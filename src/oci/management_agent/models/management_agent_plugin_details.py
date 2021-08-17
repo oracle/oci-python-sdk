@@ -34,25 +34,32 @@ class ManagementAgentPluginDetails(object):
             The value to assign to the plugin_version property of this ManagementAgentPluginDetails.
         :type plugin_version: str
 
+        :param is_enabled:
+            The value to assign to the is_enabled property of this ManagementAgentPluginDetails.
+        :type is_enabled: bool
+
         """
         self.swagger_types = {
             'plugin_id': 'str',
             'plugin_name': 'str',
             'plugin_display_name': 'str',
-            'plugin_version': 'str'
+            'plugin_version': 'str',
+            'is_enabled': 'bool'
         }
 
         self.attribute_map = {
             'plugin_id': 'pluginId',
             'plugin_name': 'pluginName',
             'plugin_display_name': 'pluginDisplayName',
-            'plugin_version': 'pluginVersion'
+            'plugin_version': 'pluginVersion',
+            'is_enabled': 'isEnabled'
         }
 
         self._plugin_id = None
         self._plugin_name = None
         self._plugin_display_name = None
         self._plugin_version = None
+        self._is_enabled = None
 
     @property
     def plugin_id(self):
@@ -149,6 +156,30 @@ class ManagementAgentPluginDetails(object):
         :type: str
         """
         self._plugin_version = plugin_version
+
+    @property
+    def is_enabled(self):
+        """
+        Gets the is_enabled of this ManagementAgentPluginDetails.
+        flag indicating whether the plugin is in enabled mode or disabled mode.
+
+
+        :return: The is_enabled of this ManagementAgentPluginDetails.
+        :rtype: bool
+        """
+        return self._is_enabled
+
+    @is_enabled.setter
+    def is_enabled(self, is_enabled):
+        """
+        Sets the is_enabled of this ManagementAgentPluginDetails.
+        flag indicating whether the plugin is in enabled mode or disabled mode.
+
+
+        :param is_enabled: The is_enabled of this ManagementAgentPluginDetails.
+        :type: bool
+        """
+        self._is_enabled = is_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

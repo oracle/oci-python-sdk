@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.44.0 - 2021-08-17
+====================
+
+Added
+-----
+* Support for getting management agent hosts which are eligible to create Operations Insights host resources on, in the Operations Insights service
+* Support for getting summarized agent counts and summarized plugin counts in the Management Agent Cloud service
+
+Breaking
+--------
+* Model `WorkSubmissionKey` was removed from Management Agent Cloud service
+* Type for parameter `plugin_name` changed to `list[str]` from `str` in operation `list_management_agent_plugins` in the Management Agent Cloud Service
+* Type for parameter `version` changed to `list[str]` from `str` in operation `list_management_agent_plugins` in the Management Agent Cloud Service
+* Type for parameter `platform_type` changed to `list[str]` from `str` in operation `list_management_agent_plugins` in the Management Agent Cloud Service
+
+====================
 2.43.2 - 2021-08-03
 ====================
 

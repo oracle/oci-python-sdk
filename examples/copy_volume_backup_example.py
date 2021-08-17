@@ -58,34 +58,18 @@ destination_region = args.destination_region
 kms_key_id = args.kms_key_id
 display_name = args.display_name
 
-# load config and create clients (one for the source region and one for the destination region).
+# load config and create clients one for BlockstorageClient and another for BlockstorageClientCompositeOperations.
 source_config = oci.config.from_file()
-destination_config = source_config.copy()
-destination_config["region"] = destination_region
-source_blockstorage_client = oci.core.BlockstorageClient(source_config)
-destination_blockstorage_client = oci.core.BlockstorageClient(destination_config)
-
 print('Copying backup with ID {} from {} to {} using new display name: {} and kms key id: {} \n'.format(
     source_backup_id, source_config["region"], destination_region, display_name, kms_key_id))
-result = source_blockstorage_client.copy_volume_backup(
-    source_backup_id,
-    oci.core.models.CopyVolumeBackupDetails(
+blockstorage_client = oci.core.BlockstorageClient(source_config)
+blockstorage_composite_client = oci.core.BlockstorageClientCompositeOperations(blockstorage_client)
+copied_backup = blockstorage_composite_client.copy_volume_backup_and_wait_for_work_request(
+    volume_backup_id=source_backup_id,
+    copy_volume_backup_details=oci.core.models.CopyVolumeBackupDetails(
         destination_region=destination_region,
         display_name=display_name,
         kms_key_id=kms_key_id
-    )
-)
-
-print('Copy backup response status: {}, copied backup: {}\n'.format(result.status, result.data))
-print('Waiting for the copied backup to be in available state...')
-
-# query the destination region for the copied' backup's status and wait for it to be available.
-copied_backup = oci.wait_until(
-    destination_blockstorage_client,
-    destination_blockstorage_client.get_volume_backup(result.data.id),
-    'lifecycle_state',
-    'AVAILABLE'
-).data
-
+    )).data
 print('Backup successfully copied: {}'.format(copied_backup))
 print('Example script done')
