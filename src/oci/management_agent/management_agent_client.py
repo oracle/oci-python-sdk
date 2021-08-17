@@ -825,7 +825,7 @@ class ManagementAgentClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
-            The sort order to use, either 'asc' or 'desc'.
+            The sort order to use, either 'ASC' or 'DESC'.
 
             Allowed values are: "ASC", "DESC"
 
@@ -936,7 +936,7 @@ class ManagementAgentClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment from which the Management Agents to be listed.
+            The OCID of the compartment to which a request will be scoped.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1074,7 +1074,7 @@ class ManagementAgentClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment from which the Management Agents to be listed.
+            The OCID of the compartment to which a request will be scoped.
 
         :param bool compartment_id_in_subtree: (optional)
             if set to true then it fetches install key for all compartments where user has access to else only on the compartment specified.
@@ -1206,7 +1206,7 @@ class ManagementAgentClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment from which the Management Agents to be listed.
+            The OCID of the compartment to which a request will be scoped.
 
         :param str display_name: (optional)
             Filter to return only Management Agent Plugins having the particular display name.
@@ -1235,6 +1235,11 @@ class ManagementAgentClient(object):
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "TERMINATED", "DELETING", "DELETED", "FAILED"
 
+        :param list[str] platform_type: (optional)
+            Filter to return only results having the particular platform type.
+
+            Allowed values are: "LINUX", "WINDOWS"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1261,7 +1266,8 @@ class ManagementAgentClient(object):
             "sort_order",
             "sort_by",
             "opc_request_id",
-            "lifecycle_state"
+            "lifecycle_state",
+            "platform_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1289,6 +1295,14 @@ class ManagementAgentClient(object):
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
+        if 'platform_type' in kwargs:
+            platform_type_allowed_values = ["LINUX", "WINDOWS"]
+            for platform_type_item in kwargs['platform_type']:
+                if platform_type_item not in platform_type_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                    )
+
         query_params = {
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
@@ -1296,7 +1310,8 @@ class ManagementAgentClient(object):
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "lifecycleState": kwargs.get("lifecycle_state", missing)
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1333,12 +1348,12 @@ class ManagementAgentClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment from which the Management Agents to be listed.
+            The OCID of the compartment to which a request will be scoped.
 
-        :param str plugin_name: (optional)
-            Filter to return only Management Agents having the particular Plugin installed.
+        :param list[str] plugin_name: (optional)
+            Filter to return only Management Agents having the particular Plugin installed. A special pluginName of 'None' can be provided and this will return only Management Agents having no plugin installed.
 
-        :param str version: (optional)
+        :param list[str] version: (optional)
             Filter to return only Management Agents having the particular agent version.
 
         :param str display_name: (optional)
@@ -1349,10 +1364,21 @@ class ManagementAgentClient(object):
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "TERMINATED", "DELETING", "DELETED", "FAILED"
 
-        :param str platform_type: (optional)
-            Filter to return only Management Agents having the particular platform type.
+        :param str availability_status: (optional)
+            Filter to return only Management Agents in the particular availability status.
+
+            Allowed values are: "ACTIVE", "SILENT", "NOT_AVAILABLE"
+
+        :param str host_id: (optional)
+            Filter to return only Management Agents having the particular agent host id.
+
+        :param list[str] platform_type: (optional)
+            Filter to return only results having the particular platform type.
 
             Allowed values are: "LINUX", "WINDOWS"
+
+        :param bool is_customer_deployed: (optional)
+            true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1368,7 +1394,7 @@ class ManagementAgentClient(object):
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
 
-            Allowed values are: "timeCreated", "displayName"
+            Allowed values are: "timeCreated", "displayName", "host", "availabilityStatus", "platformType", "pluginDisplayNames", "version"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1397,7 +1423,10 @@ class ManagementAgentClient(object):
             "version",
             "display_name",
             "lifecycle_state",
+            "availability_status",
+            "host_id",
             "platform_type",
+            "is_customer_deployed",
             "limit",
             "page",
             "sort_order",
@@ -1416,12 +1445,20 @@ class ManagementAgentClient(object):
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
+        if 'availability_status' in kwargs:
+            availability_status_allowed_values = ["ACTIVE", "SILENT", "NOT_AVAILABLE"]
+            if kwargs['availability_status'] not in availability_status_allowed_values:
+                raise ValueError(
+                    "Invalid value for `availability_status`, must be one of {0}".format(availability_status_allowed_values)
+                )
+
         if 'platform_type' in kwargs:
             platform_type_allowed_values = ["LINUX", "WINDOWS"]
-            if kwargs['platform_type'] not in platform_type_allowed_values:
-                raise ValueError(
-                    "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
-                )
+            for platform_type_item in kwargs['platform_type']:
+                if platform_type_item not in platform_type_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                    )
 
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
@@ -1431,7 +1468,7 @@ class ManagementAgentClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["timeCreated", "displayName"]
+            sort_by_allowed_values = ["timeCreated", "displayName", "host", "availabilityStatus", "platformType", "pluginDisplayNames", "version"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -1439,11 +1476,14 @@ class ManagementAgentClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
-            "pluginName": kwargs.get("plugin_name", missing),
-            "version": kwargs.get("version", missing),
+            "pluginName": self.base_client.generate_collection_format_param(kwargs.get("plugin_name", missing), 'multi'),
+            "version": self.base_client.generate_collection_format_param(kwargs.get("version", missing), 'multi'),
             "displayName": kwargs.get("display_name", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "platformType": kwargs.get("platform_type", missing),
+            "availabilityStatus": kwargs.get("availability_status", missing),
+            "hostId": kwargs.get("host_id", missing),
+            "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi'),
+            "isCustomerDeployed": kwargs.get("is_customer_deployed", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -1722,7 +1762,7 @@ class ManagementAgentClient(object):
 
 
         :param str compartment_id: (required)
-            The ID of the compartment from which the Management Agents to be listed.
+            The OCID of the compartment to which a request will be scoped.
 
         :param str agent_id: (optional)
             The ManagementAgentID of the agent from which the Management Agents to be filtered.
@@ -1849,6 +1889,188 @@ class ManagementAgentClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="list[WorkRequestSummary]")
+
+    def summarize_management_agent_counts(self, compartment_id, group_by, **kwargs):
+        """
+        Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.
+        Supported groupBy parameters: availabilityStatus, platformType, version
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment to which a request will be scoped.
+
+        :param oci.management_agent.models.list[str] group_by: (required)
+            The field by which to group Management Agents. Currently, only one groupBy dimension is supported at a time.
+
+            Allowed values are: "availabilityStatus", "platformType", "version"
+
+        :param bool has_plugins: (optional)
+            When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.management_agent.models.ManagementAgentAggregationCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/summarize_management_agent_counts.py.html>`__ to see an example of how to use summarize_management_agent_counts API.
+        """
+        resource_path = "/managementAgentCounts"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "has_plugins",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_management_agent_counts got unknown kwargs: {!r}".format(extra_kwargs))
+
+        group_by_allowed_values = ["availabilityStatus", "platformType", "version"]
+        for group_by_item in group_by:
+            if group_by_item not in group_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "groupBy": self.base_client.generate_collection_format_param(group_by, 'multi'),
+            "hasPlugins": kwargs.get("has_plugins", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ManagementAgentAggregationCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ManagementAgentAggregationCollection")
+
+    def summarize_management_agent_plugin_counts(self, compartment_id, group_by, **kwargs):
+        """
+        Gets count of the inventory of management agent plugins for a given compartment id and group by parameter.
+        Supported groupBy parameter: pluginName
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment to which a request will be scoped.
+
+        :param str group_by: (required)
+            The field by which to group Management Agent Plugins
+
+            Allowed values are: "pluginName"
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.management_agent.models.ManagementAgentPluginAggregationCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/summarize_management_agent_plugin_counts.py.html>`__ to see an example of how to use summarize_management_agent_plugin_counts API.
+        """
+        resource_path = "/managementAgentPluginCounts"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_management_agent_plugin_counts got unknown kwargs: {!r}".format(extra_kwargs))
+
+        group_by_allowed_values = ["pluginName"]
+        if group_by not in group_by_allowed_values:
+            raise ValueError(
+                "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
+            )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "groupBy": group_by,
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ManagementAgentPluginAggregationCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ManagementAgentPluginAggregationCollection")
 
     def update_management_agent(self, management_agent_id, update_management_agent_details, **kwargs):
         """

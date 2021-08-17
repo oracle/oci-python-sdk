@@ -58,7 +58,7 @@ class UpdateManagementAgentDetails(object):
     def is_agent_auto_upgradable(self):
         """
         Gets the is_agent_auto_upgradable of this UpdateManagementAgentDetails.
-        true if the agent can be upgraded automatically; false if it must be upgraded manually. true is currently unsupported.
+        Setting of this flag is no longer supported.
 
 
         :return: The is_agent_auto_upgradable of this UpdateManagementAgentDetails.
@@ -70,7 +70,7 @@ class UpdateManagementAgentDetails(object):
     def is_agent_auto_upgradable(self, is_agent_auto_upgradable):
         """
         Sets the is_agent_auto_upgradable of this UpdateManagementAgentDetails.
-        true if the agent can be upgraded automatically; false if it must be upgraded manually. true is currently unsupported.
+        Setting of this flag is no longer supported.
 
 
         :param is_agent_auto_upgradable: The is_agent_auto_upgradable of this UpdateManagementAgentDetails.

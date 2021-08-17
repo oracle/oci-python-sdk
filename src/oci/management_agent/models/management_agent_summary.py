@@ -108,9 +108,17 @@ class ManagementAgentSummary(object):
             The value to assign to the time_created property of this ManagementAgentSummary.
         :type time_created: datetime
 
+        :param time_updated:
+            The value to assign to the time_updated property of this ManagementAgentSummary.
+        :type time_updated: datetime
+
         :param host:
             The value to assign to the host property of this ManagementAgentSummary.
         :type host: str
+
+        :param host_id:
+            The value to assign to the host_id property of this ManagementAgentSummary.
+        :type host_id: str
 
         :param plugin_list:
             The value to assign to the plugin_list property of this ManagementAgentSummary.
@@ -140,6 +148,10 @@ class ManagementAgentSummary(object):
             The value to assign to the lifecycle_details property of this ManagementAgentSummary.
         :type lifecycle_details: str
 
+        :param is_customer_deployed:
+            The value to assign to the is_customer_deployed property of this ManagementAgentSummary.
+        :type is_customer_deployed: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementAgentSummary.
         :type freeform_tags: dict(str, str)
@@ -159,13 +171,16 @@ class ManagementAgentSummary(object):
             'version': 'str',
             'is_agent_auto_upgradable': 'bool',
             'time_created': 'datetime',
+            'time_updated': 'datetime',
             'host': 'str',
+            'host_id': 'str',
             'plugin_list': 'list[ManagementAgentPluginDetails]',
             'compartment_id': 'str',
             'time_last_heartbeat': 'datetime',
             'availability_status': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'is_customer_deployed': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -180,13 +195,16 @@ class ManagementAgentSummary(object):
             'version': 'version',
             'is_agent_auto_upgradable': 'isAgentAutoUpgradable',
             'time_created': 'timeCreated',
+            'time_updated': 'timeUpdated',
             'host': 'host',
+            'host_id': 'hostId',
             'plugin_list': 'pluginList',
             'compartment_id': 'compartmentId',
             'time_last_heartbeat': 'timeLastHeartbeat',
             'availability_status': 'availabilityStatus',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'is_customer_deployed': 'isCustomerDeployed',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -200,13 +218,16 @@ class ManagementAgentSummary(object):
         self._version = None
         self._is_agent_auto_upgradable = None
         self._time_created = None
+        self._time_updated = None
         self._host = None
+        self._host_id = None
         self._plugin_list = None
         self._compartment_id = None
         self._time_last_heartbeat = None
         self._availability_status = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._is_customer_deployed = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -388,7 +409,7 @@ class ManagementAgentSummary(object):
     def is_agent_auto_upgradable(self):
         """
         Gets the is_agent_auto_upgradable of this ManagementAgentSummary.
-        true if the agent can be upgraded automatically; false if it must be upgraded manually. true is currently unsupported.
+        true if the agent can be upgraded automatically; false if it must be upgraded manually.
 
 
         :return: The is_agent_auto_upgradable of this ManagementAgentSummary.
@@ -400,7 +421,7 @@ class ManagementAgentSummary(object):
     def is_agent_auto_upgradable(self, is_agent_auto_upgradable):
         """
         Sets the is_agent_auto_upgradable of this ManagementAgentSummary.
-        true if the agent can be upgraded automatically; false if it must be upgraded manually. true is currently unsupported.
+        true if the agent can be upgraded automatically; false if it must be upgraded manually.
 
 
         :param is_agent_auto_upgradable: The is_agent_auto_upgradable of this ManagementAgentSummary.
@@ -433,6 +454,30 @@ class ManagementAgentSummary(object):
         self._time_created = time_created
 
     @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this ManagementAgentSummary.
+        The time the Management Agent was last updated. An RFC3339 formatted datetime string
+
+
+        :return: The time_updated of this ManagementAgentSummary.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this ManagementAgentSummary.
+        The time the Management Agent was last updated. An RFC3339 formatted datetime string
+
+
+        :param time_updated: The time_updated of this ManagementAgentSummary.
+        :type: datetime
+        """
+        self._time_updated = time_updated
+
+    @property
     def host(self):
         """
         Gets the host of this ManagementAgentSummary.
@@ -455,6 +500,30 @@ class ManagementAgentSummary(object):
         :type: str
         """
         self._host = host
+
+    @property
+    def host_id(self):
+        """
+        Gets the host_id of this ManagementAgentSummary.
+        Host resource ocid
+
+
+        :return: The host_id of this ManagementAgentSummary.
+        :rtype: str
+        """
+        return self._host_id
+
+    @host_id.setter
+    def host_id(self, host_id):
+        """
+        Sets the host_id of this ManagementAgentSummary.
+        Host resource ocid
+
+
+        :param host_id: The host_id of this ManagementAgentSummary.
+        :type: str
+        """
+        self._host_id = host_id
 
     @property
     def plugin_list(self):
@@ -611,6 +680,30 @@ class ManagementAgentSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def is_customer_deployed(self):
+        """
+        Gets the is_customer_deployed of this ManagementAgentSummary.
+        true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
+
+
+        :return: The is_customer_deployed of this ManagementAgentSummary.
+        :rtype: bool
+        """
+        return self._is_customer_deployed
+
+    @is_customer_deployed.setter
+    def is_customer_deployed(self, is_customer_deployed):
+        """
+        Sets the is_customer_deployed of this ManagementAgentSummary.
+        true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
+
+
+        :param is_customer_deployed: The is_customer_deployed of this ManagementAgentSummary.
+        :type: bool
+        """
+        self._is_customer_deployed = is_customer_deployed
 
     @property
     def freeform_tags(self):

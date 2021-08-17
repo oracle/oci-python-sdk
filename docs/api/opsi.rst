@@ -62,6 +62,7 @@ Opsi
     oci.opsi.models.HostDetails
     oci.opsi.models.HostEntities
     oci.opsi.models.HostHardwareConfiguration
+    oci.opsi.models.HostImportableAgentEntitySummary
     oci.opsi.models.HostInsight
     oci.opsi.models.HostInsightResourceStatisticsAggregation
     oci.opsi.models.HostInsightSummary
@@ -80,6 +81,8 @@ Opsi
     oci.opsi.models.HostResourceStatistics
     oci.opsi.models.HostedEntityCollection
     oci.opsi.models.HostedEntitySummary
+    oci.opsi.models.ImportableAgentEntitySummary
+    oci.opsi.models.ImportableAgentEntitySummaryCollection
     oci.opsi.models.ImportableEnterpriseManagerEntity
     oci.opsi.models.ImportableEnterpriseManagerEntityCollection
     oci.opsi.models.IngestDatabaseConfigurationDetails
