@@ -166,6 +166,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -259,6 +263,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -382,6 +390,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -531,6 +543,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -723,6 +739,10 @@ class LogAnalyticsClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -825,6 +845,10 @@ class LogAnalyticsClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -927,6 +951,10 @@ class LogAnalyticsClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1022,6 +1050,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1123,6 +1155,10 @@ class LogAnalyticsClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1320,6 +1356,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1411,6 +1451,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1502,6 +1546,10 @@ class LogAnalyticsClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1591,6 +1639,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1673,6 +1725,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1762,6 +1818,10 @@ class LogAnalyticsClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -1853,6 +1913,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -3298,6 +3362,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -3391,6 +3459,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -3570,6 +3642,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -3663,6 +3739,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -3761,6 +3841,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -3843,6 +3927,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -3923,6 +4011,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -4012,6 +4104,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -4094,6 +4190,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -4201,6 +4301,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -4312,6 +4416,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -4396,6 +4504,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -6958,6 +7070,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -13058,6 +13174,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -13246,6 +13366,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -13430,6 +13554,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -13530,6 +13658,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -13663,6 +13795,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -13786,6 +13922,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -13888,6 +14028,10 @@ class LogAnalyticsClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -13981,6 +14125,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -14259,6 +14407,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -14356,6 +14508,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -14471,6 +14627,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -14572,6 +14732,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -14667,6 +14831,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -14760,6 +14928,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -14853,6 +15025,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -14944,6 +15120,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -15039,6 +15219,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -15141,6 +15325,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -15266,6 +15454,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -15384,6 +15576,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -15473,6 +15669,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -15605,6 +15805,10 @@ class LogAnalyticsClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -15796,6 +16000,10 @@ class LogAnalyticsClient(object):
             "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         # If the body parameter is optional we need to assign it to a variable so additional type checking can be performed.
         try:
@@ -15921,6 +16129,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -16021,6 +16233,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -16121,6 +16337,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -16221,6 +16441,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -16342,6 +16566,10 @@ class LogAnalyticsClient(object):
             "if-match": kwargs.get("if_match", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -16477,6 +16705,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -16680,6 +16912,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):
@@ -16773,6 +17009,10 @@ class LogAnalyticsClient(object):
             "opc-request-id": kwargs.get("opc_request_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+        # Set default value for expect header if user has not overridden it
+        lowercase_header_params_keys = [k.lower() for k in header_params]
+        if "expect" not in lowercase_header_params_keys:
+            header_params["expect"] = "100-continue"
 
         retry_strategy = self.retry_strategy
         if kwargs.get('retry_strategy'):

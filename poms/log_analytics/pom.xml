@@ -92,6 +92,7 @@
         <version>${codegen-version}</version>
         <configuration>
           <isTestGenerationEnabled>false</isTestGenerationEnabled>
+          <isExpect100ContinueSupported>true</isExpect100ContinueSupported>
         </configuration>
         <executions>
           <!-- Complile execution -->
