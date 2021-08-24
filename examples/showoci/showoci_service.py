@@ -134,7 +134,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.39.1"
+    oci_compatible_version = "2.44.0"
 
     ##########################################################################
     # Global Constants
@@ -682,7 +682,7 @@ class ShowOCIService(object):
                 if int(i) < int(rl):
                     print("")
                     print("*********************************************************************")
-                    print("Error, OCI SDK version " + self.oci_compatible_version + " required !")
+                    print("Error, OCI SDK minimum version " + self.oci_compatible_version + " required !")
                     print("OCI SDK Version installed = " + self.get_oci_version())
                     print("Please use below command to upgrade OCI SDK:")
                     print("   python -m pip install --upgrade oci")
@@ -7572,6 +7572,7 @@ class ShowOCIService(object):
                              'db_version': str(dbs.db_version),
                              'service_console_url': str(dbs.service_console_url),
                              'connection_strings': str(dbs.connection_strings),
+                             'connection_urls': str(dbs.connection_urls),
                              'time_created': str(dbs.time_created),
                              'compartment_name': str(compartment['name']),
                              'compartment_id': str(compartment['id']),
@@ -7602,9 +7603,18 @@ class ShowOCIService(object):
                              'time_of_last_switchover': str(dbs.time_of_last_switchover),
                              'time_of_last_failover': str(dbs.time_of_last_failover),
                              'failed_data_recovery_in_seconds': str(dbs.failed_data_recovery_in_seconds),
-                             'available_upgrade_versions': dbs.available_upgrade_versions,
                              'standby_lag_time_in_seconds': "",
-                             'standby_lifecycle_state': ""
+                             'standby_lifecycle_state': "",
+                             'peer_db_ids': dbs.peer_db_ids,
+                             'time_data_guard_role_changed': str(dbs.time_data_guard_role_changed),
+                             'time_local_data_guard_enabled': str(dbs.time_local_data_guard_enabled),
+                             'dataguard_region_type': str(dbs.dataguard_region_type),
+                             'customer_contacts': "" if dbs.customer_contacts is None else str(', '.join(x.email for x in dbs.customer_contacts)),
+                             'supported_regions_to_clone_to': dbs.supported_regions_to_clone_to,
+                             'key_store_wallet_name': str(dbs.key_store_wallet_name),
+                             'key_store_id': str(dbs.key_store_id),
+                             'available_upgrade_versions': str(dbs.available_upgrade_versions),
+                             'role': str(dbs.role)
                              }
 
                     # if standby object exist
