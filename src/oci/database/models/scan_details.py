@@ -26,6 +26,14 @@ class ScanDetails(object):
             The value to assign to the port property of this ScanDetails.
         :type port: int
 
+        :param scan_listener_port_tcp:
+            The value to assign to the scan_listener_port_tcp property of this ScanDetails.
+        :type scan_listener_port_tcp: int
+
+        :param scan_listener_port_tcp_ssl:
+            The value to assign to the scan_listener_port_tcp_ssl property of this ScanDetails.
+        :type scan_listener_port_tcp_ssl: int
+
         :param ips:
             The value to assign to the ips property of this ScanDetails.
         :type ips: list[str]
@@ -34,17 +42,23 @@ class ScanDetails(object):
         self.swagger_types = {
             'hostname': 'str',
             'port': 'int',
+            'scan_listener_port_tcp': 'int',
+            'scan_listener_port_tcp_ssl': 'int',
             'ips': 'list[str]'
         }
 
         self.attribute_map = {
             'hostname': 'hostname',
             'port': 'port',
+            'scan_listener_port_tcp': 'scanListenerPortTcp',
+            'scan_listener_port_tcp_ssl': 'scanListenerPortTcpSsl',
             'ips': 'ips'
         }
 
         self._hostname = None
         self._port = None
+        self._scan_listener_port_tcp = None
+        self._scan_listener_port_tcp_ssl = None
         self._ips = None
 
     @property
@@ -94,6 +108,54 @@ class ScanDetails(object):
         :type: int
         """
         self._port = port
+
+    @property
+    def scan_listener_port_tcp(self):
+        """
+        Gets the scan_listener_port_tcp of this ScanDetails.
+        The SCAN TCPIP port. Default is 1521.
+
+
+        :return: The scan_listener_port_tcp of this ScanDetails.
+        :rtype: int
+        """
+        return self._scan_listener_port_tcp
+
+    @scan_listener_port_tcp.setter
+    def scan_listener_port_tcp(self, scan_listener_port_tcp):
+        """
+        Sets the scan_listener_port_tcp of this ScanDetails.
+        The SCAN TCPIP port. Default is 1521.
+
+
+        :param scan_listener_port_tcp: The scan_listener_port_tcp of this ScanDetails.
+        :type: int
+        """
+        self._scan_listener_port_tcp = scan_listener_port_tcp
+
+    @property
+    def scan_listener_port_tcp_ssl(self):
+        """
+        Gets the scan_listener_port_tcp_ssl of this ScanDetails.
+        The SCAN TCPIP SSL port. Default is 2484.
+
+
+        :return: The scan_listener_port_tcp_ssl of this ScanDetails.
+        :rtype: int
+        """
+        return self._scan_listener_port_tcp_ssl
+
+    @scan_listener_port_tcp_ssl.setter
+    def scan_listener_port_tcp_ssl(self, scan_listener_port_tcp_ssl):
+        """
+        Sets the scan_listener_port_tcp_ssl of this ScanDetails.
+        The SCAN TCPIP SSL port. Default is 2484.
+
+
+        :param scan_listener_port_tcp_ssl: The scan_listener_port_tcp_ssl of this ScanDetails.
+        :type: int
+        """
+        self._scan_listener_port_tcp_ssl = scan_listener_port_tcp_ssl
 
     @property
     def ips(self):
