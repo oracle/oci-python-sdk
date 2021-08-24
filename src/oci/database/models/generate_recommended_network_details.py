@@ -26,6 +26,14 @@ class GenerateRecommendedNetworkDetails(object):
             The value to assign to the display_name property of this GenerateRecommendedNetworkDetails.
         :type display_name: str
 
+        :param scan_listener_port_tcp:
+            The value to assign to the scan_listener_port_tcp property of this GenerateRecommendedNetworkDetails.
+        :type scan_listener_port_tcp: int
+
+        :param scan_listener_port_tcp_ssl:
+            The value to assign to the scan_listener_port_tcp_ssl property of this GenerateRecommendedNetworkDetails.
+        :type scan_listener_port_tcp_ssl: int
+
         :param networks:
             The value to assign to the networks property of this GenerateRecommendedNetworkDetails.
         :type networks: list[oci.database.models.InfoForNetworkGenDetails]
@@ -50,6 +58,8 @@ class GenerateRecommendedNetworkDetails(object):
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
+            'scan_listener_port_tcp': 'int',
+            'scan_listener_port_tcp_ssl': 'int',
             'networks': 'list[InfoForNetworkGenDetails]',
             'dns': 'list[str]',
             'ntp': 'list[str]',
@@ -60,6 +70,8 @@ class GenerateRecommendedNetworkDetails(object):
         self.attribute_map = {
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
+            'scan_listener_port_tcp': 'scanListenerPortTcp',
+            'scan_listener_port_tcp_ssl': 'scanListenerPortTcpSsl',
             'networks': 'networks',
             'dns': 'dns',
             'ntp': 'ntp',
@@ -69,6 +81,8 @@ class GenerateRecommendedNetworkDetails(object):
 
         self._compartment_id = None
         self._display_name = None
+        self._scan_listener_port_tcp = None
+        self._scan_listener_port_tcp_ssl = None
         self._networks = None
         self._dns = None
         self._ntp = None
@@ -126,6 +140,54 @@ class GenerateRecommendedNetworkDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def scan_listener_port_tcp(self):
+        """
+        Gets the scan_listener_port_tcp of this GenerateRecommendedNetworkDetails.
+        The SCAN TCPIP port. Default is 1521.
+
+
+        :return: The scan_listener_port_tcp of this GenerateRecommendedNetworkDetails.
+        :rtype: int
+        """
+        return self._scan_listener_port_tcp
+
+    @scan_listener_port_tcp.setter
+    def scan_listener_port_tcp(self, scan_listener_port_tcp):
+        """
+        Sets the scan_listener_port_tcp of this GenerateRecommendedNetworkDetails.
+        The SCAN TCPIP port. Default is 1521.
+
+
+        :param scan_listener_port_tcp: The scan_listener_port_tcp of this GenerateRecommendedNetworkDetails.
+        :type: int
+        """
+        self._scan_listener_port_tcp = scan_listener_port_tcp
+
+    @property
+    def scan_listener_port_tcp_ssl(self):
+        """
+        Gets the scan_listener_port_tcp_ssl of this GenerateRecommendedNetworkDetails.
+        The SCAN TCPIP SSL port. Default is 2484.
+
+
+        :return: The scan_listener_port_tcp_ssl of this GenerateRecommendedNetworkDetails.
+        :rtype: int
+        """
+        return self._scan_listener_port_tcp_ssl
+
+    @scan_listener_port_tcp_ssl.setter
+    def scan_listener_port_tcp_ssl(self, scan_listener_port_tcp_ssl):
+        """
+        Sets the scan_listener_port_tcp_ssl of this GenerateRecommendedNetworkDetails.
+        The SCAN TCPIP SSL port. Default is 2484.
+
+
+        :param scan_listener_port_tcp_ssl: The scan_listener_port_tcp_ssl of this GenerateRecommendedNetworkDetails.
+        :type: int
+        """
+        self._scan_listener_port_tcp_ssl = scan_listener_port_tcp_ssl
 
     @property
     def networks(self):

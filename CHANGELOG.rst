@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.44.1 - 2021-08-24
+====================
+
+Added
+-----
+* Support for generating recommended VM cluster networks in the Database service
+* Support for creating VM cluster networks with a specified listener port in the Database service
+
+====================
 2.44.0 - 2021-08-17
 ====================
 
