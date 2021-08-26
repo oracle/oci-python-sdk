@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.osms.api</groupId>
         <artifactId>osms-spec</artifactId>
-        <version>0.2.0-9</version>
+        <version>0.3.0-128</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ParseConnectionDetails(object):
     """
-    Parse connections from the connection metadata and oracle wallet file.
+    Parse connections from the connection metadata and Oracle wallet file.
+    An error will be returned if more than one of connectionPayload, walletSecretId or walletSecretName are present in the request.
     """
 
     def __init__(self, **kwargs):
@@ -26,19 +27,33 @@ class ParseConnectionDetails(object):
             The value to assign to the connection_payload property of this ParseConnectionDetails.
         :type connection_payload: str
 
+        :param wallet_secret_id:
+            The value to assign to the wallet_secret_id property of this ParseConnectionDetails.
+        :type wallet_secret_id: str
+
+        :param wallet_secret_name:
+            The value to assign to the wallet_secret_name property of this ParseConnectionDetails.
+        :type wallet_secret_name: str
+
         """
         self.swagger_types = {
             'connection_detail': 'Connection',
-            'connection_payload': 'str'
+            'connection_payload': 'str',
+            'wallet_secret_id': 'str',
+            'wallet_secret_name': 'str'
         }
 
         self.attribute_map = {
             'connection_detail': 'connectionDetail',
-            'connection_payload': 'connectionPayload'
+            'connection_payload': 'connectionPayload',
+            'wallet_secret_id': 'walletSecretId',
+            'wallet_secret_name': 'walletSecretName'
         }
 
         self._connection_detail = None
         self._connection_payload = None
+        self._wallet_secret_id = None
+        self._wallet_secret_name = None
 
     @property
     def connection_detail(self):
@@ -83,6 +98,54 @@ class ParseConnectionDetails(object):
         :type: str
         """
         self._connection_payload = connection_payload
+
+    @property
+    def wallet_secret_id(self):
+        """
+        Gets the wallet_secret_id of this ParseConnectionDetails.
+        OCID of the OCI Vault secret holding the Oracle wallet to parse.
+
+
+        :return: The wallet_secret_id of this ParseConnectionDetails.
+        :rtype: str
+        """
+        return self._wallet_secret_id
+
+    @wallet_secret_id.setter
+    def wallet_secret_id(self, wallet_secret_id):
+        """
+        Sets the wallet_secret_id of this ParseConnectionDetails.
+        OCID of the OCI Vault secret holding the Oracle wallet to parse.
+
+
+        :param wallet_secret_id: The wallet_secret_id of this ParseConnectionDetails.
+        :type: str
+        """
+        self._wallet_secret_id = wallet_secret_id
+
+    @property
+    def wallet_secret_name(self):
+        """
+        Gets the wallet_secret_name of this ParseConnectionDetails.
+        Name of the OCI Vault secret holding the Oracle wallet to parse.
+
+
+        :return: The wallet_secret_name of this ParseConnectionDetails.
+        :rtype: str
+        """
+        return self._wallet_secret_name
+
+    @wallet_secret_name.setter
+    def wallet_secret_name(self, wallet_secret_name):
+        """
+        Sets the wallet_secret_name of this ParseConnectionDetails.
+        Name of the OCI Vault secret holding the Oracle wallet to parse.
+
+
+        :param wallet_secret_name: The wallet_secret_name of this ParseConnectionDetails.
+        :type: str
+        """
+        self._wallet_secret_name = wallet_secret_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

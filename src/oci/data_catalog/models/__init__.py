@@ -67,6 +67,7 @@ from .entity_summary import EntitySummary
 from .entity_tag import EntityTag
 from .entity_tag_collection import EntityTagCollection
 from .entity_tag_summary import EntityTagSummary
+from .event_config import EventConfig
 from .export_data_asset_details import ExportDataAssetDetails
 from .faceted_search_aggregation import FacetedSearchAggregation
 from .faceted_search_custom_property import FacetedSearchCustomProperty
@@ -232,6 +233,7 @@ data_catalog_type_mapping = {
     "EntityTag": EntityTag,
     "EntityTagCollection": EntityTagCollection,
     "EntityTagSummary": EntityTagSummary,
+    "EventConfig": EventConfig,
     "ExportDataAssetDetails": ExportDataAssetDetails,
     "FacetedSearchAggregation": FacetedSearchAggregation,
     "FacetedSearchCustomProperty": FacetedSearchCustomProperty,

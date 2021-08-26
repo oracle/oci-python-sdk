@@ -1045,6 +1045,46 @@ def test_install_all_package_updates_on_managed_instance(testing_service_client)
 
 
 # IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_install_all_updates_on_managed_instance_group(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'InstallAllUpdatesOnManagedInstanceGroup'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'InstallAllUpdatesOnManagedInstanceGroup')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='InstallAllUpdatesOnManagedInstanceGroup')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.install_all_updates_on_managed_instance_group(
+                managed_instance_group_id=request.pop(util.camelize('managedInstanceGroupId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'InstallAllUpdatesOnManagedInstanceGroup',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'install_all_updates_on_managed_instance_group',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
 def test_install_all_windows_updates_on_managed_instance(testing_service_client):
     if not testing_service_client.is_api_enabled('os_management', 'InstallAllWindowsUpdatesOnManagedInstance'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2498,6 +2538,47 @@ def test_skip_next_scheduled_job_execution(testing_service_client):
             result,
             service_error,
             'skip_next_scheduled_job_execution',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_osms_us_grp@oracle.com" jiraProject="OSMS" opsJiraProject="OSMS"
+def test_update_managed_instance(testing_service_client):
+    if not testing_service_client.is_api_enabled('os_management', 'UpdateManagedInstance'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('os_management', util.camelize('os_management'), 'UpdateManagedInstance')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='os_management', api_name='UpdateManagedInstance')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.os_management.OsManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_managed_instance(
+                managed_instance_id=request.pop(util.camelize('managedInstanceId')),
+                update_managed_instance_details=request.pop(util.camelize('UpdateManagedInstanceDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'os_management',
+            'UpdateManagedInstance',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'managedInstance',
             False,
             False
         )

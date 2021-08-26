@@ -114,6 +114,22 @@ class ManagedInstance(object):
             The value to assign to the is_reboot_required property of this ManagedInstance.
         :type is_reboot_required: bool
 
+        :param notification_topic_id:
+            The value to assign to the notification_topic_id property of this ManagedInstance.
+        :type notification_topic_id: str
+
+        :param ksplice_effective_kernel_version:
+            The value to assign to the ksplice_effective_kernel_version property of this ManagedInstance.
+        :type ksplice_effective_kernel_version: str
+
+        :param is_data_collection_authorized:
+            The value to assign to the is_data_collection_authorized property of this ManagedInstance.
+        :type is_data_collection_authorized: bool
+
+        :param autonomous:
+            The value to assign to the autonomous property of this ManagedInstance.
+        :type autonomous: oci.os_management.models.AutonomousSettings
+
         :param security_updates_available:
             The value to assign to the security_updates_available property of this ManagedInstance.
         :type security_updates_available: int
@@ -156,6 +172,10 @@ class ManagedInstance(object):
             'managed_instance_groups': 'list[Id]',
             'os_family': 'str',
             'is_reboot_required': 'bool',
+            'notification_topic_id': 'str',
+            'ksplice_effective_kernel_version': 'str',
+            'is_data_collection_authorized': 'bool',
+            'autonomous': 'AutonomousSettings',
             'security_updates_available': 'int',
             'bug_updates_available': 'int',
             'enhancement_updates_available': 'int',
@@ -181,6 +201,10 @@ class ManagedInstance(object):
             'managed_instance_groups': 'managedInstanceGroups',
             'os_family': 'osFamily',
             'is_reboot_required': 'isRebootRequired',
+            'notification_topic_id': 'notificationTopicId',
+            'ksplice_effective_kernel_version': 'kspliceEffectiveKernelVersion',
+            'is_data_collection_authorized': 'isDataCollectionAuthorized',
+            'autonomous': 'autonomous',
             'security_updates_available': 'securityUpdatesAvailable',
             'bug_updates_available': 'bugUpdatesAvailable',
             'enhancement_updates_available': 'enhancementUpdatesAvailable',
@@ -205,6 +229,10 @@ class ManagedInstance(object):
         self._managed_instance_groups = None
         self._os_family = None
         self._is_reboot_required = None
+        self._notification_topic_id = None
+        self._ksplice_effective_kernel_version = None
+        self._is_data_collection_authorized = None
+        self._autonomous = None
         self._security_updates_available = None
         self._bug_updates_available = None
         self._enhancement_updates_available = None
@@ -609,6 +637,102 @@ class ManagedInstance(object):
         :type: bool
         """
         self._is_reboot_required = is_reboot_required
+
+    @property
+    def notification_topic_id(self):
+        """
+        Gets the notification_topic_id of this ManagedInstance.
+        OCID of the ONS topic used to send notification to users
+
+
+        :return: The notification_topic_id of this ManagedInstance.
+        :rtype: str
+        """
+        return self._notification_topic_id
+
+    @notification_topic_id.setter
+    def notification_topic_id(self, notification_topic_id):
+        """
+        Sets the notification_topic_id of this ManagedInstance.
+        OCID of the ONS topic used to send notification to users
+
+
+        :param notification_topic_id: The notification_topic_id of this ManagedInstance.
+        :type: str
+        """
+        self._notification_topic_id = notification_topic_id
+
+    @property
+    def ksplice_effective_kernel_version(self):
+        """
+        Gets the ksplice_effective_kernel_version of this ManagedInstance.
+        The ksplice effective kernel version
+
+
+        :return: The ksplice_effective_kernel_version of this ManagedInstance.
+        :rtype: str
+        """
+        return self._ksplice_effective_kernel_version
+
+    @ksplice_effective_kernel_version.setter
+    def ksplice_effective_kernel_version(self, ksplice_effective_kernel_version):
+        """
+        Sets the ksplice_effective_kernel_version of this ManagedInstance.
+        The ksplice effective kernel version
+
+
+        :param ksplice_effective_kernel_version: The ksplice_effective_kernel_version of this ManagedInstance.
+        :type: str
+        """
+        self._ksplice_effective_kernel_version = ksplice_effective_kernel_version
+
+    @property
+    def is_data_collection_authorized(self):
+        """
+        Gets the is_data_collection_authorized of this ManagedInstance.
+        True if user allow data collection for this instance
+
+
+        :return: The is_data_collection_authorized of this ManagedInstance.
+        :rtype: bool
+        """
+        return self._is_data_collection_authorized
+
+    @is_data_collection_authorized.setter
+    def is_data_collection_authorized(self, is_data_collection_authorized):
+        """
+        Sets the is_data_collection_authorized of this ManagedInstance.
+        True if user allow data collection for this instance
+
+
+        :param is_data_collection_authorized: The is_data_collection_authorized of this ManagedInstance.
+        :type: bool
+        """
+        self._is_data_collection_authorized = is_data_collection_authorized
+
+    @property
+    def autonomous(self):
+        """
+        Gets the autonomous of this ManagedInstance.
+        if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
+
+
+        :return: The autonomous of this ManagedInstance.
+        :rtype: oci.os_management.models.AutonomousSettings
+        """
+        return self._autonomous
+
+    @autonomous.setter
+    def autonomous(self, autonomous):
+        """
+        Sets the autonomous of this ManagedInstance.
+        if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
+
+
+        :param autonomous: The autonomous of this ManagedInstance.
+        :type: oci.os_management.models.AutonomousSettings
+        """
+        self._autonomous = autonomous
 
     @property
     def security_updates_available(self):

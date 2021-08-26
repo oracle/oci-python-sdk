@@ -162,6 +162,10 @@ class CustomPropertySummary(object):
             The value to assign to the is_event_enabled property of this CustomPropertySummary.
         :type is_event_enabled: bool
 
+        :param events:
+            The value to assign to the events property of this CustomPropertySummary.
+        :type events: list[oci.data_catalog.models.EventConfig]
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -185,7 +189,8 @@ class CustomPropertySummary(object):
             'time_updated': 'datetime',
             'created_by_id': 'str',
             'updated_by_id': 'str',
-            'is_event_enabled': 'bool'
+            'is_event_enabled': 'bool',
+            'events': 'list[EventConfig]'
         }
 
         self.attribute_map = {
@@ -210,7 +215,8 @@ class CustomPropertySummary(object):
             'time_updated': 'timeUpdated',
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById',
-            'is_event_enabled': 'isEventEnabled'
+            'is_event_enabled': 'isEventEnabled',
+            'events': 'events'
         }
 
         self._key = None
@@ -235,6 +241,7 @@ class CustomPropertySummary(object):
         self._created_by_id = None
         self._updated_by_id = None
         self._is_event_enabled = None
+        self._events = None
 
     @property
     def key(self):
@@ -785,6 +792,30 @@ class CustomPropertySummary(object):
         :type: bool
         """
         self._is_event_enabled = is_event_enabled
+
+    @property
+    def events(self):
+        """
+        Gets the events of this CustomPropertySummary.
+        Event configuration for this custom property, against the desired subset of object types to which the property applies.
+
+
+        :return: The events of this CustomPropertySummary.
+        :rtype: list[oci.data_catalog.models.EventConfig]
+        """
+        return self._events
+
+    @events.setter
+    def events(self, events):
+        """
+        Sets the events of this CustomPropertySummary.
+        Event configuration for this custom property, against the desired subset of object types to which the property applies.
+
+
+        :param events: The events of this CustomPropertySummary.
+        :type: list[oci.data_catalog.models.EventConfig]
+        """
+        self._events = events
 
     def __repr__(self):
         return formatted_flat_dict(self)
