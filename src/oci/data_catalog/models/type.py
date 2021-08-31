@@ -105,6 +105,14 @@ class Type(object):
             The value to assign to the custom_properties property of this Type.
         :type custom_properties: list[oci.data_catalog.models.CustomPropertySummary]
 
+        :param parent_type_key:
+            The value to assign to the parent_type_key property of this Type.
+        :type parent_type_key: str
+
+        :param parent_type_name:
+            The value to assign to the parent_type_name property of this Type.
+        :type parent_type_name: str
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -119,7 +127,9 @@ class Type(object):
             'type_category': 'str',
             'external_type_name': 'str',
             'uri': 'str',
-            'custom_properties': 'list[CustomPropertySummary]'
+            'custom_properties': 'list[CustomPropertySummary]',
+            'parent_type_key': 'str',
+            'parent_type_name': 'str'
         }
 
         self.attribute_map = {
@@ -135,7 +145,9 @@ class Type(object):
             'type_category': 'typeCategory',
             'external_type_name': 'externalTypeName',
             'uri': 'uri',
-            'custom_properties': 'customProperties'
+            'custom_properties': 'customProperties',
+            'parent_type_key': 'parentTypeKey',
+            'parent_type_name': 'parentTypeName'
         }
 
         self._key = None
@@ -151,6 +163,8 @@ class Type(object):
         self._external_type_name = None
         self._uri = None
         self._custom_properties = None
+        self._parent_type_key = None
+        self._parent_type_name = None
 
     @property
     def key(self):
@@ -505,6 +519,54 @@ class Type(object):
         :type: list[oci.data_catalog.models.CustomPropertySummary]
         """
         self._custom_properties = custom_properties
+
+    @property
+    def parent_type_key(self):
+        """
+        Gets the parent_type_key of this Type.
+        Unique key of the parent type.
+
+
+        :return: The parent_type_key of this Type.
+        :rtype: str
+        """
+        return self._parent_type_key
+
+    @parent_type_key.setter
+    def parent_type_key(self, parent_type_key):
+        """
+        Sets the parent_type_key of this Type.
+        Unique key of the parent type.
+
+
+        :param parent_type_key: The parent_type_key of this Type.
+        :type: str
+        """
+        self._parent_type_key = parent_type_key
+
+    @property
+    def parent_type_name(self):
+        """
+        Gets the parent_type_name of this Type.
+        Name of the parent type.
+
+
+        :return: The parent_type_name of this Type.
+        :rtype: str
+        """
+        return self._parent_type_name
+
+    @parent_type_name.setter
+    def parent_type_name(self, parent_type_name):
+        """
+        Sets the parent_type_name of this Type.
+        Name of the parent type.
+
+
+        :param parent_type_name: The parent_type_name of this Type.
+        :type: str
+        """
+        self._parent_type_name = parent_type_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

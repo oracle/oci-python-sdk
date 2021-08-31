@@ -46,6 +46,18 @@ class ObjectRelationship(object):
             The value to assign to the time_updated property of this ObjectRelationship.
         :type time_updated: datetime
 
+        :param path:
+            The value to assign to the path property of this ObjectRelationship.
+        :type path: str
+
+        :param parent_key:
+            The value to assign to the parent_key property of this ObjectRelationship.
+        :type parent_key: str
+
+        :param parent_path:
+            The value to assign to the parent_path property of this ObjectRelationship.
+        :type parent_path: str
+
         """
         self.swagger_types = {
             'relationship_type': 'str',
@@ -54,7 +66,10 @@ class ObjectRelationship(object):
             'type_name': 'str',
             'type_key': 'str',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'path': 'str',
+            'parent_key': 'str',
+            'parent_path': 'str'
         }
 
         self.attribute_map = {
@@ -64,7 +79,10 @@ class ObjectRelationship(object):
             'type_name': 'typeName',
             'type_key': 'typeKey',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'path': 'path',
+            'parent_key': 'parentKey',
+            'parent_path': 'parentPath'
         }
 
         self._relationship_type = None
@@ -74,6 +92,9 @@ class ObjectRelationship(object):
         self._type_key = None
         self._time_created = None
         self._time_updated = None
+        self._path = None
+        self._parent_key = None
+        self._parent_path = None
 
     @property
     def relationship_type(self):
@@ -252,6 +273,78 @@ class ObjectRelationship(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def path(self):
+        """
+        Gets the path of this ObjectRelationship.
+        Full path of the object.
+
+
+        :return: The path of this ObjectRelationship.
+        :rtype: str
+        """
+        return self._path
+
+    @path.setter
+    def path(self, path):
+        """
+        Sets the path of this ObjectRelationship.
+        Full path of the object.
+
+
+        :param path: The path of this ObjectRelationship.
+        :type: str
+        """
+        self._path = path
+
+    @property
+    def parent_key(self):
+        """
+        Gets the parent_key of this ObjectRelationship.
+        Key of the parent object for the resource.
+
+
+        :return: The parent_key of this ObjectRelationship.
+        :rtype: str
+        """
+        return self._parent_key
+
+    @parent_key.setter
+    def parent_key(self, parent_key):
+        """
+        Sets the parent_key of this ObjectRelationship.
+        Key of the parent object for the resource.
+
+
+        :param parent_key: The parent_key of this ObjectRelationship.
+        :type: str
+        """
+        self._parent_key = parent_key
+
+    @property
+    def parent_path(self):
+        """
+        Gets the parent_path of this ObjectRelationship.
+        Full path of the parent object.
+
+
+        :return: The parent_path of this ObjectRelationship.
+        :rtype: str
+        """
+        return self._parent_path
+
+    @parent_path.setter
+    def parent_path(self, parent_path):
+        """
+        Sets the parent_path of this ObjectRelationship.
+        Full path of the parent object.
+
+
+        :param parent_path: The parent_path of this ObjectRelationship.
+        :type: str
+        """
+        self._parent_path = parent_path
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -138,6 +138,10 @@ class ScheduledJobSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
+        :param is_restricted:
+            The value to assign to the is_restricted property of this ScheduledJobSummary.
+        :type is_restricted: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -152,7 +156,8 @@ class ScheduledJobSummary(object):
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'os_family': 'str'
+            'os_family': 'str',
+            'is_restricted': 'bool'
         }
 
         self.attribute_map = {
@@ -168,7 +173,8 @@ class ScheduledJobSummary(object):
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'os_family': 'osFamily'
+            'os_family': 'osFamily',
+            'is_restricted': 'isRestricted'
         }
 
         self._id = None
@@ -184,6 +190,7 @@ class ScheduledJobSummary(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._os_family = None
+        self._is_restricted = None
 
     @property
     def id(self):
@@ -524,6 +531,30 @@ class ScheduledJobSummary(object):
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
+
+    @property
+    def is_restricted(self):
+        """
+        Gets the is_restricted of this ScheduledJobSummary.
+        true, if the schedule job has its update capabilities restricted. (Used to track Autonomous Scheduled Job)
+
+
+        :return: The is_restricted of this ScheduledJobSummary.
+        :rtype: bool
+        """
+        return self._is_restricted
+
+    @is_restricted.setter
+    def is_restricted(self, is_restricted):
+        """
+        Sets the is_restricted of this ScheduledJobSummary.
+        true, if the schedule job has its update capabilities restricted. (Used to track Autonomous Scheduled Job)
+
+
+        :param is_restricted: The is_restricted of this ScheduledJobSummary.
+        :type: bool
+        """
+        self._is_restricted = is_restricted
 
     def __repr__(self):
         return formatted_flat_dict(self)

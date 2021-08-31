@@ -66,6 +66,14 @@ class CreateScheduledJobDetails(object):
     UPDATE_TYPE_ENHANCEMENT = "ENHANCEMENT"
 
     #: A constant which can be used with the update_type property of a CreateScheduledJobDetails.
+    #: This constant has a value of "OTHER"
+    UPDATE_TYPE_OTHER = "OTHER"
+
+    #: A constant which can be used with the update_type property of a CreateScheduledJobDetails.
+    #: This constant has a value of "KSPLICE"
+    UPDATE_TYPE_KSPLICE = "KSPLICE"
+
+    #: A constant which can be used with the update_type property of a CreateScheduledJobDetails.
     #: This constant has a value of "ALL"
     UPDATE_TYPE_ALL = "ALL"
 
@@ -131,7 +139,7 @@ class CreateScheduledJobDetails(object):
 
         :param update_type:
             The value to assign to the update_type property of this CreateScheduledJobDetails.
-            Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "ALL"
+            Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL"
         :type update_type: str
 
         :param package_names:
@@ -489,7 +497,7 @@ class CreateScheduledJobDetails(object):
         Gets the update_type of this CreateScheduledJobDetails.
         Type of the update (only if operation type is UPDATEALL)
 
-        Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "ALL"
+        Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL"
 
 
         :return: The update_type of this CreateScheduledJobDetails.
@@ -507,7 +515,7 @@ class CreateScheduledJobDetails(object):
         :param update_type: The update_type of this CreateScheduledJobDetails.
         :type: str
         """
-        allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "ALL"]
+        allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL"]
         if not value_allowed_none_or_none_sentinel(update_type, allowed_values):
             raise ValueError(
                 "Invalid value for `update_type`, must be None or one of {0}"

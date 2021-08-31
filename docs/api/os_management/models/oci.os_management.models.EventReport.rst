@@ -1,0 +1,11 @@
+EventReport
+===========
+
+.. currentmodule:: oci.os_management.models
+
+.. autoclass:: EventReport
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

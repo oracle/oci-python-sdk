@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SoftwarePackageDependency(object):
     """
-    A dependecy for a software package
+    A dependency for a software package
     """
 
     def __init__(self, **kwargs):

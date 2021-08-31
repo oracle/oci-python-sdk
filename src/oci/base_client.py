@@ -39,12 +39,11 @@ USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 DICT_VALUE_TYPE_REGEX = re.compile('dict\(str, (.+?)\)$')  # noqa: W605
 LIST_ITEM_TYPE_REGEX = re.compile('list\[(.+?)\]$')  # noqa: W605
 
-SERVICES_SUPPORTING_EXPECT_HEADER = ["object_storage", "log_analytics"]
-
-
+# Expect header is enabled by default
+enable_expect_header = True
 expect_header_env_var = os.environ.get('OCI_PYSDK_USING_EXPECT_HEADER', True)
-if expect_header_env_var == "FALSE":
-    expect_header_env_var = False
+if isinstance(expect_header_env_var, six.string_types) and expect_header_env_var.lower() == "false":
+    enable_expect_header = False
 
 
 def merge_type_mappings(*dictionaries):
@@ -241,7 +240,7 @@ class OCIConnectionPool(urllib3.HTTPSConnectionPool):
 
 # Replace the HTTPS connection pool with OCIConnectionPool once the env var `OCI_PYSDK_USING_EXPECT_HEADER` is not set
 # to "FALSE"
-if expect_header_env_var:
+if enable_expect_header:
     urllib3.poolmanager.pool_classes_by_scheme["https"] = OCIConnectionPool
 
 
@@ -311,9 +310,6 @@ class BaseClient(object):
 
         self.skip_deserialization = kwargs.get('skip_deserialization')
 
-        # Enable expect 100 for select services
-        self.enable_expect_header = self.service in SERVICES_SUPPORTING_EXPECT_HEADER if expect_header_env_var else False
-
     @property
     def endpoint(self):
         return self._endpoint
@@ -362,14 +358,13 @@ class BaseClient(object):
 
         """
 
-        # By default we will add Expect header for all PUT/POST operations, for services which support it
-        if self.enable_expect_header and (method == 'PUT' or method == 'POST'):
-            if header_params is None:
-                header_params = {'expect': '100-continue'}
-            elif "expect" not in header_params:
-                header_params['expect'] = '100-continue'
-
         if header_params:
+            # Remove expect header if user has disabled it, or if the operation is not PUT, POST or PATCH
+            if not enable_expect_header or method.lower() not in ["put", "post", "patch"]:
+                map_lowercase_header_params_keys_to_actual_keys = {k.lower(): k for k in header_params}
+                if "expect" in map_lowercase_header_params_keys_to_actual_keys:
+                    header_params.pop(map_lowercase_header_params_keys_to_actual_keys.get("expect"), None)
+
             header_params = self.sanitize_for_serialization(header_params)
 
         header_params = header_params or {}

@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.08.31 - 21.08.31
+=====================
+* Added CSV for database backups
+* Added Autonomous Database DG and extra properties
+
+=====================
 21.06.29 - 21.06.29
 =====================
 * Added DRG Route Tables for DRGV2

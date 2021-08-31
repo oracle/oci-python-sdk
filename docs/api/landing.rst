@@ -99,6 +99,7 @@ API Reference
 * :doc:`Operator Control <operator_access_control/client/oci.operator_access_control.OperatorControlClient>`
 * :doc:`Operations Insights <opsi/client/oci.opsi.OperationsInsightsClient>`
 * :doc:`Optimizer <optimizer/client/oci.optimizer.OptimizerClient>`
+* :doc:`Event <os_management/client/oci.os_management.EventClient>`
 * :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`

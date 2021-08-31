@@ -81,6 +81,7 @@ Data Catalog
     oci.data_catalog.models.EntityTag
     oci.data_catalog.models.EntityTagCollection
     oci.data_catalog.models.EntityTagSummary
+    oci.data_catalog.models.EventConfig
     oci.data_catalog.models.ExportDataAssetDetails
     oci.data_catalog.models.FacetedSearchAggregation
     oci.data_catalog.models.FacetedSearchCustomProperty

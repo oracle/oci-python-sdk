@@ -8,6 +8,7 @@ import json
 import logging
 from enum import Enum
 
+from . import regions_definitions
 from . import service_endpoints
 from oci._vendor import six
 from oci._vendor import requests
@@ -15,111 +16,11 @@ from oci._vendor.requests.exceptions import HTTPError, ConnectionError, RetryErr
 from oci._vendor.requests.adapters import HTTPAdapter
 from oci._vendor.urllib3.util.retry import Retry
 
-REGIONS_SHORT_NAMES = {
-    'phx': 'us-phoenix-1',
-    'iad': 'us-ashburn-1',
-    'sjc': 'us-sanjose-1',
-    'fra': 'eu-frankfurt-1',
-    'zrh': 'eu-zurich-1',
-    'cwl': 'uk-cardiff-1',
-    'lhr': 'uk-london-1',
-    'yyz': 'ca-toronto-1',
-    'nrt': 'ap-tokyo-1',
-    'icn': 'ap-seoul-1',
-    'bom': 'ap-mumbai-1',
-    'gru': 'sa-saopaulo-1',
-    'scl': 'sa-santiago-1',
-    'syd': 'ap-sydney-1',
-    'ltn': 'uk-gov-london-1',
-    'kix': 'ap-osaka-1',
-    'mel': 'ap-melbourne-1',
-    'ams': 'eu-amsterdam-1',
-    'jed': 'me-jeddah-1',
-    'yul': 'ca-montreal-1',
-    'hyd': 'ap-hyderabad-1',
-    'yny': 'ap-chuncheon-1',
-    'brs': 'uk-gov-cardiff-1',
-    'nja': 'ap-chiyoda-1',
-    'dxb': 'me-dubai-1',
-    'vcp': 'sa-vinhedo-1'
-}
-REGION_REALMS = {
-    'ap-melbourne-1': 'oc1',
-    'ap-mumbai-1': 'oc1',
-    'ap-hyderabad-1': 'oc1',
-    'ap-osaka-1': 'oc1',
-    'ap-seoul-1': 'oc1',
-    'ap-sydney-1': 'oc1',
-    'ap-tokyo-1': 'oc1',
-    'ap-chuncheon-1': 'oc1',
-    'us-phoenix-1': 'oc1',
-    'us-ashburn-1': 'oc1',
-    'us-sanjose-1': 'oc1',
-    'eu-amsterdam-1': 'oc1',
-    'eu-frankfurt-1': 'oc1',
-    'eu-zurich-1': 'oc1',
-    'me-dubai-1': 'oc1',
-    'me-jeddah-1': 'oc1',
-    'uk-cardiff-1': 'oc1',
-    'uk-london-1': 'oc1',
-    'ca-toronto-1': 'oc1',
-    'sa-saopaulo-1': 'oc1',
-    'sa-santiago-1': 'oc1',
-    'ca-montreal-1': 'oc1',
-    'sa-vinhedo-1': 'oc1',
+REGIONS_SHORT_NAMES = regions_definitions.REGIONS_SHORT_NAMES
+REGION_REALMS = regions_definitions.REGION_REALMS
+REALMS = regions_definitions.REALMS
+REGIONS = regions_definitions.REGIONS
 
-    'us-langley-1': 'oc2',
-    'us-luke-1': 'oc2',
-
-    'us-gov-ashburn-1': 'oc3',
-    'us-gov-chicago-1': 'oc3',
-    'us-gov-phoenix-1': 'oc3',
-
-    'uk-gov-london-1': 'oc4',
-    'uk-gov-cardiff-1': 'oc4',
-
-    'ap-chiyoda-1': 'oc8'
-}
-REALMS = {
-    'oc1': 'oraclecloud.com',
-    'oc2': 'oraclegovcloud.com',
-    'oc3': 'oraclegovcloud.com',
-    'oc4': 'oraclegovcloud.uk',
-    'oc8': 'oraclecloud8.com'
-}
-REGIONS = [
-    "ap-melbourne-1",
-    "ap-mumbai-1",
-    "ap-hyderabad-1",
-    "ap-osaka-1",
-    "ap-seoul-1",
-    "ap-sydney-1",
-    "ap-tokyo-1",
-    "ap-chuncheon-1",
-    "ap-chiyoda-1",
-    "us-phoenix-1",
-    "us-ashburn-1",
-    "us-sanjose-1",
-    "eu-amsterdam-1",
-    "eu-frankfurt-1",
-    "eu-zurich-1",
-    "me-dubai-1",
-    "me-jeddah-1",
-    "uk-cardiff-1",
-    "uk-london-1",
-    "uk-gov-cardiff-1",
-    "ca-toronto-1",
-    "ca-montreal-1",
-    "us-langley-1",
-    "us-luke-1",
-    "us-gov-ashburn-1",
-    "us-gov-chicago-1",
-    "us-gov-phoenix-1",
-    "sa-saopaulo-1",
-    "sa-santiago-1",
-    "uk-gov-london-1",
-    "sa-vinhedo-1"
-]
 SERVICE_ENDPOINTS = service_endpoints.SERVICE_ENDPOINTS
 SERVICE_ENDPOINTS['auth'] = 'https://auth.{domain}'
 

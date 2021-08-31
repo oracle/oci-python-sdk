@@ -66,6 +66,14 @@ class ScheduledJob(object):
     UPDATE_TYPE_ENHANCEMENT = "ENHANCEMENT"
 
     #: A constant which can be used with the update_type property of a ScheduledJob.
+    #: This constant has a value of "OTHER"
+    UPDATE_TYPE_OTHER = "OTHER"
+
+    #: A constant which can be used with the update_type property of a ScheduledJob.
+    #: This constant has a value of "KSPLICE"
+    UPDATE_TYPE_KSPLICE = "KSPLICE"
+
+    #: A constant which can be used with the update_type property of a ScheduledJob.
     #: This constant has a value of "ALL"
     UPDATE_TYPE_ALL = "ALL"
 
@@ -166,7 +174,7 @@ class ScheduledJob(object):
 
         :param update_type:
             The value to assign to the update_type property of this ScheduledJob.
-            Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "ALL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type update_type: str
 
@@ -202,6 +210,10 @@ class ScheduledJob(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type os_family: str
 
+        :param is_restricted:
+            The value to assign to the is_restricted property of this ScheduledJob.
+        :type is_restricted: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -223,7 +235,8 @@ class ScheduledJob(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'update_names': 'list[str]',
-            'os_family': 'str'
+            'os_family': 'str',
+            'is_restricted': 'bool'
         }
 
         self.attribute_map = {
@@ -246,7 +259,8 @@ class ScheduledJob(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'update_names': 'updateNames',
-            'os_family': 'osFamily'
+            'os_family': 'osFamily',
+            'is_restricted': 'isRestricted'
         }
 
         self._id = None
@@ -269,6 +283,7 @@ class ScheduledJob(object):
         self._defined_tags = None
         self._update_names = None
         self._os_family = None
+        self._is_restricted = None
 
     @property
     def id(self):
@@ -582,7 +597,7 @@ class ScheduledJob(object):
         Gets the update_type of this ScheduledJob.
         Type of the update (only if operation type is UPDATEALL)
 
-        Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "ALL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -601,7 +616,7 @@ class ScheduledJob(object):
         :param update_type: The update_type of this ScheduledJob.
         :type: str
         """
-        allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "ALL"]
+        allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL"]
         if not value_allowed_none_or_none_sentinel(update_type, allowed_values):
             update_type = 'UNKNOWN_ENUM_VALUE'
         self._update_type = update_type
@@ -791,6 +806,30 @@ class ScheduledJob(object):
         if not value_allowed_none_or_none_sentinel(os_family, allowed_values):
             os_family = 'UNKNOWN_ENUM_VALUE'
         self._os_family = os_family
+
+    @property
+    def is_restricted(self):
+        """
+        Gets the is_restricted of this ScheduledJob.
+        true, if the schedule job has its update capabilities restricted. (Used to track Autonomous Scheduled Job)
+
+
+        :return: The is_restricted of this ScheduledJob.
+        :rtype: bool
+        """
+        return self._is_restricted
+
+    @is_restricted.setter
+    def is_restricted(self, is_restricted):
+        """
+        Sets the is_restricted of this ScheduledJob.
+        true, if the schedule job has its update capabilities restricted. (Used to track Autonomous Scheduled Job)
+
+
+        :param is_restricted: The is_restricted of this ScheduledJob.
+        :type: bool
+        """
+        self._is_restricted = is_restricted
 
     def __repr__(self):
         return formatted_flat_dict(self)
