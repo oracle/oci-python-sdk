@@ -27,6 +27,7 @@ logger = logging.getLogger(__name__)
 logger = logging.getLogger(__name__)
 INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE_VALUE_NAME = 'instance_principal'
 DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE = 'delegation_token_with_instance_principal'
+RESOURCE_PRINCIPAL_AUTHENTICATION_TYPE = 'resource_principal'
 DELEGATION_TOKEN_FILE_FIELD_NAME = 'delegation_token_file'
 AUTHENTICATION_TYPE_FIELD_NAME = 'authentication_type'
 MEBIBYTE = 1024 * 1024
@@ -184,9 +185,17 @@ def _get_signer_from_delegation_token_instance_principal(config):
     return InstancePrincipalsDelegationTokenSigner(**signer_kwargs)
 
 
+def _get_signer_from_resource_principal(config):
+    # Import the signer inside the function to avoid circular imports during initialization
+    from oci.auth.signers import get_resource_principal_signer
+
+    return get_resource_principal_signer()
+
+
 # This map can be easily extended to accommodate support for more auth types through the config file
 AUTH_TYPE_TO_SIGNER_FUNCTION_MAP = {
-    DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE: _get_signer_from_delegation_token_instance_principal
+    DELEGATION_TOKEN_WITH_INSTANCE_PRINCIPAL_AUTHENTICATION_TYPE: _get_signer_from_delegation_token_instance_principal,
+    RESOURCE_PRINCIPAL_AUTHENTICATION_TYPE: _get_signer_from_resource_principal,
 }
 
 

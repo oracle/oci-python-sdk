@@ -81,6 +81,14 @@ class TypeSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param parent_type_key:
+            The value to assign to the parent_type_key property of this TypeSummary.
+        :type parent_type_key: str
+
+        :param parent_type_name:
+            The value to assign to the parent_type_name property of this TypeSummary.
+        :type parent_type_name: str
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -89,7 +97,9 @@ class TypeSummary(object):
             'catalog_id': 'str',
             'type_category': 'str',
             'uri': 'str',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'parent_type_key': 'str',
+            'parent_type_name': 'str'
         }
 
         self.attribute_map = {
@@ -99,7 +109,9 @@ class TypeSummary(object):
             'catalog_id': 'catalogId',
             'type_category': 'typeCategory',
             'uri': 'uri',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'parent_type_key': 'parentTypeKey',
+            'parent_type_name': 'parentTypeName'
         }
 
         self._key = None
@@ -109,6 +121,8 @@ class TypeSummary(object):
         self._type_category = None
         self._uri = None
         self._lifecycle_state = None
+        self._parent_type_key = None
+        self._parent_type_name = None
 
     @property
     def key(self):
@@ -283,6 +297,54 @@ class TypeSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def parent_type_key(self):
+        """
+        Gets the parent_type_key of this TypeSummary.
+        Unique key of the parent type.
+
+
+        :return: The parent_type_key of this TypeSummary.
+        :rtype: str
+        """
+        return self._parent_type_key
+
+    @parent_type_key.setter
+    def parent_type_key(self, parent_type_key):
+        """
+        Sets the parent_type_key of this TypeSummary.
+        Unique key of the parent type.
+
+
+        :param parent_type_key: The parent_type_key of this TypeSummary.
+        :type: str
+        """
+        self._parent_type_key = parent_type_key
+
+    @property
+    def parent_type_name(self):
+        """
+        Gets the parent_type_name of this TypeSummary.
+        Name of the parent type.
+
+
+        :return: The parent_type_name of this TypeSummary.
+        :rtype: str
+        """
+        return self._parent_type_name
+
+    @parent_type_name.setter
+    def parent_type_name(self, parent_type_name):
+        """
+        Sets the parent_type_name of this TypeSummary.
+        Name of the parent type.
+
+
+        :param parent_type_name: The parent_type_name of this TypeSummary.
+        :type: str
+        """
+        self._parent_type_name = parent_type_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

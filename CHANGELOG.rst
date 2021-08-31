@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.44.2 - 2021-08-31
+====================
+
+Added
+-----
+* Support for Oracle Analytics Cloud and OCI Vault integration on connections in the Data Catalog service
+* Support for critical event monitoring in the OS Management service
+
+====================
 2.44.1 - 2021-08-24
 ====================
 

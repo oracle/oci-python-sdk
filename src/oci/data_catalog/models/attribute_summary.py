@@ -90,6 +90,10 @@ class AttributeSummary(object):
             The value to assign to the length property of this AttributeSummary.
         :type length: int
 
+        :param position:
+            The value to assign to the position property of this AttributeSummary.
+        :type position: int
+
         :param precision:
             The value to assign to the precision property of this AttributeSummary.
         :type precision: int
@@ -166,6 +170,10 @@ class AttributeSummary(object):
             The value to assign to the time_updated property of this AttributeSummary.
         :type time_updated: datetime
 
+        :param properties:
+            The value to assign to the properties property of this AttributeSummary.
+        :type properties: dict(str, dict(str, str))
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -175,6 +183,7 @@ class AttributeSummary(object):
             'entity_key': 'str',
             'external_key': 'str',
             'length': 'int',
+            'position': 'int',
             'precision': 'int',
             'scale': 'int',
             'is_nullable': 'bool',
@@ -192,7 +201,8 @@ class AttributeSummary(object):
             'custom_property_members': 'list[CustomPropertyGetUsage]',
             'associated_rule_types': 'list[str]',
             'is_derived_attribute': 'bool',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'properties': 'dict(str, dict(str, str))'
         }
 
         self.attribute_map = {
@@ -203,6 +213,7 @@ class AttributeSummary(object):
             'entity_key': 'entityKey',
             'external_key': 'externalKey',
             'length': 'length',
+            'position': 'position',
             'precision': 'precision',
             'scale': 'scale',
             'is_nullable': 'isNullable',
@@ -220,7 +231,8 @@ class AttributeSummary(object):
             'custom_property_members': 'customPropertyMembers',
             'associated_rule_types': 'associatedRuleTypes',
             'is_derived_attribute': 'isDerivedAttribute',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'properties': 'properties'
         }
 
         self._key = None
@@ -230,6 +242,7 @@ class AttributeSummary(object):
         self._entity_key = None
         self._external_key = None
         self._length = None
+        self._position = None
         self._precision = None
         self._scale = None
         self._is_nullable = None
@@ -248,6 +261,7 @@ class AttributeSummary(object):
         self._associated_rule_types = None
         self._is_derived_attribute = None
         self._time_updated = None
+        self._properties = None
 
     @property
     def key(self):
@@ -418,6 +432,30 @@ class AttributeSummary(object):
         :type: int
         """
         self._length = length
+
+    @property
+    def position(self):
+        """
+        Gets the position of this AttributeSummary.
+        Position of the attribute in the record definition.
+
+
+        :return: The position of this AttributeSummary.
+        :rtype: int
+        """
+        return self._position
+
+    @position.setter
+    def position(self, position):
+        """
+        Sets the position of this AttributeSummary.
+        Position of the attribute in the record definition.
+
+
+        :param position: The position of this AttributeSummary.
+        :type: int
+        """
+        self._position = position
 
     @property
     def precision(self):
@@ -876,6 +914,38 @@ class AttributeSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def properties(self):
+        """
+        Gets the properties of this AttributeSummary.
+        A map of maps that contains the properties which are specific to the attribute type. Each attribute type
+        definition defines it's set of required and optional properties. The map keys are category names and the
+        values are maps of property name to property value. Every property is contained inside of a category. Most
+        attributes have required properties within the \"default\" category.
+        Example: `{\"properties\": { \"default\": { \"key1\": \"value1\"}}}`
+
+
+        :return: The properties of this AttributeSummary.
+        :rtype: dict(str, dict(str, str))
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties):
+        """
+        Sets the properties of this AttributeSummary.
+        A map of maps that contains the properties which are specific to the attribute type. Each attribute type
+        definition defines it's set of required and optional properties. The map keys are category names and the
+        values are maps of property name to property value. Every property is contained inside of a category. Most
+        attributes have required properties within the \"default\" category.
+        Example: `{\"properties\": { \"default\": { \"key1\": \"value1\"}}}`
+
+
+        :param properties: The properties of this AttributeSummary.
+        :type: dict(str, dict(str, str))
+        """
+        self._properties = properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

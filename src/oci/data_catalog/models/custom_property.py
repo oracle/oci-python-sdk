@@ -166,6 +166,10 @@ class CustomProperty(object):
             The value to assign to the allowed_values property of this CustomProperty.
         :type allowed_values: list[str]
 
+        :param events:
+            The value to assign to the events property of this CustomProperty.
+        :type events: list[oci.data_catalog.models.EventConfig]
+
         :param properties:
             The value to assign to the properties property of this CustomProperty.
         :type properties: dict(str, dict(str, str))
@@ -195,6 +199,7 @@ class CustomProperty(object):
             'is_event_enabled': 'bool',
             'scope': 'list[CustomPropertyTypeUsage]',
             'allowed_values': 'list[str]',
+            'events': 'list[EventConfig]',
             'properties': 'dict(str, dict(str, str))'
         }
 
@@ -222,6 +227,7 @@ class CustomProperty(object):
             'is_event_enabled': 'isEventEnabled',
             'scope': 'scope',
             'allowed_values': 'allowedValues',
+            'events': 'events',
             'properties': 'properties'
         }
 
@@ -248,6 +254,7 @@ class CustomProperty(object):
         self._is_event_enabled = None
         self._scope = None
         self._allowed_values = None
+        self._events = None
         self._properties = None
 
     @property
@@ -780,7 +787,7 @@ class CustomProperty(object):
     def scope(self):
         """
         Gets the scope of this CustomProperty.
-        Type or scope of the custom property belongs to. This will be an array of type id it will be belongs to
+        The set of object types to which the custom property applies.
 
 
         :return: The scope of this CustomProperty.
@@ -792,7 +799,7 @@ class CustomProperty(object):
     def scope(self, scope):
         """
         Sets the scope of this CustomProperty.
-        Type or scope of the custom property belongs to. This will be an array of type id it will be belongs to
+        The set of object types to which the custom property applies.
 
 
         :param scope: The scope of this CustomProperty.
@@ -823,6 +830,30 @@ class CustomProperty(object):
         :type: list[str]
         """
         self._allowed_values = allowed_values
+
+    @property
+    def events(self):
+        """
+        Gets the events of this CustomProperty.
+        Event configuration for this custom property, against the desired subset of object types to which the property applies.
+
+
+        :return: The events of this CustomProperty.
+        :rtype: list[oci.data_catalog.models.EventConfig]
+        """
+        return self._events
+
+    @events.setter
+    def events(self, events):
+        """
+        Sets the events of this CustomProperty.
+        Event configuration for this custom property, against the desired subset of object types to which the property applies.
+
+
+        :param events: The events of this CustomProperty.
+        :type: list[oci.data_catalog.models.EventConfig]
+        """
+        self._events = events
 
     @property
     def properties(self):

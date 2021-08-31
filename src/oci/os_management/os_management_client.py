@@ -2109,6 +2109,11 @@ class OsManagementClient(object):
         :param str managed_instance_id: (required)
             OCID for the managed instance
 
+        :param str update_type: (optional)
+            The type of updates to be applied
+
+            Allowed values are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL"
+
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
@@ -2139,6 +2144,7 @@ class OsManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "update_type",
             "opc_request_id",
             "opc_retry_token"
         ]
@@ -2156,6 +2162,18 @@ class OsManagementClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'update_type' in kwargs:
+            update_type_allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL"]
+            if kwargs['update_type'] not in update_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `update_type`, must be one of {0}".format(update_type_allowed_values)
+                )
+
+        query_params = {
+            "updateType": kwargs.get("update_type", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2177,12 +2195,118 @@ class OsManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+
+    def install_all_updates_on_managed_instance_group(self, managed_instance_group_id, **kwargs):
+        """
+        Install all of the available updates for the Managed Instance Group.
+
+
+        :param str managed_instance_group_id: (required)
+            OCID for the managed instance group
+
+        :param str update_type: (optional)
+            The type of updates to be applied
+
+            Allowed values are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagement/install_all_updates_on_managed_instance_group.py.html>`__ to see an example of how to use install_all_updates_on_managed_instance_group API.
+        """
+        resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/updates/installAll"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "update_type",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "install_all_updates_on_managed_instance_group got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedInstanceGroupId": managed_instance_group_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'update_type' in kwargs:
+            update_type_allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL"]
+            if kwargs['update_type'] not in update_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `update_type`, must be one of {0}".format(update_type_allowed_values)
+                )
+
+        query_params = {
+            "updateType": kwargs.get("update_type", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
 
     def install_all_windows_updates_on_managed_instance(self, managed_instance_id, **kwargs):
@@ -2192,6 +2316,11 @@ class OsManagementClient(object):
 
         :param str managed_instance_id: (required)
             OCID for the managed instance
+
+        :param str update_type: (optional)
+            The type of updates to be applied
+
+            Allowed values are: "SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2223,6 +2352,7 @@ class OsManagementClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "update_type",
             "opc_request_id",
             "opc_retry_token"
         ]
@@ -2240,6 +2370,18 @@ class OsManagementClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'update_type' in kwargs:
+            update_type_allowed_values = ["SECURITY", "BUGFIX", "ENHANCEMENT", "OTHER", "KSPLICE", "ALL"]
+            if kwargs['update_type'] not in update_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `update_type`, must be one of {0}".format(update_type_allowed_values)
+                )
+
+        query_params = {
+            "updateType": kwargs.get("update_type", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -2261,12 +2403,14 @@ class OsManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
 
     def install_package_on_managed_instance(self, managed_instance_id, software_package_name, **kwargs):
@@ -3813,6 +3957,9 @@ class OsManagementClient(object):
 
             Allowed values are: "LINUX", "WINDOWS", "ALL"
 
+        :param bool is_restricted: (optional)
+            If true, will only filter out restricted Autonomous Linux Scheduled Job
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3843,7 +3990,8 @@ class OsManagementClient(object):
             "sort_by",
             "lifecycle_state",
             "opc_request_id",
-            "os_family"
+            "os_family",
+            "is_restricted"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3896,7 +4044,8 @@ class OsManagementClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
-            "osFamily": kwargs.get("os_family", missing)
+            "osFamily": kwargs.get("os_family", missing),
+            "isRestricted": kwargs.get("is_restricted", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -5447,6 +5596,95 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params)
+
+    def update_managed_instance(self, managed_instance_id, update_managed_instance_details, **kwargs):
+        """
+        Updates a specific Managed Instance.
+
+
+        :param str managed_instance_id: (required)
+            OCID for the managed instance
+
+        :param oci.os_management.models.UpdateManagedInstanceDetails update_managed_instance_details: (required)
+            Details about a Managed Instance to update
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.ManagedInstance`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/osmanagement/update_managed_instance.py.html>`__ to see an example of how to use update_managed_instance API.
+        """
+        resource_path = "/managedInstances/{managedInstanceId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_managed_instance got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedInstanceId": managed_instance_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_managed_instance_details,
+                response_type="ManagedInstance")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_managed_instance_details,
+                response_type="ManagedInstance")
 
     def update_managed_instance_group(self, managed_instance_group_id, update_managed_instance_group_details, **kwargs):
         """

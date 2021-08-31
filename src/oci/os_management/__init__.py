@@ -5,8 +5,10 @@
 from __future__ import absolute_import
 
 
+from .event_client import EventClient
+from .event_client_composite_operations import EventClientCompositeOperations
 from .os_management_client import OsManagementClient
 from .os_management_client_composite_operations import OsManagementClientCompositeOperations
 from . import models
 
-__all__ = ["OsManagementClient", "OsManagementClientCompositeOperations", "models"]
+__all__ = ["EventClient", "EventClientCompositeOperations", "OsManagementClient", "OsManagementClientCompositeOperations", "models"]
