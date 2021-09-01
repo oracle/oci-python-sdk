@@ -13,6 +13,54 @@ class JobExecutionSummary(object):
     A summary of a job execution on a Managed Database.
     """
 
+    #: A constant which can be used with the database_type property of a JobExecutionSummary.
+    #: This constant has a value of "EXTERNAL_SIDB"
+    DATABASE_TYPE_EXTERNAL_SIDB = "EXTERNAL_SIDB"
+
+    #: A constant which can be used with the database_type property of a JobExecutionSummary.
+    #: This constant has a value of "EXTERNAL_RAC"
+    DATABASE_TYPE_EXTERNAL_RAC = "EXTERNAL_RAC"
+
+    #: A constant which can be used with the database_type property of a JobExecutionSummary.
+    #: This constant has a value of "CLOUD_SIDB"
+    DATABASE_TYPE_CLOUD_SIDB = "CLOUD_SIDB"
+
+    #: A constant which can be used with the database_type property of a JobExecutionSummary.
+    #: This constant has a value of "CLOUD_RAC"
+    DATABASE_TYPE_CLOUD_RAC = "CLOUD_RAC"
+
+    #: A constant which can be used with the database_sub_type property of a JobExecutionSummary.
+    #: This constant has a value of "CDB"
+    DATABASE_SUB_TYPE_CDB = "CDB"
+
+    #: A constant which can be used with the database_sub_type property of a JobExecutionSummary.
+    #: This constant has a value of "PDB"
+    DATABASE_SUB_TYPE_PDB = "PDB"
+
+    #: A constant which can be used with the database_sub_type property of a JobExecutionSummary.
+    #: This constant has a value of "NON_CDB"
+    DATABASE_SUB_TYPE_NON_CDB = "NON_CDB"
+
+    #: A constant which can be used with the deployment_type property of a JobExecutionSummary.
+    #: This constant has a value of "ONPREMISE"
+    DEPLOYMENT_TYPE_ONPREMISE = "ONPREMISE"
+
+    #: A constant which can be used with the deployment_type property of a JobExecutionSummary.
+    #: This constant has a value of "BM"
+    DEPLOYMENT_TYPE_BM = "BM"
+
+    #: A constant which can be used with the deployment_type property of a JobExecutionSummary.
+    #: This constant has a value of "VM"
+    DEPLOYMENT_TYPE_VM = "VM"
+
+    #: A constant which can be used with the deployment_type property of a JobExecutionSummary.
+    #: This constant has a value of "EXADATA"
+    DEPLOYMENT_TYPE_EXADATA = "EXADATA"
+
+    #: A constant which can be used with the deployment_type property of a JobExecutionSummary.
+    #: This constant has a value of "EXADATA_CC"
+    DEPLOYMENT_TYPE_EXADATA_CC = "EXADATA_CC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new JobExecutionSummary object with values from keyword arguments.
@@ -42,6 +90,28 @@ class JobExecutionSummary(object):
             The value to assign to the managed_database_name property of this JobExecutionSummary.
         :type managed_database_name: str
 
+        :param database_type:
+            The value to assign to the database_type property of this JobExecutionSummary.
+            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type database_type: str
+
+        :param database_sub_type:
+            The value to assign to the database_sub_type property of this JobExecutionSummary.
+            Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type database_sub_type: str
+
+        :param deployment_type:
+            The value to assign to the deployment_type property of this JobExecutionSummary.
+            Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type deployment_type: str
+
+        :param is_cluster:
+            The value to assign to the is_cluster property of this JobExecutionSummary.
+        :type is_cluster: bool
+
         :param job_id:
             The value to assign to the job_id property of this JobExecutionSummary.
         :type job_id: str
@@ -70,6 +140,10 @@ class JobExecutionSummary(object):
             'managed_database_group_id': 'str',
             'managed_database_id': 'str',
             'managed_database_name': 'str',
+            'database_type': 'str',
+            'database_sub_type': 'str',
+            'deployment_type': 'str',
+            'is_cluster': 'bool',
             'job_id': 'str',
             'job_name': 'str',
             'status': 'str',
@@ -84,6 +158,10 @@ class JobExecutionSummary(object):
             'managed_database_group_id': 'managedDatabaseGroupId',
             'managed_database_id': 'managedDatabaseId',
             'managed_database_name': 'managedDatabaseName',
+            'database_type': 'databaseType',
+            'database_sub_type': 'databaseSubType',
+            'deployment_type': 'deploymentType',
+            'is_cluster': 'isCluster',
             'job_id': 'jobId',
             'job_name': 'jobName',
             'status': 'status',
@@ -97,6 +175,10 @@ class JobExecutionSummary(object):
         self._managed_database_group_id = None
         self._managed_database_id = None
         self._managed_database_name = None
+        self._database_type = None
+        self._database_sub_type = None
+        self._deployment_type = None
+        self._is_cluster = None
         self._job_id = None
         self._job_name = None
         self._status = None
@@ -258,6 +340,120 @@ class JobExecutionSummary(object):
         :type: str
         """
         self._managed_database_name = managed_database_name
+
+    @property
+    def database_type(self):
+        """
+        Gets the database_type of this JobExecutionSummary.
+        The type of Oracle Database installation.
+
+        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The database_type of this JobExecutionSummary.
+        :rtype: str
+        """
+        return self._database_type
+
+    @database_type.setter
+    def database_type(self, database_type):
+        """
+        Sets the database_type of this JobExecutionSummary.
+        The type of Oracle Database installation.
+
+
+        :param database_type: The database_type of this JobExecutionSummary.
+        :type: str
+        """
+        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC"]
+        if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
+            database_type = 'UNKNOWN_ENUM_VALUE'
+        self._database_type = database_type
+
+    @property
+    def database_sub_type(self):
+        """
+        Gets the database_sub_type of this JobExecutionSummary.
+        The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+
+        Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The database_sub_type of this JobExecutionSummary.
+        :rtype: str
+        """
+        return self._database_sub_type
+
+    @database_sub_type.setter
+    def database_sub_type(self, database_sub_type):
+        """
+        Sets the database_sub_type of this JobExecutionSummary.
+        The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+
+
+        :param database_sub_type: The database_sub_type of this JobExecutionSummary.
+        :type: str
+        """
+        allowed_values = ["CDB", "PDB", "NON_CDB"]
+        if not value_allowed_none_or_none_sentinel(database_sub_type, allowed_values):
+            database_sub_type = 'UNKNOWN_ENUM_VALUE'
+        self._database_sub_type = database_sub_type
+
+    @property
+    def deployment_type(self):
+        """
+        Gets the deployment_type of this JobExecutionSummary.
+        A list of the supported infrastructure that can be used to deploy the database.
+
+        Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The deployment_type of this JobExecutionSummary.
+        :rtype: str
+        """
+        return self._deployment_type
+
+    @deployment_type.setter
+    def deployment_type(self, deployment_type):
+        """
+        Sets the deployment_type of this JobExecutionSummary.
+        A list of the supported infrastructure that can be used to deploy the database.
+
+
+        :param deployment_type: The deployment_type of this JobExecutionSummary.
+        :type: str
+        """
+        allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC"]
+        if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
+            deployment_type = 'UNKNOWN_ENUM_VALUE'
+        self._deployment_type = deployment_type
+
+    @property
+    def is_cluster(self):
+        """
+        Gets the is_cluster of this JobExecutionSummary.
+        Indicates whether the Oracle Database is part of a cluster.
+
+
+        :return: The is_cluster of this JobExecutionSummary.
+        :rtype: bool
+        """
+        return self._is_cluster
+
+    @is_cluster.setter
+    def is_cluster(self, is_cluster):
+        """
+        Sets the is_cluster of this JobExecutionSummary.
+        Indicates whether the Oracle Database is part of a cluster.
+
+
+        :param is_cluster: The is_cluster of this JobExecutionSummary.
+        :type: bool
+        """
+        self._is_cluster = is_cluster
 
     @property
     def job_id(self):

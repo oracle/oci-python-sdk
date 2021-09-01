@@ -149,7 +149,7 @@ class UpdateStackDetails(object):
         Gets the variables of this UpdateStackDetails.
         Terraform variables associated with this resource.
         The maximum number of variables supported is 250.
-        The maximum size of each variable, including both name and value, is 4096 bytes.
+        The maximum size of each variable, including both name and value, is 8192 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 
 
@@ -164,7 +164,7 @@ class UpdateStackDetails(object):
         Sets the variables of this UpdateStackDetails.
         Terraform variables associated with this resource.
         The maximum number of variables supported is 250.
-        The maximum size of each variable, including both name and value, is 4096 bytes.
+        The maximum size of each variable, including both name and value, is 8192 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 
 

@@ -597,6 +597,46 @@ def test_get_job(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
+def test_get_job_detailed_log_content(testing_service_client):
+    if not testing_service_client.is_api_enabled('resource_manager', 'GetJobDetailedLogContent'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('resource_manager', util.camelize('resource_manager'), 'GetJobDetailedLogContent')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='resource_manager', api_name='GetJobDetailedLogContent')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.resource_manager.ResourceManagerClient(config, service_endpoint=service_endpoint)
+            response = client.get_job_detailed_log_content(
+                job_id=request.pop(util.camelize('jobId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'resource_manager',
+            'GetJobDetailedLogContent',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'str',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_orm_us_grp@oracle.com" jiraProject="ORCH" opsJiraProject="OS"
 def test_get_job_logs(testing_service_client):
     if not testing_service_client.is_api_enabled('resource_manager', 'GetJobLogs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

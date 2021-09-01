@@ -22,16 +22,23 @@ class TerraformVersionSummary(object):
             The value to assign to the name property of this TerraformVersionSummary.
         :type name: str
 
+        :param is_default:
+            The value to assign to the is_default property of this TerraformVersionSummary.
+        :type is_default: bool
+
         """
         self.swagger_types = {
-            'name': 'str'
+            'name': 'str',
+            'is_default': 'bool'
         }
 
         self.attribute_map = {
-            'name': 'name'
+            'name': 'name',
+            'is_default': 'isDefault'
         }
 
         self._name = None
+        self._is_default = None
 
     @property
     def name(self):
@@ -56,6 +63,30 @@ class TerraformVersionSummary(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def is_default(self):
+        """
+        Gets the is_default of this TerraformVersionSummary.
+        Indicates whether this Terraform version is used by default in :func:`create_stack`.
+
+
+        :return: The is_default of this TerraformVersionSummary.
+        :rtype: bool
+        """
+        return self._is_default
+
+    @is_default.setter
+    def is_default(self, is_default):
+        """
+        Sets the is_default of this TerraformVersionSummary.
+        Indicates whether this Terraform version is used by default in :func:`create_stack`.
+
+
+        :param is_default: The is_default of this TerraformVersionSummary.
+        :type: bool
+        """
+        self._is_default = is_default
 
     def __repr__(self):
         return formatted_flat_dict(self)

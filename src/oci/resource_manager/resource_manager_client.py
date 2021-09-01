@@ -18,10 +18,10 @@ missing = Sentinel("Missing")
 
 class ResourceManagerClient(object):
     """
-    API for the Resource Manager service.
-    Use this API to install, configure, and manage resources via the "infrastructure-as-code" model.
+    Use the Resource Manager API to automate deployment and operations for all Oracle Cloud Infrastructure resources.
+    Using the infrastructure-as-code (IaC) model, the service is based on Terraform, an open source industry standard that lets DevOps engineers develop and deploy their infrastructure anywhere.
     For more information, see
-    [Overview of Resource Manager](/iaas/Content/ResourceManager/Concepts/resourcemanager.htm).
+    [the Resource Manager documentation](/iaas/Content/ResourceManager/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -94,6 +94,9 @@ class ResourceManagerClient(object):
         Indicates the intention to cancel the specified job.
         Cancellation of the job is not immediate, and may be delayed,
         or may not happen at all.
+        You can optionally choose forced cancellation by setting `isForced` to true.
+        A forced cancellation can result in an incorrect state file.
+        For example, the state file might not reflect the exact state of the provisioned resources.
 
 
         :param str job_id: (required)
@@ -109,6 +112,11 @@ class ResourceManagerClient(object):
             For optimistic concurrency control. In the `PUT` or `DELETE` call for a resource, set the `if-match`
             parameter to the value of the etag from a previous `GET` or `POST` response for that resource.  The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param bool is_forced: (optional)
+            Indicates whether a forced cancellation is requested for the job while it was running.
+            A forced cancellation can result in an incorrect state file.
+            For example, the state file might not reflect the exact state of the provisioned resources.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -131,7 +139,8 @@ class ResourceManagerClient(object):
         expected_kwargs = [
             "retry_strategy",
             "opc_request_id",
-            "if_match"
+            "if_match",
+            "is_forced"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -147,6 +156,11 @@ class ResourceManagerClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "isForced": kwargs.get("is_forced", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -166,12 +180,14 @@ class ResourceManagerClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params)
 
     def change_configuration_source_provider_compartment(self, configuration_source_provider_id, change_configuration_source_provider_compartment_details, **kwargs):
@@ -485,7 +501,7 @@ class ResourceManagerClient(object):
         For more information, see
         `To create a configuration source provider`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateConfigurationSourceProvider
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#CreateConfigurationSourceProvider
 
 
         :param oci.resource_manager.models.CreateConfigurationSourceProviderDetails create_configuration_source_provider_details: (required)
@@ -647,7 +663,7 @@ class ResourceManagerClient(object):
         For more information, see
         `To create a stack`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#CreateStack
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#createstack-all
 
 
         :param oci.resource_manager.models.CreateStackDetails create_stack_details: (required)
@@ -724,7 +740,7 @@ class ResourceManagerClient(object):
 
     def create_template(self, create_template_details, **kwargs):
         """
-        Creates a custom template in the specified compartment.
+        Creates a private template in the specified compartment.
 
 
         :param oci.resource_manager.models.CreateTemplateDetails create_template_details: (required)
@@ -740,9 +756,6 @@ class ResourceManagerClient(object):
             24 hours, but can be invalidated before then due to conflicting operations. For example,
             if a resource has been deleted and purged from the system, then a retry of the original
             creation request may be rejected.
-
-        :param str oci_splat_generated_ocids: (optional)
-            This is to enable limit/quota support through splat
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -765,8 +778,7 @@ class ResourceManagerClient(object):
         expected_kwargs = [
             "retry_strategy",
             "opc_request_id",
-            "opc_retry_token",
-            "oci_splat_generated_ocids"
+            "opc_retry_token"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -777,8 +789,7 @@ class ResourceManagerClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "opc-retry-token": kwargs.get("opc_retry_token", missing),
-            "oci-splat-generated-ocids": kwargs.get("oci_splat_generated_ocids", missing)
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1309,9 +1320,89 @@ class ResourceManagerClient(object):
                 header_params=header_params,
                 response_type="Job")
 
+    def get_job_detailed_log_content(self, job_id, **kwargs):
+        """
+        Returns the Terraform detailed log content for the specified job in plain text. `Learn about Terraform detailed log.`__
+
+        __ https://www.terraform.io/docs/internals/debugging.html
+
+
+        :param str job_id: (required)
+            The `OCID`__ of the job.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type str
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/resourcemanager/get_job_detailed_log_content.py.html>`__ to see an example of how to use get_job_detailed_log_content API.
+        """
+        resource_path = "/jobs/{jobId}/detailedLogContent"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_job_detailed_log_content got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "jobId": job_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "text/plain; charset=utf-8",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="str")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="str")
+
     def get_job_logs(self, job_id, **kwargs):
         """
-        Returns log entries for the specified job in JSON format.
+        Returns console log entries for the specified job in JSON format.
 
 
         :param str job_id: (required)
@@ -1458,8 +1549,7 @@ class ResourceManagerClient(object):
 
     def get_job_logs_content(self, job_id, **kwargs):
         """
-        Returns raw log file for the specified job in text format.
-        Returns a maximum of 100,000 log entries.
+        Returns a raw log file for the specified job. The raw log file contains console log entries in text format. The maximum number of entries in a file is 100,000.
 
 
         :param str job_id: (required)
@@ -2263,7 +2353,10 @@ class ResourceManagerClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
-            A filter to return only resources that match the specified display name.
+            A filter to return only resources that match the given display name exactly.
+            Use this filter to list a resource by name.
+            Requires `sortBy` set to `DISPLAYNAME`.
+            Alternatively, when you know the resource OCID, use the related Get operation.
 
         :param str sort_by: (optional)
             The field to use when sorting returned resources.
@@ -2427,7 +2520,10 @@ class ResourceManagerClient(object):
             Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
 
         :param str display_name: (optional)
-            A filter to return only resources that match the specified display name.
+            A filter to return only resources that match the given display name exactly.
+            Use this filter to list a resource by name.
+            Requires `sortBy` set to `DISPLAYNAME`.
+            Alternatively, when you know the resource OCID, use the related Get operation.
 
         :param str sort_by: (optional)
             The field to use when sorting returned resources.
@@ -2781,12 +2877,15 @@ class ResourceManagerClient(object):
             - DELETED
             - FAILED
 
-            __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
+            __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates
 
             Allowed values are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str display_name: (optional)
-            A filter to return only resources that match the specified display name.
+            A filter to return only resources that match the given display name exactly.
+            Use this filter to list a resource by name.
+            Requires `sortBy` set to `DISPLAYNAME`.
+            Alternatively, when you know the resource OCID, use the related Get operation.
 
         :param str sort_by: (optional)
             The field to use when sorting returned resources.
@@ -2971,6 +3070,7 @@ class ResourceManagerClient(object):
     def list_templates(self, **kwargs):
         """
         Lists templates according to the specified filter.
+        The attributes `compartmentId` and `templateCategoryId` are required unless `templateId` is specified.
 
 
         :param str opc_request_id: (optional)
@@ -2984,6 +3084,7 @@ class ResourceManagerClient(object):
 
         :param str template_category_id: (optional)
             Unique identifier of the template category.
+            Possible values are `0` (Quick Starts), `1` (Service), `2` (Architecture), and `3` (Private).
 
         :param str template_id: (optional)
             The `OCID`__ of the template.
@@ -2991,7 +3092,10 @@ class ResourceManagerClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str display_name: (optional)
-            A filter to return only resources that match the specified display name.
+            A filter to return only resources that match the given display name exactly.
+            Use this filter to list a resource by name.
+            Requires `sortBy` set to `DISPLAYNAME`.
+            Alternatively, when you know the resource OCID, use the related Get operation.
 
         :param str sort_by: (optional)
             The field to use when sorting returned resources.
@@ -3521,9 +3625,9 @@ class ResourceManagerClient(object):
         """
         Updates the properties of the specified configuration source provider.
         For more information, see
-        `To update a configuration source provider`__.
+        `To edit a configuration source provider`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#UpdateConfigurationSourceProvider
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm#EditConfigurationSourceProvider
 
 
         :param str configuration_source_provider_id: (required)

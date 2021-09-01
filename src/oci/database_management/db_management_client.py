@@ -286,6 +286,106 @@ class DbManagementClient(object):
                 body=change_database_parameters_details,
                 response_type="UpdateDatabaseParametersResult")
 
+    def change_db_management_private_endpoint_compartment(self, db_management_private_endpoint_id, change_db_management_private_endpoint_compartment_details, **kwargs):
+        """
+        Moves the Database Management private endpoint and its dependent resources to the specified compartment.
+
+
+        :param str db_management_private_endpoint_id: (required)
+            The `OCID`__ of the Database Management private endpoint.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_management.models.ChangeDbManagementPrivateEndpointCompartmentDetails change_db_management_private_endpoint_compartment_details: (required)
+            The details used to change the compartment of a Database Management private endpoint.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/change_db_management_private_endpoint_compartment.py.html>`__ to see an example of how to use change_db_management_private_endpoint_compartment API.
+        """
+        resource_path = "/dbManagementPrivateEndpoints/{dbManagementPrivateEndpointId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_db_management_private_endpoint_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "dbManagementPrivateEndpointId": db_management_private_endpoint_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_db_management_private_endpoint_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_db_management_private_endpoint_compartment_details)
+
     def change_job_compartment(self, job_id, change_job_compartment_details, **kwargs):
         """
         Moves a job.
@@ -490,6 +590,82 @@ class DbManagementClient(object):
                 header_params=header_params,
                 body=change_managed_database_group_compartment_details)
 
+    def create_db_management_private_endpoint(self, create_db_management_private_endpoint_details, **kwargs):
+        """
+        Creates a new Database Management private endpoint.
+
+
+        :param oci.database_management.models.CreateDbManagementPrivateEndpointDetails create_db_management_private_endpoint_details: (required)
+            Details to create a new private endpoint.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.DbManagementPrivateEndpoint`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/create_db_management_private_endpoint.py.html>`__ to see an example of how to use create_db_management_private_endpoint API.
+        """
+        resource_path = "/dbManagementPrivateEndpoints"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_db_management_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_db_management_private_endpoint_details,
+                response_type="DbManagementPrivateEndpoint")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_db_management_private_endpoint_details,
+                response_type="DbManagementPrivateEndpoint")
+
     def create_job(self, create_job_details, **kwargs):
         """
         Creates a job to be executed on a Managed Database or Managed Database Group. Only one
@@ -644,6 +820,90 @@ class DbManagementClient(object):
                 header_params=header_params,
                 body=create_managed_database_group_details,
                 response_type="ManagedDatabaseGroup")
+
+    def delete_db_management_private_endpoint(self, db_management_private_endpoint_id, **kwargs):
+        """
+        Deletes the specified Database Management private endpoint.
+
+
+        :param str db_management_private_endpoint_id: (required)
+            The `OCID`__ of the Database Management private endpoint.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/delete_db_management_private_endpoint.py.html>`__ to see an example of how to use delete_db_management_private_endpoint API.
+        """
+        resource_path = "/dbManagementPrivateEndpoints/{dbManagementPrivateEndpointId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_db_management_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "dbManagementPrivateEndpointId": db_management_private_endpoint_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def delete_job(self, job_id, **kwargs):
         """
@@ -814,7 +1074,7 @@ class DbManagementClient(object):
 
     def get_awr_db_report(self, managed_database_id, awr_db_id, **kwargs):
         """
-        Gets the AWR report for the specified Managed Database.
+        Gets the AWR report for the specific database.
 
 
         :param str managed_database_id: (required)
@@ -825,7 +1085,7 @@ class DbManagementClient(object):
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
             Note that the internal ID of the database can be retrieved from the following endpoint:
-            /managedDatabases/{managedDatabaseId}/awrDbs:
+            /managedDatabases/{managedDatabaseId}/awrDbs
 
         :param list[int] inst_nums: (optional)
             The optional multiple value query parameter to filter the database instance numbers.
@@ -974,7 +1234,7 @@ class DbManagementClient(object):
 
     def get_awr_db_sql_report(self, managed_database_id, awr_db_id, sql_id, **kwargs):
         """
-        Get a AWR SQL report for one SQL.
+        Gets the SQL health check report for one SQL of the specific database.
 
 
         :param str managed_database_id: (required)
@@ -985,7 +1245,7 @@ class DbManagementClient(object):
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
             Note that the internal ID of the database can be retrieved from the following endpoint:
-            /managedDatabases/{managedDatabaseId}/awrDbs:
+            /managedDatabases/{managedDatabaseId}/awrDbs
 
         :param str sql_id: (required)
             The parameter to filter SQL by ID. Note that the SQL ID is generated internally by Oracle for each SQL statement and can be retrieved from AWR Report API (/managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbReport) or Performance Hub API (/internal/managedDatabases/{managedDatabaseId}/actions/retrievePerformanceData)
@@ -1135,11 +1395,11 @@ class DbManagementClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
-            The start time for the time range to retrieve the health metrics of a Managed Database
+            The start time of the time range to retrieve the health metrics of a Managed Database
             in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
 
         :param str end_time: (required)
-            The end time for the time range to retrieve the health metrics of a Managed Database
+            The end time of the time range to retrieve the health metrics of a Managed Database
             in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
 
         :param str opc_request_id: (optional)
@@ -1256,6 +1516,12 @@ class DbManagementClient(object):
         :param str filter_by_database_sub_type: (optional)
             The filter used to filter the databases in the fleet by a specific Oracle Database subtype.
 
+        :param str filter_by_database_deployment_type: (optional)
+            The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.
+
+        :param str filter_by_database_version: (optional)
+            The filter used to filter the databases in the fleet by a specific Oracle Database version.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1282,7 +1548,9 @@ class DbManagementClient(object):
             "compare_type",
             "filter_by_metric_names",
             "filter_by_database_type",
-            "filter_by_database_sub_type"
+            "filter_by_database_sub_type",
+            "filter_by_database_deployment_type",
+            "filter_by_database_version"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1304,7 +1572,9 @@ class DbManagementClient(object):
             "compareType": kwargs.get("compare_type", missing),
             "filterByMetricNames": kwargs.get("filter_by_metric_names", missing),
             "filterByDatabaseType": kwargs.get("filter_by_database_type", missing),
-            "filterByDatabaseSubType": kwargs.get("filter_by_database_sub_type", missing)
+            "filterByDatabaseSubType": kwargs.get("filter_by_database_sub_type", missing),
+            "filterByDatabaseDeploymentType": kwargs.get("filter_by_database_deployment_type", missing),
+            "filterByDatabaseVersion": kwargs.get("filter_by_database_version", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1346,11 +1616,11 @@ class DbManagementClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str start_time: (required)
-            The start time for the time range to retrieve the health metrics of a Managed Database
+            The start time of the time range to retrieve the health metrics of a Managed Database
             in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
 
         :param str end_time: (required)
-            The end time for the time range to retrieve the health metrics of a Managed Database
+            The end time of the time range to retrieve the health metrics of a Managed Database
             in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
 
         :param str opc_request_id: (optional)
@@ -1416,6 +1686,83 @@ class DbManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="DatabaseHomeMetrics")
+
+    def get_db_management_private_endpoint(self, db_management_private_endpoint_id, **kwargs):
+        """
+        Gets the details of the specified Database Management private endpoint.
+
+
+        :param str db_management_private_endpoint_id: (required)
+            The `OCID`__ of the Database Management private endpoint.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.DbManagementPrivateEndpoint`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/get_db_management_private_endpoint.py.html>`__ to see an example of how to use get_db_management_private_endpoint API.
+        """
+        resource_path = "/dbManagementPrivateEndpoints/{dbManagementPrivateEndpointId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_db_management_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "dbManagementPrivateEndpointId": db_management_private_endpoint_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DbManagementPrivateEndpoint")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DbManagementPrivateEndpoint")
 
     def get_job(self, job_id, **kwargs):
         """
@@ -1796,6 +2143,332 @@ class DbManagementClient(object):
                 header_params=header_params,
                 response_type="ManagedDatabaseGroup")
 
+    def get_pdb_metrics(self, managed_database_id, start_time, end_time, **kwargs):
+        """
+        Gets a summary of the resource usage metrics like DB Time, CPU, User I/O, Wait, Storage, and Memory
+        for each Pdb under specified Container database in same compartment as container database.
+        If comparmentId is provided then for each Pdb under specified compartmentId.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str start_time: (required)
+            The start time of the time range to retrieve the health metrics of a Managed Database
+            in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
+
+        :param str end_time: (required)
+            The end time of the time range to retrieve the health metrics of a Managed Database
+            in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str compare_type: (optional)
+            The time window used for metrics comparison.
+
+            Allowed values are: "HOUR", "DAY"
+
+        :param str filter_by_metric_names: (optional)
+            The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.PdbMetrics`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/get_pdb_metrics.py.html>`__ to see an example of how to use get_pdb_metrics API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/pdbMetrics"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "compartment_id",
+            "compare_type",
+            "filter_by_metric_names"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_pdb_metrics got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'compare_type' in kwargs:
+            compare_type_allowed_values = ["HOUR", "DAY"]
+            if kwargs['compare_type'] not in compare_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `compare_type`, must be one of {0}".format(compare_type_allowed_values)
+                )
+
+        query_params = {
+            "startTime": start_time,
+            "endTime": end_time,
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "compareType": kwargs.get("compare_type", missing),
+            "filterByMetricNames": kwargs.get("filter_by_metric_names", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PdbMetrics")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="PdbMetrics")
+
+    def get_work_request(self, work_request_id, **kwargs):
+        """
+        Gets information of the work request with the given Work Request Id.
+
+
+        :param str work_request_id: (required)
+            The `OCID`__ of the async Work Request.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.WorkRequest`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/get_work_request.py.html>`__ to see an example of how to use get_work_request API.
+        """
+        resource_path = "/workRequests/{workRequestId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workRequestId": work_request_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="WorkRequest")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="WorkRequest")
+
+    def list_associated_databases(self, db_management_private_endpoint_id, compartment_id, **kwargs):
+        """
+        Gets the list of Databases using the specified Database Management private endpoint.
+
+
+        :param str db_management_private_endpoint_id: (required)
+            The `OCID`__ of the Database Management private endpoint.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param int limit: (optional)
+            The maximum number of records returned in paginated response.
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort Databases using a specific Database Management Private Endpoint
+
+            Allowed values are: "timeRegistered"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.AssociatedDatabaseCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_associated_databases.py.html>`__ to see an example of how to use list_associated_databases API.
+        """
+        resource_path = "/dbManagementPrivateEndpoints/{dbManagementPrivateEndpointId}/associatedDatabases"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_associated_databases got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "dbManagementPrivateEndpointId": db_management_private_endpoint_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeRegistered"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AssociatedDatabaseCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AssociatedDatabaseCollection")
+
     def list_awr_db_snapshots(self, managed_database_id, awr_db_id, **kwargs):
         """
         Lists AWR snapshots for the specified database in the AWR.
@@ -1809,7 +2482,7 @@ class DbManagementClient(object):
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
             Note that the internal ID of the database can be retrieved from the following endpoint:
-            /managedDatabases/{managedDatabaseId}/awrDbs:
+            /managedDatabases/{managedDatabaseId}/awrDbs
 
         :param str inst_num: (optional)
             The optional single value query parameter to filter the database instance number.
@@ -1844,7 +2517,7 @@ class DbManagementClient(object):
             Allowed values are: "TIME_BEGIN", "SNAPSHOT_ID"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -1999,7 +2672,7 @@ class DbManagementClient(object):
             Allowed values are: "END_INTERVAL_TIME", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2149,7 +2822,7 @@ class DbManagementClient(object):
             Allowed values are: "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2254,10 +2927,149 @@ class DbManagementClient(object):
                 header_params=header_params,
                 response_type="DatabaseParametersCollection")
 
+    def list_db_management_private_endpoints(self, compartment_id, **kwargs):
+        """
+        Gets a list of Database Management private endpoints.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str name: (optional)
+            A filter to return only resources that match the entire name.
+
+        :param str vcn_id: (optional)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str lifecycle_state: (optional)
+            The lifecycle state of a resource.
+
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+
+        :param int limit: (optional)
+            The maximum number of records returned in paginated response.
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort information by. Only one sortOrder can be used. The default sort order
+            for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+            The \u2018NAME\u2019 sort order is case-sensitive.
+
+            Allowed values are: "TIMECREATED", "NAME"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.DbManagementPrivateEndpointCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_db_management_private_endpoints.py.html>`__ to see an example of how to use list_db_management_private_endpoints API.
+        """
+        resource_path = "/dbManagementPrivateEndpoints"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "name",
+            "vcn_id",
+            "lifecycle_state",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_db_management_private_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "name": kwargs.get("name", missing),
+            "vcnId": kwargs.get("vcn_id", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DbManagementPrivateEndpointCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DbManagementPrivateEndpointCollection")
+
     def list_job_executions(self, compartment_id, **kwargs):
         """
-        Gets the job execution for a specific ID or the list of job executions for a job, Managed Database or Managed Database Group
-        in a specific compartment. Only one of the parameters, ID, jobId, managedDatabaseId or managedDatabaseGroupId should be provided.
+        Gets the job execution for a specific ID or the list of job executions for a job, job run, Managed Database or Managed Database Group
+        in a specific compartment. Only one of the parameters, ID, jobId, jobRunId, managedDatabaseId or managedDatabaseGroupId should be provided.
         If none of these parameters is provided, all the job executions in the compartment are listed. Job executions can also be filtered
         based on the name and status parameters.
 
@@ -2307,9 +3119,12 @@ class DbManagementClient(object):
             Allowed values are: "TIMECREATED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
 
             Allowed values are: "ASC", "DESC"
+
+        :param str job_run_id: (optional)
+            The identifier of the job run.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2341,7 +3156,8 @@ class DbManagementClient(object):
             "limit",
             "page",
             "sort_by",
-            "sort_order"
+            "sort_order",
+            "job_run_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2373,7 +3189,8 @@ class DbManagementClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "jobRunId": kwargs.get("job_run_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2457,7 +3274,7 @@ class DbManagementClient(object):
             Allowed values are: "TIMECREATED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2606,7 +3423,7 @@ class DbManagementClient(object):
             Allowed values are: "TIMECREATED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2750,7 +3567,7 @@ class DbManagementClient(object):
             Allowed values are: "TIMECREATED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2851,8 +3668,11 @@ class DbManagementClient(object):
     def list_managed_databases(self, compartment_id, **kwargs):
         """
         Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
-        Managed Databases can also be filtered based on the name parameter. Only one of the parameters, ID or name
-        should be provided. If none of these parameters is provided, all the Managed Databases in the compartment are listed.
+        Managed Databases can be filtered based on the name parameter. Only one of the parameters, ID or name
+        should be provided. If neither of these parameters is provided, all the Managed Databases in the compartment
+        are listed. Managed Databases can also be filtered based on the deployment type and management option.
+        If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
+        considered and Managed Databases with `ADVANCED` management option are listed.
 
 
         :param str compartment_id: (required)
@@ -2869,6 +3689,16 @@ class DbManagementClient(object):
         :param str name: (optional)
             A filter to return only resources that match the entire name.
 
+        :param str management_option: (optional)
+            A filter to return Managed Databases with the specified management option.
+
+            Allowed values are: "BASIC", "ADVANCED"
+
+        :param str deployment_type: (optional)
+            A filter to return Managed Databases of the specified deployment type.
+
+            Allowed values are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC"
+
         :param str page: (optional)
             The page token representing the page, from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
@@ -2884,7 +3714,7 @@ class DbManagementClient(object):
             Allowed values are: "TIMECREATED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -2911,6 +3741,8 @@ class DbManagementClient(object):
             "opc_request_id",
             "id",
             "name",
+            "management_option",
+            "deployment_type",
             "page",
             "limit",
             "sort_by",
@@ -2920,6 +3752,20 @@ class DbManagementClient(object):
         if extra_kwargs:
             raise ValueError(
                 "list_managed_databases got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'management_option' in kwargs:
+            management_option_allowed_values = ["BASIC", "ADVANCED"]
+            if kwargs['management_option'] not in management_option_allowed_values:
+                raise ValueError(
+                    "Invalid value for `management_option`, must be one of {0}".format(management_option_allowed_values)
+                )
+
+        if 'deployment_type' in kwargs:
+            deployment_type_allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC"]
+            if kwargs['deployment_type'] not in deployment_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `deployment_type`, must be one of {0}".format(deployment_type_allowed_values)
+                )
 
         if 'sort_by' in kwargs:
             sort_by_allowed_values = ["TIMECREATED", "NAME"]
@@ -2939,6 +3785,8 @@ class DbManagementClient(object):
             "compartmentId": compartment_id,
             "id": kwargs.get("id", missing),
             "name": kwargs.get("name", missing),
+            "managementOption": kwargs.get("management_option", missing),
+            "deploymentType": kwargs.get("deployment_type", missing),
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing),
             "sortBy": kwargs.get("sort_by", missing),
@@ -2997,7 +3845,7 @@ class DbManagementClient(object):
             Allowed values are: "TIMECREATED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -3101,6 +3949,387 @@ class DbManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="TablespaceCollection")
+
+    def list_work_request_errors(self, work_request_id, **kwargs):
+        """
+        Returns a (paginated) list of errors for a given work request.
+
+
+        :param str work_request_id: (required)
+            The `OCID`__ of the async Work Request.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in paginated response.
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+
+            Allowed values are: "timeAccepted"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.WorkRequestErrorCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_work_request_errors.py.html>`__ to see an example of how to use list_work_request_errors API.
+        """
+        resource_path = "/workRequests/{workRequestId}/errors"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workRequestId": work_request_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeAccepted"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="WorkRequestErrorCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="WorkRequestErrorCollection")
+
+    def list_work_request_logs(self, work_request_id, **kwargs):
+        """
+        Returns a (paginated) list of logs for a given work request.
+
+
+        :param str work_request_id: (required)
+            The `OCID`__ of the async Work Request.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in paginated response.
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+
+            Allowed values are: "timeAccepted"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.WorkRequestLogEntryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_work_request_logs.py.html>`__ to see an example of how to use list_work_request_logs API.
+        """
+        resource_path = "/workRequests/{workRequestId}/logs"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workRequestId": work_request_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeAccepted"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="WorkRequestLogEntryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="WorkRequestLogEntryCollection")
+
+    def list_work_requests(self, compartment_id, **kwargs):
+        """
+        Lists all the work requests in the specified compartment.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str resource_id: (optional)
+            The `OCID`__ of the resource affected by the work request.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str work_request_id: (optional)
+            The ID of the asynchronous work request.
+
+        :param str status: (optional)
+            A filter to return only resources their status matches the given WorkRequestStatus.
+
+            Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+
+            Allowed values are: "timeAccepted"
+
+        :param str page: (optional)
+            The page token representing the page, from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of records returned in paginated response.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.WorkRequestCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_work_requests.py.html>`__ to see an example of how to use list_work_requests API.
+        """
+        resource_path = "/workRequests"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "resource_id",
+            "opc_request_id",
+            "work_request_id",
+            "status",
+            "sort_order",
+            "sort_by",
+            "page",
+            "limit"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'status' in kwargs:
+            status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+            if kwargs['status'] not in status_allowed_values:
+                raise ValueError(
+                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeAccepted"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "resourceId": kwargs.get("resource_id", missing),
+            "workRequestId": kwargs.get("work_request_id", missing),
+            "status": kwargs.get("status", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="WorkRequestCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="WorkRequestCollection")
 
     def remove_managed_database_from_managed_database_group(self, managed_database_group_id, remove_managed_database_from_managed_database_group_details, **kwargs):
         """
@@ -3302,7 +4531,7 @@ class DbManagementClient(object):
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
             Note that the internal ID of the database can be retrieved from the following endpoint:
-            /managedDatabases/{managedDatabaseId}/awrDbs:
+            /managedDatabases/{managedDatabaseId}/awrDbs
 
         :param str inst_num: (optional)
             The optional single value query parameter to filter the database instance number.
@@ -3342,7 +4571,7 @@ class DbManagementClient(object):
             Allowed values are: "TIME_SAMPLED", "AVG_VALUE"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -3487,7 +4716,7 @@ class DbManagementClient(object):
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
             Note that the internal ID of the database can be retrieved from the following endpoint:
-            /managedDatabases/{managedDatabaseId}/awrDbs:
+            /managedDatabases/{managedDatabaseId}/awrDbs
 
         :param oci.database_management.models.list[str] name: (required)
             The required multiple value query parameter to filter the entity name.
@@ -3525,7 +4754,7 @@ class DbManagementClient(object):
             Allowed values are: "TIMESTAMP", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -3651,7 +4880,7 @@ class DbManagementClient(object):
 
     def summarize_awr_db_parameter_changes(self, managed_database_id, awr_db_id, name, **kwargs):
         """
-        Summarizes the AWR database parameter change history for one database parameter of the specified Managed Database. One change history record contains
+        Summarizes the database parameter change history for one database parameter of the specified database in AWR. One change history record contains
         the previous value, the changed value, and the corresponding time range. If the database parameter value was changed multiple times within the time range, then multiple change history records are created for the same parameter.
         Note that this API only returns information on change history details for one database parameter.
         To get a list of all the database parameters whose values were changed during a specified time range, use the following API endpoint:
@@ -3666,7 +4895,7 @@ class DbManagementClient(object):
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
             Note that the internal ID of the database can be retrieved from the following endpoint:
-            /managedDatabases/{managedDatabaseId}/awrDbs:
+            /managedDatabases/{managedDatabaseId}/awrDbs
 
         :param str name: (required)
             The required single value query parameter to filter the entity name.
@@ -3704,7 +4933,7 @@ class DbManagementClient(object):
             Allowed values are: "IS_CHANGED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -3830,13 +5059,15 @@ class DbManagementClient(object):
 
     def summarize_awr_db_parameters(self, managed_database_id, awr_db_id, **kwargs):
         """
-        Summarizes the AWR database parameter history for the specified Managed Database. This includes the list of database
+        Summarizes the database parameter history for the specified database in AWR. This includes the list of database
         parameters, with information on whether the parameter values were modified within the query time range. Note that
-        each database parameter is only listed once. The returned summary gets all the database parameters, which include:
-         -Each parameter whose value was changed during the time range: AwrDbParameterValueOptionalQueryParam (valueChanged =\"Y\")
-         -Each parameter whose value was unchanged during the time range: AwrDbParameterValueOptionalQueryParam (valueChanged =\"N\")
-         -Each parameter whose value was changed at the system level during the time range: (valueChanged =\"Y\"  and valueModified = \"SYSTEM_MOD\").
-         -Each parameter whose value was unchanged during the time range, however, the value is not the default value: (valueChanged =\"N\" and  valueDefault = \"FALSE\")
+        each database parameter is only listed once. Depending on the optional query parameters, the returned summary gets all the database parameters, which include:
+
+        - Each parameter whose value was changed during the time range:  (valueChanged =\"Y\")
+        - Each parameter whose value was unchanged during the time range:  (valueChanged =\"N\")
+        - Each parameter whose value was changed at the system level during the time range: (valueChanged =\"Y\"  and valueModified = \"SYSTEM_MOD\")
+        - Each parameter whose value was unchanged during the time range, however, the value is not the default value: (valueChanged =\"N\" and  valueDefault = \"FALSE\")
+
         Note that this API does not return information on the number of times each database parameter has been changed within the time range. To get the database parameter value change history for a specific parameter, use the following API endpoint:
         /managedDatabases/{managedDatabaseId}/awrDbs/{awrDbId}/awrDbParameterChanges
 
@@ -3849,7 +5080,7 @@ class DbManagementClient(object):
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
             Note that the internal ID of the database can be retrieved from the following endpoint:
-            /managedDatabases/{managedDatabaseId}/awrDbs:
+            /managedDatabases/{managedDatabaseId}/awrDbs
 
         :param str inst_num: (optional)
             The optional single value query parameter to filter the database instance number.
@@ -3905,7 +5136,7 @@ class DbManagementClient(object):
             Allowed values are: "IS_CHANGED", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -4091,7 +5322,7 @@ class DbManagementClient(object):
             Allowed values are: "END_INTERVAL_TIME", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -4220,7 +5451,7 @@ class DbManagementClient(object):
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
             Note that the internal ID of the database can be retrieved from the following endpoint:
-            /managedDatabases/{managedDatabaseId}/awrDbs:
+            /managedDatabases/{managedDatabaseId}/awrDbs
 
         :param oci.database_management.models.list[str] name: (required)
             The required multiple value query parameter to filter the entity name.
@@ -4258,7 +5489,7 @@ class DbManagementClient(object):
             Allowed values are: "TIME_BEGIN", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -4395,7 +5626,7 @@ class DbManagementClient(object):
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
             Note that the internal ID of the database can be retrieved from the following endpoint:
-            /managedDatabases/{managedDatabaseId}/awrDbs:
+            /managedDatabases/{managedDatabaseId}/awrDbs
 
         :param str inst_num: (optional)
             The optional single value query parameter to filter the database instance number.
@@ -4431,7 +5662,7 @@ class DbManagementClient(object):
             Allowed values are: "WAITS_PERSEC", "AVG_WAIT_TIME_PERSEC"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -4574,7 +5805,7 @@ class DbManagementClient(object):
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
             Note that the internal ID of the database can be retrieved from the following endpoint:
-            /managedDatabases/{managedDatabaseId}/awrDbs:
+            /managedDatabases/{managedDatabaseId}/awrDbs
 
         :param str name: (required)
             The required single value query parameter to filter the entity name.
@@ -4621,7 +5852,7 @@ class DbManagementClient(object):
             Allowed values are: "CATEGORY", "PERCENTAGE"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -4764,7 +5995,7 @@ class DbManagementClient(object):
         :param str awr_db_id: (required)
             The parameter to filter the database by internal ID.
             Note that the internal ID of the database can be retrieved from the following endpoint:
-            /managedDatabases/{managedDatabaseId}/awrDbs:
+            /managedDatabases/{managedDatabaseId}/awrDbs
 
         :param str inst_num: (optional)
             The optional single value query parameter to filter the database instance number.
@@ -4807,7 +6038,7 @@ class DbManagementClient(object):
             Allowed values are: "TIME_BEGIN", "NAME"
 
         :param str sort_order: (optional)
-            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the the default order.
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
 
             Allowed values are: "ASC", "DESC"
 
@@ -4940,6 +6171,322 @@ class DbManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="AwrDbWaitEventCollection")
+
+    def summarize_job_executions_statuses(self, compartment_id, start_time, end_time, **kwargs):
+        """
+        Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str start_time: (required)
+            The start time of the time range to retrieve the status summary of job executions
+            in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
+
+        :param str end_time: (required)
+            The end time of the time range to retrieve the status summary of job executions
+            in UTC in ISO-8601 format, which is \"yyyy-MM-dd'T'hh:mm:ss.sss'Z'\".
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str id: (optional)
+            The identifier of the resource.
+
+        :param str managed_database_group_id: (optional)
+            The `OCID`__ of the Managed Database Group.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str managed_database_id: (optional)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str name: (optional)
+            A filter to return only resources that match the entire name.
+
+        :param str sort_by: (optional)
+            The field to sort information by. Only one sortOrder can be used. The default sort order
+            for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+            The \u2018NAME\u2019 sort order is case-sensitive.
+
+            Allowed values are: "TIMECREATED", "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.JobExecutionsStatusSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/summarize_job_executions_statuses.py.html>`__ to see an example of how to use summarize_job_executions_statuses API.
+        """
+        resource_path = "/jobExecutionsStatus"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "id",
+            "managed_database_group_id",
+            "managed_database_id",
+            "name",
+            "sort_by",
+            "sort_order"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_job_executions_statuses got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "id": kwargs.get("id", missing),
+            "managedDatabaseGroupId": kwargs.get("managed_database_group_id", missing),
+            "managedDatabaseId": kwargs.get("managed_database_id", missing),
+            "startTime": start_time,
+            "endTime": end_time,
+            "name": kwargs.get("name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="JobExecutionsStatusSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="JobExecutionsStatusSummaryCollection")
+
+    def update_db_management_private_endpoint(self, db_management_private_endpoint_id, update_db_management_private_endpoint_details, **kwargs):
+        """
+        Updates one or more attributes of the specified Database Management private endpoint.
+
+
+        :param str db_management_private_endpoint_id: (required)
+            The `OCID`__ of the Database Management private endpoint.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.database_management.models.UpdateDbManagementPrivateEndpointDetails update_db_management_private_endpoint_details: (required)
+            The details used to update a Database Management private endpoint.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.DbManagementPrivateEndpoint`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/update_db_management_private_endpoint.py.html>`__ to see an example of how to use update_db_management_private_endpoint API.
+        """
+        resource_path = "/dbManagementPrivateEndpoints/{dbManagementPrivateEndpointId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_db_management_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "dbManagementPrivateEndpointId": db_management_private_endpoint_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_db_management_private_endpoint_details,
+                response_type="DbManagementPrivateEndpoint")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_db_management_private_endpoint_details,
+                response_type="DbManagementPrivateEndpoint")
+
+    def update_job(self, job_id, update_job_details, **kwargs):
+        """
+        Updates the details for the recurring scheduled job specified by jobId. Note that non-recurring (one time) jobs cannot be updated.
+
+
+        :param str job_id: (required)
+            The identifier of the job.
+
+        :param oci.database_management.models.UpdateJobDetails update_job_details: (required)
+            The details required to update a job.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.Job`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/update_job.py.html>`__ to see an example of how to use update_job API.
+        """
+        resource_path = "/jobs/{jobId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_job got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "jobId": job_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_job_details,
+                response_type="Job")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_job_details,
+                response_type="Job")
 
     def update_managed_database_group(self, managed_database_group_id, update_managed_database_group_details, **kwargs):
         """

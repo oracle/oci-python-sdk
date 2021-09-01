@@ -253,7 +253,7 @@ class ConfigurationSourceProviderSummary(object):
         Allowable values:
         - ACTIVE
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#CSPStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__CSPStates
 
 
         :return: The lifecycle_state of this ConfigurationSourceProviderSummary.
@@ -272,7 +272,7 @@ class ConfigurationSourceProviderSummary(object):
         Allowable values:
         - ACTIVE
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#CSPStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__CSPStates
 
 
         :param lifecycle_state: The lifecycle_state of this ConfigurationSourceProviderSummary.

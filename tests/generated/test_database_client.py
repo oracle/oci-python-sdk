@@ -2699,6 +2699,46 @@ def test_disable_autonomous_database_operations_insights(testing_service_client)
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_disable_database_management(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DisableDatabaseManagement'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DisableDatabaseManagement')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DisableDatabaseManagement')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.disable_database_management(
+                database_id=request.pop(util.camelize('databaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DisableDatabaseManagement',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'database',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_disable_external_container_database_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableExternalContainerDatabaseDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3055,6 +3095,47 @@ def test_enable_autonomous_database_operations_insights(testing_service_client):
             result,
             service_error,
             'enable_autonomous_database_operations_insights',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_enable_database_management(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'EnableDatabaseManagement'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'EnableDatabaseManagement')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='EnableDatabaseManagement')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.enable_database_management(
+                database_id=request.pop(util.camelize('databaseId')),
+                enable_database_management_details=request.pop(util.camelize('EnableDatabaseManagementDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'EnableDatabaseManagement',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'database',
             False,
             False
         )
@@ -8383,6 +8464,47 @@ def test_migrate_vault_key(testing_service_client):
         testing_service_client.validate_result(
             'database',
             'MigrateVaultKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'database',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_modify_database_management(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ModifyDatabaseManagement'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ModifyDatabaseManagement')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ModifyDatabaseManagement')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.modify_database_management(
+                database_id=request.pop(util.camelize('databaseId')),
+                modify_database_management_details=request.pop(util.camelize('ModifyDatabaseManagementDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ModifyDatabaseManagement',
             request_containers[i]['containerId'],
             request_containers[i]['request'],
             result,

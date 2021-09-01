@@ -116,6 +116,47 @@ def test_change_database_parameters(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_change_db_management_private_endpoint_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ChangeDbManagementPrivateEndpointCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ChangeDbManagementPrivateEndpointCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ChangeDbManagementPrivateEndpointCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.change_db_management_private_endpoint_compartment(
+                db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
+                change_db_management_private_endpoint_compartment_details=request.pop(util.camelize('ChangeDbManagementPrivateEndpointCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ChangeDbManagementPrivateEndpointCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_db_management_private_endpoint_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_change_job_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'ChangeJobCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -198,6 +239,46 @@ def test_change_managed_database_group_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_create_db_management_private_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'CreateDbManagementPrivateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'CreateDbManagementPrivateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='CreateDbManagementPrivateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.create_db_management_private_endpoint(
+                create_db_management_private_endpoint_details=request.pop(util.camelize('CreateDbManagementPrivateEndpointDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'CreateDbManagementPrivateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dbManagementPrivateEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_create_job(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'CreateJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -273,6 +354,46 @@ def test_create_managed_database_group(testing_service_client):
             service_error,
             'managedDatabaseGroup',
             False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_delete_db_management_private_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'DeleteDbManagementPrivateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'DeleteDbManagementPrivateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='DeleteDbManagementPrivateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.delete_db_management_private_endpoint(
+                db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'DeleteDbManagementPrivateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_db_management_private_endpoint',
+            True,
             False
         )
 
@@ -566,6 +687,46 @@ def test_get_database_home_metrics(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_db_management_private_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetDbManagementPrivateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetDbManagementPrivateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetDbManagementPrivateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_db_management_private_endpoint(
+                db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetDbManagementPrivateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dbManagementPrivateEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_get_job(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'GetJob'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -766,6 +927,151 @@ def test_get_managed_database_group(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_pdb_metrics(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetPdbMetrics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetPdbMetrics')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetPdbMetrics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_pdb_metrics(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                start_time=request.pop(util.camelize('startTime')),
+                end_time=request.pop(util.camelize('endTime')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetPdbMetrics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'pdbMetrics',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_work_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetWorkRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetWorkRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetWorkRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_work_request(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetWorkRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequest',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_associated_databases(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListAssociatedDatabases'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListAssociatedDatabases')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListAssociatedDatabases')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_associated_databases(
+                db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_associated_databases(
+                    db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_associated_databases(
+                        db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListAssociatedDatabases',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'associatedDatabaseCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_list_awr_db_snapshots(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'ListAwrDbSnapshots'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -925,6 +1231,66 @@ def test_list_database_parameters(testing_service_client):
             'databaseParametersCollection',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_db_management_private_endpoints(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListDbManagementPrivateEndpoints'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListDbManagementPrivateEndpoints')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListDbManagementPrivateEndpoints')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_db_management_private_endpoints(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_db_management_private_endpoints(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_db_management_private_endpoints(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListDbManagementPrivateEndpoints',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dbManagementPrivateEndpointCollection',
+            False,
+            True
         )
 
 
@@ -1283,6 +1649,186 @@ def test_list_tablespaces(testing_service_client):
             result,
             service_error,
             'tablespaceCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_work_request_errors(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListWorkRequestErrors'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListWorkRequestErrors')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListWorkRequestErrors')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_request_errors(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_request_errors(
+                    work_request_id=request.pop(util.camelize('workRequestId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_request_errors(
+                        work_request_id=request.pop(util.camelize('workRequestId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListWorkRequestErrors',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequestErrorCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_work_request_logs(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListWorkRequestLogs'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListWorkRequestLogs')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListWorkRequestLogs')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_request_logs(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_request_logs(
+                    work_request_id=request.pop(util.camelize('workRequestId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_request_logs(
+                        work_request_id=request.pop(util.camelize('workRequestId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListWorkRequestLogs',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequestLogEntryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_work_requests(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListWorkRequests'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListWorkRequests')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListWorkRequests')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_requests(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_requests(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_requests(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListWorkRequests',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workRequestCollection',
             False,
             True
         )
@@ -1921,6 +2467,130 @@ def test_summarize_awr_db_wait_events(testing_service_client):
             'awrDbWaitEventCollection',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_summarize_job_executions_statuses(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'SummarizeJobExecutionsStatuses'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'SummarizeJobExecutionsStatuses')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='SummarizeJobExecutionsStatuses')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_job_executions_statuses(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                start_time=request.pop(util.camelize('startTime')),
+                end_time=request.pop(util.camelize('endTime')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'SummarizeJobExecutionsStatuses',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'jobExecutionsStatusSummaryCollection',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_db_management_private_endpoint(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateDbManagementPrivateEndpoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateDbManagementPrivateEndpoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateDbManagementPrivateEndpoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_db_management_private_endpoint(
+                db_management_private_endpoint_id=request.pop(util.camelize('dbManagementPrivateEndpointId')),
+                update_db_management_private_endpoint_details=request.pop(util.camelize('UpdateDbManagementPrivateEndpointDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateDbManagementPrivateEndpoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dbManagementPrivateEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_job(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateJob'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateJob')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateJob')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_job(
+                job_id=request.pop(util.camelize('jobId')),
+                update_job_details=request.pop(util.camelize('UpdateJobDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateJob',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'job',
+            False,
+            False
         )
 
 

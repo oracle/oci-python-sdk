@@ -151,6 +151,10 @@ class DatabaseSummary(object):
             The value to assign to the database_software_image_id property of this DatabaseSummary.
         :type database_software_image_id: str
 
+        :param database_management_config:
+            The value to assign to the database_management_config property of this DatabaseSummary.
+        :type database_management_config: oci.database.models.CloudDatabaseManagementConfig
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -174,7 +178,8 @@ class DatabaseSummary(object):
             'connection_strings': 'DatabaseConnectionStrings',
             'kms_key_id': 'str',
             'source_database_point_in_time_recovery_timestamp': 'datetime',
-            'database_software_image_id': 'str'
+            'database_software_image_id': 'str',
+            'database_management_config': 'CloudDatabaseManagementConfig'
         }
 
         self.attribute_map = {
@@ -199,7 +204,8 @@ class DatabaseSummary(object):
             'connection_strings': 'connectionStrings',
             'kms_key_id': 'kmsKeyId',
             'source_database_point_in_time_recovery_timestamp': 'sourceDatabasePointInTimeRecoveryTimestamp',
-            'database_software_image_id': 'databaseSoftwareImageId'
+            'database_software_image_id': 'databaseSoftwareImageId',
+            'database_management_config': 'databaseManagementConfig'
         }
 
         self._id = None
@@ -224,6 +230,7 @@ class DatabaseSummary(object):
         self._kms_key_id = None
         self._source_database_point_in_time_recovery_timestamp = None
         self._database_software_image_id = None
+        self._database_management_config = None
 
     @property
     def id(self):
@@ -798,6 +805,26 @@ class DatabaseSummary(object):
         :type: str
         """
         self._database_software_image_id = database_software_image_id
+
+    @property
+    def database_management_config(self):
+        """
+        Gets the database_management_config of this DatabaseSummary.
+
+        :return: The database_management_config of this DatabaseSummary.
+        :rtype: oci.database.models.CloudDatabaseManagementConfig
+        """
+        return self._database_management_config
+
+    @database_management_config.setter
+    def database_management_config(self, database_management_config):
+        """
+        Sets the database_management_config of this DatabaseSummary.
+
+        :param database_management_config: The database_management_config of this DatabaseSummary.
+        :type: oci.database.models.CloudDatabaseManagementConfig
+        """
+        self._database_management_config = database_management_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

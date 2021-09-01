@@ -83,7 +83,7 @@ class SqlJob(Job):
 
         :param schedule_type:
             The value to assign to the schedule_type property of this SqlJob.
-            Allowed values for this property are: "IMMEDIATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IMMEDIATE", "LATER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type schedule_type: str
 
@@ -106,6 +106,10 @@ class SqlJob(Job):
         :param result_location:
             The value to assign to the result_location property of this SqlJob.
         :type result_location: oci.database_management.models.JobExecutionResultLocation
+
+        :param schedule_details:
+            The value to assign to the schedule_details property of this SqlJob.
+        :type schedule_details: oci.database_management.models.JobScheduleDetails
 
         :param submission_error_message:
             The value to assign to the submission_error_message property of this SqlJob.
@@ -160,6 +164,7 @@ class SqlJob(Job):
             'lifecycle_state': 'str',
             'timeout': 'str',
             'result_location': 'JobExecutionResultLocation',
+            'schedule_details': 'JobScheduleDetails',
             'submission_error_message': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -184,6 +189,7 @@ class SqlJob(Job):
             'lifecycle_state': 'lifecycleState',
             'timeout': 'timeout',
             'result_location': 'resultLocation',
+            'schedule_details': 'scheduleDetails',
             'submission_error_message': 'submissionErrorMessage',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -207,6 +213,7 @@ class SqlJob(Job):
         self._lifecycle_state = None
         self._timeout = None
         self._result_location = None
+        self._schedule_details = None
         self._submission_error_message = None
         self._time_created = None
         self._time_updated = None

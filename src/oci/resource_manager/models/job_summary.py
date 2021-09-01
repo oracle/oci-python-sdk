@@ -391,7 +391,7 @@ class JobSummary(object):
         - CANCELING
         - CANCELED
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates
 
 
         :return: The lifecycle_state of this JobSummary.
@@ -415,7 +415,7 @@ class JobSummary(object):
         - CANCELING
         - CANCELED
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates
 
 
         :param lifecycle_state: The lifecycle_state of this JobSummary.

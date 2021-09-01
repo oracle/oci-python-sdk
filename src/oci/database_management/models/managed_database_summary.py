@@ -21,6 +21,14 @@ class ManagedDatabaseSummary(object):
     #: This constant has a value of "EXTERNAL_RAC"
     DATABASE_TYPE_EXTERNAL_RAC = "EXTERNAL_RAC"
 
+    #: A constant which can be used with the database_type property of a ManagedDatabaseSummary.
+    #: This constant has a value of "CLOUD_SIDB"
+    DATABASE_TYPE_CLOUD_SIDB = "CLOUD_SIDB"
+
+    #: A constant which can be used with the database_type property of a ManagedDatabaseSummary.
+    #: This constant has a value of "CLOUD_RAC"
+    DATABASE_TYPE_CLOUD_RAC = "CLOUD_RAC"
+
     #: A constant which can be used with the database_sub_type property of a ManagedDatabaseSummary.
     #: This constant has a value of "CDB"
     DATABASE_SUB_TYPE_CDB = "CDB"
@@ -32,6 +40,34 @@ class ManagedDatabaseSummary(object):
     #: A constant which can be used with the database_sub_type property of a ManagedDatabaseSummary.
     #: This constant has a value of "NON_CDB"
     DATABASE_SUB_TYPE_NON_CDB = "NON_CDB"
+
+    #: A constant which can be used with the deployment_type property of a ManagedDatabaseSummary.
+    #: This constant has a value of "ONPREMISE"
+    DEPLOYMENT_TYPE_ONPREMISE = "ONPREMISE"
+
+    #: A constant which can be used with the deployment_type property of a ManagedDatabaseSummary.
+    #: This constant has a value of "BM"
+    DEPLOYMENT_TYPE_BM = "BM"
+
+    #: A constant which can be used with the deployment_type property of a ManagedDatabaseSummary.
+    #: This constant has a value of "VM"
+    DEPLOYMENT_TYPE_VM = "VM"
+
+    #: A constant which can be used with the deployment_type property of a ManagedDatabaseSummary.
+    #: This constant has a value of "EXADATA"
+    DEPLOYMENT_TYPE_EXADATA = "EXADATA"
+
+    #: A constant which can be used with the deployment_type property of a ManagedDatabaseSummary.
+    #: This constant has a value of "EXADATA_CC"
+    DEPLOYMENT_TYPE_EXADATA_CC = "EXADATA_CC"
+
+    #: A constant which can be used with the management_option property of a ManagedDatabaseSummary.
+    #: This constant has a value of "BASIC"
+    MANAGEMENT_OPTION_BASIC = "BASIC"
+
+    #: A constant which can be used with the management_option property of a ManagedDatabaseSummary.
+    #: This constant has a value of "ADVANCED"
+    MANAGEMENT_OPTION_ADVANCED = "ADVANCED"
 
     def __init__(self, **kwargs):
         """
@@ -52,7 +88,7 @@ class ManagedDatabaseSummary(object):
 
         :param database_type:
             The value to assign to the database_type property of this ManagedDatabaseSummary.
-            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_type: str
 
@@ -61,6 +97,18 @@ class ManagedDatabaseSummary(object):
             Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_sub_type: str
+
+        :param deployment_type:
+            The value to assign to the deployment_type property of this ManagedDatabaseSummary.
+            Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type deployment_type: str
+
+        :param management_option:
+            The value to assign to the management_option property of this ManagedDatabaseSummary.
+            Allowed values for this property are: "BASIC", "ADVANCED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type management_option: str
 
         :param is_cluster:
             The value to assign to the is_cluster property of this ManagedDatabaseSummary.
@@ -81,6 +129,8 @@ class ManagedDatabaseSummary(object):
             'name': 'str',
             'database_type': 'str',
             'database_sub_type': 'str',
+            'deployment_type': 'str',
+            'management_option': 'str',
             'is_cluster': 'bool',
             'parent_container_id': 'str',
             'time_created': 'datetime'
@@ -92,6 +142,8 @@ class ManagedDatabaseSummary(object):
             'name': 'name',
             'database_type': 'databaseType',
             'database_sub_type': 'databaseSubType',
+            'deployment_type': 'deploymentType',
+            'management_option': 'managementOption',
             'is_cluster': 'isCluster',
             'parent_container_id': 'parentContainerId',
             'time_created': 'timeCreated'
@@ -102,6 +154,8 @@ class ManagedDatabaseSummary(object):
         self._name = None
         self._database_type = None
         self._database_sub_type = None
+        self._deployment_type = None
+        self._management_option = None
         self._is_cluster = None
         self._parent_container_id = None
         self._time_created = None
@@ -192,7 +246,7 @@ class ManagedDatabaseSummary(object):
         **[Required]** Gets the database_type of this ManagedDatabaseSummary.
         The type of Oracle Database installation.
 
-        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -211,7 +265,7 @@ class ManagedDatabaseSummary(object):
         :param database_type: The database_type of this ManagedDatabaseSummary.
         :type: str
         """
-        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC"]
+        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC"]
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
             database_type = 'UNKNOWN_ENUM_VALUE'
         self._database_type = database_type
@@ -245,6 +299,66 @@ class ManagedDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(database_sub_type, allowed_values):
             database_sub_type = 'UNKNOWN_ENUM_VALUE'
         self._database_sub_type = database_sub_type
+
+    @property
+    def deployment_type(self):
+        """
+        Gets the deployment_type of this ManagedDatabaseSummary.
+        The infrastructure used to deploy the Oracle Database.
+
+        Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The deployment_type of this ManagedDatabaseSummary.
+        :rtype: str
+        """
+        return self._deployment_type
+
+    @deployment_type.setter
+    def deployment_type(self, deployment_type):
+        """
+        Sets the deployment_type of this ManagedDatabaseSummary.
+        The infrastructure used to deploy the Oracle Database.
+
+
+        :param deployment_type: The deployment_type of this ManagedDatabaseSummary.
+        :type: str
+        """
+        allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC"]
+        if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
+            deployment_type = 'UNKNOWN_ENUM_VALUE'
+        self._deployment_type = deployment_type
+
+    @property
+    def management_option(self):
+        """
+        Gets the management_option of this ManagedDatabaseSummary.
+        The management option used when enabling Database Management.
+
+        Allowed values for this property are: "BASIC", "ADVANCED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The management_option of this ManagedDatabaseSummary.
+        :rtype: str
+        """
+        return self._management_option
+
+    @management_option.setter
+    def management_option(self, management_option):
+        """
+        Sets the management_option of this ManagedDatabaseSummary.
+        The management option used when enabling Database Management.
+
+
+        :param management_option: The management_option of this ManagedDatabaseSummary.
+        :type: str
+        """
+        allowed_values = ["BASIC", "ADVANCED"]
+        if not value_allowed_none_or_none_sentinel(management_option, allowed_values):
+            management_option = 'UNKNOWN_ENUM_VALUE'
+        self._management_option = management_option
 
     @property
     def is_cluster(self):

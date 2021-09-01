@@ -14,7 +14,7 @@ class ConfigurationSourceProvider(object):
     For more information, see
     `Managing Configuration Source Providers`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingstacksandjobs.htm#ManagingConfigurationSourceProviders
+    __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/managingconfigurationsourceproviders.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a ConfigurationSourceProvider.
@@ -270,7 +270,7 @@ class ConfigurationSourceProvider(object):
         For more information about configuration source provider lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#CSPStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__CSPStates
 
         Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -289,7 +289,7 @@ class ConfigurationSourceProvider(object):
         For more information about configuration source provider lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#CSPStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__CSPStates
 
 
         :param lifecycle_state: The lifecycle_state of this ConfigurationSourceProvider.

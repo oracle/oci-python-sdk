@@ -68,7 +68,7 @@ def test_change_management_dashboards_compartment(testing_service_client):
             request_containers[i]['request'],
             result,
             service_error,
-            'change_management_dashboards_compartment',
+            'managementDashboard',
             False,
             False
         )
@@ -109,7 +109,7 @@ def test_change_management_saved_searches_compartment(testing_service_client):
             request_containers[i]['request'],
             result,
             service_error,
-            'change_management_saved_searches_compartment',
+            'managementSavedSearch',
             False,
             False
         )

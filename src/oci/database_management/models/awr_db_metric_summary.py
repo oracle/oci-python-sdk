@@ -161,7 +161,7 @@ class AwrDbMetricSummary(object):
     def max_value(self):
         """
         Gets the max_value of this AwrDbMetricSummary.
-        The maximum value of the sampling period.v
+        The maximum value of the sampling period.
 
 
         :return: The max_value of this AwrDbMetricSummary.
@@ -173,7 +173,7 @@ class AwrDbMetricSummary(object):
     def max_value(self, max_value):
         """
         Sets the max_value of this AwrDbMetricSummary.
-        The maximum value of the sampling period.v
+        The maximum value of the sampling period.
 
 
         :param max_value: The max_value of this AwrDbMetricSummary.
