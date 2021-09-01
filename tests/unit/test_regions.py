@@ -2,6 +2,7 @@
 # Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
+import json
 import os
 import pytest
 
@@ -13,6 +14,29 @@ def reset_external_sources_dict():
     _has_been_read_external_sources[ExternalSources.REGIONS_CFG_FILE] = False
     _has_been_read_external_sources[ExternalSources.ENV_VAR] = False
     _has_been_read_external_sources[ExternalSources.IMDS] = True
+
+
+def test_all_regions():
+    try:
+        with open('tests/resources/regions.json', 'r') as f:
+            regions_raw = f.read()
+    except (OSError, IOError) as e:
+        pytest.fail("Reading regions configuration file failed because of error: {}".format(e))
+
+    # Try importing JSONDecodeError for Python 2 and Python 3 compatibility
+    try:
+        from json.decoder import JSONDecodeError
+    except ImportError:
+        JSONDecodeError = ValueError
+    try:
+        regions = json.loads(regions_raw)
+    except JSONDecodeError as e:
+        # Unable to parse the json array
+        pytest.fail("Decoding JSON array from regions configuration file failed because of error: {}".format(e))
+
+    for region in regions:
+        assert(region['regionIdentifier'] in REGIONS)
+        assert(region['realmKey'] in REALMS.keys())
 
 
 def test_endpoint_for_service_template():
