@@ -18,6 +18,10 @@ Added
 * Support for a unified way of managing both external and cloud databases in the Database Management service
 * Support for metrics and Performance Hub on virtual machine, bare metal, and ExaCS databases in the Database Management service
 
+Breaking
+--------
+* Param `oci_splat_generated_ocids` is removed from operation `create_template` in the Resource Manager service
+
 ====================
 2.44.2 - 2021-08-31
 ====================
