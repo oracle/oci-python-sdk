@@ -119,6 +119,7 @@ class ObjectStorageConfigSource(ConfigSource):
         """
         **[Required]** Gets the bucket_name of this ObjectStorageConfigSource.
         The name of the bucket that contains the Terraform configuration files.
+        Maximum file size (applies to each file in the bucket): 100 MB. (In a bucket, a file is an object.)
 
 
         :return: The bucket_name of this ObjectStorageConfigSource.
@@ -131,6 +132,7 @@ class ObjectStorageConfigSource(ConfigSource):
         """
         Sets the bucket_name of this ObjectStorageConfigSource.
         The name of the bucket that contains the Terraform configuration files.
+        Maximum file size (applies to each file in the bucket): 100 MB. (In a bucket, a file is an object.)
 
 
         :param bucket_name: The bucket_name of this ObjectStorageConfigSource.

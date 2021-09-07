@@ -228,7 +228,7 @@ class StackSummary(object):
         - DELETED
         - FAILED
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates
 
 
         :return: The lifecycle_state of this StackSummary.
@@ -251,7 +251,7 @@ class StackSummary(object):
         - DELETED
         - FAILED
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates
 
 
         :param lifecycle_state: The lifecycle_state of this StackSummary.

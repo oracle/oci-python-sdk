@@ -23,6 +23,10 @@ class CreateDestroyJobOperationDetails(CreateJobOperationDetails):
             The value to assign to the operation property of this CreateDestroyJobOperationDetails.
         :type operation: str
 
+        :param terraform_advanced_options:
+            The value to assign to the terraform_advanced_options property of this CreateDestroyJobOperationDetails.
+        :type terraform_advanced_options: oci.resource_manager.models.TerraformAdvancedOptions
+
         :param execution_plan_strategy:
             The value to assign to the execution_plan_strategy property of this CreateDestroyJobOperationDetails.
         :type execution_plan_strategy: str
@@ -30,17 +34,40 @@ class CreateDestroyJobOperationDetails(CreateJobOperationDetails):
         """
         self.swagger_types = {
             'operation': 'str',
+            'terraform_advanced_options': 'TerraformAdvancedOptions',
             'execution_plan_strategy': 'str'
         }
 
         self.attribute_map = {
             'operation': 'operation',
+            'terraform_advanced_options': 'terraformAdvancedOptions',
             'execution_plan_strategy': 'executionPlanStrategy'
         }
 
         self._operation = None
+        self._terraform_advanced_options = None
         self._execution_plan_strategy = None
         self._operation = 'DESTROY'
+
+    @property
+    def terraform_advanced_options(self):
+        """
+        Gets the terraform_advanced_options of this CreateDestroyJobOperationDetails.
+
+        :return: The terraform_advanced_options of this CreateDestroyJobOperationDetails.
+        :rtype: oci.resource_manager.models.TerraformAdvancedOptions
+        """
+        return self._terraform_advanced_options
+
+    @terraform_advanced_options.setter
+    def terraform_advanced_options(self, terraform_advanced_options):
+        """
+        Sets the terraform_advanced_options of this CreateDestroyJobOperationDetails.
+
+        :param terraform_advanced_options: The terraform_advanced_options of this CreateDestroyJobOperationDetails.
+        :type: oci.resource_manager.models.TerraformAdvancedOptions
+        """
+        self._terraform_advanced_options = terraform_advanced_options
 
     @property
     def execution_plan_strategy(self):

@@ -68,6 +68,10 @@ class JobSummary(object):
             The value to assign to the schedule_type property of this JobSummary.
         :type schedule_type: str
 
+        :param schedule_details:
+            The value to assign to the schedule_details property of this JobSummary.
+        :type schedule_details: oci.database_management.models.JobScheduleDetails
+
         :param job_type:
             The value to assign to the job_type property of this JobSummary.
             Allowed values for this property are: "SQL", 'UNKNOWN_ENUM_VALUE'.
@@ -104,6 +108,7 @@ class JobSummary(object):
             'managed_database_id': 'str',
             'database_sub_type': 'str',
             'schedule_type': 'str',
+            'schedule_details': 'JobScheduleDetails',
             'job_type': 'str',
             'lifecycle_state': 'str',
             'timeout': 'str',
@@ -121,6 +126,7 @@ class JobSummary(object):
             'managed_database_id': 'managedDatabaseId',
             'database_sub_type': 'databaseSubType',
             'schedule_type': 'scheduleType',
+            'schedule_details': 'scheduleDetails',
             'job_type': 'jobType',
             'lifecycle_state': 'lifecycleState',
             'timeout': 'timeout',
@@ -137,6 +143,7 @@ class JobSummary(object):
         self._managed_database_id = None
         self._database_sub_type = None
         self._schedule_type = None
+        self._schedule_details = None
         self._job_type = None
         self._lifecycle_state = None
         self._timeout = None
@@ -357,6 +364,26 @@ class JobSummary(object):
         :type: str
         """
         self._schedule_type = schedule_type
+
+    @property
+    def schedule_details(self):
+        """
+        Gets the schedule_details of this JobSummary.
+
+        :return: The schedule_details of this JobSummary.
+        :rtype: oci.database_management.models.JobScheduleDetails
+        """
+        return self._schedule_details
+
+    @schedule_details.setter
+    def schedule_details(self, schedule_details):
+        """
+        Sets the schedule_details of this JobSummary.
+
+        :param schedule_details: The schedule_details of this JobSummary.
+        :type: oci.database_management.models.JobScheduleDetails
+        """
+        self._schedule_details = schedule_details
 
     @property
     def job_type(self):

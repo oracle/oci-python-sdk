@@ -21,6 +21,14 @@ class FleetStatusByCategory(object):
     #: This constant has a value of "EXTERNAL_RAC"
     DATABASE_TYPE_EXTERNAL_RAC = "EXTERNAL_RAC"
 
+    #: A constant which can be used with the database_type property of a FleetStatusByCategory.
+    #: This constant has a value of "CLOUD_SIDB"
+    DATABASE_TYPE_CLOUD_SIDB = "CLOUD_SIDB"
+
+    #: A constant which can be used with the database_type property of a FleetStatusByCategory.
+    #: This constant has a value of "CLOUD_RAC"
+    DATABASE_TYPE_CLOUD_RAC = "CLOUD_RAC"
+
     #: A constant which can be used with the database_sub_type property of a FleetStatusByCategory.
     #: This constant has a value of "CDB"
     DATABASE_SUB_TYPE_CDB = "CDB"
@@ -40,7 +48,7 @@ class FleetStatusByCategory(object):
 
         :param database_type:
             The value to assign to the database_type property of this FleetStatusByCategory.
-            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_type: str
 
@@ -77,7 +85,7 @@ class FleetStatusByCategory(object):
         Gets the database_type of this FleetStatusByCategory.
         The type of Oracle Database installation.
 
-        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -96,7 +104,7 @@ class FleetStatusByCategory(object):
         :param database_type: The database_type of this FleetStatusByCategory.
         :type: str
         """
-        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC"]
+        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC"]
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
             database_type = 'UNKNOWN_ENUM_VALUE'
         self._database_type = database_type

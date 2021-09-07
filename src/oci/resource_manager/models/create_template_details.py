@@ -186,7 +186,8 @@ class CreateTemplateDetails(object):
     def logo_file_base64_encoded(self):
         """
         Gets the logo_file_base64_encoded of this CreateTemplateDetails.
-        Base64-encoded logo for the template.
+        Base64-encoded logo to use as the template icon.
+        Template icon file requirements: PNG format, 50 KB maximum, 110 x 110 pixels.
 
 
         :return: The logo_file_base64_encoded of this CreateTemplateDetails.
@@ -198,7 +199,8 @@ class CreateTemplateDetails(object):
     def logo_file_base64_encoded(self, logo_file_base64_encoded):
         """
         Sets the logo_file_base64_encoded of this CreateTemplateDetails.
-        Base64-encoded logo for the template.
+        Base64-encoded logo to use as the template icon.
+        Template icon file requirements: PNG format, 50 KB maximum, 110 x 110 pixels.
 
 
         :param logo_file_base64_encoded: The logo_file_base64_encoded of this CreateTemplateDetails.

@@ -7,6 +7,8 @@ from __future__ import absolute_import
 from .activity_time_series_metrics import ActivityTimeSeriesMetrics
 from .add_managed_database_to_managed_database_group_details import AddManagedDatabaseToManagedDatabaseGroupDetails
 from .allowed_parameter_value import AllowedParameterValue
+from .associated_database_collection import AssociatedDatabaseCollection
+from .associated_database_summary import AssociatedDatabaseSummary
 from .awr_db_collection import AwrDbCollection
 from .awr_db_cpu_usage_collection import AwrDbCpuUsageCollection
 from .awr_db_cpu_usage_summary import AwrDbCpuUsageSummary
@@ -34,10 +36,12 @@ from .awr_db_wait_event_summary import AwrDbWaitEventSummary
 from .awr_query_result import AwrQueryResult
 from .change_database_parameter_details import ChangeDatabaseParameterDetails
 from .change_database_parameters_details import ChangeDatabaseParametersDetails
+from .change_db_management_private_endpoint_compartment_details import ChangeDbManagementPrivateEndpointCompartmentDetails
 from .change_job_compartment_details import ChangeJobCompartmentDetails
 from .change_managed_database_group_compartment_details import ChangeManagedDatabaseGroupCompartmentDetails
 from .child_database import ChildDatabase
 from .cluster_cache_metric import ClusterCacheMetric
+from .create_db_management_private_endpoint_details import CreateDbManagementPrivateEndpointDetails
 from .create_job_details import CreateJobDetails
 from .create_managed_database_group_details import CreateManagedDatabaseGroupDetails
 from .create_sql_job_details import CreateSqlJobDetails
@@ -54,6 +58,9 @@ from .database_storage_aggregate_metrics import DatabaseStorageAggregateMetrics
 from .database_time_aggregate_metrics import DatabaseTimeAggregateMetrics
 from .database_usage_metrics import DatabaseUsageMetrics
 from .datafile import Datafile
+from .db_management_private_endpoint import DbManagementPrivateEndpoint
+from .db_management_private_endpoint_collection import DbManagementPrivateEndpointCollection
+from .db_management_private_endpoint_summary import DbManagementPrivateEndpointSummary
 from .fleet_metric_definition import FleetMetricDefinition
 from .fleet_metric_summary_definition import FleetMetricSummaryDefinition
 from .fleet_status_by_category import FleetStatusByCategory
@@ -67,9 +74,12 @@ from .job_execution_collection import JobExecutionCollection
 from .job_execution_result_details import JobExecutionResultDetails
 from .job_execution_result_location import JobExecutionResultLocation
 from .job_execution_summary import JobExecutionSummary
+from .job_executions_status_summary import JobExecutionsStatusSummary
+from .job_executions_status_summary_collection import JobExecutionsStatusSummaryCollection
 from .job_run import JobRun
 from .job_run_collection import JobRunCollection
 from .job_run_summary import JobRunSummary
+from .job_schedule_details import JobScheduleDetails
 from .job_summary import JobSummary
 from .managed_database import ManagedDatabase
 from .managed_database_collection import ManagedDatabaseCollection
@@ -83,6 +93,7 @@ from .metric_dimension_definition import MetricDimensionDefinition
 from .object_storage_job_execution_result_details import ObjectStorageJobExecutionResultDetails
 from .object_storage_job_execution_result_location import ObjectStorageJobExecutionResultLocation
 from .parent_group import ParentGroup
+from .pdb_metrics import PdbMetrics
 from .pdb_status_details import PdbStatusDetails
 from .remove_managed_database_from_managed_database_group_details import RemoveManagedDatabaseFromManagedDatabaseGroupDetails
 from .reset_database_parameters_details import ResetDatabaseParametersDetails
@@ -93,13 +104,26 @@ from .tablespace_summary import TablespaceSummary
 from .time_series_metric_data_point import TimeSeriesMetricDataPoint
 from .time_series_metric_definition import TimeSeriesMetricDefinition
 from .update_database_parameters_result import UpdateDatabaseParametersResult
+from .update_db_management_private_endpoint_details import UpdateDbManagementPrivateEndpointDetails
+from .update_job_details import UpdateJobDetails
 from .update_managed_database_group_details import UpdateManagedDatabaseGroupDetails
+from .update_sql_job_details import UpdateSqlJobDetails
+from .work_request import WorkRequest
+from .work_request_collection import WorkRequestCollection
+from .work_request_error import WorkRequestError
+from .work_request_error_collection import WorkRequestErrorCollection
+from .work_request_log_entry import WorkRequestLogEntry
+from .work_request_log_entry_collection import WorkRequestLogEntryCollection
+from .work_request_resource import WorkRequestResource
+from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for database_management services.
 database_management_type_mapping = {
     "ActivityTimeSeriesMetrics": ActivityTimeSeriesMetrics,
     "AddManagedDatabaseToManagedDatabaseGroupDetails": AddManagedDatabaseToManagedDatabaseGroupDetails,
     "AllowedParameterValue": AllowedParameterValue,
+    "AssociatedDatabaseCollection": AssociatedDatabaseCollection,
+    "AssociatedDatabaseSummary": AssociatedDatabaseSummary,
     "AwrDbCollection": AwrDbCollection,
     "AwrDbCpuUsageCollection": AwrDbCpuUsageCollection,
     "AwrDbCpuUsageSummary": AwrDbCpuUsageSummary,
@@ -127,10 +151,12 @@ database_management_type_mapping = {
     "AwrQueryResult": AwrQueryResult,
     "ChangeDatabaseParameterDetails": ChangeDatabaseParameterDetails,
     "ChangeDatabaseParametersDetails": ChangeDatabaseParametersDetails,
+    "ChangeDbManagementPrivateEndpointCompartmentDetails": ChangeDbManagementPrivateEndpointCompartmentDetails,
     "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
     "ChangeManagedDatabaseGroupCompartmentDetails": ChangeManagedDatabaseGroupCompartmentDetails,
     "ChildDatabase": ChildDatabase,
     "ClusterCacheMetric": ClusterCacheMetric,
+    "CreateDbManagementPrivateEndpointDetails": CreateDbManagementPrivateEndpointDetails,
     "CreateJobDetails": CreateJobDetails,
     "CreateManagedDatabaseGroupDetails": CreateManagedDatabaseGroupDetails,
     "CreateSqlJobDetails": CreateSqlJobDetails,
@@ -147,6 +173,9 @@ database_management_type_mapping = {
     "DatabaseTimeAggregateMetrics": DatabaseTimeAggregateMetrics,
     "DatabaseUsageMetrics": DatabaseUsageMetrics,
     "Datafile": Datafile,
+    "DbManagementPrivateEndpoint": DbManagementPrivateEndpoint,
+    "DbManagementPrivateEndpointCollection": DbManagementPrivateEndpointCollection,
+    "DbManagementPrivateEndpointSummary": DbManagementPrivateEndpointSummary,
     "FleetMetricDefinition": FleetMetricDefinition,
     "FleetMetricSummaryDefinition": FleetMetricSummaryDefinition,
     "FleetStatusByCategory": FleetStatusByCategory,
@@ -160,9 +189,12 @@ database_management_type_mapping = {
     "JobExecutionResultDetails": JobExecutionResultDetails,
     "JobExecutionResultLocation": JobExecutionResultLocation,
     "JobExecutionSummary": JobExecutionSummary,
+    "JobExecutionsStatusSummary": JobExecutionsStatusSummary,
+    "JobExecutionsStatusSummaryCollection": JobExecutionsStatusSummaryCollection,
     "JobRun": JobRun,
     "JobRunCollection": JobRunCollection,
     "JobRunSummary": JobRunSummary,
+    "JobScheduleDetails": JobScheduleDetails,
     "JobSummary": JobSummary,
     "ManagedDatabase": ManagedDatabase,
     "ManagedDatabaseCollection": ManagedDatabaseCollection,
@@ -176,6 +208,7 @@ database_management_type_mapping = {
     "ObjectStorageJobExecutionResultDetails": ObjectStorageJobExecutionResultDetails,
     "ObjectStorageJobExecutionResultLocation": ObjectStorageJobExecutionResultLocation,
     "ParentGroup": ParentGroup,
+    "PdbMetrics": PdbMetrics,
     "PdbStatusDetails": PdbStatusDetails,
     "RemoveManagedDatabaseFromManagedDatabaseGroupDetails": RemoveManagedDatabaseFromManagedDatabaseGroupDetails,
     "ResetDatabaseParametersDetails": ResetDatabaseParametersDetails,
@@ -186,5 +219,16 @@ database_management_type_mapping = {
     "TimeSeriesMetricDataPoint": TimeSeriesMetricDataPoint,
     "TimeSeriesMetricDefinition": TimeSeriesMetricDefinition,
     "UpdateDatabaseParametersResult": UpdateDatabaseParametersResult,
-    "UpdateManagedDatabaseGroupDetails": UpdateManagedDatabaseGroupDetails
+    "UpdateDbManagementPrivateEndpointDetails": UpdateDbManagementPrivateEndpointDetails,
+    "UpdateJobDetails": UpdateJobDetails,
+    "UpdateManagedDatabaseGroupDetails": UpdateManagedDatabaseGroupDetails,
+    "UpdateSqlJobDetails": UpdateSqlJobDetails,
+    "WorkRequest": WorkRequest,
+    "WorkRequestCollection": WorkRequestCollection,
+    "WorkRequestError": WorkRequestError,
+    "WorkRequestErrorCollection": WorkRequestErrorCollection,
+    "WorkRequestLogEntry": WorkRequestLogEntry,
+    "WorkRequestLogEntryCollection": WorkRequestLogEntryCollection,
+    "WorkRequestResource": WorkRequestResource,
+    "WorkRequestSummary": WorkRequestSummary
 }

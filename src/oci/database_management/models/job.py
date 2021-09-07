@@ -29,6 +29,10 @@ class Job(object):
     #: This constant has a value of "IMMEDIATE"
     SCHEDULE_TYPE_IMMEDIATE = "IMMEDIATE"
 
+    #: A constant which can be used with the schedule_type property of a Job.
+    #: This constant has a value of "LATER"
+    SCHEDULE_TYPE_LATER = "LATER"
+
     #: A constant which can be used with the job_type property of a Job.
     #: This constant has a value of "SQL"
     JOB_TYPE_SQL = "SQL"
@@ -86,7 +90,7 @@ class Job(object):
 
         :param schedule_type:
             The value to assign to the schedule_type property of this Job.
-            Allowed values for this property are: "IMMEDIATE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IMMEDIATE", "LATER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type schedule_type: str
 
@@ -109,6 +113,10 @@ class Job(object):
         :param result_location:
             The value to assign to the result_location property of this Job.
         :type result_location: oci.database_management.models.JobExecutionResultLocation
+
+        :param schedule_details:
+            The value to assign to the schedule_details property of this Job.
+        :type schedule_details: oci.database_management.models.JobScheduleDetails
 
         :param submission_error_message:
             The value to assign to the submission_error_message property of this Job.
@@ -137,6 +145,7 @@ class Job(object):
             'lifecycle_state': 'str',
             'timeout': 'str',
             'result_location': 'JobExecutionResultLocation',
+            'schedule_details': 'JobScheduleDetails',
             'submission_error_message': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime'
@@ -156,6 +165,7 @@ class Job(object):
             'lifecycle_state': 'lifecycleState',
             'timeout': 'timeout',
             'result_location': 'resultLocation',
+            'schedule_details': 'scheduleDetails',
             'submission_error_message': 'submissionErrorMessage',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
@@ -174,6 +184,7 @@ class Job(object):
         self._lifecycle_state = None
         self._timeout = None
         self._result_location = None
+        self._schedule_details = None
         self._submission_error_message = None
         self._time_created = None
         self._time_updated = None
@@ -411,7 +422,7 @@ class Job(object):
         **[Required]** Gets the schedule_type of this Job.
         The schedule type of the job.
 
-        Allowed values for this property are: "IMMEDIATE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IMMEDIATE", "LATER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -430,7 +441,7 @@ class Job(object):
         :param schedule_type: The schedule_type of this Job.
         :type: str
         """
-        allowed_values = ["IMMEDIATE"]
+        allowed_values = ["IMMEDIATE", "LATER"]
         if not value_allowed_none_or_none_sentinel(schedule_type, allowed_values):
             schedule_type = 'UNKNOWN_ENUM_VALUE'
         self._schedule_type = schedule_type
@@ -538,6 +549,26 @@ class Job(object):
         :type: oci.database_management.models.JobExecutionResultLocation
         """
         self._result_location = result_location
+
+    @property
+    def schedule_details(self):
+        """
+        Gets the schedule_details of this Job.
+
+        :return: The schedule_details of this Job.
+        :rtype: oci.database_management.models.JobScheduleDetails
+        """
+        return self._schedule_details
+
+    @schedule_details.setter
+    def schedule_details(self, schedule_details):
+        """
+        Sets the schedule_details of this Job.
+
+        :param schedule_details: The schedule_details of this Job.
+        :type: oci.database_management.models.JobScheduleDetails
+        """
+        self._schedule_details = schedule_details
 
     @property
     def submission_error_message(self):

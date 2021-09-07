@@ -34,6 +34,10 @@ class DatabaseCredentials(object):
             The value to assign to the password property of this DatabaseCredentials.
         :type password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this DatabaseCredentials.
+        :type secret_id: str
+
         :param role:
             The value to assign to the role property of this DatabaseCredentials.
             Allowed values for this property are: "NORMAL", "SYSDBA"
@@ -43,17 +47,20 @@ class DatabaseCredentials(object):
         self.swagger_types = {
             'user_name': 'str',
             'password': 'str',
+            'secret_id': 'str',
             'role': 'str'
         }
 
         self.attribute_map = {
             'user_name': 'userName',
             'password': 'password',
+            'secret_id': 'secretId',
             'role': 'role'
         }
 
         self._user_name = None
         self._password = None
+        self._secret_id = None
         self._role = None
 
     @property
@@ -103,6 +110,34 @@ class DatabaseCredentials(object):
         :type: str
         """
         self._password = password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this DatabaseCredentials.
+        The `OCID`__ of the secret containing the user password.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The secret_id of this DatabaseCredentials.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this DatabaseCredentials.
+        The `OCID`__ of the secret containing the user password.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param secret_id: The secret_id of this DatabaseCredentials.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def role(self):

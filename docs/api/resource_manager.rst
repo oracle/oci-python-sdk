@@ -21,6 +21,7 @@ Resource Manager
     oci.resource_manager.models.ApplyJobOperationDetails
     oci.resource_manager.models.ApplyJobOperationDetailsSummary
     oci.resource_manager.models.ApplyJobPlanResolution
+    oci.resource_manager.models.CancellationDetails
     oci.resource_manager.models.ChangeConfigurationSourceProviderCompartmentDetails
     oci.resource_manager.models.ChangeStackCompartmentDetails
     oci.resource_manager.models.ChangeTemplateCompartmentDetails
@@ -83,6 +84,7 @@ Resource Manager
     oci.resource_manager.models.TemplateSummary
     oci.resource_manager.models.TemplateSummaryCollection
     oci.resource_manager.models.TemplateZipUploadConfigSource
+    oci.resource_manager.models.TerraformAdvancedOptions
     oci.resource_manager.models.TerraformVersionCollection
     oci.resource_manager.models.TerraformVersionSummary
     oci.resource_manager.models.UpdateConfigSourceDetails

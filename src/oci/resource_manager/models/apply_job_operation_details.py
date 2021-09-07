@@ -35,6 +35,10 @@ class ApplyJobOperationDetails(JobOperationDetails):
             The value to assign to the operation property of this ApplyJobOperationDetails.
         :type operation: str
 
+        :param terraform_advanced_options:
+            The value to assign to the terraform_advanced_options property of this ApplyJobOperationDetails.
+        :type terraform_advanced_options: oci.resource_manager.models.TerraformAdvancedOptions
+
         :param execution_plan_strategy:
             The value to assign to the execution_plan_strategy property of this ApplyJobOperationDetails.
             Allowed values for this property are: "FROM_PLAN_JOB_ID", "FROM_LATEST_PLAN_JOB", "AUTO_APPROVED", 'UNKNOWN_ENUM_VALUE'.
@@ -48,20 +52,43 @@ class ApplyJobOperationDetails(JobOperationDetails):
         """
         self.swagger_types = {
             'operation': 'str',
+            'terraform_advanced_options': 'TerraformAdvancedOptions',
             'execution_plan_strategy': 'str',
             'execution_plan_job_id': 'str'
         }
 
         self.attribute_map = {
             'operation': 'operation',
+            'terraform_advanced_options': 'terraformAdvancedOptions',
             'execution_plan_strategy': 'executionPlanStrategy',
             'execution_plan_job_id': 'executionPlanJobId'
         }
 
         self._operation = None
+        self._terraform_advanced_options = None
         self._execution_plan_strategy = None
         self._execution_plan_job_id = None
         self._operation = 'APPLY'
+
+    @property
+    def terraform_advanced_options(self):
+        """
+        Gets the terraform_advanced_options of this ApplyJobOperationDetails.
+
+        :return: The terraform_advanced_options of this ApplyJobOperationDetails.
+        :rtype: oci.resource_manager.models.TerraformAdvancedOptions
+        """
+        return self._terraform_advanced_options
+
+    @terraform_advanced_options.setter
+    def terraform_advanced_options(self, terraform_advanced_options):
+        """
+        Sets the terraform_advanced_options of this ApplyJobOperationDetails.
+
+        :param terraform_advanced_options: The terraform_advanced_options of this ApplyJobOperationDetails.
+        :type: oci.resource_manager.models.TerraformAdvancedOptions
+        """
+        self._terraform_advanced_options = terraform_advanced_options
 
     @property
     def execution_plan_strategy(self):

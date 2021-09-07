@@ -63,6 +63,7 @@ Database
     oci.database.models.ChangeExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeKeyStoreCompartmentDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
+    oci.database.models.CloudDatabaseManagementConfig
     oci.database.models.CloudExadataInfrastructure
     oci.database.models.CloudExadataInfrastructureSummary
     oci.database.models.CloudVmCluster
@@ -130,6 +131,7 @@ Database
     oci.database.models.DatabaseConnectionCredentialsByDetails
     oci.database.models.DatabaseConnectionString
     oci.database.models.DatabaseConnectionStrings
+    oci.database.models.DatabaseCredentialDetails
     oci.database.models.DatabaseManagementConfig
     oci.database.models.DatabaseSoftwareImage
     oci.database.models.DatabaseSoftwareImageSummary
@@ -155,6 +157,7 @@ Database
     oci.database.models.DbSystemSummary
     oci.database.models.DbVersionSummary
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
+    oci.database.models.EnableDatabaseManagementDetails
     oci.database.models.EnableExternalContainerDatabaseDatabaseManagementDetails
     oci.database.models.EnableExternalDatabaseManagementDetailsBase
     oci.database.models.EnableExternalDatabaseOperationsInsightsDetailsBase
@@ -204,6 +207,7 @@ Database
     oci.database.models.MaintenanceRunSummary
     oci.database.models.MaintenanceWindow
     oci.database.models.MigrateVaultKeyDetails
+    oci.database.models.ModifyDatabaseManagementDetails
     oci.database.models.Month
     oci.database.models.MountTypeDetails
     oci.database.models.NodeDetails

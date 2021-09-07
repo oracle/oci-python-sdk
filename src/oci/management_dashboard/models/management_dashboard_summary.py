@@ -42,6 +42,18 @@ class ManagementDashboardSummary(object):
             The value to assign to the compartment_id property of this ManagementDashboardSummary.
         :type compartment_id: str
 
+        :param provider_id:
+            The value to assign to the provider_id property of this ManagementDashboardSummary.
+        :type provider_id: str
+
+        :param provider_name:
+            The value to assign to the provider_name property of this ManagementDashboardSummary.
+        :type provider_name: str
+
+        :param provider_version:
+            The value to assign to the provider_version property of this ManagementDashboardSummary.
+        :type provider_version: str
+
         :param is_oob_dashboard:
             The value to assign to the is_oob_dashboard property of this ManagementDashboardSummary.
         :type is_oob_dashboard: bool
@@ -99,6 +111,9 @@ class ManagementDashboardSummary(object):
             'display_name': 'str',
             'description': 'str',
             'compartment_id': 'str',
+            'provider_id': 'str',
+            'provider_name': 'str',
+            'provider_version': 'str',
             'is_oob_dashboard': 'bool',
             'created_by': 'str',
             'time_created': 'datetime',
@@ -119,6 +134,9 @@ class ManagementDashboardSummary(object):
             'display_name': 'displayName',
             'description': 'description',
             'compartment_id': 'compartmentId',
+            'provider_id': 'providerId',
+            'provider_name': 'providerName',
+            'provider_version': 'providerVersion',
             'is_oob_dashboard': 'isOobDashboard',
             'created_by': 'createdBy',
             'time_created': 'timeCreated',
@@ -138,6 +156,9 @@ class ManagementDashboardSummary(object):
         self._display_name = None
         self._description = None
         self._compartment_id = None
+        self._provider_id = None
+        self._provider_name = None
+        self._provider_version = None
         self._is_oob_dashboard = None
         self._created_by = None
         self._time_created = None
@@ -270,6 +291,78 @@ class ManagementDashboardSummary(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def provider_id(self):
+        """
+        **[Required]** Gets the provider_id of this ManagementDashboardSummary.
+        ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
+
+
+        :return: The provider_id of this ManagementDashboardSummary.
+        :rtype: str
+        """
+        return self._provider_id
+
+    @provider_id.setter
+    def provider_id(self, provider_id):
+        """
+        Sets the provider_id of this ManagementDashboardSummary.
+        ID of the service (for example, log-analytics) that owns the dashboard. Each service has a unique ID.
+
+
+        :param provider_id: The provider_id of this ManagementDashboardSummary.
+        :type: str
+        """
+        self._provider_id = provider_id
+
+    @property
+    def provider_name(self):
+        """
+        **[Required]** Gets the provider_name of this ManagementDashboardSummary.
+        Name of the service (for example, Logging Analytics) that owns the dashboard.
+
+
+        :return: The provider_name of this ManagementDashboardSummary.
+        :rtype: str
+        """
+        return self._provider_name
+
+    @provider_name.setter
+    def provider_name(self, provider_name):
+        """
+        Sets the provider_name of this ManagementDashboardSummary.
+        Name of the service (for example, Logging Analytics) that owns the dashboard.
+
+
+        :param provider_name: The provider_name of this ManagementDashboardSummary.
+        :type: str
+        """
+        self._provider_name = provider_name
+
+    @property
+    def provider_version(self):
+        """
+        **[Required]** Gets the provider_version of this ManagementDashboardSummary.
+        Version of the service that owns the dashboard.
+
+
+        :return: The provider_version of this ManagementDashboardSummary.
+        :rtype: str
+        """
+        return self._provider_version
+
+    @provider_version.setter
+    def provider_version(self, provider_version):
+        """
+        Sets the provider_version of this ManagementDashboardSummary.
+        Version of the service that owns the dashboard.
+
+
+        :param provider_version: The provider_version of this ManagementDashboardSummary.
+        :type: str
+        """
+        self._provider_version = provider_version
 
     @property
     def is_oob_dashboard(self):

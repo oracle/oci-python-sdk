@@ -34,6 +34,10 @@ class TemplateSummary(object):
             The value to assign to the description property of this TemplateSummary.
         :type description: str
 
+        :param is_free_tier:
+            The value to assign to the is_free_tier property of this TemplateSummary.
+        :type is_free_tier: bool
+
         :param time_created:
             The value to assign to the time_created property of this TemplateSummary.
         :type time_created: datetime
@@ -48,6 +52,7 @@ class TemplateSummary(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'description': 'str',
+            'is_free_tier': 'bool',
             'time_created': 'datetime',
             'lifecycle_state': 'str'
         }
@@ -57,6 +62,7 @@ class TemplateSummary(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'description': 'description',
+            'is_free_tier': 'isFreeTier',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState'
         }
@@ -65,6 +71,7 @@ class TemplateSummary(object):
         self._compartment_id = None
         self._display_name = None
         self._description = None
+        self._is_free_tier = None
         self._time_created = None
         self._lifecycle_state = None
 
@@ -167,6 +174,30 @@ class TemplateSummary(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def is_free_tier(self):
+        """
+        Gets the is_free_tier of this TemplateSummary.
+        whether the template will work for free tier tenancy.
+
+
+        :return: The is_free_tier of this TemplateSummary.
+        :rtype: bool
+        """
+        return self._is_free_tier
+
+    @is_free_tier.setter
+    def is_free_tier(self, is_free_tier):
+        """
+        Sets the is_free_tier of this TemplateSummary.
+        whether the template will work for free tier tenancy.
+
+
+        :param is_free_tier: The is_free_tier of this TemplateSummary.
+        :type: bool
+        """
+        self._is_free_tier = is_free_tier
 
     @property
     def time_created(self):

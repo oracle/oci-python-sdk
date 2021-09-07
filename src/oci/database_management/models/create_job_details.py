@@ -80,6 +80,10 @@ class CreateJobDetails(object):
             The value to assign to the result_location property of this CreateJobDetails.
         :type result_location: oci.database_management.models.JobExecutionResultLocation
 
+        :param schedule_details:
+            The value to assign to the schedule_details property of this CreateJobDetails.
+        :type schedule_details: oci.database_management.models.JobScheduleDetails
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -91,7 +95,8 @@ class CreateJobDetails(object):
             'schedule_type': 'str',
             'job_type': 'str',
             'timeout': 'str',
-            'result_location': 'JobExecutionResultLocation'
+            'result_location': 'JobExecutionResultLocation',
+            'schedule_details': 'JobScheduleDetails'
         }
 
         self.attribute_map = {
@@ -104,7 +109,8 @@ class CreateJobDetails(object):
             'schedule_type': 'scheduleType',
             'job_type': 'jobType',
             'timeout': 'timeout',
-            'result_location': 'resultLocation'
+            'result_location': 'resultLocation',
+            'schedule_details': 'scheduleDetails'
         }
 
         self._name = None
@@ -117,6 +123,7 @@ class CreateJobDetails(object):
         self._job_type = None
         self._timeout = None
         self._result_location = None
+        self._schedule_details = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -398,6 +405,26 @@ class CreateJobDetails(object):
         :type: oci.database_management.models.JobExecutionResultLocation
         """
         self._result_location = result_location
+
+    @property
+    def schedule_details(self):
+        """
+        Gets the schedule_details of this CreateJobDetails.
+
+        :return: The schedule_details of this CreateJobDetails.
+        :rtype: oci.database_management.models.JobScheduleDetails
+        """
+        return self._schedule_details
+
+    @schedule_details.setter
+    def schedule_details(self, schedule_details):
+        """
+        Sets the schedule_details of this CreateJobDetails.
+
+        :param schedule_details: The schedule_details of this CreateJobDetails.
+        :type: oci.database_management.models.JobScheduleDetails
+        """
+        self._schedule_details = schedule_details
 
     def __repr__(self):
         return formatted_flat_dict(self)
