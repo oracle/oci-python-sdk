@@ -1,0 +1,11 @@
+CancellationDetails
+===================
+
+.. currentmodule:: oci.resource_manager.models
+
+.. autoclass:: CancellationDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

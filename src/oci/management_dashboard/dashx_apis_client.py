@@ -122,7 +122,7 @@ class DashxApisClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
-        :return: A :class:`~oci.response.Response` object with data of type None
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.management_dashboard.models.ManagementDashboard`
         :rtype: :class:`~oci.response.Response`
 
         :example:
@@ -175,14 +175,16 @@ class DashxApisClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_management_dashboards_compartment_details)
+                body=change_management_dashboards_compartment_details,
+                response_type="ManagementDashboard")
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_management_dashboards_compartment_details)
+                body=change_management_dashboards_compartment_details,
+                response_type="ManagementDashboard")
 
     def change_management_saved_searches_compartment(self, management_saved_search_id, change_management_saved_searches_compartment_details, **kwargs):
         """
@@ -220,7 +222,7 @@ class DashxApisClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
-        :return: A :class:`~oci.response.Response` object with data of type None
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.management_dashboard.models.ManagementSavedSearch`
         :rtype: :class:`~oci.response.Response`
 
         :example:
@@ -273,22 +275,22 @@ class DashxApisClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_management_saved_searches_compartment_details)
+                body=change_management_saved_searches_compartment_details,
+                response_type="ManagementSavedSearch")
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_management_saved_searches_compartment_details)
+                body=change_management_saved_searches_compartment_details,
+                response_type="ManagementSavedSearch")
 
     def create_management_dashboard(self, create_management_dashboard_details, **kwargs):
         """
-        Creates a new dashboard.  Limit for number of saved searches in a dashboard is 20. To get an example of what needs to be passed to CREATE, one can use GET API.
-        oci management-dashboard dashboard get --management-dashboard-id  \"ocid1.managementdashboard.oc1..dashboardId1\" --query data > Create.json
-
-        Modify the Create.json by removing \"id\" attribute and other desired changes, then do
-        oci management-dashboard dashboard create  --from-json file://Create.json
+        Creates a new dashboard.  Limit for number of saved searches in a dashboard is 20. Here's an example of how you can use CLI to create a dashboard. For information on the details that must be passed to CREATE, you can use the GET API to obtain the Create.json file:
+        oci management-dashboard dashboard get --management-dashboard-id  \"ocid1.managementdashboard.oc1..dashboardId1\" --query data > Create.json.
+        You can then modify the Create.json file by removing the\"id\" attribute and making other required changes, and use the oci management-dashboard dashboard create command.
 
 
         :param oci.management_dashboard.models.CreateManagementDashboardDetails create_management_dashboard_details: (required)
@@ -364,11 +366,10 @@ class DashxApisClient(object):
 
     def create_management_saved_search(self, create_management_saved_search_details, **kwargs):
         """
-        Creates a new saved search. To get an example of what needs to be passed to CREATE, one can use GET API.
-        oci management-dashboard saved-search get --management-saved-search-id ocid1.managementsavedsearch.oc1..savedsearchId1 --query data > Create.json
+        Creates a new saved search. Here's an example of how you can use CLI to create a saved search. For information on the details that must be passed to CREATE, you can use the GET API to obtain the Create.json file:
 
-        Modify the Create.json by removing \"id\" attribute and other desired changes, then do
-        oci management-dashboard saved-search create  --from-json file://Create.json
+        oci management-dashboard saved-search get --management-saved-search-id ocid1.managementsavedsearch.oc1..savedsearchId1 --query data > Create.json.
+        You can then modify the Create.json file by removing the \"id\" attribute and making other required changes, and use the oci management-dashboard saved-search create command.
 
 
         :param oci.management_dashboard.models.CreateManagementSavedSearchDetails create_management_saved_search_details: (required)
@@ -608,11 +609,11 @@ class DashxApisClient(object):
 
     def export_dashboard(self, export_dashboard_id, **kwargs):
         """
-        Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard. An example using OCI CLI is $oci management-dashboard dashboard export --query data --export-dashboard-id \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\"  > dashboards.json $oci management-dashboard dashboard import --from-json file://dashboards.json
+        Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard. Here's an example of how you can use CLI to export a dashboard. $oci management-dashboard dashboard export --query data --export-dashboard-id \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\"  > dashboards.json
 
 
         :param str export_dashboard_id: (required)
-            List of dashboardIds in plain text. The syntaxt is '{\"dashboardIds\":[\"dashboardId1\", \"dashboardId2\", ...]}'. Escaping is needed when using in OCI CLI. For example, \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\" .
+            List of dashboardIds in plain text. The syntax is '{\"dashboardIds\":[\"dashboardId1\", \"dashboardId2\", ...]}'. Escaping is needed when using in OCI CLI. For example, \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\" .
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -866,9 +867,12 @@ class DashxApisClient(object):
 
     def import_dashboard(self, management_dashboard_import_details, **kwargs):
         """
-        Imports an array of dashboards and their saved searches. Import is designed to work with exportDashboard. An example using OCI CLI is
-            $oci management-dashboard dashboard export --query data --export-dashboard-id \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\"  > dashboards.json
-            $oci management-dashboard dashboard import --from-json file://dashboards.json
+        Imports an array of dashboards and their saved searches. Here's an example of how you can use CLI to import a dashboard. For information on the details that must be passed to IMPORT, you can use the EXPORT API to obtain the Import.json file:
+        oci management-dashboard dashboard export --query data --export-dashboard-id \"{\\\"dashboardIds\\\":[\\\"ocid1.managementdashboard.oc1..dashboardId1\\\"]}\"  > Import.json.
+        Note that import API updates the resource if it already exist, and creates a new resource if it does not exist. To import to a different compartment, edit and change the compartmentId to the desired compartment OCID.
+        Here is an example of how you can use CLI to do import:
+
+        oci management-dashboard dashboard import --from-json file://Import.json
 
 
         :param oci.management_dashboard.models.ManagementDashboardImportDetails management_dashboard_import_details: (required)

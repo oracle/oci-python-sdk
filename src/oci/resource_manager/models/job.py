@@ -118,6 +118,10 @@ class Job(object):
             The value to assign to the failure_details property of this Job.
         :type failure_details: oci.resource_manager.models.FailureDetails
 
+        :param cancellation_details:
+            The value to assign to the cancellation_details property of this Job.
+        :type cancellation_details: oci.resource_manager.models.CancellationDetails
+
         :param working_directory:
             The value to assign to the working_directory property of this Job.
         :type working_directory: str
@@ -152,6 +156,7 @@ class Job(object):
             'time_finished': 'datetime',
             'lifecycle_state': 'str',
             'failure_details': 'FailureDetails',
+            'cancellation_details': 'CancellationDetails',
             'working_directory': 'str',
             'variables': 'dict(str, str)',
             'config_source': 'ConfigSourceRecord',
@@ -172,6 +177,7 @@ class Job(object):
             'time_finished': 'timeFinished',
             'lifecycle_state': 'lifecycleState',
             'failure_details': 'failureDetails',
+            'cancellation_details': 'cancellationDetails',
             'working_directory': 'workingDirectory',
             'variables': 'variables',
             'config_source': 'configSource',
@@ -191,6 +197,7 @@ class Job(object):
         self._time_finished = None
         self._lifecycle_state = None
         self._failure_details = None
+        self._cancellation_details = None
         self._working_directory = None
         self._variables = None
         self._config_source = None
@@ -469,7 +476,7 @@ class Job(object):
         For more information about job lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -488,7 +495,7 @@ class Job(object):
         For more information about job lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#JobStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates
 
 
         :param lifecycle_state: The lifecycle_state of this Job.
@@ -518,6 +525,26 @@ class Job(object):
         :type: oci.resource_manager.models.FailureDetails
         """
         self._failure_details = failure_details
+
+    @property
+    def cancellation_details(self):
+        """
+        Gets the cancellation_details of this Job.
+
+        :return: The cancellation_details of this Job.
+        :rtype: oci.resource_manager.models.CancellationDetails
+        """
+        return self._cancellation_details
+
+    @cancellation_details.setter
+    def cancellation_details(self, cancellation_details):
+        """
+        Sets the cancellation_details of this Job.
+
+        :param cancellation_details: The cancellation_details of this Job.
+        :type: oci.resource_manager.models.CancellationDetails
+        """
+        self._cancellation_details = cancellation_details
 
     @property
     def working_directory(self):
@@ -553,7 +580,7 @@ class Job(object):
         Gets the variables of this Job.
         Terraform variables associated with this resource.
         Maximum number of variables supported is 250.
-        The maximum size of each variable, including both name and value, is 4096 bytes.
+        The maximum size of each variable, including both name and value, is 8192 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 
 
@@ -568,7 +595,7 @@ class Job(object):
         Sets the variables of this Job.
         Terraform variables associated with this resource.
         Maximum number of variables supported is 250.
-        The maximum size of each variable, including both name and value, is 4096 bytes.
+        The maximum size of each variable, including both name and value, is 8192 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 
 

@@ -184,7 +184,7 @@ class CreateStackDetails(object):
         Gets the variables of this CreateStackDetails.
         Terraform variables associated with this resource.
         Maximum number of variables supported is 250.
-        The maximum size of each variable, including both name and value, is 4096 bytes.
+        The maximum size of each variable, including both name and value, is 8192 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 
 
@@ -199,7 +199,7 @@ class CreateStackDetails(object):
         Sets the variables of this CreateStackDetails.
         Terraform variables associated with this resource.
         Maximum number of variables supported is 250.
-        The maximum size of each variable, including both name and value, is 4096 bytes.
+        The maximum size of each variable, including both name and value, is 8192 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 
 

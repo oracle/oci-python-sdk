@@ -50,13 +50,21 @@ class ManagementSavedSearchSummary(object):
             The value to assign to the is_oob_saved_search property of this ManagementSavedSearchSummary.
         :type is_oob_saved_search: bool
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this ManagementSavedSearchSummary.
+        :type compartment_id: str
+
         :param provider_id:
             The value to assign to the provider_id property of this ManagementSavedSearchSummary.
         :type provider_id: str
 
-        :param compartment_id:
-            The value to assign to the compartment_id property of this ManagementSavedSearchSummary.
-        :type compartment_id: str
+        :param provider_version:
+            The value to assign to the provider_version property of this ManagementSavedSearchSummary.
+        :type provider_version: str
+
+        :param provider_name:
+            The value to assign to the provider_name property of this ManagementSavedSearchSummary.
+        :type provider_name: str
 
         :param description:
             The value to assign to the description property of this ManagementSavedSearchSummary.
@@ -135,8 +143,10 @@ class ManagementSavedSearchSummary(object):
             'id': 'str',
             'display_name': 'str',
             'is_oob_saved_search': 'bool',
-            'provider_id': 'str',
             'compartment_id': 'str',
+            'provider_id': 'str',
+            'provider_version': 'str',
+            'provider_name': 'str',
             'description': 'str',
             'nls': 'object',
             'type': 'str',
@@ -160,8 +170,10 @@ class ManagementSavedSearchSummary(object):
             'id': 'id',
             'display_name': 'displayName',
             'is_oob_saved_search': 'isOobSavedSearch',
-            'provider_id': 'providerId',
             'compartment_id': 'compartmentId',
+            'provider_id': 'providerId',
+            'provider_version': 'providerVersion',
+            'provider_name': 'providerName',
             'description': 'description',
             'nls': 'nls',
             'type': 'type',
@@ -184,8 +196,10 @@ class ManagementSavedSearchSummary(object):
         self._id = None
         self._display_name = None
         self._is_oob_saved_search = None
-        self._provider_id = None
         self._compartment_id = None
+        self._provider_id = None
+        self._provider_version = None
+        self._provider_name = None
         self._description = None
         self._nls = None
         self._type = None
@@ -277,6 +291,30 @@ class ManagementSavedSearchSummary(object):
         self._is_oob_saved_search = is_oob_saved_search
 
     @property
+    def compartment_id(self):
+        """
+        **[Required]** Gets the compartment_id of this ManagementSavedSearchSummary.
+        OCID of the compartment in which the saved search resides.
+
+
+        :return: The compartment_id of this ManagementSavedSearchSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this ManagementSavedSearchSummary.
+        OCID of the compartment in which the saved search resides.
+
+
+        :param compartment_id: The compartment_id of this ManagementSavedSearchSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
+
+    @property
     def provider_id(self):
         """
         **[Required]** Gets the provider_id of this ManagementSavedSearchSummary.
@@ -301,28 +339,52 @@ class ManagementSavedSearchSummary(object):
         self._provider_id = provider_id
 
     @property
-    def compartment_id(self):
+    def provider_version(self):
         """
-        **[Required]** Gets the compartment_id of this ManagementSavedSearchSummary.
-        OCID of the compartment in which the saved search resides.
+        **[Required]** Gets the provider_version of this ManagementSavedSearchSummary.
+        Version of the service that owns this saved search.
 
 
-        :return: The compartment_id of this ManagementSavedSearchSummary.
+        :return: The provider_version of this ManagementSavedSearchSummary.
         :rtype: str
         """
-        return self._compartment_id
+        return self._provider_version
 
-    @compartment_id.setter
-    def compartment_id(self, compartment_id):
+    @provider_version.setter
+    def provider_version(self, provider_version):
         """
-        Sets the compartment_id of this ManagementSavedSearchSummary.
-        OCID of the compartment in which the saved search resides.
+        Sets the provider_version of this ManagementSavedSearchSummary.
+        Version of the service that owns this saved search.
 
 
-        :param compartment_id: The compartment_id of this ManagementSavedSearchSummary.
+        :param provider_version: The provider_version of this ManagementSavedSearchSummary.
         :type: str
         """
-        self._compartment_id = compartment_id
+        self._provider_version = provider_version
+
+    @property
+    def provider_name(self):
+        """
+        **[Required]** Gets the provider_name of this ManagementSavedSearchSummary.
+        Name of the service (for example, Logging Analytics) that owns the saved search.
+
+
+        :return: The provider_name of this ManagementSavedSearchSummary.
+        :rtype: str
+        """
+        return self._provider_name
+
+    @provider_name.setter
+    def provider_name(self, provider_name):
+        """
+        Sets the provider_name of this ManagementSavedSearchSummary.
+        Name of the service (for example, Logging Analytics) that owns the saved search.
+
+
+        :param provider_name: The provider_name of this ManagementSavedSearchSummary.
+        :type: str
+        """
+        self._provider_name = provider_name
 
     @property
     def description(self):

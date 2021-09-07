@@ -294,7 +294,7 @@ class Stack(object):
         For more information about stack lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates
 
         Allowed values for this property are: "CREATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -313,7 +313,7 @@ class Stack(object):
         For more information about stack lifecycle states in Resource Manager, see
         `Key Concepts`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#StackStates
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__StackStates
 
 
         :param lifecycle_state: The lifecycle_state of this Stack.
@@ -350,7 +350,7 @@ class Stack(object):
         Gets the variables of this Stack.
         Terraform variables associated with this resource.
         Maximum number of variables supported is 250.
-        The maximum size of each variable, including both name and value, is 4096 bytes.
+        The maximum size of each variable, including both name and value, is 8192 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 
 
@@ -365,7 +365,7 @@ class Stack(object):
         Sets the variables of this Stack.
         Terraform variables associated with this resource.
         Maximum number of variables supported is 250.
-        The maximum size of each variable, including both name and value, is 4096 bytes.
+        The maximum size of each variable, including both name and value, is 8192 bytes.
         Example: `{\"CompartmentId\": \"compartment-id-value\"}`
 
 

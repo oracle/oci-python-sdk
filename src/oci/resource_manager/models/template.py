@@ -46,6 +46,10 @@ class Template(object):
             The value to assign to the long_description property of this Template.
         :type long_description: str
 
+        :param is_free_tier:
+            The value to assign to the is_free_tier property of this Template.
+        :type is_free_tier: bool
+
         :param time_created:
             The value to assign to the time_created property of this Template.
         :type time_created: datetime
@@ -76,6 +80,7 @@ class Template(object):
             'display_name': 'str',
             'description': 'str',
             'long_description': 'str',
+            'is_free_tier': 'bool',
             'time_created': 'datetime',
             'template_config_source': 'TemplateConfigSource',
             'lifecycle_state': 'str',
@@ -90,6 +95,7 @@ class Template(object):
             'display_name': 'displayName',
             'description': 'description',
             'long_description': 'longDescription',
+            'is_free_tier': 'isFreeTier',
             'time_created': 'timeCreated',
             'template_config_source': 'templateConfigSource',
             'lifecycle_state': 'lifecycleState',
@@ -103,6 +109,7 @@ class Template(object):
         self._display_name = None
         self._description = None
         self._long_description = None
+        self._is_free_tier = None
         self._time_created = None
         self._template_config_source = None
         self._lifecycle_state = None
@@ -170,6 +177,7 @@ class Template(object):
         """
         Gets the category_id of this Template.
         Unique identifier for the category where the template is located.
+        Possible values are `0` (Quick Starts), `1` (Service), `2` (Architecture), and `3` (Private).
 
 
         :return: The category_id of this Template.
@@ -182,6 +190,7 @@ class Template(object):
         """
         Sets the category_id of this Template.
         Unique identifier for the category where the template is located.
+        Possible values are `0` (Quick Starts), `1` (Service), `2` (Architecture), and `3` (Private).
 
 
         :param category_id: The category_id of this Template.
@@ -260,6 +269,30 @@ class Template(object):
         :type: str
         """
         self._long_description = long_description
+
+    @property
+    def is_free_tier(self):
+        """
+        Gets the is_free_tier of this Template.
+        whether the template will work for free tier tenancy.
+
+
+        :return: The is_free_tier of this Template.
+        :rtype: bool
+        """
+        return self._is_free_tier
+
+    @is_free_tier.setter
+    def is_free_tier(self, is_free_tier):
+        """
+        Sets the is_free_tier of this Template.
+        whether the template will work for free tier tenancy.
+
+
+        :param is_free_tier: The is_free_tier of this Template.
+        :type: bool
+        """
+        self._is_free_tier = is_free_tier
 
     @property
     def time_created(self):

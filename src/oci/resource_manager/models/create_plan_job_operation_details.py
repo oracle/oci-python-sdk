@@ -23,17 +23,44 @@ class CreatePlanJobOperationDetails(CreateJobOperationDetails):
             The value to assign to the operation property of this CreatePlanJobOperationDetails.
         :type operation: str
 
+        :param terraform_advanced_options:
+            The value to assign to the terraform_advanced_options property of this CreatePlanJobOperationDetails.
+        :type terraform_advanced_options: oci.resource_manager.models.TerraformAdvancedOptions
+
         """
         self.swagger_types = {
-            'operation': 'str'
+            'operation': 'str',
+            'terraform_advanced_options': 'TerraformAdvancedOptions'
         }
 
         self.attribute_map = {
-            'operation': 'operation'
+            'operation': 'operation',
+            'terraform_advanced_options': 'terraformAdvancedOptions'
         }
 
         self._operation = None
+        self._terraform_advanced_options = None
         self._operation = 'PLAN'
+
+    @property
+    def terraform_advanced_options(self):
+        """
+        Gets the terraform_advanced_options of this CreatePlanJobOperationDetails.
+
+        :return: The terraform_advanced_options of this CreatePlanJobOperationDetails.
+        :rtype: oci.resource_manager.models.TerraformAdvancedOptions
+        """
+        return self._terraform_advanced_options
+
+    @terraform_advanced_options.setter
+    def terraform_advanced_options(self, terraform_advanced_options):
+        """
+        Sets the terraform_advanced_options of this CreatePlanJobOperationDetails.
+
+        :param terraform_advanced_options: The terraform_advanced_options of this CreatePlanJobOperationDetails.
+        :type: oci.resource_manager.models.TerraformAdvancedOptions
+        """
+        self._terraform_advanced_options = terraform_advanced_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

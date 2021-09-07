@@ -61,6 +61,10 @@ class CreateSqlJobDetails(CreateJobDetails):
             The value to assign to the result_location property of this CreateSqlJobDetails.
         :type result_location: oci.database_management.models.JobExecutionResultLocation
 
+        :param schedule_details:
+            The value to assign to the schedule_details property of this CreateSqlJobDetails.
+        :type schedule_details: oci.database_management.models.JobScheduleDetails
+
         :param sql_text:
             The value to assign to the sql_text property of this CreateSqlJobDetails.
         :type sql_text: str
@@ -81,6 +85,10 @@ class CreateSqlJobDetails(CreateJobDetails):
             The value to assign to the password property of this CreateSqlJobDetails.
         :type password: str
 
+        :param secret_id:
+            The value to assign to the secret_id property of this CreateSqlJobDetails.
+        :type secret_id: str
+
         :param role:
             The value to assign to the role property of this CreateSqlJobDetails.
         :type role: str
@@ -97,11 +105,13 @@ class CreateSqlJobDetails(CreateJobDetails):
             'job_type': 'str',
             'timeout': 'str',
             'result_location': 'JobExecutionResultLocation',
+            'schedule_details': 'JobScheduleDetails',
             'sql_text': 'str',
             'sql_type': 'str',
             'operation_type': 'str',
             'user_name': 'str',
             'password': 'str',
+            'secret_id': 'str',
             'role': 'str'
         }
 
@@ -116,11 +126,13 @@ class CreateSqlJobDetails(CreateJobDetails):
             'job_type': 'jobType',
             'timeout': 'timeout',
             'result_location': 'resultLocation',
+            'schedule_details': 'scheduleDetails',
             'sql_text': 'sqlText',
             'sql_type': 'sqlType',
             'operation_type': 'operationType',
             'user_name': 'userName',
             'password': 'password',
+            'secret_id': 'secretId',
             'role': 'role'
         }
 
@@ -134,11 +146,13 @@ class CreateSqlJobDetails(CreateJobDetails):
         self._job_type = None
         self._timeout = None
         self._result_location = None
+        self._schedule_details = None
         self._sql_text = None
         self._sql_type = None
         self._operation_type = None
         self._user_name = None
         self._password = None
+        self._secret_id = None
         self._role = None
         self._job_type = 'SQL'
 
@@ -261,6 +275,34 @@ class CreateSqlJobDetails(CreateJobDetails):
         :type: str
         """
         self._password = password
+
+    @property
+    def secret_id(self):
+        """
+        Gets the secret_id of this CreateSqlJobDetails.
+        The `OCID`__ of the secret containing the user password.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The secret_id of this CreateSqlJobDetails.
+        :rtype: str
+        """
+        return self._secret_id
+
+    @secret_id.setter
+    def secret_id(self, secret_id):
+        """
+        Sets the secret_id of this CreateSqlJobDetails.
+        The `OCID`__ of the secret containing the user password.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param secret_id: The secret_id of this CreateSqlJobDetails.
+        :type: str
+        """
+        self._secret_id = secret_id
 
     @property
     def role(self):

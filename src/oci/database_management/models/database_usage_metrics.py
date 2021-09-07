@@ -21,6 +21,14 @@ class DatabaseUsageMetrics(object):
     #: This constant has a value of "EXTERNAL_RAC"
     DATABASE_TYPE_EXTERNAL_RAC = "EXTERNAL_RAC"
 
+    #: A constant which can be used with the database_type property of a DatabaseUsageMetrics.
+    #: This constant has a value of "CLOUD_SIDB"
+    DATABASE_TYPE_CLOUD_SIDB = "CLOUD_SIDB"
+
+    #: A constant which can be used with the database_type property of a DatabaseUsageMetrics.
+    #: This constant has a value of "CLOUD_RAC"
+    DATABASE_TYPE_CLOUD_RAC = "CLOUD_RAC"
+
     #: A constant which can be used with the database_sub_type property of a DatabaseUsageMetrics.
     #: This constant has a value of "CDB"
     DATABASE_SUB_TYPE_CDB = "CDB"
@@ -32,6 +40,26 @@ class DatabaseUsageMetrics(object):
     #: A constant which can be used with the database_sub_type property of a DatabaseUsageMetrics.
     #: This constant has a value of "NON_CDB"
     DATABASE_SUB_TYPE_NON_CDB = "NON_CDB"
+
+    #: A constant which can be used with the deployment_type property of a DatabaseUsageMetrics.
+    #: This constant has a value of "ONPREMISE"
+    DEPLOYMENT_TYPE_ONPREMISE = "ONPREMISE"
+
+    #: A constant which can be used with the deployment_type property of a DatabaseUsageMetrics.
+    #: This constant has a value of "BM"
+    DEPLOYMENT_TYPE_BM = "BM"
+
+    #: A constant which can be used with the deployment_type property of a DatabaseUsageMetrics.
+    #: This constant has a value of "VM"
+    DEPLOYMENT_TYPE_VM = "VM"
+
+    #: A constant which can be used with the deployment_type property of a DatabaseUsageMetrics.
+    #: This constant has a value of "EXADATA"
+    DEPLOYMENT_TYPE_EXADATA = "EXADATA"
+
+    #: A constant which can be used with the deployment_type property of a DatabaseUsageMetrics.
+    #: This constant has a value of "EXADATA_CC"
+    DEPLOYMENT_TYPE_EXADATA_CC = "EXADATA_CC"
 
     def __init__(self, **kwargs):
         """
@@ -48,7 +76,7 @@ class DatabaseUsageMetrics(object):
 
         :param database_type:
             The value to assign to the database_type property of this DatabaseUsageMetrics.
-            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_type: str
 
@@ -57,6 +85,16 @@ class DatabaseUsageMetrics(object):
             Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_sub_type: str
+
+        :param deployment_type:
+            The value to assign to the deployment_type property of this DatabaseUsageMetrics.
+            Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type deployment_type: str
+
+        :param database_version:
+            The value to assign to the database_version property of this DatabaseUsageMetrics.
+        :type database_version: str
 
         :param database_name:
             The value to assign to the database_name property of this DatabaseUsageMetrics.
@@ -76,6 +114,8 @@ class DatabaseUsageMetrics(object):
             'compartment_id': 'str',
             'database_type': 'str',
             'database_sub_type': 'str',
+            'deployment_type': 'str',
+            'database_version': 'str',
             'database_name': 'str',
             'database_container_id': 'str',
             'metrics': 'list[FleetMetricDefinition]'
@@ -86,6 +126,8 @@ class DatabaseUsageMetrics(object):
             'compartment_id': 'compartmentId',
             'database_type': 'databaseType',
             'database_sub_type': 'databaseSubType',
+            'deployment_type': 'deploymentType',
+            'database_version': 'databaseVersion',
             'database_name': 'databaseName',
             'database_container_id': 'databaseContainerId',
             'metrics': 'metrics'
@@ -95,6 +137,8 @@ class DatabaseUsageMetrics(object):
         self._compartment_id = None
         self._database_type = None
         self._database_sub_type = None
+        self._deployment_type = None
+        self._database_version = None
         self._database_name = None
         self._database_container_id = None
         self._metrics = None
@@ -161,7 +205,7 @@ class DatabaseUsageMetrics(object):
         Gets the database_type of this DatabaseUsageMetrics.
         The type of Oracle Database installation.
 
-        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -180,7 +224,7 @@ class DatabaseUsageMetrics(object):
         :param database_type: The database_type of this DatabaseUsageMetrics.
         :type: str
         """
-        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC"]
+        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC"]
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
             database_type = 'UNKNOWN_ENUM_VALUE'
         self._database_type = database_type
@@ -214,6 +258,60 @@ class DatabaseUsageMetrics(object):
         if not value_allowed_none_or_none_sentinel(database_sub_type, allowed_values):
             database_sub_type = 'UNKNOWN_ENUM_VALUE'
         self._database_sub_type = database_sub_type
+
+    @property
+    def deployment_type(self):
+        """
+        Gets the deployment_type of this DatabaseUsageMetrics.
+        The infrastructure used to deploy the Oracle Database.
+
+        Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The deployment_type of this DatabaseUsageMetrics.
+        :rtype: str
+        """
+        return self._deployment_type
+
+    @deployment_type.setter
+    def deployment_type(self, deployment_type):
+        """
+        Sets the deployment_type of this DatabaseUsageMetrics.
+        The infrastructure used to deploy the Oracle Database.
+
+
+        :param deployment_type: The deployment_type of this DatabaseUsageMetrics.
+        :type: str
+        """
+        allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC"]
+        if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
+            deployment_type = 'UNKNOWN_ENUM_VALUE'
+        self._deployment_type = deployment_type
+
+    @property
+    def database_version(self):
+        """
+        Gets the database_version of this DatabaseUsageMetrics.
+        The Oracle Database version.
+
+
+        :return: The database_version of this DatabaseUsageMetrics.
+        :rtype: str
+        """
+        return self._database_version
+
+    @database_version.setter
+    def database_version(self, database_version):
+        """
+        Sets the database_version of this DatabaseUsageMetrics.
+        The Oracle Database version.
+
+
+        :param database_version: The database_version of this DatabaseUsageMetrics.
+        :type: str
+        """
+        self._database_version = database_version
 
     @property
     def database_name(self):

@@ -7,6 +7,7 @@ from __future__ import absolute_import
 from .apply_job_operation_details import ApplyJobOperationDetails
 from .apply_job_operation_details_summary import ApplyJobOperationDetailsSummary
 from .apply_job_plan_resolution import ApplyJobPlanResolution
+from .cancellation_details import CancellationDetails
 from .change_configuration_source_provider_compartment_details import ChangeConfigurationSourceProviderCompartmentDetails
 from .change_stack_compartment_details import ChangeStackCompartmentDetails
 from .change_template_compartment_details import ChangeTemplateCompartmentDetails
@@ -69,6 +70,7 @@ from .template_config_source import TemplateConfigSource
 from .template_summary import TemplateSummary
 from .template_summary_collection import TemplateSummaryCollection
 from .template_zip_upload_config_source import TemplateZipUploadConfigSource
+from .terraform_advanced_options import TerraformAdvancedOptions
 from .terraform_version_collection import TerraformVersionCollection
 from .terraform_version_summary import TerraformVersionSummary
 from .update_config_source_details import UpdateConfigSourceDetails
@@ -96,6 +98,7 @@ resource_manager_type_mapping = {
     "ApplyJobOperationDetails": ApplyJobOperationDetails,
     "ApplyJobOperationDetailsSummary": ApplyJobOperationDetailsSummary,
     "ApplyJobPlanResolution": ApplyJobPlanResolution,
+    "CancellationDetails": CancellationDetails,
     "ChangeConfigurationSourceProviderCompartmentDetails": ChangeConfigurationSourceProviderCompartmentDetails,
     "ChangeStackCompartmentDetails": ChangeStackCompartmentDetails,
     "ChangeTemplateCompartmentDetails": ChangeTemplateCompartmentDetails,
@@ -158,6 +161,7 @@ resource_manager_type_mapping = {
     "TemplateSummary": TemplateSummary,
     "TemplateSummaryCollection": TemplateSummaryCollection,
     "TemplateZipUploadConfigSource": TemplateZipUploadConfigSource,
+    "TerraformAdvancedOptions": TerraformAdvancedOptions,
     "TerraformVersionCollection": TerraformVersionCollection,
     "TerraformVersionSummary": TerraformVersionSummary,
     "UpdateConfigSourceDetails": UpdateConfigSourceDetails,

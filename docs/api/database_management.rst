@@ -21,6 +21,8 @@ Database Management
     oci.database_management.models.ActivityTimeSeriesMetrics
     oci.database_management.models.AddManagedDatabaseToManagedDatabaseGroupDetails
     oci.database_management.models.AllowedParameterValue
+    oci.database_management.models.AssociatedDatabaseCollection
+    oci.database_management.models.AssociatedDatabaseSummary
     oci.database_management.models.AwrDbCollection
     oci.database_management.models.AwrDbCpuUsageCollection
     oci.database_management.models.AwrDbCpuUsageSummary
@@ -48,10 +50,12 @@ Database Management
     oci.database_management.models.AwrQueryResult
     oci.database_management.models.ChangeDatabaseParameterDetails
     oci.database_management.models.ChangeDatabaseParametersDetails
+    oci.database_management.models.ChangeDbManagementPrivateEndpointCompartmentDetails
     oci.database_management.models.ChangeJobCompartmentDetails
     oci.database_management.models.ChangeManagedDatabaseGroupCompartmentDetails
     oci.database_management.models.ChildDatabase
     oci.database_management.models.ClusterCacheMetric
+    oci.database_management.models.CreateDbManagementPrivateEndpointDetails
     oci.database_management.models.CreateJobDetails
     oci.database_management.models.CreateManagedDatabaseGroupDetails
     oci.database_management.models.CreateSqlJobDetails
@@ -68,6 +72,9 @@ Database Management
     oci.database_management.models.DatabaseTimeAggregateMetrics
     oci.database_management.models.DatabaseUsageMetrics
     oci.database_management.models.Datafile
+    oci.database_management.models.DbManagementPrivateEndpoint
+    oci.database_management.models.DbManagementPrivateEndpointCollection
+    oci.database_management.models.DbManagementPrivateEndpointSummary
     oci.database_management.models.FleetMetricDefinition
     oci.database_management.models.FleetMetricSummaryDefinition
     oci.database_management.models.FleetStatusByCategory
@@ -81,9 +88,12 @@ Database Management
     oci.database_management.models.JobExecutionResultDetails
     oci.database_management.models.JobExecutionResultLocation
     oci.database_management.models.JobExecutionSummary
+    oci.database_management.models.JobExecutionsStatusSummary
+    oci.database_management.models.JobExecutionsStatusSummaryCollection
     oci.database_management.models.JobRun
     oci.database_management.models.JobRunCollection
     oci.database_management.models.JobRunSummary
+    oci.database_management.models.JobScheduleDetails
     oci.database_management.models.JobSummary
     oci.database_management.models.ManagedDatabase
     oci.database_management.models.ManagedDatabaseCollection
@@ -97,6 +107,7 @@ Database Management
     oci.database_management.models.ObjectStorageJobExecutionResultDetails
     oci.database_management.models.ObjectStorageJobExecutionResultLocation
     oci.database_management.models.ParentGroup
+    oci.database_management.models.PdbMetrics
     oci.database_management.models.PdbStatusDetails
     oci.database_management.models.RemoveManagedDatabaseFromManagedDatabaseGroupDetails
     oci.database_management.models.ResetDatabaseParametersDetails
@@ -107,4 +118,15 @@ Database Management
     oci.database_management.models.TimeSeriesMetricDataPoint
     oci.database_management.models.TimeSeriesMetricDefinition
     oci.database_management.models.UpdateDatabaseParametersResult
+    oci.database_management.models.UpdateDbManagementPrivateEndpointDetails
+    oci.database_management.models.UpdateJobDetails
     oci.database_management.models.UpdateManagedDatabaseGroupDetails
+    oci.database_management.models.UpdateSqlJobDetails
+    oci.database_management.models.WorkRequest
+    oci.database_management.models.WorkRequestCollection
+    oci.database_management.models.WorkRequestError
+    oci.database_management.models.WorkRequestErrorCollection
+    oci.database_management.models.WorkRequestLogEntry
+    oci.database_management.models.WorkRequestLogEntryCollection
+    oci.database_management.models.WorkRequestResource
+    oci.database_management.models.WorkRequestSummary

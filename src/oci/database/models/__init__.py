@@ -49,6 +49,7 @@ from .change_compartment_details import ChangeCompartmentDetails
 from .change_exadata_infrastructure_compartment_details import ChangeExadataInfrastructureCompartmentDetails
 from .change_key_store_compartment_details import ChangeKeyStoreCompartmentDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
+from .cloud_database_management_config import CloudDatabaseManagementConfig
 from .cloud_exadata_infrastructure import CloudExadataInfrastructure
 from .cloud_exadata_infrastructure_summary import CloudExadataInfrastructureSummary
 from .cloud_vm_cluster import CloudVmCluster
@@ -116,6 +117,7 @@ from .database_connection_credentials import DatabaseConnectionCredentials
 from .database_connection_credentials_by_details import DatabaseConnectionCredentialsByDetails
 from .database_connection_string import DatabaseConnectionString
 from .database_connection_strings import DatabaseConnectionStrings
+from .database_credential_details import DatabaseCredentialDetails
 from .database_management_config import DatabaseManagementConfig
 from .database_software_image import DatabaseSoftwareImage
 from .database_software_image_summary import DatabaseSoftwareImageSummary
@@ -141,6 +143,7 @@ from .db_system_shape_summary import DbSystemShapeSummary
 from .db_system_summary import DbSystemSummary
 from .db_version_summary import DbVersionSummary
 from .deregister_autonomous_database_data_safe_details import DeregisterAutonomousDatabaseDataSafeDetails
+from .enable_database_management_details import EnableDatabaseManagementDetails
 from .enable_external_container_database_database_management_details import EnableExternalContainerDatabaseDatabaseManagementDetails
 from .enable_external_database_management_details_base import EnableExternalDatabaseManagementDetailsBase
 from .enable_external_database_operations_insights_details_base import EnableExternalDatabaseOperationsInsightsDetailsBase
@@ -190,6 +193,7 @@ from .maintenance_run import MaintenanceRun
 from .maintenance_run_summary import MaintenanceRunSummary
 from .maintenance_window import MaintenanceWindow
 from .migrate_vault_key_details import MigrateVaultKeyDetails
+from .modify_database_management_details import ModifyDatabaseManagementDetails
 from .month import Month
 from .mount_type_details import MountTypeDetails
 from .node_details import NodeDetails
@@ -303,6 +307,7 @@ database_type_mapping = {
     "ChangeExadataInfrastructureCompartmentDetails": ChangeExadataInfrastructureCompartmentDetails,
     "ChangeKeyStoreCompartmentDetails": ChangeKeyStoreCompartmentDetails,
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
+    "CloudDatabaseManagementConfig": CloudDatabaseManagementConfig,
     "CloudExadataInfrastructure": CloudExadataInfrastructure,
     "CloudExadataInfrastructureSummary": CloudExadataInfrastructureSummary,
     "CloudVmCluster": CloudVmCluster,
@@ -370,6 +375,7 @@ database_type_mapping = {
     "DatabaseConnectionCredentialsByDetails": DatabaseConnectionCredentialsByDetails,
     "DatabaseConnectionString": DatabaseConnectionString,
     "DatabaseConnectionStrings": DatabaseConnectionStrings,
+    "DatabaseCredentialDetails": DatabaseCredentialDetails,
     "DatabaseManagementConfig": DatabaseManagementConfig,
     "DatabaseSoftwareImage": DatabaseSoftwareImage,
     "DatabaseSoftwareImageSummary": DatabaseSoftwareImageSummary,
@@ -395,6 +401,7 @@ database_type_mapping = {
     "DbSystemSummary": DbSystemSummary,
     "DbVersionSummary": DbVersionSummary,
     "DeregisterAutonomousDatabaseDataSafeDetails": DeregisterAutonomousDatabaseDataSafeDetails,
+    "EnableDatabaseManagementDetails": EnableDatabaseManagementDetails,
     "EnableExternalContainerDatabaseDatabaseManagementDetails": EnableExternalContainerDatabaseDatabaseManagementDetails,
     "EnableExternalDatabaseManagementDetailsBase": EnableExternalDatabaseManagementDetailsBase,
     "EnableExternalDatabaseOperationsInsightsDetailsBase": EnableExternalDatabaseOperationsInsightsDetailsBase,
@@ -444,6 +451,7 @@ database_type_mapping = {
     "MaintenanceRunSummary": MaintenanceRunSummary,
     "MaintenanceWindow": MaintenanceWindow,
     "MigrateVaultKeyDetails": MigrateVaultKeyDetails,
+    "ModifyDatabaseManagementDetails": ModifyDatabaseManagementDetails,
     "Month": Month,
     "MountTypeDetails": MountTypeDetails,
     "NodeDetails": NodeDetails,

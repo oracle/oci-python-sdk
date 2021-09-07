@@ -45,6 +45,7 @@ class TemplateCategorySummary(object):
         """
         Gets the id of this TemplateCategorySummary.
         Unique identifier for the template category.
+        Possible values are `0` (Quick Starts), `1` (Service), `2` (Architecture), and `3` (Private).
 
 
         :return: The id of this TemplateCategorySummary.
@@ -57,6 +58,7 @@ class TemplateCategorySummary(object):
         """
         Sets the id of this TemplateCategorySummary.
         Unique identifier for the template category.
+        Possible values are `0` (Quick Starts), `1` (Service), `2` (Architecture), and `3` (Private).
 
 
         :param id: The id of this TemplateCategorySummary.

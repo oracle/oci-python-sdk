@@ -13,6 +13,26 @@ class ChildDatabase(object):
     The child Managed Database of a Managed Database Group.
     """
 
+    #: A constant which can be used with the deployment_type property of a ChildDatabase.
+    #: This constant has a value of "ONPREMISE"
+    DEPLOYMENT_TYPE_ONPREMISE = "ONPREMISE"
+
+    #: A constant which can be used with the deployment_type property of a ChildDatabase.
+    #: This constant has a value of "BM"
+    DEPLOYMENT_TYPE_BM = "BM"
+
+    #: A constant which can be used with the deployment_type property of a ChildDatabase.
+    #: This constant has a value of "VM"
+    DEPLOYMENT_TYPE_VM = "VM"
+
+    #: A constant which can be used with the deployment_type property of a ChildDatabase.
+    #: This constant has a value of "EXADATA"
+    DEPLOYMENT_TYPE_EXADATA = "EXADATA"
+
+    #: A constant which can be used with the deployment_type property of a ChildDatabase.
+    #: This constant has a value of "EXADATA_CC"
+    DEPLOYMENT_TYPE_EXADATA_CC = "EXADATA_CC"
+
     #: A constant which can be used with the database_type property of a ChildDatabase.
     #: This constant has a value of "EXTERNAL_SIDB"
     DATABASE_TYPE_EXTERNAL_SIDB = "EXTERNAL_SIDB"
@@ -20,6 +40,14 @@ class ChildDatabase(object):
     #: A constant which can be used with the database_type property of a ChildDatabase.
     #: This constant has a value of "EXTERNAL_RAC"
     DATABASE_TYPE_EXTERNAL_RAC = "EXTERNAL_RAC"
+
+    #: A constant which can be used with the database_type property of a ChildDatabase.
+    #: This constant has a value of "CLOUD_SIDB"
+    DATABASE_TYPE_CLOUD_SIDB = "CLOUD_SIDB"
+
+    #: A constant which can be used with the database_type property of a ChildDatabase.
+    #: This constant has a value of "CLOUD_RAC"
+    DATABASE_TYPE_CLOUD_RAC = "CLOUD_RAC"
 
     #: A constant which can be used with the database_sub_type property of a ChildDatabase.
     #: This constant has a value of "CDB"
@@ -50,9 +78,15 @@ class ChildDatabase(object):
             The value to assign to the compartment_id property of this ChildDatabase.
         :type compartment_id: str
 
+        :param deployment_type:
+            The value to assign to the deployment_type property of this ChildDatabase.
+            Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type deployment_type: str
+
         :param database_type:
             The value to assign to the database_type property of this ChildDatabase.
-            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_type: str
 
@@ -71,6 +105,7 @@ class ChildDatabase(object):
             'id': 'str',
             'name': 'str',
             'compartment_id': 'str',
+            'deployment_type': 'str',
             'database_type': 'str',
             'database_sub_type': 'str',
             'time_added': 'datetime'
@@ -80,6 +115,7 @@ class ChildDatabase(object):
             'id': 'id',
             'name': 'name',
             'compartment_id': 'compartmentId',
+            'deployment_type': 'deploymentType',
             'database_type': 'databaseType',
             'database_sub_type': 'databaseSubType',
             'time_added': 'timeAdded'
@@ -88,6 +124,7 @@ class ChildDatabase(object):
         self._id = None
         self._name = None
         self._compartment_id = None
+        self._deployment_type = None
         self._database_type = None
         self._database_sub_type = None
         self._time_added = None
@@ -173,12 +210,42 @@ class ChildDatabase(object):
         self._compartment_id = compartment_id
 
     @property
+    def deployment_type(self):
+        """
+        Gets the deployment_type of this ChildDatabase.
+        The infrastructure used to deploy the Oracle Database.
+
+        Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The deployment_type of this ChildDatabase.
+        :rtype: str
+        """
+        return self._deployment_type
+
+    @deployment_type.setter
+    def deployment_type(self, deployment_type):
+        """
+        Sets the deployment_type of this ChildDatabase.
+        The infrastructure used to deploy the Oracle Database.
+
+
+        :param deployment_type: The deployment_type of this ChildDatabase.
+        :type: str
+        """
+        allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC"]
+        if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
+            deployment_type = 'UNKNOWN_ENUM_VALUE'
+        self._deployment_type = deployment_type
+
+    @property
     def database_type(self):
         """
         Gets the database_type of this ChildDatabase.
         The type of Oracle Database installation.
 
-        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -197,7 +264,7 @@ class ChildDatabase(object):
         :param database_type: The database_type of this ChildDatabase.
         :type: str
         """
-        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC"]
+        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC"]
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
             database_type = 'UNKNOWN_ENUM_VALUE'
         self._database_type = database_type
