@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.odsc.pegasus</groupId>
         <artifactId>odsc-pegasus-control-plane-spec</artifactId>
-        <version>0.1.916</version>
+        <version>0.1.954</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

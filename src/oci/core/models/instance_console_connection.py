@@ -77,6 +77,10 @@ class InstanceConsoleConnection(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param service_host_key_fingerprint:
+            The value to assign to the service_host_key_fingerprint property of this InstanceConsoleConnection.
+        :type service_host_key_fingerprint: str
+
         :param vnc_connection_string:
             The value to assign to the vnc_connection_string property of this InstanceConsoleConnection.
         :type vnc_connection_string: str
@@ -91,6 +95,7 @@ class InstanceConsoleConnection(object):
             'id': 'str',
             'instance_id': 'str',
             'lifecycle_state': 'str',
+            'service_host_key_fingerprint': 'str',
             'vnc_connection_string': 'str'
         }
 
@@ -103,6 +108,7 @@ class InstanceConsoleConnection(object):
             'id': 'id',
             'instance_id': 'instanceId',
             'lifecycle_state': 'lifecycleState',
+            'service_host_key_fingerprint': 'serviceHostKeyFingerprint',
             'vnc_connection_string': 'vncConnectionString'
         }
 
@@ -114,6 +120,7 @@ class InstanceConsoleConnection(object):
         self._id = None
         self._instance_id = None
         self._lifecycle_state = None
+        self._service_host_key_fingerprint = None
         self._vnc_connection_string = None
 
     @property
@@ -202,7 +209,7 @@ class InstanceConsoleConnection(object):
     def fingerprint(self):
         """
         Gets the fingerprint of this InstanceConsoleConnection.
-        The SSH public key fingerprint for the console connection.
+        The SSH public key's fingerprint for client authentication to the console connection.
 
 
         :return: The fingerprint of this InstanceConsoleConnection.
@@ -214,7 +221,7 @@ class InstanceConsoleConnection(object):
     def fingerprint(self, fingerprint):
         """
         Sets the fingerprint of this InstanceConsoleConnection.
-        The SSH public key fingerprint for the console connection.
+        The SSH public key's fingerprint for client authentication to the console connection.
 
 
         :param fingerprint: The fingerprint of this InstanceConsoleConnection.
@@ -333,6 +340,30 @@ class InstanceConsoleConnection(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def service_host_key_fingerprint(self):
+        """
+        Gets the service_host_key_fingerprint of this InstanceConsoleConnection.
+        The SSH public key's fingerprint for the console connection service host.
+
+
+        :return: The service_host_key_fingerprint of this InstanceConsoleConnection.
+        :rtype: str
+        """
+        return self._service_host_key_fingerprint
+
+    @service_host_key_fingerprint.setter
+    def service_host_key_fingerprint(self, service_host_key_fingerprint):
+        """
+        Sets the service_host_key_fingerprint of this InstanceConsoleConnection.
+        The SSH public key's fingerprint for the console connection service host.
+
+
+        :param service_host_key_fingerprint: The service_host_key_fingerprint of this InstanceConsoleConnection.
+        :type: str
+        """
+        self._service_host_key_fingerprint = service_host_key_fingerprint
 
     @property
     def vnc_connection_string(self):
