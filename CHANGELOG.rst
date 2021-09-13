@@ -4,12 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.45.1 - TBD
+2.45.1 - 2021-09-14
 ====================
 
 Added
 -----
-* TBD
+* Support for serviceHostKeyFingerprint property for InstanceConsoleConnection in Core service
+* Support for Shielded Instances in Core service
+* Support for ML Jobs in the Data Science service
 
 ====================
 2.45.0 - 2021-09-07
