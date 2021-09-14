@@ -38,9 +38,21 @@ class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig(InstanceConfig
 
         :param type:
             The value to assign to the type property of this InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.
-            Allowed values for this property are: "AMD_MILAN_BM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMD_MILAN_BM", "AMD_ROME_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
+
+        :param is_secure_boot_enabled:
+            The value to assign to the is_secure_boot_enabled property of this InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.
+        :type is_secure_boot_enabled: bool
+
+        :param is_trusted_platform_module_enabled:
+            The value to assign to the is_trusted_platform_module_enabled property of this InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.
+        :type is_trusted_platform_module_enabled: bool
+
+        :param is_measured_boot_enabled:
+            The value to assign to the is_measured_boot_enabled property of this InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.
+        :type is_measured_boot_enabled: bool
 
         :param numa_nodes_per_socket:
             The value to assign to the numa_nodes_per_socket property of this InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig.
@@ -51,15 +63,24 @@ class InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig(InstanceConfig
         """
         self.swagger_types = {
             'type': 'str',
+            'is_secure_boot_enabled': 'bool',
+            'is_trusted_platform_module_enabled': 'bool',
+            'is_measured_boot_enabled': 'bool',
             'numa_nodes_per_socket': 'str'
         }
 
         self.attribute_map = {
             'type': 'type',
+            'is_secure_boot_enabled': 'isSecureBootEnabled',
+            'is_trusted_platform_module_enabled': 'isTrustedPlatformModuleEnabled',
+            'is_measured_boot_enabled': 'isMeasuredBootEnabled',
             'numa_nodes_per_socket': 'numaNodesPerSocket'
         }
 
         self._type = None
+        self._is_secure_boot_enabled = None
+        self._is_trusted_platform_module_enabled = None
+        self._is_measured_boot_enabled = None
         self._numa_nodes_per_socket = None
         self._type = 'AMD_MILAN_BM'
 

@@ -5,17 +5,31 @@
 from __future__ import absolute_import
 
 from .category_log_details import CategoryLogDetails
+from .change_job_compartment_details import ChangeJobCompartmentDetails
+from .change_job_run_compartment_details import ChangeJobRunCompartmentDetails
 from .change_model_compartment_details import ChangeModelCompartmentDetails
 from .change_model_deployment_compartment_details import ChangeModelDeploymentCompartmentDetails
 from .change_notebook_session_compartment_details import ChangeNotebookSessionCompartmentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
+from .create_job_details import CreateJobDetails
+from .create_job_run_details import CreateJobRunDetails
 from .create_model_deployment_details import CreateModelDeploymentDetails
 from .create_model_details import CreateModelDetails
 from .create_model_provenance_details import CreateModelProvenanceDetails
 from .create_notebook_session_details import CreateNotebookSessionDetails
 from .create_project_details import CreateProjectDetails
+from .default_job_configuration_details import DefaultJobConfigurationDetails
 from .fixed_size_scaling_policy import FixedSizeScalingPolicy
 from .instance_configuration import InstanceConfiguration
+from .job import Job
+from .job_configuration_details import JobConfigurationDetails
+from .job_infrastructure_configuration_details import JobInfrastructureConfigurationDetails
+from .job_log_configuration_details import JobLogConfigurationDetails
+from .job_run import JobRun
+from .job_run_log_details import JobRunLogDetails
+from .job_run_summary import JobRunSummary
+from .job_shape_summary import JobShapeSummary
+from .job_summary import JobSummary
 from .log_details import LogDetails
 from .metadata import Metadata
 from .model import Model
@@ -35,7 +49,10 @@ from .project import Project
 from .project_summary import ProjectSummary
 from .scaling_policy import ScalingPolicy
 from .single_model_deployment_configuration_details import SingleModelDeploymentConfigurationDetails
+from .standalone_job_infrastructure_configuration_details import StandaloneJobInfrastructureConfigurationDetails
 from .update_category_log_details import UpdateCategoryLogDetails
+from .update_job_details import UpdateJobDetails
+from .update_job_run_details import UpdateJobRunDetails
 from .update_model_configuration_details import UpdateModelConfigurationDetails
 from .update_model_deployment_configuration_details import UpdateModelDeploymentConfigurationDetails
 from .update_model_deployment_details import UpdateModelDeploymentDetails
@@ -53,17 +70,31 @@ from .work_request_summary import WorkRequestSummary
 # Maps type names to classes for data_science services.
 data_science_type_mapping = {
     "CategoryLogDetails": CategoryLogDetails,
+    "ChangeJobCompartmentDetails": ChangeJobCompartmentDetails,
+    "ChangeJobRunCompartmentDetails": ChangeJobRunCompartmentDetails,
     "ChangeModelCompartmentDetails": ChangeModelCompartmentDetails,
     "ChangeModelDeploymentCompartmentDetails": ChangeModelDeploymentCompartmentDetails,
     "ChangeNotebookSessionCompartmentDetails": ChangeNotebookSessionCompartmentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
+    "CreateJobDetails": CreateJobDetails,
+    "CreateJobRunDetails": CreateJobRunDetails,
     "CreateModelDeploymentDetails": CreateModelDeploymentDetails,
     "CreateModelDetails": CreateModelDetails,
     "CreateModelProvenanceDetails": CreateModelProvenanceDetails,
     "CreateNotebookSessionDetails": CreateNotebookSessionDetails,
     "CreateProjectDetails": CreateProjectDetails,
+    "DefaultJobConfigurationDetails": DefaultJobConfigurationDetails,
     "FixedSizeScalingPolicy": FixedSizeScalingPolicy,
     "InstanceConfiguration": InstanceConfiguration,
+    "Job": Job,
+    "JobConfigurationDetails": JobConfigurationDetails,
+    "JobInfrastructureConfigurationDetails": JobInfrastructureConfigurationDetails,
+    "JobLogConfigurationDetails": JobLogConfigurationDetails,
+    "JobRun": JobRun,
+    "JobRunLogDetails": JobRunLogDetails,
+    "JobRunSummary": JobRunSummary,
+    "JobShapeSummary": JobShapeSummary,
+    "JobSummary": JobSummary,
     "LogDetails": LogDetails,
     "Metadata": Metadata,
     "Model": Model,
@@ -83,7 +114,10 @@ data_science_type_mapping = {
     "ProjectSummary": ProjectSummary,
     "ScalingPolicy": ScalingPolicy,
     "SingleModelDeploymentConfigurationDetails": SingleModelDeploymentConfigurationDetails,
+    "StandaloneJobInfrastructureConfigurationDetails": StandaloneJobInfrastructureConfigurationDetails,
     "UpdateCategoryLogDetails": UpdateCategoryLogDetails,
+    "UpdateJobDetails": UpdateJobDetails,
+    "UpdateJobRunDetails": UpdateJobRunDetails,
     "UpdateModelConfigurationDetails": UpdateModelConfigurationDetails,
     "UpdateModelDeploymentConfigurationDetails": UpdateModelDeploymentConfigurationDetails,
     "UpdateModelDeploymentDetails": UpdateModelDeploymentDetails,

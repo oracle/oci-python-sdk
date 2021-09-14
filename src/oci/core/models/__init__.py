@@ -16,6 +16,10 @@ from .add_vcn_cidr_details import AddVcnCidrDetails
 from .added_network_security_group_security_rules import AddedNetworkSecurityGroupSecurityRules
 from .amd_milan_bm_launch_instance_platform_config import AmdMilanBmLaunchInstancePlatformConfig
 from .amd_milan_bm_platform_config import AmdMilanBmPlatformConfig
+from .amd_rome_bm_launch_instance_platform_config import AmdRomeBmLaunchInstancePlatformConfig
+from .amd_rome_bm_platform_config import AmdRomeBmPlatformConfig
+from .amd_vm_launch_instance_platform_config import AmdVmLaunchInstancePlatformConfig
+from .amd_vm_platform_config import AmdVmPlatformConfig
 from .app_catalog_listing import AppCatalogListing
 from .app_catalog_listing_resource_version import AppCatalogListingResourceVersion
 from .app_catalog_listing_resource_version_agreements import AppCatalogListingResourceVersionAgreements
@@ -241,6 +245,8 @@ from .instance_agent_plugin_config_details import InstanceAgentPluginConfigDetai
 from .instance_availability_config import InstanceAvailabilityConfig
 from .instance_configuration import InstanceConfiguration
 from .instance_configuration_amd_milan_bm_launch_instance_platform_config import InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
+from .instance_configuration_amd_rome_bm_launch_instance_platform_config import InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig
+from .instance_configuration_amd_vm_launch_instance_platform_config import InstanceConfigurationAmdVmLaunchInstancePlatformConfig
 from .instance_configuration_attach_vnic_details import InstanceConfigurationAttachVnicDetails
 from .instance_configuration_attach_volume_details import InstanceConfigurationAttachVolumeDetails
 from .instance_configuration_availability_config import InstanceConfigurationAvailabilityConfig
@@ -252,6 +258,8 @@ from .instance_configuration_instance_options import InstanceConfigurationInstan
 from .instance_configuration_instance_source_details import InstanceConfigurationInstanceSourceDetails
 from .instance_configuration_instance_source_via_boot_volume_details import InstanceConfigurationInstanceSourceViaBootVolumeDetails
 from .instance_configuration_instance_source_via_image_details import InstanceConfigurationInstanceSourceViaImageDetails
+from .instance_configuration_intel_skylake_bm_launch_instance_platform_config import InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig
+from .instance_configuration_intel_vm_launch_instance_platform_config import InstanceConfigurationIntelVmLaunchInstancePlatformConfig
 from .instance_configuration_iscsi_attach_volume_details import InstanceConfigurationIscsiAttachVolumeDetails
 from .instance_configuration_launch_instance_agent_config_details import InstanceConfigurationLaunchInstanceAgentConfigDetails
 from .instance_configuration_launch_instance_details import InstanceConfigurationLaunchInstanceDetails
@@ -281,6 +289,10 @@ from .instance_source_details import InstanceSourceDetails
 from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolumeDetails
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
 from .instance_summary import InstanceSummary
+from .intel_skylake_bm_launch_instance_platform_config import IntelSkylakeBmLaunchInstancePlatformConfig
+from .intel_skylake_bm_platform_config import IntelSkylakeBmPlatformConfig
+from .intel_vm_launch_instance_platform_config import IntelVmLaunchInstancePlatformConfig
+from .intel_vm_platform_config import IntelVmPlatformConfig
 from .internet_gateway import InternetGateway
 from .ipsec_tunnel_drg_attachment_network_details import IpsecTunnelDrgAttachmentNetworkDetails
 from .ipv6 import Ipv6
@@ -292,6 +304,9 @@ from .launch_instance_shape_config_details import LaunchInstanceShapeConfigDetai
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
+from .measured_boot_entry import MeasuredBootEntry
+from .measured_boot_report import MeasuredBootReport
+from .measured_boot_report_measurements import MeasuredBootReportMeasurements
 from .modify_vcn_cidr_details import ModifyVcnCidrDetails
 from .multipath_device import MultipathDevice
 from .nat_gateway import NatGateway
@@ -326,9 +341,14 @@ from .service_id_request_details import ServiceIdRequestDetails
 from .service_id_response_details import ServiceIdResponseDetails
 from .shape import Shape
 from .shape_max_vnic_attachment_options import ShapeMaxVnicAttachmentOptions
+from .shape_measured_boot_options import ShapeMeasuredBootOptions
 from .shape_memory_options import ShapeMemoryOptions
 from .shape_networking_bandwidth_options import ShapeNetworkingBandwidthOptions
+from .shape_numa_nodes_per_socket_platform_options import ShapeNumaNodesPerSocketPlatformOptions
 from .shape_ocpu_options import ShapeOcpuOptions
+from .shape_platform_config_options import ShapePlatformConfigOptions
+from .shape_secure_boot_options import ShapeSecureBootOptions
+from .shape_trusted_platform_module_options import ShapeTrustedPlatformModuleOptions
 from .subnet import Subnet
 from .tcp_options import TcpOptions
 from .terminate_preemption_action import TerminatePreemptionAction
@@ -453,6 +473,10 @@ core_type_mapping = {
     "AddedNetworkSecurityGroupSecurityRules": AddedNetworkSecurityGroupSecurityRules,
     "AmdMilanBmLaunchInstancePlatformConfig": AmdMilanBmLaunchInstancePlatformConfig,
     "AmdMilanBmPlatformConfig": AmdMilanBmPlatformConfig,
+    "AmdRomeBmLaunchInstancePlatformConfig": AmdRomeBmLaunchInstancePlatformConfig,
+    "AmdRomeBmPlatformConfig": AmdRomeBmPlatformConfig,
+    "AmdVmLaunchInstancePlatformConfig": AmdVmLaunchInstancePlatformConfig,
+    "AmdVmPlatformConfig": AmdVmPlatformConfig,
     "AppCatalogListing": AppCatalogListing,
     "AppCatalogListingResourceVersion": AppCatalogListingResourceVersion,
     "AppCatalogListingResourceVersionAgreements": AppCatalogListingResourceVersionAgreements,
@@ -678,6 +702,8 @@ core_type_mapping = {
     "InstanceAvailabilityConfig": InstanceAvailabilityConfig,
     "InstanceConfiguration": InstanceConfiguration,
     "InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig": InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig,
+    "InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig": InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig,
+    "InstanceConfigurationAmdVmLaunchInstancePlatformConfig": InstanceConfigurationAmdVmLaunchInstancePlatformConfig,
     "InstanceConfigurationAttachVnicDetails": InstanceConfigurationAttachVnicDetails,
     "InstanceConfigurationAttachVolumeDetails": InstanceConfigurationAttachVolumeDetails,
     "InstanceConfigurationAvailabilityConfig": InstanceConfigurationAvailabilityConfig,
@@ -689,6 +715,8 @@ core_type_mapping = {
     "InstanceConfigurationInstanceSourceDetails": InstanceConfigurationInstanceSourceDetails,
     "InstanceConfigurationInstanceSourceViaBootVolumeDetails": InstanceConfigurationInstanceSourceViaBootVolumeDetails,
     "InstanceConfigurationInstanceSourceViaImageDetails": InstanceConfigurationInstanceSourceViaImageDetails,
+    "InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig": InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig,
+    "InstanceConfigurationIntelVmLaunchInstancePlatformConfig": InstanceConfigurationIntelVmLaunchInstancePlatformConfig,
     "InstanceConfigurationIscsiAttachVolumeDetails": InstanceConfigurationIscsiAttachVolumeDetails,
     "InstanceConfigurationLaunchInstanceAgentConfigDetails": InstanceConfigurationLaunchInstanceAgentConfigDetails,
     "InstanceConfigurationLaunchInstanceDetails": InstanceConfigurationLaunchInstanceDetails,
@@ -718,6 +746,10 @@ core_type_mapping = {
     "InstanceSourceViaBootVolumeDetails": InstanceSourceViaBootVolumeDetails,
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
     "InstanceSummary": InstanceSummary,
+    "IntelSkylakeBmLaunchInstancePlatformConfig": IntelSkylakeBmLaunchInstancePlatformConfig,
+    "IntelSkylakeBmPlatformConfig": IntelSkylakeBmPlatformConfig,
+    "IntelVmLaunchInstancePlatformConfig": IntelVmLaunchInstancePlatformConfig,
+    "IntelVmPlatformConfig": IntelVmPlatformConfig,
     "InternetGateway": InternetGateway,
     "IpsecTunnelDrgAttachmentNetworkDetails": IpsecTunnelDrgAttachmentNetworkDetails,
     "Ipv6": Ipv6,
@@ -729,6 +761,9 @@ core_type_mapping = {
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
     "LocalPeeringGateway": LocalPeeringGateway,
+    "MeasuredBootEntry": MeasuredBootEntry,
+    "MeasuredBootReport": MeasuredBootReport,
+    "MeasuredBootReportMeasurements": MeasuredBootReportMeasurements,
     "ModifyVcnCidrDetails": ModifyVcnCidrDetails,
     "MultipathDevice": MultipathDevice,
     "NatGateway": NatGateway,
@@ -763,9 +798,14 @@ core_type_mapping = {
     "ServiceIdResponseDetails": ServiceIdResponseDetails,
     "Shape": Shape,
     "ShapeMaxVnicAttachmentOptions": ShapeMaxVnicAttachmentOptions,
+    "ShapeMeasuredBootOptions": ShapeMeasuredBootOptions,
     "ShapeMemoryOptions": ShapeMemoryOptions,
     "ShapeNetworkingBandwidthOptions": ShapeNetworkingBandwidthOptions,
+    "ShapeNumaNodesPerSocketPlatformOptions": ShapeNumaNodesPerSocketPlatformOptions,
     "ShapeOcpuOptions": ShapeOcpuOptions,
+    "ShapePlatformConfigOptions": ShapePlatformConfigOptions,
+    "ShapeSecureBootOptions": ShapeSecureBootOptions,
+    "ShapeTrustedPlatformModuleOptions": ShapeTrustedPlatformModuleOptions,
     "Subnet": Subnet,
     "TcpOptions": TcpOptions,
     "TerminatePreemptionAction": TerminatePreemptionAction,

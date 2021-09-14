@@ -36,6 +36,10 @@ Core Services
     oci.core.models.AddedNetworkSecurityGroupSecurityRules
     oci.core.models.AmdMilanBmLaunchInstancePlatformConfig
     oci.core.models.AmdMilanBmPlatformConfig
+    oci.core.models.AmdRomeBmLaunchInstancePlatformConfig
+    oci.core.models.AmdRomeBmPlatformConfig
+    oci.core.models.AmdVmLaunchInstancePlatformConfig
+    oci.core.models.AmdVmPlatformConfig
     oci.core.models.AppCatalogListing
     oci.core.models.AppCatalogListingResourceVersion
     oci.core.models.AppCatalogListingResourceVersionAgreements
@@ -261,6 +265,8 @@ Core Services
     oci.core.models.InstanceAvailabilityConfig
     oci.core.models.InstanceConfiguration
     oci.core.models.InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
+    oci.core.models.InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig
+    oci.core.models.InstanceConfigurationAmdVmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationAttachVnicDetails
     oci.core.models.InstanceConfigurationAttachVolumeDetails
     oci.core.models.InstanceConfigurationAvailabilityConfig
@@ -272,6 +278,8 @@ Core Services
     oci.core.models.InstanceConfigurationInstanceSourceDetails
     oci.core.models.InstanceConfigurationInstanceSourceViaBootVolumeDetails
     oci.core.models.InstanceConfigurationInstanceSourceViaImageDetails
+    oci.core.models.InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig
+    oci.core.models.InstanceConfigurationIntelVmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationIscsiAttachVolumeDetails
     oci.core.models.InstanceConfigurationLaunchInstanceAgentConfigDetails
     oci.core.models.InstanceConfigurationLaunchInstanceDetails
@@ -301,6 +309,10 @@ Core Services
     oci.core.models.InstanceSourceViaBootVolumeDetails
     oci.core.models.InstanceSourceViaImageDetails
     oci.core.models.InstanceSummary
+    oci.core.models.IntelSkylakeBmLaunchInstancePlatformConfig
+    oci.core.models.IntelSkylakeBmPlatformConfig
+    oci.core.models.IntelVmLaunchInstancePlatformConfig
+    oci.core.models.IntelVmPlatformConfig
     oci.core.models.InternetGateway
     oci.core.models.IpsecTunnelDrgAttachmentNetworkDetails
     oci.core.models.Ipv6
@@ -312,6 +324,9 @@ Core Services
     oci.core.models.LaunchOptions
     oci.core.models.LetterOfAuthority
     oci.core.models.LocalPeeringGateway
+    oci.core.models.MeasuredBootEntry
+    oci.core.models.MeasuredBootReport
+    oci.core.models.MeasuredBootReportMeasurements
     oci.core.models.ModifyVcnCidrDetails
     oci.core.models.MultipathDevice
     oci.core.models.NatGateway
@@ -346,9 +361,14 @@ Core Services
     oci.core.models.ServiceIdResponseDetails
     oci.core.models.Shape
     oci.core.models.ShapeMaxVnicAttachmentOptions
+    oci.core.models.ShapeMeasuredBootOptions
     oci.core.models.ShapeMemoryOptions
     oci.core.models.ShapeNetworkingBandwidthOptions
+    oci.core.models.ShapeNumaNodesPerSocketPlatformOptions
     oci.core.models.ShapeOcpuOptions
+    oci.core.models.ShapePlatformConfigOptions
+    oci.core.models.ShapeSecureBootOptions
+    oci.core.models.ShapeTrustedPlatformModuleOptions
     oci.core.models.Subnet
     oci.core.models.TcpOptions
     oci.core.models.TerminatePreemptionAction
