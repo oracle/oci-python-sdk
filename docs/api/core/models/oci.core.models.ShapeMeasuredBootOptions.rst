@@ -1,0 +1,11 @@
+ShapeMeasuredBootOptions
+========================
+
+.. currentmodule:: oci.core.models
+
+.. autoclass:: ShapeMeasuredBootOptions
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

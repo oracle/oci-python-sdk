@@ -38,6 +38,10 @@ class ComputeImageCapabilitySchemaSummary(object):
             The value to assign to the display_name property of this ComputeImageCapabilitySchemaSummary.
         :type display_name: str
 
+        :param schema_data:
+            The value to assign to the schema_data property of this ComputeImageCapabilitySchemaSummary.
+        :type schema_data: dict(str, ImageCapabilitySchemaDescriptor)
+
         :param time_created:
             The value to assign to the time_created property of this ComputeImageCapabilitySchemaSummary.
         :type time_created: datetime
@@ -57,6 +61,7 @@ class ComputeImageCapabilitySchemaSummary(object):
             'compute_global_image_capability_schema_version_name': 'str',
             'image_id': 'str',
             'display_name': 'str',
+            'schema_data': 'dict(str, ImageCapabilitySchemaDescriptor)',
             'time_created': 'datetime',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
@@ -68,6 +73,7 @@ class ComputeImageCapabilitySchemaSummary(object):
             'compute_global_image_capability_schema_version_name': 'computeGlobalImageCapabilitySchemaVersionName',
             'image_id': 'imageId',
             'display_name': 'displayName',
+            'schema_data': 'schemaData',
             'time_created': 'timeCreated',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
@@ -78,6 +84,7 @@ class ComputeImageCapabilitySchemaSummary(object):
         self._compute_global_image_capability_schema_version_name = None
         self._image_id = None
         self._display_name = None
+        self._schema_data = None
         self._time_created = None
         self._defined_tags = None
         self._freeform_tags = None
@@ -205,6 +212,30 @@ class ComputeImageCapabilitySchemaSummary(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def schema_data(self):
+        """
+        Gets the schema_data of this ComputeImageCapabilitySchemaSummary.
+        A mapping of each capability name to its ImageCapabilityDescriptor.
+
+
+        :return: The schema_data of this ComputeImageCapabilitySchemaSummary.
+        :rtype: dict(str, ImageCapabilitySchemaDescriptor)
+        """
+        return self._schema_data
+
+    @schema_data.setter
+    def schema_data(self, schema_data):
+        """
+        Sets the schema_data of this ComputeImageCapabilitySchemaSummary.
+        A mapping of each capability name to its ImageCapabilityDescriptor.
+
+
+        :param schema_data: The schema_data of this ComputeImageCapabilitySchemaSummary.
+        :type: dict(str, ImageCapabilitySchemaDescriptor)
+        """
+        self._schema_data = schema_data
 
     @property
     def time_created(self):
