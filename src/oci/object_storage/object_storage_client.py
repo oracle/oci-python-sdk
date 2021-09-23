@@ -426,6 +426,12 @@ class ObjectStorageClient(object):
 
             __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
+        :param str opc_sse_kms_key_id: (optional)
+            The `OCID`__ of a master encryption key used to call the Key
+            Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -452,7 +458,8 @@ class ObjectStorageClient(object):
             "opc_sse_customer_key_sha256",
             "opc_source_sse_customer_algorithm",
             "opc_source_sse_customer_key",
-            "opc_source_sse_customer_key_sha256"
+            "opc_source_sse_customer_key_sha256",
+            "opc_sse_kms_key_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -479,7 +486,8 @@ class ObjectStorageClient(object):
             "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing),
             "opc-source-sse-customer-algorithm": kwargs.get("opc_source_sse_customer_algorithm", missing),
             "opc-source-sse-customer-key": kwargs.get("opc_source_sse_customer_key", missing),
-            "opc-source-sse-customer-key-sha256": kwargs.get("opc_source_sse_customer_key_sha256", missing)
+            "opc-source-sse-customer-key-sha256": kwargs.get("opc_source_sse_customer_key_sha256", missing),
+            "opc-sse-kms-key-id": kwargs.get("opc_sse_kms_key_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -631,6 +639,12 @@ class ObjectStorageClient(object):
 
             __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
+        :param str opc_sse_kms_key_id: (optional)
+            The `OCID`__ of a master encryption key used to call the Key
+            Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -656,7 +670,8 @@ class ObjectStorageClient(object):
             "opc_client_request_id",
             "opc_sse_customer_algorithm",
             "opc_sse_customer_key",
-            "opc_sse_customer_key_sha256"
+            "opc_sse_customer_key_sha256",
+            "opc_sse_kms_key_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -682,7 +697,8 @@ class ObjectStorageClient(object):
             "opc-client-request-id": kwargs.get("opc_client_request_id", missing),
             "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
             "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
-            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing)
+            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing),
+            "opc-sse-kms-key-id": kwargs.get("opc_sse_kms_key_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 
@@ -1510,8 +1526,9 @@ class ObjectStorageClient(object):
             the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
-            fail if the resource already exists.
+            The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+            match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+            the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -1798,8 +1815,9 @@ class ObjectStorageClient(object):
             the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
-            fail if the resource already exists.
+            The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+            match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+            the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -2372,8 +2390,9 @@ class ObjectStorageClient(object):
             the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
-            fail if the resource already exists.
+            The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+            match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+            the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -2470,8 +2489,9 @@ class ObjectStorageClient(object):
             the resource.
 
         :param str if_none_match: (optional)
-            The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
-            fail if the resource already exists.
+            The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+            match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+            the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
 
         :param str opc_client_request_id: (optional)
             The client request ID for tracing.
@@ -4093,6 +4113,12 @@ class ObjectStorageClient(object):
 
             __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
+        :param str opc_sse_kms_key_id: (optional)
+            The `OCID`__ of a master encryption key used to call the Key
+            Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
         :param str storage_tier: (optional)
             The storage tier that the object should be stored in. If not specified, the object will be stored in
             the same storage tier as the bucket.
@@ -4146,6 +4172,7 @@ class ObjectStorageClient(object):
             "opc_sse_customer_algorithm",
             "opc_sse_customer_key",
             "opc_sse_customer_key_sha256",
+            "opc_sse_kms_key_id",
             "storage_tier",
             "opc_meta"
         ]
@@ -4182,6 +4209,7 @@ class ObjectStorageClient(object):
             "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
             "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
             "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing),
+            "opc-sse-kms-key-id": kwargs.get("opc_sse_kms_key_id", missing),
             "storage-tier": kwargs.get("storage_tier", missing),
 
         }
@@ -5139,6 +5167,12 @@ class ObjectStorageClient(object):
 
             __ https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm
 
+        :param str opc_sse_kms_key_id: (optional)
+            The `OCID`__ of a master encryption key used to call the Key
+            Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5175,7 +5209,8 @@ class ObjectStorageClient(object):
             "content_md5",
             "opc_sse_customer_algorithm",
             "opc_sse_customer_key",
-            "opc_sse_customer_key_sha256"
+            "opc_sse_customer_key_sha256",
+            "opc_sse_kms_key_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5210,7 +5245,8 @@ class ObjectStorageClient(object):
             "Content-MD5": kwargs.get("content_md5", missing),
             "opc-sse-customer-algorithm": kwargs.get("opc_sse_customer_algorithm", missing),
             "opc-sse-customer-key": kwargs.get("opc_sse_customer_key", missing),
-            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing)
+            "opc-sse-customer-key-sha256": kwargs.get("opc_sse_customer_key_sha256", missing),
+            "opc-sse-kms-key-id": kwargs.get("opc_sse_kms_key_id", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
         # Set default value for expect header if user has not overridden it

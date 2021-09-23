@@ -39,6 +39,10 @@ class ManagedInstanceUsage(object):
             The value to assign to the hostname property of this ManagedInstanceUsage.
         :type hostname: str
 
+        :param operating_system:
+            The value to assign to the operating_system property of this ManagedInstanceUsage.
+        :type operating_system: oci.jms.models.OperatingSystem
+
         :param approximate_application_count:
             The value to assign to the approximate_application_count property of this ManagedInstanceUsage.
         :type approximate_application_count: int
@@ -72,6 +76,7 @@ class ManagedInstanceUsage(object):
             'managed_instance_id': 'str',
             'managed_instance_type': 'str',
             'hostname': 'str',
+            'operating_system': 'OperatingSystem',
             'approximate_application_count': 'int',
             'approximate_installation_count': 'int',
             'approximate_jre_count': 'int',
@@ -85,6 +90,7 @@ class ManagedInstanceUsage(object):
             'managed_instance_id': 'managedInstanceId',
             'managed_instance_type': 'managedInstanceType',
             'hostname': 'hostname',
+            'operating_system': 'operatingSystem',
             'approximate_application_count': 'approximateApplicationCount',
             'approximate_installation_count': 'approximateInstallationCount',
             'approximate_jre_count': 'approximateJreCount',
@@ -97,6 +103,7 @@ class ManagedInstanceUsage(object):
         self._managed_instance_id = None
         self._managed_instance_type = None
         self._hostname = None
+        self._operating_system = None
         self._approximate_application_count = None
         self._approximate_installation_count = None
         self._approximate_jre_count = None
@@ -186,6 +193,26 @@ class ManagedInstanceUsage(object):
         :type: str
         """
         self._hostname = hostname
+
+    @property
+    def operating_system(self):
+        """
+        Gets the operating_system of this ManagedInstanceUsage.
+
+        :return: The operating_system of this ManagedInstanceUsage.
+        :rtype: oci.jms.models.OperatingSystem
+        """
+        return self._operating_system
+
+    @operating_system.setter
+    def operating_system(self, operating_system):
+        """
+        Sets the operating_system of this ManagedInstanceUsage.
+
+        :param operating_system: The operating_system of this ManagedInstanceUsage.
+        :type: oci.jms.models.OperatingSystem
+        """
+        self._operating_system = operating_system
 
     @property
     def approximate_application_count(self):

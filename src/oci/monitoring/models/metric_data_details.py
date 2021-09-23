@@ -113,7 +113,7 @@ class MetricDataDetails(object):
     def resource_group(self):
         """
         Gets the resource_group of this MetricDataDetails.
-        Resource group to assign to the metric. A resource group is a custom string that can be used as a filter. Only one resource group can be applied per metric.
+        Resource group to assign to the metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
         A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         Avoid entering confidential information.
 
@@ -129,7 +129,7 @@ class MetricDataDetails(object):
     def resource_group(self, resource_group):
         """
         Sets the resource_group of this MetricDataDetails.
-        Resource group to assign to the metric. A resource group is a custom string that can be used as a filter. Only one resource group can be applied per metric.
+        Resource group to assign to the metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
         A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         Avoid entering confidential information.
 

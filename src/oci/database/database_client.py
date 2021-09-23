@@ -2204,7 +2204,7 @@ class DatabaseClient(object):
 
 
         :param oci.database.models.CreateAutonomousContainerDatabaseDetails create_autonomous_container_database_details: (required)
-            Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure.
+            Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or

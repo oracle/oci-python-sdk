@@ -33,10 +33,7 @@ Jms
     oci.jms.models.JreUsageCollection
     oci.jms.models.ManagedInstanceUsage
     oci.jms.models.ManagedInstanceUsageCollection
-    oci.jms.models.RequestSummarizedApplicationUsageDetails
-    oci.jms.models.RequestSummarizedInstallationUsageDetails
-    oci.jms.models.RequestSummarizedJreUsageDetails
-    oci.jms.models.RequestSummarizedManagedInstanceUsageDetails
+    oci.jms.models.OperatingSystem
     oci.jms.models.UpdateFleetAgentConfigurationDetails
     oci.jms.models.UpdateFleetDetails
     oci.jms.models.WorkRequest

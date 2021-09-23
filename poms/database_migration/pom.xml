@@ -20,7 +20,7 @@
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <!-- Service Spec file goes here -->
-    <zdmcs-spec-spec-file>./source/api.cond.yaml</zdmcs-spec-spec-file>
+    <zdmcs-spec-spec-file>./source/api.20200720.cond.yaml</zdmcs-spec-spec-file>
   </properties>
   <build>
     <directory>${sdk-root-dir}/target</directory>
@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.zdmcs</groupId>
         <artifactId>zdmcs-spec</artifactId>
-        <version>0.1.75</version>
+        <version>0.1.86</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

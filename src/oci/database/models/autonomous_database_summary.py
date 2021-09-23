@@ -548,6 +548,10 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the peer_db_ids property of this AutonomousDatabaseSummary.
         :type peer_db_ids: list[str]
 
+        :param is_mtls_connection_required:
+            The value to assign to the is_mtls_connection_required property of this AutonomousDatabaseSummary.
+        :type is_mtls_connection_required: bool
+
         :param autonomous_maintenance_schedule_type:
             The value to assign to the autonomous_maintenance_schedule_type property of this AutonomousDatabaseSummary.
             Allowed values for this property are: "EARLY", "REGULAR", 'UNKNOWN_ENUM_VALUE'.
@@ -628,6 +632,7 @@ class AutonomousDatabaseSummary(object):
             'dataguard_region_type': 'str',
             'time_data_guard_role_changed': 'datetime',
             'peer_db_ids': 'list[str]',
+            'is_mtls_connection_required': 'bool',
             'autonomous_maintenance_schedule_type': 'str'
         }
 
@@ -704,6 +709,7 @@ class AutonomousDatabaseSummary(object):
             'dataguard_region_type': 'dataguardRegionType',
             'time_data_guard_role_changed': 'timeDataGuardRoleChanged',
             'peer_db_ids': 'peerDbIds',
+            'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType'
         }
 
@@ -779,6 +785,7 @@ class AutonomousDatabaseSummary(object):
         self._dataguard_region_type = None
         self._time_data_guard_role_changed = None
         self._peer_db_ids = None
+        self._is_mtls_connection_required = None
         self._autonomous_maintenance_schedule_type = None
 
     @property
@@ -2766,6 +2773,30 @@ class AutonomousDatabaseSummary(object):
         :type: list[str]
         """
         self._peer_db_ids = peer_db_ids
+
+    @property
+    def is_mtls_connection_required(self):
+        """
+        Gets the is_mtls_connection_required of this AutonomousDatabaseSummary.
+        Indicates whether the Autonomous Database requires mTLS connections.
+
+
+        :return: The is_mtls_connection_required of this AutonomousDatabaseSummary.
+        :rtype: bool
+        """
+        return self._is_mtls_connection_required
+
+    @is_mtls_connection_required.setter
+    def is_mtls_connection_required(self, is_mtls_connection_required):
+        """
+        Sets the is_mtls_connection_required of this AutonomousDatabaseSummary.
+        Indicates whether the Autonomous Database requires mTLS connections.
+
+
+        :param is_mtls_connection_required: The is_mtls_connection_required of this AutonomousDatabaseSummary.
+        :type: bool
+        """
+        self._is_mtls_connection_required = is_mtls_connection_required
 
     @property
     def autonomous_maintenance_schedule_type(self):

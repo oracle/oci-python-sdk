@@ -43,6 +43,10 @@ class InstallationUsage(object):
             The value to assign to the architecture property of this InstallationUsage.
         :type architecture: str
 
+        :param operating_system:
+            The value to assign to the operating_system property of this InstallationUsage.
+        :type operating_system: oci.jms.models.OperatingSystem
+
         :param approximate_application_count:
             The value to assign to the approximate_application_count property of this InstallationUsage.
         :type approximate_application_count: int
@@ -75,6 +79,7 @@ class InstallationUsage(object):
             'path': 'str',
             'os': 'str',
             'architecture': 'str',
+            'operating_system': 'OperatingSystem',
             'approximate_application_count': 'int',
             'approximate_managed_instance_count': 'int',
             'time_start': 'datetime',
@@ -90,6 +95,7 @@ class InstallationUsage(object):
             'path': 'path',
             'os': 'os',
             'architecture': 'architecture',
+            'operating_system': 'operatingSystem',
             'approximate_application_count': 'approximateApplicationCount',
             'approximate_managed_instance_count': 'approximateManagedInstanceCount',
             'time_start': 'timeStart',
@@ -104,6 +110,7 @@ class InstallationUsage(object):
         self._path = None
         self._os = None
         self._architecture = None
+        self._operating_system = None
         self._approximate_application_count = None
         self._approximate_managed_instance_count = None
         self._time_start = None
@@ -211,7 +218,7 @@ class InstallationUsage(object):
     def os(self):
         """
         **[Required]** Gets the os of this InstallationUsage.
-        The Operating System for the installation.
+        The Operating System for the installation. Deprecated, use `operatingSystem` instead.
 
 
         :return: The os of this InstallationUsage.
@@ -223,7 +230,7 @@ class InstallationUsage(object):
     def os(self, os):
         """
         Sets the os of this InstallationUsage.
-        The Operating System for the installation.
+        The Operating System for the installation. Deprecated, use `operatingSystem` instead.
 
 
         :param os: The os of this InstallationUsage.
@@ -235,7 +242,7 @@ class InstallationUsage(object):
     def architecture(self):
         """
         **[Required]** Gets the architecture of this InstallationUsage.
-        The architecture of the operating system for the installation.
+        The architecture of the operating system for the installation. Deprecated, use `operatingSystem` instead.
 
 
         :return: The architecture of this InstallationUsage.
@@ -247,13 +254,33 @@ class InstallationUsage(object):
     def architecture(self, architecture):
         """
         Sets the architecture of this InstallationUsage.
-        The architecture of the operating system for the installation.
+        The architecture of the operating system for the installation. Deprecated, use `operatingSystem` instead.
 
 
         :param architecture: The architecture of this InstallationUsage.
         :type: str
         """
         self._architecture = architecture
+
+    @property
+    def operating_system(self):
+        """
+        Gets the operating_system of this InstallationUsage.
+
+        :return: The operating_system of this InstallationUsage.
+        :rtype: oci.jms.models.OperatingSystem
+        """
+        return self._operating_system
+
+    @operating_system.setter
+    def operating_system(self, operating_system):
+        """
+        Sets the operating_system of this InstallationUsage.
+
+        :param operating_system: The operating_system of this InstallationUsage.
+        :type: oci.jms.models.OperatingSystem
+        """
+        self._operating_system = operating_system
 
     @property
     def approximate_application_count(self):

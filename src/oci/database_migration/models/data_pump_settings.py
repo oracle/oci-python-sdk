@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataPumpSettings(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Optional settings for Data Pump Export and Import jobs
     """
 

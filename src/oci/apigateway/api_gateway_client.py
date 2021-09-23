@@ -851,6 +851,13 @@ class ApiGatewayClient(object):
             The resource will be updated or deleted only if the etag you
             provide matches the resource's current etag value.
 
+        :param str range: (optional)
+            The Range HTTP request header indicates the part of a document that the
+            server should return. `RFC 7233`__.
+            Note that only a single range of bytes is supported.
+
+            __ https://tools.ietf.org/html/rfc7233#section-3.1
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -872,7 +879,8 @@ class ApiGatewayClient(object):
         expected_kwargs = [
             "retry_strategy",
             "opc_request_id",
-            "if_match"
+            "if_match",
+            "range"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -893,7 +901,8 @@ class ApiGatewayClient(object):
             "accept": "application/json",
             "content-type": "application/json",
             "opc-request-id": kwargs.get("opc_request_id", missing),
-            "if-match": kwargs.get("if_match", missing)
+            "if-match": kwargs.get("if_match", missing),
+            "range": kwargs.get("range", missing)
         }
         header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
 

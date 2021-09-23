@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdatePrivateEndpoint(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     OCI Private Endpoint configuration details.
     An empty object would result in the removal of the stored details.
     """

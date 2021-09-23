@@ -19,10 +19,7 @@ from .jre_usage import JreUsage
 from .jre_usage_collection import JreUsageCollection
 from .managed_instance_usage import ManagedInstanceUsage
 from .managed_instance_usage_collection import ManagedInstanceUsageCollection
-from .request_summarized_application_usage_details import RequestSummarizedApplicationUsageDetails
-from .request_summarized_installation_usage_details import RequestSummarizedInstallationUsageDetails
-from .request_summarized_jre_usage_details import RequestSummarizedJreUsageDetails
-from .request_summarized_managed_instance_usage_details import RequestSummarizedManagedInstanceUsageDetails
+from .operating_system import OperatingSystem
 from .update_fleet_agent_configuration_details import UpdateFleetAgentConfigurationDetails
 from .update_fleet_details import UpdateFleetDetails
 from .work_request import WorkRequest
@@ -50,10 +47,7 @@ jms_type_mapping = {
     "JreUsageCollection": JreUsageCollection,
     "ManagedInstanceUsage": ManagedInstanceUsage,
     "ManagedInstanceUsageCollection": ManagedInstanceUsageCollection,
-    "RequestSummarizedApplicationUsageDetails": RequestSummarizedApplicationUsageDetails,
-    "RequestSummarizedInstallationUsageDetails": RequestSummarizedInstallationUsageDetails,
-    "RequestSummarizedJreUsageDetails": RequestSummarizedJreUsageDetails,
-    "RequestSummarizedManagedInstanceUsageDetails": RequestSummarizedManagedInstanceUsageDetails,
+    "OperatingSystem": OperatingSystem,
     "UpdateFleetAgentConfigurationDetails": UpdateFleetAgentConfigurationDetails,
     "UpdateFleetDetails": UpdateFleetDetails,
     "WorkRequest": WorkRequest,

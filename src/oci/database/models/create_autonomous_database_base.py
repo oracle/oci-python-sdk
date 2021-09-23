@@ -213,6 +213,10 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the customer_contacts property of this CreateAutonomousDatabaseBase.
         :type customer_contacts: list[oci.database.models.CustomerContact]
 
+        :param is_mtls_connection_required:
+            The value to assign to the is_mtls_connection_required property of this CreateAutonomousDatabaseBase.
+        :type is_mtls_connection_required: bool
+
         :param autonomous_maintenance_schedule_type:
             The value to assign to the autonomous_maintenance_schedule_type property of this CreateAutonomousDatabaseBase.
             Allowed values for this property are: "EARLY", "REGULAR"
@@ -250,6 +254,7 @@ class CreateAutonomousDatabaseBase(object):
             'db_version': 'str',
             'source': 'str',
             'customer_contacts': 'list[CustomerContact]',
+            'is_mtls_connection_required': 'bool',
             'autonomous_maintenance_schedule_type': 'str'
         }
 
@@ -284,6 +289,7 @@ class CreateAutonomousDatabaseBase(object):
             'db_version': 'dbVersion',
             'source': 'source',
             'customer_contacts': 'customerContacts',
+            'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType'
         }
 
@@ -317,6 +323,7 @@ class CreateAutonomousDatabaseBase(object):
         self._db_version = None
         self._source = None
         self._customer_contacts = None
+        self._is_mtls_connection_required = None
         self._autonomous_maintenance_schedule_type = None
 
     @staticmethod
@@ -1300,6 +1307,30 @@ class CreateAutonomousDatabaseBase(object):
         :type: list[oci.database.models.CustomerContact]
         """
         self._customer_contacts = customer_contacts
+
+    @property
+    def is_mtls_connection_required(self):
+        """
+        Gets the is_mtls_connection_required of this CreateAutonomousDatabaseBase.
+        Indicates whether the Autonomous Database requires mTLS connections.
+
+
+        :return: The is_mtls_connection_required of this CreateAutonomousDatabaseBase.
+        :rtype: bool
+        """
+        return self._is_mtls_connection_required
+
+    @is_mtls_connection_required.setter
+    def is_mtls_connection_required(self, is_mtls_connection_required):
+        """
+        Sets the is_mtls_connection_required of this CreateAutonomousDatabaseBase.
+        Indicates whether the Autonomous Database requires mTLS connections.
+
+
+        :param is_mtls_connection_required: The is_mtls_connection_required of this CreateAutonomousDatabaseBase.
+        :type: bool
+        """
+        self._is_mtls_connection_required = is_mtls_connection_required
 
     @property
     def autonomous_maintenance_schedule_type(self):
