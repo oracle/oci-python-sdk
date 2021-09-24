@@ -334,3 +334,36 @@ class TestUploadManager:
         downloaded = bytearray(len(data))
         get_result.data.raw.readinto(downloaded)
         assert data == downloaded
+
+    def test_upload_manager_multipart_ssec_kms(self, object_storage, non_vcr_bucket, content_input_file):
+        object_name = 'test_object_multipart_ssec_kms'
+        namespace = object_storage.get_namespace().data
+
+        ssec_kms = "ocid1.key.oc1.phx.avnybakjaafna.abyhqljthy6bmiwubo3givln3agaswkfdrdlpvjgh2oyfgfsxnymwf7fb4sa"
+        # explicitly use part_size < file size to trigger multipart
+        part_size_in_bytes = (LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES - 1) * MEBIBYTE
+        upload_manager = oci.object_storage.UploadManager(object_storage, allow_multipart_uploads=True)
+        response = upload_manager.upload_file(
+            namespace, non_vcr_bucket, object_name, content_input_file, part_size=part_size_in_bytes,
+            opc_sse_kms_key_id=ssec_kms)
+        util.validate_response(response)
+
+        # confirm that the object was actually uploaded with multipart
+        assert response.headers['opc-multipart-md5']
+
+        print('Downloading object {} from {} for verification'.format(object_name, non_vcr_bucket))
+        # downloading the object doesn't require sse kms key id to be passed
+        response = object_storage.get_object(
+            namespace_name=namespace,
+            bucket_name=non_vcr_bucket,
+            object_name=object_name,
+        )
+        downloaded_file_path = os.path.join('tests', 'resources', 'downloaded_multipart_ssec_kms_verify.bin')
+        with open(downloaded_file_path, 'wb') as file:
+            for chunk in response.data.raw.stream(MEBIBYTE, decode_content=False):
+                file.write(chunk)
+        print('Object downloaded')
+
+        assert filecmp.cmp(content_input_file, downloaded_file_path, shallow=False)
+
+        os.remove(downloaded_file_path)
