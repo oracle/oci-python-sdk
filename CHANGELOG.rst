@@ -4,6 +4,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.46.0 - 2021-09-28
+====================
+
+Added
+-----
+* Support for autonomous databases and clones on shared infrastructure not requiring mTLS in the Database service
+* Support for server-side encryption using object-specific KMS keys in the Object Storage service
+* Support for Windows in the Java Management service
+* Support for using network security groups in the API Gateway service
+* Support for network security groups in the Functions service
+* Support for signed container images in the Functions service
+* Support for setting message format when creating and updating alarms in the Monitoring service
+* Support for user and security assessment features in the Data Safe service
+
+Breaking
+--------
+* Operations `request_summarized_application_usage`, `request_summarized_installation_usage`, `request_summarized_jre_usage`, `request_summarized_managed_instance_usage` were removed from the Java Management Service Client
+* Models `RequestSummarizedApplicationUsageDetails`, `RequestSummarizedInstallationUsageDetails`, `RequestSummarizedJreUsageDetails` and `RequestSummarizedManagedInstanceUsageDetails` were removed from Java Management Service
+
+Changed
+-------
+* Dependency `configparser` will only be installed for Python 2. The built-in configparser will be used for Python 3
+
+====================
 2.45.1 - 2021-09-14
 ====================
 

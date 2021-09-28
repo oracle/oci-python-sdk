@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class JavaManagementServiceClient(object):
     """
-    API for the Java Management Service. Use this API to view and manage Fleets.
+    API for the Java Management Service. Use this API to view, create, and manage Fleets.
     """
 
     def __init__(self, config, **kwargs):
@@ -988,398 +988,6 @@ class JavaManagementServiceClient(object):
                 header_params=header_params,
                 response_type="WorkRequestCollection")
 
-    def request_summarized_application_usage(self, fleet_id, request_summarized_application_usage_details, **kwargs):
-        """
-        List application usage in a specified Fleet filtered by form parameters.
-
-
-        :param str fleet_id: (required)
-            The `OCID`__ of the Fleet.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param oci.jms.models.RequestSummarizedApplicationUsageDetails request_summarized_application_usage_details: (required)
-            Parameters for filtering application usage.
-
-        :param int limit: (optional)
-            The maximum number of items to return.
-
-        :param str page: (optional)
-            The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
-
-        :param str opc_request_id: (optional)
-            The client request ID for tracing.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.jms.models.ApplicationUsageCollection`
-        :rtype: :class:`~oci.response.Response`
-
-        :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_summarized_application_usage.py.html>`__ to see an example of how to use request_summarized_application_usage API.
-        """
-        resource_path = "/fleets/{fleetId}/actions/summarizeApplicationUsage"
-        method = "POST"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "limit",
-            "page",
-            "opc_request_id"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "request_summarized_application_usage got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "fleetId": fleet_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
-
-        query_params = {
-            "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                query_params=query_params,
-                header_params=header_params,
-                body=request_summarized_application_usage_details,
-                response_type="ApplicationUsageCollection")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                query_params=query_params,
-                header_params=header_params,
-                body=request_summarized_application_usage_details,
-                response_type="ApplicationUsageCollection")
-
-    def request_summarized_installation_usage(self, fleet_id, request_summarized_installation_usage_details, **kwargs):
-        """
-        List Java installation usage in a specified Fleet filtered by form parameters.
-
-
-        :param str fleet_id: (required)
-            The `OCID`__ of the Fleet.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param oci.jms.models.RequestSummarizedInstallationUsageDetails request_summarized_installation_usage_details: (required)
-            Parameters for filtering Java installation usage.
-
-        :param int limit: (optional)
-            The maximum number of items to return.
-
-        :param str page: (optional)
-            The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
-
-        :param str opc_request_id: (optional)
-            The client request ID for tracing.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.jms.models.InstallationUsageCollection`
-        :rtype: :class:`~oci.response.Response`
-
-        :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_summarized_installation_usage.py.html>`__ to see an example of how to use request_summarized_installation_usage API.
-        """
-        resource_path = "/fleets/{fleetId}/actions/summarizeInstallationUsage"
-        method = "POST"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "limit",
-            "page",
-            "opc_request_id"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "request_summarized_installation_usage got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "fleetId": fleet_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
-
-        query_params = {
-            "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                query_params=query_params,
-                header_params=header_params,
-                body=request_summarized_installation_usage_details,
-                response_type="InstallationUsageCollection")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                query_params=query_params,
-                header_params=header_params,
-                body=request_summarized_installation_usage_details,
-                response_type="InstallationUsageCollection")
-
-    def request_summarized_jre_usage(self, fleet_id, request_summarized_jre_usage_details, **kwargs):
-        """
-        List Java Runtime usage in a specified Fleet filtered by form parameters.
-
-
-        :param str fleet_id: (required)
-            The `OCID`__ of the Fleet.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param oci.jms.models.RequestSummarizedJreUsageDetails request_summarized_jre_usage_details: (required)
-            Parameters for filtering Java Runtime usage.
-
-        :param int limit: (optional)
-            The maximum number of items to return.
-
-        :param str page: (optional)
-            The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
-
-        :param str opc_request_id: (optional)
-            The client request ID for tracing.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.jms.models.JreUsageCollection`
-        :rtype: :class:`~oci.response.Response`
-
-        :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_summarized_jre_usage.py.html>`__ to see an example of how to use request_summarized_jre_usage API.
-        """
-        resource_path = "/fleets/{fleetId}/actions/summarizeJreUsage"
-        method = "POST"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "limit",
-            "page",
-            "opc_request_id"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "request_summarized_jre_usage got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "fleetId": fleet_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
-
-        query_params = {
-            "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                query_params=query_params,
-                header_params=header_params,
-                body=request_summarized_jre_usage_details,
-                response_type="JreUsageCollection")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                query_params=query_params,
-                header_params=header_params,
-                body=request_summarized_jre_usage_details,
-                response_type="JreUsageCollection")
-
-    def request_summarized_managed_instance_usage(self, fleet_id, request_summarized_managed_instance_usage_details, **kwargs):
-        """
-        List managed instance usage in a specified Fleet filtered by form parameters.
-
-
-        :param str fleet_id: (required)
-            The `OCID`__ of the Fleet.
-
-            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-
-        :param oci.jms.models.RequestSummarizedManagedInstanceUsageDetails request_summarized_managed_instance_usage_details: (required)
-            Parameters for filtering managed instance usage.
-
-        :param int limit: (optional)
-            The maximum number of items to return.
-
-        :param str page: (optional)
-            The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
-
-        :param str opc_request_id: (optional)
-            The client request ID for tracing.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
-            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.jms.models.ManagedInstanceUsageCollection`
-        :rtype: :class:`~oci.response.Response`
-
-        :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/jms/request_summarized_managed_instance_usage.py.html>`__ to see an example of how to use request_summarized_managed_instance_usage API.
-        """
-        resource_path = "/fleets/{fleetId}/actions/summarizeManagedInstanceUsage"
-        method = "POST"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "retry_strategy",
-            "limit",
-            "page",
-            "opc_request_id"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "request_summarized_managed_instance_usage got unknown kwargs: {!r}".format(extra_kwargs))
-
-        path_params = {
-            "fleetId": fleet_id
-        }
-
-        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
-
-        for (k, v) in six.iteritems(path_params):
-            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
-                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
-
-        query_params = {
-            "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.retry_strategy
-        if kwargs.get('retry_strategy'):
-            retry_strategy = kwargs.get('retry_strategy')
-
-        if retry_strategy:
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                query_params=query_params,
-                header_params=header_params,
-                body=request_summarized_managed_instance_usage_details,
-                response_type="ManagedInstanceUsageCollection")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                path_params=path_params,
-                query_params=query_params,
-                header_params=header_params,
-                body=request_summarized_managed_instance_usage_details,
-                response_type="ManagedInstanceUsageCollection")
-
     def summarize_application_usage(self, fleet_id, **kwargs):
         """
         List application usage in a Fleet filtered by query parameters.
@@ -1422,10 +1030,14 @@ class JavaManagementServiceClient(object):
             Allowed values are: "approximateJreCount", "approximateInstallationCount", "approximateManagedInstanceCount"
 
         :param datetime time_start: (optional)
-            The start of the time period during which resources are searched (formatted according to RFC3339).
+            The start of the time period during which resources are searched (formatted according to `RFC3339`__).
+
+            __ https://datatracker.ietf.org/doc/html/rfc3339
 
         :param datetime time_end: (optional)
-            The end of the time period during which resources are searched (formatted according to RFC3339).
+            The end of the time period during which resources are searched (formatted according to `RFC3339`__).
+
+            __ https://datatracker.ietf.org/doc/html/rfc3339
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1442,13 +1054,18 @@ class JavaManagementServiceClient(object):
             The field to sort application views. Only one sort order may be provided.
             Default order for _timeFirstSeen_, _timeLastSeen_, _approximateJreCount_, _approximateInstallationCount_
             and _approximateManagedInstanceCount_  is **descending**.
-            Default order for _displayName_ is **ascending**.
+            Default order for _displayName_ and _osName_ is **ascending**.
             If no value is specified _timeLastSeen_ is default.
 
-            Allowed values are: "timeFirstSeen", "timeLastSeen", "displayName", "approximateJreCount", "approximateInstallationCount", "approximateManagedInstanceCount"
+            Allowed values are: "timeFirstSeen", "timeLastSeen", "displayName", "approximateJreCount", "approximateInstallationCount", "approximateManagedInstanceCount", "osName"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
+
+        :param list[str] os_family: (optional)
+            The operating system type.
+
+            Allowed values are: "LINUX", "WINDOWS", "MACOS", "UNKNOWN"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1485,7 +1102,8 @@ class JavaManagementServiceClient(object):
             "page",
             "sort_order",
             "sort_by",
-            "opc_request_id"
+            "opc_request_id",
+            "os_family"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1518,11 +1136,19 @@ class JavaManagementServiceClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["timeFirstSeen", "timeLastSeen", "displayName", "approximateJreCount", "approximateInstallationCount", "approximateManagedInstanceCount"]
+            sort_by_allowed_values = ["timeFirstSeen", "timeLastSeen", "displayName", "approximateJreCount", "approximateInstallationCount", "approximateManagedInstanceCount", "osName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
                 )
+
+        if 'os_family' in kwargs:
+            os_family_allowed_values = ["LINUX", "WINDOWS", "MACOS", "UNKNOWN"]
+            for os_family_item in kwargs['os_family']:
+                if os_family_item not in os_family_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                    )
 
         query_params = {
             "applicationId": kwargs.get("application_id", missing),
@@ -1533,13 +1159,14 @@ class JavaManagementServiceClient(object):
             "jreVersion": kwargs.get("jre_version", missing),
             "installationPath": kwargs.get("installation_path", missing),
             "managedInstanceId": kwargs.get("managed_instance_id", missing),
-            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'csv'),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "timeStart": kwargs.get("time_start", missing),
             "timeEnd": kwargs.get("time_end", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "osFamily": self.base_client.generate_collection_format_param(kwargs.get("os_family", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1608,10 +1235,14 @@ class JavaManagementServiceClient(object):
             Allowed values are: "approximateApplicationCount", "approximateManagedInstanceCount"
 
         :param datetime time_start: (optional)
-            The start of the time period during which resources are searched (formatted according to RFC3339).
+            The start of the time period during which resources are searched (formatted according to `RFC3339`__).
+
+            __ https://datatracker.ietf.org/doc/html/rfc3339
 
         :param datetime time_end: (optional)
-            The end of the time period during which resources are searched (formatted according to RFC3339).
+            The end of the time period during which resources are searched (formatted according to `RFC3339`__).
+
+            __ https://datatracker.ietf.org/doc/html/rfc3339
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1630,10 +1261,15 @@ class JavaManagementServiceClient(object):
             and _approximateManagedInstanceCount_  is **descending**.
             Default order for _jreDistribution_ and _jreVendor_ is **ascending**. If no value is specified _timeLastSeen_ is default.
 
-            Allowed values are: "jreDistribution", "jreVendor", "jreVersion", "path", "timeFirstSeen", "timeLastSeen", "approximateApplicationCount", "approximateManagedInstanceCount"
+            Allowed values are: "jreDistribution", "jreVendor", "jreVersion", "path", "timeFirstSeen", "timeLastSeen", "approximateApplicationCount", "approximateManagedInstanceCount", "osName"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
+
+        :param list[str] os_family: (optional)
+            The operating system type.
+
+            Allowed values are: "LINUX", "WINDOWS", "MACOS", "UNKNOWN"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1668,7 +1304,8 @@ class JavaManagementServiceClient(object):
             "page",
             "sort_order",
             "sort_by",
-            "opc_request_id"
+            "opc_request_id",
+            "os_family"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1701,11 +1338,19 @@ class JavaManagementServiceClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["jreDistribution", "jreVendor", "jreVersion", "path", "timeFirstSeen", "timeLastSeen", "approximateApplicationCount", "approximateManagedInstanceCount"]
+            sort_by_allowed_values = ["jreDistribution", "jreVendor", "jreVersion", "path", "timeFirstSeen", "timeLastSeen", "approximateApplicationCount", "approximateManagedInstanceCount", "osName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
                 )
+
+        if 'os_family' in kwargs:
+            os_family_allowed_values = ["LINUX", "WINDOWS", "MACOS", "UNKNOWN"]
+            for os_family_item in kwargs['os_family']:
+                if os_family_item not in os_family_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                    )
 
         query_params = {
             "jreVendor": kwargs.get("jre_vendor", missing),
@@ -1714,13 +1359,14 @@ class JavaManagementServiceClient(object):
             "installationPath": kwargs.get("installation_path", missing),
             "applicationId": kwargs.get("application_id", missing),
             "managedInstanceId": kwargs.get("managed_instance_id", missing),
-            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'csv'),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "timeStart": kwargs.get("time_start", missing),
             "timeEnd": kwargs.get("time_end", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "osFamily": self.base_client.generate_collection_format_param(kwargs.get("os_family", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1786,10 +1432,14 @@ class JavaManagementServiceClient(object):
             Allowed values are: "approximateInstallationCount", "approximateApplicationCount", "approximateManagedInstanceCount"
 
         :param datetime time_start: (optional)
-            The start of the time period during which resources are searched (formatted according to RFC3339).
+            The start of the time period during which resources are searched (formatted according to `RFC3339`__).
+
+            __ https://datatracker.ietf.org/doc/html/rfc3339
 
         :param datetime time_end: (optional)
-            The end of the time period during which resources are searched (formatted according to RFC3339).
+            The end of the time period during which resources are searched (formatted according to `RFC3339`__).
+
+            __ https://datatracker.ietf.org/doc/html/rfc3339
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1807,12 +1457,18 @@ class JavaManagementServiceClient(object):
             Default order for _timeFirstSeen_, _timeLastSeen_, and _version_ is **descending**.
             Default order for _timeFirstSeen_, _timeLastSeen_, _version_, _approximateInstallationCount_,
             _approximateApplicationCount_ and _approximateManagedInstanceCount_  is **descending**.
-            Default order for _distribution_ and _vendor_ is **ascending**. If no value is specified _timeLastSeen_ is default.
+            Default order for _distribution_, _vendor_, and _osName_ is **ascending**.
+            If no value is specified _timeLastSeen_ is default.
 
-            Allowed values are: "distribution", "timeFirstSeen", "timeLastSeen", "vendor", "version", "approximateInstallationCount", "approximateApplicationCount", "approximateManagedInstanceCount"
+            Allowed values are: "distribution", "timeFirstSeen", "timeLastSeen", "vendor", "version", "approximateInstallationCount", "approximateApplicationCount", "approximateManagedInstanceCount", "osName"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
+
+        :param list[str] os_family: (optional)
+            The operating system type.
+
+            Allowed values are: "LINUX", "WINDOWS", "MACOS", "UNKNOWN"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1846,7 +1502,8 @@ class JavaManagementServiceClient(object):
             "page",
             "sort_order",
             "sort_by",
-            "opc_request_id"
+            "opc_request_id",
+            "os_family"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1879,11 +1536,19 @@ class JavaManagementServiceClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["distribution", "timeFirstSeen", "timeLastSeen", "vendor", "version", "approximateInstallationCount", "approximateApplicationCount", "approximateManagedInstanceCount"]
+            sort_by_allowed_values = ["distribution", "timeFirstSeen", "timeLastSeen", "vendor", "version", "approximateInstallationCount", "approximateApplicationCount", "approximateManagedInstanceCount", "osName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
                 )
+
+        if 'os_family' in kwargs:
+            os_family_allowed_values = ["LINUX", "WINDOWS", "MACOS", "UNKNOWN"]
+            for os_family_item in kwargs['os_family']:
+                if os_family_item not in os_family_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                    )
 
         query_params = {
             "jreVendor": kwargs.get("jre_vendor", missing),
@@ -1891,13 +1556,14 @@ class JavaManagementServiceClient(object):
             "jreVersion": kwargs.get("jre_version", missing),
             "applicationId": kwargs.get("application_id", missing),
             "managedInstanceId": kwargs.get("managed_instance_id", missing),
-            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'csv'),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "timeStart": kwargs.get("time_start", missing),
             "timeEnd": kwargs.get("time_end", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "osFamily": self.base_client.generate_collection_format_param(kwargs.get("os_family", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1971,10 +1637,14 @@ class JavaManagementServiceClient(object):
             Allowed values are: "approximateJreCount", "approximateInstallationCount", "approximateApplicationCount"
 
         :param datetime time_start: (optional)
-            The start of the time period during which resources are searched (formatted according to RFC3339).
+            The start of the time period during which resources are searched (formatted according to `RFC3339`__).
+
+            __ https://datatracker.ietf.org/doc/html/rfc3339
 
         :param datetime time_end: (optional)
-            The end of the time period during which resources are searched (formatted according to RFC3339).
+            The end of the time period during which resources are searched (formatted according to `RFC3339`__).
+
+            __ https://datatracker.ietf.org/doc/html/rfc3339
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1991,12 +1661,18 @@ class JavaManagementServiceClient(object):
             The field to sort managed instance views. Only one sort order may be provided.
             Default order for _timeFirstSeen_, _timeLastSeen_, approximateJreCount_, _approximateInstallationCount_
             and _approximateApplicationCount_  is **descending**.
+            Default order for _osName_ is **ascending**.
             If no value is specified _timeLastSeen_ is default.
 
-            Allowed values are: "timeFirstSeen", "timeLastSeen", "approximateJreCount", "approximateInstallationCount", "approximateApplicationCount"
+            Allowed values are: "timeFirstSeen", "timeLastSeen", "approximateJreCount", "approximateInstallationCount", "approximateApplicationCount", "osName"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
+
+        :param list[str] os_family: (optional)
+            The operating system type.
+
+            Allowed values are: "LINUX", "WINDOWS", "MACOS", "UNKNOWN"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2032,7 +1708,8 @@ class JavaManagementServiceClient(object):
             "page",
             "sort_order",
             "sort_by",
-            "opc_request_id"
+            "opc_request_id",
+            "os_family"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2072,11 +1749,19 @@ class JavaManagementServiceClient(object):
                 )
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["timeFirstSeen", "timeLastSeen", "approximateJreCount", "approximateInstallationCount", "approximateApplicationCount"]
+            sort_by_allowed_values = ["timeFirstSeen", "timeLastSeen", "approximateJreCount", "approximateInstallationCount", "approximateApplicationCount", "osName"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
                 )
+
+        if 'os_family' in kwargs:
+            os_family_allowed_values = ["LINUX", "WINDOWS", "MACOS", "UNKNOWN"]
+            for os_family_item in kwargs['os_family']:
+                if os_family_item not in os_family_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `os_family`, must be one of {0}".format(os_family_allowed_values)
+                    )
 
         query_params = {
             "managedInstanceId": kwargs.get("managed_instance_id", missing),
@@ -2086,13 +1771,14 @@ class JavaManagementServiceClient(object):
             "jreVersion": kwargs.get("jre_version", missing),
             "installationPath": kwargs.get("installation_path", missing),
             "applicationId": kwargs.get("application_id", missing),
-            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'csv'),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "timeStart": kwargs.get("time_start", missing),
             "timeEnd": kwargs.get("time_end", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "osFamily": self.base_client.generate_collection_format_param(kwargs.get("os_family", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

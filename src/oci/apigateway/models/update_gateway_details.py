@@ -22,6 +22,10 @@ class UpdateGatewayDetails(object):
             The value to assign to the display_name property of this UpdateGatewayDetails.
         :type display_name: str
 
+        :param network_security_group_ids:
+            The value to assign to the network_security_group_ids property of this UpdateGatewayDetails.
+        :type network_security_group_ids: list[str]
+
         :param certificate_id:
             The value to assign to the certificate_id property of this UpdateGatewayDetails.
         :type certificate_id: str
@@ -41,6 +45,7 @@ class UpdateGatewayDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'network_security_group_ids': 'list[str]',
             'certificate_id': 'str',
             'response_cache_details': 'ResponseCacheDetails',
             'freeform_tags': 'dict(str, str)',
@@ -49,6 +54,7 @@ class UpdateGatewayDetails(object):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'network_security_group_ids': 'networkSecurityGroupIds',
             'certificate_id': 'certificateId',
             'response_cache_details': 'responseCacheDetails',
             'freeform_tags': 'freeformTags',
@@ -56,6 +62,7 @@ class UpdateGatewayDetails(object):
         }
 
         self._display_name = None
+        self._network_security_group_ids = None
         self._certificate_id = None
         self._response_cache_details = None
         self._freeform_tags = None
@@ -90,6 +97,30 @@ class UpdateGatewayDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def network_security_group_ids(self):
+        """
+        Gets the network_security_group_ids of this UpdateGatewayDetails.
+        An array of Network Security Groups OCIDs associated with this API Gateway.
+
+
+        :return: The network_security_group_ids of this UpdateGatewayDetails.
+        :rtype: list[str]
+        """
+        return self._network_security_group_ids
+
+    @network_security_group_ids.setter
+    def network_security_group_ids(self, network_security_group_ids):
+        """
+        Sets the network_security_group_ids of this UpdateGatewayDetails.
+        An array of Network Security Groups OCIDs associated with this API Gateway.
+
+
+        :param network_security_group_ids: The network_security_group_ids of this UpdateGatewayDetails.
+        :type: list[str]
+        """
+        self._network_security_group_ids = network_security_group_ids
 
     @property
     def certificate_id(self):

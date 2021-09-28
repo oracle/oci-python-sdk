@@ -153,7 +153,9 @@ class FleetAgentConfiguration(object):
     def time_last_modified(self):
         """
         **[Required]** Gets the time_last_modified of this FleetAgentConfiguration.
-        The date and time of the last modification to the Fleet Agent Configuration (formatted according to RFC3339).
+        The date and time of the last modification to the Fleet Agent Configuration (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_last_modified of this FleetAgentConfiguration.
@@ -165,7 +167,9 @@ class FleetAgentConfiguration(object):
     def time_last_modified(self, time_last_modified):
         """
         Sets the time_last_modified of this FleetAgentConfiguration.
-        The date and time of the last modification to the Fleet Agent Configuration (formatted according to RFC3339).
+        The date and time of the last modification to the Fleet Agent Configuration (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_last_modified: The time_last_modified of this FleetAgentConfiguration.

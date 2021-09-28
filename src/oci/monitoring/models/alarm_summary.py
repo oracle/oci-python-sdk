@@ -182,7 +182,6 @@ class AlarmSummary(object):
         """
         **[Required]** Gets the display_name of this AlarmSummary.
         A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-        Avoid entering confidential information.
 
         This name is sent as the title for notifications related to this alarm.
 
@@ -199,7 +198,6 @@ class AlarmSummary(object):
         """
         Sets the display_name of this AlarmSummary.
         A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-        Avoid entering confidential information.
 
         This name is sent as the title for notifications related to this alarm.
 
@@ -305,8 +303,8 @@ class AlarmSummary(object):
         the Monitoring service interprets results for each returned time series as Boolean values,
         where zero represents false and a non-zero value represents true. A true value means that the trigger
         rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-        rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally
-        specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        rule (threshold or absence). Supported values for interval depend on the specified time range. More
+        interval values are supported for smaller time ranges. Supported grouping functions: `grouping()`, `groupBy()`.
         For details about Monitoring Query Language (MQL), see `Monitoring Query Language (MQL) Reference`__.
         For available dimensions, review the metric definition for the supported service.
         See `Supported Services`__.
@@ -344,8 +342,8 @@ class AlarmSummary(object):
         the Monitoring service interprets results for each returned time series as Boolean values,
         where zero represents false and a non-zero value represents true. A true value means that the trigger
         rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-        rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally
-        specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        rule (threshold or absence). Supported values for interval depend on the specified time range. More
+        interval values are supported for smaller time ranges. Supported grouping functions: `grouping()`, `groupBy()`.
         For details about Monitoring Query Language (MQL), see `Monitoring Query Language (MQL) Reference`__.
         For available dimensions, review the metric definition for the supported service.
         See `Supported Services`__.

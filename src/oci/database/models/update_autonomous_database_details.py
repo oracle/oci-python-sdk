@@ -189,6 +189,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the customer_contacts property of this UpdateAutonomousDatabaseDetails.
         :type customer_contacts: list[oci.database.models.CustomerContact]
 
+        :param is_mtls_connection_required:
+            The value to assign to the is_mtls_connection_required property of this UpdateAutonomousDatabaseDetails.
+        :type is_mtls_connection_required: bool
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -218,7 +222,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'subnet_id': 'str',
             'private_endpoint_label': 'str',
             'nsg_ids': 'list[str]',
-            'customer_contacts': 'list[CustomerContact]'
+            'customer_contacts': 'list[CustomerContact]',
+            'is_mtls_connection_required': 'bool'
         }
 
         self.attribute_map = {
@@ -249,7 +254,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'subnet_id': 'subnetId',
             'private_endpoint_label': 'privateEndpointLabel',
             'nsg_ids': 'nsgIds',
-            'customer_contacts': 'customerContacts'
+            'customer_contacts': 'customerContacts',
+            'is_mtls_connection_required': 'isMtlsConnectionRequired'
         }
 
         self._cpu_core_count = None
@@ -280,6 +286,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._private_endpoint_label = None
         self._nsg_ids = None
         self._customer_contacts = None
+        self._is_mtls_connection_required = None
 
     @property
     def cpu_core_count(self):
@@ -1168,6 +1175,30 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: list[oci.database.models.CustomerContact]
         """
         self._customer_contacts = customer_contacts
+
+    @property
+    def is_mtls_connection_required(self):
+        """
+        Gets the is_mtls_connection_required of this UpdateAutonomousDatabaseDetails.
+        Indicates whether the Autonomous Database requires mTLS connections.
+
+
+        :return: The is_mtls_connection_required of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_mtls_connection_required
+
+    @is_mtls_connection_required.setter
+    def is_mtls_connection_required(self, is_mtls_connection_required):
+        """
+        Sets the is_mtls_connection_required of this UpdateAutonomousDatabaseDetails.
+        Indicates whether the Autonomous Database requires mTLS connections.
+
+
+        :param is_mtls_connection_required: The is_mtls_connection_required of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_mtls_connection_required = is_mtls_connection_required
 
     def __repr__(self):
         return formatted_flat_dict(self)

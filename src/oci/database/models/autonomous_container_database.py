@@ -393,7 +393,7 @@ class AutonomousContainerDatabase(object):
     def db_unique_name(self):
         """
         Gets the db_unique_name of this AutonomousContainerDatabase.
-        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+        **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
 
 
         :return: The db_unique_name of this AutonomousContainerDatabase.
@@ -405,7 +405,7 @@ class AutonomousContainerDatabase(object):
     def db_unique_name(self, db_unique_name):
         """
         Sets the db_unique_name of this AutonomousContainerDatabase.
-        The `DB_UNIQUE_NAME` of the Oracle Database being backed up.
+        **Deprecated.** The `DB_UNIQUE_NAME` value is set by Oracle Cloud Infrastructure.  Do not specify a value for this parameter. Specifying a value for this field will cause Terraform operations to fail.
 
 
         :param db_unique_name: The db_unique_name of this AutonomousContainerDatabase.

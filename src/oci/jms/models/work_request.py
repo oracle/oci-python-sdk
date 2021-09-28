@@ -309,7 +309,9 @@ class WorkRequest(object):
     def time_accepted(self):
         """
         **[Required]** Gets the time_accepted of this WorkRequest.
-        The date and time the request was created (formatted according to RFC3339).
+        The date and time the request was created (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_accepted of this WorkRequest.
@@ -321,7 +323,9 @@ class WorkRequest(object):
     def time_accepted(self, time_accepted):
         """
         Sets the time_accepted of this WorkRequest.
-        The date and time the request was created (formatted according to RFC3339).
+        The date and time the request was created (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_accepted: The time_accepted of this WorkRequest.
@@ -333,7 +337,9 @@ class WorkRequest(object):
     def time_started(self):
         """
         Gets the time_started of this WorkRequest.
-        The date and time the work request transitioned from _ACCEPTED_ to _IN_PROGRESS_ (formatted according to RFC3339).
+        The date and time the work request transitioned from _ACCEPTED_ to _IN_PROGRESS_ (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_started of this WorkRequest.
@@ -345,7 +351,9 @@ class WorkRequest(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this WorkRequest.
-        The date and time the work request transitioned from _ACCEPTED_ to _IN_PROGRESS_ (formatted according to RFC3339).
+        The date and time the work request transitioned from _ACCEPTED_ to _IN_PROGRESS_ (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_started: The time_started of this WorkRequest.
@@ -357,7 +365,9 @@ class WorkRequest(object):
     def time_finished(self):
         """
         Gets the time_finished of this WorkRequest.
-        The date and time the work request reached a terminal state, either _FAILED_ or _SUCCEEDED_ (formatted according to RFC3339).
+        The date and time the work request reached a terminal state, either _FAILED_ or _SUCCEEDED_ (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_finished of this WorkRequest.
@@ -369,7 +379,9 @@ class WorkRequest(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this WorkRequest.
-        The date and time the work request reached a terminal state, either _FAILED_ or _SUCCEEDED_ (formatted according to RFC3339).
+        The date and time the work request reached a terminal state, either _FAILED_ or _SUCCEEDED_ (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_finished: The time_finished of this WorkRequest.

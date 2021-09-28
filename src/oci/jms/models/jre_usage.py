@@ -30,6 +30,10 @@ class JreUsage(object):
             The value to assign to the version property of this JreUsage.
         :type version: str
 
+        :param operating_systems:
+            The value to assign to the operating_systems property of this JreUsage.
+        :type operating_systems: list[oci.jms.models.OperatingSystem]
+
         :param approximate_installation_count:
             The value to assign to the approximate_installation_count property of this JreUsage.
         :type approximate_installation_count: int
@@ -63,6 +67,7 @@ class JreUsage(object):
             'vendor': 'str',
             'distribution': 'str',
             'version': 'str',
+            'operating_systems': 'list[OperatingSystem]',
             'approximate_installation_count': 'int',
             'approximate_application_count': 'int',
             'approximate_managed_instance_count': 'int',
@@ -76,6 +81,7 @@ class JreUsage(object):
             'vendor': 'vendor',
             'distribution': 'distribution',
             'version': 'version',
+            'operating_systems': 'operatingSystems',
             'approximate_installation_count': 'approximateInstallationCount',
             'approximate_application_count': 'approximateApplicationCount',
             'approximate_managed_instance_count': 'approximateManagedInstanceCount',
@@ -88,6 +94,7 @@ class JreUsage(object):
         self._vendor = None
         self._distribution = None
         self._version = None
+        self._operating_systems = None
         self._approximate_installation_count = None
         self._approximate_application_count = None
         self._approximate_managed_instance_count = None
@@ -167,6 +174,30 @@ class JreUsage(object):
         :type: str
         """
         self._version = version
+
+    @property
+    def operating_systems(self):
+        """
+        Gets the operating_systems of this JreUsage.
+        The operating systems that have this Java Runtime installed.
+
+
+        :return: The operating_systems of this JreUsage.
+        :rtype: list[oci.jms.models.OperatingSystem]
+        """
+        return self._operating_systems
+
+    @operating_systems.setter
+    def operating_systems(self, operating_systems):
+        """
+        Sets the operating_systems of this JreUsage.
+        The operating systems that have this Java Runtime installed.
+
+
+        :param operating_systems: The operating_systems of this JreUsage.
+        :type: list[oci.jms.models.OperatingSystem]
+        """
+        self._operating_systems = operating_systems
 
     @property
     def approximate_installation_count(self):

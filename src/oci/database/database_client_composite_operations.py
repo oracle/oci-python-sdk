@@ -1005,7 +1005,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.CreateAutonomousContainerDatabaseDetails create_autonomous_container_database_details: (required)
-            Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure.
+            Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -1040,7 +1040,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.CreateAutonomousContainerDatabaseDetails create_autonomous_container_database_details: (required)
-            Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure.
+            Request to create an Autonomous Container Database in a specified Autonomous Exadata Infrastructure or in Autonomous VM Cluster.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousContainerDatabase.lifecycle_state`

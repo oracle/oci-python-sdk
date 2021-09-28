@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MigrationPhaseCollection(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Results of a Migration Phase search. Contains a collection of valid ODMS Job Phases.
     """
 

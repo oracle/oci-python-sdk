@@ -38,6 +38,10 @@ class GatewaySummary(object):
             The value to assign to the subnet_id property of this GatewaySummary.
         :type subnet_id: str
 
+        :param network_security_group_ids:
+            The value to assign to the network_security_group_ids property of this GatewaySummary.
+        :type network_security_group_ids: list[str]
+
         :param time_created:
             The value to assign to the time_created property of this GatewaySummary.
         :type time_created: datetime
@@ -77,6 +81,7 @@ class GatewaySummary(object):
             'compartment_id': 'str',
             'endpoint_type': 'str',
             'subnet_id': 'str',
+            'network_security_group_ids': 'list[str]',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
@@ -93,6 +98,7 @@ class GatewaySummary(object):
             'compartment_id': 'compartmentId',
             'endpoint_type': 'endpointType',
             'subnet_id': 'subnetId',
+            'network_security_group_ids': 'networkSecurityGroupIds',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
@@ -108,6 +114,7 @@ class GatewaySummary(object):
         self._compartment_id = None
         self._endpoint_type = None
         self._subnet_id = None
+        self._network_security_group_ids = None
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
@@ -264,6 +271,30 @@ class GatewaySummary(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def network_security_group_ids(self):
+        """
+        Gets the network_security_group_ids of this GatewaySummary.
+        An array of Network Security Groups OCIDs associated with this API Gateway.
+
+
+        :return: The network_security_group_ids of this GatewaySummary.
+        :rtype: list[str]
+        """
+        return self._network_security_group_ids
+
+    @network_security_group_ids.setter
+    def network_security_group_ids(self, network_security_group_ids):
+        """
+        Sets the network_security_group_ids of this GatewaySummary.
+        An array of Network Security Groups OCIDs associated with this API Gateway.
+
+
+        :param network_security_group_ids: The network_security_group_ids of this GatewaySummary.
+        :type: list[str]
+        """
+        self._network_security_group_ids = network_security_group_ids
 
     @property
     def time_created(self):

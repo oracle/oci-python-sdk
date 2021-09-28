@@ -29,5 +29,7 @@ Functions
     oci.functions.models.Function
     oci.functions.models.FunctionSummary
     oci.functions.models.FunctionTraceConfig
+    oci.functions.models.ImagePolicyConfig
+    oci.functions.models.KeyDetails
     oci.functions.models.UpdateApplicationDetails
     oci.functions.models.UpdateFunctionDetails

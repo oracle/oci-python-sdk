@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDirectoryObject(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Directory object details, used to define either import or export directory objects in Data Pump Settings.
     Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error.
     Export directory will error if there are database link details specified.

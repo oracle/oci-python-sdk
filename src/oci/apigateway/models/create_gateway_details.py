@@ -34,6 +34,10 @@ class CreateGatewayDetails(object):
             The value to assign to the subnet_id property of this CreateGatewayDetails.
         :type subnet_id: str
 
+        :param network_security_group_ids:
+            The value to assign to the network_security_group_ids property of this CreateGatewayDetails.
+        :type network_security_group_ids: list[str]
+
         :param certificate_id:
             The value to assign to the certificate_id property of this CreateGatewayDetails.
         :type certificate_id: str
@@ -56,6 +60,7 @@ class CreateGatewayDetails(object):
             'compartment_id': 'str',
             'endpoint_type': 'str',
             'subnet_id': 'str',
+            'network_security_group_ids': 'list[str]',
             'certificate_id': 'str',
             'response_cache_details': 'ResponseCacheDetails',
             'freeform_tags': 'dict(str, str)',
@@ -67,6 +72,7 @@ class CreateGatewayDetails(object):
             'compartment_id': 'compartmentId',
             'endpoint_type': 'endpointType',
             'subnet_id': 'subnetId',
+            'network_security_group_ids': 'networkSecurityGroupIds',
             'certificate_id': 'certificateId',
             'response_cache_details': 'responseCacheDetails',
             'freeform_tags': 'freeformTags',
@@ -77,6 +83,7 @@ class CreateGatewayDetails(object):
         self._compartment_id = None
         self._endpoint_type = None
         self._subnet_id = None
+        self._network_security_group_ids = None
         self._certificate_id = None
         self._response_cache_details = None
         self._freeform_tags = None
@@ -201,6 +208,30 @@ class CreateGatewayDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def network_security_group_ids(self):
+        """
+        Gets the network_security_group_ids of this CreateGatewayDetails.
+        An array of Network Security Groups OCIDs associated with this API Gateway.
+
+
+        :return: The network_security_group_ids of this CreateGatewayDetails.
+        :rtype: list[str]
+        """
+        return self._network_security_group_ids
+
+    @network_security_group_ids.setter
+    def network_security_group_ids(self, network_security_group_ids):
+        """
+        Sets the network_security_group_ids of this CreateGatewayDetails.
+        An array of Network Security Groups OCIDs associated with this API Gateway.
+
+
+        :param network_security_group_ids: The network_security_group_ids of this CreateGatewayDetails.
+        :type: list[str]
+        """
+        self._network_security_group_ids = network_security_group_ids
 
     @property
     def certificate_id(self):

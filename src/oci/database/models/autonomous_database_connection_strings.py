@@ -38,13 +38,18 @@ class AutonomousDatabaseConnectionStrings(object):
             The value to assign to the all_connection_strings property of this AutonomousDatabaseConnectionStrings.
         :type all_connection_strings: dict(str, str)
 
+        :param profiles:
+            The value to assign to the profiles property of this AutonomousDatabaseConnectionStrings.
+        :type profiles: list[oci.database.models.DatabaseConnectionStringProfile]
+
         """
         self.swagger_types = {
             'high': 'str',
             'medium': 'str',
             'low': 'str',
             'dedicated': 'str',
-            'all_connection_strings': 'dict(str, str)'
+            'all_connection_strings': 'dict(str, str)',
+            'profiles': 'list[DatabaseConnectionStringProfile]'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class AutonomousDatabaseConnectionStrings(object):
             'medium': 'medium',
             'low': 'low',
             'dedicated': 'dedicated',
-            'all_connection_strings': 'allConnectionStrings'
+            'all_connection_strings': 'allConnectionStrings',
+            'profiles': 'profiles'
         }
 
         self._high = None
@@ -60,6 +66,7 @@ class AutonomousDatabaseConnectionStrings(object):
         self._low = None
         self._dedicated = None
         self._all_connection_strings = None
+        self._profiles = None
 
     @property
     def high(self):
@@ -186,6 +193,30 @@ class AutonomousDatabaseConnectionStrings(object):
         :type: dict(str, str)
         """
         self._all_connection_strings = all_connection_strings
+
+    @property
+    def profiles(self):
+        """
+        Gets the profiles of this AutonomousDatabaseConnectionStrings.
+        A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
+
+
+        :return: The profiles of this AutonomousDatabaseConnectionStrings.
+        :rtype: list[oci.database.models.DatabaseConnectionStringProfile]
+        """
+        return self._profiles
+
+    @profiles.setter
+    def profiles(self, profiles):
+        """
+        Sets the profiles of this AutonomousDatabaseConnectionStrings.
+        A list of connection string profiles to allow clients to group, filter and select connection string values based on structured metadata.
+
+
+        :param profiles: The profiles of this AutonomousDatabaseConnectionStrings.
+        :type: list[oci.database.models.DatabaseConnectionStringProfile]
+        """
+        self._profiles = profiles
 
     def __repr__(self):
         return formatted_flat_dict(self)

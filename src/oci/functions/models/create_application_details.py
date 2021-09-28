@@ -34,6 +34,10 @@ class CreateApplicationDetails(object):
             The value to assign to the subnet_ids property of this CreateApplicationDetails.
         :type subnet_ids: list[str]
 
+        :param network_security_group_ids:
+            The value to assign to the network_security_group_ids property of this CreateApplicationDetails.
+        :type network_security_group_ids: list[str]
+
         :param syslog_url:
             The value to assign to the syslog_url property of this CreateApplicationDetails.
         :type syslog_url: str
@@ -50,16 +54,22 @@ class CreateApplicationDetails(object):
             The value to assign to the defined_tags property of this CreateApplicationDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param image_policy_config:
+            The value to assign to the image_policy_config property of this CreateApplicationDetails.
+        :type image_policy_config: oci.functions.models.ImagePolicyConfig
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'display_name': 'str',
             'config': 'dict(str, str)',
             'subnet_ids': 'list[str]',
+            'network_security_group_ids': 'list[str]',
             'syslog_url': 'str',
             'trace_config': 'ApplicationTraceConfig',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'image_policy_config': 'ImagePolicyConfig'
         }
 
         self.attribute_map = {
@@ -67,20 +77,24 @@ class CreateApplicationDetails(object):
             'display_name': 'displayName',
             'config': 'config',
             'subnet_ids': 'subnetIds',
+            'network_security_group_ids': 'networkSecurityGroupIds',
             'syslog_url': 'syslogUrl',
             'trace_config': 'traceConfig',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'image_policy_config': 'imagePolicyConfig'
         }
 
         self._compartment_id = None
         self._display_name = None
         self._config = None
         self._subnet_ids = None
+        self._network_security_group_ids = None
         self._syslog_url = None
         self._trace_config = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._image_policy_config = None
 
     @property
     def compartment_id(self):
@@ -191,6 +205,34 @@ class CreateApplicationDetails(object):
         :type: list[str]
         """
         self._subnet_ids = subnet_ids
+
+    @property
+    def network_security_group_ids(self):
+        """
+        Gets the network_security_group_ids of this CreateApplicationDetails.
+        The `OCID`__s of the Network Security Groups to add the application to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The network_security_group_ids of this CreateApplicationDetails.
+        :rtype: list[str]
+        """
+        return self._network_security_group_ids
+
+    @network_security_group_ids.setter
+    def network_security_group_ids(self, network_security_group_ids):
+        """
+        Sets the network_security_group_ids of this CreateApplicationDetails.
+        The `OCID`__s of the Network Security Groups to add the application to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param network_security_group_ids: The network_security_group_ids of this CreateApplicationDetails.
+        :type: list[str]
+        """
+        self._network_security_group_ids = network_security_group_ids
 
     @property
     def syslog_url(self):
@@ -309,6 +351,26 @@ class CreateApplicationDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def image_policy_config(self):
+        """
+        Gets the image_policy_config of this CreateApplicationDetails.
+
+        :return: The image_policy_config of this CreateApplicationDetails.
+        :rtype: oci.functions.models.ImagePolicyConfig
+        """
+        return self._image_policy_config
+
+    @image_policy_config.setter
+    def image_policy_config(self, image_policy_config):
+        """
+        Sets the image_policy_config of this CreateApplicationDetails.
+
+        :param image_policy_config: The image_policy_config of this CreateApplicationDetails.
+        :type: oci.functions.models.ImagePolicyConfig
+        """
+        self._image_policy_config = image_policy_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

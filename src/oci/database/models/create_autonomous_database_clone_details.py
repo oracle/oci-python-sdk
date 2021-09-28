@@ -150,6 +150,10 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             The value to assign to the customer_contacts property of this CreateAutonomousDatabaseCloneDetails.
         :type customer_contacts: list[oci.database.models.CustomerContact]
 
+        :param is_mtls_connection_required:
+            The value to assign to the is_mtls_connection_required property of this CreateAutonomousDatabaseCloneDetails.
+        :type is_mtls_connection_required: bool
+
         :param autonomous_maintenance_schedule_type:
             The value to assign to the autonomous_maintenance_schedule_type property of this CreateAutonomousDatabaseCloneDetails.
             Allowed values for this property are: "EARLY", "REGULAR"
@@ -196,6 +200,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'db_version': 'str',
             'source': 'str',
             'customer_contacts': 'list[CustomerContact]',
+            'is_mtls_connection_required': 'bool',
             'autonomous_maintenance_schedule_type': 'str',
             'source_id': 'str',
             'clone_type': 'str'
@@ -232,6 +237,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
             'db_version': 'dbVersion',
             'source': 'source',
             'customer_contacts': 'customerContacts',
+            'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'source_id': 'sourceId',
             'clone_type': 'cloneType'
@@ -267,6 +273,7 @@ class CreateAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBase):
         self._db_version = None
         self._source = None
         self._customer_contacts = None
+        self._is_mtls_connection_required = None
         self._autonomous_maintenance_schedule_type = None
         self._source_id = None
         self._clone_type = None

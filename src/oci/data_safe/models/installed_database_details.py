@@ -100,7 +100,7 @@ class InstalledDatabaseDetails(DatabaseDetails):
     def ip_addresses(self):
         """
         Gets the ip_addresses of this InstalledDatabaseDetails.
-        A List of either the IP Addresses or FQDN names of the database hosts.
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 
 
         :return: The ip_addresses of this InstalledDatabaseDetails.
@@ -112,7 +112,7 @@ class InstalledDatabaseDetails(DatabaseDetails):
     def ip_addresses(self, ip_addresses):
         """
         Sets the ip_addresses of this InstalledDatabaseDetails.
-        A List of either the IP Addresses or FQDN names of the database hosts.
+        The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 
 
         :param ip_addresses: The ip_addresses of this InstalledDatabaseDetails.

@@ -116,6 +116,7 @@ from .database_connection_credentails_by_name import DatabaseConnectionCredentai
 from .database_connection_credentials import DatabaseConnectionCredentials
 from .database_connection_credentials_by_details import DatabaseConnectionCredentialsByDetails
 from .database_connection_string import DatabaseConnectionString
+from .database_connection_string_profile import DatabaseConnectionStringProfile
 from .database_connection_strings import DatabaseConnectionStrings
 from .database_credential_details import DatabaseCredentialDetails
 from .database_management_config import DatabaseManagementConfig
@@ -374,6 +375,7 @@ database_type_mapping = {
     "DatabaseConnectionCredentials": DatabaseConnectionCredentials,
     "DatabaseConnectionCredentialsByDetails": DatabaseConnectionCredentialsByDetails,
     "DatabaseConnectionString": DatabaseConnectionString,
+    "DatabaseConnectionStringProfile": DatabaseConnectionStringProfile,
     "DatabaseConnectionStrings": DatabaseConnectionStrings,
     "DatabaseCredentialDetails": DatabaseCredentialDetails,
     "DatabaseManagementConfig": DatabaseManagementConfig,

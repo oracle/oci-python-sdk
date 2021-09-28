@@ -1,9 +1,9 @@
-RequestSummarizedInstallationUsageDetails
-=========================================
+OperatingSystem
+===============
 
 .. currentmodule:: oci.jms.models
 
-.. autoclass:: RequestSummarizedInstallationUsageDetails
+.. autoclass:: OperatingSystem
     :show-inheritance:
     :special-members: __init__
     :members:
