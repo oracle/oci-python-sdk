@@ -88,6 +88,7 @@ class DatabaseMigrationClient(object):
 
     def abort_job(self, job_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Aborts a Migration Job (either Evaluation or Migration).
 
 
@@ -184,6 +185,7 @@ class DatabaseMigrationClient(object):
 
     def change_agent_compartment(self, agent_id, change_agent_compartment_details, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Used to configure an ODMS Agent Compartment ID.
 
 
@@ -283,6 +285,7 @@ class DatabaseMigrationClient(object):
 
     def change_connection_compartment(self, connection_id, change_connection_compartment_details, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Used to change the Database Connection compartment.
 
 
@@ -382,6 +385,7 @@ class DatabaseMigrationClient(object):
 
     def change_migration_compartment(self, migration_id, change_migration_compartment_details, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Used to change the Migration compartment.
 
 
@@ -481,6 +485,7 @@ class DatabaseMigrationClient(object):
 
     def clone_migration(self, migration_id, clone_migration_details, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Clone a configuration from an existing Migration.
 
 
@@ -582,6 +587,7 @@ class DatabaseMigrationClient(object):
 
     def create_connection(self, create_connection_details, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Create a Database Connection resource that contains the details to connect to either a Source or Target Database
         in the migration.
 
@@ -660,6 +666,7 @@ class DatabaseMigrationClient(object):
 
     def create_migration(self, create_migration_details, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Create a Migration resource that contains all the details to perform the
         database migration operation, such as source and destination database
         details, credentials, etc.
@@ -739,6 +746,7 @@ class DatabaseMigrationClient(object):
 
     def delete_agent(self, agent_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Delete the ODMS Agent represented by the specified ODMS Agent ID.
 
 
@@ -822,6 +830,7 @@ class DatabaseMigrationClient(object):
 
     def delete_connection(self, connection_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Deletes the Database Connection represented by the specified connection ID.
 
 
@@ -905,6 +914,7 @@ class DatabaseMigrationClient(object):
 
     def delete_job(self, job_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Deletes the migration job represented by the given job ID.
 
 
@@ -988,6 +998,7 @@ class DatabaseMigrationClient(object):
 
     def delete_migration(self, migration_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Deletes the Migration represented by the specified migration ID.
 
 
@@ -1071,6 +1082,7 @@ class DatabaseMigrationClient(object):
 
     def evaluate_migration(self, migration_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Start Validate Migration job.
 
 
@@ -1167,6 +1179,7 @@ class DatabaseMigrationClient(object):
 
     def get_agent(self, agent_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Display the ODMS Agent configuration.
 
 
@@ -1243,6 +1256,7 @@ class DatabaseMigrationClient(object):
 
     def get_connection(self, connection_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Display Database Connection details.
 
 
@@ -1319,6 +1333,7 @@ class DatabaseMigrationClient(object):
 
     def get_job(self, job_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Get a migration job.
 
 
@@ -1395,6 +1410,7 @@ class DatabaseMigrationClient(object):
 
     def get_job_output_content(self, job_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Get the migration Job Output content as a String.
 
 
@@ -1471,6 +1487,7 @@ class DatabaseMigrationClient(object):
 
     def get_migration(self, migration_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Display Migration details.
 
 
@@ -1556,6 +1573,7 @@ class DatabaseMigrationClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Gets the details of a work request.
 
 
@@ -1632,6 +1650,7 @@ class DatabaseMigrationClient(object):
 
     def list_agent_images(self, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Get details of the ODMS Agent Images available to install on-premises.
 
 
@@ -1723,6 +1742,7 @@ class DatabaseMigrationClient(object):
 
     def list_agents(self, compartment_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Display the name of all the existing ODMS Agents in the server.
 
 
@@ -1852,6 +1872,7 @@ class DatabaseMigrationClient(object):
 
     def list_connections(self, compartment_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         List all Database Connections.
 
 
@@ -1981,6 +2002,7 @@ class DatabaseMigrationClient(object):
 
     def list_job_outputs(self, job_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         List the Job Outputs
 
 
@@ -2073,6 +2095,7 @@ class DatabaseMigrationClient(object):
 
     def list_jobs(self, migration_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         List all the names of the Migration jobs associated to the specified
         migration site.
 
@@ -2203,6 +2226,7 @@ class DatabaseMigrationClient(object):
 
     def list_migrations(self, compartment_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         List all Migrations.
 
 
@@ -2346,6 +2370,7 @@ class DatabaseMigrationClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Gets the errors for a work request.
 
 
@@ -2472,6 +2497,7 @@ class DatabaseMigrationClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Gets the logs for a work request.
 
 
@@ -2598,6 +2624,7 @@ class DatabaseMigrationClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Lists the work requests in a compartment or for a specified resource.
 
 
@@ -2720,6 +2747,7 @@ class DatabaseMigrationClient(object):
 
     def resume_job(self, job_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Resume a migration Job.
 
 
@@ -2822,6 +2850,7 @@ class DatabaseMigrationClient(object):
 
     def retrieve_supported_phases(self, migration_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Display Migration Phases for a specified migration.
 
 
@@ -2898,6 +2927,7 @@ class DatabaseMigrationClient(object):
 
     def start_migration(self, migration_id, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Start Migration job.
 
 
@@ -3000,6 +3030,7 @@ class DatabaseMigrationClient(object):
 
     def update_agent(self, agent_id, update_agent_details, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Modifies the ODMS Agent represented by the given ODMS Agent ID.
 
 
@@ -3101,6 +3132,7 @@ class DatabaseMigrationClient(object):
 
     def update_connection(self, connection_id, update_connection_details, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Update Database Connection resource details.
 
 
@@ -3189,6 +3221,7 @@ class DatabaseMigrationClient(object):
 
     def update_job(self, job_id, update_job_details, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Update Migration Job resource details.
 
 
@@ -3279,6 +3312,7 @@ class DatabaseMigrationClient(object):
 
     def update_migration(self, migration_id, update_migration_details, **kwargs):
         """
+        Note: Deprecated. Use the new resource model APIs instead.
         Update Migration resource details.
 
 

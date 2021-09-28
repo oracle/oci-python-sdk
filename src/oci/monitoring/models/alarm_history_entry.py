@@ -52,7 +52,7 @@ class AlarmHistoryEntry(object):
     def summary(self):
         """
         **[Required]** Gets the summary of this AlarmHistoryEntry.
-        Description for this alarm history entry. Avoid entering confidential information.
+        Description for this alarm history entry.
 
         Example 1 - alarm state history entry: `The alarm state is FIRING`
 
@@ -68,7 +68,7 @@ class AlarmHistoryEntry(object):
     def summary(self, summary):
         """
         Sets the summary of this AlarmHistoryEntry.
-        Description for this alarm history entry. Avoid entering confidential information.
+        Description for this alarm history entry.
 
         Example 1 - alarm state history entry: `The alarm state is FIRING`
 

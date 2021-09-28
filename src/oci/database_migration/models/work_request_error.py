@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestError(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     An error encountered while executing an operation that is tracked by a work request.
     """
 

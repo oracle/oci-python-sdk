@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ResumeJobDetails(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Parameters to specify to resume a Migration Job.
     """
 

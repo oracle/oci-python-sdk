@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConnectionCollection(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Results of a Database Connection search. Contains DatabaseConnectionSummary items.
     """
 

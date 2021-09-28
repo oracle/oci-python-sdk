@@ -17,9 +17,10 @@ class MetricData(object):
 
     * Data points: 100,000.
     * Metric streams* within data points: 2,000.
+    * Time range returned for 1-day resolution: 90 days.
     * Time range returned for 1-hour resolution: 90 days.
     * Time range returned for 5-minute resolution: 30 days.
-    * Time range returned for any other resolution: 7 days.
+    * Time range returned for 1-minute resolution: 7 days.
 
     *A metric stream is an individual set of aggregated data for a metric, typically specific to a single resource.
     Metric streams cannot be aggregated across metric groups.
@@ -133,9 +134,8 @@ class MetricData(object):
     def resource_group(self):
         """
         Gets the resource_group of this MetricData.
-        Resource group provided with the posted metric. A resource group is a custom string that can be used as a filter. Only one resource group can be applied per metric.
+        Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
         A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        Avoid entering confidential information.
 
         Example: `frontend-fleet`
 
@@ -149,9 +149,8 @@ class MetricData(object):
     def resource_group(self, resource_group):
         """
         Sets the resource_group of this MetricData.
-        Resource group provided with the posted metric. A resource group is a custom string that can be used as a filter. Only one resource group can be applied per metric.
+        Resource group provided with the posted metric. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
         A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        Avoid entering confidential information.
 
         Example: `frontend-fleet`
 
@@ -285,7 +284,7 @@ class MetricData(object):
         frequency at which aggregated data points are returned. For example, use a query interval of
         5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
         frequency. The resolution must be equal or less than the interval in the query. The default
-        resolution is 1m (one minute). Supported values: `1m`-`60m` (also `1h`).
+        resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.
 
         Example: `5m`
 
@@ -303,7 +302,7 @@ class MetricData(object):
         frequency at which aggregated data points are returned. For example, use a query interval of
         5 minutes with a resolution of 1 minute to retrieve five-minute aggregations at a one-minute
         frequency. The resolution must be equal or less than the interval in the query. The default
-        resolution is 1m (one minute). Supported values: `1m`-`60m` (also `1h`).
+        resolution is 1m (one minute). Supported values: `1m`-`60m`, `1h`-`24h`, `1d`.
 
         Example: `5m`
 

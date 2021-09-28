@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDataTransferMediumDetails(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Data Transfer Medium details for the Migration.
     Only one type of data transfer medium can be specified and will replace the stored Data Transfer Medium details.
     If an empty object is specified, the stored Data Transfer Medium details will be removed.

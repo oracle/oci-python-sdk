@@ -165,7 +165,8 @@ class RenameObjectDetails(object):
     def new_obj_if_none_match_e_tag(self):
         """
         Gets the new_obj_if_none_match_e_tag of this RenameObjectDetails.
-        The if-none-match entity tag (ETag) of the new object.
+        The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which indicates
+        request should fail if the new object already exists.
 
 
         :return: The new_obj_if_none_match_e_tag of this RenameObjectDetails.
@@ -177,7 +178,8 @@ class RenameObjectDetails(object):
     def new_obj_if_none_match_e_tag(self, new_obj_if_none_match_e_tag):
         """
         Sets the new_obj_if_none_match_e_tag of this RenameObjectDetails.
-        The if-none-match entity tag (ETag) of the new object.
+        The if-none-match entity tag (ETag) of the new object. The only valid value is '*', which indicates
+        request should fail if the new object already exists.
 
 
         :param new_obj_if_none_match_e_tag: The new_obj_if_none_match_e_tag of this RenameObjectDetails.

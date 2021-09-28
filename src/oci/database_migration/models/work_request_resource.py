@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestResource(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     A resource that is created or operated on by an asynchronous operation that is tracked by
     a work request.
     """

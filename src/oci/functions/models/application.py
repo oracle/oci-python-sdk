@@ -72,6 +72,10 @@ class Application(object):
             The value to assign to the subnet_ids property of this Application.
         :type subnet_ids: list[str]
 
+        :param network_security_group_ids:
+            The value to assign to the network_security_group_ids property of this Application.
+        :type network_security_group_ids: list[str]
+
         :param syslog_url:
             The value to assign to the syslog_url property of this Application.
         :type syslog_url: str
@@ -96,6 +100,10 @@ class Application(object):
             The value to assign to the time_updated property of this Application.
         :type time_updated: datetime
 
+        :param image_policy_config:
+            The value to assign to the image_policy_config property of this Application.
+        :type image_policy_config: oci.functions.models.ImagePolicyConfig
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -104,12 +112,14 @@ class Application(object):
             'lifecycle_state': 'str',
             'config': 'dict(str, str)',
             'subnet_ids': 'list[str]',
+            'network_security_group_ids': 'list[str]',
             'syslog_url': 'str',
             'trace_config': 'ApplicationTraceConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'image_policy_config': 'ImagePolicyConfig'
         }
 
         self.attribute_map = {
@@ -119,12 +129,14 @@ class Application(object):
             'lifecycle_state': 'lifecycleState',
             'config': 'config',
             'subnet_ids': 'subnetIds',
+            'network_security_group_ids': 'networkSecurityGroupIds',
             'syslog_url': 'syslogUrl',
             'trace_config': 'traceConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'image_policy_config': 'imagePolicyConfig'
         }
 
         self._id = None
@@ -133,12 +145,14 @@ class Application(object):
         self._lifecycle_state = None
         self._config = None
         self._subnet_ids = None
+        self._network_security_group_ids = None
         self._syslog_url = None
         self._trace_config = None
         self._freeform_tags = None
         self._defined_tags = None
         self._time_created = None
         self._time_updated = None
+        self._image_policy_config = None
 
     @property
     def id(self):
@@ -307,6 +321,34 @@ class Application(object):
         :type: list[str]
         """
         self._subnet_ids = subnet_ids
+
+    @property
+    def network_security_group_ids(self):
+        """
+        Gets the network_security_group_ids of this Application.
+        The `OCID`__s of the Network Security Groups to add the application to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The network_security_group_ids of this Application.
+        :rtype: list[str]
+        """
+        return self._network_security_group_ids
+
+    @network_security_group_ids.setter
+    def network_security_group_ids(self, network_security_group_ids):
+        """
+        Sets the network_security_group_ids of this Application.
+        The `OCID`__s of the Network Security Groups to add the application to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param network_security_group_ids: The network_security_group_ids of this Application.
+        :type: list[str]
+        """
+        self._network_security_group_ids = network_security_group_ids
 
     @property
     def syslog_url(self):
@@ -491,6 +533,26 @@ class Application(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def image_policy_config(self):
+        """
+        Gets the image_policy_config of this Application.
+
+        :return: The image_policy_config of this Application.
+        :rtype: oci.functions.models.ImagePolicyConfig
+        """
+        return self._image_policy_config
+
+    @image_policy_config.setter
+    def image_policy_config(self, image_policy_config):
+        """
+        Sets the image_policy_config of this Application.
+
+        :param image_policy_config: The image_policy_config of this Application.
+        :type: oci.functions.models.ImagePolicyConfig
+        """
+        self._image_policy_config = image_policy_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

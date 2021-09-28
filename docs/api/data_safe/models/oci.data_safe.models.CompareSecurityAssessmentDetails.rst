@@ -1,9 +1,9 @@
-RequestSummarizedJreUsageDetails
+CompareSecurityAssessmentDetails
 ================================
 
-.. currentmodule:: oci.jms.models
+.. currentmodule:: oci.data_safe.models
 
-.. autoclass:: RequestSummarizedJreUsageDetails
+.. autoclass:: CompareSecurityAssessmentDetails
     :show-inheritance:
     :special-members: __init__
     :members:

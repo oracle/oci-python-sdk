@@ -355,7 +355,9 @@ class Fleet(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Fleet.
-        The creation date and time of the Fleet (formatted according to RFC3339).
+        The creation date and time of the Fleet (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_created of this Fleet.
@@ -367,7 +369,9 @@ class Fleet(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Fleet.
-        The creation date and time of the Fleet (formatted according to RFC3339).
+        The creation date and time of the Fleet (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_created: The time_created of this Fleet.

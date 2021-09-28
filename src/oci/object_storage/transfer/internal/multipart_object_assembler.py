@@ -99,6 +99,9 @@ class MultipartObjectAssembler:
         :param str opc_sse_customer_key_sha256 (optional):
             The base64-encoded SHA256 hash of the encryption key.
 
+        :param str opc_sse_kms_key_id (optional):
+            The OCID of a master encryption key used to call the Key Management Service to generate a data encryption key or to encrypt or decrypt a data encryption key.
+
         :param str storage_tier: (optional)
             The storage tier that the object should be stored in. If not specified, the object will be stored in
             the same storage tier as the bucket.
@@ -148,6 +151,8 @@ class MultipartObjectAssembler:
                          "bucketName": bucket_name,
                          "objectName": object_name,
                          "parts": []}
+        self.opc_sse_kms_key_id = kwargs['opc_sse_kms_key_id'] if 'opc_sse_kms_key_id' in kwargs else None
+
         # Copy SSE-C parameters (if any)
         self.ssec_params = {}
         for param_name in SSEC_PARAM_NAMES:
@@ -382,6 +387,8 @@ class MultipartObjectAssembler:
             kwargs['if_match'] = self.if_match
         if self.if_none_match:
             kwargs['if_none_match'] = self.if_none_match
+        if self.opc_sse_kms_key_id:
+            kwargs['opc_sse_kms_key_id'] = self.opc_sse_kms_key_id
 
         # pass on SSE-C values (if any)
         kwargs.update(self.ssec_params)
@@ -409,6 +416,8 @@ class MultipartObjectAssembler:
         new_kwargs = {'content_md5': part["hash"]}
         if 'opc_client_request_id' in kwargs:
             new_kwargs['opc_client_request_id'] = kwargs['opc_client_request_id']
+        if 'opc_sse_kms_key_id' in kwargs:
+            new_kwargs['opc_sse_kms_key_id'] = kwargs['opc_sse_kms_key_id']
 
         # supply SSE-C key (if any) information to upload-part
         new_kwargs.update(self.ssec_params)

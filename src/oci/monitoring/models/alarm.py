@@ -43,6 +43,18 @@ class Alarm(object):
     #: This constant has a value of "INFO"
     SEVERITY_INFO = "INFO"
 
+    #: A constant which can be used with the message_format property of a Alarm.
+    #: This constant has a value of "RAW"
+    MESSAGE_FORMAT_RAW = "RAW"
+
+    #: A constant which can be used with the message_format property of a Alarm.
+    #: This constant has a value of "PRETTY_JSON"
+    MESSAGE_FORMAT_PRETTY_JSON = "PRETTY_JSON"
+
+    #: A constant which can be used with the message_format property of a Alarm.
+    #: This constant has a value of "ONS_OPTIMIZED"
+    MESSAGE_FORMAT_ONS_OPTIMIZED = "ONS_OPTIMIZED"
+
     #: A constant which can be used with the lifecycle_state property of a Alarm.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -110,6 +122,12 @@ class Alarm(object):
             The value to assign to the body property of this Alarm.
         :type body: str
 
+        :param message_format:
+            The value to assign to the message_format property of this Alarm.
+            Allowed values for this property are: "RAW", "PRETTY_JSON", "ONS_OPTIMIZED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type message_format: str
+
         :param destinations:
             The value to assign to the destinations property of this Alarm.
         :type destinations: list[str]
@@ -162,6 +180,7 @@ class Alarm(object):
             'pending_duration': 'str',
             'severity': 'str',
             'body': 'str',
+            'message_format': 'str',
             'destinations': 'list[str]',
             'repeat_notification_duration': 'str',
             'suppression': 'Suppression',
@@ -186,6 +205,7 @@ class Alarm(object):
             'pending_duration': 'pendingDuration',
             'severity': 'severity',
             'body': 'body',
+            'message_format': 'messageFormat',
             'destinations': 'destinations',
             'repeat_notification_duration': 'repeatNotificationDuration',
             'suppression': 'suppression',
@@ -209,6 +229,7 @@ class Alarm(object):
         self._pending_duration = None
         self._severity = None
         self._body = None
+        self._message_format = None
         self._destinations = None
         self._repeat_notification_duration = None
         self._suppression = None
@@ -252,7 +273,6 @@ class Alarm(object):
         """
         **[Required]** Gets the display_name of this Alarm.
         A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-        Avoid entering confidential information.
 
         This name is sent as the title for notifications related to this alarm.
 
@@ -269,7 +289,6 @@ class Alarm(object):
         """
         Sets the display_name of this Alarm.
         A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
-        Avoid entering confidential information.
 
         This name is sent as the title for notifications related to this alarm.
 
@@ -407,9 +426,8 @@ class Alarm(object):
     def resource_group(self):
         """
         Gets the resource_group of this Alarm.
-        Resource group specified as a filter for metric data retrieved by the alarm. A resource group is a custom string that can be used as a filter. Only one resource group can be applied per metric.
+        Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
         A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        Avoid entering confidential information.
 
         Example: `frontend-fleet`
 
@@ -423,9 +441,8 @@ class Alarm(object):
     def resource_group(self, resource_group):
         """
         Sets the resource_group of this Alarm.
-        Resource group specified as a filter for metric data retrieved by the alarm. A resource group is a custom string that can be used as a filter. Only one resource group can be applied per metric.
+        Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric.
         A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        Avoid entering confidential information.
 
         Example: `frontend-fleet`
 
@@ -443,7 +460,8 @@ class Alarm(object):
         the Monitoring service interprets results for each returned time series as Boolean values,
         where zero represents false and a non-zero value represents true. A true value means that the trigger
         rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-        rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally
+        rule (threshold or absence). Supported values for interval depend on the specified time range. More
+        interval values are supported for smaller time ranges. You can optionally
         specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
         For details about Monitoring Query Language (MQL), see `Monitoring Query Language (MQL) Reference`__.
         For available dimensions, review the metric definition for the supported service.
@@ -482,7 +500,8 @@ class Alarm(object):
         the Monitoring service interprets results for each returned time series as Boolean values,
         where zero represents false and a non-zero value represents true. A true value means that the trigger
         rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-        rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally
+        rule (threshold or absence). Supported values for interval depend on the specified time range. More
+        interval values are supported for smaller time ranges. You can optionally
         specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
         For details about Monitoring Query Language (MQL), see `Monitoring Query Language (MQL) Reference`__.
         For available dimensions, review the metric definition for the supported service.
@@ -629,7 +648,7 @@ class Alarm(object):
         Gets the body of this Alarm.
         The human-readable content of the notification delivered. Oracle recommends providing guidance
         to operators for resolving the alarm condition. Consider adding links to standard runbook
-        practices. Avoid entering confidential information.
+        practices.
 
         Example: `High CPU usage alert. Follow runbook instructions for resolution.`
 
@@ -645,7 +664,7 @@ class Alarm(object):
         Sets the body of this Alarm.
         The human-readable content of the notification delivered. Oracle recommends providing guidance
         to operators for resolving the alarm condition. Consider adding links to standard runbook
-        practices. Avoid entering confidential information.
+        practices.
 
         Example: `High CPU usage alert. Follow runbook instructions for resolution.`
 
@@ -654,6 +673,42 @@ class Alarm(object):
         :type: str
         """
         self._body = body
+
+    @property
+    def message_format(self):
+        """
+        Gets the message_format of this Alarm.
+        The format to use for notification messages sent from this alarm. The formats are:
+        * `RAW` - Raw JSON blob. Default value.
+        * `PRETTY_JSON`: JSON with new lines and indents.
+        * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+
+        Allowed values for this property are: "RAW", "PRETTY_JSON", "ONS_OPTIMIZED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The message_format of this Alarm.
+        :rtype: str
+        """
+        return self._message_format
+
+    @message_format.setter
+    def message_format(self, message_format):
+        """
+        Sets the message_format of this Alarm.
+        The format to use for notification messages sent from this alarm. The formats are:
+        * `RAW` - Raw JSON blob. Default value.
+        * `PRETTY_JSON`: JSON with new lines and indents.
+        * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+
+
+        :param message_format: The message_format of this Alarm.
+        :type: str
+        """
+        allowed_values = ["RAW", "PRETTY_JSON", "ONS_OPTIMIZED"]
+        if not value_allowed_none_or_none_sentinel(message_format, allowed_values):
+            message_format = 'UNKNOWN_ENUM_VALUE'
+        self._message_format = message_format
 
     @property
     def destinations(self):

@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateConnectionDetails(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Details to create a Database Connection resource.
     """
 

@@ -11,9 +11,19 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateAlarmDetails(object):
     """
     The configuration details for updating an alarm.
-
-    **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
+
+    #: A constant which can be used with the message_format property of a UpdateAlarmDetails.
+    #: This constant has a value of "RAW"
+    MESSAGE_FORMAT_RAW = "RAW"
+
+    #: A constant which can be used with the message_format property of a UpdateAlarmDetails.
+    #: This constant has a value of "PRETTY_JSON"
+    MESSAGE_FORMAT_PRETTY_JSON = "PRETTY_JSON"
+
+    #: A constant which can be used with the message_format property of a UpdateAlarmDetails.
+    #: This constant has a value of "ONS_OPTIMIZED"
+    MESSAGE_FORMAT_ONS_OPTIMIZED = "ONS_OPTIMIZED"
 
     def __init__(self, **kwargs):
         """
@@ -64,6 +74,11 @@ class UpdateAlarmDetails(object):
             The value to assign to the body property of this UpdateAlarmDetails.
         :type body: str
 
+        :param message_format:
+            The value to assign to the message_format property of this UpdateAlarmDetails.
+            Allowed values for this property are: "RAW", "PRETTY_JSON", "ONS_OPTIMIZED"
+        :type message_format: str
+
         :param destinations:
             The value to assign to the destinations property of this UpdateAlarmDetails.
         :type destinations: list[str]
@@ -101,6 +116,7 @@ class UpdateAlarmDetails(object):
             'pending_duration': 'str',
             'severity': 'str',
             'body': 'str',
+            'message_format': 'str',
             'destinations': 'list[str]',
             'repeat_notification_duration': 'str',
             'suppression': 'Suppression',
@@ -121,6 +137,7 @@ class UpdateAlarmDetails(object):
             'pending_duration': 'pendingDuration',
             'severity': 'severity',
             'body': 'body',
+            'message_format': 'messageFormat',
             'destinations': 'destinations',
             'repeat_notification_duration': 'repeatNotificationDuration',
             'suppression': 'suppression',
@@ -140,6 +157,7 @@ class UpdateAlarmDetails(object):
         self._pending_duration = None
         self._severity = None
         self._body = None
+        self._message_format = None
         self._destinations = None
         self._repeat_notification_duration = None
         self._suppression = None
@@ -307,7 +325,7 @@ class UpdateAlarmDetails(object):
     def resource_group(self):
         """
         Gets the resource_group of this UpdateAlarmDetails.
-        Resource group that you want to use as a filter. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric.
+        Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric.
         A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         Avoid entering confidential information.
 
@@ -323,7 +341,7 @@ class UpdateAlarmDetails(object):
     def resource_group(self, resource_group):
         """
         Sets the resource_group of this UpdateAlarmDetails.
-        Resource group that you want to use as a filter. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric.
+        Resource group that you want to match. A null value returns only metric data that has no resource groups. The alarm retrieves metric data associated with the specified resource group only. Only one resource group can be applied per metric.
         A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         Avoid entering confidential information.
 
@@ -343,7 +361,8 @@ class UpdateAlarmDetails(object):
         the Monitoring service interprets results for each returned time series as Boolean values,
         where zero represents false and a non-zero value represents true. A true value means that the trigger
         rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-        rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally
+        rule (threshold or absence). Supported values for interval depend on the specified time range. More
+        interval values are supported for smaller time ranges. You can optionally
         specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
         For details about Monitoring Query Language (MQL), see `Monitoring Query Language (MQL) Reference`__.
         For available dimensions, review the metric definition for the supported service.
@@ -382,7 +401,8 @@ class UpdateAlarmDetails(object):
         the Monitoring service interprets results for each returned time series as Boolean values,
         where zero represents false and a non-zero value represents true. A true value means that the trigger
         rule condition has been met. The query must specify a metric, statistic, interval, and trigger
-        rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally
+        rule (threshold or absence). Supported values for interval depend on the specified time range. More
+        interval values are supported for smaller time ranges. You can optionally
         specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
         For details about Monitoring Query Language (MQL), see `Monitoring Query Language (MQL) Reference`__.
         For available dimensions, review the metric definition for the supported service.
@@ -548,6 +568,44 @@ class UpdateAlarmDetails(object):
         :type: str
         """
         self._body = body
+
+    @property
+    def message_format(self):
+        """
+        Gets the message_format of this UpdateAlarmDetails.
+        The format to use for notification messages sent from this alarm. The formats are:
+        * `RAW` - Raw JSON blob. Default value.
+        * `PRETTY_JSON`: JSON with new lines and indents.
+        * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+
+        Allowed values for this property are: "RAW", "PRETTY_JSON", "ONS_OPTIMIZED"
+
+
+        :return: The message_format of this UpdateAlarmDetails.
+        :rtype: str
+        """
+        return self._message_format
+
+    @message_format.setter
+    def message_format(self, message_format):
+        """
+        Sets the message_format of this UpdateAlarmDetails.
+        The format to use for notification messages sent from this alarm. The formats are:
+        * `RAW` - Raw JSON blob. Default value.
+        * `PRETTY_JSON`: JSON with new lines and indents.
+        * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Applies only to messages sent through the Notifications service to the following subscription types: Email.
+
+
+        :param message_format: The message_format of this UpdateAlarmDetails.
+        :type: str
+        """
+        allowed_values = ["RAW", "PRETTY_JSON", "ONS_OPTIMIZED"]
+        if not value_allowed_none_or_none_sentinel(message_format, allowed_values):
+            raise ValueError(
+                "Invalid value for `message_format`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._message_format = message_format
 
     @property
     def destinations(self):

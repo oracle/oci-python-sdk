@@ -130,6 +130,7 @@ Database
     oci.database.models.DatabaseConnectionCredentials
     oci.database.models.DatabaseConnectionCredentialsByDetails
     oci.database.models.DatabaseConnectionString
+    oci.database.models.DatabaseConnectionStringProfile
     oci.database.models.DatabaseConnectionStrings
     oci.database.models.DatabaseCredentialDetails
     oci.database.models.DatabaseManagementConfig

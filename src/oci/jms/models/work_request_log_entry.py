@@ -68,7 +68,9 @@ class WorkRequestLogEntry(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestLogEntry.
-        The date and time the log message was written (formatted according to RFC3339).
+        The date and time the log message was written (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The timestamp of this WorkRequestLogEntry.
@@ -80,7 +82,9 @@ class WorkRequestLogEntry(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestLogEntry.
-        The date and time the log message was written (formatted according to RFC3339).
+        The date and time the log message was written (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param timestamp: The timestamp of this WorkRequestLogEntry.

@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDatabaseLinkDetails(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Optional details for creating a network database link from OCI database to on-premise database.
     """
 

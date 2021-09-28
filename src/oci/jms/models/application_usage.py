@@ -32,6 +32,10 @@ class ApplicationUsage(object):
             The value to assign to the application_type property of this ApplicationUsage.
         :type application_type: str
 
+        :param operating_systems:
+            The value to assign to the operating_systems property of this ApplicationUsage.
+        :type operating_systems: list[oci.jms.models.OperatingSystem]
+
         :param approximate_installation_count:
             The value to assign to the approximate_installation_count property of this ApplicationUsage.
         :type approximate_installation_count: int
@@ -65,6 +69,7 @@ class ApplicationUsage(object):
             'application_id': 'str',
             'display_name': 'str',
             'application_type': 'str',
+            'operating_systems': 'list[OperatingSystem]',
             'approximate_installation_count': 'int',
             'approximate_jre_count': 'int',
             'approximate_managed_instance_count': 'int',
@@ -78,6 +83,7 @@ class ApplicationUsage(object):
             'application_id': 'applicationId',
             'display_name': 'displayName',
             'application_type': 'applicationType',
+            'operating_systems': 'operatingSystems',
             'approximate_installation_count': 'approximateInstallationCount',
             'approximate_jre_count': 'approximateJreCount',
             'approximate_managed_instance_count': 'approximateManagedInstanceCount',
@@ -90,6 +96,7 @@ class ApplicationUsage(object):
         self._application_id = None
         self._display_name = None
         self._application_type = None
+        self._operating_systems = None
         self._approximate_installation_count = None
         self._approximate_jre_count = None
         self._approximate_managed_instance_count = None
@@ -169,6 +176,30 @@ class ApplicationUsage(object):
         :type: str
         """
         self._application_type = application_type
+
+    @property
+    def operating_systems(self):
+        """
+        Gets the operating_systems of this ApplicationUsage.
+        The operating systems running this application.
+
+
+        :return: The operating_systems of this ApplicationUsage.
+        :rtype: list[oci.jms.models.OperatingSystem]
+        """
+        return self._operating_systems
+
+    @operating_systems.setter
+    def operating_systems(self, operating_systems):
+        """
+        Sets the operating_systems of this ApplicationUsage.
+        The operating systems running this application.
+
+
+        :param operating_systems: The operating_systems of this ApplicationUsage.
+        :type: list[oci.jms.models.OperatingSystem]
+        """
+        self._operating_systems = operating_systems
 
     @property
     def approximate_installation_count(self):

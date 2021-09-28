@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CloneMigrationDetails(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Details that will override an existing Migration configuration that will be cloned.
     """
 

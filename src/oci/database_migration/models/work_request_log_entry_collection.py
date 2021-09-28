@@ -10,6 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestLogEntryCollection(object):
     """
+    Note: Deprecated. Use the new resource model APIs instead.
     Results of a Work Request search. Contains WorkRequestLogEntry items.
     """
 

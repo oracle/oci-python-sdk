@@ -13,6 +13,8 @@ from .create_function_details import CreateFunctionDetails
 from .function import Function
 from .function_summary import FunctionSummary
 from .function_trace_config import FunctionTraceConfig
+from .image_policy_config import ImagePolicyConfig
+from .key_details import KeyDetails
 from .update_application_details import UpdateApplicationDetails
 from .update_function_details import UpdateFunctionDetails
 
@@ -27,6 +29,8 @@ functions_type_mapping = {
     "Function": Function,
     "FunctionSummary": FunctionSummary,
     "FunctionTraceConfig": FunctionTraceConfig,
+    "ImagePolicyConfig": ImagePolicyConfig,
+    "KeyDetails": KeyDetails,
     "UpdateApplicationDetails": UpdateApplicationDetails,
     "UpdateFunctionDetails": UpdateFunctionDetails
 }
