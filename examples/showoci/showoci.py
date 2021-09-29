@@ -71,6 +71,7 @@
 # - oci.network_load_balancer.NetworkLoadBalancerClient
 # - oci.management_agent.ManagementAgentClient
 # - oci.database_management.DbManagementClient
+# - oci.bastion.BastionClient
 #
 # Modules Not Yet Covered:
 # - oci.secrets.SecretsClient
@@ -95,7 +96,7 @@ import sys
 import argparse
 import datetime
 
-version = "21.08.31"
+version = "21.10.05"
 
 ##########################################################################
 # check OCI version

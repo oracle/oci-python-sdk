@@ -57,6 +57,7 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 - oci.network_load_balancer.NetworkLoadBalancerClient
 - oci.management_agent.ManagementAgentClient
 - oci.database_management.DbManagementClient
+- oci.bastion.BastionClient
 
 
 ## Executing using Cloud Shell:
