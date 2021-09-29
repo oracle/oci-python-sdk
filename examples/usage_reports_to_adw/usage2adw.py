@@ -883,7 +883,6 @@ def check_database_table_structure_cost(connection, tag_special_key, tenant_name
             sql += "    USAGE_INTERVAL_START    DATE,"
             sql += "    USAGE_INTERVAL_END      DATE,"
             sql += "    PRD_SERVICE             VARCHAR2(100),"
-            sql += "    PRD_RESOURCE            VARCHAR2(100),"
             sql += "    PRD_COMPARTMENT_ID      VARCHAR2(100),"
             sql += "    PRD_COMPARTMENT_NAME    VARCHAR2(100),"
             sql += "    PRD_COMPARTMENT_PATH    VARCHAR2(1000),"
