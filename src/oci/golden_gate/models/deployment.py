@@ -41,6 +41,54 @@ class Deployment(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a Deployment.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the lifecycle_state property of a Deployment.
+    #: This constant has a value of "IN_PROGRESS"
+    LIFECYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a Deployment.
+    #: This constant has a value of "CANCELING"
+    LIFECYCLE_STATE_CANCELING = "CANCELING"
+
+    #: A constant which can be used with the lifecycle_state property of a Deployment.
+    #: This constant has a value of "CANCELED"
+    LIFECYCLE_STATE_CANCELED = "CANCELED"
+
+    #: A constant which can be used with the lifecycle_state property of a Deployment.
+    #: This constant has a value of "SUCCEEDED"
+    LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a Deployment.
+    #: This constant has a value of "RECOVERING"
+    LIFECYCLE_SUB_STATE_RECOVERING = "RECOVERING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a Deployment.
+    #: This constant has a value of "STARTING"
+    LIFECYCLE_SUB_STATE_STARTING = "STARTING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a Deployment.
+    #: This constant has a value of "STOPPING"
+    LIFECYCLE_SUB_STATE_STOPPING = "STOPPING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a Deployment.
+    #: This constant has a value of "MOVING"
+    LIFECYCLE_SUB_STATE_MOVING = "MOVING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a Deployment.
+    #: This constant has a value of "UPGRADING"
+    LIFECYCLE_SUB_STATE_UPGRADING = "UPGRADING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a Deployment.
+    #: This constant has a value of "RESTORING"
+    LIFECYCLE_SUB_STATE_RESTORING = "RESTORING"
+
+    #: A constant which can be used with the lifecycle_sub_state property of a Deployment.
+    #: This constant has a value of "BACKUP_IN_PROGRESS"
+    LIFECYCLE_SUB_STATE_BACKUP_IN_PROGRESS = "BACKUP_IN_PROGRESS"
+
     #: A constant which can be used with the license_model property of a Deployment.
     #: This constant has a value of "LICENSE_INCLUDED"
     LICENSE_MODEL_LICENSE_INCLUDED = "LICENSE_INCLUDED"
@@ -88,9 +136,15 @@ class Deployment(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Deployment.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
+
+        :param lifecycle_sub_state:
+            The value to assign to the lifecycle_sub_state property of this Deployment.
+            Allowed values for this property are: "RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_sub_state: str
 
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this Deployment.
@@ -158,6 +212,10 @@ class Deployment(object):
             The value to assign to the is_latest_version property of this Deployment.
         :type is_latest_version: bool
 
+        :param time_upgrade_required:
+            The value to assign to the time_upgrade_required property of this Deployment.
+        :type time_upgrade_required: datetime
+
         :param deployment_type:
             The value to assign to the deployment_type property of this Deployment.
             Allowed values for this property are: "OGG", 'UNKNOWN_ENUM_VALUE'.
@@ -178,6 +236,7 @@ class Deployment(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'lifecycle_sub_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -194,6 +253,7 @@ class Deployment(object):
             'deployment_url': 'str',
             'system_tags': 'dict(str, dict(str, object))',
             'is_latest_version': 'bool',
+            'time_upgrade_required': 'datetime',
             'deployment_type': 'str',
             'ogg_data': 'OggDeployment'
         }
@@ -207,6 +267,7 @@ class Deployment(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_sub_state': 'lifecycleSubState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -223,6 +284,7 @@ class Deployment(object):
             'deployment_url': 'deploymentUrl',
             'system_tags': 'systemTags',
             'is_latest_version': 'isLatestVersion',
+            'time_upgrade_required': 'timeUpgradeRequired',
             'deployment_type': 'deploymentType',
             'ogg_data': 'oggData'
         }
@@ -235,6 +297,7 @@ class Deployment(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._lifecycle_sub_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -251,6 +314,7 @@ class Deployment(object):
         self._deployment_url = None
         self._system_tags = None
         self._is_latest_version = None
+        self._time_upgrade_required = None
         self._deployment_type = None
         self._ogg_data = None
 
@@ -448,7 +512,7 @@ class Deployment(object):
         Gets the lifecycle_state of this Deployment.
         Possible lifecycle states.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -467,10 +531,40 @@ class Deployment(object):
         :param lifecycle_state: The lifecycle_state of this Deployment.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_sub_state(self):
+        """
+        Gets the lifecycle_sub_state of this Deployment.
+        Possible GGS lifecycle sub-states.
+
+        Allowed values for this property are: "RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_sub_state of this Deployment.
+        :rtype: str
+        """
+        return self._lifecycle_sub_state
+
+    @lifecycle_sub_state.setter
+    def lifecycle_sub_state(self, lifecycle_sub_state):
+        """
+        Sets the lifecycle_sub_state of this Deployment.
+        Possible GGS lifecycle sub-states.
+
+
+        :param lifecycle_sub_state: The lifecycle_sub_state of this Deployment.
+        :type: str
+        """
+        allowed_values = ["RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_sub_state, allowed_values):
+            lifecycle_sub_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_sub_state = lifecycle_sub_state
 
     @property
     def lifecycle_details(self):
@@ -879,6 +973,34 @@ class Deployment(object):
         :type: bool
         """
         self._is_latest_version = is_latest_version
+
+    @property
+    def time_upgrade_required(self):
+        """
+        Gets the time_upgrade_required of this Deployment.
+        The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_upgrade_required of this Deployment.
+        :rtype: datetime
+        """
+        return self._time_upgrade_required
+
+    @time_upgrade_required.setter
+    def time_upgrade_required(self, time_upgrade_required):
+        """
+        Sets the time_upgrade_required of this Deployment.
+        The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_upgrade_required: The time_upgrade_required of this Deployment.
+        :type: datetime
+        """
+        self._time_upgrade_required = time_upgrade_required
 
     @property
     def deployment_type(self):

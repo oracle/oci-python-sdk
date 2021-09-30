@@ -482,6 +482,77 @@ class ManagementAgentClient(object):
                 header_params=header_params,
                 body=deploy_plugins_details)
 
+    def get_auto_upgradable_config(self, compartment_id, **kwargs):
+        """
+        Get the AutoUpgradable configuration for all agents in a tenancy.
+        The supplied compartmentId must be a tenancy root.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment to which a request will be scoped.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.management_agent.models.AutoUpgradableConfig`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/get_auto_upgradable_config.py.html>`__ to see an example of how to use get_auto_upgradable_config API.
+        """
+        resource_path = "/managementAgents/actions/getAutoUpgradableConfig"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_auto_upgradable_config got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AutoUpgradableConfig")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="AutoUpgradableConfig")
+
     def get_management_agent(self, management_agent_id, **kwargs):
         """
         Gets complete details of the inventory of a given agent id
@@ -972,6 +1043,11 @@ class ManagementAgentClient(object):
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "TERMINATED", "DELETING", "DELETED", "FAILED"
 
+        :param str install_type: (optional)
+            A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+
+            Allowed values are: "AGENT", "GATEWAY"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -999,7 +1075,8 @@ class ManagementAgentClient(object):
             "sort_order",
             "sort_by",
             "name",
-            "lifecycle_state"
+            "lifecycle_state",
+            "install_type"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1027,6 +1104,13 @@ class ManagementAgentClient(object):
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
                 )
 
+        if 'install_type' in kwargs:
+            install_type_allowed_values = ["AGENT", "GATEWAY"]
+            if kwargs['install_type'] not in install_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `install_type`, must be one of {0}".format(install_type_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "limit": kwargs.get("limit", missing),
@@ -1034,7 +1118,8 @@ class ManagementAgentClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "name": kwargs.get("name", missing),
-            "lifecycleState": kwargs.get("lifecycle_state", missing)
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "installType": kwargs.get("install_type", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1380,6 +1465,11 @@ class ManagementAgentClient(object):
         :param bool is_customer_deployed: (optional)
             true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
 
+        :param str install_type: (optional)
+            A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+
+            Allowed values are: "AGENT", "GATEWAY"
+
         :param int limit: (optional)
             The maximum number of items to return.
 
@@ -1427,6 +1517,7 @@ class ManagementAgentClient(object):
             "host_id",
             "platform_type",
             "is_customer_deployed",
+            "install_type",
             "limit",
             "page",
             "sort_order",
@@ -1460,6 +1551,13 @@ class ManagementAgentClient(object):
                         "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
                     )
 
+        if 'install_type' in kwargs:
+            install_type_allowed_values = ["AGENT", "GATEWAY"]
+            if kwargs['install_type'] not in install_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `install_type`, must be one of {0}".format(install_type_allowed_values)
+                )
+
         if 'sort_order' in kwargs:
             sort_order_allowed_values = ["ASC", "DESC"]
             if kwargs['sort_order'] not in sort_order_allowed_values:
@@ -1484,6 +1582,7 @@ class ManagementAgentClient(object):
             "hostId": kwargs.get("host_id", missing),
             "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi'),
             "isCustomerDeployed": kwargs.get("is_customer_deployed", missing),
+            "installType": kwargs.get("install_type", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -1890,6 +1989,83 @@ class ManagementAgentClient(object):
                 header_params=header_params,
                 response_type="list[WorkRequestSummary]")
 
+    def set_auto_upgradable_config(self, set_auto_upgradable_config_details, **kwargs):
+        """
+        Sets the AutoUpgradable configuration for all agents in a tenancy.
+        The supplied compartmentId must be a tenancy root.
+
+
+        :param oci.management_agent.models.SetAutoUpgradableConfigDetails set_auto_upgradable_config_details: (required)
+            Details of the AutoUpgradable configuration for agents of the tenancy.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.management_agent.models.AutoUpgradableConfig`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/managementagent/set_auto_upgradable_config.py.html>`__ to see an example of how to use set_auto_upgradable_config API.
+        """
+        resource_path = "/managementAgents/actions/setAutoUpgradableConfig"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "set_auto_upgradable_config got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=set_auto_upgradable_config_details,
+                response_type="AutoUpgradableConfig")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=set_auto_upgradable_config_details,
+                response_type="AutoUpgradableConfig")
+
     def summarize_management_agent_counts(self, compartment_id, group_by, **kwargs):
         """
         Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.
@@ -1906,6 +2082,11 @@ class ManagementAgentClient(object):
 
         :param bool has_plugins: (optional)
             When set to true then agents that have at least one plugin deployed will be returned. When set to false only agents that have no plugins deployed will be returned.
+
+        :param str install_type: (optional)
+            A filter to return either agents or gateway types depending upon install type selected by user. By default both install type will be returned.
+
+            Allowed values are: "AGENT", "GATEWAY"
 
         :param str page: (optional)
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
@@ -1934,6 +2115,7 @@ class ManagementAgentClient(object):
         expected_kwargs = [
             "retry_strategy",
             "has_plugins",
+            "install_type",
             "page",
             "opc_request_id"
         ]
@@ -1949,10 +2131,18 @@ class ManagementAgentClient(object):
                     "Invalid value for `group_by`, must be one of {0}".format(group_by_allowed_values)
                 )
 
+        if 'install_type' in kwargs:
+            install_type_allowed_values = ["AGENT", "GATEWAY"]
+            if kwargs['install_type'] not in install_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `install_type`, must be one of {0}".format(install_type_allowed_values)
+                )
+
         query_params = {
             "compartmentId": compartment_id,
             "groupBy": self.base_client.generate_collection_format_param(group_by, 'multi'),
             "hasPlugins": kwargs.get("has_plugins", missing),
+            "installType": kwargs.get("install_type", missing),
             "page": kwargs.get("page", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}

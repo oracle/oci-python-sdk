@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Agent(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     ODMS Agent Details
     """
 

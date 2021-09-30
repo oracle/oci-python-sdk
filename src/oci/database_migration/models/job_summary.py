@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JobSummary(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Job description
     """
 

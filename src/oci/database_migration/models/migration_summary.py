@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MigrationSummary(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Migration resource
     """
 
@@ -33,6 +32,30 @@ class MigrationSummary(object):
     #: A constant which can be used with the lifecycle_state property of a MigrationSummary.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a MigrationSummary.
+    #: This constant has a value of "IN_PROGRESS"
+    LIFECYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a MigrationSummary.
+    #: This constant has a value of "ACCEPTED"
+    LIFECYCLE_STATE_ACCEPTED = "ACCEPTED"
+
+    #: A constant which can be used with the lifecycle_state property of a MigrationSummary.
+    #: This constant has a value of "SUCCEEDED"
+    LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the lifecycle_state property of a MigrationSummary.
+    #: This constant has a value of "CANCELED"
+    LIFECYCLE_STATE_CANCELED = "CANCELED"
+
+    #: A constant which can be used with the lifecycle_state property of a MigrationSummary.
+    #: This constant has a value of "WAITING"
+    LIFECYCLE_STATE_WAITING = "WAITING"
+
+    #: A constant which can be used with the lifecycle_state property of a MigrationSummary.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
     #: A constant which can be used with the lifecycle_state property of a MigrationSummary.
     #: This constant has a value of "INACTIVE"
@@ -139,7 +162,7 @@ class MigrationSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this MigrationSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "IN_PROGRESS", "ACCEPTED", "SUCCEEDED", "CANCELED", "WAITING", "NEEDS_ATTENTION", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -543,7 +566,7 @@ class MigrationSummary(object):
         **[Required]** Gets the lifecycle_state of this MigrationSummary.
         The current state of the Migration.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "IN_PROGRESS", "ACCEPTED", "SUCCEEDED", "CANCELED", "WAITING", "NEEDS_ATTENTION", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -562,7 +585,7 @@ class MigrationSummary(object):
         :param lifecycle_state: The lifecycle_state of this MigrationSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "IN_PROGRESS", "ACCEPTED", "SUCCEEDED", "CANCELED", "WAITING", "NEEDS_ATTENTION", "INACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

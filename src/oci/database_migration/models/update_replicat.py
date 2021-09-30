@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateReplicat(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Parameters for Replicat processes.
     If an empty object is specified, the stored Replicat details will be removed.
     """

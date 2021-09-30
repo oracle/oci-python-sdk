@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDataPumpParameters(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Optional parameters for Data Pump Export and Import. Refer to `Configuring Optional Initial Load Advanced Settings`__
 
     __ https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED

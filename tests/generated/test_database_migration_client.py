@@ -518,6 +518,46 @@ def test_evaluate_migration(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="zdmdev_grp@oracle.com" jiraProject="ZDMCS" opsJiraProject="ZDMCS"
+def test_get_advisor_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_migration', 'GetAdvisorReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_migration', util.camelize('database_migration'), 'GetAdvisorReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_migration', api_name='GetAdvisorReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_migration.DatabaseMigrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_advisor_report(
+                job_id=request.pop(util.camelize('jobId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_migration',
+            'GetAdvisorReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'advisorReport',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="zdmdev_grp@oracle.com" jiraProject="ZDMCS" opsJiraProject="ZDMCS"
 def test_get_agent(testing_service_client):
     if not testing_service_client.is_api_enabled('database_migration', 'GetAgent'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1049,6 +1089,63 @@ def test_list_jobs(testing_service_client):
             result,
             service_error,
             'jobCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="zdmdev_grp@oracle.com" jiraProject="ZDMCS" opsJiraProject="ZDMCS"
+def test_list_migration_object_types(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_migration', 'ListMigrationObjectTypes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_migration', util.camelize('database_migration'), 'ListMigrationObjectTypes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_migration', api_name='ListMigrationObjectTypes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_migration.DatabaseMigrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_migration_object_types(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_migration_object_types(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_migration_object_types(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_migration',
+            'ListMigrationObjectTypes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'migrationObjectTypeSummaryCollection',
             False,
             True
         )

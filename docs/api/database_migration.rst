@@ -19,6 +19,10 @@ Database Migration
     :template: autosummary/model_class.rst
 
     oci.database_migration.models.AdminCredentials
+    oci.database_migration.models.AdvisorReport
+    oci.database_migration.models.AdvisorReportBucketDetails
+    oci.database_migration.models.AdvisorReportLocationDetails
+    oci.database_migration.models.AdvisorSettings
     oci.database_migration.models.Agent
     oci.database_migration.models.AgentCollection
     oci.database_migration.models.AgentImageCollection
@@ -33,50 +37,63 @@ Database Migration
     oci.database_migration.models.ConnectionCollection
     oci.database_migration.models.ConnectionSummary
     oci.database_migration.models.CreateAdminCredentials
+    oci.database_migration.models.CreateAdvisorSettings
     oci.database_migration.models.CreateAgentDetails
     oci.database_migration.models.CreateConnectDescriptor
     oci.database_migration.models.CreateConnectionDetails
+    oci.database_migration.models.CreateCurlTransferDetails
     oci.database_migration.models.CreateDataPumpParameters
     oci.database_migration.models.CreateDataPumpSettings
     oci.database_migration.models.CreateDataTransferMediumDetails
     oci.database_migration.models.CreateDatabaseLinkDetails
     oci.database_migration.models.CreateDirectoryObject
+    oci.database_migration.models.CreateDumpTransferDetails
     oci.database_migration.models.CreateExtract
     oci.database_migration.models.CreateGoldenGateDetails
     oci.database_migration.models.CreateGoldenGateHub
     oci.database_migration.models.CreateGoldenGateSettings
+    oci.database_migration.models.CreateHostDumpTransferDetails
     oci.database_migration.models.CreateMigrationDetails
     oci.database_migration.models.CreateObjectStoreBucket
+    oci.database_migration.models.CreateOciCliDumpTransferDetails
     oci.database_migration.models.CreatePrivateEndpoint
     oci.database_migration.models.CreateReplicat
     oci.database_migration.models.CreateSshDetails
     oci.database_migration.models.CreateVaultDetails
+    oci.database_migration.models.CurlTransferDetails
     oci.database_migration.models.DataPumpParameters
     oci.database_migration.models.DataPumpSettings
     oci.database_migration.models.DataTransferMediumDetails
     oci.database_migration.models.DatabaseLinkDetails
     oci.database_migration.models.DatabaseObject
     oci.database_migration.models.DirectoryObject
+    oci.database_migration.models.DumpTransferDetails
     oci.database_migration.models.Extract
     oci.database_migration.models.GenerateToken
     oci.database_migration.models.GoldenGateDetails
     oci.database_migration.models.GoldenGateHub
     oci.database_migration.models.GoldenGateSettings
+    oci.database_migration.models.HostDumpTransferDetails
     oci.database_migration.models.Job
     oci.database_migration.models.JobCollection
     oci.database_migration.models.JobOutputSummary
     oci.database_migration.models.JobOutputSummaryCollection
     oci.database_migration.models.JobSummary
+    oci.database_migration.models.LogLocationBucketDetails
     oci.database_migration.models.MetadataRemap
     oci.database_migration.models.Migration
     oci.database_migration.models.MigrationCollection
     oci.database_migration.models.MigrationJobProgressResource
     oci.database_migration.models.MigrationJobProgressSummary
+    oci.database_migration.models.MigrationObjectTypeSummary
+    oci.database_migration.models.MigrationObjectTypeSummaryCollection
     oci.database_migration.models.MigrationPhaseCollection
     oci.database_migration.models.MigrationPhaseSummary
     oci.database_migration.models.MigrationSummary
     oci.database_migration.models.ObjectStoreBucket
+    oci.database_migration.models.OciCliDumpTransferDetails
     oci.database_migration.models.ParLink
+    oci.database_migration.models.PhaseExtractEntry
     oci.database_migration.models.PhaseStatus
     oci.database_migration.models.PrivateEndpointDetails
     oci.database_migration.models.Replicat
@@ -85,21 +102,26 @@ Database Migration
     oci.database_migration.models.StartMigrationDetails
     oci.database_migration.models.UnsupportedDatabaseObject
     oci.database_migration.models.UpdateAdminCredentials
+    oci.database_migration.models.UpdateAdvisorSettings
     oci.database_migration.models.UpdateAgentDetails
     oci.database_migration.models.UpdateConnectDescriptor
     oci.database_migration.models.UpdateConnectionDetails
+    oci.database_migration.models.UpdateCurlTransferDetails
     oci.database_migration.models.UpdateDataPumpParameters
     oci.database_migration.models.UpdateDataPumpSettings
     oci.database_migration.models.UpdateDataTransferMediumDetails
     oci.database_migration.models.UpdateDatabaseLinkDetails
     oci.database_migration.models.UpdateDirectoryObject
+    oci.database_migration.models.UpdateDumpTransferDetails
     oci.database_migration.models.UpdateExtract
     oci.database_migration.models.UpdateGoldenGateDetails
     oci.database_migration.models.UpdateGoldenGateHub
     oci.database_migration.models.UpdateGoldenGateSettings
+    oci.database_migration.models.UpdateHostDumpTransferDetails
     oci.database_migration.models.UpdateJobDetails
     oci.database_migration.models.UpdateMigrationDetails
     oci.database_migration.models.UpdateObjectStoreBucket
+    oci.database_migration.models.UpdateOciCliDumpTransferDetails
     oci.database_migration.models.UpdatePrivateEndpoint
     oci.database_migration.models.UpdateReplicat
     oci.database_migration.models.UpdateSshDetails

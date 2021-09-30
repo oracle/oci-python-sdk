@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_cancel_deployment_backup(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'CancelDeploymentBackup'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'CancelDeploymentBackup')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='CancelDeploymentBackup')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.cancel_deployment_backup(
+                deployment_backup_id=request.pop(util.camelize('deploymentBackupId')),
+                cancel_deployment_backup_details=request.pop(util.camelize('CancelDeploymentBackupDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'CancelDeploymentBackup',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cancel_deployment_backup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
 def test_change_database_registration_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('golden_gate', 'ChangeDatabaseRegistrationCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -517,6 +558,46 @@ def test_get_deployment_backup(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_get_deployment_upgrade(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'GetDeploymentUpgrade'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'GetDeploymentUpgrade')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='GetDeploymentUpgrade')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.get_deployment_upgrade(
+                deployment_upgrade_id=request.pop(util.camelize('deploymentUpgradeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'GetDeploymentUpgrade',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'deploymentUpgrade',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
 def test_get_work_request(testing_service_client):
     if not testing_service_client.is_api_enabled('golden_gate', 'GetWorkRequest'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -671,6 +752,66 @@ def test_list_deployment_backups(testing_service_client):
             result,
             service_error,
             'deploymentBackupCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="ggs_team_ww_grp@oracle.com" jiraProject="GGS" opsJiraProject="GGS"
+def test_list_deployment_upgrades(testing_service_client):
+    if not testing_service_client.is_api_enabled('golden_gate', 'ListDeploymentUpgrades'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('golden_gate', util.camelize('golden_gate'), 'ListDeploymentUpgrades')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='golden_gate', api_name='ListDeploymentUpgrades')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.golden_gate.GoldenGateClient(config, service_endpoint=service_endpoint)
+            response = client.list_deployment_upgrades(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_deployment_upgrades(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_deployment_upgrades(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'golden_gate',
+            'ListDeploymentUpgrades',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'deploymentUpgradeCollection',
             False,
             True
         )

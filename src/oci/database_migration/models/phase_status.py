@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PhaseStatus(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Job phase status details.
     """
 
@@ -21,6 +20,10 @@ class PhaseStatus(object):
     #: A constant which can be used with the name property of a PhaseStatus.
     #: This constant has a value of "ODMS_VALIDATE_SRC"
     NAME_ODMS_VALIDATE_SRC = "ODMS_VALIDATE_SRC"
+
+    #: A constant which can be used with the name property of a PhaseStatus.
+    #: This constant has a value of "ODMS_VALIDATE_PREMIGRATION_ADVISOR"
+    NAME_ODMS_VALIDATE_PREMIGRATION_ADVISOR = "ODMS_VALIDATE_PREMIGRATION_ADVISOR"
 
     #: A constant which can be used with the name property of a PhaseStatus.
     #: This constant has a value of "ODMS_VALIDATE_GG_HUB"
@@ -37,6 +40,14 @@ class PhaseStatus(object):
     #: A constant which can be used with the name property of a PhaseStatus.
     #: This constant has a value of "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT"
     NAME_ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT = "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT"
+
+    #: A constant which can be used with the name property of a PhaseStatus.
+    #: This constant has a value of "ODMS_VALIDATE_DATAPUMP_SRC"
+    NAME_ODMS_VALIDATE_DATAPUMP_SRC = "ODMS_VALIDATE_DATAPUMP_SRC"
+
+    #: A constant which can be used with the name property of a PhaseStatus.
+    #: This constant has a value of "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC"
+    NAME_ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC = "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC"
 
     #: A constant which can be used with the name property of a PhaseStatus.
     #: This constant has a value of "ODMS_VALIDATE"
@@ -101,7 +112,7 @@ class PhaseStatus(object):
 
         :param name:
             The value to assign to the name property of this PhaseStatus.
-            Allowed values for this property are: "ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_PREMIGRATION_ADVISOR", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE_DATAPUMP_SRC", "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type name: str
 
@@ -115,6 +126,18 @@ class PhaseStatus(object):
             The value to assign to the duration_in_ms property of this PhaseStatus.
         :type duration_in_ms: int
 
+        :param is_advisor_report_available:
+            The value to assign to the is_advisor_report_available property of this PhaseStatus.
+        :type is_advisor_report_available: bool
+
+        :param extract:
+            The value to assign to the extract property of this PhaseStatus.
+        :type extract: list[oci.database_migration.models.PhaseExtractEntry]
+
+        :param log_location:
+            The value to assign to the log_location property of this PhaseStatus.
+        :type log_location: oci.database_migration.models.LogLocationBucketDetails
+
         :param progress:
             The value to assign to the progress property of this PhaseStatus.
         :type progress: int
@@ -124,6 +147,9 @@ class PhaseStatus(object):
             'name': 'str',
             'status': 'str',
             'duration_in_ms': 'int',
+            'is_advisor_report_available': 'bool',
+            'extract': 'list[PhaseExtractEntry]',
+            'log_location': 'LogLocationBucketDetails',
             'progress': 'int'
         }
 
@@ -131,12 +157,18 @@ class PhaseStatus(object):
             'name': 'name',
             'status': 'status',
             'duration_in_ms': 'durationInMs',
+            'is_advisor_report_available': 'isAdvisorReportAvailable',
+            'extract': 'extract',
+            'log_location': 'logLocation',
             'progress': 'progress'
         }
 
         self._name = None
         self._status = None
         self._duration_in_ms = None
+        self._is_advisor_report_available = None
+        self._extract = None
+        self._log_location = None
         self._progress = None
 
     @property
@@ -145,7 +177,7 @@ class PhaseStatus(object):
         **[Required]** Gets the name of this PhaseStatus.
         Phase name
 
-        Allowed values for this property are: "ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_PREMIGRATION_ADVISOR", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE_DATAPUMP_SRC", "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -164,7 +196,7 @@ class PhaseStatus(object):
         :param name: The name of this PhaseStatus.
         :type: str
         """
-        allowed_values = ["ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP"]
+        allowed_values = ["ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_PREMIGRATION_ADVISOR", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE_DATAPUMP_SRC", "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP"]
         if not value_allowed_none_or_none_sentinel(name, allowed_values):
             name = 'UNKNOWN_ENUM_VALUE'
         self._name = name
@@ -222,6 +254,74 @@ class PhaseStatus(object):
         :type: int
         """
         self._duration_in_ms = duration_in_ms
+
+    @property
+    def is_advisor_report_available(self):
+        """
+        Gets the is_advisor_report_available of this PhaseStatus.
+        True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+
+
+        :return: The is_advisor_report_available of this PhaseStatus.
+        :rtype: bool
+        """
+        return self._is_advisor_report_available
+
+    @is_advisor_report_available.setter
+    def is_advisor_report_available(self, is_advisor_report_available):
+        """
+        Sets the is_advisor_report_available of this PhaseStatus.
+        True if a Pre-Migration Advisor report is available for this phase. False or null if no report is available.
+
+
+        :param is_advisor_report_available: The is_advisor_report_available of this PhaseStatus.
+        :type: bool
+        """
+        self._is_advisor_report_available = is_advisor_report_available
+
+    @property
+    def extract(self):
+        """
+        Gets the extract of this PhaseStatus.
+        Summary of phase status results.
+
+
+        :return: The extract of this PhaseStatus.
+        :rtype: list[oci.database_migration.models.PhaseExtractEntry]
+        """
+        return self._extract
+
+    @extract.setter
+    def extract(self, extract):
+        """
+        Sets the extract of this PhaseStatus.
+        Summary of phase status results.
+
+
+        :param extract: The extract of this PhaseStatus.
+        :type: list[oci.database_migration.models.PhaseExtractEntry]
+        """
+        self._extract = extract
+
+    @property
+    def log_location(self):
+        """
+        Gets the log_location of this PhaseStatus.
+
+        :return: The log_location of this PhaseStatus.
+        :rtype: oci.database_migration.models.LogLocationBucketDetails
+        """
+        return self._log_location
+
+    @log_location.setter
+    def log_location(self, log_location):
+        """
+        Sets the log_location of this PhaseStatus.
+
+        :param log_location: The log_location of this PhaseStatus.
+        :type: oci.database_migration.models.LogLocationBucketDetails
+        """
+        self._log_location = log_location
 
     @property
     def progress(self):

@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.oci.mysql</groupId>
         <artifactId>mysqlaas-api-spec</artifactId>
-        <version>14.17.0</version>
+        <version>14.27.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

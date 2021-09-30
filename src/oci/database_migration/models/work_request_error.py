@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestError(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     An error encountered while executing an operation that is tracked by a work request.
     """
 
@@ -27,26 +26,26 @@ class WorkRequestError(object):
             The value to assign to the message property of this WorkRequestError.
         :type message: str
 
-        :param time_stamp:
-            The value to assign to the time_stamp property of this WorkRequestError.
-        :type time_stamp: datetime
+        :param timestamp:
+            The value to assign to the timestamp property of this WorkRequestError.
+        :type timestamp: datetime
 
         """
         self.swagger_types = {
             'code': 'str',
             'message': 'str',
-            'time_stamp': 'datetime'
+            'timestamp': 'datetime'
         }
 
         self.attribute_map = {
             'code': 'code',
             'message': 'message',
-            'time_stamp': 'timeStamp'
+            'timestamp': 'timestamp'
         }
 
         self._code = None
         self._message = None
-        self._time_stamp = None
+        self._timestamp = None
 
     @property
     def code(self):
@@ -103,28 +102,28 @@ class WorkRequestError(object):
         self._message = message
 
     @property
-    def time_stamp(self):
+    def timestamp(self):
         """
-        **[Required]** Gets the time_stamp of this WorkRequestError.
+        **[Required]** Gets the timestamp of this WorkRequestError.
         The time the error occured. An RFC3339 formatted datetime string.
 
 
-        :return: The time_stamp of this WorkRequestError.
+        :return: The timestamp of this WorkRequestError.
         :rtype: datetime
         """
-        return self._time_stamp
+        return self._timestamp
 
-    @time_stamp.setter
-    def time_stamp(self, time_stamp):
+    @timestamp.setter
+    def timestamp(self, timestamp):
         """
-        Sets the time_stamp of this WorkRequestError.
+        Sets the timestamp of this WorkRequestError.
         The time the error occured. An RFC3339 formatted datetime string.
 
 
-        :param time_stamp: The time_stamp of this WorkRequestError.
+        :param timestamp: The timestamp of this WorkRequestError.
         :type: datetime
         """
-        self._time_stamp = time_stamp
+        self._timestamp = timestamp
 
     def __repr__(self):
         return formatted_flat_dict(self)

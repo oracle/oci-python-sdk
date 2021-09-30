@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestLogEntry(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     A log message from executing an operation that is tracked by a work request.
     """
 
@@ -23,23 +22,23 @@ class WorkRequestLogEntry(object):
             The value to assign to the message property of this WorkRequestLogEntry.
         :type message: str
 
-        :param time_stamp:
-            The value to assign to the time_stamp property of this WorkRequestLogEntry.
-        :type time_stamp: datetime
+        :param timestamp:
+            The value to assign to the timestamp property of this WorkRequestLogEntry.
+        :type timestamp: datetime
 
         """
         self.swagger_types = {
             'message': 'str',
-            'time_stamp': 'datetime'
+            'timestamp': 'datetime'
         }
 
         self.attribute_map = {
             'message': 'message',
-            'time_stamp': 'timeStamp'
+            'timestamp': 'timestamp'
         }
 
         self._message = None
-        self._time_stamp = None
+        self._timestamp = None
 
     @property
     def message(self):
@@ -66,28 +65,28 @@ class WorkRequestLogEntry(object):
         self._message = message
 
     @property
-    def time_stamp(self):
+    def timestamp(self):
         """
-        **[Required]** Gets the time_stamp of this WorkRequestLogEntry.
+        **[Required]** Gets the timestamp of this WorkRequestLogEntry.
         The time the log message was written. An RFC3339 formatted datetime string
 
 
-        :return: The time_stamp of this WorkRequestLogEntry.
+        :return: The timestamp of this WorkRequestLogEntry.
         :rtype: datetime
         """
-        return self._time_stamp
+        return self._timestamp
 
-    @time_stamp.setter
-    def time_stamp(self, time_stamp):
+    @timestamp.setter
+    def timestamp(self, timestamp):
         """
-        Sets the time_stamp of this WorkRequestLogEntry.
+        Sets the timestamp of this WorkRequestLogEntry.
         The time the log message was written. An RFC3339 formatted datetime string
 
 
-        :param time_stamp: The time_stamp of this WorkRequestLogEntry.
+        :param timestamp: The timestamp of this WorkRequestLogEntry.
         :type: datetime
         """
-        self._time_stamp = time_stamp
+        self._timestamp = timestamp
 
     def __repr__(self):
         return formatted_flat_dict(self)

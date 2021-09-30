@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AgentImageCollection(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Results of an ODMS Agent Image search. Contains AgentImageSummary items.
     """
 

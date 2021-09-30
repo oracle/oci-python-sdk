@@ -385,7 +385,7 @@ class WorkRequest(object):
     def time_finished(self):
         """
         Gets the time_finished of this WorkRequest.
-        The date and time the object was finished. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The date and time the request was finished. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -399,7 +399,7 @@ class WorkRequest(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this WorkRequest.
-        The date and time the object was finished. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+        The date and time the request was finished. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
 
         __ https://tools.ietf.org/html/rfc3339
 

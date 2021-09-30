@@ -26,6 +26,10 @@ class OggDeployment(object):
             The value to assign to the admin_username property of this OggDeployment.
         :type admin_username: str
 
+        :param ogg_version:
+            The value to assign to the ogg_version property of this OggDeployment.
+        :type ogg_version: str
+
         :param certificate:
             The value to assign to the certificate property of this OggDeployment.
         :type certificate: str
@@ -34,17 +38,20 @@ class OggDeployment(object):
         self.swagger_types = {
             'deployment_name': 'str',
             'admin_username': 'str',
+            'ogg_version': 'str',
             'certificate': 'str'
         }
 
         self.attribute_map = {
             'deployment_name': 'deploymentName',
             'admin_username': 'adminUsername',
+            'ogg_version': 'oggVersion',
             'certificate': 'certificate'
         }
 
         self._deployment_name = None
         self._admin_username = None
+        self._ogg_version = None
         self._certificate = None
 
     @property
@@ -94,6 +101,30 @@ class OggDeployment(object):
         :type: str
         """
         self._admin_username = admin_username
+
+    @property
+    def ogg_version(self):
+        """
+        Gets the ogg_version of this OggDeployment.
+        Version of OGG
+
+
+        :return: The ogg_version of this OggDeployment.
+        :rtype: str
+        """
+        return self._ogg_version
+
+    @ogg_version.setter
+    def ogg_version(self, ogg_version):
+        """
+        Sets the ogg_version of this OggDeployment.
+        Version of OGG
+
+
+        :param ogg_version: The ogg_version of this OggDeployment.
+        :type: str
+        """
+        self._ogg_version = ogg_version
 
     @property
     def certificate(self):

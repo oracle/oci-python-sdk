@@ -234,6 +234,46 @@ def test_deploy_plugins(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="team_oci_mgmtagent_macs_ww_grp@oracle.com" jiraProject="MGMTAGENT" opsJiraProject="MGMTAGENT"
+def test_get_auto_upgradable_config(testing_service_client):
+    if not testing_service_client.is_api_enabled('management_agent', 'GetAutoUpgradableConfig'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('management_agent', util.camelize('management_agent'), 'GetAutoUpgradableConfig')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='management_agent', api_name='GetAutoUpgradableConfig')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
+            response = client.get_auto_upgradable_config(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'management_agent',
+            'GetAutoUpgradableConfig',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autoUpgradableConfig',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_mgmtagent_macs_ww_grp@oracle.com" jiraProject="MGMTAGENT" opsJiraProject="MGMTAGENT"
 def test_get_management_agent(testing_service_client):
     if not testing_service_client.is_api_enabled('management_agent', 'GetManagementAgent'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -870,6 +910,46 @@ def test_list_work_requests(testing_service_client):
             'workRequestSummary',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="team_oci_mgmtagent_macs_ww_grp@oracle.com" jiraProject="MGMTAGENT" opsJiraProject="MGMTAGENT"
+def test_set_auto_upgradable_config(testing_service_client):
+    if not testing_service_client.is_api_enabled('management_agent', 'SetAutoUpgradableConfig'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('management_agent', util.camelize('management_agent'), 'SetAutoUpgradableConfig')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='management_agent', api_name='SetAutoUpgradableConfig')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.management_agent.ManagementAgentClient(config, service_endpoint=service_endpoint)
+            response = client.set_auto_upgradable_config(
+                set_auto_upgradable_config_details=request.pop(util.camelize('SetAutoUpgradableConfigDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'management_agent',
+            'SetAutoUpgradableConfig',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autoUpgradableConfig',
+            False,
+            False
         )
 
 
