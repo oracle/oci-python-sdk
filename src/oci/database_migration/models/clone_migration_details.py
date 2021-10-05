@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CloneMigrationDetails(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Details that will override an existing Migration configuration that will be cloned.
     """
 
@@ -47,6 +46,10 @@ class CloneMigrationDetails(object):
             The value to assign to the exclude_objects property of this CloneMigrationDetails.
         :type exclude_objects: list[oci.database_migration.models.DatabaseObject]
 
+        :param include_objects:
+            The value to assign to the include_objects property of this CloneMigrationDetails.
+        :type include_objects: list[oci.database_migration.models.DatabaseObject]
+
         :param vault_details:
             The value to assign to the vault_details property of this CloneMigrationDetails.
         :type vault_details: oci.database_migration.models.CreateVaultDetails
@@ -68,6 +71,7 @@ class CloneMigrationDetails(object):
             'source_container_database_connection_id': 'str',
             'target_database_connection_id': 'str',
             'exclude_objects': 'list[DatabaseObject]',
+            'include_objects': 'list[DatabaseObject]',
             'vault_details': 'CreateVaultDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -81,6 +85,7 @@ class CloneMigrationDetails(object):
             'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId',
             'target_database_connection_id': 'targetDatabaseConnectionId',
             'exclude_objects': 'excludeObjects',
+            'include_objects': 'includeObjects',
             'vault_details': 'vaultDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -93,6 +98,7 @@ class CloneMigrationDetails(object):
         self._source_container_database_connection_id = None
         self._target_database_connection_id = None
         self._exclude_objects = None
+        self._include_objects = None
         self._vault_details = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -247,7 +253,7 @@ class CloneMigrationDetails(object):
     def exclude_objects(self):
         """
         Gets the exclude_objects of this CloneMigrationDetails.
-        Database objects to exclude from migration.
+        Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
 
 
         :return: The exclude_objects of this CloneMigrationDetails.
@@ -259,13 +265,37 @@ class CloneMigrationDetails(object):
     def exclude_objects(self, exclude_objects):
         """
         Sets the exclude_objects of this CloneMigrationDetails.
-        Database objects to exclude from migration.
+        Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
 
 
         :param exclude_objects: The exclude_objects of this CloneMigrationDetails.
         :type: list[oci.database_migration.models.DatabaseObject]
         """
         self._exclude_objects = exclude_objects
+
+    @property
+    def include_objects(self):
+        """
+        Gets the include_objects of this CloneMigrationDetails.
+        Database objects to include from migration, cannot be specified alongside 'excludeObjects'
+
+
+        :return: The include_objects of this CloneMigrationDetails.
+        :rtype: list[oci.database_migration.models.DatabaseObject]
+        """
+        return self._include_objects
+
+    @include_objects.setter
+    def include_objects(self, include_objects):
+        """
+        Sets the include_objects of this CloneMigrationDetails.
+        Database objects to include from migration, cannot be specified alongside 'excludeObjects'
+
+
+        :param include_objects: The include_objects of this CloneMigrationDetails.
+        :type: list[oci.database_migration.models.DatabaseObject]
+        """
+        self._include_objects = include_objects
 
     @property
     def vault_details(self):

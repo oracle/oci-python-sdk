@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAgentDetails(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     ODMS Agent Details
     """
 
@@ -18,10 +17,6 @@ class UpdateAgentDetails(object):
         """
         Initializes a new UpdateAgentDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
-
-        :param compartment_id:
-            The value to assign to the compartment_id property of this UpdateAgentDetails.
-        :type compartment_id: str
 
         :param display_name:
             The value to assign to the display_name property of this UpdateAgentDetails.
@@ -49,7 +44,6 @@ class UpdateAgentDetails(object):
 
         """
         self.swagger_types = {
-            'compartment_id': 'str',
             'display_name': 'str',
             'stream_id': 'str',
             'public_key': 'str',
@@ -59,7 +53,6 @@ class UpdateAgentDetails(object):
         }
 
         self.attribute_map = {
-            'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'stream_id': 'streamId',
             'public_key': 'publicKey',
@@ -68,37 +61,12 @@ class UpdateAgentDetails(object):
             'defined_tags': 'definedTags'
         }
 
-        self._compartment_id = None
         self._display_name = None
         self._stream_id = None
         self._public_key = None
         self._version = None
         self._freeform_tags = None
         self._defined_tags = None
-
-    @property
-    def compartment_id(self):
-        """
-        Gets the compartment_id of this UpdateAgentDetails.
-        The OCID of the compartment.
-
-
-        :return: The compartment_id of this UpdateAgentDetails.
-        :rtype: str
-        """
-        return self._compartment_id
-
-    @compartment_id.setter
-    def compartment_id(self, compartment_id):
-        """
-        Sets the compartment_id of this UpdateAgentDetails.
-        The OCID of the compartment.
-
-
-        :param compartment_id: The compartment_id of this UpdateAgentDetails.
-        :type: str
-        """
-        self._compartment_id = compartment_id
 
     @property
     def display_name(self):

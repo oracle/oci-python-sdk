@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateGoldenGateSettings(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Optional settings for Oracle GoldenGate processes
     If an empty object is specified, the stored GoldenGate Settings details will be removed.
     """

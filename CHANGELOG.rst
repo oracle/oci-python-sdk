@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.47.0 - 2021-10-05
+====================
+
+Added
+-----
+* Support for configuring Binlog variables in the MySQL Database service.
+* Support new response value "OPERATOR" for backup creationType in list and get MDS backup API in the MySQL Database service.
+* Support for SetAutoUpgradableConfig and GetAutoUpgradableConfig operations in Management Agent Cloud service.
+* Support for additional installType filter for List Management Agents, Images and Count API operations in Management Agent Cloud service.
+* Support for list and read DeploymentUpgrade, cancel and restore DeploymentBackup in the Golden Gate service.
+* Support for non-autonomous databases targets, executing Pre-Migration advisor, uploading Datapump logs into Object Storage bucket, and filtering Database Objects in the Database Migration service.
+* Support for calling Oracle Cloud Infrastructure services in the ap-ibaraki-1 region.
+
+Breaking changes
+----
+* Param `is_agent_auto_upgradable` is removed from model `UpdateManagementAgentDetails` in the Management Agent Cloud Service
+* Param `display_name` is removed from operations `list_work_requests`, `list_work_request_logs` and `list_work_request_errors` in the Database Migration Service Client
+* Allowed values for param `sort_order` from operation `list_work_requests` changed to `timeAccepted` in the Database Migration Service Client
+* Allowed values for param `sort_order` from operations `list_work_request_errors` and `list_work_request_logs` changed to `timestamp` in the Database Migration Service Client
+* Param `time_stamp` renamed to `timestamp` in models `WorkRequestLogEntry`, `WorkRequestError` for the Database Migration Service
+* Param `compartment_id` is removed from model `UpdateAgentDetails` for the Database Migration Service
+
+====================
 2.46.0 - 2021-09-28
 ====================
 

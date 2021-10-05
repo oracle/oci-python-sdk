@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequest(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     An asynchronous work request.
     """
 
@@ -67,6 +66,10 @@ class WorkRequest(object):
     STATUS_IN_PROGRESS = "IN_PROGRESS"
 
     #: A constant which can be used with the status property of a WorkRequest.
+    #: This constant has a value of "WAITING"
+    STATUS_WAITING = "WAITING"
+
+    #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "FAILED"
     STATUS_FAILED = "FAILED"
 
@@ -95,7 +98,7 @@ class WorkRequest(object):
 
         :param status:
             The value to assign to the status property of this WorkRequest.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -198,7 +201,7 @@ class WorkRequest(object):
         **[Required]** Gets the status of this WorkRequest.
         Status of current work request.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -217,7 +220,7 @@ class WorkRequest(object):
         :param status: The status of this WorkRequest.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status

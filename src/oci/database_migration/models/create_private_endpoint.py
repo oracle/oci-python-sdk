@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreatePrivateEndpoint(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     OCI Private Endpoint configuration details.
     Not required for source container database connections, it will default to the specified Source Database Connection Private Endpoint.
     """

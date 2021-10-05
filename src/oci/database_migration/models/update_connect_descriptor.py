@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateConnectDescriptor(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Connect Descriptor details. If a Private Endpoint was specified in the Connection, the host entry should be a valid IP address.
     """
 

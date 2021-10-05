@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class JobOutputSummaryCollection(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Results of a Job output listing. Contains JobOutputSummary items.
     """
 

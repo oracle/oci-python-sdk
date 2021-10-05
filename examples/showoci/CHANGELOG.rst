@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.10.05 - 21.10.05
+=====================
+* Added Bastions
+* Added OAC Vanity URL
+
+=====================
 21.08.31 - 21.08.31
 =====================
 * Added CSV for database backups

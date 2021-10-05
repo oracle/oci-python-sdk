@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDatabaseLinkDetails(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Optional details for creating a network database link from OCI database to on-premise database.
     """
 
@@ -23,21 +22,28 @@ class CreateDatabaseLinkDetails(object):
             The value to assign to the name property of this CreateDatabaseLinkDetails.
         :type name: str
 
+        :param wallet_bucket:
+            The value to assign to the wallet_bucket property of this CreateDatabaseLinkDetails.
+        :type wallet_bucket: oci.database_migration.models.CreateObjectStoreBucket
+
         """
         self.swagger_types = {
-            'name': 'str'
+            'name': 'str',
+            'wallet_bucket': 'CreateObjectStoreBucket'
         }
 
         self.attribute_map = {
-            'name': 'name'
+            'name': 'name',
+            'wallet_bucket': 'walletBucket'
         }
 
         self._name = None
+        self._wallet_bucket = None
 
     @property
     def name(self):
         """
-        **[Required]** Gets the name of this CreateDatabaseLinkDetails.
+        Gets the name of this CreateDatabaseLinkDetails.
         Name of database link from OCI database to on-premise database. ODMS will create link, if the link does not already exist.
 
 
@@ -57,6 +63,26 @@ class CreateDatabaseLinkDetails(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def wallet_bucket(self):
+        """
+        Gets the wallet_bucket of this CreateDatabaseLinkDetails.
+
+        :return: The wallet_bucket of this CreateDatabaseLinkDetails.
+        :rtype: oci.database_migration.models.CreateObjectStoreBucket
+        """
+        return self._wallet_bucket
+
+    @wallet_bucket.setter
+    def wallet_bucket(self, wallet_bucket):
+        """
+        Sets the wallet_bucket of this CreateDatabaseLinkDetails.
+
+        :param wallet_bucket: The wallet_bucket of this CreateDatabaseLinkDetails.
+        :type: oci.database_migration.models.CreateObjectStoreBucket
+        """
+        self._wallet_bucket = wallet_bucket
 
     def __repr__(self):
         return formatted_flat_dict(self)

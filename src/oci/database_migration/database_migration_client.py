@@ -77,7 +77,7 @@ class DatabaseMigrationClient(object):
         base_client_init_kwargs = {
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
-            'base_path': '/20200720',
+            'base_path': '/20210929',
             'service_endpoint_template': 'https://odms.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False)
         }
@@ -88,7 +88,6 @@ class DatabaseMigrationClient(object):
 
     def abort_job(self, job_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Aborts a Migration Job (either Evaluation or Migration).
 
 
@@ -185,7 +184,6 @@ class DatabaseMigrationClient(object):
 
     def change_agent_compartment(self, agent_id, change_agent_compartment_details, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Used to configure an ODMS Agent Compartment ID.
 
 
@@ -285,7 +283,6 @@ class DatabaseMigrationClient(object):
 
     def change_connection_compartment(self, connection_id, change_connection_compartment_details, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Used to change the Database Connection compartment.
 
 
@@ -385,7 +382,6 @@ class DatabaseMigrationClient(object):
 
     def change_migration_compartment(self, migration_id, change_migration_compartment_details, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Used to change the Migration compartment.
 
 
@@ -485,7 +481,6 @@ class DatabaseMigrationClient(object):
 
     def clone_migration(self, migration_id, clone_migration_details, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Clone a configuration from an existing Migration.
 
 
@@ -587,7 +582,6 @@ class DatabaseMigrationClient(object):
 
     def create_connection(self, create_connection_details, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Create a Database Connection resource that contains the details to connect to either a Source or Target Database
         in the migration.
 
@@ -666,7 +660,6 @@ class DatabaseMigrationClient(object):
 
     def create_migration(self, create_migration_details, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Create a Migration resource that contains all the details to perform the
         database migration operation, such as source and destination database
         details, credentials, etc.
@@ -746,7 +739,6 @@ class DatabaseMigrationClient(object):
 
     def delete_agent(self, agent_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Delete the ODMS Agent represented by the specified ODMS Agent ID.
 
 
@@ -830,7 +822,6 @@ class DatabaseMigrationClient(object):
 
     def delete_connection(self, connection_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Deletes the Database Connection represented by the specified connection ID.
 
 
@@ -914,7 +905,6 @@ class DatabaseMigrationClient(object):
 
     def delete_job(self, job_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Deletes the migration job represented by the given job ID.
 
 
@@ -998,7 +988,6 @@ class DatabaseMigrationClient(object):
 
     def delete_migration(self, migration_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Deletes the Migration represented by the specified migration ID.
 
 
@@ -1082,7 +1071,6 @@ class DatabaseMigrationClient(object):
 
     def evaluate_migration(self, migration_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Start Validate Migration job.
 
 
@@ -1177,9 +1165,84 @@ class DatabaseMigrationClient(object):
                 header_params=header_params,
                 response_type="Job")
 
+    def get_advisor_report(self, job_id, **kwargs):
+        """
+        Get the Pre-Migration Advisor report details
+
+
+        :param str job_id: (required)
+            The OCID of the job
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_migration.models.AdvisorReport`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemigration/get_advisor_report.py.html>`__ to see an example of how to use get_advisor_report API.
+        """
+        resource_path = "/jobs/{jobId}/advisorReport"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_advisor_report got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "jobId": job_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="AdvisorReport")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="AdvisorReport")
+
     def get_agent(self, agent_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Display the ODMS Agent configuration.
 
 
@@ -1256,7 +1319,6 @@ class DatabaseMigrationClient(object):
 
     def get_connection(self, connection_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Display Database Connection details.
 
 
@@ -1333,7 +1395,6 @@ class DatabaseMigrationClient(object):
 
     def get_job(self, job_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Get a migration job.
 
 
@@ -1410,7 +1471,6 @@ class DatabaseMigrationClient(object):
 
     def get_job_output_content(self, job_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Get the migration Job Output content as a String.
 
 
@@ -1487,7 +1547,6 @@ class DatabaseMigrationClient(object):
 
     def get_migration(self, migration_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Display Migration details.
 
 
@@ -1573,7 +1632,6 @@ class DatabaseMigrationClient(object):
 
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Gets the details of a work request.
 
 
@@ -1650,7 +1708,6 @@ class DatabaseMigrationClient(object):
 
     def list_agent_images(self, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Get details of the ODMS Agent Images available to install on-premises.
 
 
@@ -1742,7 +1799,6 @@ class DatabaseMigrationClient(object):
 
     def list_agents(self, compartment_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Display the name of all the existing ODMS Agents in the server.
 
 
@@ -1872,7 +1928,6 @@ class DatabaseMigrationClient(object):
 
     def list_connections(self, compartment_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         List all Database Connections.
 
 
@@ -2002,7 +2057,6 @@ class DatabaseMigrationClient(object):
 
     def list_job_outputs(self, job_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         List the Job Outputs
 
 
@@ -2095,7 +2149,6 @@ class DatabaseMigrationClient(object):
 
     def list_jobs(self, migration_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         List all the names of the Migration jobs associated to the specified
         migration site.
 
@@ -2224,9 +2277,114 @@ class DatabaseMigrationClient(object):
                 header_params=header_params,
                 response_type="JobCollection")
 
+    def list_migration_object_types(self, **kwargs):
+        """
+        Display sample object types to exclude or include for a Migration.
+
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided.
+            Default order for name is custom based on it's usage frequency. If no value is specified name is default.
+
+            Allowed values are: "name"
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_migration.models.MigrationObjectTypeSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemigration/list_migration_object_types.py.html>`__ to see an example of how to use list_migration_object_types API.
+        """
+        resource_path = "/migrationObjectTypes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_migration_object_types got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MigrationObjectTypeSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="MigrationObjectTypeSummaryCollection")
+
     def list_migrations(self, compartment_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         List all Migrations.
 
 
@@ -2258,9 +2416,9 @@ class DatabaseMigrationClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str lifecycle_state: (optional)
-            The current state of the Database Migration Deployment.
+            The lifecycle state of the Migration.
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "IN_PROGRESS", "ACCEPTED", "SUCCEEDED", "CANCELED", "WAITING", "NEEDS_ATTENTION", "INACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str lifecycle_details: (optional)
             The lifecycle detailed status of the Migration.
@@ -2316,7 +2474,7 @@ class DatabaseMigrationClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "IN_PROGRESS", "ACCEPTED", "SUCCEEDED", "CANCELED", "WAITING", "NEEDS_ATTENTION", "INACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -2370,7 +2528,6 @@ class DatabaseMigrationClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Gets the errors for a work request.
 
 
@@ -2384,18 +2541,14 @@ class DatabaseMigrationClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
-            Default order for displayName is ascending. If no value is specified timeCreated is default.
+            The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
 
-            Allowed values are: "timeCreated", "displayName"
+            Allowed values are: "timestamp"
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
-
-        :param str display_name: (optional)
-            A filter to return only resources that match the entire display name given.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2425,7 +2578,6 @@ class DatabaseMigrationClient(object):
             "page",
             "sort_by",
             "sort_order",
-            "display_name",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2444,7 +2596,7 @@ class DatabaseMigrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["timeCreated", "displayName"]
+            sort_by_allowed_values = ["timestamp"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -2461,8 +2613,7 @@ class DatabaseMigrationClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "sortOrder": kwargs.get("sort_order", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2497,7 +2648,6 @@ class DatabaseMigrationClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Gets the logs for a work request.
 
 
@@ -2511,18 +2661,14 @@ class DatabaseMigrationClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
-            Default order for displayName is ascending. If no value is specified timeCreated is default.
+            The field to sort by. Only one sort order may be provided. Default order for timestamp is descending.
 
-            Allowed values are: "timeCreated", "displayName"
+            Allowed values are: "timestamp"
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
-
-        :param str display_name: (optional)
-            A filter to return only resources that match the entire display name given.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2552,7 +2698,6 @@ class DatabaseMigrationClient(object):
             "page",
             "sort_by",
             "sort_order",
-            "display_name",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2571,7 +2716,7 @@ class DatabaseMigrationClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["timeCreated", "displayName"]
+            sort_by_allowed_values = ["timestamp"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -2588,8 +2733,7 @@ class DatabaseMigrationClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "sortOrder": kwargs.get("sort_order", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2624,7 +2768,6 @@ class DatabaseMigrationClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Lists the work requests in a compartment or for a specified resource.
 
 
@@ -2636,6 +2779,11 @@ class DatabaseMigrationClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param str status: (optional)
+            A filter to return only resources their lifecycleState matches the given OperationStatus.
+
+            Allowed values are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
+
         :param int limit: (optional)
             The maximum number of items to return.
 
@@ -2643,18 +2791,14 @@ class DatabaseMigrationClient(object):
             The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
-            Default order for displayName is ascending. If no value is specified timeCreated is default.
+            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
 
-            Allowed values are: "timeCreated", "displayName"
+            Allowed values are: "timeAccepted"
 
         :param str sort_order: (optional)
             The sort order to use, either 'asc' or 'desc'.
 
             Allowed values are: "ASC", "DESC"
-
-        :param str display_name: (optional)
-            A filter to return only resources that match the entire display name given.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -2681,11 +2825,11 @@ class DatabaseMigrationClient(object):
         expected_kwargs = [
             "retry_strategy",
             "resource_id",
+            "status",
             "limit",
             "page",
             "sort_by",
             "sort_order",
-            "display_name",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2693,8 +2837,15 @@ class DatabaseMigrationClient(object):
             raise ValueError(
                 "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
 
+        if 'status' in kwargs:
+            status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+            if kwargs['status'] not in status_allowed_values:
+                raise ValueError(
+                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                )
+
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["timeCreated", "displayName"]
+            sort_by_allowed_values = ["timeAccepted"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
@@ -2710,11 +2861,11 @@ class DatabaseMigrationClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "resourceId": kwargs.get("resource_id", missing),
+            "status": kwargs.get("status", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "sortOrder": kwargs.get("sort_order", missing),
-            "displayName": kwargs.get("display_name", missing)
+            "sortOrder": kwargs.get("sort_order", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2747,7 +2898,6 @@ class DatabaseMigrationClient(object):
 
     def resume_job(self, job_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Resume a migration Job.
 
 
@@ -2850,7 +3000,6 @@ class DatabaseMigrationClient(object):
 
     def retrieve_supported_phases(self, migration_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Display Migration Phases for a specified migration.
 
 
@@ -2927,7 +3076,6 @@ class DatabaseMigrationClient(object):
 
     def start_migration(self, migration_id, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Start Migration job.
 
 
@@ -3030,7 +3178,6 @@ class DatabaseMigrationClient(object):
 
     def update_agent(self, agent_id, update_agent_details, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Modifies the ODMS Agent represented by the given ODMS Agent ID.
 
 
@@ -3132,7 +3279,6 @@ class DatabaseMigrationClient(object):
 
     def update_connection(self, connection_id, update_connection_details, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Update Database Connection resource details.
 
 
@@ -3221,7 +3367,6 @@ class DatabaseMigrationClient(object):
 
     def update_job(self, job_id, update_job_details, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Update Migration Job resource details.
 
 
@@ -3312,7 +3457,6 @@ class DatabaseMigrationClient(object):
 
     def update_migration(self, migration_id, update_migration_details, **kwargs):
         """
-        Note: Deprecated. Use the new resource model APIs instead.
         Update Migration resource details.
 
 

@@ -18,10 +18,6 @@ class UpdateManagementAgentDetails(object):
         Initializes a new UpdateManagementAgentDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
-        :param is_agent_auto_upgradable:
-            The value to assign to the is_agent_auto_upgradable property of this UpdateManagementAgentDetails.
-        :type is_agent_auto_upgradable: bool
-
         :param display_name:
             The value to assign to the display_name property of this UpdateManagementAgentDetails.
         :type display_name: str
@@ -36,47 +32,20 @@ class UpdateManagementAgentDetails(object):
 
         """
         self.swagger_types = {
-            'is_agent_auto_upgradable': 'bool',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
-            'is_agent_auto_upgradable': 'isAgentAutoUpgradable',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
-        self._is_agent_auto_upgradable = None
         self._display_name = None
         self._freeform_tags = None
         self._defined_tags = None
-
-    @property
-    def is_agent_auto_upgradable(self):
-        """
-        Gets the is_agent_auto_upgradable of this UpdateManagementAgentDetails.
-        Setting of this flag is no longer supported.
-
-
-        :return: The is_agent_auto_upgradable of this UpdateManagementAgentDetails.
-        :rtype: bool
-        """
-        return self._is_agent_auto_upgradable
-
-    @is_agent_auto_upgradable.setter
-    def is_agent_auto_upgradable(self, is_agent_auto_upgradable):
-        """
-        Sets the is_agent_auto_upgradable of this UpdateManagementAgentDetails.
-        Setting of this flag is no longer supported.
-
-
-        :param is_agent_auto_upgradable: The is_agent_auto_upgradable of this UpdateManagementAgentDetails.
-        :type: bool
-        """
-        self._is_agent_auto_upgradable = is_agent_auto_upgradable
 
     @property
     def display_name(self):

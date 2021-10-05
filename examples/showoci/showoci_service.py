@@ -134,7 +134,7 @@ class ShowOCIFlags(object):
 # class ShowOCIService
 ##########################################################################
 class ShowOCIService(object):
-    oci_compatible_version = "2.44.0"
+    oci_compatible_version = "2.45.1"
 
     ##########################################################################
     # Global Constants
@@ -311,6 +311,7 @@ class ShowOCIService(object):
     # Security and Logging
     C_SECURITY = "security"
     C_SECURITY_CLOUD_GUARD = "cloud_guard"
+    C_SECURITY_BASTION = "bastion"
     C_SECURITY_LOGGING = "logging"
 
     # Security Scores
@@ -10858,6 +10859,7 @@ class ShowOCIService(object):
                                'capacity_value': str(oac.capacity.capacity_value),
                                'email_notification': str(oac.email_notification),
                                'service_url': str(oac.service_url),
+                               'vanity_domain': "",
                                'vanity_url': "",
                                'sum_info': "PaaS OAC Native " + ("BYOL" if 'BRING' in oac.license_type else "INCL"),
                                'sum_size_gb': str(oac.capacity.capacity_value),
@@ -10866,11 +10868,17 @@ class ShowOCIService(object):
                                'compartment_id': str(compartment['id']),
                                'region_name': str(self.config['region'])}
 
-                        # Fetch main OAC object for Vanity URL - TBD once customer create Vanity URL
-                        # try:
-                        #    oac_main = oac_client.get_analytics_instance(oac.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
-                        # except oci.exceptions.ServiceError as e:
-                        #    pass
+                        # Fetch main OAC object for Vanity URL
+                        try:
+                            oac_main = oac_client.get_analytics_instance(oac.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                            if oac_main.vanity_url_details:
+                                for k, v in oac_main.vanity_url_details.items():
+                                    if v:
+                                        val['vanity_domain'] = str(', '.join(x for x in v.hosts))
+                                        val['vanity_url'] = str(', '.join(x for x in v.urls))
+
+                        except oci.exceptions.ServiceError:
+                            pass
 
                         # add the data
                         cnt += 1
@@ -11317,17 +11325,20 @@ class ShowOCIService(object):
             print("Security and Logging Services...")
 
             # clients
+            bs_client = oci.bastion.BastionClient(self.config, signer=self.signer, timeout=2)
             cg_client = oci.cloud_guard.CloudGuardClient(self.config, signer=self.signer, timeout=2)
             log_client = oci.logging.LoggingManagementClient(self.config, signer=self.signer, timeout=2)
 
             if self.flags.proxy:
                 cg_client.base_client.session.proxies = {'https': self.flags.proxy}
                 log_client.base_client.session.proxies = {'https': self.flags.proxy}
+                bs_client.base_client.session.proxies = {'https': self.flags.proxy}
 
             # reference to compartments
             compartments = self.get_compartment()
 
             # add the key if not exists
+            self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_BASTION)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_CLOUD_GUARD)
             self.__initialize_data_key(self.C_SECURITY, self.C_SECURITY_LOGGING)
 
@@ -11335,6 +11346,7 @@ class ShowOCIService(object):
             sec = self.data[self.C_SECURITY]
 
             # append the data
+            sec[self.C_SECURITY_BASTION] += self.__load_security_bastions(bs_client, compartments)
             sec[self.C_SECURITY_CLOUD_GUARD] += self.__load_security_cloud_guard(cg_client, compartments)
             sec[self.C_SECURITY_LOGGING] += self.__load_security_log_groups(log_client, compartments)
 
@@ -11699,4 +11711,81 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_security_log_groups", e)
+            return data
+
+    ##########################################################################
+    # __load_security_bastions
+    ##########################################################################
+    def __load_security_bastions(self, bs_client, compartments):
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("Bastions")
+
+            # loop on all compartments
+            for compartment in compartments:
+
+                # skip managed paas compartment
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                bastions = []
+                try:
+                    bastions = oci.pagination.list_call_get_all_results(
+                        bs_client.list_bastions,
+                        compartment['id'],
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+                except oci.exceptions.ConnectTimeout:
+                    self.__load_print_auth_warning()
+                    break
+
+                print(".", end="")
+
+                # bs = oci.bastion.models.BastionSummary
+                for bs in bastions:
+                    if (bs.lifecycle_state == 'ACTIVE' or bs.lifecycle_state == 'UPDATING'):
+                        val = {
+                            'id': str(bs.id),
+                            'bastion_type': str(bs.bastion_type),
+                            'name': str(bs.name),
+                            'target_vcn_id': str(bs.target_vcn_id),
+                            'target_vcn_name': self.get_network_vcn(bs.target_vcn_id),
+                            'target_subnet_id': str(bs.target_subnet_id),
+                            'target_subnet_name': self.get_network_subnet(bs.target_subnet_id),
+
+                            'time_created': str(bs.time_created),
+                            'time_updated': str(bs.time_updated),
+                            'lifecycle_state': str(bs.lifecycle_state),
+                            'defined_tags': [] if bs.defined_tags is None else bs.defined_tags,
+                            'freeform_tags': [] if bs.freeform_tags is None else bs.freeform_tags,
+                            'lifecycle_details': str(bs.lifecycle_details),
+                            'sum_info': "Bastions",
+                            'sum_size_gb': str(1),
+                            'compartment_name': str(compartment['name']),
+                            'compartment_id': str(compartment['id']),
+                            'region_name': str(self.config['region'])
+                        }
+
+                        cnt += 1
+                        data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_security_bastions", e)
             return data

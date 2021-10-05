@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectStoreBucket(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     In lieu of a network database link, OCI Object Storage bucket will be used to store Data Pump dump files for the migration.
+    Additionally, it can be specified alongside a database link data transfer medium.
     """
 
     def __init__(self, **kwargs):

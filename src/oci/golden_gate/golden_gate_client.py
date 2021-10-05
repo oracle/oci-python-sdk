@@ -86,6 +86,96 @@ class GoldenGateClient(object):
         self.base_client = BaseClient("golden_gate", config, signer, golden_gate_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
 
+    def cancel_deployment_backup(self, deployment_backup_id, cancel_deployment_backup_details, **kwargs):
+        """
+        Cancels a Deployment Backup creation process.
+
+
+        :param str deployment_backup_id: (required)
+            A unique DeploymentBackup identifier.
+
+        :param oci.golden_gate.models.CancelDeploymentBackupDetails cancel_deployment_backup_details: (required)
+            A placeholder for any additional metadata to describe the deployment backup cancel.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the etag from a previous GET or POST response for that resource.  The resource is updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried, in case of a timeout or server error, without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated before then due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request is rejected.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/cancel_deployment_backup.py.html>`__ to see an example of how to use cancel_deployment_backup API.
+        """
+        resource_path = "/deploymentBackups/{deploymentBackupId}/actions/cancel"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "cancel_deployment_backup got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "deploymentBackupId": deployment_backup_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=cancel_deployment_backup_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=cancel_deployment_backup_details)
+
     def change_database_registration_compartment(self, database_registration_id, change_database_registration_compartment_details, **kwargs):
         """
         Moves the DatabaseRegistration into a different compartment within the same tenancy. When provided, If-Match is checked against ETag values of the resource.  For information about moving resources between compartments, see `Moving Resources Between Compartments`__.
@@ -1035,6 +1125,81 @@ class GoldenGateClient(object):
                 header_params=header_params,
                 response_type="DeploymentBackup")
 
+    def get_deployment_upgrade(self, deployment_upgrade_id, **kwargs):
+        """
+        Retrieves a deployment upgrade.
+
+
+        :param str deployment_upgrade_id: (required)
+            A unique Deployment Upgrade identifier.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.golden_gate.models.DeploymentUpgrade`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/get_deployment_upgrade.py.html>`__ to see an example of how to use get_deployment_upgrade API.
+        """
+        resource_path = "/deploymentUpgrades/{deploymentUpgradeId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_deployment_upgrade got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "deploymentUpgradeId": deployment_upgrade_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DeploymentUpgrade")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="DeploymentUpgrade")
+
     def get_work_request(self, work_request_id, **kwargs):
         """
         Retrieve the WorkRequest identified by the given OCID.
@@ -1121,7 +1286,7 @@ class GoldenGateClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the 'lifecycleState' given.
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"
 
         :param str display_name: (optional)
             A filter to return only the resources that match the entire 'displayName' given.
@@ -1179,7 +1344,7 @@ class GoldenGateClient(object):
                 "list_database_registrations got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -1251,7 +1416,7 @@ class GoldenGateClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the 'lifecycleState' given.
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"
 
         :param str display_name: (optional)
             A filter to return only the resources that match the entire 'displayName' given.
@@ -1310,7 +1475,7 @@ class GoldenGateClient(object):
                 "list_deployment_backups got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -1369,6 +1534,138 @@ class GoldenGateClient(object):
                 header_params=header_params,
                 response_type="DeploymentBackupCollection")
 
+    def list_deployment_upgrades(self, compartment_id, **kwargs):
+        """
+        Lists the Deployment Upgrades in a compartment.
+
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list resources.
+
+        :param str deployment_id: (optional)
+            The ID of the deployment in which to list resources.
+
+        :param str lifecycle_state: (optional)
+            A filter to return only the resources that match the 'lifecycleState' given.
+
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"
+
+        :param str display_name: (optional)
+            A filter to return only the resources that match the entire 'displayName' given.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is descending.  Default order for 'displayName' is ascending. If no value is specified timeCreated is the default.
+
+            Allowed values are: "timeCreated", "displayName"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.golden_gate.models.DeploymentUpgradeCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/goldengate/list_deployment_upgrades.py.html>`__ to see an example of how to use list_deployment_upgrades API.
+        """
+        resource_path = "/deploymentUpgrades"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "deployment_id",
+            "lifecycle_state",
+            "display_name",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_deployment_upgrades got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "deploymentId": kwargs.get("deployment_id", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DeploymentUpgradeCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DeploymentUpgradeCollection")
+
     def list_deployments(self, compartment_id, **kwargs):
         """
         Lists the Deployments in a compartment.
@@ -1380,10 +1677,18 @@ class GoldenGateClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only the resources that match the 'lifecycleState' given.
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"
+
+        :param str lifecycle_sub_state: (optional)
+            A filter to return only the resources that match the 'lifecycleSubState' given.
+
+            Allowed values are: "RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS"
 
         :param str display_name: (optional)
             A filter to return only the resources that match the entire 'displayName' given.
+
+        :param str fqdn: (optional)
+            A filter to return only the resources that match the 'fqdn' given.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1425,7 +1730,9 @@ class GoldenGateClient(object):
         expected_kwargs = [
             "retry_strategy",
             "lifecycle_state",
+            "lifecycle_sub_state",
             "display_name",
+            "fqdn",
             "limit",
             "page",
             "sort_order",
@@ -1438,10 +1745,17 @@ class GoldenGateClient(object):
                 "list_deployments got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'lifecycle_sub_state' in kwargs:
+            lifecycle_sub_state_allowed_values = ["RECOVERING", "STARTING", "STOPPING", "MOVING", "UPGRADING", "RESTORING", "BACKUP_IN_PROGRESS"]
+            if kwargs['lifecycle_sub_state'] not in lifecycle_sub_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_sub_state`, must be one of {0}".format(lifecycle_sub_state_allowed_values)
                 )
 
         if 'sort_order' in kwargs:
@@ -1461,7 +1775,9 @@ class GoldenGateClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "lifecycleSubState": kwargs.get("lifecycle_sub_state", missing),
             "displayName": kwargs.get("display_name", missing),
+            "fqdn": kwargs.get("fqdn", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -1686,6 +2002,9 @@ class GoldenGateClient(object):
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
 
+        :param str resource_id: (optional)
+            The ID of the resource in which to list resources.
+
         :param str opc_request_id: (optional)
             The client request ID for tracing.
 
@@ -1715,6 +2034,7 @@ class GoldenGateClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
+            "resource_id",
             "opc_request_id",
             "page",
             "limit"
@@ -1726,6 +2046,7 @@ class GoldenGateClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
+            "resourceId": kwargs.get("resource_id", missing),
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing)
         }
