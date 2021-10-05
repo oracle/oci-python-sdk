@@ -65,6 +65,14 @@ class ManagementAgent(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the install_type property of a ManagementAgent.
+    #: This constant has a value of "AGENT"
+    INSTALL_TYPE_AGENT = "AGENT"
+
+    #: A constant which can be used with the install_type property of a ManagementAgent.
+    #: This constant has a value of "GATEWAY"
+    INSTALL_TYPE_GATEWAY = "GATEWAY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagementAgent object with values from keyword arguments.
@@ -99,6 +107,10 @@ class ManagementAgent(object):
         :param version:
             The value to assign to the version property of this ManagementAgent.
         :type version: str
+
+        :param resource_artifact_version:
+            The value to assign to the resource_artifact_version property of this ManagementAgent.
+        :type resource_artifact_version: str
 
         :param host:
             The value to assign to the host property of this ManagementAgent.
@@ -156,6 +168,12 @@ class ManagementAgent(object):
             The value to assign to the is_customer_deployed property of this ManagementAgent.
         :type is_customer_deployed: bool
 
+        :param install_type:
+            The value to assign to the install_type property of this ManagementAgent.
+            Allowed values for this property are: "AGENT", "GATEWAY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type install_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementAgent.
         :type freeform_tags: dict(str, str)
@@ -173,6 +191,7 @@ class ManagementAgent(object):
             'platform_name': 'str',
             'platform_version': 'str',
             'version': 'str',
+            'resource_artifact_version': 'str',
             'host': 'str',
             'host_id': 'str',
             'install_path': 'str',
@@ -186,6 +205,7 @@ class ManagementAgent(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'is_customer_deployed': 'bool',
+            'install_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -198,6 +218,7 @@ class ManagementAgent(object):
             'platform_name': 'platformName',
             'platform_version': 'platformVersion',
             'version': 'version',
+            'resource_artifact_version': 'resourceArtifactVersion',
             'host': 'host',
             'host_id': 'hostId',
             'install_path': 'installPath',
@@ -211,6 +232,7 @@ class ManagementAgent(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'is_customer_deployed': 'isCustomerDeployed',
+            'install_type': 'installType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -222,6 +244,7 @@ class ManagementAgent(object):
         self._platform_name = None
         self._platform_version = None
         self._version = None
+        self._resource_artifact_version = None
         self._host = None
         self._host_id = None
         self._install_path = None
@@ -235,6 +258,7 @@ class ManagementAgent(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._is_customer_deployed = None
+        self._install_type = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -413,6 +437,38 @@ class ManagementAgent(object):
         self._version = version
 
     @property
+    def resource_artifact_version(self):
+        """
+        Gets the resource_artifact_version of this ManagementAgent.
+        Version of the deployment artifact instantiated by this Management Agent.
+        The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes
+        (whose artifacts are based upon Standalone but can advance independently)
+        is YYMMDD.HHMM.VVVVVVVVVVVV.
+        VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
+
+
+        :return: The resource_artifact_version of this ManagementAgent.
+        :rtype: str
+        """
+        return self._resource_artifact_version
+
+    @resource_artifact_version.setter
+    def resource_artifact_version(self, resource_artifact_version):
+        """
+        Sets the resource_artifact_version of this ManagementAgent.
+        Version of the deployment artifact instantiated by this Management Agent.
+        The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes
+        (whose artifacts are based upon Standalone but can advance independently)
+        is YYMMDD.HHMM.VVVVVVVVVVVV.
+        VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
+
+
+        :param resource_artifact_version: The resource_artifact_version of this ManagementAgent.
+        :type: str
+        """
+        self._resource_artifact_version = resource_artifact_version
+
+    @property
     def host(self):
         """
         Gets the host of this ManagementAgent.
@@ -536,7 +592,7 @@ class ManagementAgent(object):
     def is_agent_auto_upgradable(self):
         """
         Gets the is_agent_auto_upgradable of this ManagementAgent.
-        true if the agent can be upgraded automatically; false if it must be upgraded manually.
+        true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
 
 
         :return: The is_agent_auto_upgradable of this ManagementAgent.
@@ -548,7 +604,7 @@ class ManagementAgent(object):
     def is_agent_auto_upgradable(self, is_agent_auto_upgradable):
         """
         Sets the is_agent_auto_upgradable of this ManagementAgent.
-        true if the agent can be upgraded automatically; false if it must be upgraded manually.
+        true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
 
 
         :param is_agent_auto_upgradable: The is_agent_auto_upgradable of this ManagementAgent.
@@ -735,6 +791,36 @@ class ManagementAgent(object):
         :type: bool
         """
         self._is_customer_deployed = is_customer_deployed
+
+    @property
+    def install_type(self):
+        """
+        Gets the install_type of this ManagementAgent.
+        The install type, either AGENT or GATEWAY
+
+        Allowed values for this property are: "AGENT", "GATEWAY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The install_type of this ManagementAgent.
+        :rtype: str
+        """
+        return self._install_type
+
+    @install_type.setter
+    def install_type(self, install_type):
+        """
+        Sets the install_type of this ManagementAgent.
+        The install type, either AGENT or GATEWAY
+
+
+        :param install_type: The install_type of this ManagementAgent.
+        :type: str
+        """
+        allowed_values = ["AGENT", "GATEWAY"]
+        if not value_allowed_none_or_none_sentinel(install_type, allowed_values):
+            install_type = 'UNKNOWN_ENUM_VALUE'
+        self._install_type = install_type
 
     @property
     def freeform_tags(self):

@@ -23,6 +23,47 @@ class GoldenGateClientCompositeOperations(object):
         """
         self.client = client
 
+    def cancel_deployment_backup_and_wait_for_state(self, deployment_backup_id, cancel_deployment_backup_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
+        """
+        Calls :py:func:`~oci.golden_gate.GoldenGateClient.cancel_deployment_backup` and waits for the :py:class:`~oci.golden_gate.models.WorkRequest`
+        to enter the given state(s).
+
+        :param str deployment_backup_id: (required)
+            A unique DeploymentBackup identifier.
+
+        :param oci.golden_gate.models.CancelDeploymentBackupDetails cancel_deployment_backup_details: (required)
+            A placeholder for any additional metadata to describe the deployment backup cancel.
+
+        :param list[str] wait_for_states:
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.golden_gate.models.WorkRequest.status`
+
+        :param dict operation_kwargs:
+            A dictionary of keyword arguments to pass to :py:func:`~oci.golden_gate.GoldenGateClient.cancel_deployment_backup`
+
+        :param dict waiter_kwargs:
+            A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
+            as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
+        """
+        operation_result = self.client.cancel_deployment_backup(deployment_backup_id, cancel_deployment_backup_details, **operation_kwargs)
+        if not wait_for_states:
+            return operation_result
+
+        lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
+
+        try:
+            waiter_result = oci.wait_until(
+                self.client,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
+                **waiter_kwargs
+            )
+            result_to_return = waiter_result
+
+            return result_to_return
+        except Exception as e:
+            raise oci.exceptions.CompositeOperationError(partial_results=[operation_result], cause=e)
+
     def change_database_registration_compartment_and_wait_for_state(self, database_registration_id, change_database_registration_compartment_details, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
         Calls :py:func:`~oci.golden_gate.GoldenGateClient.change_database_registration_compartment` and waits for the :py:class:`~oci.golden_gate.models.WorkRequest`

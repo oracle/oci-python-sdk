@@ -65,6 +65,14 @@ class ManagementAgentSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the install_type property of a ManagementAgentSummary.
+    #: This constant has a value of "AGENT"
+    INSTALL_TYPE_AGENT = "AGENT"
+
+    #: A constant which can be used with the install_type property of a ManagementAgentSummary.
+    #: This constant has a value of "GATEWAY"
+    INSTALL_TYPE_GATEWAY = "GATEWAY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagementAgentSummary object with values from keyword arguments.
@@ -99,6 +107,10 @@ class ManagementAgentSummary(object):
         :param version:
             The value to assign to the version property of this ManagementAgentSummary.
         :type version: str
+
+        :param resource_artifact_version:
+            The value to assign to the resource_artifact_version property of this ManagementAgentSummary.
+        :type resource_artifact_version: str
 
         :param is_agent_auto_upgradable:
             The value to assign to the is_agent_auto_upgradable property of this ManagementAgentSummary.
@@ -152,6 +164,12 @@ class ManagementAgentSummary(object):
             The value to assign to the is_customer_deployed property of this ManagementAgentSummary.
         :type is_customer_deployed: bool
 
+        :param install_type:
+            The value to assign to the install_type property of this ManagementAgentSummary.
+            Allowed values for this property are: "AGENT", "GATEWAY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type install_type: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementAgentSummary.
         :type freeform_tags: dict(str, str)
@@ -169,6 +187,7 @@ class ManagementAgentSummary(object):
             'platform_name': 'str',
             'platform_version': 'str',
             'version': 'str',
+            'resource_artifact_version': 'str',
             'is_agent_auto_upgradable': 'bool',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -181,6 +200,7 @@ class ManagementAgentSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'is_customer_deployed': 'bool',
+            'install_type': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -193,6 +213,7 @@ class ManagementAgentSummary(object):
             'platform_name': 'platformName',
             'platform_version': 'platformVersion',
             'version': 'version',
+            'resource_artifact_version': 'resourceArtifactVersion',
             'is_agent_auto_upgradable': 'isAgentAutoUpgradable',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -205,6 +226,7 @@ class ManagementAgentSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'is_customer_deployed': 'isCustomerDeployed',
+            'install_type': 'installType',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -216,6 +238,7 @@ class ManagementAgentSummary(object):
         self._platform_name = None
         self._platform_version = None
         self._version = None
+        self._resource_artifact_version = None
         self._is_agent_auto_upgradable = None
         self._time_created = None
         self._time_updated = None
@@ -228,6 +251,7 @@ class ManagementAgentSummary(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._is_customer_deployed = None
+        self._install_type = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -406,10 +430,42 @@ class ManagementAgentSummary(object):
         self._version = version
 
     @property
+    def resource_artifact_version(self):
+        """
+        Gets the resource_artifact_version of this ManagementAgentSummary.
+        Version of the deployment artifact instantiated by this Management Agent.
+        The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes
+        (whose artifacts are based upon Standalone but can advance independently)
+        is YYMMDD.HHMM.VVVVVVVVVVVV.
+        VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
+
+
+        :return: The resource_artifact_version of this ManagementAgentSummary.
+        :rtype: str
+        """
+        return self._resource_artifact_version
+
+    @resource_artifact_version.setter
+    def resource_artifact_version(self, resource_artifact_version):
+        """
+        Sets the resource_artifact_version of this ManagementAgentSummary.
+        Version of the deployment artifact instantiated by this Management Agent.
+        The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes
+        (whose artifacts are based upon Standalone but can advance independently)
+        is YYMMDD.HHMM.VVVVVVVVVVVV.
+        VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
+
+
+        :param resource_artifact_version: The resource_artifact_version of this ManagementAgentSummary.
+        :type: str
+        """
+        self._resource_artifact_version = resource_artifact_version
+
+    @property
     def is_agent_auto_upgradable(self):
         """
         Gets the is_agent_auto_upgradable of this ManagementAgentSummary.
-        true if the agent can be upgraded automatically; false if it must be upgraded manually.
+        true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
 
 
         :return: The is_agent_auto_upgradable of this ManagementAgentSummary.
@@ -421,7 +477,7 @@ class ManagementAgentSummary(object):
     def is_agent_auto_upgradable(self, is_agent_auto_upgradable):
         """
         Sets the is_agent_auto_upgradable of this ManagementAgentSummary.
-        true if the agent can be upgraded automatically; false if it must be upgraded manually.
+        true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
 
 
         :param is_agent_auto_upgradable: The is_agent_auto_upgradable of this ManagementAgentSummary.
@@ -704,6 +760,36 @@ class ManagementAgentSummary(object):
         :type: bool
         """
         self._is_customer_deployed = is_customer_deployed
+
+    @property
+    def install_type(self):
+        """
+        Gets the install_type of this ManagementAgentSummary.
+        The install type, either AGENT or GATEWAY
+
+        Allowed values for this property are: "AGENT", "GATEWAY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The install_type of this ManagementAgentSummary.
+        :rtype: str
+        """
+        return self._install_type
+
+    @install_type.setter
+    def install_type(self, install_type):
+        """
+        Sets the install_type of this ManagementAgentSummary.
+        The install type, either AGENT or GATEWAY
+
+
+        :param install_type: The install_type of this ManagementAgentSummary.
+        :type: str
+        """
+        allowed_values = ["AGENT", "GATEWAY"]
+        if not value_allowed_none_or_none_sentinel(install_type, allowed_values):
+            install_type = 'UNKNOWN_ENUM_VALUE'
+        self._install_type = install_type
 
     @property
     def freeform_tags(self):

@@ -41,6 +41,26 @@ class DeploymentBackupSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a DeploymentBackupSummary.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the lifecycle_state property of a DeploymentBackupSummary.
+    #: This constant has a value of "IN_PROGRESS"
+    LIFECYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a DeploymentBackupSummary.
+    #: This constant has a value of "CANCELING"
+    LIFECYCLE_STATE_CANCELING = "CANCELING"
+
+    #: A constant which can be used with the lifecycle_state property of a DeploymentBackupSummary.
+    #: This constant has a value of "CANCELED"
+    LIFECYCLE_STATE_CANCELED = "CANCELED"
+
+    #: A constant which can be used with the lifecycle_state property of a DeploymentBackupSummary.
+    #: This constant has a value of "SUCCEEDED"
+    LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
+
     #: A constant which can be used with the backup_type property of a DeploymentBackupSummary.
     #: This constant has a value of "INCREMENTAL"
     BACKUP_TYPE_INCREMENTAL = "INCREMENTAL"
@@ -76,7 +96,7 @@ class DeploymentBackupSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DeploymentBackupSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -330,7 +350,7 @@ class DeploymentBackupSummary(object):
         **[Required]** Gets the lifecycle_state of this DeploymentBackupSummary.
         Possible lifecycle states.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -349,7 +369,7 @@ class DeploymentBackupSummary(object):
         :param lifecycle_state: The lifecycle_state of this DeploymentBackupSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", "IN_PROGRESS", "CANCELING", "CANCELED", "SUCCEEDED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

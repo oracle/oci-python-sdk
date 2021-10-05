@@ -77,6 +77,14 @@ class ConfigurationVariables(object):
     #: This constant has a value of "BEFORE_AND_AFTER"
     GROUP_REPLICATION_CONSISTENCY_BEFORE_AND_AFTER = "BEFORE_AND_AFTER"
 
+    #: A constant which can be used with the binlog_row_metadata property of a ConfigurationVariables.
+    #: This constant has a value of "FULL"
+    BINLOG_ROW_METADATA_FULL = "FULL"
+
+    #: A constant which can be used with the binlog_row_metadata property of a ConfigurationVariables.
+    #: This constant has a value of "MINIMAL"
+    BINLOG_ROW_METADATA_MINIMAL = "MINIMAL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConfigurationVariables object with values from keyword arguments.
@@ -149,6 +157,20 @@ class ConfigurationVariables(object):
         :param binlog_expire_logs_seconds:
             The value to assign to the binlog_expire_logs_seconds property of this ConfigurationVariables.
         :type binlog_expire_logs_seconds: int
+
+        :param binlog_row_metadata:
+            The value to assign to the binlog_row_metadata property of this ConfigurationVariables.
+            Allowed values for this property are: "FULL", "MINIMAL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type binlog_row_metadata: str
+
+        :param binlog_row_value_options:
+            The value to assign to the binlog_row_value_options property of this ConfigurationVariables.
+        :type binlog_row_value_options: str
+
+        :param binlog_transaction_compression:
+            The value to assign to the binlog_transaction_compression property of this ConfigurationVariables.
+        :type binlog_transaction_compression: bool
 
         :param innodb_buffer_pool_size:
             The value to assign to the innodb_buffer_pool_size property of this ConfigurationVariables.
@@ -311,6 +333,9 @@ class ConfigurationVariables(object):
             'sql_require_primary_key': 'bool',
             'sql_warnings': 'bool',
             'binlog_expire_logs_seconds': 'int',
+            'binlog_row_metadata': 'str',
+            'binlog_row_value_options': 'str',
+            'binlog_transaction_compression': 'bool',
             'innodb_buffer_pool_size': 'int',
             'innodb_ft_result_cache_limit': 'int',
             'max_connections': 'int',
@@ -365,6 +390,9 @@ class ConfigurationVariables(object):
             'sql_require_primary_key': 'sqlRequirePrimaryKey',
             'sql_warnings': 'sqlWarnings',
             'binlog_expire_logs_seconds': 'binlogExpireLogsSeconds',
+            'binlog_row_metadata': 'binlogRowMetadata',
+            'binlog_row_value_options': 'binlogRowValueOptions',
+            'binlog_transaction_compression': 'binlogTransactionCompression',
             'innodb_buffer_pool_size': 'innodbBufferPoolSize',
             'innodb_ft_result_cache_limit': 'innodbFtResultCacheLimit',
             'max_connections': 'maxConnections',
@@ -418,6 +446,9 @@ class ConfigurationVariables(object):
         self._sql_require_primary_key = None
         self._sql_warnings = None
         self._binlog_expire_logs_seconds = None
+        self._binlog_row_metadata = None
+        self._binlog_row_value_options = None
+        self._binlog_transaction_compression = None
         self._innodb_buffer_pool_size = None
         self._innodb_ft_result_cache_limit = None
         self._max_connections = None
@@ -875,7 +906,10 @@ class ConfigurationVariables(object):
     def binlog_expire_logs_seconds(self):
         """
         Gets the binlog_expire_logs_seconds of this ConfigurationVariables.
-        (\"binlog_expire_logs_seconds\") DEPRECATED -- variable should not be settable and will be ignored
+        Sets the binary log expiration period in seconds.
+        binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable `binlog_expire_logs_seconds`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds
 
 
         :return: The binlog_expire_logs_seconds of this ConfigurationVariables.
@@ -887,13 +921,112 @@ class ConfigurationVariables(object):
     def binlog_expire_logs_seconds(self, binlog_expire_logs_seconds):
         """
         Sets the binlog_expire_logs_seconds of this ConfigurationVariables.
-        (\"binlog_expire_logs_seconds\") DEPRECATED -- variable should not be settable and will be ignored
+        Sets the binary log expiration period in seconds.
+        binlogExpireLogsSeconds corresponds to the MySQL binary logging system variable `binlog_expire_logs_seconds`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_expire_logs_seconds
 
 
         :param binlog_expire_logs_seconds: The binlog_expire_logs_seconds of this ConfigurationVariables.
         :type: int
         """
         self._binlog_expire_logs_seconds = binlog_expire_logs_seconds
+
+    @property
+    def binlog_row_metadata(self):
+        """
+        Gets the binlog_row_metadata of this ConfigurationVariables.
+        Configures the amount of table metadata added to the binary log when using row-based logging.
+        binlogRowMetadata corresponds to the MySQL binary logging system variable `binlog_row_metadata`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata
+
+        Allowed values for this property are: "FULL", "MINIMAL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The binlog_row_metadata of this ConfigurationVariables.
+        :rtype: str
+        """
+        return self._binlog_row_metadata
+
+    @binlog_row_metadata.setter
+    def binlog_row_metadata(self, binlog_row_metadata):
+        """
+        Sets the binlog_row_metadata of this ConfigurationVariables.
+        Configures the amount of table metadata added to the binary log when using row-based logging.
+        binlogRowMetadata corresponds to the MySQL binary logging system variable `binlog_row_metadata`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_metadata
+
+
+        :param binlog_row_metadata: The binlog_row_metadata of this ConfigurationVariables.
+        :type: str
+        """
+        allowed_values = ["FULL", "MINIMAL"]
+        if not value_allowed_none_or_none_sentinel(binlog_row_metadata, allowed_values):
+            binlog_row_metadata = 'UNKNOWN_ENUM_VALUE'
+        self._binlog_row_metadata = binlog_row_metadata
+
+    @property
+    def binlog_row_value_options(self):
+        """
+        Gets the binlog_row_value_options of this ConfigurationVariables.
+        When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document.
+        binlogRowValueOptions corresponds to the MySQL binary logging system variable `binlog_row_value_options`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options
+
+
+        :return: The binlog_row_value_options of this ConfigurationVariables.
+        :rtype: str
+        """
+        return self._binlog_row_value_options
+
+    @binlog_row_value_options.setter
+    def binlog_row_value_options(self, binlog_row_value_options):
+        """
+        Sets the binlog_row_value_options of this ConfigurationVariables.
+        When set to PARTIAL_JSON, this enables use of a space-efficient binary log format for updates that modify only a small portion of a JSON document.
+        binlogRowValueOptions corresponds to the MySQL binary logging system variable `binlog_row_value_options`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_row_value_options
+
+
+        :param binlog_row_value_options: The binlog_row_value_options of this ConfigurationVariables.
+        :type: str
+        """
+        self._binlog_row_value_options = binlog_row_value_options
+
+    @property
+    def binlog_transaction_compression(self):
+        """
+        Gets the binlog_transaction_compression of this ConfigurationVariables.
+        Enables compression for transactions that are written to binary log files on this server.
+        binlogTransactionCompression corresponds to the MySQL binary logging system variable `binlog_transaction_compression`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression
+
+
+        :return: The binlog_transaction_compression of this ConfigurationVariables.
+        :rtype: bool
+        """
+        return self._binlog_transaction_compression
+
+    @binlog_transaction_compression.setter
+    def binlog_transaction_compression(self, binlog_transaction_compression):
+        """
+        Sets the binlog_transaction_compression of this ConfigurationVariables.
+        Enables compression for transactions that are written to binary log files on this server.
+        binlogTransactionCompression corresponds to the MySQL binary logging system variable `binlog_transaction_compression`__.
+
+        __ https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_transaction_compression
+
+
+        :param binlog_transaction_compression: The binlog_transaction_compression of this ConfigurationVariables.
+        :type: bool
+        """
+        self._binlog_transaction_compression = binlog_transaction_compression
 
     @property
     def innodb_buffer_pool_size(self):

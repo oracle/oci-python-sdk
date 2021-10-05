@@ -3423,6 +3423,11 @@ class ShowOCIData(object):
             if cg:
                 security_services['cloud_guard'] = cg
 
+            # bastions
+            bs = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_BASTION, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if bs:
+                security_services['bastions'] = bs
+
             # logging
             log = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_LOGGING, 'region_name', region_name, 'compartment_id', compartment['id'])
             if log:

@@ -10,8 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DatabaseObject(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
-    Database objects to exclude from migration
+    Database objects to include or exclude from migration
     """
 
     def __init__(self, **kwargs):
@@ -27,19 +26,26 @@ class DatabaseObject(object):
             The value to assign to the object_name property of this DatabaseObject.
         :type object_name: str
 
+        :param type:
+            The value to assign to the type property of this DatabaseObject.
+        :type type: str
+
         """
         self.swagger_types = {
             'owner': 'str',
-            'object_name': 'str'
+            'object_name': 'str',
+            'type': 'str'
         }
 
         self.attribute_map = {
             'owner': 'owner',
-            'object_name': 'objectName'
+            'object_name': 'objectName',
+            'type': 'type'
         }
 
         self._owner = None
         self._object_name = None
+        self._type = None
 
     @property
     def owner(self):
@@ -88,6 +94,32 @@ class DatabaseObject(object):
         :type: str
         """
         self._object_name = object_name
+
+    @property
+    def type(self):
+        """
+        Gets the type of this DatabaseObject.
+        Type of object to exclude.
+        If not specified, matching owners and object names of type TABLE would be excluded.
+
+
+        :return: The type of this DatabaseObject.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this DatabaseObject.
+        Type of object to exclude.
+        If not specified, matching owners and object names of type TABLE would be excluded.
+
+
+        :param type: The type of this DatabaseObject.
+        :type: str
+        """
+        self._type = type
 
     def __repr__(self):
         return formatted_flat_dict(self)

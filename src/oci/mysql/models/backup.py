@@ -66,6 +66,10 @@ class Backup(object):
     #: This constant has a value of "AUTOMATIC"
     CREATION_TYPE_AUTOMATIC = "AUTOMATIC"
 
+    #: A constant which can be used with the creation_type property of a Backup.
+    #: This constant has a value of "OPERATOR"
+    CREATION_TYPE_OPERATOR = "OPERATOR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Backup object with values from keyword arguments.
@@ -113,7 +117,7 @@ class Backup(object):
 
         :param creation_type:
             The value to assign to the creation_type property of this Backup.
-            Allowed values for this property are: "MANUAL", "AUTOMATIC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MANUAL", "AUTOMATIC", "OPERATOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type creation_type: str
 
@@ -450,9 +454,9 @@ class Backup(object):
     def creation_type(self):
         """
         **[Required]** Gets the creation_type of this Backup.
-        If the backup was created automatically, or by a manual request.
+        Indicates how the backup was created: manually, automatic, or by an Operator.
 
-        Allowed values for this property are: "MANUAL", "AUTOMATIC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MANUAL", "AUTOMATIC", "OPERATOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -465,13 +469,13 @@ class Backup(object):
     def creation_type(self, creation_type):
         """
         Sets the creation_type of this Backup.
-        If the backup was created automatically, or by a manual request.
+        Indicates how the backup was created: manually, automatic, or by an Operator.
 
 
         :param creation_type: The creation_type of this Backup.
         :type: str
         """
-        allowed_values = ["MANUAL", "AUTOMATIC"]
+        allowed_values = ["MANUAL", "AUTOMATIC", "OPERATOR"]
         if not value_allowed_none_or_none_sentinel(creation_type, allowed_values):
             creation_type = 'UNKNOWN_ENUM_VALUE'
         self._creation_type = creation_type

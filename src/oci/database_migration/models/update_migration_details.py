@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateMigrationDetails(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Update Migration resource parameters.
     """
 
@@ -56,13 +55,25 @@ class UpdateMigrationDetails(object):
             The value to assign to the data_transfer_medium_details property of this UpdateMigrationDetails.
         :type data_transfer_medium_details: oci.database_migration.models.UpdateDataTransferMediumDetails
 
+        :param dump_transfer_details:
+            The value to assign to the dump_transfer_details property of this UpdateMigrationDetails.
+        :type dump_transfer_details: oci.database_migration.models.UpdateDumpTransferDetails
+
         :param datapump_settings:
             The value to assign to the datapump_settings property of this UpdateMigrationDetails.
         :type datapump_settings: oci.database_migration.models.UpdateDataPumpSettings
 
+        :param advisor_settings:
+            The value to assign to the advisor_settings property of this UpdateMigrationDetails.
+        :type advisor_settings: oci.database_migration.models.UpdateAdvisorSettings
+
         :param exclude_objects:
             The value to assign to the exclude_objects property of this UpdateMigrationDetails.
         :type exclude_objects: list[oci.database_migration.models.DatabaseObject]
+
+        :param include_objects:
+            The value to assign to the include_objects property of this UpdateMigrationDetails.
+        :type include_objects: list[oci.database_migration.models.DatabaseObject]
 
         :param golden_gate_details:
             The value to assign to the golden_gate_details property of this UpdateMigrationDetails.
@@ -89,8 +100,11 @@ class UpdateMigrationDetails(object):
             'source_container_database_connection_id': 'str',
             'target_database_connection_id': 'str',
             'data_transfer_medium_details': 'UpdateDataTransferMediumDetails',
+            'dump_transfer_details': 'UpdateDumpTransferDetails',
             'datapump_settings': 'UpdateDataPumpSettings',
+            'advisor_settings': 'UpdateAdvisorSettings',
             'exclude_objects': 'list[DatabaseObject]',
+            'include_objects': 'list[DatabaseObject]',
             'golden_gate_details': 'UpdateGoldenGateDetails',
             'vault_details': 'UpdateVaultDetails',
             'freeform_tags': 'dict(str, str)',
@@ -105,8 +119,11 @@ class UpdateMigrationDetails(object):
             'source_container_database_connection_id': 'sourceContainerDatabaseConnectionId',
             'target_database_connection_id': 'targetDatabaseConnectionId',
             'data_transfer_medium_details': 'dataTransferMediumDetails',
+            'dump_transfer_details': 'dumpTransferDetails',
             'datapump_settings': 'datapumpSettings',
+            'advisor_settings': 'advisorSettings',
             'exclude_objects': 'excludeObjects',
+            'include_objects': 'includeObjects',
             'golden_gate_details': 'goldenGateDetails',
             'vault_details': 'vaultDetails',
             'freeform_tags': 'freeformTags',
@@ -120,8 +137,11 @@ class UpdateMigrationDetails(object):
         self._source_container_database_connection_id = None
         self._target_database_connection_id = None
         self._data_transfer_medium_details = None
+        self._dump_transfer_details = None
         self._datapump_settings = None
+        self._advisor_settings = None
         self._exclude_objects = None
+        self._include_objects = None
         self._golden_gate_details = None
         self._vault_details = None
         self._freeform_tags = None
@@ -304,6 +324,26 @@ class UpdateMigrationDetails(object):
         self._data_transfer_medium_details = data_transfer_medium_details
 
     @property
+    def dump_transfer_details(self):
+        """
+        Gets the dump_transfer_details of this UpdateMigrationDetails.
+
+        :return: The dump_transfer_details of this UpdateMigrationDetails.
+        :rtype: oci.database_migration.models.UpdateDumpTransferDetails
+        """
+        return self._dump_transfer_details
+
+    @dump_transfer_details.setter
+    def dump_transfer_details(self, dump_transfer_details):
+        """
+        Sets the dump_transfer_details of this UpdateMigrationDetails.
+
+        :param dump_transfer_details: The dump_transfer_details of this UpdateMigrationDetails.
+        :type: oci.database_migration.models.UpdateDumpTransferDetails
+        """
+        self._dump_transfer_details = dump_transfer_details
+
+    @property
     def datapump_settings(self):
         """
         Gets the datapump_settings of this UpdateMigrationDetails.
@@ -324,10 +364,30 @@ class UpdateMigrationDetails(object):
         self._datapump_settings = datapump_settings
 
     @property
+    def advisor_settings(self):
+        """
+        Gets the advisor_settings of this UpdateMigrationDetails.
+
+        :return: The advisor_settings of this UpdateMigrationDetails.
+        :rtype: oci.database_migration.models.UpdateAdvisorSettings
+        """
+        return self._advisor_settings
+
+    @advisor_settings.setter
+    def advisor_settings(self, advisor_settings):
+        """
+        Sets the advisor_settings of this UpdateMigrationDetails.
+
+        :param advisor_settings: The advisor_settings of this UpdateMigrationDetails.
+        :type: oci.database_migration.models.UpdateAdvisorSettings
+        """
+        self._advisor_settings = advisor_settings
+
+    @property
     def exclude_objects(self):
         """
         Gets the exclude_objects of this UpdateMigrationDetails.
-        Database objects to exclude from migration.
+        Database objects to exclude from migration, cannot be specified alongside 'includeObjects'.
         If specified, the list will be replaced entirely. Empty list will remove stored excludeObjects details.
 
 
@@ -340,7 +400,7 @@ class UpdateMigrationDetails(object):
     def exclude_objects(self, exclude_objects):
         """
         Sets the exclude_objects of this UpdateMigrationDetails.
-        Database objects to exclude from migration.
+        Database objects to exclude from migration, cannot be specified alongside 'includeObjects'.
         If specified, the list will be replaced entirely. Empty list will remove stored excludeObjects details.
 
 
@@ -348,6 +408,32 @@ class UpdateMigrationDetails(object):
         :type: list[oci.database_migration.models.DatabaseObject]
         """
         self._exclude_objects = exclude_objects
+
+    @property
+    def include_objects(self):
+        """
+        Gets the include_objects of this UpdateMigrationDetails.
+        Database objects to include from migration, cannot be specified alongside 'excludeObjects'.
+        If specified, the list will be replaced entirely. Empty list will remove stored includeObjects details.
+
+
+        :return: The include_objects of this UpdateMigrationDetails.
+        :rtype: list[oci.database_migration.models.DatabaseObject]
+        """
+        return self._include_objects
+
+    @include_objects.setter
+    def include_objects(self, include_objects):
+        """
+        Sets the include_objects of this UpdateMigrationDetails.
+        Database objects to include from migration, cannot be specified alongside 'excludeObjects'.
+        If specified, the list will be replaced entirely. Empty list will remove stored includeObjects details.
+
+
+        :param include_objects: The include_objects of this UpdateMigrationDetails.
+        :type: list[oci.database_migration.models.DatabaseObject]
+        """
+        self._include_objects = include_objects
 
     @property
     def golden_gate_details(self):

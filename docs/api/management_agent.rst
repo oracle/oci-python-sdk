@@ -18,6 +18,7 @@ Management Agent
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.management_agent.models.AutoUpgradableConfig
     oci.management_agent.models.AvailabilityHistorySummary
     oci.management_agent.models.CreateManagementAgentInstallKeyDetails
     oci.management_agent.models.DeployPluginsDetails
@@ -37,6 +38,7 @@ Management Agent
     oci.management_agent.models.ManagementAgentPluginDetails
     oci.management_agent.models.ManagementAgentPluginSummary
     oci.management_agent.models.ManagementAgentSummary
+    oci.management_agent.models.SetAutoUpgradableConfigDetails
     oci.management_agent.models.UpdateManagementAgentDetails
     oci.management_agent.models.UpdateManagementAgentInstallKeyDetails
     oci.management_agent.models.WorkRequest

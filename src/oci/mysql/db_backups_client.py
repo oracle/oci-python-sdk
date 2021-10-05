@@ -471,7 +471,7 @@ class DbBackupsClient(object):
         :param str creation_type: (optional)
             Backup creationType
 
-            Allowed values are: "MANUAL", "AUTOMATIC"
+            Allowed values are: "MANUAL", "AUTOMATIC", "OPERATOR"
 
         :param str sort_by: (optional)
             The field to sort by. Only one sort order may be provided. Time fields are default ordered as descending.
@@ -540,7 +540,7 @@ class DbBackupsClient(object):
                 )
 
         if 'creation_type' in kwargs:
-            creation_type_allowed_values = ["MANUAL", "AUTOMATIC"]
+            creation_type_allowed_values = ["MANUAL", "AUTOMATIC", "OPERATOR"]
             if kwargs['creation_type'] not in creation_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `creation_type`, must be one of {0}".format(creation_type_allowed_values)

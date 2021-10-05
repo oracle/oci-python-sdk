@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Migration(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Migration resource
     """
 
@@ -31,6 +30,10 @@ class Migration(object):
     WAIT_AFTER_ODMS_VALIDATE_SRC = "ODMS_VALIDATE_SRC"
 
     #: A constant which can be used with the wait_after property of a Migration.
+    #: This constant has a value of "ODMS_VALIDATE_PREMIGRATION_ADVISOR"
+    WAIT_AFTER_ODMS_VALIDATE_PREMIGRATION_ADVISOR = "ODMS_VALIDATE_PREMIGRATION_ADVISOR"
+
+    #: A constant which can be used with the wait_after property of a Migration.
     #: This constant has a value of "ODMS_VALIDATE_GG_HUB"
     WAIT_AFTER_ODMS_VALIDATE_GG_HUB = "ODMS_VALIDATE_GG_HUB"
 
@@ -45,6 +48,14 @@ class Migration(object):
     #: A constant which can be used with the wait_after property of a Migration.
     #: This constant has a value of "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT"
     WAIT_AFTER_ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT = "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT"
+
+    #: A constant which can be used with the wait_after property of a Migration.
+    #: This constant has a value of "ODMS_VALIDATE_DATAPUMP_SRC"
+    WAIT_AFTER_ODMS_VALIDATE_DATAPUMP_SRC = "ODMS_VALIDATE_DATAPUMP_SRC"
+
+    #: A constant which can be used with the wait_after property of a Migration.
+    #: This constant has a value of "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC"
+    WAIT_AFTER_ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC = "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC"
 
     #: A constant which can be used with the wait_after property of a Migration.
     #: This constant has a value of "ODMS_VALIDATE"
@@ -97,6 +108,30 @@ class Migration(object):
     #: A constant which can be used with the lifecycle_state property of a Migration.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Migration.
+    #: This constant has a value of "IN_PROGRESS"
+    LIFECYCLE_STATE_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the lifecycle_state property of a Migration.
+    #: This constant has a value of "ACCEPTED"
+    LIFECYCLE_STATE_ACCEPTED = "ACCEPTED"
+
+    #: A constant which can be used with the lifecycle_state property of a Migration.
+    #: This constant has a value of "SUCCEEDED"
+    LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
+
+    #: A constant which can be used with the lifecycle_state property of a Migration.
+    #: This constant has a value of "CANCELED"
+    LIFECYCLE_STATE_CANCELED = "CANCELED"
+
+    #: A constant which can be used with the lifecycle_state property of a Migration.
+    #: This constant has a value of "WAITING"
+    LIFECYCLE_STATE_WAITING = "WAITING"
+
+    #: A constant which can be used with the lifecycle_state property of a Migration.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
     #: A constant which can be used with the lifecycle_state property of a Migration.
     #: This constant has a value of "INACTIVE"
@@ -167,7 +202,7 @@ class Migration(object):
 
         :param wait_after:
             The value to assign to the wait_after property of this Migration.
-            Allowed values for this property are: "ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_PREMIGRATION_ADVISOR", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE_DATAPUMP_SRC", "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type wait_after: str
 
@@ -199,13 +234,25 @@ class Migration(object):
             The value to assign to the data_transfer_medium_details property of this Migration.
         :type data_transfer_medium_details: oci.database_migration.models.DataTransferMediumDetails
 
+        :param dump_transfer_details:
+            The value to assign to the dump_transfer_details property of this Migration.
+        :type dump_transfer_details: oci.database_migration.models.DumpTransferDetails
+
         :param datapump_settings:
             The value to assign to the datapump_settings property of this Migration.
         :type datapump_settings: oci.database_migration.models.DataPumpSettings
 
+        :param advisor_settings:
+            The value to assign to the advisor_settings property of this Migration.
+        :type advisor_settings: oci.database_migration.models.AdvisorSettings
+
         :param exclude_objects:
             The value to assign to the exclude_objects property of this Migration.
         :type exclude_objects: list[oci.database_migration.models.DatabaseObject]
+
+        :param include_objects:
+            The value to assign to the include_objects property of this Migration.
+        :type include_objects: list[oci.database_migration.models.DatabaseObject]
 
         :param golden_gate_details:
             The value to assign to the golden_gate_details property of this Migration.
@@ -229,7 +276,7 @@ class Migration(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Migration.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "IN_PROGRESS", "ACCEPTED", "SUCCEEDED", "CANCELED", "WAITING", "NEEDS_ATTENTION", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -265,8 +312,11 @@ class Migration(object):
             'target_database_connection_id': 'str',
             'executing_job_id': 'str',
             'data_transfer_medium_details': 'DataTransferMediumDetails',
+            'dump_transfer_details': 'DumpTransferDetails',
             'datapump_settings': 'DataPumpSettings',
+            'advisor_settings': 'AdvisorSettings',
             'exclude_objects': 'list[DatabaseObject]',
+            'include_objects': 'list[DatabaseObject]',
             'golden_gate_details': 'GoldenGateDetails',
             'vault_details': 'VaultDetails',
             'time_created': 'datetime',
@@ -292,8 +342,11 @@ class Migration(object):
             'target_database_connection_id': 'targetDatabaseConnectionId',
             'executing_job_id': 'executingJobId',
             'data_transfer_medium_details': 'dataTransferMediumDetails',
+            'dump_transfer_details': 'dumpTransferDetails',
             'datapump_settings': 'datapumpSettings',
+            'advisor_settings': 'advisorSettings',
             'exclude_objects': 'excludeObjects',
+            'include_objects': 'includeObjects',
             'golden_gate_details': 'goldenGateDetails',
             'vault_details': 'vaultDetails',
             'time_created': 'timeCreated',
@@ -318,8 +371,11 @@ class Migration(object):
         self._target_database_connection_id = None
         self._executing_job_id = None
         self._data_transfer_medium_details = None
+        self._dump_transfer_details = None
         self._datapump_settings = None
+        self._advisor_settings = None
         self._exclude_objects = None
+        self._include_objects = None
         self._golden_gate_details = None
         self._vault_details = None
         self._time_created = None
@@ -440,7 +496,7 @@ class Migration(object):
         Name of a migration phase. The Job will wait after executing this
         phase until the Resume Job endpoint is called.
 
-        Allowed values for this property are: "ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_PREMIGRATION_ADVISOR", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE_DATAPUMP_SRC", "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -460,7 +516,7 @@ class Migration(object):
         :param wait_after: The wait_after of this Migration.
         :type: str
         """
-        allowed_values = ["ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP"]
+        allowed_values = ["ODMS_VALIDATE_TGT", "ODMS_VALIDATE_SRC", "ODMS_VALIDATE_PREMIGRATION_ADVISOR", "ODMS_VALIDATE_GG_HUB", "ODMS_VALIDATE_DATAPUMP_SETTINGS", "ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC", "ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT", "ODMS_VALIDATE_DATAPUMP_SRC", "ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC", "ODMS_VALIDATE", "ODMS_PREPARE", "ODMS_INITIAL_LOAD_EXPORT", "ODMS_DATA_UPLOAD", "ODMS_INITIAL_LOAD_IMPORT", "ODMS_POST_INITIAL_LOAD", "ODMS_PREPARE_REPLICATION_TARGET", "ODMS_MONITOR_REPLICATION_LAG", "ODMS_SWITCHOVER", "ODMS_CLEANUP"]
         if not value_allowed_none_or_none_sentinel(wait_after, allowed_values):
             wait_after = 'UNKNOWN_ENUM_VALUE'
         self._wait_after = wait_after
@@ -630,6 +686,26 @@ class Migration(object):
         self._data_transfer_medium_details = data_transfer_medium_details
 
     @property
+    def dump_transfer_details(self):
+        """
+        Gets the dump_transfer_details of this Migration.
+
+        :return: The dump_transfer_details of this Migration.
+        :rtype: oci.database_migration.models.DumpTransferDetails
+        """
+        return self._dump_transfer_details
+
+    @dump_transfer_details.setter
+    def dump_transfer_details(self, dump_transfer_details):
+        """
+        Sets the dump_transfer_details of this Migration.
+
+        :param dump_transfer_details: The dump_transfer_details of this Migration.
+        :type: oci.database_migration.models.DumpTransferDetails
+        """
+        self._dump_transfer_details = dump_transfer_details
+
+    @property
     def datapump_settings(self):
         """
         Gets the datapump_settings of this Migration.
@@ -650,10 +726,31 @@ class Migration(object):
         self._datapump_settings = datapump_settings
 
     @property
+    def advisor_settings(self):
+        """
+        Gets the advisor_settings of this Migration.
+
+        :return: The advisor_settings of this Migration.
+        :rtype: oci.database_migration.models.AdvisorSettings
+        """
+        return self._advisor_settings
+
+    @advisor_settings.setter
+    def advisor_settings(self, advisor_settings):
+        """
+        Sets the advisor_settings of this Migration.
+
+        :param advisor_settings: The advisor_settings of this Migration.
+        :type: oci.database_migration.models.AdvisorSettings
+        """
+        self._advisor_settings = advisor_settings
+
+    @property
     def exclude_objects(self):
         """
         Gets the exclude_objects of this Migration.
         Database objects to exclude from migration.
+        If 'includeObjects' are specified, only exclude object types can be specified with general wildcards (.*) for owner and objectName.
 
 
         :return: The exclude_objects of this Migration.
@@ -666,12 +763,37 @@ class Migration(object):
         """
         Sets the exclude_objects of this Migration.
         Database objects to exclude from migration.
+        If 'includeObjects' are specified, only exclude object types can be specified with general wildcards (.*) for owner and objectName.
 
 
         :param exclude_objects: The exclude_objects of this Migration.
         :type: list[oci.database_migration.models.DatabaseObject]
         """
         self._exclude_objects = exclude_objects
+
+    @property
+    def include_objects(self):
+        """
+        Gets the include_objects of this Migration.
+        Database objects to include from migration.
+
+
+        :return: The include_objects of this Migration.
+        :rtype: list[oci.database_migration.models.DatabaseObject]
+        """
+        return self._include_objects
+
+    @include_objects.setter
+    def include_objects(self, include_objects):
+        """
+        Sets the include_objects of this Migration.
+        Database objects to include from migration.
+
+
+        :param include_objects: The include_objects of this Migration.
+        :type: list[oci.database_migration.models.DatabaseObject]
+        """
+        self._include_objects = include_objects
 
     @property
     def golden_gate_details(self):
@@ -791,7 +913,7 @@ class Migration(object):
         **[Required]** Gets the lifecycle_state of this Migration.
         The current state of the Migration resource.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "IN_PROGRESS", "ACCEPTED", "SUCCEEDED", "CANCELED", "WAITING", "NEEDS_ATTENTION", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -810,7 +932,7 @@ class Migration(object):
         :param lifecycle_state: The lifecycle_state of this Migration.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "IN_PROGRESS", "ACCEPTED", "SUCCEEDED", "CANCELED", "WAITING", "NEEDS_ATTENTION", "INACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

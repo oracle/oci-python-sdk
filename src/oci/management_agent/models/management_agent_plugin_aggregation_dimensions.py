@@ -22,16 +22,23 @@ class ManagementAgentPluginAggregationDimensions(object):
             The value to assign to the plugin_name property of this ManagementAgentPluginAggregationDimensions.
         :type plugin_name: str
 
+        :param plugin_display_name:
+            The value to assign to the plugin_display_name property of this ManagementAgentPluginAggregationDimensions.
+        :type plugin_display_name: str
+
         """
         self.swagger_types = {
-            'plugin_name': 'str'
+            'plugin_name': 'str',
+            'plugin_display_name': 'str'
         }
 
         self.attribute_map = {
-            'plugin_name': 'pluginName'
+            'plugin_name': 'pluginName',
+            'plugin_display_name': 'pluginDisplayName'
         }
 
         self._plugin_name = None
+        self._plugin_display_name = None
 
     @property
     def plugin_name(self):
@@ -56,6 +63,30 @@ class ManagementAgentPluginAggregationDimensions(object):
         :type: str
         """
         self._plugin_name = plugin_name
+
+    @property
+    def plugin_display_name(self):
+        """
+        Gets the plugin_display_name of this ManagementAgentPluginAggregationDimensions.
+        Management Agent Plugin Display Name
+
+
+        :return: The plugin_display_name of this ManagementAgentPluginAggregationDimensions.
+        :rtype: str
+        """
+        return self._plugin_display_name
+
+    @plugin_display_name.setter
+    def plugin_display_name(self, plugin_display_name):
+        """
+        Sets the plugin_display_name of this ManagementAgentPluginAggregationDimensions.
+        Management Agent Plugin Display Name
+
+
+        :param plugin_display_name: The plugin_display_name of this ManagementAgentPluginAggregationDimensions.
+        :type: str
+        """
+        self._plugin_display_name = plugin_display_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

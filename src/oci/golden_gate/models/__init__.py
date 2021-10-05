@@ -4,6 +4,7 @@
 
 from __future__ import absolute_import
 
+from .cancel_deployment_backup_details import CancelDeploymentBackupDetails
 from .change_database_registration_compartment_details import ChangeDatabaseRegistrationCompartmentDetails
 from .change_deployment_backup_compartment_details import ChangeDeploymentBackupCompartmentDetails
 from .change_deployment_compartment_details import ChangeDeploymentCompartmentDetails
@@ -14,6 +15,7 @@ from .create_ogg_deployment_details import CreateOggDeploymentDetails
 from .database_registration import DatabaseRegistration
 from .database_registration_collection import DatabaseRegistrationCollection
 from .database_registration_summary import DatabaseRegistrationSummary
+from .default_cancel_deployment_backup_details import DefaultCancelDeploymentBackupDetails
 from .default_restore_deployment_details import DefaultRestoreDeploymentDetails
 from .default_start_deployment_details import DefaultStartDeploymentDetails
 from .default_stop_deployment_details import DefaultStopDeploymentDetails
@@ -23,6 +25,9 @@ from .deployment_backup_collection import DeploymentBackupCollection
 from .deployment_backup_summary import DeploymentBackupSummary
 from .deployment_collection import DeploymentCollection
 from .deployment_summary import DeploymentSummary
+from .deployment_upgrade import DeploymentUpgrade
+from .deployment_upgrade_collection import DeploymentUpgradeCollection
+from .deployment_upgrade_summary import DeploymentUpgradeSummary
 from .ogg_deployment import OggDeployment
 from .restore_deployment_details import RestoreDeploymentDetails
 from .start_deployment_details import StartDeploymentDetails
@@ -40,6 +45,7 @@ from .work_request_resource import WorkRequestResource
 
 # Maps type names to classes for golden_gate services.
 golden_gate_type_mapping = {
+    "CancelDeploymentBackupDetails": CancelDeploymentBackupDetails,
     "ChangeDatabaseRegistrationCompartmentDetails": ChangeDatabaseRegistrationCompartmentDetails,
     "ChangeDeploymentBackupCompartmentDetails": ChangeDeploymentBackupCompartmentDetails,
     "ChangeDeploymentCompartmentDetails": ChangeDeploymentCompartmentDetails,
@@ -50,6 +56,7 @@ golden_gate_type_mapping = {
     "DatabaseRegistration": DatabaseRegistration,
     "DatabaseRegistrationCollection": DatabaseRegistrationCollection,
     "DatabaseRegistrationSummary": DatabaseRegistrationSummary,
+    "DefaultCancelDeploymentBackupDetails": DefaultCancelDeploymentBackupDetails,
     "DefaultRestoreDeploymentDetails": DefaultRestoreDeploymentDetails,
     "DefaultStartDeploymentDetails": DefaultStartDeploymentDetails,
     "DefaultStopDeploymentDetails": DefaultStopDeploymentDetails,
@@ -59,6 +66,9 @@ golden_gate_type_mapping = {
     "DeploymentBackupSummary": DeploymentBackupSummary,
     "DeploymentCollection": DeploymentCollection,
     "DeploymentSummary": DeploymentSummary,
+    "DeploymentUpgrade": DeploymentUpgrade,
+    "DeploymentUpgradeCollection": DeploymentUpgradeCollection,
+    "DeploymentUpgradeSummary": DeploymentUpgradeSummary,
     "OggDeployment": OggDeployment,
     "RestoreDeploymentDetails": RestoreDeploymentDetails,
     "StartDeploymentDetails": StartDeploymentDetails,

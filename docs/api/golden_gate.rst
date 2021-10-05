@@ -18,6 +18,7 @@ Golden Gate
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.golden_gate.models.CancelDeploymentBackupDetails
     oci.golden_gate.models.ChangeDatabaseRegistrationCompartmentDetails
     oci.golden_gate.models.ChangeDeploymentBackupCompartmentDetails
     oci.golden_gate.models.ChangeDeploymentCompartmentDetails
@@ -28,6 +29,7 @@ Golden Gate
     oci.golden_gate.models.DatabaseRegistration
     oci.golden_gate.models.DatabaseRegistrationCollection
     oci.golden_gate.models.DatabaseRegistrationSummary
+    oci.golden_gate.models.DefaultCancelDeploymentBackupDetails
     oci.golden_gate.models.DefaultRestoreDeploymentDetails
     oci.golden_gate.models.DefaultStartDeploymentDetails
     oci.golden_gate.models.DefaultStopDeploymentDetails
@@ -37,6 +39,9 @@ Golden Gate
     oci.golden_gate.models.DeploymentBackupSummary
     oci.golden_gate.models.DeploymentCollection
     oci.golden_gate.models.DeploymentSummary
+    oci.golden_gate.models.DeploymentUpgrade
+    oci.golden_gate.models.DeploymentUpgradeCollection
+    oci.golden_gate.models.DeploymentUpgradeSummary
     oci.golden_gate.models.OggDeployment
     oci.golden_gate.models.RestoreDeploymentDetails
     oci.golden_gate.models.StartDeploymentDetails

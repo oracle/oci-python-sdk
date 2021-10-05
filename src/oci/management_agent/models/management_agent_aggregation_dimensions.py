@@ -33,6 +33,14 @@ class ManagementAgentAggregationDimensions(object):
     #: This constant has a value of "WINDOWS"
     PLATFORM_TYPE_WINDOWS = "WINDOWS"
 
+    #: A constant which can be used with the install_type property of a ManagementAgentAggregationDimensions.
+    #: This constant has a value of "AGENT"
+    INSTALL_TYPE_AGENT = "AGENT"
+
+    #: A constant which can be used with the install_type property of a ManagementAgentAggregationDimensions.
+    #: This constant has a value of "GATEWAY"
+    INSTALL_TYPE_GATEWAY = "GATEWAY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ManagementAgentAggregationDimensions object with values from keyword arguments.
@@ -58,25 +66,34 @@ class ManagementAgentAggregationDimensions(object):
             The value to assign to the has_plugins property of this ManagementAgentAggregationDimensions.
         :type has_plugins: bool
 
+        :param install_type:
+            The value to assign to the install_type property of this ManagementAgentAggregationDimensions.
+            Allowed values for this property are: "AGENT", "GATEWAY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type install_type: str
+
         """
         self.swagger_types = {
             'availability_status': 'str',
             'platform_type': 'str',
             'version': 'str',
-            'has_plugins': 'bool'
+            'has_plugins': 'bool',
+            'install_type': 'str'
         }
 
         self.attribute_map = {
             'availability_status': 'availabilityStatus',
             'platform_type': 'platformType',
             'version': 'version',
-            'has_plugins': 'hasPlugins'
+            'has_plugins': 'hasPlugins',
+            'install_type': 'installType'
         }
 
         self._availability_status = None
         self._platform_type = None
         self._version = None
         self._has_plugins = None
+        self._install_type = None
 
     @property
     def availability_status(self):
@@ -185,6 +202,36 @@ class ManagementAgentAggregationDimensions(object):
         :type: bool
         """
         self._has_plugins = has_plugins
+
+    @property
+    def install_type(self):
+        """
+        Gets the install_type of this ManagementAgentAggregationDimensions.
+        The install type, either AGENT or GATEWAY
+
+        Allowed values for this property are: "AGENT", "GATEWAY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The install_type of this ManagementAgentAggregationDimensions.
+        :rtype: str
+        """
+        return self._install_type
+
+    @install_type.setter
+    def install_type(self, install_type):
+        """
+        Sets the install_type of this ManagementAgentAggregationDimensions.
+        The install type, either AGENT or GATEWAY
+
+
+        :param install_type: The install_type of this ManagementAgentAggregationDimensions.
+        :type: str
+        """
+        allowed_values = ["AGENT", "GATEWAY"]
+        if not value_allowed_none_or_none_sentinel(install_type, allowed_values):
+            install_type = 'UNKNOWN_ENUM_VALUE'
+        self._install_type = install_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

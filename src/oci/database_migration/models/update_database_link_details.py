@@ -10,7 +10,6 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDatabaseLinkDetails(object):
     """
-    Note: Deprecated. Use the new resource model APIs instead.
     Optional details for updating a network database link from OCI database to on-premise database.
     """
 
@@ -23,21 +22,28 @@ class UpdateDatabaseLinkDetails(object):
             The value to assign to the name property of this UpdateDatabaseLinkDetails.
         :type name: str
 
+        :param wallet_bucket:
+            The value to assign to the wallet_bucket property of this UpdateDatabaseLinkDetails.
+        :type wallet_bucket: oci.database_migration.models.UpdateObjectStoreBucket
+
         """
         self.swagger_types = {
-            'name': 'str'
+            'name': 'str',
+            'wallet_bucket': 'UpdateObjectStoreBucket'
         }
 
         self.attribute_map = {
-            'name': 'name'
+            'name': 'name',
+            'wallet_bucket': 'walletBucket'
         }
 
         self._name = None
+        self._wallet_bucket = None
 
     @property
     def name(self):
         """
-        **[Required]** Gets the name of this UpdateDatabaseLinkDetails.
+        Gets the name of this UpdateDatabaseLinkDetails.
         Name of database link from OCI database to on-premise database. ODMS will create link, if the link does not already exist.
 
 
@@ -57,6 +63,26 @@ class UpdateDatabaseLinkDetails(object):
         :type: str
         """
         self._name = name
+
+    @property
+    def wallet_bucket(self):
+        """
+        Gets the wallet_bucket of this UpdateDatabaseLinkDetails.
+
+        :return: The wallet_bucket of this UpdateDatabaseLinkDetails.
+        :rtype: oci.database_migration.models.UpdateObjectStoreBucket
+        """
+        return self._wallet_bucket
+
+    @wallet_bucket.setter
+    def wallet_bucket(self, wallet_bucket):
+        """
+        Sets the wallet_bucket of this UpdateDatabaseLinkDetails.
+
+        :param wallet_bucket: The wallet_bucket of this UpdateDatabaseLinkDetails.
+        :type: oci.database_migration.models.UpdateObjectStoreBucket
+        """
+        self._wallet_bucket = wallet_bucket
 
     def __repr__(self):
         return formatted_flat_dict(self)

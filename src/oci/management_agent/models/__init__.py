@@ -4,6 +4,7 @@
 
 from __future__ import absolute_import
 
+from .auto_upgradable_config import AutoUpgradableConfig
 from .availability_history_summary import AvailabilityHistorySummary
 from .create_management_agent_install_key_details import CreateManagementAgentInstallKeyDetails
 from .deploy_plugins_details import DeployPluginsDetails
@@ -23,6 +24,7 @@ from .management_agent_plugin_aggregation_dimensions import ManagementAgentPlugi
 from .management_agent_plugin_details import ManagementAgentPluginDetails
 from .management_agent_plugin_summary import ManagementAgentPluginSummary
 from .management_agent_summary import ManagementAgentSummary
+from .set_auto_upgradable_config_details import SetAutoUpgradableConfigDetails
 from .update_management_agent_details import UpdateManagementAgentDetails
 from .update_management_agent_install_key_details import UpdateManagementAgentInstallKeyDetails
 from .work_request import WorkRequest
@@ -33,6 +35,7 @@ from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for management_agent services.
 management_agent_type_mapping = {
+    "AutoUpgradableConfig": AutoUpgradableConfig,
     "AvailabilityHistorySummary": AvailabilityHistorySummary,
     "CreateManagementAgentInstallKeyDetails": CreateManagementAgentInstallKeyDetails,
     "DeployPluginsDetails": DeployPluginsDetails,
@@ -52,6 +55,7 @@ management_agent_type_mapping = {
     "ManagementAgentPluginDetails": ManagementAgentPluginDetails,
     "ManagementAgentPluginSummary": ManagementAgentPluginSummary,
     "ManagementAgentSummary": ManagementAgentSummary,
+    "SetAutoUpgradableConfigDetails": SetAutoUpgradableConfigDetails,
     "UpdateManagementAgentDetails": UpdateManagementAgentDetails,
     "UpdateManagementAgentInstallKeyDetails": UpdateManagementAgentInstallKeyDetails,
     "WorkRequest": WorkRequest,
