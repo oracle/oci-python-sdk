@@ -10845,7 +10845,7 @@ class ShowOCIService(object):
 
                 # oac = oci.analytics.models.AnalyticsInstanceSummary
                 for oac in oacs:
-                    if (oac.lifecycle_state == 'ACTIVE' or oac.lifecycle_state == 'UPDATING'):
+                    if (oac.lifecycle_state != 'DELETED'):
 
                         val = {'id': str(oac.id),
                                'name': str(oac.name),
@@ -10861,7 +10861,7 @@ class ShowOCIService(object):
                                'service_url': str(oac.service_url),
                                'vanity_domain': "",
                                'vanity_url': "",
-                               'sum_info': "PaaS OAC Native " + ("BYOL" if 'BRING' in oac.license_type else "INCL"),
+                               'sum_info': "PaaS OAC Native " + str(oac.capacity.capacity_type) + " " + ("BYOL" if 'BRING' in oac.license_type else "INCL"),
                                'sum_size_gb': str(oac.capacity.capacity_value),
                                'network_endpoint_details': str(oac.network_endpoint_details.network_endpoint_type),
                                'compartment_name': str(compartment['name']),
