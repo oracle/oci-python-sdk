@@ -2048,6 +2048,8 @@ class ShowOCIData(object):
                 data.append(
                     {'id': str(db_home['id']),
                      'home': str(db_home['display_name']) + " - " + str(db_home['db_version']),
+                     'home_name': str(db_home['display_name']),
+                     'home_version': str(db_home['db_version']),
                      'databases': self.__get_database_db_databases(db_home['databases']),
                      'patches': self.__get_database_db_patches(db_home['patches'])
                      })

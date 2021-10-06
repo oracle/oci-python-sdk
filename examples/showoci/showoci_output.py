@@ -3728,6 +3728,7 @@ class ShowOCICSV(object):
                         'time_created': dbs['time_created'][0:16],
                         'domain': dbs['domain'],
                         'db_nodes': str(', '.join(x['desc'] for x in dbs['db_nodes'])),
+                        'db_homes': str(', '.join(x['home'] for x in dbs['db_homes'])),
                         'freeform_tags': str(', '.join(key + "=" + dbs['freeform_tags'][key] for key in dbs['freeform_tags'].keys())),
                         'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
                         'maintenance_window': "",
@@ -3777,7 +3778,9 @@ class ShowOCICSV(object):
                             'freeform_tags': str(', '.join(key + "=" + dbs['freeform_tags'][key] for key in dbs['freeform_tags'].keys())),
                             'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
                             'database_id': db['id'],
-                            'dbsystem_id': dbs['id']
+                            'dbsystem_id': dbs['id'],
+                            'db_home': db_home['home_name'],
+                            'db_home_version': db_home['home_version']
                         }
 
                         self.csv_database.append(data)
@@ -3832,6 +3835,7 @@ class ShowOCICSV(object):
                             'time_created': vm['time_created'][0:16],
                             'domain': vm['domain'],
                             'db_nodes': str(', '.join(x['desc'] for x in vm['db_nodes'])),
+                            'db_homes': str(', '.join(x['home'] for x in vm['db_homes'])),
                             'freeform_tags': str(', '.join(key + "=" + vm['freeform_tags'][key] for key in vm['freeform_tags'].keys())),
                             'defined_tags': self.__get_defined_tags(vm['defined_tags']),
                             'maintenance_window': "",
@@ -3881,7 +3885,9 @@ class ShowOCICSV(object):
                                     'freeform_tags': str(', '.join(key + "=" + vm['freeform_tags'][key] for key in vm['freeform_tags'].keys())),
                                     'defined_tags': self.__get_defined_tags(vm['defined_tags']),
                                     'database_id': db['id'],
-                                    'dbsystem_id': vm['id']
+                                    'dbsystem_id': vm['id'],
+                                    'db_home': db_home['home_name'],
+                                    'db_home_version': db_home['home_version']
                                     }
 
                             self.csv_database.append(data)
@@ -3937,7 +3943,9 @@ class ShowOCICSV(object):
                         'freeform_tags': str(', '.join(key + "=" + dbs['freeform_tags'][key] for key in dbs['freeform_tags'].keys())),
                         'defined_tags': self.__get_defined_tags(dbs['defined_tags']),
                         'database_id': "",
-                        'dbsystem_id': dbs['id']
+                        'dbsystem_id': dbs['id'],
+                        'db_home': "",
+                        'db_home_version': dbs['db_version']
                         }
                 self.csv_database.append(data)
 
