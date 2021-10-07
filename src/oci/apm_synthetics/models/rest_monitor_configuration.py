@@ -97,6 +97,10 @@ class RestMonitorConfiguration(MonitorConfiguration):
             The value to assign to the verify_response_codes property of this RestMonitorConfiguration.
         :type verify_response_codes: list[str]
 
+        :param network_configuration:
+            The value to assign to the network_configuration property of this RestMonitorConfiguration.
+        :type network_configuration: oci.apm_synthetics.models.NetworkConfiguration
+
         """
         self.swagger_types = {
             'config_type': 'str',
@@ -110,7 +114,8 @@ class RestMonitorConfiguration(MonitorConfiguration):
             'request_query_params': 'list[RequestQueryParam]',
             'request_post_body': 'str',
             'verify_response_content': 'str',
-            'verify_response_codes': 'list[str]'
+            'verify_response_codes': 'list[str]',
+            'network_configuration': 'NetworkConfiguration'
         }
 
         self.attribute_map = {
@@ -125,7 +130,8 @@ class RestMonitorConfiguration(MonitorConfiguration):
             'request_query_params': 'requestQueryParams',
             'request_post_body': 'requestPostBody',
             'verify_response_content': 'verifyResponseContent',
-            'verify_response_codes': 'verifyResponseCodes'
+            'verify_response_codes': 'verifyResponseCodes',
+            'network_configuration': 'networkConfiguration'
         }
 
         self._config_type = None
@@ -140,6 +146,7 @@ class RestMonitorConfiguration(MonitorConfiguration):
         self._request_post_body = None
         self._verify_response_content = None
         self._verify_response_codes = None
+        self._network_configuration = None
         self._config_type = 'REST_CONFIG'
 
     @property
@@ -391,6 +398,26 @@ class RestMonitorConfiguration(MonitorConfiguration):
         :type: list[str]
         """
         self._verify_response_codes = verify_response_codes
+
+    @property
+    def network_configuration(self):
+        """
+        Gets the network_configuration of this RestMonitorConfiguration.
+
+        :return: The network_configuration of this RestMonitorConfiguration.
+        :rtype: oci.apm_synthetics.models.NetworkConfiguration
+        """
+        return self._network_configuration
+
+    @network_configuration.setter
+    def network_configuration(self, network_configuration):
+        """
+        Sets the network_configuration of this RestMonitorConfiguration.
+
+        :param network_configuration: The network_configuration of this RestMonitorConfiguration.
+        :type: oci.apm_synthetics.models.NetworkConfiguration
+        """
+        self._network_configuration = network_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

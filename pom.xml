@@ -43,6 +43,10 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/waf/pom.xml</module>
+    <module>poms/apm_config/pom.xml</module>
+    <module>poms/data_labeling_service_dataplane/pom.xml</module>
+    <module>poms/data_labeling_service/pom.xml</module>
     <module>poms/ai_anomaly_detection/pom.xml</module>
     <module>poms/devops/pom.xml</module>
     <module>poms/jms/pom.xml</module>

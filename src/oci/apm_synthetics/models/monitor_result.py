@@ -73,7 +73,7 @@ class MonitorResult(object):
         """
         Gets the result_type of this MonitorResult.
         Type of result.
-        Example: HAR, Screenshot or Log.
+        Example: HAR, Screenshot, Log or Network.
 
 
         :return: The result_type of this MonitorResult.
@@ -86,7 +86,7 @@ class MonitorResult(object):
         """
         Sets the result_type of this MonitorResult.
         Type of result.
-        Example: HAR, Screenshot or Log.
+        Example: HAR, Screenshot, Log or Network.
 
 
         :param result_type: The result_type of this MonitorResult.

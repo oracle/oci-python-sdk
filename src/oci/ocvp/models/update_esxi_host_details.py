@@ -105,9 +105,8 @@ class UpdateEsxiHostDetails(object):
     def next_sku(self):
         """
         Gets the next_sku of this UpdateEsxiHostDetails.
-        Billing option to switch to after the existing billing cycle ends.
-        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+        The billing option to switch to after the existing billing cycle ends.
+        If `nextSku` is null or empty, `currentSku` continues to the next billing cycle.
         :func:`list_supported_skus`.
 
         Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
@@ -122,9 +121,8 @@ class UpdateEsxiHostDetails(object):
     def next_sku(self, next_sku):
         """
         Sets the next_sku of this UpdateEsxiHostDetails.
-        Billing option to switch to after the existing billing cycle ends.
-        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+        The billing option to switch to after the existing billing cycle ends.
+        If `nextSku` is null or empty, `currentSku` continues to the next billing cycle.
         :func:`list_supported_skus`.
 
 

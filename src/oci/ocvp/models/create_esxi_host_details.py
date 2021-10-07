@@ -176,9 +176,7 @@ class CreateEsxiHostDetails(object):
     def current_sku(self):
         """
         Gets the current_sku of this CreateEsxiHostDetails.
-        Billing option selected during SDDC creation.
-        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+        The billing option currently used by the ESXi host.
         :func:`list_supported_skus`.
 
         Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
@@ -193,9 +191,7 @@ class CreateEsxiHostDetails(object):
     def current_sku(self, current_sku):
         """
         Sets the current_sku of this CreateEsxiHostDetails.
-        Billing option selected during SDDC creation.
-        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+        The billing option currently used by the ESXi host.
         :func:`list_supported_skus`.
 
 
@@ -214,8 +210,8 @@ class CreateEsxiHostDetails(object):
     def next_sku(self):
         """
         Gets the next_sku of this CreateEsxiHostDetails.
-        Billing option to switch to once existing billing cycle ends.
-        If nextSku is null or empty, currentSku will be used to continue with next billing term.
+        The billing option to switch to after the existing billing cycle ends.
+        If `nextSku` is null or empty, `currentSku` continues to the next billing cycle.
         :func:`list_supported_skus`.
 
         Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
@@ -230,8 +226,8 @@ class CreateEsxiHostDetails(object):
     def next_sku(self, next_sku):
         """
         Sets the next_sku of this CreateEsxiHostDetails.
-        Billing option to switch to once existing billing cycle ends.
-        If nextSku is null or empty, currentSku will be used to continue with next billing term.
+        The billing option to switch to after the existing billing cycle ends.
+        If `nextSku` is null or empty, `currentSku` continues to the next billing cycle.
         :func:`list_supported_skus`.
 
 

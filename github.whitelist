@@ -122,3 +122,7 @@
 ^src/oci/jms/.*\.py$
 ^src/oci/devops/.*\.py$
 ^src/oci/ai_anomaly_detection/.*\.py$
+^src/oci/data_labeling_service/.*\.py$
+^src/oci/data_labeling_service_dataplane/.*\.py$
+^src/oci/apm_config/.*\.py$
+^src/oci/waf/.*\.py$

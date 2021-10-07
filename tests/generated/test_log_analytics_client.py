@@ -2570,6 +2570,46 @@ def test_get_log_analytics_object_collection_rule(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
+def test_get_log_sets_count(testing_service_client):
+    if not testing_service_client.is_api_enabled('log_analytics', 'GetLogSetsCount'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('log_analytics', util.camelize('log_analytics'), 'GetLogSetsCount')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='log_analytics', api_name='GetLogSetsCount')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.log_analytics.LogAnalyticsClient(config, service_endpoint=service_endpoint)
+            response = client.get_log_sets_count(
+                namespace_name=request.pop(util.camelize('namespaceName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'log_analytics',
+            'GetLogSetsCount',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'logSetsCount',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="omc_loganalytics_dev_ww_grp@oracle.com" jiraProject="LOGAN" opsJiraProject="LOGAN"
 def test_get_lookup(testing_service_client):
     if not testing_service_client.is_api_enabled('log_analytics', 'GetLookup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

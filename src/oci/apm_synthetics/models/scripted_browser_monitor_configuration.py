@@ -32,22 +32,29 @@ class ScriptedBrowserMonitorConfiguration(MonitorConfiguration):
             The value to assign to the is_certificate_validation_enabled property of this ScriptedBrowserMonitorConfiguration.
         :type is_certificate_validation_enabled: bool
 
+        :param network_configuration:
+            The value to assign to the network_configuration property of this ScriptedBrowserMonitorConfiguration.
+        :type network_configuration: oci.apm_synthetics.models.NetworkConfiguration
+
         """
         self.swagger_types = {
             'config_type': 'str',
             'is_failure_retried': 'bool',
-            'is_certificate_validation_enabled': 'bool'
+            'is_certificate_validation_enabled': 'bool',
+            'network_configuration': 'NetworkConfiguration'
         }
 
         self.attribute_map = {
             'config_type': 'configType',
             'is_failure_retried': 'isFailureRetried',
-            'is_certificate_validation_enabled': 'isCertificateValidationEnabled'
+            'is_certificate_validation_enabled': 'isCertificateValidationEnabled',
+            'network_configuration': 'networkConfiguration'
         }
 
         self._config_type = None
         self._is_failure_retried = None
         self._is_certificate_validation_enabled = None
+        self._network_configuration = None
         self._config_type = 'SCRIPTED_BROWSER_CONFIG'
 
     @property
@@ -73,6 +80,26 @@ class ScriptedBrowserMonitorConfiguration(MonitorConfiguration):
         :type: bool
         """
         self._is_certificate_validation_enabled = is_certificate_validation_enabled
+
+    @property
+    def network_configuration(self):
+        """
+        Gets the network_configuration of this ScriptedBrowserMonitorConfiguration.
+
+        :return: The network_configuration of this ScriptedBrowserMonitorConfiguration.
+        :rtype: oci.apm_synthetics.models.NetworkConfiguration
+        """
+        return self._network_configuration
+
+    @network_configuration.setter
+    def network_configuration(self, network_configuration):
+        """
+        Sets the network_configuration of this ScriptedBrowserMonitorConfiguration.
+
+        :param network_configuration: The network_configuration of this ScriptedBrowserMonitorConfiguration.
+        :type: oci.apm_synthetics.models.NetworkConfiguration
+        """
+        self._network_configuration = network_configuration
 
     def __repr__(self):
         return formatted_flat_dict(self)

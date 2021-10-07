@@ -72,6 +72,10 @@ class CreateMonitorDetails(object):
             The value to assign to the repeat_interval_in_seconds property of this CreateMonitorDetails.
         :type repeat_interval_in_seconds: int
 
+        :param is_run_once:
+            The value to assign to the is_run_once property of this CreateMonitorDetails.
+        :type is_run_once: bool
+
         :param timeout_in_seconds:
             The value to assign to the timeout_in_seconds property of this CreateMonitorDetails.
         :type timeout_in_seconds: int
@@ -104,6 +108,7 @@ class CreateMonitorDetails(object):
             'script_id': 'str',
             'status': 'str',
             'repeat_interval_in_seconds': 'int',
+            'is_run_once': 'bool',
             'timeout_in_seconds': 'int',
             'target': 'str',
             'script_parameters': 'list[MonitorScriptParameter]',
@@ -119,6 +124,7 @@ class CreateMonitorDetails(object):
             'script_id': 'scriptId',
             'status': 'status',
             'repeat_interval_in_seconds': 'repeatIntervalInSeconds',
+            'is_run_once': 'isRunOnce',
             'timeout_in_seconds': 'timeoutInSeconds',
             'target': 'target',
             'script_parameters': 'scriptParameters',
@@ -133,6 +139,7 @@ class CreateMonitorDetails(object):
         self._script_id = None
         self._status = None
         self._repeat_interval_in_seconds = None
+        self._is_run_once = None
         self._timeout_in_seconds = None
         self._target = None
         self._script_parameters = None
@@ -309,6 +316,30 @@ class CreateMonitorDetails(object):
         :type: int
         """
         self._repeat_interval_in_seconds = repeat_interval_in_seconds
+
+    @property
+    def is_run_once(self):
+        """
+        Gets the is_run_once of this CreateMonitorDetails.
+        If runOnce is enabled, then the monitor will run once.
+
+
+        :return: The is_run_once of this CreateMonitorDetails.
+        :rtype: bool
+        """
+        return self._is_run_once
+
+    @is_run_once.setter
+    def is_run_once(self, is_run_once):
+        """
+        Sets the is_run_once of this CreateMonitorDetails.
+        If runOnce is enabled, then the monitor will run once.
+
+
+        :param is_run_once: The is_run_once of this CreateMonitorDetails.
+        :type: bool
+        """
+        self._is_run_once = is_run_once
 
     @property
     def timeout_in_seconds(self):
