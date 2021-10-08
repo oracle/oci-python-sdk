@@ -21,7 +21,7 @@ import os
 
 fips.enable_fips_mode()
 
-if "OCI_PYTHON_SDK_NO_SERVICE_IMPORTS" in os.environ:
+if os.getenv("OCI_PYTHON_SDK_NO_SERVICE_IMPORTS", "").lower() in ["true", "1"]:
     pass
 else:
     from . import {spec_names}

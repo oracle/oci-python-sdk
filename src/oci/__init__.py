@@ -13,7 +13,7 @@ import os
 
 fips.enable_fips_mode()
 
-if "OCI_PYTHON_SDK_NO_SERVICE_IMPORTS" in os.environ:
+if os.getenv("OCI_PYTHON_SDK_NO_SERVICE_IMPORTS", "").lower() in ["true", "1"]:
     pass
 else:
     from . import ai_anomaly_detection, ai_language, analytics, announcements_service, apigateway, apm_config, apm_control_plane, apm_synthetics, apm_traces, application_migration, artifacts, audit, autoscaling, bastion, bds, blockchain, budget, cims, cloud_guard, compute_instance_agent, container_engine, core, data_catalog, data_flow, data_integration, data_labeling_service, data_labeling_service_dataplane, data_safe, data_science, database, database_management, database_migration, devops, dns, dts, email, events, file_storage, functions, generic_artifacts_content, golden_gate, healthchecks, identity, integration, jms, key_management, limits, load_balancer, log_analytics, logging, loggingingestion, loggingsearch, management_agent, management_dashboard, marketplace, monitoring, mysql, network_load_balancer, nosql, object_storage, oce, ocvp, oda, ons, operator_access_control, opsi, optimizer, os_management, resource_manager, resource_search, rover, sch, secrets, service_catalog, streaming, tenant_manager_control_plane, usage_api, vault, vulnerability_scanning, waas, waf, work_requests
