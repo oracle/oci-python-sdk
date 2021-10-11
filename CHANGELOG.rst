@@ -4,12 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.47.1 - TBD
+2.47.1 - 2021-10-12
 ====================
 
 Added
 -----
-* TBD
+* Support for the Data Labeling Service
+* Support for the Web Application Firewall service
+* Support for querying and setting Application Performance Monitoring configurations in the Application Performance Monitoring service
+* Support for the run-once monitor feature and network data collection in the Application Performance Monitoring service
+* Support for Oracle Enterprise Manager bridges, source auto-association, source event types mapping, and partitioning and searching data by LogSet in the Logging Analytics service
+* Support for Log events APIs used by plugins like fluentd, fluentbit, etc. to upload data in the Logging Analytics service
+* Support for a new ActionType: FAILED in work requests in the VMware Provisioning service
+* Support for calling Oracle Cloud Infrastructure services in the il-jerusalem-1 region
 
 ====================
 2.47.0 - 2021-10-05
