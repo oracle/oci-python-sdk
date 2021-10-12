@@ -371,7 +371,7 @@ class SddcSummary(object):
     def is_hcx_enabled(self):
         """
         Gets the is_hcx_enabled of this SddcSummary.
-        HCX enabled or not
+        Indicates whether HCX is enabled.
 
 
         :return: The is_hcx_enabled of this SddcSummary.
@@ -383,7 +383,7 @@ class SddcSummary(object):
     def is_hcx_enabled(self, is_hcx_enabled):
         """
         Sets the is_hcx_enabled of this SddcSummary.
-        HCX enabled or not
+        Indicates whether HCX is enabled.
 
 
         :param is_hcx_enabled: The is_hcx_enabled of this SddcSummary.

@@ -26,6 +26,7 @@ REGIONS_SHORT_NAMES = {
     'sjc': 'us-sanjose-1',
     'vcp': 'sa-vinhedo-1',
     'scl': 'sa-santiago-1',
+    'mtz': 'il-jerusalem-1',
     'lfi': 'us-langley-1',
     'luf': 'us-luke-1',
     'ric': 'us-gov-ashburn-1',
@@ -60,6 +61,7 @@ REGION_REALMS = {
     'us-sanjose-1': 'oc1',
     'sa-vinhedo-1': 'oc1',
     'sa-santiago-1': 'oc1',
+    'il-jerusalem-1': 'oc1',
 
     'us-langley-1': 'oc2',
     'us-luke-1': 'oc2',
@@ -105,6 +107,7 @@ REGIONS = [
     'us-sanjose-1',
     'sa-vinhedo-1',
     'sa-santiago-1',
+    'il-jerusalem-1',
     'us-langley-1',
     'us-luke-1',
     'us-gov-ashburn-1',

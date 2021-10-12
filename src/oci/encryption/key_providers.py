@@ -6,7 +6,6 @@ from oci._vendor import six
 
 import abc
 import base64
-import copy
 from cryptography.hazmat.primitives.ciphers import algorithms
 
 from oci.exceptions import ServiceError
@@ -45,11 +44,24 @@ class MasterKeyProvider(object):
 
 
 class KMSMasterKeyProvider(MasterKeyProvider):
-    def __init__(self, config, kms_master_keys=None):
+    def __init__(self, config, kms_master_keys=None, **kwargs):
         """
+        :param dict config: (required)
+            An OCI config dict used to create underlying clients to talk to OCI KMS.
+            Note, the 'region' in this config must match the region that the key / vault
+            exist in otherwise they will not be found.
+
         :param list[KMSMasterKey] kms_master_keys: (optional)
             A list of KMSMasterKeys. Currently a max of 1 master key is supported.
             For decryption, you can use a KMSMasterKeyProvder with no master keys.
+
+        :param signer: (optional)
+            The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
+            provided in the config parameter.
+
+            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
+        :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
         """
         if kms_master_keys is not None and len(kms_master_keys) > 1:
             raise ValueError(
@@ -60,7 +72,12 @@ class KMSMasterKeyProvider(MasterKeyProvider):
         if kms_master_keys:
             self.primary_master_key = kms_master_keys[0]
 
+        self.signer = kwargs.get('signer')
         self.config = config
+        if not self.config and not self.signer:
+            raise ValueError(
+                "Either a config or signer must be passed in"
+            )
 
     def get_primary_master_key(self):
         return self.primary_master_key
@@ -92,14 +109,8 @@ class KMSMasterKeyProvider(MasterKeyProvider):
 
         master_key_config = self.config
 
-        # if the caller specifies a region, make sure the
-        # config we pass to KMSMasterKey uses that region
-        if "region" in kwargs:
-            region = kwargs["region"]
-            del kwargs["region"]
-
-            master_key_config = copy.deepcopy(self.config)
-            master_key_config["region"] = region
+        if self.signer:
+            kwargs["signer"] = self.signer
 
         kms_master_key = KMSMasterKey(config=master_key_config, **kwargs)
         return kms_master_key
@@ -148,7 +159,7 @@ class MasterKey(object):
 
 
 class KMSMasterKey(MasterKey):
-    def __init__(self, config, master_key_id, vault_id):
+    def __init__(self, config, master_key_id, vault_id, **kwargs):
         """
         Represents a MasterKey contained in the OCI Key Management Service.
 
@@ -162,28 +173,54 @@ class KMSMasterKey(MasterKey):
 
         :param str vault_id: (required)
             The OCID of the vault containing the master key
+
+        :param signer: (optional)
+            The signer to use when signing requests made by the service client. The default is to use a :py:class:`~oci.signer.Signer` based on the values
+            provided in the config parameter.
+
+            One use case for this parameter is for `Instance Principals authentication <https://docs.cloud.oracle.com/Content/Identity/Tasks/callingservicesfrominstances.htm>`__
+            by passing an instance of :py:class:`~oci.auth.signers.InstancePrincipalsSecurityTokenSigner` as the value for this keyword argument
+        :type signer: :py:class:`~oci.signer.AbstractBaseSigner`
+
+        :param str region: (optional)
+            The region this master key resides in
         """
-        kms_vault_client = KmsVaultClient(config)
+        if not config and not kwargs.get("signer"):
+            raise ValueError(
+                "Either a config or signer must be passed in"
+            )
+
+        self.region = None
+        # Get region from **kwargs, config, or signer
+        if kwargs.get('region'):
+            self.region = kwargs.get("region")
+        elif "region" in config:
+            self.region = config["region"]
+        elif kwargs.get('signer'):
+            self.region = kwargs.get("signer").region
+
+        kms_vault_client = KmsVaultClient(config, **kwargs)
+        # There is a chance that caller specified a region and differs from the config or signer's region
+        kms_vault_client.base_client.set_region(self.region)
 
         try:
             vault = kms_vault_client.get_vault(vault_id).data
         except ServiceError as service_error:
             message = "Failed to access vaultId: {vault_id} while targeting region: {region}.".format(
-                vault_id=vault_id, region=config['region']
+                vault_id=vault_id, region=self.region
             )
             raise_runtime_error_from(message, service_error)
 
         self.kms_management_client = KmsManagementClient(
-            config, service_endpoint=vault.management_endpoint
+            config, service_endpoint=vault.management_endpoint, **kwargs
         )
+
         self.kms_crypto_client = KmsCryptoClient(
-            config, service_endpoint=vault.crypto_endpoint
+            config, service_endpoint=vault.crypto_endpoint, **kwargs
         )
 
         self.master_key_id = master_key_id
         self.vault_id = vault.id
-
-        self.region = config["region"]
 
     def generate_data_encryption_key(self, algorithm):
         dek_key_shape = KeyShape()

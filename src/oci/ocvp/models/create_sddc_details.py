@@ -391,9 +391,7 @@ class CreateSddcDetails(object):
     def initial_sku(self):
         """
         Gets the initial_sku of this CreateSddcDetails.
-        Billing option selected during SDDC creation.
-        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+        The billing option selected during SDDC creation.
         :func:`list_supported_skus`.
 
         Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
@@ -408,9 +406,7 @@ class CreateSddcDetails(object):
     def initial_sku(self, initial_sku):
         """
         Sets the initial_sku of this CreateSddcDetails.
-        Billing option selected during SDDC creation.
-        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+        The billing option selected during SDDC creation.
         :func:`list_supported_skus`.
 
 

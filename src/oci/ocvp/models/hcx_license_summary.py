@@ -69,7 +69,7 @@ class HcxLicenseSummary(object):
     def activation_key(self):
         """
         **[Required]** Gets the activation_key of this HcxLicenseSummary.
-        HCX on-premise license key value
+        HCX on-premise license key value.
 
 
         :return: The activation_key of this HcxLicenseSummary.
@@ -81,7 +81,7 @@ class HcxLicenseSummary(object):
     def activation_key(self, activation_key):
         """
         Sets the activation_key of this HcxLicenseSummary.
-        HCX on-premise license key value
+        HCX on-premise license key value.
 
 
         :param activation_key: The activation_key of this HcxLicenseSummary.
@@ -93,7 +93,7 @@ class HcxLicenseSummary(object):
     def status(self):
         """
         **[Required]** Gets the status of this HcxLicenseSummary.
-        status of HCX on-premise license
+        status of HCX on-premise license.
 
         Allowed values for this property are: "AVAILABLE", "CONSUMED", "DEACTIVATED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -108,7 +108,7 @@ class HcxLicenseSummary(object):
     def status(self, status):
         """
         Sets the status of this HcxLicenseSummary.
-        status of HCX on-premise license
+        status of HCX on-premise license.
 
 
         :param status: The status of this HcxLicenseSummary.

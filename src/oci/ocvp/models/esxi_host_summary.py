@@ -423,9 +423,7 @@ class EsxiHostSummary(object):
     def current_sku(self):
         """
         **[Required]** Gets the current_sku of this EsxiHostSummary.
-        Billing option selected during SDDC creation.
-        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+        The billing option currently used by the ESXi host.
         :func:`list_supported_skus`.
 
         Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS", 'UNKNOWN_ENUM_VALUE'.
@@ -441,9 +439,7 @@ class EsxiHostSummary(object):
     def current_sku(self, current_sku):
         """
         Sets the current_sku of this EsxiHostSummary.
-        Billing option selected during SDDC creation.
-        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+        The billing option currently used by the ESXi host.
         :func:`list_supported_skus`.
 
 
@@ -459,7 +455,8 @@ class EsxiHostSummary(object):
     def next_sku(self):
         """
         **[Required]** Gets the next_sku of this EsxiHostSummary.
-        Billing option to switch to once existing billing cycle ends.
+        The billing option to switch to after the current billing cycle ends.
+        If `nextSku` is null or empty, `currentSku` continues to the next billing cycle.
         :func:`list_supported_skus`.
 
         Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS", 'UNKNOWN_ENUM_VALUE'.
@@ -475,7 +472,8 @@ class EsxiHostSummary(object):
     def next_sku(self, next_sku):
         """
         Sets the next_sku of this EsxiHostSummary.
-        Billing option to switch to once existing billing cycle ends.
+        The billing option to switch to after the current billing cycle ends.
+        If `nextSku` is null or empty, `currentSku` continues to the next billing cycle.
         :func:`list_supported_skus`.
 
 
@@ -491,8 +489,8 @@ class EsxiHostSummary(object):
     def billing_contract_end_date(self):
         """
         **[Required]** Gets the billing_contract_end_date of this EsxiHostSummary.
-        Current billing cycle end date. If nextSku is different from existing SKU, then we switch to newSKu
-        after this contractEndDate
+        Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku`
+        becomes the new `currentSKU` when the `contractEndDate` is reached.
         Example: `2016-08-25T21:10:29.600Z`
 
 
@@ -505,8 +503,8 @@ class EsxiHostSummary(object):
     def billing_contract_end_date(self, billing_contract_end_date):
         """
         Sets the billing_contract_end_date of this EsxiHostSummary.
-        Current billing cycle end date. If nextSku is different from existing SKU, then we switch to newSKu
-        after this contractEndDate
+        Current billing cycle end date. If the value in `currentSku` and `nextSku` are different, the value specified in `nextSku`
+        becomes the new `currentSKU` when the `contractEndDate` is reached.
         Example: `2016-08-25T21:10:29.600Z`
 
 

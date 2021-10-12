@@ -205,6 +205,7 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsWarningCollection
     oci.log_analytics.models.LogGroupSummaryReport
     oci.log_analytics.models.LogSetCollection
+    oci.log_analytics.models.LogSetsCount
     oci.log_analytics.models.LookupCommandDescriptor
     oci.log_analytics.models.LookupField
     oci.log_analytics.models.LookupSummaryReport

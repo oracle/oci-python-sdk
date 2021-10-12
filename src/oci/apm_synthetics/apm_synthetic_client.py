@@ -534,7 +534,7 @@ class ApmSyntheticClient(object):
 
     def get_monitor_result(self, apm_domain_id, monitor_id, vantage_point, result_type, result_content_type, execution_time, **kwargs):
         """
-        Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, or Console Log.
+        Gets the results for a specific execution of a monitor identified by OCID. The results are in a HAR file, Screenshot, Console Log or Network details.
 
 
         :param str apm_domain_id: (required)
@@ -547,7 +547,7 @@ class ApmSyntheticClient(object):
             The vantagePoint name.
 
         :param str result_type: (required)
-            The result type har or screenshot or log.
+            The result type har, screenshot, log or network.
 
         :param str result_content_type: (required)
             The result content type zip or raw.

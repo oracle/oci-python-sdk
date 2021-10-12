@@ -191,6 +191,7 @@ from .log_analytics_warning import LogAnalyticsWarning
 from .log_analytics_warning_collection import LogAnalyticsWarningCollection
 from .log_group_summary_report import LogGroupSummaryReport
 from .log_set_collection import LogSetCollection
+from .log_sets_count import LogSetsCount
 from .lookup_command_descriptor import LookupCommandDescriptor
 from .lookup_field import LookupField
 from .lookup_summary_report import LookupSummaryReport
@@ -489,6 +490,7 @@ log_analytics_type_mapping = {
     "LogAnalyticsWarningCollection": LogAnalyticsWarningCollection,
     "LogGroupSummaryReport": LogGroupSummaryReport,
     "LogSetCollection": LogSetCollection,
+    "LogSetsCount": LogSetsCount,
     "LookupCommandDescriptor": LookupCommandDescriptor,
     "LookupField": LookupField,
     "LookupSummaryReport": LookupSummaryReport,

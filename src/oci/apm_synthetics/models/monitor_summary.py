@@ -86,6 +86,10 @@ class MonitorSummary(object):
             The value to assign to the repeat_interval_in_seconds property of this MonitorSummary.
         :type repeat_interval_in_seconds: int
 
+        :param is_run_once:
+            The value to assign to the is_run_once property of this MonitorSummary.
+        :type is_run_once: bool
+
         :param timeout_in_seconds:
             The value to assign to the timeout_in_seconds property of this MonitorSummary.
         :type timeout_in_seconds: int
@@ -121,6 +125,7 @@ class MonitorSummary(object):
             'script_name': 'str',
             'status': 'str',
             'repeat_interval_in_seconds': 'int',
+            'is_run_once': 'bool',
             'timeout_in_seconds': 'int',
             'target': 'str',
             'time_created': 'datetime',
@@ -139,6 +144,7 @@ class MonitorSummary(object):
             'script_name': 'scriptName',
             'status': 'status',
             'repeat_interval_in_seconds': 'repeatIntervalInSeconds',
+            'is_run_once': 'isRunOnce',
             'timeout_in_seconds': 'timeoutInSeconds',
             'target': 'target',
             'time_created': 'timeCreated',
@@ -156,6 +162,7 @@ class MonitorSummary(object):
         self._script_name = None
         self._status = None
         self._repeat_interval_in_seconds = None
+        self._is_run_once = None
         self._timeout_in_seconds = None
         self._target = None
         self._time_created = None
@@ -402,6 +409,30 @@ class MonitorSummary(object):
         :type: int
         """
         self._repeat_interval_in_seconds = repeat_interval_in_seconds
+
+    @property
+    def is_run_once(self):
+        """
+        **[Required]** Gets the is_run_once of this MonitorSummary.
+        If runOnce is enabled, then the monitor will run once.
+
+
+        :return: The is_run_once of this MonitorSummary.
+        :rtype: bool
+        """
+        return self._is_run_once
+
+    @is_run_once.setter
+    def is_run_once(self, is_run_once):
+        """
+        Sets the is_run_once of this MonitorSummary.
+        If runOnce is enabled, then the monitor will run once.
+
+
+        :param is_run_once: The is_run_once of this MonitorSummary.
+        :type: bool
+        """
+        self._is_run_once = is_run_once
 
     @property
     def timeout_in_seconds(self):
