@@ -11,14 +11,17 @@
 ##########################################################################
 # Application Command line parameters
 #
-#   -t config   - Config file section to use (tenancy profile)
+#   -c config   - OCI CLI Config
+#   -t profile  - profile inside the config file
 #   -p proxy    - Set Proxy (i.e. www-proxy-server.com:80)
 #   -ip         - Use Instance Principals for Authentication
 #   -dt         - Use Instance Principals with delegation token for cloud shell
 #   -rg region  - Filter Region
 #   -cp compart - Filter by Comcpartment
 #   -sr service - Filter by Service
+#   -sc scope   - Filter by Scope = AD,REGION
 #   -js         - print in JSON format
+#   -csv file   - print to csv file
 #
 ##########################################################################
 # Info:
@@ -63,6 +66,7 @@ import oci
 import json
 import os
 import time
+import csv
 
 
 ##########################################################################
@@ -96,7 +100,7 @@ def check_service_error(code):
 # Input - config_profile and is_instance_principals and is_delegation_token
 # Output - config and signer objects
 ##########################################################################
-def create_signer(config_profile, is_instance_principals, is_delegation_token):
+def create_signer(config_file, config_profile, is_instance_principals, is_delegation_token):
 
     # if instance principals authentications
     if is_instance_principals:
@@ -147,7 +151,7 @@ def create_signer(config_profile, is_instance_principals, is_delegation_token):
     # -----------------------------
     else:
         config = oci.config.from_file(
-            oci.config.DEFAULT_LOCATION,
+            (config_file if config_file else oci.config.DEFAULT_LOCATION),
             (config_profile if config_profile else oci.config.DEFAULT_PROFILE)
         )
         signer = oci.signer.Signer(
@@ -212,7 +216,7 @@ def print_limits(limits_data):
                 if not prev_compartment or prev_compartment != compartment_name:
                     print_header(compartment_name, 2)
 
-                print(str(ct['name'] + " ").ljust(20) + limit_name + value + used + available + scope)
+                print(str(ct['service_name'] + " ").ljust(20) + limit_name + value + used + available + scope)
                 prev_compartment = compartment_name
 
             print("")
@@ -224,19 +228,74 @@ def print_limits(limits_data):
 
 
 ##########################################################################
+# create csv file
+##########################################################################
+def export_to_csv_file(file_name, limits_data):
+
+    csv_data = []
+
+    try:
+        for region in limits_data:
+            reg_name = region['region_name']
+            limits = region['data']
+            sorted_limit = sorted(limits, key=lambda i: i['compartment_name'])
+
+            for ct in sorted_limit:
+                val = {
+                    'region_name': reg_name,
+                    'compartment_name': ct['compartment_name'],
+                    'compartment_id': ct['compartment_id'],
+                    'service_name': ct['service_name'],
+                    'service_description': ct['service_description'],
+                    'limit_name': ct['limit_name'],
+                    'value': ct['value'],
+                    'used': ct['used'],
+                    'available': ct['available'],
+                    'scope': ct['scope_type'],
+                    'availability_domain': ct['availability_domain']
+                }
+                csv_data.append(val)
+
+        # if no data
+        if len(csv_data) == 0:
+            return
+
+        # prepare keys and data
+        result = [dict(item) for item in csv_data]
+        fields = [key for key in result[0].keys()]
+
+        with open(file_name, mode='w', newline='') as csv_file:
+            writer = csv.DictWriter(csv_file, fieldnames=fields)
+
+            # write header
+            writer.writeheader()
+
+            for row in result:
+                writer.writerow(row)
+
+        print("")
+        print("Extracted to CSV file : --> " + file_name)
+
+    except Exception as e:
+        raise Exception("Error in export_to_csv_file: " + str(e.args))
+
+
+##########################################################################
 # Main
 ##########################################################################
-
 # Get Command Line Parser
 parser = argparse.ArgumentParser()
-parser.add_argument('-t', default="", dest='config_profile', help='Config file section to use (tenancy profile)')
+parser.add_argument('-c', default="", dest='config_file', help='OCI CLI Config file')
+parser.add_argument('-t', default="", dest='config_profile', help='Config Profile inside the config file')
 parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
 parser.add_argument('-rg', default="", dest='filter_region', help='filter by region (i.e. us-ashburn-1) ')
 parser.add_argument('-cp', default="", dest='filter_comp', help='filter by compartment (i.e. production) ')
-parser.add_argument('-sr', default="", dest='filter_service', help='filter by servoce (i.e. compute) ')
+parser.add_argument('-sr', default="", dest='filter_service', help='filter by service (i.e. compute) ')
+parser.add_argument('-sc', default="", dest='filter_scope', help='filter by scope (i.e. AD,REGION,GLOBAL) ')
 parser.add_argument('-ip', action='store_true', default=False, dest='is_instance_principals', help='Use Instance Principals for Authentication')
 parser.add_argument('-dt', action='store_true', default=False, dest='is_delegation_token', help='Use Delegation Token for Authentication')
 parser.add_argument('-js', action='store_true', default=False, dest='print_json', help='print in JSON format')
+parser.add_argument('-csv', default="", dest='csv', help="Output to CSV files, Input as file header")
 cmd = parser.parse_args()
 
 # Start print time info
@@ -253,12 +312,13 @@ print("Written By Adi Zohar, Sep 2021")
 print("Command Line : " + ' '.join(x for x in sys.argv[1:]))
 
 # Identity extract compartments
-config, signer = create_signer(cmd.config_profile, cmd.is_instance_principals, cmd.is_delegation_token)
+config, signer = create_signer(cmd.config_file, cmd.config_profile, cmd.is_instance_principals, cmd.is_delegation_token)
 compartments = []
 tenancy = None
 filter_region = cmd.filter_region
 filter_compartment = cmd.filter_comp
 filter_service = cmd.filter_service
+filter_scope = cmd.filter_scope
 print_json = cmd.print_json
 
 try:
@@ -371,11 +431,14 @@ for region_name in [str(es.region_name) for es in regions]:
 
                 # oci.limits.models.LimitValueSummary
                 for limit in limits:
+                    if filter_scope and str(filter_scope) not in str(limit.scope_type):
+                        continue
+
                     val = {
                         'compartment_name': str(compartment.name),
                         'compartment_id': str(compartment.id),
-                        'name': str(service.name),
-                        'description': str(service.description),
+                        'service_name': str(service.name),
+                        'service_description': str(service.description),
                         'limit_name': str(limit.name),
                         'availability_domain': ("" if limit.availability_domain is None else str(limit.availability_domain)),
                         'scope_type': str(limit.scope_type),
@@ -428,8 +491,9 @@ for region_name in [str(es.region_name) for es in regions]:
 ############################################
 # Print Output
 ############################################
-# to print JSON
-if print_json:
+if cmd.csv:
+    export_to_csv_file(cmd.csv, main_data)
+elif print_json:
     print(json.dumps(main_data, indent=4, sort_keys=False))
 else:
     print_limits(main_data)

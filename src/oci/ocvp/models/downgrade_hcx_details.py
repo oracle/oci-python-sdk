@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DowngradeHcxDetails(object):
     """
-    The HCX on-premise licenses to be reserved when downgrade from HCX Enterprise to HCX Advanced.
+    The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.
+    Downgrading from HCX Enterprise to HCX Advanced reduces the number of provided license keys from 10 to 3.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +38,7 @@ class DowngradeHcxDetails(object):
     def reserving_hcx_on_premise_license_keys(self):
         """
         **[Required]** Gets the reserving_hcx_on_premise_license_keys of this DowngradeHcxDetails.
-        The HCX on-premise licenses keys to be reserved when downgrade from HCX Enterprise to HCX Advanced.
+        The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.
 
 
         :return: The reserving_hcx_on_premise_license_keys of this DowngradeHcxDetails.
@@ -49,7 +50,7 @@ class DowngradeHcxDetails(object):
     def reserving_hcx_on_premise_license_keys(self, reserving_hcx_on_premise_license_keys):
         """
         Sets the reserving_hcx_on_premise_license_keys of this DowngradeHcxDetails.
-        The HCX on-premise licenses keys to be reserved when downgrade from HCX Enterprise to HCX Advanced.
+        The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.
 
 
         :param reserving_hcx_on_premise_license_keys: The reserving_hcx_on_premise_license_keys of this DowngradeHcxDetails.

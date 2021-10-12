@@ -4229,7 +4229,7 @@ class LogAnalyticsClient(object):
             parser definition
 
         :param str parser_type: (optional)
-            The parser type - possible values are XML or JSON.
+            The parser type - possible values are XML, JSON or DELIMITED.
 
             Allowed values are: "XML", "JSON"
 
@@ -4344,7 +4344,7 @@ class LogAnalyticsClient(object):
             parser definition
 
         :param str parser_type: (optional)
-            The parser type - possible values are XML or JSON.
+            The parser type - possible values are XML, JSON or DELIMITED.
 
             Allowed values are: "XML", "JSON"
 
@@ -5763,6 +5763,81 @@ class LogAnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="LogAnalyticsObjectCollectionRule")
+
+    def get_log_sets_count(self, namespace_name, **kwargs):
+        """
+        This API returns the count of distinct log sets.
+
+
+        :param str namespace_name: (required)
+            The Logging Analytics namespace used for the request.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. A convenience :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY`
+            is also available. The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogSetsCount`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/loganalytics/get_log_sets_count.py.html>`__ to see an example of how to use get_log_sets_count API.
+        """
+        resource_path = "/namespaces/{namespaceName}/storage/logSetsCount"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_log_sets_count got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "namespaceName": namespace_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.retry_strategy
+        if kwargs.get('retry_strategy'):
+            retry_strategy = kwargs.get('retry_strategy')
+
+        if retry_strategy:
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LogSetsCount")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="LogSetsCount")
 
     def get_lookup(self, namespace_name, lookup_name, **kwargs):
         """
@@ -9349,6 +9424,9 @@ class LogAnalyticsClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param list[str] log_set_name_contains: (optional)
+            If this filter is present, each of the logsets returned must contain the value of this filter.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9372,7 +9450,8 @@ class LogAnalyticsClient(object):
             "opc_request_id",
             "limit",
             "page",
-            "sort_order"
+            "sort_order",
+            "log_set_name_contains"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9399,7 +9478,8 @@ class LogAnalyticsClient(object):
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "logSetNameContains": self.base_client.generate_collection_format_param(kwargs.get("log_set_name_contains", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

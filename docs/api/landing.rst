@@ -12,6 +12,7 @@ API Reference
 * :doc:`Deployment <apigateway/client/oci.apigateway.DeploymentClient>`
 * :doc:`Gateway <apigateway/client/oci.apigateway.GatewayClient>`
 * :doc:`Work Requests <mysql/client/oci.mysql.WorkRequestsClient>`
+* :doc:`Config <apm_config/client/oci.apm_config.ConfigClient>`
 * :doc:`Apm Domain <apm_control_plane/client/oci.apm_control_plane.ApmDomainClient>`
 * :doc:`Apm Synthetic <apm_synthetics/client/oci.apm_synthetics.ApmSyntheticClient>`
 * :doc:`Query <apm_traces/client/oci.apm_traces.QueryClient>`
@@ -38,6 +39,8 @@ API Reference
 * :doc:`Data Catalog <data_catalog/client/oci.data_catalog.DataCatalogClient>`
 * :doc:`Data Flow <data_flow/client/oci.data_flow.DataFlowClient>`
 * :doc:`Data Integration <data_integration/client/oci.data_integration.DataIntegrationClient>`
+* :doc:`Data Labeling Management <data_labeling_service/client/oci.data_labeling_service.DataLabelingManagementClient>`
+* :doc:`Data Labeling <data_labeling_service_dataplane/client/oci.data_labeling_service_dataplane.DataLabelingClient>`
 * :doc:`Data Safe <data_safe/client/oci.data_safe.DataSafeClient>`
 * :doc:`Data Science <data_science/client/oci.data_science.DataScienceClient>`
 * :doc:`Database <database/client/oci.database.DatabaseClient>`
@@ -123,6 +126,7 @@ API Reference
 * :doc:`Vulnerability Scanning <vulnerability_scanning/client/oci.vulnerability_scanning.VulnerabilityScanningClient>`
 * :doc:`Redirect <waas/client/oci.waas.RedirectClient>`
 * :doc:`Waas <waas/client/oci.waas.WaasClient>`
+* :doc:`Waf <waf/client/oci.waf.WafClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 
 .. rubric:: Other Modules
@@ -147,6 +151,7 @@ API Reference
     analytics
     announcements_service
     apigateway
+    apm_config
     apm_control_plane
     apm_synthetics
     apm_traces
@@ -166,6 +171,8 @@ API Reference
     data_catalog
     data_flow
     data_integration
+    data_labeling_service
+    data_labeling_service_dataplane
     data_safe
     data_science
     database
@@ -219,6 +226,7 @@ API Reference
     vault
     vulnerability_scanning
     waas
+    waf
     work_requests
     config
     exceptions

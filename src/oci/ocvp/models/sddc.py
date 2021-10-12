@@ -626,9 +626,7 @@ class Sddc(object):
     def initial_sku(self):
         """
         Gets the initial_sku of this Sddc.
-        Billing option selected during SDDC creation.
-        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+        The billing option selected during SDDC creation.
         :func:`list_supported_skus`.
 
         Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS", 'UNKNOWN_ENUM_VALUE'.
@@ -644,9 +642,7 @@ class Sddc(object):
     def initial_sku(self, initial_sku):
         """
         Sets the initial_sku of this Sddc.
-        Billing option selected during SDDC creation.
-        Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+        The billing option selected during SDDC creation.
         :func:`list_supported_skus`.
 
 
@@ -1636,8 +1632,9 @@ class Sddc(object):
     def hcx_on_prem_key(self):
         """
         Gets the hcx_on_prem_key of this Sddc.
-        The activation key to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
-        Your implementation might need more than one activation key. To obtain additional keys, contact Oracle Support.
+        The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution.
+        The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys.
+        HCX Enterprise provides 10 activation keys.
 
 
         :return: The hcx_on_prem_key of this Sddc.
@@ -1649,8 +1646,9 @@ class Sddc(object):
     def hcx_on_prem_key(self, hcx_on_prem_key):
         """
         Sets the hcx_on_prem_key of this Sddc.
-        The activation key to use on the on-premises HCX Enterprise appliance you site pair with HCX Manager in your VMware Solution.
-        Your implementation might need more than one activation key. To obtain additional keys, contact Oracle Support.
+        The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution.
+        The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys.
+        HCX Enterprise provides 10 activation keys.
 
 
         :param hcx_on_prem_key: The hcx_on_prem_key of this Sddc.

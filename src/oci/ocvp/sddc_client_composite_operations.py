@@ -155,7 +155,7 @@ class SddcClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.ocvp.models.DowngradeHcxDetails downgrade_hcx_details: (required)
-            The HCX on-premise license keys to be reserved when downgrade from HCX Enterprise to HCX Advanced.
+            The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.
 
         :param str sddc_id: (required)
             The `OCID`__ of the SDDC.

@@ -88,7 +88,7 @@ class SddcClient(object):
 
     def cancel_downgrade_hcx(self, sddc_id, **kwargs):
         """
-        Cancel the pending SDDC downgrade from HCX Enterprise to HCX Advanced
+        Cancel the pending SDDC downgrade from HCX Enterprise to HCX Advanced.
 
 
         :param str sddc_id: (required)
@@ -461,11 +461,14 @@ class SddcClient(object):
 
     def downgrade_hcx(self, downgrade_hcx_details, sddc_id, **kwargs):
         """
-        Downgrade the specified SDDC from HCX Enterprise to HCX Advanced
+        Downgrade the specified SDDC from HCX Enterprise to HCX Advanced.
+        Downgrading from HCX Enterprise to HCX Advanced reduces the number of provided license keys from 10 to 3.
+        Downgrade remains in a `PENDING` state until the end of the current billing cycle. You can use :func:`cancel_downgrade_hcx`
+        to cancel the downgrade while it's still in a `PENDING` state.
 
 
         :param oci.ocvp.models.DowngradeHcxDetails downgrade_hcx_details: (required)
-            The HCX on-premise license keys to be reserved when downgrade from HCX Enterprise to HCX Advanced.
+            The HCX on-premise license keys to be reserved when downgrading from HCX Enterprise to HCX Advanced.
 
         :param str sddc_id: (required)
             The `OCID`__ of the SDDC.
@@ -794,8 +797,7 @@ class SddcClient(object):
 
     def list_supported_skus(self, compartment_id, **kwargs):
         """
-        Lists supported SKUs. Oracle Cloud Infrastructure VMware Solution supports the following billing interval SKUs:
-        HOUR, MONTH, ONE_YEAR, and THREE_YEARS.
+        Lists supported SKUs.
 
 
         :param str compartment_id: (required)

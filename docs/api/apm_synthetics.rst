@@ -32,6 +32,7 @@ Apm Synthetics
     oci.apm_synthetics.models.MonitorScriptParameterInfo
     oci.apm_synthetics.models.MonitorStatusCountMap
     oci.apm_synthetics.models.MonitorSummary
+    oci.apm_synthetics.models.NetworkConfiguration
     oci.apm_synthetics.models.PublicVantagePointCollection
     oci.apm_synthetics.models.PublicVantagePointSummary
     oci.apm_synthetics.models.RequestAuthenticationDetails

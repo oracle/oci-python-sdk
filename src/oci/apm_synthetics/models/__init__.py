@@ -18,6 +18,7 @@ from .monitor_script_parameter import MonitorScriptParameter
 from .monitor_script_parameter_info import MonitorScriptParameterInfo
 from .monitor_status_count_map import MonitorStatusCountMap
 from .monitor_summary import MonitorSummary
+from .network_configuration import NetworkConfiguration
 from .public_vantage_point_collection import PublicVantagePointCollection
 from .public_vantage_point_summary import PublicVantagePointSummary
 from .request_authentication_details import RequestAuthenticationDetails
@@ -51,6 +52,7 @@ apm_synthetics_type_mapping = {
     "MonitorScriptParameterInfo": MonitorScriptParameterInfo,
     "MonitorStatusCountMap": MonitorStatusCountMap,
     "MonitorSummary": MonitorSummary,
+    "NetworkConfiguration": NetworkConfiguration,
     "PublicVantagePointCollection": PublicVantagePointCollection,
     "PublicVantagePointSummary": PublicVantagePointSummary,
     "RequestAuthenticationDetails": RequestAuthenticationDetails,
