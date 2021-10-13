@@ -12,6 +12,8 @@ from oci._vendor import requests
 import oci.retry
 import oci.signer
 import threading
+import logging
+import pprint
 
 
 class X509FederationClient(object):
@@ -66,6 +68,10 @@ class X509FederationClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool log_requests: (optional)
+        log_request if set to True, will log the request url and response data when retrieving
+        the token from the federation endpoint.
         """
 
         kwarg_keys = kwargs.keys()
@@ -89,6 +95,14 @@ class X509FederationClient(object):
         self.purpose = None
         if 'purpose' in kwargs and kwargs['purpose'] is not None:
             self.purpose = kwargs['purpose']
+
+        self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
+        self.logger.addHandler(logging.NullHandler())
+        if kwargs.get('log_requests'):
+            self.logger.disabled = False
+            self.logger.setLevel(logging.DEBUG)
+        else:
+            self.logger.disabled = True
 
         if 'intermediate_certificate_retrievers' in kwargs and kwargs['intermediate_certificate_retrievers']:
             self.intermediate_certificate_retrievers = kwargs['intermediate_certificate_retrievers']
@@ -155,7 +169,11 @@ class X509FederationClient(object):
         fingerprint = ":".join("{:02X}".format(ch) for ch in bytearray(certificate.fingerprint(SHA1())))
         signer = AuthTokenRequestSigner(self.tenancy_id, fingerprint, self.leaf_certificate_retriever)
 
+        self.logger.debug("Requesting token from : %s " % (self.federation_endpoint))
         response = self.requests_session.post(self.federation_endpoint, json=request_payload, auth=signer, verify=self.cert_bundle_verify, timeout=(10, 60))
+        self.logger.debug("Receiving token response......\n{}\n".format(pprint.pformat(
+            {"status_code": response.status_code, "url": response.url, "header": dict(response.headers.items()),
+                "reason": response.reason}, indent=2)))
 
         parsed_response = None
         try:

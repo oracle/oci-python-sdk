@@ -11,6 +11,7 @@ from oci._vendor import requests
 from oci._vendor.requests.exceptions import HTTPError
 
 import oci.regions
+import logging
 
 
 class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTokenSigner):
@@ -51,6 +52,11 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
         To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+    :param bool log_requests: (optional)
+        log_request if set to True, will log the request url and response data when retrieving
+        the certificate & corresponding private key (if there is one defined for this retriever) from UrlBasedCertificateRetriever,
+        region, federation endpoint, and the response for receiving the token from the federation endpoint
     """
 
     METADATA_URL_BASE = 'http://169.254.169.254/opc/v2'
@@ -61,12 +67,21 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
     METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
 
     def __init__(self, **kwargs):
+        self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
+        self.logger.addHandler(logging.NullHandler())
+        if kwargs.get('log_requests'):
+            self.logger.disabled = False
+            self.logger.setLevel(logging.DEBUG)
+        else:
+            self.logger.disabled = True
+
         try:
             self.leaf_certificate_retriever = UrlBasedCertificateRetriever(
                 certificate_url=self.LEAF_CERTIFICATE_URL,
                 private_key_url=self.LEAF_CERTIFICATE_PRIVATE_KEY_URL,
                 retry_strategy=INSTANCE_METADATA_URL_CERTIFICATE_RETRIEVER_RETRY_STRATEGY,
-                headers=self.METADATA_AUTH_HEADERS)
+                headers=self.METADATA_AUTH_HEADERS,
+                log_requests=kwargs.get('log_requests'))
         except HTTPError as e:
             if e.response.status_code == 404:
                 InstancePrincipalsSecurityTokenSigner.METADATA_URL_BASE = 'http://169.254.169.254/opc/v1'
@@ -95,6 +110,8 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         else:
             federation_endpoint = '{}/v1/x509'.format(oci.regions.endpoint_for('auth', self.region))
 
+        self.logger.debug("federation endpoint is set to : %s " % (federation_endpoint))
+
         federation_client = X509FederationClient(
             federation_endpoint=federation_endpoint,
             tenancy_id=self.tenancy_id,
@@ -103,7 +120,8 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
             intermediate_certificate_retrievers=[self.intermediate_certificate_retriever],
             cert_bundle_verify=kwargs.get('federation_client_cert_bundle_verify', None),
             retry_strategy=kwargs.get('federation_client_retry_strategy', None),
-            purpose=kwargs.get('purpose', None)
+            purpose=kwargs.get('purpose', None),
+            log_requests=kwargs.get('log_requests')
         )
         if 'generic_headers' in kwargs:
             generic_headers = kwargs['generic_headers']
@@ -115,6 +133,7 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         if hasattr(self, 'region'):
             return self.region
 
+        self.logger.debug("Requesting region information from : %s " % (self.GET_REGION_URL))
         response = requests.get(self.GET_REGION_URL, timeout=(10, 60), headers=self.METADATA_AUTH_HEADERS)
         region_raw = response.text.strip().lower()
 
@@ -124,4 +143,5 @@ class InstancePrincipalsSecurityTokenSigner(X509FederationClientBasedSecurityTok
         else:
             self.region = region_raw
 
+        self.logger.debug("Region is set to : %s " % (self.region))
         return self.region
