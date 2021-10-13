@@ -164,13 +164,9 @@ def test_wait_time_exceeded(identity, config):
     response = identity.get_user(user_id)
     assert description == response.data.description
 
-    start_time = time.time()
     with pytest.raises(oci.exceptions.MaximumWaitTimeExceeded):
         # Wait on a property that will not change until we time out.
         oci.wait_until(identity, response, 'name', 'test', max_wait_seconds=2)
-
-    total_time = time.time() - start_time
-    assert 1 < total_time < 4
 
     # clean up
     identity.delete_user(user_id)
