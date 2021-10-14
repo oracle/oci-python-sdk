@@ -27,7 +27,7 @@ else:
     from . import {spec_names}
 
     __all__ = [
-        "BaseClient", "Error", "Request", "Response", "Signer", "config", "constants", "decorators", "exceptions", "regions", "wait_until", "pagination", "auth", "retry", "fips",
+        "BaseClient", "Error", "Request", "Response", "Signer", "config", "constants", "decorators", "exceptions", "regions", "wait_until", "pagination", "auth", "retry", "fips", "circuit_breaker",
         {quoted_spec_names}
     ]
 """

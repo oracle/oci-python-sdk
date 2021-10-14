@@ -127,3 +127,32 @@ def test_sanitize_headers_for_requests(config):
     assert isinstance(dummy_headers["array"], list)
     assert isinstance(dummy_headers["array"][0], six.integer_types)
     assert isinstance(dummy_headers["NoneHeader"], type(None))
+
+
+def test_get_preferred_retry_strategy(config):
+    # Default case
+    client = oci.identity.IdentityClient(config)
+
+    retry_strategy = client.base_client.get_preferred_retry_strategy(operation_retry_strategy=None,
+                                                                     client_retry_strategy=None)
+    assert retry_strategy is None
+
+    # Set global Retry strategy
+    oci.retry.GLOBAL_RETRY_STRATEGY = oci.retry.RetryStrategyBuilder(
+        backoff_type=oci.retry.BACKOFF_FULL_JITTER_VALUE).get_retry_strategy()
+    retry_strategy = client.base_client.get_preferred_retry_strategy(operation_retry_strategy=None,
+                                                                     client_retry_strategy=None)
+    assert isinstance(retry_strategy, oci.retry.ExponentialBackoffWithFullJitterRetryStrategy)
+
+    # Set Client retry strategy
+    client_retry_strategy = oci.retry.RetryStrategyBuilder(backoff_type=oci.retry.BACKOFF_EQUAL_JITTER_VALUE).get_retry_strategy()
+    retry_strategy = client.base_client.get_preferred_retry_strategy(operation_retry_strategy=None,
+                                                                     client_retry_strategy=client_retry_strategy)
+    assert isinstance(retry_strategy, oci.retry.ExponentialBackoffWithEqualJitterRetryStrategy)
+
+    # Set operation level retry strategy
+    operation_retry_strategy = oci.retry.RetryStrategyBuilder(
+        backoff_type=oci.retry.BACKOFF_FULL_JITTER_EQUAL_ON_THROTTLE_VALUE).get_retry_strategy()
+    retry_strategy = client.base_client.get_preferred_retry_strategy(operation_retry_strategy=operation_retry_strategy,
+                                                                     client_retry_strategy=client_retry_strategy)
+    assert isinstance(retry_strategy, oci.retry.ExponentialBackoffWithFullJitterEqualForThrottlesRetryStrategy)

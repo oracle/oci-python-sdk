@@ -62,3 +62,14 @@ class DummyBaseClient(object):
         self.query_params = kwargs.get('query_params')
         self.header_params = kwargs.get('header_params')
         return self
+
+    def add_opc_retry_token_if_needed(self, *args, **kwargs):
+        return self
+
+    @staticmethod
+    def get_preferred_retry_strategy(operation_retry_strategy, client_retry_strategy):
+        return None
+
+    @staticmethod
+    def add_opc_client_retries_header(*args, **kwargs):
+        return None

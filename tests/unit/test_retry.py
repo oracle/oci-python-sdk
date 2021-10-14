@@ -23,11 +23,11 @@ import tests.util
 
 def test_limit_retry_checker():
     checker = oci.retry.retry_checkers.LimitBasedRetryChecker()
-    assert 5 == checker.max_attempts  # Should default to 5
+    assert 8 == checker.max_attempts  # Should default to 5
 
     assert checker.should_retry(current_attempt=1)  # retry if we failed the first attempt
     assert checker.should_retry(current_attempt=4)  # since we have made 4 attempts, we're allowed one more
-    assert not checker.should_retry(current_attempt=5)  # we made 5 tries and couldn't do it, no more are allowed
+    assert not checker.should_retry(current_attempt=8)  # we made 5 tries and couldn't do it, no more are allowed
 
     checker = oci.retry.retry_checkers.LimitBasedRetryChecker(max_attempts=1)
     assert not checker.should_retry(current_attempt=1)  # we are only allowed 1 attempt, so no more are allowed
@@ -74,7 +74,7 @@ def test_service_error_checker_timeouts():
 def test_total_time_limit_exceeded_retry_checker():
     checker = oci.retry.retry_checkers.TotalTimeExceededRetryChecker()
     assert checker.should_retry(total_time_elapsed=299)
-    assert not checker.should_retry(total_time_elapsed=300)
+    assert not checker.should_retry(total_time_elapsed=600)
 
     checker = oci.retry.retry_checkers.TotalTimeExceededRetryChecker(time_limit_seconds=20)
     assert checker.should_retry(total_time_elapsed=19)
@@ -89,10 +89,10 @@ def test_checker_container():
     ]
     checker_container = oci.retry.retry_checkers.RetryCheckerContainer(checkers=checkers)
 
-    assert not checker_container.should_retry(exception=RequestsConnectionError(), current_attempt=7)  # limit failed, service error passed
+    assert not checker_container.should_retry(exception=RequestsConnectionError(), current_attempt=8)  # limit failed, service error passed
     # This is inside a try block because ConnectionError exists in Python 3 and not in Python 2
     try:
-        assert not checker_container.should_retry(exception=ConnectionError(), current_attempt=7)  # limit failed, service error passed
+        assert not checker_container.should_retry(exception=ConnectionError(), current_attempt=8)  # limit failed, service error passed
     except NameError:
         pass
     assert not checker_container.should_retry(exception=RuntimeError(), current_attempt=3)  # limit passed, service error failed
@@ -128,7 +128,7 @@ def test_retry_strategy_builder():
     retrying_call.return_sucess_on_call_number = 10
     with pytest.raises(oci.exceptions.ServiceError) as e:
         retry_strategy.make_retrying_call(retrying_call.do_call)
-    assert retrying_call.current_calls == 5  # we should have failed out after we hit the limit as per the retry strategy
+    assert retrying_call.current_calls == 8  # we should have failed out after we hit the limit as per the retry strategy
     assert e.value.status == 502
     assert e.value.code == 'SomeCode'
 
@@ -138,9 +138,9 @@ def test_retry_strategy_builder():
     assert retrying_call.current_calls == 4
 
     retrying_call.reset()
-    retrying_call.return_sucess_on_call_number = 5  # Boundary for the limit check
+    retrying_call.return_sucess_on_call_number = 8  # Boundary for the limit check
     assert retry_strategy.make_retrying_call(retrying_call.do_call)
-    assert retrying_call.current_calls == 5
+    assert retrying_call.current_calls == 8
 
     retrying_call.reset()
     retrying_call.exception_to_throw = oci.exceptions.ServiceError(404, 'NotFound', {}, None)
@@ -153,7 +153,7 @@ def test_retry_strategy_builder():
     retrying_call.reset()
     retrying_call.exception_to_throw = oci.exceptions.ServiceError(429, 'NotFound', {}, None)
     assert retry_strategy.make_retrying_call(retrying_call.do_call)
-    assert retrying_call.current_calls == 5
+    assert retrying_call.current_calls == 8
 
 
 def test_retry_strategy_none_retry_strategy():
@@ -185,9 +185,9 @@ def test_retry_strategy_builder_with_total_elapsed_time():
 
 def test_retry_strategy_builder_different_types():
     builder = oci.retry.RetryStrategyBuilder()
-    assert isinstance(builder.get_retry_strategy(), oci.retry.NoneRetryStrategy)
+    assert isinstance(builder.get_retry_strategy(), oci.retry.ExponentialBackOffWithDecorrelatedJitterRetryStrategy)
 
-    assert isinstance(oci.retry.DEFAULT_RETRY_STRATEGY, oci.retry.ExponentialBackoffWithFullJitterEqualForThrottlesRetryStrategy)
+    assert isinstance(oci.retry.DEFAULT_RETRY_STRATEGY, oci.retry.ExponentialBackOffWithDecorrelatedJitterRetryStrategy)
 
     builder.add_max_attempts()
 

@@ -11,6 +11,7 @@ This section describes SDK-specific behaviors:
 * :doc:`Calculating stream content length </sdk_behaviors/calculate_content_length>`
 * :doc:`Signing bodies </sdk_behaviors/signing_bodies>`
 * :doc:`Enable Selective Service Imports </sdk_behaviors/enable_selective_service_imports>`
+* :doc:`Circuit Breakers </sdk_behaviors/circuit_breakers>`
 
 .. toctree::
     :hidden:
@@ -23,3 +24,4 @@ This section describes SDK-specific behaviors:
     calculate_content_length
     signing_bodies
     enable_selective_service_imports
+    circuit_breakers

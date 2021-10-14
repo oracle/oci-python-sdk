@@ -63,6 +63,9 @@ def test_client_level_retry_strategy(config):
         def make_retrying_call(self, func_ref, *func_args, **func_kwargs):
             raise RuntimeError('Used ThrowRetryStrategy')
 
+        def add_circuit_breaker_callback(self, circuit_breaker_callback):
+            pass
+
     client = oci.identity.IdentityClient(config, retry_strategy=ThrowRetryStrategy())
     client.base_client.endpoint = 'https://fakeendpoint.oracle'
 
