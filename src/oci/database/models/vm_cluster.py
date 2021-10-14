@@ -142,6 +142,10 @@ class VmCluster(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type license_model: str
 
+        :param db_servers:
+            The value to assign to the db_servers property of this VmCluster.
+        :type db_servers: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this VmCluster.
         :type freeform_tags: dict(str, str)
@@ -173,6 +177,7 @@ class VmCluster(object):
             'system_version': 'str',
             'ssh_public_keys': 'list[str]',
             'license_model': 'str',
+            'db_servers': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -199,6 +204,7 @@ class VmCluster(object):
             'system_version': 'systemVersion',
             'ssh_public_keys': 'sshPublicKeys',
             'license_model': 'licenseModel',
+            'db_servers': 'dbServers',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -224,6 +230,7 @@ class VmCluster(object):
         self._system_version = None
         self._ssh_public_keys = None
         self._license_model = None
+        self._db_servers = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -766,6 +773,30 @@ class VmCluster(object):
         if not value_allowed_none_or_none_sentinel(license_model, allowed_values):
             license_model = 'UNKNOWN_ENUM_VALUE'
         self._license_model = license_model
+
+    @property
+    def db_servers(self):
+        """
+        Gets the db_servers of this VmCluster.
+        The list of Db server.
+
+
+        :return: The db_servers of this VmCluster.
+        :rtype: list[str]
+        """
+        return self._db_servers
+
+    @db_servers.setter
+    def db_servers(self, db_servers):
+        """
+        Sets the db_servers of this VmCluster.
+        The list of Db server.
+
+
+        :param db_servers: The db_servers of this VmCluster.
+        :type: list[str]
+        """
+        self._db_servers = db_servers
 
     @property
     def freeform_tags(self):

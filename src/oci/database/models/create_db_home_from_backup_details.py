@@ -24,6 +24,10 @@ class CreateDbHomeFromBackupDetails(object):
             The value to assign to the display_name property of this CreateDbHomeFromBackupDetails.
         :type display_name: str
 
+        :param database_software_image_id:
+            The value to assign to the database_software_image_id property of this CreateDbHomeFromBackupDetails.
+        :type database_software_image_id: str
+
         :param database:
             The value to assign to the database property of this CreateDbHomeFromBackupDetails.
         :type database: oci.database.models.CreateDatabaseFromBackupDetails
@@ -39,6 +43,7 @@ class CreateDbHomeFromBackupDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'database_software_image_id': 'str',
             'database': 'CreateDatabaseFromBackupDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -46,12 +51,14 @@ class CreateDbHomeFromBackupDetails(object):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'database_software_image_id': 'databaseSoftwareImageId',
             'database': 'database',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
+        self._database_software_image_id = None
         self._database = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -79,6 +86,34 @@ class CreateDbHomeFromBackupDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def database_software_image_id(self):
+        """
+        Gets the database_software_image_id of this CreateDbHomeFromBackupDetails.
+        The database software image `OCID`__ of the image to be used to restore a database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The database_software_image_id of this CreateDbHomeFromBackupDetails.
+        :rtype: str
+        """
+        return self._database_software_image_id
+
+    @database_software_image_id.setter
+    def database_software_image_id(self, database_software_image_id):
+        """
+        Sets the database_software_image_id of this CreateDbHomeFromBackupDetails.
+        The database software image `OCID`__ of the image to be used to restore a database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param database_software_image_id: The database_software_image_id of this CreateDbHomeFromBackupDetails.
+        :type: str
+        """
+        self._database_software_image_id = database_software_image_id
 
     @property
     def database(self):

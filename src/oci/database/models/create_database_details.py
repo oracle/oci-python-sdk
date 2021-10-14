@@ -77,6 +77,10 @@ class CreateDatabaseDetails(object):
             The value to assign to the defined_tags property of this CreateDatabaseDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param sid_prefix:
+            The value to assign to the sid_prefix property of this CreateDatabaseDetails.
+        :type sid_prefix: str
+
         """
         self.swagger_types = {
             'db_name': 'str',
@@ -90,7 +94,8 @@ class CreateDatabaseDetails(object):
             'db_workload': 'str',
             'db_backup_config': 'DbBackupConfig',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'sid_prefix': 'str'
         }
 
         self.attribute_map = {
@@ -105,7 +110,8 @@ class CreateDatabaseDetails(object):
             'db_workload': 'dbWorkload',
             'db_backup_config': 'dbBackupConfig',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'sid_prefix': 'sidPrefix'
         }
 
         self._db_name = None
@@ -120,6 +126,7 @@ class CreateDatabaseDetails(object):
         self._db_backup_config = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._sid_prefix = None
 
     @property
     def db_name(self):
@@ -438,6 +445,30 @@ class CreateDatabaseDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def sid_prefix(self):
+        """
+        Gets the sid_prefix of this CreateDatabaseDetails.
+        Specifies a prefix for the `Oracle SID` of the database to be created.
+
+
+        :return: The sid_prefix of this CreateDatabaseDetails.
+        :rtype: str
+        """
+        return self._sid_prefix
+
+    @sid_prefix.setter
+    def sid_prefix(self, sid_prefix):
+        """
+        Sets the sid_prefix of this CreateDatabaseDetails.
+        Specifies a prefix for the `Oracle SID` of the database to be created.
+
+
+        :param sid_prefix: The sid_prefix of this CreateDatabaseDetails.
+        :type: str
+        """
+        self._sid_prefix = sid_prefix
 
     def __repr__(self):
         return formatted_flat_dict(self)

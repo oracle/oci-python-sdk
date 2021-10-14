@@ -34,6 +34,10 @@ class Database(object):
     LIFECYCLE_STATE_UPGRADING = "UPGRADING"
 
     #: A constant which can be used with the lifecycle_state property of a Database.
+    #: This constant has a value of "CONVERTING"
+    LIFECYCLE_STATE_CONVERTING = "CONVERTING"
+
+    #: A constant which can be used with the lifecycle_state property of a Database.
     #: This constant has a value of "TERMINATING"
     LIFECYCLE_STATE_TERMINATING = "TERMINATING"
 
@@ -104,7 +108,7 @@ class Database(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Database.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "UPGRADING", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "UPGRADING", "CONVERTING", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -144,9 +148,17 @@ class Database(object):
             The value to assign to the database_software_image_id property of this Database.
         :type database_software_image_id: str
 
+        :param is_cdb:
+            The value to assign to the is_cdb property of this Database.
+        :type is_cdb: bool
+
         :param database_management_config:
             The value to assign to the database_management_config property of this Database.
         :type database_management_config: oci.database.models.CloudDatabaseManagementConfig
+
+        :param sid_prefix:
+            The value to assign to the sid_prefix property of this Database.
+        :type sid_prefix: str
 
         """
         self.swagger_types = {
@@ -172,7 +184,9 @@ class Database(object):
             'kms_key_id': 'str',
             'source_database_point_in_time_recovery_timestamp': 'datetime',
             'database_software_image_id': 'str',
-            'database_management_config': 'CloudDatabaseManagementConfig'
+            'is_cdb': 'bool',
+            'database_management_config': 'CloudDatabaseManagementConfig',
+            'sid_prefix': 'str'
         }
 
         self.attribute_map = {
@@ -198,7 +212,9 @@ class Database(object):
             'kms_key_id': 'kmsKeyId',
             'source_database_point_in_time_recovery_timestamp': 'sourceDatabasePointInTimeRecoveryTimestamp',
             'database_software_image_id': 'databaseSoftwareImageId',
-            'database_management_config': 'databaseManagementConfig'
+            'is_cdb': 'isCdb',
+            'database_management_config': 'databaseManagementConfig',
+            'sid_prefix': 'sidPrefix'
         }
 
         self._id = None
@@ -223,7 +239,9 @@ class Database(object):
         self._kms_key_id = None
         self._source_database_point_in_time_recovery_timestamp = None
         self._database_software_image_id = None
+        self._is_cdb = None
         self._database_management_config = None
+        self._sid_prefix = None
 
     @property
     def id(self):
@@ -539,7 +557,7 @@ class Database(object):
         **[Required]** Gets the lifecycle_state of this Database.
         The current state of the database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "UPGRADING", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "UPGRADING", "CONVERTING", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -558,7 +576,7 @@ class Database(object):
         :param lifecycle_state: The lifecycle_state of this Database.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "UPGRADING", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "BACKUP_IN_PROGRESS", "UPGRADING", "CONVERTING", "TERMINATING", "TERMINATED", "RESTORE_FAILED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -800,6 +818,30 @@ class Database(object):
         self._database_software_image_id = database_software_image_id
 
     @property
+    def is_cdb(self):
+        """
+        Gets the is_cdb of this Database.
+        True if the database is a container database.
+
+
+        :return: The is_cdb of this Database.
+        :rtype: bool
+        """
+        return self._is_cdb
+
+    @is_cdb.setter
+    def is_cdb(self, is_cdb):
+        """
+        Sets the is_cdb of this Database.
+        True if the database is a container database.
+
+
+        :param is_cdb: The is_cdb of this Database.
+        :type: bool
+        """
+        self._is_cdb = is_cdb
+
+    @property
     def database_management_config(self):
         """
         Gets the database_management_config of this Database.
@@ -818,6 +860,30 @@ class Database(object):
         :type: oci.database.models.CloudDatabaseManagementConfig
         """
         self._database_management_config = database_management_config
+
+    @property
+    def sid_prefix(self):
+        """
+        Gets the sid_prefix of this Database.
+        Specifies a prefix for the `Oracle SID` of the database to be created.
+
+
+        :return: The sid_prefix of this Database.
+        :rtype: str
+        """
+        return self._sid_prefix
+
+    @sid_prefix.setter
+    def sid_prefix(self, sid_prefix):
+        """
+        Sets the sid_prefix of this Database.
+        Specifies a prefix for the `Oracle SID` of the database to be created.
+
+
+        :param sid_prefix: The sid_prefix of this Database.
+        :type: str
+        """
+        self._sid_prefix = sid_prefix
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -1,0 +1,11 @@
+PdbConversionHistoryEntrySummary
+================================
+
+.. currentmodule:: oci.database.models
+
+.. autoclass:: PdbConversionHistoryEntrySummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
