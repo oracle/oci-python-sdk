@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.48.0 - 2021-10-19
+====================
+
+Added
+-----
+* Support for creating database systems from backups with database software images in the Database service
+* Support for optionally providing a SID prefix during Exadata database creation in the Database service
+* Support for node subsetting on VM clusters in the Database service
+* Support for non-CDB to PDB conversion in the Database service
+* Support for default homepages, unprocessed data buckets, and parsing geostats in the Logging Analytics service
+* Support for Circuit Breakers. Please refer `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/circuit_breakers.html>`__ to learn more.
+* Support for enabling/disabling Retries globally for operations using Default Retry Strategy. Please refer `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html#overriding-the-retry-behavior-at-global-sdk-level>`__ for more info.
+
+Breaking
+--------
+* Default Retry strategy will now retry operations for max 8 attempts and have a timeout of 600 seconds before failing. The strategy will now use `De-Correlated jitter <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html#de-correlated-jitter>`__ as the default delay strategy.
+
+====================
 2.47.1 - 2021-10-12
 ====================
 

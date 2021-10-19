@@ -37,7 +37,7 @@ class ResourcePrincipalsFederationSigner(SecurityTokenSigner):
         else:
             raise ValueError("resource_principal_token_endpoint must be provided")
 
-        self.instance_principal_signer = InstancePrincipalsSecurityTokenSigner()
+        self.instance_principal_signer = InstancePrincipalsSecurityTokenSigner(log_requests=log_requests)
         self.session_key_supplier = SessionKeySupplier()
         self.region = self.instance_principal_signer.initialize_and_return_region()
         self.tenancy_id = self.instance_principal_signer.tenancy_id

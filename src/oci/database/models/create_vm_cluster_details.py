@@ -84,6 +84,10 @@ class CreateVmClusterDetails(object):
             The value to assign to the gi_version property of this CreateVmClusterDetails.
         :type gi_version: str
 
+        :param db_servers:
+            The value to assign to the db_servers property of this CreateVmClusterDetails.
+        :type db_servers: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateVmClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -108,6 +112,7 @@ class CreateVmClusterDetails(object):
             'is_local_backup_enabled': 'bool',
             'time_zone': 'str',
             'gi_version': 'str',
+            'db_servers': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -127,6 +132,7 @@ class CreateVmClusterDetails(object):
             'is_local_backup_enabled': 'isLocalBackupEnabled',
             'time_zone': 'timeZone',
             'gi_version': 'giVersion',
+            'db_servers': 'dbServers',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -145,6 +151,7 @@ class CreateVmClusterDetails(object):
         self._is_local_backup_enabled = None
         self._time_zone = None
         self._gi_version = None
+        self._db_servers = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -507,6 +514,30 @@ class CreateVmClusterDetails(object):
         :type: str
         """
         self._gi_version = gi_version
+
+    @property
+    def db_servers(self):
+        """
+        Gets the db_servers of this CreateVmClusterDetails.
+        The list of Db server.
+
+
+        :return: The db_servers of this CreateVmClusterDetails.
+        :rtype: list[str]
+        """
+        return self._db_servers
+
+    @db_servers.setter
+    def db_servers(self, db_servers):
+        """
+        Sets the db_servers of this CreateVmClusterDetails.
+        The list of Db server.
+
+
+        :param db_servers: The db_servers of this CreateVmClusterDetails.
+        :type: list[str]
+        """
+        self._db_servers = db_servers
 
     @property
     def freeform_tags(self):

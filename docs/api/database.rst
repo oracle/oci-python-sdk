@@ -19,6 +19,7 @@ Database
     :template: autosummary/model_class.rst
 
     oci.database.models.ActivateExadataInfrastructureDetails
+    oci.database.models.AddVirtualMachineToVmClusterDetails
     oci.database.models.AssociatedDatabaseDetails
     oci.database.models.AutomatedMountDetails
     oci.database.models.AutonomousContainerDatabase
@@ -72,6 +73,8 @@ Database
     oci.database.models.ConfigureAutonomousDatabaseVaultKeyDetails
     oci.database.models.ConsoleConnection
     oci.database.models.ConsoleConnectionSummary
+    oci.database.models.ConvertToPdbDetails
+    oci.database.models.ConvertToPdbTargetBase
     oci.database.models.CreateAutonomousContainerDatabaseDetails
     oci.database.models.CreateAutonomousDatabaseBackupDetails
     oci.database.models.CreateAutonomousDatabaseBase
@@ -152,6 +155,9 @@ Database
     oci.database.models.DbIormConfigUpdateDetail
     oci.database.models.DbNode
     oci.database.models.DbNodeSummary
+    oci.database.models.DbServer
+    oci.database.models.DbServerDetails
+    oci.database.models.DbServerSummary
     oci.database.models.DbSystem
     oci.database.models.DbSystemOptions
     oci.database.models.DbSystemShapeSummary
@@ -219,6 +225,9 @@ Database
     oci.database.models.PatchHistoryEntry
     oci.database.models.PatchHistoryEntrySummary
     oci.database.models.PatchSummary
+    oci.database.models.PdbConversionHistoryEntry
+    oci.database.models.PdbConversionHistoryEntrySummary
+    oci.database.models.PdbConversionToNewDatabaseDetails
     oci.database.models.PeerAutonomousContainerDatabaseBackupConfig
     oci.database.models.PluggableDatabase
     oci.database.models.PluggableDatabaseConnectionStrings
@@ -226,6 +235,7 @@ Database
     oci.database.models.RegisterAutonomousDatabaseDataSafeDetails
     oci.database.models.ReinstateDataGuardAssociationDetails
     oci.database.models.RemoteClonePluggableDatabaseDetails
+    oci.database.models.RemoveVirtualMachineFromVmClusterDetails
     oci.database.models.RestoreAutonomousDatabaseDetails
     oci.database.models.RestoreDatabaseDetails
     oci.database.models.ScanDetails

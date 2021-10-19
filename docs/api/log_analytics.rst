@@ -111,6 +111,7 @@ Log Analytics
     oci.log_analytics.models.FilterOutput
     oci.log_analytics.models.FixedFrequencySchedule
     oci.log_analytics.models.FunctionField
+    oci.log_analytics.models.GeoStatsCommandDescriptor
     oci.log_analytics.models.HeadCommandDescriptor
     oci.log_analytics.models.HighlightCommandDescriptor
     oci.log_analytics.models.HighlightGroupsCommandDescriptor
@@ -188,6 +189,9 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsParserMetaPluginParameter
     oci.log_analytics.models.LogAnalyticsParserSummary
     oci.log_analytics.models.LogAnalyticsPatternFilter
+    oci.log_analytics.models.LogAnalyticsPreference
+    oci.log_analytics.models.LogAnalyticsPreferenceCollection
+    oci.log_analytics.models.LogAnalyticsPreferenceDetails
     oci.log_analytics.models.LogAnalyticsSource
     oci.log_analytics.models.LogAnalyticsSourceCollection
     oci.log_analytics.models.LogAnalyticsSourceDataFilter
@@ -278,6 +282,7 @@ Log Analytics
     oci.log_analytics.models.TopCommandDescriptor
     oci.log_analytics.models.TrendColumn
     oci.log_analytics.models.UiParserTestMetadata
+    oci.log_analytics.models.UnprocessedDataBucket
     oci.log_analytics.models.UpdateLogAnalyticsEmBridgeDetails
     oci.log_analytics.models.UpdateLogAnalyticsEntityDetails
     oci.log_analytics.models.UpdateLogAnalyticsEntityTypeDetails

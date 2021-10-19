@@ -72,13 +72,23 @@ class CreateDataGuardAssociationDetails(object):
             The value to assign to the creation_type property of this CreateDataGuardAssociationDetails.
         :type creation_type: str
 
+        :param peer_db_unique_name:
+            The value to assign to the peer_db_unique_name property of this CreateDataGuardAssociationDetails.
+        :type peer_db_unique_name: str
+
+        :param peer_sid_prefix:
+            The value to assign to the peer_sid_prefix property of this CreateDataGuardAssociationDetails.
+        :type peer_sid_prefix: str
+
         """
         self.swagger_types = {
             'database_software_image_id': 'str',
             'database_admin_password': 'str',
             'protection_mode': 'str',
             'transport_type': 'str',
-            'creation_type': 'str'
+            'creation_type': 'str',
+            'peer_db_unique_name': 'str',
+            'peer_sid_prefix': 'str'
         }
 
         self.attribute_map = {
@@ -86,7 +96,9 @@ class CreateDataGuardAssociationDetails(object):
             'database_admin_password': 'databaseAdminPassword',
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
-            'creation_type': 'creationType'
+            'creation_type': 'creationType',
+            'peer_db_unique_name': 'peerDbUniqueName',
+            'peer_sid_prefix': 'peerSidPrefix'
         }
 
         self._database_software_image_id = None
@@ -94,6 +106,8 @@ class CreateDataGuardAssociationDetails(object):
         self._protection_mode = None
         self._transport_type = None
         self._creation_type = None
+        self._peer_db_unique_name = None
+        self._peer_sid_prefix = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -313,6 +327,54 @@ class CreateDataGuardAssociationDetails(object):
         :type: str
         """
         self._creation_type = creation_type
+
+    @property
+    def peer_db_unique_name(self):
+        """
+        Gets the peer_db_unique_name of this CreateDataGuardAssociationDetails.
+        Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+
+
+        :return: The peer_db_unique_name of this CreateDataGuardAssociationDetails.
+        :rtype: str
+        """
+        return self._peer_db_unique_name
+
+    @peer_db_unique_name.setter
+    def peer_db_unique_name(self, peer_db_unique_name):
+        """
+        Sets the peer_db_unique_name of this CreateDataGuardAssociationDetails.
+        Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
+
+
+        :param peer_db_unique_name: The peer_db_unique_name of this CreateDataGuardAssociationDetails.
+        :type: str
+        """
+        self._peer_db_unique_name = peer_db_unique_name
+
+    @property
+    def peer_sid_prefix(self):
+        """
+        Gets the peer_sid_prefix of this CreateDataGuardAssociationDetails.
+        Specifies a prefix for the `Oracle SID` of the database to be created.
+
+
+        :return: The peer_sid_prefix of this CreateDataGuardAssociationDetails.
+        :rtype: str
+        """
+        return self._peer_sid_prefix
+
+    @peer_sid_prefix.setter
+    def peer_sid_prefix(self, peer_sid_prefix):
+        """
+        Sets the peer_sid_prefix of this CreateDataGuardAssociationDetails.
+        Specifies a prefix for the `Oracle SID` of the database to be created.
+
+
+        :param peer_sid_prefix: The peer_sid_prefix of this CreateDataGuardAssociationDetails.
+        :type: str
+        """
+        self._peer_sid_prefix = peer_sid_prefix
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,6 +10,8 @@ import oci.retry
 import os.path
 from oci._vendor import six
 import threading
+import logging
+import pprint
 
 # A retry strategy for use when calling the metadata endpoint on an instance to retrieve certificates. This retry strategy
 # will retry on any exception (the metadata endpoint does not throw errors like an OCI service) up to 5 times or a max
@@ -85,6 +87,10 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
     :param obj retry_strategy: (optional)
         A retry strategy to use when retrieving the certificate and private key from the URLs provided to this class. This should be one of the strategies available in
         the :py:mod:`~oci.retry` module. By default this retriever will not perform any retries.
+
+    :param bool log_requests: (optional)
+        log_request if set to True will log the request url and response data when retrieving
+        the certificate & corresponding private key (if there is one defined for this retriever)
     """
 
     READ_CHUNK_BYTES = 1024 * 1024  # A mebibyte
@@ -99,6 +105,15 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         self.private_key_url = kwargs.get('private_key_url')
         self.passphrase = kwargs.get('passphrase')
         self.retry_strategy = kwargs.get('retry_strategy')
+
+        self.logger = logging.getLogger("{}.{}".format(__name__, id(self)))
+        self.logger.addHandler(logging.NullHandler())
+
+        if kwargs.get('log_requests'):
+            self.logger.disabled = False
+            self.logger.setLevel(logging.DEBUG)
+        else:
+            self.logger.disabled = True
 
         if self.passphrase and isinstance(self.passphrase, six.text_type):
             self.passphrase = self.passphrase.encode('ascii')
@@ -170,7 +185,11 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         import oci.signer
 
         downloaded_certificate = six.BytesIO()
+        self.logger.debug("Requesting certificate from : %s " % (self.cert_url))
         response = self.requests_session.get(self.cert_url, stream=True, timeout=(10, 60))
+        self.logger.debug("Receiving certificate response......\n{}\n".format(pprint.pformat(
+            {"status_code": response.status_code, "url": response.url, "header": dict(response.headers.items()),
+                "reason": response.reason}, indent=2)))
 
         response.raise_for_status()
 
@@ -186,7 +205,12 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
 
         if self.private_key_url:
             downloaded_private_key_raw = six.BytesIO()
+            self.logger.debug("Requesting private key from : %s " % (self.private_key_url))
             response = self.requests_session.get(self.private_key_url, stream=True, timeout=(10, 60))
+
+            self.logger.debug("Receiving private key response......\n{}\n".format(pprint.pformat(
+                {"status_code": response.status_code, "url": response.url, "header": dict(response.headers.items()),
+                    "reason": response.reason}, indent=2)))
 
             response.raise_for_status()
 

@@ -36,6 +36,10 @@ class ServiceError(Exception):
             return None
 
 
+class TransientServiceError(ServiceError):
+    """A transient service error occurred"""
+
+
 class ClientError(Exception):
     """A client-side error occurred.."""
 

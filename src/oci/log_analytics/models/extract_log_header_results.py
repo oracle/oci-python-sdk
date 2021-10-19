@@ -26,19 +26,26 @@ class ExtractLogHeaderResults(object):
             The value to assign to the xml_paths property of this ExtractLogHeaderResults.
         :type xml_paths: list[str]
 
+        :param header_paths:
+            The value to assign to the header_paths property of this ExtractLogHeaderResults.
+        :type header_paths: list[str]
+
         """
         self.swagger_types = {
             'json_paths': 'list[ExtractLogHeaderDetails]',
-            'xml_paths': 'list[str]'
+            'xml_paths': 'list[str]',
+            'header_paths': 'list[str]'
         }
 
         self.attribute_map = {
             'json_paths': 'jsonPaths',
-            'xml_paths': 'xmlPaths'
+            'xml_paths': 'xmlPaths',
+            'header_paths': 'headerPaths'
         }
 
         self._json_paths = None
         self._xml_paths = None
+        self._header_paths = None
 
     @property
     def json_paths(self):
@@ -87,6 +94,30 @@ class ExtractLogHeaderResults(object):
         :type: list[str]
         """
         self._xml_paths = xml_paths
+
+    @property
+    def header_paths(self):
+        """
+        Gets the header_paths of this ExtractLogHeaderResults.
+        The log header values.
+
+
+        :return: The header_paths of this ExtractLogHeaderResults.
+        :rtype: list[str]
+        """
+        return self._header_paths
+
+    @header_paths.setter
+    def header_paths(self, header_paths):
+        """
+        Sets the header_paths of this ExtractLogHeaderResults.
+        The log header values.
+
+
+        :param header_paths: The header_paths of this ExtractLogHeaderResults.
+        :type: list[str]
+        """
+        self._header_paths = header_paths
 
     def __repr__(self):
         return formatted_flat_dict(self)

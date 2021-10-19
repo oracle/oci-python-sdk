@@ -136,6 +136,7 @@ API Reference
 * :doc:`Pagination <pagination>`
 * :doc:`Request and Response <request_and_response>`
 * :doc:`Retry <retry>`
+* :doc:`Circuit Breaker <circuit_breaker>`
 * :doc:`Signing <signing>`
 * :doc:`Upload Manager <upload_manager>`
 * :doc:`Utilities <utilities>`
@@ -229,6 +230,7 @@ API Reference
     waf
     work_requests
     config
+    circuit_breaker
     exceptions
     pagination
     request_and_response
