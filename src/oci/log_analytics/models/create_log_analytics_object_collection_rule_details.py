@@ -87,6 +87,10 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
             The value to assign to the overrides property of this CreateLogAnalyticsObjectCollectionRuleDetails.
         :type overrides: dict(str, list[PropertyOverride])
 
+        :param object_name_filters:
+            The value to assign to the object_name_filters property of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type object_name_filters: list[str]
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateLogAnalyticsObjectCollectionRuleDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -111,6 +115,7 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
             'char_encoding': 'str',
             'is_enabled': 'bool',
             'overrides': 'dict(str, list[PropertyOverride])',
+            'object_name_filters': 'list[str]',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -130,6 +135,7 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
             'char_encoding': 'charEncoding',
             'is_enabled': 'isEnabled',
             'overrides': 'overrides',
+            'object_name_filters': 'objectNameFilters',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -148,6 +154,7 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         self._char_encoding = None
         self._is_enabled = None
         self._overrides = None
+        self._object_name_filters = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -518,6 +525,38 @@ class CreateLogAnalyticsObjectCollectionRuleDetails(object):
         :type: dict(str, list[PropertyOverride])
         """
         self._overrides = overrides
+
+    @property
+    def object_name_filters(self):
+        """
+        Gets the object_name_filters of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        When the filters are provided, only the objects matching the filters are picked up for processing.
+        The matchType supported is exact match and accommodates wildcard \"*\".
+        For more information on filters, see `Event Filters`__.
+
+        __ https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm
+
+
+        :return: The object_name_filters of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :rtype: list[str]
+        """
+        return self._object_name_filters
+
+    @object_name_filters.setter
+    def object_name_filters(self, object_name_filters):
+        """
+        Sets the object_name_filters of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        When the filters are provided, only the objects matching the filters are picked up for processing.
+        The matchType supported is exact match and accommodates wildcard \"*\".
+        For more information on filters, see `Event Filters`__.
+
+        __ https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm
+
+
+        :param object_name_filters: The object_name_filters of this CreateLogAnalyticsObjectCollectionRuleDetails.
+        :type: list[str]
+        """
+        self._object_name_filters = object_name_filters
 
     @property
     def defined_tags(self):

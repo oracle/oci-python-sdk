@@ -6,8 +6,19 @@
 # hit or the exception received from a service call (or the response from the service call if it didn't exception out).
 
 from ..exceptions import ServiceError, RequestException, ConnectTimeout
+from circuitbreaker import CircuitBreakerError
 from oci._vendor.requests.exceptions import Timeout
 from oci._vendor.requests.exceptions import ConnectionError as RequestsConnectionError
+import logging
+import threading
+
+logger = logging.getLogger(__name__)
+
+RETRYABLE_STATUSES_AND_CODES = {
+    -1: [],
+    409: ['IncorrectState'],
+    429: []
+}
 
 
 class RetryCheckerContainer(object):
@@ -80,10 +91,10 @@ class TotalTimeExceededRetryChecker(BaseRetryChecker):
     for scenarios such as "keep retrying for 5 minutes". It is the responsiblity of the caller to track the total time
     elapsed - objects of this class will not track this.
 
-    If not specified, the default time limit is 300 seconds (5 minutes).
+    If not specified, the default time limit is 600 seconds (10 minutes).
     """
 
-    def __init__(self, time_limit_seconds=300, **kwargs):
+    def __init__(self, time_limit_seconds=600, **kwargs):
         super(TotalTimeExceededRetryChecker, self).__init__(**kwargs)
         self.time_limit_seconds = time_limit_seconds
 
@@ -97,11 +108,11 @@ class LimitBasedRetryChecker(BaseRetryChecker):
     It is the responsiblity of the caller to track how many attempts/tries it has done - objects of this
     class will not track this.
 
-    If not specified, the default number of tries allowed is 5. Tries are also assumed to be one-based (i.e. the
+    If not specified, the default number of tries allowed is 8. Tries are also assumed to be one-based (i.e. the
     first attempt/try is 1, the second is 2 etc)
     """
 
-    def __init__(self, max_attempts=5, **kwargs):
+    def __init__(self, max_attempts=8, **kwargs):
         if max_attempts < 1:
             raise ValueError('The max number of attempts must be >= 1, with 1 indicating no retries')
 
@@ -160,6 +171,10 @@ class TimeoutConnectionAndServiceErrorRetryChecker(BaseRetryChecker):
         elif isinstance(exception, RequestException):
             return True
         elif isinstance(exception, ConnectTimeout):
+            return True
+        elif isinstance(exception, CircuitBreakerError):
+            if 'circuit_breaker_callback' in kwargs:
+                threading.Thread(target=kwargs['circuit_breaker_callback'], args=(exception,)).start()
             return True
         elif isinstance(exception, ServiceError):
             if exception.status in self.service_error_retry_config:

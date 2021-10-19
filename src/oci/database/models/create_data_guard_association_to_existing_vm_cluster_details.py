@@ -41,6 +41,14 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
             The value to assign to the creation_type property of this CreateDataGuardAssociationToExistingVmClusterDetails.
         :type creation_type: str
 
+        :param peer_db_unique_name:
+            The value to assign to the peer_db_unique_name property of this CreateDataGuardAssociationToExistingVmClusterDetails.
+        :type peer_db_unique_name: str
+
+        :param peer_sid_prefix:
+            The value to assign to the peer_sid_prefix property of this CreateDataGuardAssociationToExistingVmClusterDetails.
+        :type peer_sid_prefix: str
+
         :param peer_vm_cluster_id:
             The value to assign to the peer_vm_cluster_id property of this CreateDataGuardAssociationToExistingVmClusterDetails.
         :type peer_vm_cluster_id: str
@@ -56,6 +64,8 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
             'protection_mode': 'str',
             'transport_type': 'str',
             'creation_type': 'str',
+            'peer_db_unique_name': 'str',
+            'peer_sid_prefix': 'str',
             'peer_vm_cluster_id': 'str',
             'peer_db_home_id': 'str'
         }
@@ -66,6 +76,8 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
             'creation_type': 'creationType',
+            'peer_db_unique_name': 'peerDbUniqueName',
+            'peer_sid_prefix': 'peerSidPrefix',
             'peer_vm_cluster_id': 'peerVmClusterId',
             'peer_db_home_id': 'peerDbHomeId'
         }
@@ -75,6 +87,8 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
         self._protection_mode = None
         self._transport_type = None
         self._creation_type = None
+        self._peer_db_unique_name = None
+        self._peer_sid_prefix = None
         self._peer_vm_cluster_id = None
         self._peer_db_home_id = None
         self._creation_type = 'ExistingVmCluster'

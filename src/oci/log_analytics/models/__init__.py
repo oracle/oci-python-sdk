@@ -97,6 +97,7 @@ from .filter_details import FilterDetails
 from .filter_output import FilterOutput
 from .fixed_frequency_schedule import FixedFrequencySchedule
 from .function_field import FunctionField
+from .geo_stats_command_descriptor import GeoStatsCommandDescriptor
 from .head_command_descriptor import HeadCommandDescriptor
 from .highlight_command_descriptor import HighlightCommandDescriptor
 from .highlight_groups_command_descriptor import HighlightGroupsCommandDescriptor
@@ -174,6 +175,9 @@ from .log_analytics_parser_meta_plugin_collection import LogAnalyticsParserMetaP
 from .log_analytics_parser_meta_plugin_parameter import LogAnalyticsParserMetaPluginParameter
 from .log_analytics_parser_summary import LogAnalyticsParserSummary
 from .log_analytics_pattern_filter import LogAnalyticsPatternFilter
+from .log_analytics_preference import LogAnalyticsPreference
+from .log_analytics_preference_collection import LogAnalyticsPreferenceCollection
+from .log_analytics_preference_details import LogAnalyticsPreferenceDetails
 from .log_analytics_source import LogAnalyticsSource
 from .log_analytics_source_collection import LogAnalyticsSourceCollection
 from .log_analytics_source_data_filter import LogAnalyticsSourceDataFilter
@@ -264,6 +268,7 @@ from .timezone_collection import TimezoneCollection
 from .top_command_descriptor import TopCommandDescriptor
 from .trend_column import TrendColumn
 from .ui_parser_test_metadata import UiParserTestMetadata
+from .unprocessed_data_bucket import UnprocessedDataBucket
 from .update_log_analytics_em_bridge_details import UpdateLogAnalyticsEmBridgeDetails
 from .update_log_analytics_entity_details import UpdateLogAnalyticsEntityDetails
 from .update_log_analytics_entity_type_details import UpdateLogAnalyticsEntityTypeDetails
@@ -396,6 +401,7 @@ log_analytics_type_mapping = {
     "FilterOutput": FilterOutput,
     "FixedFrequencySchedule": FixedFrequencySchedule,
     "FunctionField": FunctionField,
+    "GeoStatsCommandDescriptor": GeoStatsCommandDescriptor,
     "HeadCommandDescriptor": HeadCommandDescriptor,
     "HighlightCommandDescriptor": HighlightCommandDescriptor,
     "HighlightGroupsCommandDescriptor": HighlightGroupsCommandDescriptor,
@@ -473,6 +479,9 @@ log_analytics_type_mapping = {
     "LogAnalyticsParserMetaPluginParameter": LogAnalyticsParserMetaPluginParameter,
     "LogAnalyticsParserSummary": LogAnalyticsParserSummary,
     "LogAnalyticsPatternFilter": LogAnalyticsPatternFilter,
+    "LogAnalyticsPreference": LogAnalyticsPreference,
+    "LogAnalyticsPreferenceCollection": LogAnalyticsPreferenceCollection,
+    "LogAnalyticsPreferenceDetails": LogAnalyticsPreferenceDetails,
     "LogAnalyticsSource": LogAnalyticsSource,
     "LogAnalyticsSourceCollection": LogAnalyticsSourceCollection,
     "LogAnalyticsSourceDataFilter": LogAnalyticsSourceDataFilter,
@@ -563,6 +572,7 @@ log_analytics_type_mapping = {
     "TopCommandDescriptor": TopCommandDescriptor,
     "TrendColumn": TrendColumn,
     "UiParserTestMetadata": UiParserTestMetadata,
+    "UnprocessedDataBucket": UnprocessedDataBucket,
     "UpdateLogAnalyticsEmBridgeDetails": UpdateLogAnalyticsEmBridgeDetails,
     "UpdateLogAnalyticsEntityDetails": UpdateLogAnalyticsEntityDetails,
     "UpdateLogAnalyticsEntityTypeDetails": UpdateLogAnalyticsEntityTypeDetails,

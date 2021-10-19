@@ -5,6 +5,7 @@
 from __future__ import absolute_import
 
 from .activate_exadata_infrastructure_details import ActivateExadataInfrastructureDetails
+from .add_virtual_machine_to_vm_cluster_details import AddVirtualMachineToVmClusterDetails
 from .associated_database_details import AssociatedDatabaseDetails
 from .automated_mount_details import AutomatedMountDetails
 from .autonomous_container_database import AutonomousContainerDatabase
@@ -58,6 +59,8 @@ from .complete_external_backup_job_details import CompleteExternalBackupJobDetai
 from .configure_autonomous_database_vault_key_details import ConfigureAutonomousDatabaseVaultKeyDetails
 from .console_connection import ConsoleConnection
 from .console_connection_summary import ConsoleConnectionSummary
+from .convert_to_pdb_details import ConvertToPdbDetails
+from .convert_to_pdb_target_base import ConvertToPdbTargetBase
 from .create_autonomous_container_database_details import CreateAutonomousContainerDatabaseDetails
 from .create_autonomous_database_backup_details import CreateAutonomousDatabaseBackupDetails
 from .create_autonomous_database_base import CreateAutonomousDatabaseBase
@@ -138,6 +141,9 @@ from .db_iorm_config import DbIormConfig
 from .db_iorm_config_update_detail import DbIormConfigUpdateDetail
 from .db_node import DbNode
 from .db_node_summary import DbNodeSummary
+from .db_server import DbServer
+from .db_server_details import DbServerDetails
+from .db_server_summary import DbServerSummary
 from .db_system import DbSystem
 from .db_system_options import DbSystemOptions
 from .db_system_shape_summary import DbSystemShapeSummary
@@ -205,6 +211,9 @@ from .patch_details import PatchDetails
 from .patch_history_entry import PatchHistoryEntry
 from .patch_history_entry_summary import PatchHistoryEntrySummary
 from .patch_summary import PatchSummary
+from .pdb_conversion_history_entry import PdbConversionHistoryEntry
+from .pdb_conversion_history_entry_summary import PdbConversionHistoryEntrySummary
+from .pdb_conversion_to_new_database_details import PdbConversionToNewDatabaseDetails
 from .peer_autonomous_container_database_backup_config import PeerAutonomousContainerDatabaseBackupConfig
 from .pluggable_database import PluggableDatabase
 from .pluggable_database_connection_strings import PluggableDatabaseConnectionStrings
@@ -212,6 +221,7 @@ from .pluggable_database_summary import PluggableDatabaseSummary
 from .register_autonomous_database_data_safe_details import RegisterAutonomousDatabaseDataSafeDetails
 from .reinstate_data_guard_association_details import ReinstateDataGuardAssociationDetails
 from .remote_clone_pluggable_database_details import RemoteClonePluggableDatabaseDetails
+from .remove_virtual_machine_from_vm_cluster_details import RemoveVirtualMachineFromVmClusterDetails
 from .restore_autonomous_database_details import RestoreAutonomousDatabaseDetails
 from .restore_database_details import RestoreDatabaseDetails
 from .scan_details import ScanDetails
@@ -264,6 +274,7 @@ from .workload_type import WorkloadType
 # Maps type names to classes for database services.
 database_type_mapping = {
     "ActivateExadataInfrastructureDetails": ActivateExadataInfrastructureDetails,
+    "AddVirtualMachineToVmClusterDetails": AddVirtualMachineToVmClusterDetails,
     "AssociatedDatabaseDetails": AssociatedDatabaseDetails,
     "AutomatedMountDetails": AutomatedMountDetails,
     "AutonomousContainerDatabase": AutonomousContainerDatabase,
@@ -317,6 +328,8 @@ database_type_mapping = {
     "ConfigureAutonomousDatabaseVaultKeyDetails": ConfigureAutonomousDatabaseVaultKeyDetails,
     "ConsoleConnection": ConsoleConnection,
     "ConsoleConnectionSummary": ConsoleConnectionSummary,
+    "ConvertToPdbDetails": ConvertToPdbDetails,
+    "ConvertToPdbTargetBase": ConvertToPdbTargetBase,
     "CreateAutonomousContainerDatabaseDetails": CreateAutonomousContainerDatabaseDetails,
     "CreateAutonomousDatabaseBackupDetails": CreateAutonomousDatabaseBackupDetails,
     "CreateAutonomousDatabaseBase": CreateAutonomousDatabaseBase,
@@ -397,6 +410,9 @@ database_type_mapping = {
     "DbIormConfigUpdateDetail": DbIormConfigUpdateDetail,
     "DbNode": DbNode,
     "DbNodeSummary": DbNodeSummary,
+    "DbServer": DbServer,
+    "DbServerDetails": DbServerDetails,
+    "DbServerSummary": DbServerSummary,
     "DbSystem": DbSystem,
     "DbSystemOptions": DbSystemOptions,
     "DbSystemShapeSummary": DbSystemShapeSummary,
@@ -464,6 +480,9 @@ database_type_mapping = {
     "PatchHistoryEntry": PatchHistoryEntry,
     "PatchHistoryEntrySummary": PatchHistoryEntrySummary,
     "PatchSummary": PatchSummary,
+    "PdbConversionHistoryEntry": PdbConversionHistoryEntry,
+    "PdbConversionHistoryEntrySummary": PdbConversionHistoryEntrySummary,
+    "PdbConversionToNewDatabaseDetails": PdbConversionToNewDatabaseDetails,
     "PeerAutonomousContainerDatabaseBackupConfig": PeerAutonomousContainerDatabaseBackupConfig,
     "PluggableDatabase": PluggableDatabase,
     "PluggableDatabaseConnectionStrings": PluggableDatabaseConnectionStrings,
@@ -471,6 +490,7 @@ database_type_mapping = {
     "RegisterAutonomousDatabaseDataSafeDetails": RegisterAutonomousDatabaseDataSafeDetails,
     "ReinstateDataGuardAssociationDetails": ReinstateDataGuardAssociationDetails,
     "RemoteClonePluggableDatabaseDetails": RemoteClonePluggableDatabaseDetails,
+    "RemoveVirtualMachineFromVmClusterDetails": RemoveVirtualMachineFromVmClusterDetails,
     "RestoreAutonomousDatabaseDetails": RestoreAutonomousDatabaseDetails,
     "RestoreDatabaseDetails": RestoreDatabaseDetails,
     "ScanDetails": ScanDetails,

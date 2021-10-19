@@ -135,6 +135,10 @@ class UpsertLogAnalyticsParserDetails(object):
             Allowed values for this property are: "XML", "JSON", "REGEX", "ODL", "DELIMITED"
         :type type: str
 
+        :param is_namespace_aware:
+            The value to assign to the is_namespace_aware property of this UpsertLogAnalyticsParserDetails.
+        :type is_namespace_aware: bool
+
         """
         self.swagger_types = {
             'content': 'str',
@@ -160,7 +164,8 @@ class UpsertLogAnalyticsParserDetails(object):
             'should_tokenize_original_text': 'bool',
             'field_delimiter': 'str',
             'field_qualifier': 'str',
-            'type': 'str'
+            'type': 'str',
+            'is_namespace_aware': 'bool'
         }
 
         self.attribute_map = {
@@ -187,7 +192,8 @@ class UpsertLogAnalyticsParserDetails(object):
             'should_tokenize_original_text': 'shouldTokenizeOriginalText',
             'field_delimiter': 'fieldDelimiter',
             'field_qualifier': 'fieldQualifier',
-            'type': 'type'
+            'type': 'type',
+            'is_namespace_aware': 'isNamespaceAware'
         }
 
         self._content = None
@@ -214,6 +220,7 @@ class UpsertLogAnalyticsParserDetails(object):
         self._field_delimiter = None
         self._field_qualifier = None
         self._type = None
+        self._is_namespace_aware = None
 
     @property
     def content(self):
@@ -800,6 +807,30 @@ class UpsertLogAnalyticsParserDetails(object):
                 .format(allowed_values)
             )
         self._type = type
+
+    @property
+    def is_namespace_aware(self):
+        """
+        Gets the is_namespace_aware of this UpsertLogAnalyticsParserDetails.
+        A flag indicating whether the XML parser should consider the namespace(s) while processing the log data.
+
+
+        :return: The is_namespace_aware of this UpsertLogAnalyticsParserDetails.
+        :rtype: bool
+        """
+        return self._is_namespace_aware
+
+    @is_namespace_aware.setter
+    def is_namespace_aware(self, is_namespace_aware):
+        """
+        Sets the is_namespace_aware of this UpsertLogAnalyticsParserDetails.
+        A flag indicating whether the XML parser should consider the namespace(s) while processing the log data.
+
+
+        :param is_namespace_aware: The is_namespace_aware of this UpsertLogAnalyticsParserDetails.
+        :type: bool
+        """
+        self._is_namespace_aware = is_namespace_aware
 
     def __repr__(self):
         return formatted_flat_dict(self)

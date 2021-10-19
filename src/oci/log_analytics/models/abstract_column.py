@@ -115,6 +115,10 @@ class AbstractColumn(object):
             The value to assign to the is_multi_valued property of this AbstractColumn.
         :type is_multi_valued: bool
 
+        :param is_case_sensitive:
+            The value to assign to the is_case_sensitive property of this AbstractColumn.
+        :type is_case_sensitive: bool
+
         :param is_groupable:
             The value to assign to the is_groupable property of this AbstractColumn.
         :type is_groupable: bool
@@ -145,6 +149,7 @@ class AbstractColumn(object):
             'values': 'list[FieldValue]',
             'is_list_of_values': 'bool',
             'is_multi_valued': 'bool',
+            'is_case_sensitive': 'bool',
             'is_groupable': 'bool',
             'is_evaluable': 'bool',
             'value_type': 'str',
@@ -159,6 +164,7 @@ class AbstractColumn(object):
             'values': 'values',
             'is_list_of_values': 'isListOfValues',
             'is_multi_valued': 'isMultiValued',
+            'is_case_sensitive': 'isCaseSensitive',
             'is_groupable': 'isGroupable',
             'is_evaluable': 'isEvaluable',
             'value_type': 'valueType',
@@ -172,6 +178,7 @@ class AbstractColumn(object):
         self._values = None
         self._is_list_of_values = None
         self._is_multi_valued = None
+        self._is_case_sensitive = None
         self._is_groupable = None
         self._is_evaluable = None
         self._value_type = None
@@ -361,6 +368,30 @@ class AbstractColumn(object):
         :type: bool
         """
         self._is_multi_valued = is_multi_valued
+
+    @property
+    def is_case_sensitive(self):
+        """
+        Gets the is_case_sensitive of this AbstractColumn.
+        A flag indicating whether or not the field is a case sensitive field.  Only applies to string fields.
+
+
+        :return: The is_case_sensitive of this AbstractColumn.
+        :rtype: bool
+        """
+        return self._is_case_sensitive
+
+    @is_case_sensitive.setter
+    def is_case_sensitive(self, is_case_sensitive):
+        """
+        Sets the is_case_sensitive of this AbstractColumn.
+        A flag indicating whether or not the field is a case sensitive field.  Only applies to string fields.
+
+
+        :param is_case_sensitive: The is_case_sensitive of this AbstractColumn.
+        :type: bool
+        """
+        self._is_case_sensitive = is_case_sensitive
 
     @property
     def is_groupable(self):

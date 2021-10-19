@@ -21,7 +21,7 @@ class HighlightGroupsCommandDescriptor(AbstractCommandDescriptor):
 
         :param name:
             The value to assign to the name property of this HighlightGroupsCommandDescriptor.
-            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE"
+            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE"
         :type name: str
 
         :param display_query_string:
@@ -52,6 +52,10 @@ class HighlightGroupsCommandDescriptor(AbstractCommandDescriptor):
             The value to assign to the priority property of this HighlightGroupsCommandDescriptor.
         :type priority: str
 
+        :param match_only:
+            The value to assign to the match_only property of this HighlightGroupsCommandDescriptor.
+        :type match_only: list[str]
+
         :param fields:
             The value to assign to the fields property of this HighlightGroupsCommandDescriptor.
         :type fields: list[str]
@@ -74,6 +78,7 @@ class HighlightGroupsCommandDescriptor(AbstractCommandDescriptor):
             'declared_fields': 'list[AbstractField]',
             'color': 'str',
             'priority': 'str',
+            'match_only': 'list[str]',
             'fields': 'list[str]',
             'keywords': 'list[str]',
             'sub_queries': 'list[ParseQueryOutput]'
@@ -88,6 +93,7 @@ class HighlightGroupsCommandDescriptor(AbstractCommandDescriptor):
             'declared_fields': 'declaredFields',
             'color': 'color',
             'priority': 'priority',
+            'match_only': 'matchOnly',
             'fields': 'fields',
             'keywords': 'keywords',
             'sub_queries': 'subQueries'
@@ -101,6 +107,7 @@ class HighlightGroupsCommandDescriptor(AbstractCommandDescriptor):
         self._declared_fields = None
         self._color = None
         self._priority = None
+        self._match_only = None
         self._fields = None
         self._keywords = None
         self._sub_queries = None
@@ -153,6 +160,30 @@ class HighlightGroupsCommandDescriptor(AbstractCommandDescriptor):
         :type: str
         """
         self._priority = priority
+
+    @property
+    def match_only(self):
+        """
+        Gets the match_only of this HighlightGroupsCommandDescriptor.
+        List of fields to search for terms or phrases to highlight.  If not specified all string fields are scanned.
+
+
+        :return: The match_only of this HighlightGroupsCommandDescriptor.
+        :rtype: list[str]
+        """
+        return self._match_only
+
+    @match_only.setter
+    def match_only(self, match_only):
+        """
+        Sets the match_only of this HighlightGroupsCommandDescriptor.
+        List of fields to search for terms or phrases to highlight.  If not specified all string fields are scanned.
+
+
+        :param match_only: The match_only of this HighlightGroupsCommandDescriptor.
+        :type: list[str]
+        """
+        self._match_only = match_only
 
     @property
     def fields(self):

@@ -36,6 +36,7 @@ requires = [
     "pyOpenSSL>=17.5.0,<=19.1.0",
     "python-dateutil>=2.5.3,<3.0.0",
     "pytz>=2016.10",
+    "circuitbreaker>=1.3.1,< 2.0.0"
 ]
 
 setup(

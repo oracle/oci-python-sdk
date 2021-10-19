@@ -14,8 +14,9 @@ import time
 BACKOFF_FULL_JITTER_VALUE = 'full_jitter'
 BACKOFF_EQUAL_JITTER_VALUE = 'equal_jitter'
 BACKOFF_FULL_JITTER_EQUAL_ON_THROTTLE_VALUE = 'full_jitter_with_equal_on_throttle'
+BACKOFF_DECORRELATED_JITTER_VALUE = 'decorrelated_jitter'
 
-VALID_BACKOFF_TYPES = [BACKOFF_FULL_JITTER_VALUE, BACKOFF_EQUAL_JITTER_VALUE, BACKOFF_FULL_JITTER_EQUAL_ON_THROTTLE_VALUE]
+VALID_BACKOFF_TYPES = [BACKOFF_FULL_JITTER_VALUE, BACKOFF_EQUAL_JITTER_VALUE, BACKOFF_FULL_JITTER_EQUAL_ON_THROTTLE_VALUE, BACKOFF_DECORRELATED_JITTER_VALUE]
 
 
 class RetryStrategyBuilder(object):
@@ -36,29 +37,29 @@ class RetryStrategyBuilder(object):
 
         :param Boolean max_attempts_check (optional):
             Whether to enable a check that we don't exceed a certain number of attempts. If not provided
-            this defaults to False (i.e. this check will not be done)
+            this defaults to True (with a default max-attempts = 8)
 
         :param Boolean service_error_check (optional):
             Whether to enable a check that will retry on connection errors, timeouts and service errors
             which match given combinations of HTTP statuses and textual error codes. If not provided
-            this defaults to False (i.e. this check will not be done)
+            this defaults to True (i.e. this check will be done)
 
         :param Boolean total_elapsed_time_check (optional):
             Whether to enable a check that we don't exceed a certain amount of time when retrying. This is intended
-            for scenarios such as "keep retrying for 5 minutes".  If not provided this defaults to False
-            (i.e. this check will not be done)
+            for scenarios such as "keep retrying for 5 minutes".  If not provided this defaults to True
+            (i.e. this check will be done with the total elapsed time of 600 seconds)
 
         :param int max_attempts (optional):
             If we are checking that we don't exceed a certain number of attempts, what that number of
             attempts should be. This only applies if we are performing a check on the maximum number of
             attempts and will be ignored otherwise. If we are performing a check on the maximum number of
-            attempts and this value is not provided, we will default to a maximum of 5 attempts
+            attempts and this value is not provided, we will default to a maximum of 8 attempts
 
         :param int total_elapsed_time_seconds (optional):
             If we are checking that we don't exceed a certain amount of time when retrying, what that amount of
-            time should be (in seconds). This only applies if we are perfoming a check on the total elapsed time and will
+            time should be (in seconds). This only applies if we are performing a check on the total elapsed time and will
             be ignored otherwise. If we are performing a check on the total elapsed time and this value is not provided, we
-            will default to 300 seconds (5 minutes)
+            will default to 600 seconds (10 minutes)
 
         :param dict service_error_retry_config (optional):
             If we are checking on service errors, we can configure what HTTP statuses (e.g. 429) to retry on and, optionally,
@@ -69,11 +70,11 @@ class RetryStrategyBuilder(object):
             the numeric status is checked for retry purposes.
 
             If we are performing a check on service errors and this value is not provided, then by default we will retry on
-            HTTP 429's (throttles) without any textual code check.
+            HTTP 409/IncorrectState, 429's (throttles) without any textual code check.
 
         :param Boolean service_error_retry_on_any_5xx (optional):
             If we are checking on service errors, whether to retry on any HTTP 5xx received from the service. If
-            we are performing a check on service errors and this value is not provided, it defaults to True (retry on any 5xx)
+            we are performing a check on service errors and this value is not provided, it defaults to True (retry on any 5xx except 501)
 
         :param int retry_base_sleep_time_seconds (optional):
             For exponential backoff with jitter, the base time to use in our retry calculation in seconds. If not
@@ -87,34 +88,38 @@ class RetryStrategyBuilder(object):
             For exponential backoff with jitter, the maximum amount of time to wait between retries. If not provided, this
             value defaults to 30 seconds
 
+        :param int decorrelated_jitter (optional):
+            The random De-correlated jitter value in seconds (default 1) to be used when using the backoff_type BACKOFF_DECORRELATED_JITTER_VALUE
+
         :param str backoff_type (optional):
-            The type of backoff we want to do (e.g. full jitter). The convenience constants in this retry module: ``BACKOFF_FULL_JITTER_VALUE``,
-            ``BACKOFF_EQUAL_JITTER_VALUE``, and ``BACKOFF_FULL_JITTER_EQUAL_ON_THROTTLE_VALUE`` can be used as values here. If no value is specified then
-            the value ``BACKOFF_FULL_JITTER_EQUAL_ON_THROTTLE_VALUE`` will be used. This will use exponential backoff and full jitter on all retries
-            except for throttles, in which case it will use exponential backoff and equal jitter.
+            The type of backoff we want to do (e.g. full jitter). The convenience constants in this retry module: ``BACKOFF_DECORRELATED_JITTER_VALUE``,
+            ``BACKOFF_FULL_JITTER_VALUE``,`BACKOFF_EQUAL_JITTER_VALUE``, and ``BACKOFF_FULL_JITTER_EQUAL_ON_THROTTLE_VALUE`` can be used as values here.
+            If no value is specified then the value ``BACKOFF_DECORRELATED_JITTER_VALUE`` will be used. This will use exponential backoff and a
+            random de-correlated jitter.
         """
 
-        self.max_attempts_check = kwargs.get('max_attempts_check', False)
-        self.service_error_check = kwargs.get('service_error_check', False)
-        self.total_elapsed_time_check = kwargs.get('total_elapsed_time_check', False)
+        self.max_attempts_check = kwargs.get('max_attempts_check', True)
+        self.service_error_check = kwargs.get('service_error_check', True)
+        self.total_elapsed_time_check = kwargs.get('total_elapsed_time_check', True)
 
-        self.max_attempts = kwargs.get('max_attempts', None)
-        self.total_elapsed_time_seconds = kwargs.get('total_elapsed_time_seconds', None)
-        self.service_error_retry_config = kwargs.get('service_error_retry_config', {})
+        self.max_attempts = kwargs.get('max_attempts', 8)
+        self.total_elapsed_time_seconds = kwargs.get('total_elapsed_time_seconds', 600)
+        self.service_error_retry_config = kwargs.get('service_error_retry_config', retry_checkers.RETRYABLE_STATUSES_AND_CODES)
         self.service_error_retry_on_any_5xx = kwargs.get('service_error_retry_on_any_5xx', True)
 
         self.retry_base_sleep_time_seconds = kwargs.get('retry_base_sleep_time_seconds', 1)
         self.retry_exponential_growth_factor = kwargs.get('retry_exponential_growth_factor', 2)
         self.retry_max_wait_between_calls_seconds = kwargs.get('retry_max_wait_between_calls_seconds', 30)
+        self.decorrelated_jitter = kwargs.get('decorrelated_jitter', 1)
 
-        self.backoff_type = BACKOFF_FULL_JITTER_EQUAL_ON_THROTTLE_VALUE
+        self.backoff_type = BACKOFF_DECORRELATED_JITTER_VALUE
         if 'backoff_type' in kwargs:
             if kwargs['backoff_type'] not in VALID_BACKOFF_TYPES:
                 raise ValueError('Unrecognized backoff type supplied. Recognized types are: {}'.format(VALID_BACKOFF_TYPES))
             else:
                 self.backoff_type = kwargs['backoff_type']
 
-    def add_max_attempts(self, max_attempts=None):
+    def add_max_attempts(self, max_attempts=8):
         self.max_attempts_check = True
         if max_attempts:
             self.max_attempts = max_attempts
@@ -124,7 +129,7 @@ class RetryStrategyBuilder(object):
         self.max_attempts_check = False
         return self
 
-    def add_total_elapsed_time(self, total_elapsed_time_seconds=None):
+    def add_total_elapsed_time(self, total_elapsed_time_seconds=600):
         self.total_elapsed_time_check = True
         if total_elapsed_time_seconds:
             self.total_elapsed_time_seconds = total_elapsed_time_seconds
@@ -182,7 +187,15 @@ class RetryStrategyBuilder(object):
 
         checker_container = retry_checkers.RetryCheckerContainer(checkers=checkers)
 
-        if self.backoff_type == BACKOFF_FULL_JITTER_VALUE:
+        if self.backoff_type == BACKOFF_DECORRELATED_JITTER_VALUE:
+            return ExponentialBackOffWithDecorrelatedJitterRetryStrategy(
+                base_sleep_time_seconds=self.retry_base_sleep_time_seconds,
+                exponent_growth_factor=self.retry_exponential_growth_factor,
+                max_wait_between_calls_seconds=self.retry_max_wait_between_calls_seconds,
+                checker_container=checker_container,
+                decorrelated_jitter=self.decorrelated_jitter
+            )
+        elif self.backoff_type == BACKOFF_FULL_JITTER_VALUE:
             return ExponentialBackoffWithFullJitterRetryStrategy(
                 base_sleep_time_seconds=self.retry_base_sleep_time_seconds,
                 exponent_growth_factor=self.retry_exponential_growth_factor,
@@ -254,6 +267,7 @@ class ExponentialBackoffRetryStrategyBase(object):
         self.exponent_growth_factor = exponent_growth_factor
         self.max_wait_between_calls_seconds = max_wait_between_calls_seconds
         self.checkers = checker_container
+        self.circuit_breaker_callback = None
 
     def make_retrying_call(self, func_ref, *func_args, **func_kwargs):
         """
@@ -269,7 +283,7 @@ class ExponentialBackoffRetryStrategyBase(object):
         attempt = 0
         start_time = time.time()
         _should_record_body_position_for_retry = should_record_body_position_for_retry(func_ref, **func_kwargs)
-        _is_body_retryable = True
+        _is_body_retryable = True  # This will be always True for no body and bodies which are non-rewindable
         while should_retry:
             try:
                 # File-like body should be treated differently while retrying
@@ -280,7 +294,8 @@ class ExponentialBackoffRetryStrategyBase(object):
             except Exception as e:
                 attempt += 1
                 if _is_body_retryable and self.checkers.should_retry(exception=e, current_attempt=attempt,
-                                                                     total_time_elapsed=(time.time() - start_time)):
+                                                                     total_time_elapsed=(time.time() - start_time),
+                                                                     circuit_breaker_callback=self.circuit_breaker_callback):
                     self.do_sleep(attempt, e)
 
                     # If the body has to be rewound, then attempt to rewind
@@ -294,6 +309,52 @@ class ExponentialBackoffRetryStrategyBase(object):
 
     def do_sleep(self, attempt, exception):
         raise NotImplementedError('Subclasses should implement this')
+
+    def add_circuit_breaker_callback(self, circuit_breaker_callback):
+        self.circuit_breaker_callback = circuit_breaker_callback
+
+
+class ExponentialBackOffWithDecorrelatedJitterRetryStrategy(ExponentialBackoffRetryStrategyBase):
+    """
+        A retry strategy which does exponential backoff with decorrelated jitter. Times used are in seconds and
+        the strategy can be described as:
+
+        .. code-block:: none
+
+            min(base_sleep_time_seconds * exponent_growth_factor ** (attempt) + random(0, 1), max_wait_seconds))
+
+        """
+
+    def __init__(self, base_sleep_time_seconds, exponent_growth_factor, max_wait_between_calls_seconds,
+                 checker_container, decorrelated_jitter=1, **kwargs):
+        """
+        Creates a new instance of an exponential backoff with Decorrelated jitter retry strategy.
+
+        :param int base_sleep_time_seconds:
+            The base amount to sleep by, in seconds
+
+        :param int exponent_growth_factor:
+            The exponent part of our backoff. We will raise take this value and raising it to the power
+            of attempts and then multiply this with base_sleep_time_seconds
+
+        :param int max_wait_between_calls_seconds:
+            The maximum time we will wait between calls, in seconds
+
+        :param retry_checkers.RetryCheckerContainer checker_container:
+            The checks to run to determine whether a failed call should be retried
+
+        :param int decorrelated_jitter (optional):
+            The amount of time in seconds (default 1) to be used as de-correlated jitter between subsequent retries.
+        """
+        super(ExponentialBackOffWithDecorrelatedJitterRetryStrategy, self) \
+            .__init__(base_sleep_time_seconds, exponent_growth_factor, max_wait_between_calls_seconds,
+                      checker_container, **kwargs)
+        self.decorrelated_jitter = decorrelated_jitter
+
+    def do_sleep(self, attempt, exception):
+        sleep_time_subseconds = retry_sleep_utils.get_exponential_backoff_with_decorrelated_jitter_sleep_time(
+            self.base_sleep_time_seconds, self.exponent_growth_factor, self.max_wait_between_calls_seconds, attempt, self.decorrelated_jitter)
+        time.sleep(sleep_time_subseconds)  # time.sleep needs seconds, but can take fractional seconds
 
 
 class ExponentialBackoffWithFullJitterRetryStrategy(ExponentialBackoffRetryStrategyBase):

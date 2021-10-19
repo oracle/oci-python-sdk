@@ -164,6 +164,10 @@ class LogAnalyticsParser(object):
             The value to assign to the is_user_deleted property of this LogAnalyticsParser.
         :type is_user_deleted: bool
 
+        :param is_namespace_aware:
+            The value to assign to the is_namespace_aware property of this LogAnalyticsParser.
+        :type is_namespace_aware: bool
+
         """
         self.swagger_types = {
             'content': 'str',
@@ -196,7 +200,8 @@ class LogAnalyticsParser(object):
             'field_delimiter': 'str',
             'field_qualifier': 'str',
             'type': 'str',
-            'is_user_deleted': 'bool'
+            'is_user_deleted': 'bool',
+            'is_namespace_aware': 'bool'
         }
 
         self.attribute_map = {
@@ -230,7 +235,8 @@ class LogAnalyticsParser(object):
             'field_delimiter': 'fieldDelimiter',
             'field_qualifier': 'fieldQualifier',
             'type': 'type',
-            'is_user_deleted': 'isUserDeleted'
+            'is_user_deleted': 'isUserDeleted',
+            'is_namespace_aware': 'isNamespaceAware'
         }
 
         self._content = None
@@ -264,6 +270,7 @@ class LogAnalyticsParser(object):
         self._field_qualifier = None
         self._type = None
         self._is_user_deleted = None
+        self._is_namespace_aware = None
 
     @property
     def content(self):
@@ -1012,6 +1019,30 @@ class LogAnalyticsParser(object):
         :type: bool
         """
         self._is_user_deleted = is_user_deleted
+
+    @property
+    def is_namespace_aware(self):
+        """
+        Gets the is_namespace_aware of this LogAnalyticsParser.
+        A flag indicating whether the XML parser should consider the namespace(s) while processing the log data.
+
+
+        :return: The is_namespace_aware of this LogAnalyticsParser.
+        :rtype: bool
+        """
+        return self._is_namespace_aware
+
+    @is_namespace_aware.setter
+    def is_namespace_aware(self, is_namespace_aware):
+        """
+        Sets the is_namespace_aware of this LogAnalyticsParser.
+        A flag indicating whether the XML parser should consider the namespace(s) while processing the log data.
+
+
+        :param is_namespace_aware: The is_namespace_aware of this LogAnalyticsParser.
+        :type: bool
+        """
+        self._is_namespace_aware = is_namespace_aware
 
     def __repr__(self):
         return formatted_flat_dict(self)

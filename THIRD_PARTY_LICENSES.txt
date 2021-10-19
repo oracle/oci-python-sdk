@@ -111,7 +111,11 @@ urllib3
 * Source code: https://github.com/urllib3/urllib3
 * Project home: https://urllib3.readthedocs.io
 
-
+circuitbreaker
+* Copyright (c) 2016-2020, Fabian Fuelling opensource@fabfuel.de. All rights reserved.
+* License: MIT License
+* Source code: https://github.com/fabfuel/circuitbreaker
+* Project home: https://pypi.org/project/circuitbreaker
 
 =============================== Licenses ===============================
 
@@ -127,6 +131,8 @@ Copyright (c) 2010-2020 Benjamin Peterson
 Copyright (c) 2014 Adam Knight 2012 Adam T. Lindsay (original author)
 
 Copyright (c) 2008-2020 Andrey Petrov and contributors (see CONTRIBUTORS.txt)
+
+Copyright (c) 2016-2020, Fabian Fuelling opensource@fabfuel.de. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to

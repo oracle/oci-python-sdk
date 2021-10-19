@@ -45,6 +45,10 @@ class Column(AbstractColumn):
             The value to assign to the is_multi_valued property of this Column.
         :type is_multi_valued: bool
 
+        :param is_case_sensitive:
+            The value to assign to the is_case_sensitive property of this Column.
+        :type is_case_sensitive: bool
+
         :param is_groupable:
             The value to assign to the is_groupable property of this Column.
         :type is_groupable: bool
@@ -74,6 +78,7 @@ class Column(AbstractColumn):
             'values': 'list[FieldValue]',
             'is_list_of_values': 'bool',
             'is_multi_valued': 'bool',
+            'is_case_sensitive': 'bool',
             'is_groupable': 'bool',
             'is_evaluable': 'bool',
             'value_type': 'str',
@@ -88,6 +93,7 @@ class Column(AbstractColumn):
             'values': 'values',
             'is_list_of_values': 'isListOfValues',
             'is_multi_valued': 'isMultiValued',
+            'is_case_sensitive': 'isCaseSensitive',
             'is_groupable': 'isGroupable',
             'is_evaluable': 'isEvaluable',
             'value_type': 'valueType',
@@ -101,6 +107,7 @@ class Column(AbstractColumn):
         self._values = None
         self._is_list_of_values = None
         self._is_multi_valued = None
+        self._is_case_sensitive = None
         self._is_groupable = None
         self._is_evaluable = None
         self._value_type = None

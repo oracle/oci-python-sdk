@@ -136,6 +136,22 @@ class DbNodeSummary(object):
             The value to assign to the additional_details property of this DbNodeSummary.
         :type additional_details: str
 
+        :param cpu_core_count:
+            The value to assign to the cpu_core_count property of this DbNodeSummary.
+        :type cpu_core_count: int
+
+        :param memory_size_in_gbs:
+            The value to assign to the memory_size_in_gbs property of this DbNodeSummary.
+        :type memory_size_in_gbs: int
+
+        :param db_node_storage_size_in_gbs:
+            The value to assign to the db_node_storage_size_in_gbs property of this DbNodeSummary.
+        :type db_node_storage_size_in_gbs: int
+
+        :param db_server_id:
+            The value to assign to the db_server_id property of this DbNodeSummary.
+        :type db_server_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -154,7 +170,11 @@ class DbNodeSummary(object):
             'maintenance_type': 'str',
             'time_maintenance_window_start': 'datetime',
             'time_maintenance_window_end': 'datetime',
-            'additional_details': 'str'
+            'additional_details': 'str',
+            'cpu_core_count': 'int',
+            'memory_size_in_gbs': 'int',
+            'db_node_storage_size_in_gbs': 'int',
+            'db_server_id': 'str'
         }
 
         self.attribute_map = {
@@ -174,7 +194,11 @@ class DbNodeSummary(object):
             'maintenance_type': 'maintenanceType',
             'time_maintenance_window_start': 'timeMaintenanceWindowStart',
             'time_maintenance_window_end': 'timeMaintenanceWindowEnd',
-            'additional_details': 'additionalDetails'
+            'additional_details': 'additionalDetails',
+            'cpu_core_count': 'cpuCoreCount',
+            'memory_size_in_gbs': 'memorySizeInGBs',
+            'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
+            'db_server_id': 'dbServerId'
         }
 
         self._id = None
@@ -194,6 +218,10 @@ class DbNodeSummary(object):
         self._time_maintenance_window_start = None
         self._time_maintenance_window_end = None
         self._additional_details = None
+        self._cpu_core_count = None
+        self._memory_size_in_gbs = None
+        self._db_node_storage_size_in_gbs = None
+        self._db_server_id = None
 
     @property
     def id(self):
@@ -662,6 +690,106 @@ class DbNodeSummary(object):
         :type: str
         """
         self._additional_details = additional_details
+
+    @property
+    def cpu_core_count(self):
+        """
+        Gets the cpu_core_count of this DbNodeSummary.
+        The number of CPU cores enabled on the Db node.
+
+
+        :return: The cpu_core_count of this DbNodeSummary.
+        :rtype: int
+        """
+        return self._cpu_core_count
+
+    @cpu_core_count.setter
+    def cpu_core_count(self, cpu_core_count):
+        """
+        Sets the cpu_core_count of this DbNodeSummary.
+        The number of CPU cores enabled on the Db node.
+
+
+        :param cpu_core_count: The cpu_core_count of this DbNodeSummary.
+        :type: int
+        """
+        self._cpu_core_count = cpu_core_count
+
+    @property
+    def memory_size_in_gbs(self):
+        """
+        Gets the memory_size_in_gbs of this DbNodeSummary.
+        The allocated memory in GBs on the Db node.
+
+
+        :return: The memory_size_in_gbs of this DbNodeSummary.
+        :rtype: int
+        """
+        return self._memory_size_in_gbs
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, memory_size_in_gbs):
+        """
+        Sets the memory_size_in_gbs of this DbNodeSummary.
+        The allocated memory in GBs on the Db node.
+
+
+        :param memory_size_in_gbs: The memory_size_in_gbs of this DbNodeSummary.
+        :type: int
+        """
+        self._memory_size_in_gbs = memory_size_in_gbs
+
+    @property
+    def db_node_storage_size_in_gbs(self):
+        """
+        Gets the db_node_storage_size_in_gbs of this DbNodeSummary.
+        The allocated local node storage in GBs on the Db node.
+
+
+        :return: The db_node_storage_size_in_gbs of this DbNodeSummary.
+        :rtype: int
+        """
+        return self._db_node_storage_size_in_gbs
+
+    @db_node_storage_size_in_gbs.setter
+    def db_node_storage_size_in_gbs(self, db_node_storage_size_in_gbs):
+        """
+        Sets the db_node_storage_size_in_gbs of this DbNodeSummary.
+        The allocated local node storage in GBs on the Db node.
+
+
+        :param db_node_storage_size_in_gbs: The db_node_storage_size_in_gbs of this DbNodeSummary.
+        :type: int
+        """
+        self._db_node_storage_size_in_gbs = db_node_storage_size_in_gbs
+
+    @property
+    def db_server_id(self):
+        """
+        Gets the db_server_id of this DbNodeSummary.
+        The `OCID`__ of the Exacc Db server associated with the database node.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The db_server_id of this DbNodeSummary.
+        :rtype: str
+        """
+        return self._db_server_id
+
+    @db_server_id.setter
+    def db_server_id(self, db_server_id):
+        """
+        Sets the db_server_id of this DbNodeSummary.
+        The `OCID`__ of the Exacc Db server associated with the database node.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param db_server_id: The db_server_id of this DbNodeSummary.
+        :type: str
+        """
+        self._db_server_id = db_server_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

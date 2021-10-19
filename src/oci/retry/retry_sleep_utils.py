@@ -12,3 +12,7 @@ def get_exponential_backoff_with_full_jitter_sleep_time(base_sleep_time_seconds,
 def get_exponential_backoff_with_equal_jitter_sleep_time(base_sleep_time_seconds, exponent_growth_factor, max_wait_between_calls_seconds, attempt):
     exponential_backoff_sleep = min(base_sleep_time_seconds * (exponent_growth_factor ** attempt), max_wait_between_calls_seconds)
     return (exponential_backoff_sleep / 2.0) + random.uniform(0, exponential_backoff_sleep / 2.0)
+
+
+def get_exponential_backoff_with_decorrelated_jitter_sleep_time(base_sleep_time_seconds, exponent_growth_factor, max_wait_between_calls_seconds, attempt, decorrelated_jitter):
+    return min(base_sleep_time_seconds * (exponent_growth_factor ** (attempt - 1)) + random.uniform(0, decorrelated_jitter), max_wait_between_calls_seconds)

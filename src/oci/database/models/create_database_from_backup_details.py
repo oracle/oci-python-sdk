@@ -38,13 +38,18 @@ class CreateDatabaseFromBackupDetails(object):
             The value to assign to the db_name property of this CreateDatabaseFromBackupDetails.
         :type db_name: str
 
+        :param sid_prefix:
+            The value to assign to the sid_prefix property of this CreateDatabaseFromBackupDetails.
+        :type sid_prefix: str
+
         """
         self.swagger_types = {
             'backup_id': 'str',
             'backup_tde_password': 'str',
             'admin_password': 'str',
             'db_unique_name': 'str',
-            'db_name': 'str'
+            'db_name': 'str',
+            'sid_prefix': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class CreateDatabaseFromBackupDetails(object):
             'backup_tde_password': 'backupTDEPassword',
             'admin_password': 'adminPassword',
             'db_unique_name': 'dbUniqueName',
-            'db_name': 'dbName'
+            'db_name': 'dbName',
+            'sid_prefix': 'sidPrefix'
         }
 
         self._backup_id = None
@@ -60,6 +66,7 @@ class CreateDatabaseFromBackupDetails(object):
         self._admin_password = None
         self._db_unique_name = None
         self._db_name = None
+        self._sid_prefix = None
 
     @property
     def backup_id(self):
@@ -184,6 +191,30 @@ class CreateDatabaseFromBackupDetails(object):
         :type: str
         """
         self._db_name = db_name
+
+    @property
+    def sid_prefix(self):
+        """
+        Gets the sid_prefix of this CreateDatabaseFromBackupDetails.
+        Specifies a prefix for the `Oracle SID` of the database to be created.
+
+
+        :return: The sid_prefix of this CreateDatabaseFromBackupDetails.
+        :rtype: str
+        """
+        return self._sid_prefix
+
+    @sid_prefix.setter
+    def sid_prefix(self, sid_prefix):
+        """
+        Sets the sid_prefix of this CreateDatabaseFromBackupDetails.
+        Specifies a prefix for the `Oracle SID` of the database to be created.
+
+
+        :param sid_prefix: The sid_prefix of this CreateDatabaseFromBackupDetails.
+        :type: str
+        """
+        self._sid_prefix = sid_prefix
 
     def __repr__(self):
         return formatted_flat_dict(self)

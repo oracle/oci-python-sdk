@@ -52,6 +52,10 @@ class LogAnalyticsSourceFunction(object):
             The value to assign to the source_reference property of this LogAnalyticsSourceFunction.
         :type source_reference: str
 
+        :param features:
+            The value to assign to the features property of this LogAnalyticsSourceFunction.
+        :type features: list[str]
+
         :param function_id:
             The value to assign to the function_id property of this LogAnalyticsSourceFunction.
         :type function_id: int
@@ -96,6 +100,7 @@ class LogAnalyticsSourceFunction(object):
             'function_name': 'str',
             'function_reference': 'str',
             'source_reference': 'str',
+            'features': 'list[str]',
             'function_id': 'int',
             'order': 'int',
             'is_system': 'bool',
@@ -114,6 +119,7 @@ class LogAnalyticsSourceFunction(object):
             'function_name': 'functionName',
             'function_reference': 'functionReference',
             'source_reference': 'sourceReference',
+            'features': 'features',
             'function_id': 'functionId',
             'order': 'order',
             'is_system': 'isSystem',
@@ -131,6 +137,7 @@ class LogAnalyticsSourceFunction(object):
         self._function_name = None
         self._function_reference = None
         self._source_reference = None
+        self._features = None
         self._function_id = None
         self._order = None
         self._is_system = None
@@ -286,6 +293,30 @@ class LogAnalyticsSourceFunction(object):
         :type: str
         """
         self._source_reference = source_reference
+
+    @property
+    def features(self):
+        """
+        Gets the features of this LogAnalyticsSourceFunction.
+        Features of the source function to use for enrichment.
+
+
+        :return: The features of this LogAnalyticsSourceFunction.
+        :rtype: list[str]
+        """
+        return self._features
+
+    @features.setter
+    def features(self, features):
+        """
+        Sets the features of this LogAnalyticsSourceFunction.
+        Features of the source function to use for enrichment.
+
+
+        :param features: The features of this LogAnalyticsSourceFunction.
+        :type: list[str]
+        """
+        self._features = features
 
     @property
     def function_id(self):

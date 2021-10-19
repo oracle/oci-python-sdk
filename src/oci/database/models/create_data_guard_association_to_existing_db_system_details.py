@@ -43,6 +43,14 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
             The value to assign to the creation_type property of this CreateDataGuardAssociationToExistingDbSystemDetails.
         :type creation_type: str
 
+        :param peer_db_unique_name:
+            The value to assign to the peer_db_unique_name property of this CreateDataGuardAssociationToExistingDbSystemDetails.
+        :type peer_db_unique_name: str
+
+        :param peer_sid_prefix:
+            The value to assign to the peer_sid_prefix property of this CreateDataGuardAssociationToExistingDbSystemDetails.
+        :type peer_sid_prefix: str
+
         :param peer_db_system_id:
             The value to assign to the peer_db_system_id property of this CreateDataGuardAssociationToExistingDbSystemDetails.
         :type peer_db_system_id: str
@@ -58,6 +66,8 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
             'protection_mode': 'str',
             'transport_type': 'str',
             'creation_type': 'str',
+            'peer_db_unique_name': 'str',
+            'peer_sid_prefix': 'str',
             'peer_db_system_id': 'str',
             'peer_db_home_id': 'str'
         }
@@ -68,6 +78,8 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
             'creation_type': 'creationType',
+            'peer_db_unique_name': 'peerDbUniqueName',
+            'peer_sid_prefix': 'peerSidPrefix',
             'peer_db_system_id': 'peerDbSystemId',
             'peer_db_home_id': 'peerDbHomeId'
         }
@@ -77,6 +89,8 @@ class CreateDataGuardAssociationToExistingDbSystemDetails(CreateDataGuardAssocia
         self._protection_mode = None
         self._transport_type = None
         self._creation_type = None
+        self._peer_db_unique_name = None
+        self._peer_sid_prefix = None
         self._peer_db_system_id = None
         self._peer_db_home_id = None
         self._creation_type = 'ExistingDbSystem'

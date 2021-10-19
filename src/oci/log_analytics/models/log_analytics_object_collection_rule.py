@@ -122,6 +122,10 @@ class LogAnalyticsObjectCollectionRule(object):
             The value to assign to the is_enabled property of this LogAnalyticsObjectCollectionRule.
         :type is_enabled: bool
 
+        :param object_name_filters:
+            The value to assign to the object_name_filters property of this LogAnalyticsObjectCollectionRule.
+        :type object_name_filters: list[str]
+
         :param defined_tags:
             The value to assign to the defined_tags property of this LogAnalyticsObjectCollectionRule.
         :type defined_tags: dict(str, dict(str, object))
@@ -151,6 +155,7 @@ class LogAnalyticsObjectCollectionRule(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'is_enabled': 'bool',
+            'object_name_filters': 'list[str]',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -175,6 +180,7 @@ class LogAnalyticsObjectCollectionRule(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'is_enabled': 'isEnabled',
+            'object_name_filters': 'objectNameFilters',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -198,6 +204,7 @@ class LogAnalyticsObjectCollectionRule(object):
         self._time_created = None
         self._time_updated = None
         self._is_enabled = None
+        self._object_name_filters = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -696,6 +703,38 @@ class LogAnalyticsObjectCollectionRule(object):
         :type: bool
         """
         self._is_enabled = is_enabled
+
+    @property
+    def object_name_filters(self):
+        """
+        Gets the object_name_filters of this LogAnalyticsObjectCollectionRule.
+        When the filters are provided, only the objects matching the filters are picked up for processing.
+        The matchType supported is exact match and accommodates wildcard \"*\".
+        For more information on filters, see `Event Filters`__.
+
+        __ https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm
+
+
+        :return: The object_name_filters of this LogAnalyticsObjectCollectionRule.
+        :rtype: list[str]
+        """
+        return self._object_name_filters
+
+    @object_name_filters.setter
+    def object_name_filters(self, object_name_filters):
+        """
+        Sets the object_name_filters of this LogAnalyticsObjectCollectionRule.
+        When the filters are provided, only the objects matching the filters are picked up for processing.
+        The matchType supported is exact match and accommodates wildcard \"*\".
+        For more information on filters, see `Event Filters`__.
+
+        __ https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm
+
+
+        :param object_name_filters: The object_name_filters of this LogAnalyticsObjectCollectionRule.
+        :type: list[str]
+        """
+        self._object_name_filters = object_name_filters
 
     @property
     def defined_tags(self):

@@ -6,6 +6,8 @@ from __future__ import absolute_import
 import json
 import logging
 import platform
+
+import circuitbreaker
 import pytz
 import random
 import os
@@ -24,11 +26,13 @@ from dateutil import tz
 import functools
 from six.moves.http_client import HTTPResponse
 
-from . import constants, exceptions, regions
+from . import constants, exceptions, regions, retry
 from .auth import signers
 from .config import get_config_value_or_default, validate_config
 from .request import Request
 from .response import Response
+from .circuit_breaker import CircuitBreakerStrategy, NoCircuitBreakerStrategy
+from circuitbreaker import CircuitBreaker, CircuitBreakerMonitor
 from .version import __version__
 from .util import NONE_SENTINEL, Sentinel, extract_service_endpoint
 missing = Sentinel("Missing")
@@ -310,6 +314,29 @@ class BaseClient(object):
 
         self.skip_deserialization = kwargs.get('skip_deserialization')
 
+        # Circuit Breaker at client level
+        self.circuit_breaker_strategy = kwargs.get('circuit_breaker_strategy')
+        self.circuit_breaker_name = None
+        # Log if Circuit Breaker Strategy is not enabled or if using Default Circuit breaker Strategy
+        if self.circuit_breaker_strategy is None or isinstance(self.circuit_breaker_strategy, NoCircuitBreakerStrategy):
+            self.logger.debug('No circuit breaker strategy enabled!')
+        else:
+            # Enable Circuit breaker if a valid circuit breaker strategy is available
+            if not isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy):
+                raise TypeError('Invalid Circuit Breaker Strategy!')
+            self.circuit_breaker_name = str(uuid.uuid4()) if self.circuit_breaker_strategy.name is None else self.circuit_breaker_strategy.name
+            # Re-use Circuit breaker if sharing a Circuit Breaker Strategy.
+            circuit_breaker = CircuitBreakerMonitor.get(self.circuit_breaker_name)
+            if circuit_breaker is None:
+                circuit_breaker = CircuitBreaker(
+                    failure_threshold=self.circuit_breaker_strategy.failure_threshold,
+                    recovery_timeout=self.circuit_breaker_strategy.recovery_timeout,
+                    expected_exception=self.circuit_breaker_strategy.expected_exception,
+                    name=self.circuit_breaker_name
+                )
+            # Equivalent to decorating the request function with Circuit Breaker
+            self.request = circuit_breaker(self.request)
+
     @property
     def endpoint(self):
         return self._endpoint
@@ -506,6 +533,12 @@ class BaseClient(object):
     def request(self, request):
         self.logger.info(utc_now() + "Request: %s %s" % (str(request.method), request.url))
 
+        initial_circuit_breaker_state = None
+        if self.circuit_breaker_name:
+            initial_circuit_breaker_state = CircuitBreakerMonitor.get(self.circuit_breaker_name).state
+            if initial_circuit_breaker_state != circuitbreaker.STATE_CLOSED:
+                self.logger.debug("Circuit Breaker State is {}!".format(initial_circuit_breaker_state))
+
         signer = self.signer
         if not request.enforce_content_headers:
             signer = signer.without_content_headers
@@ -538,8 +571,16 @@ class BaseClient(object):
         response_type = request.response_type
         self.logger.debug(utc_now() + "Response status: %s" % str(response.status_code))
 
+        # Raise Service Error or Transient Service Error
         if not 200 <= response.status_code <= 299:
-            self.raise_service_error(request, response)
+            service_code, message = self.get_deserialized_service_code_and_message(response)
+            if isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy) and self.circuit_breaker_strategy.is_transient_error(response.status_code, service_code):
+                new_circuit_breaker_state = CircuitBreakerMonitor.get(self.circuit_breaker_name).state
+                if initial_circuit_breaker_state != new_circuit_breaker_state:
+                    self.logger.warning("Circuit Breaker state changed from {} to {}".format(initial_circuit_breaker_state, new_circuit_breaker_state))
+                self.raise_transient_service_error(request, response, service_code, message)
+            else:
+                self.raise_service_error(request, response, service_code, message)
 
         if stream:
             # Don't unpack a streaming response body
@@ -563,6 +604,11 @@ class BaseClient(object):
     def add_opc_retry_token_if_needed(self, header_params, retry_token_length=30):
         if 'opc-retry-token' not in header_params:
             header_params['opc-retry-token'] = ''.join(random.SystemRandom().choice(string.ascii_letters + string.digits) for _ in range(retry_token_length))
+
+    @staticmethod
+    def add_opc_client_retries_header(header_params):
+        if 'opc-client-retries' not in header_params:
+            header_params['opc-client-retries'] = "true"
 
     def to_path_value(self, obj):
         """
@@ -690,7 +736,23 @@ class BaseClient(object):
 
         return result
 
-    def raise_service_error(self, request, response):
+    def raise_service_error(self, request, response, service_code, message):
+        raise exceptions.ServiceError(
+            response.status_code,
+            service_code,
+            response.headers,
+            message,
+            original_request=request)
+
+    def raise_transient_service_error(self, request, response, service_code, message):
+        raise exceptions.TransientServiceError(
+            response.status_code,
+            service_code,
+            response.headers,
+            message,
+            original_request=request)
+
+    def get_deserialized_service_code_and_message(self, response):
         deserialized_data = self.deserialize_response_data(response.content, 'object')
         service_code = None
         message = None
@@ -704,12 +766,7 @@ class BaseClient(object):
             # of black holing the message, just put it in the error
             message = deserialized_data
 
-        raise exceptions.ServiceError(
-            response.status_code,
-            service_code,
-            response.headers,
-            message,
-            original_request=request)
+        return service_code, message
 
     def deserialize_response_data(self, response_data, response_type):
         """
@@ -867,3 +924,20 @@ class BaseClient(object):
                 setattr(instance, attr, self.__deserialize(value, attr_type))
 
         return instance
+
+    @staticmethod
+    def get_preferred_retry_strategy(operation_retry_strategy, client_retry_strategy):
+        """
+        Gets the preferred Retry Strategy for the client
+        :param operation_retry_strategy: (optional) Operation level Retry Strategy
+        :param client_retry_strategy: (optional) Client level Retry Strategy
+        :return: Preferred Retry Strategy.
+        """
+        retry_strategy = None
+        if operation_retry_strategy:
+            retry_strategy = operation_retry_strategy
+        elif client_retry_strategy:
+            retry_strategy = client_retry_strategy
+        elif retry.GLOBAL_RETRY_STRATEGY:
+            retry_strategy = retry.GLOBAL_RETRY_STRATEGY
+        return retry_strategy
