@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 ##########################################################################
@@ -385,7 +385,7 @@ def handle_object(compartment, region_name, obj_name, list_object, update_object
 
             # loop on Array
             for arr in array:
-                if not namespace:
+                if not namespace and obj_name != "Network CPEs":
                     if arr.lifecycle_state == "TERMINATING" or arr.lifecycle_state == "TERMINATED":
                         continue
 
@@ -612,7 +612,6 @@ def main():
                 handle_object(compartment, region_name, "Network IPSECs", network_client.list_ip_sec_connections, network_client.update_ip_sec_connection, oci.core.models.UpdateIPSecConnectionDetails)
                 handle_object(compartment, region_name, "Network LPGs", network_client.list_local_peering_gateways, network_client.update_local_peering_gateway, oci.core.models.UpdateLocalPeeringGatewayDetails)
                 handle_object(compartment, region_name, "Network NATGWs", network_client.list_nat_gateways, network_client.update_nat_gateway, oci.core.models.UpdateNatGatewayDetails)
-                handle_object(compartment, region_name, "Network NSGs", network_client.list_network_security_groups, network_client.update_network_security_group, oci.core.models.UpdateNetworkSecurityGroupDetails)
                 handle_object(compartment, region_name, "Network RPGs", network_client.list_remote_peering_connections, network_client.update_remote_peering_connection, oci.core.models.UpdateRemotePeeringConnectionDetails)
                 handle_object(compartment, region_name, "Network Routes", network_client.list_route_tables, network_client.update_route_table, oci.core.models.UpdateRouteTableDetails)
                 handle_object(compartment, region_name, "Network SLs", network_client.list_security_lists, network_client.update_security_list, oci.core.models.UpdateSecurityListDetails)
