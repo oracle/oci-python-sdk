@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Order(object):
     """
-    Order Details for Console plugin display
+    Order details.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class Order(object):
     def order_number(self):
         """
         **[Required]** Gets the order_number of this Order.
-        Immutable and unique order number holding customer subscription information
+        Immutable and unique order number holding customer subscription information.
 
 
         :return: The order_number of this Order.
@@ -77,7 +77,7 @@ class Order(object):
     def order_number(self, order_number):
         """
         Sets the order_number of this Order.
-        Immutable and unique order number holding customer subscription information
+        Immutable and unique order number holding customer subscription information.
 
 
         :param order_number: The order_number of this Order.
@@ -113,7 +113,7 @@ class Order(object):
     def admin_email(self):
         """
         **[Required]** Gets the admin_email of this Order.
-        Admin e-mail owning subscription.
+        Administrator email owning the subscription.
 
 
         :return: The admin_email of this Order.
@@ -125,7 +125,7 @@ class Order(object):
     def admin_email(self, admin_email):
         """
         Sets the admin_email of this Order.
-        Admin e-mail owning subscription.
+        Administrator email owning the subscription.
 
 
         :param admin_email: The admin_email of this Order.
@@ -137,7 +137,7 @@ class Order(object):
     def order_state(self):
         """
         **[Required]** Gets the order_state of this Order.
-        State of order.
+        State of the order.
 
 
         :return: The order_state of this Order.
@@ -149,7 +149,7 @@ class Order(object):
     def order_state(self, order_state):
         """
         Sets the order_state of this Order.
-        State of order.
+        State of the order.
 
 
         :param order_state: The order_state of this Order.

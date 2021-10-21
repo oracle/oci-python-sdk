@@ -98,6 +98,107 @@ class OperationsInsightsClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def add_exadata_insight_members(self, add_exadata_insight_members_details, exadata_insight_id, **kwargs):
+        """
+        Add new members (e.g. databases and hosts) to an Exadata system in Operations Insights. Exadata-related metric collection and analysis will be started.
+
+
+        :param oci.opsi.models.AddExadataInsightMembersDetails add_exadata_insight_members_details: (required)
+            Details for the members (e.g. databases and hosts) of an Exadata system to be added in Operations Insights.
+
+        :param str exadata_insight_id: (required)
+            Unique Exadata insight identifier
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request that can be retried in case of a timeout or
+            server error without risk of executing the same action again. Retry tokens expire after 24
+            hours.
+
+            *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+            operations, such as a resource being deleted or purged from the system.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/add_exadata_insight_members.py.html>`__ to see an example of how to use add_exadata_insight_members API.
+        """
+        resource_path = "/exadataInsights/{exadataInsightId}/actions/addMembers"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "add_exadata_insight_members got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "exadataInsightId": exadata_insight_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_exadata_insight_members_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=add_exadata_insight_members_details)
+
     def change_database_insight_compartment(self, database_insight_id, change_database_insight_compartment_details, **kwargs):
         """
         Moves a DatabaseInsight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
@@ -288,6 +389,107 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_enterprise_manager_bridge_compartment_details)
+
+    def change_exadata_insight_compartment(self, exadata_insight_id, change_exadata_insight_compartment_details, **kwargs):
+        """
+        Moves an Exadata insight resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
+
+
+        :param str exadata_insight_id: (required)
+            Unique Exadata insight identifier
+
+        :param oci.opsi.models.ChangeExadataInsightCompartmentDetails change_exadata_insight_compartment_details: (required)
+            The information to be updated.
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request that can be retried in case of a timeout or
+            server error without risk of executing the same action again. Retry tokens expire after 24
+            hours.
+
+            *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+            operations, such as a resource being deleted or purged from the system.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/change_exadata_insight_compartment.py.html>`__ to see an example of how to use change_exadata_insight_compartment API.
+        """
+        resource_path = "/exadataInsights/{exadataInsightId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_exadata_insight_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "exadataInsightId": exadata_insight_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_exadata_insight_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_exadata_insight_compartment_details)
 
     def change_host_insight_compartment(self, host_insight_id, change_host_insight_compartment_details, **kwargs):
         """
@@ -552,6 +754,87 @@ class OperationsInsightsClient(object):
                 body=create_enterprise_manager_bridge_details,
                 response_type="EnterpriseManagerBridge")
 
+    def create_exadata_insight(self, create_exadata_insight_details, **kwargs):
+        """
+        Create an Exadata insight resource for an Exadata system in Operations Insights. The Exadata system will be enabled in Operations Insights. Exadata-related metric collection and analysis will be started.
+
+
+        :param oci.opsi.models.CreateExadataInsightDetails create_exadata_insight_details: (required)
+            Details for the Exadata system for which an Exadata insight resource will be created in Operations Insights.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request that can be retried in case of a timeout or
+            server error without risk of executing the same action again. Retry tokens expire after 24
+            hours.
+
+            *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+            operations, such as a resource being deleted or purged from the system.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.ExadataInsight`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/create_exadata_insight.py.html>`__ to see an example of how to use create_exadata_insight API.
+        """
+        resource_path = "/exadataInsights"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_exadata_insight got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_exadata_insight_details,
+                response_type="ExadataInsight")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_exadata_insight_details,
+                response_type="ExadataInsight")
+
     def create_host_insight(self, create_host_insight_details, **kwargs):
         """
         Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
@@ -803,6 +1086,91 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_exadata_insight(self, exadata_insight_id, **kwargs):
+        """
+        Deletes an Exadata insight. The Exadata insight will be deleted and cannot be enabled again.
+
+
+        :param str exadata_insight_id: (required)
+            Unique Exadata insight identifier
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/delete_exadata_insight.py.html>`__ to see an example of how to use delete_exadata_insight API.
+        """
+        resource_path = "/exadataInsights/{exadataInsightId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_exadata_insight got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "exadataInsightId": exadata_insight_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_host_insight(self, host_insight_id, **kwargs):
         """
         Deletes a host insight. The host insight will be deleted and cannot be enabled again.
@@ -944,6 +1312,102 @@ class OperationsInsightsClient(object):
 
         path_params = {
             "databaseInsightId": database_insight_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def disable_exadata_insight(self, exadata_insight_id, **kwargs):
+        """
+        Disables an Exadata system in Operations Insights. Exadata-related metric collection and analysis will be stopped.
+
+
+        :param str exadata_insight_id: (required)
+            Unique Exadata insight identifier
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request that can be retried in case of a timeout or
+            server error without risk of executing the same action again. Retry tokens expire after 24
+            hours.
+
+            *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+            operations, such as a resource being deleted or purged from the system.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/disable_exadata_insight.py.html>`__ to see an example of how to use disable_exadata_insight API.
+        """
+        resource_path = "/exadataInsights/{exadataInsightId}/actions/disable"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "disable_exadata_insight got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "exadataInsightId": exadata_insight_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -1180,6 +1644,107 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=enable_database_insight_details)
+
+    def enable_exadata_insight(self, enable_exadata_insight_details, exadata_insight_id, **kwargs):
+        """
+        Enables an Exadata system in Operations Insights. Exadata-related metric collection and analysis will be started.
+
+
+        :param oci.opsi.models.EnableExadataInsightDetails enable_exadata_insight_details: (required)
+            Details for the Exadata system to be enabled in Operations Insights.
+
+        :param str exadata_insight_id: (required)
+            Unique Exadata insight identifier
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request that can be retried in case of a timeout or
+            server error without risk of executing the same action again. Retry tokens expire after 24
+            hours.
+
+            *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+            operations, such as a resource being deleted or purged from the system.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/enable_exadata_insight.py.html>`__ to see an example of how to use enable_exadata_insight API.
+        """
+        resource_path = "/exadataInsights/{exadataInsightId}/actions/enable"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "enable_exadata_insight got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "exadataInsightId": exadata_insight_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=enable_exadata_insight_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=enable_exadata_insight_details)
 
     def enable_host_insight(self, enable_host_insight_details, host_insight_id, **kwargs):
         """
@@ -1441,6 +2006,86 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="EnterpriseManagerBridge")
+
+    def get_exadata_insight(self, exadata_insight_id, **kwargs):
+        """
+        Gets details of an Exadata insight.
+
+
+        :param str exadata_insight_id: (required)
+            Unique Exadata insight identifier
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.ExadataInsight`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/get_exadata_insight.py.html>`__ to see an example of how to use get_exadata_insight API.
+        """
+        resource_path = "/exadataInsights/{exadataInsightId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_exadata_insight got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "exadataInsightId": exadata_insight_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ExadataInsight")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ExadataInsight")
 
     def get_host_insight(self, host_insight_id, **kwargs):
         """
@@ -2282,6 +2927,14 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
+
         :param list[str] database_type: (optional)
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
@@ -2370,6 +3023,8 @@ class OperationsInsightsClient(object):
             "enterprise_manager_bridge_id",
             "id",
             "database_id",
+            "exadata_insight_id",
+            "cdb_name",
             "database_type",
             "limit",
             "page",
@@ -2414,6 +3069,8 @@ class OperationsInsightsClient(object):
             "enterpriseManagerBridgeId": kwargs.get("enterprise_manager_bridge_id", missing),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
             "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -2528,6 +3185,11 @@ class OperationsInsightsClient(object):
 
             Allowed values are: "databaseName", "databaseDisplayName", "databaseType"
 
+        :param str exadata_insight_id: (optional)
+            `OCID`__ of exadata insight resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -2564,6 +3226,7 @@ class OperationsInsightsClient(object):
             "page",
             "sort_order",
             "sort_by",
+            "exadata_insight_id",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2629,7 +3292,8 @@ class OperationsInsightsClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "exadataInsightId": kwargs.get("exadata_insight_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2815,6 +3479,547 @@ class OperationsInsightsClient(object):
                 header_params=header_params,
                 response_type="EnterpriseManagerBridgeCollection")
 
+    def list_exadata_configurations(self, **kwargs):
+        """
+        Gets a list of exadata insight configurations. Either compartmentId or exadataInsightsId query parameter must be specified.
+
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_type: (optional)
+            Filter by one or more Exadata types.
+            Possible value are DBMACHINE, EXACS, and EXACC.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Exadata configuration list sort options. If `fields` parameter is selected, the `sortBy` parameter must be one of the fields specified.
+
+            Allowed values are: "exadataName", "exadataDisplayName", "exadataType"
+
+        :param list[str] defined_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+            The key for each tag is \"{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same tag name are interpreted as \"OR\".  Values for different tag names are interpreted as \"AND\".
+
+        :param list[str] defined_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.true\" (for checking existence of a defined tag)
+            or \"{namespace}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+            The key for each tag is \"{tagName}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for different tag names are interpreted as \"AND\".
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.ExadataConfigurationCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/list_exadata_configurations.py.html>`__ to see an example of how to use list_exadata_configurations API.
+        """
+        resource_path = "/exadataInsights/exadataConfigurations"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "compartment_id",
+            "exadata_insight_id",
+            "exadata_type",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "defined_tag_equals",
+            "freeform_tag_equals",
+            "defined_tag_exists",
+            "freeform_tag_exists",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_exadata_configurations got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["exadataName", "exadataDisplayName", "exadataType"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "exadataType": self.base_client.generate_collection_format_param(kwargs.get("exadata_type", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
+            "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
+            "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ExadataConfigurationCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ExadataConfigurationCollection")
+
+    def list_exadata_insights(self, **kwargs):
+        """
+        Gets a list of Exadata insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str enterprise_manager_bridge_id: (optional)
+            Unique Enterprise Manager bridge identifier
+
+        :param list[str] id: (optional)
+            Optional list of Exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] status: (optional)
+            Resource Status
+
+            Allowed values are: "DISABLED", "ENABLED", "TERMINATED"
+
+        :param list[str] lifecycle_state: (optional)
+            Lifecycle states
+
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
+
+        :param list[str] exadata_type: (optional)
+            Filter by one or more Exadata types.
+            Possible value are DBMACHINE, EXACS, and EXACC.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Exadata insight list sort options. If `fields` parameter is selected, the `sortBy` parameter must be one of the fields specified. Default order for timeCreated is descending. Default order for exadataName is ascending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated", "exadataName"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.ExadataInsightSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/list_exadata_insights.py.html>`__ to see an example of how to use list_exadata_insights API.
+        """
+        resource_path = "/exadataInsights"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "compartment_id",
+            "enterprise_manager_bridge_id",
+            "id",
+            "status",
+            "lifecycle_state",
+            "exadata_type",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_exadata_insights got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'status' in kwargs:
+            status_allowed_values = ["DISABLED", "ENABLED", "TERMINATED"]
+            for status_item in kwargs['status']:
+                if status_item not in status_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                    )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
+            for lifecycle_state_item in kwargs['lifecycle_state']:
+                if lifecycle_state_item not in lifecycle_state_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "exadataName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "enterpriseManagerBridgeId": kwargs.get("enterprise_manager_bridge_id", missing),
+            "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "status": self.base_client.generate_collection_format_param(kwargs.get("status", missing), 'multi'),
+            "lifecycleState": self.base_client.generate_collection_format_param(kwargs.get("lifecycle_state", missing), 'multi'),
+            "exadataType": self.base_client.generate_collection_format_param(kwargs.get("exadata_type", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ExadataInsightSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ExadataInsightSummaryCollection")
+
+    def list_host_configurations(self, **kwargs):
+        """
+        Gets a list of host insight configurations based on the query parameters specified. Either compartmentId or hostInsightId query parameter must be specified.
+        When both compartmentId and compartmentIdInSubtree are specified, a list of host insight configurations in that compartment and in all sub-compartments will be returned.
+
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str enterprise_manager_bridge_id: (optional)
+            Unique Enterprise Manager bridge identifier
+
+        :param list[str] id: (optional)
+            Optional list of host insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] platform_type: (optional)
+            Filter by one or more platform types.
+            Possible value is LINUX.
+
+            Allowed values are: "LINUX"
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Host configuration list sort options.
+
+            Allowed values are: "hostName", "platformType"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param list[str] defined_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+            The key for each tag is \"{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same tag name are interpreted as \"OR\".  Values for different tag names are interpreted as \"AND\".
+
+        :param list[str] defined_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.true\" (for checking existence of a defined tag)
+            or \"{namespace}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+            The key for each tag is \"{tagName}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for different tag names are interpreted as \"AND\".
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.HostConfigurationCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/list_host_configurations.py.html>`__ to see an example of how to use list_host_configurations API.
+        """
+        resource_path = "/hostInsights/hostConfigurations"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "compartment_id",
+            "enterprise_manager_bridge_id",
+            "id",
+            "exadata_insight_id",
+            "platform_type",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id",
+            "defined_tag_equals",
+            "freeform_tag_equals",
+            "defined_tag_exists",
+            "freeform_tag_exists"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_host_configurations got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'platform_type' in kwargs:
+            platform_type_allowed_values = ["LINUX"]
+            for platform_type_item in kwargs['platform_type']:
+                if platform_type_item not in platform_type_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                    )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["hostName", "platformType"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "enterpriseManagerBridgeId": kwargs.get("enterprise_manager_bridge_id", missing),
+            "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
+            "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
+            "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="HostConfigurationCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="HostConfigurationCollection")
+
     def list_host_insights(self, **kwargs):
         """
         Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
@@ -2876,6 +4081,14 @@ class OperationsInsightsClient(object):
 
             Allowed values are: "hostName", "hostType"
 
+        :param str enterprise_manager_bridge_id: (optional)
+            Unique Enterprise Manager bridge identifier
+
+        :param str exadata_insight_id: (optional)
+            `OCID`__ of exadata insight resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -2910,6 +4123,8 @@ class OperationsInsightsClient(object):
             "page",
             "sort_order",
             "sort_by",
+            "enterprise_manager_bridge_id",
+            "exadata_insight_id",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2965,7 +4180,9 @@ class OperationsInsightsClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "enterpriseManagerBridgeId": kwargs.get("enterprise_manager_bridge_id", missing),
+            "exadataInsightId": kwargs.get("exadata_insight_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3040,6 +4257,11 @@ class OperationsInsightsClient(object):
 
             Allowed values are: "LINUX"
 
+        :param str exadata_insight_id: (optional)
+            `OCID`__ of exadata insight resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
             return in a paginated \"List\" call.
@@ -3094,6 +4316,7 @@ class OperationsInsightsClient(object):
             "time_interval_start",
             "time_interval_end",
             "platform_type",
+            "exadata_insight_id",
             "limit",
             "page",
             "sort_order",
@@ -3134,6 +4357,7 @@ class OperationsInsightsClient(object):
             "timeIntervalEnd": kwargs.get("time_interval_end", missing),
             "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi'),
             "id": id,
+            "exadataInsightId": kwargs.get("exadata_insight_id", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -3325,6 +4549,15 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
 
+        :param list[str] enterprise_manager_entity_type: (optional)
+            Filter by one or more Enterprise Manager entity types. Currently, the supported types are \"oracle_pdb\", \"oracle_database\", \"host\", \"oracle_dbmachine\", \"oracle_exa_cloud_service\", and \"oracle_oci_exadata_cloud_service\". If this parameter is not specified, targets of all supported entity types are returned by default.
+
+        :param str enterprise_manager_identifier: (optional)
+            Used in combination with enterpriseManagerParentEntityIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular Enterprise Manager parent entity.
+
+        :param str enterprise_manager_parent_entity_identifier: (optional)
+            Used in combination with enterpriseManagerIdentifier to return the members of a particular Enterprise Manager parent entity. Both enterpriseManagerIdentifier and enterpriseManagerParentEntityIdentifier must be specified to identify a particular  Enterprise Manager parent entity.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -3351,6 +4584,9 @@ class OperationsInsightsClient(object):
             "retry_strategy",
             "limit",
             "page",
+            "enterprise_manager_entity_type",
+            "enterprise_manager_identifier",
+            "enterprise_manager_parent_entity_identifier",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3370,7 +4606,10 @@ class OperationsInsightsClient(object):
 
         query_params = {
             "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing)
+            "page": kwargs.get("page", missing),
+            "enterpriseManagerEntityType": self.base_client.generate_collection_format_param(kwargs.get("enterprise_manager_entity_type", missing), 'multi'),
+            "enterpriseManagerIdentifier": kwargs.get("enterprise_manager_identifier", missing),
+            "enterpriseManagerParentEntityIdentifier": kwargs.get("enterprise_manager_parent_entity_identifier", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3833,6 +5072,16 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
 
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+
+            Allowed values are: "timeAccepted"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3855,7 +5104,9 @@ class OperationsInsightsClient(object):
             "retry_strategy",
             "opc_request_id",
             "page",
-            "limit"
+            "limit",
+            "sort_by",
+            "sort_order"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3872,9 +5123,25 @@ class OperationsInsightsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeAccepted"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
         query_params = {
             "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing)
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3939,6 +5206,16 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
 
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+
+            Allowed values are: "timeAccepted"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3961,7 +5238,9 @@ class OperationsInsightsClient(object):
             "retry_strategy",
             "opc_request_id",
             "page",
-            "limit"
+            "limit",
+            "sort_by",
+            "sort_order"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3978,9 +5257,25 @@ class OperationsInsightsClient(object):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeAccepted"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
         query_params = {
             "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing)
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -4017,15 +5312,10 @@ class OperationsInsightsClient(object):
                 header_params=header_params,
                 response_type="WorkRequestLogEntryCollection")
 
-    def list_work_requests(self, compartment_id, **kwargs):
+    def list_work_requests(self, **kwargs):
         """
-        Lists the work requests in a compartment.
+        Lists the work requests in a compartment. Either compartmentId or id must be specified. Only one of id, resourceId or relatedResourceId can be specified optionally.
 
-
-        :param str compartment_id: (required)
-            The `OCID`__ of the compartment.
-
-            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
@@ -4046,6 +5336,35 @@ class OperationsInsightsClient(object):
             Example: `50`
 
             __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str id: (optional)
+            The ID of the asynchronous work request.
+
+        :param str status: (optional)
+            A filter to return only resources their lifecycleState matches the given OperationStatus.
+
+            Allowed values are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
+
+        :param str resource_id: (optional)
+            The ID of the resource affected by the work request.
+
+        :param str related_resource_id: (optional)
+            The ID of the related resource for the resource affected by the work request, e.g. the related Exadata Insight OCID of the Database Insight work request
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+
+            Allowed values are: "timeAccepted"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4069,17 +5388,51 @@ class OperationsInsightsClient(object):
             "retry_strategy",
             "opc_request_id",
             "page",
-            "limit"
+            "limit",
+            "compartment_id",
+            "id",
+            "status",
+            "resource_id",
+            "related_resource_id",
+            "sort_order",
+            "sort_by"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
             raise ValueError(
                 "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
 
+        if 'status' in kwargs:
+            status_allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+            if kwargs['status'] not in status_allowed_values:
+                raise ValueError(
+                    "Invalid value for `status`, must be one of {0}".format(status_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeAccepted"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
         query_params = {
-            "compartmentId": compartment_id,
             "page": kwargs.get("page", missing),
-            "limit": kwargs.get("limit", missing)
+            "limit": kwargs.get("limit", missing),
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "id": kwargs.get("id", missing),
+            "status": kwargs.get("status", missing),
+            "resourceId": kwargs.get("resource_id", missing),
+            "relatedResourceId": kwargs.get("related_resource_id", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -4163,6 +5516,14 @@ class OperationsInsightsClient(object):
             Optional list of database insight resource `OCIDs`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
 
         :param str utilization_level: (optional)
             Filter by utilization level by the following buckets:
@@ -4256,6 +5617,8 @@ class OperationsInsightsClient(object):
             "database_type",
             "database_id",
             "id",
+            "exadata_insight_id",
+            "cdb_name",
             "utilization_level",
             "page",
             "sort_order",
@@ -4312,6 +5675,8 @@ class OperationsInsightsClient(object):
             "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
             "utilizationLevel": kwargs.get("utilization_level", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -4405,6 +5770,14 @@ class OperationsInsightsClient(object):
             Optional list of database insight resource `OCIDs`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
 
         :param str statistic: (optional)
             Choose the type of statistic metric data to be used for forecasting.
@@ -4512,6 +5885,8 @@ class OperationsInsightsClient(object):
             "database_type",
             "database_id",
             "id",
+            "exadata_insight_id",
+            "cdb_name",
             "statistic",
             "forecast_days",
             "forecast_model",
@@ -4570,6 +5945,8 @@ class OperationsInsightsClient(object):
             "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
             "statistic": kwargs.get("statistic", missing),
             "forecastDays": kwargs.get("forecast_days", missing),
             "forecastModel": kwargs.get("forecast_model", missing),
@@ -4619,7 +5996,8 @@ class OperationsInsightsClient(object):
 
     def summarize_database_insight_resource_statistics(self, compartment_id, resource_metric, **kwargs):
         """
-        Lists the Resource statistics (usage,capacity, usage change percent, utilization percent, base capacity, isAutoScalingEnabled) for each database filtered by utilization level
+        Lists the Resource statistics (usage,capacity, usage change percent, utilization percent, base capacity, isAutoScalingEnabled)
+        for each database filtered by utilization level.
 
 
         :param str compartment_id: (required)
@@ -4665,6 +6043,14 @@ class OperationsInsightsClient(object):
             Optional list of database insight resource `OCIDs`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
 
         :param int percentile: (optional)
             Percentile values of daily usage to be used for computing the aggregate resource usage.
@@ -4766,6 +6152,8 @@ class OperationsInsightsClient(object):
             "database_type",
             "database_id",
             "id",
+            "exadata_insight_id",
+            "cdb_name",
             "percentile",
             "insight_by",
             "forecast_days",
@@ -4817,6 +6205,8 @@ class OperationsInsightsClient(object):
             "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
             "percentile": kwargs.get("percentile", missing),
             "insightBy": kwargs.get("insight_by", missing),
             "forecastDays": kwargs.get("forecast_days", missing),
@@ -4915,6 +6305,11 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param list[str] host_name: (optional)
             Filter by one or more hostname.
 
@@ -4988,6 +6383,7 @@ class OperationsInsightsClient(object):
             "database_type",
             "database_id",
             "id",
+            "exadata_insight_id",
             "host_name",
             "is_database_instance_level_metrics",
             "page",
@@ -5020,6 +6416,7 @@ class OperationsInsightsClient(object):
             "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
             "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
             "isDatabaseInstanceLevelMetrics": kwargs.get("is_database_instance_level_metrics", missing),
             "page": kwargs.get("page", missing),
@@ -5112,6 +6509,11 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
@@ -5192,6 +6594,7 @@ class OperationsInsightsClient(object):
             "database_type",
             "database_id",
             "id",
+            "exadata_insight_id",
             "page",
             "sort_order",
             "sort_by",
@@ -5239,6 +6642,7 @@ class OperationsInsightsClient(object):
             "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
@@ -5331,6 +6735,11 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param int forecast_days: (optional)
             Number of days used for utilization forecast analysis.
 
@@ -5404,6 +6813,7 @@ class OperationsInsightsClient(object):
             "database_type",
             "database_id",
             "id",
+            "exadata_insight_id",
             "forecast_days",
             "host_name",
             "is_database_instance_level_metrics",
@@ -5436,6 +6846,7 @@ class OperationsInsightsClient(object):
             "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
             "forecastDays": kwargs.get("forecast_days", missing),
             "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
             "isDatabaseInstanceLevelMetrics": kwargs.get("is_database_instance_level_metrics", missing),
@@ -5616,6 +7027,1837 @@ class OperationsInsightsClient(object):
                 header_params=header_params,
                 response_type="SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection")
 
+    def summarize_exadata_insight_resource_capacity_trend(self, resource_type, resource_metric, exadata_insight_id, **kwargs):
+        """
+        Returns response with time series data (endTimestamp, capacity) for the time period specified for an exadata system for a resource metric.
+        Additionally resources can be filtered using databaseInsightId, hostInsightId or storageServerName query parameters.
+        Top five resources are returned if total exceeds the limit specified.
+        Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Database name is returned in name field. DatabaseInsightId, cdbName and hostName query parameter applies to ResourceType DATABASE.
+        Valid values for ResourceType HOST are CPU and MEMORY. HostName is returned in name field. HostInsightId and hostName query parameter applies to ResourceType HOST.
+        Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT. Storage server name is returned in name field for resourceMetric IOPS and THROUGHPUT
+        and asmName is returned in name field for resourceMetric STORAGE. StorageServerName query parameter applies to ResourceType STORAGE_SERVER.
+        Valid values for ResourceType DISKGROUP is STORAGE. Comma delimited (asmName,diskgroupName) is returned in name field.
+
+
+        :param str resource_type: (required)
+            Filter by resource.
+            Supported values are HOST , STORAGE_SERVER and DATABASE
+
+        :param str resource_metric: (required)
+            Filter by resource metric.
+            Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+
+        :param str exadata_insight_id: (required)
+            `OCID`__ of exadata insight resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str analysis_time_interval: (optional)
+            Specify time period in ISO 8601 format with respect to current time.
+            Default is last 30 days represented by P30D.
+            If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+            Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+
+        :param datetime time_interval_start: (optional)
+            Analysis start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            The minimum allowed value is 2 years prior to the current day.
+            timeIntervalStart and timeIntervalEnd parameters are used together.
+            If analysisTimeInterval is specified, this parameter is ignored.
+
+        :param datetime time_interval_end: (optional)
+            Analysis end time in UTC in ISO 8601 format(exclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd are used together.
+            If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+
+        :param list[str] database_insight_id: (optional)
+            Optional list of database insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] host_insight_id: (optional)
+            Optional list of host insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] storage_server_name: (optional)
+            Optional storage server name on an exadata system.
+
+        :param list[str] exadata_type: (optional)
+            Filter by one or more Exadata types.
+            Possible value are DBMACHINE, EXACS, and EXACC.
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
+
+        :param list[str] host_name: (optional)
+            Filter by hostname.
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The order in which resource capacity trend records are listed
+
+            Allowed values are: "id", "name"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.SummarizeExadataInsightResourceCapacityTrendCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_exadata_insight_resource_capacity_trend.py.html>`__ to see an example of how to use summarize_exadata_insight_resource_capacity_trend API.
+        """
+        resource_path = "/exadataInsights/resourceCapacityTrend"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "compartment_id",
+            "analysis_time_interval",
+            "time_interval_start",
+            "time_interval_end",
+            "database_insight_id",
+            "host_insight_id",
+            "storage_server_name",
+            "exadata_type",
+            "cdb_name",
+            "host_name",
+            "page",
+            "limit",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_exadata_insight_resource_capacity_trend got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["id", "name"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "resourceType": resource_type,
+            "resourceMetric": resource_metric,
+            "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
+            "timeIntervalStart": kwargs.get("time_interval_start", missing),
+            "timeIntervalEnd": kwargs.get("time_interval_end", missing),
+            "exadataInsightId": exadata_insight_id,
+            "databaseInsightId": self.base_client.generate_collection_format_param(kwargs.get("database_insight_id", missing), 'multi'),
+            "hostInsightId": self.base_client.generate_collection_format_param(kwargs.get("host_insight_id", missing), 'multi'),
+            "storageServerName": self.base_client.generate_collection_format_param(kwargs.get("storage_server_name", missing), 'multi'),
+            "exadataType": self.base_client.generate_collection_format_param(kwargs.get("exadata_type", missing), 'multi'),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceCapacityTrendCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceCapacityTrendCollection")
+
+    def summarize_exadata_insight_resource_capacity_trend_aggregated(self, resource_type, resource_metric, **kwargs):
+        """
+        Returns response with time series data (endTimestamp, capacity) for the time period specified for an exadata system or fleet aggregation for a resource metric.
+        The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+        Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+        Valid values for ResourceType HOST are CPU and MEMORY.
+        Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+
+
+        :param str resource_type: (required)
+            Filter by resource.
+            Supported values are HOST , STORAGE_SERVER and DATABASE
+
+        :param str resource_metric: (required)
+            Filter by resource metric.
+            Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str analysis_time_interval: (optional)
+            Specify time period in ISO 8601 format with respect to current time.
+            Default is last 30 days represented by P30D.
+            If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+            Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+
+        :param datetime time_interval_start: (optional)
+            Analysis start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            The minimum allowed value is 2 years prior to the current day.
+            timeIntervalStart and timeIntervalEnd parameters are used together.
+            If analysisTimeInterval is specified, this parameter is ignored.
+
+        :param datetime time_interval_end: (optional)
+            Analysis end time in UTC in ISO 8601 format(exclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd are used together.
+            If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_type: (optional)
+            Filter by one or more Exadata types.
+            Possible value are DBMACHINE, EXACS, and EXACC.
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
+
+        :param list[str] host_name: (optional)
+            Filter by hostname.
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Sorts using end timestamp or capacity.
+
+            Allowed values are: "endTimestamp", "capacity"
+
+        :param list[str] defined_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+            The key for each tag is \"{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same tag name are interpreted as \"OR\".  Values for different tag names are interpreted as \"AND\".
+
+        :param list[str] defined_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.true\" (for checking existence of a defined tag)
+            or \"{namespace}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+            The key for each tag is \"{tagName}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for different tag names are interpreted as \"AND\".
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.SummarizeExadataInsightResourceCapacityTrendAggregation`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_exadata_insight_resource_capacity_trend_aggregated.py.html>`__ to see an example of how to use summarize_exadata_insight_resource_capacity_trend_aggregated API.
+        """
+        resource_path = "/exadataInsights/resourceCapacityTrendAggregated"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "compartment_id",
+            "analysis_time_interval",
+            "time_interval_start",
+            "time_interval_end",
+            "exadata_insight_id",
+            "exadata_type",
+            "cdb_name",
+            "host_name",
+            "page",
+            "sort_order",
+            "sort_by",
+            "defined_tag_equals",
+            "freeform_tag_equals",
+            "defined_tag_exists",
+            "freeform_tag_exists",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_exadata_insight_resource_capacity_trend_aggregated got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["endTimestamp", "capacity"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "resourceType": resource_type,
+            "resourceMetric": resource_metric,
+            "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
+            "timeIntervalStart": kwargs.get("time_interval_start", missing),
+            "timeIntervalEnd": kwargs.get("time_interval_end", missing),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "exadataType": self.base_client.generate_collection_format_param(kwargs.get("exadata_type", missing), 'multi'),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
+            "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
+            "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceCapacityTrendAggregation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceCapacityTrendAggregation")
+
+    def summarize_exadata_insight_resource_forecast_trend(self, resource_type, resource_metric, exadata_insight_id, **kwargs):
+        """
+        Get historical usage and forecast predictions for an exadata system with breakdown by databases, hosts or storage servers.
+        Additionally resources can be filtered using databaseInsightId, hostInsightId or storageServerName query parameters.
+        Top five resources are returned if total exceeds the limit specified.
+        Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Database name is returned in name field. DatabaseInsightId , cdbName and hostName query parameter applies to ResourceType DATABASE.
+        Valid values for ResourceType HOST are CPU and MEMORY. HostName s returned in name field. HostInsightId and hostName query parameter applies to ResourceType HOST.
+        Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT. Storage server name is returned in name field for resourceMetric IOPS and THROUGHPUT
+        and asmName is returned in name field for resourceMetric STORAGE. StorageServerName query parameter applies to ResourceType STORAGE_SERVER.
+        Valid value for ResourceType DISKGROUP is STORAGE. Comma delimited (asmName,diskgroupName) is returned in name field.
+
+
+        :param str resource_type: (required)
+            Filter by resource.
+            Supported values are HOST , STORAGE_SERVER and DATABASE
+
+        :param str resource_metric: (required)
+            Filter by resource metric.
+            Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+
+        :param str exadata_insight_id: (required)
+            `OCID`__ of exadata insight resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str analysis_time_interval: (optional)
+            Specify time period in ISO 8601 format with respect to current time.
+            Default is last 30 days represented by P30D.
+            If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+            Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+
+        :param datetime time_interval_start: (optional)
+            Analysis start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            The minimum allowed value is 2 years prior to the current day.
+            timeIntervalStart and timeIntervalEnd parameters are used together.
+            If analysisTimeInterval is specified, this parameter is ignored.
+
+        :param datetime time_interval_end: (optional)
+            Analysis end time in UTC in ISO 8601 format(exclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd are used together.
+            If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+
+        :param list[str] database_insight_id: (optional)
+            Optional list of database insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] host_insight_id: (optional)
+            Optional list of host insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] storage_server_name: (optional)
+            Optional storage server name on an exadata system.
+
+        :param list[str] exadata_type: (optional)
+            Filter by one or more Exadata types.
+            Possible value are DBMACHINE, EXACS, and EXACC.
+
+        :param str statistic: (optional)
+            Choose the type of statistic metric data to be used for forecasting.
+
+            Allowed values are: "AVG", "MAX"
+
+        :param int forecast_start_day: (optional)
+            Number of days used for utilization forecast analysis.
+
+        :param int forecast_days: (optional)
+            Number of days used for utilization forecast analysis.
+
+        :param str forecast_model: (optional)
+            Choose algorithm model for the forecasting.
+            Possible values:
+              - LINEAR: Uses linear regression algorithm for forecasting.
+              - ML_AUTO: Automatically detects best algorithm to use for forecasting.
+              - ML_NO_AUTO: Automatically detects seasonality of the data for forecasting using linear or seasonal algorithm.
+
+            Allowed values are: "LINEAR", "ML_AUTO", "ML_NO_AUTO"
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
+
+        :param list[str] host_name: (optional)
+            Filter by hostname.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param int confidence: (optional)
+            This parameter is used to change data's confidence level, this data is ingested by the
+            forecast algorithm.
+            Confidence is the probability of an interval to contain the expected population parameter.
+            Manipulation of this value will lead to different results.
+            If not set, default confidence value is 95%.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The order in which resource Forecast trend records are listed
+
+            Allowed values are: "id", "name", "daysToReachCapacity"
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.SummarizeExadataInsightResourceForecastTrendCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_exadata_insight_resource_forecast_trend.py.html>`__ to see an example of how to use summarize_exadata_insight_resource_forecast_trend API.
+        """
+        resource_path = "/exadataInsights/resourceForecastTrend"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "analysis_time_interval",
+            "time_interval_start",
+            "time_interval_end",
+            "database_insight_id",
+            "host_insight_id",
+            "storage_server_name",
+            "exadata_type",
+            "statistic",
+            "forecast_start_day",
+            "forecast_days",
+            "forecast_model",
+            "cdb_name",
+            "host_name",
+            "limit",
+            "confidence",
+            "sort_order",
+            "sort_by",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_exadata_insight_resource_forecast_trend got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'statistic' in kwargs:
+            statistic_allowed_values = ["AVG", "MAX"]
+            if kwargs['statistic'] not in statistic_allowed_values:
+                raise ValueError(
+                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                )
+
+        if 'forecast_model' in kwargs:
+            forecast_model_allowed_values = ["LINEAR", "ML_AUTO", "ML_NO_AUTO"]
+            if kwargs['forecast_model'] not in forecast_model_allowed_values:
+                raise ValueError(
+                    "Invalid value for `forecast_model`, must be one of {0}".format(forecast_model_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["id", "name", "daysToReachCapacity"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "resourceType": resource_type,
+            "resourceMetric": resource_metric,
+            "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
+            "timeIntervalStart": kwargs.get("time_interval_start", missing),
+            "timeIntervalEnd": kwargs.get("time_interval_end", missing),
+            "exadataInsightId": exadata_insight_id,
+            "databaseInsightId": self.base_client.generate_collection_format_param(kwargs.get("database_insight_id", missing), 'multi'),
+            "hostInsightId": self.base_client.generate_collection_format_param(kwargs.get("host_insight_id", missing), 'multi'),
+            "storageServerName": self.base_client.generate_collection_format_param(kwargs.get("storage_server_name", missing), 'multi'),
+            "exadataType": self.base_client.generate_collection_format_param(kwargs.get("exadata_type", missing), 'multi'),
+            "statistic": kwargs.get("statistic", missing),
+            "forecastStartDay": kwargs.get("forecast_start_day", missing),
+            "forecastDays": kwargs.get("forecast_days", missing),
+            "forecastModel": kwargs.get("forecast_model", missing),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "confidence": kwargs.get("confidence", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceForecastTrendCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceForecastTrendCollection")
+
+    def summarize_exadata_insight_resource_forecast_trend_aggregated(self, resource_type, resource_metric, **kwargs):
+        """
+        Get aggregated historical usage and forecast predictions for resources. Either compartmentId or exadataInsightsId query parameter must be specified.
+        Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+        Valid values for ResourceType HOST are CPU and MEMORY.
+        Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+
+
+        :param str resource_type: (required)
+            Filter by resource.
+            Supported values are HOST , STORAGE_SERVER and DATABASE
+
+        :param str resource_metric: (required)
+            Filter by resource metric.
+            Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str analysis_time_interval: (optional)
+            Specify time period in ISO 8601 format with respect to current time.
+            Default is last 30 days represented by P30D.
+            If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+            Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+
+        :param datetime time_interval_start: (optional)
+            Analysis start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            The minimum allowed value is 2 years prior to the current day.
+            timeIntervalStart and timeIntervalEnd parameters are used together.
+            If analysisTimeInterval is specified, this parameter is ignored.
+
+        :param datetime time_interval_end: (optional)
+            Analysis end time in UTC in ISO 8601 format(exclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd are used together.
+            If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_type: (optional)
+            Filter by one or more Exadata types.
+            Possible value are DBMACHINE, EXACS, and EXACC.
+
+        :param str statistic: (optional)
+            Choose the type of statistic metric data to be used for forecasting.
+
+            Allowed values are: "AVG", "MAX"
+
+        :param int forecast_start_day: (optional)
+            Number of days used for utilization forecast analysis.
+
+        :param int forecast_days: (optional)
+            Number of days used for utilization forecast analysis.
+
+        :param str forecast_model: (optional)
+            Choose algorithm model for the forecasting.
+            Possible values:
+              - LINEAR: Uses linear regression algorithm for forecasting.
+              - ML_AUTO: Automatically detects best algorithm to use for forecasting.
+              - ML_NO_AUTO: Automatically detects seasonality of the data for forecasting using linear or seasonal algorithm.
+
+            Allowed values are: "LINEAR", "ML_AUTO", "ML_NO_AUTO"
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
+
+        :param list[str] host_name: (optional)
+            Filter by hostname.
+
+        :param int confidence: (optional)
+            This parameter is used to change data's confidence level, this data is ingested by the
+            forecast algorithm.
+            Confidence is the probability of an interval to contain the expected population parameter.
+            Manipulation of this value will lead to different results.
+            If not set, default confidence value is 95%.
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param list[str] defined_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+            The key for each tag is \"{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same tag name are interpreted as \"OR\".  Values for different tag names are interpreted as \"AND\".
+
+        :param list[str] defined_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.true\" (for checking existence of a defined tag)
+            or \"{namespace}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+            The key for each tag is \"{tagName}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for different tag names are interpreted as \"AND\".
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.SummarizeExadataInsightResourceForecastTrendAggregation`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_exadata_insight_resource_forecast_trend_aggregated.py.html>`__ to see an example of how to use summarize_exadata_insight_resource_forecast_trend_aggregated API.
+        """
+        resource_path = "/exadataInsights/resourceForecastTrendAggregated"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "compartment_id",
+            "analysis_time_interval",
+            "time_interval_start",
+            "time_interval_end",
+            "exadata_insight_id",
+            "exadata_type",
+            "statistic",
+            "forecast_start_day",
+            "forecast_days",
+            "forecast_model",
+            "cdb_name",
+            "host_name",
+            "confidence",
+            "page",
+            "defined_tag_equals",
+            "freeform_tag_equals",
+            "defined_tag_exists",
+            "freeform_tag_exists",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_exadata_insight_resource_forecast_trend_aggregated got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'statistic' in kwargs:
+            statistic_allowed_values = ["AVG", "MAX"]
+            if kwargs['statistic'] not in statistic_allowed_values:
+                raise ValueError(
+                    "Invalid value for `statistic`, must be one of {0}".format(statistic_allowed_values)
+                )
+
+        if 'forecast_model' in kwargs:
+            forecast_model_allowed_values = ["LINEAR", "ML_AUTO", "ML_NO_AUTO"]
+            if kwargs['forecast_model'] not in forecast_model_allowed_values:
+                raise ValueError(
+                    "Invalid value for `forecast_model`, must be one of {0}".format(forecast_model_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "resourceType": resource_type,
+            "resourceMetric": resource_metric,
+            "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
+            "timeIntervalStart": kwargs.get("time_interval_start", missing),
+            "timeIntervalEnd": kwargs.get("time_interval_end", missing),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "exadataType": self.base_client.generate_collection_format_param(kwargs.get("exadata_type", missing), 'multi'),
+            "statistic": kwargs.get("statistic", missing),
+            "forecastStartDay": kwargs.get("forecast_start_day", missing),
+            "forecastDays": kwargs.get("forecast_days", missing),
+            "forecastModel": kwargs.get("forecast_model", missing),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "confidence": kwargs.get("confidence", missing),
+            "page": kwargs.get("page", missing),
+            "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
+            "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
+            "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceForecastTrendAggregation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceForecastTrendAggregation")
+
+    def summarize_exadata_insight_resource_statistics(self, exadata_insight_id, resource_type, resource_metric, **kwargs):
+        """
+        Lists the Resource statistics (usage, capacity, usage change percent, utilization percent) for each resource based on resourceMetric filtered by utilization level.
+        Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+        Valid values for ResourceType HOST are CPU and MEMORY.
+        Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS, THROUGHPUT.
+        Valid value for ResourceType DISKGROUP is STORAGE.
+
+
+        :param str exadata_insight_id: (required)
+            `OCID`__ of exadata insight resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str resource_type: (required)
+            Filter by resource.
+            Supported values are HOST , STORAGE_SERVER and DATABASE
+
+        :param str resource_metric: (required)
+            Filter by resource metric.
+            Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+
+        :param str analysis_time_interval: (optional)
+            Specify time period in ISO 8601 format with respect to current time.
+            Default is last 30 days represented by P30D.
+            If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+            Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+
+        :param datetime time_interval_start: (optional)
+            Analysis start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            The minimum allowed value is 2 years prior to the current day.
+            timeIntervalStart and timeIntervalEnd parameters are used together.
+            If analysisTimeInterval is specified, this parameter is ignored.
+
+        :param datetime time_interval_end: (optional)
+            Analysis end time in UTC in ISO 8601 format(exclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd are used together.
+            If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+
+        :param list[str] exadata_type: (optional)
+            Filter by one or more Exadata types.
+            Possible value are DBMACHINE, EXACS, and EXACC.
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
+
+        :param list[str] host_name: (optional)
+            Filter by hostname.
+
+        :param int percentile: (optional)
+            Percentile values of daily usage to be used for computing the aggregate resource usage.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The order in which resource statistics records are listed
+
+            Allowed values are: "utilizationPercent", "usage", "usageChangePercent"
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.SummarizeExadataInsightResourceStatisticsAggregationCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_exadata_insight_resource_statistics.py.html>`__ to see an example of how to use summarize_exadata_insight_resource_statistics API.
+        """
+        resource_path = "/exadataInsights/resourceStatistics"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "analysis_time_interval",
+            "time_interval_start",
+            "time_interval_end",
+            "exadata_type",
+            "cdb_name",
+            "host_name",
+            "percentile",
+            "sort_order",
+            "sort_by",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_exadata_insight_resource_statistics got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["utilizationPercent", "usage", "usageChangePercent"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "exadataInsightId": exadata_insight_id,
+            "resourceType": resource_type,
+            "resourceMetric": resource_metric,
+            "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
+            "timeIntervalStart": kwargs.get("time_interval_start", missing),
+            "timeIntervalEnd": kwargs.get("time_interval_end", missing),
+            "exadataType": self.base_client.generate_collection_format_param(kwargs.get("exadata_type", missing), 'multi'),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "percentile": kwargs.get("percentile", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceStatisticsAggregationCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceStatisticsAggregationCollection")
+
+    def summarize_exadata_insight_resource_usage(self, compartment_id, resource_type, resource_metric, **kwargs):
+        """
+        A cumulative distribution function is used to rank the usage data points per resource within the specified time period.
+        For each resource, the minimum data point with a ranking > the percentile value is included in the summation.
+        Linear regression functions are used to calculate the usage change percentage.
+        Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+        Valid values for ResourceType HOST are CPU and MEMORY.
+        Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str resource_type: (required)
+            Filter by resource.
+            Supported values are HOST , STORAGE_SERVER and DATABASE
+
+        :param str resource_metric: (required)
+            Filter by resource metric.
+            Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+
+        :param str analysis_time_interval: (optional)
+            Specify time period in ISO 8601 format with respect to current time.
+            Default is last 30 days represented by P30D.
+            If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+            Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+
+        :param datetime time_interval_start: (optional)
+            Analysis start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            The minimum allowed value is 2 years prior to the current day.
+            timeIntervalStart and timeIntervalEnd parameters are used together.
+            If analysisTimeInterval is specified, this parameter is ignored.
+
+        :param datetime time_interval_end: (optional)
+            Analysis end time in UTC in ISO 8601 format(exclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd are used together.
+            If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_type: (optional)
+            Filter by one or more Exadata types.
+            Possible value are DBMACHINE, EXACS, and EXACC.
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
+
+        :param list[str] host_name: (optional)
+            Filter by hostname.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The order in which resource usage summary records are listed
+
+            Allowed values are: "utilizationPercent", "usage", "capacity", "usageChangePercent"
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param int percentile: (optional)
+            Percentile values of daily usage to be used for computing the aggregate resource usage.
+
+        :param list[str] defined_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+            The key for each tag is \"{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same tag name are interpreted as \"OR\".  Values for different tag names are interpreted as \"AND\".
+
+        :param list[str] defined_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.true\" (for checking existence of a defined tag)
+            or \"{namespace}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+            The key for each tag is \"{tagName}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for different tag names are interpreted as \"AND\".
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.SummarizeExadataInsightResourceUsageCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_exadata_insight_resource_usage.py.html>`__ to see an example of how to use summarize_exadata_insight_resource_usage API.
+        """
+        resource_path = "/exadataInsights/resourceUsageSummary"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "analysis_time_interval",
+            "time_interval_start",
+            "time_interval_end",
+            "exadata_insight_id",
+            "exadata_type",
+            "cdb_name",
+            "host_name",
+            "sort_order",
+            "sort_by",
+            "page",
+            "limit",
+            "percentile",
+            "defined_tag_equals",
+            "freeform_tag_equals",
+            "defined_tag_exists",
+            "freeform_tag_exists",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_exadata_insight_resource_usage got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["utilizationPercent", "usage", "capacity", "usageChangePercent"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "resourceType": resource_type,
+            "resourceMetric": resource_metric,
+            "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
+            "timeIntervalStart": kwargs.get("time_interval_start", missing),
+            "timeIntervalEnd": kwargs.get("time_interval_end", missing),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "exadataType": self.base_client.generate_collection_format_param(kwargs.get("exadata_type", missing), 'multi'),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "percentile": kwargs.get("percentile", missing),
+            "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
+            "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
+            "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceUsageCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceUsageCollection")
+
+    def summarize_exadata_insight_resource_usage_aggregated(self, compartment_id, resource_type, resource_metric, **kwargs):
+        """
+        A cumulative distribution function is used to rank the usage data points per database within the specified time period.
+        For each database, the minimum data point with a ranking > the percentile value is included in the summation.
+        Linear regression functions are used to calculate the usage change percentage.
+        Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE.
+        Valid values for ResourceType HOST are CPU and MEMORY.
+        Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str resource_type: (required)
+            Filter by resource.
+            Supported values are HOST , STORAGE_SERVER and DATABASE
+
+        :param str resource_metric: (required)
+            Filter by resource metric.
+            Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+
+        :param str analysis_time_interval: (optional)
+            Specify time period in ISO 8601 format with respect to current time.
+            Default is last 30 days represented by P30D.
+            If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+            Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+
+        :param datetime time_interval_start: (optional)
+            Analysis start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            The minimum allowed value is 2 years prior to the current day.
+            timeIntervalStart and timeIntervalEnd parameters are used together.
+            If analysisTimeInterval is specified, this parameter is ignored.
+
+        :param datetime time_interval_end: (optional)
+            Analysis end time in UTC in ISO 8601 format(exclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd are used together.
+            If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_type: (optional)
+            Filter by one or more Exadata types.
+            Possible value are DBMACHINE, EXACS, and EXACC.
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
+
+        :param list[str] host_name: (optional)
+            Filter by hostname.
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param int percentile: (optional)
+            Percentile values of daily usage to be used for computing the aggregate resource usage.
+
+        :param list[str] defined_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+            The key for each tag is \"{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same tag name are interpreted as \"OR\".  Values for different tag names are interpreted as \"AND\".
+
+        :param list[str] defined_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.true\" (for checking existence of a defined tag)
+            or \"{namespace}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+            The key for each tag is \"{tagName}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for different tag names are interpreted as \"AND\".
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.SummarizeExadataInsightResourceUsageAggregation`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_exadata_insight_resource_usage_aggregated.py.html>`__ to see an example of how to use summarize_exadata_insight_resource_usage_aggregated API.
+        """
+        resource_path = "/exadataInsights/resourceUsageSummaryAggregated"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "analysis_time_interval",
+            "time_interval_start",
+            "time_interval_end",
+            "exadata_insight_id",
+            "exadata_type",
+            "cdb_name",
+            "host_name",
+            "page",
+            "percentile",
+            "defined_tag_equals",
+            "freeform_tag_equals",
+            "defined_tag_exists",
+            "freeform_tag_exists",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_exadata_insight_resource_usage_aggregated got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "resourceType": resource_type,
+            "resourceMetric": resource_metric,
+            "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
+            "timeIntervalStart": kwargs.get("time_interval_start", missing),
+            "timeIntervalEnd": kwargs.get("time_interval_end", missing),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "exadataType": self.base_client.generate_collection_format_param(kwargs.get("exadata_type", missing), 'multi'),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "percentile": kwargs.get("percentile", missing),
+            "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
+            "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
+            "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceUsageAggregation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceUsageAggregation")
+
+    def summarize_exadata_insight_resource_utilization_insight(self, compartment_id, resource_type, resource_metric, **kwargs):
+        """
+        Gets current utilization, projected utilization and days to reach projectedUtilization for an exadata system over specified time period. Valid values for ResourceType DATABASE are CPU,MEMORY,IO and STORAGE. Valid values for ResourceType HOST are CPU and MEMORY. Valid values for ResourceType STORAGE_SERVER are STORAGE, IOPS and THROUGHPUT.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str resource_type: (required)
+            Filter by resource.
+            Supported values are HOST , STORAGE_SERVER and DATABASE
+
+        :param str resource_metric: (required)
+            Filter by resource metric.
+            Supported values are CPU , STORAGE, MEMORY, IO, IOPS, THROUGHPUT
+
+        :param str analysis_time_interval: (optional)
+            Specify time period in ISO 8601 format with respect to current time.
+            Default is last 30 days represented by P30D.
+            If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+            Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+
+        :param datetime time_interval_start: (optional)
+            Analysis start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            The minimum allowed value is 2 years prior to the current day.
+            timeIntervalStart and timeIntervalEnd parameters are used together.
+            If analysisTimeInterval is specified, this parameter is ignored.
+
+        :param datetime time_interval_end: (optional)
+            Analysis end time in UTC in ISO 8601 format(exclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd are used together.
+            If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_type: (optional)
+            Filter by one or more Exadata types.
+            Possible value are DBMACHINE, EXACS, and EXACC.
+
+        :param int forecast_start_day: (optional)
+            Number of days used for utilization forecast analysis.
+
+        :param int forecast_days: (optional)
+            Number of days used for utilization forecast analysis.
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
+
+        :param list[str] host_name: (optional)
+            Filter by hostname.
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param list[str] defined_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_equals: (optional)
+            A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+            The key for each tag is \"{tagName}.{value}\".  All inputs are case-insensitive.
+            Multiple values for the same tag name are interpreted as \"OR\".  Values for different tag names are interpreted as \"AND\".
+
+        :param list[str] defined_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+            Each item in the list has the format \"{namespace}.{tagName}.true\" (for checking existence of a defined tag)
+            or \"{namespace}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for the same key (i.e. same namespace and tag name) are interpreted as \"OR\".
+            Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as \"AND\".
+
+        :param list[str] freeform_tag_exists: (optional)
+            A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+            The key for each tag is \"{tagName}.true\".  All inputs are case-insensitive.
+            Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
+            Multiple values for different tag names are interpreted as \"AND\".
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.SummarizeExadataInsightResourceUtilizationInsightAggregation`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_exadata_insight_resource_utilization_insight.py.html>`__ to see an example of how to use summarize_exadata_insight_resource_utilization_insight API.
+        """
+        resource_path = "/exadataInsights/resourceUtilizationInsight"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "analysis_time_interval",
+            "time_interval_start",
+            "time_interval_end",
+            "exadata_insight_id",
+            "exadata_type",
+            "forecast_start_day",
+            "forecast_days",
+            "cdb_name",
+            "host_name",
+            "limit",
+            "page",
+            "defined_tag_equals",
+            "freeform_tag_equals",
+            "defined_tag_exists",
+            "freeform_tag_exists",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_exadata_insight_resource_utilization_insight got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "resourceType": resource_type,
+            "resourceMetric": resource_metric,
+            "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
+            "timeIntervalStart": kwargs.get("time_interval_start", missing),
+            "timeIntervalEnd": kwargs.get("time_interval_end", missing),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "exadataType": self.base_client.generate_collection_format_param(kwargs.get("exadata_type", missing), 'multi'),
+            "forecastStartDay": kwargs.get("forecast_start_day", missing),
+            "forecastDays": kwargs.get("forecast_days", missing),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
+            "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
+            "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
+            "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceUtilizationInsightAggregation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeExadataInsightResourceUtilizationInsightAggregation")
+
+    def summarize_exadata_members(self, exadata_insight_id, **kwargs):
+        """
+        Lists the software and hardware inventory of the Exadata System.
+
+
+        :param str exadata_insight_id: (required)
+            `OCID`__ of exadata insight resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_type: (optional)
+            Filter by one or more Exadata types.
+            Possible value are DBMACHINE, EXACS, and EXACC.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The order in which exadata member records are listed
+
+            Allowed values are: "name", "displayName", "entityType"
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.ExadataMemberCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_exadata_members.py.html>`__ to see an example of how to use summarize_exadata_members API.
+        """
+        resource_path = "/exadataInsights/exadataMembers"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "exadata_type",
+            "sort_order",
+            "sort_by",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_exadata_members got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["name", "displayName", "entityType"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "exadataInsightId": exadata_insight_id,
+            "exadataType": self.base_client.generate_collection_format_param(kwargs.get("exadata_type", missing), 'multi'),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ExadataMemberCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ExadataMemberCollection")
+
     def summarize_host_insight_resource_capacity_trend(self, compartment_id, resource_metric, **kwargs):
         """
         Returns response with time series data (endTimestamp, capacity) for the time period specified.
@@ -5658,6 +8900,11 @@ class OperationsInsightsClient(object):
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -5741,6 +8988,7 @@ class OperationsInsightsClient(object):
             "time_interval_end",
             "platform_type",
             "id",
+            "exadata_insight_id",
             "utilization_level",
             "page",
             "sort_order",
@@ -5793,6 +9041,7 @@ class OperationsInsightsClient(object):
             "timeIntervalEnd": kwargs.get("time_interval_end", missing),
             "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
             "utilizationLevel": kwargs.get("utilization_level", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -5876,6 +9125,11 @@ class OperationsInsightsClient(object):
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -5973,6 +9227,7 @@ class OperationsInsightsClient(object):
             "time_interval_end",
             "platform_type",
             "id",
+            "exadata_insight_id",
             "statistic",
             "forecast_days",
             "forecast_model",
@@ -6027,6 +9282,7 @@ class OperationsInsightsClient(object):
             "timeIntervalEnd": kwargs.get("time_interval_end", missing),
             "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
             "statistic": kwargs.get("statistic", missing),
             "forecastDays": kwargs.get("forecast_days", missing),
             "forecastModel": kwargs.get("forecast_model", missing),
@@ -6113,6 +9369,11 @@ class OperationsInsightsClient(object):
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -6207,6 +9468,7 @@ class OperationsInsightsClient(object):
             "time_interval_end",
             "platform_type",
             "id",
+            "exadata_insight_id",
             "percentile",
             "insight_by",
             "forecast_days",
@@ -6255,6 +9517,7 @@ class OperationsInsightsClient(object):
             "timeIntervalEnd": kwargs.get("time_interval_end", missing),
             "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
             "percentile": kwargs.get("percentile", missing),
             "insightBy": kwargs.get("insight_by", missing),
             "forecastDays": kwargs.get("forecast_days", missing),
@@ -6346,6 +9609,11 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
@@ -6410,6 +9678,7 @@ class OperationsInsightsClient(object):
             "time_interval_end",
             "platform_type",
             "id",
+            "exadata_insight_id",
             "page",
             "percentile",
             "opc_request_id",
@@ -6439,6 +9708,7 @@ class OperationsInsightsClient(object):
             "timeIntervalEnd": kwargs.get("time_interval_end", missing),
             "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
             "page": kwargs.get("page", missing),
             "percentile": kwargs.get("percentile", missing),
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
@@ -6524,6 +9794,11 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param str page: (optional)
             For list pagination. The value of the `opc-next-page` response header from
             the previous \"List\" call. For important details about how pagination works,
@@ -6595,6 +9870,7 @@ class OperationsInsightsClient(object):
             "time_interval_end",
             "platform_type",
             "id",
+            "exadata_insight_id",
             "page",
             "sort_order",
             "sort_by",
@@ -6639,6 +9915,7 @@ class OperationsInsightsClient(object):
             "timeIntervalEnd": kwargs.get("time_interval_end", missing),
             "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
@@ -6724,6 +10001,11 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
         :param int forecast_days: (optional)
             Number of days used for utilization forecast analysis.
 
@@ -6788,6 +10070,7 @@ class OperationsInsightsClient(object):
             "time_interval_end",
             "platform_type",
             "id",
+            "exadata_insight_id",
             "forecast_days",
             "page",
             "opc_request_id",
@@ -6817,6 +10100,7 @@ class OperationsInsightsClient(object):
             "timeIntervalEnd": kwargs.get("time_interval_end", missing),
             "platformType": self.base_client.generate_collection_format_param(kwargs.get("platform_type", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
             "forecastDays": kwargs.get("forecast_days", missing),
             "page": kwargs.get("page", missing),
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
@@ -6859,7 +10143,8 @@ class OperationsInsightsClient(object):
 
     def summarize_sql_insights(self, compartment_id, **kwargs):
         """
-        Query SQL Warehouse to get the performance insights for SQLs taking greater than X% database time for a given time period across the given databases or database types.
+        Query SQL Warehouse to get the performance insights for SQLs taking greater than X% database time for a given
+        time period across the given databases or database types.
 
 
         :param str compartment_id: (required)
@@ -6882,6 +10167,14 @@ class OperationsInsightsClient(object):
             Optional list of database insight resource `OCIDs`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
 
         :param list[str] host_name: (optional)
             Filter by one or more hostname.
@@ -6967,6 +10260,8 @@ class OperationsInsightsClient(object):
             "database_type",
             "database_id",
             "id",
+            "exadata_insight_id",
+            "cdb_name",
             "host_name",
             "database_time_pct_greater_than",
             "analysis_time_interval",
@@ -6997,6 +10292,8 @@ class OperationsInsightsClient(object):
             "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
             "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
             "databaseTimePctGreaterThan": kwargs.get("database_time_pct_greater_than", missing),
             "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
@@ -7305,7 +10602,8 @@ class OperationsInsightsClient(object):
 
     def summarize_sql_statistics(self, compartment_id, **kwargs):
         """
-        Query SQL Warehouse to get the performance statistics for SQLs taking greater than X% database time for a given time period across the given databases or database types.
+        Query SQL Warehouse to get the performance statistics for SQLs taking greater than X% database time for a given
+        time period across the given databases or database types.
 
 
         :param str compartment_id: (required)
@@ -7328,6 +10626,14 @@ class OperationsInsightsClient(object):
             Optional list of database insight resource `OCIDs`__.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
 
         :param list[str] host_name: (optional)
             Filter by one or more hostname.
@@ -7442,6 +10748,8 @@ class OperationsInsightsClient(object):
             "database_type",
             "database_id",
             "id",
+            "exadata_insight_id",
+            "cdb_name",
             "host_name",
             "database_time_pct_greater_than",
             "sql_identifier",
@@ -7499,6 +10807,8 @@ class OperationsInsightsClient(object):
             "databaseType": self.base_client.generate_collection_format_param(kwargs.get("database_type", missing), 'multi'),
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
             "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
             "databaseTimePctGreaterThan": kwargs.get("database_time_pct_greater_than", missing),
             "sqlIdentifier": self.base_client.generate_collection_format_param(kwargs.get("sql_identifier", missing), 'multi'),
@@ -7571,6 +10881,14 @@ class OperationsInsightsClient(object):
             Optional list of database `OCIDs`__ of the database insight resource.
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] exadata_insight_id: (optional)
+            Optional list of exadata insight resource `OCIDs`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param list[str] cdb_name: (optional)
+            Filter by one or more cdb name.
 
         :param list[str] host_name: (optional)
             Filter by one or more hostname.
@@ -7652,6 +10970,8 @@ class OperationsInsightsClient(object):
             "retry_strategy",
             "database_id",
             "id",
+            "exadata_insight_id",
+            "cdb_name",
             "host_name",
             "analysis_time_interval",
             "time_interval_start",
@@ -7672,6 +10992,8 @@ class OperationsInsightsClient(object):
             "compartmentId": compartment_id,
             "databaseId": self.base_client.generate_collection_format_param(kwargs.get("database_id", missing), 'multi'),
             "id": self.base_client.generate_collection_format_param(kwargs.get("id", missing), 'multi'),
+            "exadataInsightId": self.base_client.generate_collection_format_param(kwargs.get("exadata_insight_id", missing), 'multi'),
+            "cdbName": self.base_client.generate_collection_format_param(kwargs.get("cdb_name", missing), 'multi'),
             "hostName": self.base_client.generate_collection_format_param(kwargs.get("host_name", missing), 'multi'),
             "sqlIdentifier": sql_identifier,
             "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
@@ -8026,6 +11348,96 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_enterprise_manager_bridge_details)
+
+    def update_exadata_insight(self, exadata_insight_id, update_exadata_insight_details, **kwargs):
+        """
+        Updates configuration of an Exadata insight.
+
+
+        :param str exadata_insight_id: (required)
+            Unique Exadata insight identifier
+
+        :param oci.opsi.models.UpdateExadataInsightDetails update_exadata_insight_details: (required)
+            The configuration to be updated.
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/update_exadata_insight.py.html>`__ to see an example of how to use update_exadata_insight API.
+        """
+        resource_path = "/exadataInsights/{exadataInsightId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_exadata_insight got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "exadataInsightId": exadata_insight_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_exadata_insight_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_exadata_insight_details)
 
     def update_host_insight(self, host_insight_id, update_host_insight_details, **kwargs):
         """

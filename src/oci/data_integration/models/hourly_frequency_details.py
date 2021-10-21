@@ -21,12 +21,12 @@ class HourlyFrequencyDetails(AbstractFrequencyDetails):
 
         :param model_type:
             The value to assign to the model_type property of this HourlyFrequencyDetails.
-            Allowed values for this property are: "HOURLY", "DAILY", "MONTHLY"
+            Allowed values for this property are: "HOURLY", "DAILY", "MONTHLY", "WEEKLY", "MONTHLY_RULE", "CUSTOM"
         :type model_type: str
 
         :param frequency:
             The value to assign to the frequency property of this HourlyFrequencyDetails.
-            Allowed values for this property are: "HOURLY", "DAILY", "MONTHLY"
+            Allowed values for this property are: "HOURLY", "DAILY", "MONTHLY", "WEEKLY", "CUSTOM"
         :type frequency: str
 
         :param interval:

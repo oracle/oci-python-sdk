@@ -89,6 +89,74 @@ class WorkRequest(object):
     #: This constant has a value of "DELETE_DEPLOYMENT"
     OPERATION_TYPE_DELETE_DEPLOYMENT = "DELETE_DEPLOYMENT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_BUILD_PIPELINE"
+    OPERATION_TYPE_CREATE_BUILD_PIPELINE = "CREATE_BUILD_PIPELINE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_BUILD_PIPELINE"
+    OPERATION_TYPE_UPDATE_BUILD_PIPELINE = "UPDATE_BUILD_PIPELINE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_BUILD_PIPELINE"
+    OPERATION_TYPE_DELETE_BUILD_PIPELINE = "DELETE_BUILD_PIPELINE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_BUILD_PIPELINE_STAGE"
+    OPERATION_TYPE_CREATE_BUILD_PIPELINE_STAGE = "CREATE_BUILD_PIPELINE_STAGE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_BUILD_PIPELINE_STAGE"
+    OPERATION_TYPE_UPDATE_BUILD_PIPELINE_STAGE = "UPDATE_BUILD_PIPELINE_STAGE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_BUILD_PIPELINE_STAGE"
+    OPERATION_TYPE_DELETE_BUILD_PIPELINE_STAGE = "DELETE_BUILD_PIPELINE_STAGE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_CONNECTION"
+    OPERATION_TYPE_CREATE_CONNECTION = "CREATE_CONNECTION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_CONNECTION"
+    OPERATION_TYPE_UPDATE_CONNECTION = "UPDATE_CONNECTION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_CONNECTION"
+    OPERATION_TYPE_DELETE_CONNECTION = "DELETE_CONNECTION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_TRIGGER"
+    OPERATION_TYPE_CREATE_TRIGGER = "CREATE_TRIGGER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_TRIGGER"
+    OPERATION_TYPE_UPDATE_TRIGGER = "UPDATE_TRIGGER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_TRIGGER"
+    OPERATION_TYPE_DELETE_TRIGGER = "DELETE_TRIGGER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "EXECUTE_TRIGGER"
+    OPERATION_TYPE_EXECUTE_TRIGGER = "EXECUTE_TRIGGER"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_REPOSITORY"
+    OPERATION_TYPE_CREATE_REPOSITORY = "CREATE_REPOSITORY"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_REPOSITORY"
+    OPERATION_TYPE_UPDATE_REPOSITORY = "UPDATE_REPOSITORY"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_REPOSITORY"
+    OPERATION_TYPE_DELETE_REPOSITORY = "DELETE_REPOSITORY"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MIRROR_REPOSITORY"
+    OPERATION_TYPE_MIRROR_REPOSITORY = "MIRROR_REPOSITORY"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -120,7 +188,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_DEPLOY_PIPELINE", "UPDATE_DEPLOY_PIPELINE", "DELETE_DEPLOY_PIPELINE", "CREATE_DEPLOY_STAGE", "UPDATE_DEPLOY_STAGE", "DELETE_DEPLOY_STAGE", "CREATE_DEPLOY_ARTIFACT", "UPDATE_DEPLOY_ARTIFACT", "DELETE_DEPLOY_ARTIFACT", "CREATE_DEPLOY_ENVIRONMENT", "UPDATE_DEPLOY_ENVIRONMENT", "DELETE_DEPLOY_ENVIRONMENT", "CREATE_DEPLOYMENT", "UPDATE_DEPLOYMENT", "DELETE_DEPLOYMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_DEPLOY_PIPELINE", "UPDATE_DEPLOY_PIPELINE", "DELETE_DEPLOY_PIPELINE", "CREATE_DEPLOY_STAGE", "UPDATE_DEPLOY_STAGE", "DELETE_DEPLOY_STAGE", "CREATE_DEPLOY_ARTIFACT", "UPDATE_DEPLOY_ARTIFACT", "DELETE_DEPLOY_ARTIFACT", "CREATE_DEPLOY_ENVIRONMENT", "UPDATE_DEPLOY_ENVIRONMENT", "DELETE_DEPLOY_ENVIRONMENT", "CREATE_DEPLOYMENT", "UPDATE_DEPLOYMENT", "DELETE_DEPLOYMENT", "CREATE_BUILD_PIPELINE", "UPDATE_BUILD_PIPELINE", "DELETE_BUILD_PIPELINE", "CREATE_BUILD_PIPELINE_STAGE", "UPDATE_BUILD_PIPELINE_STAGE", "DELETE_BUILD_PIPELINE_STAGE", "CREATE_CONNECTION", "UPDATE_CONNECTION", "DELETE_CONNECTION", "CREATE_TRIGGER", "UPDATE_TRIGGER", "DELETE_TRIGGER", "EXECUTE_TRIGGER", "CREATE_REPOSITORY", "UPDATE_REPOSITORY", "DELETE_REPOSITORY", "MIRROR_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -199,7 +267,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         Type of the work request.
 
-        Allowed values for this property are: "CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_DEPLOY_PIPELINE", "UPDATE_DEPLOY_PIPELINE", "DELETE_DEPLOY_PIPELINE", "CREATE_DEPLOY_STAGE", "UPDATE_DEPLOY_STAGE", "DELETE_DEPLOY_STAGE", "CREATE_DEPLOY_ARTIFACT", "UPDATE_DEPLOY_ARTIFACT", "DELETE_DEPLOY_ARTIFACT", "CREATE_DEPLOY_ENVIRONMENT", "UPDATE_DEPLOY_ENVIRONMENT", "DELETE_DEPLOY_ENVIRONMENT", "CREATE_DEPLOYMENT", "UPDATE_DEPLOYMENT", "DELETE_DEPLOYMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_DEPLOY_PIPELINE", "UPDATE_DEPLOY_PIPELINE", "DELETE_DEPLOY_PIPELINE", "CREATE_DEPLOY_STAGE", "UPDATE_DEPLOY_STAGE", "DELETE_DEPLOY_STAGE", "CREATE_DEPLOY_ARTIFACT", "UPDATE_DEPLOY_ARTIFACT", "DELETE_DEPLOY_ARTIFACT", "CREATE_DEPLOY_ENVIRONMENT", "UPDATE_DEPLOY_ENVIRONMENT", "DELETE_DEPLOY_ENVIRONMENT", "CREATE_DEPLOYMENT", "UPDATE_DEPLOYMENT", "DELETE_DEPLOYMENT", "CREATE_BUILD_PIPELINE", "UPDATE_BUILD_PIPELINE", "DELETE_BUILD_PIPELINE", "CREATE_BUILD_PIPELINE_STAGE", "UPDATE_BUILD_PIPELINE_STAGE", "DELETE_BUILD_PIPELINE_STAGE", "CREATE_CONNECTION", "UPDATE_CONNECTION", "DELETE_CONNECTION", "CREATE_TRIGGER", "UPDATE_TRIGGER", "DELETE_TRIGGER", "EXECUTE_TRIGGER", "CREATE_REPOSITORY", "UPDATE_REPOSITORY", "DELETE_REPOSITORY", "MIRROR_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -218,7 +286,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_DEPLOY_PIPELINE", "UPDATE_DEPLOY_PIPELINE", "DELETE_DEPLOY_PIPELINE", "CREATE_DEPLOY_STAGE", "UPDATE_DEPLOY_STAGE", "DELETE_DEPLOY_STAGE", "CREATE_DEPLOY_ARTIFACT", "UPDATE_DEPLOY_ARTIFACT", "DELETE_DEPLOY_ARTIFACT", "CREATE_DEPLOY_ENVIRONMENT", "UPDATE_DEPLOY_ENVIRONMENT", "DELETE_DEPLOY_ENVIRONMENT", "CREATE_DEPLOYMENT", "UPDATE_DEPLOYMENT", "DELETE_DEPLOYMENT"]
+        allowed_values = ["CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_DEPLOY_PIPELINE", "UPDATE_DEPLOY_PIPELINE", "DELETE_DEPLOY_PIPELINE", "CREATE_DEPLOY_STAGE", "UPDATE_DEPLOY_STAGE", "DELETE_DEPLOY_STAGE", "CREATE_DEPLOY_ARTIFACT", "UPDATE_DEPLOY_ARTIFACT", "DELETE_DEPLOY_ARTIFACT", "CREATE_DEPLOY_ENVIRONMENT", "UPDATE_DEPLOY_ENVIRONMENT", "DELETE_DEPLOY_ENVIRONMENT", "CREATE_DEPLOYMENT", "UPDATE_DEPLOYMENT", "DELETE_DEPLOYMENT", "CREATE_BUILD_PIPELINE", "UPDATE_BUILD_PIPELINE", "DELETE_BUILD_PIPELINE", "CREATE_BUILD_PIPELINE_STAGE", "UPDATE_BUILD_PIPELINE_STAGE", "DELETE_BUILD_PIPELINE_STAGE", "CREATE_CONNECTION", "UPDATE_CONNECTION", "DELETE_CONNECTION", "CREATE_TRIGGER", "UPDATE_TRIGGER", "DELETE_TRIGGER", "EXECUTE_TRIGGER", "CREATE_REPOSITORY", "UPDATE_REPOSITORY", "DELETE_REPOSITORY", "MIRROR_REPOSITORY"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

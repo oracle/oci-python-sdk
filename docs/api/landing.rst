@@ -25,6 +25,8 @@ API Reference
 * :doc:`Bds <bds/client/oci.bds.BdsClient>`
 * :doc:`Blockchain Platform <blockchain/client/oci.blockchain.BlockchainPlatformClient>`
 * :doc:`Budget <budget/client/oci.budget.BudgetClient>`
+* :doc:`Certificates <certificates/client/oci.certificates.CertificatesClient>`
+* :doc:`Certificates Management <certificates_management/client/oci.certificates_management.CertificatesManagementClient>`
 * :doc:`Incident <cims/client/oci.cims.IncidentClient>`
 * :doc:`User <cims/client/oci.cims.UserClient>`
 * :doc:`Cloud Guard <cloud_guard/client/oci.cloud_guard.CloudGuardClient>`
@@ -118,8 +120,10 @@ API Reference
 * :doc:`Domain Governance <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainGovernanceClient>`
 * :doc:`Link <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.LinkClient>`
 * :doc:`Orders <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.OrdersClient>`
+* :doc:`Organization <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.OrganizationClient>`
 * :doc:`Recipient Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.RecipientInvitationClient>`
 * :doc:`Sender Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SenderInvitationClient>`
+* :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
 * :doc:`Usageapi <usage_api/client/oci.usage_api.UsageapiClient>`
 * :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
@@ -164,6 +168,8 @@ API Reference
     bds
     blockchain
     budget
+    certificates
+    certificates_management
     cims
     cloud_guard
     compute_instance_agent

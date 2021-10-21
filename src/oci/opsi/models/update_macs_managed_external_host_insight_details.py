@@ -21,7 +21,7 @@ class UpdateMacsManagedExternalHostInsightDetails(UpdateHostInsightDetails):
 
         :param entity_source:
             The value to assign to the entity_source property of this UpdateMacsManagedExternalHostInsightDetails.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST"
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST"
         :type entity_source: str
 
         :param freeform_tags:

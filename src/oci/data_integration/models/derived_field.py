@@ -60,6 +60,10 @@ class DerivedField(TypedObject):
             The value to assign to the type property of this DerivedField.
         :type type: str
 
+        :param is_use_inferred_type:
+            The value to assign to the is_use_inferred_type property of this DerivedField.
+        :type is_use_inferred_type: bool
+
         :param labels:
             The value to assign to the labels property of this DerivedField.
         :type labels: list[str]
@@ -76,6 +80,7 @@ class DerivedField(TypedObject):
             'description': 'str',
             'expr': 'Expression',
             'type': 'str',
+            'is_use_inferred_type': 'bool',
             'labels': 'list[str]'
         }
 
@@ -90,6 +95,7 @@ class DerivedField(TypedObject):
             'description': 'description',
             'expr': 'expr',
             'type': 'type',
+            'is_use_inferred_type': 'isUseInferredType',
             'labels': 'labels'
         }
 
@@ -103,6 +109,7 @@ class DerivedField(TypedObject):
         self._description = None
         self._expr = None
         self._type = None
+        self._is_use_inferred_type = None
         self._labels = None
         self._model_type = 'DERIVED_FIELD'
 
@@ -149,6 +156,30 @@ class DerivedField(TypedObject):
         :type: str
         """
         self._type = type
+
+    @property
+    def is_use_inferred_type(self):
+        """
+        Gets the is_use_inferred_type of this DerivedField.
+        Specifies whether to use inferred expression output type as output type of the derived field. Default value of this flag is false.
+
+
+        :return: The is_use_inferred_type of this DerivedField.
+        :rtype: bool
+        """
+        return self._is_use_inferred_type
+
+    @is_use_inferred_type.setter
+    def is_use_inferred_type(self, is_use_inferred_type):
+        """
+        Sets the is_use_inferred_type of this DerivedField.
+        Specifies whether to use inferred expression output type as output type of the derived field. Default value of this flag is false.
+
+
+        :param is_use_inferred_type: The is_use_inferred_type of this DerivedField.
+        :type: bool
+        """
+        self._is_use_inferred_type = is_use_inferred_type
 
     @property
     def labels(self):

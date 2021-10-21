@@ -17,18 +17,23 @@ class EntityShape(object):
     #: This constant has a value of "FILE_ENTITY"
     MODEL_TYPE_FILE_ENTITY = "FILE_ENTITY"
 
+    #: A constant which can be used with the model_type property of a EntityShape.
+    #: This constant has a value of "SQL_ENTITY"
+    MODEL_TYPE_SQL_ENTITY = "SQL_ENTITY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EntityShape object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.EntityShapeFromSQL`
         * :class:`~oci.data_integration.models.EntityShapeFromFile`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this EntityShape.
-            Allowed values for this property are: "FILE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FILE_ENTITY", "SQL_ENTITY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -58,6 +63,9 @@ class EntityShape(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'SQL_ENTITY':
+            return 'EntityShapeFromSQL'
+
         if type == 'FILE_ENTITY':
             return 'EntityShapeFromFile'
         else:
@@ -69,7 +77,7 @@ class EntityShape(object):
         **[Required]** Gets the model_type of this EntityShape.
         The data entity type.
 
-        Allowed values for this property are: "FILE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "FILE_ENTITY", "SQL_ENTITY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -88,7 +96,7 @@ class EntityShape(object):
         :param model_type: The model_type of this EntityShape.
         :type: str
         """
-        allowed_values = ["FILE_ENTITY"]
+        allowed_values = ["FILE_ENTITY", "SQL_ENTITY"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

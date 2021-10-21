@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class KeyAttribute(object):
     """
-    An attribute within a key.
+    An attribute within a key, the attribute property is being deprecated.
     """
 
     def __init__(self, **kwargs):
@@ -22,6 +22,10 @@ class KeyAttribute(object):
             The value to assign to the position property of this KeyAttribute.
         :type position: int
 
+        :param shape_field:
+            The value to assign to the shape_field property of this KeyAttribute.
+        :type shape_field: oci.data_integration.models.ShapeField
+
         :param attribute:
             The value to assign to the attribute property of this KeyAttribute.
         :type attribute: oci.data_integration.models.ShapeField
@@ -29,15 +33,18 @@ class KeyAttribute(object):
         """
         self.swagger_types = {
             'position': 'int',
+            'shape_field': 'ShapeField',
             'attribute': 'ShapeField'
         }
 
         self.attribute_map = {
             'position': 'position',
+            'shape_field': 'shapeField',
             'attribute': 'attribute'
         }
 
         self._position = None
+        self._shape_field = None
         self._attribute = None
 
     @property
@@ -63,6 +70,26 @@ class KeyAttribute(object):
         :type: int
         """
         self._position = position
+
+    @property
+    def shape_field(self):
+        """
+        Gets the shape_field of this KeyAttribute.
+
+        :return: The shape_field of this KeyAttribute.
+        :rtype: oci.data_integration.models.ShapeField
+        """
+        return self._shape_field
+
+    @shape_field.setter
+    def shape_field(self, shape_field):
+        """
+        Sets the shape_field of this KeyAttribute.
+
+        :param shape_field: The shape_field of this KeyAttribute.
+        :type: oci.data_integration.models.ShapeField
+        """
+        self._shape_field = shape_field
 
     @property
     def attribute(self):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ActivateOrderDetails(object):
     """
-    The parameters for activating an order subscription in a tenancy
+    The parameters for activating an order subscription in a tenancy.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ActivateOrderDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ActivateOrderDetails.
-        Tenant Id to activate the Order.
+        Tenant ID to activate the order.
 
 
         :return: The compartment_id of this ActivateOrderDetails.
@@ -49,7 +49,7 @@ class ActivateOrderDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ActivateOrderDetails.
-        Tenant Id to activate the Order.
+        Tenant ID to activate the order.
 
 
         :param compartment_id: The compartment_id of this ActivateOrderDetails.

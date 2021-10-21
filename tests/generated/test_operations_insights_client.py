@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_add_exadata_insight_members(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'AddExadataInsightMembers'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'AddExadataInsightMembers')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='AddExadataInsightMembers')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.add_exadata_insight_members(
+                add_exadata_insight_members_details=request.pop(util.camelize('AddExadataInsightMembersDetails')),
+                exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'AddExadataInsightMembers',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'add_exadata_insight_members',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_change_database_insight_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'ChangeDatabaseInsightCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -110,6 +151,47 @@ def test_change_enterprise_manager_bridge_compartment(testing_service_client):
             result,
             service_error,
             'change_enterprise_manager_bridge_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_change_exadata_insight_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ChangeExadataInsightCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ChangeExadataInsightCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ChangeExadataInsightCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.change_exadata_insight_compartment(
+                exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                change_exadata_insight_compartment_details=request.pop(util.camelize('ChangeExadataInsightCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ChangeExadataInsightCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_exadata_insight_compartment',
             False,
             False
         )
@@ -237,6 +319,46 @@ def test_create_enterprise_manager_bridge(testing_service_client):
 
 
 # IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_create_exadata_insight(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'CreateExadataInsight'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'CreateExadataInsight')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='CreateExadataInsight')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.create_exadata_insight(
+                create_exadata_insight_details=request.pop(util.camelize('CreateExadataInsightDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'CreateExadataInsight',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exadataInsight',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_create_host_insight(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'CreateHostInsight'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -357,6 +479,46 @@ def test_delete_enterprise_manager_bridge(testing_service_client):
 
 
 # IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_delete_exadata_insight(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'DeleteExadataInsight'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'DeleteExadataInsight')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='DeleteExadataInsight')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_exadata_insight(
+                exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'DeleteExadataInsight',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_exadata_insight',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_delete_host_insight(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'DeleteHostInsight'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -431,6 +593,46 @@ def test_disable_database_insight(testing_service_client):
             result,
             service_error,
             'disable_database_insight',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_disable_exadata_insight(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'DisableExadataInsight'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'DisableExadataInsight')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='DisableExadataInsight')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.disable_exadata_insight(
+                exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'DisableExadataInsight',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'disable_exadata_insight',
             False,
             False
         )
@@ -512,6 +714,47 @@ def test_enable_database_insight(testing_service_client):
             result,
             service_error,
             'enable_database_insight',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_enable_exadata_insight(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'EnableExadataInsight'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'EnableExadataInsight')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='EnableExadataInsight')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.enable_exadata_insight(
+                enable_exadata_insight_details=request.pop(util.camelize('EnableExadataInsightDetails')),
+                exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'EnableExadataInsight',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'enable_exadata_insight',
             False,
             False
         )
@@ -633,6 +876,46 @@ def test_get_enterprise_manager_bridge(testing_service_client):
             result,
             service_error,
             'enterpriseManagerBridge',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_get_exadata_insight(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'GetExadataInsight'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'GetExadataInsight')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='GetExadataInsight')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.get_exadata_insight(
+                exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'GetExadataInsight',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exadataInsight',
             False,
             False
         )
@@ -1126,6 +1409,177 @@ def test_list_enterprise_manager_bridges(testing_service_client):
             result,
             service_error,
             'enterpriseManagerBridgeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="resourcePlanning" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_list_exadata_configurations(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ListExadataConfigurations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ListExadataConfigurations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ListExadataConfigurations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.list_exadata_configurations(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_exadata_configurations(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_exadata_configurations(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ListExadataConfigurations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exadataConfigurationCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_list_exadata_insights(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ListExadataInsights'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ListExadataInsights')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ListExadataInsights')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.list_exadata_insights(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_exadata_insights(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_exadata_insights(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ListExadataInsights',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exadataInsightSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="resourcePlanning" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_list_host_configurations(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ListHostConfigurations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ListHostConfigurations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ListHostConfigurations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.list_host_configurations(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_host_configurations(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_host_configurations(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ListHostConfigurations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'hostConfigurationCollection',
             False,
             True
         )
@@ -1704,7 +2158,6 @@ def test_list_work_requests(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
             response = client.list_work_requests(
-                compartment_id=request.pop(util.camelize('compartmentId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -1712,7 +2165,6 @@ def test_list_work_requests(testing_service_client):
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_work_requests(
-                    compartment_id=request.pop(util.camelize('compartmentId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -1722,7 +2174,6 @@ def test_list_work_requests(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_work_requests(
-                        compartment_id=request.pop(util.camelize('compartmentId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )
@@ -2176,6 +2627,588 @@ def test_summarize_database_insight_tablespace_usage_trend(testing_service_clien
             result,
             service_error,
             'summarizeDatabaseInsightTablespaceUsageTrendAggregationCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="resourcePlanning" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_exadata_insight_resource_capacity_trend(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeExadataInsightResourceCapacityTrend'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeExadataInsightResourceCapacityTrend')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeExadataInsightResourceCapacityTrend')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_exadata_insight_resource_capacity_trend(
+                resource_type=request.pop(util.camelize('resourceType')),
+                resource_metric=request.pop(util.camelize('resourceMetric')),
+                exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_exadata_insight_resource_capacity_trend(
+                    resource_type=request.pop(util.camelize('resourceType')),
+                    resource_metric=request.pop(util.camelize('resourceMetric')),
+                    exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_exadata_insight_resource_capacity_trend(
+                        resource_type=request.pop(util.camelize('resourceType')),
+                        resource_metric=request.pop(util.camelize('resourceMetric')),
+                        exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeExadataInsightResourceCapacityTrend',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'summarizeExadataInsightResourceCapacityTrendCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="resourcePlanning" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_exadata_insight_resource_capacity_trend_aggregated(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeExadataInsightResourceCapacityTrendAggregated'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeExadataInsightResourceCapacityTrendAggregated')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeExadataInsightResourceCapacityTrendAggregated')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_exadata_insight_resource_capacity_trend_aggregated(
+                resource_type=request.pop(util.camelize('resourceType')),
+                resource_metric=request.pop(util.camelize('resourceMetric')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_exadata_insight_resource_capacity_trend_aggregated(
+                    resource_type=request.pop(util.camelize('resourceType')),
+                    resource_metric=request.pop(util.camelize('resourceMetric')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_exadata_insight_resource_capacity_trend_aggregated(
+                        resource_type=request.pop(util.camelize('resourceType')),
+                        resource_metric=request.pop(util.camelize('resourceMetric')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeExadataInsightResourceCapacityTrendAggregated',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'summarizeExadataInsightResourceCapacityTrendAggregation',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="resourcePlanning" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_exadata_insight_resource_forecast_trend(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeExadataInsightResourceForecastTrend'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeExadataInsightResourceForecastTrend')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeExadataInsightResourceForecastTrend')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_exadata_insight_resource_forecast_trend(
+                resource_type=request.pop(util.camelize('resourceType')),
+                resource_metric=request.pop(util.camelize('resourceMetric')),
+                exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_exadata_insight_resource_forecast_trend(
+                    resource_type=request.pop(util.camelize('resourceType')),
+                    resource_metric=request.pop(util.camelize('resourceMetric')),
+                    exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_exadata_insight_resource_forecast_trend(
+                        resource_type=request.pop(util.camelize('resourceType')),
+                        resource_metric=request.pop(util.camelize('resourceMetric')),
+                        exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeExadataInsightResourceForecastTrend',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'summarizeExadataInsightResourceForecastTrendCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="resourcePlanning" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_exadata_insight_resource_forecast_trend_aggregated(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeExadataInsightResourceForecastTrendAggregated'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeExadataInsightResourceForecastTrendAggregated')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeExadataInsightResourceForecastTrendAggregated')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_exadata_insight_resource_forecast_trend_aggregated(
+                resource_type=request.pop(util.camelize('resourceType')),
+                resource_metric=request.pop(util.camelize('resourceMetric')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_exadata_insight_resource_forecast_trend_aggregated(
+                    resource_type=request.pop(util.camelize('resourceType')),
+                    resource_metric=request.pop(util.camelize('resourceMetric')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_exadata_insight_resource_forecast_trend_aggregated(
+                        resource_type=request.pop(util.camelize('resourceType')),
+                        resource_metric=request.pop(util.camelize('resourceMetric')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeExadataInsightResourceForecastTrendAggregated',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'summarizeExadataInsightResourceForecastTrendAggregation',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="resourcePlanning" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_exadata_insight_resource_statistics(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeExadataInsightResourceStatistics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeExadataInsightResourceStatistics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeExadataInsightResourceStatistics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_exadata_insight_resource_statistics(
+                exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                resource_type=request.pop(util.camelize('resourceType')),
+                resource_metric=request.pop(util.camelize('resourceMetric')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_exadata_insight_resource_statistics(
+                    exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                    resource_type=request.pop(util.camelize('resourceType')),
+                    resource_metric=request.pop(util.camelize('resourceMetric')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_exadata_insight_resource_statistics(
+                        exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                        resource_type=request.pop(util.camelize('resourceType')),
+                        resource_metric=request.pop(util.camelize('resourceMetric')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeExadataInsightResourceStatistics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'summarizeExadataInsightResourceStatisticsAggregationCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="resourcePlanning" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_exadata_insight_resource_usage(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeExadataInsightResourceUsage'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeExadataInsightResourceUsage')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeExadataInsightResourceUsage')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_exadata_insight_resource_usage(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                resource_type=request.pop(util.camelize('resourceType')),
+                resource_metric=request.pop(util.camelize('resourceMetric')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_exadata_insight_resource_usage(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    resource_type=request.pop(util.camelize('resourceType')),
+                    resource_metric=request.pop(util.camelize('resourceMetric')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_exadata_insight_resource_usage(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        resource_type=request.pop(util.camelize('resourceType')),
+                        resource_metric=request.pop(util.camelize('resourceMetric')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeExadataInsightResourceUsage',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'summarizeExadataInsightResourceUsageCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="resourcePlanning" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_exadata_insight_resource_usage_aggregated(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeExadataInsightResourceUsageAggregated'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeExadataInsightResourceUsageAggregated')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeExadataInsightResourceUsageAggregated')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_exadata_insight_resource_usage_aggregated(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                resource_type=request.pop(util.camelize('resourceType')),
+                resource_metric=request.pop(util.camelize('resourceMetric')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_exadata_insight_resource_usage_aggregated(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    resource_type=request.pop(util.camelize('resourceType')),
+                    resource_metric=request.pop(util.camelize('resourceMetric')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_exadata_insight_resource_usage_aggregated(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        resource_type=request.pop(util.camelize('resourceType')),
+                        resource_metric=request.pop(util.camelize('resourceMetric')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeExadataInsightResourceUsageAggregated',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'summarizeExadataInsightResourceUsageAggregation',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="resourcePlanning" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_exadata_insight_resource_utilization_insight(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeExadataInsightResourceUtilizationInsight'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeExadataInsightResourceUtilizationInsight')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeExadataInsightResourceUtilizationInsight')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_exadata_insight_resource_utilization_insight(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                resource_type=request.pop(util.camelize('resourceType')),
+                resource_metric=request.pop(util.camelize('resourceMetric')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_exadata_insight_resource_utilization_insight(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    resource_type=request.pop(util.camelize('resourceType')),
+                    resource_metric=request.pop(util.camelize('resourceMetric')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_exadata_insight_resource_utilization_insight(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        resource_type=request.pop(util.camelize('resourceType')),
+                        resource_metric=request.pop(util.camelize('resourceMetric')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeExadataInsightResourceUtilizationInsight',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'summarizeExadataInsightResourceUtilizationInsightAggregation',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="resourcePlanning" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_exadata_members(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeExadataMembers'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeExadataMembers')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeExadataMembers')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_exadata_members(
+                exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_exadata_members(
+                    exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_exadata_members(
+                        exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeExadataMembers',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'exadataMemberCollection',
             False,
             True
         )
@@ -3008,6 +4041,47 @@ def test_update_enterprise_manager_bridge(testing_service_client):
             result,
             service_error,
             'update_enterprise_manager_bridge',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_update_exadata_insight(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'UpdateExadataInsight'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'UpdateExadataInsight')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='UpdateExadataInsight')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.update_exadata_insight(
+                exadata_insight_id=request.pop(util.camelize('exadataInsightId')),
+                update_exadata_insight_details=request.pop(util.camelize('UpdateExadataInsightDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'UpdateExadataInsight',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_exadata_insight',
             False,
             False
         )

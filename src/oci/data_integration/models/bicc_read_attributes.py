@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BiccReadAttributes(AbstractReadAttribute):
     """
-    Properties to configure reading from an Oracle Database.
+    Properties to configure reading from BICC.
     """
 
     #: A constant which can be used with the extract_strategy property of a BiccReadAttributes.

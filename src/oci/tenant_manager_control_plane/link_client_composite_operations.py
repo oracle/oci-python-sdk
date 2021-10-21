@@ -25,14 +25,14 @@ class LinkClientCompositeOperations(object):
 
     def delete_link_and_wait_for_state(self, link_id, wait_for_states=[], operation_kwargs={}, waiter_kwargs={}):
         """
-        Calls :py:func:`~oci.tenant_manager_control_plane.LinkClient.delete_link` and waits for the :py:class:`~oci.tenant_manager_control_plane.models.Link` acted upon
+        Calls :py:func:`~oci.tenant_manager_control_plane.LinkClient.delete_link` and waits for the :py:class:`~oci.tenant_manager_control_plane.models.WorkRequest`
         to enter the given state(s).
 
         :param str link_id: (required)
             OCID of the link to terminate.
 
         :param list[str] wait_for_states:
-            An array of states to wait on. These should be valid values for :py:attr:`~oci.tenant_manager_control_plane.models.Link.lifecycle_state`
+            An array of states to wait on. These should be valid values for :py:attr:`~oci.tenant_manager_control_plane.models.WorkRequest.status`
 
         :param dict operation_kwargs:
             A dictionary of keyword arguments to pass to :py:func:`~oci.tenant_manager_control_plane.LinkClient.delete_link`
@@ -41,7 +41,6 @@ class LinkClientCompositeOperations(object):
             A dictionary of keyword arguments to pass to the :py:func:`oci.wait_until` function. For example, you could pass ``max_interval_seconds`` or ``max_interval_seconds``
             as dictionary keys to modify how long the waiter function will wait between retries and the maximum amount of time it will wait
         """
-        initial_get_result = self.client.get_link(link_id)
         operation_result = None
         try:
             operation_result = self.client.delete_link(link_id, **operation_kwargs)
@@ -55,13 +54,13 @@ class LinkClientCompositeOperations(object):
             return operation_result
 
         lowered_wait_for_states = [w.lower() for w in wait_for_states]
+        wait_for_resource_id = operation_result.headers['opc-work-request-id']
 
         try:
             waiter_result = oci.wait_until(
                 self.client,
-                initial_get_result,
-                evaluate_response=lambda r: getattr(r.data, 'lifecycle_state') and getattr(r.data, 'lifecycle_state').lower() in lowered_wait_for_states,
-                succeed_on_not_found=True,
+                self.client.get_work_request(wait_for_resource_id),
+                evaluate_response=lambda r: getattr(r.data, 'status') and getattr(r.data, 'status').lower() in lowered_wait_for_states,
                 **waiter_kwargs
             )
             result_to_return = waiter_result

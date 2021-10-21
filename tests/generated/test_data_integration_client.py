@@ -489,6 +489,47 @@ def test_create_folder(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_create_function_library(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'CreateFunctionLibrary'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'CreateFunctionLibrary')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='CreateFunctionLibrary')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.create_function_library(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                create_function_library_details=request.pop(util.camelize('CreateFunctionLibraryDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'CreateFunctionLibrary',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'functionLibrary',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_create_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'CreatePatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -856,6 +897,88 @@ def test_create_task_validation(testing_service_client):
             result,
             service_error,
             'taskValidation',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_create_user_defined_function(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'CreateUserDefinedFunction'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'CreateUserDefinedFunction')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='CreateUserDefinedFunction')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.create_user_defined_function(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                create_user_defined_function_details=request.pop(util.camelize('CreateUserDefinedFunctionDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'CreateUserDefinedFunction',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'userDefinedFunction',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_create_user_defined_function_validation(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'CreateUserDefinedFunctionValidation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'CreateUserDefinedFunctionValidation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='CreateUserDefinedFunctionValidation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.create_user_defined_function_validation(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                create_user_defined_function_validation_details=request.pop(util.camelize('CreateUserDefinedFunctionValidationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'CreateUserDefinedFunctionValidation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'userDefinedFunctionValidation',
             False,
             False
         )
@@ -1273,6 +1396,47 @@ def test_delete_folder(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_delete_function_library(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'DeleteFunctionLibrary'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'DeleteFunctionLibrary')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='DeleteFunctionLibrary')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.delete_function_library(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                function_library_key=request.pop(util.camelize('functionLibraryKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'DeleteFunctionLibrary',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_function_library',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_delete_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'DeletePatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1640,6 +1804,88 @@ def test_delete_task_validation(testing_service_client):
             result,
             service_error,
             'delete_task_validation',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_delete_user_defined_function(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'DeleteUserDefinedFunction'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'DeleteUserDefinedFunction')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='DeleteUserDefinedFunction')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.delete_user_defined_function(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                user_defined_function_key=request.pop(util.camelize('userDefinedFunctionKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'DeleteUserDefinedFunction',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_user_defined_function',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_delete_user_defined_function_validation(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'DeleteUserDefinedFunctionValidation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'DeleteUserDefinedFunctionValidation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='DeleteUserDefinedFunctionValidation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.delete_user_defined_function_validation(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                user_defined_function_validation_key=request.pop(util.camelize('userDefinedFunctionValidationKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'DeleteUserDefinedFunctionValidation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_user_defined_function_validation',
             True,
             False
         )
@@ -2183,6 +2429,47 @@ def test_get_folder(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_get_function_library(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'GetFunctionLibrary'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'GetFunctionLibrary')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='GetFunctionLibrary')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_function_library(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                function_library_key=request.pop(util.camelize('functionLibraryKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'GetFunctionLibrary',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'functionLibrary',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_get_patch(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'GetPatch'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2676,6 +2963,88 @@ def test_get_task_validation(testing_service_client):
             result,
             service_error,
             'taskValidation',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_get_user_defined_function(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'GetUserDefinedFunction'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'GetUserDefinedFunction')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='GetUserDefinedFunction')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_user_defined_function(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                user_defined_function_key=request.pop(util.camelize('userDefinedFunctionKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'GetUserDefinedFunction',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'userDefinedFunction',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_get_user_defined_function_validation(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'GetUserDefinedFunctionValidation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'GetUserDefinedFunctionValidation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='GetUserDefinedFunctionValidation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.get_user_defined_function_validation(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                user_defined_function_validation_key=request.pop(util.camelize('userDefinedFunctionValidationKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'GetUserDefinedFunctionValidation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'userDefinedFunctionValidation',
             False,
             False
         )
@@ -3434,6 +3803,66 @@ def test_list_folders(testing_service_client):
             result,
             service_error,
             'folderSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_function_libraries(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListFunctionLibraries'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListFunctionLibraries')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListFunctionLibraries')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_function_libraries(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_function_libraries(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_function_libraries(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListFunctionLibraries',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'functionLibrarySummaryCollection',
             False,
             True
         )
@@ -4313,6 +4742,126 @@ def test_list_tasks(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_user_defined_function_validations(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListUserDefinedFunctionValidations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListUserDefinedFunctionValidations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListUserDefinedFunctionValidations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_user_defined_function_validations(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_user_defined_function_validations(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_user_defined_function_validations(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListUserDefinedFunctionValidations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'userDefinedFunctionValidationSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_list_user_defined_functions(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'ListUserDefinedFunctions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'ListUserDefinedFunctions')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='ListUserDefinedFunctions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_user_defined_functions(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_user_defined_functions(
+                    workspace_id=request.pop(util.camelize('workspaceId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_user_defined_functions(
+                        workspace_id=request.pop(util.camelize('workspaceId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'ListUserDefinedFunctions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'userDefinedFunctionSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_list_work_request_errors(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'ListWorkRequestErrors'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4886,6 +5435,48 @@ def test_update_folder(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_update_function_library(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'UpdateFunctionLibrary'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'UpdateFunctionLibrary')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='UpdateFunctionLibrary')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.update_function_library(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                function_library_key=request.pop(util.camelize('functionLibraryKey')),
+                update_function_library_details=request.pop(util.camelize('UpdateFunctionLibraryDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'UpdateFunctionLibrary',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'functionLibrary',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
 def test_update_pipeline(testing_service_client):
     if not testing_service_client.is_api_enabled('data_integration', 'UpdatePipeline'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5178,6 +5769,48 @@ def test_update_task_schedule(testing_service_client):
             result,
             service_error,
             'taskSchedule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="di_dis_ww_grp@oracle.com" jiraProject="DI" opsJiraProject="DIS"
+def test_update_user_defined_function(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_integration', 'UpdateUserDefinedFunction'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_integration', util.camelize('data_integration'), 'UpdateUserDefinedFunction')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_integration', api_name='UpdateUserDefinedFunction')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_integration.DataIntegrationClient(config, service_endpoint=service_endpoint)
+            response = client.update_user_defined_function(
+                workspace_id=request.pop(util.camelize('workspaceId')),
+                user_defined_function_key=request.pop(util.camelize('userDefinedFunctionKey')),
+                update_user_defined_function_details=request.pop(util.camelize('UpdateUserDefinedFunctionDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_integration',
+            'UpdateUserDefinedFunction',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'userDefinedFunction',
             False,
             False
         )

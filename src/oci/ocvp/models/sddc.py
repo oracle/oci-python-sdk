@@ -434,9 +434,9 @@ class Sddc(object):
     def compute_availability_domain(self):
         """
         **[Required]** Gets the compute_availability_domain of this Sddc.
-        The availability domain the ESXi hosts are running in.
+        The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.
 
-        Example: `Uocm:PHX-AD-1`
+        Example: `Uocm:PHX-AD-1`, `multi-AD`
 
 
         :return: The compute_availability_domain of this Sddc.
@@ -448,9 +448,9 @@ class Sddc(object):
     def compute_availability_domain(self, compute_availability_domain):
         """
         Sets the compute_availability_domain of this Sddc.
-        The availability domain the ESXi hosts are running in.
+        The availability domain the ESXi hosts are running in. For Multi-AD SDDC, it is `multi-AD`.
 
-        Example: `Uocm:PHX-AD-1`
+        Example: `Uocm:PHX-AD-1`, `multi-AD`
 
 
         :param compute_availability_domain: The compute_availability_domain of this Sddc.

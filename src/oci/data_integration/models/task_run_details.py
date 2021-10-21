@@ -65,6 +65,18 @@ class TaskRunDetails(object):
     #: This constant has a value of "REST_TASK"
     TASK_TYPE_REST_TASK = "REST_TASK"
 
+    #: A constant which can be used with the re_run_type property of a TaskRunDetails.
+    #: This constant has a value of "BEGINNING"
+    RE_RUN_TYPE_BEGINNING = "BEGINNING"
+
+    #: A constant which can be used with the re_run_type property of a TaskRunDetails.
+    #: This constant has a value of "FAILED"
+    RE_RUN_TYPE_FAILED = "FAILED"
+
+    #: A constant which can be used with the re_run_type property of a TaskRunDetails.
+    #: This constant has a value of "STEP"
+    RE_RUN_TYPE_STEP = "STEP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TaskRunDetails object with values from keyword arguments.
@@ -138,6 +150,20 @@ class TaskRunDetails(object):
             The value to assign to the identifier property of this TaskRunDetails.
         :type identifier: str
 
+        :param ref_task_run_id:
+            The value to assign to the ref_task_run_id property of this TaskRunDetails.
+        :type ref_task_run_id: str
+
+        :param re_run_type:
+            The value to assign to the re_run_type property of this TaskRunDetails.
+            Allowed values for this property are: "BEGINNING", "FAILED", "STEP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type re_run_type: str
+
+        :param step_id:
+            The value to assign to the step_id property of this TaskRunDetails.
+        :type step_id: str
+
         :param metadata:
             The value to assign to the metadata property of this TaskRunDetails.
         :type metadata: oci.data_integration.models.ObjectMetadata
@@ -160,6 +186,9 @@ class TaskRunDetails(object):
             'object_status': 'int',
             'task_type': 'str',
             'identifier': 'str',
+            'ref_task_run_id': 'str',
+            're_run_type': 'str',
+            'step_id': 'str',
             'metadata': 'ObjectMetadata'
         }
 
@@ -180,6 +209,9 @@ class TaskRunDetails(object):
             'object_status': 'objectStatus',
             'task_type': 'taskType',
             'identifier': 'identifier',
+            'ref_task_run_id': 'refTaskRunId',
+            're_run_type': 'reRunType',
+            'step_id': 'stepId',
             'metadata': 'metadata'
         }
 
@@ -199,6 +231,9 @@ class TaskRunDetails(object):
         self._object_status = None
         self._task_type = None
         self._identifier = None
+        self._ref_task_run_id = None
+        self._re_run_type = None
+        self._step_id = None
         self._metadata = None
 
     @property
@@ -592,6 +627,84 @@ class TaskRunDetails(object):
         :type: str
         """
         self._identifier = identifier
+
+    @property
+    def ref_task_run_id(self):
+        """
+        Gets the ref_task_run_id of this TaskRunDetails.
+        Reference Task Run Id to be used for re-run
+
+
+        :return: The ref_task_run_id of this TaskRunDetails.
+        :rtype: str
+        """
+        return self._ref_task_run_id
+
+    @ref_task_run_id.setter
+    def ref_task_run_id(self, ref_task_run_id):
+        """
+        Sets the ref_task_run_id of this TaskRunDetails.
+        Reference Task Run Id to be used for re-run
+
+
+        :param ref_task_run_id: The ref_task_run_id of this TaskRunDetails.
+        :type: str
+        """
+        self._ref_task_run_id = ref_task_run_id
+
+    @property
+    def re_run_type(self):
+        """
+        Gets the re_run_type of this TaskRunDetails.
+        Supported re-run types
+
+        Allowed values for this property are: "BEGINNING", "FAILED", "STEP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The re_run_type of this TaskRunDetails.
+        :rtype: str
+        """
+        return self._re_run_type
+
+    @re_run_type.setter
+    def re_run_type(self, re_run_type):
+        """
+        Sets the re_run_type of this TaskRunDetails.
+        Supported re-run types
+
+
+        :param re_run_type: The re_run_type of this TaskRunDetails.
+        :type: str
+        """
+        allowed_values = ["BEGINNING", "FAILED", "STEP"]
+        if not value_allowed_none_or_none_sentinel(re_run_type, allowed_values):
+            re_run_type = 'UNKNOWN_ENUM_VALUE'
+        self._re_run_type = re_run_type
+
+    @property
+    def step_id(self):
+        """
+        Gets the step_id of this TaskRunDetails.
+        Step Id for running from a certain step.
+
+
+        :return: The step_id of this TaskRunDetails.
+        :rtype: str
+        """
+        return self._step_id
+
+    @step_id.setter
+    def step_id(self, step_id):
+        """
+        Sets the step_id of this TaskRunDetails.
+        Step Id for running from a certain step.
+
+
+        :param step_id: The step_id of this TaskRunDetails.
+        :type: str
+        """
+        self._step_id = step_id
 
     @property
     def metadata(self):

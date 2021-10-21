@@ -48,6 +48,10 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
             The value to assign to the database_version property of this EmManagedExternalDatabaseConfigurationSummary.
         :type database_version: str
 
+        :param cdb_name:
+            The value to assign to the cdb_name property of this EmManagedExternalDatabaseConfigurationSummary.
+        :type cdb_name: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this EmManagedExternalDatabaseConfigurationSummary.
         :type defined_tags: dict(str, dict(str, object))
@@ -72,6 +76,10 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
             The value to assign to the instances property of this EmManagedExternalDatabaseConfigurationSummary.
         :type instances: list[oci.opsi.models.HostInstanceMap]
 
+        :param exadata_details:
+            The value to assign to the exadata_details property of this EmManagedExternalDatabaseConfigurationSummary.
+        :type exadata_details: oci.opsi.models.ExadataDetails
+
         """
         self.swagger_types = {
             'database_insight_id': 'str',
@@ -81,12 +89,14 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
             'database_display_name': 'str',
             'database_type': 'str',
             'database_version': 'str',
+            'cdb_name': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'processor_count': 'int',
             'enterprise_manager_identifier': 'str',
             'enterprise_manager_bridge_id': 'str',
-            'instances': 'list[HostInstanceMap]'
+            'instances': 'list[HostInstanceMap]',
+            'exadata_details': 'ExadataDetails'
         }
 
         self.attribute_map = {
@@ -97,12 +107,14 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
             'database_display_name': 'databaseDisplayName',
             'database_type': 'databaseType',
             'database_version': 'databaseVersion',
+            'cdb_name': 'cdbName',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'processor_count': 'processorCount',
             'enterprise_manager_identifier': 'enterpriseManagerIdentifier',
             'enterprise_manager_bridge_id': 'enterpriseManagerBridgeId',
-            'instances': 'instances'
+            'instances': 'instances',
+            'exadata_details': 'exadataDetails'
         }
 
         self._database_insight_id = None
@@ -112,12 +124,14 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
         self._database_display_name = None
         self._database_type = None
         self._database_version = None
+        self._cdb_name = None
         self._defined_tags = None
         self._freeform_tags = None
         self._processor_count = None
         self._enterprise_manager_identifier = None
         self._enterprise_manager_bridge_id = None
         self._instances = None
+        self._exadata_details = None
         self._entity_source = 'EM_MANAGED_EXTERNAL_DATABASE'
 
     @property
@@ -191,6 +205,26 @@ class EmManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSummary
         :type: list[oci.opsi.models.HostInstanceMap]
         """
         self._instances = instances
+
+    @property
+    def exadata_details(self):
+        """
+        **[Required]** Gets the exadata_details of this EmManagedExternalDatabaseConfigurationSummary.
+
+        :return: The exadata_details of this EmManagedExternalDatabaseConfigurationSummary.
+        :rtype: oci.opsi.models.ExadataDetails
+        """
+        return self._exadata_details
+
+    @exadata_details.setter
+    def exadata_details(self, exadata_details):
+        """
+        Sets the exadata_details of this EmManagedExternalDatabaseConfigurationSummary.
+
+        :param exadata_details: The exadata_details of this EmManagedExternalDatabaseConfigurationSummary.
+        :type: oci.opsi.models.ExadataDetails
+        """
+        self._exadata_details = exadata_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

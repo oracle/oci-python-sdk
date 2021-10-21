@@ -36,6 +36,14 @@ class SSLConfigurationDetails(object):
             The value to assign to the verify_peer_certificate property of this SSLConfigurationDetails.
         :type verify_peer_certificate: bool
 
+        :param trusted_certificate_authority_ids:
+            The value to assign to the trusted_certificate_authority_ids property of this SSLConfigurationDetails.
+        :type trusted_certificate_authority_ids: list[str]
+
+        :param certificate_ids:
+            The value to assign to the certificate_ids property of this SSLConfigurationDetails.
+        :type certificate_ids: list[str]
+
         :param certificate_name:
             The value to assign to the certificate_name property of this SSLConfigurationDetails.
         :type certificate_name: str
@@ -57,6 +65,8 @@ class SSLConfigurationDetails(object):
         self.swagger_types = {
             'verify_depth': 'int',
             'verify_peer_certificate': 'bool',
+            'trusted_certificate_authority_ids': 'list[str]',
+            'certificate_ids': 'list[str]',
             'certificate_name': 'str',
             'protocols': 'list[str]',
             'cipher_suite_name': 'str',
@@ -66,6 +76,8 @@ class SSLConfigurationDetails(object):
         self.attribute_map = {
             'verify_depth': 'verifyDepth',
             'verify_peer_certificate': 'verifyPeerCertificate',
+            'trusted_certificate_authority_ids': 'trustedCertificateAuthorityIds',
+            'certificate_ids': 'certificateIds',
             'certificate_name': 'certificateName',
             'protocols': 'protocols',
             'cipher_suite_name': 'cipherSuiteName',
@@ -74,6 +86,8 @@ class SSLConfigurationDetails(object):
 
         self._verify_depth = None
         self._verify_peer_certificate = None
+        self._trusted_certificate_authority_ids = None
+        self._certificate_ids = None
         self._certificate_name = None
         self._protocols = None
         self._cipher_suite_name = None
@@ -134,6 +148,62 @@ class SSLConfigurationDetails(object):
         :type: bool
         """
         self._verify_peer_certificate = verify_peer_certificate
+
+    @property
+    def trusted_certificate_authority_ids(self):
+        """
+        Gets the trusted_certificate_authority_ids of this SSLConfigurationDetails.
+        Ids for OCI certificates service CA or CA bundles for the load balancer to trust.
+
+        Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
+
+
+        :return: The trusted_certificate_authority_ids of this SSLConfigurationDetails.
+        :rtype: list[str]
+        """
+        return self._trusted_certificate_authority_ids
+
+    @trusted_certificate_authority_ids.setter
+    def trusted_certificate_authority_ids(self, trusted_certificate_authority_ids):
+        """
+        Sets the trusted_certificate_authority_ids of this SSLConfigurationDetails.
+        Ids for OCI certificates service CA or CA bundles for the load balancer to trust.
+
+        Example: `[ocid1.cabundle.oc1.us-ashburn-1.amaaaaaaav3bgsaagl4zzyqdop5i2vuwoqewdvauuw34llqa74otq2jdsfyq]`
+
+
+        :param trusted_certificate_authority_ids: The trusted_certificate_authority_ids of this SSLConfigurationDetails.
+        :type: list[str]
+        """
+        self._trusted_certificate_authority_ids = trusted_certificate_authority_ids
+
+    @property
+    def certificate_ids(self):
+        """
+        Gets the certificate_ids of this SSLConfigurationDetails.
+        Ids for OCI certificates service certificates. Currently only a single Id may be passed.
+
+        Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
+
+
+        :return: The certificate_ids of this SSLConfigurationDetails.
+        :rtype: list[str]
+        """
+        return self._certificate_ids
+
+    @certificate_ids.setter
+    def certificate_ids(self, certificate_ids):
+        """
+        Sets the certificate_ids of this SSLConfigurationDetails.
+        Ids for OCI certificates service certificates. Currently only a single Id may be passed.
+
+        Example: `[ocid1.certificate.oc1.us-ashburn-1.amaaaaaaav3bgsaa5o2q7rh5nfmkkukfkogasqhk6af2opufhjlqg7m6jqzq]`
+
+
+        :param certificate_ids: The certificate_ids of this SSLConfigurationDetails.
+        :type: list[str]
+        """
+        self._certificate_ids = certificate_ids
 
     @property
     def certificate_name(self):

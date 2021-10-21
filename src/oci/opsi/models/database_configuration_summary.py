@@ -66,6 +66,10 @@ class DatabaseConfigurationSummary(object):
             The value to assign to the database_version property of this DatabaseConfigurationSummary.
         :type database_version: str
 
+        :param cdb_name:
+            The value to assign to the cdb_name property of this DatabaseConfigurationSummary.
+        :type cdb_name: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this DatabaseConfigurationSummary.
         :type defined_tags: dict(str, dict(str, object))
@@ -87,6 +91,7 @@ class DatabaseConfigurationSummary(object):
             'database_display_name': 'str',
             'database_type': 'str',
             'database_version': 'str',
+            'cdb_name': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'processor_count': 'int'
@@ -100,6 +105,7 @@ class DatabaseConfigurationSummary(object):
             'database_display_name': 'databaseDisplayName',
             'database_type': 'databaseType',
             'database_version': 'databaseVersion',
+            'cdb_name': 'cdbName',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'processor_count': 'processorCount'
@@ -112,6 +118,7 @@ class DatabaseConfigurationSummary(object):
         self._database_display_name = None
         self._database_type = None
         self._database_version = None
+        self._cdb_name = None
         self._defined_tags = None
         self._freeform_tags = None
         self._processor_count = None
@@ -316,6 +323,30 @@ class DatabaseConfigurationSummary(object):
         :type: str
         """
         self._database_version = database_version
+
+    @property
+    def cdb_name(self):
+        """
+        **[Required]** Gets the cdb_name of this DatabaseConfigurationSummary.
+        Name of the CDB.Only applies to PDB.
+
+
+        :return: The cdb_name of this DatabaseConfigurationSummary.
+        :rtype: str
+        """
+        return self._cdb_name
+
+    @cdb_name.setter
+    def cdb_name(self, cdb_name):
+        """
+        Sets the cdb_name of this DatabaseConfigurationSummary.
+        Name of the CDB.Only applies to PDB.
+
+
+        :param cdb_name: The cdb_name of this DatabaseConfigurationSummary.
+        :type: str
+        """
+        self._cdb_name = cdb_name
 
     @property
     def defined_tags(self):

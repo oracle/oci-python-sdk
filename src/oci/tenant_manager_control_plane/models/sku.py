@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Sku(object):
     """
-    A single Subscription SKU
+    A single subscription SKU.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class Sku(object):
     def number(self):
         """
         Gets the number of this Sku.
-        SKU number
+        SKU number.
 
 
         :return: The number of this Sku.
@@ -63,7 +63,7 @@ class Sku(object):
     def number(self, number):
         """
         Sets the number of this Sku.
-        SKU number
+        SKU number.
 
 
         :param number: The number of this Sku.
@@ -75,7 +75,7 @@ class Sku(object):
     def name(self):
         """
         Gets the name of this Sku.
-        SKU name
+        SKU name.
 
 
         :return: The name of this Sku.
@@ -87,7 +87,7 @@ class Sku(object):
     def name(self, name):
         """
         Sets the name of this Sku.
-        SKU name
+        SKU name.
 
 
         :param name: The name of this Sku.
@@ -99,7 +99,7 @@ class Sku(object):
     def quantity(self):
         """
         Gets the quantity of this Sku.
-        SKU quantity
+        SKU quantity.
 
 
         :return: The quantity of this Sku.
@@ -111,7 +111,7 @@ class Sku(object):
     def quantity(self, quantity):
         """
         Sets the quantity of this Sku.
-        SKU quantity
+        SKU quantity.
 
 
         :param quantity: The quantity of this Sku.

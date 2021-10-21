@@ -64,6 +64,14 @@ class UpdateConnectionFromAdwc(UpdateConnectionDetails):
             The value to assign to the registry_metadata property of this UpdateConnectionFromAdwc.
         :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
+        :param tns_alias:
+            The value to assign to the tns_alias property of this UpdateConnectionFromAdwc.
+        :type tns_alias: str
+
+        :param tns_names:
+            The value to assign to the tns_names property of this UpdateConnectionFromAdwc.
+        :type tns_names: list[str]
+
         :param username:
             The value to assign to the username property of this UpdateConnectionFromAdwc.
         :type username: str
@@ -89,6 +97,8 @@ class UpdateConnectionFromAdwc(UpdateConnectionDetails):
             'identifier': 'str',
             'connection_properties': 'list[ConnectionProperty]',
             'registry_metadata': 'RegistryMetadata',
+            'tns_alias': 'str',
+            'tns_names': 'list[str]',
             'username': 'str',
             'password': 'str',
             'password_secret': 'SensitiveAttribute'
@@ -106,6 +116,8 @@ class UpdateConnectionFromAdwc(UpdateConnectionDetails):
             'identifier': 'identifier',
             'connection_properties': 'connectionProperties',
             'registry_metadata': 'registryMetadata',
+            'tns_alias': 'tnsAlias',
+            'tns_names': 'tnsNames',
             'username': 'username',
             'password': 'password',
             'password_secret': 'passwordSecret'
@@ -122,10 +134,60 @@ class UpdateConnectionFromAdwc(UpdateConnectionDetails):
         self._identifier = None
         self._connection_properties = None
         self._registry_metadata = None
+        self._tns_alias = None
+        self._tns_names = None
         self._username = None
         self._password = None
         self._password_secret = None
         self._model_type = 'ORACLE_ADWC_CONNECTION'
+
+    @property
+    def tns_alias(self):
+        """
+        Gets the tns_alias of this UpdateConnectionFromAdwc.
+        The Autonomous Data Warehouse instance service name.
+
+
+        :return: The tns_alias of this UpdateConnectionFromAdwc.
+        :rtype: str
+        """
+        return self._tns_alias
+
+    @tns_alias.setter
+    def tns_alias(self, tns_alias):
+        """
+        Sets the tns_alias of this UpdateConnectionFromAdwc.
+        The Autonomous Data Warehouse instance service name.
+
+
+        :param tns_alias: The tns_alias of this UpdateConnectionFromAdwc.
+        :type: str
+        """
+        self._tns_alias = tns_alias
+
+    @property
+    def tns_names(self):
+        """
+        Gets the tns_names of this UpdateConnectionFromAdwc.
+        Array of service names that are available for selection in the tnsAlias property.
+
+
+        :return: The tns_names of this UpdateConnectionFromAdwc.
+        :rtype: list[str]
+        """
+        return self._tns_names
+
+    @tns_names.setter
+    def tns_names(self, tns_names):
+        """
+        Sets the tns_names of this UpdateConnectionFromAdwc.
+        Array of service names that are available for selection in the tnsAlias property.
+
+
+        :param tns_names: The tns_names of this UpdateConnectionFromAdwc.
+        :type: list[str]
+        """
+        self._tns_names = tns_names
 
     @property
     def username(self):

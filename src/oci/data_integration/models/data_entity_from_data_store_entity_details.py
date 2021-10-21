@@ -49,7 +49,7 @@ class DataEntityFromDataStoreEntityDetails(DataEntityDetails):
 
         :param model_type:
             The value to assign to the model_type property of this DataEntityFromDataStoreEntityDetails.
-            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY"
+            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "SQL_ENTITY", "DATA_STORE_ENTITY"
         :type model_type: str
 
         :param key:

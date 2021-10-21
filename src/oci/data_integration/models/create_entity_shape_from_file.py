@@ -45,7 +45,7 @@ class CreateEntityShapeFromFile(CreateEntityShapeDetails):
 
         :param model_type:
             The value to assign to the model_type property of this CreateEntityShapeFromFile.
-            Allowed values for this property are: "FILE_ENTITY"
+            Allowed values for this property are: "FILE_ENTITY", "SQL_ENTITY"
         :type model_type: str
 
         :param key:

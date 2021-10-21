@@ -17,18 +17,23 @@ class CreateEntityShapeDetails(object):
     #: This constant has a value of "FILE_ENTITY"
     MODEL_TYPE_FILE_ENTITY = "FILE_ENTITY"
 
+    #: A constant which can be used with the model_type property of a CreateEntityShapeDetails.
+    #: This constant has a value of "SQL_ENTITY"
+    MODEL_TYPE_SQL_ENTITY = "SQL_ENTITY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateEntityShapeDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.data_integration.models.CreateEntityShapeFromSQL`
         * :class:`~oci.data_integration.models.CreateEntityShapeFromFile`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this CreateEntityShapeDetails.
-            Allowed values for this property are: "FILE_ENTITY"
+            Allowed values for this property are: "FILE_ENTITY", "SQL_ENTITY"
         :type model_type: str
 
         """
@@ -50,6 +55,9 @@ class CreateEntityShapeDetails(object):
         """
         type = object_dictionary['modelType']
 
+        if type == 'SQL_ENTITY':
+            return 'CreateEntityShapeFromSQL'
+
         if type == 'FILE_ENTITY':
             return 'CreateEntityShapeFromFile'
         else:
@@ -61,7 +69,7 @@ class CreateEntityShapeDetails(object):
         **[Required]** Gets the model_type of this CreateEntityShapeDetails.
         The data entity type.
 
-        Allowed values for this property are: "FILE_ENTITY"
+        Allowed values for this property are: "FILE_ENTITY", "SQL_ENTITY"
 
 
         :return: The model_type of this CreateEntityShapeDetails.
@@ -79,7 +87,7 @@ class CreateEntityShapeDetails(object):
         :param model_type: The model_type of this CreateEntityShapeDetails.
         :type: str
         """
-        allowed_values = ["FILE_ENTITY"]
+        allowed_values = ["FILE_ENTITY", "SQL_ENTITY"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

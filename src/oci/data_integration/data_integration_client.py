@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class DataIntegrationClient(object):
     """
-    Use the Data Integration Service APIs to perform common extract, load, and transform (ETL) tasks.
+    Use the Data Integration API to organize your data integration projects, create data flows, pipelines and tasks, and then publish, schedule, and run tasks that extract, transform, and load data. For more information, see [Data Integration](https://docs.oracle.com/iaas/data-integration/home.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -1137,6 +1137,99 @@ class DataIntegrationClient(object):
                 body=create_folder_details,
                 response_type="Folder")
 
+    def create_function_library(self, workspace_id, create_function_library_details, **kwargs):
+        """
+        Creates a function library in a project or in another function library, limited to two levels of function libraries. |
+        FunctionLibraries are used to organize your design-time resources, such as tasks or data flows.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param oci.data_integration.models.CreateFunctionLibraryDetails create_function_library_details: (required)
+            The details needed to create a function Library.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.FunctionLibrary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_function_library.py.html>`__ to see an example of how to use create_function_library API.
+        """
+        resource_path = "/workspaces/{workspaceId}/functionLibraries"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_function_library got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_function_library_details,
+                response_type="FunctionLibrary")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_function_library_details,
+                response_type="FunctionLibrary")
+
     def create_patch(self, workspace_id, application_key, create_patch_details, **kwargs):
         """
         Creates a patch in an application.
@@ -1981,9 +2074,193 @@ class DataIntegrationClient(object):
                 body=create_task_validation_details,
                 response_type="TaskValidation")
 
+    def create_user_defined_function(self, workspace_id, create_user_defined_function_details, **kwargs):
+        """
+        Creates a new UserDefinedFunction in a function library ready for performing data integrations.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param oci.data_integration.models.CreateUserDefinedFunctionDetails create_user_defined_function_details: (required)
+            The details needed to create a new UserDefinedFunction.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.UserDefinedFunction`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_user_defined_function.py.html>`__ to see an example of how to use create_user_defined_function API.
+        """
+        resource_path = "/workspaces/{workspaceId}/userDefinedFunctions"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_user_defined_function got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_user_defined_function_details,
+                response_type="UserDefinedFunction")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_user_defined_function_details,
+                response_type="UserDefinedFunction")
+
+    def create_user_defined_function_validation(self, workspace_id, create_user_defined_function_validation_details, **kwargs):
+        """
+        Accepts the UserDefinedFunction definition in the request payload and creates a UserDefinedFunction validation.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param oci.data_integration.models.CreateUserDefinedFunctionValidationDetails create_user_defined_function_validation_details: (required)
+            The information needed to create the UserDefinedFunction validation for the UserDefinedFunction object.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.UserDefinedFunctionValidation`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/create_user_defined_function_validation.py.html>`__ to see an example of how to use create_user_defined_function_validation API.
+        """
+        resource_path = "/workspaces/{workspaceId}/userDefinedFunctionValidations"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_user_defined_function_validation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_user_defined_function_validation_details,
+                response_type="UserDefinedFunctionValidation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=create_user_defined_function_validation_details,
+                response_type="UserDefinedFunctionValidation")
+
     def create_workspace(self, create_workspace_details, **kwargs):
         """
-        Creates a new Data Integration workspace ready for performing data integration tasks.
+        Creates a new Data Integration workspace ready for performing data integration tasks. To retrieve the OCID for the new workspace, use the opc-work-request-id returned by this API and call the :func:`get_work_request` API.
 
 
         :param oci.data_integration.models.CreateWorkspaceDetails create_workspace_details: (required)
@@ -2874,6 +3151,96 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_function_library(self, workspace_id, function_library_key, **kwargs):
+        """
+        Removes a Function Library from a project using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str function_library_key: (required)
+            The functionLibrary key.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_function_library.py.html>`__ to see an example of how to use delete_function_library API.
+        """
+        resource_path = "/workspaces/{workspaceId}/functionLibraries/{functionLibraryKey}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_function_library got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "functionLibraryKey": function_library_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_patch(self, workspace_id, application_key, patch_key, **kwargs):
         """
         Removes a patch using the specified identifier.
@@ -3662,6 +4029,186 @@ class DataIntegrationClient(object):
         path_params = {
             "workspaceId": workspace_id,
             "taskValidationKey": task_validation_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_user_defined_function(self, workspace_id, user_defined_function_key, **kwargs):
+        """
+        Removes a UserDefinedFunction from a function library using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str user_defined_function_key: (required)
+            The user defined function key.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_user_defined_function.py.html>`__ to see an example of how to use delete_user_defined_function API.
+        """
+        resource_path = "/workspaces/{workspaceId}/userDefinedFunctions/{userDefinedFunctionKey}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_user_defined_function got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "userDefinedFunctionKey": user_defined_function_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_user_defined_function_validation(self, workspace_id, user_defined_function_validation_key, **kwargs):
+        """
+        Removes a UserDefinedFunction validation using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str user_defined_function_validation_key: (required)
+            The key of the userDefinedFunction validation.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/delete_user_defined_function_validation.py.html>`__ to see an example of how to use delete_user_defined_function_validation API.
+        """
+        resource_path = "/workspaces/{workspaceId}/userDefinedFunctionValidations/{userDefinedFunctionValidationKey}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_user_defined_function_validation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "userDefinedFunctionValidationKey": user_defined_function_validation_key
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -4875,6 +5422,112 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 response_type="Folder")
 
+    def get_function_library(self, workspace_id, function_library_key, **kwargs):
+        """
+        Retrieves a Function Library using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str function_library_key: (required)
+            The functionLibrary key.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param list[str] projection: (optional)
+            This parameter allows users to specify which view of the object to return. CHILD_COUNT_STATISTICS - This option is used to get statistics on immediate children of the object by their type.
+
+            Allowed values are: "CHILD_COUNT_STATISTICS"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.FunctionLibrary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_function_library.py.html>`__ to see an example of how to use get_function_library API.
+        """
+        resource_path = "/workspaces/{workspaceId}/functionLibraries/{functionLibraryKey}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "projection"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_function_library got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "functionLibraryKey": function_library_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'projection' in kwargs:
+            projection_allowed_values = ["CHILD_COUNT_STATISTICS"]
+            for projection_item in kwargs['projection']:
+                if projection_item not in projection_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `projection`, must be one of {0}".format(projection_allowed_values)
+                    )
+
+        query_params = {
+            "projection": self.base_client.generate_collection_format_param(kwargs.get("projection", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="FunctionLibrary")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="FunctionLibrary")
+
     def get_patch(self, workspace_id, application_key, patch_key, **kwargs):
         """
         Retrieves a patch in an application using the specified identifier.
@@ -5977,6 +6630,176 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 response_type="TaskValidation")
 
+    def get_user_defined_function(self, workspace_id, user_defined_function_key, **kwargs):
+        """
+        Retrieves a UserDefinedFunction using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str user_defined_function_key: (required)
+            The user defined function key.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.UserDefinedFunction`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_user_defined_function.py.html>`__ to see an example of how to use get_user_defined_function API.
+        """
+        resource_path = "/workspaces/{workspaceId}/userDefinedFunctions/{userDefinedFunctionKey}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_user_defined_function got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "userDefinedFunctionKey": user_defined_function_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="UserDefinedFunction")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="UserDefinedFunction")
+
+    def get_user_defined_function_validation(self, workspace_id, user_defined_function_validation_key, **kwargs):
+        """
+        Retrieves a UserDefinedFunction validation using the specified identifier.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str user_defined_function_validation_key: (required)
+            The key of the userDefinedFunction validation.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.UserDefinedFunctionValidation`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/get_user_defined_function_validation.py.html>`__ to see an example of how to use get_user_defined_function_validation API.
+        """
+        resource_path = "/workspaces/{workspaceId}/userDefinedFunctionValidations/{userDefinedFunctionValidationKey}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_user_defined_function_validation got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "userDefinedFunctionValidationKey": user_defined_function_validation_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="UserDefinedFunctionValidation")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="UserDefinedFunctionValidation")
+
     def get_work_request(self, work_request_id, **kwargs):
         """
         Retrieves the status of the work request with the given ID.
@@ -6150,6 +6973,9 @@ class DataIntegrationClient(object):
         :param str name: (optional)
             Used to filter by the name of the object.
 
+        :param str name_contains: (optional)
+            This parameter can be used to filter objects by the names that match partially or fully with the given value.
+
         :param list[str] identifier: (optional)
             Used to filter by the identifier of the published object.
 
@@ -6202,6 +7028,7 @@ class DataIntegrationClient(object):
         expected_kwargs = [
             "retry_strategy",
             "name",
+            "name_contains",
             "identifier",
             "fields",
             "limit",
@@ -6241,6 +7068,7 @@ class DataIntegrationClient(object):
 
         query_params = {
             "name": kwargs.get("name", missing),
+            "nameContains": kwargs.get("name_contains", missing),
             "identifier": self.base_client.generate_collection_format_param(kwargs.get("identifier", missing), 'multi'),
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "limit": kwargs.get("limit", missing),
@@ -7201,6 +8029,9 @@ class DataIntegrationClient(object):
         :param str name: (optional)
             Used to filter by the name of the object.
 
+        :param str name_contains: (optional)
+            This parameter can be used to filter objects by the names that match partially or fully with the given value.
+
         :param list[str] identifier: (optional)
             Used to filter by the identifier of the published object.
 
@@ -7261,6 +8092,7 @@ class DataIntegrationClient(object):
             "retry_strategy",
             "fields",
             "name",
+            "name_contains",
             "identifier",
             "type",
             "type_in_subtree",
@@ -7303,6 +8135,7 @@ class DataIntegrationClient(object):
         query_params = {
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "name": kwargs.get("name", missing),
+            "nameContains": kwargs.get("name_contains", missing),
             "identifier": self.base_client.generate_collection_format_param(kwargs.get("identifier", missing), 'multi'),
             "type": self.base_client.generate_collection_format_param(kwargs.get("type", missing), 'multi'),
             "typeInSubtree": kwargs.get("type_in_subtree", missing),
@@ -7659,6 +8492,9 @@ class DataIntegrationClient(object):
         :param str name: (optional)
             Used to filter by the name of the object.
 
+        :param str name_contains: (optional)
+            This parameter can be used to filter objects by the names that match partially or fully with the given value.
+
         :param list[str] identifier: (optional)
             Used to filter by the identifier of the object.
 
@@ -7706,6 +8542,7 @@ class DataIntegrationClient(object):
             "aggregator_key",
             "fields",
             "name",
+            "name_contains",
             "identifier",
             "page",
             "limit",
@@ -7716,6 +8553,156 @@ class DataIntegrationClient(object):
         if extra_kwargs:
             raise ValueError(
                 "list_folders got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "aggregatorKey": kwargs.get("aggregator_key", missing),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "name": kwargs.get("name", missing),
+            "nameContains": kwargs.get("name_contains", missing),
+            "identifier": self.base_client.generate_collection_format_param(kwargs.get("identifier", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="FolderSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="FolderSummaryCollection")
+
+    def list_function_libraries(self, workspace_id, **kwargs):
+        """
+        Retrieves a list of function libraries in a project and provides options to filter the list.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str aggregator_key: (optional)
+            Used to filter by the project or the folder object.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to get for an object.
+
+        :param str name: (optional)
+            Used to filter by the name of the object.
+
+        :param list[str] identifier: (optional)
+            Used to filter by the identifier of the object.
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.FunctionLibrarySummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_function_libraries.py.html>`__ to see an example of how to use list_function_libraries API.
+        """
+        resource_path = "/workspaces/{workspaceId}/functionLibraries"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "aggregator_key",
+            "fields",
+            "name",
+            "identifier",
+            "page",
+            "limit",
+            "sort_order",
+            "sort_by"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_function_libraries got unknown kwargs: {!r}".format(extra_kwargs))
 
         path_params = {
             "workspaceId": workspace_id
@@ -7776,7 +8763,7 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FolderSummaryCollection")
+                response_type="FunctionLibrarySummaryCollection")
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7784,7 +8771,7 @@ class DataIntegrationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FolderSummaryCollection")
+                response_type="FunctionLibrarySummaryCollection")
 
     def list_patch_changes(self, workspace_id, application_key, **kwargs):
         """
@@ -8399,6 +9386,9 @@ class DataIntegrationClient(object):
         :param str name: (optional)
             Used to filter by the name of the object.
 
+        :param str name_contains: (optional)
+            This parameter can be used to filter objects by the names that match partially or fully with the given value.
+
         :param list[str] identifier: (optional)
             Used to filter by the identifier of the object.
 
@@ -8445,6 +9435,7 @@ class DataIntegrationClient(object):
             "opc_request_id",
             "fields",
             "name",
+            "name_contains",
             "identifier",
             "page",
             "limit",
@@ -8483,6 +9474,7 @@ class DataIntegrationClient(object):
         query_params = {
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "name": kwargs.get("name", missing),
+            "nameContains": kwargs.get("name_contains", missing),
             "identifier": self.base_client.generate_collection_format_param(kwargs.get("identifier", missing), 'multi'),
             "page": kwargs.get("page", missing),
             "limit": kwargs.get("limit", missing),
@@ -8540,6 +9532,12 @@ class DataIntegrationClient(object):
 
         :param str name: (optional)
             Used to filter by the name of the object.
+
+        :param str name_starts_with: (optional)
+            This parameter can be used to filter objects by the names starting with the given value.
+
+        :param str name_contains: (optional)
+            This parameter can be used to filter objects by the names that match partially or fully with the given value.
 
         :param list[str] identifier: (optional)
             Used to filter by the identifier of the published object.
@@ -8601,6 +9599,8 @@ class DataIntegrationClient(object):
             "retry_strategy",
             "fields",
             "name",
+            "name_starts_with",
+            "name_contains",
             "identifier",
             "type",
             "type_in_subtree",
@@ -8643,6 +9643,8 @@ class DataIntegrationClient(object):
         query_params = {
             "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
             "name": kwargs.get("name", missing),
+            "nameStartsWith": kwargs.get("name_starts_with", missing),
+            "nameContains": kwargs.get("name_contains", missing),
             "identifier": self.base_client.generate_collection_format_param(kwargs.get("identifier", missing), 'multi'),
             "type": self.base_client.generate_collection_format_param(kwargs.get("type", missing), 'multi'),
             "typeInSubtree": kwargs.get("type_in_subtree", missing),
@@ -9320,6 +10322,9 @@ class DataIntegrationClient(object):
         :param list[str] filter: (optional)
             This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>
 
+        :param str name_starts_with: (optional)
+            This parameter can be used to filter objects by the names starting with the given value.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9350,7 +10355,8 @@ class DataIntegrationClient(object):
             "limit",
             "sort_order",
             "sort_by",
-            "filter"
+            "filter",
+            "name_starts_with"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9392,7 +10398,8 @@ class DataIntegrationClient(object):
             "limit": kwargs.get("limit", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "filter": self.base_client.generate_collection_format_param(kwargs.get("filter", missing), 'multi')
+            "filter": self.base_client.generate_collection_format_param(kwargs.get("filter", missing), 'multi'),
+            "nameStartsWith": kwargs.get("name_starts_with", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -9894,6 +10901,304 @@ class DataIntegrationClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="TaskSummaryCollection")
+
+    def list_user_defined_function_validations(self, workspace_id, **kwargs):
+        """
+        Retrieves a list of UserDefinedFunctionvalidations within the specified workspace.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str key: (optional)
+            Used to filter by the key of the object.
+
+        :param str name: (optional)
+            Used to filter by the name of the object.
+
+        :param str identifier: (optional)
+            Used to filter by the identifier of the object.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to get for an object.
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.UserDefinedFunctionValidationSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_user_defined_function_validations.py.html>`__ to see an example of how to use list_user_defined_function_validations API.
+        """
+        resource_path = "/workspaces/{workspaceId}/userDefinedFunctionValidations"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "key",
+            "name",
+            "identifier",
+            "fields",
+            "page",
+            "limit",
+            "sort_by",
+            "sort_order",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_user_defined_function_validations got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "key": kwargs.get("key", missing),
+            "name": kwargs.get("name", missing),
+            "identifier": kwargs.get("identifier", missing),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="UserDefinedFunctionValidationSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="UserDefinedFunctionValidationSummaryCollection")
+
+    def list_user_defined_functions(self, workspace_id, **kwargs):
+        """
+        Retrieves a list of UserDefinedFunctions in a function library.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str function_library_key: (optional)
+            Unique key of the FunctionLibrary.
+
+        :param list[str] fields: (optional)
+            Specifies the fields to get for an object.
+
+        :param str name: (optional)
+            Used to filter by the name of the object.
+
+        :param list[str] identifier: (optional)
+            Used to filter by the identifier of the object.
+
+        :param int limit: (optional)
+            Sets the maximum number of results per page, or items to return in a paginated `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value for this parameter is the `opc-next-page` or the `opc-prev-page` response header from the previous `List` call. See `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            Specifies sort order to use, either `ASC` (ascending) or `DESC` (descending).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter `query` is present (search operation and sorting order is by relevance score in descending order).
+
+            Allowed values are: "TIME_CREATED", "DISPLAY_NAME"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.UserDefinedFunctionSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/list_user_defined_functions.py.html>`__ to see an example of how to use list_user_defined_functions API.
+        """
+        resource_path = "/workspaces/{workspaceId}/userDefinedFunctions"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "function_library_key",
+            "fields",
+            "name",
+            "identifier",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_user_defined_functions got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIME_CREATED", "DISPLAY_NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "functionLibraryKey": kwargs.get("function_library_key", missing),
+            "fields": self.base_client.generate_collection_format_param(kwargs.get("fields", missing), 'multi'),
+            "name": kwargs.get("name", missing),
+            "identifier": self.base_client.generate_collection_format_param(kwargs.get("identifier", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="UserDefinedFunctionSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="UserDefinedFunctionSummaryCollection")
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -11213,6 +12518,103 @@ class DataIntegrationClient(object):
                 body=update_folder_details,
                 response_type="Folder")
 
+    def update_function_library(self, workspace_id, function_library_key, update_function_library_details, **kwargs):
+        """
+        Updates a specific Function Library.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str function_library_key: (required)
+            The functionLibrary key.
+
+        :param oci.data_integration.models.UpdateFunctionLibraryDetails update_function_library_details: (required)
+            The details needed to update a FunctionL ibrary.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.FunctionLibrary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_function_library.py.html>`__ to see an example of how to use update_function_library API.
+        """
+        resource_path = "/workspaces/{workspaceId}/functionLibraries/{functionLibraryKey}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_function_library got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "functionLibraryKey": function_library_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_function_library_details,
+                response_type="FunctionLibrary")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_function_library_details,
+                response_type="FunctionLibrary")
+
     def update_pipeline(self, workspace_id, pipeline_key, update_pipeline_details, **kwargs):
         """
         Updates a specific pipeline.
@@ -11913,6 +13315,103 @@ class DataIntegrationClient(object):
                 header_params=header_params,
                 body=update_task_schedule_details,
                 response_type="TaskSchedule")
+
+    def update_user_defined_function(self, workspace_id, user_defined_function_key, update_user_defined_function_details, **kwargs):
+        """
+        Updates a specific UserDefinedFunction.
+
+
+        :param str workspace_id: (required)
+            The workspace ID.
+
+        :param str user_defined_function_key: (required)
+            The user defined function key.
+
+        :param oci.data_integration.models.UpdateUserDefinedFunctionDetails update_user_defined_function_details: (required)
+            The details needed to updated a UserDefinedFunction.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If
+            you need to contact Oracle about a particular request,
+            please provide the request ID.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match` parameter to the value of the `etag` from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the `etag` you provide matches the resource's current `etag` value.
+            When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_integration.models.UserDefinedFunction`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/dataintegration/update_user_defined_function.py.html>`__ to see an example of how to use update_user_defined_function API.
+        """
+        resource_path = "/workspaces/{workspaceId}/userDefinedFunctions/{userDefinedFunctionKey}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_user_defined_function got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "workspaceId": workspace_id,
+            "userDefinedFunctionKey": user_defined_function_key
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_user_defined_function_details,
+                response_type="UserDefinedFunction")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_user_defined_function_details,
+                response_type="UserDefinedFunction")
 
     def update_workspace(self, workspace_id, update_workspace_details, **kwargs):
         """

@@ -50,6 +50,10 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
     USAGE_UNIT_MBPS = "MBPS"
 
     #: A constant which can be used with the usage_unit property of a SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
+    #: This constant has a value of "IOPS"
+    USAGE_UNIT_IOPS = "IOPS"
+
+    #: A constant which can be used with the usage_unit property of a SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
     #: This constant has a value of "PERCENT"
     USAGE_UNIT_PERCENT = "PERCENT"
 
@@ -74,7 +78,7 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
 
         :param usage_unit:
             The value to assign to the usage_unit property of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
-            Allowed values for this property are: "CORES", "GB", "MBPS", "PERCENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CORES", "GB", "MBPS", "IOPS", "PERCENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type usage_unit: str
 
@@ -189,7 +193,7 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
         **[Required]** Gets the usage_unit of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
         Displays usage unit ( CORES, GB)
 
-        Allowed values for this property are: "CORES", "GB", "MBPS", "PERCENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CORES", "GB", "MBPS", "IOPS", "PERCENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -208,7 +212,7 @@ class SummarizeDatabaseInsightResourceStatisticsAggregationCollection(object):
         :param usage_unit: The usage_unit of this SummarizeDatabaseInsightResourceStatisticsAggregationCollection.
         :type: str
         """
-        allowed_values = ["CORES", "GB", "MBPS", "PERCENT"]
+        allowed_values = ["CORES", "GB", "MBPS", "IOPS", "PERCENT"]
         if not value_allowed_none_or_none_sentinel(usage_unit, allowed_values):
             usage_unit = 'UNKNOWN_ENUM_VALUE'
         self._usage_unit = usage_unit

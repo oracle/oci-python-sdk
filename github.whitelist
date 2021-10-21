@@ -127,3 +127,5 @@
 ^src/oci/data_labeling_service_dataplane/.*\.py$
 ^src/oci/apm_config/.*\.py$
 ^src/oci/waf/.*\.py$
+^src/oci/certificates/.*\.py$
+^src/oci/certificates_management/.*\.py$

@@ -64,6 +64,10 @@ class UpdateDataAssetFromObjectStorage(UpdateDataAssetDetails):
             The value to assign to the registry_metadata property of this UpdateDataAssetFromObjectStorage.
         :type registry_metadata: oci.data_integration.models.RegistryMetadata
 
+        :param oci_region:
+            The value to assign to the oci_region property of this UpdateDataAssetFromObjectStorage.
+        :type oci_region: str
+
         :param url:
             The value to assign to the url property of this UpdateDataAssetFromObjectStorage.
         :type url: str
@@ -93,6 +97,7 @@ class UpdateDataAssetFromObjectStorage(UpdateDataAssetDetails):
             'external_key': 'str',
             'asset_properties': 'dict(str, str)',
             'registry_metadata': 'RegistryMetadata',
+            'oci_region': 'str',
             'url': 'str',
             'tenancy_id': 'str',
             'namespace': 'str',
@@ -111,6 +116,7 @@ class UpdateDataAssetFromObjectStorage(UpdateDataAssetDetails):
             'external_key': 'externalKey',
             'asset_properties': 'assetProperties',
             'registry_metadata': 'registryMetadata',
+            'oci_region': 'ociRegion',
             'url': 'url',
             'tenancy_id': 'tenancyId',
             'namespace': 'namespace',
@@ -128,11 +134,36 @@ class UpdateDataAssetFromObjectStorage(UpdateDataAssetDetails):
         self._external_key = None
         self._asset_properties = None
         self._registry_metadata = None
+        self._oci_region = None
         self._url = None
         self._tenancy_id = None
         self._namespace = None
         self._default_connection = None
         self._model_type = 'ORACLE_OBJECT_STORAGE_DATA_ASSET'
+
+    @property
+    def oci_region(self):
+        """
+        Gets the oci_region of this UpdateDataAssetFromObjectStorage.
+        The Oracle Object storage Region ie. us-ashburn-1
+
+
+        :return: The oci_region of this UpdateDataAssetFromObjectStorage.
+        :rtype: str
+        """
+        return self._oci_region
+
+    @oci_region.setter
+    def oci_region(self, oci_region):
+        """
+        Sets the oci_region of this UpdateDataAssetFromObjectStorage.
+        The Oracle Object storage Region ie. us-ashburn-1
+
+
+        :param oci_region: The oci_region of this UpdateDataAssetFromObjectStorage.
+        :type: str
+        """
+        self._oci_region = oci_region
 
     @property
     def url(self):
