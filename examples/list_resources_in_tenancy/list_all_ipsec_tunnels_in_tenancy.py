@@ -8,6 +8,8 @@
 # @author: Adi Zohar
 #
 # Supports Python 3
+#
+# DISCLAIMER – This is not an official Oracle application,  It does not supported by Oracle Support, It should NOT be used for utilization calculation purposes
 ##########################################################################
 # Info:
 #    List all IPSEC tunnels in Tenancy including DRG redundancy
@@ -48,7 +50,6 @@
 #   -ip       - Use Instance Principals for Authentication
 #   -dt       - Use Instance Principals with delegation token for cloud shell
 ##########################################################################
-
 from __future__ import print_function
 import sys
 import argparse
