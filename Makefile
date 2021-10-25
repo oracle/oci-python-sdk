@@ -31,10 +31,15 @@ gen:
 
 .PHONY: build
 build:
-	@echo Creating .tar.gz, .whl files for distribution.
-	python setup.py sdist bdist_wheel
+	make wheel
 	@echo Creating .zip for distribution.
 	python scripts/zip-wheel
+
+
+.PHONY: wheel
+wheel:
+	@echo Creating .tar.gz, .whl files for distribution.
+	python setup.py sdist bdist_wheel
 
 
 .PHONY: install

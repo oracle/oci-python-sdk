@@ -42,22 +42,23 @@ echo SDK Version Number $SDK_VERSION
 # Disable expect 100 continue feature for integ tests.
 export OCI_PYSDK_USING_EXPECT_HEADER=FALSE
 
-echo Building Docs
-pip install -r docs/requirements.txt
+# remove make docs for speeding up the build time.
+#echo Building Docs
+#pip install -r docs/requirements.txt
 
-# Redirect STDOUT and STDERR to a file to avoid resource unavailable error in TeamCity jobs.
-make docs >> build_output.txt 2>&1
+## Redirect STDOUT and STDERR to a file to avoid resource unavailable error in TeamCity jobs.
+#make docs >> build_output.txt 2>&1
 
-# a hyperlinks mismatch will cause all of the links on readthedocs to break
-if cat build_output.txt | grep -q "ERROR: Anonymous hyperlink mismatch";  then
-    echo "Failing due to error building docs with sphinx.";
-    exit 1;
-else
-    echo "No critical errors found during sphinx build.";
-fi
+## a hyperlinks mismatch will cause all of the links on readthedocs to break
+#if cat build_output.txt | grep -q "ERROR: Anonymous hyperlink mismatch";  then
+#    echo "Failing due to error building docs with sphinx.";
+#    exit 1;
+#else
+#    echo "No critical errors found during sphinx build.";
+#fi
 
-mkdir -p dist/oci-python-sdk-docs-$SDK_VERSION/
-cp -r docs/_build/html/* dist/oci-python-sdk-docs-$SDK_VERSION/
+#mkdir -p dist/oci-python-sdk-docs-$SDK_VERSION/
+#cp -r docs/_build/html/* dist/oci-python-sdk-docs-$SDK_VERSION/
 
 echo Running Tests
 
@@ -87,10 +88,10 @@ pip install wheel
 
 echo Building Wheel
 # Redirect STDOUT and STDERR to a file to avoid resource unavailable error in TeamCity jobs.
-make build >> build_output.txt 2>&1
+make wheel >> wheel_output.txt 2>&1
 
-# Delete build_output.txt
-rm build_output.txt
+# Delete wheel_output.txt
+rm wheel_output.txt
 
 # Create a dev directory that will contain versions of the whl, zip, and docs meant for
 # the dev pypi artifactory. Each artifact includes the build number in the version to avoid
