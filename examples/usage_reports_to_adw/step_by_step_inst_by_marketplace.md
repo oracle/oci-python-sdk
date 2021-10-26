@@ -7,9 +7,11 @@ Oracle Application Express (APEX) will be used for reporting.
 
 ## Must be deployed at Home Region
 
-**Developed by Adi Zohar, Feb 2020**
+**DISCLAIMER – This is not an official Oracle application,  It does not supported by Oracle Support, It should NOT be used for utilization calculation purposes, and rather OCI's official 
+[cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
+and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-** DISCLAIMER – This is not an official Oracle application **
+**Developed by Adi Zohar, Feb 2020**
 
 ## 1. Deploy Usage2ADW from Oracle Cloud Makretplace
 ```
@@ -195,8 +197,42 @@ Fill:
 
 ![](img/Image_22.png)
    
+## 6. How to change Autonomous Database to Private End Point
 
-## 20. How to upgrade the usage2adw application and APEX
+Login to OCI Console -> Menu -> Oracle Database -> Autonomous Database
+
+Choose The Autonomous database for Usage2ADW
+
+More Actions Menu -> Update Network Access
+
+![](img/pe1.png)
+
+#### Update Network Access
+
+Choose Network Access -> Private endpoint access Only
+
+Choose Network security group that will assigned to the Autonomous database
+
+If you don't have Network Security Group, Go to the Virtual Cloud Network and Create one.
+
+Make sure you allow port 1522/TCP inbound traffic.
+
+![](img/pe2.png)
+
+#### Update VM tnsnames to the private endpoint
+
+Find the Private Endpoint URL:
+
+![](img/pe3.png)
+
+Login to the usage2adw virtual machine using ssh tool with opc user
+
+cd ADWCUSG
+
+Edit tnsnames.ora file and change the tnsnames *_low entry host to the private end point specify in the ADW page
+
+
+## 7. How to upgrade the usage2adw application and APEX
 ```
 # on oci github:
 bash -c "$(curl -L https://github.com/oracle/oci-python-sdk/blob/master/examples/usage_reports_to_adw/setup/setup_upgrade_usage2adw.sh?raw=true)"    
@@ -205,6 +241,6 @@ bash -c "$(curl -L https://github.com/oracle/oci-python-sdk/blob/master/examples
 
 ## License
 
-Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl
 or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.

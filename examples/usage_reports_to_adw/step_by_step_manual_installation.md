@@ -5,9 +5,11 @@ usage2adw is a tool which uses the Python SDK to extract the usage reports from 
 
 Oracle Application Express (APEX) will be used for reporting.  
 
-**Developed by Adi Zohar, Feb 2020**
+**DISCLAIMER – This is not an official Oracle application,  It does not supported by Oracle Support, It should NOT be used for utilization calculation purposes, and rather OCI's official 
+[cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
+and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-** DISCLAIMER – This is not an official Oracle application **
+**Developed by Adi Zohar, 2020-2021**
 
 ## 1. Deploy VM Compute instance to run the python script
 ```
@@ -329,7 +331,42 @@ Right Click and Download [usage.demo.apex.sql](https://raw.githubusercontent.com
     0 0 * * * timeout 6h /home/opc/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw.sh > /home/opc/usage_reports_to_adw/shell_scripts/run_single_daily_usage2adw_crontab_run.txt 2>&1
 ```
 
-## 20. How to upgrade the usage2adw software and "OCI Usage and Cost Report" APEX application
+## 20. How to change Autonomous Database to Private End Point
+
+Login to OCI Console -> Menu -> Oracle Database -> Autonomous Database
+
+Choose The Autonomous database for Usage2ADW
+
+More Actions Menu -> Update Network Access
+
+![](img/pe1.png)
+
+#### Update Network Access
+
+Choose Network Access -> Private endpoint access Only
+
+Choose Network security group that will assigned to the Autonomous database
+
+If you don't have Network Security Group, Go to the Virtual Cloud Network and Create one.
+
+Make sure you allow port 1522/TCP inbound traffic.
+
+![](img/pe2.png)
+
+#### Update VM tnsnames to the private endpoint
+
+Find the Private Endpoint URL:
+
+![](img/pe3.png)
+
+Login to the usage2adw virtual machine using ssh tool with opc user
+
+cd ADWCUSG
+
+Edit tnsnames.ora file and change the tnsnames *_low entry host to the private end point specify in the ADW page
+
+
+## 21. How to upgrade the usage2adw software and "OCI Usage and Cost Report" APEX application
 ```
     # clone the software from github:
     cd $HOME

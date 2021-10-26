@@ -905,6 +905,11 @@ class ShowOCIOutput(object):
                 if 'details' in load_balance_obj:
                     self.__print_load_balancer_details(load_balance_obj['details'])
 
+                # print logs
+                if 'logs' in load_balance_obj:
+                    for index, log in enumerate(load_balance_obj['logs'], start=1):
+                        print(self.tabs + "Log " + str(index) + "      : " + log['name'])
+
                 if 'backendset' in load_balance_obj:
                     self.__print_load_balancer_backendset(load_balance_obj['backendset'])
 
@@ -2140,6 +2145,10 @@ class ShowOCIOutput(object):
                 if 'agent_is_management_disabled' in instance:
                     print(self.tabs2 + "Agent: Is Management Disabled = " + instance['agent_is_management_disabled'] + ", Is Monitoring Disabled = " + instance['agent_is_monitoring_disabled'])
 
+                # print logs
+                if 'logs' in instance:
+                    for index, log in enumerate(instance['logs'], start=1):
+                        print(self.tabs + "Log " + str(index) + "      : " + log['name'])
                 print("")
 
         except Exception as e:
@@ -3354,7 +3363,9 @@ class ShowOCICSV(object):
                     'api_keys': "Not Checked",
                     'auth_token': "Not Checked",
                     'secret_key': "Not Checked",
-                    'smtp_cred': "Not Checked"
+                    'smtp_cred': "Not Checked",
+                    'last_successful_login_time': user['last_successful_login_time'],
+                    'previous_successful_login_time': user['previous_successful_login_time']
                 }
 
                 # Check if credential exist
@@ -4235,6 +4246,15 @@ class ShowOCICSV(object):
             # listeners
             if 'listeners' in lb:
 
+                # get error and access log:
+                log_errors = ""
+                log_access = ""
+                for log in load_balance_obj['logs']:
+                    if 'error' in log['name']:
+                        log_errors = log['name']
+                    if 'access' in log['name']:
+                        log_access = log['name']
+
                 # if no listener
                 if not lb['listeners']:
                     data = {'region_name': region_name,
@@ -4244,6 +4264,9 @@ class ShowOCICSV(object):
                             'shape': lb['shape_name'],
                             'type': ("Private" if lb['is_private'] else "Public"),
                             'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                            'log_errors': log_errors,
+                            'log_access': log_access,
+                            'logs': str(', '.join(x['name'] for x in load_balance_obj['logs'])),
                             'subnets': str(', '.join(x for x in lb['subnets'])),
                             'listener_port': "No Listener",
                             'listener_def_bs': "",
@@ -4264,6 +4287,9 @@ class ShowOCICSV(object):
                             'shape': lb['shape_name'],
                             'type': ("Private" if lb['is_private'] else "Public"),
                             'ip_addresses': str(', '.join(x for x in lb['ips'])),
+                            'log_errors': log_errors,
+                            'log_access': log_access,
+                            'logs': str(', '.join(x['name'] for x in load_balance_obj['logs'])),
                             'subnets': str(', '.join(x for x in lb['subnets'])),
                             'listener_port': listener['port'],
                             'listener_def_bs': listener['default_backend_set_name'],
