@@ -251,7 +251,7 @@ class DomainSummary(object):
     def time_created(self):
         """
         Gets the time_created of this DomainSummary.
-        Date-time when this domain was created. An RFC3339-formatted date and time string.
+        Date-time when this domain was created. An RFC 3339-formatted date and time string.
 
 
         :return: The time_created of this DomainSummary.
@@ -263,7 +263,7 @@ class DomainSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DomainSummary.
-        Date-time when this domain was created. An RFC3339-formatted date and time string.
+        Date-time when this domain was created. An RFC 3339-formatted date and time string.
 
 
         :param time_created: The time_created of this DomainSummary.
@@ -275,7 +275,7 @@ class DomainSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this DomainSummary.
-        Date-time when this domain was last updated. An RFC3339-formatted date and time string.
+        Date-time when this domain was last updated. An RFC 3339-formatted date and time string.
 
 
         :return: The time_updated of this DomainSummary.
@@ -287,7 +287,7 @@ class DomainSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this DomainSummary.
-        Date-time when this domain was last updated. An RFC3339-formatted date and time string.
+        Date-time when this domain was last updated. An RFC 3339-formatted date and time string.
 
 
         :param time_updated: The time_updated of this DomainSummary.

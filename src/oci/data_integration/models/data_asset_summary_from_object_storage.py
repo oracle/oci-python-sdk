@@ -72,6 +72,10 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
             The value to assign to the metadata property of this DataAssetSummaryFromObjectStorage.
         :type metadata: oci.data_integration.models.ObjectMetadata
 
+        :param oci_region:
+            The value to assign to the oci_region property of this DataAssetSummaryFromObjectStorage.
+        :type oci_region: str
+
         :param url:
             The value to assign to the url property of this DataAssetSummaryFromObjectStorage.
         :type url: str
@@ -103,6 +107,7 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
             'object_version': 'int',
             'parent_ref': 'ParentReference',
             'metadata': 'ObjectMetadata',
+            'oci_region': 'str',
             'url': 'str',
             'tenancy_id': 'str',
             'namespace': 'str',
@@ -123,6 +128,7 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
             'object_version': 'objectVersion',
             'parent_ref': 'parentRef',
             'metadata': 'metadata',
+            'oci_region': 'ociRegion',
             'url': 'url',
             'tenancy_id': 'tenancyId',
             'namespace': 'namespace',
@@ -142,11 +148,36 @@ class DataAssetSummaryFromObjectStorage(DataAssetSummary):
         self._object_version = None
         self._parent_ref = None
         self._metadata = None
+        self._oci_region = None
         self._url = None
         self._tenancy_id = None
         self._namespace = None
         self._default_connection = None
         self._model_type = 'ORACLE_OBJECT_STORAGE_DATA_ASSET'
+
+    @property
+    def oci_region(self):
+        """
+        Gets the oci_region of this DataAssetSummaryFromObjectStorage.
+        The Oracle Object storage Region ie. us-ashburn-1
+
+
+        :return: The oci_region of this DataAssetSummaryFromObjectStorage.
+        :rtype: str
+        """
+        return self._oci_region
+
+    @oci_region.setter
+    def oci_region(self, oci_region):
+        """
+        Sets the oci_region of this DataAssetSummaryFromObjectStorage.
+        The Oracle Object storage Region ie. us-ashburn-1
+
+
+        :param oci_region: The oci_region of this DataAssetSummaryFromObjectStorage.
+        :type: str
+        """
+        self._oci_region = oci_region
 
     @property
     def url(self):

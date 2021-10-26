@@ -20,6 +20,7 @@ from .auth_details import AuthDetails
 from .avro_format_attribute import AvroFormatAttribute
 from .base_type import BaseType
 from .bicc_read_attributes import BiccReadAttributes
+from .cancel_rest_call_config import CancelRestCallConfig
 from .change_compartment_details import ChangeCompartmentDetails
 from .child_reference import ChildReference
 from .child_reference_detail import ChildReferenceDetail
@@ -94,9 +95,11 @@ from .create_data_flow_details import CreateDataFlowDetails
 from .create_data_flow_validation_details import CreateDataFlowValidationDetails
 from .create_entity_shape_details import CreateEntityShapeDetails
 from .create_entity_shape_from_file import CreateEntityShapeFromFile
+from .create_entity_shape_from_sql import CreateEntityShapeFromSQL
 from .create_external_publication_details import CreateExternalPublicationDetails
 from .create_external_publication_validation_details import CreateExternalPublicationValidationDetails
 from .create_folder_details import CreateFolderDetails
+from .create_function_library_details import CreateFunctionLibraryDetails
 from .create_patch_details import CreatePatchDetails
 from .create_pipeline_details import CreatePipelineDetails
 from .create_pipeline_validation_details import CreatePipelineValidationDetails
@@ -116,8 +119,11 @@ from .create_task_validation_details import CreateTaskValidationDetails
 from .create_task_validation_from_data_loader_task import CreateTaskValidationFromDataLoaderTask
 from .create_task_validation_from_integration_task import CreateTaskValidationFromIntegrationTask
 from .create_task_validation_from_pipeline_task import CreateTaskValidationFromPipelineTask
+from .create_user_defined_function_details import CreateUserDefinedFunctionDetails
+from .create_user_defined_function_validation_details import CreateUserDefinedFunctionValidationDetails
 from .create_workspace_details import CreateWorkspaceDetails
 from .csv_format_attribute import CsvFormatAttribute
+from .custom_frequency_details import CustomFrequencyDetails
 from .daily_frequency_details import DailyFrequencyDetails
 from .data_asset import DataAsset
 from .data_asset_from_adwc_details import DataAssetFromAdwcDetails
@@ -144,6 +150,8 @@ from .data_entity_from_data_store import DataEntityFromDataStore
 from .data_entity_from_data_store_entity_details import DataEntityFromDataStoreEntityDetails
 from .data_entity_from_file import DataEntityFromFile
 from .data_entity_from_file_entity_details import DataEntityFromFileEntityDetails
+from .data_entity_from_sql import DataEntityFromSql
+from .data_entity_from_sql_entity_details import DataEntityFromSqlEntityDetails
 from .data_entity_from_table import DataEntityFromTable
 from .data_entity_from_table_entity_details import DataEntityFromTableEntityDetails
 from .data_entity_from_view import DataEntityFromView
@@ -152,6 +160,7 @@ from .data_entity_summary import DataEntitySummary
 from .data_entity_summary_collection import DataEntitySummaryCollection
 from .data_entity_summary_from_data_store import DataEntitySummaryFromDataStore
 from .data_entity_summary_from_file import DataEntitySummaryFromFile
+from .data_entity_summary_from_sql import DataEntitySummaryFromSql
 from .data_entity_summary_from_table import DataEntitySummaryFromTable
 from .data_entity_summary_from_view import DataEntitySummaryFromView
 from .data_flow import DataFlow
@@ -180,7 +189,9 @@ from .end_operator import EndOperator
 from .enriched_entity import EnrichedEntity
 from .entity_shape import EntityShape
 from .entity_shape_from_file import EntityShapeFromFile
+from .entity_shape_from_sql import EntityShapeFromSQL
 from .error_details import ErrorDetails
+from .execute_rest_call_config import ExecuteRestCallConfig
 from .expression import Expression
 from .expression_operator import ExpressionOperator
 from .external_publication import ExternalPublication
@@ -201,6 +212,11 @@ from .folder_details import FolderDetails
 from .folder_summary import FolderSummary
 from .folder_summary_collection import FolderSummaryCollection
 from .foreign_key import ForeignKey
+from .function_library import FunctionLibrary
+from .function_library_details import FunctionLibraryDetails
+from .function_library_summary import FunctionLibrarySummary
+from .function_library_summary_collection import FunctionLibrarySummaryCollection
+from .function_signature import FunctionSignature
 from .hourly_frequency_details import HourlyFrequencyDetails
 from .input_field import InputField
 from .input_link import InputLink
@@ -221,6 +237,7 @@ from .merge_operator import MergeOperator
 from .message import Message
 from .minus import Minus
 from .monthly_frequency_details import MonthlyFrequencyDetails
+from .monthly_rule_frequency_details import MonthlyRuleFrequencyDetails
 from .name_list_rule import NameListRule
 from .name_pattern_rule import NamePatternRule
 from .native_shape_field import NativeShapeField
@@ -284,6 +301,7 @@ from .reference_used_by import ReferenceUsedBy
 from .registry_metadata import RegistryMetadata
 from .rename_rule import RenameRule
 from .resource_configuration import ResourceConfiguration
+from .rest_call_config import RestCallConfig
 from .root_object import RootObject
 from .rule_based_field_map import RuleBasedFieldMap
 from .rule_type_config import RuleTypeConfig
@@ -345,6 +363,7 @@ from .typed_name_pattern_rule import TypedNamePatternRule
 from .typed_object import TypedObject
 from .ui_properties import UIProperties
 from .union import Union
+from .unique_data_key import UniqueDataKey
 from .unique_key import UniqueKey
 from .update_application_details import UpdateApplicationDetails
 from .update_connection_details import UpdateConnectionDetails
@@ -368,6 +387,7 @@ from .update_data_asset_from_oracle import UpdateDataAssetFromOracle
 from .update_data_flow_details import UpdateDataFlowDetails
 from .update_external_publication_details import UpdateExternalPublicationDetails
 from .update_folder_details import UpdateFolderDetails
+from .update_function_library_details import UpdateFunctionLibraryDetails
 from .update_pipeline_details import UpdatePipelineDetails
 from .update_project_details import UpdateProjectDetails
 from .update_reference_details import UpdateReferenceDetails
@@ -381,9 +401,18 @@ from .update_task_from_rest_task import UpdateTaskFromRestTask
 from .update_task_from_sql_task import UpdateTaskFromSQLTask
 from .update_task_run_details import UpdateTaskRunDetails
 from .update_task_schedule_details import UpdateTaskScheduleDetails
+from .update_user_defined_function_details import UpdateUserDefinedFunctionDetails
 from .update_workspace_details import UpdateWorkspaceDetails
+from .user_defined_function import UserDefinedFunction
+from .user_defined_function_details import UserDefinedFunctionDetails
+from .user_defined_function_summary import UserDefinedFunctionSummary
+from .user_defined_function_summary_collection import UserDefinedFunctionSummaryCollection
+from .user_defined_function_validation import UserDefinedFunctionValidation
+from .user_defined_function_validation_summary import UserDefinedFunctionValidationSummary
+from .user_defined_function_validation_summary_collection import UserDefinedFunctionValidationSummaryCollection
 from .validation_message import ValidationMessage
 from .variable import Variable
+from .weekly_frequency_details import WeeklyFrequencyDetails
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
 from .work_request_log_entry import WorkRequestLogEntry
@@ -411,6 +440,7 @@ data_integration_type_mapping = {
     "AvroFormatAttribute": AvroFormatAttribute,
     "BaseType": BaseType,
     "BiccReadAttributes": BiccReadAttributes,
+    "CancelRestCallConfig": CancelRestCallConfig,
     "ChangeCompartmentDetails": ChangeCompartmentDetails,
     "ChildReference": ChildReference,
     "ChildReferenceDetail": ChildReferenceDetail,
@@ -485,9 +515,11 @@ data_integration_type_mapping = {
     "CreateDataFlowValidationDetails": CreateDataFlowValidationDetails,
     "CreateEntityShapeDetails": CreateEntityShapeDetails,
     "CreateEntityShapeFromFile": CreateEntityShapeFromFile,
+    "CreateEntityShapeFromSQL": CreateEntityShapeFromSQL,
     "CreateExternalPublicationDetails": CreateExternalPublicationDetails,
     "CreateExternalPublicationValidationDetails": CreateExternalPublicationValidationDetails,
     "CreateFolderDetails": CreateFolderDetails,
+    "CreateFunctionLibraryDetails": CreateFunctionLibraryDetails,
     "CreatePatchDetails": CreatePatchDetails,
     "CreatePipelineDetails": CreatePipelineDetails,
     "CreatePipelineValidationDetails": CreatePipelineValidationDetails,
@@ -507,8 +539,11 @@ data_integration_type_mapping = {
     "CreateTaskValidationFromDataLoaderTask": CreateTaskValidationFromDataLoaderTask,
     "CreateTaskValidationFromIntegrationTask": CreateTaskValidationFromIntegrationTask,
     "CreateTaskValidationFromPipelineTask": CreateTaskValidationFromPipelineTask,
+    "CreateUserDefinedFunctionDetails": CreateUserDefinedFunctionDetails,
+    "CreateUserDefinedFunctionValidationDetails": CreateUserDefinedFunctionValidationDetails,
     "CreateWorkspaceDetails": CreateWorkspaceDetails,
     "CsvFormatAttribute": CsvFormatAttribute,
+    "CustomFrequencyDetails": CustomFrequencyDetails,
     "DailyFrequencyDetails": DailyFrequencyDetails,
     "DataAsset": DataAsset,
     "DataAssetFromAdwcDetails": DataAssetFromAdwcDetails,
@@ -535,6 +570,8 @@ data_integration_type_mapping = {
     "DataEntityFromDataStoreEntityDetails": DataEntityFromDataStoreEntityDetails,
     "DataEntityFromFile": DataEntityFromFile,
     "DataEntityFromFileEntityDetails": DataEntityFromFileEntityDetails,
+    "DataEntityFromSql": DataEntityFromSql,
+    "DataEntityFromSqlEntityDetails": DataEntityFromSqlEntityDetails,
     "DataEntityFromTable": DataEntityFromTable,
     "DataEntityFromTableEntityDetails": DataEntityFromTableEntityDetails,
     "DataEntityFromView": DataEntityFromView,
@@ -543,6 +580,7 @@ data_integration_type_mapping = {
     "DataEntitySummaryCollection": DataEntitySummaryCollection,
     "DataEntitySummaryFromDataStore": DataEntitySummaryFromDataStore,
     "DataEntitySummaryFromFile": DataEntitySummaryFromFile,
+    "DataEntitySummaryFromSql": DataEntitySummaryFromSql,
     "DataEntitySummaryFromTable": DataEntitySummaryFromTable,
     "DataEntitySummaryFromView": DataEntitySummaryFromView,
     "DataFlow": DataFlow,
@@ -571,7 +609,9 @@ data_integration_type_mapping = {
     "EnrichedEntity": EnrichedEntity,
     "EntityShape": EntityShape,
     "EntityShapeFromFile": EntityShapeFromFile,
+    "EntityShapeFromSQL": EntityShapeFromSQL,
     "ErrorDetails": ErrorDetails,
+    "ExecuteRestCallConfig": ExecuteRestCallConfig,
     "Expression": Expression,
     "ExpressionOperator": ExpressionOperator,
     "ExternalPublication": ExternalPublication,
@@ -592,6 +632,11 @@ data_integration_type_mapping = {
     "FolderSummary": FolderSummary,
     "FolderSummaryCollection": FolderSummaryCollection,
     "ForeignKey": ForeignKey,
+    "FunctionLibrary": FunctionLibrary,
+    "FunctionLibraryDetails": FunctionLibraryDetails,
+    "FunctionLibrarySummary": FunctionLibrarySummary,
+    "FunctionLibrarySummaryCollection": FunctionLibrarySummaryCollection,
+    "FunctionSignature": FunctionSignature,
     "HourlyFrequencyDetails": HourlyFrequencyDetails,
     "InputField": InputField,
     "InputLink": InputLink,
@@ -612,6 +657,7 @@ data_integration_type_mapping = {
     "Message": Message,
     "Minus": Minus,
     "MonthlyFrequencyDetails": MonthlyFrequencyDetails,
+    "MonthlyRuleFrequencyDetails": MonthlyRuleFrequencyDetails,
     "NameListRule": NameListRule,
     "NamePatternRule": NamePatternRule,
     "NativeShapeField": NativeShapeField,
@@ -675,6 +721,7 @@ data_integration_type_mapping = {
     "RegistryMetadata": RegistryMetadata,
     "RenameRule": RenameRule,
     "ResourceConfiguration": ResourceConfiguration,
+    "RestCallConfig": RestCallConfig,
     "RootObject": RootObject,
     "RuleBasedFieldMap": RuleBasedFieldMap,
     "RuleTypeConfig": RuleTypeConfig,
@@ -736,6 +783,7 @@ data_integration_type_mapping = {
     "TypedObject": TypedObject,
     "UIProperties": UIProperties,
     "Union": Union,
+    "UniqueDataKey": UniqueDataKey,
     "UniqueKey": UniqueKey,
     "UpdateApplicationDetails": UpdateApplicationDetails,
     "UpdateConnectionDetails": UpdateConnectionDetails,
@@ -759,6 +807,7 @@ data_integration_type_mapping = {
     "UpdateDataFlowDetails": UpdateDataFlowDetails,
     "UpdateExternalPublicationDetails": UpdateExternalPublicationDetails,
     "UpdateFolderDetails": UpdateFolderDetails,
+    "UpdateFunctionLibraryDetails": UpdateFunctionLibraryDetails,
     "UpdatePipelineDetails": UpdatePipelineDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
     "UpdateReferenceDetails": UpdateReferenceDetails,
@@ -772,9 +821,18 @@ data_integration_type_mapping = {
     "UpdateTaskFromSQLTask": UpdateTaskFromSQLTask,
     "UpdateTaskRunDetails": UpdateTaskRunDetails,
     "UpdateTaskScheduleDetails": UpdateTaskScheduleDetails,
+    "UpdateUserDefinedFunctionDetails": UpdateUserDefinedFunctionDetails,
     "UpdateWorkspaceDetails": UpdateWorkspaceDetails,
+    "UserDefinedFunction": UserDefinedFunction,
+    "UserDefinedFunctionDetails": UserDefinedFunctionDetails,
+    "UserDefinedFunctionSummary": UserDefinedFunctionSummary,
+    "UserDefinedFunctionSummaryCollection": UserDefinedFunctionSummaryCollection,
+    "UserDefinedFunctionValidation": UserDefinedFunctionValidation,
+    "UserDefinedFunctionValidationSummary": UserDefinedFunctionValidationSummary,
+    "UserDefinedFunctionValidationSummaryCollection": UserDefinedFunctionValidationSummaryCollection,
     "ValidationMessage": ValidationMessage,
     "Variable": Variable,
+    "WeeklyFrequencyDetails": WeeklyFrequencyDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
     "WorkRequestLogEntry": WorkRequestLogEntry,

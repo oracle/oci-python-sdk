@@ -8,6 +8,8 @@
 # @author: Adi Zohar
 #
 # Supports Python  3
+#
+# DISCLAIMER – This is not an official Oracle application,  It does not supported by Oracle Support, It should NOT be used for utilization calculation purposes
 ##########################################################################
 # Info:
 #    Tag Resources in Tenancy
@@ -104,7 +106,7 @@ def get_string_dict(dic, namespace=False):
         for key, val in dic.items():
             if len(retval) > 0:
                 retval += ", "
-            retval += key + "." + "".join("{}={}".format(k, v) for k, v in val.items())
+            retval += ", ".join("{}.{}={}".format(key, k, v) for k, v in val.items())
     # if free
     else:
         retval = ', '.join("{}={}".format(k, v) for k, v in dic.items())
@@ -150,7 +152,7 @@ def command_line():
         if ("defined" in cmd.action):
             assign_tag_namespace = cmd.tag.split(".")[0]
             assign_tag_key = cmd.tag.split(".")[1].split("=")[0]
-            assign_tag_value = cmd.tag.split(".")[1].split("=")[1]
+            assign_tag_value = cmd.tag.split("=")[1]
             if not (assign_tag_namespace or assign_tag_key or assign_tag_value):
                 print("Error with tag format, must be in format - namespace.key=value")
                 raise SystemExit
@@ -373,7 +375,7 @@ def handle_object(compartment, region_name, obj_name, list_object, update_object
                 if availability_domains:
                     array = oci.pagination.list_call_get_all_results(list_object, availability_domain, compartment.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
                 elif namespace:
-                    array = oci.pagination.list_call_get_all_results(list_object, namespace, compartment.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                    array = oci.pagination.list_call_get_all_results(list_object, namespace, compartment.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY, fields=['tags']).data
                 else:
                     array = oci.pagination.list_call_get_all_results(list_object, compartment.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
             except oci.exceptions.ServiceError as e:
@@ -385,7 +387,7 @@ def handle_object(compartment, region_name, obj_name, list_object, update_object
 
             # loop on Array
             for arr in array:
-                if not namespace:
+                if not namespace and obj_name != "Network CPEs":
                     if arr.lifecycle_state == "TERMINATING" or arr.lifecycle_state == "TERMINATED":
                         continue
 
@@ -462,7 +464,11 @@ def handle_tags(defined_tags, freeform_tags):
             # Del Key
             if "del" in cmd.action:
                 if defined_tags_exist:
-                    defined_tags.pop(assign_tag_namespace, None)
+                    # remove the key value
+                    defined_tags[assign_tag_namespace].pop(assign_tag_key, None)
+                    # dict is empty
+                    if not defined_tags[assign_tag_namespace]:
+                        defined_tags.pop(assign_tag_namespace, None)
                     tags_process = "Deleted"
 
             # Add Key
@@ -470,7 +476,12 @@ def handle_tags(defined_tags, freeform_tags):
                 if not defined_tags_exist:
                     if not defined_tags:
                         defined_tags = {}
-                    defined_tags[assign_tag_namespace] = {assign_tag_key: assign_tag_value}
+
+                    # if namespace exist, add to the dict.
+                    if assign_tag_namespace in defined_tags:
+                        defined_tags[assign_tag_namespace][assign_tag_key] = assign_tag_value
+                    else:
+                        defined_tags[assign_tag_namespace] = {assign_tag_key: assign_tag_value}
                     tags_process = "Added"
 
         ############################################
@@ -612,7 +623,6 @@ def main():
                 handle_object(compartment, region_name, "Network IPSECs", network_client.list_ip_sec_connections, network_client.update_ip_sec_connection, oci.core.models.UpdateIPSecConnectionDetails)
                 handle_object(compartment, region_name, "Network LPGs", network_client.list_local_peering_gateways, network_client.update_local_peering_gateway, oci.core.models.UpdateLocalPeeringGatewayDetails)
                 handle_object(compartment, region_name, "Network NATGWs", network_client.list_nat_gateways, network_client.update_nat_gateway, oci.core.models.UpdateNatGatewayDetails)
-                handle_object(compartment, region_name, "Network NSGs", network_client.list_network_security_groups, network_client.update_network_security_group, oci.core.models.UpdateNetworkSecurityGroupDetails)
                 handle_object(compartment, region_name, "Network RPGs", network_client.list_remote_peering_connections, network_client.update_remote_peering_connection, oci.core.models.UpdateRemotePeeringConnectionDetails)
                 handle_object(compartment, region_name, "Network Routes", network_client.list_route_tables, network_client.update_route_table, oci.core.models.UpdateRouteTableDetails)
                 handle_object(compartment, region_name, "Network SLs", network_client.list_security_lists, network_client.update_security_list, oci.core.models.UpdateSecurityListDetails)

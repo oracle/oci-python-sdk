@@ -1,0 +1,11 @@
+CreateDeliverArtifactStageDetails
+=================================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: CreateDeliverArtifactStageDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

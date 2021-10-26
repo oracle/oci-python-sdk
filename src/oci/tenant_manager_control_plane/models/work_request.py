@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequest(object):
     """
-    A description of work request status.
+    A description of the work request status.
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
@@ -24,6 +24,10 @@ class WorkRequest(object):
     #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "CANCEL_SENDER_INVITATION"
     OPERATION_TYPE_CANCEL_SENDER_INVITATION = "CANCEL_SENDER_INVITATION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "COMPLETE_ORDER_ACTIVATION"
+    OPERATION_TYPE_COMPLETE_ORDER_ACTIVATION = "COMPLETE_ORDER_ACTIVATION"
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "ACTIVATE_ORDER_EXISTING_TENANCY"
@@ -40,6 +44,18 @@ class WorkRequest(object):
     #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "CREATE_CHILD_TENANCY"
     OPERATION_TYPE_CREATE_CHILD_TENANCY = "CREATE_CHILD_TENANCY"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ASSIGN_DEFAULT_SUBSCRIPTION"
+    OPERATION_TYPE_ASSIGN_DEFAULT_SUBSCRIPTION = "ASSIGN_DEFAULT_SUBSCRIPTION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MANUAL_LINK_CREATION"
+    OPERATION_TYPE_MANUAL_LINK_CREATION = "MANUAL_LINK_CREATION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "TERMINATE_ORGANIZATION_TENANCY"
+    OPERATION_TYPE_TERMINATE_ORGANIZATION_TENANCY = "TERMINATE_ORGANIZATION_TENANCY"
 
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
@@ -72,7 +88,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "COMPLETE_ORDER_ACTIVATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", "ASSIGN_DEFAULT_SUBSCRIPTION", "MANUAL_LINK_CREATION", "TERMINATE_ORGANIZATION_TENANCY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -151,7 +167,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         Type of the work request.
 
-        Allowed values for this property are: "CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "COMPLETE_ORDER_ACTIVATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", "ASSIGN_DEFAULT_SUBSCRIPTION", "MANUAL_LINK_CREATION", "TERMINATE_ORGANIZATION_TENANCY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -170,7 +186,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY"]
+        allowed_values = ["CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "COMPLETE_ORDER_ACTIVATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", "ASSIGN_DEFAULT_SUBSCRIPTION", "MANUAL_LINK_CREATION", "TERMINATE_ORGANIZATION_TENANCY"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -179,7 +195,7 @@ class WorkRequest(object):
     def status(self):
         """
         **[Required]** Gets the status of this WorkRequest.
-        Status of current work request.
+        Status of the current work request.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -194,7 +210,7 @@ class WorkRequest(object):
     def status(self, status):
         """
         Sets the status of this WorkRequest.
-        Status of current work request.
+        Status of the current work request.
 
 
         :param status: The status of this WorkRequest.

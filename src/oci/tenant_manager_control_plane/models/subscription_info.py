@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SubscriptionInfo(object):
     """
-    A single subscription's details
+    A single subscription's details.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class SubscriptionInfo(object):
     def spm_subscription_id(self):
         """
         **[Required]** Gets the spm_subscription_id of this SubscriptionInfo.
-        Subscription id.
+        Subscription ID.
 
 
         :return: The spm_subscription_id of this SubscriptionInfo.
@@ -77,7 +77,7 @@ class SubscriptionInfo(object):
     def spm_subscription_id(self, spm_subscription_id):
         """
         Sets the spm_subscription_id of this SubscriptionInfo.
-        Subscription id.
+        Subscription ID.
 
 
         :param spm_subscription_id: The spm_subscription_id of this SubscriptionInfo.
@@ -89,7 +89,7 @@ class SubscriptionInfo(object):
     def service(self):
         """
         **[Required]** Gets the service of this SubscriptionInfo.
-        Service name for subscription
+        Service name for subscription.
 
 
         :return: The service of this SubscriptionInfo.
@@ -101,7 +101,7 @@ class SubscriptionInfo(object):
     def service(self, service):
         """
         Sets the service of this SubscriptionInfo.
-        Service name for subscription
+        Service name for subscription.
 
 
         :param service: The service of this SubscriptionInfo.
@@ -113,7 +113,7 @@ class SubscriptionInfo(object):
     def start_date(self):
         """
         **[Required]** Gets the start_date of this SubscriptionInfo.
-        Subscription start date. An RFC3339 formatted datetime string
+        Subscription start date. An RFC 3339-formatted date and time string.
 
 
         :return: The start_date of this SubscriptionInfo.
@@ -125,7 +125,7 @@ class SubscriptionInfo(object):
     def start_date(self, start_date):
         """
         Sets the start_date of this SubscriptionInfo.
-        Subscription start date. An RFC3339 formatted datetime string
+        Subscription start date. An RFC 3339-formatted date and time string.
 
 
         :param start_date: The start_date of this SubscriptionInfo.
@@ -137,7 +137,7 @@ class SubscriptionInfo(object):
     def end_date(self):
         """
         **[Required]** Gets the end_date of this SubscriptionInfo.
-        Subscription end date. An RFC3339 formatted datetime string
+        Subscription end date. An RFC 3339-formatted date and time string.
 
 
         :return: The end_date of this SubscriptionInfo.
@@ -149,7 +149,7 @@ class SubscriptionInfo(object):
     def end_date(self, end_date):
         """
         Sets the end_date of this SubscriptionInfo.
-        Subscription end date. An RFC3339 formatted datetime string
+        Subscription end date. An RFC 3339-formatted date and time string.
 
 
         :param end_date: The end_date of this SubscriptionInfo.
@@ -161,7 +161,7 @@ class SubscriptionInfo(object):
     def skus(self):
         """
         **[Required]** Gets the skus of this SubscriptionInfo.
-        List of SKUs the subscription contains
+        List of SKUs the subscription contains.
 
 
         :return: The skus of this SubscriptionInfo.
@@ -173,7 +173,7 @@ class SubscriptionInfo(object):
     def skus(self, skus):
         """
         Sets the skus of this SubscriptionInfo.
-        List of SKUs the subscription contains
+        List of SKUs the subscription contains.
 
 
         :param skus: The skus of this SubscriptionInfo.

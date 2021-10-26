@@ -68,6 +68,10 @@ class CreateEsxiHostDetails(object):
             Allowed values for this property are: "HOUR", "MONTH", "ONE_YEAR", "THREE_YEARS"
         :type next_sku: str
 
+        :param compute_availability_domain:
+            The value to assign to the compute_availability_domain property of this CreateEsxiHostDetails.
+        :type compute_availability_domain: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateEsxiHostDetails.
         :type freeform_tags: dict(str, str)
@@ -82,6 +86,7 @@ class CreateEsxiHostDetails(object):
             'display_name': 'str',
             'current_sku': 'str',
             'next_sku': 'str',
+            'compute_availability_domain': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -91,6 +96,7 @@ class CreateEsxiHostDetails(object):
             'display_name': 'displayName',
             'current_sku': 'currentSku',
             'next_sku': 'nextSku',
+            'compute_availability_domain': 'computeAvailabilityDomain',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -99,6 +105,7 @@ class CreateEsxiHostDetails(object):
         self._display_name = None
         self._current_sku = None
         self._next_sku = None
+        self._compute_availability_domain = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -241,6 +248,34 @@ class CreateEsxiHostDetails(object):
                 .format(allowed_values)
             )
         self._next_sku = next_sku
+
+    @property
+    def compute_availability_domain(self):
+        """
+        Gets the compute_availability_domain of this CreateEsxiHostDetails.
+        The availability domain to create the ESXi host in.
+        If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain;
+        for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+
+
+        :return: The compute_availability_domain of this CreateEsxiHostDetails.
+        :rtype: str
+        """
+        return self._compute_availability_domain
+
+    @compute_availability_domain.setter
+    def compute_availability_domain(self, compute_availability_domain):
+        """
+        Sets the compute_availability_domain of this CreateEsxiHostDetails.
+        The availability domain to create the ESXi host in.
+        If keep empty, for AD-specific SDDC, new ESXi host will be created in the same availability domain;
+        for multi-AD SDDC, new ESXi host will be auto assigned to the next availability domain following evenly distribution strategy.
+
+
+        :param compute_availability_domain: The compute_availability_domain of this CreateEsxiHostDetails.
+        :type: str
+        """
+        self._compute_availability_domain = compute_availability_domain
 
     @property
     def freeform_tags(self):

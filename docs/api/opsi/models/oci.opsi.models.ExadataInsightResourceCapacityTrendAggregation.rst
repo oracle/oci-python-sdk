@@ -1,0 +1,11 @@
+ExadataInsightResourceCapacityTrendAggregation
+==============================================
+
+.. currentmodule:: oci.opsi.models
+
+.. autoclass:: ExadataInsightResourceCapacityTrendAggregation
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

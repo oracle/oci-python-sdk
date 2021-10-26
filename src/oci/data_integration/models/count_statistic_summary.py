@@ -41,6 +41,14 @@ class CountStatisticSummary(object):
     #: This constant has a value of "APPLICATION"
     OBJECT_TYPE_APPLICATION = "APPLICATION"
 
+    #: A constant which can be used with the object_type property of a CountStatisticSummary.
+    #: This constant has a value of "FUNCTION_LIBRARY"
+    OBJECT_TYPE_FUNCTION_LIBRARY = "FUNCTION_LIBRARY"
+
+    #: A constant which can be used with the object_type property of a CountStatisticSummary.
+    #: This constant has a value of "USER_DEFINED_FUNCTION"
+    OBJECT_TYPE_USER_DEFINED_FUNCTION = "USER_DEFINED_FUNCTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CountStatisticSummary object with values from keyword arguments.
@@ -48,7 +56,7 @@ class CountStatisticSummary(object):
 
         :param object_type:
             The value to assign to the object_type property of this CountStatisticSummary.
-            Allowed values for this property are: "PROJECT", "FOLDER", "DATA_FLOW", "DATA_ASSET", "CONNECTION", "TASK", "APPLICATION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROJECT", "FOLDER", "DATA_FLOW", "DATA_ASSET", "CONNECTION", "TASK", "APPLICATION", "FUNCTION_LIBRARY", "USER_DEFINED_FUNCTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type object_type: str
 
@@ -76,7 +84,7 @@ class CountStatisticSummary(object):
         Gets the object_type of this CountStatisticSummary.
         The type of object for the count statistic object.
 
-        Allowed values for this property are: "PROJECT", "FOLDER", "DATA_FLOW", "DATA_ASSET", "CONNECTION", "TASK", "APPLICATION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROJECT", "FOLDER", "DATA_FLOW", "DATA_ASSET", "CONNECTION", "TASK", "APPLICATION", "FUNCTION_LIBRARY", "USER_DEFINED_FUNCTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -95,7 +103,7 @@ class CountStatisticSummary(object):
         :param object_type: The object_type of this CountStatisticSummary.
         :type: str
         """
-        allowed_values = ["PROJECT", "FOLDER", "DATA_FLOW", "DATA_ASSET", "CONNECTION", "TASK", "APPLICATION"]
+        allowed_values = ["PROJECT", "FOLDER", "DATA_FLOW", "DATA_ASSET", "CONNECTION", "TASK", "APPLICATION", "FUNCTION_LIBRARY", "USER_DEFINED_FUNCTION"]
         if not value_allowed_none_or_none_sentinel(object_type, allowed_values):
             object_type = 'UNKNOWN_ENUM_VALUE'
         self._object_type = object_type

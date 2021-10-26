@@ -153,7 +153,7 @@ class Link(object):
     def child_tenancy_id(self):
         """
         **[Required]** Gets the child_tenancy_id of this Link.
-        OCID of the child tenancy
+        OCID of the child tenancy.
 
 
         :return: The child_tenancy_id of this Link.
@@ -165,7 +165,7 @@ class Link(object):
     def child_tenancy_id(self, child_tenancy_id):
         """
         Sets the child_tenancy_id of this Link.
-        OCID of the child tenancy
+        OCID of the child tenancy.
 
 
         :param child_tenancy_id: The child_tenancy_id of this Link.

@@ -46,6 +46,10 @@ class DatabaseDetails(object):
             The value to assign to the instances property of this DatabaseDetails.
         :type instances: list[oci.opsi.models.HostInstanceMap]
 
+        :param cdb_name:
+            The value to assign to the cdb_name property of this DatabaseDetails.
+        :type cdb_name: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -54,7 +58,8 @@ class DatabaseDetails(object):
             'database_display_name': 'str',
             'database_type': 'str',
             'database_version': 'str',
-            'instances': 'list[HostInstanceMap]'
+            'instances': 'list[HostInstanceMap]',
+            'cdb_name': 'str'
         }
 
         self.attribute_map = {
@@ -64,7 +69,8 @@ class DatabaseDetails(object):
             'database_display_name': 'databaseDisplayName',
             'database_type': 'databaseType',
             'database_version': 'databaseVersion',
-            'instances': 'instances'
+            'instances': 'instances',
+            'cdb_name': 'cdbName'
         }
 
         self._id = None
@@ -74,6 +80,7 @@ class DatabaseDetails(object):
         self._database_type = None
         self._database_version = None
         self._instances = None
+        self._cdb_name = None
 
     @property
     def id(self):
@@ -250,6 +257,30 @@ class DatabaseDetails(object):
         :type: list[oci.opsi.models.HostInstanceMap]
         """
         self._instances = instances
+
+    @property
+    def cdb_name(self):
+        """
+        Gets the cdb_name of this DatabaseDetails.
+        Name of the CDB.Only applies to PDB.
+
+
+        :return: The cdb_name of this DatabaseDetails.
+        :rtype: str
+        """
+        return self._cdb_name
+
+    @cdb_name.setter
+    def cdb_name(self, cdb_name):
+        """
+        Sets the cdb_name of this DatabaseDetails.
+        Name of the CDB.Only applies to PDB.
+
+
+        :param cdb_name: The cdb_name of this DatabaseDetails.
+        :type: str
+        """
+        self._cdb_name = cdb_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

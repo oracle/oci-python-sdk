@@ -98,7 +98,7 @@ class OrdersClient(object):
 
     def activate_order(self, activate_order_details, activation_token, **kwargs):
         """
-        Triggers an order activation workflow on behalf of the tenant given by compartment id in the body.
+        Triggers an order activation workflow on behalf of the tenant, given by compartment ID in the body.
 
 
         :param oci.tenant_manager_control_plane.models.ActivateOrderDetails activate_order_details: (required)

@@ -45,7 +45,7 @@ class EntityShapeFromFile(EntityShape):
 
         :param model_type:
             The value to assign to the model_type property of this EntityShapeFromFile.
-            Allowed values for this property are: "FILE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "FILE_ENTITY", "SQL_ENTITY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 

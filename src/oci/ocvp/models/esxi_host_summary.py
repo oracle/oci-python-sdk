@@ -124,6 +124,10 @@ class EsxiHostSummary(object):
             The value to assign to the billing_contract_end_date property of this EsxiHostSummary.
         :type billing_contract_end_date: datetime
 
+        :param compute_availability_domain:
+            The value to assign to the compute_availability_domain property of this EsxiHostSummary.
+        :type compute_availability_domain: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this EsxiHostSummary.
         :type freeform_tags: dict(str, str)
@@ -145,6 +149,7 @@ class EsxiHostSummary(object):
             'current_sku': 'str',
             'next_sku': 'str',
             'billing_contract_end_date': 'datetime',
+            'compute_availability_domain': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -161,6 +166,7 @@ class EsxiHostSummary(object):
             'current_sku': 'currentSku',
             'next_sku': 'nextSku',
             'billing_contract_end_date': 'billingContractEndDate',
+            'compute_availability_domain': 'computeAvailabilityDomain',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -176,6 +182,7 @@ class EsxiHostSummary(object):
         self._current_sku = None
         self._next_sku = None
         self._billing_contract_end_date = None
+        self._compute_availability_domain = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -512,6 +519,30 @@ class EsxiHostSummary(object):
         :type: datetime
         """
         self._billing_contract_end_date = billing_contract_end_date
+
+    @property
+    def compute_availability_domain(self):
+        """
+        **[Required]** Gets the compute_availability_domain of this EsxiHostSummary.
+        The availability domain of the ESXi host.
+
+
+        :return: The compute_availability_domain of this EsxiHostSummary.
+        :rtype: str
+        """
+        return self._compute_availability_domain
+
+    @compute_availability_domain.setter
+    def compute_availability_domain(self, compute_availability_domain):
+        """
+        Sets the compute_availability_domain of this EsxiHostSummary.
+        The availability domain of the ESXi host.
+
+
+        :param compute_availability_domain: The compute_availability_domain of this EsxiHostSummary.
+        :type: str
+        """
+        self._compute_availability_domain = compute_availability_domain
 
     @property
     def freeform_tags(self):

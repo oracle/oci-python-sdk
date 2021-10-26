@@ -54,20 +54,13 @@ class DeployStageExecutionProgress(object):
         Initializes a new DeployStageExecutionProgress object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
-        * :class:`~oci.devops.models.ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress`
-        * :class:`~oci.devops.models.ComputeInstanceGroupCanaryDeployStageExecutionProgress`
-        * :class:`~oci.devops.models.ComputeInstanceGroupDeployStageExecutionProgress`
-        * :class:`~oci.devops.models.LoadBalancerTrafficShiftDeployStageExecutionProgress`
-        * :class:`~oci.devops.models.WaitDeployStageExecutionProgress`
-        * :class:`~oci.devops.models.ComputeInstanceGroupCanaryTrafficShiftDeployStageExecutionProgress`
-        * :class:`~oci.devops.models.RunValidationTestOnComputeInstanceDeployStageExecutionProgress`
         * :class:`~oci.devops.models.ManualApprovalDeployStageExecutionProgress`
-        * :class:`~oci.devops.models.RunPipelineDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.ComputeInstanceGroupDeployStageExecutionProgress`
         * :class:`~oci.devops.models.OkeDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.LoadBalancerTrafficShiftDeployStageExecutionProgress`
         * :class:`~oci.devops.models.FunctionDeployStageExecutionProgress`
         * :class:`~oci.devops.models.InvokeFunctionDeployStageExecutionProgress`
-        * :class:`~oci.devops.models.ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress`
-        * :class:`~oci.devops.models.ComputeInstanceGroupBlueGreenDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.WaitDeployStageExecutionProgress`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -145,35 +138,17 @@ class DeployStageExecutionProgress(object):
         """
         type = object_dictionary['deployStageType']
 
-        if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT':
-            return 'ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress'
-
-        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT':
-            return 'ComputeInstanceGroupCanaryDeployStageExecutionProgress'
+        if type == 'MANUAL_APPROVAL':
+            return 'ManualApprovalDeployStageExecutionProgress'
 
         if type == 'COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT':
             return 'ComputeInstanceGroupDeployStageExecutionProgress'
 
-        if type == 'LOAD_BALANCER_TRAFFIC_SHIFT':
-            return 'LoadBalancerTrafficShiftDeployStageExecutionProgress'
-
-        if type == 'WAIT':
-            return 'WaitDeployStageExecutionProgress'
-
-        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT':
-            return 'ComputeInstanceGroupCanaryTrafficShiftDeployStageExecutionProgress'
-
-        if type == 'RUN_VALIDATION_TEST_ON_COMPUTE_INSTANCE':
-            return 'RunValidationTestOnComputeInstanceDeployStageExecutionProgress'
-
-        if type == 'MANUAL_APPROVAL':
-            return 'ManualApprovalDeployStageExecutionProgress'
-
-        if type == 'RUN_DEPLOYMENT_PIPELINE':
-            return 'RunPipelineDeployStageExecutionProgress'
-
         if type == 'OKE_DEPLOYMENT':
             return 'OkeDeployStageExecutionProgress'
+
+        if type == 'LOAD_BALANCER_TRAFFIC_SHIFT':
+            return 'LoadBalancerTrafficShiftDeployStageExecutionProgress'
 
         if type == 'DEPLOY_FUNCTION':
             return 'FunctionDeployStageExecutionProgress'
@@ -181,11 +156,8 @@ class DeployStageExecutionProgress(object):
         if type == 'INVOKE_FUNCTION':
             return 'InvokeFunctionDeployStageExecutionProgress'
 
-        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL':
-            return 'ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress'
-
-        if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT':
-            return 'ComputeInstanceGroupBlueGreenDeployStageExecutionProgress'
+        if type == 'WAIT':
+            return 'WaitDeployStageExecutionProgress'
         else:
             return 'DeployStageExecutionProgress'
 

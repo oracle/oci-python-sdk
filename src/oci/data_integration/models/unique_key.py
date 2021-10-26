@@ -27,6 +27,7 @@ class UniqueKey(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.data_integration.models.PrimaryKey`
+        * :class:`~oci.data_integration.models.UniqueDataKey`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -99,6 +100,9 @@ class UniqueKey(object):
 
         if type == 'PRIMARY_KEY':
             return 'PrimaryKey'
+
+        if type == 'UNIQUE_KEY':
+            return 'UniqueDataKey'
         else:
             return 'UniqueKey'
 

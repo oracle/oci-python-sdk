@@ -1,0 +1,11 @@
+GithubAccessTokenConnectionSummary
+==================================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: GithubAccessTokenConnectionSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
