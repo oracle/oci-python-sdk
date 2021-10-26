@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConnectionSummaryFromBICC(ConnectionSummary):
     """
-    The connection summary details for an Oracle Database data asset.
+    The connection summary details for a FUSION_APP BICC connection.
     """
 
     def __init__(self, **kwargs):

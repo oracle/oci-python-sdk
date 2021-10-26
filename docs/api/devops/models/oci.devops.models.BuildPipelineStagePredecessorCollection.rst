@@ -1,0 +1,11 @@
+BuildPipelineStagePredecessorCollection
+=======================================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: BuildPipelineStagePredecessorCollection
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

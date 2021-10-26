@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDataAssetFromFusionApp(CreateDataAssetDetails):
     """
-    Details for the MYSQL data asset type.
+    Details for the FUSION_APP data asset type.
     """
 
     def __init__(self, **kwargs):
@@ -117,7 +117,7 @@ class CreateDataAssetFromFusionApp(CreateDataAssetDetails):
     def service_url(self):
         """
         Gets the service_url of this CreateDataAssetFromFusionApp.
-        The service url of the Bi Server.
+        The generic JDBC host name.
 
 
         :return: The service_url of this CreateDataAssetFromFusionApp.
@@ -129,7 +129,7 @@ class CreateDataAssetFromFusionApp(CreateDataAssetDetails):
     def service_url(self, service_url):
         """
         Sets the service_url of this CreateDataAssetFromFusionApp.
-        The service url of the Bi Server.
+        The generic JDBC host name.
 
 
         :param service_url: The service_url of this CreateDataAssetFromFusionApp.

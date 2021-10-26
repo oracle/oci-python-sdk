@@ -26,6 +26,10 @@ class DataEntitySummary(object):
     MODEL_TYPE_FILE_ENTITY = "FILE_ENTITY"
 
     #: A constant which can be used with the model_type property of a DataEntitySummary.
+    #: This constant has a value of "SQL_ENTITY"
+    MODEL_TYPE_SQL_ENTITY = "SQL_ENTITY"
+
+    #: A constant which can be used with the model_type property of a DataEntitySummary.
     #: This constant has a value of "DATA_STORE_ENTITY"
     MODEL_TYPE_DATA_STORE_ENTITY = "DATA_STORE_ENTITY"
 
@@ -37,13 +41,14 @@ class DataEntitySummary(object):
         * :class:`~oci.data_integration.models.DataEntitySummaryFromFile`
         * :class:`~oci.data_integration.models.DataEntitySummaryFromTable`
         * :class:`~oci.data_integration.models.DataEntitySummaryFromDataStore`
+        * :class:`~oci.data_integration.models.DataEntitySummaryFromSql`
         * :class:`~oci.data_integration.models.DataEntitySummaryFromView`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this DataEntitySummary.
-            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "SQL_ENTITY", "DATA_STORE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -82,6 +87,9 @@ class DataEntitySummary(object):
         if type == 'DATA_STORE_ENTITY':
             return 'DataEntitySummaryFromDataStore'
 
+        if type == 'SQL_ENTITY':
+            return 'DataEntitySummaryFromSql'
+
         if type == 'VIEW_ENTITY':
             return 'DataEntitySummaryFromView'
         else:
@@ -93,7 +101,7 @@ class DataEntitySummary(object):
         **[Required]** Gets the model_type of this DataEntitySummary.
         The data entity type.
 
-        Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "SQL_ENTITY", "DATA_STORE_ENTITY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -112,7 +120,7 @@ class DataEntitySummary(object):
         :param model_type: The model_type of this DataEntitySummary.
         :type: str
         """
-        allowed_values = ["VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "DATA_STORE_ENTITY"]
+        allowed_values = ["VIEW_ENTITY", "TABLE_ENTITY", "FILE_ENTITY", "SQL_ENTITY", "DATA_STORE_ENTITY"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

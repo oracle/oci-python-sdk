@@ -48,6 +48,10 @@ class CreateEmManagedExternalDatabaseInsightDetails(CreateDatabaseInsightDetails
             The value to assign to the enterprise_manager_entity_identifier property of this CreateEmManagedExternalDatabaseInsightDetails.
         :type enterprise_manager_entity_identifier: str
 
+        :param exadata_insight_id:
+            The value to assign to the exadata_insight_id property of this CreateEmManagedExternalDatabaseInsightDetails.
+        :type exadata_insight_id: str
+
         """
         self.swagger_types = {
             'entity_source': 'str',
@@ -56,7 +60,8 @@ class CreateEmManagedExternalDatabaseInsightDetails(CreateDatabaseInsightDetails
             'defined_tags': 'dict(str, dict(str, object))',
             'enterprise_manager_identifier': 'str',
             'enterprise_manager_bridge_id': 'str',
-            'enterprise_manager_entity_identifier': 'str'
+            'enterprise_manager_entity_identifier': 'str',
+            'exadata_insight_id': 'str'
         }
 
         self.attribute_map = {
@@ -66,7 +71,8 @@ class CreateEmManagedExternalDatabaseInsightDetails(CreateDatabaseInsightDetails
             'defined_tags': 'definedTags',
             'enterprise_manager_identifier': 'enterpriseManagerIdentifier',
             'enterprise_manager_bridge_id': 'enterpriseManagerBridgeId',
-            'enterprise_manager_entity_identifier': 'enterpriseManagerEntityIdentifier'
+            'enterprise_manager_entity_identifier': 'enterpriseManagerEntityIdentifier',
+            'exadata_insight_id': 'exadataInsightId'
         }
 
         self._entity_source = None
@@ -76,6 +82,7 @@ class CreateEmManagedExternalDatabaseInsightDetails(CreateDatabaseInsightDetails
         self._enterprise_manager_identifier = None
         self._enterprise_manager_bridge_id = None
         self._enterprise_manager_entity_identifier = None
+        self._exadata_insight_id = None
         self._entity_source = 'EM_MANAGED_EXTERNAL_DATABASE'
 
     @property
@@ -149,6 +156,34 @@ class CreateEmManagedExternalDatabaseInsightDetails(CreateDatabaseInsightDetails
         :type: str
         """
         self._enterprise_manager_entity_identifier = enterprise_manager_entity_identifier
+
+    @property
+    def exadata_insight_id(self):
+        """
+        Gets the exadata_insight_id of this CreateEmManagedExternalDatabaseInsightDetails.
+        The `OCID`__ of the Exadata insight.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The exadata_insight_id of this CreateEmManagedExternalDatabaseInsightDetails.
+        :rtype: str
+        """
+        return self._exadata_insight_id
+
+    @exadata_insight_id.setter
+    def exadata_insight_id(self, exadata_insight_id):
+        """
+        Sets the exadata_insight_id of this CreateEmManagedExternalDatabaseInsightDetails.
+        The `OCID`__ of the Exadata insight.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param exadata_insight_id: The exadata_insight_id of this CreateEmManagedExternalDatabaseInsightDetails.
+        :type: str
+        """
+        self._exadata_insight_id = exadata_insight_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

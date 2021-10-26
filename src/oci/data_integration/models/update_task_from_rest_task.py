@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTaskFromRestTask(UpdateTaskDetails):
     """
-    The information about the Generic REST task.
+    The information about the Generic REST task. The endpoint and cancelEndpoint  properties are deprecated, use the properties executeRestCallConfig, cancelRestCallConfig and pollRestCallConfig for execute, cancel and polling of the calls.
     """
 
     #: A constant which can be used with the method_type property of a UpdateTaskFromRestTask.
@@ -40,6 +40,10 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
     #: A constant which can be used with the api_call_mode property of a UpdateTaskFromRestTask.
     #: This constant has a value of "ASYNC_OCI_WORKREQUEST"
     API_CALL_MODE_ASYNC_OCI_WORKREQUEST = "ASYNC_OCI_WORKREQUEST"
+
+    #: A constant which can be used with the api_call_mode property of a UpdateTaskFromRestTask.
+    #: This constant has a value of "ASYNC_GENERIC"
+    API_CALL_MODE_ASYNC_GENERIC = "ASYNC_GENERIC"
 
     #: A constant which can be used with the cancel_method_type property of a UpdateTaskFromRestTask.
     #: This constant has a value of "GET"
@@ -155,7 +159,7 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
 
         :param api_call_mode:
             The value to assign to the api_call_mode property of this UpdateTaskFromRestTask.
-            Allowed values for this property are: "SYNCHRONOUS", "ASYNC_OCI_WORKREQUEST"
+            Allowed values for this property are: "SYNCHRONOUS", "ASYNC_OCI_WORKREQUEST", "ASYNC_GENERIC"
         :type api_call_mode: str
 
         :param cancel_endpoint:
@@ -166,6 +170,14 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
             The value to assign to the cancel_method_type property of this UpdateTaskFromRestTask.
             Allowed values for this property are: "GET", "POST", "PATCH", "DELETE", "PUT"
         :type cancel_method_type: str
+
+        :param execute_rest_call_config:
+            The value to assign to the execute_rest_call_config property of this UpdateTaskFromRestTask.
+        :type execute_rest_call_config: oci.data_integration.models.ExecuteRestCallConfig
+
+        :param cancel_rest_call_config:
+            The value to assign to the cancel_rest_call_config property of this UpdateTaskFromRestTask.
+        :type cancel_rest_call_config: oci.data_integration.models.CancelRestCallConfig
 
         """
         self.swagger_types = {
@@ -192,7 +204,9 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
             'json_data': 'str',
             'api_call_mode': 'str',
             'cancel_endpoint': 'Expression',
-            'cancel_method_type': 'str'
+            'cancel_method_type': 'str',
+            'execute_rest_call_config': 'ExecuteRestCallConfig',
+            'cancel_rest_call_config': 'CancelRestCallConfig'
         }
 
         self.attribute_map = {
@@ -219,7 +233,9 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
             'json_data': 'jsonData',
             'api_call_mode': 'apiCallMode',
             'cancel_endpoint': 'cancelEndpoint',
-            'cancel_method_type': 'cancelMethodType'
+            'cancel_method_type': 'cancelMethodType',
+            'execute_rest_call_config': 'executeRestCallConfig',
+            'cancel_rest_call_config': 'cancelRestCallConfig'
         }
 
         self._model_type = None
@@ -246,6 +262,8 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
         self._api_call_mode = None
         self._cancel_endpoint = None
         self._cancel_method_type = None
+        self._execute_rest_call_config = None
+        self._cancel_rest_call_config = None
         self._model_type = 'REST_TASK'
 
     @property
@@ -292,7 +310,7 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
     def method_type(self):
         """
         Gets the method_type of this UpdateTaskFromRestTask.
-        The REST method to use.
+        The REST method to use. This property is deprecated, use ExecuteRestCallConfig's methodType property instead.
 
         Allowed values for this property are: "GET", "POST", "PATCH", "DELETE", "PUT"
 
@@ -306,7 +324,7 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
     def method_type(self, method_type):
         """
         Sets the method_type of this UpdateTaskFromRestTask.
-        The REST method to use.
+        The REST method to use. This property is deprecated, use ExecuteRestCallConfig's methodType property instead.
 
 
         :param method_type: The method_type of this UpdateTaskFromRestTask.
@@ -324,8 +342,6 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
     def headers(self):
         """
         Gets the headers of this UpdateTaskFromRestTask.
-        The headers for the REST call.
-
 
         :return: The headers of this UpdateTaskFromRestTask.
         :rtype: object
@@ -336,8 +352,6 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
     def headers(self, headers):
         """
         Sets the headers of this UpdateTaskFromRestTask.
-        The headers for the REST call.
-
 
         :param headers: The headers of this UpdateTaskFromRestTask.
         :type: object
@@ -372,7 +386,7 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
     def json_data(self):
         """
         Gets the json_data of this UpdateTaskFromRestTask.
-        JSON data for payload body.
+        JSON data for payload body. This property is deprecated, use ExecuteRestCallConfig's payload config param instead.
 
 
         :return: The json_data of this UpdateTaskFromRestTask.
@@ -384,7 +398,7 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
     def json_data(self, json_data):
         """
         Sets the json_data of this UpdateTaskFromRestTask.
-        JSON data for payload body.
+        JSON data for payload body. This property is deprecated, use ExecuteRestCallConfig's payload config param instead.
 
 
         :param json_data: The json_data of this UpdateTaskFromRestTask.
@@ -396,9 +410,9 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
     def api_call_mode(self):
         """
         Gets the api_call_mode of this UpdateTaskFromRestTask.
-        The invocation type to be used for Generic REST invocation.
+        The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
 
-        Allowed values for this property are: "SYNCHRONOUS", "ASYNC_OCI_WORKREQUEST"
+        Allowed values for this property are: "SYNCHRONOUS", "ASYNC_OCI_WORKREQUEST", "ASYNC_GENERIC"
 
 
         :return: The api_call_mode of this UpdateTaskFromRestTask.
@@ -410,13 +424,13 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
     def api_call_mode(self, api_call_mode):
         """
         Sets the api_call_mode of this UpdateTaskFromRestTask.
-        The invocation type to be used for Generic REST invocation.
+        The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
 
 
         :param api_call_mode: The api_call_mode of this UpdateTaskFromRestTask.
         :type: str
         """
-        allowed_values = ["SYNCHRONOUS", "ASYNC_OCI_WORKREQUEST"]
+        allowed_values = ["SYNCHRONOUS", "ASYNC_OCI_WORKREQUEST", "ASYNC_GENERIC"]
         if not value_allowed_none_or_none_sentinel(api_call_mode, allowed_values):
             raise ValueError(
                 "Invalid value for `api_call_mode`, must be None or one of {0}"
@@ -475,6 +489,46 @@ class UpdateTaskFromRestTask(UpdateTaskDetails):
                 .format(allowed_values)
             )
         self._cancel_method_type = cancel_method_type
+
+    @property
+    def execute_rest_call_config(self):
+        """
+        Gets the execute_rest_call_config of this UpdateTaskFromRestTask.
+
+        :return: The execute_rest_call_config of this UpdateTaskFromRestTask.
+        :rtype: oci.data_integration.models.ExecuteRestCallConfig
+        """
+        return self._execute_rest_call_config
+
+    @execute_rest_call_config.setter
+    def execute_rest_call_config(self, execute_rest_call_config):
+        """
+        Sets the execute_rest_call_config of this UpdateTaskFromRestTask.
+
+        :param execute_rest_call_config: The execute_rest_call_config of this UpdateTaskFromRestTask.
+        :type: oci.data_integration.models.ExecuteRestCallConfig
+        """
+        self._execute_rest_call_config = execute_rest_call_config
+
+    @property
+    def cancel_rest_call_config(self):
+        """
+        Gets the cancel_rest_call_config of this UpdateTaskFromRestTask.
+
+        :return: The cancel_rest_call_config of this UpdateTaskFromRestTask.
+        :rtype: oci.data_integration.models.CancelRestCallConfig
+        """
+        return self._cancel_rest_call_config
+
+    @cancel_rest_call_config.setter
+    def cancel_rest_call_config(self, cancel_rest_call_config):
+        """
+        Sets the cancel_rest_call_config of this UpdateTaskFromRestTask.
+
+        :param cancel_rest_call_config: The cancel_rest_call_config of this UpdateTaskFromRestTask.
+        :type: oci.data_integration.models.CancelRestCallConfig
+        """
+        self._cancel_rest_call_config = cancel_rest_call_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

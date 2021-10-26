@@ -77,6 +77,38 @@ class WorkRequest(object):
     #: This constant has a value of "DELETE_HOST_INSIGHT"
     OPERATION_TYPE_DELETE_HOST_INSIGHT = "DELETE_HOST_INSIGHT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_EXADATA_INSIGHT"
+    OPERATION_TYPE_CREATE_EXADATA_INSIGHT = "CREATE_EXADATA_INSIGHT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ENABLE_EXADATA_INSIGHT"
+    OPERATION_TYPE_ENABLE_EXADATA_INSIGHT = "ENABLE_EXADATA_INSIGHT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DISABLE_EXADATA_INSIGHT"
+    OPERATION_TYPE_DISABLE_EXADATA_INSIGHT = "DISABLE_EXADATA_INSIGHT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_EXADATA_INSIGHT"
+    OPERATION_TYPE_UPDATE_EXADATA_INSIGHT = "UPDATE_EXADATA_INSIGHT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MOVE_EXADATA_INSIGHT"
+    OPERATION_TYPE_MOVE_EXADATA_INSIGHT = "MOVE_EXADATA_INSIGHT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_EXADATA_INSIGHT"
+    OPERATION_TYPE_DELETE_EXADATA_INSIGHT = "DELETE_EXADATA_INSIGHT"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ADD_EXADATA_INSIGHT_MEMBERS"
+    OPERATION_TYPE_ADD_EXADATA_INSIGHT_MEMBERS = "ADD_EXADATA_INSIGHT_MEMBERS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "EXADATA_AUTO_SYNC"
+    OPERATION_TYPE_EXADATA_AUTO_SYNC = "EXADATA_AUTO_SYNC"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -84,6 +116,10 @@ class WorkRequest(object):
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "IN_PROGRESS"
     STATUS_IN_PROGRESS = "IN_PROGRESS"
+
+    #: A constant which can be used with the status property of a WorkRequest.
+    #: This constant has a value of "WAITING"
+    STATUS_WAITING = "WAITING"
 
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "FAILED"
@@ -108,13 +144,13 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "ENABLE_DATABASE_INSIGHT", "DISABLE_DATABASE_INSIGHT", "UPDATE_DATABASE_INSIGHT", "CREATE_DATABASE_INSIGHT", "MOVE_DATABASE_INSIGHT", "DELETE_DATABASE_INSIGHT", "CREATE_ENTERPRISE_MANAGER_BRIDGE", "UDPATE_ENTERPRISE_MANAGER_BRIDGE", "MOVE_ENTERPRISE_MANAGER_BRIDGE", "DELETE_ENTERPRISE_MANAGER_BRIDGE", "ENABLE_HOST_INSIGHT", "DISABLE_HOST_INSIGHT", "UPDATE_HOST_INSIGHT", "CREATE_HOST_INSIGHT", "MOVE_HOST_INSIGHT", "DELETE_HOST_INSIGHT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ENABLE_DATABASE_INSIGHT", "DISABLE_DATABASE_INSIGHT", "UPDATE_DATABASE_INSIGHT", "CREATE_DATABASE_INSIGHT", "MOVE_DATABASE_INSIGHT", "DELETE_DATABASE_INSIGHT", "CREATE_ENTERPRISE_MANAGER_BRIDGE", "UDPATE_ENTERPRISE_MANAGER_BRIDGE", "MOVE_ENTERPRISE_MANAGER_BRIDGE", "DELETE_ENTERPRISE_MANAGER_BRIDGE", "ENABLE_HOST_INSIGHT", "DISABLE_HOST_INSIGHT", "UPDATE_HOST_INSIGHT", "CREATE_HOST_INSIGHT", "MOVE_HOST_INSIGHT", "DELETE_HOST_INSIGHT", "CREATE_EXADATA_INSIGHT", "ENABLE_EXADATA_INSIGHT", "DISABLE_EXADATA_INSIGHT", "UPDATE_EXADATA_INSIGHT", "MOVE_EXADATA_INSIGHT", "DELETE_EXADATA_INSIGHT", "ADD_EXADATA_INSIGHT_MEMBERS", "EXADATA_AUTO_SYNC", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
         :param status:
             The value to assign to the status property of this WorkRequest.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
@@ -187,7 +223,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         Type of the work request
 
-        Allowed values for this property are: "ENABLE_DATABASE_INSIGHT", "DISABLE_DATABASE_INSIGHT", "UPDATE_DATABASE_INSIGHT", "CREATE_DATABASE_INSIGHT", "MOVE_DATABASE_INSIGHT", "DELETE_DATABASE_INSIGHT", "CREATE_ENTERPRISE_MANAGER_BRIDGE", "UDPATE_ENTERPRISE_MANAGER_BRIDGE", "MOVE_ENTERPRISE_MANAGER_BRIDGE", "DELETE_ENTERPRISE_MANAGER_BRIDGE", "ENABLE_HOST_INSIGHT", "DISABLE_HOST_INSIGHT", "UPDATE_HOST_INSIGHT", "CREATE_HOST_INSIGHT", "MOVE_HOST_INSIGHT", "DELETE_HOST_INSIGHT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ENABLE_DATABASE_INSIGHT", "DISABLE_DATABASE_INSIGHT", "UPDATE_DATABASE_INSIGHT", "CREATE_DATABASE_INSIGHT", "MOVE_DATABASE_INSIGHT", "DELETE_DATABASE_INSIGHT", "CREATE_ENTERPRISE_MANAGER_BRIDGE", "UDPATE_ENTERPRISE_MANAGER_BRIDGE", "MOVE_ENTERPRISE_MANAGER_BRIDGE", "DELETE_ENTERPRISE_MANAGER_BRIDGE", "ENABLE_HOST_INSIGHT", "DISABLE_HOST_INSIGHT", "UPDATE_HOST_INSIGHT", "CREATE_HOST_INSIGHT", "MOVE_HOST_INSIGHT", "DELETE_HOST_INSIGHT", "CREATE_EXADATA_INSIGHT", "ENABLE_EXADATA_INSIGHT", "DISABLE_EXADATA_INSIGHT", "UPDATE_EXADATA_INSIGHT", "MOVE_EXADATA_INSIGHT", "DELETE_EXADATA_INSIGHT", "ADD_EXADATA_INSIGHT_MEMBERS", "EXADATA_AUTO_SYNC", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -206,7 +242,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["ENABLE_DATABASE_INSIGHT", "DISABLE_DATABASE_INSIGHT", "UPDATE_DATABASE_INSIGHT", "CREATE_DATABASE_INSIGHT", "MOVE_DATABASE_INSIGHT", "DELETE_DATABASE_INSIGHT", "CREATE_ENTERPRISE_MANAGER_BRIDGE", "UDPATE_ENTERPRISE_MANAGER_BRIDGE", "MOVE_ENTERPRISE_MANAGER_BRIDGE", "DELETE_ENTERPRISE_MANAGER_BRIDGE", "ENABLE_HOST_INSIGHT", "DISABLE_HOST_INSIGHT", "UPDATE_HOST_INSIGHT", "CREATE_HOST_INSIGHT", "MOVE_HOST_INSIGHT", "DELETE_HOST_INSIGHT"]
+        allowed_values = ["ENABLE_DATABASE_INSIGHT", "DISABLE_DATABASE_INSIGHT", "UPDATE_DATABASE_INSIGHT", "CREATE_DATABASE_INSIGHT", "MOVE_DATABASE_INSIGHT", "DELETE_DATABASE_INSIGHT", "CREATE_ENTERPRISE_MANAGER_BRIDGE", "UDPATE_ENTERPRISE_MANAGER_BRIDGE", "MOVE_ENTERPRISE_MANAGER_BRIDGE", "DELETE_ENTERPRISE_MANAGER_BRIDGE", "ENABLE_HOST_INSIGHT", "DISABLE_HOST_INSIGHT", "UPDATE_HOST_INSIGHT", "CREATE_HOST_INSIGHT", "MOVE_HOST_INSIGHT", "DELETE_HOST_INSIGHT", "CREATE_EXADATA_INSIGHT", "ENABLE_EXADATA_INSIGHT", "DISABLE_EXADATA_INSIGHT", "UPDATE_EXADATA_INSIGHT", "MOVE_EXADATA_INSIGHT", "DELETE_EXADATA_INSIGHT", "ADD_EXADATA_INSIGHT_MEMBERS", "EXADATA_AUTO_SYNC"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -217,7 +253,7 @@ class WorkRequest(object):
         **[Required]** Gets the status of this WorkRequest.
         Status of current work request.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -236,7 +272,7 @@ class WorkRequest(object):
         :param status: The status of this WorkRequest.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             status = 'UNKNOWN_ENUM_VALUE'
         self._status = status

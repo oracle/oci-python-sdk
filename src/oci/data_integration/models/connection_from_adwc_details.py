@@ -72,6 +72,14 @@ class ConnectionFromAdwcDetails(ConnectionDetails):
             The value to assign to the metadata property of this ConnectionFromAdwcDetails.
         :type metadata: oci.data_integration.models.ObjectMetadata
 
+        :param tns_alias:
+            The value to assign to the tns_alias property of this ConnectionFromAdwcDetails.
+        :type tns_alias: str
+
+        :param tns_names:
+            The value to assign to the tns_names property of this ConnectionFromAdwcDetails.
+        :type tns_names: list[str]
+
         :param username:
             The value to assign to the username property of this ConnectionFromAdwcDetails.
         :type username: str
@@ -99,6 +107,8 @@ class ConnectionFromAdwcDetails(ConnectionDetails):
             'connection_properties': 'list[ConnectionProperty]',
             'is_default': 'bool',
             'metadata': 'ObjectMetadata',
+            'tns_alias': 'str',
+            'tns_names': 'list[str]',
             'username': 'str',
             'password': 'str',
             'password_secret': 'SensitiveAttribute'
@@ -118,6 +128,8 @@ class ConnectionFromAdwcDetails(ConnectionDetails):
             'connection_properties': 'connectionProperties',
             'is_default': 'isDefault',
             'metadata': 'metadata',
+            'tns_alias': 'tnsAlias',
+            'tns_names': 'tnsNames',
             'username': 'username',
             'password': 'password',
             'password_secret': 'passwordSecret'
@@ -136,10 +148,60 @@ class ConnectionFromAdwcDetails(ConnectionDetails):
         self._connection_properties = None
         self._is_default = None
         self._metadata = None
+        self._tns_alias = None
+        self._tns_names = None
         self._username = None
         self._password = None
         self._password_secret = None
         self._model_type = 'ORACLE_ADWC_CONNECTION'
+
+    @property
+    def tns_alias(self):
+        """
+        Gets the tns_alias of this ConnectionFromAdwcDetails.
+        The Autonomous Data Warehouse instance service name.
+
+
+        :return: The tns_alias of this ConnectionFromAdwcDetails.
+        :rtype: str
+        """
+        return self._tns_alias
+
+    @tns_alias.setter
+    def tns_alias(self, tns_alias):
+        """
+        Sets the tns_alias of this ConnectionFromAdwcDetails.
+        The Autonomous Data Warehouse instance service name.
+
+
+        :param tns_alias: The tns_alias of this ConnectionFromAdwcDetails.
+        :type: str
+        """
+        self._tns_alias = tns_alias
+
+    @property
+    def tns_names(self):
+        """
+        Gets the tns_names of this ConnectionFromAdwcDetails.
+        Array of service names that are available for selection in the tnsAlias property.
+
+
+        :return: The tns_names of this ConnectionFromAdwcDetails.
+        :rtype: list[str]
+        """
+        return self._tns_names
+
+    @tns_names.setter
+    def tns_names(self, tns_names):
+        """
+        Sets the tns_names of this ConnectionFromAdwcDetails.
+        Array of service names that are available for selection in the tnsAlias property.
+
+
+        :param tns_names: The tns_names of this ConnectionFromAdwcDetails.
+        :type: list[str]
+        """
+        self._tns_names = tns_names
 
     @property
     def username(self):

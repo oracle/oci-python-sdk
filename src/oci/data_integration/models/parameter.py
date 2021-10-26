@@ -99,6 +99,10 @@ class Parameter(TypedObject):
             The value to assign to the type_name property of this Parameter.
         :type type_name: str
 
+        :param used_for:
+            The value to assign to the used_for property of this Parameter.
+        :type used_for: str
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -115,7 +119,8 @@ class Parameter(TypedObject):
             'is_input': 'bool',
             'is_output': 'bool',
             'output_aggregation_type': 'str',
-            'type_name': 'str'
+            'type_name': 'str',
+            'used_for': 'str'
         }
 
         self.attribute_map = {
@@ -133,7 +138,8 @@ class Parameter(TypedObject):
             'is_input': 'isInput',
             'is_output': 'isOutput',
             'output_aggregation_type': 'outputAggregationType',
-            'type_name': 'typeName'
+            'type_name': 'typeName',
+            'used_for': 'usedFor'
         }
 
         self._model_type = None
@@ -151,6 +157,7 @@ class Parameter(TypedObject):
         self._is_output = None
         self._output_aggregation_type = None
         self._type_name = None
+        self._used_for = None
         self._model_type = 'PARAMETER'
 
     @property
@@ -326,6 +333,30 @@ class Parameter(TypedObject):
         :type: str
         """
         self._type_name = type_name
+
+    @property
+    def used_for(self):
+        """
+        Gets the used_for of this Parameter.
+        The param name for which parameter is created for for eg. driver Shape, Operation etc.
+
+
+        :return: The used_for of this Parameter.
+        :rtype: str
+        """
+        return self._used_for
+
+    @used_for.setter
+    def used_for(self, used_for):
+        """
+        Sets the used_for of this Parameter.
+        The param name for which parameter is created for for eg. driver Shape, Operation etc.
+
+
+        :param used_for: The used_for of this Parameter.
+        :type: str
+        """
+        self._used_for = used_for
 
     def __repr__(self):
         return formatted_flat_dict(self)

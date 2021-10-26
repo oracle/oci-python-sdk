@@ -98,7 +98,7 @@ class LinkClient(object):
 
     def delete_link(self, link_id, **kwargs):
         """
-        Terminate the link.
+        Starts the link termination workflow.
 
 
         :param str link_id: (required)

@@ -34,6 +34,7 @@ Data Integration
     oci.data_integration.models.AvroFormatAttribute
     oci.data_integration.models.BaseType
     oci.data_integration.models.BiccReadAttributes
+    oci.data_integration.models.CancelRestCallConfig
     oci.data_integration.models.ChangeCompartmentDetails
     oci.data_integration.models.ChildReference
     oci.data_integration.models.ChildReferenceDetail
@@ -108,9 +109,11 @@ Data Integration
     oci.data_integration.models.CreateDataFlowValidationDetails
     oci.data_integration.models.CreateEntityShapeDetails
     oci.data_integration.models.CreateEntityShapeFromFile
+    oci.data_integration.models.CreateEntityShapeFromSQL
     oci.data_integration.models.CreateExternalPublicationDetails
     oci.data_integration.models.CreateExternalPublicationValidationDetails
     oci.data_integration.models.CreateFolderDetails
+    oci.data_integration.models.CreateFunctionLibraryDetails
     oci.data_integration.models.CreatePatchDetails
     oci.data_integration.models.CreatePipelineDetails
     oci.data_integration.models.CreatePipelineValidationDetails
@@ -130,8 +133,11 @@ Data Integration
     oci.data_integration.models.CreateTaskValidationFromDataLoaderTask
     oci.data_integration.models.CreateTaskValidationFromIntegrationTask
     oci.data_integration.models.CreateTaskValidationFromPipelineTask
+    oci.data_integration.models.CreateUserDefinedFunctionDetails
+    oci.data_integration.models.CreateUserDefinedFunctionValidationDetails
     oci.data_integration.models.CreateWorkspaceDetails
     oci.data_integration.models.CsvFormatAttribute
+    oci.data_integration.models.CustomFrequencyDetails
     oci.data_integration.models.DailyFrequencyDetails
     oci.data_integration.models.DataAsset
     oci.data_integration.models.DataAssetFromAdwcDetails
@@ -158,6 +164,8 @@ Data Integration
     oci.data_integration.models.DataEntityFromDataStoreEntityDetails
     oci.data_integration.models.DataEntityFromFile
     oci.data_integration.models.DataEntityFromFileEntityDetails
+    oci.data_integration.models.DataEntityFromSql
+    oci.data_integration.models.DataEntityFromSqlEntityDetails
     oci.data_integration.models.DataEntityFromTable
     oci.data_integration.models.DataEntityFromTableEntityDetails
     oci.data_integration.models.DataEntityFromView
@@ -166,6 +174,7 @@ Data Integration
     oci.data_integration.models.DataEntitySummaryCollection
     oci.data_integration.models.DataEntitySummaryFromDataStore
     oci.data_integration.models.DataEntitySummaryFromFile
+    oci.data_integration.models.DataEntitySummaryFromSql
     oci.data_integration.models.DataEntitySummaryFromTable
     oci.data_integration.models.DataEntitySummaryFromView
     oci.data_integration.models.DataFlow
@@ -194,7 +203,9 @@ Data Integration
     oci.data_integration.models.EnrichedEntity
     oci.data_integration.models.EntityShape
     oci.data_integration.models.EntityShapeFromFile
+    oci.data_integration.models.EntityShapeFromSQL
     oci.data_integration.models.ErrorDetails
+    oci.data_integration.models.ExecuteRestCallConfig
     oci.data_integration.models.Expression
     oci.data_integration.models.ExpressionOperator
     oci.data_integration.models.ExternalPublication
@@ -215,6 +226,11 @@ Data Integration
     oci.data_integration.models.FolderSummary
     oci.data_integration.models.FolderSummaryCollection
     oci.data_integration.models.ForeignKey
+    oci.data_integration.models.FunctionLibrary
+    oci.data_integration.models.FunctionLibraryDetails
+    oci.data_integration.models.FunctionLibrarySummary
+    oci.data_integration.models.FunctionLibrarySummaryCollection
+    oci.data_integration.models.FunctionSignature
     oci.data_integration.models.HourlyFrequencyDetails
     oci.data_integration.models.InputField
     oci.data_integration.models.InputLink
@@ -235,6 +251,7 @@ Data Integration
     oci.data_integration.models.Message
     oci.data_integration.models.Minus
     oci.data_integration.models.MonthlyFrequencyDetails
+    oci.data_integration.models.MonthlyRuleFrequencyDetails
     oci.data_integration.models.NameListRule
     oci.data_integration.models.NamePatternRule
     oci.data_integration.models.NativeShapeField
@@ -298,6 +315,7 @@ Data Integration
     oci.data_integration.models.RegistryMetadata
     oci.data_integration.models.RenameRule
     oci.data_integration.models.ResourceConfiguration
+    oci.data_integration.models.RestCallConfig
     oci.data_integration.models.RootObject
     oci.data_integration.models.RuleBasedFieldMap
     oci.data_integration.models.RuleTypeConfig
@@ -359,6 +377,7 @@ Data Integration
     oci.data_integration.models.TypedObject
     oci.data_integration.models.UIProperties
     oci.data_integration.models.Union
+    oci.data_integration.models.UniqueDataKey
     oci.data_integration.models.UniqueKey
     oci.data_integration.models.UpdateApplicationDetails
     oci.data_integration.models.UpdateConnectionDetails
@@ -382,6 +401,7 @@ Data Integration
     oci.data_integration.models.UpdateDataFlowDetails
     oci.data_integration.models.UpdateExternalPublicationDetails
     oci.data_integration.models.UpdateFolderDetails
+    oci.data_integration.models.UpdateFunctionLibraryDetails
     oci.data_integration.models.UpdatePipelineDetails
     oci.data_integration.models.UpdateProjectDetails
     oci.data_integration.models.UpdateReferenceDetails
@@ -395,9 +415,18 @@ Data Integration
     oci.data_integration.models.UpdateTaskFromSQLTask
     oci.data_integration.models.UpdateTaskRunDetails
     oci.data_integration.models.UpdateTaskScheduleDetails
+    oci.data_integration.models.UpdateUserDefinedFunctionDetails
     oci.data_integration.models.UpdateWorkspaceDetails
+    oci.data_integration.models.UserDefinedFunction
+    oci.data_integration.models.UserDefinedFunctionDetails
+    oci.data_integration.models.UserDefinedFunctionSummary
+    oci.data_integration.models.UserDefinedFunctionSummaryCollection
+    oci.data_integration.models.UserDefinedFunctionValidation
+    oci.data_integration.models.UserDefinedFunctionValidationSummary
+    oci.data_integration.models.UserDefinedFunctionValidationSummaryCollection
     oci.data_integration.models.ValidationMessage
     oci.data_integration.models.Variable
+    oci.data_integration.models.WeeklyFrequencyDetails
     oci.data_integration.models.WorkRequest
     oci.data_integration.models.WorkRequestError
     oci.data_integration.models.WorkRequestLogEntry

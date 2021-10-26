@@ -4,16 +4,23 @@
 
 from __future__ import absolute_import
 
+from .add_em_managed_external_exadata_insight_members_details import AddEmManagedExternalExadataInsightMembersDetails
+from .add_exadata_insight_members_details import AddExadataInsightMembersDetails
 from .autonomous_database_configuration_summary import AutonomousDatabaseConfigurationSummary
 from .autonomous_database_insight import AutonomousDatabaseInsight
 from .autonomous_database_insight_summary import AutonomousDatabaseInsightSummary
 from .change_database_insight_compartment_details import ChangeDatabaseInsightCompartmentDetails
 from .change_enterprise_manager_bridge_compartment_details import ChangeEnterpriseManagerBridgeCompartmentDetails
+from .change_exadata_insight_compartment_details import ChangeExadataInsightCompartmentDetails
 from .change_host_insight_compartment_details import ChangeHostInsightCompartmentDetails
 from .connection_details import ConnectionDetails
 from .create_database_insight_details import CreateDatabaseInsightDetails
 from .create_em_managed_external_database_insight_details import CreateEmManagedExternalDatabaseInsightDetails
+from .create_em_managed_external_exadata_insight_details import CreateEmManagedExternalExadataInsightDetails
+from .create_em_managed_external_exadata_member_entity_details import CreateEmManagedExternalExadataMemberEntityDetails
+from .create_em_managed_external_host_insight_details import CreateEmManagedExternalHostInsightDetails
 from .create_enterprise_manager_bridge_details import CreateEnterpriseManagerBridgeDetails
+from .create_exadata_insight_details import CreateExadataInsightDetails
 from .create_host_insight_details import CreateHostInsightDetails
 from .create_macs_managed_external_host_insight_details import CreateMacsManagedExternalHostInsightDetails
 from .credential_details import CredentialDetails
@@ -29,19 +36,50 @@ from .database_insight import DatabaseInsight
 from .database_insight_summary import DatabaseInsightSummary
 from .database_insights import DatabaseInsights
 from .database_insights_collection import DatabaseInsightsCollection
+from .disk_group_details import DiskGroupDetails
 from .em_managed_external_database_configuration_summary import EmManagedExternalDatabaseConfigurationSummary
 from .em_managed_external_database_insight import EmManagedExternalDatabaseInsight
 from .em_managed_external_database_insight_summary import EmManagedExternalDatabaseInsightSummary
+from .em_managed_external_exadata_insight import EmManagedExternalExadataInsight
+from .em_managed_external_exadata_insight_summary import EmManagedExternalExadataInsightSummary
+from .em_managed_external_host_configuration_summary import EmManagedExternalHostConfigurationSummary
+from .em_managed_external_host_insight import EmManagedExternalHostInsight
+from .em_managed_external_host_insight_summary import EmManagedExternalHostInsightSummary
 from .enable_database_insight_details import EnableDatabaseInsightDetails
 from .enable_em_managed_external_database_insight_details import EnableEmManagedExternalDatabaseInsightDetails
+from .enable_em_managed_external_exadata_insight_details import EnableEmManagedExternalExadataInsightDetails
+from .enable_em_managed_external_host_insight_details import EnableEmManagedExternalHostInsightDetails
+from .enable_exadata_insight_details import EnableExadataInsightDetails
 from .enable_host_insight_details import EnableHostInsightDetails
 from .enable_macs_managed_external_host_insight_details import EnableMacsManagedExternalHostInsightDetails
 from .enterprise_manager_bridge import EnterpriseManagerBridge
 from .enterprise_manager_bridge_collection import EnterpriseManagerBridgeCollection
 from .enterprise_manager_bridge_summary import EnterpriseManagerBridgeSummary
 from .enterprise_manager_bridges import EnterpriseManagerBridges
+from .exadata_configuration_collection import ExadataConfigurationCollection
+from .exadata_configuration_summary import ExadataConfigurationSummary
+from .exadata_database_machine_configuration_summary import ExadataDatabaseMachineConfigurationSummary
+from .exadata_database_statistics_summary import ExadataDatabaseStatisticsSummary
+from .exadata_details import ExadataDetails
+from .exadata_diskgroup_statistics_summary import ExadataDiskgroupStatisticsSummary
+from .exadata_host_statistics_summary import ExadataHostStatisticsSummary
+from .exadata_insight import ExadataInsight
+from .exadata_insight_resource_capacity_trend_aggregation import ExadataInsightResourceCapacityTrendAggregation
+from .exadata_insight_resource_capacity_trend_summary import ExadataInsightResourceCapacityTrendSummary
+from .exadata_insight_resource_forecast_trend_summary import ExadataInsightResourceForecastTrendSummary
+from .exadata_insight_resource_insight_utilization_item import ExadataInsightResourceInsightUtilizationItem
+from .exadata_insight_resource_statistics import ExadataInsightResourceStatistics
+from .exadata_insight_resource_statistics_aggregation import ExadataInsightResourceStatisticsAggregation
+from .exadata_insight_summary import ExadataInsightSummary
+from .exadata_insight_summary_collection import ExadataInsightSummaryCollection
+from .exadata_insights import ExadataInsights
+from .exadata_member_collection import ExadataMemberCollection
+from .exadata_member_summary import ExadataMemberSummary
+from .exadata_storage_server_statistics_summary import ExadataStorageServerStatisticsSummary
 from .historical_data_item import HistoricalDataItem
+from .host_configuration_collection import HostConfigurationCollection
 from .host_configuration_metric_group import HostConfigurationMetricGroup
+from .host_configuration_summary import HostConfigurationSummary
 from .host_cpu_hardware_configuration import HostCpuHardwareConfiguration
 from .host_cpu_statistics import HostCpuStatistics
 from .host_cpu_usage import HostCpuUsage
@@ -83,9 +121,11 @@ from .ingest_sql_plan_lines_details import IngestSqlPlanLinesDetails
 from .ingest_sql_plan_lines_response_details import IngestSqlPlanLinesResponseDetails
 from .ingest_sql_text_details import IngestSqlTextDetails
 from .ingest_sql_text_response_details import IngestSqlTextResponseDetails
+from .instance_metrics import InstanceMetrics
 from .macs_managed_external_database_configuration_summary import MacsManagedExternalDatabaseConfigurationSummary
 from .macs_managed_external_database_insight import MacsManagedExternalDatabaseInsight
 from .macs_managed_external_database_insight_summary import MacsManagedExternalDatabaseInsightSummary
+from .macs_managed_external_host_configuration_summary import MacsManagedExternalHostConfigurationSummary
 from .macs_managed_external_host_insight import MacsManagedExternalHostInsight
 from .macs_managed_external_host_insight_summary import MacsManagedExternalHostInsightSummary
 from .projected_data_item import ProjectedDataItem
@@ -95,6 +135,7 @@ from .resource_insight_projected_utilization import ResourceInsightProjectedUtil
 from .resource_insight_projected_utilization_item import ResourceInsightProjectedUtilizationItem
 from .resource_statistics import ResourceStatistics
 from .resource_statistics_aggregation import ResourceStatisticsAggregation
+from .resource_usage_summary import ResourceUsageSummary
 from .resource_usage_trend_aggregation import ResourceUsageTrendAggregation
 from .sql_bucket import SqlBucket
 from .sql_insight_aggregation import SqlInsightAggregation
@@ -122,6 +163,7 @@ from .sql_statistics_time_series_by_plan_aggregation_collection import SqlStatis
 from .sql_text import SqlText
 from .sql_text_collection import SqlTextCollection
 from .sql_text_summary import SqlTextSummary
+from .storage_server_details import StorageServerDetails
 from .summarize_database_insight_resource_capacity_trend_aggregation_collection import SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection
 from .summarize_database_insight_resource_forecast_trend_aggregation import SummarizeDatabaseInsightResourceForecastTrendAggregation
 from .summarize_database_insight_resource_statistics_aggregation_collection import SummarizeDatabaseInsightResourceStatisticsAggregationCollection
@@ -129,6 +171,14 @@ from .summarize_database_insight_resource_usage_aggregation import SummarizeData
 from .summarize_database_insight_resource_usage_trend_aggregation_collection import SummarizeDatabaseInsightResourceUsageTrendAggregationCollection
 from .summarize_database_insight_resource_utilization_insight_aggregation import SummarizeDatabaseInsightResourceUtilizationInsightAggregation
 from .summarize_database_insight_tablespace_usage_trend_aggregation_collection import SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection
+from .summarize_exadata_insight_resource_capacity_trend_aggregation import SummarizeExadataInsightResourceCapacityTrendAggregation
+from .summarize_exadata_insight_resource_capacity_trend_collection import SummarizeExadataInsightResourceCapacityTrendCollection
+from .summarize_exadata_insight_resource_forecast_trend_aggregation import SummarizeExadataInsightResourceForecastTrendAggregation
+from .summarize_exadata_insight_resource_forecast_trend_collection import SummarizeExadataInsightResourceForecastTrendCollection
+from .summarize_exadata_insight_resource_statistics_aggregation_collection import SummarizeExadataInsightResourceStatisticsAggregationCollection
+from .summarize_exadata_insight_resource_usage_aggregation import SummarizeExadataInsightResourceUsageAggregation
+from .summarize_exadata_insight_resource_usage_collection import SummarizeExadataInsightResourceUsageCollection
+from .summarize_exadata_insight_resource_utilization_insight_aggregation import SummarizeExadataInsightResourceUtilizationInsightAggregation
 from .summarize_host_insight_resource_capacity_trend_aggregation_collection import SummarizeHostInsightResourceCapacityTrendAggregationCollection
 from .summarize_host_insight_resource_forecast_trend_aggregation import SummarizeHostInsightResourceForecastTrendAggregation
 from .summarize_host_insight_resource_statistics_aggregation_collection import SummarizeHostInsightResourceStatisticsAggregationCollection
@@ -141,7 +191,10 @@ from .tablespace_usage_trend_aggregation import TablespaceUsageTrendAggregation
 from .update_autonomous_database_insight_details import UpdateAutonomousDatabaseInsightDetails
 from .update_database_insight_details import UpdateDatabaseInsightDetails
 from .update_em_managed_external_database_insight_details import UpdateEmManagedExternalDatabaseInsightDetails
+from .update_em_managed_external_exadata_insight_details import UpdateEmManagedExternalExadataInsightDetails
+from .update_em_managed_external_host_insight_details import UpdateEmManagedExternalHostInsightDetails
 from .update_enterprise_manager_bridge_details import UpdateEnterpriseManagerBridgeDetails
+from .update_exadata_insight_details import UpdateExadataInsightDetails
 from .update_host_insight_details import UpdateHostInsightDetails
 from .update_macs_managed_external_database_insight_details import UpdateMacsManagedExternalDatabaseInsightDetails
 from .update_macs_managed_external_host_insight_details import UpdateMacsManagedExternalHostInsightDetails
@@ -156,16 +209,23 @@ from .work_requests import WorkRequests
 
 # Maps type names to classes for opsi services.
 opsi_type_mapping = {
+    "AddEmManagedExternalExadataInsightMembersDetails": AddEmManagedExternalExadataInsightMembersDetails,
+    "AddExadataInsightMembersDetails": AddExadataInsightMembersDetails,
     "AutonomousDatabaseConfigurationSummary": AutonomousDatabaseConfigurationSummary,
     "AutonomousDatabaseInsight": AutonomousDatabaseInsight,
     "AutonomousDatabaseInsightSummary": AutonomousDatabaseInsightSummary,
     "ChangeDatabaseInsightCompartmentDetails": ChangeDatabaseInsightCompartmentDetails,
     "ChangeEnterpriseManagerBridgeCompartmentDetails": ChangeEnterpriseManagerBridgeCompartmentDetails,
+    "ChangeExadataInsightCompartmentDetails": ChangeExadataInsightCompartmentDetails,
     "ChangeHostInsightCompartmentDetails": ChangeHostInsightCompartmentDetails,
     "ConnectionDetails": ConnectionDetails,
     "CreateDatabaseInsightDetails": CreateDatabaseInsightDetails,
     "CreateEmManagedExternalDatabaseInsightDetails": CreateEmManagedExternalDatabaseInsightDetails,
+    "CreateEmManagedExternalExadataInsightDetails": CreateEmManagedExternalExadataInsightDetails,
+    "CreateEmManagedExternalExadataMemberEntityDetails": CreateEmManagedExternalExadataMemberEntityDetails,
+    "CreateEmManagedExternalHostInsightDetails": CreateEmManagedExternalHostInsightDetails,
     "CreateEnterpriseManagerBridgeDetails": CreateEnterpriseManagerBridgeDetails,
+    "CreateExadataInsightDetails": CreateExadataInsightDetails,
     "CreateHostInsightDetails": CreateHostInsightDetails,
     "CreateMacsManagedExternalHostInsightDetails": CreateMacsManagedExternalHostInsightDetails,
     "CredentialDetails": CredentialDetails,
@@ -181,19 +241,50 @@ opsi_type_mapping = {
     "DatabaseInsightSummary": DatabaseInsightSummary,
     "DatabaseInsights": DatabaseInsights,
     "DatabaseInsightsCollection": DatabaseInsightsCollection,
+    "DiskGroupDetails": DiskGroupDetails,
     "EmManagedExternalDatabaseConfigurationSummary": EmManagedExternalDatabaseConfigurationSummary,
     "EmManagedExternalDatabaseInsight": EmManagedExternalDatabaseInsight,
     "EmManagedExternalDatabaseInsightSummary": EmManagedExternalDatabaseInsightSummary,
+    "EmManagedExternalExadataInsight": EmManagedExternalExadataInsight,
+    "EmManagedExternalExadataInsightSummary": EmManagedExternalExadataInsightSummary,
+    "EmManagedExternalHostConfigurationSummary": EmManagedExternalHostConfigurationSummary,
+    "EmManagedExternalHostInsight": EmManagedExternalHostInsight,
+    "EmManagedExternalHostInsightSummary": EmManagedExternalHostInsightSummary,
     "EnableDatabaseInsightDetails": EnableDatabaseInsightDetails,
     "EnableEmManagedExternalDatabaseInsightDetails": EnableEmManagedExternalDatabaseInsightDetails,
+    "EnableEmManagedExternalExadataInsightDetails": EnableEmManagedExternalExadataInsightDetails,
+    "EnableEmManagedExternalHostInsightDetails": EnableEmManagedExternalHostInsightDetails,
+    "EnableExadataInsightDetails": EnableExadataInsightDetails,
     "EnableHostInsightDetails": EnableHostInsightDetails,
     "EnableMacsManagedExternalHostInsightDetails": EnableMacsManagedExternalHostInsightDetails,
     "EnterpriseManagerBridge": EnterpriseManagerBridge,
     "EnterpriseManagerBridgeCollection": EnterpriseManagerBridgeCollection,
     "EnterpriseManagerBridgeSummary": EnterpriseManagerBridgeSummary,
     "EnterpriseManagerBridges": EnterpriseManagerBridges,
+    "ExadataConfigurationCollection": ExadataConfigurationCollection,
+    "ExadataConfigurationSummary": ExadataConfigurationSummary,
+    "ExadataDatabaseMachineConfigurationSummary": ExadataDatabaseMachineConfigurationSummary,
+    "ExadataDatabaseStatisticsSummary": ExadataDatabaseStatisticsSummary,
+    "ExadataDetails": ExadataDetails,
+    "ExadataDiskgroupStatisticsSummary": ExadataDiskgroupStatisticsSummary,
+    "ExadataHostStatisticsSummary": ExadataHostStatisticsSummary,
+    "ExadataInsight": ExadataInsight,
+    "ExadataInsightResourceCapacityTrendAggregation": ExadataInsightResourceCapacityTrendAggregation,
+    "ExadataInsightResourceCapacityTrendSummary": ExadataInsightResourceCapacityTrendSummary,
+    "ExadataInsightResourceForecastTrendSummary": ExadataInsightResourceForecastTrendSummary,
+    "ExadataInsightResourceInsightUtilizationItem": ExadataInsightResourceInsightUtilizationItem,
+    "ExadataInsightResourceStatistics": ExadataInsightResourceStatistics,
+    "ExadataInsightResourceStatisticsAggregation": ExadataInsightResourceStatisticsAggregation,
+    "ExadataInsightSummary": ExadataInsightSummary,
+    "ExadataInsightSummaryCollection": ExadataInsightSummaryCollection,
+    "ExadataInsights": ExadataInsights,
+    "ExadataMemberCollection": ExadataMemberCollection,
+    "ExadataMemberSummary": ExadataMemberSummary,
+    "ExadataStorageServerStatisticsSummary": ExadataStorageServerStatisticsSummary,
     "HistoricalDataItem": HistoricalDataItem,
+    "HostConfigurationCollection": HostConfigurationCollection,
     "HostConfigurationMetricGroup": HostConfigurationMetricGroup,
+    "HostConfigurationSummary": HostConfigurationSummary,
     "HostCpuHardwareConfiguration": HostCpuHardwareConfiguration,
     "HostCpuStatistics": HostCpuStatistics,
     "HostCpuUsage": HostCpuUsage,
@@ -235,9 +326,11 @@ opsi_type_mapping = {
     "IngestSqlPlanLinesResponseDetails": IngestSqlPlanLinesResponseDetails,
     "IngestSqlTextDetails": IngestSqlTextDetails,
     "IngestSqlTextResponseDetails": IngestSqlTextResponseDetails,
+    "InstanceMetrics": InstanceMetrics,
     "MacsManagedExternalDatabaseConfigurationSummary": MacsManagedExternalDatabaseConfigurationSummary,
     "MacsManagedExternalDatabaseInsight": MacsManagedExternalDatabaseInsight,
     "MacsManagedExternalDatabaseInsightSummary": MacsManagedExternalDatabaseInsightSummary,
+    "MacsManagedExternalHostConfigurationSummary": MacsManagedExternalHostConfigurationSummary,
     "MacsManagedExternalHostInsight": MacsManagedExternalHostInsight,
     "MacsManagedExternalHostInsightSummary": MacsManagedExternalHostInsightSummary,
     "ProjectedDataItem": ProjectedDataItem,
@@ -247,6 +340,7 @@ opsi_type_mapping = {
     "ResourceInsightProjectedUtilizationItem": ResourceInsightProjectedUtilizationItem,
     "ResourceStatistics": ResourceStatistics,
     "ResourceStatisticsAggregation": ResourceStatisticsAggregation,
+    "ResourceUsageSummary": ResourceUsageSummary,
     "ResourceUsageTrendAggregation": ResourceUsageTrendAggregation,
     "SqlBucket": SqlBucket,
     "SqlInsightAggregation": SqlInsightAggregation,
@@ -274,6 +368,7 @@ opsi_type_mapping = {
     "SqlText": SqlText,
     "SqlTextCollection": SqlTextCollection,
     "SqlTextSummary": SqlTextSummary,
+    "StorageServerDetails": StorageServerDetails,
     "SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection": SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection,
     "SummarizeDatabaseInsightResourceForecastTrendAggregation": SummarizeDatabaseInsightResourceForecastTrendAggregation,
     "SummarizeDatabaseInsightResourceStatisticsAggregationCollection": SummarizeDatabaseInsightResourceStatisticsAggregationCollection,
@@ -281,6 +376,14 @@ opsi_type_mapping = {
     "SummarizeDatabaseInsightResourceUsageTrendAggregationCollection": SummarizeDatabaseInsightResourceUsageTrendAggregationCollection,
     "SummarizeDatabaseInsightResourceUtilizationInsightAggregation": SummarizeDatabaseInsightResourceUtilizationInsightAggregation,
     "SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection": SummarizeDatabaseInsightTablespaceUsageTrendAggregationCollection,
+    "SummarizeExadataInsightResourceCapacityTrendAggregation": SummarizeExadataInsightResourceCapacityTrendAggregation,
+    "SummarizeExadataInsightResourceCapacityTrendCollection": SummarizeExadataInsightResourceCapacityTrendCollection,
+    "SummarizeExadataInsightResourceForecastTrendAggregation": SummarizeExadataInsightResourceForecastTrendAggregation,
+    "SummarizeExadataInsightResourceForecastTrendCollection": SummarizeExadataInsightResourceForecastTrendCollection,
+    "SummarizeExadataInsightResourceStatisticsAggregationCollection": SummarizeExadataInsightResourceStatisticsAggregationCollection,
+    "SummarizeExadataInsightResourceUsageAggregation": SummarizeExadataInsightResourceUsageAggregation,
+    "SummarizeExadataInsightResourceUsageCollection": SummarizeExadataInsightResourceUsageCollection,
+    "SummarizeExadataInsightResourceUtilizationInsightAggregation": SummarizeExadataInsightResourceUtilizationInsightAggregation,
     "SummarizeHostInsightResourceCapacityTrendAggregationCollection": SummarizeHostInsightResourceCapacityTrendAggregationCollection,
     "SummarizeHostInsightResourceForecastTrendAggregation": SummarizeHostInsightResourceForecastTrendAggregation,
     "SummarizeHostInsightResourceStatisticsAggregationCollection": SummarizeHostInsightResourceStatisticsAggregationCollection,
@@ -293,7 +396,10 @@ opsi_type_mapping = {
     "UpdateAutonomousDatabaseInsightDetails": UpdateAutonomousDatabaseInsightDetails,
     "UpdateDatabaseInsightDetails": UpdateDatabaseInsightDetails,
     "UpdateEmManagedExternalDatabaseInsightDetails": UpdateEmManagedExternalDatabaseInsightDetails,
+    "UpdateEmManagedExternalExadataInsightDetails": UpdateEmManagedExternalExadataInsightDetails,
+    "UpdateEmManagedExternalHostInsightDetails": UpdateEmManagedExternalHostInsightDetails,
     "UpdateEnterpriseManagerBridgeDetails": UpdateEnterpriseManagerBridgeDetails,
+    "UpdateExadataInsightDetails": UpdateExadataInsightDetails,
     "UpdateHostInsightDetails": UpdateHostInsightDetails,
     "UpdateMacsManagedExternalDatabaseInsightDetails": UpdateMacsManagedExternalDatabaseInsightDetails,
     "UpdateMacsManagedExternalHostInsightDetails": UpdateMacsManagedExternalHostInsightDetails,

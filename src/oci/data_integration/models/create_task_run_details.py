@@ -13,6 +13,18 @@ class CreateTaskRunDetails(object):
     The properties used in task run create operations.
     """
 
+    #: A constant which can be used with the re_run_type property of a CreateTaskRunDetails.
+    #: This constant has a value of "BEGINNING"
+    RE_RUN_TYPE_BEGINNING = "BEGINNING"
+
+    #: A constant which can be used with the re_run_type property of a CreateTaskRunDetails.
+    #: This constant has a value of "FAILED"
+    RE_RUN_TYPE_FAILED = "FAILED"
+
+    #: A constant which can be used with the re_run_type property of a CreateTaskRunDetails.
+    #: This constant has a value of "STEP"
+    RE_RUN_TYPE_STEP = "STEP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateTaskRunDetails object with values from keyword arguments.
@@ -50,6 +62,19 @@ class CreateTaskRunDetails(object):
             The value to assign to the task_schedule_key property of this CreateTaskRunDetails.
         :type task_schedule_key: str
 
+        :param ref_task_run_id:
+            The value to assign to the ref_task_run_id property of this CreateTaskRunDetails.
+        :type ref_task_run_id: str
+
+        :param re_run_type:
+            The value to assign to the re_run_type property of this CreateTaskRunDetails.
+            Allowed values for this property are: "BEGINNING", "FAILED", "STEP"
+        :type re_run_type: str
+
+        :param step_id:
+            The value to assign to the step_id property of this CreateTaskRunDetails.
+        :type step_id: str
+
         :param registry_metadata:
             The value to assign to the registry_metadata property of this CreateTaskRunDetails.
         :type registry_metadata: oci.data_integration.models.RegistryMetadata
@@ -64,6 +89,9 @@ class CreateTaskRunDetails(object):
             'config_provider': 'CreateConfigProvider',
             'identifier': 'str',
             'task_schedule_key': 'str',
+            'ref_task_run_id': 'str',
+            're_run_type': 'str',
+            'step_id': 'str',
             'registry_metadata': 'RegistryMetadata'
         }
 
@@ -76,6 +104,9 @@ class CreateTaskRunDetails(object):
             'config_provider': 'configProvider',
             'identifier': 'identifier',
             'task_schedule_key': 'taskScheduleKey',
+            'ref_task_run_id': 'refTaskRunId',
+            're_run_type': 'reRunType',
+            'step_id': 'stepId',
             'registry_metadata': 'registryMetadata'
         }
 
@@ -87,6 +118,9 @@ class CreateTaskRunDetails(object):
         self._config_provider = None
         self._identifier = None
         self._task_schedule_key = None
+        self._ref_task_run_id = None
+        self._re_run_type = None
+        self._step_id = None
         self._registry_metadata = None
 
     @property
@@ -276,6 +310,86 @@ class CreateTaskRunDetails(object):
         :type: str
         """
         self._task_schedule_key = task_schedule_key
+
+    @property
+    def ref_task_run_id(self):
+        """
+        Gets the ref_task_run_id of this CreateTaskRunDetails.
+        Reference Task Run Id to be used for re-run
+
+
+        :return: The ref_task_run_id of this CreateTaskRunDetails.
+        :rtype: str
+        """
+        return self._ref_task_run_id
+
+    @ref_task_run_id.setter
+    def ref_task_run_id(self, ref_task_run_id):
+        """
+        Sets the ref_task_run_id of this CreateTaskRunDetails.
+        Reference Task Run Id to be used for re-run
+
+
+        :param ref_task_run_id: The ref_task_run_id of this CreateTaskRunDetails.
+        :type: str
+        """
+        self._ref_task_run_id = ref_task_run_id
+
+    @property
+    def re_run_type(self):
+        """
+        Gets the re_run_type of this CreateTaskRunDetails.
+        Supported re-run types
+
+        Allowed values for this property are: "BEGINNING", "FAILED", "STEP"
+
+
+        :return: The re_run_type of this CreateTaskRunDetails.
+        :rtype: str
+        """
+        return self._re_run_type
+
+    @re_run_type.setter
+    def re_run_type(self, re_run_type):
+        """
+        Sets the re_run_type of this CreateTaskRunDetails.
+        Supported re-run types
+
+
+        :param re_run_type: The re_run_type of this CreateTaskRunDetails.
+        :type: str
+        """
+        allowed_values = ["BEGINNING", "FAILED", "STEP"]
+        if not value_allowed_none_or_none_sentinel(re_run_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `re_run_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._re_run_type = re_run_type
+
+    @property
+    def step_id(self):
+        """
+        Gets the step_id of this CreateTaskRunDetails.
+        Step Id for running from a certain step.
+
+
+        :return: The step_id of this CreateTaskRunDetails.
+        :rtype: str
+        """
+        return self._step_id
+
+    @step_id.setter
+    def step_id(self, step_id):
+        """
+        Sets the step_id of this CreateTaskRunDetails.
+        Step Id for running from a certain step.
+
+
+        :param step_id: The step_id of this CreateTaskRunDetails.
+        :type: str
+        """
+        self._step_id = step_id
 
     @property
     def registry_metadata(self):

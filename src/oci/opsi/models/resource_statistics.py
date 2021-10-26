@@ -42,6 +42,10 @@ class ResourceStatistics(object):
             The value to assign to the usage_change_percent property of this ResourceStatistics.
         :type usage_change_percent: float
 
+        :param instance_metrics:
+            The value to assign to the instance_metrics property of this ResourceStatistics.
+        :type instance_metrics: list[oci.opsi.models.InstanceMetrics]
+
         """
         self.swagger_types = {
             'usage': 'float',
@@ -49,7 +53,8 @@ class ResourceStatistics(object):
             'base_capacity': 'float',
             'is_auto_scaling_enabled': 'bool',
             'utilization_percent': 'float',
-            'usage_change_percent': 'float'
+            'usage_change_percent': 'float',
+            'instance_metrics': 'list[InstanceMetrics]'
         }
 
         self.attribute_map = {
@@ -58,7 +63,8 @@ class ResourceStatistics(object):
             'base_capacity': 'baseCapacity',
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'utilization_percent': 'utilizationPercent',
-            'usage_change_percent': 'usageChangePercent'
+            'usage_change_percent': 'usageChangePercent',
+            'instance_metrics': 'instanceMetrics'
         }
 
         self._usage = None
@@ -67,6 +73,7 @@ class ResourceStatistics(object):
         self._is_auto_scaling_enabled = None
         self._utilization_percent = None
         self._usage_change_percent = None
+        self._instance_metrics = None
 
     @property
     def usage(self):
@@ -211,6 +218,30 @@ class ResourceStatistics(object):
         :type: float
         """
         self._usage_change_percent = usage_change_percent
+
+    @property
+    def instance_metrics(self):
+        """
+        Gets the instance_metrics of this ResourceStatistics.
+        Array of instance metrics
+
+
+        :return: The instance_metrics of this ResourceStatistics.
+        :rtype: list[oci.opsi.models.InstanceMetrics]
+        """
+        return self._instance_metrics
+
+    @instance_metrics.setter
+    def instance_metrics(self, instance_metrics):
+        """
+        Sets the instance_metrics of this ResourceStatistics.
+        Array of instance metrics
+
+
+        :param instance_metrics: The instance_metrics of this ResourceStatistics.
+        :type: list[oci.opsi.models.InstanceMetrics]
+        """
+        self._instance_metrics = instance_metrics
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -17,18 +17,23 @@ class EnableHostInsightDetails(object):
     #: This constant has a value of "MACS_MANAGED_EXTERNAL_HOST"
     ENTITY_SOURCE_MACS_MANAGED_EXTERNAL_HOST = "MACS_MANAGED_EXTERNAL_HOST"
 
+    #: A constant which can be used with the entity_source property of a EnableHostInsightDetails.
+    #: This constant has a value of "EM_MANAGED_EXTERNAL_HOST"
+    ENTITY_SOURCE_EM_MANAGED_EXTERNAL_HOST = "EM_MANAGED_EXTERNAL_HOST"
+
     def __init__(self, **kwargs):
         """
         Initializes a new EnableHostInsightDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.opsi.models.EnableMacsManagedExternalHostInsightDetails`
+        * :class:`~oci.opsi.models.EnableEmManagedExternalHostInsightDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param entity_source:
             The value to assign to the entity_source property of this EnableHostInsightDetails.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST"
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST"
         :type entity_source: str
 
         """
@@ -52,6 +57,9 @@ class EnableHostInsightDetails(object):
 
         if type == 'MACS_MANAGED_EXTERNAL_HOST':
             return 'EnableMacsManagedExternalHostInsightDetails'
+
+        if type == 'EM_MANAGED_EXTERNAL_HOST':
+            return 'EnableEmManagedExternalHostInsightDetails'
         else:
             return 'EnableHostInsightDetails'
 
@@ -61,7 +69,7 @@ class EnableHostInsightDetails(object):
         **[Required]** Gets the entity_source of this EnableHostInsightDetails.
         Source of the host entity.
 
-        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST"
+        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST"
 
 
         :return: The entity_source of this EnableHostInsightDetails.
@@ -79,7 +87,7 @@ class EnableHostInsightDetails(object):
         :param entity_source: The entity_source of this EnableHostInsightDetails.
         :type: str
         """
-        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST"]
+        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             raise ValueError(
                 "Invalid value for `entity_source`, must be None or one of {0}"

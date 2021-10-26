@@ -215,7 +215,7 @@ class CreateSddcDetails(object):
     def compute_availability_domain(self):
         """
         **[Required]** Gets the compute_availability_domain of this CreateSddcDetails.
-        The availability domain to create the SDDC's ESXi hosts in.
+        The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
 
 
         :return: The compute_availability_domain of this CreateSddcDetails.
@@ -227,7 +227,7 @@ class CreateSddcDetails(object):
     def compute_availability_domain(self, compute_availability_domain):
         """
         Sets the compute_availability_domain of this CreateSddcDetails.
-        The availability domain to create the SDDC's ESXi hosts in.
+        The availability domain to create the SDDC's ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`.
 
 
         :param compute_availability_domain: The compute_availability_domain of this CreateSddcDetails.

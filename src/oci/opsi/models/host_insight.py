@@ -17,6 +17,10 @@ class HostInsight(object):
     #: This constant has a value of "MACS_MANAGED_EXTERNAL_HOST"
     ENTITY_SOURCE_MACS_MANAGED_EXTERNAL_HOST = "MACS_MANAGED_EXTERNAL_HOST"
 
+    #: A constant which can be used with the entity_source property of a HostInsight.
+    #: This constant has a value of "EM_MANAGED_EXTERNAL_HOST"
+    ENTITY_SOURCE_EM_MANAGED_EXTERNAL_HOST = "EM_MANAGED_EXTERNAL_HOST"
+
     #: A constant which can be used with the status property of a HostInsight.
     #: This constant has a value of "DISABLED"
     STATUS_DISABLED = "DISABLED"
@@ -62,13 +66,14 @@ class HostInsight(object):
         Initializes a new HostInsight object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.opsi.models.EmManagedExternalHostInsight`
         * :class:`~oci.opsi.models.MacsManagedExternalHostInsight`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param entity_source:
             The value to assign to the entity_source property of this HostInsight.
-            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 
@@ -193,6 +198,9 @@ class HostInsight(object):
         """
         type = object_dictionary['entitySource']
 
+        if type == 'EM_MANAGED_EXTERNAL_HOST':
+            return 'EmManagedExternalHostInsight'
+
         if type == 'MACS_MANAGED_EXTERNAL_HOST':
             return 'MacsManagedExternalHostInsight'
         else:
@@ -204,7 +212,7 @@ class HostInsight(object):
         **[Required]** Gets the entity_source of this HostInsight.
         Source of the host entity.
 
-        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -223,7 +231,7 @@ class HostInsight(object):
         :param entity_source: The entity_source of this HostInsight.
         :type: str
         """
-        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST"]
+        allowed_values = ["MACS_MANAGED_EXTERNAL_HOST", "EM_MANAGED_EXTERNAL_HOST"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             entity_source = 'UNKNOWN_ENUM_VALUE'
         self._entity_source = entity_source

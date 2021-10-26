@@ -76,6 +76,10 @@ class DataAssetFromObjectStorageDetails(DataAsset):
             The value to assign to the key_map property of this DataAssetFromObjectStorageDetails.
         :type key_map: dict(str, str)
 
+        :param oci_region:
+            The value to assign to the oci_region property of this DataAssetFromObjectStorageDetails.
+        :type oci_region: str
+
         :param url:
             The value to assign to the url property of this DataAssetFromObjectStorageDetails.
         :type url: str
@@ -108,6 +112,7 @@ class DataAssetFromObjectStorageDetails(DataAsset):
             'parent_ref': 'ParentReference',
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)',
+            'oci_region': 'str',
             'url': 'str',
             'tenancy_id': 'str',
             'namespace': 'str',
@@ -129,6 +134,7 @@ class DataAssetFromObjectStorageDetails(DataAsset):
             'parent_ref': 'parentRef',
             'metadata': 'metadata',
             'key_map': 'keyMap',
+            'oci_region': 'ociRegion',
             'url': 'url',
             'tenancy_id': 'tenancyId',
             'namespace': 'namespace',
@@ -149,11 +155,36 @@ class DataAssetFromObjectStorageDetails(DataAsset):
         self._parent_ref = None
         self._metadata = None
         self._key_map = None
+        self._oci_region = None
         self._url = None
         self._tenancy_id = None
         self._namespace = None
         self._default_connection = None
         self._model_type = 'ORACLE_OBJECT_STORAGE_DATA_ASSET'
+
+    @property
+    def oci_region(self):
+        """
+        Gets the oci_region of this DataAssetFromObjectStorageDetails.
+        The Oracle Object storage Region ie. us-ashburn-1
+
+
+        :return: The oci_region of this DataAssetFromObjectStorageDetails.
+        :rtype: str
+        """
+        return self._oci_region
+
+    @oci_region.setter
+    def oci_region(self, oci_region):
+        """
+        Sets the oci_region of this DataAssetFromObjectStorageDetails.
+        The Oracle Object storage Region ie. us-ashburn-1
+
+
+        :param oci_region: The oci_region of this DataAssetFromObjectStorageDetails.
+        :type: str
+        """
+        self._oci_region = oci_region
 
     @property
     def url(self):

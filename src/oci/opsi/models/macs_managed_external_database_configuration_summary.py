@@ -48,6 +48,10 @@ class MacsManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSumma
             The value to assign to the database_version property of this MacsManagedExternalDatabaseConfigurationSummary.
         :type database_version: str
 
+        :param cdb_name:
+            The value to assign to the cdb_name property of this MacsManagedExternalDatabaseConfigurationSummary.
+        :type cdb_name: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this MacsManagedExternalDatabaseConfigurationSummary.
         :type defined_tags: dict(str, dict(str, object))
@@ -85,6 +89,7 @@ class MacsManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSumma
             'database_display_name': 'str',
             'database_type': 'str',
             'database_version': 'str',
+            'cdb_name': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'processor_count': 'int',
@@ -102,6 +107,7 @@ class MacsManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSumma
             'database_display_name': 'databaseDisplayName',
             'database_type': 'databaseType',
             'database_version': 'databaseVersion',
+            'cdb_name': 'cdbName',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'processor_count': 'processorCount',
@@ -118,6 +124,7 @@ class MacsManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSumma
         self._database_display_name = None
         self._database_type = None
         self._database_version = None
+        self._cdb_name = None
         self._defined_tags = None
         self._freeform_tags = None
         self._processor_count = None
