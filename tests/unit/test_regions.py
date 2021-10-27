@@ -14,6 +14,25 @@ def reset_external_sources_dict():
     _has_been_read_external_sources[ExternalSources.REGIONS_CFG_FILE] = False
     _has_been_read_external_sources[ExternalSources.ENV_VAR] = False
     _has_been_read_external_sources[ExternalSources.IMDS] = True
+    _has_been_read_external_sources[ExternalSources.SECOND_LEVEL_DOMAIN_FALLBACK] = False
+
+
+def test_realm_fallback():
+    reset_external_sources_dict()
+
+    # Test if fallback  goes back to OC1 if env.OCI_DEFAULT_REALM was not set
+    endpoint = endpoint_for('compute', 'dummy-region', None, None)
+    assert endpoint == 'https://iaas.dummy-region.oraclecloud.com'
+    reset_external_sources_dict()
+
+    # Test - Fallback should go to the second level domain as defined in env.OCI_DEFAULT_REALM if region is not found
+    os.environ['OCI_DEFAULT_REALM'] = 'fallbacksecondleveldomain.com'
+    endpoint = endpoint_for('compute', 'dummy-region', None, None)
+    assert endpoint == 'https://iaas.dummy-region.fallbacksecondleveldomain.com'
+
+    # Cleanup
+    del os.environ['OCI_DEFAULT_REALM']
+    reset_external_sources_dict()
 
 
 def test_all_regions():
