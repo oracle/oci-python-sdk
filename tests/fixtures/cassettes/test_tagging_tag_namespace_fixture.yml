@@ -15,7 +15,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 14:59:09 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -23,7 +23,7 @@ interactions:
       user-agent:
       - Oracle-PythonSDK/2.10.3 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
   response:
     body:
       string: "{\n  \"isRetired\" : false,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\

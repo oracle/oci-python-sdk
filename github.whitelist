@@ -129,3 +129,5 @@
 ^src/oci/waf/.*\.py$
 ^src/oci/certificates/.*\.py$
 ^src/oci/certificates_management/.*\.py$
+^src/oci/usage/.*\.py$
+^src/oci/database_tools/.*\.py$

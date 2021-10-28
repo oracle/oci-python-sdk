@@ -87,6 +87,14 @@ class CreateCloudVmClusterDetails(object):
             The value to assign to the time_zone property of this CreateCloudVmClusterDetails.
         :type time_zone: str
 
+        :param scan_listener_port_tcp:
+            The value to assign to the scan_listener_port_tcp property of this CreateCloudVmClusterDetails.
+        :type scan_listener_port_tcp: int
+
+        :param scan_listener_port_tcp_ssl:
+            The value to assign to the scan_listener_port_tcp_ssl property of this CreateCloudVmClusterDetails.
+        :type scan_listener_port_tcp_ssl: int
+
         :param nsg_ids:
             The value to assign to the nsg_ids property of this CreateCloudVmClusterDetails.
         :type nsg_ids: list[str]
@@ -124,6 +132,8 @@ class CreateCloudVmClusterDetails(object):
             'is_sparse_diskgroup_enabled': 'bool',
             'is_local_backup_enabled': 'bool',
             'time_zone': 'str',
+            'scan_listener_port_tcp': 'int',
+            'scan_listener_port_tcp_ssl': 'int',
             'nsg_ids': 'list[str]',
             'backup_network_nsg_ids': 'list[str]',
             'gi_version': 'str',
@@ -147,6 +157,8 @@ class CreateCloudVmClusterDetails(object):
             'is_sparse_diskgroup_enabled': 'isSparseDiskgroupEnabled',
             'is_local_backup_enabled': 'isLocalBackupEnabled',
             'time_zone': 'timeZone',
+            'scan_listener_port_tcp': 'scanListenerPortTcp',
+            'scan_listener_port_tcp_ssl': 'scanListenerPortTcpSsl',
             'nsg_ids': 'nsgIds',
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
             'gi_version': 'giVersion',
@@ -169,6 +181,8 @@ class CreateCloudVmClusterDetails(object):
         self._is_sparse_diskgroup_enabled = None
         self._is_local_backup_enabled = None
         self._time_zone = None
+        self._scan_listener_port_tcp = None
+        self._scan_listener_port_tcp_ssl = None
         self._nsg_ids = None
         self._backup_network_nsg_ids = None
         self._gi_version = None
@@ -602,6 +616,54 @@ class CreateCloudVmClusterDetails(object):
         :type: str
         """
         self._time_zone = time_zone
+
+    @property
+    def scan_listener_port_tcp(self):
+        """
+        Gets the scan_listener_port_tcp of this CreateCloudVmClusterDetails.
+        The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+
+
+        :return: The scan_listener_port_tcp of this CreateCloudVmClusterDetails.
+        :rtype: int
+        """
+        return self._scan_listener_port_tcp
+
+    @scan_listener_port_tcp.setter
+    def scan_listener_port_tcp(self, scan_listener_port_tcp):
+        """
+        Sets the scan_listener_port_tcp of this CreateCloudVmClusterDetails.
+        The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+
+
+        :param scan_listener_port_tcp: The scan_listener_port_tcp of this CreateCloudVmClusterDetails.
+        :type: int
+        """
+        self._scan_listener_port_tcp = scan_listener_port_tcp
+
+    @property
+    def scan_listener_port_tcp_ssl(self):
+        """
+        Gets the scan_listener_port_tcp_ssl of this CreateCloudVmClusterDetails.
+        The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+
+
+        :return: The scan_listener_port_tcp_ssl of this CreateCloudVmClusterDetails.
+        :rtype: int
+        """
+        return self._scan_listener_port_tcp_ssl
+
+    @scan_listener_port_tcp_ssl.setter
+    def scan_listener_port_tcp_ssl(self, scan_listener_port_tcp_ssl):
+        """
+        Sets the scan_listener_port_tcp_ssl of this CreateCloudVmClusterDetails.
+        The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+
+
+        :param scan_listener_port_tcp_ssl: The scan_listener_port_tcp_ssl of this CreateCloudVmClusterDetails.
+        :type: int
+        """
+        self._scan_listener_port_tcp_ssl = scan_listener_port_tcp_ssl
 
     @property
     def nsg_ids(self):

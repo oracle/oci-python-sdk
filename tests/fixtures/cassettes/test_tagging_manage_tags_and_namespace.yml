@@ -15,7 +15,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:32 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -23,7 +23,7 @@ interactions:
       user-agent:
       - Oracle-PythonSDK/2.10.3 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces?compartmentId=ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces?compartmentId=ocid1.compartment.oc1..aaaaaaaa235ux54bxmitd4zvnhxyeubszseeoklcpvlegqumemc4x47oku5q
   response:
     body:
       string: "[ {\n  \"isRetired\" : false,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaaxeqkoz5opecm6b4dpzhzveqhf3issjllvhuk2lhhg5u6lhy2vz2a\"\
@@ -70,7 +70,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:32 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -78,7 +78,7 @@ interactions:
       user-agent:
       - Oracle-PythonSDK/2.10.3 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
   response:
     body:
       string: "{\n  \"isRetired\" : false,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
@@ -120,7 +120,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:32 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -128,7 +128,7 @@ interactions:
       user-agent:
       - Oracle-PythonSDK/2.10.3 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
   response:
     body:
       string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
@@ -176,7 +176,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:33 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -186,7 +186,7 @@ interactions:
       x-content-sha256:
       - 7nqNwYbKssvppWdK7iqP3DS/YKZDclCc70SNlMu7yrE=
     method: PUT
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
   response:
     body:
       string: "{\n  \"isRetired\" : false,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
@@ -233,7 +233,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:33 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -243,7 +243,7 @@ interactions:
       x-content-sha256:
       - 9yqKyer3QcWt3kIgKsqThPPyLlwdGYGfLdnNTFvMipA=
     method: PUT
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
   response:
     body:
       string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
@@ -291,7 +291,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:34 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -301,7 +301,7 @@ interactions:
       x-content-sha256:
       - HScz3hJX+d3vF9jo1ovsUEJXJDuTiMSl6Kv0CgoPlAs=
     method: PUT
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
   response:
     body:
       string: "{\n  \"isRetired\" : false,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
@@ -348,7 +348,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:34 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -358,7 +358,7 @@ interactions:
       x-content-sha256:
       - YN6OY0B0Kz3MmuVaZemsPt2Q/iP/GDKkJ5uJhD6Do/g=
     method: PUT
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
   response:
     body:
       string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
@@ -403,7 +403,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:35 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -411,7 +411,7 @@ interactions:
       user-agent:
       - Oracle-PythonSDK/2.10.3 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagone_vcr
   response:
     body:
       string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
@@ -456,7 +456,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:35 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -464,7 +464,7 @@ interactions:
       user-agent:
       - Oracle-PythonSDK/2.10.3 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagtwo_vcr
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagtwo_vcr
   response:
     body:
       string: "{\n  \"code\" : \"NotAuthorizedOrNotFound\",\n  \"message\" : \"Authorization\
@@ -504,7 +504,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:35 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -514,7 +514,7 @@ interactions:
       x-content-sha256:
       - BwC+T5ES9eB6OmQDI7URHY5otxOqGHbiIs7Ja/wjfUw=
     method: POST
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags
   response:
     body:
       string: "{\n  \"isRetired\" : false,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
@@ -563,7 +563,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:36 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -573,7 +573,7 @@ interactions:
       x-content-sha256:
       - XmvN6PMRTK96GJJt3B2gOeJlRUwAgXfYX0AHll5CAZU=
     method: PUT
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
   response:
     body:
       string: "{\n  \"isRetired\" : true,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
@@ -616,7 +616,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:44 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -624,7 +624,7 @@ interactions:
       user-agent:
       - Oracle-PythonSDK/2.10.3 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags
   response:
     body:
       string: "[ {\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
@@ -1068,7 +1068,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:44 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -1076,7 +1076,7 @@ interactions:
       user-agent:
       - Oracle-PythonSDK/2.10.3 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagtwo_vcr
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq/tags/tagtwo_vcr
   response:
     body:
       string: "{\n  \"isRetired\" : true,\n  \"isCostTracking\" : false,\n  \"tagNamespaceId\"\
@@ -1121,7 +1121,7 @@ interactions:
       date:
       - Mon, 03 Feb 2020 17:27:45 GMT
       host:
-      - identity.us-phoenix-1.oraclecloud.com
+      - identity.us-phoenix-1.oci.oraclecloud.com
       opc-client-info:
       - Oracle-PythonSDK/2.10.3
       opc-request-id:
@@ -1129,7 +1129,7 @@ interactions:
       user-agent:
       - Oracle-PythonSDK/2.10.3 (python 3.5.1; x86_64-Darwin)
     method: GET
-    uri: https://identity.us-phoenix-1.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
+    uri: https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/tagNamespaces/ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq
   response:
     body:
       string: "{\n  \"isRetired\" : true,\n  \"id\" : \"ocid1.tagnamespace.oc1..aaaaaaaa5wxauflghyiyeed2l3z5rpts6vp4oqsc2cbh6gilnq3xlt7vh3gq\"\
