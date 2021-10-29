@@ -1660,7 +1660,8 @@ class ShowOCIData(object):
                         'defined_tags': instance['defined_tags'],
                         'freeform_tags': instance['freeform_tags'],
                         'metadata': instance['metadata'],
-                        'extended_metadata': instance['extended_metadata']
+                        'extended_metadata': instance['extended_metadata'],
+                        'logs': self.service.get_logging_log(instance['id'])
                         }
 
                 # boot volumes attachments
@@ -2785,8 +2786,10 @@ class ShowOCIData(object):
 
             # tbd buckets size
             for bucket in buckets:
-                value = {'name': bucket['name'], 'objects': bucket['approximate_count'],
-                         'size': bucket['approximate_size'], 'sum_size_gb': bucket['size_gb'],
+                value = {'name': bucket['name'],
+                         'objects': bucket['approximate_count'],
+                         'size': bucket['approximate_size'],
+                         'sum_size_gb': bucket['size_gb'],
                          'sum_info': 'Object Storage - Buckets (GB)',
                          'preauthenticated_requests': bucket['preauthenticated_requests'],
                          'object_lifecycle': bucket['object_lifecycle'],
@@ -2795,15 +2798,34 @@ class ShowOCIData(object):
                          'region_name': bucket['region_name'],
                          'namespace_name': bucket['namespace_name'],
                          'public_access_type': bucket['public_access_type'],
-                         'storage_tier': bucket['storage_tier']
+                         'storage_tier': bucket['storage_tier'],
+                         'object_events_enabled': bucket['object_events_enabled'],
+                         'kms_key_id': bucket['kms_key_id'],
+                         'object_lifecycle_policy_etag': bucket['object_lifecycle_policy_etag'],
+                         'replication_enabled': bucket['replication_enabled'],
+                         'is_read_only': bucket['is_read_only'],
+                         'versioning': bucket['versioning'],
+                         'auto_tiering': bucket['auto_tiering'],
+                         'id': bucket['id'],
+                         'defined_tags': bucket['defined_tags'],
+                         'freeform_tags': bucket['freeform_tags'],
+                         'logs': self.service.get_logging_log(bucket['name'])
                          }
 
+                replication_enabled = ", Replication" if value['replication_enabled'] == "True" else ""
+                object_events_enabled = ", Events" if value['object_events_enabled'] == "True" else ""
+                is_read_only = ", ReadOnly" if value['is_read_only'] == "True" else ""
+                log_enabled = ", Log Enabled" if value['logs'] else ""
+                versioning = ", Versioning" if value['versioning'] == "Enabled" else ""
+                object_lifecycle = value['object_lifecycle'] if value['object_lifecycle'] else ""
+                auto_tiering = ", AutoTier" if value['auto_tiering'] != "Disabled" else ""
+
                 value['desc'] = (
-                    bucket['name'].ljust(24) + " - " +
+                    bucket['name'].ljust(30)[0:30] + " - " +
                     value['objects'] + " Objs , " +
                     value['size'] + "GB (Approx)" +
-                    value['object_lifecycle'] +
-                    value['preauthenticated_requests']
+                    log_enabled + auto_tiering + versioning + replication_enabled + is_read_only + object_events_enabled +
+                    object_lifecycle
                 )
 
                 data.append(value)
@@ -2947,9 +2969,12 @@ class ShowOCIData(object):
             load_balancers = self.service.search_multi_items(self.service.C_LB, self.service.C_LB_LOAD_BALANCERS, 'region_name', region_name, 'compartment_id', compartment['id'])
 
             for load_balance_obj in load_balancers:
-                dataval = {'sum_info': "Load Balancer " + str(load_balance_obj['shape_name']),
-                           'details': self.__get_load_balancer_details(load_balance_obj),
-                           'backendset': self.__get_load_balancer_backendset(load_balance_obj['id'])}
+                dataval = {
+                    'sum_info': "Load Balancer " + str(load_balance_obj['shape_name']),
+                    'details': self.__get_load_balancer_details(load_balance_obj),
+                    'backendset': self.__get_load_balancer_backendset(load_balance_obj['id']),
+                    'logs': self.service.get_logging_log(load_balance_obj['id'])
+                }
                 data.append(dataval)
 
             return data

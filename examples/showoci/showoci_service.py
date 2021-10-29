@@ -595,6 +595,30 @@ class ShowOCIService(object):
         return []
 
     ##########################################################################
+    # return log by resource
+    ##########################################################################
+    def get_logging_log(self, resource_id):
+        data = []
+        try:
+
+            if self.C_SECURITY not in self.data:
+                return data
+            if self.C_SECURITY_LOGGING not in self.data[self.C_SECURITY]:
+                return data
+
+            array = self.data[self.C_SECURITY][self.C_SECURITY_LOGGING]
+            for item in array:
+                if 'logs' in item:
+                    for log in item['logs']:
+                        if 'source_resource' in log and 'lifecycle_state' in log:
+                            if log['source_resource'] == resource_id and log['lifecycle_state'] == 'ACTIVE':
+                                data.append(log)
+            return data
+
+        except Exception as e:
+            self.__print_error("get_logging_log", e)
+
+    ##########################################################################
     # return subnet
     ##########################################################################
     def get_network_subnet(self, subnet_id, detailed=False):
@@ -5806,28 +5830,43 @@ class ShowOCIService(object):
                 # loop on array
                 # arr = oci.object_storage.models.BucketSummary
                 for arr in buckets:
-                    val = {'name': str(arr.name), 'time_created': str(arr.time_created),
-                           'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
-                           'region_name': str(self.config['region']), 'public_access_type': "", 'storage_tier': "",
-                           'approximate_count': "", 'approximate_size': "", 'object_lifecycle': "",
-                           'preauthenticated_requests': "", 'size_gb': "", 'namespace_name': namespace_name}
-
-                    ###############################
-                    # get more info
-                    ###############################
                     try:
-                        bucket = object_storage.get_bucket(namespace_name, str(arr.name), fields=['approximateCount', 'approximateSize']).data
+                        # bucket = oci.object_storage.models.Bucket
+                        bucket = object_storage.get_bucket(namespace_name, str(arr.name), fields=['approximateCount', 'approximateSize', 'autoTiering']).data
 
                         if bucket:
-                            val['public_access_type'] = str(bucket.public_access_type)
-                            val['storage_tier'] = str(bucket.storage_tier)
+                            val = {
+                                'name': str(arr.name),
+                                'time_created': str(arr.time_created),
+                                'compartment_name': str(compartment['name']),
+                                'compartment_id': str(compartment['id']),
+                                'region_name': str(self.config['region']),
+                                'public_access_type': str(bucket.public_access_type),
+                                'storage_tier': str(bucket.storage_tier),
+                                'object_events_enabled': str(bucket.object_events_enabled),
+                                'defined_tags': [] if bucket.defined_tags is None else bucket.defined_tags,
+                                'freeform_tags': [] if bucket.freeform_tags is None else bucket.freeform_tags,
+                                'kms_key_id': str(bucket.kms_key_id),
+                                'object_lifecycle_policy_etag': str(bucket.object_lifecycle_policy_etag),
+                                'replication_enabled': str(bucket.replication_enabled),
+                                'is_read_only': str(bucket.is_read_only),
+                                'versioning': str(bucket.versioning),
+                                'auto_tiering': str(bucket.auto_tiering) if bucket.auto_tiering else "",
+                                'id': str(bucket.id),
+                                'size_gb': "",
+                                'approximate_count': "",
+                                'approximate_size': "",
+                                'object_lifecycle': "",
+                                'preauthenticated_requests': "",
+                                'namespace_name': namespace_name
+                            }
                             objcnt = bucket.approximate_count
                             size = bucket.approximate_size
 
                             # check if size if not empty
                             if objcnt is not None and size is not None:
-                                val['approximate_count'] = str('{:9,.0f}'.format(objcnt))
-                                val['approximate_size'] = str('{:9,.1f}'.format(round(size / 1024 / 1024 / 1024, 1)))
+                                val['approximate_count'] = str('{:11,.0f}'.format(objcnt))
+                                val['approximate_size'] = str('{:11,.1f}'.format(round(size / 1024 / 1024 / 1024, 1)))
                                 val['size_gb'] = str(round(size / 1024 / 1024 / 1024, 1))
 
                     except oci.exceptions.ServiceError as e:
@@ -5852,8 +5891,8 @@ class ShowOCIService(object):
 
                     if lp:
                         for lc in lp.items:
-                            val['object_lifecycle'] += " , LifeCycle: " + str(lc.name) + ", " + str(
-                                lc.action) + ", " + str(lc.time_amount) + " " + str(lc.time_unit)
+                            val['object_lifecycle'] += ", LifeCycle: " + str(lc.name) + " - " + str(
+                                lc.action) + " - " + str(lc.time_amount) + " " + str(lc.time_unit)
 
                     data.append(val)
                     cnt += 1
@@ -11655,10 +11694,14 @@ class ShowOCIService(object):
 
                     # log_item = oci.logging.models.LogSummary
                     for log_item in logs:
+                        enabled_str = "Enabled" if log_item.is_enabled else "Not Enabled"
                         log_val = {
+                            'log_group_id': str(item.id),
+                            'log_group_name': str(item.display_name),
                             'id': str(log_item.id),
                             'display_name': str(log_item.display_name),
                             'is_enabled': str(log_item.is_enabled),
+                            'name': str(item.display_name) + " - " + str(log_item.display_name) + " - " + enabled_str,
                             'source_service': "",
                             'source_category': "",
                             'source_sourcetype': "",

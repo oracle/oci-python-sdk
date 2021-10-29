@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.11.02 - 21.11.02
+=====================
+* Added local user last login to CSV
+
+=====================
+21.10.19 - 21.10.19
+=====================
+* Added logs to load balancer
+* Added logs to compute instances
+* Added logs to Object Storage
+* Added additional attributes to object storage
+
+=====================
 21.10.12 - 21.10.12
 =====================
 * Database Home patch level to the csv
