@@ -19,6 +19,7 @@ Identity
     :template: autosummary/model_class.rst
 
     oci.identity.models.AddUserToGroupDetails
+    oci.identity.models.AllowedDomainLicenseTypeSummary
     oci.identity.models.ApiKey
     oci.identity.models.AuthToken
     oci.identity.models.AuthenticationPolicy
@@ -35,12 +36,16 @@ Identity
     oci.identity.models.BulkEditTagsResourceType
     oci.identity.models.BulkEditTagsResourceTypeCollection
     oci.identity.models.BulkMoveResourcesDetails
+    oci.identity.models.ChangeDomainCompartmentDetails
+    oci.identity.models.ChangeDomainLicenseTypeDetails
     oci.identity.models.ChangeTagNamespaceCompartmentDetail
+    oci.identity.models.ChangeTasDomainLicenseTypeDetails
     oci.identity.models.Compartment
     oci.identity.models.CreateApiKeyDetails
     oci.identity.models.CreateAuthTokenDetails
     oci.identity.models.CreateCompartmentDetails
     oci.identity.models.CreateCustomerSecretKeyDetails
+    oci.identity.models.CreateDomainDetails
     oci.identity.models.CreateDynamicGroupDetails
     oci.identity.models.CreateGroupDetails
     oci.identity.models.CreateIdentityProviderDetails
@@ -59,11 +64,21 @@ Identity
     oci.identity.models.CustomerSecretKey
     oci.identity.models.CustomerSecretKeySummary
     oci.identity.models.DefaultTagDefinitionValidator
+    oci.identity.models.Domain
+    oci.identity.models.DomainReplication
+    oci.identity.models.DomainReplicationStates
+    oci.identity.models.DomainSummary
     oci.identity.models.DynamicGroup
+    oci.identity.models.EnableReplicationToRegionDetails
     oci.identity.models.EnumTagDefinitionValidator
     oci.identity.models.FaultDomain
     oci.identity.models.FullyQualifiedScope
     oci.identity.models.Group
+    oci.identity.models.IamWorkRequest
+    oci.identity.models.IamWorkRequestErrorSummary
+    oci.identity.models.IamWorkRequestLogSummary
+    oci.identity.models.IamWorkRequestResource
+    oci.identity.models.IamWorkRequestSummary
     oci.identity.models.IdentityProvider
     oci.identity.models.IdentityProviderGroupSummary
     oci.identity.models.IdpGroupMapping
@@ -81,6 +96,7 @@ Identity
     oci.identity.models.Policy
     oci.identity.models.Region
     oci.identity.models.RegionSubscription
+    oci.identity.models.ReplicatedRegionDetails
     oci.identity.models.Saml2IdentityProvider
     oci.identity.models.ScimClientCredentials
     oci.identity.models.SmtpCredential
@@ -103,6 +119,7 @@ Identity
     oci.identity.models.UpdateAuthenticationPolicyDetails
     oci.identity.models.UpdateCompartmentDetails
     oci.identity.models.UpdateCustomerSecretKeyDetails
+    oci.identity.models.UpdateDomainDetails
     oci.identity.models.UpdateDynamicGroupDetails
     oci.identity.models.UpdateGroupDetails
     oci.identity.models.UpdateIdentityProviderDetails

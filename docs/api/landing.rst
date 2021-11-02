@@ -48,6 +48,7 @@ API Reference
 * :doc:`Database <database/client/oci.database.DatabaseClient>`
 * :doc:`Db Management <database_management/client/oci.database_management.DbManagementClient>`
 * :doc:`Database Migration <database_migration/client/oci.database_migration.DatabaseMigrationClient>`
+* :doc:`Database Tools <database_tools/client/oci.database_tools.DatabaseToolsClient>`
 * :doc:`Devops <devops/client/oci.devops.DevopsClient>`
 * :doc:`DNS <dns/client/oci.dns.DnsClient>`
 * :doc:`Appliance Export Job <dts/client/oci.dts.ApplianceExportJobClient>`
@@ -125,6 +126,7 @@ API Reference
 * :doc:`Sender Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SenderInvitationClient>`
 * :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
+* :doc:`Rewards <usage/client/oci.usage.RewardsClient>`
 * :doc:`Usageapi <usage_api/client/oci.usage_api.UsageapiClient>`
 * :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
 * :doc:`Vulnerability Scanning <vulnerability_scanning/client/oci.vulnerability_scanning.VulnerabilityScanningClient>`
@@ -185,6 +187,7 @@ API Reference
     database
     database_management
     database_migration
+    database_tools
     devops
     dns
     dts
@@ -229,6 +232,7 @@ API Reference
     service_catalog
     streaming
     tenant_manager_control_plane
+    usage
     usage_api
     vault
     vulnerability_scanning

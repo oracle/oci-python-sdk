@@ -5,9 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.11.02 - 2021-11-02
+=====================
+* Amended APEX application for version 21.1
+* Amended the APEX Theme
+* Added instructions to the installation guide how to change the Autonomous database to private endpoint.
+
+=====================
 21.07.13 - 2021-07-13
 =====================
-* Added Parallel queries to better performance for both APEX and usage2adw.py
+* Added Parallel queries for better performance for both APEX and usage2adw.py
 
 =====================
 21.05.25 - 2021-05-25

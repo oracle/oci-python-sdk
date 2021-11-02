@@ -86,6 +86,7 @@ class IdentityClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20160918',
+            'service_endpoint_template': 'https://identity.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False),
             'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
         }
@@ -94,6 +95,117 @@ class IdentityClient(object):
         self.base_client = BaseClient("identity", config, signer, identity_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
+
+    def activate_domain(self, domain_id, **kwargs):
+        """
+        If the domain's {@code lifecycleState} is INACTIVE,
+        1. Set the {@code lifecycleDetails} to ACTIVATING and asynchronously starts enabling
+           the domain and return 202 ACCEPTED.
+            1.1 Sets the domain status to ENABLED and set specified domain's
+                {@code lifecycleState} to ACTIVE and set the {@code lifecycleDetails} to null.
+
+        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+        the async operation's status. Deactivate a domain can be done using HTTP POST
+        /domains/{domainId}/actions/deactivate.
+
+        - If the domain's {@code lifecycleState} is ACTIVE, returns 202 ACCEPTED with no action
+          taken on service side.
+        - If domain is of {@code type} DEFAULT or DEFAULT_LIGHTWEIGHT or domain's {@code lifecycleState} is not INACTIVE,
+          returns 400 BAD REQUEST.
+        - If the domain doesn't exists, returns 404 NOT FOUND.
+        - If the authenticated user is part of the domain to be activated, returns 400 BAD REQUEST
+        - If error occurs while activating domain, returns 500 INTERNAL SERVER ERROR.
+
+
+        :param str domain_id: (required)
+            The OCID of the domain
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/activate_domain.py.html>`__ to see an example of how to use activate_domain API.
+        """
+        resource_path = "/domains/{domainId}/actions/activate"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "activate_domain got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "domainId": domain_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
 
     def activate_mfa_totp_device(self, user_id, mfa_totp_device_id, mfa_totp_token, **kwargs):
         """
@@ -858,6 +970,231 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def change_domain_compartment(self, domain_id, change_domain_compartment_details, **kwargs):
+        """
+        Change the containing compartment for a domain.
+
+        This is an asynchronous call where the Domain's compartment is changed and is updated with the new compartment information.
+        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+        the async operation's status.
+
+        The compartment change is complete when accessed via domain URL and
+        also returns new compartment OCID.
+        - If the domain doesn't exists, returns 404 NOT FOUND.
+        - If Domain {@code type} is DEFAULT or DEFAULT_LIGHTWEIGHT, return 400 BAD Request
+        - If Domain is not active or being updated, returns 400 BAD REQUEST.
+        - If error occurs while changing compartment for domain, return 500 INTERNAL SERVER ERROR.
+
+
+        :param str domain_id: (required)
+            The OCID of the domain
+
+        :param oci.identity.models.ChangeDomainCompartmentDetails change_domain_compartment_details: (required)
+            the request object for moving compartment of a domain
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/change_domain_compartment.py.html>`__ to see an example of how to use change_domain_compartment API.
+        """
+        resource_path = "/domains/{domainId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_domain_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "domainId": domain_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_domain_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_domain_compartment_details)
+
+    def change_domain_license_type(self, domain_id, change_domain_license_type_details, **kwargs):
+        """
+        If the domain's {@code lifecycleState} is ACTIVE, validates the requested {@code licenseType} update
+        is allowed and
+        1. Set the {@code lifecycleDetails} to UPDATING
+        2. Asynchronously starts updating the domain and return 202 ACCEPTED.
+            2.1 Successfully updates specified domain's {@code licenseType}.
+        3. On completion set the {@code lifecycleDetails} to null.
+        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+        the async operation's status.
+
+        - If license type update is successful, return 202 ACCEPTED
+        - If requested {@code licenseType} validation fails, returns 400 Bad request.
+        - If Domain is not active or being updated, returns 400 BAD REQUEST.
+        - If Domain {@code type} is DEFAULT or DEFAULT_LIGHTWEIGHT, return 400 BAD Request
+        - If the domain doesn't exists, returns 404 NOT FOUND
+        - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
+
+
+        :param str domain_id: (required)
+            The OCID of the domain
+
+        :param oci.identity.models.ChangeDomainLicenseTypeDetails change_domain_license_type_details: (required)
+            the request object for domain license type update
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/change_domain_license_type.py.html>`__ to see an example of how to use change_domain_license_type API.
+        """
+        resource_path = "/domains/{domainId}/actions/changeLicenseType"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_domain_license_type got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "domainId": domain_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_domain_license_type_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_domain_license_type_details)
+
     def change_tag_namespace_compartment(self, tag_namespace_id, change_tag_namespace_compartment_detail, **kwargs):
         """
         Moves the specified tag namespace to the specified compartment within the same tenancy.
@@ -1248,6 +1585,99 @@ class IdentityClient(object):
                 body=create_customer_secret_key_details,
                 response_type="CustomerSecretKey")
 
+    def create_domain(self, create_domain_details, **kwargs):
+        """
+        Creates a new domain in the tenancy with domain home in {@code homeRegion}. This is an asynchronous call - where, at start,
+        {@code lifecycleState} of this domain is set to CREATING and {@code lifecycleDetails} to UPDATING. On domain creation completion
+        this Domain's {@code lifecycleState} will be set to ACTIVE and {@code lifecycleDetails} to null.
+
+        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+        the async operation's status.
+
+        After creating a `Domain`, make sure its `lifecycleState` changes from CREATING to ACTIVE
+        before using it.
+        If the domain's {@code displayName} already exists, returns 400 BAD REQUEST.
+        If any one of admin related fields are provided and one of the following 3 fields
+        - {@code adminEmail}, {@code adminLastName} and {@code adminUserName} - is not provided,
+        returns 400 BAD REQUEST.
+        - If {@code isNotificationBypassed} is NOT provided when admin information is provided,
+        returns 400 BAD REQUEST.
+        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+
+
+        :param oci.identity.models.CreateDomainDetails create_domain_details: (required)
+            The request object for creating a new domain
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/create_domain.py.html>`__ to see an example of how to use create_domain API.
+        """
+        resource_path = "/domains"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_domain got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_domain_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_domain_details)
+
     def create_dynamic_group(self, create_dynamic_group_details, **kwargs):
         """
         Creates a new dynamic group in your tenancy.
@@ -1441,6 +1871,8 @@ class IdentityClient(object):
 
     def create_identity_provider(self, create_identity_provider_details, **kwargs):
         """
+        **Deprecated.** For more information, see `Deprecated IAM Service APIs`__.
+
         Creates a new identity provider in your tenancy. For more information, see
         `Identity Providers and Federation`__.
 
@@ -1460,6 +1892,7 @@ class IdentityClient(object):
         be CREATING. Before using the object, first make sure its `lifecycleState` has
         changed to ACTIVE.
 
+        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
         __ https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1535,8 +1968,12 @@ class IdentityClient(object):
 
     def create_idp_group_mapping(self, create_idp_group_mapping_details, identity_provider_id, **kwargs):
         """
+        **Deprecated.** For more information, see `Deprecated IAM Service APIs`__.
+
         Creates a single mapping between an IdP group and an IAM Service
         :class:`Group`.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param oci.identity.models.CreateIdpGroupMappingDetails create_idp_group_mapping_details: (required)
@@ -2763,6 +3200,118 @@ class IdentityClient(object):
                 body=create_user_details,
                 response_type="User")
 
+    def deactivate_domain(self, domain_id, **kwargs):
+        """
+        If the domain's {@code lifecycleState} is ACTIVE and no active Apps are present in domain,
+        1. Set the {@code lifecycleDetails} to DEACTIVATING and asynchronously starts disabling
+           the domain and return 202 ACCEPTED.
+            1.1 Sets the domain status to DISABLED and set specified domain's
+                {@code lifecycleState} to INACTIVE and set the {@code lifecycleDetails} to null.
+
+        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+        the async operation's status. Activate a domain can be done using HTTP POST
+        /domains/{domainId}/actions/activate.
+
+        - If the domain's {@code lifecycleState} is INACTIVE, returns 202 ACCEPTED with no action
+          taken on service side.
+        - If domain is of {@code type} DEFAULT or DEFAULT_LIGHTWEIGHT or domain's {@code lifecycleState}
+          is not ACTIVE, returns 400 BAD REQUEST.
+        - If the domain doesn't exists, returns 404 NOT FOUND.
+        - If any active Apps in domain, returns 400 BAD REQUEST.
+        - If the authenticated user is part of the domain to be activated, returns 400 BAD REQUEST
+        - If error occurs while deactivating domain, returns 500 INTERNAL SERVER ERROR.
+
+
+        :param str domain_id: (required)
+            The OCID of the domain
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/deactivate_domain.py.html>`__ to see an example of how to use deactivate_domain API.
+        """
+        resource_path = "/domains/{domainId}/actions/deactivate"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "deactivate_domain got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "domainId": domain_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_api_key(self, user_id, fingerprint, **kwargs):
         """
         Deletes the specified API signing key for the specified user.
@@ -3096,6 +3645,107 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def delete_domain(self, domain_id, **kwargs):
+        """
+        Soft Deletes a domain.
+
+        This is an asynchronous API, where, if the domain's {@code lifecycleState} is INACTIVE and
+        no active Apps are present in underlying stripe,
+          1. Sets the specified domain's {@code lifecycleState} to DELETING.
+          2. Domains marked as DELETING will be cleaned up by a periodic task unless customer request it to be undo via ticket.
+          3. Work request is created and returned as opc-work-request-id along with 202 ACCEPTED.
+        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+        the async operation's status.
+
+        - If the domain's {@code lifecycleState} is DELETING, returns 202 Accepted as a deletion
+          is already in progress for this domain.
+        - If the domain doesn't exists, returns 404 NOT FOUND.
+        - If domain is of {@code type} DEFAULT or DEFAULT_LIGHTWEIGHT, returns 400 BAD REQUEST.
+        - If any active Apps in domain, returns 400 BAD REQUEST.
+        - If the authenticated user is part of the domain to be deleted, returns 400 BAD REQUEST.
+        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+
+
+        :param str domain_id: (required)
+            The OCID of the domain
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/delete_domain.py.html>`__ to see an example of how to use delete_domain API.
+        """
+        resource_path = "/domains/{domainId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_domain got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "domainId": domain_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
     def delete_dynamic_group(self, dynamic_group_id, **kwargs):
         """
         Deletes the specified dynamic group.
@@ -3256,8 +3906,12 @@ class IdentityClient(object):
 
     def delete_identity_provider(self, identity_provider_id, **kwargs):
         """
+        **Deprecated.** For more information, see `Deprecated IAM Service APIs`__.
+
         Deletes the specified identity provider. The identity provider must not have
         any group mappings (see :class:`IdpGroupMapping`).
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -3336,7 +3990,11 @@ class IdentityClient(object):
 
     def delete_idp_group_mapping(self, identity_provider_id, mapping_id, **kwargs):
         """
+        **Deprecated.** For more information, see `Deprecated IAM Service APIs`__.
+
         Deletes the specified group mapping.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -4267,6 +4925,118 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params)
 
+    def enable_replication_to_region(self, domain_id, enable_replication_to_region_details, **kwargs):
+        """
+        Replicate domain to a new region. This is an asynchronous call - where, at start,
+        {@code state} of this domain in replica region is set to ENABLING_REPLICATION.
+        On domain replication completion the {@code state} will be set to REPLICATION_ENABLED.
+
+        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+        the async operation's status.
+
+        If the replica region's {@code state} is already ENABLING_REPLICATION or REPLICATION_ENABLED,
+        returns 409 CONFLICT.
+        - If the domain doesn't exists, returns 404 NOT FOUND.
+        - If home region is same as replication region, return 400 BAD REQUEST.
+        - If Domain is not active or being updated, returns 400 BAD REQUEST.
+        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+
+
+        :param str domain_id: (required)
+            The OCID of the domain
+
+        :param oci.identity.models.EnableReplicationToRegionDetails enable_replication_to_region_details: (required)
+            the request object for region we are replicating domain region
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            may be rejected).
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/enable_replication_to_region.py.html>`__ to see an example of how to use enable_replication_to_region API.
+        """
+        resource_path = "/domains/{domainId}/actions/enableReplicationToRegion"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "opc_retry_token",
+            "if_match"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "enable_replication_to_region got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "domainId": domain_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=enable_replication_to_region_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=enable_replication_to_region_details)
+
     def generate_totp_seed(self, user_id, mfa_totp_device_id, **kwargs):
         """
         Generate seed for the MFA TOTP device.
@@ -4500,6 +5270,89 @@ class IdentityClient(object):
                 header_params=header_params,
                 response_type="Compartment")
 
+    def get_domain(self, domain_id, **kwargs):
+        """
+        Get the specified domain's information.
+
+        - If the domain doesn't exists, returns 404 NOT FOUND.
+        - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
+
+
+        :param str domain_id: (required)
+            The OCID of the domain
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.Domain`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_domain.py.html>`__ to see an example of how to use get_domain API.
+        """
+        resource_path = "/domains/{domainId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_domain got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "domainId": domain_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Domain")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Domain")
+
     def get_dynamic_group(self, dynamic_group_id, **kwargs):
         """
         Gets the specified dynamic group's information.
@@ -4644,9 +5497,97 @@ class IdentityClient(object):
                 header_params=header_params,
                 response_type="Group")
 
+    def get_iam_work_request(self, iam_work_request_id, **kwargs):
+        """
+        Gets details on a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
+        iam work request id that can be provided in this API to track the current status of the operation.
+
+        - If workrequest exists, returns 202 ACCEPTED
+        - If workrequest does not exist, returns 404 NOT FOUND
+
+
+        :param str iam_work_request_id: (required)
+            The OCID of the IAM work request.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.identity.models.IamWorkRequest`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/get_iam_work_request.py.html>`__ to see an example of how to use get_iam_work_request API.
+        """
+        resource_path = "/iamWorkRequests/{iamWorkRequestId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_iam_work_request got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "iamWorkRequestId": iam_work_request_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IamWorkRequest")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="IamWorkRequest")
+
     def get_identity_provider(self, identity_provider_id, **kwargs):
         """
+        **Deprecated.** For more information, see `Deprecated IAM Service APIs`__.
+
         Gets the specified identity provider's information.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -4716,7 +5657,11 @@ class IdentityClient(object):
 
     def get_idp_group_mapping(self, identity_provider_id, mapping_id, **kwargs):
         """
+        **Deprecated.** For more information, see `Deprecated IAM Service APIs`__.
+
         Gets the specified group mapping.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -5219,7 +6164,7 @@ class IdentityClient(object):
     def get_tagging_work_request(self, work_request_id, **kwargs):
         """
         Gets details on a specified work request. The workRequestID is returned in the opc-workrequest-id header
-        for any asynchronous operation in the Identity and Access Management service.
+        for any asynchronous operation in tagging service.
 
 
         :param str work_request_id: (required)
@@ -5571,7 +6516,7 @@ class IdentityClient(object):
     def get_work_request(self, work_request_id, **kwargs):
         """
         Gets details on a specified work request. The workRequestID is returned in the opc-workrequest-id header
-        for any asynchronous operation in the Identity and Access Management service.
+        for any asynchronous operation in the compartment service.
 
 
         :param str work_request_id: (required)
@@ -5638,6 +6583,88 @@ class IdentityClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="WorkRequest")
+
+    def list_allowed_domain_license_types(self, **kwargs):
+        """
+        List the allowed domain license types supported by OCI
+        If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
+        If {@code name} is provided, it filters and returns resources that match the given license type name.
+        Otherwise, returns all valid license types that are currently supported.
+
+        - If license type details are retrieved sucessfully, return 202 ACCEPTED.
+        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+
+
+        :param str current_license_type_name: (optional)
+            The domain license type
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.AllowedDomainLicenseTypeSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_allowed_domain_license_types.py.html>`__ to see an example of how to use list_allowed_domain_license_types API.
+        """
+        resource_path = "/allowedDomainLicenseTypes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "current_license_type_name",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_allowed_domain_license_types got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "currentLicenseTypeName": kwargs.get("current_license_type_name", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AllowedDomainLicenseTypeSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[AllowedDomainLicenseTypeSummary]")
 
     def list_api_keys(self, user_id, **kwargs):
         """
@@ -6355,6 +7382,177 @@ class IdentityClient(object):
                 header_params=header_params,
                 response_type="list[CustomerSecretKeySummary]")
 
+    def list_domains(self, compartment_id, **kwargs):
+        """
+        List all domains that are homed or have a replica region in current region.
+        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+
+        :param str display_name: (optional)
+            The mutable display name of the domain
+
+        :param str url: (optional)
+            The region agnostic domain URL
+
+        :param str home_region_url: (optional)
+            The region specific domain URL
+
+        :param str type: (optional)
+            The domain type
+
+        :param str license_type: (optional)
+            The domain license type
+
+        :param bool is_hidden_on_login: (optional)
+            Indicate if the domain is visible at login screen or not
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param str name: (optional)
+            A filter to only return resources that match the given name exactly.
+
+        :param str sort_by: (optional)
+            The field to sort by. You can provide one sort order (`sortOrder`). Default order for
+            TIMECREATED is descending. Default order for NAME is ascending. The NAME
+            sort order is case sensitive.
+
+            **Note:** In general, some \"List\" operations (for example, `ListInstances`) let you
+            optionally filter by Availability Domain if the scope of the resource type is within a
+            single Availability Domain. If you call one of these \"List\" operations without specifying
+            an Availability Domain, the resources are grouped by Availability Domain, then sorted.
+
+            Allowed values are: "TIMECREATED", "NAME"
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The NAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param str lifecycle_state: (optional)
+            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+
+            Allowed values are: "CREATING", "ACTIVE", "DELETING", "INACTIVE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.DomainSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_domains.py.html>`__ to see an example of how to use list_domains API.
+        """
+        resource_path = "/domains"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "display_name",
+            "url",
+            "home_region_url",
+            "type",
+            "license_type",
+            "is_hidden_on_login",
+            "page",
+            "limit",
+            "name",
+            "sort_by",
+            "sort_order",
+            "opc_request_id",
+            "lifecycle_state"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_domains got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "DELETING", "INACTIVE"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "displayName": kwargs.get("display_name", missing),
+            "url": kwargs.get("url", missing),
+            "homeRegionUrl": kwargs.get("home_region_url", missing),
+            "type": kwargs.get("type", missing),
+            "licenseType": kwargs.get("license_type", missing),
+            "isHiddenOnLogin": kwargs.get("is_hidden_on_login", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "name": kwargs.get("name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "lifecycleState": kwargs.get("lifecycle_state", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DomainSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[DomainSummary]")
+
     def list_dynamic_groups(self, compartment_id, **kwargs):
         """
         Lists the dynamic groups in your tenancy. You must specify your tenancy's OCID as the value for
@@ -6702,9 +7900,336 @@ class IdentityClient(object):
                 header_params=header_params,
                 response_type="list[Group]")
 
+    def list_iam_work_request_errors(self, iam_work_request_id, **kwargs):
+        """
+        Gets error details for a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
+        iam work request id that can be provided in this API to track the current status of the operation.
+
+        - If workrequest exists, returns 202 ACCEPTED
+        - If workrequest does not exist, returns 404 NOT FOUND
+
+
+        :param str iam_work_request_id: (required)
+            The OCID of the IAM work request.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The NAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.IamWorkRequestErrorSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_iam_work_request_errors.py.html>`__ to see an example of how to use list_iam_work_request_errors API.
+        """
+        resource_path = "/iamWorkRequests/{iamWorkRequestId}/errors"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_iam_work_request_errors got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "iamWorkRequestId": iam_work_request_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IamWorkRequestErrorSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IamWorkRequestErrorSummary]")
+
+    def list_iam_work_request_logs(self, iam_work_request_id, **kwargs):
+        """
+        Gets logs for a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
+        iam work request id that can be provided in this API to track the current status of the operation.
+
+        - If workrequest exists, returns 202 ACCEPTED
+        - If workrequest does not exist, returns 404 NOT FOUND
+
+
+        :param str iam_work_request_id: (required)
+            The OCID of the IAM work request.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`). The NAME sort order
+            is case sensitive.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.IamWorkRequestLogSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_iam_work_request_logs.py.html>`__ to see an example of how to use list_iam_work_request_logs API.
+        """
+        resource_path = "/iamWorkRequests/{iamWorkRequestId}/logs"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_iam_work_request_logs got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "iamWorkRequestId": iam_work_request_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IamWorkRequestLogSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IamWorkRequestLogSummary]")
+
+    def list_iam_work_requests(self, compartment_id, **kwargs):
+        """
+        List the IAM work requests in compartment
+
+        - If IAM workrequest  details are retrieved sucessfully, return 202 ACCEPTED.
+        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+
+
+        :param str compartment_id: (required)
+            The OCID of the compartment (remember that the tenancy is simply the root compartment).
+
+        :param str page: (optional)
+            The value of the `opc-next-page` response header from the previous \"List\" call.
+
+        :param int limit: (optional)
+            The maximum number of items to return in a paginated \"List\" call.
+
+        :param str resource_identifier: (optional)
+            The identifier of the resource the work request affects.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.identity.models.IamWorkRequestSummary`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/list_iam_work_requests.py.html>`__ to see an example of how to use list_iam_work_requests API.
+        """
+        resource_path = "/iamWorkRequests"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "page",
+            "limit",
+            "resource_identifier",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_iam_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing),
+            "resourceIdentifier": kwargs.get("resource_identifier", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IamWorkRequestSummary]")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="list[IamWorkRequestSummary]")
+
     def list_identity_provider_groups(self, identity_provider_id, **kwargs):
         """
+        **Deprecated.** For more information, see `Deprecated IAM Service APIs`__.
+
         Lists the identity provider groups.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -6812,11 +8337,14 @@ class IdentityClient(object):
 
     def list_identity_providers(self, protocol, compartment_id, **kwargs):
         """
+        **Deprecated.** For more information, see `Deprecated IAM Service APIs`__.
+
         Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
         identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
         compartment ID (remember that the tenancy is simply the root compartment).
         See `Where to Get the Tenancy's OCID and User's OCID`__.
 
+        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
         __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five
 
 
@@ -6956,7 +8484,11 @@ class IdentityClient(object):
 
     def list_idp_group_mappings(self, identity_provider_id, **kwargs):
         """
+        **Deprecated.** For more information, see `Deprecated IAM Service APIs`__.
+
         Lists the group mappings for the specified identity provider.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -9408,6 +10940,107 @@ class IdentityClient(object):
                 body=update_customer_secret_key_details,
                 response_type="CustomerSecretKeySummary")
 
+    def update_domain(self, domain_id, update_domain_details, **kwargs):
+        """
+        Updates domain information and associated stripe. This is an asynchronous call where
+        the associated stripe and domain are updated.
+
+        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
+        the async operation's status.
+
+        - If the {@code displayName} is not unique within the tenancy, returns 400 BAD REQUEST.
+        - If any field other than {@code description} is requested to be updated for DEFAULT domain,
+        returns 400 BAD REQUEST.
+        - If Domain is not active or being updated, returns 400 BAD REQUEST.
+        - If Domain {@code type} is DEFAULT or DEFAULT_LIGHTWEIGHT, return 400 BAD Request
+        - If the domain doesn't exists, returns 404 NOT FOUND.
+
+
+        :param str domain_id: (required)
+            The OCID of the domain
+
+        :param oci.identity.models.UpdateDomainDetails update_domain_details: (required)
+            Request object for updating the Domain.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+            particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/identity/update_domain.py.html>`__ to see an example of how to use update_domain API.
+        """
+        resource_path = "/domains/{domainId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_domain got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "domainId": domain_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_domain_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_domain_details)
+
     def update_dynamic_group(self, dynamic_group_id, update_dynamic_group_details, **kwargs):
         """
         Updates the specified dynamic group.
@@ -9582,7 +11215,11 @@ class IdentityClient(object):
 
     def update_identity_provider(self, identity_provider_id, update_identity_provider_details, **kwargs):
         """
+        **Deprecated.** For more information, see `Deprecated IAM Service APIs`__.
+
         Updates the specified identity provider.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)
@@ -9668,7 +11305,11 @@ class IdentityClient(object):
 
     def update_idp_group_mapping(self, identity_provider_id, mapping_id, update_idp_group_mapping_details, **kwargs):
         """
+        **Deprecated.** For more information, see `Deprecated IAM Service APIs`__.
+
         Updates the specified group mapping.
+
+        __ https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm
 
 
         :param str identity_provider_id: (required)

@@ -5,6 +5,7 @@
 from __future__ import absolute_import
 
 from .add_user_to_group_details import AddUserToGroupDetails
+from .allowed_domain_license_type_summary import AllowedDomainLicenseTypeSummary
 from .api_key import ApiKey
 from .auth_token import AuthToken
 from .authentication_policy import AuthenticationPolicy
@@ -21,12 +22,16 @@ from .bulk_edit_tags_details import BulkEditTagsDetails
 from .bulk_edit_tags_resource_type import BulkEditTagsResourceType
 from .bulk_edit_tags_resource_type_collection import BulkEditTagsResourceTypeCollection
 from .bulk_move_resources_details import BulkMoveResourcesDetails
+from .change_domain_compartment_details import ChangeDomainCompartmentDetails
+from .change_domain_license_type_details import ChangeDomainLicenseTypeDetails
 from .change_tag_namespace_compartment_detail import ChangeTagNamespaceCompartmentDetail
+from .change_tas_domain_license_type_details import ChangeTasDomainLicenseTypeDetails
 from .compartment import Compartment
 from .create_api_key_details import CreateApiKeyDetails
 from .create_auth_token_details import CreateAuthTokenDetails
 from .create_compartment_details import CreateCompartmentDetails
 from .create_customer_secret_key_details import CreateCustomerSecretKeyDetails
+from .create_domain_details import CreateDomainDetails
 from .create_dynamic_group_details import CreateDynamicGroupDetails
 from .create_group_details import CreateGroupDetails
 from .create_identity_provider_details import CreateIdentityProviderDetails
@@ -45,11 +50,21 @@ from .create_user_details import CreateUserDetails
 from .customer_secret_key import CustomerSecretKey
 from .customer_secret_key_summary import CustomerSecretKeySummary
 from .default_tag_definition_validator import DefaultTagDefinitionValidator
+from .domain import Domain
+from .domain_replication import DomainReplication
+from .domain_replication_states import DomainReplicationStates
+from .domain_summary import DomainSummary
 from .dynamic_group import DynamicGroup
+from .enable_replication_to_region_details import EnableReplicationToRegionDetails
 from .enum_tag_definition_validator import EnumTagDefinitionValidator
 from .fault_domain import FaultDomain
 from .fully_qualified_scope import FullyQualifiedScope
 from .group import Group
+from .iam_work_request import IamWorkRequest
+from .iam_work_request_error_summary import IamWorkRequestErrorSummary
+from .iam_work_request_log_summary import IamWorkRequestLogSummary
+from .iam_work_request_resource import IamWorkRequestResource
+from .iam_work_request_summary import IamWorkRequestSummary
 from .identity_provider import IdentityProvider
 from .identity_provider_group_summary import IdentityProviderGroupSummary
 from .idp_group_mapping import IdpGroupMapping
@@ -67,6 +82,7 @@ from .password_policy import PasswordPolicy
 from .policy import Policy
 from .region import Region
 from .region_subscription import RegionSubscription
+from .replicated_region_details import ReplicatedRegionDetails
 from .saml2_identity_provider import Saml2IdentityProvider
 from .scim_client_credentials import ScimClientCredentials
 from .smtp_credential import SmtpCredential
@@ -89,6 +105,7 @@ from .update_auth_token_details import UpdateAuthTokenDetails
 from .update_authentication_policy_details import UpdateAuthenticationPolicyDetails
 from .update_compartment_details import UpdateCompartmentDetails
 from .update_customer_secret_key_details import UpdateCustomerSecretKeyDetails
+from .update_domain_details import UpdateDomainDetails
 from .update_dynamic_group_details import UpdateDynamicGroupDetails
 from .update_group_details import UpdateGroupDetails
 from .update_identity_provider_details import UpdateIdentityProviderDetails
@@ -117,6 +134,7 @@ from .work_request_summary import WorkRequestSummary
 # Maps type names to classes for identity services.
 identity_type_mapping = {
     "AddUserToGroupDetails": AddUserToGroupDetails,
+    "AllowedDomainLicenseTypeSummary": AllowedDomainLicenseTypeSummary,
     "ApiKey": ApiKey,
     "AuthToken": AuthToken,
     "AuthenticationPolicy": AuthenticationPolicy,
@@ -133,12 +151,16 @@ identity_type_mapping = {
     "BulkEditTagsResourceType": BulkEditTagsResourceType,
     "BulkEditTagsResourceTypeCollection": BulkEditTagsResourceTypeCollection,
     "BulkMoveResourcesDetails": BulkMoveResourcesDetails,
+    "ChangeDomainCompartmentDetails": ChangeDomainCompartmentDetails,
+    "ChangeDomainLicenseTypeDetails": ChangeDomainLicenseTypeDetails,
     "ChangeTagNamespaceCompartmentDetail": ChangeTagNamespaceCompartmentDetail,
+    "ChangeTasDomainLicenseTypeDetails": ChangeTasDomainLicenseTypeDetails,
     "Compartment": Compartment,
     "CreateApiKeyDetails": CreateApiKeyDetails,
     "CreateAuthTokenDetails": CreateAuthTokenDetails,
     "CreateCompartmentDetails": CreateCompartmentDetails,
     "CreateCustomerSecretKeyDetails": CreateCustomerSecretKeyDetails,
+    "CreateDomainDetails": CreateDomainDetails,
     "CreateDynamicGroupDetails": CreateDynamicGroupDetails,
     "CreateGroupDetails": CreateGroupDetails,
     "CreateIdentityProviderDetails": CreateIdentityProviderDetails,
@@ -157,11 +179,21 @@ identity_type_mapping = {
     "CustomerSecretKey": CustomerSecretKey,
     "CustomerSecretKeySummary": CustomerSecretKeySummary,
     "DefaultTagDefinitionValidator": DefaultTagDefinitionValidator,
+    "Domain": Domain,
+    "DomainReplication": DomainReplication,
+    "DomainReplicationStates": DomainReplicationStates,
+    "DomainSummary": DomainSummary,
     "DynamicGroup": DynamicGroup,
+    "EnableReplicationToRegionDetails": EnableReplicationToRegionDetails,
     "EnumTagDefinitionValidator": EnumTagDefinitionValidator,
     "FaultDomain": FaultDomain,
     "FullyQualifiedScope": FullyQualifiedScope,
     "Group": Group,
+    "IamWorkRequest": IamWorkRequest,
+    "IamWorkRequestErrorSummary": IamWorkRequestErrorSummary,
+    "IamWorkRequestLogSummary": IamWorkRequestLogSummary,
+    "IamWorkRequestResource": IamWorkRequestResource,
+    "IamWorkRequestSummary": IamWorkRequestSummary,
     "IdentityProvider": IdentityProvider,
     "IdentityProviderGroupSummary": IdentityProviderGroupSummary,
     "IdpGroupMapping": IdpGroupMapping,
@@ -179,6 +211,7 @@ identity_type_mapping = {
     "Policy": Policy,
     "Region": Region,
     "RegionSubscription": RegionSubscription,
+    "ReplicatedRegionDetails": ReplicatedRegionDetails,
     "Saml2IdentityProvider": Saml2IdentityProvider,
     "ScimClientCredentials": ScimClientCredentials,
     "SmtpCredential": SmtpCredential,
@@ -201,6 +234,7 @@ identity_type_mapping = {
     "UpdateAuthenticationPolicyDetails": UpdateAuthenticationPolicyDetails,
     "UpdateCompartmentDetails": UpdateCompartmentDetails,
     "UpdateCustomerSecretKeyDetails": UpdateCustomerSecretKeyDetails,
+    "UpdateDomainDetails": UpdateDomainDetails,
     "UpdateDynamicGroupDetails": UpdateDynamicGroupDetails,
     "UpdateGroupDetails": UpdateGroupDetails,
     "UpdateIdentityProviderDetails": UpdateIdentityProviderDetails,

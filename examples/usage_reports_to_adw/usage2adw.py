@@ -3,6 +3,9 @@
 # Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 #
+# DISCLAIMER – This is not an official Oracle application,  It does not supported by Oracle Support,
+# It should NOT be used for utilization calculation purposes, and rather OCI's official
+#
 # usage2adw.py
 #
 # @author: Adi Zohar
@@ -70,7 +73,7 @@ import requests
 import time
 
 
-version = "21.07.13"
+version = "21.11.01"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 

@@ -6,9 +6,11 @@ Authentication to OCI by User or instance principals.
 
 It uses APEX for Visualization and generates Daily e-mail report.
 
-**Developed by Adi Zohar, Feb 2020**
+**DISCLAIMER – This is not an official Oracle application,  It does not supported by Oracle Support, It should NOT be used for utilization calculation purposes, and rather OCI's official 
+[cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
+and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-** DISCLAIMER – This is not an official Oracle application **
+**Developed by Adi Zohar, 2020-2021**
 
 ## Main Features
 - Usage Current State
