@@ -48,14 +48,21 @@ METADATA_AUTH_HEADERS = {'Authorization': 'Bearer Oracle'}
 REGIONS_CONFIG_FILE_PATH = os.path.join('~', '.oci', 'regions-config.json')
 
 # Enumerate region information sources outside of lookups
-ExternalSources = Enum('ExternalSources', ['REGIONS_CFG_FILE', 'ENV_VAR', 'IMDS'])
+ExternalSources = Enum('ExternalSources', ['REGIONS_CFG_FILE', 'ENV_VAR', 'IMDS', 'SECOND_LEVEL_DOMAIN_FALLBACK'])
+
+# Constant env name for second level domain fallback.
+DEFAULT_REALM_ENV_VARNAME = "OCI_DEFAULT_REALM"
+
+# Variable for second_level_domain_fallback, initially empty string, but will be set to fallback if env.DEFAULT_REALM_ENV_VARNAME exists
+second_level_domain_fallback = ""
 
 # Dict to track if we have read the ExternalSources
 # Reading from IMDS is opt-in and can be enabled by calling enable_instance_metadata_service()
 _has_been_read_external_sources = {
     ExternalSources.REGIONS_CFG_FILE: False,
     ExternalSources.ENV_VAR: False,
-    ExternalSources.IMDS: True
+    ExternalSources.IMDS: True,
+    ExternalSources.SECOND_LEVEL_DOMAIN_FALLBACK: False
 }
 
 logger = logging.getLogger(__name__)
@@ -173,6 +180,11 @@ def _get_source_has_been_read(source):
 
 
 def _check_and_add_region_metadata(region):
+    if not _get_source_has_been_read(ExternalSources.SECOND_LEVEL_DOMAIN_FALLBACK):
+        global second_level_domain_fallback
+        second_level_domain_fallback = os.environ.get(DEFAULT_REALM_ENV_VARNAME)
+        _set_source_has_been_read(ExternalSources.SECOND_LEVEL_DOMAIN_FALLBACK)
+
     # Follow the hierarchy of sources
     if _set_region_metadata_from_cfg_file(region):
         logger.debug("Added metadata information for {} region from regions config file".format(region))
@@ -183,6 +195,9 @@ def _check_and_add_region_metadata(region):
     elif _set_region_from_instance_metadata_service(region):
         logger.debug("Added metadata information for {} region from IMDS".format(region))
         return True
+    elif second_level_domain_fallback:
+        logger.debug("Unknown regionId '{}', default realm is defined, will fallback to '{}'".format(region, second_level_domain_fallback))
+        return False
     logger.debug("Unknown regionId '{}', will assume it's in Realm OC1".format(region))
     return False
 
@@ -362,8 +377,18 @@ def _endpoint(service, region, service_endpoint_template=None):
 
 
 def _second_level_domain(region):
+    if not _get_source_has_been_read(ExternalSources.SECOND_LEVEL_DOMAIN_FALLBACK):
+        global second_level_domain_fallback
+        second_level_domain_fallback = os.environ.get(DEFAULT_REALM_ENV_VARNAME)
+        _set_source_has_been_read(ExternalSources.SECOND_LEVEL_DOMAIN_FALLBACK)
+
     if region in REGION_REALMS.keys():
         realm = REGION_REALMS[region]
+    elif second_level_domain_fallback:
+        # if second_level_domain_fallback exists, default to using "unknown" realm
+        # second_level_domain_fallback as the second level domain
+        REALMS["unknown"] = second_level_domain_fallback
+        realm = "unknown"
     else:
         # default realm to OC1
         realm = 'oc1'

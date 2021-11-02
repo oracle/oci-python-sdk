@@ -220,6 +220,14 @@ class CloudVmCluster(object):
             The value to assign to the zone_id property of this CloudVmCluster.
         :type zone_id: str
 
+        :param scan_listener_port_tcp:
+            The value to assign to the scan_listener_port_tcp property of this CloudVmCluster.
+        :type scan_listener_port_tcp: int
+
+        :param scan_listener_port_tcp_ssl:
+            The value to assign to the scan_listener_port_tcp_ssl property of this CloudVmCluster.
+        :type scan_listener_port_tcp_ssl: int
+
         """
         self.swagger_types = {
             'iorm_config_cache': 'ExadataIormConfig',
@@ -259,7 +267,9 @@ class CloudVmCluster(object):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'scan_dns_name': 'str',
-            'zone_id': 'str'
+            'zone_id': 'str',
+            'scan_listener_port_tcp': 'int',
+            'scan_listener_port_tcp_ssl': 'int'
         }
 
         self.attribute_map = {
@@ -300,7 +310,9 @@ class CloudVmCluster(object):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'scan_dns_name': 'scanDnsName',
-            'zone_id': 'zoneId'
+            'zone_id': 'zoneId',
+            'scan_listener_port_tcp': 'scanListenerPortTcp',
+            'scan_listener_port_tcp_ssl': 'scanListenerPortTcpSsl'
         }
 
         self._iorm_config_cache = None
@@ -341,6 +353,8 @@ class CloudVmCluster(object):
         self._defined_tags = None
         self._scan_dns_name = None
         self._zone_id = None
+        self._scan_listener_port_tcp = None
+        self._scan_listener_port_tcp_ssl = None
 
     @property
     def iorm_config_cache(self):
@@ -1383,6 +1397,54 @@ class CloudVmCluster(object):
         :type: str
         """
         self._zone_id = zone_id
+
+    @property
+    def scan_listener_port_tcp(self):
+        """
+        Gets the scan_listener_port_tcp of this CloudVmCluster.
+        The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+
+
+        :return: The scan_listener_port_tcp of this CloudVmCluster.
+        :rtype: int
+        """
+        return self._scan_listener_port_tcp
+
+    @scan_listener_port_tcp.setter
+    def scan_listener_port_tcp(self, scan_listener_port_tcp):
+        """
+        Sets the scan_listener_port_tcp of this CloudVmCluster.
+        The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+
+
+        :param scan_listener_port_tcp: The scan_listener_port_tcp of this CloudVmCluster.
+        :type: int
+        """
+        self._scan_listener_port_tcp = scan_listener_port_tcp
+
+    @property
+    def scan_listener_port_tcp_ssl(self):
+        """
+        Gets the scan_listener_port_tcp_ssl of this CloudVmCluster.
+        The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+
+
+        :return: The scan_listener_port_tcp_ssl of this CloudVmCluster.
+        :rtype: int
+        """
+        return self._scan_listener_port_tcp_ssl
+
+    @scan_listener_port_tcp_ssl.setter
+    def scan_listener_port_tcp_ssl(self, scan_listener_port_tcp_ssl):
+        """
+        Sets the scan_listener_port_tcp_ssl of this CloudVmCluster.
+        The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+
+
+        :param scan_listener_port_tcp_ssl: The scan_listener_port_tcp_ssl of this CloudVmCluster.
+        :type: int
+        """
+        self._scan_listener_port_tcp_ssl = scan_listener_port_tcp_ssl
 
     def __repr__(self):
         return formatted_flat_dict(self)
