@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.db.cca</groupId>
         <artifactId>customer-controlled-access-spec</artifactId>
-        <version>1.1.113</version>
+        <version>1.1.184</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

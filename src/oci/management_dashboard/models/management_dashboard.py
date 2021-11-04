@@ -128,6 +128,10 @@ class ManagementDashboard(object):
             The value to assign to the parameters_config property of this ManagementDashboard.
         :type parameters_config: list[object]
 
+        :param drilldown_config:
+            The value to assign to the drilldown_config property of this ManagementDashboard.
+        :type drilldown_config: list[object]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ManagementDashboard.
         :type freeform_tags: dict(str, str)
@@ -164,6 +168,7 @@ class ManagementDashboard(object):
             'saved_searches': 'list[ManagementSavedSearch]',
             'lifecycle_state': 'str',
             'parameters_config': 'list[object]',
+            'drilldown_config': 'list[object]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -195,6 +200,7 @@ class ManagementDashboard(object):
             'saved_searches': 'savedSearches',
             'lifecycle_state': 'lifecycleState',
             'parameters_config': 'parametersConfig',
+            'drilldown_config': 'drilldownConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -225,6 +231,7 @@ class ManagementDashboard(object):
         self._saved_searches = None
         self._lifecycle_state = None
         self._parameters_config = None
+        self._drilldown_config = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -857,6 +864,30 @@ class ManagementDashboard(object):
         :type: list[object]
         """
         self._parameters_config = parameters_config
+
+    @property
+    def drilldown_config(self):
+        """
+        Gets the drilldown_config of this ManagementDashboard.
+        Drill-down configuration to define the destination of a drill-down action.
+
+
+        :return: The drilldown_config of this ManagementDashboard.
+        :rtype: list[object]
+        """
+        return self._drilldown_config
+
+    @drilldown_config.setter
+    def drilldown_config(self, drilldown_config):
+        """
+        Sets the drilldown_config of this ManagementDashboard.
+        Drill-down configuration to define the destination of a drill-down action.
+
+
+        :param drilldown_config: The drilldown_config of this ManagementDashboard.
+        :type: list[object]
+        """
+        self._drilldown_config = drilldown_config
 
     @property
     def freeform_tags(self):

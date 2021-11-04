@@ -189,6 +189,9 @@ class OperatorActionsClient(object):
         :param str name: (optional)
             A filter to return only resources that match the entire display name given.
 
+        :param str resource_type: (optional)
+            A filter to return only lists of resources that match the entire given service type.
+
         :param str lifecycle_state: (optional)
             A filter to return only resources whose lifecycleState matches the given OperatorAction lifecycleState.
 
@@ -234,6 +237,7 @@ class OperatorActionsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "name",
+            "resource_type",
             "lifecycle_state",
             "limit",
             "page",
@@ -269,6 +273,7 @@ class OperatorActionsClient(object):
 
         query_params = {
             "name": kwargs.get("name", missing),
+            "resourceType": kwargs.get("resource_type", missing),
             "compartmentId": compartment_id,
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "limit": kwargs.get("limit", missing),

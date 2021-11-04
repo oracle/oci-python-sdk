@@ -108,7 +108,7 @@ def test_create_operator_control_assignment(testing_service_client):
             request_containers[i]['request'],
             result,
             service_error,
-            'create_operator_control_assignment',
+            'operatorControlAssignment',
             False,
             False
         )

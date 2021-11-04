@@ -17,6 +17,18 @@ class CreateOperatorControlDetails(object):
     You must name your Operator Control appropriately so it reflects the resources that will be governed by the Operator Control. Neither the Operator Controls nor their assignments to resources are visible to the Oracle operators.
     """
 
+    #: A constant which can be used with the resource_type property of a CreateOperatorControlDetails.
+    #: This constant has a value of "EXACC"
+    RESOURCE_TYPE_EXACC = "EXACC"
+
+    #: A constant which can be used with the resource_type property of a CreateOperatorControlDetails.
+    #: This constant has a value of "EXADATAINFRASTRUCTURE"
+    RESOURCE_TYPE_EXADATAINFRASTRUCTURE = "EXADATAINFRASTRUCTURE"
+
+    #: A constant which can be used with the resource_type property of a CreateOperatorControlDetails.
+    #: This constant has a value of "AUTONOMOUSVMCLUSTER"
+    RESOURCE_TYPE_AUTONOMOUSVMCLUSTER = "AUTONOMOUSVMCLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateOperatorControlDetails object with values from keyword arguments.
@@ -46,6 +58,11 @@ class CreateOperatorControlDetails(object):
             The value to assign to the is_fully_pre_approved property of this CreateOperatorControlDetails.
         :type is_fully_pre_approved: bool
 
+        :param resource_type:
+            The value to assign to the resource_type property of this CreateOperatorControlDetails.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"
+        :type resource_type: str
+
         :param email_id_list:
             The value to assign to the email_id_list property of this CreateOperatorControlDetails.
         :type email_id_list: list[str]
@@ -74,6 +91,7 @@ class CreateOperatorControlDetails(object):
             'approver_groups_list': 'list[str]',
             'pre_approved_op_action_list': 'list[str]',
             'is_fully_pre_approved': 'bool',
+            'resource_type': 'str',
             'email_id_list': 'list[str]',
             'system_message': 'str',
             'compartment_id': 'str',
@@ -88,6 +106,7 @@ class CreateOperatorControlDetails(object):
             'approver_groups_list': 'approverGroupsList',
             'pre_approved_op_action_list': 'preApprovedOpActionList',
             'is_fully_pre_approved': 'isFullyPreApproved',
+            'resource_type': 'resourceType',
             'email_id_list': 'emailIdList',
             'system_message': 'systemMessage',
             'compartment_id': 'compartmentId',
@@ -101,6 +120,7 @@ class CreateOperatorControlDetails(object):
         self._approver_groups_list = None
         self._pre_approved_op_action_list = None
         self._is_fully_pre_approved = None
+        self._resource_type = None
         self._email_id_list = None
         self._system_message = None
         self._compartment_id = None
@@ -182,7 +202,7 @@ class CreateOperatorControlDetails(object):
     @property
     def approver_groups_list(self):
         """
-        Gets the approver_groups_list of this CreateOperatorControlDetails.
+        **[Required]** Gets the approver_groups_list of this CreateOperatorControlDetails.
         List of user groups who can approve an access request associated with a resource governed by this operator control.
 
 
@@ -232,7 +252,7 @@ class CreateOperatorControlDetails(object):
     @property
     def is_fully_pre_approved(self):
         """
-        Gets the is_fully_pre_approved of this CreateOperatorControlDetails.
+        **[Required]** Gets the is_fully_pre_approved of this CreateOperatorControlDetails.
         Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control
         will be auto-approved.
 
@@ -254,6 +274,38 @@ class CreateOperatorControlDetails(object):
         :type: bool
         """
         self._is_fully_pre_approved = is_fully_pre_approved
+
+    @property
+    def resource_type(self):
+        """
+        **[Required]** Gets the resource_type of this CreateOperatorControlDetails.
+        resourceType for which the OperatorControl is applicable
+
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"
+
+
+        :return: The resource_type of this CreateOperatorControlDetails.
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """
+        Sets the resource_type of this CreateOperatorControlDetails.
+        resourceType for which the OperatorControl is applicable
+
+
+        :param resource_type: The resource_type of this CreateOperatorControlDetails.
+        :type: str
+        """
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"]
+        if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `resource_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._resource_type = resource_type
 
     @property
     def email_id_list(self):
