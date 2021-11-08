@@ -4,13 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.49.2 - TBD
+2.50.0 - 2021-11-09
 ====================
 
 Added
 -----
-* TBD
+* Support for drill down metadata in the Management Dashboard service
+* Support for operator access control on dedicated autonomous databases in the Operator Access Control service
 
+Breaking
+--------
+* Property `resource_type` and `is_enforced_always` from model `CreateOperatorControlAssignmentDetails` changed from optional to required in the Operator Access Control service
+* Property `operator_control_name`, `approver_groups_list` and `is_fully_pre_approved` from model `UpdateOperatorControlDetails` changed from optional to required in the Operator Access Control service
+* Property `is_enforced_always` from model `UpdateOperatorControlAssignmentDetails` changed from optional to required in the Operator Access Control service
+* Property `approver_groups_list` and `is_fully_pre_approved` from model `CreateOperatorControlDetails` changed from optional to required in the Operator Access Control service
+* Data type for response of operation `create_operator_control_assignment` changed to `oci.operator_access_control.models.OperatorControlAssignment` in the Operator Access Control service
 ====================
 2.49.1 - 2021-11-02
 ====================
