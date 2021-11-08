@@ -50,8 +50,10 @@ class InstancePrincipalsDelegationTokenSigner(InstancePrincipalsSecurityTokenSig
         generic_headers = ["date", "(request-target)", "host", "opc-obo-token"]
         super(InstancePrincipalsDelegationTokenSigner, self).__init__(generic_headers=generic_headers, **kwargs)
 
-    # opc-obo-token is added to the request headers
     def do_request_sign(self, request, enforce_content_headers=True):
+        """
+        Signs the request with the opc-obo-token added to the request header
+        """
         request.headers['opc-obo-token'] = self.delegation_token
         super(InstancePrincipalsDelegationTokenSigner, self).do_request_sign(request, enforce_content_headers)
         return request

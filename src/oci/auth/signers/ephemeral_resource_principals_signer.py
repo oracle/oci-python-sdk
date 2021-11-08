@@ -75,6 +75,9 @@ class EphemeralResourcePrincipalSigner(SecurityTokenSigner):
             return FixedSessionKeySupplier(oci.signer.load_private_key(private_key, passphrase))
 
     def get_security_token(self):
+        """
+        Get the security token
+        """
         if hasattr(self, 'security_token'):
             if self.security_token.valid_with_jitter():
                 return self.security_token.security_token
@@ -82,6 +85,9 @@ class EphemeralResourcePrincipalSigner(SecurityTokenSigner):
         return self._refresh_security_token_inner()
 
     def refresh_security_token(self):
+        """
+        Refresh the security token
+        """
         return self._refresh_security_token_inner()
 
     def _refresh_security_token_inner(self):
