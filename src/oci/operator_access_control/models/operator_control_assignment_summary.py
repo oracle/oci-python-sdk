@@ -13,6 +13,18 @@ class OperatorControlAssignmentSummary(object):
     Details of the operator control assignment.
     """
 
+    #: A constant which can be used with the resource_type property of a OperatorControlAssignmentSummary.
+    #: This constant has a value of "EXACC"
+    RESOURCE_TYPE_EXACC = "EXACC"
+
+    #: A constant which can be used with the resource_type property of a OperatorControlAssignmentSummary.
+    #: This constant has a value of "EXADATAINFRASTRUCTURE"
+    RESOURCE_TYPE_EXADATAINFRASTRUCTURE = "EXADATAINFRASTRUCTURE"
+
+    #: A constant which can be used with the resource_type property of a OperatorControlAssignmentSummary.
+    #: This constant has a value of "AUTONOMOUSVMCLUSTER"
+    RESOURCE_TYPE_AUTONOMOUSVMCLUSTER = "AUTONOMOUSVMCLUSTER"
+
     #: A constant which can be used with the lifecycle_state property of a OperatorControlAssignmentSummary.
     #: This constant has a value of "CREATED"
     LIFECYCLE_STATE_CREATED = "CREATED"
@@ -26,8 +38,20 @@ class OperatorControlAssignmentSummary(object):
     LIFECYCLE_STATE_APPLYFAILED = "APPLYFAILED"
 
     #: A constant which can be used with the lifecycle_state property of a OperatorControlAssignmentSummary.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a OperatorControlAssignmentSummary.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a OperatorControlAssignmentSummary.
     #: This constant has a value of "DELETED"
     LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a OperatorControlAssignmentSummary.
+    #: This constant has a value of "DELETIONFAILED"
+    LIFECYCLE_STATE_DELETIONFAILED = "DELETIONFAILED"
 
     def __init__(self, **kwargs):
         """
@@ -46,13 +70,15 @@ class OperatorControlAssignmentSummary(object):
             The value to assign to the resource_id property of this OperatorControlAssignmentSummary.
         :type resource_id: str
 
-        :param resource_type:
-            The value to assign to the resource_type property of this OperatorControlAssignmentSummary.
-        :type resource_type: str
-
         :param compartment_id:
             The value to assign to the compartment_id property of this OperatorControlAssignmentSummary.
         :type compartment_id: str
+
+        :param resource_type:
+            The value to assign to the resource_type property of this OperatorControlAssignmentSummary.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type resource_type: str
 
         :param time_assignment_from:
             The value to assign to the time_assignment_from property of this OperatorControlAssignmentSummary.
@@ -70,9 +96,29 @@ class OperatorControlAssignmentSummary(object):
             The value to assign to the time_of_assignment property of this OperatorControlAssignmentSummary.
         :type time_of_assignment: datetime
 
+        :param error_code:
+            The value to assign to the error_code property of this OperatorControlAssignmentSummary.
+        :type error_code: int
+
+        :param error_message:
+            The value to assign to the error_message property of this OperatorControlAssignmentSummary.
+        :type error_message: str
+
+        :param is_log_forwarded:
+            The value to assign to the is_log_forwarded property of this OperatorControlAssignmentSummary.
+        :type is_log_forwarded: bool
+
+        :param remote_syslog_server_address:
+            The value to assign to the remote_syslog_server_address property of this OperatorControlAssignmentSummary.
+        :type remote_syslog_server_address: str
+
+        :param remote_syslog_server_port:
+            The value to assign to the remote_syslog_server_port property of this OperatorControlAssignmentSummary.
+        :type remote_syslog_server_port: int
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this OperatorControlAssignmentSummary.
-            Allowed values for this property are: "CREATED", "APPLIED", "APPLYFAILED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "DELETING", "DELETED", "DELETIONFAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -89,12 +135,17 @@ class OperatorControlAssignmentSummary(object):
             'id': 'str',
             'operator_control_id': 'str',
             'resource_id': 'str',
-            'resource_type': 'str',
             'compartment_id': 'str',
+            'resource_type': 'str',
             'time_assignment_from': 'datetime',
             'time_assignment_to': 'datetime',
             'is_enforced_always': 'bool',
             'time_of_assignment': 'datetime',
+            'error_code': 'int',
+            'error_message': 'str',
+            'is_log_forwarded': 'bool',
+            'remote_syslog_server_address': 'str',
+            'remote_syslog_server_port': 'int',
             'lifecycle_state': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -104,12 +155,17 @@ class OperatorControlAssignmentSummary(object):
             'id': 'id',
             'operator_control_id': 'operatorControlId',
             'resource_id': 'resourceId',
-            'resource_type': 'resourceType',
             'compartment_id': 'compartmentId',
+            'resource_type': 'resourceType',
             'time_assignment_from': 'timeAssignmentFrom',
             'time_assignment_to': 'timeAssignmentTo',
             'is_enforced_always': 'isEnforcedAlways',
             'time_of_assignment': 'timeOfAssignment',
+            'error_code': 'errorCode',
+            'error_message': 'errorMessage',
+            'is_log_forwarded': 'isLogForwarded',
+            'remote_syslog_server_address': 'remoteSyslogServerAddress',
+            'remote_syslog_server_port': 'remoteSyslogServerPort',
             'lifecycle_state': 'lifecycleState',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -118,12 +174,17 @@ class OperatorControlAssignmentSummary(object):
         self._id = None
         self._operator_control_id = None
         self._resource_id = None
-        self._resource_type = None
         self._compartment_id = None
+        self._resource_type = None
         self._time_assignment_from = None
         self._time_assignment_to = None
         self._is_enforced_always = None
         self._time_of_assignment = None
+        self._error_code = None
+        self._error_message = None
+        self._is_log_forwarded = None
+        self._remote_syslog_server_address = None
+        self._remote_syslog_server_port = None
         self._lifecycle_state = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -201,30 +262,6 @@ class OperatorControlAssignmentSummary(object):
         self._resource_id = resource_id
 
     @property
-    def resource_type(self):
-        """
-        Gets the resource_type of this OperatorControlAssignmentSummary.
-        Type of the target resource being governed by the operator control.
-
-
-        :return: The resource_type of this OperatorControlAssignmentSummary.
-        :rtype: str
-        """
-        return self._resource_type
-
-    @resource_type.setter
-    def resource_type(self, resource_type):
-        """
-        Sets the resource_type of this OperatorControlAssignmentSummary.
-        Type of the target resource being governed by the operator control.
-
-
-        :param resource_type: The resource_type of this OperatorControlAssignmentSummary.
-        :type: str
-        """
-        self._resource_type = resource_type
-
-    @property
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this OperatorControlAssignmentSummary.
@@ -247,6 +284,36 @@ class OperatorControlAssignmentSummary(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def resource_type(self):
+        """
+        Gets the resource_type of this OperatorControlAssignmentSummary.
+        resourceType for which the OperatorControlAssignment is applicable
+
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The resource_type of this OperatorControlAssignmentSummary.
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """
+        Sets the resource_type of this OperatorControlAssignmentSummary.
+        resourceType for which the OperatorControlAssignment is applicable
+
+
+        :param resource_type: The resource_type of this OperatorControlAssignmentSummary.
+        :type: str
+        """
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"]
+        if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
+            resource_type = 'UNKNOWN_ENUM_VALUE'
+        self._resource_type = resource_type
 
     @property
     def time_assignment_from(self):
@@ -357,12 +424,132 @@ class OperatorControlAssignmentSummary(object):
         self._time_of_assignment = time_of_assignment
 
     @property
+    def error_code(self):
+        """
+        Gets the error_code of this OperatorControlAssignmentSummary.
+        The code identifying the error occurred during Assignment operation.
+
+
+        :return: The error_code of this OperatorControlAssignmentSummary.
+        :rtype: int
+        """
+        return self._error_code
+
+    @error_code.setter
+    def error_code(self, error_code):
+        """
+        Sets the error_code of this OperatorControlAssignmentSummary.
+        The code identifying the error occurred during Assignment operation.
+
+
+        :param error_code: The error_code of this OperatorControlAssignmentSummary.
+        :type: int
+        """
+        self._error_code = error_code
+
+    @property
+    def error_message(self):
+        """
+        Gets the error_message of this OperatorControlAssignmentSummary.
+        The message describing the error occurred during Assignment operation.
+
+
+        :return: The error_message of this OperatorControlAssignmentSummary.
+        :rtype: str
+        """
+        return self._error_message
+
+    @error_message.setter
+    def error_message(self, error_message):
+        """
+        Sets the error_message of this OperatorControlAssignmentSummary.
+        The message describing the error occurred during Assignment operation.
+
+
+        :param error_message: The error_message of this OperatorControlAssignmentSummary.
+        :type: str
+        """
+        self._error_message = error_message
+
+    @property
+    def is_log_forwarded(self):
+        """
+        Gets the is_log_forwarded of this OperatorControlAssignmentSummary.
+        If set, then the audit logs are being forwarded to the relevant remote logging server
+
+
+        :return: The is_log_forwarded of this OperatorControlAssignmentSummary.
+        :rtype: bool
+        """
+        return self._is_log_forwarded
+
+    @is_log_forwarded.setter
+    def is_log_forwarded(self, is_log_forwarded):
+        """
+        Sets the is_log_forwarded of this OperatorControlAssignmentSummary.
+        If set, then the audit logs are being forwarded to the relevant remote logging server
+
+
+        :param is_log_forwarded: The is_log_forwarded of this OperatorControlAssignmentSummary.
+        :type: bool
+        """
+        self._is_log_forwarded = is_log_forwarded
+
+    @property
+    def remote_syslog_server_address(self):
+        """
+        Gets the remote_syslog_server_address of this OperatorControlAssignmentSummary.
+        The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
+
+
+        :return: The remote_syslog_server_address of this OperatorControlAssignmentSummary.
+        :rtype: str
+        """
+        return self._remote_syslog_server_address
+
+    @remote_syslog_server_address.setter
+    def remote_syslog_server_address(self, remote_syslog_server_address):
+        """
+        Sets the remote_syslog_server_address of this OperatorControlAssignmentSummary.
+        The address of the remote syslog server where the audit logs are being forwarded to. Address in host or IP format.
+
+
+        :param remote_syslog_server_address: The remote_syslog_server_address of this OperatorControlAssignmentSummary.
+        :type: str
+        """
+        self._remote_syslog_server_address = remote_syslog_server_address
+
+    @property
+    def remote_syslog_server_port(self):
+        """
+        Gets the remote_syslog_server_port of this OperatorControlAssignmentSummary.
+        The listening port of the remote syslog server. The port range is 0 - 65535.
+
+
+        :return: The remote_syslog_server_port of this OperatorControlAssignmentSummary.
+        :rtype: int
+        """
+        return self._remote_syslog_server_port
+
+    @remote_syslog_server_port.setter
+    def remote_syslog_server_port(self, remote_syslog_server_port):
+        """
+        Sets the remote_syslog_server_port of this OperatorControlAssignmentSummary.
+        The listening port of the remote syslog server. The port range is 0 - 65535.
+
+
+        :param remote_syslog_server_port: The remote_syslog_server_port of this OperatorControlAssignmentSummary.
+        :type: int
+        """
+        self._remote_syslog_server_port = remote_syslog_server_port
+
+    @property
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OperatorControlAssignmentSummary.
         The current lifcycle state of the OperatorControl.
 
-        Allowed values for this property are: "CREATED", "APPLIED", "APPLYFAILED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "DELETING", "DELETED", "DELETIONFAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -381,7 +568,7 @@ class OperatorControlAssignmentSummary(object):
         :param lifecycle_state: The lifecycle_state of this OperatorControlAssignmentSummary.
         :type: str
         """
-        allowed_values = ["CREATED", "APPLIED", "APPLYFAILED", "DELETED"]
+        allowed_values = ["CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "DELETING", "DELETED", "DELETIONFAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

@@ -25,6 +25,7 @@ from .operator_control_assignment_summary import OperatorControlAssignmentSummar
 from .operator_control_collection import OperatorControlCollection
 from .operator_control_summary import OperatorControlSummary
 from .reject_access_request_details import RejectAccessRequestDetails
+from .review_access_request_details import ReviewAccessRequestDetails
 from .revoke_access_request_details import RevokeAccessRequestDetails
 from .update_operator_control_assignment_details import UpdateOperatorControlAssignmentDetails
 from .update_operator_control_details import UpdateOperatorControlDetails
@@ -52,6 +53,7 @@ operator_access_control_type_mapping = {
     "OperatorControlCollection": OperatorControlCollection,
     "OperatorControlSummary": OperatorControlSummary,
     "RejectAccessRequestDetails": RejectAccessRequestDetails,
+    "ReviewAccessRequestDetails": ReviewAccessRequestDetails,
     "RevokeAccessRequestDetails": RevokeAccessRequestDetails,
     "UpdateOperatorControlAssignmentDetails": UpdateOperatorControlAssignmentDetails,
     "UpdateOperatorControlDetails": UpdateOperatorControlDetails

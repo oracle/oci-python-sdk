@@ -13,6 +13,18 @@ class OperatorActionSummary(object):
     Details of the operator action. Operator actions are pre-defined set of commands available to the operator on different layers of the infrastructure.
     """
 
+    #: A constant which can be used with the resource_type property of a OperatorActionSummary.
+    #: This constant has a value of "EXACC"
+    RESOURCE_TYPE_EXACC = "EXACC"
+
+    #: A constant which can be used with the resource_type property of a OperatorActionSummary.
+    #: This constant has a value of "EXADATAINFRASTRUCTURE"
+    RESOURCE_TYPE_EXADATAINFRASTRUCTURE = "EXADATAINFRASTRUCTURE"
+
+    #: A constant which can be used with the resource_type property of a OperatorActionSummary.
+    #: This constant has a value of "AUTONOMOUSVMCLUSTER"
+    RESOURCE_TYPE_AUTONOMOUSVMCLUSTER = "AUTONOMOUSVMCLUSTER"
+
     #: A constant which can be used with the lifecycle_state property of a OperatorActionSummary.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -42,6 +54,12 @@ class OperatorActionSummary(object):
             The value to assign to the compartment_id property of this OperatorActionSummary.
         :type compartment_id: str
 
+        :param resource_type:
+            The value to assign to the resource_type property of this OperatorActionSummary.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type resource_type: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this OperatorActionSummary.
             Allowed values for this property are: "ACTIVE", "INACTIVE", 'UNKNOWN_ENUM_VALUE'.
@@ -58,6 +76,7 @@ class OperatorActionSummary(object):
             'name': 'str',
             'component': 'str',
             'compartment_id': 'str',
+            'resource_type': 'str',
             'lifecycle_state': 'str',
             'description': 'str'
         }
@@ -67,6 +86,7 @@ class OperatorActionSummary(object):
             'name': 'name',
             'component': 'component',
             'compartment_id': 'compartmentId',
+            'resource_type': 'resourceType',
             'lifecycle_state': 'lifecycleState',
             'description': 'description'
         }
@@ -75,6 +95,7 @@ class OperatorActionSummary(object):
         self._name = None
         self._component = None
         self._compartment_id = None
+        self._resource_type = None
         self._lifecycle_state = None
         self._description = None
 
@@ -173,6 +194,36 @@ class OperatorActionSummary(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def resource_type(self):
+        """
+        Gets the resource_type of this OperatorActionSummary.
+        resourceType for which the OperatorAction is applicable
+
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The resource_type of this OperatorActionSummary.
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """
+        Sets the resource_type of this OperatorActionSummary.
+        resourceType for which the OperatorAction is applicable
+
+
+        :param resource_type: The resource_type of this OperatorActionSummary.
+        :type: str
+        """
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"]
+        if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
+            resource_type = 'UNKNOWN_ENUM_VALUE'
+        self._resource_type = resource_type
 
     @property
     def lifecycle_state(self):

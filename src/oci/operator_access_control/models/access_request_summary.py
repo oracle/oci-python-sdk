@@ -13,6 +13,18 @@ class AccessRequestSummary(object):
     Summary of access request.
     """
 
+    #: A constant which can be used with the resource_type property of a AccessRequestSummary.
+    #: This constant has a value of "EXACC"
+    RESOURCE_TYPE_EXACC = "EXACC"
+
+    #: A constant which can be used with the resource_type property of a AccessRequestSummary.
+    #: This constant has a value of "EXADATAINFRASTRUCTURE"
+    RESOURCE_TYPE_EXADATAINFRASTRUCTURE = "EXADATAINFRASTRUCTURE"
+
+    #: A constant which can be used with the resource_type property of a AccessRequestSummary.
+    #: This constant has a value of "AUTONOMOUSVMCLUSTER"
+    RESOURCE_TYPE_AUTONOMOUSVMCLUSTER = "AUTONOMOUSVMCLUSTER"
+
     #: A constant which can be used with the lifecycle_state property of a AccessRequestSummary.
     #: This constant has a value of "CREATED"
     LIFECYCLE_STATE_CREATED = "CREATED"
@@ -93,6 +105,14 @@ class AccessRequestSummary(object):
     #: This constant has a value of "EXPIRED"
     LIFECYCLE_STATE_EXPIRED = "EXPIRED"
 
+    #: A constant which can be used with the lifecycle_state property of a AccessRequestSummary.
+    #: This constant has a value of "APPROVEDFORFUTURE"
+    LIFECYCLE_STATE_APPROVEDFORFUTURE = "APPROVEDFORFUTURE"
+
+    #: A constant which can be used with the lifecycle_state property of a AccessRequestSummary.
+    #: This constant has a value of "INREVIEW"
+    LIFECYCLE_STATE_INREVIEW = "INREVIEW"
+
     #: A constant which can be used with the severity property of a AccessRequestSummary.
     #: This constant has a value of "S1"
     SEVERITY_S1 = "S1"
@@ -138,9 +158,15 @@ class AccessRequestSummary(object):
             The value to assign to the resource_name property of this AccessRequestSummary.
         :type resource_name: str
 
+        :param resource_type:
+            The value to assign to the resource_type property of this AccessRequestSummary.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type resource_type: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AccessRequestSummary.
-            Allowed values for this property are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -151,6 +177,10 @@ class AccessRequestSummary(object):
         :param time_of_modification:
             The value to assign to the time_of_modification property of this AccessRequestSummary.
         :type time_of_modification: datetime
+
+        :param time_of_user_creation:
+            The value to assign to the time_of_user_creation property of this AccessRequestSummary.
+        :type time_of_user_creation: datetime
 
         :param duration:
             The value to assign to the duration property of this AccessRequestSummary.
@@ -186,9 +216,11 @@ class AccessRequestSummary(object):
             'compartment_id': 'str',
             'resource_id': 'str',
             'resource_name': 'str',
+            'resource_type': 'str',
             'lifecycle_state': 'str',
             'time_of_creation': 'datetime',
             'time_of_modification': 'datetime',
+            'time_of_user_creation': 'datetime',
             'duration': 'int',
             'extend_duration': 'int',
             'severity': 'str',
@@ -204,9 +236,11 @@ class AccessRequestSummary(object):
             'compartment_id': 'compartmentId',
             'resource_id': 'resourceId',
             'resource_name': 'resourceName',
+            'resource_type': 'resourceType',
             'lifecycle_state': 'lifecycleState',
             'time_of_creation': 'timeOfCreation',
             'time_of_modification': 'timeOfModification',
+            'time_of_user_creation': 'timeOfUserCreation',
             'duration': 'duration',
             'extend_duration': 'extendDuration',
             'severity': 'severity',
@@ -221,9 +255,11 @@ class AccessRequestSummary(object):
         self._compartment_id = None
         self._resource_id = None
         self._resource_name = None
+        self._resource_type = None
         self._lifecycle_state = None
         self._time_of_creation = None
         self._time_of_modification = None
+        self._time_of_user_creation = None
         self._duration = None
         self._extend_duration = None
         self._severity = None
@@ -378,12 +414,42 @@ class AccessRequestSummary(object):
         self._resource_name = resource_name
 
     @property
+    def resource_type(self):
+        """
+        Gets the resource_type of this AccessRequestSummary.
+        resourceType for which the AccessRequest is applicable
+
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The resource_type of this AccessRequestSummary.
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """
+        Sets the resource_type of this AccessRequestSummary.
+        resourceType for which the AccessRequest is applicable
+
+
+        :param resource_type: The resource_type of this AccessRequestSummary.
+        :type: str
+        """
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"]
+        if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
+            resource_type = 'UNKNOWN_ENUM_VALUE'
+        self._resource_type = resource_type
+
+    @property
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this AccessRequestSummary.
         The current state of the AccessRequest.
 
-        Allowed values for this property are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -402,7 +468,7 @@ class AccessRequestSummary(object):
         :param lifecycle_state: The lifecycle_state of this AccessRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED"]
+        allowed_values = ["CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -462,6 +528,34 @@ class AccessRequestSummary(object):
         :type: datetime
         """
         self._time_of_modification = time_of_modification
+
+    @property
+    def time_of_user_creation(self):
+        """
+        Gets the time_of_user_creation of this AccessRequestSummary.
+        The time when access request is scheduled to be approved in `RFC 3339`__ timestamp format.Example: '2020-05-22T21:10:29.600Z'
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_of_user_creation of this AccessRequestSummary.
+        :rtype: datetime
+        """
+        return self._time_of_user_creation
+
+    @time_of_user_creation.setter
+    def time_of_user_creation(self, time_of_user_creation):
+        """
+        Sets the time_of_user_creation of this AccessRequestSummary.
+        The time when access request is scheduled to be approved in `RFC 3339`__ timestamp format.Example: '2020-05-22T21:10:29.600Z'
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_of_user_creation: The time_of_user_creation of this AccessRequestSummary.
+        :type: datetime
+        """
+        self._time_of_user_creation = time_of_user_creation
 
     @property
     def duration(self):

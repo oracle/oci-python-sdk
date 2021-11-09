@@ -112,6 +112,10 @@ class ManagementSavedSearchForImportDetails(object):
             The value to assign to the parameters_config property of this ManagementSavedSearchForImportDetails.
         :type parameters_config: list[object]
 
+        :param drilldown_config:
+            The value to assign to the drilldown_config property of this ManagementSavedSearchForImportDetails.
+        :type drilldown_config: list[object]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -132,7 +136,8 @@ class ManagementSavedSearchForImportDetails(object):
             'widget_vm': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
-            'parameters_config': 'list[object]'
+            'parameters_config': 'list[object]',
+            'drilldown_config': 'list[object]'
         }
 
         self.attribute_map = {
@@ -154,7 +159,8 @@ class ManagementSavedSearchForImportDetails(object):
             'widget_vm': 'widgetVM',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
-            'parameters_config': 'parametersConfig'
+            'parameters_config': 'parametersConfig',
+            'drilldown_config': 'drilldownConfig'
         }
 
         self._id = None
@@ -176,6 +182,7 @@ class ManagementSavedSearchForImportDetails(object):
         self._freeform_tags = None
         self._defined_tags = None
         self._parameters_config = None
+        self._drilldown_config = None
 
     @property
     def id(self):
@@ -642,6 +649,30 @@ class ManagementSavedSearchForImportDetails(object):
         :type: list[object]
         """
         self._parameters_config = parameters_config
+
+    @property
+    def drilldown_config(self):
+        """
+        Gets the drilldown_config of this ManagementSavedSearchForImportDetails.
+        Drill-down configuration to define the destination of a drill-down action.
+
+
+        :return: The drilldown_config of this ManagementSavedSearchForImportDetails.
+        :rtype: list[object]
+        """
+        return self._drilldown_config
+
+    @drilldown_config.setter
+    def drilldown_config(self, drilldown_config):
+        """
+        Sets the drilldown_config of this ManagementSavedSearchForImportDetails.
+        Drill-down configuration to define the destination of a drill-down action.
+
+
+        :param drilldown_config: The drilldown_config of this ManagementSavedSearchForImportDetails.
+        :type: list[object]
+        """
+        self._drilldown_config = drilldown_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

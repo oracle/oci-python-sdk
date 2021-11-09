@@ -18,6 +18,14 @@ class CreateOperatorControlAssignmentDetails(object):
     #: This constant has a value of "EXACC"
     RESOURCE_TYPE_EXACC = "EXACC"
 
+    #: A constant which can be used with the resource_type property of a CreateOperatorControlAssignmentDetails.
+    #: This constant has a value of "EXADATAINFRASTRUCTURE"
+    RESOURCE_TYPE_EXADATAINFRASTRUCTURE = "EXADATAINFRASTRUCTURE"
+
+    #: A constant which can be used with the resource_type property of a CreateOperatorControlAssignmentDetails.
+    #: This constant has a value of "AUTONOMOUSVMCLUSTER"
+    RESOURCE_TYPE_AUTONOMOUSVMCLUSTER = "AUTONOMOUSVMCLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateOperatorControlAssignmentDetails object with values from keyword arguments.
@@ -37,7 +45,7 @@ class CreateOperatorControlAssignmentDetails(object):
 
         :param resource_type:
             The value to assign to the resource_type property of this CreateOperatorControlAssignmentDetails.
-            Allowed values for this property are: "EXACC"
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"
         :type resource_type: str
 
         :param resource_compartment_id:
@@ -64,6 +72,26 @@ class CreateOperatorControlAssignmentDetails(object):
             The value to assign to the comment property of this CreateOperatorControlAssignmentDetails.
         :type comment: str
 
+        :param is_log_forwarded:
+            The value to assign to the is_log_forwarded property of this CreateOperatorControlAssignmentDetails.
+        :type is_log_forwarded: bool
+
+        :param remote_syslog_server_address:
+            The value to assign to the remote_syslog_server_address property of this CreateOperatorControlAssignmentDetails.
+        :type remote_syslog_server_address: str
+
+        :param remote_syslog_server_port:
+            The value to assign to the remote_syslog_server_port property of this CreateOperatorControlAssignmentDetails.
+        :type remote_syslog_server_port: int
+
+        :param remote_syslog_server_ca_cert:
+            The value to assign to the remote_syslog_server_ca_cert property of this CreateOperatorControlAssignmentDetails.
+        :type remote_syslog_server_ca_cert: str
+
+        :param is_auto_approve_during_maintenance:
+            The value to assign to the is_auto_approve_during_maintenance property of this CreateOperatorControlAssignmentDetails.
+        :type is_auto_approve_during_maintenance: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateOperatorControlAssignmentDetails.
         :type freeform_tags: dict(str, str)
@@ -84,6 +112,11 @@ class CreateOperatorControlAssignmentDetails(object):
             'compartment_id': 'str',
             'is_enforced_always': 'bool',
             'comment': 'str',
+            'is_log_forwarded': 'bool',
+            'remote_syslog_server_address': 'str',
+            'remote_syslog_server_port': 'int',
+            'remote_syslog_server_ca_cert': 'str',
+            'is_auto_approve_during_maintenance': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -99,6 +132,11 @@ class CreateOperatorControlAssignmentDetails(object):
             'compartment_id': 'compartmentId',
             'is_enforced_always': 'isEnforcedAlways',
             'comment': 'comment',
+            'is_log_forwarded': 'isLogForwarded',
+            'remote_syslog_server_address': 'remoteSyslogServerAddress',
+            'remote_syslog_server_port': 'remoteSyslogServerPort',
+            'remote_syslog_server_ca_cert': 'remoteSyslogServerCACert',
+            'is_auto_approve_during_maintenance': 'isAutoApproveDuringMaintenance',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -113,6 +151,11 @@ class CreateOperatorControlAssignmentDetails(object):
         self._compartment_id = None
         self._is_enforced_always = None
         self._comment = None
+        self._is_log_forwarded = None
+        self._remote_syslog_server_address = None
+        self._remote_syslog_server_port = None
+        self._remote_syslog_server_ca_cert = None
+        self._is_auto_approve_during_maintenance = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -191,10 +234,10 @@ class CreateOperatorControlAssignmentDetails(object):
     @property
     def resource_type(self):
         """
-        Gets the resource_type of this CreateOperatorControlAssignmentDetails.
+        **[Required]** Gets the resource_type of this CreateOperatorControlAssignmentDetails.
         Type of the target resource.
 
-        Allowed values for this property are: "EXACC"
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"
 
 
         :return: The resource_type of this CreateOperatorControlAssignmentDetails.
@@ -212,7 +255,7 @@ class CreateOperatorControlAssignmentDetails(object):
         :param resource_type: The resource_type of this CreateOperatorControlAssignmentDetails.
         :type: str
         """
-        allowed_values = ["EXACC"]
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"]
         if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
             raise ValueError(
                 "Invalid value for `resource_type`, must be None or one of {0}"
@@ -327,7 +370,7 @@ class CreateOperatorControlAssignmentDetails(object):
     @property
     def is_enforced_always(self):
         """
-        Gets the is_enforced_always of this CreateOperatorControlAssignmentDetails.
+        **[Required]** Gets the is_enforced_always of this CreateOperatorControlAssignmentDetails.
         If set, then the target resource is always governed by the operator control.
 
 
@@ -371,6 +414,126 @@ class CreateOperatorControlAssignmentDetails(object):
         :type: str
         """
         self._comment = comment
+
+    @property
+    def is_log_forwarded(self):
+        """
+        Gets the is_log_forwarded of this CreateOperatorControlAssignmentDetails.
+        If set, then the audit logs will be forwarded to the relevant remote logging server
+
+
+        :return: The is_log_forwarded of this CreateOperatorControlAssignmentDetails.
+        :rtype: bool
+        """
+        return self._is_log_forwarded
+
+    @is_log_forwarded.setter
+    def is_log_forwarded(self, is_log_forwarded):
+        """
+        Sets the is_log_forwarded of this CreateOperatorControlAssignmentDetails.
+        If set, then the audit logs will be forwarded to the relevant remote logging server
+
+
+        :param is_log_forwarded: The is_log_forwarded of this CreateOperatorControlAssignmentDetails.
+        :type: bool
+        """
+        self._is_log_forwarded = is_log_forwarded
+
+    @property
+    def remote_syslog_server_address(self):
+        """
+        Gets the remote_syslog_server_address of this CreateOperatorControlAssignmentDetails.
+        The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
+
+
+        :return: The remote_syslog_server_address of this CreateOperatorControlAssignmentDetails.
+        :rtype: str
+        """
+        return self._remote_syslog_server_address
+
+    @remote_syslog_server_address.setter
+    def remote_syslog_server_address(self, remote_syslog_server_address):
+        """
+        Sets the remote_syslog_server_address of this CreateOperatorControlAssignmentDetails.
+        The address of the remote syslog server where the audit logs will be forwarded to. Address in host or IP format.
+
+
+        :param remote_syslog_server_address: The remote_syslog_server_address of this CreateOperatorControlAssignmentDetails.
+        :type: str
+        """
+        self._remote_syslog_server_address = remote_syslog_server_address
+
+    @property
+    def remote_syslog_server_port(self):
+        """
+        Gets the remote_syslog_server_port of this CreateOperatorControlAssignmentDetails.
+        The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
+
+
+        :return: The remote_syslog_server_port of this CreateOperatorControlAssignmentDetails.
+        :rtype: int
+        """
+        return self._remote_syslog_server_port
+
+    @remote_syslog_server_port.setter
+    def remote_syslog_server_port(self, remote_syslog_server_port):
+        """
+        Sets the remote_syslog_server_port of this CreateOperatorControlAssignmentDetails.
+        The listening port of the remote syslog server. The port range is 0 - 65535. Only TCP supported.
+
+
+        :param remote_syslog_server_port: The remote_syslog_server_port of this CreateOperatorControlAssignmentDetails.
+        :type: int
+        """
+        self._remote_syslog_server_port = remote_syslog_server_port
+
+    @property
+    def remote_syslog_server_ca_cert(self):
+        """
+        Gets the remote_syslog_server_ca_cert of this CreateOperatorControlAssignmentDetails.
+        The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
+
+
+        :return: The remote_syslog_server_ca_cert of this CreateOperatorControlAssignmentDetails.
+        :rtype: str
+        """
+        return self._remote_syslog_server_ca_cert
+
+    @remote_syslog_server_ca_cert.setter
+    def remote_syslog_server_ca_cert(self, remote_syslog_server_ca_cert):
+        """
+        Sets the remote_syslog_server_ca_cert of this CreateOperatorControlAssignmentDetails.
+        The CA certificate of the remote syslog server. Identity of the remote syslog server will be asserted based on this certificate.
+
+
+        :param remote_syslog_server_ca_cert: The remote_syslog_server_ca_cert of this CreateOperatorControlAssignmentDetails.
+        :type: str
+        """
+        self._remote_syslog_server_ca_cert = remote_syslog_server_ca_cert
+
+    @property
+    def is_auto_approve_during_maintenance(self):
+        """
+        Gets the is_auto_approve_during_maintenance of this CreateOperatorControlAssignmentDetails.
+        The boolean if true would autoApprove during maintenance.
+
+
+        :return: The is_auto_approve_during_maintenance of this CreateOperatorControlAssignmentDetails.
+        :rtype: bool
+        """
+        return self._is_auto_approve_during_maintenance
+
+    @is_auto_approve_during_maintenance.setter
+    def is_auto_approve_during_maintenance(self, is_auto_approve_during_maintenance):
+        """
+        Sets the is_auto_approve_during_maintenance of this CreateOperatorControlAssignmentDetails.
+        The boolean if true would autoApprove during maintenance.
+
+
+        :param is_auto_approve_during_maintenance: The is_auto_approve_during_maintenance of this CreateOperatorControlAssignmentDetails.
+        :type: bool
+        """
+        self._is_auto_approve_during_maintenance = is_auto_approve_during_maintenance
 
     @property
     def freeform_tags(self):

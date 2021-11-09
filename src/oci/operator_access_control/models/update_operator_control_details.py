@@ -99,7 +99,7 @@ class UpdateOperatorControlDetails(object):
     @property
     def operator_control_name(self):
         """
-        Gets the operator_control_name of this UpdateOperatorControlDetails.
+        **[Required]** Gets the operator_control_name of this UpdateOperatorControlDetails.
         Name of the operator control.
 
 
@@ -171,7 +171,7 @@ class UpdateOperatorControlDetails(object):
     @property
     def approver_groups_list(self):
         """
-        Gets the approver_groups_list of this UpdateOperatorControlDetails.
+        **[Required]** Gets the approver_groups_list of this UpdateOperatorControlDetails.
         List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
 
 
@@ -221,7 +221,7 @@ class UpdateOperatorControlDetails(object):
     @property
     def is_fully_pre_approved(self):
         """
-        Gets the is_fully_pre_approved of this UpdateOperatorControlDetails.
+        **[Required]** Gets the is_fully_pre_approved of this UpdateOperatorControlDetails.
         Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control
         will be auto-approved.
 

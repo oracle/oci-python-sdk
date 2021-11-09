@@ -169,11 +169,17 @@ try:
     )
 
     print("Create a new DRG route table pointing to the route distribution.")
-    drg_route_table = virtual_network_client.create_drg_route_table(
+    result = virtual_network_client.create_drg_route_table(
         oci.core.models.CreateDrgRouteTableDetails(
             drg_id=drg.id,
             import_drg_route_distribution_id=import_route_distribution.id
         )
+    ).data
+    drg_route_table = oci.wait_until(
+        virtual_network_client,
+        virtual_network_client.get_drg_route_table(result.id),
+        'lifecycle_state',
+        'AVAILABLE'
     ).data
     print(drg_route_table)
     print('\n')
