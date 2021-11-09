@@ -30,22 +30,29 @@ class ApproveAccessRequestDetails(object):
             The value to assign to the additional_message property of this ApproveAccessRequestDetails.
         :type additional_message: str
 
+        :param time_of_user_creation:
+            The value to assign to the time_of_user_creation property of this ApproveAccessRequestDetails.
+        :type time_of_user_creation: datetime
+
         """
         self.swagger_types = {
             'approver_comment': 'str',
             'audit_type': 'list[str]',
-            'additional_message': 'str'
+            'additional_message': 'str',
+            'time_of_user_creation': 'datetime'
         }
 
         self.attribute_map = {
             'approver_comment': 'approverComment',
             'audit_type': 'auditType',
-            'additional_message': 'additionalMessage'
+            'additional_message': 'additionalMessage',
+            'time_of_user_creation': 'timeOfUserCreation'
         }
 
         self._approver_comment = None
         self._audit_type = None
         self._additional_message = None
+        self._time_of_user_creation = None
 
     @property
     def approver_comment(self):
@@ -122,6 +129,34 @@ class ApproveAccessRequestDetails(object):
         :type: str
         """
         self._additional_message = additional_message
+
+    @property
+    def time_of_user_creation(self):
+        """
+        Gets the time_of_user_creation of this ApproveAccessRequestDetails.
+        The time when access request is scheduled to be approved in `RFC 3339`__ timestamp format.Example: '2020-05-22T21:10:29.600Z'
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_of_user_creation of this ApproveAccessRequestDetails.
+        :rtype: datetime
+        """
+        return self._time_of_user_creation
+
+    @time_of_user_creation.setter
+    def time_of_user_creation(self, time_of_user_creation):
+        """
+        Sets the time_of_user_creation of this ApproveAccessRequestDetails.
+        The time when access request is scheduled to be approved in `RFC 3339`__ timestamp format.Example: '2020-05-22T21:10:29.600Z'
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_of_user_creation: The time_of_user_creation of this ApproveAccessRequestDetails.
+        :type: datetime
+        """
+        self._time_of_user_creation = time_of_user_creation
 
     def __repr__(self):
         return formatted_flat_dict(self)

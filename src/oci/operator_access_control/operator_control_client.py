@@ -475,6 +475,9 @@ class OperatorControlClient(object):
         :param str display_name: (optional)
             A filter to return OperatorControl that match the entire display name given.
 
+        :param str resource_type: (optional)
+            A filter to return only lists of resources that match the entire given service type.
+
         :param int limit: (optional)
             The maximum number of items to return.
 
@@ -516,6 +519,7 @@ class OperatorControlClient(object):
             "retry_strategy",
             "lifecycle_state",
             "display_name",
+            "resource_type",
             "limit",
             "page",
             "sort_order",
@@ -552,6 +556,7 @@ class OperatorControlClient(object):
             "compartmentId": compartment_id,
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "displayName": kwargs.get("display_name", missing),
+            "resourceType": kwargs.get("resource_type", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),

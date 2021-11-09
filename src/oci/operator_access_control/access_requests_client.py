@@ -385,10 +385,23 @@ class AccessRequestsClient(object):
         :param str resource_name: (optional)
             A filter to return only resources that match the given ResourceName.
 
+        :param str resource_type: (optional)
+            A filter to return only lists of resources that match the entire given service type.
+
         :param str lifecycle_state: (optional)
             A filter to return only resources whose lifecycleState matches the given AccessRequest lifecycleState.
 
-            Allowed values are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED"
+            Allowed values are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW"
+
+        :param datetime time_start: (optional)
+            Query start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd parameters are used together.
+
+        :param datetime time_end: (optional)
+            Query start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd parameters are used together.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -430,7 +443,10 @@ class AccessRequestsClient(object):
         expected_kwargs = [
             "retry_strategy",
             "resource_name",
+            "resource_type",
             "lifecycle_state",
+            "time_start",
+            "time_end",
             "limit",
             "page",
             "sort_order",
@@ -443,7 +459,7 @@ class AccessRequestsClient(object):
                 "list_access_requests got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED"]
+            lifecycle_state_allowed_values = ["CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -466,7 +482,10 @@ class AccessRequestsClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "resourceName": kwargs.get("resource_name", missing),
+            "resourceType": kwargs.get("resource_type", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "timeStart": kwargs.get("time_start", missing),
+            "timeEnd": kwargs.get("time_end", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
@@ -605,6 +624,109 @@ class AccessRequestsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=reject_access_request_details)
+
+    def review_access_request(self, access_request_id, review_access_request_details, **kwargs):
+        """
+        Reviews the access request.
+
+
+        :param str access_request_id: (required)
+            unique AccessRequest identifier
+
+        :param oci.operator_access_control.models.ReviewAccessRequestDetails review_access_request_details: (required)
+            Details regarding the approval of an access request created by the operator.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request so it can be retried in case of a timeout or
+            server error without risk of executing that same action again. Retry tokens expire after 24
+            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            has been deleted and purged from the system, then a retry of the original creation request
+            might be rejected.
+
+        :param str if_match: (optional)
+            For optimistic concurrency control. In the PUT or DELETE call
+            for a resource, set the `if-match` parameter to the value of the
+            etag from a previous GET or POST response for that resource.
+            The resource will be updated or deleted only if the etag you
+            provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.operator_access_control.models.AccessRequest`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/operatoraccesscontrol/review_access_request.py.html>`__ to see an example of how to use review_access_request API.
+        """
+        resource_path = "/accessRequests/{accessRequestId}/action/review"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_retry_token",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "review_access_request got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "accessRequestId": access_request_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=review_access_request_details,
+                response_type="AccessRequest")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=review_access_request_details,
+                response_type="AccessRequest")
 
     def revoke_access_request(self, access_request_id, revoke_access_request_details, **kwargs):
         """

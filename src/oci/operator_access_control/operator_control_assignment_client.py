@@ -226,7 +226,7 @@ class OperatorControlAssignmentClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
-        :return: A :class:`~oci.response.Response` object with data of type None
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.operator_access_control.models.OperatorControlAssignment`
         :rtype: :class:`~oci.response.Response`
 
         :example:
@@ -269,13 +269,15 @@ class OperatorControlAssignmentClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_operator_control_assignment_details)
+                body=create_operator_control_assignment_details,
+                response_type="OperatorControlAssignment")
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_operator_control_assignment_details)
+                body=create_operator_control_assignment_details,
+                response_type="OperatorControlAssignment")
 
     def delete_operator_control_assignment(self, operator_control_assignment_id, **kwargs):
         """
@@ -467,10 +469,13 @@ class OperatorControlAssignmentClient(object):
         :param str resource_name: (optional)
             A filter to return only resources that match the given ResourceName.
 
+        :param str resource_type: (optional)
+            A filter to return only lists of resources that match the entire given service type.
+
         :param str lifecycle_state: (optional)
             A filter to return only resources whose lifecycleState matches the given OperatorControlAssignment lifecycleState.
 
-            Allowed values are: "CREATED", "APPLIED", "APPLYFAILED", "DELETED"
+            Allowed values are: "CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "DELETING", "DELETED", "DELETIONFAILED"
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -513,6 +518,7 @@ class OperatorControlAssignmentClient(object):
             "retry_strategy",
             "operator_control_name",
             "resource_name",
+            "resource_type",
             "lifecycle_state",
             "limit",
             "page",
@@ -526,7 +532,7 @@ class OperatorControlAssignmentClient(object):
                 "list_operator_control_assignments got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATED", "APPLIED", "APPLYFAILED", "DELETED"]
+            lifecycle_state_allowed_values = ["CREATED", "APPLIED", "APPLYFAILED", "UPDATING", "DELETING", "DELETED", "DELETIONFAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -550,6 +556,7 @@ class OperatorControlAssignmentClient(object):
             "operatorControlName": kwargs.get("operator_control_name", missing),
             "resourceName": kwargs.get("resource_name", missing),
             "compartmentId": compartment_id,
+            "resourceType": kwargs.get("resource_type", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),

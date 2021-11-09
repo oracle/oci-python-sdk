@@ -18,6 +18,18 @@ class OperatorAction(object):
     The following infrastructure layers are controlled by the operator actions x-obmcs-top-level-enum: '#/definitions/InfrastructureLayers' enum: *INFRASTRUCTURELAYERS
     """
 
+    #: A constant which can be used with the resource_type property of a OperatorAction.
+    #: This constant has a value of "EXACC"
+    RESOURCE_TYPE_EXACC = "EXACC"
+
+    #: A constant which can be used with the resource_type property of a OperatorAction.
+    #: This constant has a value of "EXADATAINFRASTRUCTURE"
+    RESOURCE_TYPE_EXADATAINFRASTRUCTURE = "EXADATAINFRASTRUCTURE"
+
+    #: A constant which can be used with the resource_type property of a OperatorAction.
+    #: This constant has a value of "AUTONOMOUSVMCLUSTER"
+    RESOURCE_TYPE_AUTONOMOUSVMCLUSTER = "AUTONOMOUSVMCLUSTER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OperatorAction object with values from keyword arguments.
@@ -31,9 +43,19 @@ class OperatorAction(object):
             The value to assign to the name property of this OperatorAction.
         :type name: str
 
+        :param customer_display_name:
+            The value to assign to the customer_display_name property of this OperatorAction.
+        :type customer_display_name: str
+
         :param component:
             The value to assign to the component property of this OperatorAction.
         :type component: str
+
+        :param resource_type:
+            The value to assign to the resource_type property of this OperatorAction.
+            Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type resource_type: str
 
         :param description:
             The value to assign to the description property of this OperatorAction.
@@ -47,7 +69,9 @@ class OperatorAction(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'customer_display_name': 'str',
             'component': 'str',
+            'resource_type': 'str',
             'description': 'str',
             'properties': 'list[OperatorActionProperties]'
         }
@@ -55,14 +79,18 @@ class OperatorAction(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'customer_display_name': 'customerDisplayName',
             'component': 'component',
+            'resource_type': 'resourceType',
             'description': 'description',
             'properties': 'properties'
         }
 
         self._id = None
         self._name = None
+        self._customer_display_name = None
         self._component = None
+        self._resource_type = None
         self._description = None
         self._properties = None
 
@@ -94,7 +122,7 @@ class OperatorAction(object):
     def name(self):
         """
         **[Required]** Gets the name of this OperatorAction.
-        Name of the operator action.
+        Unique name of the operator action.
 
 
         :return: The name of this OperatorAction.
@@ -106,13 +134,37 @@ class OperatorAction(object):
     def name(self, name):
         """
         Sets the name of this OperatorAction.
-        Name of the operator action.
+        Unique name of the operator action.
 
 
         :param name: The name of this OperatorAction.
         :type: str
         """
         self._name = name
+
+    @property
+    def customer_display_name(self):
+        """
+        Gets the customer_display_name of this OperatorAction.
+        Display Name of the operator action.
+
+
+        :return: The customer_display_name of this OperatorAction.
+        :rtype: str
+        """
+        return self._customer_display_name
+
+    @customer_display_name.setter
+    def customer_display_name(self, customer_display_name):
+        """
+        Sets the customer_display_name of this OperatorAction.
+        Display Name of the operator action.
+
+
+        :param customer_display_name: The customer_display_name of this OperatorAction.
+        :type: str
+        """
+        self._customer_display_name = customer_display_name
 
     @property
     def component(self):
@@ -137,6 +189,36 @@ class OperatorAction(object):
         :type: str
         """
         self._component = component
+
+    @property
+    def resource_type(self):
+        """
+        Gets the resource_type of this OperatorAction.
+        resourceType for which the OperatorAction is applicable
+
+        Allowed values for this property are: "EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The resource_type of this OperatorAction.
+        :rtype: str
+        """
+        return self._resource_type
+
+    @resource_type.setter
+    def resource_type(self, resource_type):
+        """
+        Sets the resource_type of this OperatorAction.
+        resourceType for which the OperatorAction is applicable
+
+
+        :param resource_type: The resource_type of this OperatorAction.
+        :type: str
+        """
+        allowed_values = ["EXACC", "EXADATAINFRASTRUCTURE", "AUTONOMOUSVMCLUSTER"]
+        if not value_allowed_none_or_none_sentinel(resource_type, allowed_values):
+            resource_type = 'UNKNOWN_ENUM_VALUE'
+        self._resource_type = resource_type
 
     @property
     def description(self):

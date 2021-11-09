@@ -45,6 +45,7 @@ Operator Access Control
     oci.operator_access_control.models.OperatorControlCollection
     oci.operator_access_control.models.OperatorControlSummary
     oci.operator_access_control.models.RejectAccessRequestDetails
+    oci.operator_access_control.models.ReviewAccessRequestDetails
     oci.operator_access_control.models.RevokeAccessRequestDetails
     oci.operator_access_control.models.UpdateOperatorControlAssignmentDetails
     oci.operator_access_control.models.UpdateOperatorControlDetails
