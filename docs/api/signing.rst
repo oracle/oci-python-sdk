@@ -29,7 +29,7 @@ EnvironmentError exception.
 Additional Signers
 ===================
 
-.. module:: oci.auth.signers
+.. automodule:: oci.auth.signers
 
 .. autoclass:: SecurityTokenSigner
       :special-members: __init__
@@ -43,11 +43,23 @@ Additional Signers
       :special-members: __init__
       :members:
 
+.. autoclass:: InstancePrincipalsDelegationTokenSigner
+      :special-members: __init__
+      :members:
+
+.. autoclass:: ResourcePrincipalsFederationSigner
+      :special-members: __init__
+      :members:
+
+.. autoclass:: EphemeralResourcePrincipalSigner
+      :special-members: __init__
+      :members:
+
 ============================
 X509 Certificate Retrievers
 ============================
 
-.. module:: oci.auth.certificate_retriever
+.. automodule:: oci.auth.certificate_retriever
 
 .. autoclass:: UrlBasedCertificateRetriever
       :special-members: __init__
@@ -65,13 +77,13 @@ X509 Certificate Retrievers
 X509 Certificate Federation Client
 ====================================
 
-.. module:: oci.auth.federation_client
+.. automodule:: oci.auth.federation_client
 
 .. autoclass:: X509FederationClient
       :special-members: __init__
       :members:
 
-.. module:: oci.auth.session_key_supplier
+.. automodule:: oci.auth.session_key_supplier
 
 .. autoclass:: SessionKeySupplier
       :special-members: __init__
