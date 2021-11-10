@@ -1724,7 +1724,7 @@ class ShowOCIData(object):
             return data
 
     ##########################################################################
-    # print compute images
+    # Get compute images
     ##########################################################################
     def __get_core_compute_images(self, region_name, compartment):
 
@@ -1734,8 +1734,7 @@ class ShowOCIData(object):
 
             for image in images:
                 value = {'id': image['id'],
-                         'desc': image['display_name'].ljust(24) + " - " + image['operating_system'] + " - " + image[
-                             'size_in_gbs'].rjust(3) + "GB - Base:  " + image['base_image_name'],
+                         'desc': image['display_name'].ljust(24) + " - " + image['operating_system'] + " - " + image['size_in_gbs'].rjust(3) + "GB - Base:  " + image['base_image_name'],
                          'sum_info': 'Object Storage - Images (GB)',
                          'sum_size_gb': image['size_in_gbs'],
                          'sum_count_info': "Compute - Images (Count)",
@@ -1751,6 +1750,40 @@ class ShowOCIData(object):
 
         except Exception as e:
             self.__print_error("__get_core_compute_images", e)
+            return data
+
+    ##########################################################################
+    # Get compute images
+    ##########################################################################
+    def __get_core_compute_capacity_reservation(self, region_name, compartment):
+
+        data = []
+        try:
+            array = self.service.search_multi_items(self.service.C_COMPUTE, self.service.C_COMPUTE_CAPACITY_RESERVATION, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            for arr in array:
+                value = {'id': arr['id'],
+                         'display_name': arr['display_name'],
+                         'lifecycle_state': arr['lifecycle_state'],
+                         'availability_domain': arr['availability_domain'],
+                         'is_default_reservation': arr['is_default_reservation'],
+                         'time_created': arr['time_created'],
+                         'reserved_instance_count': arr['reserved_instance_count'],
+                         'used_instance_count': arr['used_instance_count'],
+                         'instances': arr['instances'],
+                         'config': arr['config'],
+                         'sum_size_gb': arr['reserved_instance_count'],
+                         'sum_info': "Compute - Capacity Reservation Instances",
+                         'defined_tags': arr['defined_tags'],
+                         'freeform_tags': arr['freeform_tags'],
+                         'compartment_name': arr['compartment_name'],
+                         'compartment_id': arr['compartment_id']
+                         }
+                data.append(value)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_core_compute_capacity_reservation", e)
             return data
 
     ##########################################################################
@@ -1856,6 +1889,10 @@ class ShowOCIData(object):
             data = self.__get_core_compute_images(region_name, compartment)
             if len(data) > 0:
                 return_data['images'] = data
+
+            data = self.__get_core_compute_capacity_reservation(region_name, compartment)
+            if len(data) > 0:
+                return_data['capacity_reservation'] = data
 
             data = self.__get_core_compute_instance_configuration(region_name, compartment)
             if len(data) > 0:
@@ -2193,6 +2230,103 @@ class ShowOCIData(object):
 
         except Exception as e:
             self.__print_error("__get_database_db_exadata", e)
+            return data
+
+    ##########################################################################
+    # Exacc Infra
+    ##########################################################################
+    def __get_database_db_exacc(self, region_name, compartment):
+
+        data = []
+        try:
+            list_exas = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXACC, 'region_name', region_name, 'compartment_id', compartment['id'])
+
+            for dbs in list_exas:
+                value = {
+                    'id': dbs['id'],
+                    'display_name': dbs['display_name'],
+                    'shape': dbs['shape'],
+                    'time_zone': dbs['time_zone'],
+                    'cpus_enabled': dbs['cpus_enabled'],
+                    'max_cpu_count': dbs['max_cpu_count'],
+                    'memory_size_in_gbs': dbs['memory_size_in_gbs'],
+                    'max_memory_in_gbs': dbs['max_memory_in_gbs'],
+                    'db_node_storage_size_in_gbs': dbs['db_node_storage_size_in_gbs'],
+                    'max_db_node_storage_in_g_bs': dbs['max_db_node_storage_in_g_bs'],
+                    'data_storage_size_in_tbs': dbs['data_storage_size_in_tbs'],
+                    'max_data_storage_in_t_bs': dbs['max_data_storage_in_t_bs'],
+                    'storage_count': dbs['storage_count'],
+                    'additional_storage_count': dbs['additional_storage_count'],
+                    'activated_storage_count': dbs['activated_storage_count'],
+                    'compute_count': dbs['compute_count'],
+                    'cloud_control_plane_server1': dbs['cloud_control_plane_server1'],
+                    'cloud_control_plane_server2': dbs['cloud_control_plane_server2'],
+                    'netmask': dbs['netmask'],
+                    'gateway': dbs['gateway'],
+                    'admin_network_cidr': dbs['admin_network_cidr'],
+                    'infini_band_network_cidr': dbs['infini_band_network_cidr'],
+                    'corporate_proxy': dbs['corporate_proxy'],
+                    'dns_server': dbs['dns_server'],
+                    'ntp_server': dbs['ntp_server'],
+                    'time_created': dbs['time_created'],
+                    'lifecycle_state': dbs['lifecycle_state'],
+                    'lifecycle_details': dbs['lifecycle_details'],
+                    'csi_number': dbs['csi_number'],
+                    'maintenance_slo_status': dbs['maintenance_slo_status'],
+                    'last_maintenance_run': dbs['last_maintenance_run'],
+                    'next_maintenance_run': dbs['next_maintenance_run'],
+                    'maintenance_window': dbs['maintenance_window'],
+                    'defined_tags': dbs['defined_tags'],
+                    'freeform_tags': dbs['freeform_tags'],
+                    'contacts': dbs['contacts'],
+                    'compartment_name': dbs['compartment_name'],
+                    'compartment_id': dbs['compartment_id'],
+                    'region_name': dbs['region_name'],
+                    'sum_info': 'Database ExaCC - ' + dbs['shape'],
+                    'sum_info_storage': 'Database - Storage (GB)',
+                    'sum_size_gb': dbs['max_data_storage_in_t_bs'],
+                    'vm_clusters': [],
+                    'name': dbs['display_name'] + " - " + dbs['shape'] + " - " + dbs['lifecycle_state']
+                }
+
+                for vm in dbs['vm_clusters']:
+                    valvm = {
+                        'id': vm['id'],
+                        'last_patch_history_entry_id': vm['last_patch_history_entry_id'],
+                        'lifecycle_state': vm['lifecycle_state'],
+                        'display_name': vm['display_name'],
+                        'time_created': vm['time_created'],
+                        'lifecycle_details': vm['lifecycle_details'],
+                        'time_zone': vm['time_zone'],
+                        'is_local_backup_enabled': vm['is_local_backup_enabled'],
+                        'exadata_infrastructure_id': vm['exadata_infrastructure_id'],
+                        'is_sparse_diskgroup_enabled': vm['is_sparse_diskgroup_enabled'],
+                        'vm_cluster_network_id': vm['vm_cluster_network_id'],
+                        'cpus_enabled': vm['cpus_enabled'],
+                        'memory_size_in_gbs': vm['memory_size_in_gbs'],
+                        'db_node_storage_size_in_gbs': vm['db_node_storage_size_in_gbs'],
+                        'data_storage_size_in_tbs': vm['data_storage_size_in_tbs'],
+                        'shape': vm['shape'],
+                        'gi_version': vm['gi_version'],
+                        'system_version': vm['system_version'],
+                        'license_model': vm['license_model'],
+                        'defined_tags': vm['defined_tags'],
+                        'freeform_tags': vm['freeform_tags'],
+                        'region_name': vm['region_name'],
+                        'sum_info': 'Database ExaCC - ' + dbs['shape'] + " - " + vm['license_model'],
+                        'sum_info_storage': 'Database - Storage (GB)',
+                        'sum_size_gb': vm['db_node_storage_size_in_gbs'],
+                        'patches': self.__get_database_db_patches(vm['patches']),
+                        'db_homes': self.__get_database_db_homes(vm['db_homes']),
+                        'db_nodes': self.__get_database_db_nodes(vm['db_nodes'])
+                    }
+                    value['vm_clusters'].append(valvm)
+
+                data.append(value)
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_database_db_exacc", e)
             return data
 
     ##########################################################################
@@ -2601,6 +2735,11 @@ class ShowOCIData(object):
             if data:
                 if len(data) > 0:
                     return_data['exadata_infrustructure'] = data
+
+            data = self.__get_database_db_exacc(region_name, compartment)
+            if data:
+                if len(data) > 0:
+                    return_data['exacc_infrustructure'] = data
 
             data = self.__get_database_adb_dedicated(region_name, compartment)
             if data:

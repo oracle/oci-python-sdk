@@ -18,6 +18,8 @@ Executing using Cloud Shell:
        python3 list_dbsystem_with_maintenance_in_tenancy.py -dt
        python3 list_bv_backups_in_tenancy.py -dt
        python3 list_limits_per_compartments.py -dt
+       python3 list_policies_in_tenancy.py -dt
+       python3 list_all_capacity_reservations_in_tenancy.py -dt
 
     4. Help with --help
 
