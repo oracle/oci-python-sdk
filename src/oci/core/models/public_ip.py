@@ -209,8 +209,10 @@ class PublicIp(object):
     def assigned_entity_id(self):
         """
         Gets the assigned_entity_id of this PublicIp.
-        The OCID of the entity the public IP is assigned to, or in the process of
+        The `OCID`__ of the entity the public IP is assigned to, or in the process of
         being assigned to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The assigned_entity_id of this PublicIp.
@@ -222,8 +224,10 @@ class PublicIp(object):
     def assigned_entity_id(self, assigned_entity_id):
         """
         Sets the assigned_entity_id of this PublicIp.
-        The OCID of the entity the public IP is assigned to, or in the process of
+        The `OCID`__ of the entity the public IP is assigned to, or in the process of
         being assigned to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param assigned_entity_id: The assigned_entity_id of this PublicIp.
@@ -299,10 +303,12 @@ class PublicIp(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this PublicIp.
-        The OCID of the compartment containing the public IP. For an ephemeral public IP, this is
+        The `OCID`__ of the compartment containing the public IP. For an ephemeral public IP, this is
         the compartment of its assigned entity (which can be a private IP or a regional entity such
         as a NAT gateway). For a reserved public IP that is currently assigned,
         its compartment can be different from the assigned private IP's.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PublicIp.
@@ -314,10 +320,12 @@ class PublicIp(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this PublicIp.
-        The OCID of the compartment containing the public IP. For an ephemeral public IP, this is
+        The `OCID`__ of the compartment containing the public IP. For an ephemeral public IP, this is
         the compartment of its assigned entity (which can be a private IP or a regional entity such
         as a NAT gateway). For a reserved public IP that is currently assigned,
         its compartment can be different from the assigned private IP's.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PublicIp.
@@ -363,8 +371,8 @@ class PublicIp(object):
     def display_name(self):
         """
         Gets the display_name of this PublicIp.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this PublicIp.
@@ -376,8 +384,8 @@ class PublicIp(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this PublicIp.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this PublicIp.
@@ -423,7 +431,9 @@ class PublicIp(object):
     def id(self):
         """
         Gets the id of this PublicIp.
-        The public IP's Oracle ID (OCID).
+        The public IP's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PublicIp.
@@ -435,7 +445,9 @@ class PublicIp(object):
     def id(self, id):
         """
         Sets the id of this PublicIp.
-        The public IP's Oracle ID (OCID).
+        The public IP's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PublicIp.
@@ -567,11 +579,13 @@ class PublicIp(object):
         Gets the private_ip_id of this PublicIp.
         Deprecated. Use `assignedEntityId` instead.
 
-        The OCID of the private IP that the public IP is currently assigned to, or in the
+        The `OCID`__ of the private IP that the public IP is currently assigned to, or in the
         process of being assigned to.
 
         **Note:** This is `null` if the public IP is not assigned to a private IP, or is
         in the process of being assigned to one.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this PublicIp.
@@ -585,11 +599,13 @@ class PublicIp(object):
         Sets the private_ip_id of this PublicIp.
         Deprecated. Use `assignedEntityId` instead.
 
-        The OCID of the private IP that the public IP is currently assigned to, or in the
+        The `OCID`__ of the private IP that the public IP is currently assigned to, or in the
         process of being assigned to.
 
         **Note:** This is `null` if the public IP is not assigned to a private IP, or is
         in the process of being assigned to one.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this PublicIp.

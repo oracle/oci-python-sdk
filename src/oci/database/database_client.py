@@ -4073,7 +4073,7 @@ class DatabaseClient(object):
     def create_pluggable_database(self, create_pluggable_database_details, **kwargs):
         """
         Creates and starts a pluggable database in the specified container database.
-        Use the [StartPluggableDatabase](#/en/database/latest/PluggableDatabase/StartPluggableDatabase] and [StopPluggableDatabase](#/en/database/latest/PluggableDatabase/StopPluggableDatabase] APIs to start and stop the pluggable database.
+        Use the :func:`start_pluggable_database` and :func:`stop_pluggable_database` APIs to start and stop the pluggable database.
 
 
         :param oci.database.models.CreatePluggableDatabaseDetails create_pluggable_database_details: (required)
@@ -9997,7 +9997,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str upgrade_history_entry_id: (required)
-            The database upgrade History `OCID`__.
+            The database/db system upgrade History `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

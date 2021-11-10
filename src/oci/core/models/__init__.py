@@ -152,6 +152,8 @@ from .create_instance_pool_placement_configuration_details import CreateInstance
 from .create_internet_gateway_details import CreateInternetGatewayDetails
 from .create_ipv6_details import CreateIpv6Details
 from .create_local_peering_gateway_details import CreateLocalPeeringGatewayDetails
+from .create_macsec_key import CreateMacsecKey
+from .create_macsec_properties import CreateMacsecProperties
 from .create_nat_gateway_details import CreateNatGatewayDetails
 from .create_network_security_group_details import CreateNetworkSecurityGroupDetails
 from .create_private_ip_details import CreatePrivateIpDetails
@@ -304,6 +306,8 @@ from .launch_instance_shape_config_details import LaunchInstanceShapeConfigDetai
 from .launch_options import LaunchOptions
 from .letter_of_authority import LetterOfAuthority
 from .local_peering_gateway import LocalPeeringGateway
+from .macsec_key import MacsecKey
+from .macsec_properties import MacsecProperties
 from .measured_boot_entry import MeasuredBootEntry
 from .measured_boot_report import MeasuredBootReport
 from .measured_boot_report_measurements import MeasuredBootReportMeasurements
@@ -350,10 +354,12 @@ from .shape_platform_config_options import ShapePlatformConfigOptions
 from .shape_secure_boot_options import ShapeSecureBootOptions
 from .shape_trusted_platform_module_options import ShapeTrustedPlatformModuleOptions
 from .subnet import Subnet
+from .subnet_topology import SubnetTopology
 from .tcp_options import TcpOptions
 from .terminate_preemption_action import TerminatePreemptionAction
 from .topology import Topology
 from .topology_associated_with_entity_relationship import TopologyAssociatedWithEntityRelationship
+from .topology_associated_with_relationship_details import TopologyAssociatedWithRelationshipDetails
 from .topology_contains_entity_relationship import TopologyContainsEntityRelationship
 from .topology_entity_relationship import TopologyEntityRelationship
 from .topology_routes_to_entity_relationship import TopologyRoutesToEntityRelationship
@@ -402,6 +408,8 @@ from .update_internet_gateway_details import UpdateInternetGatewayDetails
 from .update_ipv6_details import UpdateIpv6Details
 from .update_launch_options import UpdateLaunchOptions
 from .update_local_peering_gateway_details import UpdateLocalPeeringGatewayDetails
+from .update_macsec_key import UpdateMacsecKey
+from .update_macsec_properties import UpdateMacsecProperties
 from .update_nat_gateway_details import UpdateNatGatewayDetails
 from .update_network_security_group_details import UpdateNetworkSecurityGroupDetails
 from .update_network_security_group_security_rules_details import UpdateNetworkSecurityGroupSecurityRulesDetails
@@ -609,6 +617,8 @@ core_type_mapping = {
     "CreateInternetGatewayDetails": CreateInternetGatewayDetails,
     "CreateIpv6Details": CreateIpv6Details,
     "CreateLocalPeeringGatewayDetails": CreateLocalPeeringGatewayDetails,
+    "CreateMacsecKey": CreateMacsecKey,
+    "CreateMacsecProperties": CreateMacsecProperties,
     "CreateNatGatewayDetails": CreateNatGatewayDetails,
     "CreateNetworkSecurityGroupDetails": CreateNetworkSecurityGroupDetails,
     "CreatePrivateIpDetails": CreatePrivateIpDetails,
@@ -761,6 +771,8 @@ core_type_mapping = {
     "LaunchOptions": LaunchOptions,
     "LetterOfAuthority": LetterOfAuthority,
     "LocalPeeringGateway": LocalPeeringGateway,
+    "MacsecKey": MacsecKey,
+    "MacsecProperties": MacsecProperties,
     "MeasuredBootEntry": MeasuredBootEntry,
     "MeasuredBootReport": MeasuredBootReport,
     "MeasuredBootReportMeasurements": MeasuredBootReportMeasurements,
@@ -807,10 +819,12 @@ core_type_mapping = {
     "ShapeSecureBootOptions": ShapeSecureBootOptions,
     "ShapeTrustedPlatformModuleOptions": ShapeTrustedPlatformModuleOptions,
     "Subnet": Subnet,
+    "SubnetTopology": SubnetTopology,
     "TcpOptions": TcpOptions,
     "TerminatePreemptionAction": TerminatePreemptionAction,
     "Topology": Topology,
     "TopologyAssociatedWithEntityRelationship": TopologyAssociatedWithEntityRelationship,
+    "TopologyAssociatedWithRelationshipDetails": TopologyAssociatedWithRelationshipDetails,
     "TopologyContainsEntityRelationship": TopologyContainsEntityRelationship,
     "TopologyEntityRelationship": TopologyEntityRelationship,
     "TopologyRoutesToEntityRelationship": TopologyRoutesToEntityRelationship,
@@ -859,6 +873,8 @@ core_type_mapping = {
     "UpdateIpv6Details": UpdateIpv6Details,
     "UpdateLaunchOptions": UpdateLaunchOptions,
     "UpdateLocalPeeringGatewayDetails": UpdateLocalPeeringGatewayDetails,
+    "UpdateMacsecKey": UpdateMacsecKey,
+    "UpdateMacsecProperties": UpdateMacsecProperties,
     "UpdateNatGatewayDetails": UpdateNatGatewayDetails,
     "UpdateNetworkSecurityGroupDetails": UpdateNetworkSecurityGroupDetails,
     "UpdateNetworkSecurityGroupSecurityRulesDetails": UpdateNetworkSecurityGroupSecurityRulesDetails,

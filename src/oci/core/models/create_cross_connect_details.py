@@ -58,6 +58,10 @@ class CreateCrossConnectDetails(object):
             The value to assign to the customer_reference_name property of this CreateCrossConnectDetails.
         :type customer_reference_name: str
 
+        :param macsec_properties:
+            The value to assign to the macsec_properties property of this CreateCrossConnectDetails.
+        :type macsec_properties: oci.core.models.CreateMacsecProperties
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -69,7 +73,8 @@ class CreateCrossConnectDetails(object):
             'location_name': 'str',
             'near_cross_connect_or_cross_connect_group_id': 'str',
             'port_speed_shape_name': 'str',
-            'customer_reference_name': 'str'
+            'customer_reference_name': 'str',
+            'macsec_properties': 'CreateMacsecProperties'
         }
 
         self.attribute_map = {
@@ -82,7 +87,8 @@ class CreateCrossConnectDetails(object):
             'location_name': 'locationName',
             'near_cross_connect_or_cross_connect_group_id': 'nearCrossConnectOrCrossConnectGroupId',
             'port_speed_shape_name': 'portSpeedShapeName',
-            'customer_reference_name': 'customerReferenceName'
+            'customer_reference_name': 'customerReferenceName',
+            'macsec_properties': 'macsecProperties'
         }
 
         self._compartment_id = None
@@ -95,12 +101,15 @@ class CreateCrossConnectDetails(object):
         self._near_cross_connect_or_cross_connect_group_id = None
         self._port_speed_shape_name = None
         self._customer_reference_name = None
+        self._macsec_properties = None
 
     @property
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateCrossConnectDetails.
-        The OCID of the compartment to contain the cross-connect.
+        The `OCID`__ of the compartment to contain the cross-connect.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateCrossConnectDetails.
@@ -112,7 +121,9 @@ class CreateCrossConnectDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateCrossConnectDetails.
-        The OCID of the compartment to contain the cross-connect.
+        The `OCID`__ of the compartment to contain the cross-connect.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateCrossConnectDetails.
@@ -124,7 +135,9 @@ class CreateCrossConnectDetails(object):
     def cross_connect_group_id(self):
         """
         Gets the cross_connect_group_id of this CreateCrossConnectDetails.
-        The OCID of the cross-connect group to put this cross-connect in.
+        The `OCID`__ of the cross-connect group to put this cross-connect in.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cross_connect_group_id of this CreateCrossConnectDetails.
@@ -136,7 +149,9 @@ class CreateCrossConnectDetails(object):
     def cross_connect_group_id(self, cross_connect_group_id):
         """
         Sets the cross_connect_group_id of this CreateCrossConnectDetails.
-        The OCID of the cross-connect group to put this cross-connect in.
+        The `OCID`__ of the cross-connect group to put this cross-connect in.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cross_connect_group_id: The cross_connect_group_id of this CreateCrossConnectDetails.
@@ -210,8 +225,10 @@ class CreateCrossConnectDetails(object):
         Gets the far_cross_connect_or_cross_connect_group_id of this CreateCrossConnectDetails.
         If you already have an existing cross-connect or cross-connect group at this FastConnect
         location, and you want this new cross-connect to be on a different router (for the
-        purposes of redundancy), provide the OCID of that existing cross-connect or
+        purposes of redundancy), provide the `OCID`__ of that existing cross-connect or
         cross-connect group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The far_cross_connect_or_cross_connect_group_id of this CreateCrossConnectDetails.
@@ -225,8 +242,10 @@ class CreateCrossConnectDetails(object):
         Sets the far_cross_connect_or_cross_connect_group_id of this CreateCrossConnectDetails.
         If you already have an existing cross-connect or cross-connect group at this FastConnect
         location, and you want this new cross-connect to be on a different router (for the
-        purposes of redundancy), provide the OCID of that existing cross-connect or
+        purposes of redundancy), provide the `OCID`__ of that existing cross-connect or
         cross-connect group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param far_cross_connect_or_cross_connect_group_id: The far_cross_connect_or_cross_connect_group_id of this CreateCrossConnectDetails.
@@ -306,7 +325,9 @@ class CreateCrossConnectDetails(object):
         Gets the near_cross_connect_or_cross_connect_group_id of this CreateCrossConnectDetails.
         If you already have an existing cross-connect or cross-connect group at this FastConnect
         location, and you want this new cross-connect to be on the same router, provide the
-        OCID of that existing cross-connect or cross-connect group.
+        `OCID`__ of that existing cross-connect or cross-connect group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The near_cross_connect_or_cross_connect_group_id of this CreateCrossConnectDetails.
@@ -320,7 +341,9 @@ class CreateCrossConnectDetails(object):
         Sets the near_cross_connect_or_cross_connect_group_id of this CreateCrossConnectDetails.
         If you already have an existing cross-connect or cross-connect group at this FastConnect
         location, and you want this new cross-connect to be on the same router, provide the
-        OCID of that existing cross-connect or cross-connect group.
+        `OCID`__ of that existing cross-connect or cross-connect group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param near_cross_connect_or_cross_connect_group_id: The near_cross_connect_or_cross_connect_group_id of this CreateCrossConnectDetails.
@@ -383,6 +406,26 @@ class CreateCrossConnectDetails(object):
         :type: str
         """
         self._customer_reference_name = customer_reference_name
+
+    @property
+    def macsec_properties(self):
+        """
+        Gets the macsec_properties of this CreateCrossConnectDetails.
+
+        :return: The macsec_properties of this CreateCrossConnectDetails.
+        :rtype: oci.core.models.CreateMacsecProperties
+        """
+        return self._macsec_properties
+
+    @macsec_properties.setter
+    def macsec_properties(self, macsec_properties):
+        """
+        Sets the macsec_properties of this CreateCrossConnectDetails.
+
+        :param macsec_properties: The macsec_properties of this CreateCrossConnectDetails.
+        :type: oci.core.models.CreateMacsecProperties
+        """
+        self._macsec_properties = macsec_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

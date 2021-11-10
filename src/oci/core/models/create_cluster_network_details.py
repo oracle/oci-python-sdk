@@ -136,8 +136,8 @@ class CreateClusterNetworkDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateClusterNetworkDetails.
-        A user-friendly name for the cluster network. Does not have to be unique, and it's
-        changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CreateClusterNetworkDetails.
@@ -149,8 +149,8 @@ class CreateClusterNetworkDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateClusterNetworkDetails.
-        A user-friendly name for the cluster network. Does not have to be unique, and it's
-        changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateClusterNetworkDetails.

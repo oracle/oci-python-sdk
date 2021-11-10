@@ -87,6 +87,10 @@ class CrossConnectGroup(object):
             The value to assign to the time_created property of this CrossConnectGroup.
         :type time_created: datetime
 
+        :param macsec_properties:
+            The value to assign to the macsec_properties property of this CrossConnectGroup.
+        :type macsec_properties: oci.core.models.MacsecProperties
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -96,7 +100,8 @@ class CrossConnectGroup(object):
             'id': 'str',
             'lifecycle_state': 'str',
             'customer_reference_name': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'macsec_properties': 'MacsecProperties'
         }
 
         self.attribute_map = {
@@ -107,7 +112,8 @@ class CrossConnectGroup(object):
             'id': 'id',
             'lifecycle_state': 'lifecycleState',
             'customer_reference_name': 'customerReferenceName',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'macsec_properties': 'macsecProperties'
         }
 
         self._compartment_id = None
@@ -118,12 +124,15 @@ class CrossConnectGroup(object):
         self._lifecycle_state = None
         self._customer_reference_name = None
         self._time_created = None
+        self._macsec_properties = None
 
     @property
     def compartment_id(self):
         """
         Gets the compartment_id of this CrossConnectGroup.
-        The OCID of the compartment containing the cross-connect group.
+        The `OCID`__ of the compartment containing the cross-connect group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CrossConnectGroup.
@@ -135,7 +144,9 @@ class CrossConnectGroup(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CrossConnectGroup.
-        The OCID of the compartment containing the cross-connect group.
+        The `OCID`__ of the compartment containing the cross-connect group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CrossConnectGroup.
@@ -181,7 +192,7 @@ class CrossConnectGroup(object):
     def display_name(self):
         """
         Gets the display_name of this CrossConnectGroup.
-        The display name of a user-friendly name. Does not have to be unique, and it's changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -194,7 +205,7 @@ class CrossConnectGroup(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CrossConnectGroup.
-        The display name of a user-friendly name. Does not have to be unique, and it's changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -348,6 +359,26 @@ class CrossConnectGroup(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def macsec_properties(self):
+        """
+        Gets the macsec_properties of this CrossConnectGroup.
+
+        :return: The macsec_properties of this CrossConnectGroup.
+        :rtype: oci.core.models.MacsecProperties
+        """
+        return self._macsec_properties
+
+    @macsec_properties.setter
+    def macsec_properties(self, macsec_properties):
+        """
+        Sets the macsec_properties of this CrossConnectGroup.
+
+        :param macsec_properties: The macsec_properties of this CrossConnectGroup.
+        :type: oci.core.models.MacsecProperties
+        """
+        self._macsec_properties = macsec_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

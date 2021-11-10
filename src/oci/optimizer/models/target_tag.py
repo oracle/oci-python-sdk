@@ -10,7 +10,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetTag(object):
     """
-    A target tag with tag namespace, tag definition, tag value type, and tag values attached to the current profile override.
+    A tag key definition used in the current profile override, including the tag namespace, tag key, tag value type, and tag values.
+    Only defined tags are supported.
+    For more information about tagging, see `Tagging Overview`__
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm
     """
 
     #: A constant which can be used with the tag_value_type property of a TargetTag.
@@ -92,7 +96,7 @@ class TargetTag(object):
     def tag_definition_name(self):
         """
         **[Required]** Gets the tag_definition_name of this TargetTag.
-        The name of the tag definition.
+        The name you use to refer to the tag, also known as the tag key.
 
 
         :return: The tag_definition_name of this TargetTag.
@@ -104,7 +108,7 @@ class TargetTag(object):
     def tag_definition_name(self, tag_definition_name):
         """
         Sets the tag_definition_name of this TargetTag.
-        The name of the tag definition.
+        The name you use to refer to the tag, also known as the tag key.
 
 
         :param tag_definition_name: The tag_definition_name of this TargetTag.
@@ -116,7 +120,13 @@ class TargetTag(object):
     def tag_value_type(self):
         """
         **[Required]** Gets the tag_value_type of this TargetTag.
-        The tag value type.
+        Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
+
+        When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation
+        for resources with any tag values attached to them.
+
+        When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values.
+        Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
 
         Allowed values for this property are: "VALUE", "ANY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -131,7 +141,13 @@ class TargetTag(object):
     def tag_value_type(self, tag_value_type):
         """
         Sets the tag_value_type of this TargetTag.
-        The tag value type.
+        Specifies which tag value types in the `tagValues` field result in overrides of the recommendation criteria.
+
+        When the value for this field is `ANY`, the `tagValues` field should be empty, which enforces overrides to the recommendation
+        for resources with any tag values attached to them.
+
+        When the value for this field value is `VALUE`, the `tagValues` field must include a specific value or list of values.
+        Overrides to the recommendation criteria only occur for resources that match the values in the `tagValues` fields.
 
 
         :param tag_value_type: The tag_value_type of this TargetTag.
@@ -146,7 +162,7 @@ class TargetTag(object):
     def tag_values(self):
         """
         Gets the tag_values of this TargetTag.
-        The list of tag values.
+        The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
 
 
         :return: The tag_values of this TargetTag.
@@ -158,7 +174,7 @@ class TargetTag(object):
     def tag_values(self, tag_values):
         """
         Sets the tag_values of this TargetTag.
-        The list of tag values.
+        The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
 
 
         :param tag_values: The tag_values of this TargetTag.

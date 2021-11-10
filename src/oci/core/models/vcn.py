@@ -217,7 +217,9 @@ class Vcn(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Vcn.
-        The OCID of the compartment containing the VCN.
+        The `OCID`__ of the compartment containing the VCN.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Vcn.
@@ -229,7 +231,9 @@ class Vcn(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Vcn.
-        The OCID of the compartment containing the VCN.
+        The `OCID`__ of the compartment containing the VCN.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Vcn.
@@ -241,7 +245,9 @@ class Vcn(object):
     def default_dhcp_options_id(self):
         """
         Gets the default_dhcp_options_id of this Vcn.
-        The OCID for the VCN's default set of DHCP options.
+        The `OCID`__ for the VCN's default set of DHCP options.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The default_dhcp_options_id of this Vcn.
@@ -253,7 +259,9 @@ class Vcn(object):
     def default_dhcp_options_id(self, default_dhcp_options_id):
         """
         Sets the default_dhcp_options_id of this Vcn.
-        The OCID for the VCN's default set of DHCP options.
+        The `OCID`__ for the VCN's default set of DHCP options.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param default_dhcp_options_id: The default_dhcp_options_id of this Vcn.
@@ -265,7 +273,9 @@ class Vcn(object):
     def default_route_table_id(self):
         """
         Gets the default_route_table_id of this Vcn.
-        The OCID for the VCN's default route table.
+        The `OCID`__ for the VCN's default route table.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The default_route_table_id of this Vcn.
@@ -277,7 +287,9 @@ class Vcn(object):
     def default_route_table_id(self, default_route_table_id):
         """
         Sets the default_route_table_id of this Vcn.
-        The OCID for the VCN's default route table.
+        The `OCID`__ for the VCN's default route table.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param default_route_table_id: The default_route_table_id of this Vcn.
@@ -289,7 +301,9 @@ class Vcn(object):
     def default_security_list_id(self):
         """
         Gets the default_security_list_id of this Vcn.
-        The OCID for the VCN's default security list.
+        The `OCID`__ for the VCN's default security list.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The default_security_list_id of this Vcn.
@@ -301,7 +315,9 @@ class Vcn(object):
     def default_security_list_id(self, default_security_list_id):
         """
         Sets the default_security_list_id of this Vcn.
-        The OCID for the VCN's default security list.
+        The `OCID`__ for the VCN's default security list.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param default_security_list_id: The default_security_list_id of this Vcn.
@@ -459,7 +475,9 @@ class Vcn(object):
     def id(self):
         """
         **[Required]** Gets the id of this Vcn.
-        The VCN's Oracle ID (OCID).
+        The VCN's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Vcn.
@@ -471,7 +489,9 @@ class Vcn(object):
     def id(self, id):
         """
         Sets the id of this Vcn.
-        The VCN's Oracle ID (OCID).
+        The VCN's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Vcn.

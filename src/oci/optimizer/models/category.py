@@ -96,6 +96,10 @@ class Category(object):
             The value to assign to the time_updated property of this Category.
         :type time_updated: datetime
 
+        :param extended_metadata:
+            The value to assign to the extended_metadata property of this Category.
+        :type extended_metadata: dict(str, str)
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -107,7 +111,8 @@ class Category(object):
             'lifecycle_state': 'str',
             'estimated_cost_saving': 'float',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'extended_metadata': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -120,7 +125,8 @@ class Category(object):
             'lifecycle_state': 'lifecycleState',
             'estimated_cost_saving': 'estimatedCostSaving',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'extended_metadata': 'extendedMetadata'
         }
 
         self._id = None
@@ -133,6 +139,7 @@ class Category(object):
         self._estimated_cost_saving = None
         self._time_created = None
         self._time_updated = None
+        self._extended_metadata = None
 
     @property
     def id(self):
@@ -186,7 +193,7 @@ class Category(object):
     def name(self):
         """
         **[Required]** Gets the name of this Category.
-        The name assigned to the category. Avoid entering confidential information.
+        The name assigned to the category.
 
 
         :return: The name of this Category.
@@ -198,7 +205,7 @@ class Category(object):
     def name(self, name):
         """
         Sets the name of this Category.
-        The name assigned to the category. Avoid entering confidential information.
+        The name assigned to the category.
 
 
         :param name: The name of this Category.
@@ -210,7 +217,7 @@ class Category(object):
     def description(self):
         """
         **[Required]** Gets the description of this Category.
-        Text describing the category. Avoid entering confidential information.
+        Text describing the category.
 
 
         :return: The description of this Category.
@@ -222,7 +229,7 @@ class Category(object):
     def description(self, description):
         """
         Sets the description of this Category.
-        Text describing the category. Avoid entering confidential information.
+        Text describing the category.
 
 
         :param description: The description of this Category.
@@ -379,6 +386,38 @@ class Category(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def extended_metadata(self):
+        """
+        Gets the extended_metadata of this Category.
+        Additional metadata key/value pairs for the category.
+
+        For example:
+
+        `{\"EstimatedSaving\": \"200\"}`
+
+
+        :return: The extended_metadata of this Category.
+        :rtype: dict(str, str)
+        """
+        return self._extended_metadata
+
+    @extended_metadata.setter
+    def extended_metadata(self, extended_metadata):
+        """
+        Sets the extended_metadata of this Category.
+        Additional metadata key/value pairs for the category.
+
+        For example:
+
+        `{\"EstimatedSaving\": \"200\"}`
+
+
+        :param extended_metadata: The extended_metadata of this Category.
+        :type: dict(str, str)
+        """
+        self._extended_metadata = extended_metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

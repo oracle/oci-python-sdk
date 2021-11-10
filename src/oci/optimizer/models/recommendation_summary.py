@@ -156,6 +156,10 @@ class RecommendationSummary(object):
             The value to assign to the supported_levels property of this RecommendationSummary.
         :type supported_levels: oci.optimizer.models.SupportedLevels
 
+        :param extended_metadata:
+            The value to assign to the extended_metadata property of this RecommendationSummary.
+        :type extended_metadata: dict(str, str)
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -172,7 +176,8 @@ class RecommendationSummary(object):
             'time_status_end': 'datetime',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'supported_levels': 'SupportedLevels'
+            'supported_levels': 'SupportedLevels',
+            'extended_metadata': 'dict(str, str)'
         }
 
         self.attribute_map = {
@@ -190,7 +195,8 @@ class RecommendationSummary(object):
             'time_status_end': 'timeStatusEnd',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
-            'supported_levels': 'supportedLevels'
+            'supported_levels': 'supportedLevels',
+            'extended_metadata': 'extendedMetadata'
         }
 
         self._id = None
@@ -208,6 +214,7 @@ class RecommendationSummary(object):
         self._time_created = None
         self._time_updated = None
         self._supported_levels = None
+        self._extended_metadata = None
 
     @property
     def id(self):
@@ -592,6 +599,38 @@ class RecommendationSummary(object):
         :type: oci.optimizer.models.SupportedLevels
         """
         self._supported_levels = supported_levels
+
+    @property
+    def extended_metadata(self):
+        """
+        Gets the extended_metadata of this RecommendationSummary.
+        Additional metadata key/value pairs for the recommendation summary.
+
+        For example:
+
+        `{\"EstimatedSaving\": \"200\"}`
+
+
+        :return: The extended_metadata of this RecommendationSummary.
+        :rtype: dict(str, str)
+        """
+        return self._extended_metadata
+
+    @extended_metadata.setter
+    def extended_metadata(self, extended_metadata):
+        """
+        Sets the extended_metadata of this RecommendationSummary.
+        Additional metadata key/value pairs for the recommendation summary.
+
+        For example:
+
+        `{\"EstimatedSaving\": \"200\"}`
+
+
+        :param extended_metadata: The extended_metadata of this RecommendationSummary.
+        :type: dict(str, str)
+        """
+        self._extended_metadata = extended_metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

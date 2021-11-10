@@ -1,0 +1,11 @@
+CreateBdsApiKeyDetails
+======================
+
+.. currentmodule:: oci.bds.models
+
+.. autoclass:: CreateBdsApiKeyDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

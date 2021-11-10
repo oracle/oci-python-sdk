@@ -131,3 +131,4 @@
 ^src/oci/certificates_management/.*\.py$
 ^src/oci/usage/.*\.py$
 ^src/oci/database_tools/.*\.py$
+^src/oci/service_manager_proxy/.*\.py$

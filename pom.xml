@@ -43,6 +43,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/service_manager_proxy/pom.xml</module>
     <module>poms/database_tools/pom.xml</module>
     <module>poms/usage/pom.xml</module>
     <module>poms/certificates_management/pom.xml</module>

@@ -92,8 +92,8 @@ class UpdateLocalPeeringGatewayDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateLocalPeeringGatewayDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateLocalPeeringGatewayDetails.
@@ -105,8 +105,8 @@ class UpdateLocalPeeringGatewayDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateLocalPeeringGatewayDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateLocalPeeringGatewayDetails.
@@ -152,11 +152,12 @@ class UpdateLocalPeeringGatewayDetails(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this UpdateLocalPeeringGatewayDetails.
-        The OCID of the route table the LPG will use.
+        The `OCID`__ of the route table the LPG will use.
 
         For information about why you would associate a route table with an LPG, see
         `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
 
 
@@ -169,11 +170,12 @@ class UpdateLocalPeeringGatewayDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this UpdateLocalPeeringGatewayDetails.
-        The OCID of the route table the LPG will use.
+        The `OCID`__ of the route table the LPG will use.
 
         For information about why you would associate a route table with an LPG, see
         `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
 
 

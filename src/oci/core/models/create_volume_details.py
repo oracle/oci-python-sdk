@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateVolumeDetails(object):
     """
-    CreateVolumeDetails model.
+    The details of the volume to create. For CreateVolume operation, this field is required in the request,
+    see :func:`create_volume`.
     """
 
     def __init__(self, **kwargs):

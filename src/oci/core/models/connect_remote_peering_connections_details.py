@@ -44,7 +44,9 @@ class ConnectRemotePeeringConnectionsDetails(object):
     def peer_id(self):
         """
         **[Required]** Gets the peer_id of this ConnectRemotePeeringConnectionsDetails.
-        The OCID of the RPC you want to peer with.
+        The `OCID`__ of the RPC you want to peer with.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_id of this ConnectRemotePeeringConnectionsDetails.
@@ -56,7 +58,9 @@ class ConnectRemotePeeringConnectionsDetails(object):
     def peer_id(self, peer_id):
         """
         Sets the peer_id of this ConnectRemotePeeringConnectionsDetails.
-        The OCID of the RPC you want to peer with.
+        The `OCID`__ of the RPC you want to peer with.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param peer_id: The peer_id of this ConnectRemotePeeringConnectionsDetails.

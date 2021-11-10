@@ -141,8 +141,8 @@ class CreateComputeCapacityReservationDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateComputeCapacityReservationDetails.
-        A user-friendly name for the compute capacity reservation. Does not have to be unique, and it's
-        changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CreateComputeCapacityReservationDetails.
@@ -154,8 +154,8 @@ class CreateComputeCapacityReservationDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateComputeCapacityReservationDetails.
-        A user-friendly name for the compute capacity reservation. Does not have to be unique, and it's
-        changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateComputeCapacityReservationDetails.
@@ -259,7 +259,7 @@ class CreateComputeCapacityReservationDetails(object):
     def instance_reservation_configs(self):
         """
         Gets the instance_reservation_configs of this CreateComputeCapacityReservationDetails.
-        The reservation configurations for the capacity reservation.
+        The capacity configurations for the capacity reservation.
 
         To use the reservation for the desired shape, specify the shape, count, and
         optionally the fault domain where you want this configuration.
@@ -274,7 +274,7 @@ class CreateComputeCapacityReservationDetails(object):
     def instance_reservation_configs(self, instance_reservation_configs):
         """
         Sets the instance_reservation_configs of this CreateComputeCapacityReservationDetails.
-        The reservation configurations for the capacity reservation.
+        The capacity configurations for the capacity reservation.
 
         To use the reservation for the desired shape, specify the shape, count, and
         optionally the fault domain where you want this configuration.

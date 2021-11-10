@@ -280,6 +280,47 @@ def test_change_shape(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_create_bds_api_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'CreateBdsApiKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'CreateBdsApiKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='CreateBdsApiKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.create_bds_api_key(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                create_bds_api_key_details=request.pop(util.camelize('CreateBdsApiKeyDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'CreateBdsApiKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_bds_api_key',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
 def test_create_bds_instance(testing_service_client):
     if not testing_service_client.is_api_enabled('bds', 'CreateBdsInstance'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -315,6 +356,47 @@ def test_create_bds_instance(testing_service_client):
             service_error,
             'create_bds_instance',
             False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_delete_bds_api_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'DeleteBdsApiKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'DeleteBdsApiKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='DeleteBdsApiKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_bds_api_key(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                api_key_id=request.pop(util.camelize('apiKeyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'DeleteBdsApiKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_bds_api_key',
+            True,
             False
         )
 
@@ -395,6 +477,47 @@ def test_get_auto_scaling_configuration(testing_service_client):
             result,
             service_error,
             'autoScalingConfiguration',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_get_bds_api_key(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'GetBdsApiKey'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'GetBdsApiKey')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='GetBdsApiKey')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.get_bds_api_key(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                api_key_id=request.pop(util.camelize('apiKeyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'GetBdsApiKey',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'bdsApiKey',
             False,
             False
         )
@@ -538,6 +661,66 @@ def test_list_auto_scaling_configurations(testing_service_client):
             result,
             service_error,
             'autoScalingConfigurationSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_list_bds_api_keys(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'ListBdsApiKeys'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'ListBdsApiKeys')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='ListBdsApiKeys')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.list_bds_api_keys(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_bds_api_keys(
+                    bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_bds_api_keys(
+                        bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'ListBdsApiKeys',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'bdsApiKeySummary',
             False,
             True
         )
@@ -902,6 +1085,48 @@ def test_restart_node(testing_service_client):
             result,
             service_error,
             'restart_node',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_test_bds_object_storage_connection(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'TestBdsObjectStorageConnection'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'TestBdsObjectStorageConnection')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='TestBdsObjectStorageConnection')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.test_bds_object_storage_connection(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                api_key_id=request.pop(util.camelize('apiKeyId')),
+                test_bds_object_storage_connection_details=request.pop(util.camelize('TestBdsObjectStorageConnectionDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'TestBdsObjectStorageConnection',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'test_bds_object_storage_connection',
             False,
             False
         )

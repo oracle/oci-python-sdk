@@ -108,7 +108,7 @@ class CreateVolumeBackupDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateVolumeBackupDetails.
-        A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -121,7 +121,7 @@ class CreateVolumeBackupDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateVolumeBackupDetails.
-        A user-friendly name for the volume backup. Does not have to be unique and it's changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 

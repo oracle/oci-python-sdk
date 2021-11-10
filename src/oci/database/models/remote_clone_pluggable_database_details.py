@@ -40,13 +40,18 @@ class RemoteClonePluggableDatabaseDetails(object):
             The value to assign to the target_tde_wallet_password property of this RemoteClonePluggableDatabaseDetails.
         :type target_tde_wallet_password: str
 
+        :param should_pdb_admin_account_be_locked:
+            The value to assign to the should_pdb_admin_account_be_locked property of this RemoteClonePluggableDatabaseDetails.
+        :type should_pdb_admin_account_be_locked: bool
+
         """
         self.swagger_types = {
             'target_container_database_id': 'str',
             'source_container_db_admin_password': 'str',
             'cloned_pdb_name': 'str',
             'pdb_admin_password': 'str',
-            'target_tde_wallet_password': 'str'
+            'target_tde_wallet_password': 'str',
+            'should_pdb_admin_account_be_locked': 'bool'
         }
 
         self.attribute_map = {
@@ -54,7 +59,8 @@ class RemoteClonePluggableDatabaseDetails(object):
             'source_container_db_admin_password': 'sourceContainerDbAdminPassword',
             'cloned_pdb_name': 'clonedPdbName',
             'pdb_admin_password': 'pdbAdminPassword',
-            'target_tde_wallet_password': 'targetTdeWalletPassword'
+            'target_tde_wallet_password': 'targetTdeWalletPassword',
+            'should_pdb_admin_account_be_locked': 'shouldPdbAdminAccountBeLocked'
         }
 
         self._target_container_database_id = None
@@ -62,6 +68,7 @@ class RemoteClonePluggableDatabaseDetails(object):
         self._cloned_pdb_name = None
         self._pdb_admin_password = None
         self._target_tde_wallet_password = None
+        self._should_pdb_admin_account_be_locked = None
 
     @property
     def target_container_database_id(self):
@@ -142,7 +149,7 @@ class RemoteClonePluggableDatabaseDetails(object):
     @property
     def pdb_admin_password(self):
         """
-        **[Required]** Gets the pdb_admin_password of this RemoteClonePluggableDatabaseDetails.
+        Gets the pdb_admin_password of this RemoteClonePluggableDatabaseDetails.
         A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
 
 
@@ -166,7 +173,7 @@ class RemoteClonePluggableDatabaseDetails(object):
     @property
     def target_tde_wallet_password(self):
         """
-        **[Required]** Gets the target_tde_wallet_password of this RemoteClonePluggableDatabaseDetails.
+        Gets the target_tde_wallet_password of this RemoteClonePluggableDatabaseDetails.
         The existing TDE wallet password of the target CDB.
 
 
@@ -186,6 +193,32 @@ class RemoteClonePluggableDatabaseDetails(object):
         :type: str
         """
         self._target_tde_wallet_password = target_tde_wallet_password
+
+    @property
+    def should_pdb_admin_account_be_locked(self):
+        """
+        Gets the should_pdb_admin_account_be_locked of this RemoteClonePluggableDatabaseDetails.
+        The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it.
+        If true, the pluggable database will be locked and user cannot login to it.
+
+
+        :return: The should_pdb_admin_account_be_locked of this RemoteClonePluggableDatabaseDetails.
+        :rtype: bool
+        """
+        return self._should_pdb_admin_account_be_locked
+
+    @should_pdb_admin_account_be_locked.setter
+    def should_pdb_admin_account_be_locked(self, should_pdb_admin_account_be_locked):
+        """
+        Sets the should_pdb_admin_account_be_locked of this RemoteClonePluggableDatabaseDetails.
+        The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it.
+        If true, the pluggable database will be locked and user cannot login to it.
+
+
+        :param should_pdb_admin_account_be_locked: The should_pdb_admin_account_be_locked of this RemoteClonePluggableDatabaseDetails.
+        :type: bool
+        """
+        self._should_pdb_admin_account_be_locked = should_pdb_admin_account_be_locked
 
     def __repr__(self):
         return formatted_flat_dict(self)

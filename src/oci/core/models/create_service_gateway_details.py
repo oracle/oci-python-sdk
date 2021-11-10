@@ -201,7 +201,7 @@ class CreateServiceGatewayDetails(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this CreateServiceGatewayDetails.
-        The OCID of the route table the service gateway will use.
+        The `OCID`__ of the route table the service gateway will use.
 
         If you don't specify a route table here, the service gateway is created without an associated route
         table. The Networking service does NOT automatically associate the attached VCN's default route table
@@ -210,6 +210,7 @@ class CreateServiceGatewayDetails(object):
         For information about why you would associate a route table with a service gateway, see
         `Transit Routing: Private Access to Oracle Services`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
 
@@ -222,7 +223,7 @@ class CreateServiceGatewayDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this CreateServiceGatewayDetails.
-        The OCID of the route table the service gateway will use.
+        The `OCID`__ of the route table the service gateway will use.
 
         If you don't specify a route table here, the service gateway is created without an associated route
         table. The Networking service does NOT automatically associate the attached VCN's default route table
@@ -231,6 +232,7 @@ class CreateServiceGatewayDetails(object):
         For information about why you would associate a route table with a service gateway, see
         `Transit Routing: Private Access to Oracle Services`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
 

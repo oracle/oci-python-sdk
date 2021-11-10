@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateRoverNodeDetails(object):
     """
-    The information requied to create a RoverNode.
+    CreateRoverNodeDetails model.
     """
 
     #: A constant which can be used with the shipping_preference property of a CreateRoverNodeDetails.
@@ -137,6 +137,22 @@ class CreateRoverNodeDetails(object):
             The value to assign to the oracle_shipping_tracking_url property of this CreateRoverNodeDetails.
         :type oracle_shipping_tracking_url: str
 
+        :param is_import_requested:
+            The value to assign to the is_import_requested property of this CreateRoverNodeDetails.
+        :type is_import_requested: bool
+
+        :param import_compartment_id:
+            The value to assign to the import_compartment_id property of this CreateRoverNodeDetails.
+        :type import_compartment_id: str
+
+        :param import_file_bucket:
+            The value to assign to the import_file_bucket property of this CreateRoverNodeDetails.
+        :type import_file_bucket: str
+
+        :param data_validation_code:
+            The value to assign to the data_validation_code property of this CreateRoverNodeDetails.
+        :type data_validation_code: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateRoverNodeDetails.
         :type freeform_tags: dict(str, str)
@@ -170,6 +186,10 @@ class CreateRoverNodeDetails(object):
             'lifecycle_state_details': 'str',
             'serial_number': 'str',
             'oracle_shipping_tracking_url': 'str',
+            'is_import_requested': 'bool',
+            'import_compartment_id': 'str',
+            'import_file_bucket': 'str',
+            'data_validation_code': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -195,6 +215,10 @@ class CreateRoverNodeDetails(object):
             'lifecycle_state_details': 'lifecycleStateDetails',
             'serial_number': 'serialNumber',
             'oracle_shipping_tracking_url': 'oracleShippingTrackingUrl',
+            'is_import_requested': 'isImportRequested',
+            'import_compartment_id': 'importCompartmentId',
+            'import_file_bucket': 'importFileBucket',
+            'data_validation_code': 'dataValidationCode',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -219,6 +243,10 @@ class CreateRoverNodeDetails(object):
         self._lifecycle_state_details = None
         self._serial_number = None
         self._oracle_shipping_tracking_url = None
+        self._is_import_requested = None
+        self._import_compartment_id = None
+        self._import_file_bucket = None
+        self._data_validation_code = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -698,6 +726,102 @@ class CreateRoverNodeDetails(object):
         :type: str
         """
         self._oracle_shipping_tracking_url = oracle_shipping_tracking_url
+
+    @property
+    def is_import_requested(self):
+        """
+        Gets the is_import_requested of this CreateRoverNodeDetails.
+        The flag indicating that customer requests data to be imported to OCI upon Rover node return.
+
+
+        :return: The is_import_requested of this CreateRoverNodeDetails.
+        :rtype: bool
+        """
+        return self._is_import_requested
+
+    @is_import_requested.setter
+    def is_import_requested(self, is_import_requested):
+        """
+        Sets the is_import_requested of this CreateRoverNodeDetails.
+        The flag indicating that customer requests data to be imported to OCI upon Rover node return.
+
+
+        :param is_import_requested: The is_import_requested of this CreateRoverNodeDetails.
+        :type: bool
+        """
+        self._is_import_requested = is_import_requested
+
+    @property
+    def import_compartment_id(self):
+        """
+        Gets the import_compartment_id of this CreateRoverNodeDetails.
+        An OCID of a compartment where data will be imported to upon Rover node return.
+
+
+        :return: The import_compartment_id of this CreateRoverNodeDetails.
+        :rtype: str
+        """
+        return self._import_compartment_id
+
+    @import_compartment_id.setter
+    def import_compartment_id(self, import_compartment_id):
+        """
+        Sets the import_compartment_id of this CreateRoverNodeDetails.
+        An OCID of a compartment where data will be imported to upon Rover node return.
+
+
+        :param import_compartment_id: The import_compartment_id of this CreateRoverNodeDetails.
+        :type: str
+        """
+        self._import_compartment_id = import_compartment_id
+
+    @property
+    def import_file_bucket(self):
+        """
+        Gets the import_file_bucket of this CreateRoverNodeDetails.
+        Name of a bucket where files from NFS share will be imported to upon Rover node return.
+
+
+        :return: The import_file_bucket of this CreateRoverNodeDetails.
+        :rtype: str
+        """
+        return self._import_file_bucket
+
+    @import_file_bucket.setter
+    def import_file_bucket(self, import_file_bucket):
+        """
+        Sets the import_file_bucket of this CreateRoverNodeDetails.
+        Name of a bucket where files from NFS share will be imported to upon Rover node return.
+
+
+        :param import_file_bucket: The import_file_bucket of this CreateRoverNodeDetails.
+        :type: str
+        """
+        self._import_file_bucket = import_file_bucket
+
+    @property
+    def data_validation_code(self):
+        """
+        Gets the data_validation_code of this CreateRoverNodeDetails.
+        Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+
+
+        :return: The data_validation_code of this CreateRoverNodeDetails.
+        :rtype: str
+        """
+        return self._data_validation_code
+
+    @data_validation_code.setter
+    def data_validation_code(self, data_validation_code):
+        """
+        Sets the data_validation_code of this CreateRoverNodeDetails.
+        Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+
+
+        :param data_validation_code: The data_validation_code of this CreateRoverNodeDetails.
+        :type: str
+        """
+        self._data_validation_code = data_validation_code
 
     @property
     def freeform_tags(self):

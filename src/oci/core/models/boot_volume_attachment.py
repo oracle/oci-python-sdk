@@ -207,10 +207,8 @@ class BootVolumeAttachment(object):
     def display_name(self):
         """
         Gets the display_name of this BootVolumeAttachment.
-        A user-friendly name. Does not have to be unique, and it cannot be changed.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        Example: `My boot volume`
 
 
         :return: The display_name of this BootVolumeAttachment.
@@ -222,10 +220,8 @@ class BootVolumeAttachment(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this BootVolumeAttachment.
-        A user-friendly name. Does not have to be unique, and it cannot be changed.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        Example: `My boot volume`
 
 
         :param display_name: The display_name of this BootVolumeAttachment.

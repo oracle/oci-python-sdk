@@ -92,8 +92,8 @@ class UpdatePublicIpDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdatePublicIpDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this UpdatePublicIpDetails.
@@ -105,8 +105,8 @@ class UpdatePublicIpDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdatePublicIpDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdatePublicIpDetails.
@@ -152,11 +152,13 @@ class UpdatePublicIpDetails(object):
     def private_ip_id(self):
         """
         Gets the private_ip_id of this UpdatePublicIpDetails.
-        The OCID of the private IP to assign the public IP to.
+        The `OCID`__ of the private IP to assign the public IP to.
         * If the public IP is already assigned to a different private IP, it will be unassigned
         and then reassigned to the specified private IP.
         * If you set this field to an empty string, the public IP will be unassigned from the
         private IP it is currently assigned to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this UpdatePublicIpDetails.
@@ -168,11 +170,13 @@ class UpdatePublicIpDetails(object):
     def private_ip_id(self, private_ip_id):
         """
         Sets the private_ip_id of this UpdatePublicIpDetails.
-        The OCID of the private IP to assign the public IP to.
+        The `OCID`__ of the private IP to assign the public IP to.
         * If the public IP is already assigned to a different private IP, it will be unassigned
         and then reassigned to the specified private IP.
         * If you set this field to an empty string, the public IP will be unassigned from the
         private IP it is currently assigned to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this UpdatePublicIpDetails.

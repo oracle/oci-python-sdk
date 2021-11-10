@@ -37,6 +37,14 @@ class CreateVirtualCircuitDetails(object):
     #: This constant has a value of "PRIVATE"
     TYPE_PRIVATE = "PRIVATE"
 
+    #: A constant which can be used with the ip_mtu property of a CreateVirtualCircuitDetails.
+    #: This constant has a value of "MTU_1500"
+    IP_MTU_MTU_1500 = "MTU_1500"
+
+    #: A constant which can be used with the ip_mtu property of a CreateVirtualCircuitDetails.
+    #: This constant has a value of "MTU_9000"
+    IP_MTU_MTU_9000 = "MTU_9000"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateVirtualCircuitDetails object with values from keyword arguments.
@@ -112,6 +120,11 @@ class CreateVirtualCircuitDetails(object):
             Allowed values for this property are: "PUBLIC", "PRIVATE"
         :type type: str
 
+        :param ip_mtu:
+            The value to assign to the ip_mtu property of this CreateVirtualCircuitDetails.
+            Allowed values for this property are: "MTU_1500", "MTU_9000"
+        :type ip_mtu: str
+
         """
         self.swagger_types = {
             'bandwidth_shape_name': 'str',
@@ -130,7 +143,8 @@ class CreateVirtualCircuitDetails(object):
             'provider_service_name': 'str',
             'public_prefixes': 'list[CreateVirtualCircuitPublicPrefixDetails]',
             'region': 'str',
-            'type': 'str'
+            'type': 'str',
+            'ip_mtu': 'str'
         }
 
         self.attribute_map = {
@@ -150,7 +164,8 @@ class CreateVirtualCircuitDetails(object):
             'provider_service_name': 'providerServiceName',
             'public_prefixes': 'publicPrefixes',
             'region': 'region',
-            'type': 'type'
+            'type': 'type',
+            'ip_mtu': 'ipMtu'
         }
 
         self._bandwidth_shape_name = None
@@ -170,6 +185,7 @@ class CreateVirtualCircuitDetails(object):
         self._public_prefixes = None
         self._region = None
         self._type = None
+        self._ip_mtu = None
 
     @property
     def bandwidth_shape_name(self):
@@ -207,7 +223,9 @@ class CreateVirtualCircuitDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateVirtualCircuitDetails.
-        The OCID of the compartment to contain the virtual circuit.
+        The `OCID`__ of the compartment to contain the virtual circuit.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateVirtualCircuitDetails.
@@ -219,7 +237,9 @@ class CreateVirtualCircuitDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateVirtualCircuitDetails.
-        The OCID of the compartment to contain the virtual circuit.
+        The `OCID`__ of the compartment to contain the virtual circuit.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateVirtualCircuitDetails.
@@ -396,7 +416,8 @@ class CreateVirtualCircuitDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateVirtualCircuitDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CreateVirtualCircuitDetails.
@@ -408,7 +429,8 @@ class CreateVirtualCircuitDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateVirtualCircuitDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateVirtualCircuitDetails.
@@ -454,8 +476,10 @@ class CreateVirtualCircuitDetails(object):
     def gateway_id(self):
         """
         Gets the gateway_id of this CreateVirtualCircuitDetails.
-        For private virtual circuits only. The OCID of the :class:`Drg`
+        For private virtual circuits only. The `OCID`__ of the :class:`Drg`
         that this virtual circuit uses.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gateway_id of this CreateVirtualCircuitDetails.
@@ -467,8 +491,10 @@ class CreateVirtualCircuitDetails(object):
     def gateway_id(self, gateway_id):
         """
         Sets the gateway_id of this CreateVirtualCircuitDetails.
-        For private virtual circuits only. The OCID of the :class:`Drg`
+        For private virtual circuits only. The `OCID`__ of the :class:`Drg`
         that this virtual circuit uses.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gateway_id: The gateway_id of this CreateVirtualCircuitDetails.
@@ -508,9 +534,11 @@ class CreateVirtualCircuitDetails(object):
     def provider_service_id(self):
         """
         Gets the provider_service_id of this CreateVirtualCircuitDetails.
-        The OCID of the service offered by the provider (if you're connecting
+        The `OCID`__ of the service offered by the provider (if you're connecting
         via a provider). To get a list of the available service offerings, see
         :func:`list_fast_connect_provider_services`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The provider_service_id of this CreateVirtualCircuitDetails.
@@ -522,9 +550,11 @@ class CreateVirtualCircuitDetails(object):
     def provider_service_id(self, provider_service_id):
         """
         Sets the provider_service_id of this CreateVirtualCircuitDetails.
-        The OCID of the service offered by the provider (if you're connecting
+        The `OCID`__ of the service offered by the provider (if you're connecting
         via a provider). To get a list of the available service offerings, see
         :func:`list_fast_connect_provider_services`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param provider_service_id: The provider_service_id of this CreateVirtualCircuitDetails.
@@ -677,6 +707,38 @@ class CreateVirtualCircuitDetails(object):
                 .format(allowed_values)
             )
         self._type = type
+
+    @property
+    def ip_mtu(self):
+        """
+        Gets the ip_mtu of this CreateVirtualCircuitDetails.
+        The layer 3 IP MTU to use with this virtual circuit.
+
+        Allowed values for this property are: "MTU_1500", "MTU_9000"
+
+
+        :return: The ip_mtu of this CreateVirtualCircuitDetails.
+        :rtype: str
+        """
+        return self._ip_mtu
+
+    @ip_mtu.setter
+    def ip_mtu(self, ip_mtu):
+        """
+        Sets the ip_mtu of this CreateVirtualCircuitDetails.
+        The layer 3 IP MTU to use with this virtual circuit.
+
+
+        :param ip_mtu: The ip_mtu of this CreateVirtualCircuitDetails.
+        :type: str
+        """
+        allowed_values = ["MTU_1500", "MTU_9000"]
+        if not value_allowed_none_or_none_sentinel(ip_mtu, allowed_values):
+            raise ValueError(
+                "Invalid value for `ip_mtu`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._ip_mtu = ip_mtu
 
     def __repr__(self):
         return formatted_flat_dict(self)

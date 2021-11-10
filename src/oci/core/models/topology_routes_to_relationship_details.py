@@ -13,6 +13,14 @@ class TopologyRoutesToRelationshipDetails(object):
     Defines route rule details for a `routesTo` relationship.
     """
 
+    #: A constant which can be used with the route_type property of a TopologyRoutesToRelationshipDetails.
+    #: This constant has a value of "STATIC"
+    ROUTE_TYPE_STATIC = "STATIC"
+
+    #: A constant which can be used with the route_type property of a TopologyRoutesToRelationshipDetails.
+    #: This constant has a value of "DYNAMIC"
+    ROUTE_TYPE_DYNAMIC = "DYNAMIC"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TopologyRoutesToRelationshipDetails object with values from keyword arguments.
@@ -30,22 +38,31 @@ class TopologyRoutesToRelationshipDetails(object):
             The value to assign to the route_table_id property of this TopologyRoutesToRelationshipDetails.
         :type route_table_id: str
 
+        :param route_type:
+            The value to assign to the route_type property of this TopologyRoutesToRelationshipDetails.
+            Allowed values for this property are: "STATIC", "DYNAMIC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type route_type: str
+
         """
         self.swagger_types = {
             'destination_type': 'str',
             'destination': 'str',
-            'route_table_id': 'str'
+            'route_table_id': 'str',
+            'route_type': 'str'
         }
 
         self.attribute_map = {
             'destination_type': 'destinationType',
             'destination': 'destination',
-            'route_table_id': 'routeTableId'
+            'route_table_id': 'routeTableId',
+            'route_type': 'routeType'
         }
 
         self._destination_type = None
         self._destination = None
         self._route_table_id = None
+        self._route_type = None
 
     @property
     def destination_type(self):
@@ -130,6 +147,36 @@ class TopologyRoutesToRelationshipDetails(object):
         :type: str
         """
         self._route_table_id = route_table_id
+
+    @property
+    def route_type(self):
+        """
+        Gets the route_type of this TopologyRoutesToRelationshipDetails.
+        A route rule can be `STATIC` if manually added to the route table or `DYNAMIC` if imported from another route table.
+
+        Allowed values for this property are: "STATIC", "DYNAMIC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The route_type of this TopologyRoutesToRelationshipDetails.
+        :rtype: str
+        """
+        return self._route_type
+
+    @route_type.setter
+    def route_type(self, route_type):
+        """
+        Sets the route_type of this TopologyRoutesToRelationshipDetails.
+        A route rule can be `STATIC` if manually added to the route table or `DYNAMIC` if imported from another route table.
+
+
+        :param route_type: The route_type of this TopologyRoutesToRelationshipDetails.
+        :type: str
+        """
+        allowed_values = ["STATIC", "DYNAMIC"]
+        if not value_allowed_none_or_none_sentinel(route_type, allowed_values):
+            route_type = 'UNKNOWN_ENUM_VALUE'
+        self._route_type = route_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

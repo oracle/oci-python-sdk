@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateIPSecTunnelEncryptionDomainDetails(object):
     """
-    Request to update a multi-encryption domain policy on the VPNaaS tunnel.
+    Request to update a multi-encryption domain policy on the IPSec tunnel.
     There can't be more than 50 security associations in use at one time. See `Encryption domain for policy-based
     tunnels`__ for more.
 

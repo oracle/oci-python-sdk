@@ -252,7 +252,7 @@ class CreateVnicDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateVnicDetails.
-        A user-friendly name for the VNIC. Does not have to be unique.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -265,7 +265,7 @@ class CreateVnicDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateVnicDetails.
-        A user-friendly name for the VNIC. Does not have to be unique.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -524,7 +524,7 @@ class CreateVnicDetails(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this CreateVnicDetails.
-        The OCID of the subnet to create the VNIC in. When launching an instance,
+        The `OCID`__ of the subnet to create the VNIC in. When launching an instance,
         use this `subnetId` instead of the deprecated `subnetId` in
         :func:`launch_instance_details`.
         At least one of them is required; if you provide both, the values must match.
@@ -532,6 +532,8 @@ class CreateVnicDetails(object):
         If you are an Oracle Cloud VMware Solution customer and creating a secondary
         VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`.
         If you provide both a `vlanId` and `subnetId`, the request fails.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreateVnicDetails.
@@ -543,7 +545,7 @@ class CreateVnicDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreateVnicDetails.
-        The OCID of the subnet to create the VNIC in. When launching an instance,
+        The `OCID`__ of the subnet to create the VNIC in. When launching an instance,
         use this `subnetId` instead of the deprecated `subnetId` in
         :func:`launch_instance_details`.
         At least one of them is required; if you provide both, the values must match.
@@ -551,6 +553,8 @@ class CreateVnicDetails(object):
         If you are an Oracle Cloud VMware Solution customer and creating a secondary
         VNIC in a VLAN instead of a subnet, provide a `vlanId` instead of a `subnetId`.
         If you provide both a `vlanId` and `subnetId`, the request fails.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreateVnicDetails.
@@ -563,11 +567,13 @@ class CreateVnicDetails(object):
         """
         Gets the vlan_id of this CreateVnicDetails.
         Provide this attribute only if you are an Oracle Cloud VMware Solution
-        customer and creating a secondary VNIC in a VLAN. The value is the OCID of the VLAN.
+        customer and creating a secondary VNIC in a VLAN. The value is the `OCID`__ of the VLAN.
         See :class:`Vlan`.
 
         Provide a `vlanId` instead of a `subnetId`. If you provide both a
         `vlanId` and `subnetId`, the request fails.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vlan_id of this CreateVnicDetails.
@@ -580,11 +586,13 @@ class CreateVnicDetails(object):
         """
         Sets the vlan_id of this CreateVnicDetails.
         Provide this attribute only if you are an Oracle Cloud VMware Solution
-        customer and creating a secondary VNIC in a VLAN. The value is the OCID of the VLAN.
+        customer and creating a secondary VNIC in a VLAN. The value is the `OCID`__ of the VLAN.
         See :class:`Vlan`.
 
         Provide a `vlanId` instead of a `subnetId`. If you provide both a
         `vlanId` and `subnetId`, the request fails.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vlan_id: The vlan_id of this CreateVnicDetails.

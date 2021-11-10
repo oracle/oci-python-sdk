@@ -13,6 +13,8 @@ from .auto_scale_policy_metric_rule import AutoScalePolicyMetricRule
 from .auto_scale_policy_rule import AutoScalePolicyRule
 from .auto_scaling_configuration import AutoScalingConfiguration
 from .auto_scaling_configuration_summary import AutoScalingConfigurationSummary
+from .bds_api_key import BdsApiKey
+from .bds_api_key_summary import BdsApiKeySummary
 from .bds_instance import BdsInstance
 from .bds_instance_summary import BdsInstanceSummary
 from .change_bds_instance_compartment_details import ChangeBdsInstanceCompartmentDetails
@@ -20,6 +22,7 @@ from .change_shape_details import ChangeShapeDetails
 from .change_shape_nodes import ChangeShapeNodes
 from .cloud_sql_details import CloudSqlDetails
 from .cluster_details import ClusterDetails
+from .create_bds_api_key_details import CreateBdsApiKeyDetails
 from .create_bds_instance_details import CreateBdsInstanceDetails
 from .create_node_details import CreateNodeDetails
 from .default_error import DefaultError
@@ -30,6 +33,7 @@ from .node import Node
 from .remove_auto_scaling_configuration_details import RemoveAutoScalingConfigurationDetails
 from .remove_cloud_sql_details import RemoveCloudSqlDetails
 from .restart_node_details import RestartNodeDetails
+from .test_bds_object_storage_connection_details import TestBdsObjectStorageConnectionDetails
 from .update_auto_scaling_configuration_details import UpdateAutoScalingConfigurationDetails
 from .update_bds_instance_details import UpdateBdsInstanceDetails
 from .volume_attachment_detail import VolumeAttachmentDetail
@@ -49,6 +53,8 @@ bds_type_mapping = {
     "AutoScalePolicyRule": AutoScalePolicyRule,
     "AutoScalingConfiguration": AutoScalingConfiguration,
     "AutoScalingConfigurationSummary": AutoScalingConfigurationSummary,
+    "BdsApiKey": BdsApiKey,
+    "BdsApiKeySummary": BdsApiKeySummary,
     "BdsInstance": BdsInstance,
     "BdsInstanceSummary": BdsInstanceSummary,
     "ChangeBdsInstanceCompartmentDetails": ChangeBdsInstanceCompartmentDetails,
@@ -56,6 +62,7 @@ bds_type_mapping = {
     "ChangeShapeNodes": ChangeShapeNodes,
     "CloudSqlDetails": CloudSqlDetails,
     "ClusterDetails": ClusterDetails,
+    "CreateBdsApiKeyDetails": CreateBdsApiKeyDetails,
     "CreateBdsInstanceDetails": CreateBdsInstanceDetails,
     "CreateNodeDetails": CreateNodeDetails,
     "DefaultError": DefaultError,
@@ -66,6 +73,7 @@ bds_type_mapping = {
     "RemoveAutoScalingConfigurationDetails": RemoveAutoScalingConfigurationDetails,
     "RemoveCloudSqlDetails": RemoveCloudSqlDetails,
     "RestartNodeDetails": RestartNodeDetails,
+    "TestBdsObjectStorageConnectionDetails": TestBdsObjectStorageConnectionDetails,
     "UpdateAutoScalingConfigurationDetails": UpdateAutoScalingConfigurationDetails,
     "UpdateBdsInstanceDetails": UpdateBdsInstanceDetails,
     "VolumeAttachmentDetail": VolumeAttachmentDetail,

@@ -120,7 +120,9 @@ class UpdateSubnetDetails(object):
     def dhcp_options_id(self):
         """
         Gets the dhcp_options_id of this UpdateSubnetDetails.
-        The OCID of the set of DHCP options the subnet will use.
+        The `OCID`__ of the set of DHCP options the subnet will use.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dhcp_options_id of this UpdateSubnetDetails.
@@ -132,7 +134,9 @@ class UpdateSubnetDetails(object):
     def dhcp_options_id(self, dhcp_options_id):
         """
         Sets the dhcp_options_id of this UpdateSubnetDetails.
-        The OCID of the set of DHCP options the subnet will use.
+        The `OCID`__ of the set of DHCP options the subnet will use.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dhcp_options_id: The dhcp_options_id of this UpdateSubnetDetails.
@@ -204,7 +208,9 @@ class UpdateSubnetDetails(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this UpdateSubnetDetails.
-        The OCID of the route table the subnet will use.
+        The `OCID`__ of the route table the subnet will use.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this UpdateSubnetDetails.
@@ -216,7 +222,9 @@ class UpdateSubnetDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this UpdateSubnetDetails.
-        The OCID of the route table the subnet will use.
+        The `OCID`__ of the route table the subnet will use.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this UpdateSubnetDetails.

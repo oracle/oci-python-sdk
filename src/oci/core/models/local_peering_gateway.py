@@ -186,7 +186,9 @@ class LocalPeeringGateway(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this LocalPeeringGateway.
-        The OCID of the compartment containing the LPG.
+        The `OCID`__ of the compartment containing the LPG.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this LocalPeeringGateway.
@@ -198,7 +200,9 @@ class LocalPeeringGateway(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this LocalPeeringGateway.
-        The OCID of the compartment containing the LPG.
+        The `OCID`__ of the compartment containing the LPG.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this LocalPeeringGateway.
@@ -244,8 +248,8 @@ class LocalPeeringGateway(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this LocalPeeringGateway.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this LocalPeeringGateway.
@@ -257,8 +261,8 @@ class LocalPeeringGateway(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this LocalPeeringGateway.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this LocalPeeringGateway.
@@ -304,7 +308,9 @@ class LocalPeeringGateway(object):
     def id(self):
         """
         **[Required]** Gets the id of this LocalPeeringGateway.
-        The LPG's Oracle ID (OCID).
+        The LPG's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this LocalPeeringGateway.
@@ -316,7 +322,9 @@ class LocalPeeringGateway(object):
     def id(self, id):
         """
         Sets the id of this LocalPeeringGateway.
-        The LPG's Oracle ID (OCID).
+        The LPG's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this LocalPeeringGateway.
@@ -538,11 +546,12 @@ class LocalPeeringGateway(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this LocalPeeringGateway.
-        The OCID of the route table the LPG is using.
+        The `OCID`__ of the route table the LPG is using.
 
         For information about why you would associate a route table with an LPG, see
         `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
 
 
@@ -555,11 +564,12 @@ class LocalPeeringGateway(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this LocalPeeringGateway.
-        The OCID of the route table the LPG is using.
+        The `OCID`__ of the route table the LPG is using.
 
         For information about why you would associate a route table with an LPG, see
         `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
 
 

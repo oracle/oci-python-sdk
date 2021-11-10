@@ -205,8 +205,6 @@ class ConsoleHistory(object):
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
-        Example: `My console history metadata`
-
 
         :return: The display_name of this ConsoleHistory.
         :rtype: str
@@ -219,8 +217,6 @@ class ConsoleHistory(object):
         Sets the display_name of this ConsoleHistory.
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        Example: `My console history metadata`
 
 
         :param display_name: The display_name of this ConsoleHistory.

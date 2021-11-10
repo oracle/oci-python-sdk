@@ -239,7 +239,9 @@ class FastConnectProviderService(object):
     def id(self):
         """
         **[Required]** Gets the id of this FastConnectProviderService.
-        The OCID of the service offered by the provider.
+        The `OCID`__ of the service offered by the provider.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this FastConnectProviderService.
@@ -251,7 +253,9 @@ class FastConnectProviderService(object):
     def id(self, id):
         """
         Sets the id of this FastConnectProviderService.
-        The OCID of the service offered by the provider.
+        The `OCID`__ of the service offered by the provider.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this FastConnectProviderService.

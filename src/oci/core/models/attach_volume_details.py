@@ -108,7 +108,7 @@ class AttachVolumeDetails(object):
     def device(self):
         """
         Gets the device of this AttachVolumeDetails.
-        The device name.
+        The device name. To retrieve a list of devices for a given instance, see :func:`list_instance_devices`.
 
 
         :return: The device of this AttachVolumeDetails.
@@ -120,7 +120,7 @@ class AttachVolumeDetails(object):
     def device(self, device):
         """
         Sets the device of this AttachVolumeDetails.
-        The device name.
+        The device name. To retrieve a list of devices for a given instance, see :func:`list_instance_devices`.
 
 
         :param device: The device of this AttachVolumeDetails.
@@ -132,7 +132,8 @@ class AttachVolumeDetails(object):
     def display_name(self):
         """
         Gets the display_name of this AttachVolumeDetails.
-        A user-friendly name. Does not have to be unique, and it cannot be changed. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this AttachVolumeDetails.
@@ -144,7 +145,8 @@ class AttachVolumeDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AttachVolumeDetails.
-        A user-friendly name. Does not have to be unique, and it cannot be changed. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this AttachVolumeDetails.

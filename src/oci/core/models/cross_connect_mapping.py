@@ -135,10 +135,12 @@ class CrossConnectMapping(object):
     def cross_connect_or_cross_connect_group_id(self):
         """
         Gets the cross_connect_or_cross_connect_group_id of this CrossConnectMapping.
-        The OCID of the cross-connect or cross-connect group for this mapping.
+        The `OCID`__ of the cross-connect or cross-connect group for this mapping.
         Specified by the owner of the cross-connect or cross-connect group (the
         customer if the customer is colocated with Oracle, or the provider if the
         customer is connecting via provider).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cross_connect_or_cross_connect_group_id of this CrossConnectMapping.
@@ -150,10 +152,12 @@ class CrossConnectMapping(object):
     def cross_connect_or_cross_connect_group_id(self, cross_connect_or_cross_connect_group_id):
         """
         Sets the cross_connect_or_cross_connect_group_id of this CrossConnectMapping.
-        The OCID of the cross-connect or cross-connect group for this mapping.
+        The `OCID`__ of the cross-connect or cross-connect group for this mapping.
         Specified by the owner of the cross-connect or cross-connect group (the
         customer if the customer is colocated with Oracle, or the provider if the
         customer is connecting via provider).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cross_connect_or_cross_connect_group_id: The cross_connect_or_cross_connect_group_id of this CrossConnectMapping.

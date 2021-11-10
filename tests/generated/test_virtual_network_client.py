@@ -646,7 +646,7 @@ def test_change_dhcp_options_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_change_drg_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ChangeDrgCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1584,7 +1584,7 @@ def test_create_dhcp_options(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_create_drg(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateDrg'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1624,7 +1624,7 @@ def test_create_drg(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_create_drg_attachment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'CreateDrgAttachment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2624,7 +2624,7 @@ def test_delete_dhcp_options(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_delete_drg(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteDrg'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2664,7 +2664,7 @@ def test_delete_drg(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_delete_drg_attachment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'DeleteDrgAttachment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3925,7 +3925,7 @@ def test_get_dhcp_options(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_get_drg(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetDrg'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3965,7 +3965,7 @@ def test_get_drg(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_get_drg_attachment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetDrgAttachment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4648,7 +4648,7 @@ def test_get_network_security_group(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="vnConfigAdvisor" email="oci_vnconfigadvisor_us_grp@oracle.com" jiraProject="VCNCP" opsJiraProject="VN"
+# IssueRoutingInfo tag="vnConfigAdvisor" email="oci_vnconfigadvisor_us_grp@oracle.com" jiraProject="VNCA" opsJiraProject="VNCA"
 def test_get_networking_topology(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetNetworkingTopology'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -5128,6 +5128,47 @@ def test_get_subnet(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="vnConfigAdvisor" email="oci_vnconfigadvisor_us_grp@oracle.com" jiraProject="VNCA" opsJiraProject="VNCA"
+def test_get_subnet_topology(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetSubnetTopology'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetSubnetTopology')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetSubnetTopology')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_subnet_topology(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                subnet_id=request.pop(util.camelize('subnetId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetSubnetTopology',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'subnetTopology',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
 def test_get_tunnel_cpe_device_config(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetTunnelCpeDeviceConfig'):
@@ -5330,7 +5371,7 @@ def test_get_vcn_dns_resolver_association(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="vnConfigAdvisor" email="oci_vnconfigadvisor_us_grp@oracle.com" jiraProject="VCNCP" opsJiraProject="VN"
+# IssueRoutingInfo tag="vnConfigAdvisor" email="oci_vnconfigadvisor_us_grp@oracle.com" jiraProject="VNCA" opsJiraProject="VNCA"
 def test_get_vcn_topology(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetVcnTopology'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6107,7 +6148,7 @@ def test_list_dhcp_options(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_list_drg_attachments(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListDrgAttachments'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -6407,7 +6448,7 @@ def test_list_drg_route_tables(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_list_drgs(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'ListDrgs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8469,7 +8510,7 @@ def test_update_dhcp_options(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_update_drg(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateDrg'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8510,7 +8551,7 @@ def test_update_drg(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+# IssueRoutingInfo tag="pnp" email="elpaso_ops_us_grp@oracle.com" jiraProject="NAT" opsJiraProject="PNP"
 def test_update_drg_attachment(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'UpdateDrgAttachment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

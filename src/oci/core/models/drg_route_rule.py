@@ -90,6 +90,10 @@ class DrgRouteRule(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type route_provenance: str
 
+        :param attributes:
+            The value to assign to the attributes property of this DrgRouteRule.
+        :type attributes: object
+
         """
         self.swagger_types = {
             'destination': 'str',
@@ -99,7 +103,8 @@ class DrgRouteRule(object):
             'is_conflict': 'bool',
             'is_blackhole': 'bool',
             'id': 'str',
-            'route_provenance': 'str'
+            'route_provenance': 'str',
+            'attributes': 'object'
         }
 
         self.attribute_map = {
@@ -110,7 +115,8 @@ class DrgRouteRule(object):
             'is_conflict': 'isConflict',
             'is_blackhole': 'isBlackhole',
             'id': 'id',
-            'route_provenance': 'routeProvenance'
+            'route_provenance': 'routeProvenance',
+            'attributes': 'attributes'
         }
 
         self._destination = None
@@ -121,6 +127,7 @@ class DrgRouteRule(object):
         self._is_blackhole = None
         self._id = None
         self._route_provenance = None
+        self._attributes = None
 
     @property
     def destination(self):
@@ -379,6 +386,30 @@ class DrgRouteRule(object):
         if not value_allowed_none_or_none_sentinel(route_provenance, allowed_values):
             route_provenance = 'UNKNOWN_ENUM_VALUE'
         self._route_provenance = route_provenance
+
+    @property
+    def attributes(self):
+        """
+        Gets the attributes of this DrgRouteRule.
+        Additional properties for the route, computed by the service.
+
+
+        :return: The attributes of this DrgRouteRule.
+        :rtype: object
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes):
+        """
+        Sets the attributes of this DrgRouteRule.
+        Additional properties for the route, computed by the service.
+
+
+        :param attributes: The attributes of this DrgRouteRule.
+        :type: object
+        """
+        self._attributes = attributes
 
     def __repr__(self):
         return formatted_flat_dict(self)

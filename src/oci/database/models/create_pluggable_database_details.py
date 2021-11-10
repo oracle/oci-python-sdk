@@ -36,6 +36,10 @@ class CreatePluggableDatabaseDetails(object):
             The value to assign to the tde_wallet_password property of this CreatePluggableDatabaseDetails.
         :type tde_wallet_password: str
 
+        :param should_pdb_admin_account_be_locked:
+            The value to assign to the should_pdb_admin_account_be_locked property of this CreatePluggableDatabaseDetails.
+        :type should_pdb_admin_account_be_locked: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreatePluggableDatabaseDetails.
         :type freeform_tags: dict(str, str)
@@ -50,6 +54,7 @@ class CreatePluggableDatabaseDetails(object):
             'container_database_id': 'str',
             'pdb_admin_password': 'str',
             'tde_wallet_password': 'str',
+            'should_pdb_admin_account_be_locked': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -59,6 +64,7 @@ class CreatePluggableDatabaseDetails(object):
             'container_database_id': 'containerDatabaseId',
             'pdb_admin_password': 'pdbAdminPassword',
             'tde_wallet_password': 'tdeWalletPassword',
+            'should_pdb_admin_account_be_locked': 'shouldPdbAdminAccountBeLocked',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -67,6 +73,7 @@ class CreatePluggableDatabaseDetails(object):
         self._container_database_id = None
         self._pdb_admin_password = None
         self._tde_wallet_password = None
+        self._should_pdb_admin_account_be_locked = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -125,7 +132,7 @@ class CreatePluggableDatabaseDetails(object):
     @property
     def pdb_admin_password(self):
         """
-        **[Required]** Gets the pdb_admin_password of this CreatePluggableDatabaseDetails.
+        Gets the pdb_admin_password of this CreatePluggableDatabaseDetails.
         A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
 
 
@@ -149,7 +156,7 @@ class CreatePluggableDatabaseDetails(object):
     @property
     def tde_wallet_password(self):
         """
-        **[Required]** Gets the tde_wallet_password of this CreatePluggableDatabaseDetails.
+        Gets the tde_wallet_password of this CreatePluggableDatabaseDetails.
         The existing TDE wallet password of the CDB.
 
 
@@ -169,6 +176,32 @@ class CreatePluggableDatabaseDetails(object):
         :type: str
         """
         self._tde_wallet_password = tde_wallet_password
+
+    @property
+    def should_pdb_admin_account_be_locked(self):
+        """
+        Gets the should_pdb_admin_account_be_locked of this CreatePluggableDatabaseDetails.
+        The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it.
+        If true, the pluggable database will be locked and user cannot login to it.
+
+
+        :return: The should_pdb_admin_account_be_locked of this CreatePluggableDatabaseDetails.
+        :rtype: bool
+        """
+        return self._should_pdb_admin_account_be_locked
+
+    @should_pdb_admin_account_be_locked.setter
+    def should_pdb_admin_account_be_locked(self, should_pdb_admin_account_be_locked):
+        """
+        Sets the should_pdb_admin_account_be_locked of this CreatePluggableDatabaseDetails.
+        The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it.
+        If true, the pluggable database will be locked and user cannot login to it.
+
+
+        :param should_pdb_admin_account_be_locked: The should_pdb_admin_account_be_locked of this CreatePluggableDatabaseDetails.
+        :type: bool
+        """
+        self._should_pdb_admin_account_be_locked = should_pdb_admin_account_be_locked
 
     @property
     def freeform_tags(self):

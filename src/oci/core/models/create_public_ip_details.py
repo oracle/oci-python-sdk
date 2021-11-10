@@ -88,8 +88,11 @@ class CreatePublicIpDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreatePublicIpDetails.
-        The OCID of the compartment to contain the public IP. For ephemeral public IPs,
-        you must set this to the private IP's compartment OCID.
+        The `OCID`__ of the compartment to contain the public IP. For ephemeral public IPs,
+        you must set this to the private IP's compartment `OCID`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreatePublicIpDetails.
@@ -101,8 +104,11 @@ class CreatePublicIpDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreatePublicIpDetails.
-        The OCID of the compartment to contain the public IP. For ephemeral public IPs,
-        you must set this to the private IP's compartment OCID.
+        The `OCID`__ of the compartment to contain the public IP. For ephemeral public IPs,
+        you must set this to the private IP's compartment `OCID`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreatePublicIpDetails.
@@ -148,8 +154,8 @@ class CreatePublicIpDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreatePublicIpDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CreatePublicIpDetails.
@@ -161,8 +167,8 @@ class CreatePublicIpDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreatePublicIpDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreatePublicIpDetails.
@@ -248,7 +254,7 @@ class CreatePublicIpDetails(object):
     def private_ip_id(self):
         """
         Gets the private_ip_id of this CreatePublicIpDetails.
-        The OCID of the private IP to assign the public IP to.
+        The `OCID`__ of the private IP to assign the public IP to.
 
         Required for an ephemeral public IP because it must always be assigned to a private IP
         (specifically a *primary* private IP).
@@ -256,6 +262,8 @@ class CreatePublicIpDetails(object):
         Optional for a reserved public IP. If you don't provide it, the public IP is created but not
         assigned to a private IP. You can later assign the public IP with
         :func:`update_public_ip`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this CreatePublicIpDetails.
@@ -267,7 +275,7 @@ class CreatePublicIpDetails(object):
     def private_ip_id(self, private_ip_id):
         """
         Sets the private_ip_id of this CreatePublicIpDetails.
-        The OCID of the private IP to assign the public IP to.
+        The `OCID`__ of the private IP to assign the public IP to.
 
         Required for an ephemeral public IP because it must always be assigned to a private IP
         (specifically a *primary* private IP).
@@ -275,6 +283,8 @@ class CreatePublicIpDetails(object):
         Optional for a reserved public IP. If you don't provide it, the public IP is created but not
         assigned to a private IP. You can later assign the public IP with
         :func:`update_public_ip`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this CreatePublicIpDetails.

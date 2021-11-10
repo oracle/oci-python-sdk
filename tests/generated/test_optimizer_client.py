@@ -155,6 +155,75 @@ def test_delete_profile(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oracle_cloud_optimizer_us_grp@oracle.com" jiraProject="OPTIMIZER" opsJiraProject="OPTIMIZER"
+def test_filter_resource_actions(testing_service_client):
+    if not testing_service_client.is_api_enabled('optimizer', 'FilterResourceActions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('optimizer', util.camelize('optimizer'), 'FilterResourceActions')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='optimizer', api_name='FilterResourceActions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.optimizer.OptimizerClient(config, service_endpoint=service_endpoint)
+            response = client.filter_resource_actions(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
+                recommendation_id=request.pop(util.camelize('recommendationId')),
+                query_details=request.pop(util.camelize('QueryDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.filter_resource_actions(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
+                    recommendation_id=request.pop(util.camelize('recommendationId')),
+                    query_details=request.pop(util.camelize('QueryDetails')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.filter_resource_actions(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
+                        recommendation_id=request.pop(util.camelize('recommendationId')),
+                        query_details=request.pop(util.camelize('QueryDetails')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'optimizer',
+            'FilterResourceActions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resourceActionCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oracle_cloud_optimizer_us_grp@oracle.com" jiraProject="OPTIMIZER" opsJiraProject="OPTIMIZER"
 def test_get_category(testing_service_client):
     if not testing_service_client.is_api_enabled('optimizer', 'GetCategory'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -581,6 +650,69 @@ def test_list_histories(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oracle_cloud_optimizer_us_grp@oracle.com" jiraProject="OPTIMIZER" opsJiraProject="OPTIMIZER"
+def test_list_profile_levels(testing_service_client):
+    if not testing_service_client.is_api_enabled('optimizer', 'ListProfileLevels'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('optimizer', util.camelize('optimizer'), 'ListProfileLevels')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='optimizer', api_name='ListProfileLevels')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.optimizer.OptimizerClient(config, service_endpoint=service_endpoint)
+            response = client.list_profile_levels(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_profile_levels(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_profile_levels(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'optimizer',
+            'ListProfileLevels',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'profileLevelCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oracle_cloud_optimizer_us_grp@oracle.com" jiraProject="OPTIMIZER" opsJiraProject="OPTIMIZER"
 def test_list_profiles(testing_service_client):
     if not testing_service_client.is_api_enabled('optimizer', 'ListProfiles'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -764,6 +896,69 @@ def test_list_recommendations(testing_service_client):
             result,
             service_error,
             'recommendationCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oracle_cloud_optimizer_us_grp@oracle.com" jiraProject="OPTIMIZER" opsJiraProject="OPTIMIZER"
+def test_list_resource_action_queryable_fields(testing_service_client):
+    if not testing_service_client.is_api_enabled('optimizer', 'ListResourceActionQueryableFields'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('optimizer', util.camelize('optimizer'), 'ListResourceActionQueryableFields')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='optimizer', api_name='ListResourceActionQueryableFields')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.optimizer.OptimizerClient(config, service_endpoint=service_endpoint)
+            response = client.list_resource_action_queryable_fields(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_resource_action_queryable_fields(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_resource_action_queryable_fields(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        compartment_id_in_subtree=request.pop(util.camelize('compartmentIdInSubtree')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'optimizer',
+            'ListResourceActionQueryableFields',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'queryableFieldCollection',
             False,
             True
         )

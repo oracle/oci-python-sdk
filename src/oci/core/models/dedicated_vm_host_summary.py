@@ -221,8 +221,6 @@ class DedicatedVmHostSummary(object):
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
-        Example: `My DVH`
-
 
         :return: The display_name of this DedicatedVmHostSummary.
         :rtype: str
@@ -235,8 +233,6 @@ class DedicatedVmHostSummary(object):
         Sets the display_name of this DedicatedVmHostSummary.
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        Example: `My DVH`
 
 
         :param display_name: The display_name of this DedicatedVmHostSummary.

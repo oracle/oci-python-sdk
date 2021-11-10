@@ -18,11 +18,11 @@ missing = Sentinel("Missing")
 
 class BlockstorageClient(object):
     """
-    API covering the [Networking](/iaas/Content/Network/Concepts/overview.htm),
+    Use the Core Services API to manage resources such as virtual cloud networks (VCNs),
+    compute instances, and block storage volumes. For more information, see the console
+    documentation for the [Networking](/iaas/Content/Network/Concepts/overview.htm),
     [Compute](/iaas/Content/Compute/Concepts/computeoverview.htm), and
-    [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services. Use this API
-    to manage resources such as virtual cloud networks (VCNs), compute instances, and
-    block storage volumes.
+    [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services.
     """
 
     def __init__(self, config, **kwargs):

@@ -34,25 +34,32 @@ class UpdateCrossConnectGroupDetails(object):
             The value to assign to the freeform_tags property of this UpdateCrossConnectGroupDetails.
         :type freeform_tags: dict(str, str)
 
+        :param macsec_properties:
+            The value to assign to the macsec_properties property of this UpdateCrossConnectGroupDetails.
+        :type macsec_properties: oci.core.models.UpdateMacsecProperties
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'customer_reference_name': 'str',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'macsec_properties': 'UpdateMacsecProperties'
         }
 
         self.attribute_map = {
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'customer_reference_name': 'customerReferenceName',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'macsec_properties': 'macsecProperties'
         }
 
         self._defined_tags = None
         self._display_name = None
         self._customer_reference_name = None
         self._freeform_tags = None
+        self._macsec_properties = None
 
     @property
     def defined_tags(self):
@@ -118,8 +125,7 @@ class UpdateCrossConnectGroupDetails(object):
     def customer_reference_name(self):
         """
         Gets the customer_reference_name of this UpdateCrossConnectGroupDetails.
-        A reference name or identifier for the physical fiber connection that this cross-connect
-        group uses.
+        A reference name or identifier for the physical fiber connection this cross-connect group uses.
 
 
         :return: The customer_reference_name of this UpdateCrossConnectGroupDetails.
@@ -131,8 +137,7 @@ class UpdateCrossConnectGroupDetails(object):
     def customer_reference_name(self, customer_reference_name):
         """
         Sets the customer_reference_name of this UpdateCrossConnectGroupDetails.
-        A reference name or identifier for the physical fiber connection that this cross-connect
-        group uses.
+        A reference name or identifier for the physical fiber connection this cross-connect group uses.
 
 
         :param customer_reference_name: The customer_reference_name of this UpdateCrossConnectGroupDetails.
@@ -173,6 +178,26 @@ class UpdateCrossConnectGroupDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def macsec_properties(self):
+        """
+        Gets the macsec_properties of this UpdateCrossConnectGroupDetails.
+
+        :return: The macsec_properties of this UpdateCrossConnectGroupDetails.
+        :rtype: oci.core.models.UpdateMacsecProperties
+        """
+        return self._macsec_properties
+
+    @macsec_properties.setter
+    def macsec_properties(self, macsec_properties):
+        """
+        Sets the macsec_properties of this UpdateCrossConnectGroupDetails.
+
+        :param macsec_properties: The macsec_properties of this UpdateCrossConnectGroupDetails.
+        :type: oci.core.models.UpdateMacsecProperties
+        """
+        self._macsec_properties = macsec_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

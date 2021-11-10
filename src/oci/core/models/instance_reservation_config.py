@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InstanceReservationConfig(object):
     """
-    Data that defines the instance reservation configuration.
+    Data that defines the capacity configuration.
     """
 
     def __init__(self, **kwargs):
@@ -65,8 +65,8 @@ class InstanceReservationConfig(object):
     def fault_domain(self):
         """
         Gets the fault_domain of this InstanceReservationConfig.
-        The fault domain of this reservation configuration.
-        If a value is not supplied, this reservation configuration is applicable to all fault domains in the specified availability domain.
+        The fault domain of this capacity configuration.
+        If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain.
         For more information, see `Capacity Reservations`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm
@@ -81,8 +81,8 @@ class InstanceReservationConfig(object):
     def fault_domain(self, fault_domain):
         """
         Sets the fault_domain of this InstanceReservationConfig.
-        The fault domain of this reservation configuration.
-        If a value is not supplied, this reservation configuration is applicable to all fault domains in the specified availability domain.
+        The fault domain of this capacity configuration.
+        If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain.
         For more information, see `Capacity Reservations`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm
@@ -145,7 +145,7 @@ class InstanceReservationConfig(object):
     def reserved_count(self):
         """
         **[Required]** Gets the reserved_count of this InstanceReservationConfig.
-        The amount of capacity reserved in this configuration.
+        The total number of instances that can be launched from the capacity configuration.
 
 
         :return: The reserved_count of this InstanceReservationConfig.
@@ -157,7 +157,7 @@ class InstanceReservationConfig(object):
     def reserved_count(self, reserved_count):
         """
         Sets the reserved_count of this InstanceReservationConfig.
-        The amount of capacity reserved in this configuration.
+        The total number of instances that can be launched from the capacity configuration.
 
 
         :param reserved_count: The reserved_count of this InstanceReservationConfig.
@@ -169,7 +169,7 @@ class InstanceReservationConfig(object):
     def used_count(self):
         """
         **[Required]** Gets the used_count of this InstanceReservationConfig.
-        The amount of capacity in use out of the total capacity reserved in this reservation configuration.
+        The amount of capacity in use out of the total capacity reserved in this capacity configuration.
 
 
         :return: The used_count of this InstanceReservationConfig.
@@ -181,7 +181,7 @@ class InstanceReservationConfig(object):
     def used_count(self, used_count):
         """
         Sets the used_count of this InstanceReservationConfig.
-        The amount of capacity in use out of the total capacity reserved in this reservation configuration.
+        The amount of capacity in use out of the total capacity reserved in this capacity configuration.
 
 
         :param used_count: The used_count of this InstanceReservationConfig.

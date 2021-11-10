@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MeasuredBootReport(object):
     """
-    The Measured Boot report for a shielded instance.
+    The measured boot report for a shielded instance.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class MeasuredBootReport(object):
     def is_policy_verification_successful(self):
         """
         **[Required]** Gets the is_policy_verification_successful of this MeasuredBootReport.
-        Whether the verification succeeded and the new values matched the expected values.
+        Whether the verification succeeded, and the new values match the expected values.
 
 
         :return: The is_policy_verification_successful of this MeasuredBootReport.
@@ -56,7 +56,7 @@ class MeasuredBootReport(object):
     def is_policy_verification_successful(self, is_policy_verification_successful):
         """
         Sets the is_policy_verification_successful of this MeasuredBootReport.
-        Whether the verification succeeded and the new values matched the expected values.
+        Whether the verification succeeded, and the new values match the expected values.
 
 
         :param is_policy_verification_successful: The is_policy_verification_successful of this MeasuredBootReport.

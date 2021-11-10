@@ -166,7 +166,7 @@ class ClusterNetwork(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ClusterNetwork.
-        The `OCID`__ of the compartment containing the cluster netowrk.
+        The `OCID`__ of the compartment containing the cluster network.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -180,7 +180,7 @@ class ClusterNetwork(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ClusterNetwork.
-        The `OCID`__ of the compartment containing the cluster netowrk.
+        The `OCID`__ of the compartment containing the cluster network.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -229,6 +229,7 @@ class ClusterNetwork(object):
         """
         Gets the display_name of this ClusterNetwork.
         A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this ClusterNetwork.
@@ -241,6 +242,7 @@ class ClusterNetwork(object):
         """
         Sets the display_name of this ClusterNetwork.
         A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this ClusterNetwork.
