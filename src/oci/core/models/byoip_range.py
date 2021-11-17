@@ -270,8 +270,8 @@ class ByoipRange(object):
     def display_name(self):
         """
         Gets the display_name of this ByoipRange.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this ByoipRange.
@@ -283,8 +283,8 @@ class ByoipRange(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ByoipRange.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this ByoipRange.

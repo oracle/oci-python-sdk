@@ -180,4 +180,5 @@ The Retry behavior Precedence in Python SDK (Highest to lowest) is defined as be
 
 .. Note::
     Some services can enable retries for operations by default which would follow the ``oci.retry.DEFAULT_RETRY_STRATEGY``.
-    This can be overridden using any alternatives mentioned above.
+    This can be overridden using any alternatives mentioned above. To know which service operations have retries enabled by default, 
+    look at the operation's description in the SDK - it will say either that it has retries enabled by default, or that it does not have retries enabled by default. 

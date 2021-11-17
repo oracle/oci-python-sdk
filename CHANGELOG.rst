@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.51.0 - 2021-11-17
+====================
+
+Added
+-----
+* Support for getting subnet topology in the Networking service
+* Support for encrypted FastConnect resources in the Networking service
+* Support for performance and high availability, as well as recommendation metrics, in the Optimizer service
+* Support for optional TDE wallet passwords in the Database service
+* Support for Object Storage service integration in the Big Data service
+
+Breaking
+--------
+* Support for circuit breakers enabled by default in all services except Streaming and Compute
+* Support for retries enabled by default in all operations of the Functions and Roving Edge services, and in some operations of the Streaming service.
+
+====================
 2.50.0 - 2021-11-09
 ====================
 

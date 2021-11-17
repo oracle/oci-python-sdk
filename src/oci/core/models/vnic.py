@@ -219,7 +219,9 @@ class Vnic(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Vnic.
-        The OCID of the compartment containing the VNIC.
+        The `OCID`__ of the compartment containing the VNIC.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Vnic.
@@ -231,7 +233,9 @@ class Vnic(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Vnic.
-        The OCID of the compartment containing the VNIC.
+        The `OCID`__ of the compartment containing the VNIC.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Vnic.
@@ -277,7 +281,7 @@ class Vnic(object):
     def display_name(self):
         """
         Gets the display_name of this Vnic.
-        A user-friendly name. Does not have to be unique.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -290,7 +294,7 @@ class Vnic(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Vnic.
-        A user-friendly name. Does not have to be unique.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -389,7 +393,9 @@ class Vnic(object):
     def id(self):
         """
         **[Required]** Gets the id of this Vnic.
-        The OCID of the VNIC.
+        The `OCID`__ of the VNIC.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Vnic.
@@ -401,7 +407,9 @@ class Vnic(object):
     def id(self, id):
         """
         Sets the id of this Vnic.
-        The OCID of the VNIC.
+        The `OCID`__ of the VNIC.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Vnic.
@@ -544,8 +552,10 @@ class Vnic(object):
         """
         Gets the vlan_id of this Vnic.
         If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-        belonging to a subnet), the `vlanId` is the OCID of the VLAN the VNIC is in. See
+        belonging to a subnet), the `vlanId` is the `OCID`__ of the VLAN the VNIC is in. See
         :class:`Vlan`. If the VNIC is instead in a subnet, `subnetId` has a value.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vlan_id of this Vnic.
@@ -558,8 +568,10 @@ class Vnic(object):
         """
         Sets the vlan_id of this Vnic.
         If the VNIC belongs to a VLAN as part of the Oracle Cloud VMware Solution (instead of
-        belonging to a subnet), the `vlanId` is the OCID of the VLAN the VNIC is in. See
+        belonging to a subnet), the `vlanId` is the `OCID`__ of the VLAN the VNIC is in. See
         :class:`Vlan`. If the VNIC is instead in a subnet, `subnetId` has a value.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vlan_id: The vlan_id of this Vnic.
@@ -673,7 +685,9 @@ class Vnic(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this Vnic.
-        The OCID of the subnet the VNIC is in.
+        The `OCID`__ of the subnet the VNIC is in.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this Vnic.
@@ -685,7 +699,9 @@ class Vnic(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this Vnic.
-        The OCID of the subnet the VNIC is in.
+        The `OCID`__ of the subnet the VNIC is in.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this Vnic.

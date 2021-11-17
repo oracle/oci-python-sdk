@@ -212,10 +212,11 @@ class RouteRule(object):
     def network_entity_id(self):
         """
         **[Required]** Gets the network_entity_id of this RouteRule.
-        The OCID for the route rule's target. For information about the type of
+        The `OCID`__ for the route rule's target. For information about the type of
         targets you can specify, see
         `Route Tables`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm
 
 
@@ -228,10 +229,11 @@ class RouteRule(object):
     def network_entity_id(self, network_entity_id):
         """
         Sets the network_entity_id of this RouteRule.
-        The OCID for the route rule's target. For information about the type of
+        The `OCID`__ for the route rule's target. For information about the type of
         targets you can specify, see
         `Route Tables`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm
 
 

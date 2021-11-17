@@ -281,7 +281,9 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this InstanceConfigurationLaunchInstanceDetails.
-        The OCID of the compartment.
+        The OCID of the compartment containing the instance.
+        Instances created from instance configurations are placed in the same compartment
+        as the instance that was used to create the instance configuration.
 
 
         :return: The compartment_id of this InstanceConfigurationLaunchInstanceDetails.
@@ -293,7 +295,9 @@ class InstanceConfigurationLaunchInstanceDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this InstanceConfigurationLaunchInstanceDetails.
-        The OCID of the compartment.
+        The OCID of the compartment containing the instance.
+        Instances created from instance configurations are placed in the same compartment
+        as the instance that was used to create the instance configuration.
 
 
         :param compartment_id: The compartment_id of this InstanceConfigurationLaunchInstanceDetails.
@@ -362,8 +366,6 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
-        Example: `My bare metal instance`
-
 
         :return: The display_name of this InstanceConfigurationLaunchInstanceDetails.
         :rtype: str
@@ -376,8 +378,6 @@ class InstanceConfigurationLaunchInstanceDetails(object):
         Sets the display_name of this InstanceConfigurationLaunchInstanceDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        Example: `My bare metal instance`
 
 
         :param display_name: The display_name of this InstanceConfigurationLaunchInstanceDetails.

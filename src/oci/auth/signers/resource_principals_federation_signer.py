@@ -76,6 +76,9 @@ class ResourcePrincipalsFederationSigner(SecurityTokenSigner):
         super(ResourcePrincipalsFederationSigner, self).__init__(self.rpst, self.session_key_supplier.get_key_pair()['private'])
 
     def get_security_token(self):
+        """
+        Returns the security token. If it is expired, refresh the token.
+        """
         if hasattr(self, 'security_token'):
             if self.security_token.valid_with_jitter():
                 return self.security_token.security_token
@@ -83,6 +86,9 @@ class ResourcePrincipalsFederationSigner(SecurityTokenSigner):
         return self._refresh_security_token_inner()
 
     def refresh_security_token(self):
+        """
+        Refresh the security token
+        """
         return self._refresh_security_token_inner()
 
     def _refresh_security_token_inner(self):

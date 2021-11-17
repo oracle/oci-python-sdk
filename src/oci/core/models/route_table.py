@@ -120,7 +120,9 @@ class RouteTable(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this RouteTable.
-        The OCID of the compartment containing the route table.
+        The `OCID`__ of the compartment containing the route table.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this RouteTable.
@@ -132,7 +134,9 @@ class RouteTable(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this RouteTable.
-        The OCID of the compartment containing the route table.
+        The `OCID`__ of the compartment containing the route table.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this RouteTable.
@@ -238,7 +242,9 @@ class RouteTable(object):
     def id(self):
         """
         **[Required]** Gets the id of this RouteTable.
-        The route table's Oracle ID (OCID).
+        The route table's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this RouteTable.
@@ -250,7 +256,9 @@ class RouteTable(object):
     def id(self, id):
         """
         Sets the id of this RouteTable.
-        The route table's Oracle ID (OCID).
+        The route table's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this RouteTable.

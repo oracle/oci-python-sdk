@@ -30,6 +30,10 @@ class CreateProfileDetails(object):
             The value to assign to the description property of this CreateProfileDetails.
         :type description: str
 
+        :param aggregation_interval_in_days:
+            The value to assign to the aggregation_interval_in_days property of this CreateProfileDetails.
+        :type aggregation_interval_in_days: int
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateProfileDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -55,6 +59,7 @@ class CreateProfileDetails(object):
             'compartment_id': 'str',
             'name': 'str',
             'description': 'str',
+            'aggregation_interval_in_days': 'int',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
             'levels_configuration': 'LevelsConfiguration',
@@ -66,6 +71,7 @@ class CreateProfileDetails(object):
             'compartment_id': 'compartmentId',
             'name': 'name',
             'description': 'description',
+            'aggregation_interval_in_days': 'aggregationIntervalInDays',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
             'levels_configuration': 'levelsConfiguration',
@@ -76,6 +82,7 @@ class CreateProfileDetails(object):
         self._compartment_id = None
         self._name = None
         self._description = None
+        self._aggregation_interval_in_days = None
         self._defined_tags = None
         self._freeform_tags = None
         self._levels_configuration = None
@@ -153,6 +160,30 @@ class CreateProfileDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def aggregation_interval_in_days(self):
+        """
+        Gets the aggregation_interval_in_days of this CreateProfileDetails.
+        The time period over which to collect data for the recommendations, measured in number of days.
+
+
+        :return: The aggregation_interval_in_days of this CreateProfileDetails.
+        :rtype: int
+        """
+        return self._aggregation_interval_in_days
+
+    @aggregation_interval_in_days.setter
+    def aggregation_interval_in_days(self, aggregation_interval_in_days):
+        """
+        Sets the aggregation_interval_in_days of this CreateProfileDetails.
+        The time period over which to collect data for the recommendations, measured in number of days.
+
+
+        :param aggregation_interval_in_days: The aggregation_interval_in_days of this CreateProfileDetails.
+        :type: int
+        """
+        self._aggregation_interval_in_days = aggregation_interval_in_days
 
     @property
     def defined_tags(self):

@@ -180,7 +180,9 @@ class CreateVlanDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateVlanDetails.
-        The OCID of the compartment to contain the VLAN.
+        The `OCID`__ of the compartment to contain the VLAN.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateVlanDetails.
@@ -192,7 +194,9 @@ class CreateVlanDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateVlanDetails.
-        The OCID of the compartment to contain the VLAN.
+        The `OCID`__ of the compartment to contain the VLAN.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateVlanDetails.
@@ -238,7 +242,7 @@ class CreateVlanDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateVlanDetails.
-        A descriptive name. Does not have to be unique, and it's changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -251,7 +255,7 @@ class CreateVlanDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateVlanDetails.
-        A descriptive name. Does not have to be unique, and it's changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -326,8 +330,10 @@ class CreateVlanDetails(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this CreateVlanDetails.
-        The OCID of the route table the VLAN will use. If you don't provide a value,
+        The `OCID`__ of the route table the VLAN will use. If you don't provide a value,
         the VLAN uses the VCN's default route table.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this CreateVlanDetails.
@@ -339,8 +345,10 @@ class CreateVlanDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this CreateVlanDetails.
-        The OCID of the route table the VLAN will use. If you don't provide a value,
+        The `OCID`__ of the route table the VLAN will use. If you don't provide a value,
         the VLAN uses the VCN's default route table.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this CreateVlanDetails.
@@ -352,7 +360,9 @@ class CreateVlanDetails(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this CreateVlanDetails.
-        The OCID of the VCN to contain the VLAN.
+        The `OCID`__ of the VCN to contain the VLAN.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this CreateVlanDetails.
@@ -364,7 +374,9 @@ class CreateVlanDetails(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this CreateVlanDetails.
-        The OCID of the VCN to contain the VLAN.
+        The `OCID`__ of the VCN to contain the VLAN.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this CreateVlanDetails.

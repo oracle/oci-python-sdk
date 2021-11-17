@@ -178,6 +178,22 @@ class RoverNode(object):
             The value to assign to the return_shipping_label_uri property of this RoverNode.
         :type return_shipping_label_uri: str
 
+        :param is_import_requested:
+            The value to assign to the is_import_requested property of this RoverNode.
+        :type is_import_requested: bool
+
+        :param import_compartment_id:
+            The value to assign to the import_compartment_id property of this RoverNode.
+        :type import_compartment_id: str
+
+        :param import_file_bucket:
+            The value to assign to the import_file_bucket property of this RoverNode.
+        :type import_file_bucket: str
+
+        :param data_validation_code:
+            The value to assign to the data_validation_code property of this RoverNode.
+        :type data_validation_code: str
+
         :param public_key:
             The value to assign to the public_key property of this RoverNode.
         :type public_key: str
@@ -185,6 +201,10 @@ class RoverNode(object):
         :param image_export_par:
             The value to assign to the image_export_par property of this RoverNode.
         :type image_export_par: str
+
+        :param tags:
+            The value to assign to the tags property of this RoverNode.
+        :type tags: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this RoverNode.
@@ -226,8 +246,13 @@ class RoverNode(object):
             'oracle_shipping_tracking_url': 'str',
             'time_return_window_ends': 'datetime',
             'return_shipping_label_uri': 'str',
+            'is_import_requested': 'bool',
+            'import_compartment_id': 'str',
+            'import_file_bucket': 'str',
+            'data_validation_code': 'str',
             'public_key': 'str',
             'image_export_par': 'str',
+            'tags': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -260,8 +285,13 @@ class RoverNode(object):
             'oracle_shipping_tracking_url': 'oracleShippingTrackingUrl',
             'time_return_window_ends': 'timeReturnWindowEnds',
             'return_shipping_label_uri': 'returnShippingLabelUri',
+            'is_import_requested': 'isImportRequested',
+            'import_compartment_id': 'importCompartmentId',
+            'import_file_bucket': 'importFileBucket',
+            'data_validation_code': 'dataValidationCode',
             'public_key': 'publicKey',
             'image_export_par': 'imageExportPar',
+            'tags': 'tags',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -293,8 +323,13 @@ class RoverNode(object):
         self._oracle_shipping_tracking_url = None
         self._time_return_window_ends = None
         self._return_shipping_label_uri = None
+        self._is_import_requested = None
+        self._import_compartment_id = None
+        self._import_file_bucket = None
+        self._data_validation_code = None
         self._public_key = None
         self._image_export_par = None
+        self._tags = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -944,6 +979,102 @@ class RoverNode(object):
         self._return_shipping_label_uri = return_shipping_label_uri
 
     @property
+    def is_import_requested(self):
+        """
+        Gets the is_import_requested of this RoverNode.
+        The flag indicating that customer requests data to be imported to OCI upon Rover node return.
+
+
+        :return: The is_import_requested of this RoverNode.
+        :rtype: bool
+        """
+        return self._is_import_requested
+
+    @is_import_requested.setter
+    def is_import_requested(self, is_import_requested):
+        """
+        Sets the is_import_requested of this RoverNode.
+        The flag indicating that customer requests data to be imported to OCI upon Rover node return.
+
+
+        :param is_import_requested: The is_import_requested of this RoverNode.
+        :type: bool
+        """
+        self._is_import_requested = is_import_requested
+
+    @property
+    def import_compartment_id(self):
+        """
+        Gets the import_compartment_id of this RoverNode.
+        An OCID of a compartment where data will be imported to upon Rover node return.
+
+
+        :return: The import_compartment_id of this RoverNode.
+        :rtype: str
+        """
+        return self._import_compartment_id
+
+    @import_compartment_id.setter
+    def import_compartment_id(self, import_compartment_id):
+        """
+        Sets the import_compartment_id of this RoverNode.
+        An OCID of a compartment where data will be imported to upon Rover node return.
+
+
+        :param import_compartment_id: The import_compartment_id of this RoverNode.
+        :type: str
+        """
+        self._import_compartment_id = import_compartment_id
+
+    @property
+    def import_file_bucket(self):
+        """
+        Gets the import_file_bucket of this RoverNode.
+        Name of a bucket where files from NFS share will be imported to upon Rover node return.
+
+
+        :return: The import_file_bucket of this RoverNode.
+        :rtype: str
+        """
+        return self._import_file_bucket
+
+    @import_file_bucket.setter
+    def import_file_bucket(self, import_file_bucket):
+        """
+        Sets the import_file_bucket of this RoverNode.
+        Name of a bucket where files from NFS share will be imported to upon Rover node return.
+
+
+        :param import_file_bucket: The import_file_bucket of this RoverNode.
+        :type: str
+        """
+        self._import_file_bucket = import_file_bucket
+
+    @property
+    def data_validation_code(self):
+        """
+        Gets the data_validation_code of this RoverNode.
+        Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+
+
+        :return: The data_validation_code of this RoverNode.
+        :rtype: str
+        """
+        return self._data_validation_code
+
+    @data_validation_code.setter
+    def data_validation_code(self, data_validation_code):
+        """
+        Sets the data_validation_code of this RoverNode.
+        Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+
+
+        :param data_validation_code: The data_validation_code of this RoverNode.
+        :type: str
+        """
+        self._data_validation_code = data_validation_code
+
+    @property
     def public_key(self):
         """
         Gets the public_key of this RoverNode.
@@ -990,6 +1121,30 @@ class RoverNode(object):
         :type: str
         """
         self._image_export_par = image_export_par
+
+    @property
+    def tags(self):
+        """
+        Gets the tags of this RoverNode.
+        The tags associated with tagSlug.
+
+
+        :return: The tags of this RoverNode.
+        :rtype: str
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """
+        Sets the tags of this RoverNode.
+        The tags associated with tagSlug.
+
+
+        :param tags: The tags of this RoverNode.
+        :type: str
+        """
+        self._tags = tags
 
     @property
     def freeform_tags(self):

@@ -144,7 +144,9 @@ class LetterOfAuthority(object):
     def cross_connect_id(self):
         """
         Gets the cross_connect_id of this LetterOfAuthority.
-        The OCID of the cross-connect.
+        The `OCID`__ of the cross-connect.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cross_connect_id of this LetterOfAuthority.
@@ -156,7 +158,9 @@ class LetterOfAuthority(object):
     def cross_connect_id(self, cross_connect_id):
         """
         Sets the cross_connect_id of this LetterOfAuthority.
-        The OCID of the cross-connect.
+        The `OCID`__ of the cross-connect.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cross_connect_id: The cross_connect_id of this LetterOfAuthority.

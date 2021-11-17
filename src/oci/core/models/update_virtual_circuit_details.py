@@ -37,6 +37,14 @@ class UpdateVirtualCircuitDetails(object):
     #: This constant has a value of "INACTIVE"
     PROVIDER_STATE_INACTIVE = "INACTIVE"
 
+    #: A constant which can be used with the ip_mtu property of a UpdateVirtualCircuitDetails.
+    #: This constant has a value of "MTU_1500"
+    IP_MTU_MTU_1500 = "MTU_1500"
+
+    #: A constant which can be used with the ip_mtu property of a UpdateVirtualCircuitDetails.
+    #: This constant has a value of "MTU_9000"
+    IP_MTU_MTU_9000 = "MTU_9000"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateVirtualCircuitDetails object with values from keyword arguments.
@@ -92,6 +100,11 @@ class UpdateVirtualCircuitDetails(object):
             The value to assign to the reference_comment property of this UpdateVirtualCircuitDetails.
         :type reference_comment: str
 
+        :param ip_mtu:
+            The value to assign to the ip_mtu property of this UpdateVirtualCircuitDetails.
+            Allowed values for this property are: "MTU_1500", "MTU_9000"
+        :type ip_mtu: str
+
         """
         self.swagger_types = {
             'bandwidth_shape_name': 'str',
@@ -105,7 +118,8 @@ class UpdateVirtualCircuitDetails(object):
             'gateway_id': 'str',
             'provider_state': 'str',
             'provider_service_key_name': 'str',
-            'reference_comment': 'str'
+            'reference_comment': 'str',
+            'ip_mtu': 'str'
         }
 
         self.attribute_map = {
@@ -120,7 +134,8 @@ class UpdateVirtualCircuitDetails(object):
             'gateway_id': 'gatewayId',
             'provider_state': 'providerState',
             'provider_service_key_name': 'providerServiceKeyName',
-            'reference_comment': 'referenceComment'
+            'reference_comment': 'referenceComment',
+            'ip_mtu': 'ipMtu'
         }
 
         self._bandwidth_shape_name = None
@@ -135,6 +150,7 @@ class UpdateVirtualCircuitDetails(object):
         self._provider_state = None
         self._provider_service_key_name = None
         self._reference_comment = None
+        self._ip_mtu = None
 
     @property
     def bandwidth_shape_name(self):
@@ -355,10 +371,8 @@ class UpdateVirtualCircuitDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateVirtualCircuitDetails.
-        A user-friendly name. Does not have to be unique.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        To be updated only by the customer who owns the virtual circuit.
 
 
         :return: The display_name of this UpdateVirtualCircuitDetails.
@@ -370,10 +384,8 @@ class UpdateVirtualCircuitDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateVirtualCircuitDetails.
-        A user-friendly name. Does not have to be unique.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        To be updated only by the customer who owns the virtual circuit.
 
 
         :param display_name: The display_name of this UpdateVirtualCircuitDetails.
@@ -419,10 +431,12 @@ class UpdateVirtualCircuitDetails(object):
     def gateway_id(self):
         """
         Gets the gateway_id of this UpdateVirtualCircuitDetails.
-        The OCID of the :class:`Drg`
+        The `OCID`__ of the :class:`Drg`
         that this private virtual circuit uses.
 
         To be updated only by the customer who owns the virtual circuit.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gateway_id of this UpdateVirtualCircuitDetails.
@@ -434,10 +448,12 @@ class UpdateVirtualCircuitDetails(object):
     def gateway_id(self, gateway_id):
         """
         Sets the gateway_id of this UpdateVirtualCircuitDetails.
-        The OCID of the :class:`Drg`
+        The `OCID`__ of the :class:`Drg`
         that this private virtual circuit uses.
 
         To be updated only by the customer who owns the virtual circuit.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gateway_id: The gateway_id of this UpdateVirtualCircuitDetails.
@@ -542,6 +558,38 @@ class UpdateVirtualCircuitDetails(object):
         :type: str
         """
         self._reference_comment = reference_comment
+
+    @property
+    def ip_mtu(self):
+        """
+        Gets the ip_mtu of this UpdateVirtualCircuitDetails.
+        The layer 3 IP MTU to use on this virtual circuit.
+
+        Allowed values for this property are: "MTU_1500", "MTU_9000"
+
+
+        :return: The ip_mtu of this UpdateVirtualCircuitDetails.
+        :rtype: str
+        """
+        return self._ip_mtu
+
+    @ip_mtu.setter
+    def ip_mtu(self, ip_mtu):
+        """
+        Sets the ip_mtu of this UpdateVirtualCircuitDetails.
+        The layer 3 IP MTU to use on this virtual circuit.
+
+
+        :param ip_mtu: The ip_mtu of this UpdateVirtualCircuitDetails.
+        :type: str
+        """
+        allowed_values = ["MTU_1500", "MTU_9000"]
+        if not value_allowed_none_or_none_sentinel(ip_mtu, allowed_values):
+            raise ValueError(
+                "Invalid value for `ip_mtu`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._ip_mtu = ip_mtu
 
     def __repr__(self):
         return formatted_flat_dict(self)

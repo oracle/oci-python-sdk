@@ -318,10 +318,8 @@ class VolumeAttachment(object):
     def display_name(self):
         """
         Gets the display_name of this VolumeAttachment.
-        A user-friendly name. Does not have to be unique, and it cannot be changed.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        Example: `My volume attachment`
 
 
         :return: The display_name of this VolumeAttachment.
@@ -333,10 +331,8 @@ class VolumeAttachment(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this VolumeAttachment.
-        A user-friendly name. Does not have to be unique, and it cannot be changed.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        Example: `My volume attachment`
 
 
         :param display_name: The display_name of this VolumeAttachment.

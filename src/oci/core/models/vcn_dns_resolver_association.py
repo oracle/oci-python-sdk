@@ -69,7 +69,9 @@ class VcnDnsResolverAssociation(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this VcnDnsResolverAssociation.
-        The OCID of the VCN in the association.
+        The `OCID`__ of the VCN in the association.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this VcnDnsResolverAssociation.
@@ -81,7 +83,9 @@ class VcnDnsResolverAssociation(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this VcnDnsResolverAssociation.
-        The OCID of the VCN in the association.
+        The `OCID`__ of the VCN in the association.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this VcnDnsResolverAssociation.
@@ -93,7 +97,9 @@ class VcnDnsResolverAssociation(object):
     def dns_resolver_id(self):
         """
         Gets the dns_resolver_id of this VcnDnsResolverAssociation.
-        The OCID of the DNS resolver in the association.
+        The `OCID`__ of the DNS resolver in the association.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The dns_resolver_id of this VcnDnsResolverAssociation.
@@ -105,7 +111,9 @@ class VcnDnsResolverAssociation(object):
     def dns_resolver_id(self, dns_resolver_id):
         """
         Sets the dns_resolver_id of this VcnDnsResolverAssociation.
-        The OCID of the DNS resolver in the association.
+        The `OCID`__ of the DNS resolver in the association.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param dns_resolver_id: The dns_resolver_id of this VcnDnsResolverAssociation.

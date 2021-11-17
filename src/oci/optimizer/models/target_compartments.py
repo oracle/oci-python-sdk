@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetCompartments(object):
     """
-    Optional. The target compartments supported by a profile override for a recommendation.
+    Optional. The compartments specified in the profile override for a recommendation.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class TargetCompartments(object):
     def items(self):
         """
         **[Required]** Gets the items of this TargetCompartments.
-        The list of target compartment OCIDs attached to the current profile override.
+        The list of OCIDs attached to the compartments specified in the current profile override.
 
 
         :return: The items of this TargetCompartments.
@@ -49,7 +49,7 @@ class TargetCompartments(object):
     def items(self, items):
         """
         Sets the items of this TargetCompartments.
-        The list of target compartment OCIDs attached to the current profile override.
+        The list of OCIDs attached to the compartments specified in the current profile override.
 
 
         :param items: The items of this TargetCompartments.

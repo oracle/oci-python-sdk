@@ -239,8 +239,8 @@ class ComputeCapacityReservation(object):
     def display_name(self):
         """
         Gets the display_name of this ComputeCapacityReservation.
-        A user-friendly name for the compute capacity reservation.
-        It does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this ComputeCapacityReservation.
@@ -252,8 +252,8 @@ class ComputeCapacityReservation(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ComputeCapacityReservation.
-        A user-friendly name for the compute capacity reservation.
-        It does not have to be unique, and it's changeable. Avoid entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this ComputeCapacityReservation.
@@ -357,7 +357,7 @@ class ComputeCapacityReservation(object):
     def instance_reservation_configs(self):
         """
         Gets the instance_reservation_configs of this ComputeCapacityReservation.
-        The reservation configurations for the capacity reservation.
+        The capacity configurations for the capacity reservation.
 
         To use the reservation for the desired shape, specify the shape, count, and
         optionally the fault domain where you want this configuration.
@@ -372,7 +372,7 @@ class ComputeCapacityReservation(object):
     def instance_reservation_configs(self, instance_reservation_configs):
         """
         Sets the instance_reservation_configs of this ComputeCapacityReservation.
-        The reservation configurations for the capacity reservation.
+        The capacity configurations for the capacity reservation.
 
         To use the reservation for the desired shape, specify the shape, count, and
         optionally the fault domain where you want this configuration.
@@ -419,7 +419,7 @@ class ComputeCapacityReservation(object):
         Gets the reserved_instance_count of this ComputeCapacityReservation.
         The number of instances for which capacity will be held with this
         compute capacity reservation. This number is the sum of the values of the `reservedCount` fields
-        for all of the instance reservation configurations under this reservation.
+        for all of the instance capacity configurations under this reservation.
         The purpose of this field is to calculate the percentage usage of the reservation.
 
 
@@ -434,7 +434,7 @@ class ComputeCapacityReservation(object):
         Sets the reserved_instance_count of this ComputeCapacityReservation.
         The number of instances for which capacity will be held with this
         compute capacity reservation. This number is the sum of the values of the `reservedCount` fields
-        for all of the instance reservation configurations under this reservation.
+        for all of the instance capacity configurations under this reservation.
         The purpose of this field is to calculate the percentage usage of the reservation.
 
 
@@ -513,7 +513,7 @@ class ComputeCapacityReservation(object):
         Gets the used_instance_count of this ComputeCapacityReservation.
         The total number of instances currently consuming space in
         this compute capacity reservation. This number is the sum of the values of the `usedCount` fields
-        for all of the instance reservation configurations under this reservation.
+        for all of the instance capacity configurations under this reservation.
         The purpose of this field is to calculate the percentage usage of the reservation.
 
 
@@ -528,7 +528,7 @@ class ComputeCapacityReservation(object):
         Sets the used_instance_count of this ComputeCapacityReservation.
         The total number of instances currently consuming space in
         this compute capacity reservation. This number is the sum of the values of the `usedCount` fields
-        for all of the instance reservation configurations under this reservation.
+        for all of the instance capacity configurations under this reservation.
         The purpose of this field is to calculate the percentage usage of the reservation.
 
 

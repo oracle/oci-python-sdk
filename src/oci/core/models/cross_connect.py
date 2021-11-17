@@ -110,6 +110,10 @@ class CrossConnect(object):
             The value to assign to the time_created property of this CrossConnect.
         :type time_created: datetime
 
+        :param macsec_properties:
+            The value to assign to the macsec_properties property of this CrossConnect.
+        :type macsec_properties: oci.core.models.MacsecProperties
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -123,7 +127,8 @@ class CrossConnect(object):
             'port_name': 'str',
             'port_speed_shape_name': 'str',
             'customer_reference_name': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'macsec_properties': 'MacsecProperties'
         }
 
         self.attribute_map = {
@@ -138,7 +143,8 @@ class CrossConnect(object):
             'port_name': 'portName',
             'port_speed_shape_name': 'portSpeedShapeName',
             'customer_reference_name': 'customerReferenceName',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'macsec_properties': 'macsecProperties'
         }
 
         self._compartment_id = None
@@ -153,12 +159,15 @@ class CrossConnect(object):
         self._port_speed_shape_name = None
         self._customer_reference_name = None
         self._time_created = None
+        self._macsec_properties = None
 
     @property
     def compartment_id(self):
         """
         Gets the compartment_id of this CrossConnect.
-        The OCID of the compartment containing the cross-connect group.
+        The `OCID`__ of the compartment containing the cross-connect group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CrossConnect.
@@ -170,7 +179,9 @@ class CrossConnect(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CrossConnect.
-        The OCID of the compartment containing the cross-connect group.
+        The `OCID`__ of the compartment containing the cross-connect group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CrossConnect.
@@ -182,7 +193,9 @@ class CrossConnect(object):
     def cross_connect_group_id(self):
         """
         Gets the cross_connect_group_id of this CrossConnect.
-        The OCID of the cross-connect group this cross-connect belongs to (if any).
+        The `OCID`__ of the cross-connect group this cross-connect belongs to (if any).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cross_connect_group_id of this CrossConnect.
@@ -194,7 +207,9 @@ class CrossConnect(object):
     def cross_connect_group_id(self, cross_connect_group_id):
         """
         Sets the cross_connect_group_id of this CrossConnect.
-        The OCID of the cross-connect group this cross-connect belongs to (if any).
+        The `OCID`__ of the cross-connect group this cross-connect belongs to (if any).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cross_connect_group_id: The cross_connect_group_id of this CrossConnect.
@@ -483,6 +498,26 @@ class CrossConnect(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def macsec_properties(self):
+        """
+        Gets the macsec_properties of this CrossConnect.
+
+        :return: The macsec_properties of this CrossConnect.
+        :rtype: oci.core.models.MacsecProperties
+        """
+        return self._macsec_properties
+
+    @macsec_properties.setter
+    def macsec_properties(self, macsec_properties):
+        """
+        Sets the macsec_properties of this CrossConnect.
+
+        :param macsec_properties: The macsec_properties of this CrossConnect.
+        :type: oci.core.models.MacsecProperties
+        """
+        self._macsec_properties = macsec_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

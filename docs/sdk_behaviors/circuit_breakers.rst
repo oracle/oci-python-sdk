@@ -127,7 +127,8 @@ The Circuit Breaker Precedence in Python SDK (Highest to lowest) is defined as b
 
 .. Note::
     Some services have enabled circuit breakers for clients by default which would follow the ``oci.circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY``.
-    This can be overridden using any alternatives mentioned above.
+    This can be overridden using any alternatives mentioned above. To know which service clients have circuit breakers enabled, look at the service client's 
+    description in the SDK - it will say either that it has circuit breakers enabled by default, or that it does not have circuit breakers enabled by default
 
 Examples
 --------

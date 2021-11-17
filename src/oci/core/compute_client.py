@@ -18,11 +18,11 @@ missing = Sentinel("Missing")
 
 class ComputeClient(object):
     """
-    API covering the [Networking](/iaas/Content/Network/Concepts/overview.htm),
+    Use the Core Services API to manage resources such as virtual cloud networks (VCNs),
+    compute instances, and block storage volumes. For more information, see the console
+    documentation for the [Networking](/iaas/Content/Network/Concepts/overview.htm),
     [Compute](/iaas/Content/Compute/Concepts/computeoverview.htm), and
-    [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services. Use this API
-    to manage resources such as virtual cloud networks (VCNs), compute instances, and
-    block storage volumes.
+    [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services.
     """
 
     def __init__(self, config, **kwargs):
@@ -104,7 +104,7 @@ class ComputeClient(object):
 
     def accept_shielded_integrity_policy(self, instance_id, **kwargs):
         """
-        Accept the changes to the PCR values in the Measured Boot Report.
+        Accept the changes to the PCR values in the measured boot report.
 
 
         :param str instance_id: (required)
@@ -3693,7 +3693,7 @@ class ComputeClient(object):
 
     def get_measured_boot_report(self, instance_id, **kwargs):
         """
-        Gets the measured boot report for this Shielded Instance.
+        Gets the measured boot report for this shielded instance.
 
 
         :param str instance_id: (required)
@@ -4012,6 +4012,8 @@ class ComputeClient(object):
         crash dump file when it crashes. The crash dump captures information about the state of the OS at the time of
         the crash. After the OS restarts, you can analyze the crash dump to diagnose the issue. For more information, see
         `Sending a Diagnostic Interrupt`__.
+
+
 
 
         For more information about managing instance lifecycle states, see
@@ -6390,14 +6392,17 @@ class ComputeClient(object):
 
     def list_images(self, compartment_id, **kwargs):
         """
-        Lists the available images in the specified compartment, including
+        Lists a subset of images available in the specified compartment, including
         `platform images`__ and
-        `custom images`__ that have
-        been created.
+        `custom images`__.
+        The list of platform images includes the three most recently published versions
+        of each major distribution.
 
-        The list of images that's returned is ordered to first show all
-        platform images, then all custom images. The order of images might
-        change when new images are released.
+        The list of images returned is ordered to first show the recent platform images,
+        then all of the custom images.
+
+        **Caution:** Platform images are refreshed regularly. When new images are released, older versions are replaced.
+        The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm
@@ -7477,10 +7482,9 @@ class ComputeClient(object):
 
     def update_compute_capacity_reservation(self, capacity_reservation_id, update_compute_capacity_reservation_details, **kwargs):
         """
-        Updates the display name, defined tag, and freeform tag fields for the specified compute capacity reservation.
-        Fields that are not provided in the request will not be updated. Avoid entering confidential information.
-
-        The update also modifies the reservation configurations of the specified compute capacity reservation.
+        Updates the specified capacity reservation and its associated capacity configurations.
+        Fields that are not provided in the request will not be updated. Capacity configurations that are not included will be deleted.
+        Avoid entering confidential information.
 
 
         :param str capacity_reservation_id: (required)

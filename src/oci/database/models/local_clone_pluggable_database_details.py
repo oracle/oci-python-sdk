@@ -32,22 +32,29 @@ class LocalClonePluggableDatabaseDetails(object):
             The value to assign to the target_tde_wallet_password property of this LocalClonePluggableDatabaseDetails.
         :type target_tde_wallet_password: str
 
+        :param should_pdb_admin_account_be_locked:
+            The value to assign to the should_pdb_admin_account_be_locked property of this LocalClonePluggableDatabaseDetails.
+        :type should_pdb_admin_account_be_locked: bool
+
         """
         self.swagger_types = {
             'cloned_pdb_name': 'str',
             'pdb_admin_password': 'str',
-            'target_tde_wallet_password': 'str'
+            'target_tde_wallet_password': 'str',
+            'should_pdb_admin_account_be_locked': 'bool'
         }
 
         self.attribute_map = {
             'cloned_pdb_name': 'clonedPdbName',
             'pdb_admin_password': 'pdbAdminPassword',
-            'target_tde_wallet_password': 'targetTdeWalletPassword'
+            'target_tde_wallet_password': 'targetTdeWalletPassword',
+            'should_pdb_admin_account_be_locked': 'shouldPdbAdminAccountBeLocked'
         }
 
         self._cloned_pdb_name = None
         self._pdb_admin_password = None
         self._target_tde_wallet_password = None
+        self._should_pdb_admin_account_be_locked = None
 
     @property
     def cloned_pdb_name(self):
@@ -76,7 +83,7 @@ class LocalClonePluggableDatabaseDetails(object):
     @property
     def pdb_admin_password(self):
         """
-        **[Required]** Gets the pdb_admin_password of this LocalClonePluggableDatabaseDetails.
+        Gets the pdb_admin_password of this LocalClonePluggableDatabaseDetails.
         A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \\#, or -.
 
 
@@ -100,7 +107,7 @@ class LocalClonePluggableDatabaseDetails(object):
     @property
     def target_tde_wallet_password(self):
         """
-        **[Required]** Gets the target_tde_wallet_password of this LocalClonePluggableDatabaseDetails.
+        Gets the target_tde_wallet_password of this LocalClonePluggableDatabaseDetails.
         The existing TDE wallet password of the target CDB.
 
 
@@ -120,6 +127,32 @@ class LocalClonePluggableDatabaseDetails(object):
         :type: str
         """
         self._target_tde_wallet_password = target_tde_wallet_password
+
+    @property
+    def should_pdb_admin_account_be_locked(self):
+        """
+        Gets the should_pdb_admin_account_be_locked of this LocalClonePluggableDatabaseDetails.
+        The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it.
+        If true, the pluggable database will be locked and user cannot login to it.
+
+
+        :return: The should_pdb_admin_account_be_locked of this LocalClonePluggableDatabaseDetails.
+        :rtype: bool
+        """
+        return self._should_pdb_admin_account_be_locked
+
+    @should_pdb_admin_account_be_locked.setter
+    def should_pdb_admin_account_be_locked(self, should_pdb_admin_account_be_locked):
+        """
+        Sets the should_pdb_admin_account_be_locked of this LocalClonePluggableDatabaseDetails.
+        The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it.
+        If true, the pluggable database will be locked and user cannot login to it.
+
+
+        :param should_pdb_admin_account_be_locked: The should_pdb_admin_account_be_locked of this LocalClonePluggableDatabaseDetails.
+        :type: bool
+        """
+        self._should_pdb_admin_account_be_locked = should_pdb_admin_account_be_locked
 
     def __repr__(self):
         return formatted_flat_dict(self)

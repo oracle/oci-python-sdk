@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TargetTags(object):
     """
-    Optional. The target tags supported by a profile override for a recommendation.
+    Optional. The tags specified in the profile override for a recommendation.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class TargetTags(object):
     def items(self):
         """
         **[Required]** Gets the items of this TargetTags.
-        The list of target tags attached to the current profile override.
+        The list of tags specified in the current profile override.
 
 
         :return: The items of this TargetTags.
@@ -49,7 +49,7 @@ class TargetTags(object):
     def items(self, items):
         """
         Sets the items of this TargetTags.
-        The list of target tags attached to the current profile override.
+        The list of tags specified in the current profile override.
 
 
         :param items: The items of this TargetTags.

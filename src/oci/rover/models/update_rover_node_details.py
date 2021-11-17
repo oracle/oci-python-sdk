@@ -129,6 +129,22 @@ class UpdateRoverNodeDetails(object):
             The value to assign to the time_return_window_ends property of this UpdateRoverNodeDetails.
         :type time_return_window_ends: datetime
 
+        :param is_import_requested:
+            The value to assign to the is_import_requested property of this UpdateRoverNodeDetails.
+        :type is_import_requested: bool
+
+        :param import_compartment_id:
+            The value to assign to the import_compartment_id property of this UpdateRoverNodeDetails.
+        :type import_compartment_id: str
+
+        :param import_file_bucket:
+            The value to assign to the import_file_bucket property of this UpdateRoverNodeDetails.
+        :type import_file_bucket: str
+
+        :param data_validation_code:
+            The value to assign to the data_validation_code property of this UpdateRoverNodeDetails.
+        :type data_validation_code: str
+
         :param public_key:
             The value to assign to the public_key property of this UpdateRoverNodeDetails.
         :type public_key: str
@@ -164,6 +180,10 @@ class UpdateRoverNodeDetails(object):
             'lifecycle_state_details': 'str',
             'time_return_window_starts': 'datetime',
             'time_return_window_ends': 'datetime',
+            'is_import_requested': 'bool',
+            'import_compartment_id': 'str',
+            'import_file_bucket': 'str',
+            'data_validation_code': 'str',
             'public_key': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -188,6 +208,10 @@ class UpdateRoverNodeDetails(object):
             'lifecycle_state_details': 'lifecycleStateDetails',
             'time_return_window_starts': 'timeReturnWindowStarts',
             'time_return_window_ends': 'timeReturnWindowEnds',
+            'is_import_requested': 'isImportRequested',
+            'import_compartment_id': 'importCompartmentId',
+            'import_file_bucket': 'importFileBucket',
+            'data_validation_code': 'dataValidationCode',
             'public_key': 'publicKey',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -211,6 +235,10 @@ class UpdateRoverNodeDetails(object):
         self._lifecycle_state_details = None
         self._time_return_window_starts = None
         self._time_return_window_ends = None
+        self._is_import_requested = None
+        self._import_compartment_id = None
+        self._import_file_bucket = None
+        self._data_validation_code = None
         self._public_key = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -643,6 +671,102 @@ class UpdateRoverNodeDetails(object):
         :type: datetime
         """
         self._time_return_window_ends = time_return_window_ends
+
+    @property
+    def is_import_requested(self):
+        """
+        Gets the is_import_requested of this UpdateRoverNodeDetails.
+        The flag indicating that customer requests data to be imported to OCI upon Rover node return.
+
+
+        :return: The is_import_requested of this UpdateRoverNodeDetails.
+        :rtype: bool
+        """
+        return self._is_import_requested
+
+    @is_import_requested.setter
+    def is_import_requested(self, is_import_requested):
+        """
+        Sets the is_import_requested of this UpdateRoverNodeDetails.
+        The flag indicating that customer requests data to be imported to OCI upon Rover node return.
+
+
+        :param is_import_requested: The is_import_requested of this UpdateRoverNodeDetails.
+        :type: bool
+        """
+        self._is_import_requested = is_import_requested
+
+    @property
+    def import_compartment_id(self):
+        """
+        Gets the import_compartment_id of this UpdateRoverNodeDetails.
+        An OCID of a compartment where data will be imported to upon Rover node return.
+
+
+        :return: The import_compartment_id of this UpdateRoverNodeDetails.
+        :rtype: str
+        """
+        return self._import_compartment_id
+
+    @import_compartment_id.setter
+    def import_compartment_id(self, import_compartment_id):
+        """
+        Sets the import_compartment_id of this UpdateRoverNodeDetails.
+        An OCID of a compartment where data will be imported to upon Rover node return.
+
+
+        :param import_compartment_id: The import_compartment_id of this UpdateRoverNodeDetails.
+        :type: str
+        """
+        self._import_compartment_id = import_compartment_id
+
+    @property
+    def import_file_bucket(self):
+        """
+        Gets the import_file_bucket of this UpdateRoverNodeDetails.
+        Name of a bucket where files from NFS share will be imported to upon Rover node return.
+
+
+        :return: The import_file_bucket of this UpdateRoverNodeDetails.
+        :rtype: str
+        """
+        return self._import_file_bucket
+
+    @import_file_bucket.setter
+    def import_file_bucket(self, import_file_bucket):
+        """
+        Sets the import_file_bucket of this UpdateRoverNodeDetails.
+        Name of a bucket where files from NFS share will be imported to upon Rover node return.
+
+
+        :param import_file_bucket: The import_file_bucket of this UpdateRoverNodeDetails.
+        :type: str
+        """
+        self._import_file_bucket = import_file_bucket
+
+    @property
+    def data_validation_code(self):
+        """
+        Gets the data_validation_code of this UpdateRoverNodeDetails.
+        Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+
+
+        :return: The data_validation_code of this UpdateRoverNodeDetails.
+        :rtype: str
+        """
+        return self._data_validation_code
+
+    @data_validation_code.setter
+    def data_validation_code(self, data_validation_code):
+        """
+        Sets the data_validation_code of this UpdateRoverNodeDetails.
+        Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+
+
+        :param data_validation_code: The data_validation_code of this UpdateRoverNodeDetails.
+        :type: str
+        """
+        self._data_validation_code = data_validation_code
 
     @property
     def public_key(self):

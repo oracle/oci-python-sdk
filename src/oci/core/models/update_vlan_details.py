@@ -106,7 +106,7 @@ class UpdateVlanDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateVlanDetails.
-        A descriptive name. Does not have to be unique, and it's changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -119,7 +119,7 @@ class UpdateVlanDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateVlanDetails.
-        A descriptive name. Does not have to be unique, and it's changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -196,7 +196,9 @@ class UpdateVlanDetails(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this UpdateVlanDetails.
-        The OCID of the route table the VLAN will use.
+        The `OCID`__ of the route table the VLAN will use.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this UpdateVlanDetails.
@@ -208,7 +210,9 @@ class UpdateVlanDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this UpdateVlanDetails.
-        The OCID of the route table the VLAN will use.
+        The `OCID`__ of the route table the VLAN will use.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this UpdateVlanDetails.

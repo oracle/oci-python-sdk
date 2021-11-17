@@ -37,7 +37,9 @@ class GetPublicIpByPrivateIpIdDetails(object):
     def private_ip_id(self):
         """
         **[Required]** Gets the private_ip_id of this GetPublicIpByPrivateIpIdDetails.
-        OCID of the private IP.
+        `OCID`__ of the private IP.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The private_ip_id of this GetPublicIpByPrivateIpIdDetails.
@@ -49,7 +51,9 @@ class GetPublicIpByPrivateIpIdDetails(object):
     def private_ip_id(self, private_ip_id):
         """
         Sets the private_ip_id of this GetPublicIpByPrivateIpIdDetails.
-        OCID of the private IP.
+        `OCID`__ of the private IP.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param private_ip_id: The private_ip_id of this GetPublicIpByPrivateIpIdDetails.

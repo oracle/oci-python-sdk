@@ -371,8 +371,6 @@ class LaunchInstanceDetails(object):
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
-        Example: `My bare metal instance`
-
 
         :return: The display_name of this LaunchInstanceDetails.
         :rtype: str
@@ -385,8 +383,6 @@ class LaunchInstanceDetails(object):
         Sets the display_name of this LaunchInstanceDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        Example: `My bare metal instance`
 
 
         :param display_name: The display_name of this LaunchInstanceDetails.
@@ -581,17 +577,23 @@ class LaunchInstanceDetails(object):
         configured to run an iPXE script to continue the boot process.
 
         If you want more control over the boot process, you can provide
-        your own custom iPXE script that will run when the instance boots;
-        however, you should be aware that the same iPXE script will run
-        every time an instance boots; not only after the initial
+        your own custom iPXE script that will run when the instance boots.
+        Be aware that the same iPXE script will run
+        every time an instance boots, not only after the initial
         LaunchInstance call.
 
         The default iPXE script connects to the instance's local boot
         volume over iSCSI and performs a network boot. If you use a custom iPXE
         script and want to network-boot from the instance's local boot volume
-        over iSCSI the same way as the default iPXE script, you should use the
+        over iSCSI the same way as the default iPXE script, use the
         following iSCSI IP address: 169.254.0.2, and boot volume IQN:
         iqn.2015-02.oracle.boot.
+
+        If your instance boot volume type is paravirtualized,
+        the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
+        If your instance boot volume type is paravirtualized
+        and you use custom iPXE to network boot into your instance,
+        the primary boot volume is attached as a data volume through virtio-scsi drive.
 
         For more information about the Bring Your Own Image feature of
         Oracle Cloud Infrastructure, see
@@ -618,17 +620,23 @@ class LaunchInstanceDetails(object):
         configured to run an iPXE script to continue the boot process.
 
         If you want more control over the boot process, you can provide
-        your own custom iPXE script that will run when the instance boots;
-        however, you should be aware that the same iPXE script will run
-        every time an instance boots; not only after the initial
+        your own custom iPXE script that will run when the instance boots.
+        Be aware that the same iPXE script will run
+        every time an instance boots, not only after the initial
         LaunchInstance call.
 
         The default iPXE script connects to the instance's local boot
         volume over iSCSI and performs a network boot. If you use a custom iPXE
         script and want to network-boot from the instance's local boot volume
-        over iSCSI the same way as the default iPXE script, you should use the
+        over iSCSI the same way as the default iPXE script, use the
         following iSCSI IP address: 169.254.0.2, and boot volume IQN:
         iqn.2015-02.oracle.boot.
+
+        If your instance boot volume type is paravirtualized,
+        the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
+        If your instance boot volume type is paravirtualized
+        and you use custom iPXE to network boot into your instance,
+        the primary boot volume is attached as a data volume through virtio-scsi drive.
 
         For more information about the Bring Your Own Image feature of
         Oracle Cloud Infrastructure, see

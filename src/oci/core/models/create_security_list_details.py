@@ -79,7 +79,9 @@ class CreateSecurityListDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateSecurityListDetails.
-        The OCID of the compartment to contain the security list.
+        The `OCID`__ of the compartment to contain the security list.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateSecurityListDetails.
@@ -91,7 +93,9 @@ class CreateSecurityListDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateSecurityListDetails.
-        The OCID of the compartment to contain the security list.
+        The `OCID`__ of the compartment to contain the security list.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateSecurityListDetails.
@@ -245,7 +249,9 @@ class CreateSecurityListDetails(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this CreateSecurityListDetails.
-        The OCID of the VCN the security list belongs to.
+        The `OCID`__ of the VCN the security list belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this CreateSecurityListDetails.
@@ -257,7 +263,9 @@ class CreateSecurityListDetails(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this CreateSecurityListDetails.
-        The OCID of the VCN the security list belongs to.
+        The `OCID`__ of the VCN the security list belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this CreateSecurityListDetails.

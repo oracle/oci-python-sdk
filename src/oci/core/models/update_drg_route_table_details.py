@@ -11,6 +11,8 @@ from oci.decorators import init_model_state_from_kwargs
 class UpdateDrgRouteTableDetails(object):
     """
     Details used in a request to update a DRG route table.
+
+    You can't assign a table to a virtual circuit or IPSec tunnel attachment if there is a static route rule for an RPC attachment.
     """
 
     def __init__(self, **kwargs):
@@ -102,8 +104,6 @@ class UpdateDrgRouteTableDetails(object):
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
-        You can't assign a table to a virtual circuit or IPSec connection attachment if there is a static route rule for an RPC attachment.
-
 
         :return: The display_name of this UpdateDrgRouteTableDetails.
         :rtype: str
@@ -116,8 +116,6 @@ class UpdateDrgRouteTableDetails(object):
         Sets the display_name of this UpdateDrgRouteTableDetails.
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        You can't assign a table to a virtual circuit or IPSec connection attachment if there is a static route rule for an RPC attachment.
 
 
         :param display_name: The display_name of this UpdateDrgRouteTableDetails.

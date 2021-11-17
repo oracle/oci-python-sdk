@@ -72,7 +72,9 @@ class CreateLocalPeeringGatewayDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateLocalPeeringGatewayDetails.
-        The OCID of the compartment containing the local peering gateway (LPG).
+        The `OCID`__ of the compartment containing the local peering gateway (LPG).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateLocalPeeringGatewayDetails.
@@ -84,7 +86,9 @@ class CreateLocalPeeringGatewayDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateLocalPeeringGatewayDetails.
-        The OCID of the compartment containing the local peering gateway (LPG).
+        The `OCID`__ of the compartment containing the local peering gateway (LPG).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateLocalPeeringGatewayDetails.
@@ -130,8 +134,8 @@ class CreateLocalPeeringGatewayDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateLocalPeeringGatewayDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CreateLocalPeeringGatewayDetails.
@@ -143,8 +147,8 @@ class CreateLocalPeeringGatewayDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateLocalPeeringGatewayDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateLocalPeeringGatewayDetails.
@@ -190,7 +194,7 @@ class CreateLocalPeeringGatewayDetails(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this CreateLocalPeeringGatewayDetails.
-        The OCID of the route table the LPG will use.
+        The `OCID`__ of the route table the LPG will use.
 
         If you don't specify a route table here, the LPG is created without an associated route
         table. The Networking service does NOT automatically associate the attached VCN's default route table
@@ -199,6 +203,7 @@ class CreateLocalPeeringGatewayDetails(object):
         For information about why you would associate a route table with an LPG, see
         `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
 
 
@@ -211,7 +216,7 @@ class CreateLocalPeeringGatewayDetails(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this CreateLocalPeeringGatewayDetails.
-        The OCID of the route table the LPG will use.
+        The `OCID`__ of the route table the LPG will use.
 
         If you don't specify a route table here, the LPG is created without an associated route
         table. The Networking service does NOT automatically associate the attached VCN's default route table
@@ -220,6 +225,7 @@ class CreateLocalPeeringGatewayDetails(object):
         For information about why you would associate a route table with an LPG, see
         `Transit Routing: Access to Multiple VCNs in Same Region`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
 
 
@@ -232,7 +238,9 @@ class CreateLocalPeeringGatewayDetails(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this CreateLocalPeeringGatewayDetails.
-        The OCID of the VCN the LPG belongs to.
+        The `OCID`__ of the VCN the LPG belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this CreateLocalPeeringGatewayDetails.
@@ -244,7 +252,9 @@ class CreateLocalPeeringGatewayDetails(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this CreateLocalPeeringGatewayDetails.
-        The OCID of the VCN the LPG belongs to.
+        The `OCID`__ of the VCN the LPG belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this CreateLocalPeeringGatewayDetails.

@@ -59,7 +59,9 @@ class IPSecConnectionDeviceStatus(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this IPSecConnectionDeviceStatus.
-        The OCID of the compartment containing the IPSec connection.
+        The `OCID`__ of the compartment containing the IPSec connection.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this IPSecConnectionDeviceStatus.
@@ -71,7 +73,9 @@ class IPSecConnectionDeviceStatus(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this IPSecConnectionDeviceStatus.
-        The OCID of the compartment containing the IPSec connection.
+        The `OCID`__ of the compartment containing the IPSec connection.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this IPSecConnectionDeviceStatus.
@@ -83,7 +87,9 @@ class IPSecConnectionDeviceStatus(object):
     def id(self):
         """
         **[Required]** Gets the id of this IPSecConnectionDeviceStatus.
-        The IPSec connection's Oracle ID (OCID).
+        The IPSec connection's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this IPSecConnectionDeviceStatus.
@@ -95,7 +101,9 @@ class IPSecConnectionDeviceStatus(object):
     def id(self, id):
         """
         Sets the id of this IPSecConnectionDeviceStatus.
-        The IPSec connection's Oracle ID (OCID).
+        The IPSec connection's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this IPSecConnectionDeviceStatus.

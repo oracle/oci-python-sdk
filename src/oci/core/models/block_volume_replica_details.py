@@ -44,8 +44,8 @@ class BlockVolumeReplicaDetails(object):
     def display_name(self):
         """
         Gets the display_name of this BlockVolumeReplicaDetails.
-        The display name of the block volume replica. You may optionally specify a *display name* for
-        the block volume replica, otherwise a default is provided.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this BlockVolumeReplicaDetails.
@@ -57,8 +57,8 @@ class BlockVolumeReplicaDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this BlockVolumeReplicaDetails.
-        The display name of the block volume replica. You may optionally specify a *display name* for
-        the block volume replica, otherwise a default is provided.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this BlockVolumeReplicaDetails.

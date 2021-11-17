@@ -212,7 +212,9 @@ class Vlan(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Vlan.
-        The OCID of the compartment containing the VLAN.
+        The `OCID`__ of the compartment containing the VLAN.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Vlan.
@@ -224,7 +226,9 @@ class Vlan(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Vlan.
-        The OCID of the compartment containing the VLAN.
+        The `OCID`__ of the compartment containing the VLAN.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Vlan.
@@ -330,7 +334,9 @@ class Vlan(object):
     def id(self):
         """
         **[Required]** Gets the id of this Vlan.
-        The VLAN's Oracle ID (OCID).
+        The VLAN's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this Vlan.
@@ -342,7 +348,9 @@ class Vlan(object):
     def id(self, id):
         """
         Sets the id of this Vlan.
-        The VLAN's Oracle ID (OCID).
+        The VLAN's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this Vlan.
@@ -442,7 +450,9 @@ class Vlan(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this Vlan.
-        The OCID of the route table that the VLAN uses.
+        The `OCID`__ of the route table that the VLAN uses.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The route_table_id of this Vlan.
@@ -454,7 +464,9 @@ class Vlan(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this Vlan.
-        The OCID of the route table that the VLAN uses.
+        The `OCID`__ of the route table that the VLAN uses.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param route_table_id: The route_table_id of this Vlan.
@@ -498,7 +510,9 @@ class Vlan(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this Vlan.
-        The OCID of the VCN the VLAN is in.
+        The `OCID`__ of the VCN the VLAN is in.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this Vlan.
@@ -510,7 +524,9 @@ class Vlan(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this Vlan.
-        The OCID of the VCN the VLAN is in.
+        The `OCID`__ of the VCN the VLAN is in.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this Vlan.

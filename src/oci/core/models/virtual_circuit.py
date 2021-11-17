@@ -138,6 +138,14 @@ class VirtualCircuit(object):
     #: This constant has a value of "PRIVATE"
     TYPE_PRIVATE = "PRIVATE"
 
+    #: A constant which can be used with the ip_mtu property of a VirtualCircuit.
+    #: This constant has a value of "MTU_1500"
+    IP_MTU_MTU_1500 = "MTU_1500"
+
+    #: A constant which can be used with the ip_mtu property of a VirtualCircuit.
+    #: This constant has a value of "MTU_9000"
+    IP_MTU_MTU_9000 = "MTU_9000"
+
     def __init__(self, **kwargs):
         """
         Initializes a new VirtualCircuit object with values from keyword arguments.
@@ -267,6 +275,12 @@ class VirtualCircuit(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
+        :param ip_mtu:
+            The value to assign to the ip_mtu property of this VirtualCircuit.
+            Allowed values for this property are: "MTU_1500", "MTU_9000", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type ip_mtu: str
+
         """
         self.swagger_types = {
             'bandwidth_shape_name': 'str',
@@ -295,7 +309,8 @@ class VirtualCircuit(object):
             'region': 'str',
             'service_type': 'str',
             'time_created': 'datetime',
-            'type': 'str'
+            'type': 'str',
+            'ip_mtu': 'str'
         }
 
         self.attribute_map = {
@@ -325,7 +340,8 @@ class VirtualCircuit(object):
             'region': 'region',
             'service_type': 'serviceType',
             'time_created': 'timeCreated',
-            'type': 'type'
+            'type': 'type',
+            'ip_mtu': 'ipMtu'
         }
 
         self._bandwidth_shape_name = None
@@ -355,6 +371,7 @@ class VirtualCircuit(object):
         self._service_type = None
         self._time_created = None
         self._type = None
+        self._ip_mtu = None
 
     @property
     def bandwidth_shape_name(self):
@@ -484,7 +501,9 @@ class VirtualCircuit(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this VirtualCircuit.
-        The OCID of the compartment containing the virtual circuit.
+        The `OCID`__ of the compartment containing the virtual circuit.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this VirtualCircuit.
@@ -496,7 +515,9 @@ class VirtualCircuit(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this VirtualCircuit.
-        The OCID of the compartment containing the virtual circuit.
+        The `OCID`__ of the compartment containing the virtual circuit.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this VirtualCircuit.
@@ -730,8 +751,10 @@ class VirtualCircuit(object):
     def gateway_id(self):
         """
         Gets the gateway_id of this VirtualCircuit.
-        The OCID of the customer's :class:`Drg`
+        The `OCID`__ of the customer's :class:`Drg`
         that this virtual circuit uses. Applicable only to private virtual circuits.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The gateway_id of this VirtualCircuit.
@@ -743,8 +766,10 @@ class VirtualCircuit(object):
     def gateway_id(self, gateway_id):
         """
         Sets the gateway_id of this VirtualCircuit.
-        The OCID of the customer's :class:`Drg`
+        The `OCID`__ of the customer's :class:`Drg`
         that this virtual circuit uses. Applicable only to private virtual circuits.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param gateway_id: The gateway_id of this VirtualCircuit.
@@ -756,7 +781,9 @@ class VirtualCircuit(object):
     def id(self):
         """
         Gets the id of this VirtualCircuit.
-        The virtual circuit's Oracle ID (OCID).
+        The virtual circuit's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this VirtualCircuit.
@@ -768,7 +795,9 @@ class VirtualCircuit(object):
     def id(self, id):
         """
         Sets the id of this VirtualCircuit.
-        The virtual circuit's Oracle ID (OCID).
+        The virtual circuit's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this VirtualCircuit.
@@ -866,7 +895,9 @@ class VirtualCircuit(object):
     def provider_service_id(self):
         """
         Gets the provider_service_id of this VirtualCircuit.
-        The OCID of the service offered by the provider (if the customer is connecting via a provider).
+        The `OCID`__ of the service offered by the provider (if the customer is connecting via a provider).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The provider_service_id of this VirtualCircuit.
@@ -878,7 +909,9 @@ class VirtualCircuit(object):
     def provider_service_id(self, provider_service_id):
         """
         Sets the provider_service_id of this VirtualCircuit.
-        The OCID of the service offered by the provider (if the customer is connecting via a provider).
+        The `OCID`__ of the service offered by the provider (if the customer is connecting via a provider).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param provider_service_id: The provider_service_id of this VirtualCircuit.
@@ -1149,6 +1182,36 @@ class VirtualCircuit(object):
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
+
+    @property
+    def ip_mtu(self):
+        """
+        Gets the ip_mtu of this VirtualCircuit.
+        The layer 3 IP MTU to use on this virtual circuit.
+
+        Allowed values for this property are: "MTU_1500", "MTU_9000", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The ip_mtu of this VirtualCircuit.
+        :rtype: str
+        """
+        return self._ip_mtu
+
+    @ip_mtu.setter
+    def ip_mtu(self, ip_mtu):
+        """
+        Sets the ip_mtu of this VirtualCircuit.
+        The layer 3 IP MTU to use on this virtual circuit.
+
+
+        :param ip_mtu: The ip_mtu of this VirtualCircuit.
+        :type: str
+        """
+        allowed_values = ["MTU_1500", "MTU_9000"]
+        if not value_allowed_none_or_none_sentinel(ip_mtu, allowed_values):
+            ip_mtu = 'UNKNOWN_ENUM_VALUE'
+        self._ip_mtu = ip_mtu
 
     def __repr__(self):
         return formatted_flat_dict(self)

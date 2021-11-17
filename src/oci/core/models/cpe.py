@@ -10,9 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Cpe(object):
     """
-    An object you create when setting up an IPSec VPN between your on-premises network
+    An object you create when setting up a Site-to-Site VPN between your on-premises network
     and VCN. The `Cpe` is a virtual representation of your customer-premises equipment,
-    which is the actual router on-premises at your site at your end of the IPSec VPN connection.
+    which is the actual router on-premises at your site at your end of the Site-to-Site VPN IPSec connection.
     For more information,
     see `Overview of the Networking Service`__.
 
@@ -97,7 +97,9 @@ class Cpe(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Cpe.
-        The OCID of the compartment containing the CPE.
+        The `OCID`__ of the compartment containing the CPE.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this Cpe.
@@ -109,7 +111,9 @@ class Cpe(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Cpe.
-        The OCID of the compartment containing the CPE.
+        The `OCID`__ of the compartment containing the CPE.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this Cpe.
@@ -266,7 +270,7 @@ class Cpe(object):
         The `OCID`__ of the CPE's device type.
         The Networking service maintains a general list of CPE device types (for example,
         Cisco ASA). For each type, Oracle provides CPE configuration content that can help
-        a network engineer configure the CPE. The OCID uniquely identifies the type of
+        a network engineer configure the CPE. The `OCID`__ uniquely identifies the type of
         device. To get the OCIDs for the device types on the list, see
         :func:`list_cpe_device_shapes`.
 
@@ -278,6 +282,7 @@ class Cpe(object):
           * :func:`get_tunnel_cpe_device_config_content`
           * :func:`get_tunnel_cpe_device_config`
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
@@ -293,7 +298,7 @@ class Cpe(object):
         The `OCID`__ of the CPE's device type.
         The Networking service maintains a general list of CPE device types (for example,
         Cisco ASA). For each type, Oracle provides CPE configuration content that can help
-        a network engineer configure the CPE. The OCID uniquely identifies the type of
+        a network engineer configure the CPE. The `OCID`__ uniquely identifies the type of
         device. To get the OCIDs for the device types on the list, see
         :func:`list_cpe_device_shapes`.
 
@@ -305,6 +310,7 @@ class Cpe(object):
           * :func:`get_tunnel_cpe_device_config_content`
           * :func:`get_tunnel_cpe_device_config`
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 

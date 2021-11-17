@@ -21,7 +21,7 @@ class NetworkingTopology(Topology):
 
         :param type:
             The value to assign to the type property of this NetworkingTopology.
-            Allowed values for this property are: "NETWORKING", "VCN", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NETWORKING", "VCN", "SUBNET", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 

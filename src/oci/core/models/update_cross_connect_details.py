@@ -38,13 +38,18 @@ class UpdateCrossConnectDetails(object):
             The value to assign to the customer_reference_name property of this UpdateCrossConnectDetails.
         :type customer_reference_name: str
 
+        :param macsec_properties:
+            The value to assign to the macsec_properties property of this UpdateCrossConnectDetails.
+        :type macsec_properties: oci.core.models.UpdateMacsecProperties
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'is_active': 'bool',
-            'customer_reference_name': 'str'
+            'customer_reference_name': 'str',
+            'macsec_properties': 'UpdateMacsecProperties'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class UpdateCrossConnectDetails(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'is_active': 'isActive',
-            'customer_reference_name': 'customerReferenceName'
+            'customer_reference_name': 'customerReferenceName',
+            'macsec_properties': 'macsecProperties'
         }
 
         self._defined_tags = None
@@ -60,6 +66,7 @@ class UpdateCrossConnectDetails(object):
         self._freeform_tags = None
         self._is_active = None
         self._customer_reference_name = None
+        self._macsec_properties = None
 
     @property
     def defined_tags(self):
@@ -191,8 +198,7 @@ class UpdateCrossConnectDetails(object):
     def customer_reference_name(self):
         """
         Gets the customer_reference_name of this UpdateCrossConnectDetails.
-        A reference name or identifier for the physical fiber connection that this cross-connect
-        uses.
+        A reference name or identifier for the physical fiber connection this cross-connect uses.
 
 
         :return: The customer_reference_name of this UpdateCrossConnectDetails.
@@ -204,14 +210,33 @@ class UpdateCrossConnectDetails(object):
     def customer_reference_name(self, customer_reference_name):
         """
         Sets the customer_reference_name of this UpdateCrossConnectDetails.
-        A reference name or identifier for the physical fiber connection that this cross-connect
-        uses.
+        A reference name or identifier for the physical fiber connection this cross-connect uses.
 
 
         :param customer_reference_name: The customer_reference_name of this UpdateCrossConnectDetails.
         :type: str
         """
         self._customer_reference_name = customer_reference_name
+
+    @property
+    def macsec_properties(self):
+        """
+        Gets the macsec_properties of this UpdateCrossConnectDetails.
+
+        :return: The macsec_properties of this UpdateCrossConnectDetails.
+        :rtype: oci.core.models.UpdateMacsecProperties
+        """
+        return self._macsec_properties
+
+    @macsec_properties.setter
+    def macsec_properties(self, macsec_properties):
+        """
+        Sets the macsec_properties of this UpdateCrossConnectDetails.
+
+        :param macsec_properties: The macsec_properties of this UpdateCrossConnectDetails.
+        :type: oci.core.models.UpdateMacsecProperties
+        """
+        self._macsec_properties = macsec_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)
