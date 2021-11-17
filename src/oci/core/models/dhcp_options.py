@@ -150,7 +150,9 @@ class DhcpOptions(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DhcpOptions.
-        The OCID of the compartment containing the set of DHCP options.
+        The `OCID`__ of the compartment containing the set of DHCP options.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DhcpOptions.
@@ -162,7 +164,9 @@ class DhcpOptions(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DhcpOptions.
-        The OCID of the compartment containing the set of DHCP options.
+        The `OCID`__ of the compartment containing the set of DHCP options.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DhcpOptions.
@@ -268,7 +272,9 @@ class DhcpOptions(object):
     def id(self):
         """
         **[Required]** Gets the id of this DhcpOptions.
-        Oracle ID (OCID) for the set of DHCP options.
+        Oracle ID (`OCID`__) for the set of DHCP options.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DhcpOptions.
@@ -280,7 +286,9 @@ class DhcpOptions(object):
     def id(self, id):
         """
         Sets the id of this DhcpOptions.
-        Oracle ID (OCID) for the set of DHCP options.
+        Oracle ID (`OCID`__) for the set of DHCP options.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DhcpOptions.
@@ -378,7 +386,9 @@ class DhcpOptions(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this DhcpOptions.
-        The OCID of the VCN the set of DHCP options belongs to.
+        The `OCID`__ of the VCN the set of DHCP options belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this DhcpOptions.
@@ -390,7 +400,9 @@ class DhcpOptions(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this DhcpOptions.
-        The OCID of the VCN the set of DHCP options belongs to.
+        The `OCID`__ of the VCN the set of DHCP options belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this DhcpOptions.

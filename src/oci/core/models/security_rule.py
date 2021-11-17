@@ -205,11 +205,12 @@ class SecurityRule(object):
             setting up a security rule for traffic destined for a particular `Service` through
             a service gateway. For example: `oci-phx-objectstorage`.
 
-          * The OCID of a :class:`NetworkSecurityGroup` in the same
+          * The `OCID`__ of a :class:`NetworkSecurityGroup` in the same
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The destination of this SecurityRule.
@@ -234,11 +235,12 @@ class SecurityRule(object):
             setting up a security rule for traffic destined for a particular `Service` through
             a service gateway. For example: `oci-phx-objectstorage`.
 
-          * The OCID of a :class:`NetworkSecurityGroup` in the same
+          * The `OCID`__ of a :class:`NetworkSecurityGroup` in the same
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param destination: The destination of this SecurityRule.
@@ -260,8 +262,10 @@ class SecurityRule(object):
             :class:`Service` (the rule is for traffic destined for a
             particular `Service` through a service gateway).
 
-          * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the OCID of a
+          * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the `OCID`__ of a
             :class:`NetworkSecurityGroup`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", "NETWORK_SECURITY_GROUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -286,8 +290,10 @@ class SecurityRule(object):
             :class:`Service` (the rule is for traffic destined for a
             particular `Service` through a service gateway).
 
-          * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the OCID of a
+          * `NETWORK_SECURITY_GROUP`: If the rule's `destination` is the `OCID`__ of a
             :class:`NetworkSecurityGroup`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param destination_type: The destination_type of this SecurityRule.
@@ -491,11 +497,12 @@ class SecurityRule(object):
             setting up a security rule for traffic coming from a particular `Service` through
             a service gateway. For example: `oci-phx-objectstorage`.
 
-          * The OCID of a :class:`NetworkSecurityGroup` in the same
+          * The `OCID`__ of a :class:`NetworkSecurityGroup` in the same
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The source of this SecurityRule.
@@ -520,11 +527,12 @@ class SecurityRule(object):
             setting up a security rule for traffic coming from a particular `Service` through
             a service gateway. For example: `oci-phx-objectstorage`.
 
-          * The OCID of a :class:`NetworkSecurityGroup` in the same
+          * The `OCID`__ of a :class:`NetworkSecurityGroup` in the same
             VCN. The value can be the NSG that the rule belongs to if the rule's intent is to control
             traffic between VNICs in the same NSG.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source: The source of this SecurityRule.
@@ -544,8 +552,10 @@ class SecurityRule(object):
             :class:`Service` (the rule is for traffic coming from a
             particular `Service` through a service gateway).
 
-          * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the OCID of a
+          * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the `OCID`__ of a
             :class:`NetworkSecurityGroup`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
         Allowed values for this property are: "CIDR_BLOCK", "SERVICE_CIDR_BLOCK", "NETWORK_SECURITY_GROUP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -568,8 +578,10 @@ class SecurityRule(object):
             :class:`Service` (the rule is for traffic coming from a
             particular `Service` through a service gateway).
 
-          * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the OCID of a
+          * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the `OCID`__ of a
             :class:`NetworkSecurityGroup`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param source_type: The source_type of this SecurityRule.

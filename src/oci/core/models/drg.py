@@ -12,7 +12,7 @@ class Drg(object):
     """
     A dynamic routing gateway (DRG) is a virtual router that provides a path for private
     network traffic between networks. You use it with other Networking
-    Service components to create a connection to your on-premises network using `VPN Connect`__ or a connection that uses
+    Service components to create a connection to your on-premises network using `Site-to-Site VPN`__ or a connection that uses
     `FastConnect`__. For more information, see
     `Overview of the Networking Service`__.
 

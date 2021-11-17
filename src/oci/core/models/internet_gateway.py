@@ -120,7 +120,9 @@ class InternetGateway(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this InternetGateway.
-        The OCID of the compartment containing the internet gateway.
+        The `OCID`__ of the compartment containing the internet gateway.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this InternetGateway.
@@ -132,7 +134,9 @@ class InternetGateway(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this InternetGateway.
-        The OCID of the compartment containing the internet gateway.
+        The `OCID`__ of the compartment containing the internet gateway.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this InternetGateway.
@@ -238,7 +242,9 @@ class InternetGateway(object):
     def id(self):
         """
         **[Required]** Gets the id of this InternetGateway.
-        The internet gateway's Oracle ID (OCID).
+        The internet gateway's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this InternetGateway.
@@ -250,7 +256,9 @@ class InternetGateway(object):
     def id(self, id):
         """
         Sets the id of this InternetGateway.
-        The internet gateway's Oracle ID (OCID).
+        The internet gateway's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this InternetGateway.
@@ -350,7 +358,9 @@ class InternetGateway(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this InternetGateway.
-        The OCID of the VCN the internet gateway belongs to.
+        The `OCID`__ of the VCN the internet gateway belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this InternetGateway.
@@ -362,7 +372,9 @@ class InternetGateway(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this InternetGateway.
-        The OCID of the VCN the internet gateway belongs to.
+        The `OCID`__ of the VCN the internet gateway belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this InternetGateway.

@@ -28,13 +28,19 @@ Optimizer
     oci.optimizer.models.EnrollmentStatus
     oci.optimizer.models.EnrollmentStatusCollection
     oci.optimizer.models.EnrollmentStatusSummary
+    oci.optimizer.models.EvaluatedMetric
     oci.optimizer.models.HistoryCollection
     oci.optimizer.models.HistorySummary
     oci.optimizer.models.LevelConfiguration
     oci.optimizer.models.LevelsConfiguration
     oci.optimizer.models.Profile
     oci.optimizer.models.ProfileCollection
+    oci.optimizer.models.ProfileLevelCollection
+    oci.optimizer.models.ProfileLevelSummary
     oci.optimizer.models.ProfileSummary
+    oci.optimizer.models.QueryDetails
+    oci.optimizer.models.QueryableFieldCollection
+    oci.optimizer.models.QueryableFieldSummary
     oci.optimizer.models.Recommendation
     oci.optimizer.models.RecommendationCollection
     oci.optimizer.models.RecommendationCount

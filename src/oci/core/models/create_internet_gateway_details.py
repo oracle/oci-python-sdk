@@ -72,7 +72,9 @@ class CreateInternetGatewayDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateInternetGatewayDetails.
-        The OCID of the compartment to contain the internet gateway.
+        The `OCID`__ of the compartment to contain the internet gateway.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateInternetGatewayDetails.
@@ -84,7 +86,9 @@ class CreateInternetGatewayDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateInternetGatewayDetails.
-        The OCID of the compartment to contain the internet gateway.
+        The `OCID`__ of the compartment to contain the internet gateway.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateInternetGatewayDetails.
@@ -214,7 +218,9 @@ class CreateInternetGatewayDetails(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this CreateInternetGatewayDetails.
-        The OCID of the VCN the internet gateway is attached to.
+        The `OCID`__ of the VCN the internet gateway is attached to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this CreateInternetGatewayDetails.
@@ -226,7 +232,9 @@ class CreateInternetGatewayDetails(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this CreateInternetGatewayDetails.
-        The OCID of the VCN the internet gateway is attached to.
+        The `OCID`__ of the VCN the internet gateway is attached to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this CreateInternetGatewayDetails.

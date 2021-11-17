@@ -113,8 +113,8 @@ class CreatePrivateIpDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreatePrivateIpDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CreatePrivateIpDetails.
@@ -126,8 +126,8 @@ class CreatePrivateIpDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreatePrivateIpDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreatePrivateIpDetails.
@@ -257,8 +257,10 @@ class CreatePrivateIpDetails(object):
     def vnic_id(self):
         """
         Gets the vnic_id of this CreatePrivateIpDetails.
-        The OCID of the VNIC to assign the private IP to. The VNIC and private IP
+        The `OCID`__ of the VNIC to assign the private IP to. The VNIC and private IP
         must be in the same subnet.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this CreatePrivateIpDetails.
@@ -270,8 +272,10 @@ class CreatePrivateIpDetails(object):
     def vnic_id(self, vnic_id):
         """
         Sets the vnic_id of this CreatePrivateIpDetails.
-        The OCID of the VNIC to assign the private IP to. The VNIC and private IP
+        The `OCID`__ of the VNIC to assign the private IP to. The VNIC and private IP
         must be in the same subnet.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this CreatePrivateIpDetails.
@@ -285,8 +289,10 @@ class CreatePrivateIpDetails(object):
         Gets the vlan_id of this CreatePrivateIpDetails.
         Use this attribute only with the Oracle Cloud VMware Solution.
 
-        The OCID of the VLAN from which the private IP is to be drawn. The IP address,
+        The `OCID`__ of the VLAN from which the private IP is to be drawn. The IP address,
         *if supplied*, must be valid for the given VLAN. See :class:`Vlan`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vlan_id of this CreatePrivateIpDetails.
@@ -300,8 +306,10 @@ class CreatePrivateIpDetails(object):
         Sets the vlan_id of this CreatePrivateIpDetails.
         Use this attribute only with the Oracle Cloud VMware Solution.
 
-        The OCID of the VLAN from which the private IP is to be drawn. The IP address,
+        The `OCID`__ of the VLAN from which the private IP is to be drawn. The IP address,
         *if supplied*, must be valid for the given VLAN. See :class:`Vlan`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vlan_id: The vlan_id of this CreatePrivateIpDetails.

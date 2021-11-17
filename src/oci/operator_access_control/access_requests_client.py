@@ -62,7 +62,7 @@ class AccessRequestsClient(object):
 
         :param obj circuit_breaker_strategy: (optional)
             A circuit breaker strategy to apply to all calls made by this service client (i.e. at the client level).
-            This client will not have circuit breakers enabled by default, users can use their own circuit breaker strategy or the convenient :py:data:`~oci.circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY` provided by the SDK to enable it.
+            This client uses :py:data:`~oci.circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY` as default if no circuit breaker strategy is provided.
             The specifics of circuit breaker strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/circuit_breakers.html>`__.
 
         :param function circuit_breaker_callback: (optional)
@@ -95,6 +95,8 @@ class AccessRequestsClient(object):
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
+        if base_client_init_kwargs.get('circuit_breaker_strategy') is None:
+            base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
         self.base_client = BaseClient("access_requests", config, signer, operator_access_control_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')

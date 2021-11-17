@@ -443,7 +443,7 @@ class DrgAttachment(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this DrgAttachment.
-        The OCID of the route table the DRG attachment is using.
+        The `OCID`__ of the route table the DRG attachment is using.
 
         For information about why you would associate a route table with a DRG attachment, see:
 
@@ -452,6 +452,7 @@ class DrgAttachment(object):
 
         This field is deprecated. Instead, use the `networkDetails` field to view the `OCID`__ of the attached resource.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -466,7 +467,7 @@ class DrgAttachment(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this DrgAttachment.
-        The OCID of the route table the DRG attachment is using.
+        The `OCID`__ of the route table the DRG attachment is using.
 
         For information about why you would associate a route table with a DRG attachment, see:
 
@@ -475,6 +476,7 @@ class DrgAttachment(object):
 
         This field is deprecated. Instead, use the `networkDetails` field to view the `OCID`__ of the attached resource.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitrouting.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm

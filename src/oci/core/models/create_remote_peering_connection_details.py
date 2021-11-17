@@ -65,7 +65,9 @@ class CreateRemotePeeringConnectionDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateRemotePeeringConnectionDetails.
-        The OCID of the compartment to contain the RPC.
+        The `OCID`__ of the compartment to contain the RPC.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateRemotePeeringConnectionDetails.
@@ -77,7 +79,9 @@ class CreateRemotePeeringConnectionDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateRemotePeeringConnectionDetails.
-        The OCID of the compartment to contain the RPC.
+        The `OCID`__ of the compartment to contain the RPC.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateRemotePeeringConnectionDetails.
@@ -149,7 +153,9 @@ class CreateRemotePeeringConnectionDetails(object):
     def drg_id(self):
         """
         **[Required]** Gets the drg_id of this CreateRemotePeeringConnectionDetails.
-        The OCID of the DRG the RPC belongs to.
+        The `OCID`__ of the DRG the RPC belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The drg_id of this CreateRemotePeeringConnectionDetails.
@@ -161,7 +167,9 @@ class CreateRemotePeeringConnectionDetails(object):
     def drg_id(self, drg_id):
         """
         Sets the drg_id of this CreateRemotePeeringConnectionDetails.
-        The OCID of the DRG the RPC belongs to.
+        The `OCID`__ of the DRG the RPC belongs to.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param drg_id: The drg_id of this CreateRemotePeeringConnectionDetails.

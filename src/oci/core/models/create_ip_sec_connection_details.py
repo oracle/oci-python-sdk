@@ -109,7 +109,9 @@ class CreateIPSecConnectionDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateIPSecConnectionDetails.
-        The OCID of the compartment to contain the IPSec connection.
+        The `OCID`__ of the compartment to contain the IPSec connection.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateIPSecConnectionDetails.
@@ -121,7 +123,9 @@ class CreateIPSecConnectionDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateIPSecConnectionDetails.
-        The OCID of the compartment to contain the IPSec connection.
+        The `OCID`__ of the compartment to contain the IPSec connection.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateIPSecConnectionDetails.
@@ -133,7 +137,9 @@ class CreateIPSecConnectionDetails(object):
     def cpe_id(self):
         """
         **[Required]** Gets the cpe_id of this CreateIPSecConnectionDetails.
-        The OCID of the :class:`Cpe` object.
+        The `OCID`__ of the :class:`Cpe` object.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cpe_id of this CreateIPSecConnectionDetails.
@@ -145,7 +151,9 @@ class CreateIPSecConnectionDetails(object):
     def cpe_id(self, cpe_id):
         """
         Sets the cpe_id of this CreateIPSecConnectionDetails.
-        The OCID of the :class:`Cpe` object.
+        The `OCID`__ of the :class:`Cpe` object.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cpe_id: The cpe_id of this CreateIPSecConnectionDetails.

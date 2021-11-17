@@ -270,8 +270,6 @@ class DedicatedVmHost(object):
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
-        Example: `My Dedicated Vm Host`
-
 
         :return: The display_name of this DedicatedVmHost.
         :rtype: str
@@ -284,8 +282,6 @@ class DedicatedVmHost(object):
         Sets the display_name of this DedicatedVmHost.
         A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        Example: `My Dedicated Vm Host`
 
 
         :param display_name: The display_name of this DedicatedVmHost.

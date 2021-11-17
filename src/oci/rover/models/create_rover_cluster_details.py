@@ -125,6 +125,22 @@ class CreateRoverClusterDetails(object):
             The value to assign to the lifecycle_state_details property of this CreateRoverClusterDetails.
         :type lifecycle_state_details: str
 
+        :param is_import_requested:
+            The value to assign to the is_import_requested property of this CreateRoverClusterDetails.
+        :type is_import_requested: bool
+
+        :param import_compartment_id:
+            The value to assign to the import_compartment_id property of this CreateRoverClusterDetails.
+        :type import_compartment_id: str
+
+        :param import_file_bucket:
+            The value to assign to the import_file_bucket property of this CreateRoverClusterDetails.
+        :type import_file_bucket: str
+
+        :param data_validation_code:
+            The value to assign to the data_validation_code property of this CreateRoverClusterDetails.
+        :type data_validation_code: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateRoverClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -155,6 +171,10 @@ class CreateRoverClusterDetails(object):
             'oracle_shipping_tracking_url': 'str',
             'lifecycle_state': 'str',
             'lifecycle_state_details': 'str',
+            'is_import_requested': 'bool',
+            'import_compartment_id': 'str',
+            'import_file_bucket': 'str',
+            'data_validation_code': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -177,6 +197,10 @@ class CreateRoverClusterDetails(object):
             'oracle_shipping_tracking_url': 'oracleShippingTrackingUrl',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_state_details': 'lifecycleStateDetails',
+            'is_import_requested': 'isImportRequested',
+            'import_compartment_id': 'importCompartmentId',
+            'import_file_bucket': 'importFileBucket',
+            'data_validation_code': 'dataValidationCode',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -198,6 +222,10 @@ class CreateRoverClusterDetails(object):
         self._oracle_shipping_tracking_url = None
         self._lifecycle_state = None
         self._lifecycle_state_details = None
+        self._is_import_requested = None
+        self._import_compartment_id = None
+        self._import_file_bucket = None
+        self._data_validation_code = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -254,7 +282,7 @@ class CreateRoverClusterDetails(object):
     def cluster_size(self):
         """
         **[Required]** Gets the cluster_size of this CreateRoverClusterDetails.
-        Number of nodes desired in the cluster, between 5 and 15.
+        Number of nodes desired in the cluster, in standalone clusters, between 5 and 15 inclusive. In station clusters, between 15 and 30 inclusive.
 
 
         :return: The cluster_size of this CreateRoverClusterDetails.
@@ -266,7 +294,7 @@ class CreateRoverClusterDetails(object):
     def cluster_size(self, cluster_size):
         """
         Sets the cluster_size of this CreateRoverClusterDetails.
-        Number of nodes desired in the cluster, between 5 and 15.
+        Number of nodes desired in the cluster, in standalone clusters, between 5 and 15 inclusive. In station clusters, between 15 and 30 inclusive.
 
 
         :param cluster_size: The cluster_size of this CreateRoverClusterDetails.
@@ -605,6 +633,102 @@ class CreateRoverClusterDetails(object):
         :type: str
         """
         self._lifecycle_state_details = lifecycle_state_details
+
+    @property
+    def is_import_requested(self):
+        """
+        Gets the is_import_requested of this CreateRoverClusterDetails.
+        The flag indicating that customer requests data to be imported to OCI upon Rover cluster return.
+
+
+        :return: The is_import_requested of this CreateRoverClusterDetails.
+        :rtype: bool
+        """
+        return self._is_import_requested
+
+    @is_import_requested.setter
+    def is_import_requested(self, is_import_requested):
+        """
+        Sets the is_import_requested of this CreateRoverClusterDetails.
+        The flag indicating that customer requests data to be imported to OCI upon Rover cluster return.
+
+
+        :param is_import_requested: The is_import_requested of this CreateRoverClusterDetails.
+        :type: bool
+        """
+        self._is_import_requested = is_import_requested
+
+    @property
+    def import_compartment_id(self):
+        """
+        Gets the import_compartment_id of this CreateRoverClusterDetails.
+        An OCID of a compartment where data will be imported to upon Rover cluster return.
+
+
+        :return: The import_compartment_id of this CreateRoverClusterDetails.
+        :rtype: str
+        """
+        return self._import_compartment_id
+
+    @import_compartment_id.setter
+    def import_compartment_id(self, import_compartment_id):
+        """
+        Sets the import_compartment_id of this CreateRoverClusterDetails.
+        An OCID of a compartment where data will be imported to upon Rover cluster return.
+
+
+        :param import_compartment_id: The import_compartment_id of this CreateRoverClusterDetails.
+        :type: str
+        """
+        self._import_compartment_id = import_compartment_id
+
+    @property
+    def import_file_bucket(self):
+        """
+        Gets the import_file_bucket of this CreateRoverClusterDetails.
+        Name of a bucket where files from NFS share will be imported to upon Rover cluster return.
+
+
+        :return: The import_file_bucket of this CreateRoverClusterDetails.
+        :rtype: str
+        """
+        return self._import_file_bucket
+
+    @import_file_bucket.setter
+    def import_file_bucket(self, import_file_bucket):
+        """
+        Sets the import_file_bucket of this CreateRoverClusterDetails.
+        Name of a bucket where files from NFS share will be imported to upon Rover cluster return.
+
+
+        :param import_file_bucket: The import_file_bucket of this CreateRoverClusterDetails.
+        :type: str
+        """
+        self._import_file_bucket = import_file_bucket
+
+    @property
+    def data_validation_code(self):
+        """
+        Gets the data_validation_code of this CreateRoverClusterDetails.
+        Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+
+
+        :return: The data_validation_code of this CreateRoverClusterDetails.
+        :rtype: str
+        """
+        return self._data_validation_code
+
+    @data_validation_code.setter
+    def data_validation_code(self, data_validation_code):
+        """
+        Sets the data_validation_code of this CreateRoverClusterDetails.
+        Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+
+
+        :param data_validation_code: The data_validation_code of this CreateRoverClusterDetails.
+        :type: str
+        """
+        self._data_validation_code = data_validation_code
 
     @property
     def freeform_tags(self):

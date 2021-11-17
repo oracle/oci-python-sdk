@@ -189,7 +189,7 @@ class InstanceConfigurationCreateVnicDetails(object):
     def display_name(self):
         """
         Gets the display_name of this InstanceConfigurationCreateVnicDetails.
-        A user-friendly name for the VNIC. Does not have to be unique.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 
@@ -202,7 +202,7 @@ class InstanceConfigurationCreateVnicDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InstanceConfigurationCreateVnicDetails.
-        A user-friendly name for the VNIC. Does not have to be unique.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
 
 

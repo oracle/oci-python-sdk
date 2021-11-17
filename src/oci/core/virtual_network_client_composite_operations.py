@@ -196,7 +196,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str drg_id: (required)
-            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+            The `OCID`__ of the DRG.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1452,7 +1452,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str drg_id: (required)
-            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+            The `OCID`__ of the DRG.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -2850,7 +2850,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str drg_id: (required)
-            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+            The `OCID`__ of the DRG.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -3070,7 +3070,7 @@ class VirtualNetworkClientCompositeOperations(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateIPSecConnectionDetails update_ip_sec_connection_details: (required)
-            Details object for updating a IPSec connection.
+            Details object for updating an IPSec connection.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.core.models.IPSecConnection.lifecycle_state`
@@ -3801,7 +3801,7 @@ class VirtualNetworkClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str drg_id: (required)
-            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+            The `OCID`__ of the DRG.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -123,3 +123,51 @@ optional arguments:
   -csv CSV            Output to CSV files, Input as file header
 
 ```
+
+## list_policies_in_tenancy.py
+Produce list of policies per compartment, can be extracted to screen or CSV.
+
+```
+usage: list_policies_in_tenancy.py [-h] [-c CONFIG_FILE] [-t CONFIG_PROFILE]
+                                   [-p PROXY] [-cp FILTER_COMPN]
+                                   [-cr FILTER_COMPR] [-g FILTER_GROUP] [-ia]
+                                   [-ip] [-dt] [-json] [-csv CSV]
+
+optional arguments:
+  -h, --help         show this help message and exit
+  -c CONFIG_FILE     OCI CLI Config file
+  -t CONFIG_PROFILE  Config Profile inside the config file
+  -p PROXY           Set Proxy (i.e. www-proxy-server.com:80)
+  -cp FILTER_COMPN   filter by compartment Name or Id
+  -cr FILTER_COMPR   filter by compartment Path
+  -g FILTER_GROUP    filter by IAM Group or Dynamic Group
+  -ia                Do not include Any-User when filterring groups
+                     [Default=False]
+  -ip                Use Instance Principals for Authentication
+  -dt                Use Delegation Token for Authentication
+  -json              Output to JSON
+  -csv CSV           Output to CSV files, Input as file header```
+```
+
+## list_all_capacity_reservations_in_tenancy.py
+Produce list of Compute Capacity Reservations in Tenancy
+
+```
+usage: list_all_capacity_reservations_in_tenancy.py [-h] [-t CONFIG_PROFILE]
+                                                    [-p PROXY] [-ip] [-dt]
+                                                    [-cp FILTER_COMPARTMENT]
+                                                    [-rg FILTER_REGION] [-js]
+                                                    [-csv CSV]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t CONFIG_PROFILE     Config file section to use (tenancy profile)
+  -p PROXY              Set Proxy (i.e. www-proxy-server.com:80)
+  -ip                   Use Instance Principals for Authentication
+  -dt                   Use Delegation Token for Authentication
+  -cp FILTER_COMPARTMENT
+                        filter by compartment Name or Id
+  -rg FILTER_REGION     filter by Region
+  -js                   print in JSON format
+  -csv CSV              Output to CSV files, Input as file header
+```

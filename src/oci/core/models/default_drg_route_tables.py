@@ -123,8 +123,10 @@ class DefaultDrgRouteTables(object):
     def virtual_circuit(self):
         """
         Gets the virtual_circuit of this DefaultDrgRouteTables.
-        The OCID of the default DRG route table to be assigned to DRG attachments
+        The `OCID`__ of the default DRG route table to be assigned to DRG attachments
         of type VIRTUAL_CIRCUIT on creation.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The virtual_circuit of this DefaultDrgRouteTables.
@@ -136,8 +138,10 @@ class DefaultDrgRouteTables(object):
     def virtual_circuit(self, virtual_circuit):
         """
         Sets the virtual_circuit of this DefaultDrgRouteTables.
-        The OCID of the default DRG route table to be assigned to DRG attachments
+        The `OCID`__ of the default DRG route table to be assigned to DRG attachments
         of type VIRTUAL_CIRCUIT on creation.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param virtual_circuit: The virtual_circuit of this DefaultDrgRouteTables.

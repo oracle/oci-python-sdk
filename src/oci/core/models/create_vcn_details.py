@@ -146,7 +146,9 @@ class CreateVcnDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateVcnDetails.
-        The OCID of the compartment to contain the VCN.
+        The `OCID`__ of the compartment to contain the VCN.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateVcnDetails.
@@ -158,7 +160,9 @@ class CreateVcnDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateVcnDetails.
-        The OCID of the compartment to contain the VCN.
+        The `OCID`__ of the compartment to contain the VCN.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateVcnDetails.

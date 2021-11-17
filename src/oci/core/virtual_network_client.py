@@ -18,11 +18,11 @@ missing = Sentinel("Missing")
 
 class VirtualNetworkClient(object):
     """
-    API covering the [Networking](/iaas/Content/Network/Concepts/overview.htm),
+    Use the Core Services API to manage resources such as virtual cloud networks (VCNs),
+    compute instances, and block storage volumes. For more information, see the console
+    documentation for the [Networking](/iaas/Content/Network/Concepts/overview.htm),
     [Compute](/iaas/Content/Compute/Concepts/computeoverview.htm), and
-    [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services. Use this API
-    to manage resources such as virtual cloud networks (VCNs), compute instances, and
-    block storage volumes.
+    [Block Volume](/iaas/Content/Block/Concepts/overview.htm) services.
     """
 
     def __init__(self, config, **kwargs):
@@ -63,7 +63,7 @@ class VirtualNetworkClient(object):
 
         :param obj circuit_breaker_strategy: (optional)
             A circuit breaker strategy to apply to all calls made by this service client (i.e. at the client level).
-            This client will not have circuit breakers enabled by default, users can use their own circuit breaker strategy or the convenient :py:data:`~oci.circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY` provided by the SDK to enable it.
+            This client uses :py:data:`~oci.circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY` as default if no circuit breaker strategy is provided.
             The specifics of circuit breaker strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/circuit_breakers.html>`__.
 
         :param function circuit_breaker_callback: (optional)
@@ -96,6 +96,8 @@ class VirtualNetworkClient(object):
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
+        if base_client_init_kwargs.get('circuit_breaker_strategy') is None:
+            base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
         self.base_client = BaseClient("virtual_network", config, signer, core_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -1491,7 +1493,7 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+            The `OCID`__ of the DRG.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -3325,7 +3327,7 @@ class VirtualNetworkClient(object):
     def create_cpe(self, create_cpe_details, **kwargs):
         """
         Creates a new virtual customer-premises equipment (CPE) object in the specified compartment. For
-        more information, see `IPSec VPNs`__.
+        more information, see `Site-to-Site VPN Overview`__.
 
         For the purposes of access control, you must provide the `OCID`__ of the compartment where you want
         the CPE to reside. Notice that the CPE doesn't have to be in the same compartment as the IPSec
@@ -3335,12 +3337,12 @@ class VirtualNetworkClient(object):
         For information about OCIDs, see `Resource Identifiers`__.
 
         You must provide the public IP address of your on-premises router. See
-        `Configuring Your On-Premises Router for an IPSec VPN`__.
+        `CPE Configuration`__.
 
         You may optionally specify a *display name* for the CPE, otherwise a default is provided. It does not have to
         be unique, and you can change it. Avoid entering confidential information.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
@@ -3700,7 +3702,7 @@ class VirtualNetworkClient(object):
         Creates a new dynamic routing gateway (DRG) in the specified compartment. For more information,
         see `Dynamic Routing Gateways (DRGs)`__.
 
-        For the purposes of access control, you must provide the OCID of the compartment where you want
+        For the purposes of access control, you must provide the `OCID`__ of the compartment where you want
         the DRG to reside. Notice that the DRG doesn't have to be in the same compartment as the VCN,
         the DRG attachment, or other Networking Service components. If you're not sure which compartment
         to use, put the DRG in the same compartment as the VCN. For more information about compartments
@@ -3711,6 +3713,7 @@ class VirtualNetworkClient(object):
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingDRGs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -4124,7 +4127,7 @@ class VirtualNetworkClient(object):
     def create_ip_sec_connection(self, create_ip_sec_connection_details, **kwargs):
         """
         Creates a new IPSec connection between the specified DRG and CPE. For more information, see
-        `IPSec VPNs`__.
+        `Site-to-Site VPN Overview`__.
 
         If you configure at least one tunnel to use static routing, then in the request you must provide
         at least one valid static route (you're allowed a maximum of 10). For example: 10.0.0.0/16.
@@ -4150,9 +4153,9 @@ class VirtualNetworkClient(object):
 
         For each tunnel, you need the IP address of Oracle's VPN headend and the shared secret
         (that is, the pre-shared key). For more information, see
-        `Configuring Your On-Premises Router for an IPSec VPN`__.
+        `CPE Configuration`__.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm
@@ -4615,7 +4618,7 @@ class VirtualNetworkClient(object):
         `Public IP Addresses`__.
 
         * **For an ephemeral public IP assigned to a private IP:** You must also specify a `privateIpId`
-        with the OCID of the primary private IP you want to assign the public IP to. The public IP is
+        with the `OCID`__ of the primary private IP you want to assign the public IP to. The public IP is
         created in the same availability domain as the private IP. An ephemeral public IP must always be
         assigned to a private IP, and only to the *primary* private IP on a VNIC, not a secondary
         private IP. Exception: If you create a :class:`NatGateway`, Oracle
@@ -4633,6 +4636,7 @@ class VirtualNetworkClient(object):
         succeeded.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.CreatePublicIpDetails create_public_ip_details: (required)
@@ -4866,7 +4870,7 @@ class VirtualNetworkClient(object):
         tables in your VCN and the types of targets you can use in route rules,
         see `Route Tables`__.
 
-        For the purposes of access control, you must provide the OCID of the compartment where you want the route
+        For the purposes of access control, you must provide the `OCID`__ of the compartment where you want the route
         table to reside. Notice that the route table doesn't have to be in the same compartment as the VCN, subnets,
         or other Networking Service components. If you're not sure which compartment to use, put the route
         table in the same compartment as the VCN. For more information about compartments and access control, see
@@ -4878,6 +4882,7 @@ class VirtualNetworkClient(object):
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -4958,7 +4963,7 @@ class VirtualNetworkClient(object):
         For information on the number of rules you can have in a security list, see
         `Service Limits`__.
 
-        For the purposes of access control, you must provide the OCID of the compartment where you want the security
+        For the purposes of access control, you must provide the `OCID`__ of the compartment where you want the security
         list to reside. Notice that the security list doesn't have to be in the same compartment as the VCN, subnets,
         or other Networking Service components. If you're not sure which compartment to use, put the security
         list in the same compartment as the VCN. For more information about compartments and access control, see
@@ -4970,6 +4975,7 @@ class VirtualNetworkClient(object):
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -5047,7 +5053,7 @@ class VirtualNetworkClient(object):
         """
         Creates a new service gateway in the specified compartment.
 
-        For the purposes of access control, you must provide the OCID of the compartment where you want
+        For the purposes of access control, you must provide the `OCID`__ of the compartment where you want
         the service gateway to reside. For more information about compartments and access control, see
         `Overview of the IAM Service`__.
         For information about OCIDs, see `Resource Identifiers`__.
@@ -5055,6 +5061,7 @@ class VirtualNetworkClient(object):
         You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
         It does not have to be unique, and you can change it. Avoid entering confidential information.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -5136,7 +5143,7 @@ class VirtualNetworkClient(object):
         For information on the number of subnets you can have in a VCN, see
         `Service Limits`__.
 
-        For the purposes of access control, you must provide the OCID of the compartment where you want the subnet
+        For the purposes of access control, you must provide the `OCID`__ of the compartment where you want the subnet
         to reside. Notice that the subnet doesn't have to be in the same compartment as the VCN, route tables, or
         other Networking Service components. If you're not sure which compartment to use, put the subnet in
         the same compartment as the VCN. For more information about compartments and access control, see
@@ -5164,6 +5171,7 @@ class VirtualNetworkClient(object):
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm
@@ -5255,7 +5263,7 @@ class VirtualNetworkClient(object):
         For a CIDR block, Oracle recommends that you use one of the private IP address ranges specified in `RFC 1918`__ (10.0.0.0/8, 172.16/12, and 192.168/16). Example:
         172.16.0.0/16. The CIDR blocks can range from /16 to /30.
 
-        For the purposes of access control, you must provide the OCID of the compartment where you want the VCN to
+        For the purposes of access control, you must provide the `OCID`__ of the compartment where you want the VCN to
         reside. Consult an Oracle Cloud Infrastructure administrator in your organization if you're not sure which
         compartment to use. Notice that the VCN doesn't have to be in the same compartment as the subnets or other
         Networking Service components. For more information about compartments and access control, see
@@ -5270,18 +5278,20 @@ class VirtualNetworkClient(object):
         `DNS in Your Virtual Cloud Network`__.
 
         The VCN automatically comes with a default route table, default security list, and default set of DHCP options.
-        The OCID for each is returned in the response. You can't delete these default objects, but you can change their
+        The `OCID`__ for each is returned in the response. You can't delete these default objects, but you can change their
         contents (that is, change the route rules, security list rules, and so on).
 
-        The VCN and subnets you create are not accessible until you attach an internet gateway or set up an IPSec VPN
+        The VCN and subnets you create are not accessible until you attach an internet gateway or set up a Site-to-Site VPN
         or FastConnect. For more information, see
         `Overview of the Networking Service`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm
         __ https://tools.ietf.org/html/rfc1918
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm
 
 
@@ -5360,7 +5370,7 @@ class VirtualNetworkClient(object):
         Infrastructure FastConnect. For more information, see
         `FastConnect Overview`__.
 
-        For the purposes of access control, you must provide the OCID of the
+        For the purposes of access control, you must provide the `OCID`__ of the
         compartment where you want the virtual circuit to reside. If you're
         not sure which compartment to use, put the virtual circuit in the
         same compartment with the DRG it's using. For more information about
@@ -5379,6 +5389,7 @@ class VirtualNetworkClient(object):
         `Route Tables`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/fastconnect.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm
@@ -5968,7 +5979,7 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+            The `OCID`__ of the DRG.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -6377,9 +6388,9 @@ class VirtualNetworkClient(object):
 
     def delete_ip_sec_connection(self, ipsc_id, **kwargs):
         """
-        Deletes the specified IPSec connection. If your goal is to disable the IPSec VPN between your VCN and
-        on-premises network, it's easiest to simply detach the DRG but keep all the IPSec VPN components intact.
-        If you were to delete all the components and then later need to create an IPSec VPN again, you would
+        Deletes the specified IPSec connection. If your goal is to disable the Site-to-Site VPN between your VCN and
+        on-premises network, it's easiest to simply detach the DRG but keep all the Site-to-Site VPN components intact.
+        If you were to delete all the components and then later need to create an Site-to-Site VPN again, you would
         need to configure your on-premises router again with the new information returned from
         :func:`create_ip_sec_connection`.
 
@@ -6729,8 +6740,11 @@ class VirtualNetworkClient(object):
         To get a list of the VNICs in a network security group, use
         :func:`list_network_security_group_vnics`.
         Each returned :class:`NetworkSecurityGroupVnic` object
-        contains both the OCID of the VNIC and the OCID of the VNIC's parent resource (for example,
+        contains both the `OCID`__ of the VNIC and the `OCID`__ of the VNIC's parent resource (for example,
         the Compute instance that the VNIC is attached to).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str network_security_group_id: (required)
@@ -6812,7 +6826,7 @@ class VirtualNetworkClient(object):
     def delete_private_ip(self, private_ip_id, **kwargs):
         """
         Unassigns and deletes the specified private IP. You must
-        specify the object's OCID. The private IP address is returned to
+        specify the object's `OCID`__. The private IP address is returned to
         the subnet's pool of available addresses.
 
         This operation cannot be used with primary private IPs, which are
@@ -6823,6 +6837,7 @@ class VirtualNetworkClient(object):
         unassigning it from the VNIC causes that route rule to blackhole and the traffic
         will be dropped.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip
 
 
@@ -6905,7 +6920,7 @@ class VirtualNetworkClient(object):
     def delete_public_ip(self, public_ip_id, **kwargs):
         """
         Unassigns and deletes the specified public IP (either ephemeral or reserved).
-        You must specify the object's OCID. The public IP address is returned to the
+        You must specify the object's `OCID`__. The public IP address is returned to the
         Oracle Cloud Infrastructure public IP pool.
 
         **Note:** You cannot update, unassign, or delete the public IP that Oracle automatically
@@ -6919,6 +6934,8 @@ class VirtualNetworkClient(object):
         If you want to simply unassign a reserved public IP and return it to your pool
         of reserved public IPs, instead use
         :func:`update_public_ip`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str public_ip_id: (required)
@@ -7867,7 +7884,7 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+            The `OCID`__ of the DRG.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -8161,9 +8178,9 @@ class VirtualNetworkClient(object):
         Here are similar operations:
 
           * :func:`get_ipsec_cpe_device_config_content`
-          returns CPE configuration content for all tunnels in a single IPSec connection.
+          returns CPE configuration content for all IPSec tunnels in a single IPSec connection.
           * :func:`get_tunnel_cpe_device_config_content`
-          returns CPE configuration content for a specific tunnel within an IPSec connection.
+          returns CPE configuration content for a specific IPSec tunnel in an IPSec connection.
 
 
         :param str cpe_id: (required)
@@ -8699,7 +8716,7 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+            The `OCID`__ of the DRG.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -8846,7 +8863,7 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+            The `OCID`__ of the DRG.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -9779,9 +9796,10 @@ class VirtualNetworkClient(object):
         Gets the specified IPv6. You must specify the object's `OCID`__.
         Alternatively, you can get the object by using
         :func:`list_ipv6s`
-        with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet OCID.
+        with the IPv6 address (for example, 2001:0db8:0123:1111:98fe:dcba:9876:4321) and subnet `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str ipv6_id: (required)
@@ -10205,10 +10223,13 @@ class VirtualNetworkClient(object):
 
     def get_private_ip(self, private_ip_id, **kwargs):
         """
-        Gets the specified private IP. You must specify the object's OCID.
+        Gets the specified private IP. You must specify the object's `OCID`__.
         Alternatively, you can get the object by using
         :func:`list_private_ips`
-        with the private IP address (for example, 10.0.3.3) and subnet OCID.
+        with the private IP address (for example, 10.0.3.3) and subnet `OCID`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str private_ip_id: (required)
@@ -10280,17 +10301,21 @@ class VirtualNetworkClient(object):
 
     def get_public_ip(self, public_ip_id, **kwargs):
         """
-        Gets the specified public IP. You must specify the object's OCID.
+        Gets the specified public IP. You must specify the object's `OCID`__.
 
         Alternatively, you can get the object by using :func:`get_public_ip_by_ip_address`
         with the public IP address (for example, 203.0.113.2).
 
         Or you can use :func:`get_public_ip_by_private_ip_id`
-        with the OCID of the private IP that the public IP is assigned to.
+        with the `OCID`__ of the private IP that the public IP is assigned to.
 
         **Note:** If you're fetching a reserved public IP that is in the process of being
         moved to a different private IP, the service returns the public IP object with
-        `lifecycleState` = ASSIGNING and `assignedEntityId` = OCID of the target private IP.
+        `lifecycleState` = ASSIGNING and `assignedEntityId` = `OCID`__ of the target private IP.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str public_ip_id: (required)
@@ -10366,7 +10391,9 @@ class VirtualNetworkClient(object):
 
         **Note:** If you're fetching a reserved public IP that is in the process of being
         moved to a different private IP, the service returns the public IP object with
-        `lifecycleState` = ASSIGNING and `assignedEntityId` = OCID of the target private IP.
+        `lifecycleState` = ASSIGNING and `assignedEntityId` = `OCID`__ of the target private IP.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.GetPublicIpByIpAddressDetails get_public_ip_by_ip_address_details: (required)
@@ -10430,13 +10457,17 @@ class VirtualNetworkClient(object):
         of the private IP. If no public IP is assigned, a 404 is returned.
 
         **Note:** If you're fetching a reserved public IP that is in the process of being
-        moved to a different private IP, and you provide the OCID of the original private
-        IP, this operation returns a 404. If you instead provide the OCID of the target
+        moved to a different private IP, and you provide the `OCID`__ of the original private
+        IP, this operation returns a 404. If you instead provide the `OCID`__ of the target
         private IP, or if you instead call
         :func:`get_public_ip` or
         :func:`get_public_ip_by_ip_address`, the
         service returns the public IP object with `lifecycleState` = ASSIGNING and
-        `assignedEntityId` = OCID of the target private IP.
+        `assignedEntityId` = `OCID`__ of the target private IP.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param oci.core.models.GetPublicIpByPrivateIpIdDetails get_public_ip_by_private_ip_id_details: (required)
@@ -11010,6 +11041,132 @@ class VirtualNetworkClient(object):
                 header_params=header_params,
                 response_type="Subnet")
 
+    def get_subnet_topology(self, compartment_id, subnet_id, **kwargs):
+        """
+        Gets a topology for a given subnet.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str subnet_id: (required)
+            The `OCID`__ of the subnet.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str access_level: (optional)
+            Valid values are `ANY` and `ACCESSIBLE`. The default is `ANY`.
+            Setting this to `ACCESSIBLE` returns only compartments for which a
+            user has INSPECT permissions, either directly or indirectly (permissions can be on a
+            resource in a subcompartment). A restricted set of fields is returned for compartments in which a user has
+            indirect INSPECT permissions.
+
+            When set to `ANY` permissions are not checked.
+
+            Allowed values are: "ANY", "ACCESSIBLE"
+
+        :param bool query_compartment_subtree: (optional)
+            When set to true, the hierarchy of compartments is traversed
+            and the specified compartment and its subcompartments are
+            inspected depending on the the setting of `accessLevel`.
+            Default is false.
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request.
+            If you need to contact Oracle about a particular request, please provide the request ID.
+
+        :param str if_none_match: (optional)
+            For querying if there is a cached value on the server. The If-None-Match HTTP request header
+            makes the request conditional. For GET and HEAD methods, the server will send back the requested
+            resource, with a 200 status, only if it doesn't have an ETag matching the given ones.
+            For other methods, the request will be processed only if the eventually existing resource's
+            ETag doesn't match any of the values listed.
+
+        :param str cache_control: (optional)
+            The Cache-Control HTTP header holds directives (instructions)
+            for caching in both requests and responses.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.SubnetTopology`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/core/get_subnet_topology.py.html>`__ to see an example of how to use get_subnet_topology API.
+        """
+        resource_path = "/subnetTopology"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "access_level",
+            "query_compartment_subtree",
+            "opc_request_id",
+            "if_none_match",
+            "cache_control"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_subnet_topology got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["ANY", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "accessLevel": kwargs.get("access_level", missing),
+            "queryCompartmentSubtree": kwargs.get("query_compartment_subtree", missing),
+            "subnetId": subnet_id
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "if-none-match": kwargs.get("if_none_match", missing),
+            "cache-control": kwargs.get("cache_control", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SubnetTopology")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SubnetTopology")
+
     def get_tunnel_cpe_device_config(self, ipsc_id, tunnel_id, **kwargs):
         """
         Gets the set of CPE configuration answers for the tunnel, which the customer provided in
@@ -11213,7 +11370,7 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+            The `OCID`__ of the DRG.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -11726,9 +11883,11 @@ class VirtualNetworkClient(object):
     def get_vnic(self, vnic_id, **kwargs):
         """
         Gets the information for the specified virtual network interface card (VNIC).
-        You can get the VNIC OCID from the
+        You can get the VNIC `OCID`__ from the
         :func:`list_vnic_attachments`
         operation.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str vnic_id: (required)
@@ -14431,11 +14590,16 @@ class VirtualNetworkClient(object):
         Lists the :class:`Ipv6` objects based
         on one of these filters:
 
-          * Subnet OCID.
-          * VNIC OCID.
+          * Subnet `OCID`__.
+          * VNIC `OCID`__.
           * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
-          IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
-          :func:`get_ipv6` requires the OCID.
+          IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its `OCID`__. For comparison,
+          :func:`get_ipv6` requires the `OCID`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param int limit: (optional)
@@ -15236,19 +15400,25 @@ class VirtualNetworkClient(object):
         Lists the :class:`PrivateIp` objects based
         on one of these filters:
 
-          - Subnet OCID.
-          - VNIC OCID.
+          - Subnet `OCID`__.
+          - VNIC `OCID`__.
           - Both private IP address and subnet OCID: This lets
           you get a `privateIP` object based on its private IP
-          address (for example, 10.0.3.3) and not its OCID. For comparison,
+          address (for example, 10.0.3.3) and not its `OCID`__. For comparison,
           :func:`get_private_ip`
-          requires the OCID.
+          requires the `OCID`__.
 
         If you're listing all the private IPs associated with a given subnet
         or VNIC, the response includes both primary and secondary private IPs.
 
         If you are an Oracle Cloud VMware Solution customer and have VLANs
-        in your VCN, you can filter the list by VLAN OCID. See :class:`Vlan`.
+        in your VCN, you can filter the list by VLAN `OCID`__. See :class:`Vlan`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param int limit: (optional)
@@ -16599,7 +16769,9 @@ class VirtualNetworkClient(object):
 
     def list_virtual_circuit_bandwidth_shapes(self, compartment_id, **kwargs):
         """
-        The deprecated operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the OCID of your tenancy (the root compartment).
+        The deprecated operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the `OCID`__ of your tenancy (the root compartment).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str compartment_id: (required)
@@ -18267,7 +18439,7 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+            The `OCID`__ of the DRG.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -18874,7 +19046,7 @@ class VirtualNetworkClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.core.models.UpdateIPSecConnectionDetails update_ip_sec_connection_details: (required)
-            Details object for updating a IPSec connection.
+            Details object for updating an IPSec connection.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -19160,13 +19332,15 @@ class VirtualNetworkClient(object):
 
     def update_ipv6(self, ipv6_id, update_ipv6_details, **kwargs):
         """
-        Updates the specified IPv6. You must specify the object's OCID.
+        Updates the specified IPv6. You must specify the object's `OCID`__.
         Use this operation if you want to:
 
           * Move an IPv6 to a different VNIC in the same subnet.
           * Enable/disable internet access for an IPv6.
           * Change the display name for an IPv6.
           * Update resource tags for an IPv6.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str ipv6_id: (required)
@@ -19441,7 +19615,7 @@ class VirtualNetworkClient(object):
         To add or remove an existing VNIC from the group, use
         :func:`update_vnic`.
 
-        To add a VNIC to the group *when you create the VNIC*, specify the NSG's OCID during creation.
+        To add a VNIC to the group *when you create the VNIC*, specify the NSG's `OCID`__ during creation.
         For example, see the `nsgIds` attribute in :func:`create_vnic_details`.
 
         To add or remove security rules from the group, use
@@ -19451,6 +19625,8 @@ class VirtualNetworkClient(object):
 
         To edit the contents of existing security rules in the group, use
         :func:`update_network_security_group_security_rules`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str network_security_group_id: (required)
@@ -19616,7 +19792,7 @@ class VirtualNetworkClient(object):
 
     def update_private_ip(self, private_ip_id, update_private_ip_details, **kwargs):
         """
-        Updates the specified private IP. You must specify the object's OCID.
+        Updates the specified private IP. You must specify the object's `OCID`__.
         Use this operation if you want to:
 
           - Move a secondary private IP to a different VNIC in the same subnet.
@@ -19626,6 +19802,8 @@ class VirtualNetworkClient(object):
         This operation cannot be used with primary private IPs.
         To update the hostname for the primary IP on a VNIC, use
         :func:`update_vnic`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param str private_ip_id: (required)
@@ -19713,7 +19891,7 @@ class VirtualNetworkClient(object):
 
     def update_public_ip(self, public_ip_id, update_public_ip_details, **kwargs):
         """
-        Updates the specified public IP. You must specify the object's OCID. Use this operation if you want to:
+        Updates the specified public IP. You must specify the object's `OCID`__. Use this operation if you want to:
 
         * Assign a reserved public IP in your pool to a private IP.
         * Move a reserved public IP to a different private IP.
@@ -19753,6 +19931,7 @@ class VirtualNetworkClient(object):
         returned. For information about the public IP limits, see
         `Public IP Addresses`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm
 
 
@@ -20884,7 +21063,7 @@ class VirtualNetworkClient(object):
 
 
         :param str drg_id: (required)
-            The `[OCID`__](/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+            The `OCID`__ of the DRG.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

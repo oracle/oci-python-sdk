@@ -155,10 +155,8 @@ class ComputeCapacityReservationSummary(object):
     def display_name(self):
         """
         Gets the display_name of this ComputeCapacityReservationSummary.
-        A user-friendly name for the capacity reservation. Does not have to be unique, and it's changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        Example: `My Reservation`
 
 
         :return: The display_name of this ComputeCapacityReservationSummary.
@@ -170,10 +168,8 @@ class ComputeCapacityReservationSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ComputeCapacityReservationSummary.
-        A user-friendly name for the capacity reservation. Does not have to be unique, and it's changeable.
+        A user-friendly name. Does not have to be unique, and it's changeable.
         Avoid entering confidential information.
-
-        Example: `My Reservation`
 
 
         :param display_name: The display_name of this ComputeCapacityReservationSummary.
@@ -303,7 +299,7 @@ class ComputeCapacityReservationSummary(object):
         Gets the reserved_instance_count of this ComputeCapacityReservationSummary.
         The number of instances for which capacity will be held in this
         compute capacity reservation. This number is the sum of the values of the `reservedCount` fields
-        for all of the instance reservation configurations under this reservation.
+        for all of the instance capacity configurations under this reservation.
         The purpose of this field is to calculate the percentage usage of the reservation.
 
 
@@ -318,7 +314,7 @@ class ComputeCapacityReservationSummary(object):
         Sets the reserved_instance_count of this ComputeCapacityReservationSummary.
         The number of instances for which capacity will be held in this
         compute capacity reservation. This number is the sum of the values of the `reservedCount` fields
-        for all of the instance reservation configurations under this reservation.
+        for all of the instance capacity configurations under this reservation.
         The purpose of this field is to calculate the percentage usage of the reservation.
 
 
@@ -333,7 +329,7 @@ class ComputeCapacityReservationSummary(object):
         Gets the used_instance_count of this ComputeCapacityReservationSummary.
         The total number of instances currently consuming space in
         this compute capacity reservation. This number is the sum of the values of the `usedCount` fields
-        for all of the instance reservation configurations under this reservation.
+        for all of the instance capacity configurations under this reservation.
         The purpose of this field is to calculate the percentage usage of the reservation.
 
 
@@ -348,7 +344,7 @@ class ComputeCapacityReservationSummary(object):
         Sets the used_instance_count of this ComputeCapacityReservationSummary.
         The total number of instances currently consuming space in
         this compute capacity reservation. This number is the sum of the values of the `usedCount` fields
-        for all of the instance reservation configurations under this reservation.
+        for all of the instance capacity configurations under this reservation.
         The purpose of this field is to calculate the percentage usage of the reservation.
 
 

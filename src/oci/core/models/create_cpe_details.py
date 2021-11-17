@@ -72,7 +72,9 @@ class CreateCpeDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateCpeDetails.
-        The OCID of the compartment to contain the CPE.
+        The `OCID`__ of the compartment to contain the CPE.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateCpeDetails.
@@ -84,7 +86,9 @@ class CreateCpeDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateCpeDetails.
-        The OCID of the compartment to contain the CPE.
+        The `OCID`__ of the compartment to contain the CPE.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateCpeDetails.

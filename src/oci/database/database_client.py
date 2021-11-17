@@ -59,7 +59,7 @@ class DatabaseClient(object):
 
         :param obj circuit_breaker_strategy: (optional)
             A circuit breaker strategy to apply to all calls made by this service client (i.e. at the client level).
-            This client will not have circuit breakers enabled by default, users can use their own circuit breaker strategy or the convenient :py:data:`~oci.circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY` provided by the SDK to enable it.
+            This client uses :py:data:`~oci.circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY` as default if no circuit breaker strategy is provided.
             The specifics of circuit breaker strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/circuit_breakers.html>`__.
 
         :param function circuit_breaker_callback: (optional)
@@ -92,6 +92,8 @@ class DatabaseClient(object):
         }
         if 'timeout' in kwargs:
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
+        if base_client_init_kwargs.get('circuit_breaker_strategy') is None:
+            base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
         self.base_client = BaseClient("database", config, signer, database_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -4073,7 +4075,7 @@ class DatabaseClient(object):
     def create_pluggable_database(self, create_pluggable_database_details, **kwargs):
         """
         Creates and starts a pluggable database in the specified container database.
-        Use the [StartPluggableDatabase](#/en/database/latest/PluggableDatabase/StartPluggableDatabase] and [StopPluggableDatabase](#/en/database/latest/PluggableDatabase/StopPluggableDatabase] APIs to start and stop the pluggable database.
+        Use the :func:`start_pluggable_database` and :func:`stop_pluggable_database` APIs to start and stop the pluggable database.
 
 
         :param oci.database.models.CreatePluggableDatabaseDetails create_pluggable_database_details: (required)
@@ -9997,7 +9999,7 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str upgrade_history_entry_id: (required)
-            The database upgrade History `OCID`__.
+            The database/db system upgrade History `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

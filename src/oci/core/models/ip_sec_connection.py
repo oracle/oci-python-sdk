@@ -12,7 +12,7 @@ class IPSecConnection(object):
     """
     A connection between a DRG and CPE. This connection consists of multiple IPSec
     tunnels. Creating this connection is one of the steps required when setting up
-    an IPSec VPN.
+    a Site-to-Site VPN.
 
     **Important:**  Each tunnel in an IPSec connection can use either static routing or BGP dynamic
     routing (see the :class:`IPSecConnectionTunnel` object's
@@ -26,13 +26,13 @@ class IPSecConnection(object):
     if that tunnel's `routing` attribute = `STATIC`. Otherwise the static routes are ignored.
 
     For more information about the workflow for setting up an IPSec connection, see
-    `IPSec VPN`__.
+    `Site-to-Site VPN Overview`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access, see
     `Getting Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingIPsec.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm
     __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm
     """
 
@@ -165,7 +165,9 @@ class IPSecConnection(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this IPSecConnection.
-        The OCID of the compartment containing the IPSec connection.
+        The `OCID`__ of the compartment containing the IPSec connection.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this IPSecConnection.
@@ -177,7 +179,9 @@ class IPSecConnection(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this IPSecConnection.
-        The OCID of the compartment containing the IPSec connection.
+        The `OCID`__ of the compartment containing the IPSec connection.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this IPSecConnection.
@@ -189,7 +193,9 @@ class IPSecConnection(object):
     def cpe_id(self):
         """
         **[Required]** Gets the cpe_id of this IPSecConnection.
-        The OCID of the :class:`Cpe` object.
+        The `OCID`__ of the :class:`Cpe` object.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The cpe_id of this IPSecConnection.
@@ -201,7 +207,9 @@ class IPSecConnection(object):
     def cpe_id(self, cpe_id):
         """
         Sets the cpe_id of this IPSecConnection.
-        The OCID of the :class:`Cpe` object.
+        The `OCID`__ of the :class:`Cpe` object.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param cpe_id: The cpe_id of this IPSecConnection.

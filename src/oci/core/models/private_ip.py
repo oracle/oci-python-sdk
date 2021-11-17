@@ -187,7 +187,9 @@ class PrivateIp(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this PrivateIp.
-        The OCID of the compartment containing the private IP.
+        The `OCID`__ of the compartment containing the private IP.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this PrivateIp.
@@ -199,7 +201,9 @@ class PrivateIp(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this PrivateIp.
-        The OCID of the compartment containing the private IP.
+        The `OCID`__ of the compartment containing the private IP.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this PrivateIp.
@@ -245,8 +249,8 @@ class PrivateIp(object):
     def display_name(self):
         """
         Gets the display_name of this PrivateIp.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this PrivateIp.
@@ -258,8 +262,8 @@ class PrivateIp(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this PrivateIp.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this PrivateIp.
@@ -357,7 +361,9 @@ class PrivateIp(object):
     def id(self):
         """
         Gets the id of this PrivateIp.
-        The private IP's Oracle ID (OCID).
+        The private IP's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this PrivateIp.
@@ -369,7 +375,9 @@ class PrivateIp(object):
     def id(self, id):
         """
         Sets the id of this PrivateIp.
-        The private IP's Oracle ID (OCID).
+        The private IP's Oracle ID (`OCID`__).
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this PrivateIp.
@@ -450,8 +458,10 @@ class PrivateIp(object):
         """
         Gets the vlan_id of this PrivateIp.
         Applicable only if the `PrivateIp` object is being used with a VLAN as part of
-        the Oracle Cloud VMware Solution. The `vlanId` is the OCID of the VLAN. See
+        the Oracle Cloud VMware Solution. The `vlanId` is the `OCID`__ of the VLAN. See
         :class:`Vlan`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vlan_id of this PrivateIp.
@@ -464,8 +474,10 @@ class PrivateIp(object):
         """
         Sets the vlan_id of this PrivateIp.
         Applicable only if the `PrivateIp` object is being used with a VLAN as part of
-        the Oracle Cloud VMware Solution. The `vlanId` is the OCID of the VLAN. See
+        the Oracle Cloud VMware Solution. The `vlanId` is the `OCID`__ of the VLAN. See
         :class:`Vlan`.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vlan_id: The vlan_id of this PrivateIp.
@@ -477,10 +489,12 @@ class PrivateIp(object):
     def subnet_id(self):
         """
         Gets the subnet_id of this PrivateIp.
-        The OCID of the subnet the VNIC is in.
+        The `OCID`__ of the subnet the VNIC is in.
 
         However, if the `PrivateIp` object is being used with a VLAN as part of
         the Oracle Cloud VMware Solution, the `subnetId` is null.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this PrivateIp.
@@ -492,10 +506,12 @@ class PrivateIp(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this PrivateIp.
-        The OCID of the subnet the VNIC is in.
+        The `OCID`__ of the subnet the VNIC is in.
 
         However, if the `PrivateIp` object is being used with a VLAN as part of
         the Oracle Cloud VMware Solution, the `subnetId` is null.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this PrivateIp.
@@ -539,10 +555,12 @@ class PrivateIp(object):
     def vnic_id(self):
         """
         Gets the vnic_id of this PrivateIp.
-        The OCID of the VNIC the private IP is assigned to. The VNIC and private IP
+        The `OCID`__ of the VNIC the private IP is assigned to. The VNIC and private IP
         must be in the same subnet.
         However, if the `PrivateIp` object is being used with a VLAN as part of
         the Oracle Cloud VMware Solution, the `vnicId` is null.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this PrivateIp.
@@ -554,10 +572,12 @@ class PrivateIp(object):
     def vnic_id(self, vnic_id):
         """
         Sets the vnic_id of this PrivateIp.
-        The OCID of the VNIC the private IP is assigned to. The VNIC and private IP
+        The `OCID`__ of the VNIC the private IP is assigned to. The VNIC and private IP
         must be in the same subnet.
         However, if the `PrivateIp` object is being used with a VLAN as part of
         the Oracle Cloud VMware Solution, the `vnicId` is null.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this PrivateIp.

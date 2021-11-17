@@ -27,6 +27,8 @@ Bds
     oci.bds.models.AutoScalePolicyRule
     oci.bds.models.AutoScalingConfiguration
     oci.bds.models.AutoScalingConfigurationSummary
+    oci.bds.models.BdsApiKey
+    oci.bds.models.BdsApiKeySummary
     oci.bds.models.BdsInstance
     oci.bds.models.BdsInstanceSummary
     oci.bds.models.ChangeBdsInstanceCompartmentDetails
@@ -34,6 +36,7 @@ Bds
     oci.bds.models.ChangeShapeNodes
     oci.bds.models.CloudSqlDetails
     oci.bds.models.ClusterDetails
+    oci.bds.models.CreateBdsApiKeyDetails
     oci.bds.models.CreateBdsInstanceDetails
     oci.bds.models.CreateNodeDetails
     oci.bds.models.DefaultError
@@ -44,6 +47,7 @@ Bds
     oci.bds.models.RemoveAutoScalingConfigurationDetails
     oci.bds.models.RemoveCloudSqlDetails
     oci.bds.models.RestartNodeDetails
+    oci.bds.models.TestBdsObjectStorageConnectionDetails
     oci.bds.models.UpdateAutoScalingConfigurationDetails
     oci.bds.models.UpdateBdsInstanceDetails
     oci.bds.models.VolumeAttachmentDetail

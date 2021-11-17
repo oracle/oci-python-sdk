@@ -121,6 +121,22 @@ class UpdateRoverClusterDetails(object):
             The value to assign to the time_pickup_expected property of this UpdateRoverClusterDetails.
         :type time_pickup_expected: datetime
 
+        :param is_import_requested:
+            The value to assign to the is_import_requested property of this UpdateRoverClusterDetails.
+        :type is_import_requested: bool
+
+        :param import_compartment_id:
+            The value to assign to the import_compartment_id property of this UpdateRoverClusterDetails.
+        :type import_compartment_id: str
+
+        :param import_file_bucket:
+            The value to assign to the import_file_bucket property of this UpdateRoverClusterDetails.
+        :type import_file_bucket: str
+
+        :param data_validation_code:
+            The value to assign to the data_validation_code property of this UpdateRoverClusterDetails.
+        :type data_validation_code: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateRoverClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -150,6 +166,10 @@ class UpdateRoverClusterDetails(object):
             'oracle_shipping_tracking_url': 'str',
             'shipping_vendor': 'str',
             'time_pickup_expected': 'datetime',
+            'is_import_requested': 'bool',
+            'import_compartment_id': 'str',
+            'import_file_bucket': 'str',
+            'data_validation_code': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -171,6 +191,10 @@ class UpdateRoverClusterDetails(object):
             'oracle_shipping_tracking_url': 'oracleShippingTrackingUrl',
             'shipping_vendor': 'shippingVendor',
             'time_pickup_expected': 'timePickupExpected',
+            'is_import_requested': 'isImportRequested',
+            'import_compartment_id': 'importCompartmentId',
+            'import_file_bucket': 'importFileBucket',
+            'data_validation_code': 'dataValidationCode',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -191,6 +215,10 @@ class UpdateRoverClusterDetails(object):
         self._oracle_shipping_tracking_url = None
         self._shipping_vendor = None
         self._time_pickup_expected = None
+        self._is_import_requested = None
+        self._import_compartment_id = None
+        self._import_file_bucket = None
+        self._data_validation_code = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -223,7 +251,7 @@ class UpdateRoverClusterDetails(object):
     def cluster_size(self):
         """
         Gets the cluster_size of this UpdateRoverClusterDetails.
-        Number of nodes desired in the cluster, between 5 and 15.
+        Number of nodes desired in the cluster, in standalone clusters, between 5 and 15 inclusive. In station clusters, between 15 and 30 inclusive.
 
 
         :return: The cluster_size of this UpdateRoverClusterDetails.
@@ -235,7 +263,7 @@ class UpdateRoverClusterDetails(object):
     def cluster_size(self, cluster_size):
         """
         Sets the cluster_size of this UpdateRoverClusterDetails.
-        Number of nodes desired in the cluster, between 5 and 15.
+        Number of nodes desired in the cluster, in standalone clusters, between 5 and 15 inclusive. In station clusters, between 15 and 30 inclusive.
 
 
         :param cluster_size: The cluster_size of this UpdateRoverClusterDetails.
@@ -574,6 +602,102 @@ class UpdateRoverClusterDetails(object):
         :type: datetime
         """
         self._time_pickup_expected = time_pickup_expected
+
+    @property
+    def is_import_requested(self):
+        """
+        Gets the is_import_requested of this UpdateRoverClusterDetails.
+        The flag indicating that customer requests data to be imported to OCI upon Rover cluster return.
+
+
+        :return: The is_import_requested of this UpdateRoverClusterDetails.
+        :rtype: bool
+        """
+        return self._is_import_requested
+
+    @is_import_requested.setter
+    def is_import_requested(self, is_import_requested):
+        """
+        Sets the is_import_requested of this UpdateRoverClusterDetails.
+        The flag indicating that customer requests data to be imported to OCI upon Rover cluster return.
+
+
+        :param is_import_requested: The is_import_requested of this UpdateRoverClusterDetails.
+        :type: bool
+        """
+        self._is_import_requested = is_import_requested
+
+    @property
+    def import_compartment_id(self):
+        """
+        Gets the import_compartment_id of this UpdateRoverClusterDetails.
+        An OCID of a compartment where data will be imported to upon Rover cluster return.
+
+
+        :return: The import_compartment_id of this UpdateRoverClusterDetails.
+        :rtype: str
+        """
+        return self._import_compartment_id
+
+    @import_compartment_id.setter
+    def import_compartment_id(self, import_compartment_id):
+        """
+        Sets the import_compartment_id of this UpdateRoverClusterDetails.
+        An OCID of a compartment where data will be imported to upon Rover cluster return.
+
+
+        :param import_compartment_id: The import_compartment_id of this UpdateRoverClusterDetails.
+        :type: str
+        """
+        self._import_compartment_id = import_compartment_id
+
+    @property
+    def import_file_bucket(self):
+        """
+        Gets the import_file_bucket of this UpdateRoverClusterDetails.
+        Name of a bucket where files from NFS share will be imported to upon Rover cluster return.
+
+
+        :return: The import_file_bucket of this UpdateRoverClusterDetails.
+        :rtype: str
+        """
+        return self._import_file_bucket
+
+    @import_file_bucket.setter
+    def import_file_bucket(self, import_file_bucket):
+        """
+        Sets the import_file_bucket of this UpdateRoverClusterDetails.
+        Name of a bucket where files from NFS share will be imported to upon Rover cluster return.
+
+
+        :param import_file_bucket: The import_file_bucket of this UpdateRoverClusterDetails.
+        :type: str
+        """
+        self._import_file_bucket = import_file_bucket
+
+    @property
+    def data_validation_code(self):
+        """
+        Gets the data_validation_code of this UpdateRoverClusterDetails.
+        Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+
+
+        :return: The data_validation_code of this UpdateRoverClusterDetails.
+        :rtype: str
+        """
+        return self._data_validation_code
+
+    @data_validation_code.setter
+    def data_validation_code(self, data_validation_code):
+        """
+        Sets the data_validation_code of this UpdateRoverClusterDetails.
+        Validation code returned by data validation tool. Required for return shipping label generation if data import was requested.
+
+
+        :param data_validation_code: The data_validation_code of this UpdateRoverClusterDetails.
+        :type: str
+        """
+        self._data_validation_code = data_validation_code
 
     @property
     def freeform_tags(self):

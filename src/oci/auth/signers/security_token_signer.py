@@ -59,6 +59,9 @@ class X509FederationClientBasedSecurityTokenSigner(SecurityTokenSigner):
         return super(X509FederationClientBasedSecurityTokenSigner, self).__call__(request, enforce_content_headers)
 
     def refresh_security_token(self):
+        """
+        Refresh the security token
+        """
         self.federation_client.refresh_security_token()
 
     def _reset_signers(self):

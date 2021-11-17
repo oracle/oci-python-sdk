@@ -99,7 +99,7 @@ class CreateDatabaseFromAnotherDatabaseDetails(object):
     @property
     def backup_tde_password(self):
         """
-        **[Required]** Gets the backup_tde_password of this CreateDatabaseFromAnotherDatabaseDetails.
+        Gets the backup_tde_password of this CreateDatabaseFromAnotherDatabaseDetails.
         The password to open the TDE wallet.
 
 

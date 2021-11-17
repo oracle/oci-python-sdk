@@ -350,10 +350,11 @@ class ServiceGateway(object):
     def route_table_id(self):
         """
         Gets the route_table_id of this ServiceGateway.
-        The OCID of the route table the service gateway is using.
+        The `OCID`__ of the route table the service gateway is using.
         For information about why you would associate a route table with a service gateway, see
         `Transit Routing: Private Access to Oracle Services`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
 
@@ -366,10 +367,11 @@ class ServiceGateway(object):
     def route_table_id(self, route_table_id):
         """
         Sets the route_table_id of this ServiceGateway.
-        The OCID of the route table the service gateway is using.
+        The `OCID`__ of the route table the service gateway is using.
         For information about why you would associate a route table with a service gateway, see
         `Transit Routing: Private Access to Oracle Services`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm
 
 

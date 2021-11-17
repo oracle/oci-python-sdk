@@ -91,6 +91,8 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
     :param bool log_requests: (optional)
         log_request if set to True will log the request url and response data when retrieving
         the certificate & corresponding private key (if there is one defined for this retriever)
+
+    **Note:** This class is used internally, it is not recommended for user's direct use.
     """
 
     READ_CHUNK_BYTES = 1024 * 1024  # A mebibyte
@@ -126,6 +128,10 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         self.refresh()
 
     def refresh(self):
+        """
+        Refresh the token by making a call to Identity for a new token.
+        Returns the new token.
+        """
         self._refresh_lock.acquire()
         try:
             if self.retry_strategy:
@@ -136,6 +142,9 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
             self._refresh_lock.release()
 
     def get_certificate_and_private_key(self):
+        """
+        Returns the certificate_and_private_key dictionary contained by this object
+        """
         self._refresh_lock.acquire()
         ret_val = self.certificate_and_private_key.copy()
         self._refresh_lock.release()
@@ -143,6 +152,9 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         return ret_val
 
     def get_certificate_as_certificate(self):
+        """
+        Retrieves the certificate as a cryptography.x509.Certificate
+        """
         raw_cert = self.get_certificate_raw()
         if raw_cert:
             return x509.load_pem_x509_certificate(raw_cert, default_backend())
@@ -150,6 +162,9 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
             return None
 
     def get_certificate_raw(self):
+        """
+        Retrieves a string containing the certificate contents
+        """
         self._refresh_lock.acquire()
         certificate = self.certificate_and_private_key.copy()['certificate']
         self._refresh_lock.release()
@@ -157,6 +172,9 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         return certificate
 
     def get_private_key_pem(self):
+        """
+        Retrievea a string containing the PEM-encoded private key
+        """
         self._refresh_lock.acquire()
         private_key = self.certificate_and_private_key.copy()['private_key_pem']
         self._refresh_lock.release()
@@ -164,6 +182,9 @@ class UrlBasedCertificateRetriever(AbstractCertificateRetriever):
         return private_key
 
     def get_private_key(self):
+        """
+        Retrieves the private key as a cryptography private key
+        """
         self._refresh_lock.acquire()
         private_key = self.certificate_and_private_key.copy()['private_key']
         self._refresh_lock.release()
@@ -265,6 +286,8 @@ class PEMStringCertificateRetriever(AbstractCertificateRetriever):
 
     :param str passphrase (optional):
         The passphrase of the private key (if any).
+
+    **Note:** This class is used internally, it is not recommended for user's direct use.
     """
 
     def __init__(self, **kwargs):
@@ -297,23 +320,40 @@ class PEMStringCertificateRetriever(AbstractCertificateRetriever):
             )
 
     def refresh(self):
-        # Since these are just the string, there is no refresh as such. A new object should be created
-        # if the strings change
+        """
+        Since these are just the string, there is no refresh as such. A new object should be created
+        if the strings change
+        """
         pass
 
     def get_certificate_and_private_key(self):
+        """
+        Returns the certificate_and_private_key dictionary contained by this object
+        """
         return self.certificate_and_private_key.copy()
 
     def get_certificate_as_certificate(self):
+        """
+        Retrieves the certificate as a cryptography.x509.Certificate
+        """
         return x509.load_pem_x509_certificate(self.certificate_and_private_key['certificate'], default_backend())
 
     def get_certificate_raw(self):
+        """
+        Retrieves a string containing the certificate contents
+        """
         return self.certificate_and_private_key['certificate']
 
     def get_private_key_pem(self):
+        """
+        Retrieve a a string containing the PEM-encoded private key
+        """
         return self.certificate_and_private_key['private_key_pem']
 
     def get_private_key(self):
+        """
+        Retrieves the private key as a cryptography private key
+        """
         return self.certificate_and_private_key['private_key']
 
 
@@ -332,6 +372,7 @@ class FileBasedCertificateRetriever(PEMStringCertificateRetriever):
     :param str passphrase (optional):
         The passphrase of the private key (if any).
 
+    **Note:** This class is used internally, it is not recommended for user's direct use.
     """
 
     def __init__(self, **kwargs):

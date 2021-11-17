@@ -172,6 +172,8 @@ Core Services
     oci.core.models.CreateInternetGatewayDetails
     oci.core.models.CreateIpv6Details
     oci.core.models.CreateLocalPeeringGatewayDetails
+    oci.core.models.CreateMacsecKey
+    oci.core.models.CreateMacsecProperties
     oci.core.models.CreateNatGatewayDetails
     oci.core.models.CreateNetworkSecurityGroupDetails
     oci.core.models.CreatePrivateIpDetails
@@ -324,6 +326,8 @@ Core Services
     oci.core.models.LaunchOptions
     oci.core.models.LetterOfAuthority
     oci.core.models.LocalPeeringGateway
+    oci.core.models.MacsecKey
+    oci.core.models.MacsecProperties
     oci.core.models.MeasuredBootEntry
     oci.core.models.MeasuredBootReport
     oci.core.models.MeasuredBootReportMeasurements
@@ -370,10 +374,12 @@ Core Services
     oci.core.models.ShapeSecureBootOptions
     oci.core.models.ShapeTrustedPlatformModuleOptions
     oci.core.models.Subnet
+    oci.core.models.SubnetTopology
     oci.core.models.TcpOptions
     oci.core.models.TerminatePreemptionAction
     oci.core.models.Topology
     oci.core.models.TopologyAssociatedWithEntityRelationship
+    oci.core.models.TopologyAssociatedWithRelationshipDetails
     oci.core.models.TopologyContainsEntityRelationship
     oci.core.models.TopologyEntityRelationship
     oci.core.models.TopologyRoutesToEntityRelationship
@@ -422,6 +428,8 @@ Core Services
     oci.core.models.UpdateIpv6Details
     oci.core.models.UpdateLaunchOptions
     oci.core.models.UpdateLocalPeeringGatewayDetails
+    oci.core.models.UpdateMacsecKey
+    oci.core.models.UpdateMacsecProperties
     oci.core.models.UpdateNatGatewayDetails
     oci.core.models.UpdateNetworkSecurityGroupDetails
     oci.core.models.UpdateNetworkSecurityGroupSecurityRulesDetails

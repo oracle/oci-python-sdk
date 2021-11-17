@@ -38,13 +38,18 @@ class CreateCrossConnectGroupDetails(object):
             The value to assign to the freeform_tags property of this CreateCrossConnectGroupDetails.
         :type freeform_tags: dict(str, str)
 
+        :param macsec_properties:
+            The value to assign to the macsec_properties property of this CreateCrossConnectGroupDetails.
+        :type macsec_properties: oci.core.models.CreateMacsecProperties
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'customer_reference_name': 'str',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'macsec_properties': 'CreateMacsecProperties'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class CreateCrossConnectGroupDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'customer_reference_name': 'customerReferenceName',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'macsec_properties': 'macsecProperties'
         }
 
         self._compartment_id = None
@@ -60,12 +66,15 @@ class CreateCrossConnectGroupDetails(object):
         self._display_name = None
         self._customer_reference_name = None
         self._freeform_tags = None
+        self._macsec_properties = None
 
     @property
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateCrossConnectGroupDetails.
-        The OCID of the compartment to contain the cross-connect group.
+        The `OCID`__ of the compartment to contain the cross-connect group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateCrossConnectGroupDetails.
@@ -77,7 +86,9 @@ class CreateCrossConnectGroupDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateCrossConnectGroupDetails.
-        The OCID of the compartment to contain the cross-connect group.
+        The `OCID`__ of the compartment to contain the cross-connect group.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateCrossConnectGroupDetails.
@@ -204,6 +215,26 @@ class CreateCrossConnectGroupDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def macsec_properties(self):
+        """
+        Gets the macsec_properties of this CreateCrossConnectGroupDetails.
+
+        :return: The macsec_properties of this CreateCrossConnectGroupDetails.
+        :rtype: oci.core.models.CreateMacsecProperties
+        """
+        return self._macsec_properties
+
+    @macsec_properties.setter
+    def macsec_properties(self, macsec_properties):
+        """
+        Sets the macsec_properties of this CreateCrossConnectGroupDetails.
+
+        :param macsec_properties: The macsec_properties of this CreateCrossConnectGroupDetails.
+        :type: oci.core.models.CreateMacsecProperties
+        """
+        self._macsec_properties = macsec_properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

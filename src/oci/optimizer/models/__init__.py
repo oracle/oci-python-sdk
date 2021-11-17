@@ -14,13 +14,19 @@ from .create_profile_details import CreateProfileDetails
 from .enrollment_status import EnrollmentStatus
 from .enrollment_status_collection import EnrollmentStatusCollection
 from .enrollment_status_summary import EnrollmentStatusSummary
+from .evaluated_metric import EvaluatedMetric
 from .history_collection import HistoryCollection
 from .history_summary import HistorySummary
 from .level_configuration import LevelConfiguration
 from .levels_configuration import LevelsConfiguration
 from .profile import Profile
 from .profile_collection import ProfileCollection
+from .profile_level_collection import ProfileLevelCollection
+from .profile_level_summary import ProfileLevelSummary
 from .profile_summary import ProfileSummary
+from .query_details import QueryDetails
+from .queryable_field_collection import QueryableFieldCollection
+from .queryable_field_summary import QueryableFieldSummary
 from .recommendation import Recommendation
 from .recommendation_collection import RecommendationCollection
 from .recommendation_count import RecommendationCount
@@ -62,13 +68,19 @@ optimizer_type_mapping = {
     "EnrollmentStatus": EnrollmentStatus,
     "EnrollmentStatusCollection": EnrollmentStatusCollection,
     "EnrollmentStatusSummary": EnrollmentStatusSummary,
+    "EvaluatedMetric": EvaluatedMetric,
     "HistoryCollection": HistoryCollection,
     "HistorySummary": HistorySummary,
     "LevelConfiguration": LevelConfiguration,
     "LevelsConfiguration": LevelsConfiguration,
     "Profile": Profile,
     "ProfileCollection": ProfileCollection,
+    "ProfileLevelCollection": ProfileLevelCollection,
+    "ProfileLevelSummary": ProfileLevelSummary,
     "ProfileSummary": ProfileSummary,
+    "QueryDetails": QueryDetails,
+    "QueryableFieldCollection": QueryableFieldCollection,
+    "QueryableFieldSummary": QueryableFieldSummary,
     "Recommendation": Recommendation,
     "RecommendationCollection": RecommendationCollection,
     "RecommendationCount": RecommendationCount,

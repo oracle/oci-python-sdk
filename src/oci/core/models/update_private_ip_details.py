@@ -99,8 +99,8 @@ class UpdatePrivateIpDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdatePrivateIpDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this UpdatePrivateIpDetails.
@@ -112,8 +112,8 @@ class UpdatePrivateIpDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdatePrivateIpDetails.
-        A user-friendly name. Does not have to be unique, and it's changeable. Avoid
-        entering confidential information.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdatePrivateIpDetails.
@@ -211,8 +211,10 @@ class UpdatePrivateIpDetails(object):
     def vnic_id(self):
         """
         Gets the vnic_id of this UpdatePrivateIpDetails.
-        The OCID of the VNIC to reassign the private IP to. The VNIC must
+        The `OCID`__ of the VNIC to reassign the private IP to. The VNIC must
         be in the same subnet as the current VNIC.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The vnic_id of this UpdatePrivateIpDetails.
@@ -224,8 +226,10 @@ class UpdatePrivateIpDetails(object):
     def vnic_id(self, vnic_id):
         """
         Sets the vnic_id of this UpdatePrivateIpDetails.
-        The OCID of the VNIC to reassign the private IP to. The VNIC must
+        The `OCID`__ of the VNIC to reassign the private IP to. The VNIC must
         be in the same subnet as the current VNIC.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param vnic_id: The vnic_id of this UpdatePrivateIpDetails.

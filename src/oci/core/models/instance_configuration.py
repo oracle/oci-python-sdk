@@ -154,7 +154,8 @@ class InstanceConfiguration(object):
     def display_name(self):
         """
         Gets the display_name of this InstanceConfiguration.
-        A user-friendly name for the instance configuration.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :return: The display_name of this InstanceConfiguration.
@@ -166,7 +167,8 @@ class InstanceConfiguration(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this InstanceConfiguration.
-        A user-friendly name for the instance configuration.
+        A user-friendly name. Does not have to be unique, and it's changeable.
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this InstanceConfiguration.
