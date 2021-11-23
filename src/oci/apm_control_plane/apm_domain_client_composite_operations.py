@@ -29,7 +29,7 @@ class ApmDomainClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param oci.apm_control_plane.models.ChangeApmDomainCompartmentDetails change_apm_domain_compartment_details: (required)
             The information to be used in changing compartment.
@@ -70,7 +70,7 @@ class ApmDomainClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.apm_control_plane.models.CreateApmDomainDetails create_apm_domain_details: (required)
-            Details for the new APM Domain.
+            Details for the new APM domain.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.apm_control_plane.models.WorkRequest.status`
@@ -108,7 +108,7 @@ class ApmDomainClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.apm_control_plane.models.WorkRequest.status`
@@ -157,7 +157,7 @@ class ApmDomainClientCompositeOperations(object):
             List of new Data Keys to be generated.
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.apm_control_plane.models.WorkRequest.status`
@@ -195,7 +195,7 @@ class ApmDomainClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param list[RemoveDataKeyDetails] remove_data_keys_list_details: (required)
             List of Data Keys to be removed.
@@ -236,10 +236,10 @@ class ApmDomainClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param oci.apm_control_plane.models.UpdateApmDomainDetails update_apm_domain_details: (required)
-            The information to be updated for the APM Domain.
+            The information to be updated for the APM domain.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.apm_control_plane.models.WorkRequest.status`

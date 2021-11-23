@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateGitlabTriggerDetails(UpdateTriggerDetails):
     """
-    Update Trigger specific to Github
+    Update trigger specific to GitLab.
     """
 
     def __init__(self, **kwargs):

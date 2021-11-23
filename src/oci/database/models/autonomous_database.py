@@ -169,6 +169,30 @@ class AutonomousDatabase(object):
     #: This constant has a value of "FAILED_DISABLING"
     OPERATIONS_INSIGHTS_STATUS_FAILED_DISABLING = "FAILED_DISABLING"
 
+    #: A constant which can be used with the database_management_status property of a AutonomousDatabase.
+    #: This constant has a value of "ENABLING"
+    DATABASE_MANAGEMENT_STATUS_ENABLING = "ENABLING"
+
+    #: A constant which can be used with the database_management_status property of a AutonomousDatabase.
+    #: This constant has a value of "ENABLED"
+    DATABASE_MANAGEMENT_STATUS_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the database_management_status property of a AutonomousDatabase.
+    #: This constant has a value of "DISABLING"
+    DATABASE_MANAGEMENT_STATUS_DISABLING = "DISABLING"
+
+    #: A constant which can be used with the database_management_status property of a AutonomousDatabase.
+    #: This constant has a value of "NOT_ENABLED"
+    DATABASE_MANAGEMENT_STATUS_NOT_ENABLED = "NOT_ENABLED"
+
+    #: A constant which can be used with the database_management_status property of a AutonomousDatabase.
+    #: This constant has a value of "FAILED_ENABLING"
+    DATABASE_MANAGEMENT_STATUS_FAILED_ENABLING = "FAILED_ENABLING"
+
+    #: A constant which can be used with the database_management_status property of a AutonomousDatabase.
+    #: This constant has a value of "FAILED_DISABLING"
+    DATABASE_MANAGEMENT_STATUS_FAILED_DISABLING = "FAILED_DISABLING"
+
     #: A constant which can be used with the open_mode property of a AutonomousDatabase.
     #: This constant has a value of "READ_ONLY"
     OPEN_MODE_READ_ONLY = "READ_ONLY"
@@ -430,6 +454,12 @@ class AutonomousDatabase(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operations_insights_status: str
 
+        :param database_management_status:
+            The value to assign to the database_management_status property of this AutonomousDatabase.
+            Allowed values for this property are: "ENABLING", "ENABLED", "DISABLING", "NOT_ENABLED", "FAILED_ENABLING", "FAILED_DISABLING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type database_management_status: str
+
         :param time_maintenance_begin:
             The value to assign to the time_maintenance_begin property of this AutonomousDatabase.
         :type time_maintenance_begin: datetime
@@ -604,6 +634,7 @@ class AutonomousDatabase(object):
             'is_auto_scaling_enabled': 'bool',
             'data_safe_status': 'str',
             'operations_insights_status': 'str',
+            'database_management_status': 'str',
             'time_maintenance_begin': 'datetime',
             'time_maintenance_end': 'datetime',
             'is_refreshable_clone': 'bool',
@@ -681,6 +712,7 @@ class AutonomousDatabase(object):
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'data_safe_status': 'dataSafeStatus',
             'operations_insights_status': 'operationsInsightsStatus',
+            'database_management_status': 'databaseManagementStatus',
             'time_maintenance_begin': 'timeMaintenanceBegin',
             'time_maintenance_end': 'timeMaintenanceEnd',
             'is_refreshable_clone': 'isRefreshableClone',
@@ -757,6 +789,7 @@ class AutonomousDatabase(object):
         self._is_auto_scaling_enabled = None
         self._data_safe_status = None
         self._operations_insights_status = None
+        self._database_management_status = None
         self._time_maintenance_begin = None
         self._time_maintenance_end = None
         self._is_refreshable_clone = None
@@ -2103,6 +2136,36 @@ class AutonomousDatabase(object):
         if not value_allowed_none_or_none_sentinel(operations_insights_status, allowed_values):
             operations_insights_status = 'UNKNOWN_ENUM_VALUE'
         self._operations_insights_status = operations_insights_status
+
+    @property
+    def database_management_status(self):
+        """
+        Gets the database_management_status of this AutonomousDatabase.
+        Status of Database Management for this Autonomous Database.
+
+        Allowed values for this property are: "ENABLING", "ENABLED", "DISABLING", "NOT_ENABLED", "FAILED_ENABLING", "FAILED_DISABLING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The database_management_status of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._database_management_status
+
+    @database_management_status.setter
+    def database_management_status(self, database_management_status):
+        """
+        Sets the database_management_status of this AutonomousDatabase.
+        Status of Database Management for this Autonomous Database.
+
+
+        :param database_management_status: The database_management_status of this AutonomousDatabase.
+        :type: str
+        """
+        allowed_values = ["ENABLING", "ENABLED", "DISABLING", "NOT_ENABLED", "FAILED_ENABLING", "FAILED_DISABLING"]
+        if not value_allowed_none_or_none_sentinel(database_management_status, allowed_values):
+            database_management_status = 'UNKNOWN_ENUM_VALUE'
+        self._database_management_status = database_management_status
 
     @property
     def time_maintenance_begin(self):

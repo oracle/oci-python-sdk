@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.apm.controller.spec</groupId>
         <artifactId>apm-controller-spec</artifactId>
-        <version>20200630.3.2</version>
+        <version>20200630.4.14</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -58,10 +58,10 @@ class TriggerSchedule(object):
     def schedule_type(self):
         """
         **[Required]** Gets the schedule_type of this TriggerSchedule.
-        Different types to trigger schedule
-        - NONE - No automated sync schedule.
-        - DEFAULT - Trigger Schedule will be every 30 minutes.
-        - CUSTOM - Custom triggering schedule.
+        Different types of trigger schedule:
+        None - No automated synchronization schedule.
+        Default - Trigger schedule is every 30 minutes.
+        Custom - Custom triggering schedule.
 
         Allowed values for this property are: "NONE", "DEFAULT", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -76,10 +76,10 @@ class TriggerSchedule(object):
     def schedule_type(self, schedule_type):
         """
         Sets the schedule_type of this TriggerSchedule.
-        Different types to trigger schedule
-        - NONE - No automated sync schedule.
-        - DEFAULT - Trigger Schedule will be every 30 minutes.
-        - CUSTOM - Custom triggering schedule.
+        Different types of trigger schedule:
+        None - No automated synchronization schedule.
+        Default - Trigger schedule is every 30 minutes.
+        Custom - Custom triggering schedule.
 
 
         :param schedule_type: The schedule_type of this TriggerSchedule.
@@ -95,8 +95,8 @@ class TriggerSchedule(object):
         """
         Gets the custom_schedule of this TriggerSchedule.
         Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size.
-        Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window, we can
-        control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+        Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.
+        You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
 
 
         :return: The custom_schedule of this TriggerSchedule.
@@ -109,8 +109,8 @@ class TriggerSchedule(object):
         """
         Sets the custom_schedule of this TriggerSchedule.
         Valid if type is CUSTOM. Following RFC 5545 recurrence rules, we can specify starting time, occurrence frequency, and interval size.
-        Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window, we can
-        control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
+        Example for frequency could be DAILY/WEEKLY/HOURLY or any RFC 5545 supported frequency, which is followed by start time of this window.
+        You can control the start time with BYHOUR, BYMINUTE and BYSECONDS. It is followed by the interval size.
 
 
         :param custom_schedule: The custom_schedule of this TriggerSchedule.

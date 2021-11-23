@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FileLineDetails(object):
     """
-    Object containing the details of a line in a file
+    Object containing the details of a line in a file.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class FileLineDetails(object):
     def line_number(self):
         """
         **[Required]** Gets the line_number of this FileLineDetails.
-        The line number
+        The line number.
 
 
         :return: The line_number of this FileLineDetails.
@@ -56,7 +56,7 @@ class FileLineDetails(object):
     def line_number(self, line_number):
         """
         Sets the line_number of this FileLineDetails.
-        The line number
+        The line number.
 
 
         :param line_number: The line_number of this FileLineDetails.
@@ -68,7 +68,7 @@ class FileLineDetails(object):
     def line_content(self):
         """
         **[Required]** Gets the line_content of this FileLineDetails.
-        The content of the line
+        The content of the line.
 
 
         :return: The line_content of this FileLineDetails.
@@ -80,7 +80,7 @@ class FileLineDetails(object):
     def line_content(self, line_content):
         """
         Sets the line_content of this FileLineDetails.
-        The content of the line
+        The content of the line.
 
 
         :param line_content: The line_content of this FileLineDetails.

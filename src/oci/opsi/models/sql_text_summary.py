@@ -30,6 +30,10 @@ class SqlTextSummary(object):
             The value to assign to the database_id property of this SqlTextSummary.
         :type database_id: str
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this SqlTextSummary.
+        :type compartment_id: str
+
         :param sql_text:
             The value to assign to the sql_text property of this SqlTextSummary.
         :type sql_text: str
@@ -39,6 +43,7 @@ class SqlTextSummary(object):
             'sql_identifier': 'str',
             'id': 'str',
             'database_id': 'str',
+            'compartment_id': 'str',
             'sql_text': 'str'
         }
 
@@ -46,12 +51,14 @@ class SqlTextSummary(object):
             'sql_identifier': 'sqlIdentifier',
             'id': 'id',
             'database_id': 'databaseId',
+            'compartment_id': 'compartmentId',
             'sql_text': 'sqlText'
         }
 
         self._sql_identifier = None
         self._id = None
         self._database_id = None
+        self._compartment_id = None
         self._sql_text = None
 
     @property
@@ -133,6 +140,34 @@ class SqlTextSummary(object):
         :type: str
         """
         self._database_id = database_id
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this SqlTextSummary.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this SqlTextSummary.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this SqlTextSummary.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this SqlTextSummary.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def sql_text(self):

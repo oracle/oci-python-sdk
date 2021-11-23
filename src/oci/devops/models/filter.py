@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Filter(object):
     """
-    The filters for the trigger
+    The filters for the trigger.
     """
 
     def __init__(self, **kwargs):
@@ -62,7 +62,7 @@ class Filter(object):
     def trigger_source(self):
         """
         **[Required]** Gets the trigger_source of this Filter.
-        Source of the Trigger (allowed values are - GITHUB, GITLAB)
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
 
 
         :return: The trigger_source of this Filter.
@@ -74,7 +74,7 @@ class Filter(object):
     def trigger_source(self, trigger_source):
         """
         Sets the trigger_source of this Filter.
-        Source of the Trigger (allowed values are - GITHUB, GITLAB)
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
 
 
         :param trigger_source: The trigger_source of this Filter.

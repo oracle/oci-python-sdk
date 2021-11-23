@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DevopsCodeRepositoryTriggerCreateResult(TriggerCreateResult):
     """
-    Trigger Create response specific to Gitlab
+    Trigger create response specific to GitLab.
     """
 
     def __init__(self, **kwargs):
@@ -137,7 +137,7 @@ class DevopsCodeRepositoryTriggerCreateResult(TriggerCreateResult):
     def repository_id(self):
         """
         **[Required]** Gets the repository_id of this DevopsCodeRepositoryTriggerCreateResult.
-        The id of the OCI Devops Repository
+        The OCID of the DevOps code repository.
 
 
         :return: The repository_id of this DevopsCodeRepositoryTriggerCreateResult.
@@ -149,7 +149,7 @@ class DevopsCodeRepositoryTriggerCreateResult(TriggerCreateResult):
     def repository_id(self, repository_id):
         """
         Sets the repository_id of this DevopsCodeRepositoryTriggerCreateResult.
-        The id of the OCI Devops Repository
+        The OCID of the DevOps code repository.
 
 
         :param repository_id: The repository_id of this DevopsCodeRepositoryTriggerCreateResult.

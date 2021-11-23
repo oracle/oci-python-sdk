@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DeliverArtifactCollection(object):
     """
-    Specifies an array of Artifacts that need to be pushed to the artifactory stores.
+    Specifies an array of artifacts that need to be pushed to the artifactory stores.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DeliverArtifactCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DeliverArtifactCollection.
-        Collection of Artifacts that were generated in the Build Stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+        Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
 
 
         :return: The items of this DeliverArtifactCollection.
@@ -49,7 +49,7 @@ class DeliverArtifactCollection(object):
     def items(self, items):
         """
         Sets the items of this DeliverArtifactCollection.
-        Collection of Artifacts that were generated in the Build Stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+        Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
 
 
         :param items: The items of this DeliverArtifactCollection.

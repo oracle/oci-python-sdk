@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpgradeDeploymentDetails(object):
     """
-    The information about the Patch for a Deployment.
+    The information about the Upgrade for a Deployment.
     """
 
     #: A constant which can be used with the type property of a UpgradeDeploymentDetails.

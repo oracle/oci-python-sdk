@@ -37,7 +37,7 @@ class ChangeApmDomainCompartmentDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ChangeApmDomainCompartmentDetails.
-        The OCID of the destination compartment for the APM Domain.
+        The OCID of the destination compartment for the APM domain.
 
 
         :return: The compartment_id of this ChangeApmDomainCompartmentDetails.
@@ -49,7 +49,7 @@ class ChangeApmDomainCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeApmDomainCompartmentDetails.
-        The OCID of the destination compartment for the APM Domain.
+        The OCID of the destination compartment for the APM domain.
 
 
         :param compartment_id: The compartment_id of this ChangeApmDomainCompartmentDetails.

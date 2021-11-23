@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TriggerCreateResult(object):
     """
-    Description of Trigger Create response.
+    Details of the trigger create response.
     """
 
     def __init__(self, **kwargs):
@@ -153,7 +153,7 @@ class TriggerCreateResult(object):
     def id(self):
         """
         **[Required]** Gets the id of this TriggerCreateResult.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :return: The id of this TriggerCreateResult.
@@ -165,7 +165,7 @@ class TriggerCreateResult(object):
     def id(self, id):
         """
         Sets the id of this TriggerCreateResult.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :param id: The id of this TriggerCreateResult.
@@ -177,7 +177,7 @@ class TriggerCreateResult(object):
     def display_name(self):
         """
         Gets the display_name of this TriggerCreateResult.
-        Name for Trigger.
+        Trigger display name. Avoid entering confidential information.
 
 
         :return: The display_name of this TriggerCreateResult.
@@ -189,7 +189,7 @@ class TriggerCreateResult(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TriggerCreateResult.
-        Name for Trigger.
+        Trigger display name. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this TriggerCreateResult.
@@ -201,7 +201,7 @@ class TriggerCreateResult(object):
     def description(self):
         """
         Gets the description of this TriggerCreateResult.
-        Description about the Trigger
+        Description about the trigger.
 
 
         :return: The description of this TriggerCreateResult.
@@ -213,7 +213,7 @@ class TriggerCreateResult(object):
     def description(self, description):
         """
         Sets the description of this TriggerCreateResult.
-        Description about the Trigger
+        Description about the trigger.
 
 
         :param description: The description of this TriggerCreateResult.
@@ -225,7 +225,7 @@ class TriggerCreateResult(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this TriggerCreateResult.
-        Project to which the Trigger belongs
+        The OCID of the DevOps project to which the trigger belongs to.
 
 
         :return: The project_id of this TriggerCreateResult.
@@ -237,7 +237,7 @@ class TriggerCreateResult(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this TriggerCreateResult.
-        Project to which the Trigger belongs
+        The OCID of the DevOps project to which the trigger belongs to.
 
 
         :param project_id: The project_id of this TriggerCreateResult.
@@ -249,7 +249,7 @@ class TriggerCreateResult(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this TriggerCreateResult.
-        Compartment to which the Trigger belongs
+        The OCID of the compartment that contains the trigger.
 
 
         :return: The compartment_id of this TriggerCreateResult.
@@ -261,7 +261,7 @@ class TriggerCreateResult(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TriggerCreateResult.
-        Compartment to which the Trigger belongs
+        The OCID of the compartment that contains the trigger.
 
 
         :param compartment_id: The compartment_id of this TriggerCreateResult.
@@ -273,7 +273,7 @@ class TriggerCreateResult(object):
     def trigger_source(self):
         """
         **[Required]** Gets the trigger_source of this TriggerCreateResult.
-        Source of the Trigger (allowed values are - GITHUB, GITLAB)
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
 
 
         :return: The trigger_source of this TriggerCreateResult.
@@ -285,7 +285,7 @@ class TriggerCreateResult(object):
     def trigger_source(self, trigger_source):
         """
         Sets the trigger_source of this TriggerCreateResult.
-        Source of the Trigger (allowed values are - GITHUB, GITLAB)
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
 
 
         :param trigger_source: The trigger_source of this TriggerCreateResult.
@@ -297,7 +297,9 @@ class TriggerCreateResult(object):
     def time_created(self):
         """
         Gets the time_created of this TriggerCreateResult.
-        The time the the Trigger was created. An RFC3339 formatted datetime string
+        The time the trigger was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_created of this TriggerCreateResult.
@@ -309,7 +311,9 @@ class TriggerCreateResult(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this TriggerCreateResult.
-        The time the the Trigger was created. An RFC3339 formatted datetime string
+        The time the trigger was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_created: The time_created of this TriggerCreateResult.
@@ -321,7 +325,9 @@ class TriggerCreateResult(object):
     def time_updated(self):
         """
         Gets the time_updated of this TriggerCreateResult.
-        The time the Trigger was updated. An RFC3339 formatted datetime string
+        The time the trigger was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_updated of this TriggerCreateResult.
@@ -333,7 +339,9 @@ class TriggerCreateResult(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this TriggerCreateResult.
-        The time the Trigger was updated. An RFC3339 formatted datetime string
+        The time the trigger was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_updated: The time_updated of this TriggerCreateResult.
@@ -345,7 +353,7 @@ class TriggerCreateResult(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this TriggerCreateResult.
-        The current state of the Trigger.
+        The current state of the trigger.
 
 
         :return: The lifecycle_state of this TriggerCreateResult.
@@ -357,7 +365,7 @@ class TriggerCreateResult(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this TriggerCreateResult.
-        The current state of the Trigger.
+        The current state of the trigger.
 
 
         :param lifecycle_state: The lifecycle_state of this TriggerCreateResult.
@@ -393,7 +401,7 @@ class TriggerCreateResult(object):
     def actions(self):
         """
         **[Required]** Gets the actions of this TriggerCreateResult.
-        The list of actions that are to be performed for this Trigger
+        The list of actions that are to be performed for this trigger.
 
 
         :return: The actions of this TriggerCreateResult.
@@ -405,7 +413,7 @@ class TriggerCreateResult(object):
     def actions(self, actions):
         """
         Sets the actions of this TriggerCreateResult.
-        The list of actions that are to be performed for this Trigger
+        The list of actions that are to be performed for this trigger.
 
 
         :param actions: The actions of this TriggerCreateResult.

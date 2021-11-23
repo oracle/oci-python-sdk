@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositorySummary(object):
     """
-    Summary of the Repository.
+    Summary of the repository.
     """
 
     def __init__(self, **kwargs):
@@ -211,7 +211,7 @@ class RepositorySummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this RepositorySummary.
-        The OCID of the repository's Compartment.
+        The OCID of the repository's compartment.
 
 
         :return: The compartment_id of this RepositorySummary.
@@ -223,7 +223,7 @@ class RepositorySummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this RepositorySummary.
-        The OCID of the repository's Compartment.
+        The OCID of the repository's compartment.
 
 
         :param compartment_id: The compartment_id of this RepositorySummary.
@@ -235,7 +235,7 @@ class RepositorySummary(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this RepositorySummary.
-        The OCID of the Project containing the repository.
+        The OCID of the DevOps project containing the repository.
 
 
         :return: The project_id of this RepositorySummary.
@@ -247,7 +247,7 @@ class RepositorySummary(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this RepositorySummary.
-        The OCID of the Project containing the repository.
+        The OCID of the DevOps project containing the repository.
 
 
         :param project_id: The project_id of this RepositorySummary.
@@ -259,7 +259,7 @@ class RepositorySummary(object):
     def namespace(self):
         """
         Gets the namespace of this RepositorySummary.
-        Tenancy unique namespace. This value is fetched from Project Service
+        Tenancy unique namespace.
 
 
         :return: The namespace of this RepositorySummary.
@@ -271,7 +271,7 @@ class RepositorySummary(object):
     def namespace(self, namespace):
         """
         Sets the namespace of this RepositorySummary.
-        Tenancy unique namespace. This value is fetched from Project Service
+        Tenancy unique namespace.
 
 
         :param namespace: The namespace of this RepositorySummary.
@@ -283,7 +283,7 @@ class RepositorySummary(object):
     def project_name(self):
         """
         Gets the project_name of this RepositorySummary.
-        Unique name of a project in a namespace. This value is fetched from Project Service
+        Unique project name in a namespace.
 
 
         :return: The project_name of this RepositorySummary.
@@ -295,7 +295,7 @@ class RepositorySummary(object):
     def project_name(self, project_name):
         """
         Sets the project_name of this RepositorySummary.
-        Unique name of a project in a namespace. This value is fetched from Project Service
+        Unique project name in a namespace.
 
 
         :param project_name: The project_name of this RepositorySummary.
@@ -307,7 +307,7 @@ class RepositorySummary(object):
     def description(self):
         """
         Gets the description of this RepositorySummary.
-        The description of this repository. Avoid entering confidential information
+        Details of the repository. Avoid entering confidential information.
 
 
         :return: The description of this RepositorySummary.
@@ -319,7 +319,7 @@ class RepositorySummary(object):
     def description(self, description):
         """
         Sets the description of this RepositorySummary.
-        The description of this repository. Avoid entering confidential information
+        Details of the repository. Avoid entering confidential information.
 
 
         :param description: The description of this RepositorySummary.
@@ -331,7 +331,7 @@ class RepositorySummary(object):
     def default_branch(self):
         """
         Gets the default_branch of this RepositorySummary.
-        The default branch of the repository
+        The default branch of the repository.
 
 
         :return: The default_branch of this RepositorySummary.
@@ -343,7 +343,7 @@ class RepositorySummary(object):
     def default_branch(self, default_branch):
         """
         Sets the default_branch of this RepositorySummary.
-        The default branch of the repository
+        The default branch of the repository.
 
 
         :param default_branch: The default_branch of this RepositorySummary.
@@ -355,7 +355,7 @@ class RepositorySummary(object):
     def repository_type(self):
         """
         Gets the repository_type of this RepositorySummary.
-        Type of repository
+        Type of repository.
 
 
         :return: The repository_type of this RepositorySummary.
@@ -367,7 +367,7 @@ class RepositorySummary(object):
     def repository_type(self, repository_type):
         """
         Sets the repository_type of this RepositorySummary.
-        Type of repository
+        Type of repository.
 
 
         :param repository_type: The repository_type of this RepositorySummary.
@@ -379,7 +379,7 @@ class RepositorySummary(object):
     def ssh_url(self):
         """
         Gets the ssh_url of this RepositorySummary.
-        ssh url user utilized to git clone, pull and push
+        SSH URL that you use to git clone, pull and push.
 
 
         :return: The ssh_url of this RepositorySummary.
@@ -391,7 +391,7 @@ class RepositorySummary(object):
     def ssh_url(self, ssh_url):
         """
         Sets the ssh_url of this RepositorySummary.
-        ssh url user utilized to git clone, pull and push
+        SSH URL that you use to git clone, pull and push.
 
 
         :param ssh_url: The ssh_url of this RepositorySummary.
@@ -403,7 +403,7 @@ class RepositorySummary(object):
     def http_url(self):
         """
         Gets the http_url of this RepositorySummary.
-        http url user utilized to git clone, pull and push
+        HTTP URL that you use to git clone, pull and push.
 
 
         :return: The http_url of this RepositorySummary.
@@ -415,7 +415,7 @@ class RepositorySummary(object):
     def http_url(self, http_url):
         """
         Sets the http_url of this RepositorySummary.
-        http url user utilized to git clone, pull and push
+        HTTP URL that you use to git clone, pull and push.
 
 
         :param http_url: The http_url of this RepositorySummary.
@@ -447,7 +447,9 @@ class RepositorySummary(object):
     def time_created(self):
         """
         Gets the time_created of this RepositorySummary.
-        The time the the Repository was created. An RFC3339 formatted datetime string
+        The time the repository was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_created of this RepositorySummary.
@@ -459,7 +461,9 @@ class RepositorySummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this RepositorySummary.
-        The time the the Repository was created. An RFC3339 formatted datetime string
+        The time the repository was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_created: The time_created of this RepositorySummary.
@@ -471,7 +475,9 @@ class RepositorySummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this RepositorySummary.
-        The time the Repository was updated. An RFC3339 formatted datetime string
+        The time the repository was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_updated of this RepositorySummary.
@@ -483,7 +489,9 @@ class RepositorySummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this RepositorySummary.
-        The time the Repository was updated. An RFC3339 formatted datetime string
+        The time the repository was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_updated: The time_updated of this RepositorySummary.
@@ -495,7 +503,7 @@ class RepositorySummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this RepositorySummary.
-        The current state of the Repository.
+        The current state of the repository.
 
 
         :return: The lifecycle_state of this RepositorySummary.
@@ -507,7 +515,7 @@ class RepositorySummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this RepositorySummary.
-        The current state of the Repository.
+        The current state of the repository.
 
 
         :param lifecycle_state: The lifecycle_state of this RepositorySummary.

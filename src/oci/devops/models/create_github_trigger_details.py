@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateGithubTriggerDetails(CreateTriggerDetails):
     """
-    The Trigger for Github as the caller
+    The trigger for GitHub as the caller.
     """
 
     def __init__(self, **kwargs):

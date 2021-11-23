@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateAbsoluteWaitCriteriaDetails(UpdateWaitCriteriaDetails):
     """
-    Specifies the absolute wait criteria, user can specify fixed length of wait duration.
+    Specifies the absolute wait criteria. You can specify fixed length of wait duration.
     """
 
     def __init__(self, **kwargs):
@@ -48,8 +48,8 @@ class UpdateAbsoluteWaitCriteriaDetails(UpdateWaitCriteriaDetails):
         """
         Gets the wait_duration of this UpdateAbsoluteWaitCriteriaDetails.
         The absolute wait duration.
-        Minimum waitDuration should be 5 seconds.
-        Maximum waitDuration can be up to 2 days.
+        Minimum wait duration must be 5 seconds.
+        Maximum wait duration can be up to 2 days.
 
 
         :return: The wait_duration of this UpdateAbsoluteWaitCriteriaDetails.
@@ -62,8 +62,8 @@ class UpdateAbsoluteWaitCriteriaDetails(UpdateWaitCriteriaDetails):
         """
         Sets the wait_duration of this UpdateAbsoluteWaitCriteriaDetails.
         The absolute wait duration.
-        Minimum waitDuration should be 5 seconds.
-        Maximum waitDuration can be up to 2 days.
+        Minimum wait duration must be 5 seconds.
+        Maximum wait duration can be up to 2 days.
 
 
         :param wait_duration: The wait_duration of this UpdateAbsoluteWaitCriteriaDetails.

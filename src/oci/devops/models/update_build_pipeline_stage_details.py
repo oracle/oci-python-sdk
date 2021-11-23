@@ -101,7 +101,7 @@ class UpdateBuildPipelineStageDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateBuildPipelineStageDetails.
-        Stage identifier which can be renamed and is not necessarily unique
+        Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateBuildPipelineStageDetails.
@@ -113,7 +113,7 @@ class UpdateBuildPipelineStageDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateBuildPipelineStageDetails.
-        Stage identifier which can be renamed and is not necessarily unique
+        Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateBuildPipelineStageDetails.
@@ -125,7 +125,7 @@ class UpdateBuildPipelineStageDetails(object):
     def description(self):
         """
         Gets the description of this UpdateBuildPipelineStageDetails.
-        Optional description about the BuildStage
+        Optional description about the build stage.
 
 
         :return: The description of this UpdateBuildPipelineStageDetails.
@@ -137,7 +137,7 @@ class UpdateBuildPipelineStageDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateBuildPipelineStageDetails.
-        Optional description about the BuildStage
+        Optional description about the build stage.
 
 
         :param description: The description of this UpdateBuildPipelineStageDetails.
@@ -149,7 +149,7 @@ class UpdateBuildPipelineStageDetails(object):
     def build_pipeline_stage_type(self):
         """
         **[Required]** Gets the build_pipeline_stage_type of this UpdateBuildPipelineStageDetails.
-        Stage sub types.
+        Stage types.
 
 
         :return: The build_pipeline_stage_type of this UpdateBuildPipelineStageDetails.
@@ -161,7 +161,7 @@ class UpdateBuildPipelineStageDetails(object):
     def build_pipeline_stage_type(self, build_pipeline_stage_type):
         """
         Sets the build_pipeline_stage_type of this UpdateBuildPipelineStageDetails.
-        Stage sub types.
+        Stage types.
 
 
         :param build_pipeline_stage_type: The build_pipeline_stage_type of this UpdateBuildPipelineStageDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildRunArgument(object):
     """
-    Values for pipeline parameters to be supplied at the time of run.
+    Values for pipeline parameters to be supplied at the time of running the build.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,8 @@ class BuildRunArgument(object):
     def name(self):
         """
         **[Required]** Gets the name of this BuildRunArgument.
-        Name of the parameter (Case-sensitive).
+        Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+        Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
 
 
         :return: The name of this BuildRunArgument.
@@ -56,7 +57,8 @@ class BuildRunArgument(object):
     def name(self, name):
         """
         Sets the name of this BuildRunArgument.
-        Name of the parameter (Case-sensitive).
+        Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+        Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
 
 
         :param name: The name of this BuildRunArgument.
@@ -68,7 +70,7 @@ class BuildRunArgument(object):
     def value(self):
         """
         **[Required]** Gets the value of this BuildRunArgument.
-        value of the argument
+        Value of the argument.
 
 
         :return: The value of this BuildRunArgument.
@@ -80,7 +82,7 @@ class BuildRunArgument(object):
     def value(self, value):
         """
         Sets the value of this BuildRunArgument.
-        value of the argument
+        Value of the argument.
 
 
         :param value: The value of this BuildRunArgument.

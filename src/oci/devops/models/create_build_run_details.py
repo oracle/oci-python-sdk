@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateBuildRunDetails(object):
     """
-    The information about new BuildRun.
+    Information about the new build run.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class CreateBuildRunDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateBuildRunDetails.
-        BuildRun identifier which can be renamed and is not necessarily unique
+        Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateBuildRunDetails.
@@ -84,7 +84,7 @@ class CreateBuildRunDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateBuildRunDetails.
-        BuildRun identifier which can be renamed and is not necessarily unique
+        Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateBuildRunDetails.
@@ -96,7 +96,7 @@ class CreateBuildRunDetails(object):
     def build_pipeline_id(self):
         """
         **[Required]** Gets the build_pipeline_id of this CreateBuildRunDetails.
-        Pipeline Identifier
+        The OCID of the build pipeline.
 
 
         :return: The build_pipeline_id of this CreateBuildRunDetails.
@@ -108,7 +108,7 @@ class CreateBuildRunDetails(object):
     def build_pipeline_id(self, build_pipeline_id):
         """
         Sets the build_pipeline_id of this CreateBuildRunDetails.
-        Pipeline Identifier
+        The OCID of the build pipeline.
 
 
         :param build_pipeline_id: The build_pipeline_id of this CreateBuildRunDetails.

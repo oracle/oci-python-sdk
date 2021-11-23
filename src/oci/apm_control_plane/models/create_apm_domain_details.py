@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateApmDomainDetails(object):
     """
-    The information about new APM Domain.
+    The information about the new APM domain.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class CreateApmDomainDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateApmDomainDetails.
-        Display name of the APM Domain
+        Display name of the APM domain.
 
 
         :return: The display_name of this CreateApmDomainDetails.
@@ -84,7 +84,7 @@ class CreateApmDomainDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateApmDomainDetails.
-        Display name of the APM Domain
+        Display name of the APM domain.
 
 
         :param display_name: The display_name of this CreateApmDomainDetails.
@@ -96,7 +96,7 @@ class CreateApmDomainDetails(object):
     def description(self):
         """
         Gets the description of this CreateApmDomainDetails.
-        Description of the APM Domain
+        Description of the APM domain.
 
 
         :return: The description of this CreateApmDomainDetails.
@@ -108,7 +108,7 @@ class CreateApmDomainDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateApmDomainDetails.
-        Description of the APM Domain
+        Description of the APM domain.
 
 
         :param description: The description of this CreateApmDomainDetails.
@@ -120,7 +120,7 @@ class CreateApmDomainDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateApmDomainDetails.
-        The OCID of the compartment corresponding to the APM Domain.
+        The OCID of the compartment corresponding to the APM domain.
 
 
         :return: The compartment_id of this CreateApmDomainDetails.
@@ -132,7 +132,7 @@ class CreateApmDomainDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateApmDomainDetails.
-        The OCID of the compartment corresponding to the APM Domain.
+        The OCID of the compartment corresponding to the APM domain.
 
 
         :param compartment_id: The compartment_id of this CreateApmDomainDetails.

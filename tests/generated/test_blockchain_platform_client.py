@@ -521,6 +521,66 @@ def test_get_work_request(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="bcs_devops_ww_grp@oracle.com" jiraProject="OBP" opsJiraProject="OBP"
+def test_list_blockchain_platform_patches(testing_service_client):
+    if not testing_service_client.is_api_enabled('blockchain', 'ListBlockchainPlatformPatches'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('blockchain', util.camelize('blockchain_platform'), 'ListBlockchainPlatformPatches')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='blockchain', api_name='ListBlockchainPlatformPatches')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
+            response = client.list_blockchain_platform_patches(
+                blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_blockchain_platform_patches(
+                    blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_blockchain_platform_patches(
+                        blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'blockchain',
+            'ListBlockchainPlatformPatches',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'blockchainPlatformPatchCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="bcs_devops_ww_grp@oracle.com" jiraProject="OBP" opsJiraProject="OBP"
 def test_list_blockchain_platforms(testing_service_client):
     if not testing_service_client.is_api_enabled('blockchain', 'ListBlockchainPlatforms'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1165,6 +1225,47 @@ def test_update_peer(testing_service_client):
             result,
             service_error,
             'update_peer',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bcs_devops_ww_grp@oracle.com" jiraProject="OBP" opsJiraProject="OBP"
+def test_upgrade_blockchain_platform(testing_service_client):
+    if not testing_service_client.is_api_enabled('blockchain', 'UpgradeBlockchainPlatform'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('blockchain', util.camelize('blockchain_platform'), 'UpgradeBlockchainPlatform')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='blockchain', api_name='UpgradeBlockchainPlatform')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.blockchain.BlockchainPlatformClient(config, service_endpoint=service_endpoint)
+            response = client.upgrade_blockchain_platform(
+                upgrade_blockchain_platform_details=request.pop(util.camelize('UpgradeBlockchainPlatformDetails')),
+                blockchain_platform_id=request.pop(util.camelize('blockchainPlatformId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'blockchain',
+            'UpgradeBlockchainPlatform',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'upgrade_blockchain_platform',
             False,
             False
         )

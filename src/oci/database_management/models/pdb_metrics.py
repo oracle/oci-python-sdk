@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PdbMetrics(object):
     """
-    The summary of Pdb's and it's resource usage metrics (CPU, IO, Storage and Active sessions) for a specified Container database.
+    The summary of Pluggable Databases (PDBs) and their resource usage metrics, within a specific Container Database (CDB).
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class PdbMetrics(object):
     def database_usage_metrics(self):
         """
         **[Required]** Gets the database_usage_metrics of this PdbMetrics.
-        The summary of Pdb's and it's resource usage metrics (CPU, IO, Storage and Active sessions) for a specified Container database.
+        A summary of PDBs and their resource usage metrics such as CPU, User I/O, and Storage, within a specific CDB.
 
 
         :return: The database_usage_metrics of this PdbMetrics.
@@ -49,7 +49,7 @@ class PdbMetrics(object):
     def database_usage_metrics(self, database_usage_metrics):
         """
         Sets the database_usage_metrics of this PdbMetrics.
-        The summary of Pdb's and it's resource usage metrics (CPU, IO, Storage and Active sessions) for a specified Container database.
+        A summary of PDBs and their resource usage metrics such as CPU, User I/O, and Storage, within a specific CDB.
 
 
         :param database_usage_metrics: The database_usage_metrics of this PdbMetrics.

@@ -75,7 +75,7 @@ class BulkEditResource(object):
     def resource_type(self):
         """
         **[Required]** Gets the resource_type of this BulkEditResource.
-        The type of resource. See :func:`bulk_edit_resource_types`.
+        The type of resource. See :func:`list_bulk_edit_tags_resource_types`.
 
 
         :return: The resource_type of this BulkEditResource.
@@ -87,7 +87,7 @@ class BulkEditResource(object):
     def resource_type(self, resource_type):
         """
         Sets the resource_type of this BulkEditResource.
-        The type of resource. See :func:`bulk_edit_resource_types`.
+        The type of resource. See :func:`list_bulk_edit_tags_resource_types`.
 
 
         :param resource_type: The resource_type of this BulkEditResource.

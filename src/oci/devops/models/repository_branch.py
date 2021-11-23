@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryBranch(RepositoryRef):
     """
-    Branch related information
+    Branch related information.
     """
 
     def __init__(self, **kwargs):

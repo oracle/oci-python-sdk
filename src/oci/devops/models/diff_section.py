@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DiffSection(object):
     """
-    Details about a section of changes within a DiffChunk.
+    Details about a section of changes within a difference chunk.
     """
 
     def __init__(self, **kwargs):

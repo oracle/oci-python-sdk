@@ -75,7 +75,7 @@ class MirrorRepositoryConfig(object):
     def repository_url(self):
         """
         Gets the repository_url of this MirrorRepositoryConfig.
-        Url of external repository we'd like to mirror
+        URL of external repository you want to mirror.
 
 
         :return: The repository_url of this MirrorRepositoryConfig.
@@ -87,7 +87,7 @@ class MirrorRepositoryConfig(object):
     def repository_url(self, repository_url):
         """
         Sets the repository_url of this MirrorRepositoryConfig.
-        Url of external repository we'd like to mirror
+        URL of external repository you want to mirror.
 
 
         :param repository_url: The repository_url of this MirrorRepositoryConfig.

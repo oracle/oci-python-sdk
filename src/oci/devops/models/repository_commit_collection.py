@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryCommitCollection(object):
     """
-    Result of a Commit search.
+    Result of a commit search.
     """
 
     def __init__(self, **kwargs):

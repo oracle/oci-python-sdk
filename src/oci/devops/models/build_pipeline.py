@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildPipeline(object):
     """
-    A set of stages whose predecessor relation forms a directed acyclic graph.
+    A set of stages forming a directed acyclic graph that defines the build process.
     """
 
     #: A constant which can be used with the lifecycle_state property of a BuildPipeline.
@@ -151,7 +151,7 @@ class BuildPipeline(object):
     def id(self):
         """
         **[Required]** Gets the id of this BuildPipeline.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :return: The id of this BuildPipeline.
@@ -163,7 +163,7 @@ class BuildPipeline(object):
     def id(self, id):
         """
         Sets the id of this BuildPipeline.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :param id: The id of this BuildPipeline.
@@ -175,7 +175,7 @@ class BuildPipeline(object):
     def description(self):
         """
         Gets the description of this BuildPipeline.
-        Optional description about the BuildPipeline
+        Optional description about the build pipeline.
 
 
         :return: The description of this BuildPipeline.
@@ -187,7 +187,7 @@ class BuildPipeline(object):
     def description(self, description):
         """
         Sets the description of this BuildPipeline.
-        Optional description about the BuildPipeline
+        Optional description about the build pipeline.
 
 
         :param description: The description of this BuildPipeline.
@@ -199,7 +199,7 @@ class BuildPipeline(object):
     def display_name(self):
         """
         Gets the display_name of this BuildPipeline.
-        BuildPipeline identifier which can be renamed and is not necessarily unique
+        Build pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :return: The display_name of this BuildPipeline.
@@ -211,7 +211,7 @@ class BuildPipeline(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this BuildPipeline.
-        BuildPipeline identifier which can be renamed and is not necessarily unique
+        Build pipeline display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this BuildPipeline.
@@ -223,7 +223,7 @@ class BuildPipeline(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this BuildPipeline.
-        Compartment Identifier
+        The OCID of the compartment where the build pipeline is created.
 
 
         :return: The compartment_id of this BuildPipeline.
@@ -235,7 +235,7 @@ class BuildPipeline(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this BuildPipeline.
-        Compartment Identifier
+        The OCID of the compartment where the build pipeline is created.
 
 
         :param compartment_id: The compartment_id of this BuildPipeline.
@@ -247,7 +247,7 @@ class BuildPipeline(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this BuildPipeline.
-        Project Identifier
+        The OCID of the DevOps project.
 
 
         :return: The project_id of this BuildPipeline.
@@ -259,7 +259,7 @@ class BuildPipeline(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this BuildPipeline.
-        Project Identifier
+        The OCID of the DevOps project.
 
 
         :param project_id: The project_id of this BuildPipeline.
@@ -271,7 +271,9 @@ class BuildPipeline(object):
     def time_created(self):
         """
         Gets the time_created of this BuildPipeline.
-        The time the BuildPipeline was created. An RFC3339 formatted datetime string
+        The time the build pipeline was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_created of this BuildPipeline.
@@ -283,7 +285,9 @@ class BuildPipeline(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this BuildPipeline.
-        The time the BuildPipeline was created. An RFC3339 formatted datetime string
+        The time the build pipeline was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_created: The time_created of this BuildPipeline.
@@ -295,7 +299,9 @@ class BuildPipeline(object):
     def time_updated(self):
         """
         Gets the time_updated of this BuildPipeline.
-        The time at which the BuildPipeline was updated. An RFC3339 formatted datetime string
+        The time the build pipeline was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_updated of this BuildPipeline.
@@ -307,7 +313,9 @@ class BuildPipeline(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this BuildPipeline.
-        The time at which the BuildPipeline was updated. An RFC3339 formatted datetime string
+        The time the build pipeline was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_updated: The time_updated of this BuildPipeline.
@@ -319,7 +327,7 @@ class BuildPipeline(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this BuildPipeline.
-        The current state of the BuildPipeline.
+        The current state of the build pipeline.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -334,7 +342,7 @@ class BuildPipeline(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this BuildPipeline.
-        The current state of the BuildPipeline.
+        The current state of the build pipeline.
 
 
         :param lifecycle_state: The lifecycle_state of this BuildPipeline.

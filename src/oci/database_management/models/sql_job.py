@@ -77,7 +77,7 @@ class SqlJob(Job):
 
         :param database_sub_type:
             The value to assign to the database_sub_type property of this SqlJob.
-            Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_sub_type: str
 

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GithubBuildRunSource(BuildRunSource):
     """
-    Specifies details of build run through Github.
+    Specifies details of build run through GitHub.
     """
 
     def __init__(self, **kwargs):
@@ -54,7 +54,7 @@ class GithubBuildRunSource(BuildRunSource):
     def trigger_id(self):
         """
         **[Required]** Gets the trigger_id of this GithubBuildRunSource.
-        The Trigger that invoked this build run
+        The trigger that invoked the build run.
 
 
         :return: The trigger_id of this GithubBuildRunSource.
@@ -66,7 +66,7 @@ class GithubBuildRunSource(BuildRunSource):
     def trigger_id(self, trigger_id):
         """
         Sets the trigger_id of this GithubBuildRunSource.
-        The Trigger that invoked this build run
+        The trigger that invoked the build run.
 
 
         :param trigger_id: The trigger_id of this GithubBuildRunSource.

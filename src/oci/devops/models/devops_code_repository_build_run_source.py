@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DevopsCodeRepositoryBuildRunSource(BuildRunSource):
     """
-    Specifies details of build run through Devops Code Repository.
+    Specifies details of build run through DevOps code repository.
     """
 
     def __init__(self, **kwargs):
@@ -61,7 +61,7 @@ class DevopsCodeRepositoryBuildRunSource(BuildRunSource):
     def trigger_id(self):
         """
         **[Required]** Gets the trigger_id of this DevopsCodeRepositoryBuildRunSource.
-        The Trigger that invoked this build run
+        The trigger that invoked the build run.
 
 
         :return: The trigger_id of this DevopsCodeRepositoryBuildRunSource.
@@ -73,7 +73,7 @@ class DevopsCodeRepositoryBuildRunSource(BuildRunSource):
     def trigger_id(self, trigger_id):
         """
         Sets the trigger_id of this DevopsCodeRepositoryBuildRunSource.
-        The Trigger that invoked this build run
+        The trigger that invoked the build run.
 
 
         :param trigger_id: The trigger_id of this DevopsCodeRepositoryBuildRunSource.
@@ -105,7 +105,7 @@ class DevopsCodeRepositoryBuildRunSource(BuildRunSource):
     def repository_id(self):
         """
         **[Required]** Gets the repository_id of this DevopsCodeRepositoryBuildRunSource.
-        The Devops Code Repository RepoId that invoked this build run
+        The DevOps code repository identifier that invoked the build run.
 
 
         :return: The repository_id of this DevopsCodeRepositoryBuildRunSource.
@@ -117,7 +117,7 @@ class DevopsCodeRepositoryBuildRunSource(BuildRunSource):
     def repository_id(self, repository_id):
         """
         Sets the repository_id of this DevopsCodeRepositoryBuildRunSource.
-        The Devops Code Repository RepoId that invoked this build run
+        The DevOps code repository identifier that invoked the build run.
 
 
         :param repository_id: The repository_id of this DevopsCodeRepositoryBuildRunSource.

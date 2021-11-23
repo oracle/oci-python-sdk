@@ -21,6 +21,10 @@ class ManagementAgentImageSummary(object):
     #: This constant has a value of "WINDOWS"
     PLATFORM_TYPE_WINDOWS = "WINDOWS"
 
+    #: A constant which can be used with the platform_type property of a ManagementAgentImageSummary.
+    #: This constant has a value of "SOLARIS"
+    PLATFORM_TYPE_SOLARIS = "SOLARIS"
+
     #: A constant which can be used with the lifecycle_state property of a ManagementAgentImageSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -64,7 +68,7 @@ class ManagementAgentImageSummary(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this ManagementAgentImageSummary.
-            Allowed values for this property are: "LINUX", "WINDOWS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
@@ -156,7 +160,7 @@ class ManagementAgentImageSummary(object):
         **[Required]** Gets the platform_type of this ManagementAgentImageSummary.
         Agent image platform type
 
-        Allowed values for this property are: "LINUX", "WINDOWS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -175,7 +179,7 @@ class ManagementAgentImageSummary(object):
         :param platform_type: The platform_type of this ManagementAgentImageSummary.
         :type: str
         """
-        allowed_values = ["LINUX", "WINDOWS"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             platform_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_type = platform_type

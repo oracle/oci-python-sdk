@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DeliverArtifactStage(BuildPipelineStage):
     """
-    Specifies the DeliverArtifact Stage.
+    Specifies the Deliver Artifacts stage.
     """
 
     def __init__(self, **kwargs):

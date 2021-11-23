@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DevopsCodeRepositoryFilter(Filter):
     """
-    The filter for Gitlab events
+    The filter for GitLab events.
     """
 
     #: A constant which can be used with the events property of a DevopsCodeRepositoryFilter.
@@ -59,7 +59,7 @@ class DevopsCodeRepositoryFilter(Filter):
     def events(self):
         """
         Gets the events of this DevopsCodeRepositoryFilter.
-        The events, only support PUSH at this time
+        The events only support PUSH.
 
         Allowed values for items in this list are: "PUSH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -74,7 +74,7 @@ class DevopsCodeRepositoryFilter(Filter):
     def events(self, events):
         """
         Sets the events of this DevopsCodeRepositoryFilter.
-        The events, only support PUSH at this time
+        The events only support PUSH.
 
 
         :param events: The events of this DevopsCodeRepositoryFilter.

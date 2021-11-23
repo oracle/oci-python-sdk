@@ -283,6 +283,7 @@ def test_list_apm_domain_work_requests(testing_service_client):
     config = util.test_config_to_python_config(
         testing_service_client.get_test_config('apm_control_plane', util.camelize('apm_domain'), 'ListApmDomainWorkRequests')
     )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
 
     request_containers = testing_service_client.get_requests(service_name='apm_control_plane', api_name='ListApmDomainWorkRequests')
 
@@ -299,6 +300,25 @@ def test_list_apm_domain_work_requests(testing_service_client):
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_apm_domain_work_requests(
+                    apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_apm_domain_work_requests(
+                        apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
         except oci_exception.ServiceError as service_exception:
             service_error = service_exception
 
@@ -311,7 +331,7 @@ def test_list_apm_domain_work_requests(testing_service_client):
             service_error,
             'workRequest',
             False,
-            False
+            True
         )
 
 

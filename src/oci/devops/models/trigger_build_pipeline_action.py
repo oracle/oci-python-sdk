@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TriggerBuildPipelineAction(TriggerAction):
     """
-    The action to trigger a build pipeline
+    The action to trigger a build pipeline.
     """
 
     def __init__(self, **kwargs):
@@ -54,7 +54,7 @@ class TriggerBuildPipelineAction(TriggerAction):
     def build_pipeline_id(self):
         """
         **[Required]** Gets the build_pipeline_id of this TriggerBuildPipelineAction.
-        The id of the build pipeline to be triggered
+        The OCID of the build pipeline to be triggered.
 
 
         :return: The build_pipeline_id of this TriggerBuildPipelineAction.
@@ -66,7 +66,7 @@ class TriggerBuildPipelineAction(TriggerAction):
     def build_pipeline_id(self, build_pipeline_id):
         """
         Sets the build_pipeline_id of this TriggerBuildPipelineAction.
-        The id of the build pipeline to be triggered
+        The OCID of the build pipeline to be triggered.
 
 
         :param build_pipeline_id: The build_pipeline_id of this TriggerBuildPipelineAction.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildRunProgressSummary(object):
     """
-    The summary run progress details of a BuildRun.
+    The summary run progress details of a build run.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,9 @@ class BuildRunProgressSummary(object):
     def time_started(self):
         """
         Gets the time_started of this BuildRunProgressSummary.
-        The time the the BuildRun is started. An RFC3339 formatted datetime string
+        The time the build run started. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_started of this BuildRunProgressSummary.
@@ -56,7 +58,9 @@ class BuildRunProgressSummary(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this BuildRunProgressSummary.
-        The time the the BuildRun is started. An RFC3339 formatted datetime string
+        The time the build run started. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_started: The time_started of this BuildRunProgressSummary.
@@ -68,7 +72,9 @@ class BuildRunProgressSummary(object):
     def time_finished(self):
         """
         Gets the time_finished of this BuildRunProgressSummary.
-        The time the BuildRun is finished. An RFC3339 formatted datetime string
+        The time the build run finished. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_finished of this BuildRunProgressSummary.
@@ -80,7 +86,9 @@ class BuildRunProgressSummary(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this BuildRunProgressSummary.
-        The time the BuildRun is finished. An RFC3339 formatted datetime string
+        The time the build run finished. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_finished: The time_finished of this BuildRunProgressSummary.

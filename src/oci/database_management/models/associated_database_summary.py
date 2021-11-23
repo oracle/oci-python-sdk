@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AssociatedDatabaseSummary(object):
     """
-    Summary of a Database currently using a Private Endpoint.
+    The summary of a database currently using a Database Management private endpoint.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,9 @@ class AssociatedDatabaseSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AssociatedDatabaseSummary.
-        The OCID of the database.
+        The `OCID`__ of the database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this AssociatedDatabaseSummary.
@@ -70,7 +72,9 @@ class AssociatedDatabaseSummary(object):
     def id(self, id):
         """
         Sets the id of this AssociatedDatabaseSummary.
-        The OCID of the database.
+        The `OCID`__ of the database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this AssociatedDatabaseSummary.
@@ -106,7 +110,9 @@ class AssociatedDatabaseSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AssociatedDatabaseSummary.
-        The compartment ID of the database.
+        The compartment `OCID`__ of the database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this AssociatedDatabaseSummary.
@@ -118,7 +124,9 @@ class AssociatedDatabaseSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AssociatedDatabaseSummary.
-        The compartment ID of the database.
+        The compartment `OCID`__ of the database.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this AssociatedDatabaseSummary.
@@ -130,7 +138,7 @@ class AssociatedDatabaseSummary(object):
     def time_registered(self):
         """
         **[Required]** Gets the time_registered of this AssociatedDatabaseSummary.
-        The time when the database was registered for Database Management.
+        The time when Database Management was enabled for the database.
 
 
         :return: The time_registered of this AssociatedDatabaseSummary.
@@ -142,7 +150,7 @@ class AssociatedDatabaseSummary(object):
     def time_registered(self, time_registered):
         """
         Sets the time_registered of this AssociatedDatabaseSummary.
-        The time when the database was registered for Database Management.
+        The time when Database Management was enabled for the database.
 
 
         :param time_registered: The time_registered of this AssociatedDatabaseSummary.

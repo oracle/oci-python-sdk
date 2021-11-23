@@ -93,7 +93,7 @@ class CreateConnectionDetails(object):
     def description(self):
         """
         Gets the description of this CreateConnectionDetails.
-        Optional description about the Connection
+        Optional description about the connection.
 
 
         :return: The description of this CreateConnectionDetails.
@@ -105,7 +105,7 @@ class CreateConnectionDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateConnectionDetails.
-        Optional description about the Connection
+        Optional description about the connection.
 
 
         :param description: The description of this CreateConnectionDetails.
@@ -117,7 +117,7 @@ class CreateConnectionDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateConnectionDetails.
-        Optional Connection display name
+        Optional connection display name. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateConnectionDetails.
@@ -129,7 +129,7 @@ class CreateConnectionDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateConnectionDetails.
-        Optional Connection display name
+        Optional connection display name. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateConnectionDetails.
@@ -141,7 +141,7 @@ class CreateConnectionDetails(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this CreateConnectionDetails.
-        Project Identifier
+        The OCID of the DevOps project.
 
 
         :return: The project_id of this CreateConnectionDetails.
@@ -153,7 +153,7 @@ class CreateConnectionDetails(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this CreateConnectionDetails.
-        Project Identifier
+        The OCID of the DevOps project.
 
 
         :param project_id: The project_id of this CreateConnectionDetails.

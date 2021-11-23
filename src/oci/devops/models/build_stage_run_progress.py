@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildStageRunProgress(BuildPipelineStageRunProgress):
     """
-    Specifies the Run details for Build Stage.
+    Specifies the run details for Build stage.
     """
 
     #: A constant which can be used with the image property of a BuildStageRunProgress.
@@ -318,7 +318,7 @@ class BuildStageRunProgress(BuildPipelineStageRunProgress):
     def steps(self):
         """
         Gets the steps of this BuildStageRunProgress.
-        The details about all the steps in a Build Stage
+        The details about all the steps in a Build stage
 
 
         :return: The steps of this BuildStageRunProgress.
@@ -330,7 +330,7 @@ class BuildStageRunProgress(BuildPipelineStageRunProgress):
     def steps(self, steps):
         """
         Sets the steps of this BuildStageRunProgress.
-        The details about all the steps in a Build Stage
+        The details about all the steps in a Build stage
 
 
         :param steps: The steps of this BuildStageRunProgress.

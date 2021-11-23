@@ -29,6 +29,14 @@ class JobDatabase(object):
     #: This constant has a value of "CLOUD_RAC"
     DATABASE_TYPE_CLOUD_RAC = "CLOUD_RAC"
 
+    #: A constant which can be used with the database_type property of a JobDatabase.
+    #: This constant has a value of "SHARED"
+    DATABASE_TYPE_SHARED = "SHARED"
+
+    #: A constant which can be used with the database_type property of a JobDatabase.
+    #: This constant has a value of "DEDICATED"
+    DATABASE_TYPE_DEDICATED = "DEDICATED"
+
     #: A constant which can be used with the database_sub_type property of a JobDatabase.
     #: This constant has a value of "CDB"
     DATABASE_SUB_TYPE_CDB = "CDB"
@@ -40,6 +48,14 @@ class JobDatabase(object):
     #: A constant which can be used with the database_sub_type property of a JobDatabase.
     #: This constant has a value of "NON_CDB"
     DATABASE_SUB_TYPE_NON_CDB = "NON_CDB"
+
+    #: A constant which can be used with the database_sub_type property of a JobDatabase.
+    #: This constant has a value of "ACD"
+    DATABASE_SUB_TYPE_ACD = "ACD"
+
+    #: A constant which can be used with the database_sub_type property of a JobDatabase.
+    #: This constant has a value of "ADB"
+    DATABASE_SUB_TYPE_ADB = "ADB"
 
     #: A constant which can be used with the deployment_type property of a JobDatabase.
     #: This constant has a value of "ONPREMISE"
@@ -61,6 +77,26 @@ class JobDatabase(object):
     #: This constant has a value of "EXADATA_CC"
     DEPLOYMENT_TYPE_EXADATA_CC = "EXADATA_CC"
 
+    #: A constant which can be used with the deployment_type property of a JobDatabase.
+    #: This constant has a value of "AUTONOMOUS"
+    DEPLOYMENT_TYPE_AUTONOMOUS = "AUTONOMOUS"
+
+    #: A constant which can be used with the workload_type property of a JobDatabase.
+    #: This constant has a value of "OLTP"
+    WORKLOAD_TYPE_OLTP = "OLTP"
+
+    #: A constant which can be used with the workload_type property of a JobDatabase.
+    #: This constant has a value of "DW"
+    WORKLOAD_TYPE_DW = "DW"
+
+    #: A constant which can be used with the workload_type property of a JobDatabase.
+    #: This constant has a value of "AJD"
+    WORKLOAD_TYPE_AJD = "AJD"
+
+    #: A constant which can be used with the workload_type property of a JobDatabase.
+    #: This constant has a value of "APEX"
+    WORKLOAD_TYPE_APEX = "APEX"
+
     def __init__(self, **kwargs):
         """
         Initializes a new JobDatabase object with values from keyword arguments.
@@ -76,25 +112,31 @@ class JobDatabase(object):
 
         :param database_type:
             The value to assign to the database_type property of this JobDatabase.
-            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_type: str
 
         :param database_sub_type:
             The value to assign to the database_sub_type property of this JobDatabase.
-            Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_sub_type: str
 
         :param deployment_type:
             The value to assign to the deployment_type property of this JobDatabase.
-            Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
         :param is_cluster:
             The value to assign to the is_cluster property of this JobDatabase.
         :type is_cluster: bool
+
+        :param workload_type:
+            The value to assign to the workload_type property of this JobDatabase.
+            Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type workload_type: str
 
         """
         self.swagger_types = {
@@ -103,7 +145,8 @@ class JobDatabase(object):
             'database_type': 'str',
             'database_sub_type': 'str',
             'deployment_type': 'str',
-            'is_cluster': 'bool'
+            'is_cluster': 'bool',
+            'workload_type': 'str'
         }
 
         self.attribute_map = {
@@ -112,7 +155,8 @@ class JobDatabase(object):
             'database_type': 'databaseType',
             'database_sub_type': 'databaseSubType',
             'deployment_type': 'deploymentType',
-            'is_cluster': 'isCluster'
+            'is_cluster': 'isCluster',
+            'workload_type': 'workloadType'
         }
 
         self._id = None
@@ -121,6 +165,7 @@ class JobDatabase(object):
         self._database_sub_type = None
         self._deployment_type = None
         self._is_cluster = None
+        self._workload_type = None
 
     @property
     def id(self):
@@ -180,7 +225,7 @@ class JobDatabase(object):
         Gets the database_type of this JobDatabase.
         The type of Oracle Database installation.
 
-        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -199,7 +244,7 @@ class JobDatabase(object):
         :param database_type: The database_type of this JobDatabase.
         :type: str
         """
-        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC"]
+        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED"]
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
             database_type = 'UNKNOWN_ENUM_VALUE'
         self._database_type = database_type
@@ -210,7 +255,7 @@ class JobDatabase(object):
         Gets the database_sub_type of this JobDatabase.
         The subtype of the Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
 
-        Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -229,7 +274,7 @@ class JobDatabase(object):
         :param database_sub_type: The database_sub_type of this JobDatabase.
         :type: str
         """
-        allowed_values = ["CDB", "PDB", "NON_CDB"]
+        allowed_values = ["CDB", "PDB", "NON_CDB", "ACD", "ADB"]
         if not value_allowed_none_or_none_sentinel(database_sub_type, allowed_values):
             database_sub_type = 'UNKNOWN_ENUM_VALUE'
         self._database_sub_type = database_sub_type
@@ -240,7 +285,7 @@ class JobDatabase(object):
         Gets the deployment_type of this JobDatabase.
         A list of the supported infrastructure that can be used to deploy the database.
 
-        Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -259,7 +304,7 @@ class JobDatabase(object):
         :param deployment_type: The deployment_type of this JobDatabase.
         :type: str
         """
-        allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC"]
+        allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type
@@ -287,6 +332,36 @@ class JobDatabase(object):
         :type: bool
         """
         self._is_cluster = is_cluster
+
+    @property
+    def workload_type(self):
+        """
+        Gets the workload_type of this JobDatabase.
+        The workload type of the Autonomous Database.
+
+        Allowed values for this property are: "OLTP", "DW", "AJD", "APEX", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The workload_type of this JobDatabase.
+        :rtype: str
+        """
+        return self._workload_type
+
+    @workload_type.setter
+    def workload_type(self, workload_type):
+        """
+        Sets the workload_type of this JobDatabase.
+        The workload type of the Autonomous Database.
+
+
+        :param workload_type: The workload_type of this JobDatabase.
+        :type: str
+        """
+        allowed_values = ["OLTP", "DW", "AJD", "APEX"]
+        if not value_allowed_none_or_none_sentinel(workload_type, allowed_values):
+            workload_type = 'UNKNOWN_ENUM_VALUE'
+        self._workload_type = workload_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

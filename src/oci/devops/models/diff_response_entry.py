@@ -299,7 +299,7 @@ class DiffResponseEntry(object):
     def added_lines_count(self):
         """
         Gets the added_lines_count of this DiffResponseEntry.
-        The number of lines added in whole diff.
+        The number of lines added in whole difference.
 
 
         :return: The added_lines_count of this DiffResponseEntry.
@@ -311,7 +311,7 @@ class DiffResponseEntry(object):
     def added_lines_count(self, added_lines_count):
         """
         Sets the added_lines_count of this DiffResponseEntry.
-        The number of lines added in whole diff.
+        The number of lines added in whole difference.
 
 
         :param added_lines_count: The added_lines_count of this DiffResponseEntry.
@@ -323,7 +323,7 @@ class DiffResponseEntry(object):
     def deleted_lines_count(self):
         """
         Gets the deleted_lines_count of this DiffResponseEntry.
-        The number of lines deleted in whole diff.
+        The number of lines deleted in whole difference.
 
 
         :return: The deleted_lines_count of this DiffResponseEntry.
@@ -335,7 +335,7 @@ class DiffResponseEntry(object):
     def deleted_lines_count(self, deleted_lines_count):
         """
         Sets the deleted_lines_count of this DiffResponseEntry.
-        The number of lines deleted in whole diff.
+        The number of lines deleted in whole difference.
 
 
         :param deleted_lines_count: The deleted_lines_count of this DiffResponseEntry.

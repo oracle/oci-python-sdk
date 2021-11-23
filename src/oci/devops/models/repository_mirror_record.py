@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryMirrorRecord(object):
     """
-    Object containing information about a mirror record
+    Object containing information about a mirror record.
     """
 
     #: A constant which can be used with the mirror_status property of a RepositoryMirrorRecord.
@@ -125,7 +125,7 @@ class RepositoryMirrorRecord(object):
     def work_request_id(self):
         """
         Gets the work_request_id of this RepositoryMirrorRecord.
-        Workrequest Id to track current mirror operation
+        Workrequest ID to track current mirror operation.
 
 
         :return: The work_request_id of this RepositoryMirrorRecord.
@@ -137,7 +137,7 @@ class RepositoryMirrorRecord(object):
     def work_request_id(self, work_request_id):
         """
         Sets the work_request_id of this RepositoryMirrorRecord.
-        Workrequest Id to track current mirror operation
+        Workrequest ID to track current mirror operation.
 
 
         :param work_request_id: The work_request_id of this RepositoryMirrorRecord.
@@ -197,7 +197,7 @@ class RepositoryMirrorRecord(object):
     def time_ended(self):
         """
         Gets the time_ended of this RepositoryMirrorRecord.
-        Time that the mirror operation ended or null if it hasn't yet ended.
+        The time taken to complete a mirror operation. Value is null if not completed.
 
 
         :return: The time_ended of this RepositoryMirrorRecord.
@@ -209,7 +209,7 @@ class RepositoryMirrorRecord(object):
     def time_ended(self, time_ended):
         """
         Sets the time_ended of this RepositoryMirrorRecord.
-        Time that the mirror operation ended or null if it hasn't yet ended.
+        The time taken to complete a mirror operation. Value is null if not completed.
 
 
         :param time_ended: The time_ended of this RepositoryMirrorRecord.

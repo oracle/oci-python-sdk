@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryPathSummary(object):
     """
-    Object containing information about files and directories in a repository
+    Object containing information about files and directories in a repository.
     """
 
     def __init__(self, **kwargs):
@@ -86,7 +86,7 @@ class RepositoryPathSummary(object):
     def type(self):
         """
         Gets the type of this RepositoryPathSummary.
-        File or Directory
+        File or directory.
 
 
         :return: The type of this RepositoryPathSummary.
@@ -98,7 +98,7 @@ class RepositoryPathSummary(object):
     def type(self, type):
         """
         Sets the type of this RepositoryPathSummary.
-        File or Directory
+        File or directory.
 
 
         :param type: The type of this RepositoryPathSummary.
@@ -110,7 +110,7 @@ class RepositoryPathSummary(object):
     def size_in_bytes(self):
         """
         Gets the size_in_bytes of this RepositoryPathSummary.
-        Size of file or directory
+        Size of file or directory.
 
 
         :return: The size_in_bytes of this RepositoryPathSummary.
@@ -122,7 +122,7 @@ class RepositoryPathSummary(object):
     def size_in_bytes(self, size_in_bytes):
         """
         Sets the size_in_bytes of this RepositoryPathSummary.
-        Size of file or directory
+        Size of file or directory.
 
 
         :param size_in_bytes: The size_in_bytes of this RepositoryPathSummary.
@@ -134,7 +134,7 @@ class RepositoryPathSummary(object):
     def name(self):
         """
         Gets the name of this RepositoryPathSummary.
-        Name of file or directory
+        Name of file or directory.
 
 
         :return: The name of this RepositoryPathSummary.
@@ -146,7 +146,7 @@ class RepositoryPathSummary(object):
     def name(self, name):
         """
         Sets the name of this RepositoryPathSummary.
-        Name of file or directory
+        Name of file or directory.
 
 
         :param name: The name of this RepositoryPathSummary.
@@ -158,7 +158,7 @@ class RepositoryPathSummary(object):
     def path(self):
         """
         Gets the path of this RepositoryPathSummary.
-        Path to file or directory in a repository
+        Path to file or directory in a repository.
 
 
         :return: The path of this RepositoryPathSummary.
@@ -170,7 +170,7 @@ class RepositoryPathSummary(object):
     def path(self, path):
         """
         Sets the path of this RepositoryPathSummary.
-        Path to file or directory in a repository
+        Path to file or directory in a repository.
 
 
         :param path: The path of this RepositoryPathSummary.
@@ -182,7 +182,7 @@ class RepositoryPathSummary(object):
     def sha(self):
         """
         Gets the sha of this RepositoryPathSummary.
-        SHA-1 checksum of blob or tree
+        SHA-1 checksum of blob or tree.
 
 
         :return: The sha of this RepositoryPathSummary.
@@ -194,7 +194,7 @@ class RepositoryPathSummary(object):
     def sha(self, sha):
         """
         Sets the sha of this RepositoryPathSummary.
-        SHA-1 checksum of blob or tree
+        SHA-1 checksum of blob or tree.
 
 
         :param sha: The sha of this RepositoryPathSummary.
@@ -206,7 +206,7 @@ class RepositoryPathSummary(object):
     def submodule_git_url(self):
         """
         Gets the submodule_git_url of this RepositoryPathSummary.
-        The giturl of the submodule
+        The git URL of the submodule.
 
 
         :return: The submodule_git_url of this RepositoryPathSummary.
@@ -218,7 +218,7 @@ class RepositoryPathSummary(object):
     def submodule_git_url(self, submodule_git_url):
         """
         Sets the submodule_git_url of this RepositoryPathSummary.
-        The giturl of the submodule
+        The git URL of the submodule.
 
 
         :param submodule_git_url: The submodule_git_url of this RepositoryPathSummary.

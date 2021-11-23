@@ -135,7 +135,7 @@ class ConnectionSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ConnectionSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :return: The id of this ConnectionSummary.
@@ -147,7 +147,7 @@ class ConnectionSummary(object):
     def id(self, id):
         """
         Sets the id of this ConnectionSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :param id: The id of this ConnectionSummary.
@@ -159,7 +159,7 @@ class ConnectionSummary(object):
     def display_name(self):
         """
         Gets the display_name of this ConnectionSummary.
-        Connection identifier which can be renamed and is not necessarily unique.
+        Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :return: The display_name of this ConnectionSummary.
@@ -171,7 +171,7 @@ class ConnectionSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ConnectionSummary.
-        Connection identifier which can be renamed and is not necessarily unique.
+        Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this ConnectionSummary.
@@ -183,7 +183,7 @@ class ConnectionSummary(object):
     def description(self):
         """
         Gets the description of this ConnectionSummary.
-        Optional description about the connection
+        Optional description about the connection.
 
 
         :return: The description of this ConnectionSummary.
@@ -195,7 +195,7 @@ class ConnectionSummary(object):
     def description(self, description):
         """
         Sets the description of this ConnectionSummary.
-        Optional description about the connection
+        Optional description about the connection.
 
 
         :param description: The description of this ConnectionSummary.
@@ -207,7 +207,7 @@ class ConnectionSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ConnectionSummary.
-        Compartment Identifier
+        The OCID of the compartment containing the connection.
 
 
         :return: The compartment_id of this ConnectionSummary.
@@ -219,7 +219,7 @@ class ConnectionSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ConnectionSummary.
-        Compartment Identifier
+        The OCID of the compartment containing the connection.
 
 
         :param compartment_id: The compartment_id of this ConnectionSummary.
@@ -231,7 +231,7 @@ class ConnectionSummary(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this ConnectionSummary.
-        Project Identifier
+        The OCID of the DevOps project.
 
 
         :return: The project_id of this ConnectionSummary.
@@ -243,7 +243,7 @@ class ConnectionSummary(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this ConnectionSummary.
-        Project Identifier
+        The OCID of the DevOps project.
 
 
         :param project_id: The project_id of this ConnectionSummary.
@@ -279,7 +279,9 @@ class ConnectionSummary(object):
     def time_created(self):
         """
         Gets the time_created of this ConnectionSummary.
-        The time the the connection was created. An RFC3339 formatted datetime string
+        The time the connection was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_created of this ConnectionSummary.
@@ -291,7 +293,9 @@ class ConnectionSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ConnectionSummary.
-        The time the the connection was created. An RFC3339 formatted datetime string
+        The time the connection was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_created: The time_created of this ConnectionSummary.
@@ -303,7 +307,9 @@ class ConnectionSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this ConnectionSummary.
-        The time the connection was updated. An RFC3339 formatted daservertetime string
+        The time the connection was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_updated of this ConnectionSummary.
@@ -315,7 +321,9 @@ class ConnectionSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ConnectionSummary.
-        The time the connection was updated. An RFC3339 formatted daservertetime string
+        The time the connection was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_updated: The time_updated of this ConnectionSummary.

@@ -41,6 +41,10 @@ class ProblemHistorySummary(object):
     #: This constant has a value of "DISMISSED"
     LIFECYCLE_DETAIL_DISMISSED = "DISMISSED"
 
+    #: A constant which can be used with the lifecycle_detail property of a ProblemHistorySummary.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_DETAIL_DELETED = "DELETED"
+
     #: A constant which can be used with the event_status property of a ProblemHistorySummary.
     #: This constant has a value of "REOPEN"
     EVENT_STATUS_REOPEN = "REOPEN"
@@ -60,6 +64,10 @@ class ProblemHistorySummary(object):
     #: A constant which can be used with the event_status property of a ProblemHistorySummary.
     #: This constant has a value of "DISMISS"
     EVENT_STATUS_DISMISS = "DISMISS"
+
+    #: A constant which can be used with the event_status property of a ProblemHistorySummary.
+    #: This constant has a value of "DELETE"
+    EVENT_STATUS_DELETE = "DELETE"
 
     def __init__(self, **kwargs):
         """
@@ -90,13 +98,13 @@ class ProblemHistorySummary(object):
 
         :param lifecycle_detail:
             The value to assign to the lifecycle_detail property of this ProblemHistorySummary.
-            Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_detail: str
 
         :param event_status:
             The value to assign to the event_status property of this ProblemHistorySummary.
-            Allowed values for this property are: "REOPEN", "OPEN", "UPDATE", "RESOLVE", "DISMISS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "REOPEN", "OPEN", "UPDATE", "RESOLVE", "DISMISS", "DELETE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type event_status: str
 
@@ -282,7 +290,7 @@ class ProblemHistorySummary(object):
         **[Required]** Gets the lifecycle_detail of this ProblemHistorySummary.
         Problem Lifecycle Detail Status
 
-        Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -301,7 +309,7 @@ class ProblemHistorySummary(object):
         :param lifecycle_detail: The lifecycle_detail of this ProblemHistorySummary.
         :type: str
         """
-        allowed_values = ["OPEN", "RESOLVED", "DISMISSED"]
+        allowed_values = ["OPEN", "RESOLVED", "DISMISSED", "DELETED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_detail, allowed_values):
             lifecycle_detail = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_detail = lifecycle_detail
@@ -312,7 +320,7 @@ class ProblemHistorySummary(object):
         Gets the event_status of this ProblemHistorySummary.
         Event status
 
-        Allowed values for this property are: "REOPEN", "OPEN", "UPDATE", "RESOLVE", "DISMISS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "REOPEN", "OPEN", "UPDATE", "RESOLVE", "DISMISS", "DELETE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -331,7 +339,7 @@ class ProblemHistorySummary(object):
         :param event_status: The event_status of this ProblemHistorySummary.
         :type: str
         """
-        allowed_values = ["REOPEN", "OPEN", "UPDATE", "RESOLVE", "DISMISS"]
+        allowed_values = ["REOPEN", "OPEN", "UPDATE", "RESOLVE", "DISMISS", "DELETE"]
         if not value_allowed_none_or_none_sentinel(event_status, allowed_values):
             event_status = 'UNKNOWN_ENUM_VALUE'
         self._event_status = event_status

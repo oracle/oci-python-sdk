@@ -26,6 +26,10 @@ class HostDetails(object):
             The value to assign to the id property of this HostDetails.
         :type id: str
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this HostDetails.
+        :type compartment_id: str
+
         :param host_name:
             The value to assign to the host_name property of this HostDetails.
         :type host_name: str
@@ -47,6 +51,7 @@ class HostDetails(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'compartment_id': 'str',
             'host_name': 'str',
             'host_display_name': 'str',
             'platform_type': 'str',
@@ -55,6 +60,7 @@ class HostDetails(object):
 
         self.attribute_map = {
             'id': 'id',
+            'compartment_id': 'compartmentId',
             'host_name': 'hostName',
             'host_display_name': 'hostDisplayName',
             'platform_type': 'platformType',
@@ -62,6 +68,7 @@ class HostDetails(object):
         }
 
         self._id = None
+        self._compartment_id = None
         self._host_name = None
         self._host_display_name = None
         self._platform_type = None
@@ -94,6 +101,34 @@ class HostDetails(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def compartment_id(self):
+        """
+        **[Required]** Gets the compartment_id of this HostDetails.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this HostDetails.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this HostDetails.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this HostDetails.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def host_name(self):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GitlabBuildSource(BuildSource):
     """
-    Gitlab Build Source for Build Stage
+    GitLab build source for Build stage.
     """
 
     def __init__(self, **kwargs):
@@ -68,7 +68,7 @@ class GitlabBuildSource(BuildSource):
     def connection_id(self):
         """
         **[Required]** Gets the connection_id of this GitlabBuildSource.
-        Connection identifier pertinent to GITLAB source provider
+        Connection identifier pertinent to GitLab source provider.
 
 
         :return: The connection_id of this GitlabBuildSource.
@@ -80,7 +80,7 @@ class GitlabBuildSource(BuildSource):
     def connection_id(self, connection_id):
         """
         Sets the connection_id of this GitlabBuildSource.
-        Connection identifier pertinent to GITLAB source provider
+        Connection identifier pertinent to GitLab source provider.
 
 
         :param connection_id: The connection_id of this GitlabBuildSource.

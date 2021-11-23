@@ -173,7 +173,7 @@
       <dependency>
         <groupId>com.oracle.blockchain</groupId>
         <artifactId>oracle-blockchain-platform-spec</artifactId>
-        <version>21.1.1</version>
+        <version>21.4.1</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

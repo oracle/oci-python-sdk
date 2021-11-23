@@ -3565,6 +3565,45 @@ def test_get_all_drg_attachments(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_get_allowed_ike_ip_sec_parameters(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetAllowedIkeIPSecParameters'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetAllowedIkeIPSecParameters')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetAllowedIkeIPSecParameters')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_allowed_ike_ip_sec_parameters(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetAllowedIkeIPSecParameters',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'allowedIkeIPSecParameters',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="vcnip" email="vcn_ip_mgmt_grp@oracle.com" jiraProject="VCNIP" opsJiraProject="VCNIP"
 def test_get_byoip_range(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'GetByoipRange'):
@@ -4402,6 +4441,47 @@ def test_get_ip_sec_connection_tunnel(testing_service_client):
             result,
             service_error,
             'iPSecConnectionTunnel',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_get_ip_sec_connection_tunnel_error(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'GetIPSecConnectionTunnelError'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'GetIPSecConnectionTunnelError')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='GetIPSecConnectionTunnelError')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.get_ip_sec_connection_tunnel_error(
+                ipsc_id=request.pop(util.camelize('ipscId')),
+                tunnel_id=request.pop(util.camelize('tunnelId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'GetIPSecConnectionTunnelError',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'iPSecConnectionTunnelErrorDetails',
             False,
             False
         )
@@ -6683,6 +6763,132 @@ def test_list_internet_gateways(testing_service_client):
             result,
             service_error,
             'internetGateway',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_list_ip_sec_connection_tunnel_routes(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListIPSecConnectionTunnelRoutes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListIPSecConnectionTunnelRoutes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListIPSecConnectionTunnelRoutes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_ip_sec_connection_tunnel_routes(
+                ipsc_id=request.pop(util.camelize('ipscId')),
+                tunnel_id=request.pop(util.camelize('tunnelId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_ip_sec_connection_tunnel_routes(
+                    ipsc_id=request.pop(util.camelize('ipscId')),
+                    tunnel_id=request.pop(util.camelize('tunnelId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_ip_sec_connection_tunnel_routes(
+                        ipsc_id=request.pop(util.camelize('ipscId')),
+                        tunnel_id=request.pop(util.camelize('tunnelId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListIPSecConnectionTunnelRoutes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tunnelRouteSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="c3" email="c3_scrum_team_us_grp@oracle.com" jiraProject="RSC" opsJiraProject="RSC"
+def test_list_ip_sec_connection_tunnel_security_associations(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'ListIPSecConnectionTunnelSecurityAssociations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'ListIPSecConnectionTunnelSecurityAssociations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='ListIPSecConnectionTunnelSecurityAssociations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.list_ip_sec_connection_tunnel_security_associations(
+                ipsc_id=request.pop(util.camelize('ipscId')),
+                tunnel_id=request.pop(util.camelize('tunnelId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_ip_sec_connection_tunnel_security_associations(
+                    ipsc_id=request.pop(util.camelize('ipscId')),
+                    tunnel_id=request.pop(util.camelize('tunnelId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_ip_sec_connection_tunnel_security_associations(
+                        ipsc_id=request.pop(util.camelize('ipscId')),
+                        tunnel_id=request.pop(util.camelize('tunnelId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'ListIPSecConnectionTunnelSecurityAssociations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tunnelSecurityAssociationSummary',
             False,
             True
         )

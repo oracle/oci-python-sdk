@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TriggerCollection(object):
     """
-    Results of a trigger search. Contains boh TriggerSummary items and other information, such as metadata.
+    Results of a trigger search. Contains boh trigger summary items and other information such as metadata.
     """
 
     def __init__(self, **kwargs):

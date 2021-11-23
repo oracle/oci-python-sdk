@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateRepositoryDetails(object):
     """
-    The information about new Repository.
+    Information about the new repository.
     """
 
     def __init__(self, **kwargs):
@@ -110,7 +110,7 @@ class CreateRepositoryDetails(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this CreateRepositoryDetails.
-        The OCID of the Project containing the repository.
+        The OCID of the DevOps project containing the repository.
 
 
         :return: The project_id of this CreateRepositoryDetails.
@@ -122,7 +122,7 @@ class CreateRepositoryDetails(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this CreateRepositoryDetails.
-        The OCID of the Project containing the repository.
+        The OCID of the DevOps project containing the repository.
 
 
         :param project_id: The project_id of this CreateRepositoryDetails.
@@ -158,7 +158,7 @@ class CreateRepositoryDetails(object):
     def repository_type(self):
         """
         Gets the repository_type of this CreateRepositoryDetails.
-        Type of repository
+        Type of repository.
 
 
         :return: The repository_type of this CreateRepositoryDetails.
@@ -170,7 +170,7 @@ class CreateRepositoryDetails(object):
     def repository_type(self, repository_type):
         """
         Sets the repository_type of this CreateRepositoryDetails.
-        Type of repository
+        Type of repository.
 
 
         :param repository_type: The repository_type of this CreateRepositoryDetails.
@@ -202,7 +202,7 @@ class CreateRepositoryDetails(object):
     def description(self):
         """
         Gets the description of this CreateRepositoryDetails.
-        The description of this repository. Avoid entering confidential information
+        Details of the repository. Avoid entering confidential information.
 
 
         :return: The description of this CreateRepositoryDetails.
@@ -214,7 +214,7 @@ class CreateRepositoryDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateRepositoryDetails.
-        The description of this repository. Avoid entering confidential information
+        Details of the repository. Avoid entering confidential information.
 
 
         :param description: The description of this CreateRepositoryDetails.

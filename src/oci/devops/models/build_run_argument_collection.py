@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildRunArgumentCollection(object):
     """
-    Specifies list of arguments passed along with the BuildRun.
+    Specifies list of arguments passed along with the build run.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class BuildRunArgumentCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this BuildRunArgumentCollection.
-        List of arguments provided at the time of BuildRun.
+        List of arguments provided at the time of running the build.
 
 
         :return: The items of this BuildRunArgumentCollection.
@@ -49,7 +49,7 @@ class BuildRunArgumentCollection(object):
     def items(self, items):
         """
         Sets the items of this BuildRunArgumentCollection.
-        List of arguments provided at the time of BuildRun.
+        List of arguments provided at the time of running the build.
 
 
         :param items: The items of this BuildRunArgumentCollection.

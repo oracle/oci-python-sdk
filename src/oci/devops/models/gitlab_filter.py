@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GitlabFilter(Filter):
     """
-    The filter for Gitlab events
+    The filter for GitLab events.
     """
 
     #: A constant which can be used with the events property of a GitlabFilter.
@@ -75,7 +75,7 @@ class GitlabFilter(Filter):
     def events(self):
         """
         Gets the events of this GitlabFilter.
-        The events, example PUSH, PULL_REQUEST_MERGE etc.
+        The events, for example, PUSH, PULL_REQUEST_MERGE.
 
         Allowed values for items in this list are: "PUSH", "PULL_REQUEST_CREATED", "PULL_REQUEST_UPDATED", "PULL_REQUEST_REOPENED", "PULL_REQUEST_MERGED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -90,7 +90,7 @@ class GitlabFilter(Filter):
     def events(self, events):
         """
         Sets the events of this GitlabFilter.
-        The events, example PUSH, PULL_REQUEST_MERGE etc.
+        The events, for example, PUSH, PULL_REQUEST_MERGE.
 
 
         :param events: The events of this GitlabFilter.

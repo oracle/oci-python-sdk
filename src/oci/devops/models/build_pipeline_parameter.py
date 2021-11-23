@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildPipelineParameter(object):
     """
-    Parameter name for which the values will be supplied at the time of BuildRun.
+    Parameter name for which the values will be supplied at the time of running the build.
     """
 
     def __init__(self, **kwargs):
@@ -51,8 +51,8 @@ class BuildPipelineParameter(object):
     def name(self):
         """
         **[Required]** Gets the name of this BuildPipelineParameter.
-        Name of the parameter (Case-sensitive).
-        Example: 'Pipeline_param' is not same as 'pipeline_Param'
+        Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+        Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
 
 
         :return: The name of this BuildPipelineParameter.
@@ -64,8 +64,8 @@ class BuildPipelineParameter(object):
     def name(self, name):
         """
         Sets the name of this BuildPipelineParameter.
-        Name of the parameter (Case-sensitive).
-        Example: 'Pipeline_param' is not same as 'pipeline_Param'
+        Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
+        Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
 
 
         :param name: The name of this BuildPipelineParameter.
@@ -77,7 +77,7 @@ class BuildPipelineParameter(object):
     def default_value(self):
         """
         Gets the default_value of this BuildPipelineParameter.
-        Default value of the parameter
+        Default value of the parameter.
 
 
         :return: The default_value of this BuildPipelineParameter.
@@ -89,7 +89,7 @@ class BuildPipelineParameter(object):
     def default_value(self, default_value):
         """
         Sets the default_value of this BuildPipelineParameter.
-        Default value of the parameter
+        Default value of the parameter.
 
 
         :param default_value: The default_value of this BuildPipelineParameter.
@@ -101,7 +101,7 @@ class BuildPipelineParameter(object):
     def description(self):
         """
         Gets the description of this BuildPipelineParameter.
-        Description of the parameter
+        Description of the parameter.
 
 
         :return: The description of this BuildPipelineParameter.
@@ -113,7 +113,7 @@ class BuildPipelineParameter(object):
     def description(self, description):
         """
         Sets the description of this BuildPipelineParameter.
-        Description of the parameter
+        Description of the parameter.
 
 
         :param description: The description of this BuildPipelineParameter.
