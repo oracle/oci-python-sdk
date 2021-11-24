@@ -271,6 +271,7 @@ class BaseClient(object):
         self._endpoint = None
         self._base_path = kwargs.get('base_path')
         self.service_endpoint_template = kwargs.get('service_endpoint_template')
+        self.endpoint_service_name = kwargs.get('endpoint_service_name')
 
         if self.regional_client:
             if kwargs.get('service_endpoint'):
@@ -286,7 +287,8 @@ class BaseClient(object):
                     service,
                     service_endpoint_template=self.service_endpoint_template,
                     region=region_to_use,
-                    endpoint=config.get('endpoint'))
+                    endpoint=config.get('endpoint'),
+                    endpoint_service_name=self.endpoint_service_name)
         else:
             if not kwargs.get('service_endpoint'):
                 raise exceptions.MissingEndpointForNonRegionalServiceClientError('An endpoint must be provided for a non-regional service client')
@@ -336,6 +338,7 @@ class BaseClient(object):
                 )
             # Equivalent to decorating the request function with Circuit Breaker
             self.request = circuit_breaker(self.request)
+        self.logger.debug('Endpoint: {}'.format(self._endpoint))
 
     @property
     def endpoint(self):
@@ -358,7 +361,7 @@ class BaseClient(object):
 
     def set_region(self, region):
         if self.regional_client:
-            self.endpoint = regions.endpoint_for(self.service, service_endpoint_template=self.service_endpoint_template, region=region)
+            self.endpoint = regions.endpoint_for(self.service, service_endpoint_template=self.service_endpoint_template, region=region, endpoint_service_name=self.endpoint_service_name)
         else:
             raise TypeError('Setting the region is not allowed for non-regional service clients. You must instead set the endpoint')
 
