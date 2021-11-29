@@ -4,12 +4,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.51.1 - TBD
+2.52.0 - 2021-11-30
 ====================
 
 Added
 -----
-* TBD
+* Support for SQL Tuning Advisor in the Database Management service
+* Support for listing users and getting user details in the Database Management service
+* Support for autonomous databases in the Database Management service
+* Support for enabling and disabling Database Management features on autonomous databases in the Database service
+* Support for the Solaris platform in the Management Agent Cloud service
+* Support for cross-compartment operations in the Operations Insights service
+* Support for listing deployment backups in the GoldenGate service
+* Support for standard tags in the Identity service
+* Support for viewing problems for deleted targets in the Cloud Guard service
+* Support for choosing a platform version while creating a platform instance in the Blockchain Platform service
+* Support for custom IPSec connection tunnel internet key exchange phase 1 and phase 2 encryption algorithms in the Networking service
+* Support for pagination when listing work requests corresponding to an APM domain in the Application Performance Monitoring service
+* Support for the "deleted" lifecycle state on APM domains in the Application Performance Monitoring service
+* Support for calling Oracle Cloud Infrastructure services in the eu-milan-1 and me-abudhabi-1 regions
+
+Breaking
+--------
+* Support for retries enabled by default in all operations of the DevOps, Build, and Source Code Management services
 
 ====================
 2.51.0 - 2021-11-17
