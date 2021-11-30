@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildStage(BuildPipelineStage):
     """
-    Specifies the build Stage.
+    Specifies the build stage.
     """
 
     #: A constant which can be used with the image property of a BuildStage.
@@ -182,7 +182,7 @@ class BuildStage(BuildPipelineStage):
     def image(self):
         """
         **[Required]** Gets the image of this BuildStage.
-        Image name for the Build Environment
+        Image name for the build environment.
 
         Allowed values for this property are: "OL7_X86_64_STANDARD_10", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -197,7 +197,7 @@ class BuildStage(BuildPipelineStage):
     def image(self, image):
         """
         Sets the image of this BuildStage.
-        Image name for the Build Environment
+        Image name for the build environment.
 
 
         :param image: The image of this BuildStage.
@@ -212,7 +212,7 @@ class BuildStage(BuildPipelineStage):
     def build_spec_file(self):
         """
         Gets the build_spec_file of this BuildStage.
-        The path to the build specification file for this Environment. The default location if not specified is build_spec.yaml
+        The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
 
 
         :return: The build_spec_file of this BuildStage.
@@ -224,7 +224,7 @@ class BuildStage(BuildPipelineStage):
     def build_spec_file(self, build_spec_file):
         """
         Sets the build_spec_file of this BuildStage.
-        The path to the build specification file for this Environment. The default location if not specified is build_spec.yaml
+        The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
 
 
         :param build_spec_file: The build_spec_file of this BuildStage.
@@ -236,7 +236,7 @@ class BuildStage(BuildPipelineStage):
     def stage_execution_timeout_in_seconds(self):
         """
         Gets the stage_execution_timeout_in_seconds of this BuildStage.
-        Timeout for the Build Stage Execution. Value in seconds.
+        Timeout for the build stage execution. Specify value in seconds.
 
 
         :return: The stage_execution_timeout_in_seconds of this BuildStage.
@@ -248,7 +248,7 @@ class BuildStage(BuildPipelineStage):
     def stage_execution_timeout_in_seconds(self, stage_execution_timeout_in_seconds):
         """
         Sets the stage_execution_timeout_in_seconds of this BuildStage.
-        Timeout for the Build Stage Execution. Value in seconds.
+        Timeout for the build stage execution. Specify value in seconds.
 
 
         :param stage_execution_timeout_in_seconds: The stage_execution_timeout_in_seconds of this BuildStage.
@@ -280,7 +280,7 @@ class BuildStage(BuildPipelineStage):
     def primary_build_source(self):
         """
         Gets the primary_build_source of this BuildStage.
-        Name of the BuildSource in which the build_spec.yml file need to be located. If not specified, the 1st entry in the BuildSource collection will be chosen as Primary.
+        Name of the build source where the build_spec.yml file is located. If not specified, then the first entry in the build source collection is chosen as primary build source.
 
 
         :return: The primary_build_source of this BuildStage.
@@ -292,7 +292,7 @@ class BuildStage(BuildPipelineStage):
     def primary_build_source(self, primary_build_source):
         """
         Sets the primary_build_source of this BuildStage.
-        Name of the BuildSource in which the build_spec.yml file need to be located. If not specified, the 1st entry in the BuildSource collection will be chosen as Primary.
+        Name of the build source where the build_spec.yml file is located. If not specified, then the first entry in the build source collection is chosen as primary build source.
 
 
         :param primary_build_source: The primary_build_source of this BuildStage.

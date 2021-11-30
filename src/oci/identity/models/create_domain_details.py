@@ -200,7 +200,7 @@ class CreateDomainDetails(object):
     def home_region(self):
         """
         **[Required]** Gets the home_region of this CreateDomainDetails.
-        The region's name. See `Regions and Availability Domains`__
+        The region's name identifier. See `Regions and Availability Domains`__
         for the full list of supported region names.
 
         Example: `us-phoenix-1`
@@ -217,7 +217,7 @@ class CreateDomainDetails(object):
     def home_region(self, home_region):
         """
         Sets the home_region of this CreateDomainDetails.
-        The region's name. See `Regions and Availability Domains`__
+        The region's name identifier. See `Regions and Availability Domains`__
         for the full list of supported region names.
 
         Example: `us-phoenix-1`

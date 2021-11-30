@@ -53,6 +53,10 @@ class ProblemSummary(object):
     #: This constant has a value of "DISMISSED"
     LIFECYCLE_DETAIL_DISMISSED = "DISMISSED"
 
+    #: A constant which can be used with the lifecycle_detail property of a ProblemSummary.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_DETAIL_DELETED = "DELETED"
+
     #: A constant which can be used with the detector_id property of a ProblemSummary.
     #: This constant has a value of "IAAS_ACTIVITY_DETECTOR"
     DETECTOR_ID_IAAS_ACTIVITY_DETECTOR = "IAAS_ACTIVITY_DETECTOR"
@@ -116,7 +120,7 @@ class ProblemSummary(object):
 
         :param lifecycle_detail:
             The value to assign to the lifecycle_detail property of this ProblemSummary.
-            Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_detail: str
 
@@ -476,7 +480,7 @@ class ProblemSummary(object):
         Gets the lifecycle_detail of this ProblemSummary.
         The lifecycleDetail will give more detail on the substate of the lifecycleState.
 
-        Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -495,7 +499,7 @@ class ProblemSummary(object):
         :param lifecycle_detail: The lifecycle_detail of this ProblemSummary.
         :type: str
         """
-        allowed_values = ["OPEN", "RESOLVED", "DISMISSED"]
+        allowed_values = ["OPEN", "RESOLVED", "DISMISSED", "DELETED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_detail, allowed_values):
             lifecycle_detail = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_detail = lifecycle_detail

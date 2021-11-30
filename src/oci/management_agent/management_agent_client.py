@@ -1384,7 +1384,7 @@ class ManagementAgentClient(object):
         :param list[str] platform_type: (optional)
             Filter to return only results having the particular platform type.
 
-            Allowed values are: "LINUX", "WINDOWS"
+            Allowed values are: "LINUX", "WINDOWS", "SOLARIS"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -1442,7 +1442,7 @@ class ManagementAgentClient(object):
                 )
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "WINDOWS"]
+            platform_type_allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -1525,7 +1525,7 @@ class ManagementAgentClient(object):
         :param list[str] platform_type: (optional)
             Filter to return only results having the particular platform type.
 
-            Allowed values are: "LINUX", "WINDOWS"
+            Allowed values are: "LINUX", "WINDOWS", "SOLARIS"
 
         :param bool is_customer_deployed: (optional)
             true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
@@ -1609,7 +1609,7 @@ class ManagementAgentClient(object):
                 )
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "WINDOWS"]
+            platform_type_allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(

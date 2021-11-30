@@ -26,6 +26,10 @@ class DatabaseDetails(object):
             The value to assign to the database_id property of this DatabaseDetails.
         :type database_id: str
 
+        :param compartment_id:
+            The value to assign to the compartment_id property of this DatabaseDetails.
+        :type compartment_id: str
+
         :param database_name:
             The value to assign to the database_name property of this DatabaseDetails.
         :type database_name: str
@@ -54,6 +58,7 @@ class DatabaseDetails(object):
         self.swagger_types = {
             'id': 'str',
             'database_id': 'str',
+            'compartment_id': 'str',
             'database_name': 'str',
             'database_display_name': 'str',
             'database_type': 'str',
@@ -65,6 +70,7 @@ class DatabaseDetails(object):
         self.attribute_map = {
             'id': 'id',
             'database_id': 'databaseId',
+            'compartment_id': 'compartmentId',
             'database_name': 'databaseName',
             'database_display_name': 'databaseDisplayName',
             'database_type': 'databaseType',
@@ -75,6 +81,7 @@ class DatabaseDetails(object):
 
         self._id = None
         self._database_id = None
+        self._compartment_id = None
         self._database_name = None
         self._database_display_name = None
         self._database_type = None
@@ -137,6 +144,34 @@ class DatabaseDetails(object):
         :type: str
         """
         self._database_id = database_id
+
+    @property
+    def compartment_id(self):
+        """
+        **[Required]** Gets the compartment_id of this DatabaseDetails.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The compartment_id of this DatabaseDetails.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this DatabaseDetails.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param compartment_id: The compartment_id of this DatabaseDetails.
+        :type: str
+        """
+        self._compartment_id = compartment_id
 
     @property
     def database_name(self):

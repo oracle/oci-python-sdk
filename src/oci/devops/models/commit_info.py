@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CommitInfo(object):
     """
-    Commit details that need to be used for the BuildRun
+    Commit details that need to be used for the build run.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class CommitInfo(object):
     def repository_url(self):
         """
         **[Required]** Gets the repository_url of this CommitInfo.
-        Repository URL
+        Repository URL.
 
 
         :return: The repository_url of this CommitInfo.
@@ -63,7 +63,7 @@ class CommitInfo(object):
     def repository_url(self, repository_url):
         """
         Sets the repository_url of this CommitInfo.
-        Repository URL
+        Repository URL.
 
 
         :param repository_url: The repository_url of this CommitInfo.
@@ -99,7 +99,7 @@ class CommitInfo(object):
     def commit_hash(self):
         """
         **[Required]** Gets the commit_hash of this CommitInfo.
-        Commit Hash pertinent to the repository URL and Branch specified.
+        Commit hash pertinent to the repository URL and the specified branch.
 
 
         :return: The commit_hash of this CommitInfo.
@@ -111,7 +111,7 @@ class CommitInfo(object):
     def commit_hash(self, commit_hash):
         """
         Sets the commit_hash of this CommitInfo.
-        Commit Hash pertinent to the repository URL and Branch specified.
+        Commit hash pertinent to the repository URL and the specified branch.
 
 
         :param commit_hash: The commit_hash of this CommitInfo.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryCommitSummary(object):
     """
-    Commit summary with commit information
+    Commit summary with commit information.
     """
 
     def __init__(self, **kwargs):
@@ -107,7 +107,7 @@ class RepositoryCommitSummary(object):
     def commit_id(self):
         """
         **[Required]** Gets the commit_id of this RepositoryCommitSummary.
-        Commit hash pointed to by Ref name
+        Commit hash pointed to by reference name.
 
 
         :return: The commit_id of this RepositoryCommitSummary.
@@ -119,7 +119,7 @@ class RepositoryCommitSummary(object):
     def commit_id(self, commit_id):
         """
         Sets the commit_id of this RepositoryCommitSummary.
-        Commit hash pointed to by Ref name
+        Commit hash pointed to by reference name.
 
 
         :param commit_id: The commit_id of this RepositoryCommitSummary.
@@ -155,7 +155,7 @@ class RepositoryCommitSummary(object):
     def author_name(self):
         """
         **[Required]** Gets the author_name of this RepositoryCommitSummary.
-        The name of the author of the repository.
+        Name of the author of the repository.
 
 
         :return: The author_name of this RepositoryCommitSummary.
@@ -167,7 +167,7 @@ class RepositoryCommitSummary(object):
     def author_name(self, author_name):
         """
         Sets the author_name of this RepositoryCommitSummary.
-        The name of the author of the repository.
+        Name of the author of the repository.
 
 
         :param author_name: The author_name of this RepositoryCommitSummary.
@@ -179,7 +179,7 @@ class RepositoryCommitSummary(object):
     def author_email(self):
         """
         **[Required]** Gets the author_email of this RepositoryCommitSummary.
-        The email of the author of the repository.
+        Email of the author of the repository.
 
 
         :return: The author_email of this RepositoryCommitSummary.
@@ -191,7 +191,7 @@ class RepositoryCommitSummary(object):
     def author_email(self, author_email):
         """
         Sets the author_email of this RepositoryCommitSummary.
-        The email of the author of the repository.
+        Email of the author of the repository.
 
 
         :param author_email: The author_email of this RepositoryCommitSummary.
@@ -203,7 +203,7 @@ class RepositoryCommitSummary(object):
     def committer_name(self):
         """
         **[Required]** Gets the committer_name of this RepositoryCommitSummary.
-        The name of who create the commit.
+        Name of who creates the commit.
 
 
         :return: The committer_name of this RepositoryCommitSummary.
@@ -215,7 +215,7 @@ class RepositoryCommitSummary(object):
     def committer_name(self, committer_name):
         """
         Sets the committer_name of this RepositoryCommitSummary.
-        The name of who create the commit.
+        Name of who creates the commit.
 
 
         :param committer_name: The committer_name of this RepositoryCommitSummary.
@@ -227,7 +227,7 @@ class RepositoryCommitSummary(object):
     def committer_email(self):
         """
         **[Required]** Gets the committer_email of this RepositoryCommitSummary.
-        The email of who create the commit.
+        Email of who creates the commit.
 
 
         :return: The committer_email of this RepositoryCommitSummary.
@@ -239,7 +239,7 @@ class RepositoryCommitSummary(object):
     def committer_email(self, committer_email):
         """
         Sets the committer_email of this RepositoryCommitSummary.
-        The email of who create the commit.
+        Email of who creates the commit.
 
 
         :param committer_email: The committer_email of this RepositoryCommitSummary.
@@ -251,7 +251,7 @@ class RepositoryCommitSummary(object):
     def parent_commit_ids(self):
         """
         **[Required]** Gets the parent_commit_ids of this RepositoryCommitSummary.
-        An array of parent commit ids of created commit.
+        An array of parent commit IDs of created commit.
 
 
         :return: The parent_commit_ids of this RepositoryCommitSummary.
@@ -263,7 +263,7 @@ class RepositoryCommitSummary(object):
     def parent_commit_ids(self, parent_commit_ids):
         """
         Sets the parent_commit_ids of this RepositoryCommitSummary.
-        An array of parent commit ids of created commit.
+        An array of parent commit IDs of created commit.
 
 
         :param parent_commit_ids: The parent_commit_ids of this RepositoryCommitSummary.
@@ -299,7 +299,7 @@ class RepositoryCommitSummary(object):
     def tree_id(self):
         """
         **[Required]** Gets the tree_id of this RepositoryCommitSummary.
-        Tree information for the specified commit
+        Tree information for the specified commit.
 
 
         :return: The tree_id of this RepositoryCommitSummary.
@@ -311,7 +311,7 @@ class RepositoryCommitSummary(object):
     def tree_id(self, tree_id):
         """
         Sets the tree_id of this RepositoryCommitSummary.
-        Tree information for the specified commit
+        Tree information for the specified commit.
 
 
         :param tree_id: The tree_id of this RepositoryCommitSummary.

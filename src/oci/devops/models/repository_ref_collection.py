@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryRefCollection(object):
     """
-    Result of a Ref search.
+    Result of a reference search.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class RepositoryRefCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this RepositoryRefCollection.
-        List of Refs.
+        List of references.
 
 
         :return: The items of this RepositoryRefCollection.
@@ -49,7 +49,7 @@ class RepositoryRefCollection(object):
     def items(self, items):
         """
         Sets the items of this RepositoryRefCollection.
-        List of Refs.
+        List of references.
 
 
         :param items: The items of this RepositoryRefCollection.

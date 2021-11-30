@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryAuthorCollection(object):
     """
-    Result of List Authors.
+    Result of list authors.
     """
 
     def __init__(self, **kwargs):

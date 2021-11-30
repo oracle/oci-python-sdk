@@ -26,6 +26,10 @@ class CreateDbManagementPrivateEndpointDetails(object):
             The value to assign to the compartment_id property of this CreateDbManagementPrivateEndpointDetails.
         :type compartment_id: str
 
+        :param is_cluster:
+            The value to assign to the is_cluster property of this CreateDbManagementPrivateEndpointDetails.
+        :type is_cluster: bool
+
         :param subnet_id:
             The value to assign to the subnet_id property of this CreateDbManagementPrivateEndpointDetails.
         :type subnet_id: str
@@ -42,6 +46,7 @@ class CreateDbManagementPrivateEndpointDetails(object):
         self.swagger_types = {
             'name': 'str',
             'compartment_id': 'str',
+            'is_cluster': 'bool',
             'subnet_id': 'str',
             'description': 'str',
             'nsg_ids': 'list[str]'
@@ -50,6 +55,7 @@ class CreateDbManagementPrivateEndpointDetails(object):
         self.attribute_map = {
             'name': 'name',
             'compartment_id': 'compartmentId',
+            'is_cluster': 'isCluster',
             'subnet_id': 'subnetId',
             'description': 'description',
             'nsg_ids': 'nsgIds'
@@ -57,6 +63,7 @@ class CreateDbManagementPrivateEndpointDetails(object):
 
         self._name = None
         self._compartment_id = None
+        self._is_cluster = None
         self._subnet_id = None
         self._description = None
         self._nsg_ids = None
@@ -65,7 +72,7 @@ class CreateDbManagementPrivateEndpointDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateDbManagementPrivateEndpointDetails.
-        The display name for the private endpoint. It is changeable.
+        The display name of the Database Management private endpoint.
 
 
         :return: The name of this CreateDbManagementPrivateEndpointDetails.
@@ -77,7 +84,7 @@ class CreateDbManagementPrivateEndpointDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateDbManagementPrivateEndpointDetails.
-        The display name for the private endpoint. It is changeable.
+        The display name of the Database Management private endpoint.
 
 
         :param name: The name of this CreateDbManagementPrivateEndpointDetails.
@@ -89,7 +96,9 @@ class CreateDbManagementPrivateEndpointDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateDbManagementPrivateEndpointDetails.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateDbManagementPrivateEndpointDetails.
@@ -101,7 +110,9 @@ class CreateDbManagementPrivateEndpointDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateDbManagementPrivateEndpointDetails.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateDbManagementPrivateEndpointDetails.
@@ -110,10 +121,36 @@ class CreateDbManagementPrivateEndpointDetails(object):
         self._compartment_id = compartment_id
 
     @property
+    def is_cluster(self):
+        """
+        Gets the is_cluster of this CreateDbManagementPrivateEndpointDetails.
+        Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
+
+
+        :return: The is_cluster of this CreateDbManagementPrivateEndpointDetails.
+        :rtype: bool
+        """
+        return self._is_cluster
+
+    @is_cluster.setter
+    def is_cluster(self, is_cluster):
+        """
+        Sets the is_cluster of this CreateDbManagementPrivateEndpointDetails.
+        Specifies whether the Database Management private endpoint will be used for Oracle Databases in a cluster.
+
+
+        :param is_cluster: The is_cluster of this CreateDbManagementPrivateEndpointDetails.
+        :type: bool
+        """
+        self._is_cluster = is_cluster
+
+    @property
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this CreateDbManagementPrivateEndpointDetails.
-        The OCID of the subnet.
+        The `OCID`__ of the subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this CreateDbManagementPrivateEndpointDetails.
@@ -125,7 +162,9 @@ class CreateDbManagementPrivateEndpointDetails(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this CreateDbManagementPrivateEndpointDetails.
-        The OCID of the subnet.
+        The `OCID`__ of the subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this CreateDbManagementPrivateEndpointDetails.
@@ -161,7 +200,7 @@ class CreateDbManagementPrivateEndpointDetails(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this CreateDbManagementPrivateEndpointDetails.
-        The OCIDs of the network security groups that the private endpoint belongs to.
+        The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
 
 
         :return: The nsg_ids of this CreateDbManagementPrivateEndpointDetails.
@@ -173,7 +212,7 @@ class CreateDbManagementPrivateEndpointDetails(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this CreateDbManagementPrivateEndpointDetails.
-        The OCIDs of the network security groups that the private endpoint belongs to.
+        The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
 
 
         :param nsg_ids: The nsg_ids of this CreateDbManagementPrivateEndpointDetails.

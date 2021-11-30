@@ -4813,7 +4813,7 @@ class CloudGuardClient(object):
         :param str lifecycle_detail: (optional)
             The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
 
-            Allowed values are: "OPEN", "RESOLVED", "DISMISSED"
+            Allowed values are: "OPEN", "RESOLVED", "DISMISSED", "DELETED"
 
         :param str lifecycle_state: (optional)
             The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
@@ -4940,7 +4940,7 @@ class CloudGuardClient(object):
                 "list_problems got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'lifecycle_detail' in kwargs:
-            lifecycle_detail_allowed_values = ["OPEN", "RESOLVED", "DISMISSED"]
+            lifecycle_detail_allowed_values = ["OPEN", "RESOLVED", "DISMISSED", "DELETED"]
             if kwargs['lifecycle_detail'] not in lifecycle_detail_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_detail`, must be one of {0}".format(lifecycle_detail_allowed_values)

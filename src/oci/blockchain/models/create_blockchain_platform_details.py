@@ -42,6 +42,10 @@ class CreateBlockchainPlatformDetails(object):
             The value to assign to the is_byol property of this CreateBlockchainPlatformDetails.
         :type is_byol: bool
 
+        :param platform_version:
+            The value to assign to the platform_version property of this CreateBlockchainPlatformDetails.
+        :type platform_version: str
+
         :param idcs_access_token:
             The value to assign to the idcs_access_token property of this CreateBlockchainPlatformDetails.
         :type idcs_access_token: str
@@ -70,6 +74,7 @@ class CreateBlockchainPlatformDetails(object):
             'platform_role': 'str',
             'compute_shape': 'str',
             'is_byol': 'bool',
+            'platform_version': 'str',
             'idcs_access_token': 'str',
             'federated_user_id': 'str',
             'ca_cert_archive_text': 'str',
@@ -84,6 +89,7 @@ class CreateBlockchainPlatformDetails(object):
             'platform_role': 'platformRole',
             'compute_shape': 'computeShape',
             'is_byol': 'isByol',
+            'platform_version': 'platformVersion',
             'idcs_access_token': 'idcsAccessToken',
             'federated_user_id': 'federatedUserId',
             'ca_cert_archive_text': 'caCertArchiveText',
@@ -97,6 +103,7 @@ class CreateBlockchainPlatformDetails(object):
         self._platform_role = None
         self._compute_shape = None
         self._is_byol = None
+        self._platform_version = None
         self._idcs_access_token = None
         self._federated_user_id = None
         self._ca_cert_archive_text = None
@@ -246,6 +253,30 @@ class CreateBlockchainPlatformDetails(object):
         :type: bool
         """
         self._is_byol = is_byol
+
+    @property
+    def platform_version(self):
+        """
+        Gets the platform_version of this CreateBlockchainPlatformDetails.
+        Platform version
+
+
+        :return: The platform_version of this CreateBlockchainPlatformDetails.
+        :rtype: str
+        """
+        return self._platform_version
+
+    @platform_version.setter
+    def platform_version(self, platform_version):
+        """
+        Sets the platform_version of this CreateBlockchainPlatformDetails.
+        Platform version
+
+
+        :param platform_version: The platform_version of this CreateBlockchainPlatformDetails.
+        :type: str
+        """
+        self._platform_version = platform_version
 
     @property
     def idcs_access_token(self):

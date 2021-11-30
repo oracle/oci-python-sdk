@@ -99,7 +99,7 @@ class UpdateDbManagementPrivateEndpointDetails(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this UpdateDbManagementPrivateEndpointDetails.
-        The OCIDs of the network security groups that the private endpoint belongs to.
+        The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
 
 
         :return: The nsg_ids of this UpdateDbManagementPrivateEndpointDetails.
@@ -111,7 +111,7 @@ class UpdateDbManagementPrivateEndpointDetails(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this UpdateDbManagementPrivateEndpointDetails.
-        The OCIDs of the network security groups that the private endpoint belongs to.
+        The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
 
 
         :param nsg_ids: The nsg_ids of this UpdateDbManagementPrivateEndpointDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExportedVariable(object):
     """
-    Values for Exported variables.
+    Values for exported variables.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class ExportedVariable(object):
     def name(self):
         """
         **[Required]** Gets the name of this ExportedVariable.
-        Name of the parameter (Case-sensitive).
+        Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
 
 
         :return: The name of this ExportedVariable.
@@ -56,7 +56,7 @@ class ExportedVariable(object):
     def name(self, name):
         """
         Sets the name of this ExportedVariable.
-        Name of the parameter (Case-sensitive).
+        Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
 
 
         :param name: The name of this ExportedVariable.
@@ -68,7 +68,7 @@ class ExportedVariable(object):
     def value(self):
         """
         **[Required]** Gets the value of this ExportedVariable.
-        value of the argument
+        Value of the argument.
 
 
         :return: The value of this ExportedVariable.
@@ -80,7 +80,7 @@ class ExportedVariable(object):
     def value(self, value):
         """
         Sets the value of this ExportedVariable.
-        value of the argument
+        Value of the argument.
 
 
         :param value: The value of this ExportedVariable.

@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildPipelineParameterCollection(object):
     """
-    Specifies list of parameters present in BuildPipeline.
-    In case of UPDATE operation, replaces existing parameters list. Merging with existing parameters is not supported.
+    Specifies list of parameters present in a build pipeline.
+    An UPDATE operation replaces the existing parameters list entirely.
     """
 
     def __init__(self, **kwargs):
@@ -38,7 +38,7 @@ class BuildPipelineParameterCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this BuildPipelineParameterCollection.
-        List of Parameters defined for a BuildPipeline.
+        List of parameters defined for a build pipeline.
 
 
         :return: The items of this BuildPipelineParameterCollection.
@@ -50,7 +50,7 @@ class BuildPipelineParameterCollection(object):
     def items(self, items):
         """
         Sets the items of this BuildPipelineParameterCollection.
-        List of Parameters defined for a BuildPipeline.
+        List of parameters defined for a build pipeline.
 
 
         :param items: The items of this BuildPipelineParameterCollection.

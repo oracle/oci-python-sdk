@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildRunProgress(object):
     """
-    The run progress details of a BuildRun.
+    The run progress details of a build run.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,9 @@ class BuildRunProgress(object):
     def time_started(self):
         """
         Gets the time_started of this BuildRunProgress.
-        The time the the BuildRun is started. An RFC3339 formatted datetime string
+        The time the build run started. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_started of this BuildRunProgress.
@@ -63,7 +65,9 @@ class BuildRunProgress(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this BuildRunProgress.
-        The time the the BuildRun is started. An RFC3339 formatted datetime string
+        The time the build run started. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_started: The time_started of this BuildRunProgress.
@@ -75,7 +79,9 @@ class BuildRunProgress(object):
     def time_finished(self):
         """
         Gets the time_finished of this BuildRunProgress.
-        The time the BuildRun is finished. An RFC3339 formatted datetime string
+        The time the build run finished. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_finished of this BuildRunProgress.
@@ -87,7 +93,9 @@ class BuildRunProgress(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this BuildRunProgress.
-        The time the BuildRun is finished. An RFC3339 formatted datetime string
+        The time the build run finished. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_finished: The time_finished of this BuildRunProgress.
@@ -99,7 +107,7 @@ class BuildRunProgress(object):
     def build_pipeline_stage_run_progress(self):
         """
         Gets the build_pipeline_stage_run_progress of this BuildRunProgress.
-        Map of stage OCIDs to BuildPipelineStageRunProgress model.
+        Map of stage OCIDs to build pipeline stage run progress model.
 
 
         :return: The build_pipeline_stage_run_progress of this BuildRunProgress.
@@ -111,7 +119,7 @@ class BuildRunProgress(object):
     def build_pipeline_stage_run_progress(self, build_pipeline_stage_run_progress):
         """
         Sets the build_pipeline_stage_run_progress of this BuildRunProgress.
-        Map of stage OCIDs to BuildPipelineStageRunProgress model.
+        Map of stage OCIDs to build pipeline stage run progress model.
 
 
         :param build_pipeline_stage_run_progress: The build_pipeline_stage_run_progress of this BuildRunProgress.

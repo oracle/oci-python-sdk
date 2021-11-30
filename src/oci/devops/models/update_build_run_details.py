@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateBuildRunDetails(object):
     """
-    The build Run information to be updated.
+    The build run information to be updated.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class UpdateBuildRunDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateBuildRunDetails.
-        BuildRun display name
+        Build run display name. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateBuildRunDetails.
@@ -63,7 +63,7 @@ class UpdateBuildRunDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateBuildRunDetails.
-        BuildRun display name
+        Build run display name. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateBuildRunDetails.

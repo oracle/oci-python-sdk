@@ -600,7 +600,7 @@ class Tablespace(object):
     def type(self):
         """
         **[Required]** Gets the type of this Tablespace.
-        The type of the tablespace.
+        The type of tablespace.
 
         Allowed values for this property are: "UNDO", "LOST_WRITE_PROTECTION", "PERMANENT", "TEMPORARY"
 
@@ -614,7 +614,7 @@ class Tablespace(object):
     def type(self, type):
         """
         Sets the type of this Tablespace.
-        The type of the tablespace.
+        The type of tablespace.
 
 
         :param type: The type of this Tablespace.
@@ -664,7 +664,7 @@ class Tablespace(object):
     def block_size_bytes(self):
         """
         Gets the block_size_bytes of this Tablespace.
-        The tablespace block size in bytes.
+        The tablespace block size.
 
 
         :return: The block_size_bytes of this Tablespace.
@@ -676,7 +676,7 @@ class Tablespace(object):
     def block_size_bytes(self, block_size_bytes):
         """
         Sets the block_size_bytes of this Tablespace.
-        The tablespace block size in bytes.
+        The tablespace block size.
 
 
         :param block_size_bytes: The block_size_bytes of this Tablespace.
@@ -1040,7 +1040,7 @@ class Tablespace(object):
     def default_in_memory(self):
         """
         Gets the default_in_memory of this Tablespace.
-        Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in this tablespace.
+        Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in the tablespace.
 
         Allowed values for this property are: "ENABLED", "DISABLED"
 
@@ -1054,7 +1054,7 @@ class Tablespace(object):
     def default_in_memory(self, default_in_memory):
         """
         Sets the default_in_memory of this Tablespace.
-        Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in this tablespace.
+        Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in the tablespace.
 
 
         :param default_in_memory: The default_in_memory of this Tablespace.
@@ -1072,7 +1072,7 @@ class Tablespace(object):
     def default_in_memory_priority(self):
         """
         Gets the default_in_memory_priority of this Tablespace.
-        Indicates the default priority for In-Memory Column Store (IM column store) population for this tablespace.
+        Indicates the default priority for In-Memory Column Store (IM column store) population for the tablespace.
 
         Allowed values for this property are: "LOW", "MEDIUM", "HIGH", "CRITICAL", "NONE"
 
@@ -1086,7 +1086,7 @@ class Tablespace(object):
     def default_in_memory_priority(self, default_in_memory_priority):
         """
         Sets the default_in_memory_priority of this Tablespace.
-        Indicates the default priority for In-Memory Column Store (IM column store) population for this tablespace.
+        Indicates the default priority for In-Memory Column Store (IM column store) population for the tablespace.
 
 
         :param default_in_memory_priority: The default_in_memory_priority of this Tablespace.
@@ -1104,7 +1104,7 @@ class Tablespace(object):
     def default_in_memory_distribute(self):
         """
         Gets the default_in_memory_distribute of this Tablespace.
-        Indicates how the IM column store is distributed by default for this tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
+        Indicates how the IM column store is distributed by default for the tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
 
         Allowed values for this property are: "AUTO", "BY_ROWID_RANGE", "BY_PARTITION", "BY_SUBPARTITION"
 
@@ -1118,7 +1118,7 @@ class Tablespace(object):
     def default_in_memory_distribute(self, default_in_memory_distribute):
         """
         Sets the default_in_memory_distribute of this Tablespace.
-        Indicates how the IM column store is distributed by default for this tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
+        Indicates how the IM column store is distributed by default for the tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
 
 
         :param default_in_memory_distribute: The default_in_memory_distribute of this Tablespace.
@@ -1136,7 +1136,7 @@ class Tablespace(object):
     def default_in_memory_compression(self):
         """
         Gets the default_in_memory_compression of this Tablespace.
-        Indicates the default compression level for the IM column store for this tablespace.
+        Indicates the default compression level for the IM column store for the tablespace.
 
         Allowed values for this property are: "NO_MEMCOMPRESS", "FOR_DML", "FOR_QUERY_LOW", "FOR_QUERY_HIGH", "FOR_CAPACITY_LOW", "FOR_CAPACITY_HIGH"
 
@@ -1150,7 +1150,7 @@ class Tablespace(object):
     def default_in_memory_compression(self, default_in_memory_compression):
         """
         Sets the default_in_memory_compression of this Tablespace.
-        Indicates the default compression level for the IM column store for this tablespace.
+        Indicates the default compression level for the IM column store for the tablespace.
 
 
         :param default_in_memory_compression: The default_in_memory_compression of this Tablespace.
@@ -1320,7 +1320,7 @@ class Tablespace(object):
     def default_in_memory_service(self):
         """
         Gets the default_in_memory_service of this Tablespace.
-        Indicates how the IM column store is populated on various instances by default for this tablespace.
+        Indicates how the IM column store is populated on various instances by default for the tablespace.
 
         Allowed values for this property are: "DEFAULT", "NONE", "ALL", "USER_DEFINED"
 
@@ -1334,7 +1334,7 @@ class Tablespace(object):
     def default_in_memory_service(self, default_in_memory_service):
         """
         Sets the default_in_memory_service of this Tablespace.
-        Indicates how the IM column store is populated on various instances by default for this tablespace.
+        Indicates how the IM column store is populated on various instances by default for the tablespace.
 
 
         :param default_in_memory_service: The default_in_memory_service of this Tablespace.
@@ -1352,7 +1352,7 @@ class Tablespace(object):
     def default_in_memory_service_name(self):
         """
         Gets the default_in_memory_service_name of this Tablespace.
-        Indicates the service name for the service on which the IM column store should be populated by default for this tablespace. This column has a value only when the corresponding DEF_INMEMORY_SERVICE is USER_DEFINED. In all other cases, this column is null.
+        Indicates the service name for the service on which the IM column store should be populated by default for the tablespace. This column has a value only when the corresponding DEF_INMEMORY_SERVICE is USER_DEFINED. In all other cases, this column is null.
 
 
         :return: The default_in_memory_service_name of this Tablespace.
@@ -1364,7 +1364,7 @@ class Tablespace(object):
     def default_in_memory_service_name(self, default_in_memory_service_name):
         """
         Sets the default_in_memory_service_name of this Tablespace.
-        Indicates the service name for the service on which the IM column store should be populated by default for this tablespace. This column has a value only when the corresponding DEF_INMEMORY_SERVICE is USER_DEFINED. In all other cases, this column is null.
+        Indicates the service name for the service on which the IM column store should be populated by default for the tablespace. This column has a value only when the corresponding DEF_INMEMORY_SERVICE is USER_DEFINED. In all other cases, this column is null.
 
 
         :param default_in_memory_service_name: The default_in_memory_service_name of this Tablespace.
@@ -1456,7 +1456,7 @@ class Tablespace(object):
     def max_size_kb(self):
         """
         Gets the max_size_kb of this Tablespace.
-        The maximum tablespace size in KB. If the tablespace contains any datafiles with Autoextend enabled, then this column displays the amount of underlying free storage space for the tablespace. For example, if the current tablespace size is 1 GB, the combined maximum size of all its datafiles is 32 GB, and its underlying storage (for example, ASM or file system storage) has 20 GB of free space, then this column will have a value of approximately 20 GB. If the tablespace contains only datafiles with autoextend disabled, then this column displays the allocated space for the entire tablespace, that is, the combined size of all datafiles in the tablespace.
+        The maximum tablespace size in KB. If the tablespace contains any data files with Autoextend enabled, then this column displays the amount of underlying free storage space for the tablespace. For example, if the current tablespace size is 1 GB, the combined maximum size of all its data files is 32 GB, and its underlying storage (for example, ASM or file system storage) has 20 GB of free space, then this column will have a value of approximately 20 GB. If the tablespace contains only data files with autoextend disabled, then this column displays the allocated space for the entire tablespace, that is, the combined size of all data files in the tablespace.
 
 
         :return: The max_size_kb of this Tablespace.
@@ -1468,7 +1468,7 @@ class Tablespace(object):
     def max_size_kb(self, max_size_kb):
         """
         Sets the max_size_kb of this Tablespace.
-        The maximum tablespace size in KB. If the tablespace contains any datafiles with Autoextend enabled, then this column displays the amount of underlying free storage space for the tablespace. For example, if the current tablespace size is 1 GB, the combined maximum size of all its datafiles is 32 GB, and its underlying storage (for example, ASM or file system storage) has 20 GB of free space, then this column will have a value of approximately 20 GB. If the tablespace contains only datafiles with autoextend disabled, then this column displays the allocated space for the entire tablespace, that is, the combined size of all datafiles in the tablespace.
+        The maximum tablespace size in KB. If the tablespace contains any data files with Autoextend enabled, then this column displays the amount of underlying free storage space for the tablespace. For example, if the current tablespace size is 1 GB, the combined maximum size of all its data files is 32 GB, and its underlying storage (for example, ASM or file system storage) has 20 GB of free space, then this column will have a value of approximately 20 GB. If the tablespace contains only data files with autoextend disabled, then this column displays the allocated space for the entire tablespace, that is, the combined size of all data files in the tablespace.
 
 
         :param max_size_kb: The max_size_kb of this Tablespace.
@@ -1528,7 +1528,7 @@ class Tablespace(object):
     def free_space_kb(self):
         """
         Gets the free_space_kb of this Tablespace.
-        The free space available in this tablespace in KB.
+        The free space available in the tablespace in KB.
 
 
         :return: The free_space_kb of this Tablespace.
@@ -1540,7 +1540,7 @@ class Tablespace(object):
     def free_space_kb(self, free_space_kb):
         """
         Sets the free_space_kb of this Tablespace.
-        The free space available in this tablespace in KB.
+        The free space available in the tablespace in KB.
 
 
         :param free_space_kb: The free_space_kb of this Tablespace.
@@ -1624,7 +1624,7 @@ class Tablespace(object):
     def datafiles(self):
         """
         Gets the datafiles of this Tablespace.
-        A list of the datafiles associated with the tablespace.
+        A list of the data files associated with the tablespace.
 
 
         :return: The datafiles of this Tablespace.
@@ -1636,7 +1636,7 @@ class Tablespace(object):
     def datafiles(self, datafiles):
         """
         Sets the datafiles of this Tablespace.
-        A list of the datafiles associated with the tablespace.
+        A list of the data files associated with the tablespace.
 
 
         :param datafiles: The datafiles of this Tablespace.

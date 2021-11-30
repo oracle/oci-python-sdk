@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryFileLines(object):
     """
-    Object containing the lines of a file in a repository
+    Object containing the lines of a file in a repository.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class RepositoryFileLines(object):
     def lines(self):
         """
         **[Required]** Gets the lines of this RepositoryFileLines.
-        The list of lines in the file
+        The list of lines in the file.
 
 
         :return: The lines of this RepositoryFileLines.
@@ -49,7 +49,7 @@ class RepositoryFileLines(object):
     def lines(self, lines):
         """
         Sets the lines of this RepositoryFileLines.
-        The list of lines in the file
+        The list of lines in the file.
 
 
         :param lines: The lines of this RepositoryFileLines.

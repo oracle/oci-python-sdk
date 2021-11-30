@@ -82,6 +82,7 @@ Identity
     oci.identity.models.IdentityProvider
     oci.identity.models.IdentityProviderGroupSummary
     oci.identity.models.IdpGroupMapping
+    oci.identity.models.ImportStandardTagsDetails
     oci.identity.models.MfaTotpDevice
     oci.identity.models.MfaTotpDeviceSummary
     oci.identity.models.MfaTotpToken
@@ -101,6 +102,9 @@ Identity
     oci.identity.models.ScimClientCredentials
     oci.identity.models.SmtpCredential
     oci.identity.models.SmtpCredentialSummary
+    oci.identity.models.StandardTagDefinitionTemplate
+    oci.identity.models.StandardTagNamespaceTemplate
+    oci.identity.models.StandardTagNamespaceTemplateSummary
     oci.identity.models.SwiftPassword
     oci.identity.models.Tag
     oci.identity.models.TagDefault

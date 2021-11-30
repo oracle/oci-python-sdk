@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryObject(object):
     """
-    Object containing information about files and directories in a repository
+    Object containing information about files and directories in a repository.
     """
 
     #: A constant which can be used with the type property of a RepositoryObject.
@@ -102,7 +102,7 @@ class RepositoryObject(object):
     def size_in_bytes(self):
         """
         **[Required]** Gets the size_in_bytes of this RepositoryObject.
-        Size in Bytes
+        Size in bytes.
 
 
         :return: The size_in_bytes of this RepositoryObject.
@@ -114,7 +114,7 @@ class RepositoryObject(object):
     def size_in_bytes(self, size_in_bytes):
         """
         Sets the size_in_bytes of this RepositoryObject.
-        Size in Bytes
+        Size in bytes.
 
 
         :param size_in_bytes: The size_in_bytes of this RepositoryObject.
@@ -126,7 +126,7 @@ class RepositoryObject(object):
     def sha(self):
         """
         **[Required]** Gets the sha of this RepositoryObject.
-        SHA-1 hash of git object
+        SHA-1 hash of git object.
 
 
         :return: The sha of this RepositoryObject.
@@ -138,7 +138,7 @@ class RepositoryObject(object):
     def sha(self, sha):
         """
         Sets the sha of this RepositoryObject.
-        SHA-1 hash of git object
+        SHA-1 hash of git object.
 
 
         :param sha: The sha of this RepositoryObject.
@@ -150,7 +150,7 @@ class RepositoryObject(object):
     def is_binary(self):
         """
         Gets the is_binary of this RepositoryObject.
-        flag to determine is the object contains binary file content or not.
+        Flag to determine if the object contains binary file content or not.
 
 
         :return: The is_binary of this RepositoryObject.
@@ -162,7 +162,7 @@ class RepositoryObject(object):
     def is_binary(self, is_binary):
         """
         Sets the is_binary of this RepositoryObject.
-        flag to determine is the object contains binary file content or not.
+        Flag to determine if the object contains binary file content or not.
 
 
         :param is_binary: The is_binary of this RepositoryObject.

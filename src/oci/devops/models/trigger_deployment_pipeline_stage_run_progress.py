@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TriggerDeploymentPipelineStageRunProgress(BuildPipelineStageRunProgress):
     """
-    Specifies Trigger Deployment Pipleline stage specific exeution details.
+    Specifies Trigger Deployment Pipleline stage specific run details.
     """
 
     def __init__(self, **kwargs):
@@ -143,7 +143,7 @@ class TriggerDeploymentPipelineStageRunProgress(BuildPipelineStageRunProgress):
     def deployment_id(self):
         """
         Gets the deployment_id of this TriggerDeploymentPipelineStageRunProgress.
-        Identifier of the Deployment Trigerred.
+        Identifier of the deployment triggered.
 
 
         :return: The deployment_id of this TriggerDeploymentPipelineStageRunProgress.
@@ -155,7 +155,7 @@ class TriggerDeploymentPipelineStageRunProgress(BuildPipelineStageRunProgress):
     def deployment_id(self, deployment_id):
         """
         Sets the deployment_id of this TriggerDeploymentPipelineStageRunProgress.
-        Identifier of the Deployment Trigerred.
+        Identifier of the deployment triggered.
 
 
         :param deployment_id: The deployment_id of this TriggerDeploymentPipelineStageRunProgress.

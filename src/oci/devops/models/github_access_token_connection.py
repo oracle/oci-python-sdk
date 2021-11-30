@@ -126,7 +126,7 @@ class GithubAccessTokenConnection(Connection):
     def access_token(self):
         """
         **[Required]** Gets the access_token of this GithubAccessTokenConnection.
-        OCID of personal access token saved in secret store
+        The OCID of personal access token saved in secret store.
 
 
         :return: The access_token of this GithubAccessTokenConnection.
@@ -138,7 +138,7 @@ class GithubAccessTokenConnection(Connection):
     def access_token(self, access_token):
         """
         Sets the access_token of this GithubAccessTokenConnection.
-        OCID of personal access token saved in secret store
+        The OCID of personal access token saved in secret store.
 
 
         :param access_token: The access_token of this GithubAccessTokenConnection.

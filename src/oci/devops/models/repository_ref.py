@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryRef(object):
     """
-    Ref object with name and commitId
+    Reference object with name and commit ID.
     """
 
     #: A constant which can be used with the ref_type property of a RepositoryRef.
@@ -89,7 +89,7 @@ class RepositoryRef(object):
     def ref_name(self):
         """
         **[Required]** Gets the ref_name of this RepositoryRef.
-        Unique Ref name inside a repository
+        Unique reference name inside a repository.
 
 
         :return: The ref_name of this RepositoryRef.
@@ -101,7 +101,7 @@ class RepositoryRef(object):
     def ref_name(self, ref_name):
         """
         Sets the ref_name of this RepositoryRef.
-        Unique Ref name inside a repository
+        Unique reference name inside a repository.
 
 
         :param ref_name: The ref_name of this RepositoryRef.
@@ -113,7 +113,7 @@ class RepositoryRef(object):
     def ref_type(self):
         """
         **[Required]** Gets the ref_type of this RepositoryRef.
-        The type of Ref (Branch or Tag)
+        The type of reference (Branch or Tag).
 
         Allowed values for this property are: "BRANCH", "TAG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -128,7 +128,7 @@ class RepositoryRef(object):
     def ref_type(self, ref_type):
         """
         Sets the ref_type of this RepositoryRef.
-        The type of Ref (Branch or Tag)
+        The type of reference (Branch or Tag).
 
 
         :param ref_type: The ref_type of this RepositoryRef.
@@ -143,7 +143,7 @@ class RepositoryRef(object):
     def full_ref_name(self):
         """
         **[Required]** Gets the full_ref_name of this RepositoryRef.
-        Unique full ref name inside a repository
+        Unique full reference name inside a repository.
 
 
         :return: The full_ref_name of this RepositoryRef.
@@ -155,7 +155,7 @@ class RepositoryRef(object):
     def full_ref_name(self, full_ref_name):
         """
         Sets the full_ref_name of this RepositoryRef.
-        Unique full ref name inside a repository
+        Unique full reference name inside a repository.
 
 
         :param full_ref_name: The full_ref_name of this RepositoryRef.
@@ -167,7 +167,7 @@ class RepositoryRef(object):
     def repository_id(self):
         """
         **[Required]** Gets the repository_id of this RepositoryRef.
-        The OCID of the repository containing the ref.
+        The OCID of the repository containing the reference.
 
 
         :return: The repository_id of this RepositoryRef.
@@ -179,7 +179,7 @@ class RepositoryRef(object):
     def repository_id(self, repository_id):
         """
         Sets the repository_id of this RepositoryRef.
-        The OCID of the repository containing the ref.
+        The OCID of the repository containing the reference.
 
 
         :param repository_id: The repository_id of this RepositoryRef.

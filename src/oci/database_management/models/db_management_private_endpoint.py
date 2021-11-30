@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbManagementPrivateEndpoint(object):
     """
-    A Database Management private endpoint that allows Database Management services to connect to databases in a customer's virtual cloud network (VCN).
+    A Database Management private endpoint allows Database Management to connect to databases in a Virtual Cloud Network (VCN).
     """
 
     #: A constant which can be used with the lifecycle_state property of a DbManagementPrivateEndpoint.
@@ -54,6 +54,10 @@ class DbManagementPrivateEndpoint(object):
             The value to assign to the compartment_id property of this DbManagementPrivateEndpoint.
         :type compartment_id: str
 
+        :param is_cluster:
+            The value to assign to the is_cluster property of this DbManagementPrivateEndpoint.
+        :type is_cluster: bool
+
         :param vcn_id:
             The value to assign to the vcn_id property of this DbManagementPrivateEndpoint.
         :type vcn_id: str
@@ -89,6 +93,7 @@ class DbManagementPrivateEndpoint(object):
             'id': 'str',
             'name': 'str',
             'compartment_id': 'str',
+            'is_cluster': 'bool',
             'vcn_id': 'str',
             'subnet_id': 'str',
             'private_ip': 'str',
@@ -102,6 +107,7 @@ class DbManagementPrivateEndpoint(object):
             'id': 'id',
             'name': 'name',
             'compartment_id': 'compartmentId',
+            'is_cluster': 'isCluster',
             'vcn_id': 'vcnId',
             'subnet_id': 'subnetId',
             'private_ip': 'privateIp',
@@ -114,6 +120,7 @@ class DbManagementPrivateEndpoint(object):
         self._id = None
         self._name = None
         self._compartment_id = None
+        self._is_cluster = None
         self._vcn_id = None
         self._subnet_id = None
         self._private_ip = None
@@ -126,7 +133,9 @@ class DbManagementPrivateEndpoint(object):
     def id(self):
         """
         **[Required]** Gets the id of this DbManagementPrivateEndpoint.
-        The OCID of the Database Management private endpoint.
+        The `OCID`__ of the Database Management private endpoint.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbManagementPrivateEndpoint.
@@ -138,7 +147,9 @@ class DbManagementPrivateEndpoint(object):
     def id(self, id):
         """
         Sets the id of this DbManagementPrivateEndpoint.
-        The OCID of the Database Management private endpoint.
+        The `OCID`__ of the Database Management private endpoint.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbManagementPrivateEndpoint.
@@ -150,7 +161,7 @@ class DbManagementPrivateEndpoint(object):
     def name(self):
         """
         **[Required]** Gets the name of this DbManagementPrivateEndpoint.
-        The display name of the private endpoint.
+        The display name of the Database Management private endpoint.
 
 
         :return: The name of this DbManagementPrivateEndpoint.
@@ -162,7 +173,7 @@ class DbManagementPrivateEndpoint(object):
     def name(self, name):
         """
         Sets the name of this DbManagementPrivateEndpoint.
-        The display name of the private endpoint.
+        The display name of the Database Management private endpoint.
 
 
         :param name: The name of this DbManagementPrivateEndpoint.
@@ -174,7 +185,9 @@ class DbManagementPrivateEndpoint(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DbManagementPrivateEndpoint.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DbManagementPrivateEndpoint.
@@ -186,7 +199,9 @@ class DbManagementPrivateEndpoint(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DbManagementPrivateEndpoint.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DbManagementPrivateEndpoint.
@@ -195,10 +210,36 @@ class DbManagementPrivateEndpoint(object):
         self._compartment_id = compartment_id
 
     @property
+    def is_cluster(self):
+        """
+        Gets the is_cluster of this DbManagementPrivateEndpoint.
+        Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
+
+
+        :return: The is_cluster of this DbManagementPrivateEndpoint.
+        :rtype: bool
+        """
+        return self._is_cluster
+
+    @is_cluster.setter
+    def is_cluster(self, is_cluster):
+        """
+        Sets the is_cluster of this DbManagementPrivateEndpoint.
+        Specifies whether the Database Management private endpoint can be used for Oracle Databases in a cluster.
+
+
+        :param is_cluster: The is_cluster of this DbManagementPrivateEndpoint.
+        :type: bool
+        """
+        self._is_cluster = is_cluster
+
+    @property
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this DbManagementPrivateEndpoint.
-        The OCID of the VCN.
+        The `OCID`__ of the VCN.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this DbManagementPrivateEndpoint.
@@ -210,7 +251,9 @@ class DbManagementPrivateEndpoint(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this DbManagementPrivateEndpoint.
-        The OCID of the VCN.
+        The `OCID`__ of the VCN.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this DbManagementPrivateEndpoint.
@@ -222,7 +265,9 @@ class DbManagementPrivateEndpoint(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this DbManagementPrivateEndpoint.
-        The OCID of the subnet.
+        The `OCID`__ of the subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this DbManagementPrivateEndpoint.
@@ -234,7 +279,9 @@ class DbManagementPrivateEndpoint(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this DbManagementPrivateEndpoint.
-        The OCID of the subnet.
+        The `OCID`__ of the subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this DbManagementPrivateEndpoint.
@@ -246,7 +293,7 @@ class DbManagementPrivateEndpoint(object):
     def private_ip(self):
         """
         Gets the private_ip of this DbManagementPrivateEndpoint.
-        The private IP addresses assigned to the private endpoint.
+        The IP addresses assigned to the Database Management private endpoint.
 
 
         :return: The private_ip of this DbManagementPrivateEndpoint.
@@ -258,7 +305,7 @@ class DbManagementPrivateEndpoint(object):
     def private_ip(self, private_ip):
         """
         Sets the private_ip of this DbManagementPrivateEndpoint.
-        The private IP addresses assigned to the private endpoint.
+        The IP addresses assigned to the Database Management private endpoint.
 
 
         :param private_ip: The private_ip of this DbManagementPrivateEndpoint.
@@ -270,7 +317,7 @@ class DbManagementPrivateEndpoint(object):
     def description(self):
         """
         Gets the description of this DbManagementPrivateEndpoint.
-        The description of the private endpoint.
+        The description of the Database Management private endpoint.
 
 
         :return: The description of this DbManagementPrivateEndpoint.
@@ -282,7 +329,7 @@ class DbManagementPrivateEndpoint(object):
     def description(self, description):
         """
         Sets the description of this DbManagementPrivateEndpoint.
-        The description of the private endpoint.
+        The description of the Database Management private endpoint.
 
 
         :param description: The description of this DbManagementPrivateEndpoint.
@@ -294,7 +341,7 @@ class DbManagementPrivateEndpoint(object):
     def time_created(self):
         """
         Gets the time_created of this DbManagementPrivateEndpoint.
-        The date and time the private endpoint was created, in the format defined by `RFC3339`__.
+        The date and time the Database Managament private endpoint was created, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -308,7 +355,7 @@ class DbManagementPrivateEndpoint(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DbManagementPrivateEndpoint.
-        The date and time the private endpoint was created, in the format defined by `RFC3339`__.
+        The date and time the Database Managament private endpoint was created, in the format defined by `RFC3339`__.
 
         __ https://tools.ietf.org/html/rfc3339
 
@@ -322,7 +369,7 @@ class DbManagementPrivateEndpoint(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this DbManagementPrivateEndpoint.
-        The current state of the private endpoint.
+        The current lifecycle state of the Database Management private endpoint.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -337,7 +384,7 @@ class DbManagementPrivateEndpoint(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DbManagementPrivateEndpoint.
-        The current state of the private endpoint.
+        The current lifecycle state of the Database Management private endpoint.
 
 
         :param lifecycle_state: The lifecycle_state of this DbManagementPrivateEndpoint.
@@ -352,7 +399,7 @@ class DbManagementPrivateEndpoint(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this DbManagementPrivateEndpoint.
-        The OCIDs of the network security groups that the private endpoint belongs to.
+        The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
 
 
         :return: The nsg_ids of this DbManagementPrivateEndpoint.
@@ -364,7 +411,7 @@ class DbManagementPrivateEndpoint(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this DbManagementPrivateEndpoint.
-        The OCIDs of the network security groups that the private endpoint belongs to.
+        The OCIDs of the Network Security Groups to which the Database Management private endpoint belongs.
 
 
         :param nsg_ids: The nsg_ids of this DbManagementPrivateEndpoint.

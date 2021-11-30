@@ -29,6 +29,10 @@ class TaggingWorkRequestSummary(object):
     #: This constant has a value of "BULK_EDIT_OF_TAGS"
     OPERATION_TYPE_BULK_EDIT_OF_TAGS = "BULK_EDIT_OF_TAGS"
 
+    #: A constant which can be used with the operation_type property of a TaggingWorkRequestSummary.
+    #: This constant has a value of "IMPORT_STANDARD_TAGS"
+    OPERATION_TYPE_IMPORT_STANDARD_TAGS = "IMPORT_STANDARD_TAGS"
+
     #: A constant which can be used with the status property of a TaggingWorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -68,7 +72,7 @@ class TaggingWorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this TaggingWorkRequestSummary.
-            Allowed values for this property are: "DELETE_TAG_DEFINITION", "DELETE_NON_EMPTY_TAG_NAMESPACE", "BULK_DELETE_TAG_DEFINITION", "BULK_EDIT_OF_TAGS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DELETE_TAG_DEFINITION", "DELETE_NON_EMPTY_TAG_NAMESPACE", "BULK_DELETE_TAG_DEFINITION", "BULK_EDIT_OF_TAGS", "IMPORT_STANDARD_TAGS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -167,7 +171,7 @@ class TaggingWorkRequestSummary(object):
         **[Required]** Gets the operation_type of this TaggingWorkRequestSummary.
         An enum-like description of the type of work the work request is doing.
 
-        Allowed values for this property are: "DELETE_TAG_DEFINITION", "DELETE_NON_EMPTY_TAG_NAMESPACE", "BULK_DELETE_TAG_DEFINITION", "BULK_EDIT_OF_TAGS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DELETE_TAG_DEFINITION", "DELETE_NON_EMPTY_TAG_NAMESPACE", "BULK_DELETE_TAG_DEFINITION", "BULK_EDIT_OF_TAGS", "IMPORT_STANDARD_TAGS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -186,7 +190,7 @@ class TaggingWorkRequestSummary(object):
         :param operation_type: The operation_type of this TaggingWorkRequestSummary.
         :type: str
         """
-        allowed_values = ["DELETE_TAG_DEFINITION", "DELETE_NON_EMPTY_TAG_NAMESPACE", "BULK_DELETE_TAG_DEFINITION", "BULK_EDIT_OF_TAGS"]
+        allowed_values = ["DELETE_TAG_DEFINITION", "DELETE_NON_EMPTY_TAG_NAMESPACE", "BULK_DELETE_TAG_DEFINITION", "BULK_EDIT_OF_TAGS", "IMPORT_STANDARD_TAGS"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

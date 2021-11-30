@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DevopsCodeRepositoryBuildSource(BuildSource):
     """
-    Devops Code Repository Build Source for Build Stage
+    DevOps code repository build source for Build stage.
     """
 
     def __init__(self, **kwargs):
@@ -68,7 +68,7 @@ class DevopsCodeRepositoryBuildSource(BuildSource):
     def repository_id(self):
         """
         **[Required]** Gets the repository_id of this DevopsCodeRepositoryBuildSource.
-        The Devops Code Repository Id
+        The DevOps code repository ID.
 
 
         :return: The repository_id of this DevopsCodeRepositoryBuildSource.
@@ -80,7 +80,7 @@ class DevopsCodeRepositoryBuildSource(BuildSource):
     def repository_id(self, repository_id):
         """
         Sets the repository_id of this DevopsCodeRepositoryBuildSource.
-        The Devops Code Repository Id
+        The DevOps code repository ID.
 
 
         :param repository_id: The repository_id of this DevopsCodeRepositoryBuildSource.

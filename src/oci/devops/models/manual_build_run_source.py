@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ManualBuildRunSource(BuildRunSource):
     """
-    Specifies details of build runs triggered manually through API.
+    Specifies details of build runs triggered manually through the API.
     """
 
     def __init__(self, **kwargs):

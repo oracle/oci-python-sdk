@@ -108,6 +108,14 @@ class DeploymentBackupSummary(object):
             The value to assign to the time_of_backup property of this DeploymentBackupSummary.
         :type time_of_backup: datetime
 
+        :param time_backup_finished:
+            The value to assign to the time_backup_finished property of this DeploymentBackupSummary.
+        :type time_backup_finished: datetime
+
+        :param size_in_bytes:
+            The value to assign to the size_in_bytes property of this DeploymentBackupSummary.
+        :type size_in_bytes: float
+
         :param backup_type:
             The value to assign to the backup_type property of this DeploymentBackupSummary.
             Allowed values for this property are: "INCREMENTAL", "FULL", 'UNKNOWN_ENUM_VALUE'.
@@ -160,6 +168,8 @@ class DeploymentBackupSummary(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_of_backup': 'datetime',
+            'time_backup_finished': 'datetime',
+            'size_in_bytes': 'float',
             'backup_type': 'str',
             'ogg_version': 'str',
             'namespace_name': 'str',
@@ -181,6 +191,8 @@ class DeploymentBackupSummary(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_of_backup': 'timeOfBackup',
+            'time_backup_finished': 'timeBackupFinished',
+            'size_in_bytes': 'sizeInBytes',
             'backup_type': 'backupType',
             'ogg_version': 'oggVersion',
             'namespace_name': 'namespaceName',
@@ -201,6 +213,8 @@ class DeploymentBackupSummary(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_of_backup = None
+        self._time_backup_finished = None
+        self._size_in_bytes = None
         self._backup_type = None
         self._ogg_version = None
         self._namespace_name = None
@@ -425,6 +439,58 @@ class DeploymentBackupSummary(object):
         :type: datetime
         """
         self._time_of_backup = time_of_backup
+
+    @property
+    def time_backup_finished(self):
+        """
+        Gets the time_backup_finished of this DeploymentBackupSummary.
+        The time of the resource backup finish. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_backup_finished of this DeploymentBackupSummary.
+        :rtype: datetime
+        """
+        return self._time_backup_finished
+
+    @time_backup_finished.setter
+    def time_backup_finished(self, time_backup_finished):
+        """
+        Sets the time_backup_finished of this DeploymentBackupSummary.
+        The time of the resource backup finish. The format is defined by `RFC3339`__, such as `2016-08-25T21:10:29.600Z`.
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_backup_finished: The time_backup_finished of this DeploymentBackupSummary.
+        :type: datetime
+        """
+        self._time_backup_finished = time_backup_finished
+
+    @property
+    def size_in_bytes(self):
+        """
+        Gets the size_in_bytes of this DeploymentBackupSummary.
+        The size of the backup stored in object storage (in bytes)
+
+
+        :return: The size_in_bytes of this DeploymentBackupSummary.
+        :rtype: float
+        """
+        return self._size_in_bytes
+
+    @size_in_bytes.setter
+    def size_in_bytes(self, size_in_bytes):
+        """
+        Sets the size_in_bytes of this DeploymentBackupSummary.
+        The size of the backup stored in object storage (in bytes)
+
+
+        :param size_in_bytes: The size_in_bytes of this DeploymentBackupSummary.
+        :type: float
+        """
+        self._size_in_bytes = size_in_bytes
 
     @property
     def backup_type(self):

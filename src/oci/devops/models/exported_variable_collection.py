@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExportedVariableCollection(object):
     """
-    Specifies list of Exported Variables.
+    Specifies list of exported variables.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ExportedVariableCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ExportedVariableCollection.
-        List of exported variables
+        List of exported variables.
 
 
         :return: The items of this ExportedVariableCollection.
@@ -49,7 +49,7 @@ class ExportedVariableCollection(object):
     def items(self, items):
         """
         Sets the items of this ExportedVariableCollection.
-        List of exported variables
+        List of exported variables.
 
 
         :param items: The items of this ExportedVariableCollection.

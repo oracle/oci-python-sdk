@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestResource(object):
     """
-    A resource created or operated on by a work request.
+    The resource that is created or operated on by a work request.
     """
 
     #: A constant which can be used with the action_type property of a WorkRequestResource.
@@ -84,7 +84,7 @@ class WorkRequestResource(object):
     def entity_type(self):
         """
         **[Required]** Gets the entity_type of this WorkRequestResource.
-        The entity type the work request is affects.
+        The resource type the work request affects.
 
 
         :return: The entity_type of this WorkRequestResource.
@@ -96,7 +96,7 @@ class WorkRequestResource(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this WorkRequestResource.
-        The entity type the work request is affects.
+        The resource type the work request affects.
 
 
         :param entity_type: The entity_type of this WorkRequestResource.
@@ -144,7 +144,7 @@ class WorkRequestResource(object):
     def identifier(self):
         """
         **[Required]** Gets the identifier of this WorkRequestResource.
-        The identifier of the resource the work request affects.
+        The OCID or other unique identifier of the resource the work request affects.
 
 
         :return: The identifier of this WorkRequestResource.
@@ -156,7 +156,7 @@ class WorkRequestResource(object):
     def identifier(self, identifier):
         """
         Sets the identifier of this WorkRequestResource.
-        The identifier of the resource the work request affects.
+        The OCID or other unique identifier of the resource the work request affects.
 
 
         :param identifier: The identifier of this WorkRequestResource.
@@ -168,7 +168,7 @@ class WorkRequestResource(object):
     def entity_uri(self):
         """
         Gets the entity_uri of this WorkRequestResource.
-        The URI path that the user can do a GET on to access the resource metadata
+        The URI path that is used in a GET request to access the resource metadata.
 
 
         :return: The entity_uri of this WorkRequestResource.
@@ -180,7 +180,7 @@ class WorkRequestResource(object):
     def entity_uri(self, entity_uri):
         """
         Sets the entity_uri of this WorkRequestResource.
-        The URI path that the user can do a GET on to access the resource metadata
+        The URI path that is used in a GET request to access the resource metadata.
 
 
         :param entity_uri: The entity_uri of this WorkRequestResource.

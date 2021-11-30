@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildPipelineCollection(object):
     """
-    Results of an pipeline search.
+    Results of a pipeline search.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class BuildPipelineCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this BuildPipelineCollection.
-        Array of BuildPipelineSummary items.
+        Array of build pipeline summary items.
 
 
         :return: The items of this BuildPipelineCollection.
@@ -49,7 +49,7 @@ class BuildPipelineCollection(object):
     def items(self, items):
         """
         Sets the items of this BuildPipelineCollection.
-        Array of BuildPipelineSummary items.
+        Array of build pipeline summary items.
 
 
         :param items: The items of this BuildPipelineCollection.

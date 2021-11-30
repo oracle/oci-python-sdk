@@ -75,7 +75,7 @@ class UpdateGithubAccessTokenConnectionDetails(UpdateConnectionDetails):
     def access_token(self):
         """
         Gets the access_token of this UpdateGithubAccessTokenConnectionDetails.
-        OCID of personal access token saved in secret store
+        The OCID of personal access token saved in secret store.
 
 
         :return: The access_token of this UpdateGithubAccessTokenConnectionDetails.
@@ -87,7 +87,7 @@ class UpdateGithubAccessTokenConnectionDetails(UpdateConnectionDetails):
     def access_token(self, access_token):
         """
         Sets the access_token of this UpdateGithubAccessTokenConnectionDetails.
-        OCID of personal access token saved in secret store
+        The OCID of personal access token saved in secret store.
 
 
         :param access_token: The access_token of this UpdateGithubAccessTokenConnectionDetails.

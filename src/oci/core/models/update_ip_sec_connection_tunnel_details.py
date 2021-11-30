@@ -33,6 +33,26 @@ class UpdateIPSecConnectionTunnelDetails(object):
     #: This constant has a value of "V2"
     IKE_VERSION_V2 = "V2"
 
+    #: A constant which can be used with the oracle_initiation property of a UpdateIPSecConnectionTunnelDetails.
+    #: This constant has a value of "INITIATOR_OR_RESPONDER"
+    ORACLE_INITIATION_INITIATOR_OR_RESPONDER = "INITIATOR_OR_RESPONDER"
+
+    #: A constant which can be used with the oracle_initiation property of a UpdateIPSecConnectionTunnelDetails.
+    #: This constant has a value of "RESPONDER_ONLY"
+    ORACLE_INITIATION_RESPONDER_ONLY = "RESPONDER_ONLY"
+
+    #: A constant which can be used with the nat_translation_enabled property of a UpdateIPSecConnectionTunnelDetails.
+    #: This constant has a value of "ENABLED"
+    NAT_TRANSLATION_ENABLED_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the nat_translation_enabled property of a UpdateIPSecConnectionTunnelDetails.
+    #: This constant has a value of "DISABLED"
+    NAT_TRANSLATION_ENABLED_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the nat_translation_enabled property of a UpdateIPSecConnectionTunnelDetails.
+    #: This constant has a value of "AUTO"
+    NAT_TRANSLATION_ENABLED_AUTO = "AUTO"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateIPSecConnectionTunnelDetails object with values from keyword arguments.
@@ -56,6 +76,28 @@ class UpdateIPSecConnectionTunnelDetails(object):
             The value to assign to the bgp_session_config property of this UpdateIPSecConnectionTunnelDetails.
         :type bgp_session_config: oci.core.models.UpdateIPSecTunnelBgpSessionDetails
 
+        :param oracle_initiation:
+            The value to assign to the oracle_initiation property of this UpdateIPSecConnectionTunnelDetails.
+            Allowed values for this property are: "INITIATOR_OR_RESPONDER", "RESPONDER_ONLY"
+        :type oracle_initiation: str
+
+        :param nat_translation_enabled:
+            The value to assign to the nat_translation_enabled property of this UpdateIPSecConnectionTunnelDetails.
+            Allowed values for this property are: "ENABLED", "DISABLED", "AUTO"
+        :type nat_translation_enabled: str
+
+        :param phase_one_config:
+            The value to assign to the phase_one_config property of this UpdateIPSecConnectionTunnelDetails.
+        :type phase_one_config: oci.core.models.PhaseOneConfigDetails
+
+        :param phase_two_config:
+            The value to assign to the phase_two_config property of this UpdateIPSecConnectionTunnelDetails.
+        :type phase_two_config: oci.core.models.PhaseTwoConfigDetails
+
+        :param dpd_config:
+            The value to assign to the dpd_config property of this UpdateIPSecConnectionTunnelDetails.
+        :type dpd_config: oci.core.models.DpdConfig
+
         :param encryption_domain_config:
             The value to assign to the encryption_domain_config property of this UpdateIPSecConnectionTunnelDetails.
         :type encryption_domain_config: oci.core.models.UpdateIPSecTunnelEncryptionDomainDetails
@@ -66,6 +108,11 @@ class UpdateIPSecConnectionTunnelDetails(object):
             'routing': 'str',
             'ike_version': 'str',
             'bgp_session_config': 'UpdateIPSecTunnelBgpSessionDetails',
+            'oracle_initiation': 'str',
+            'nat_translation_enabled': 'str',
+            'phase_one_config': 'PhaseOneConfigDetails',
+            'phase_two_config': 'PhaseTwoConfigDetails',
+            'dpd_config': 'DpdConfig',
             'encryption_domain_config': 'UpdateIPSecTunnelEncryptionDomainDetails'
         }
 
@@ -74,6 +121,11 @@ class UpdateIPSecConnectionTunnelDetails(object):
             'routing': 'routing',
             'ike_version': 'ikeVersion',
             'bgp_session_config': 'bgpSessionConfig',
+            'oracle_initiation': 'oracleInitiation',
+            'nat_translation_enabled': 'natTranslationEnabled',
+            'phase_one_config': 'phaseOneConfig',
+            'phase_two_config': 'phaseTwoConfig',
+            'dpd_config': 'dpdConfig',
             'encryption_domain_config': 'encryptionDomainConfig'
         }
 
@@ -81,6 +133,11 @@ class UpdateIPSecConnectionTunnelDetails(object):
         self._routing = None
         self._ike_version = None
         self._bgp_session_config = None
+        self._oracle_initiation = None
+        self._nat_translation_enabled = None
+        self._phase_one_config = None
+        self._phase_two_config = None
+        self._dpd_config = None
         self._encryption_domain_config = None
 
     @property
@@ -192,6 +249,130 @@ class UpdateIPSecConnectionTunnelDetails(object):
         :type: oci.core.models.UpdateIPSecTunnelBgpSessionDetails
         """
         self._bgp_session_config = bgp_session_config
+
+    @property
+    def oracle_initiation(self):
+        """
+        Gets the oracle_initiation of this UpdateIPSecConnectionTunnelDetails.
+        Whether Oracle side is the initiator for negotiation.
+
+        Allowed values for this property are: "INITIATOR_OR_RESPONDER", "RESPONDER_ONLY"
+
+
+        :return: The oracle_initiation of this UpdateIPSecConnectionTunnelDetails.
+        :rtype: str
+        """
+        return self._oracle_initiation
+
+    @oracle_initiation.setter
+    def oracle_initiation(self, oracle_initiation):
+        """
+        Sets the oracle_initiation of this UpdateIPSecConnectionTunnelDetails.
+        Whether Oracle side is the initiator for negotiation.
+
+
+        :param oracle_initiation: The oracle_initiation of this UpdateIPSecConnectionTunnelDetails.
+        :type: str
+        """
+        allowed_values = ["INITIATOR_OR_RESPONDER", "RESPONDER_ONLY"]
+        if not value_allowed_none_or_none_sentinel(oracle_initiation, allowed_values):
+            raise ValueError(
+                "Invalid value for `oracle_initiation`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._oracle_initiation = oracle_initiation
+
+    @property
+    def nat_translation_enabled(self):
+        """
+        Gets the nat_translation_enabled of this UpdateIPSecConnectionTunnelDetails.
+        Whether NAT-T Enabled on the tunnel
+
+        Allowed values for this property are: "ENABLED", "DISABLED", "AUTO"
+
+
+        :return: The nat_translation_enabled of this UpdateIPSecConnectionTunnelDetails.
+        :rtype: str
+        """
+        return self._nat_translation_enabled
+
+    @nat_translation_enabled.setter
+    def nat_translation_enabled(self, nat_translation_enabled):
+        """
+        Sets the nat_translation_enabled of this UpdateIPSecConnectionTunnelDetails.
+        Whether NAT-T Enabled on the tunnel
+
+
+        :param nat_translation_enabled: The nat_translation_enabled of this UpdateIPSecConnectionTunnelDetails.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED", "AUTO"]
+        if not value_allowed_none_or_none_sentinel(nat_translation_enabled, allowed_values):
+            raise ValueError(
+                "Invalid value for `nat_translation_enabled`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._nat_translation_enabled = nat_translation_enabled
+
+    @property
+    def phase_one_config(self):
+        """
+        Gets the phase_one_config of this UpdateIPSecConnectionTunnelDetails.
+
+        :return: The phase_one_config of this UpdateIPSecConnectionTunnelDetails.
+        :rtype: oci.core.models.PhaseOneConfigDetails
+        """
+        return self._phase_one_config
+
+    @phase_one_config.setter
+    def phase_one_config(self, phase_one_config):
+        """
+        Sets the phase_one_config of this UpdateIPSecConnectionTunnelDetails.
+
+        :param phase_one_config: The phase_one_config of this UpdateIPSecConnectionTunnelDetails.
+        :type: oci.core.models.PhaseOneConfigDetails
+        """
+        self._phase_one_config = phase_one_config
+
+    @property
+    def phase_two_config(self):
+        """
+        Gets the phase_two_config of this UpdateIPSecConnectionTunnelDetails.
+
+        :return: The phase_two_config of this UpdateIPSecConnectionTunnelDetails.
+        :rtype: oci.core.models.PhaseTwoConfigDetails
+        """
+        return self._phase_two_config
+
+    @phase_two_config.setter
+    def phase_two_config(self, phase_two_config):
+        """
+        Sets the phase_two_config of this UpdateIPSecConnectionTunnelDetails.
+
+        :param phase_two_config: The phase_two_config of this UpdateIPSecConnectionTunnelDetails.
+        :type: oci.core.models.PhaseTwoConfigDetails
+        """
+        self._phase_two_config = phase_two_config
+
+    @property
+    def dpd_config(self):
+        """
+        Gets the dpd_config of this UpdateIPSecConnectionTunnelDetails.
+
+        :return: The dpd_config of this UpdateIPSecConnectionTunnelDetails.
+        :rtype: oci.core.models.DpdConfig
+        """
+        return self._dpd_config
+
+    @dpd_config.setter
+    def dpd_config(self, dpd_config):
+        """
+        Sets the dpd_config of this UpdateIPSecConnectionTunnelDetails.
+
+        :param dpd_config: The dpd_config of this UpdateIPSecConnectionTunnelDetails.
+        :type: oci.core.models.DpdConfig
+        """
+        self._dpd_config = dpd_config
 
     @property
     def encryption_domain_config(self):

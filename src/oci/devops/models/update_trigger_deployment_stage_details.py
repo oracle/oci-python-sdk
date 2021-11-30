@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateTriggerDeploymentStageDetails(UpdateBuildPipelineStageDetails):
     """
-    Specifies trigger Deployment Pipleline stage which runs another pipeline of the application.
+    Specifies the Trigger Deployment stage, which runs another pipeline of the application.
     """
 
     def __init__(self, **kwargs):
@@ -88,7 +88,7 @@ class UpdateTriggerDeploymentStageDetails(UpdateBuildPipelineStageDetails):
     def deploy_pipeline_id(self):
         """
         Gets the deploy_pipeline_id of this UpdateTriggerDeploymentStageDetails.
-        A target Pipeline ocid that will be run in this stage.
+        A target deployment pipeline OCID that will run in this stage.
 
 
         :return: The deploy_pipeline_id of this UpdateTriggerDeploymentStageDetails.
@@ -100,7 +100,7 @@ class UpdateTriggerDeploymentStageDetails(UpdateBuildPipelineStageDetails):
     def deploy_pipeline_id(self, deploy_pipeline_id):
         """
         Sets the deploy_pipeline_id of this UpdateTriggerDeploymentStageDetails.
-        A target Pipeline ocid that will be run in this stage.
+        A target deployment pipeline OCID that will run in this stage.
 
 
         :param deploy_pipeline_id: The deploy_pipeline_id of this UpdateTriggerDeploymentStageDetails.
@@ -112,7 +112,7 @@ class UpdateTriggerDeploymentStageDetails(UpdateBuildPipelineStageDetails):
     def is_pass_all_parameters_enabled(self):
         """
         Gets the is_pass_all_parameters_enabled of this UpdateTriggerDeploymentStageDetails.
-        A boolean flag specifies whether the parameters should be passed during the deployment trigger.
+        A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
 
 
         :return: The is_pass_all_parameters_enabled of this UpdateTriggerDeploymentStageDetails.
@@ -124,7 +124,7 @@ class UpdateTriggerDeploymentStageDetails(UpdateBuildPipelineStageDetails):
     def is_pass_all_parameters_enabled(self, is_pass_all_parameters_enabled):
         """
         Sets the is_pass_all_parameters_enabled of this UpdateTriggerDeploymentStageDetails.
-        A boolean flag specifies whether the parameters should be passed during the deployment trigger.
+        A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
 
 
         :param is_pass_all_parameters_enabled: The is_pass_all_parameters_enabled of this UpdateTriggerDeploymentStageDetails.

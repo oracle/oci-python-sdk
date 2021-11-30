@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryMirrorRecordSummary(object):
     """
-    Object containing information about a mirror record
+    Object containing information about a mirror record.
     """
 
     #: A constant which can be used with the mirror_status property of a RepositoryMirrorRecordSummary.
@@ -139,7 +139,7 @@ class RepositoryMirrorRecordSummary(object):
     def work_request_id(self):
         """
         Gets the work_request_id of this RepositoryMirrorRecordSummary.
-        Workrequest Id to track current mirror operation
+        Workrequest ID to track current mirror operation.
 
 
         :return: The work_request_id of this RepositoryMirrorRecordSummary.
@@ -151,7 +151,7 @@ class RepositoryMirrorRecordSummary(object):
     def work_request_id(self, work_request_id):
         """
         Sets the work_request_id of this RepositoryMirrorRecordSummary.
-        Workrequest Id to track current mirror operation
+        Workrequest ID to track current mirror operation.
 
 
         :param work_request_id: The work_request_id of this RepositoryMirrorRecordSummary.
@@ -211,7 +211,7 @@ class RepositoryMirrorRecordSummary(object):
     def time_completed(self):
         """
         Gets the time_completed of this RepositoryMirrorRecordSummary.
-        The time complete a mirror operation.
+        The time to complete a mirror operation.
 
 
         :return: The time_completed of this RepositoryMirrorRecordSummary.
@@ -223,7 +223,7 @@ class RepositoryMirrorRecordSummary(object):
     def time_completed(self, time_completed):
         """
         Sets the time_completed of this RepositoryMirrorRecordSummary.
-        The time complete a mirror operation.
+        The time to complete a mirror operation.
 
 
         :param time_completed: The time_completed of this RepositoryMirrorRecordSummary.

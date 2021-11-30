@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GitlabTrigger(Trigger):
     """
-    Trigger specific to Gitlab
+    Trigger specific to GitLab.
     """
 
     def __init__(self, **kwargs):
@@ -139,7 +139,7 @@ class GitlabTrigger(Trigger):
     def trigger_url(self):
         """
         **[Required]** Gets the trigger_url of this GitlabTrigger.
-        The endpoint which listens to Trigger events
+        The endpoint that listens to trigger events.
 
 
         :return: The trigger_url of this GitlabTrigger.
@@ -151,7 +151,7 @@ class GitlabTrigger(Trigger):
     def trigger_url(self, trigger_url):
         """
         Sets the trigger_url of this GitlabTrigger.
-        The endpoint which listens to Trigger events
+        The endpoint that listens to trigger events.
 
 
         :param trigger_url: The trigger_url of this GitlabTrigger.

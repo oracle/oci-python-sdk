@@ -25,6 +25,10 @@ class UpdateProblemStatusDetails(object):
     #: This constant has a value of "DISMISSED"
     STATUS_DISMISSED = "DISMISSED"
 
+    #: A constant which can be used with the status property of a UpdateProblemStatusDetails.
+    #: This constant has a value of "DELETED"
+    STATUS_DELETED = "DELETED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateProblemStatusDetails object with values from keyword arguments.
@@ -32,7 +36,7 @@ class UpdateProblemStatusDetails(object):
 
         :param status:
             The value to assign to the status property of this UpdateProblemStatusDetails.
-            Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED"
+            Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", "DELETED"
         :type status: str
 
         :param comment:
@@ -59,7 +63,7 @@ class UpdateProblemStatusDetails(object):
         **[Required]** Gets the status of this UpdateProblemStatusDetails.
         Action taken by user
 
-        Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED"
+        Allowed values for this property are: "OPEN", "RESOLVED", "DISMISSED", "DELETED"
 
 
         :return: The status of this UpdateProblemStatusDetails.
@@ -77,7 +81,7 @@ class UpdateProblemStatusDetails(object):
         :param status: The status of this UpdateProblemStatusDetails.
         :type: str
         """
-        allowed_values = ["OPEN", "RESOLVED", "DISMISSED"]
+        allowed_values = ["OPEN", "RESOLVED", "DISMISSED", "DELETED"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
             raise ValueError(
                 "Invalid value for `status`, must be None or one of {0}"

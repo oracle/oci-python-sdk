@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateTriggerDetails(object):
     """
-    The information about new Trigger.
+    Information about the new trigger.
     """
 
     def __init__(self, **kwargs):
@@ -104,7 +104,7 @@ class CreateTriggerDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateTriggerDetails.
-        Name of the Trigger
+        Trigger display name. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateTriggerDetails.
@@ -116,7 +116,7 @@ class CreateTriggerDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateTriggerDetails.
-        Name of the Trigger
+        Trigger display name. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateTriggerDetails.
@@ -128,7 +128,7 @@ class CreateTriggerDetails(object):
     def description(self):
         """
         Gets the description of this CreateTriggerDetails.
-        Optional description about the Trigger
+        Optional description about the trigger.
 
 
         :return: The description of this CreateTriggerDetails.
@@ -140,7 +140,7 @@ class CreateTriggerDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateTriggerDetails.
-        Optional description about the Trigger
+        Optional description about the trigger.
 
 
         :param description: The description of this CreateTriggerDetails.
@@ -152,7 +152,7 @@ class CreateTriggerDetails(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this CreateTriggerDetails.
-        Project to which the Trigger will belong
+        The OCID of the DevOps project to which the trigger belongs to.
 
 
         :return: The project_id of this CreateTriggerDetails.
@@ -164,7 +164,7 @@ class CreateTriggerDetails(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this CreateTriggerDetails.
-        Project to which the Trigger will belong
+        The OCID of the DevOps project to which the trigger belongs to.
 
 
         :param project_id: The project_id of this CreateTriggerDetails.
@@ -176,7 +176,7 @@ class CreateTriggerDetails(object):
     def trigger_source(self):
         """
         **[Required]** Gets the trigger_source of this CreateTriggerDetails.
-        Source of the Trigger (allowed values are - GITHUB, GITLAB)
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
 
 
         :return: The trigger_source of this CreateTriggerDetails.
@@ -188,7 +188,7 @@ class CreateTriggerDetails(object):
     def trigger_source(self, trigger_source):
         """
         Sets the trigger_source of this CreateTriggerDetails.
-        Source of the Trigger (allowed values are - GITHUB, GITLAB)
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
 
 
         :param trigger_source: The trigger_source of this CreateTriggerDetails.
@@ -200,7 +200,7 @@ class CreateTriggerDetails(object):
     def actions(self):
         """
         **[Required]** Gets the actions of this CreateTriggerDetails.
-        The list of actions that are to be performed for this Trigger
+        The list of actions that are to be performed for this trigger.
 
 
         :return: The actions of this CreateTriggerDetails.
@@ -212,7 +212,7 @@ class CreateTriggerDetails(object):
     def actions(self, actions):
         """
         Sets the actions of this CreateTriggerDetails.
-        The list of actions that are to be performed for this Trigger
+        The list of actions that are to be performed for this trigger.
 
 
         :param actions: The actions of this CreateTriggerDetails.

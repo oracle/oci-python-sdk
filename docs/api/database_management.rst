@@ -7,7 +7,9 @@ Database Management
     :template: autosummary/service_client.rst
 
     oci.database_management.DbManagementClient
+    oci.database_management.SqlTuningClient
     oci.database_management.DbManagementClientCompositeOperations
+    oci.database_management.SqlTuningClientCompositeOperations
 
 --------
  Models
@@ -54,11 +56,17 @@ Database Management
     oci.database_management.models.ChangeJobCompartmentDetails
     oci.database_management.models.ChangeManagedDatabaseGroupCompartmentDetails
     oci.database_management.models.ChildDatabase
+    oci.database_management.models.CloneSqlTuningTaskDetails
     oci.database_management.models.ClusterCacheMetric
+    oci.database_management.models.ConsumerGroupPrivilegeCollection
+    oci.database_management.models.ConsumerGroupPrivilegeSummary
+    oci.database_management.models.CpuUtilizationAggregateMetrics
     oci.database_management.models.CreateDbManagementPrivateEndpointDetails
     oci.database_management.models.CreateJobDetails
     oci.database_management.models.CreateManagedDatabaseGroupDetails
     oci.database_management.models.CreateSqlJobDetails
+    oci.database_management.models.DataAccessContainerCollection
+    oci.database_management.models.DataAccessContainerSummary
     oci.database_management.models.DatabaseCredentials
     oci.database_management.models.DatabaseFleetHealthMetrics
     oci.database_management.models.DatabaseHomeMetricDefinition
@@ -75,6 +83,9 @@ Database Management
     oci.database_management.models.DbManagementPrivateEndpoint
     oci.database_management.models.DbManagementPrivateEndpointCollection
     oci.database_management.models.DbManagementPrivateEndpointSummary
+    oci.database_management.models.DropSqlTuningTaskDetails
+    oci.database_management.models.ExecutionPlanStatsComparision
+    oci.database_management.models.FailedConnectionsAggregateMetrics
     oci.database_management.models.FleetMetricDefinition
     oci.database_management.models.FleetMetricSummaryDefinition
     oci.database_management.models.FleetStatusByCategory
@@ -104,14 +115,48 @@ Database Management
     oci.database_management.models.MemoryAggregateMetrics
     oci.database_management.models.MetricDataPoint
     oci.database_management.models.MetricDimensionDefinition
+    oci.database_management.models.ObjectPrivilegeCollection
+    oci.database_management.models.ObjectPrivilegeSummary
     oci.database_management.models.ObjectStorageJobExecutionResultDetails
     oci.database_management.models.ObjectStorageJobExecutionResultLocation
     oci.database_management.models.ParentGroup
     oci.database_management.models.PdbMetrics
     oci.database_management.models.PdbStatusDetails
+    oci.database_management.models.ProxiedForUserCollection
+    oci.database_management.models.ProxiedForUserSummary
+    oci.database_management.models.ProxyUserCollection
+    oci.database_management.models.ProxyUserSummary
     oci.database_management.models.RemoveManagedDatabaseFromManagedDatabaseGroupDetails
     oci.database_management.models.ResetDatabaseParametersDetails
+    oci.database_management.models.RoleCollection
+    oci.database_management.models.RoleSummary
     oci.database_management.models.SqlJob
+    oci.database_management.models.SqlTuningAdvisorTaskCollection
+    oci.database_management.models.SqlTuningAdvisorTaskFindingCollection
+    oci.database_management.models.SqlTuningAdvisorTaskFindingSummary
+    oci.database_management.models.SqlTuningAdvisorTaskRecommendationCollection
+    oci.database_management.models.SqlTuningAdvisorTaskRecommendationSummary
+    oci.database_management.models.SqlTuningAdvisorTaskSqlExecutionPlan
+    oci.database_management.models.SqlTuningAdvisorTaskSummary
+    oci.database_management.models.SqlTuningAdvisorTaskSummaryFindingBenefits
+    oci.database_management.models.SqlTuningAdvisorTaskSummaryFindingCounts
+    oci.database_management.models.SqlTuningAdvisorTaskSummaryReport
+    oci.database_management.models.SqlTuningAdvisorTaskSummaryReportIndexFindingSummary
+    oci.database_management.models.SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary
+    oci.database_management.models.SqlTuningAdvisorTaskSummaryReportStatementCounts
+    oci.database_management.models.SqlTuningAdvisorTaskSummaryReportStatistics
+    oci.database_management.models.SqlTuningAdvisorTaskSummaryReportTaskInfo
+    oci.database_management.models.SqlTuningTaskCredentialDetails
+    oci.database_management.models.SqlTuningTaskPasswordCredentialDetails
+    oci.database_management.models.SqlTuningTaskPlanStats
+    oci.database_management.models.SqlTuningTaskReturn
+    oci.database_management.models.SqlTuningTaskSecretCredentialDetails
+    oci.database_management.models.SqlTuningTaskSqlDetail
+    oci.database_management.models.SqlTuningTaskSqlExecutionPlanStep
+    oci.database_management.models.StartSqlTuningTaskDetails
+    oci.database_management.models.StatementsAggregateMetrics
+    oci.database_management.models.SystemPrivilegeCollection
+    oci.database_management.models.SystemPrivilegeSummary
     oci.database_management.models.Tablespace
     oci.database_management.models.TablespaceCollection
     oci.database_management.models.TablespaceSummary
@@ -122,6 +167,9 @@ Database Management
     oci.database_management.models.UpdateJobDetails
     oci.database_management.models.UpdateManagedDatabaseGroupDetails
     oci.database_management.models.UpdateSqlJobDetails
+    oci.database_management.models.User
+    oci.database_management.models.UserCollection
+    oci.database_management.models.UserSummary
     oci.database_management.models.WorkRequest
     oci.database_management.models.WorkRequestCollection
     oci.database_management.models.WorkRequestError

@@ -14,6 +14,9 @@ from .add_public_ip_pool_capacity_details import AddPublicIpPoolCapacityDetails
 from .add_security_rule_details import AddSecurityRuleDetails
 from .add_vcn_cidr_details import AddVcnCidrDetails
 from .added_network_security_group_security_rules import AddedNetworkSecurityGroupSecurityRules
+from .allowed_ike_ip_sec_parameters import AllowedIkeIPSecParameters
+from .allowed_phase_one_parameters import AllowedPhaseOneParameters
+from .allowed_phase_two_parameters import AllowedPhaseTwoParameters
 from .amd_milan_bm_launch_instance_platform_config import AmdMilanBmLaunchInstancePlatformConfig
 from .amd_milan_bm_platform_config import AmdMilanBmPlatformConfig
 from .amd_rome_bm_launch_instance_platform_config import AmdRomeBmLaunchInstancePlatformConfig
@@ -189,6 +192,8 @@ from .dedicated_vm_host_instance_summary import DedicatedVmHostInstanceSummary
 from .dedicated_vm_host_shape_summary import DedicatedVmHostShapeSummary
 from .dedicated_vm_host_summary import DedicatedVmHostSummary
 from .default_drg_route_tables import DefaultDrgRouteTables
+from .default_phase_one_parameters import DefaultPhaseOneParameters
+from .default_phase_two_parameters import DefaultPhaseTwoParameters
 from .delete_virtual_circuit_public_prefix_details import DeleteVirtualCircuitPublicPrefixDetails
 from .detach_instance_pool_instance_details import DetachInstancePoolInstanceDetails
 from .detach_load_balancer_details import DetachLoadBalancerDetails
@@ -197,6 +202,7 @@ from .dhcp_dns_option import DhcpDnsOption
 from .dhcp_option import DhcpOption
 from .dhcp_options import DhcpOptions
 from .dhcp_search_domain_option import DhcpSearchDomainOption
+from .dpd_config import DpdConfig
 from .drg import Drg
 from .drg_attachment import DrgAttachment
 from .drg_attachment_id_drg_route_distribution_match_criteria import DrgAttachmentIdDrgRouteDistributionMatchCriteria
@@ -227,6 +233,7 @@ from .ip_sec_connection import IPSecConnection
 from .ip_sec_connection_device_config import IPSecConnectionDeviceConfig
 from .ip_sec_connection_device_status import IPSecConnectionDeviceStatus
 from .ip_sec_connection_tunnel import IPSecConnectionTunnel
+from .ip_sec_connection_tunnel_error_details import IPSecConnectionTunnelErrorDetails
 from .ip_sec_connection_tunnel_shared_secret import IPSecConnectionTunnelSharedSecret
 from .i_scsi_volume_attachment import IScsiVolumeAttachment
 from .icmp_options import IcmpOptions
@@ -319,6 +326,8 @@ from .network_security_group_vnic import NetworkSecurityGroupVnic
 from .networking_topology import NetworkingTopology
 from .paravirtualized_volume_attachment import ParavirtualizedVolumeAttachment
 from .peer_region_for_remote_peering import PeerRegionForRemotePeering
+from .phase_one_config_details import PhaseOneConfigDetails
+from .phase_two_config_details import PhaseTwoConfigDetails
 from .platform_config import PlatformConfig
 from .port_range import PortRange
 from .preemptible_instance_config_details import PreemptibleInstanceConfigDetails
@@ -366,6 +375,10 @@ from .topology_routes_to_entity_relationship import TopologyRoutesToEntityRelati
 from .topology_routes_to_relationship_details import TopologyRoutesToRelationshipDetails
 from .tunnel_config import TunnelConfig
 from .tunnel_cpe_device_config import TunnelCpeDeviceConfig
+from .tunnel_phase_one_details import TunnelPhaseOneDetails
+from .tunnel_phase_two_details import TunnelPhaseTwoDetails
+from .tunnel_route_summary import TunnelRouteSummary
+from .tunnel_security_association_summary import TunnelSecurityAssociationSummary
 from .tunnel_status import TunnelStatus
 from .udp_options import UdpOptions
 from .update_boot_volume_backup_details import UpdateBootVolumeBackupDetails
@@ -479,6 +492,9 @@ core_type_mapping = {
     "AddSecurityRuleDetails": AddSecurityRuleDetails,
     "AddVcnCidrDetails": AddVcnCidrDetails,
     "AddedNetworkSecurityGroupSecurityRules": AddedNetworkSecurityGroupSecurityRules,
+    "AllowedIkeIPSecParameters": AllowedIkeIPSecParameters,
+    "AllowedPhaseOneParameters": AllowedPhaseOneParameters,
+    "AllowedPhaseTwoParameters": AllowedPhaseTwoParameters,
     "AmdMilanBmLaunchInstancePlatformConfig": AmdMilanBmLaunchInstancePlatformConfig,
     "AmdMilanBmPlatformConfig": AmdMilanBmPlatformConfig,
     "AmdRomeBmLaunchInstancePlatformConfig": AmdRomeBmLaunchInstancePlatformConfig,
@@ -654,6 +670,8 @@ core_type_mapping = {
     "DedicatedVmHostShapeSummary": DedicatedVmHostShapeSummary,
     "DedicatedVmHostSummary": DedicatedVmHostSummary,
     "DefaultDrgRouteTables": DefaultDrgRouteTables,
+    "DefaultPhaseOneParameters": DefaultPhaseOneParameters,
+    "DefaultPhaseTwoParameters": DefaultPhaseTwoParameters,
     "DeleteVirtualCircuitPublicPrefixDetails": DeleteVirtualCircuitPublicPrefixDetails,
     "DetachInstancePoolInstanceDetails": DetachInstancePoolInstanceDetails,
     "DetachLoadBalancerDetails": DetachLoadBalancerDetails,
@@ -662,6 +680,7 @@ core_type_mapping = {
     "DhcpOption": DhcpOption,
     "DhcpOptions": DhcpOptions,
     "DhcpSearchDomainOption": DhcpSearchDomainOption,
+    "DpdConfig": DpdConfig,
     "Drg": Drg,
     "DrgAttachment": DrgAttachment,
     "DrgAttachmentIdDrgRouteDistributionMatchCriteria": DrgAttachmentIdDrgRouteDistributionMatchCriteria,
@@ -692,6 +711,7 @@ core_type_mapping = {
     "IPSecConnectionDeviceConfig": IPSecConnectionDeviceConfig,
     "IPSecConnectionDeviceStatus": IPSecConnectionDeviceStatus,
     "IPSecConnectionTunnel": IPSecConnectionTunnel,
+    "IPSecConnectionTunnelErrorDetails": IPSecConnectionTunnelErrorDetails,
     "IPSecConnectionTunnelSharedSecret": IPSecConnectionTunnelSharedSecret,
     "IScsiVolumeAttachment": IScsiVolumeAttachment,
     "IcmpOptions": IcmpOptions,
@@ -784,6 +804,8 @@ core_type_mapping = {
     "NetworkingTopology": NetworkingTopology,
     "ParavirtualizedVolumeAttachment": ParavirtualizedVolumeAttachment,
     "PeerRegionForRemotePeering": PeerRegionForRemotePeering,
+    "PhaseOneConfigDetails": PhaseOneConfigDetails,
+    "PhaseTwoConfigDetails": PhaseTwoConfigDetails,
     "PlatformConfig": PlatformConfig,
     "PortRange": PortRange,
     "PreemptibleInstanceConfigDetails": PreemptibleInstanceConfigDetails,
@@ -831,6 +853,10 @@ core_type_mapping = {
     "TopologyRoutesToRelationshipDetails": TopologyRoutesToRelationshipDetails,
     "TunnelConfig": TunnelConfig,
     "TunnelCpeDeviceConfig": TunnelCpeDeviceConfig,
+    "TunnelPhaseOneDetails": TunnelPhaseOneDetails,
+    "TunnelPhaseTwoDetails": TunnelPhaseTwoDetails,
+    "TunnelRouteSummary": TunnelRouteSummary,
+    "TunnelSecurityAssociationSummary": TunnelSecurityAssociationSummary,
     "TunnelStatus": TunnelStatus,
     "UdpOptions": UdpOptions,
     "UpdateBootVolumeBackupDetails": UpdateBootVolumeBackupDetails,

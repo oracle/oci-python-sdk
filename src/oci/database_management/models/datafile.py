@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Datafile(object):
     """
-    The details of a datafile.
+    The details of a data file.
     """
 
     #: A constant which can be used with the status property of a Datafile.
@@ -207,7 +207,7 @@ class Datafile(object):
     def name(self):
         """
         **[Required]** Gets the name of this Datafile.
-        The filename (including the path) of the datafile or tempfile.
+        The filename (including the path) of the data file or temp file.
 
 
         :return: The name of this Datafile.
@@ -219,7 +219,7 @@ class Datafile(object):
     def name(self, name):
         """
         Sets the name of this Datafile.
-        The filename (including the path) of the datafile or tempfile.
+        The filename (including the path) of the data file or temp file.
 
 
         :param name: The name of this Datafile.
@@ -231,7 +231,7 @@ class Datafile(object):
     def status(self):
         """
         Gets the status of this Datafile.
-        The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was dropped.
+        The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was removed.
 
         Allowed values for this property are: "AVAILABLE", "INVALID", "OFFLINE", "ONLINE", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -246,7 +246,7 @@ class Datafile(object):
     def status(self, status):
         """
         Sets the status of this Datafile.
-        The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was dropped.
+        The status of the file. INVALID status is used when the file number is not in use, for example, a file in a tablespace that was removed.
 
 
         :param status: The status of this Datafile.
@@ -291,7 +291,7 @@ class Datafile(object):
     def is_auto_extensible(self):
         """
         Gets the is_auto_extensible of this Datafile.
-        Indicates whether the datafile is auto-extensible.
+        Indicates whether the data file is auto-extensible.
 
 
         :return: The is_auto_extensible of this Datafile.
@@ -303,7 +303,7 @@ class Datafile(object):
     def is_auto_extensible(self, is_auto_extensible):
         """
         Sets the is_auto_extensible of this Datafile.
-        Indicates whether the datafile is auto-extensible.
+        Indicates whether the data file is auto-extensible.
 
 
         :param is_auto_extensible: The is_auto_extensible of this Datafile.
@@ -495,7 +495,7 @@ class Datafile(object):
     def free_space_kb(self):
         """
         Gets the free_space_kb of this Datafile.
-        The free space available in the datafile in KB.
+        The free space available in the data file in KB.
 
 
         :return: The free_space_kb of this Datafile.
@@ -507,7 +507,7 @@ class Datafile(object):
     def free_space_kb(self, free_space_kb):
         """
         Sets the free_space_kb of this Datafile.
-        The free space available in the datafile in KB.
+        The free space available in the data file in KB.
 
 
         :param free_space_kb: The free_space_kb of this Datafile.
@@ -519,7 +519,7 @@ class Datafile(object):
     def used_space_kb(self):
         """
         Gets the used_space_kb of this Datafile.
-        The total space used in the datafile in KB.
+        The total space used in the data file in KB.
 
 
         :return: The used_space_kb of this Datafile.
@@ -531,7 +531,7 @@ class Datafile(object):
     def used_space_kb(self, used_space_kb):
         """
         Sets the used_space_kb of this Datafile.
-        The total space used in the datafile in KB.
+        The total space used in the data file in KB.
 
 
         :param used_space_kb: The used_space_kb of this Datafile.

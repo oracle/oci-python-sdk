@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildRunSource(object):
     """
-    The source from which this Build Run was triggered
+    The source from which the build run is triggered.
     """
 
     #: A constant which can be used with the source_type property of a BuildRunSource.
@@ -84,7 +84,7 @@ class BuildRunSource(object):
     def source_type(self):
         """
         **[Required]** Gets the source_type of this BuildRunSource.
-        Source from which this build run was triggered
+        The source from which the build run is triggered.
 
         Allowed values for this property are: "MANUAL", "GITHUB", "GITLAB", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -99,7 +99,7 @@ class BuildRunSource(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this BuildRunSource.
-        Source from which this build run was triggered
+        The source from which the build run is triggered.
 
 
         :param source_type: The source_type of this BuildRunSource.

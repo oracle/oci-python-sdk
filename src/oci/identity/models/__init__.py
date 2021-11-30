@@ -68,6 +68,7 @@ from .iam_work_request_summary import IamWorkRequestSummary
 from .identity_provider import IdentityProvider
 from .identity_provider_group_summary import IdentityProviderGroupSummary
 from .idp_group_mapping import IdpGroupMapping
+from .import_standard_tags_details import ImportStandardTagsDetails
 from .mfa_totp_device import MfaTotpDevice
 from .mfa_totp_device_summary import MfaTotpDeviceSummary
 from .mfa_totp_token import MfaTotpToken
@@ -87,6 +88,9 @@ from .saml2_identity_provider import Saml2IdentityProvider
 from .scim_client_credentials import ScimClientCredentials
 from .smtp_credential import SmtpCredential
 from .smtp_credential_summary import SmtpCredentialSummary
+from .standard_tag_definition_template import StandardTagDefinitionTemplate
+from .standard_tag_namespace_template import StandardTagNamespaceTemplate
+from .standard_tag_namespace_template_summary import StandardTagNamespaceTemplateSummary
 from .swift_password import SwiftPassword
 from .tag import Tag
 from .tag_default import TagDefault
@@ -197,6 +201,7 @@ identity_type_mapping = {
     "IdentityProvider": IdentityProvider,
     "IdentityProviderGroupSummary": IdentityProviderGroupSummary,
     "IdpGroupMapping": IdpGroupMapping,
+    "ImportStandardTagsDetails": ImportStandardTagsDetails,
     "MfaTotpDevice": MfaTotpDevice,
     "MfaTotpDeviceSummary": MfaTotpDeviceSummary,
     "MfaTotpToken": MfaTotpToken,
@@ -216,6 +221,9 @@ identity_type_mapping = {
     "ScimClientCredentials": ScimClientCredentials,
     "SmtpCredential": SmtpCredential,
     "SmtpCredentialSummary": SmtpCredentialSummary,
+    "StandardTagDefinitionTemplate": StandardTagDefinitionTemplate,
+    "StandardTagNamespaceTemplate": StandardTagNamespaceTemplate,
+    "StandardTagNamespaceTemplateSummary": StandardTagNamespaceTemplateSummary,
     "SwiftPassword": SwiftPassword,
     "Tag": Tag,
     "TagDefault": TagDefault,

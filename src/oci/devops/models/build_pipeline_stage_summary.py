@@ -164,7 +164,7 @@ class BuildPipelineStageSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this BuildPipelineStageSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :return: The id of this BuildPipelineStageSummary.
@@ -176,7 +176,7 @@ class BuildPipelineStageSummary(object):
     def id(self, id):
         """
         Sets the id of this BuildPipelineStageSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :param id: The id of this BuildPipelineStageSummary.
@@ -188,7 +188,7 @@ class BuildPipelineStageSummary(object):
     def display_name(self):
         """
         Gets the display_name of this BuildPipelineStageSummary.
-        Stage identifier which can be renamed and is not necessarily unique
+        Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :return: The display_name of this BuildPipelineStageSummary.
@@ -200,7 +200,7 @@ class BuildPipelineStageSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this BuildPipelineStageSummary.
-        Stage identifier which can be renamed and is not necessarily unique
+        Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this BuildPipelineStageSummary.
@@ -212,7 +212,7 @@ class BuildPipelineStageSummary(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this BuildPipelineStageSummary.
-        Build Project Identifier
+        The OCID of the DevOps project.
 
 
         :return: The project_id of this BuildPipelineStageSummary.
@@ -224,7 +224,7 @@ class BuildPipelineStageSummary(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this BuildPipelineStageSummary.
-        Build Project Identifier
+        The OCID of the DevOps project.
 
 
         :param project_id: The project_id of this BuildPipelineStageSummary.
@@ -236,7 +236,7 @@ class BuildPipelineStageSummary(object):
     def build_pipeline_id(self):
         """
         **[Required]** Gets the build_pipeline_id of this BuildPipelineStageSummary.
-        Build Pipeline Identifier
+        The OCID of the build pipeline.
 
 
         :return: The build_pipeline_id of this BuildPipelineStageSummary.
@@ -248,7 +248,7 @@ class BuildPipelineStageSummary(object):
     def build_pipeline_id(self, build_pipeline_id):
         """
         Sets the build_pipeline_id of this BuildPipelineStageSummary.
-        Build Pipeline Identifier
+        The OCID of the build pipeline.
 
 
         :param build_pipeline_id: The build_pipeline_id of this BuildPipelineStageSummary.
@@ -260,7 +260,7 @@ class BuildPipelineStageSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this BuildPipelineStageSummary.
-        Compartment Identifier
+        The OCID of the compartment where the pipeline is created.
 
 
         :return: The compartment_id of this BuildPipelineStageSummary.
@@ -272,7 +272,7 @@ class BuildPipelineStageSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this BuildPipelineStageSummary.
-        Compartment Identifier
+        The OCID of the compartment where the pipeline is created.
 
 
         :param compartment_id: The compartment_id of this BuildPipelineStageSummary.
@@ -284,8 +284,7 @@ class BuildPipelineStageSummary(object):
     def build_pipeline_stage_type(self):
         """
         **[Required]** Gets the build_pipeline_stage_type of this BuildPipelineStageSummary.
-        Stages sub types. It can be either of the following stages - 'Wait Stage', 'Trigger Deployment Stage',
-        'Build Stage', 'Deliver Artificat Stage'.
+        Defines the stage type, which is one of the following: Build, Deliver Artifacts, Wait, and Trigger Deployment.
 
 
         :return: The build_pipeline_stage_type of this BuildPipelineStageSummary.
@@ -297,8 +296,7 @@ class BuildPipelineStageSummary(object):
     def build_pipeline_stage_type(self, build_pipeline_stage_type):
         """
         Sets the build_pipeline_stage_type of this BuildPipelineStageSummary.
-        Stages sub types. It can be either of the following stages - 'Wait Stage', 'Trigger Deployment Stage',
-        'Build Stage', 'Deliver Artificat Stage'.
+        Defines the stage type, which is one of the following: Build, Deliver Artifacts, Wait, and Trigger Deployment.
 
 
         :param build_pipeline_stage_type: The build_pipeline_stage_type of this BuildPipelineStageSummary.
@@ -310,7 +308,9 @@ class BuildPipelineStageSummary(object):
     def time_created(self):
         """
         Gets the time_created of this BuildPipelineStageSummary.
-        The time at which the Stage was created. An RFC3339 formatted datetime string
+        The time the stage was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_created of this BuildPipelineStageSummary.
@@ -322,7 +322,9 @@ class BuildPipelineStageSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this BuildPipelineStageSummary.
-        The time at which the Stage was created. An RFC3339 formatted datetime string
+        The time the stage was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_created: The time_created of this BuildPipelineStageSummary.
@@ -334,7 +336,9 @@ class BuildPipelineStageSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this BuildPipelineStageSummary.
-        The time at which the Stage was updated. An RFC3339 formatted datetime string
+        The time the stage was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_updated of this BuildPipelineStageSummary.
@@ -346,7 +350,9 @@ class BuildPipelineStageSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this BuildPipelineStageSummary.
-        The time at which the Stage was updated. An RFC3339 formatted datetime string
+        The time the stage was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_updated: The time_updated of this BuildPipelineStageSummary.
@@ -358,7 +364,7 @@ class BuildPipelineStageSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this BuildPipelineStageSummary.
-        The current state of the Stage.
+        The current state of the stage.
 
 
         :return: The lifecycle_state of this BuildPipelineStageSummary.
@@ -370,7 +376,7 @@ class BuildPipelineStageSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this BuildPipelineStageSummary.
-        The current state of the Stage.
+        The current state of the stage.
 
 
         :param lifecycle_state: The lifecycle_state of this BuildPipelineStageSummary.
@@ -406,7 +412,7 @@ class BuildPipelineStageSummary(object):
     def description(self):
         """
         Gets the description of this BuildPipelineStageSummary.
-        Optional description about the BuildStage
+        Optional description about the build stage.
 
 
         :return: The description of this BuildPipelineStageSummary.
@@ -418,7 +424,7 @@ class BuildPipelineStageSummary(object):
     def description(self, description):
         """
         Sets the description of this BuildPipelineStageSummary.
-        Optional description about the BuildStage
+        Optional description about the build stage.
 
 
         :param description: The description of this BuildPipelineStageSummary.

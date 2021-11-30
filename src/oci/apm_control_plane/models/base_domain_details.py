@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BaseDomainDetails(object):
     """
-    Basic details for an APM Domain.
+    Details for an APM domain.
     """
 
     #: A constant which can be used with the lifecycle_state property of a BaseDomainDetails.
@@ -28,6 +28,10 @@ class BaseDomainDetails(object):
     #: A constant which can be used with the lifecycle_state property of a BaseDomainDetails.
     #: This constant has a value of "DELETING"
     LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a BaseDomainDetails.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     #: A constant which can be used with the lifecycle_state property of a BaseDomainDetails.
     #: This constant has a value of "FAILED"
@@ -56,7 +60,7 @@ class BaseDomainDetails(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this BaseDomainDetails.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
         :type lifecycle_state: str
 
         :param is_free_tier:
@@ -145,7 +149,7 @@ class BaseDomainDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this BaseDomainDetails.
-        APM Domain display name, can be updated.
+        Display name of the APM domain, which can be updated.
 
 
         :return: The display_name of this BaseDomainDetails.
@@ -157,7 +161,7 @@ class BaseDomainDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this BaseDomainDetails.
-        APM Domain display name, can be updated.
+        Display name of the APM domain, which can be updated.
 
 
         :param display_name: The display_name of this BaseDomainDetails.
@@ -169,7 +173,7 @@ class BaseDomainDetails(object):
     def description(self):
         """
         Gets the description of this BaseDomainDetails.
-        Description of the APM Domain.
+        Description of the APM domain.
 
 
         :return: The description of this BaseDomainDetails.
@@ -181,7 +185,7 @@ class BaseDomainDetails(object):
     def description(self, description):
         """
         Sets the description of this BaseDomainDetails.
-        Description of the APM Domain.
+        Description of the APM domain.
 
 
         :param description: The description of this BaseDomainDetails.
@@ -193,7 +197,7 @@ class BaseDomainDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this BaseDomainDetails.
-        The OCID of the compartment corresponding to the APM Domain.
+        The OCID of the compartment corresponding to the APM domain.
 
 
         :return: The compartment_id of this BaseDomainDetails.
@@ -205,7 +209,7 @@ class BaseDomainDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this BaseDomainDetails.
-        The OCID of the compartment corresponding to the APM Domain.
+        The OCID of the compartment corresponding to the APM domain.
 
 
         :param compartment_id: The compartment_id of this BaseDomainDetails.
@@ -217,9 +221,9 @@ class BaseDomainDetails(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this BaseDomainDetails.
-        The current lifecycle state of the APM Domain.
+        The current lifecycle state of the APM domain.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "FAILED"
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
 
         :return: The lifecycle_state of this BaseDomainDetails.
@@ -231,13 +235,13 @@ class BaseDomainDetails(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this BaseDomainDetails.
-        The current lifecycle state of the APM Domain.
+        The current lifecycle state of the APM domain.
 
 
         :param lifecycle_state: The lifecycle_state of this BaseDomainDetails.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             raise ValueError(
                 "Invalid value for `lifecycle_state`, must be None or one of {0}"
@@ -273,7 +277,7 @@ class BaseDomainDetails(object):
     def time_created(self):
         """
         Gets the time_created of this BaseDomainDetails.
-        The time the the APM Domain was created. An RFC3339 formatted datetime string
+        The time the APM domain was created, expressed in RFC 3339 timestamp format.
 
 
         :return: The time_created of this BaseDomainDetails.
@@ -285,7 +289,7 @@ class BaseDomainDetails(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this BaseDomainDetails.
-        The time the the APM Domain was created. An RFC3339 formatted datetime string
+        The time the APM domain was created, expressed in RFC 3339 timestamp format.
 
 
         :param time_created: The time_created of this BaseDomainDetails.
@@ -297,7 +301,7 @@ class BaseDomainDetails(object):
     def time_updated(self):
         """
         Gets the time_updated of this BaseDomainDetails.
-        The time the APM Domain was updated. An RFC3339 formatted datetime string
+        The time the APM domain was updated, expressed in RFC 3339 timestamp format.
 
 
         :return: The time_updated of this BaseDomainDetails.
@@ -309,7 +313,7 @@ class BaseDomainDetails(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this BaseDomainDetails.
-        The time the APM Domain was updated. An RFC3339 formatted datetime string
+        The time the APM domain was updated, expressed in RFC 3339 timestamp format.
 
 
         :param time_updated: The time_updated of this BaseDomainDetails.

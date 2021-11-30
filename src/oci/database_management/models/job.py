@@ -25,6 +25,14 @@ class Job(object):
     #: This constant has a value of "NON_CDB"
     DATABASE_SUB_TYPE_NON_CDB = "NON_CDB"
 
+    #: A constant which can be used with the database_sub_type property of a Job.
+    #: This constant has a value of "ACD"
+    DATABASE_SUB_TYPE_ACD = "ACD"
+
+    #: A constant which can be used with the database_sub_type property of a Job.
+    #: This constant has a value of "ADB"
+    DATABASE_SUB_TYPE_ADB = "ADB"
+
     #: A constant which can be used with the schedule_type property of a Job.
     #: This constant has a value of "IMMEDIATE"
     SCHEDULE_TYPE_IMMEDIATE = "IMMEDIATE"
@@ -84,7 +92,7 @@ class Job(object):
 
         :param database_sub_type:
             The value to assign to the database_sub_type property of this Job.
-            Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_sub_type: str
 
@@ -392,7 +400,7 @@ class Job(object):
         Gets the database_sub_type of this Job.
         The subtype of the Oracle Database where the job has to be executed. Applicable only when managedDatabaseGroupId is provided.
 
-        Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -411,7 +419,7 @@ class Job(object):
         :param database_sub_type: The database_sub_type of this Job.
         :type: str
         """
-        allowed_values = ["CDB", "PDB", "NON_CDB"]
+        allowed_values = ["CDB", "PDB", "NON_CDB", "ACD", "ADB"]
         if not value_allowed_none_or_none_sentinel(database_sub_type, allowed_values):
             database_sub_type = 'UNKNOWN_ENUM_VALUE'
         self._database_sub_type = database_sub_type

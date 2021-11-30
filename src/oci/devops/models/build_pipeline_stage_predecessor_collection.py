@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildPipelineStagePredecessorCollection(object):
     """
-    The containing collection for the predecessors of a Stage.
+    The collection containing the predecessors of a stage.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class BuildPipelineStagePredecessorCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this BuildPipelineStagePredecessorCollection.
-        A list of BuildPipelineStagePredecessors for a stage.
+        A list of build pipeline stage predecessors for a stage.
 
 
         :return: The items of this BuildPipelineStagePredecessorCollection.
@@ -49,7 +49,7 @@ class BuildPipelineStagePredecessorCollection(object):
     def items(self, items):
         """
         Sets the items of this BuildPipelineStagePredecessorCollection.
-        A list of BuildPipelineStagePredecessors for a stage.
+        A list of build pipeline stage predecessors for a stage.
 
 
         :param items: The items of this BuildPipelineStagePredecessorCollection.

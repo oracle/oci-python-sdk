@@ -126,6 +126,10 @@ class BlockchainPlatform(object):
             The value to assign to the time_updated property of this BlockchainPlatform.
         :type time_updated: datetime
 
+        :param platform_version:
+            The value to assign to the platform_version property of this BlockchainPlatform.
+        :type platform_version: str
+
         :param service_version:
             The value to assign to the service_version property of this BlockchainPlatform.
         :type service_version: str
@@ -213,6 +217,7 @@ class BlockchainPlatform(object):
             'is_byol': 'bool',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'platform_version': 'str',
             'service_version': 'str',
             'platform_role': 'str',
             'compute_shape': 'str',
@@ -240,6 +245,7 @@ class BlockchainPlatform(object):
             'is_byol': 'isByol',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'platform_version': 'platformVersion',
             'service_version': 'serviceVersion',
             'platform_role': 'platformRole',
             'compute_shape': 'computeShape',
@@ -266,6 +272,7 @@ class BlockchainPlatform(object):
         self._is_byol = None
         self._time_created = None
         self._time_updated = None
+        self._platform_version = None
         self._service_version = None
         self._platform_role = None
         self._compute_shape = None
@@ -451,6 +458,30 @@ class BlockchainPlatform(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def platform_version(self):
+        """
+        Gets the platform_version of this BlockchainPlatform.
+        Platform Version
+
+
+        :return: The platform_version of this BlockchainPlatform.
+        :rtype: str
+        """
+        return self._platform_version
+
+    @platform_version.setter
+    def platform_version(self, platform_version):
+        """
+        Sets the platform_version of this BlockchainPlatform.
+        Platform Version
+
+
+        :param platform_version: The platform_version of this BlockchainPlatform.
+        :type: str
+        """
+        self._platform_version = platform_version
 
     @property
     def service_version(self):

@@ -21,6 +21,10 @@ class ManagementAgentSummary(object):
     #: This constant has a value of "WINDOWS"
     PLATFORM_TYPE_WINDOWS = "WINDOWS"
 
+    #: A constant which can be used with the platform_type property of a ManagementAgentSummary.
+    #: This constant has a value of "SOLARIS"
+    PLATFORM_TYPE_SOLARIS = "SOLARIS"
+
     #: A constant which can be used with the availability_status property of a ManagementAgentSummary.
     #: This constant has a value of "ACTIVE"
     AVAILABILITY_STATUS_ACTIVE = "ACTIVE"
@@ -92,7 +96,7 @@ class ManagementAgentSummary(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this ManagementAgentSummary.
-            Allowed values for this property are: "LINUX", "WINDOWS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
@@ -333,7 +337,7 @@ class ManagementAgentSummary(object):
         Gets the platform_type of this ManagementAgentSummary.
         Platform Type
 
-        Allowed values for this property are: "LINUX", "WINDOWS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -352,7 +356,7 @@ class ManagementAgentSummary(object):
         :param platform_type: The platform_type of this ManagementAgentSummary.
         :type: str
         """
-        allowed_values = ["LINUX", "WINDOWS"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             platform_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_type = platform_type

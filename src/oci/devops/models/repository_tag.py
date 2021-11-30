@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryTag(RepositoryRef):
     """
-    The information needed to create a lightweight Tag
+    The information needed to create a lightweight tag.
     """
 
     def __init__(self, **kwargs):

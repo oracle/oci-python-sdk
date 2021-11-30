@@ -41,7 +41,7 @@ class CreateSqlJobDetails(CreateJobDetails):
 
         :param database_sub_type:
             The value to assign to the database_sub_type property of this CreateSqlJobDetails.
-            Allowed values for this property are: "CDB", "PDB", "NON_CDB"
+            Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB"
         :type database_sub_type: str
 
         :param schedule_type:

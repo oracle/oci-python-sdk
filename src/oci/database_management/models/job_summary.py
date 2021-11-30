@@ -25,6 +25,14 @@ class JobSummary(object):
     #: This constant has a value of "NON_CDB"
     DATABASE_SUB_TYPE_NON_CDB = "NON_CDB"
 
+    #: A constant which can be used with the database_sub_type property of a JobSummary.
+    #: This constant has a value of "ACD"
+    DATABASE_SUB_TYPE_ACD = "ACD"
+
+    #: A constant which can be used with the database_sub_type property of a JobSummary.
+    #: This constant has a value of "ADB"
+    DATABASE_SUB_TYPE_ADB = "ADB"
+
     #: A constant which can be used with the job_type property of a JobSummary.
     #: This constant has a value of "SQL"
     JOB_TYPE_SQL = "SQL"
@@ -60,7 +68,7 @@ class JobSummary(object):
 
         :param database_sub_type:
             The value to assign to the database_sub_type property of this JobSummary.
-            Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_sub_type: str
 
@@ -317,7 +325,7 @@ class JobSummary(object):
         Gets the database_sub_type of this JobSummary.
         The subtype of the Oracle Database where the job has to be executed. Only applicable when managedDatabaseGroupId is provided.
 
-        Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -336,7 +344,7 @@ class JobSummary(object):
         :param database_sub_type: The database_sub_type of this JobSummary.
         :type: str
         """
-        allowed_values = ["CDB", "PDB", "NON_CDB"]
+        allowed_values = ["CDB", "PDB", "NON_CDB", "ACD", "ADB"]
         if not value_allowed_none_or_none_sentinel(database_sub_type, allowed_values):
             database_sub_type = 'UNKNOWN_ENUM_VALUE'
         self._database_sub_type = database_sub_type

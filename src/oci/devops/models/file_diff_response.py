@@ -86,7 +86,7 @@ class FileDiffResponse(object):
     def old_path(self):
         """
         Gets the old_path of this FileDiffResponse.
-        The path on the baseVersion to the changed object.
+        The path on the base version to the changed object.
 
 
         :return: The old_path of this FileDiffResponse.
@@ -98,7 +98,7 @@ class FileDiffResponse(object):
     def old_path(self, old_path):
         """
         Sets the old_path of this FileDiffResponse.
-        The path on the baseVersion to the changed object.
+        The path on the base version to the changed object.
 
 
         :param old_path: The old_path of this FileDiffResponse.
@@ -110,7 +110,7 @@ class FileDiffResponse(object):
     def new_path(self):
         """
         Gets the new_path of this FileDiffResponse.
-        The path on the targetVersion to the changed object.
+        The path on the target version to the changed object.
 
 
         :return: The new_path of this FileDiffResponse.
@@ -122,7 +122,7 @@ class FileDiffResponse(object):
     def new_path(self, new_path):
         """
         Sets the new_path of this FileDiffResponse.
-        The path on the targetVersion to the changed object.
+        The path on the target version to the changed object.
 
 
         :param new_path: The new_path of this FileDiffResponse.
@@ -134,7 +134,7 @@ class FileDiffResponse(object):
     def old_id(self):
         """
         Gets the old_id of this FileDiffResponse.
-        The ID of the changed object on the baseVersion.
+        The ID of the changed object on the base version.
 
 
         :return: The old_id of this FileDiffResponse.
@@ -146,7 +146,7 @@ class FileDiffResponse(object):
     def old_id(self, old_id):
         """
         Sets the old_id of this FileDiffResponse.
-        The ID of the changed object on the baseVersion.
+        The ID of the changed object on the base version.
 
 
         :param old_id: The old_id of this FileDiffResponse.
@@ -158,7 +158,7 @@ class FileDiffResponse(object):
     def new_id(self):
         """
         Gets the new_id of this FileDiffResponse.
-        The ID of the changed object on the targetVersion.
+        The ID of the changed object on the target version.
 
 
         :return: The new_id of this FileDiffResponse.
@@ -170,7 +170,7 @@ class FileDiffResponse(object):
     def new_id(self, new_id):
         """
         Sets the new_id of this FileDiffResponse.
-        The ID of the changed object on the targetVersion.
+        The ID of the changed object on the target version.
 
 
         :param new_id: The new_id of this FileDiffResponse.

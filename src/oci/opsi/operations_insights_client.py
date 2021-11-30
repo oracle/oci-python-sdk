@@ -2909,6 +2909,7 @@ class OperationsInsightsClient(object):
     def list_database_configurations(self, **kwargs):
         """
         Gets a list of database insight configurations based on the query parameters specified. Either compartmentId or databaseInsightId query parameter must be specified.
+        When both compartmentId and compartmentIdInSubtree are specified, a list of database insight configurations in that compartment and in all sub-compartments will be returned.
 
 
         :param str compartment_id: (optional)
@@ -3001,6 +3002,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3037,7 +3041,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3082,7 +3087,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3120,6 +3126,7 @@ class OperationsInsightsClient(object):
     def list_database_insights(self, **kwargs):
         """
         Gets a list of database insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+        When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
 
 
         :param str compartment_id: (optional)
@@ -3192,6 +3199,9 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -3229,6 +3239,7 @@ class OperationsInsightsClient(object):
             "sort_order",
             "sort_by",
             "exadata_insight_id",
+            "compartment_id_in_subtree",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3295,7 +3306,8 @@ class OperationsInsightsClient(object):
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
-            "exadataInsightId": kwargs.get("exadata_insight_id", missing)
+            "exadataInsightId": kwargs.get("exadata_insight_id", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3333,6 +3345,7 @@ class OperationsInsightsClient(object):
     def list_enterprise_manager_bridges(self, **kwargs):
         """
         Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+        When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
 
 
         :param str compartment_id: (optional)
@@ -3377,6 +3390,9 @@ class OperationsInsightsClient(object):
 
             Allowed values are: "timeCreated", "displayName"
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -3409,6 +3425,7 @@ class OperationsInsightsClient(object):
             "page",
             "sort_order",
             "sort_by",
+            "compartment_id_in_subtree",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3446,7 +3463,8 @@ class OperationsInsightsClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3656,6 +3674,7 @@ class OperationsInsightsClient(object):
     def list_exadata_insights(self, **kwargs):
         """
         Gets a list of Exadata insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+        When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
 
 
         :param str compartment_id: (optional)
@@ -3711,6 +3730,9 @@ class OperationsInsightsClient(object):
 
             Allowed values are: "timeCreated", "exadataName"
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -3745,6 +3767,7 @@ class OperationsInsightsClient(object):
             "page",
             "sort_order",
             "sort_by",
+            "compartment_id_in_subtree",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3792,7 +3815,8 @@ class OperationsInsightsClient(object):
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "sortOrder": kwargs.get("sort_order", missing),
-            "sortBy": kwargs.get("sort_by", missing)
+            "sortBy": kwargs.get("sort_by", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -3912,6 +3936,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -3945,7 +3972,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -3987,7 +4015,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -4025,6 +4054,7 @@ class OperationsInsightsClient(object):
     def list_host_insights(self, **kwargs):
         """
         Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+        When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
 
 
         :param str compartment_id: (optional)
@@ -4091,6 +4121,9 @@ class OperationsInsightsClient(object):
 
             __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -4127,6 +4160,7 @@ class OperationsInsightsClient(object):
             "sort_by",
             "enterprise_manager_bridge_id",
             "exadata_insight_id",
+            "compartment_id_in_subtree",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -4184,7 +4218,8 @@ class OperationsInsightsClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "enterpriseManagerBridgeId": kwargs.get("enterprise_manager_bridge_id", missing),
-            "exadataInsightId": kwargs.get("exadata_insight_id", missing)
+            "exadataInsightId": kwargs.get("exadata_insight_id", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -4761,7 +4796,8 @@ class OperationsInsightsClient(object):
 
     def list_sql_searches(self, compartment_id, sql_identifier, **kwargs):
         """
-        Search SQL by SQL Identifier across databases and get the SQL Text and the details of the databases executing the SQL for a given time period.
+        Search SQL by SQL Identifier across databases in a compartment and in all sub-compartments if specified.
+        And get the SQL Text and the details of the databases executing the SQL for a given time period.
 
 
         :param str compartment_id: (required)
@@ -4828,6 +4864,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -4856,7 +4895,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -4873,7 +4913,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -4910,7 +4951,7 @@ class OperationsInsightsClient(object):
 
     def list_sql_texts(self, compartment_id, sql_identifier, **kwargs):
         """
-        Query SQL Warehouse to get the full SQL Text for a SQL.
+        Query SQL Warehouse to get the full SQL Text for a SQL in a compartment and in all sub-compartments if specified.
 
 
         :param str compartment_id: (required)
@@ -4968,6 +5009,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -4995,7 +5039,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5011,7 +5056,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -5473,6 +5519,7 @@ class OperationsInsightsClient(object):
         """
         Returns response with time series data (endTimestamp, capacity, baseCapacity) for the time period specified.
         The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+        If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
 
 
         :param str compartment_id: (required)
@@ -5593,6 +5640,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5632,7 +5682,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5689,7 +5740,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -5727,6 +5779,7 @@ class OperationsInsightsClient(object):
     def summarize_database_insight_resource_forecast_trend(self, compartment_id, resource_metric, **kwargs):
         """
         Get Forecast predictions for CPU and Storage resources since a time in the past.
+        If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
 
 
         :param str compartment_id: (required)
@@ -5861,6 +5914,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -5902,7 +5958,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -5961,7 +6018,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -5999,7 +6057,7 @@ class OperationsInsightsClient(object):
     def summarize_database_insight_resource_statistics(self, compartment_id, resource_metric, **kwargs):
         """
         Lists the Resource statistics (usage,capacity, usage change percent, utilization percent, base capacity, isAutoScalingEnabled)
-        for each database filtered by utilization level.
+        for each database filtered by utilization level in a compartment and in all sub-compartments if specified.
 
 
         :param str compartment_id: (required)
@@ -6128,6 +6186,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6169,7 +6230,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6221,7 +6283,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -6261,6 +6324,7 @@ class OperationsInsightsClient(object):
         A cumulative distribution function is used to rank the usage data points per database within the specified time period.
         For each database, the minimum data point with a ranking > the percentile value is included in the summation.
         Linear regression functions are used to calculate the usage change percentage.
+        If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
 
 
         :param str compartment_id: (required)
@@ -6359,6 +6423,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6394,7 +6461,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6426,7 +6494,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -6465,6 +6534,7 @@ class OperationsInsightsClient(object):
         """
         Returns response with time series data (endTimestamp, usage, capacity) for the time period specified.
         The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+        If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
 
 
         :param str compartment_id: (required)
@@ -6570,6 +6640,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6606,7 +6679,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6653,7 +6727,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -6691,6 +6766,7 @@ class OperationsInsightsClient(object):
     def summarize_database_insight_resource_utilization_insight(self, compartment_id, resource_metric, **kwargs):
         """
         Gets resources with current utilization (high and low) and projected utilization (high and low) for a resource type over specified time period.
+        If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
 
 
         :param str compartment_id: (required)
@@ -6789,6 +6865,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -6824,7 +6903,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -6856,7 +6936,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -8864,6 +8945,7 @@ class OperationsInsightsClient(object):
         """
         Returns response with time series data (endTimestamp, capacity) for the time period specified.
         The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+        If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
 
 
         :param str compartment_id: (required)
@@ -8965,6 +9047,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -8999,7 +9084,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9051,7 +9137,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -9089,6 +9176,7 @@ class OperationsInsightsClient(object):
     def summarize_host_insight_resource_forecast_trend(self, compartment_id, resource_metric, **kwargs):
         """
         Get Forecast predictions for CPU or memory resources since a time in the past.
+        If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
 
 
         :param str compartment_id: (required)
@@ -9204,6 +9292,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9240,7 +9331,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9294,7 +9386,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -9332,7 +9425,7 @@ class OperationsInsightsClient(object):
     def summarize_host_insight_resource_statistics(self, compartment_id, resource_metric, **kwargs):
         """
         Lists the resource statistics (usage, capacity, usage change percent, utilization percent, load) for each host filtered
-        by utilization level.
+        by utilization level in a compartment and in all sub-compartments if specified.
 
 
         :param str compartment_id: (required)
@@ -9445,6 +9538,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9482,7 +9578,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9530,7 +9627,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -9570,6 +9668,7 @@ class OperationsInsightsClient(object):
         A cumulative distribution function is used to rank the usage data points per host within the specified time period.
         For each host, the minimum data point with a ranking > the percentile value is included in the summation.
         Linear regression functions are used to calculate the usage change percentage.
+        If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
 
 
         :param str compartment_id: (required)
@@ -9655,6 +9754,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9687,7 +9789,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9716,7 +9819,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -9755,6 +9859,7 @@ class OperationsInsightsClient(object):
         """
         Returns response with time series data (endTimestamp, usage, capacity) for the time period specified.
         The maximum time range for analysis is 2 years, hence this is intentionally not paginated.
+        If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
 
 
         :param str compartment_id: (required)
@@ -9847,6 +9952,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -9880,7 +9988,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -9924,7 +10033,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -9962,6 +10072,7 @@ class OperationsInsightsClient(object):
     def summarize_host_insight_resource_utilization_insight(self, compartment_id, resource_metric, **kwargs):
         """
         Gets resources with current utilization (high and low) and projected utilization (high and low) for a resource type over specified time period.
+        If compartmentIdInSubtree is specified, aggregates resources in a compartment and in all sub-compartments.
 
 
         :param str compartment_id: (required)
@@ -10047,6 +10158,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -10079,7 +10193,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -10108,7 +10223,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -10146,7 +10262,7 @@ class OperationsInsightsClient(object):
     def summarize_sql_insights(self, compartment_id, **kwargs):
         """
         Query SQL Warehouse to get the performance insights for SQLs taking greater than X% database time for a given
-        time period across the given databases or database types.
+        time period across the given databases or database types in a compartment and in all sub-compartments if specified.
 
 
         :param str compartment_id: (required)
@@ -10239,6 +10355,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -10274,7 +10393,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -10305,7 +10425,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -10605,7 +10726,7 @@ class OperationsInsightsClient(object):
     def summarize_sql_statistics(self, compartment_id, **kwargs):
         """
         Query SQL Warehouse to get the performance statistics for SQLs taking greater than X% database time for a given
-        time period across the given databases or database types.
+        time period across the given databases or database types in a compartment and in all sub-compartments if specified.
 
 
         :param str compartment_id: (required)
@@ -10727,6 +10848,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -10767,7 +10891,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -10825,7 +10950,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -10862,7 +10988,8 @@ class OperationsInsightsClient(object):
 
     def summarize_sql_statistics_time_series(self, compartment_id, sql_identifier, **kwargs):
         """
-        Query SQL Warehouse to get the performance statistics time series for a given SQL across given databases for a given time period.
+        Query SQL Warehouse to get the performance statistics time series for a given SQL across given databases for a
+        given time period in a compartment and in all sub-compartments if specified.
 
 
         :param str compartment_id: (required)
@@ -10950,6 +11077,9 @@ class OperationsInsightsClient(object):
             Currently, only existence (\"true\" at the end) is supported. Absence (\"false\" at the end) is not supported.
             Multiple values for different tag names are interpreted as \"AND\".
 
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -10983,7 +11113,8 @@ class OperationsInsightsClient(object):
             "defined_tag_equals",
             "freeform_tag_equals",
             "defined_tag_exists",
-            "freeform_tag_exists"
+            "freeform_tag_exists",
+            "compartment_id_in_subtree"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -11005,7 +11136,8 @@ class OperationsInsightsClient(object):
             "definedTagEquals": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_equals", missing), 'multi'),
             "freeformTagEquals": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_equals", missing), 'multi'),
             "definedTagExists": self.base_client.generate_collection_format_param(kwargs.get("defined_tag_exists", missing), 'multi'),
-            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi')
+            "freeformTagExists": self.base_client.generate_collection_format_param(kwargs.get("freeform_tag_exists", missing), 'multi'),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

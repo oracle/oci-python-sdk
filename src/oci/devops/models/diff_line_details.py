@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DiffLineDetails(object):
     """
-    Details about a line within the diff.
+    Details about a line within the difference.
     """
 
     #: A constant which can be used with the conflict_marker property of a DiffLineDetails.
@@ -148,7 +148,7 @@ class DiffLineDetails(object):
     def conflict_marker(self):
         """
         Gets the conflict_marker of this DiffLineDetails.
-        Indicates whether a line in a conflicted section of the diff is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
+        Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
 
         Allowed values for this property are: "BASE", "TARGET", "MARKER", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -163,7 +163,7 @@ class DiffLineDetails(object):
     def conflict_marker(self, conflict_marker):
         """
         Sets the conflict_marker of this DiffLineDetails.
-        Indicates whether a line in a conflicted section of the diff is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
+        Indicates whether a line in a conflicted section of the difference is from the base version, the target version, or if its just a marker indicating the beginning, middle, or end of a conflicted section.
 
 
         :param conflict_marker: The conflict_marker of this DiffLineDetails.

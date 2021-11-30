@@ -86,7 +86,7 @@ class UpdateConnectionDetails(object):
     def description(self):
         """
         Gets the description of this UpdateConnectionDetails.
-        Optional description about the Connection
+        Optional description about the connection.
 
 
         :return: The description of this UpdateConnectionDetails.
@@ -98,7 +98,7 @@ class UpdateConnectionDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateConnectionDetails.
-        Optional description about the Connection
+        Optional description about the connection.
 
 
         :param description: The description of this UpdateConnectionDetails.
@@ -110,7 +110,7 @@ class UpdateConnectionDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateConnectionDetails.
-        Optional Connection display name
+        Optional connection display name. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateConnectionDetails.
@@ -122,7 +122,7 @@ class UpdateConnectionDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateConnectionDetails.
-        Optional Connection display name
+        Optional connection display name. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateConnectionDetails.

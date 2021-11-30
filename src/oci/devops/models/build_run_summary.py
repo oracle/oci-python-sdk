@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildRunSummary(object):
     """
-    Summary of the BuildRun.
+    Summary of the build run.
     """
 
     def __init__(self, **kwargs):
@@ -142,7 +142,7 @@ class BuildRunSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this BuildRunSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :return: The id of this BuildRunSummary.
@@ -154,7 +154,7 @@ class BuildRunSummary(object):
     def id(self, id):
         """
         Sets the id of this BuildRunSummary.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :param id: The id of this BuildRunSummary.
@@ -166,7 +166,7 @@ class BuildRunSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this BuildRunSummary.
-        Compartment Identifier
+        The OCID of the compartment where the build is running.
 
 
         :return: The compartment_id of this BuildRunSummary.
@@ -178,7 +178,7 @@ class BuildRunSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this BuildRunSummary.
-        Compartment Identifier
+        The OCID of the compartment where the build is running.
 
 
         :param compartment_id: The compartment_id of this BuildRunSummary.
@@ -190,7 +190,7 @@ class BuildRunSummary(object):
     def display_name(self):
         """
         Gets the display_name of this BuildRunSummary.
-        BuildRun identifier which can be renamed and is not necessarily unique
+        Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :return: The display_name of this BuildRunSummary.
@@ -202,7 +202,7 @@ class BuildRunSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this BuildRunSummary.
-        BuildRun identifier which can be renamed and is not necessarily unique
+        Build run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this BuildRunSummary.
@@ -214,7 +214,7 @@ class BuildRunSummary(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this BuildRunSummary.
-        Project Identifier
+        The OCID of the DevOps project.
 
 
         :return: The project_id of this BuildRunSummary.
@@ -226,7 +226,7 @@ class BuildRunSummary(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this BuildRunSummary.
-        Project Identifier
+        The OCID of the DevOps project.
 
 
         :param project_id: The project_id of this BuildRunSummary.
@@ -238,7 +238,7 @@ class BuildRunSummary(object):
     def build_pipeline_id(self):
         """
         **[Required]** Gets the build_pipeline_id of this BuildRunSummary.
-        Pipeline Identifier
+        The OCID of the build pipeline.
 
 
         :return: The build_pipeline_id of this BuildRunSummary.
@@ -250,7 +250,7 @@ class BuildRunSummary(object):
     def build_pipeline_id(self, build_pipeline_id):
         """
         Sets the build_pipeline_id of this BuildRunSummary.
-        Pipeline Identifier
+        The OCID of the build pipeline.
 
 
         :param build_pipeline_id: The build_pipeline_id of this BuildRunSummary.
@@ -322,7 +322,9 @@ class BuildRunSummary(object):
     def time_created(self):
         """
         Gets the time_created of this BuildRunSummary.
-        The time the the BuildRun was created. An RFC3339 formatted datetime string
+        The time the build run was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_created of this BuildRunSummary.
@@ -334,7 +336,9 @@ class BuildRunSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this BuildRunSummary.
-        The time the the BuildRun was created. An RFC3339 formatted datetime string
+        The time the build run was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_created: The time_created of this BuildRunSummary.
@@ -346,7 +350,9 @@ class BuildRunSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this BuildRunSummary.
-        The time the BuildRun was updated. An RFC3339 formatted datetime string
+        The time the build run was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_updated of this BuildRunSummary.
@@ -358,7 +364,9 @@ class BuildRunSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this BuildRunSummary.
-        The time the BuildRun was updated. An RFC3339 formatted datetime string
+        The time the build run was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_updated: The time_updated of this BuildRunSummary.
@@ -370,7 +378,7 @@ class BuildRunSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this BuildRunSummary.
-        The current state of the BuildRun.
+        The current state of the build run.
 
 
         :return: The lifecycle_state of this BuildRunSummary.
@@ -382,7 +390,7 @@ class BuildRunSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this BuildRunSummary.
-        The current state of the BuildRun.
+        The current state of the build run.
 
 
         :param lifecycle_state: The lifecycle_state of this BuildRunSummary.
