@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ContainerRegistryDeliveredArtifact(DeliveredArtifact):
     """
-    Details of OCIR Artifact delivered via DeliverArtifactStage.
+    Details of the container registry artifacts delivered through the Deliver Artifacts stage.
     """
 
     def __init__(self, **kwargs):
@@ -68,7 +68,7 @@ class ContainerRegistryDeliveredArtifact(DeliveredArtifact):
     def delivered_artifact_hash(self):
         """
         **[Required]** Gets the delivered_artifact_hash of this ContainerRegistryDeliveredArtifact.
-        The Hash of the OCIR artifact pushed by the DeliverArtifactStage
+        The hash of the container registry artifact pushed by the Deliver Artifacts stage.
 
 
         :return: The delivered_artifact_hash of this ContainerRegistryDeliveredArtifact.
@@ -80,7 +80,7 @@ class ContainerRegistryDeliveredArtifact(DeliveredArtifact):
     def delivered_artifact_hash(self, delivered_artifact_hash):
         """
         Sets the delivered_artifact_hash of this ContainerRegistryDeliveredArtifact.
-        The Hash of the OCIR artifact pushed by the DeliverArtifactStage
+        The hash of the container registry artifact pushed by the Deliver Artifacts stage.
 
 
         :param delivered_artifact_hash: The delivered_artifact_hash of this ContainerRegistryDeliveredArtifact.

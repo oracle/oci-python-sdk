@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DeliverArtifact(object):
     """
-    Artifact info that need to be pushed to the artifactory stores.
+    Artifact information that need to be pushed to the artifactory stores.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class DeliverArtifact(object):
     def artifact_name(self):
         """
         **[Required]** Gets the artifact_name of this DeliverArtifact.
-        Name of the artifact specified in the build_spec.yml file.
+        Name of the artifact specified in the build_spec.yaml file.
 
 
         :return: The artifact_name of this DeliverArtifact.
@@ -56,7 +56,7 @@ class DeliverArtifact(object):
     def artifact_name(self, artifact_name):
         """
         Sets the artifact_name of this DeliverArtifact.
-        Name of the artifact specified in the build_spec.yml file.
+        Name of the artifact specified in the build_spec.yaml file.
 
 
         :param artifact_name: The artifact_name of this DeliverArtifact.
@@ -68,7 +68,7 @@ class DeliverArtifact(object):
     def artifact_id(self):
         """
         **[Required]** Gets the artifact_id of this DeliverArtifact.
-        Artifact Identifier which contains the Artifact Definition.
+        Artifact identifier that contains the artifact definition.
 
 
         :return: The artifact_id of this DeliverArtifact.
@@ -80,7 +80,7 @@ class DeliverArtifact(object):
     def artifact_id(self, artifact_id):
         """
         Sets the artifact_id of this DeliverArtifact.
-        Artifact Identifier which contains the Artifact Definition.
+        Artifact identifier that contains the artifact definition.
 
 
         :param artifact_id: The artifact_id of this DeliverArtifact.

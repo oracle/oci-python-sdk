@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryCollection(object):
     """
-    Results of a repository search. Contains RepositorySummary items and other information, such as metadata.
+    Results of a repository search. Contains repository summary items and other information, such as metadata.
     """
 
     def __init__(self, **kwargs):

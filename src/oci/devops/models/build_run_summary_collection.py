@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildRunSummaryCollection(object):
     """
-    List of BuildRunSummary.
+    List of build run summary.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class BuildRunSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this BuildRunSummaryCollection.
-        Array of BuildRunSummary items.
+        Array of build run summary items.
 
 
         :return: The items of this BuildRunSummaryCollection.
@@ -49,7 +49,7 @@ class BuildRunSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this BuildRunSummaryCollection.
-        Array of BuildRunSummary items.
+        Array of build run summary items.
 
 
         :param items: The items of this BuildRunSummaryCollection.

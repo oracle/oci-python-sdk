@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GenericDeliveredArtifact(DeliveredArtifact):
     """
-    Details of UIM Artifact delivered via DeliverArtifactStage.
+    Details of the generic artifacts delivered through the Deliver Artifacts stage.
     """
 
     def __init__(self, **kwargs):
@@ -106,7 +106,7 @@ class GenericDeliveredArtifact(DeliveredArtifact):
     def delivered_artifact_id(self):
         """
         **[Required]** Gets the delivered_artifact_id of this GenericDeliveredArtifact.
-        The OCID of the artifact pushed by the DeliverArtifactStage
+        The OCID of the artifact pushed by the Deliver Artifacts stage.
 
 
         :return: The delivered_artifact_id of this GenericDeliveredArtifact.
@@ -118,7 +118,7 @@ class GenericDeliveredArtifact(DeliveredArtifact):
     def delivered_artifact_id(self, delivered_artifact_id):
         """
         Sets the delivered_artifact_id of this GenericDeliveredArtifact.
-        The OCID of the artifact pushed by the DeliverArtifactStage
+        The OCID of the artifact pushed by the Deliver Artifacts stage.
 
 
         :param delivered_artifact_id: The delivered_artifact_id of this GenericDeliveredArtifact.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryPathCollection(object):
     """
-    Result of a List Paths in a repository
+    Result of list paths in a repository.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class RepositoryPathCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this RepositoryPathCollection.
-        List of objects describings files or directories in a repository.
+        List of objects describing files or directories in a repository.
 
 
         :return: The items of this RepositoryPathCollection.
@@ -49,7 +49,7 @@ class RepositoryPathCollection(object):
     def items(self, items):
         """
         Sets the items of this RepositoryPathCollection.
-        List of objects describings files or directories in a repository.
+        List of objects describing files or directories in a repository.
 
 
         :param items: The items of this RepositoryPathCollection.

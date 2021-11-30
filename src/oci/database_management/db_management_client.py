@@ -315,7 +315,7 @@ class DbManagementClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.ChangeDbManagementPrivateEndpointCompartmentDetails change_db_management_private_endpoint_compartment_details: (required)
-            The details used to change the compartment of a Database Management private endpoint.
+            The details used to move the Database Management private endpoint to another compartment.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -623,7 +623,7 @@ class DbManagementClient(object):
 
 
         :param oci.database_management.models.CreateDbManagementPrivateEndpointDetails create_db_management_private_endpoint_details: (required)
-            Details to create a new private endpoint.
+            Details used to create a new Database Management private endpoint.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -859,7 +859,7 @@ class DbManagementClient(object):
 
     def delete_db_management_private_endpoint(self, db_management_private_endpoint_id, **kwargs):
         """
-        Deletes the specified Database Management private endpoint.
+        Deletes a specific Database Management private endpoint.
 
 
         :param str db_management_private_endpoint_id: (required)
@@ -1755,7 +1755,7 @@ class DbManagementClient(object):
 
     def get_db_management_private_endpoint(self, db_management_private_endpoint_id, **kwargs):
         """
-        Gets the details of the specified Database Management private endpoint.
+        Gets the details of a specific Database Management private endpoint.
 
 
         :param str db_management_private_endpoint_id: (required)
@@ -2235,9 +2235,10 @@ class DbManagementClient(object):
 
     def get_pdb_metrics(self, managed_database_id, start_time, end_time, **kwargs):
         """
-        Gets a summary of the resource usage metrics like DB Time, CPU, User I/O, Wait, Storage, and Memory
-        for each Pdb under specified Container database in same compartment as container database.
-        If comparmentId is provided then for each Pdb under specified compartmentId.
+        Gets a summary of the resource usage metrics such as CPU, User I/O, and Storage for each
+        PDB within a specific CDB. If comparmentId is specified, then the metrics for
+        each PDB (within the CDB) in the specified compartment are retrieved.
+        If compartmentId is not specified, then the metrics for all the PDBs within the CDB are retrieved.
 
 
         :param str managed_database_id: (required)
@@ -2358,13 +2359,98 @@ class DbManagementClient(object):
                 header_params=header_params,
                 response_type="PdbMetrics")
 
+    def get_user(self, managed_database_id, user_name, **kwargs):
+        """
+        Gets the details of a specific user for the specified managedDatabaseId and userName.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str user_name: (required)
+            The name of the user whose details are to be viewed.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.User`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/get_user.py.html>`__ to see an example of how to use get_user API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_user got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "userName": user_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="User")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="User")
+
     def get_work_request(self, work_request_id, **kwargs):
         """
-        Gets information of the work request with the given Work Request Id.
+        Gets the status of the work request with the given Work Request ID
 
 
         :param str work_request_id: (required)
-            The `OCID`__ of the async Work Request.
+            The `OCID`__ of the asynchronous work request.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -2441,7 +2527,7 @@ class DbManagementClient(object):
 
     def list_associated_databases(self, db_management_private_endpoint_id, compartment_id, **kwargs):
         """
-        Gets the list of Databases using the specified Database Management private endpoint.
+        Gets the list of databases using a specific Database Management private endpoint.
 
 
         :param str db_management_private_endpoint_id: (required)
@@ -2458,10 +2544,10 @@ class DbManagementClient(object):
             The client request ID for tracing.
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
@@ -2470,7 +2556,7 @@ class DbManagementClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort Databases using a specific Database Management Private Endpoint
+            The option to sort databases using a specific Database Management private endpoint.
 
             Allowed values are: "timeRegistered"
 
@@ -2607,11 +2693,11 @@ class DbManagementClient(object):
             /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param str sort_by: (optional)
             The option to sort the AWR snapshot summary data.
@@ -2765,11 +2851,11 @@ class DbManagementClient(object):
             The optional less than or equal to query parameter to filter the timestamp.
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param str sort_by: (optional)
             The option to sort the AWR summary data.
@@ -2895,6 +2981,278 @@ class DbManagementClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="AwrDbCollection")
+
+    def list_consumer_group_privileges(self, managed_database_id, user_name, **kwargs):
+        """
+        Gets the list of Consumer Group Privileges granted for the specified user.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str user_name: (required)
+            The name of the user whose details are to be viewed.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str name: (optional)
+            A filter to return only resources that match the entire name.
+
+        :param str sort_by: (optional)
+            The field to sort information by. Only one sortOrder can be used. The default sort order
+            for \u2018NAME\u2019 is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+
+            Allowed values are: "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            The maximum number of records returned in the paginated response.
+
+        :param str page: (optional)
+            The page token representing the page from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.ConsumerGroupPrivilegeCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_consumer_group_privileges.py.html>`__ to see an example of how to use list_consumer_group_privileges API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/consumerGroupPrivileges"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "name",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_consumer_group_privileges got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "userName": user_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ConsumerGroupPrivilegeCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ConsumerGroupPrivilegeCollection")
+
+    def list_data_access_containers(self, managed_database_id, user_name, **kwargs):
+        """
+        Gets the list of Containers if it does not apply to all containers for the specified user.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str user_name: (required)
+            The name of the user whose details are to be viewed.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str name: (optional)
+            A filter to return only resources that match the entire name.
+
+        :param str sort_by: (optional)
+            The field to sort information by. Only one sortOrder can be used. The default sort order
+            for \u2018NAME\u2019 is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+
+            Allowed values are: "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            The maximum number of records returned in the paginated response.
+
+        :param str page: (optional)
+            The page token representing the page from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.DataAccessContainerCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_data_access_containers.py.html>`__ to see an example of how to use list_data_access_containers API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/dataAccessContainers"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "name",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_data_access_containers got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "userName": user_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DataAccessContainerCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="DataAccessContainerCollection")
 
     def list_database_parameters(self, managed_database_id, **kwargs):
         """
@@ -3057,16 +3415,19 @@ class DbManagementClient(object):
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
+        :param bool is_cluster: (optional)
+            The option to filter Database Management private endpoints that can used for Oracle Databases in a cluster. This should be used along with the vcnId query parameter.
+
         :param str lifecycle_state: (optional)
             The lifecycle state of a resource.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param str sort_order: (optional)
@@ -3106,6 +3467,7 @@ class DbManagementClient(object):
             "retry_strategy",
             "name",
             "vcn_id",
+            "is_cluster",
             "lifecycle_state",
             "limit",
             "page",
@@ -3143,6 +3505,7 @@ class DbManagementClient(object):
             "compartmentId": compartment_id,
             "name": kwargs.get("name", missing),
             "vcnId": kwargs.get("vcn_id", missing),
+            "isCluster": kwargs.get("is_cluster", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -3221,10 +3584,10 @@ class DbManagementClient(object):
             A filter to return only resources that match the entire name.
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param str sort_by: (optional)
@@ -3380,10 +3743,10 @@ class DbManagementClient(object):
             A filter to return only resources that match the entire name.
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param str sort_by: (optional)
@@ -3533,10 +3896,10 @@ class DbManagementClient(object):
             Allowed values are: "ACTIVE", "INACTIVE"
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param str sort_by: (optional)
@@ -3681,11 +4044,11 @@ class DbManagementClient(object):
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param str sort_by: (optional)
             The field to sort information by. Only one sortOrder can be used. The default sort order
@@ -3829,14 +4192,14 @@ class DbManagementClient(object):
         :param str deployment_type: (optional)
             A filter to return Managed Databases of the specified deployment type.
 
-            Allowed values are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC"
+            Allowed values are: "ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS"
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param str sort_by: (optional)
             The field to sort information by. Only one sortOrder can be used. The default sort order
@@ -3893,7 +4256,7 @@ class DbManagementClient(object):
                 )
 
         if 'deployment_type' in kwargs:
-            deployment_type_allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC"]
+            deployment_type_allowed_values = ["ONPREMISE", "BM", "VM", "EXADATA", "EXADATA_CC", "AUTONOMOUS"]
             if kwargs['deployment_type'] not in deployment_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `deployment_type`, must be one of {0}".format(deployment_type_allowed_values)
@@ -3957,6 +4320,686 @@ class DbManagementClient(object):
                 header_params=header_params,
                 response_type="ManagedDatabaseCollection")
 
+    def list_object_privileges(self, managed_database_id, user_name, **kwargs):
+        """
+        Gets the list of Object Privileges granted for the specified user.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str user_name: (required)
+            The name of the user whose details are to be viewed.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str name: (optional)
+            A filter to return only resources that match the entire name.
+
+        :param str sort_by: (optional)
+            The field to sort information by. Only one sortOrder can be used. The default sort order
+            for \u2018NAME\u2019 is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+
+            Allowed values are: "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            The maximum number of records returned in the paginated response.
+
+        :param str page: (optional)
+            The page token representing the page from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.ObjectPrivilegeCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_object_privileges.py.html>`__ to see an example of how to use list_object_privileges API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/objectPrivileges"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "name",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_object_privileges got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "userName": user_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ObjectPrivilegeCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ObjectPrivilegeCollection")
+
+    def list_proxied_for_users(self, managed_database_id, user_name, **kwargs):
+        """
+        Gets the list of Users for which the current user acts as proxy.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str user_name: (required)
+            The name of the user whose details are to be viewed.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str name: (optional)
+            A filter to return only resources that match the entire name.
+
+        :param str sort_by: (optional)
+            The field to sort information by. Only one sortOrder can be used. The default sort order
+            for \u2018NAME\u2019 is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+
+            Allowed values are: "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            The maximum number of records returned in the paginated response.
+
+        :param str page: (optional)
+            The page token representing the page from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.ProxiedForUserCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_proxied_for_users.py.html>`__ to see an example of how to use list_proxied_for_users API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/proxiedForUsers"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "name",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_proxied_for_users got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "userName": user_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ProxiedForUserCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ProxiedForUserCollection")
+
+    def list_proxy_users(self, managed_database_id, user_name, **kwargs):
+        """
+        Gets the list of proxy users for the current User.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str user_name: (required)
+            The name of the user whose details are to be viewed.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str name: (optional)
+            A filter to return only resources that match the entire name.
+
+        :param str sort_by: (optional)
+            The field to sort information by. Only one sortOrder can be used. The default sort order
+            for \u2018NAME\u2019 is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+
+            Allowed values are: "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            The maximum number of records returned in the paginated response.
+
+        :param str page: (optional)
+            The page token representing the page from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.ProxyUserCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_proxy_users.py.html>`__ to see an example of how to use list_proxy_users API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/proxyUsers"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "name",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_proxy_users got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "userName": user_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ProxyUserCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ProxyUserCollection")
+
+    def list_roles(self, managed_database_id, user_name, **kwargs):
+        """
+        Gets the list of roles granted for the specified user.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str user_name: (required)
+            The name of the user whose details are to be viewed.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str name: (optional)
+            A filter to return only resources that match the entire name.
+
+        :param str sort_by: (optional)
+            The field to sort information by. Only one sortOrder can be used. The default sort order
+            for \u2018NAME\u2019 is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+
+            Allowed values are: "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            The maximum number of records returned in the paginated response.
+
+        :param str page: (optional)
+            The page token representing the page from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.RoleCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_roles.py.html>`__ to see an example of how to use list_roles API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/roles"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "name",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_roles got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "userName": user_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RoleCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RoleCollection")
+
+    def list_system_privileges(self, managed_database_id, user_name, **kwargs):
+        """
+        Gets the list of System Privileges granted for the specified user.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str user_name: (required)
+            The name of the user whose details are to be viewed.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str name: (optional)
+            A filter to return only resources that match the entire name.
+
+        :param str sort_by: (optional)
+            The field to sort information by. Only one sortOrder can be used. The default sort order
+            for \u2018NAME\u2019 is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+
+            Allowed values are: "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            The maximum number of records returned in the paginated response.
+
+        :param str page: (optional)
+            The page token representing the page from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.SystemPrivilegeCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_system_privileges.py.html>`__ to see an example of how to use list_system_privileges API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/users/{userName}/systemPrivileges"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "name",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_system_privileges got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id,
+            "userName": user_name
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SystemPrivilegeCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SystemPrivilegeCollection")
+
     def list_tablespaces(self, managed_database_id, **kwargs):
         """
         Gets the list of tablespaces for the specified managedDatabaseId.
@@ -3986,11 +5029,11 @@ class DbManagementClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4090,13 +5133,146 @@ class DbManagementClient(object):
                 header_params=header_params,
                 response_type="TablespaceCollection")
 
+    def list_users(self, managed_database_id, **kwargs):
+        """
+        Gets the list of users for the specified managedDatabaseId.
+
+
+        :param str managed_database_id: (required)
+            The `OCID`__ of the Managed Database.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param str name: (optional)
+            A filter to return only resources that match the entire name.
+
+        :param str sort_by: (optional)
+            The field to sort information by. Only one sortOrder can be used. The default sort order
+            for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+            The \u2018NAME\u2019 sort order is case-sensitive.
+
+            Allowed values are: "TIMECREATED", "NAME"
+
+        :param str sort_order: (optional)
+            The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param int limit: (optional)
+            The maximum number of records returned in the paginated response.
+
+        :param str page: (optional)
+            The page token representing the page from where the next set of paginated results
+            are retrieved. This is usually retrieved from a previous list call.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database_management.models.UserCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/databasemanagement/list_users.py.html>`__ to see an example of how to use list_users API.
+        """
+        resource_path = "/managedDatabases/{managedDatabaseId}/users"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "name",
+            "sort_by",
+            "sort_order",
+            "limit",
+            "page"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_users got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "managedDatabaseId": managed_database_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["TIMECREATED", "NAME"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        query_params = {
+            "name": kwargs.get("name", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="UserCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="UserCollection")
+
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Returns a (paginated) list of errors for a given work request.
+        Returns a paginated list of errors for a given work request.
 
 
         :param str work_request_id: (required)
-            The `OCID`__ of the async Work Request.
+            The `OCID`__ of the asynchronous work request.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -4104,14 +5280,14 @@ class DbManagementClient(object):
             The client request ID for tracing.
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+            The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
 
             Allowed values are: "timeAccepted"
 
@@ -4218,11 +5394,11 @@ class DbManagementClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Returns a (paginated) list of logs for a given work request.
+        Returns a paginated list of logs for a given work request.
 
 
         :param str work_request_id: (required)
-            The `OCID`__ of the async Work Request.
+            The `OCID`__ of the asynchronous work request.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -4230,14 +5406,14 @@ class DbManagementClient(object):
             The client request ID for tracing.
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+            The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
 
             Allowed values are: "timeAccepted"
 
@@ -4344,7 +5520,7 @@ class DbManagementClient(object):
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
-        Lists all the work requests in the specified compartment.
+        The list of work requests in a specific compartment was retrieved successfully.
 
 
         :param str compartment_id: (required)
@@ -4361,10 +5537,12 @@ class DbManagementClient(object):
             The client request ID for tracing.
 
         :param str work_request_id: (optional)
-            The ID of the asynchronous work request.
+            The `OCID`__ of the asynchronous work request.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str status: (optional)
-            A filter to return only resources their status matches the given WorkRequestStatus.
+            A filter that returns the resources whose status matches the given WorkRequestStatus.
 
             Allowed values are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
 
@@ -4374,16 +5552,16 @@ class DbManagementClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+            The field to sort by. Only one sort order may be provided and the default order for timeAccepted is descending.
 
             Allowed values are: "timeAccepted"
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -4717,7 +5895,7 @@ class DbManagementClient(object):
             /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
@@ -4903,7 +6081,7 @@ class DbManagementClient(object):
             /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
@@ -5085,7 +6263,7 @@ class DbManagementClient(object):
             /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
@@ -5291,7 +6469,7 @@ class DbManagementClient(object):
             Allowed values are: "MODIFIED", "SYSTEM_MOD", "FALSE"
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
@@ -5480,11 +6658,11 @@ class DbManagementClient(object):
             The optional less than or equal to query parameter to filter the timestamp.
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
-            The maximum number of records returned in paginated response.
+            The maximum number of records returned in the paginated response.
 
         :param str sort_by: (optional)
             The option to sort the AWR summary data.
@@ -5650,7 +6828,7 @@ class DbManagementClient(object):
             /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
@@ -6019,7 +7197,7 @@ class DbManagementClient(object):
             /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
@@ -6208,7 +7386,7 @@ class DbManagementClient(object):
             /managedDatabases/{managedDatabaseId}/awrDbSnapshotRanges
 
         :param str page: (optional)
-            The page token representing the page, from where the next set of paginated results
+            The page token representing the page from where the next set of paginated results
             are retrieved. This is usually retrieved from a previous list call.
 
         :param int limit: (optional)
@@ -6499,7 +7677,7 @@ class DbManagementClient(object):
 
     def update_db_management_private_endpoint(self, db_management_private_endpoint_id, update_db_management_private_endpoint_details, **kwargs):
         """
-        Updates one or more attributes of the specified Database Management private endpoint.
+        Updates one or more attributes of a specific Database Management private endpoint.
 
 
         :param str db_management_private_endpoint_id: (required)

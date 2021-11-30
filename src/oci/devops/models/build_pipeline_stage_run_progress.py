@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildPipelineStageRunProgress(object):
     """
-    The details about the run progress of a Stage in a BuildRun.
+    The details about the run progress of a stage in a build run.
     """
 
     #: A constant which can be used with the status property of a BuildPipelineStageRunProgress.
@@ -134,7 +134,7 @@ class BuildPipelineStageRunProgress(object):
     def stage_display_name(self):
         """
         Gets the stage_display_name of this BuildPipelineStageRunProgress.
-        BuildRun identifier which can be renamed and is not necessarily unique
+        Build Run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :return: The stage_display_name of this BuildPipelineStageRunProgress.
@@ -146,7 +146,7 @@ class BuildPipelineStageRunProgress(object):
     def stage_display_name(self, stage_display_name):
         """
         Sets the stage_display_name of this BuildPipelineStageRunProgress.
-        BuildRun identifier which can be renamed and is not necessarily unique
+        Build Run display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :param stage_display_name: The stage_display_name of this BuildPipelineStageRunProgress.
@@ -158,7 +158,7 @@ class BuildPipelineStageRunProgress(object):
     def build_pipeline_stage_type(self):
         """
         Gets the build_pipeline_stage_type of this BuildPipelineStageRunProgress.
-        Stage sub types.
+        Stage types.
 
 
         :return: The build_pipeline_stage_type of this BuildPipelineStageRunProgress.
@@ -170,7 +170,7 @@ class BuildPipelineStageRunProgress(object):
     def build_pipeline_stage_type(self, build_pipeline_stage_type):
         """
         Sets the build_pipeline_stage_type of this BuildPipelineStageRunProgress.
-        Stage sub types.
+        Stage types.
 
 
         :param build_pipeline_stage_type: The build_pipeline_stage_type of this BuildPipelineStageRunProgress.
@@ -182,7 +182,7 @@ class BuildPipelineStageRunProgress(object):
     def build_pipeline_stage_id(self):
         """
         Gets the build_pipeline_stage_id of this BuildPipelineStageRunProgress.
-        Stage id
+        The stage OCID.
 
 
         :return: The build_pipeline_stage_id of this BuildPipelineStageRunProgress.
@@ -194,7 +194,7 @@ class BuildPipelineStageRunProgress(object):
     def build_pipeline_stage_id(self, build_pipeline_stage_id):
         """
         Sets the build_pipeline_stage_id of this BuildPipelineStageRunProgress.
-        Stage id
+        The stage OCID.
 
 
         :param build_pipeline_stage_id: The build_pipeline_stage_id of this BuildPipelineStageRunProgress.
@@ -206,7 +206,9 @@ class BuildPipelineStageRunProgress(object):
     def time_started(self):
         """
         Gets the time_started of this BuildPipelineStageRunProgress.
-        The time the Stage was started executing. An RFC3339 formatted datetime string
+        The time the stage started executing. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_started of this BuildPipelineStageRunProgress.
@@ -218,7 +220,9 @@ class BuildPipelineStageRunProgress(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this BuildPipelineStageRunProgress.
-        The time the Stage was started executing. An RFC3339 formatted datetime string
+        The time the stage started executing. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_started: The time_started of this BuildPipelineStageRunProgress.
@@ -230,7 +234,9 @@ class BuildPipelineStageRunProgress(object):
     def time_finished(self):
         """
         Gets the time_finished of this BuildPipelineStageRunProgress.
-        The time the Stage was finished executing. An RFC3339 formatted datetime string
+        The time the stage finished executing. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_finished of this BuildPipelineStageRunProgress.
@@ -242,7 +248,9 @@ class BuildPipelineStageRunProgress(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this BuildPipelineStageRunProgress.
-        The time the Stage was finished executing. An RFC3339 formatted datetime string
+        The time the stage finished executing. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_finished: The time_finished of this BuildPipelineStageRunProgress.
@@ -254,7 +262,7 @@ class BuildPipelineStageRunProgress(object):
     def status(self):
         """
         Gets the status of this BuildPipelineStageRunProgress.
-        The current status of the Stage.
+        The current status of the stage.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -269,7 +277,7 @@ class BuildPipelineStageRunProgress(object):
     def status(self, status):
         """
         Sets the status of this BuildPipelineStageRunProgress.
-        The current status of the Stage.
+        The current status of the stage.
 
 
         :param status: The status of this BuildPipelineStageRunProgress.

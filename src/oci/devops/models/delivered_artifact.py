@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DeliveredArtifact(object):
     """
-    Details of the Artifact delivered via DeliverArtifactStage.
+    Details of the artifacts delivered through the Deliver Artifacts stage.
     """
 
     #: A constant which can be used with the artifact_type property of a DeliveredArtifact.
@@ -82,7 +82,7 @@ class DeliveredArtifact(object):
     def deploy_artifact_id(self):
         """
         **[Required]** Gets the deploy_artifact_id of this DeliveredArtifact.
-        The OCID of the deploy artifact definition
+        The OCID of the deployment artifact definition.
 
 
         :return: The deploy_artifact_id of this DeliveredArtifact.
@@ -94,7 +94,7 @@ class DeliveredArtifact(object):
     def deploy_artifact_id(self, deploy_artifact_id):
         """
         Sets the deploy_artifact_id of this DeliveredArtifact.
-        The OCID of the deploy artifact definition
+        The OCID of the deployment artifact definition.
 
 
         :param deploy_artifact_id: The deploy_artifact_id of this DeliveredArtifact.
@@ -106,7 +106,7 @@ class DeliveredArtifact(object):
     def output_artifact_name(self):
         """
         **[Required]** Gets the output_artifact_name of this DeliveredArtifact.
-        Name of the output artifact defined in the build spec
+        Name of the output artifact defined in the build specification file.
 
 
         :return: The output_artifact_name of this DeliveredArtifact.
@@ -118,7 +118,7 @@ class DeliveredArtifact(object):
     def output_artifact_name(self, output_artifact_name):
         """
         Sets the output_artifact_name of this DeliveredArtifact.
-        Name of the output artifact defined in the build spec
+        Name of the output artifact defined in the build specification file.
 
 
         :param output_artifact_name: The output_artifact_name of this DeliveredArtifact.
@@ -130,7 +130,7 @@ class DeliveredArtifact(object):
     def artifact_type(self):
         """
         **[Required]** Gets the artifact_type of this DeliveredArtifact.
-        Type of Artifact Delivered
+        Type of artifact delivered.
 
         Allowed values for this property are: "GENERIC_ARTIFACT", "OCIR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -145,7 +145,7 @@ class DeliveredArtifact(object):
     def artifact_type(self, artifact_type):
         """
         Sets the artifact_type of this DeliveredArtifact.
-        Type of Artifact Delivered
+        Type of artifact delivered.
 
 
         :param artifact_type: The artifact_type of this DeliveredArtifact.

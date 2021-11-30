@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DbManagementPrivateEndpointSummary(object):
     """
-    Summary of a Database Management private endpoint.
+    The summary of a Database Management private endpoint.
     """
 
     #: A constant which can be used with the lifecycle_state property of a DbManagementPrivateEndpointSummary.
@@ -112,7 +112,9 @@ class DbManagementPrivateEndpointSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this DbManagementPrivateEndpointSummary.
-        The OCID of the Database Management private endpoint.
+        The `OCID`__ of the Database Management private endpoint.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this DbManagementPrivateEndpointSummary.
@@ -124,7 +126,9 @@ class DbManagementPrivateEndpointSummary(object):
     def id(self, id):
         """
         Sets the id of this DbManagementPrivateEndpointSummary.
-        The OCID of the Database Management private endpoint.
+        The `OCID`__ of the Database Management private endpoint.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this DbManagementPrivateEndpointSummary.
@@ -136,7 +140,7 @@ class DbManagementPrivateEndpointSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this DbManagementPrivateEndpointSummary.
-        The display name of the private endpoint.
+        The display name of the Database Management private endpoint.
 
 
         :return: The name of this DbManagementPrivateEndpointSummary.
@@ -148,7 +152,7 @@ class DbManagementPrivateEndpointSummary(object):
     def name(self, name):
         """
         Sets the name of this DbManagementPrivateEndpointSummary.
-        The display name of the private endpoint.
+        The display name of the Database Management private endpoint.
 
 
         :param name: The name of this DbManagementPrivateEndpointSummary.
@@ -160,7 +164,9 @@ class DbManagementPrivateEndpointSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DbManagementPrivateEndpointSummary.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this DbManagementPrivateEndpointSummary.
@@ -172,7 +178,9 @@ class DbManagementPrivateEndpointSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DbManagementPrivateEndpointSummary.
-        The OCID of the compartment.
+        The `OCID`__ of the compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this DbManagementPrivateEndpointSummary.
@@ -184,7 +192,9 @@ class DbManagementPrivateEndpointSummary(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this DbManagementPrivateEndpointSummary.
-        The OCID of the VCN.
+        The `OCID`__ of the VCN.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The vcn_id of this DbManagementPrivateEndpointSummary.
@@ -196,7 +206,9 @@ class DbManagementPrivateEndpointSummary(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this DbManagementPrivateEndpointSummary.
-        The OCID of the VCN.
+        The `OCID`__ of the VCN.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param vcn_id: The vcn_id of this DbManagementPrivateEndpointSummary.
@@ -208,7 +220,9 @@ class DbManagementPrivateEndpointSummary(object):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this DbManagementPrivateEndpointSummary.
-        The OCID of the subnet.
+        The `OCID`__ of the subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subnet_id of this DbManagementPrivateEndpointSummary.
@@ -220,7 +234,9 @@ class DbManagementPrivateEndpointSummary(object):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this DbManagementPrivateEndpointSummary.
-        The OCID of the subnet.
+        The `OCID`__ of the subnet.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subnet_id: The subnet_id of this DbManagementPrivateEndpointSummary.
@@ -284,7 +300,7 @@ class DbManagementPrivateEndpointSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this DbManagementPrivateEndpointSummary.
-        The current state of the private endpoint.
+        The current lifecycle state of the private endpoint.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -299,7 +315,7 @@ class DbManagementPrivateEndpointSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this DbManagementPrivateEndpointSummary.
-        The current state of the private endpoint.
+        The current lifecycle state of the private endpoint.
 
 
         :param lifecycle_state: The lifecycle_state of this DbManagementPrivateEndpointSummary.

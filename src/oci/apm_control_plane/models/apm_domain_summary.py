@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ApmDomainSummary(object):
     """
-    Summary of an APM Domain.
+    Summary of an APM domain.
     """
 
     #: A constant which can be used with the lifecycle_state property of a ApmDomainSummary.
@@ -28,6 +28,10 @@ class ApmDomainSummary(object):
     #: A constant which can be used with the lifecycle_state property of a ApmDomainSummary.
     #: This constant has a value of "DELETING"
     LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a ApmDomainSummary.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
 
     #: A constant which can be used with the lifecycle_state property of a ApmDomainSummary.
     #: This constant has a value of "FAILED"
@@ -56,7 +60,7 @@ class ApmDomainSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ApmDomainSummary.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -146,7 +150,7 @@ class ApmDomainSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ApmDomainSummary.
-        APM Domain display name, can be updated.
+        Display name of the APM domain, which can be updated.
 
 
         :return: The display_name of this ApmDomainSummary.
@@ -158,7 +162,7 @@ class ApmDomainSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ApmDomainSummary.
-        APM Domain display name, can be updated.
+        Display name of the APM domain, which can be updated.
 
 
         :param display_name: The display_name of this ApmDomainSummary.
@@ -170,7 +174,7 @@ class ApmDomainSummary(object):
     def description(self):
         """
         Gets the description of this ApmDomainSummary.
-        Description of the APM Domain.
+        Description of the APM domain.
 
 
         :return: The description of this ApmDomainSummary.
@@ -182,7 +186,7 @@ class ApmDomainSummary(object):
     def description(self, description):
         """
         Sets the description of this ApmDomainSummary.
-        Description of the APM Domain.
+        Description of the APM domain.
 
 
         :param description: The description of this ApmDomainSummary.
@@ -194,7 +198,7 @@ class ApmDomainSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ApmDomainSummary.
-        The OCID of the compartment corresponding to the APM Domain.
+        The OCID of the compartment corresponding to the APM domain.
 
 
         :return: The compartment_id of this ApmDomainSummary.
@@ -206,7 +210,7 @@ class ApmDomainSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ApmDomainSummary.
-        The OCID of the compartment corresponding to the APM Domain.
+        The OCID of the compartment corresponding to the APM domain.
 
 
         :param compartment_id: The compartment_id of this ApmDomainSummary.
@@ -218,9 +222,9 @@ class ApmDomainSummary(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this ApmDomainSummary.
-        The current lifecycle state of the APM Domain.
+        The current lifecycle state of the APM domain.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -233,13 +237,13 @@ class ApmDomainSummary(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this ApmDomainSummary.
-        The current lifecycle state of the APM Domain.
+        The current lifecycle state of the APM domain.
 
 
         :param lifecycle_state: The lifecycle_state of this ApmDomainSummary.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -272,7 +276,7 @@ class ApmDomainSummary(object):
     def time_created(self):
         """
         Gets the time_created of this ApmDomainSummary.
-        The time the the APM Domain was created. An RFC3339 formatted datetime string
+        The time the APM domain was created, expressed in RFC 3339 timestamp format.
 
 
         :return: The time_created of this ApmDomainSummary.
@@ -284,7 +288,7 @@ class ApmDomainSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this ApmDomainSummary.
-        The time the the APM Domain was created. An RFC3339 formatted datetime string
+        The time the APM domain was created, expressed in RFC 3339 timestamp format.
 
 
         :param time_created: The time_created of this ApmDomainSummary.
@@ -296,7 +300,7 @@ class ApmDomainSummary(object):
     def time_updated(self):
         """
         Gets the time_updated of this ApmDomainSummary.
-        The time the APM Domain was updated. An RFC3339 formatted datetime string
+        The time the APM domain was updated, expressed in RFC 3339 timestamp format.
 
 
         :return: The time_updated of this ApmDomainSummary.
@@ -308,7 +312,7 @@ class ApmDomainSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this ApmDomainSummary.
-        The time the APM Domain was updated. An RFC3339 formatted datetime string
+        The time the APM domain was updated, expressed in RFC 3339 timestamp format.
 
 
         :param time_updated: The time_updated of this ApmDomainSummary.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestLogEntryCollection(object):
     """
-    Results of a work request log search. Contains both WorkRequestLog items and other data.
+    The results of a work request log search. This contains WorkRequestLog items and other data.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class WorkRequestLogEntryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this WorkRequestLogEntryCollection.
-        Collection of work request logs
+        A collection of work request logs.
 
 
         :return: The items of this WorkRequestLogEntryCollection.
@@ -49,7 +49,7 @@ class WorkRequestLogEntryCollection(object):
     def items(self, items):
         """
         Sets the items of this WorkRequestLogEntryCollection.
-        Collection of work request logs
+        A collection of work request logs.
 
 
         :param items: The items of this WorkRequestLogEntryCollection.

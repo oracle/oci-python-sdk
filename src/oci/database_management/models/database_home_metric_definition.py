@@ -38,13 +38,28 @@ class DatabaseHomeMetricDefinition(object):
             The value to assign to the db_storage_aggregate_metrics property of this DatabaseHomeMetricDefinition.
         :type db_storage_aggregate_metrics: oci.database_management.models.DatabaseStorageAggregateMetrics
 
+        :param cpu_utilization_aggregate_metrics:
+            The value to assign to the cpu_utilization_aggregate_metrics property of this DatabaseHomeMetricDefinition.
+        :type cpu_utilization_aggregate_metrics: oci.database_management.models.CpuUtilizationAggregateMetrics
+
+        :param statements_aggregate_metrics:
+            The value to assign to the statements_aggregate_metrics property of this DatabaseHomeMetricDefinition.
+        :type statements_aggregate_metrics: oci.database_management.models.StatementsAggregateMetrics
+
+        :param failed_connections_aggregate_metrics:
+            The value to assign to the failed_connections_aggregate_metrics property of this DatabaseHomeMetricDefinition.
+        :type failed_connections_aggregate_metrics: oci.database_management.models.FailedConnectionsAggregateMetrics
+
         """
         self.swagger_types = {
             'activity_time_series_metrics': 'list[ActivityTimeSeriesMetrics]',
             'db_time_aggregate_metrics': 'DatabaseTimeAggregateMetrics',
             'io_aggregate_metrics': 'DatabaseIOAggregateMetrics',
             'memory_aggregate_metrics': 'MemoryAggregateMetrics',
-            'db_storage_aggregate_metrics': 'DatabaseStorageAggregateMetrics'
+            'db_storage_aggregate_metrics': 'DatabaseStorageAggregateMetrics',
+            'cpu_utilization_aggregate_metrics': 'CpuUtilizationAggregateMetrics',
+            'statements_aggregate_metrics': 'StatementsAggregateMetrics',
+            'failed_connections_aggregate_metrics': 'FailedConnectionsAggregateMetrics'
         }
 
         self.attribute_map = {
@@ -52,7 +67,10 @@ class DatabaseHomeMetricDefinition(object):
             'db_time_aggregate_metrics': 'dbTimeAggregateMetrics',
             'io_aggregate_metrics': 'ioAggregateMetrics',
             'memory_aggregate_metrics': 'memoryAggregateMetrics',
-            'db_storage_aggregate_metrics': 'dbStorageAggregateMetrics'
+            'db_storage_aggregate_metrics': 'dbStorageAggregateMetrics',
+            'cpu_utilization_aggregate_metrics': 'cpuUtilizationAggregateMetrics',
+            'statements_aggregate_metrics': 'statementsAggregateMetrics',
+            'failed_connections_aggregate_metrics': 'failedConnectionsAggregateMetrics'
         }
 
         self._activity_time_series_metrics = None
@@ -60,6 +78,9 @@ class DatabaseHomeMetricDefinition(object):
         self._io_aggregate_metrics = None
         self._memory_aggregate_metrics = None
         self._db_storage_aggregate_metrics = None
+        self._cpu_utilization_aggregate_metrics = None
+        self._statements_aggregate_metrics = None
+        self._failed_connections_aggregate_metrics = None
 
     @property
     def activity_time_series_metrics(self):
@@ -164,6 +185,66 @@ class DatabaseHomeMetricDefinition(object):
         :type: oci.database_management.models.DatabaseStorageAggregateMetrics
         """
         self._db_storage_aggregate_metrics = db_storage_aggregate_metrics
+
+    @property
+    def cpu_utilization_aggregate_metrics(self):
+        """
+        Gets the cpu_utilization_aggregate_metrics of this DatabaseHomeMetricDefinition.
+
+        :return: The cpu_utilization_aggregate_metrics of this DatabaseHomeMetricDefinition.
+        :rtype: oci.database_management.models.CpuUtilizationAggregateMetrics
+        """
+        return self._cpu_utilization_aggregate_metrics
+
+    @cpu_utilization_aggregate_metrics.setter
+    def cpu_utilization_aggregate_metrics(self, cpu_utilization_aggregate_metrics):
+        """
+        Sets the cpu_utilization_aggregate_metrics of this DatabaseHomeMetricDefinition.
+
+        :param cpu_utilization_aggregate_metrics: The cpu_utilization_aggregate_metrics of this DatabaseHomeMetricDefinition.
+        :type: oci.database_management.models.CpuUtilizationAggregateMetrics
+        """
+        self._cpu_utilization_aggregate_metrics = cpu_utilization_aggregate_metrics
+
+    @property
+    def statements_aggregate_metrics(self):
+        """
+        Gets the statements_aggregate_metrics of this DatabaseHomeMetricDefinition.
+
+        :return: The statements_aggregate_metrics of this DatabaseHomeMetricDefinition.
+        :rtype: oci.database_management.models.StatementsAggregateMetrics
+        """
+        return self._statements_aggregate_metrics
+
+    @statements_aggregate_metrics.setter
+    def statements_aggregate_metrics(self, statements_aggregate_metrics):
+        """
+        Sets the statements_aggregate_metrics of this DatabaseHomeMetricDefinition.
+
+        :param statements_aggregate_metrics: The statements_aggregate_metrics of this DatabaseHomeMetricDefinition.
+        :type: oci.database_management.models.StatementsAggregateMetrics
+        """
+        self._statements_aggregate_metrics = statements_aggregate_metrics
+
+    @property
+    def failed_connections_aggregate_metrics(self):
+        """
+        Gets the failed_connections_aggregate_metrics of this DatabaseHomeMetricDefinition.
+
+        :return: The failed_connections_aggregate_metrics of this DatabaseHomeMetricDefinition.
+        :rtype: oci.database_management.models.FailedConnectionsAggregateMetrics
+        """
+        return self._failed_connections_aggregate_metrics
+
+    @failed_connections_aggregate_metrics.setter
+    def failed_connections_aggregate_metrics(self, failed_connections_aggregate_metrics):
+        """
+        Sets the failed_connections_aggregate_metrics of this DatabaseHomeMetricDefinition.
+
+        :param failed_connections_aggregate_metrics: The failed_connections_aggregate_metrics of this DatabaseHomeMetricDefinition.
+        :type: oci.database_management.models.FailedConnectionsAggregateMetrics
+        """
+        self._failed_connections_aggregate_metrics = failed_connections_aggregate_metrics
 
     def __repr__(self):
         return formatted_flat_dict(self)

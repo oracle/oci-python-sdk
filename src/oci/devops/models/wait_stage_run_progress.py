@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WaitStageRunProgress(BuildPipelineStageRunProgress):
     """
-    Specifies wait stage specific run details.
+    Specifies Wait stage specific run details.
     """
 
     def __init__(self, **kwargs):

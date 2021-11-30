@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GitlabTriggerSummary(TriggerSummary):
     """
-    Summary of the Gitlab Trigger.
+    Summary of the GitLab trigger.
     """
 
     def __init__(self, **kwargs):

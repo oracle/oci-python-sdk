@@ -29,6 +29,14 @@ class DatabaseParametersCollection(object):
     #: This constant has a value of "CLOUD_RAC"
     DATABASE_TYPE_CLOUD_RAC = "CLOUD_RAC"
 
+    #: A constant which can be used with the database_type property of a DatabaseParametersCollection.
+    #: This constant has a value of "SHARED"
+    DATABASE_TYPE_SHARED = "SHARED"
+
+    #: A constant which can be used with the database_type property of a DatabaseParametersCollection.
+    #: This constant has a value of "DEDICATED"
+    DATABASE_TYPE_DEDICATED = "DEDICATED"
+
     #: A constant which can be used with the database_sub_type property of a DatabaseParametersCollection.
     #: This constant has a value of "CDB"
     DATABASE_SUB_TYPE_CDB = "CDB"
@@ -41,6 +49,14 @@ class DatabaseParametersCollection(object):
     #: This constant has a value of "NON_CDB"
     DATABASE_SUB_TYPE_NON_CDB = "NON_CDB"
 
+    #: A constant which can be used with the database_sub_type property of a DatabaseParametersCollection.
+    #: This constant has a value of "ACD"
+    DATABASE_SUB_TYPE_ACD = "ACD"
+
+    #: A constant which can be used with the database_sub_type property of a DatabaseParametersCollection.
+    #: This constant has a value of "ADB"
+    DATABASE_SUB_TYPE_ADB = "ADB"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseParametersCollection object with values from keyword arguments.
@@ -52,13 +68,13 @@ class DatabaseParametersCollection(object):
 
         :param database_type:
             The value to assign to the database_type property of this DatabaseParametersCollection.
-            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_type: str
 
         :param database_sub_type:
             The value to assign to the database_sub_type property of this DatabaseParametersCollection.
-            Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_sub_type: str
 
@@ -123,7 +139,7 @@ class DatabaseParametersCollection(object):
         **[Required]** Gets the database_type of this DatabaseParametersCollection.
         The type of Oracle Database installation.
 
-        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -142,7 +158,7 @@ class DatabaseParametersCollection(object):
         :param database_type: The database_type of this DatabaseParametersCollection.
         :type: str
         """
-        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC"]
+        allowed_values = ["EXTERNAL_SIDB", "EXTERNAL_RAC", "CLOUD_SIDB", "CLOUD_RAC", "SHARED", "DEDICATED"]
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
             database_type = 'UNKNOWN_ENUM_VALUE'
         self._database_type = database_type
@@ -154,7 +170,7 @@ class DatabaseParametersCollection(object):
         The subtype of the Oracle Database. Indicates whether the database
         is a Container Database, Pluggable Database, or a Non-container Database.
 
-        Allowed values for this property are: "CDB", "PDB", "NON_CDB", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -174,7 +190,7 @@ class DatabaseParametersCollection(object):
         :param database_sub_type: The database_sub_type of this DatabaseParametersCollection.
         :type: str
         """
-        allowed_values = ["CDB", "PDB", "NON_CDB"]
+        allowed_values = ["CDB", "PDB", "NON_CDB", "ACD", "ADB"]
         if not value_allowed_none_or_none_sentinel(database_sub_type, allowed_values):
             database_sub_type = 'UNKNOWN_ENUM_VALUE'
         self._database_sub_type = database_sub_type

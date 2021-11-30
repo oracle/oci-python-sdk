@@ -97,7 +97,7 @@ class UpdateTriggerDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateTriggerDetails.
-        Trigger Identifier
+        Trigger display name. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateTriggerDetails.
@@ -109,7 +109,7 @@ class UpdateTriggerDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateTriggerDetails.
-        Trigger Identifier
+        Trigger display name. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateTriggerDetails.
@@ -121,7 +121,7 @@ class UpdateTriggerDetails(object):
     def description(self):
         """
         Gets the description of this UpdateTriggerDetails.
-        Optional description about the Trigger
+        Optional description about the trigger.
 
 
         :return: The description of this UpdateTriggerDetails.
@@ -133,7 +133,7 @@ class UpdateTriggerDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateTriggerDetails.
-        Optional description about the Trigger
+        Optional description about the trigger.
 
 
         :param description: The description of this UpdateTriggerDetails.
@@ -145,7 +145,7 @@ class UpdateTriggerDetails(object):
     def trigger_source(self):
         """
         **[Required]** Gets the trigger_source of this UpdateTriggerDetails.
-        Source of the Trigger (allowed values are - GITHUB, GITLAB)
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
 
 
         :return: The trigger_source of this UpdateTriggerDetails.
@@ -157,7 +157,7 @@ class UpdateTriggerDetails(object):
     def trigger_source(self, trigger_source):
         """
         Sets the trigger_source of this UpdateTriggerDetails.
-        Source of the Trigger (allowed values are - GITHUB, GITLAB)
+        Source of the trigger. Allowed values are, GITHUB and GITLAB.
 
 
         :param trigger_source: The trigger_source of this UpdateTriggerDetails.
@@ -169,7 +169,7 @@ class UpdateTriggerDetails(object):
     def actions(self):
         """
         Gets the actions of this UpdateTriggerDetails.
-        The list of actions that are to be performed for this Trigger
+        The list of actions that are to be performed for this trigger.
 
 
         :return: The actions of this UpdateTriggerDetails.
@@ -181,7 +181,7 @@ class UpdateTriggerDetails(object):
     def actions(self, actions):
         """
         Sets the actions of this UpdateTriggerDetails.
-        The list of actions that are to be performed for this Trigger
+        The list of actions that are to be performed for this trigger.
 
 
         :param actions: The actions of this UpdateTriggerDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DevopsCodeRepositoryTrigger(Trigger):
     """
-    Trigger specific to OCI Devops Repository Service
+    Trigger specific to OCI DevOps Code Repository service.
     """
 
     def __init__(self, **kwargs):
@@ -139,7 +139,7 @@ class DevopsCodeRepositoryTrigger(Trigger):
     def repository_id(self):
         """
         **[Required]** Gets the repository_id of this DevopsCodeRepositoryTrigger.
-        The OCID of OCI Devops Repository
+        The OCID of the DevOps code repository.
 
 
         :return: The repository_id of this DevopsCodeRepositoryTrigger.
@@ -151,7 +151,7 @@ class DevopsCodeRepositoryTrigger(Trigger):
     def repository_id(self, repository_id):
         """
         Sets the repository_id of this DevopsCodeRepositoryTrigger.
-        The OCID of OCI Devops Repository
+        The OCID of the DevOps code repository.
 
 
         :param repository_id: The repository_id of this DevopsCodeRepositoryTrigger.

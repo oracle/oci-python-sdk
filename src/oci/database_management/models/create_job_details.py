@@ -25,6 +25,14 @@ class CreateJobDetails(object):
     #: This constant has a value of "NON_CDB"
     DATABASE_SUB_TYPE_NON_CDB = "NON_CDB"
 
+    #: A constant which can be used with the database_sub_type property of a CreateJobDetails.
+    #: This constant has a value of "ACD"
+    DATABASE_SUB_TYPE_ACD = "ACD"
+
+    #: A constant which can be used with the database_sub_type property of a CreateJobDetails.
+    #: This constant has a value of "ADB"
+    DATABASE_SUB_TYPE_ADB = "ADB"
+
     #: A constant which can be used with the job_type property of a CreateJobDetails.
     #: This constant has a value of "SQL"
     JOB_TYPE_SQL = "SQL"
@@ -60,7 +68,7 @@ class CreateJobDetails(object):
 
         :param database_sub_type:
             The value to assign to the database_sub_type property of this CreateJobDetails.
-            Allowed values for this property are: "CDB", "PDB", "NON_CDB"
+            Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB"
         :type database_sub_type: str
 
         :param schedule_type:
@@ -280,7 +288,7 @@ class CreateJobDetails(object):
         Gets the database_sub_type of this CreateJobDetails.
         The subtype of the Oracle Database where the job has to be executed. Only applicable when managedDatabaseGroupId is provided.
 
-        Allowed values for this property are: "CDB", "PDB", "NON_CDB"
+        Allowed values for this property are: "CDB", "PDB", "NON_CDB", "ACD", "ADB"
 
 
         :return: The database_sub_type of this CreateJobDetails.
@@ -298,7 +306,7 @@ class CreateJobDetails(object):
         :param database_sub_type: The database_sub_type of this CreateJobDetails.
         :type: str
         """
-        allowed_values = ["CDB", "PDB", "NON_CDB"]
+        allowed_values = ["CDB", "PDB", "NON_CDB", "ACD", "ADB"]
         if not value_allowed_none_or_none_sentinel(database_sub_type, allowed_values):
             raise ValueError(
                 "Invalid value for `database_sub_type`, must be None or one of {0}"

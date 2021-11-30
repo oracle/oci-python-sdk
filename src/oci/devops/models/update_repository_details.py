@@ -79,7 +79,7 @@ class UpdateRepositoryDetails(object):
     def name(self):
         """
         Gets the name of this UpdateRepositoryDetails.
-        Repository Identifier
+        Unique name of a repository.
 
 
         :return: The name of this UpdateRepositoryDetails.
@@ -91,7 +91,7 @@ class UpdateRepositoryDetails(object):
     def name(self, name):
         """
         Sets the name of this UpdateRepositoryDetails.
-        Repository Identifier
+        Unique name of a repository.
 
 
         :param name: The name of this UpdateRepositoryDetails.
@@ -103,7 +103,7 @@ class UpdateRepositoryDetails(object):
     def description(self):
         """
         Gets the description of this UpdateRepositoryDetails.
-        The description of this repository. Avoid entering confidential information
+        Details of the repository. Avoid entering confidential information.
 
 
         :return: The description of this UpdateRepositoryDetails.
@@ -115,7 +115,7 @@ class UpdateRepositoryDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateRepositoryDetails.
-        The description of this repository. Avoid entering confidential information
+        Details of the repository. Avoid entering confidential information.
 
 
         :param description: The description of this UpdateRepositoryDetails.
@@ -127,7 +127,7 @@ class UpdateRepositoryDetails(object):
     def default_branch(self):
         """
         Gets the default_branch of this UpdateRepositoryDetails.
-        The default branch of the repository
+        The default branch of the repository.
 
 
         :return: The default_branch of this UpdateRepositoryDetails.
@@ -139,7 +139,7 @@ class UpdateRepositoryDetails(object):
     def default_branch(self, default_branch):
         """
         Sets the default_branch of this UpdateRepositoryDetails.
-        The default branch of the repository
+        The default branch of the repository.
 
 
         :param default_branch: The default_branch of this UpdateRepositoryDetails.
@@ -151,7 +151,7 @@ class UpdateRepositoryDetails(object):
     def repository_type(self):
         """
         Gets the repository_type of this UpdateRepositoryDetails.
-        Type of repository
+        Type of repository.
 
 
         :return: The repository_type of this UpdateRepositoryDetails.
@@ -163,7 +163,7 @@ class UpdateRepositoryDetails(object):
     def repository_type(self, repository_type):
         """
         Sets the repository_type of this UpdateRepositoryDetails.
-        Type of repository
+        Type of repository.
 
 
         :param repository_type: The repository_type of this UpdateRepositoryDetails.

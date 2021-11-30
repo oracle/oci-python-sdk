@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequest(object):
     """
-    A description of workrequest status
+    A description of work request.
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
@@ -141,7 +141,7 @@ class WorkRequest(object):
     def operation_type(self):
         """
         **[Required]** Gets the operation_type of this WorkRequest.
-        Type of the work request
+        The type of the work request.
 
         Allowed values for this property are: "CREATE_APM_DOMAIN", "UPDATE_APM_DOMAIN", "DELETE_APM_DOMAIN", "GENERATE_DATA_KEYS", "REMOVE_DATA_KEYS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -156,7 +156,7 @@ class WorkRequest(object):
     def operation_type(self, operation_type):
         """
         Sets the operation_type of this WorkRequest.
-        Type of the work request
+        The type of the work request.
 
 
         :param operation_type: The operation_type of this WorkRequest.
@@ -201,7 +201,7 @@ class WorkRequest(object):
     def id(self):
         """
         **[Required]** Gets the id of this WorkRequest.
-        The id of the work request.
+        The ID of the work request.
 
 
         :return: The id of this WorkRequest.
@@ -213,7 +213,7 @@ class WorkRequest(object):
     def id(self, id):
         """
         Sets the id of this WorkRequest.
-        The id of the work request.
+        The ID of the work request.
 
 
         :param id: The id of this WorkRequest.
@@ -225,7 +225,7 @@ class WorkRequest(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this WorkRequest.
-        The ocid of the compartment that contains the work request.
+        The OCID of the compartment that contains the work request.
 
 
         :return: The compartment_id of this WorkRequest.
@@ -237,7 +237,7 @@ class WorkRequest(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this WorkRequest.
-        The ocid of the compartment that contains the work request.
+        The OCID of the compartment that contains the work request.
 
 
         :param compartment_id: The compartment_id of this WorkRequest.
@@ -249,7 +249,7 @@ class WorkRequest(object):
     def resources(self):
         """
         **[Required]** Gets the resources of this WorkRequest.
-        The resources affected by this work request.
+        The resources affected by the work request.
 
 
         :return: The resources of this WorkRequest.
@@ -261,7 +261,7 @@ class WorkRequest(object):
     def resources(self, resources):
         """
         Sets the resources of this WorkRequest.
-        The resources affected by this work request.
+        The resources affected by the work request.
 
 
         :param resources: The resources of this WorkRequest.

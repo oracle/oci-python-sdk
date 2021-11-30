@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryRefSummary(object):
     """
-    Summary of a Ref
+    Summary of a reference.
     """
 
     def __init__(self, **kwargs):
@@ -93,7 +93,7 @@ class RepositoryRefSummary(object):
     def ref_name(self):
         """
         **[Required]** Gets the ref_name of this RepositoryRefSummary.
-        Ref name inside a repository
+        Reference name inside a repository.
 
 
         :return: The ref_name of this RepositoryRefSummary.
@@ -105,7 +105,7 @@ class RepositoryRefSummary(object):
     def ref_name(self, ref_name):
         """
         Sets the ref_name of this RepositoryRefSummary.
-        Ref name inside a repository
+        Reference name inside a repository.
 
 
         :param ref_name: The ref_name of this RepositoryRefSummary.
@@ -117,7 +117,7 @@ class RepositoryRefSummary(object):
     def ref_type(self):
         """
         **[Required]** Gets the ref_type of this RepositoryRefSummary.
-        Type of Ref. Branch or Tag.
+        The type of reference (Branch or Tag).
 
 
         :return: The ref_type of this RepositoryRefSummary.
@@ -129,7 +129,7 @@ class RepositoryRefSummary(object):
     def ref_type(self, ref_type):
         """
         Sets the ref_type of this RepositoryRefSummary.
-        Type of Ref. Branch or Tag.
+        The type of reference (Branch or Tag).
 
 
         :param ref_type: The ref_type of this RepositoryRefSummary.
@@ -141,7 +141,7 @@ class RepositoryRefSummary(object):
     def full_ref_name(self):
         """
         **[Required]** Gets the full_ref_name of this RepositoryRefSummary.
-        Unique full ref name inside a repository
+        Unique full reference name inside a repository.
 
 
         :return: The full_ref_name of this RepositoryRefSummary.
@@ -153,7 +153,7 @@ class RepositoryRefSummary(object):
     def full_ref_name(self, full_ref_name):
         """
         Sets the full_ref_name of this RepositoryRefSummary.
-        Unique full ref name inside a repository
+        Unique full reference name inside a repository.
 
 
         :param full_ref_name: The full_ref_name of this RepositoryRefSummary.
@@ -165,7 +165,7 @@ class RepositoryRefSummary(object):
     def repository_id(self):
         """
         **[Required]** Gets the repository_id of this RepositoryRefSummary.
-        The OCID of the repository containing the ref.
+        The OCID of the repository containing the reference.
 
 
         :return: The repository_id of this RepositoryRefSummary.
@@ -177,7 +177,7 @@ class RepositoryRefSummary(object):
     def repository_id(self, repository_id):
         """
         Sets the repository_id of this RepositoryRefSummary.
-        The OCID of the repository containing the ref.
+        The OCID of the repository containing the reference.
 
 
         :param repository_id: The repository_id of this RepositoryRefSummary.

@@ -34,6 +34,14 @@ class ImpactedResourceSummary(object):
             The value to assign to the compartment_id property of this ImpactedResourceSummary.
         :type compartment_id: str
 
+        :param sighting_type:
+            The value to assign to the sighting_type property of this ImpactedResourceSummary.
+        :type sighting_type: str
+
+        :param sighting_type_display_name:
+            The value to assign to the sighting_type_display_name property of this ImpactedResourceSummary.
+        :type sighting_type_display_name: str
+
         :param resource_name:
             The value to assign to the resource_name property of this ImpactedResourceSummary.
         :type resource_name: str
@@ -56,6 +64,8 @@ class ImpactedResourceSummary(object):
             'resource_id': 'str',
             'problem_id': 'str',
             'compartment_id': 'str',
+            'sighting_type': 'str',
+            'sighting_type_display_name': 'str',
             'resource_name': 'str',
             'resource_type': 'str',
             'region': 'str',
@@ -67,6 +77,8 @@ class ImpactedResourceSummary(object):
             'resource_id': 'resourceId',
             'problem_id': 'problemId',
             'compartment_id': 'compartmentId',
+            'sighting_type': 'sightingType',
+            'sighting_type_display_name': 'sightingTypeDisplayName',
             'resource_name': 'resourceName',
             'resource_type': 'resourceType',
             'region': 'region',
@@ -77,6 +89,8 @@ class ImpactedResourceSummary(object):
         self._resource_id = None
         self._problem_id = None
         self._compartment_id = None
+        self._sighting_type = None
+        self._sighting_type_display_name = None
         self._resource_name = None
         self._resource_type = None
         self._region = None
@@ -177,6 +191,54 @@ class ImpactedResourceSummary(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def sighting_type(self):
+        """
+        Gets the sighting_type of this ImpactedResourceSummary.
+        Identifier for the sighting type
+
+
+        :return: The sighting_type of this ImpactedResourceSummary.
+        :rtype: str
+        """
+        return self._sighting_type
+
+    @sighting_type.setter
+    def sighting_type(self, sighting_type):
+        """
+        Sets the sighting_type of this ImpactedResourceSummary.
+        Identifier for the sighting type
+
+
+        :param sighting_type: The sighting_type of this ImpactedResourceSummary.
+        :type: str
+        """
+        self._sighting_type = sighting_type
+
+    @property
+    def sighting_type_display_name(self):
+        """
+        Gets the sighting_type_display_name of this ImpactedResourceSummary.
+        Name of the sighting type
+
+
+        :return: The sighting_type_display_name of this ImpactedResourceSummary.
+        :rtype: str
+        """
+        return self._sighting_type_display_name
+
+    @sighting_type_display_name.setter
+    def sighting_type_display_name(self, sighting_type_display_name):
+        """
+        Sets the sighting_type_display_name of this ImpactedResourceSummary.
+        Name of the sighting type
+
+
+        :param sighting_type_display_name: The sighting_type_display_name of this ImpactedResourceSummary.
+        :type: str
+        """
+        self._sighting_type_display_name = sighting_type_display_name
 
     @property
     def resource_name(self):

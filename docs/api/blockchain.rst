@@ -23,6 +23,8 @@ Blockchain
     oci.blockchain.models.BlockchainPlatformByHostname
     oci.blockchain.models.BlockchainPlatformCollection
     oci.blockchain.models.BlockchainPlatformComponentDetails
+    oci.blockchain.models.BlockchainPlatformPatchCollection
+    oci.blockchain.models.BlockchainPlatformPatchSummary
     oci.blockchain.models.BlockchainPlatformSummary
     oci.blockchain.models.ChangeBlockchainPlatformCompartmentDetails
     oci.blockchain.models.CreateBlockchainPlatformDetails
@@ -47,6 +49,7 @@ Blockchain
     oci.blockchain.models.UpdateBlockchainPlatformDetails
     oci.blockchain.models.UpdateOsnDetails
     oci.blockchain.models.UpdatePeerDetails
+    oci.blockchain.models.UpgradeBlockchainPlatformDetails
     oci.blockchain.models.WorkRequest
     oci.blockchain.models.WorkRequestCollection
     oci.blockchain.models.WorkRequestError

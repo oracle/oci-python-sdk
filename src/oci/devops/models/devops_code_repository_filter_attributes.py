@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DevopsCodeRepositoryFilterAttributes(object):
     """
-    Attributes to filter Devops Code Repository events
+    Attributes to filter DevOps code repository events.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DevopsCodeRepositoryFilterAttributes(object):
     def head_ref(self):
         """
         Gets the head_ref of this DevopsCodeRepositoryFilterAttributes.
-        Branch for push event
+        Branch for push event.
 
 
         :return: The head_ref of this DevopsCodeRepositoryFilterAttributes.
@@ -49,7 +49,7 @@ class DevopsCodeRepositoryFilterAttributes(object):
     def head_ref(self, head_ref):
         """
         Sets the head_ref of this DevopsCodeRepositoryFilterAttributes.
-        Branch for push event
+        Branch for push event.
 
 
         :param head_ref: The head_ref of this DevopsCodeRepositoryFilterAttributes.

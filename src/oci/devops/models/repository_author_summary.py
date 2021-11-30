@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RepositoryAuthorSummary(object):
     """
-    Object containing summary of authors in a repository
+    Object containing summary of authors in a repository.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class RepositoryAuthorSummary(object):
     def author_name(self):
         """
         **[Required]** Gets the author_name of this RepositoryAuthorSummary.
-        Author name
+        Author name.
 
 
         :return: The author_name of this RepositoryAuthorSummary.
@@ -63,7 +63,7 @@ class RepositoryAuthorSummary(object):
     def author_name(self, author_name):
         """
         Sets the author_name of this RepositoryAuthorSummary.
-        Author name
+        Author name.
 
 
         :param author_name: The author_name of this RepositoryAuthorSummary.

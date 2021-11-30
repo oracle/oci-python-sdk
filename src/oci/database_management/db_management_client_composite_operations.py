@@ -29,7 +29,7 @@ class DbManagementClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database_management.models.CreateDbManagementPrivateEndpointDetails create_db_management_private_endpoint_details: (required)
-            Details to create a new private endpoint.
+            Details used to create a new Database Management private endpoint.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database_management.models.WorkRequest.status`

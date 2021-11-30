@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CancelBuildRunDetails(object):
     """
-    The information about cancel BuildRun.
+    Information about canceling the build run.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class CancelBuildRunDetails(object):
     def reason(self):
         """
         **[Required]** Gets the reason of this CancelBuildRunDetails.
-        The reason for canceling the run.
+        The reason for canceling the build run.
 
 
         :return: The reason of this CancelBuildRunDetails.
@@ -49,7 +49,7 @@ class CancelBuildRunDetails(object):
     def reason(self, reason):
         """
         Sets the reason of this CancelBuildRunDetails.
-        The reason for canceling the run.
+        The reason for canceling the build run.
 
 
         :param reason: The reason of this CancelBuildRunDetails.

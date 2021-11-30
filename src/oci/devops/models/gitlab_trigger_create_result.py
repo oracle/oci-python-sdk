@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GitlabTriggerCreateResult(TriggerCreateResult):
     """
-    Trigger Create response specific to Gitlab
+    Trigger create response specific to GitLab.
     """
 
     def __init__(self, **kwargs):
@@ -144,7 +144,7 @@ class GitlabTriggerCreateResult(TriggerCreateResult):
     def secret(self):
         """
         **[Required]** Gets the secret of this GitlabTriggerCreateResult.
-        The secret used to validate the incoming Trigger call (this is visible only once after the resource is created)
+        The secret used to validate the incoming trigger call. This is visible only after the resource is created.
 
 
         :return: The secret of this GitlabTriggerCreateResult.
@@ -156,7 +156,7 @@ class GitlabTriggerCreateResult(TriggerCreateResult):
     def secret(self, secret):
         """
         Sets the secret of this GitlabTriggerCreateResult.
-        The secret used to validate the incoming Trigger call (this is visible only once after the resource is created)
+        The secret used to validate the incoming trigger call. This is visible only after the resource is created.
 
 
         :param secret: The secret of this GitlabTriggerCreateResult.
@@ -168,7 +168,7 @@ class GitlabTriggerCreateResult(TriggerCreateResult):
     def trigger_url(self):
         """
         **[Required]** Gets the trigger_url of this GitlabTriggerCreateResult.
-        The endpoint which listens to Trigger events
+        The endpoint that listens to trigger events.
 
 
         :return: The trigger_url of this GitlabTriggerCreateResult.
@@ -180,7 +180,7 @@ class GitlabTriggerCreateResult(TriggerCreateResult):
     def trigger_url(self, trigger_url):
         """
         Sets the trigger_url of this GitlabTriggerCreateResult.
-        The endpoint which listens to Trigger events
+        The endpoint that listens to trigger events.
 
 
         :param trigger_url: The trigger_url of this GitlabTriggerCreateResult.

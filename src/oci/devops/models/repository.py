@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Repository(object):
     """
-    Description of Repository.
+    Repositories containing the source code to build and deploy.
     """
 
     #: A constant which can be used with the repository_type property of a Repository.
@@ -273,7 +273,7 @@ class Repository(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Repository.
-        The OCID of the repository's Compartment.
+        The OCID of the repository's compartment.
 
 
         :return: The compartment_id of this Repository.
@@ -285,7 +285,7 @@ class Repository(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Repository.
-        The OCID of the repository's Compartment.
+        The OCID of the repository's compartment.
 
 
         :param compartment_id: The compartment_id of this Repository.
@@ -297,7 +297,7 @@ class Repository(object):
     def namespace(self):
         """
         Gets the namespace of this Repository.
-        Tenancy unique namespace
+        Tenancy unique namespace.
 
 
         :return: The namespace of this Repository.
@@ -309,7 +309,7 @@ class Repository(object):
     def namespace(self, namespace):
         """
         Sets the namespace of this Repository.
-        Tenancy unique namespace
+        Tenancy unique namespace.
 
 
         :param namespace: The namespace of this Repository.
@@ -321,7 +321,7 @@ class Repository(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this Repository.
-        The OCID of the Project containing the repository.
+        The OCID of the DevOps project containing the repository.
 
 
         :return: The project_id of this Repository.
@@ -333,7 +333,7 @@ class Repository(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this Repository.
-        The OCID of the Project containing the repository.
+        The OCID of the DevOps project containing the repository.
 
 
         :param project_id: The project_id of this Repository.
@@ -345,7 +345,7 @@ class Repository(object):
     def project_name(self):
         """
         Gets the project_name of this Repository.
-        Project unique Name under namespace
+        Unique project name in a namespace.
 
 
         :return: The project_name of this Repository.
@@ -357,7 +357,7 @@ class Repository(object):
     def project_name(self, project_name):
         """
         Sets the project_name of this Repository.
-        Project unique Name under namespace
+        Unique project name in a namespace.
 
 
         :param project_name: The project_name of this Repository.
@@ -369,7 +369,7 @@ class Repository(object):
     def ssh_url(self):
         """
         Gets the ssh_url of this Repository.
-        ssh url user utilized to git clone, pull and push
+        SSH URL that you use to git clone, pull and push.
 
 
         :return: The ssh_url of this Repository.
@@ -381,7 +381,7 @@ class Repository(object):
     def ssh_url(self, ssh_url):
         """
         Sets the ssh_url of this Repository.
-        ssh url user utilized to git clone, pull and push
+        SSH URL that you use to git clone, pull and push.
 
 
         :param ssh_url: The ssh_url of this Repository.
@@ -393,7 +393,7 @@ class Repository(object):
     def http_url(self):
         """
         Gets the http_url of this Repository.
-        http url user utilized to git clone, pull and push
+        HTTP URL that you use to git clone, pull and push.
 
 
         :return: The http_url of this Repository.
@@ -405,7 +405,7 @@ class Repository(object):
     def http_url(self, http_url):
         """
         Sets the http_url of this Repository.
-        http url user utilized to git clone, pull and push
+        HTTP URL that you use to git clone, pull and push.
 
 
         :param http_url: The http_url of this Repository.
@@ -417,7 +417,7 @@ class Repository(object):
     def description(self):
         """
         Gets the description of this Repository.
-        The description of this repository. Avoid entering confidential information
+        Details of the repository. Avoid entering confidential information.
 
 
         :return: The description of this Repository.
@@ -429,7 +429,7 @@ class Repository(object):
     def description(self, description):
         """
         Sets the description of this Repository.
-        The description of this repository. Avoid entering confidential information
+        Details of the repository. Avoid entering confidential information.
 
 
         :param description: The description of this Repository.
@@ -441,7 +441,7 @@ class Repository(object):
     def default_branch(self):
         """
         Gets the default_branch of this Repository.
-        The default branch of the repository
+        The default branch of the repository.
 
 
         :return: The default_branch of this Repository.
@@ -453,7 +453,7 @@ class Repository(object):
     def default_branch(self, default_branch):
         """
         Sets the default_branch of this Repository.
-        The default branch of the repository
+        The default branch of the repository.
 
 
         :param default_branch: The default_branch of this Repository.
@@ -465,9 +465,9 @@ class Repository(object):
     def repository_type(self):
         """
         Gets the repository_type of this Repository.
-        Type of repository
-        MIRRORED - Repository was created by mirroring an existing repository.
-        HOSTED - Repository was created and hosted using OCI Devops Code Repository.
+        Type of repository:
+        Mirrored - Repository created by mirroring an existing repository.
+        Hosted - Repository created and hosted using OCI DevOps code repository.
 
         Allowed values for this property are: "MIRRORED", "HOSTED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -482,9 +482,9 @@ class Repository(object):
     def repository_type(self, repository_type):
         """
         Sets the repository_type of this Repository.
-        Type of repository
-        MIRRORED - Repository was created by mirroring an existing repository.
-        HOSTED - Repository was created and hosted using OCI Devops Code Repository.
+        Type of repository:
+        Mirrored - Repository created by mirroring an existing repository.
+        Hosted - Repository created and hosted using OCI DevOps code repository.
 
 
         :param repository_type: The repository_type of this Repository.
@@ -519,7 +519,9 @@ class Repository(object):
     def time_created(self):
         """
         Gets the time_created of this Repository.
-        The time the the Repository was created. An RFC3339 formatted datetime string
+        The time the repository was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_created of this Repository.
@@ -531,7 +533,9 @@ class Repository(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Repository.
-        The time the the Repository was created. An RFC3339 formatted datetime string
+        The time the repository was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_created: The time_created of this Repository.
@@ -543,7 +547,9 @@ class Repository(object):
     def time_updated(self):
         """
         Gets the time_updated of this Repository.
-        The time the Repository was updated. An RFC3339 formatted datetime string
+        The time the repository was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_updated of this Repository.
@@ -555,7 +561,9 @@ class Repository(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Repository.
-        The time the Repository was updated. An RFC3339 formatted datetime string
+        The time the repository was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_updated: The time_updated of this Repository.
@@ -567,7 +575,7 @@ class Repository(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Repository.
-        The current state of the Repository.
+        The current state of the repository.
 
         Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -582,7 +590,7 @@ class Repository(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Repository.
-        The current state of the Repository.
+        The current state of the repository.
 
 
         :param lifecycle_state: The lifecycle_state of this Repository.
@@ -693,9 +701,9 @@ class Repository(object):
     def trigger_build_events(self):
         """
         Gets the trigger_build_events of this Repository.
-        Trigger Build Events supported for this repository
-        PUSH - Build is triggered when a push event occurs
-        COMMIT_UPDATES - Build is triggered when new commits are mirrored into repository
+        Trigger build events supported for this repository:
+        Push - Build is triggered when a push event occurs.
+        Commit updates - Build is triggered when new commits are mirrored into a repository.
 
         Allowed values for items in this list are: "PUSH", "COMMIT_UPDATES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -710,9 +718,9 @@ class Repository(object):
     def trigger_build_events(self, trigger_build_events):
         """
         Sets the trigger_build_events of this Repository.
-        Trigger Build Events supported for this repository
-        PUSH - Build is triggered when a push event occurs
-        COMMIT_UPDATES - Build is triggered when new commits are mirrored into repository
+        Trigger build events supported for this repository:
+        Push - Build is triggered when a push event occurs.
+        Commit updates - Build is triggered when new commits are mirrored into a repository.
 
 
         :param trigger_build_events: The trigger_build_events of this Repository.

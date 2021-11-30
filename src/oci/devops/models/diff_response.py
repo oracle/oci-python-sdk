@@ -86,7 +86,7 @@ class DiffResponse(object):
     def are_all_changes_included(self):
         """
         Gets the are_all_changes_included of this DiffResponse.
-        Boolean for whether all changes are included in the response.
+        Boolean value to indicate if all changes are included in the response.
 
 
         :return: The are_all_changes_included of this DiffResponse.
@@ -98,7 +98,7 @@ class DiffResponse(object):
     def are_all_changes_included(self, are_all_changes_included):
         """
         Sets the are_all_changes_included of this DiffResponse.
-        Boolean for whether all changes are included in the response.
+        Boolean value to indicate if all changes are included in the response.
 
 
         :param are_all_changes_included: The are_all_changes_included of this DiffResponse.
@@ -110,7 +110,7 @@ class DiffResponse(object):
     def change_type_count(self):
         """
         Gets the change_type_count of this DiffResponse.
-        Count of each type of change in diff.
+        Count of each type of change in difference.
 
 
         :return: The change_type_count of this DiffResponse.
@@ -122,7 +122,7 @@ class DiffResponse(object):
     def change_type_count(self, change_type_count):
         """
         Sets the change_type_count of this DiffResponse.
-        Count of each type of change in diff.
+        Count of each type of change in difference.
 
 
         :param change_type_count: The change_type_count of this DiffResponse.
@@ -206,7 +206,7 @@ class DiffResponse(object):
     def added_lines_count(self):
         """
         Gets the added_lines_count of this DiffResponse.
-        The number of lines added in whole diff.
+        The number of lines added in whole difference.
 
 
         :return: The added_lines_count of this DiffResponse.
@@ -218,7 +218,7 @@ class DiffResponse(object):
     def added_lines_count(self, added_lines_count):
         """
         Sets the added_lines_count of this DiffResponse.
-        The number of lines added in whole diff.
+        The number of lines added in whole difference.
 
 
         :param added_lines_count: The added_lines_count of this DiffResponse.
@@ -230,7 +230,7 @@ class DiffResponse(object):
     def deleted_lines_count(self):
         """
         Gets the deleted_lines_count of this DiffResponse.
-        The number of lines deleted in whole diff.
+        The number of lines deleted in whole difference.
 
 
         :return: The deleted_lines_count of this DiffResponse.
@@ -242,7 +242,7 @@ class DiffResponse(object):
     def deleted_lines_count(self, deleted_lines_count):
         """
         Sets the deleted_lines_count of this DiffResponse.
-        The number of lines deleted in whole diff.
+        The number of lines deleted in whole difference.
 
 
         :param deleted_lines_count: The deleted_lines_count of this DiffResponse.
@@ -254,7 +254,7 @@ class DiffResponse(object):
     def changes(self):
         """
         **[Required]** Gets the changes of this DiffResponse.
-        List of changes in the diff.
+        List of changes in the difference.
 
 
         :return: The changes of this DiffResponse.
@@ -266,7 +266,7 @@ class DiffResponse(object):
     def changes(self, changes):
         """
         Sets the changes of this DiffResponse.
-        List of changes in the diff.
+        List of changes in the difference.
 
 
         :param changes: The changes of this DiffResponse.

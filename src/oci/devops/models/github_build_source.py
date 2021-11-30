@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GithubBuildSource(BuildSource):
     """
-    Github Build Source for Build Stage
+    GitHub build source for Build stage.
     """
 
     def __init__(self, **kwargs):
@@ -68,7 +68,7 @@ class GithubBuildSource(BuildSource):
     def connection_id(self):
         """
         **[Required]** Gets the connection_id of this GithubBuildSource.
-        Connection identifier pertinent to GITHUB source provider
+        Connection identifier pertinent to GitHub source provider.
 
 
         :return: The connection_id of this GithubBuildSource.
@@ -80,7 +80,7 @@ class GithubBuildSource(BuildSource):
     def connection_id(self, connection_id):
         """
         Sets the connection_id of this GithubBuildSource.
-        Connection identifier pertinent to GITHUB source provider
+        Connection identifier pertinent to GitHub source provider.
 
 
         :param connection_id: The connection_id of this GithubBuildSource.

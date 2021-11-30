@@ -18,8 +18,8 @@ missing = Sentinel("Missing")
 
 class ApmDomainClient(object):
     """
-    Provide a set of APIs for tenant to perform operations like create, update, delete and list APM domains, and also
-    work request APIs to monitor progress of these operations.
+    Use the Application Performance Monitoring Control Plane API to perform operations such as creating, updating,
+    deleting and listing APM domains and monitoring the progress of these operations using the work request APIs.
     """
 
     def __init__(self, config, **kwargs):
@@ -101,19 +101,18 @@ class ApmDomainClient(object):
 
     def change_apm_domain_compartment(self, apm_domain_id, change_apm_domain_compartment_details, **kwargs):
         """
-        Moves a APM Domain into a different compartment. When provided, If-Match is checked against ETag values of the resource.
+        Moves an APM domain into a different compartment. When provided, If-Match is checked against ETag values of the APM domain.
 
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param oci.apm_control_plane.models.ChangeApmDomainCompartmentDetails change_apm_domain_compartment_details: (required)
             The information to be used in changing compartment.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
-            for a resource, set the `if-match` parameter to the value of the
-            etag from a previous GET or POST response for that resource.
+            For optimistic concurrency control. Set the `if-match` parameter
+            to the value of the etag from a previous GET or POST response for that resource.
             The resource will be updated or deleted only if the etag you
             provide matches the resource's current etag value.
 
@@ -202,11 +201,11 @@ class ApmDomainClient(object):
 
     def create_apm_domain(self, create_apm_domain_details, **kwargs):
         """
-        Creates a new APM Domain.
+        Creates a new APM domain.
 
 
         :param oci.apm_control_plane.models.CreateApmDomainDetails create_apm_domain_details: (required)
-            Details for the new APM Domain.
+            Details for the new APM domain.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -279,18 +278,17 @@ class ApmDomainClient(object):
 
     def delete_apm_domain(self, apm_domain_id, **kwargs):
         """
-        Delete the specified APM domain asynchronously. The APM domain is placed in the 'Deleting' state and will stop
+        Deletes the specified APM domain asynchronously. The APM domain is placed in the 'Deleting' state and will stop
         accepting any operation requests. All resources associated with the APM domain are eventually recovered. Use the
-        returned work request to track the progress of the background activity to complete deleting the domain.
+        returned work request ID to track the progress of the background activity to complete deleting the APM domain.
 
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
-            for a resource, set the `if-match` parameter to the value of the
-            etag from a previous GET or POST response for that resource.
+            For optimistic concurrency control. Set the `if-match` parameter
+            to the value of the etag from a previous GET or POST response for that resource.
             The resource will be updated or deleted only if the etag you
             provide matches the resource's current etag value.
 
@@ -375,12 +373,11 @@ class ApmDomainClient(object):
             List of new Data Keys to be generated.
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
-            for a resource, set the `if-match` parameter to the value of the
-            etag from a previous GET or POST response for that resource.
+            For optimistic concurrency control. Set the `if-match` parameter
+            to the value of the etag from a previous GET or POST response for that resource.
             The resource will be updated or deleted only if the etag you
             provide matches the resource's current etag value.
 
@@ -459,11 +456,11 @@ class ApmDomainClient(object):
 
     def get_apm_domain(self, apm_domain_id, **kwargs):
         """
-        Gets details of APM Domain by identifier
+        Gets the details of the APM domain specified by OCID.
 
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -617,14 +614,20 @@ class ApmDomainClient(object):
 
     def list_apm_domain_work_requests(self, apm_domain_id, **kwargs):
         """
-        Returns a (paginated) list of work requests related to a specific APM Domain.
+        Returns a (paginated) list of work requests related to a specific APM domain.
 
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -646,7 +649,9 @@ class ApmDomainClient(object):
         # Don't accept unknown kwargs
         expected_kwargs = [
             "retry_strategy",
-            "opc_request_id"
+            "opc_request_id",
+            "page",
+            "limit"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -662,6 +667,12 @@ class ApmDomainClient(object):
         for (k, v) in six.iteritems(path_params):
             if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
         header_params = {
             "accept": "application/json",
@@ -684,6 +695,7 @@ class ApmDomainClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="list[WorkRequest]")
         else:
@@ -691,12 +703,13 @@ class ApmDomainClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
+                query_params=query_params,
                 header_params=header_params,
                 response_type="list[WorkRequest]")
 
     def list_apm_domains(self, compartment_id, **kwargs):
         """
-        Lists all APM Domains for the specified tenant compartment.
+        Lists all APM domains for the specified tenant compartment.
 
 
         :param str compartment_id: (required)
@@ -708,7 +721,7 @@ class ApmDomainClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the given life-cycle state.
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -763,7 +776,7 @@ class ApmDomainClient(object):
                 "list_apm_domains got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -827,12 +840,12 @@ class ApmDomainClient(object):
 
     def list_data_keys(self, apm_domain_id, **kwargs):
         """
-        Lists all Data Keys for the specified APM Domain. The caller may filter the list by specifying the 'dataKeyType'
+        Lists all Data Keys for the specified APM domain. The caller may filter the list by specifying the 'dataKeyType'
         query parameter.
 
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param str data_key_type: (optional)
             Data key type.
@@ -927,7 +940,7 @@ class ApmDomainClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of errors for a given work request.
+        Returns a (paginated) list of errors for a given work request.
 
 
         :param str work_request_id: (required)
@@ -1022,7 +1035,7 @@ class ApmDomainClient(object):
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of logs for a given work request.
+        Returns a (paginated) list of logs for a given work request.
 
 
         :param str work_request_id: (required)
@@ -1206,15 +1219,14 @@ class ApmDomainClient(object):
 
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param oci.apm_control_plane.models.list[RemoveDataKeyDetails] remove_data_keys_list_details: (required)
             List of Data Keys to be removed.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
-            for a resource, set the `if-match` parameter to the value of the
-            etag from a previous GET or POST response for that resource.
+            For optimistic concurrency control. Set the `if-match` parameter
+            to the value of the etag from a previous GET or POST response for that resource.
             The resource will be updated or deleted only if the etag you
             provide matches the resource's current etag value.
 
@@ -1293,19 +1305,18 @@ class ApmDomainClient(object):
 
     def update_apm_domain(self, apm_domain_id, update_apm_domain_details, **kwargs):
         """
-        Update the APM domain when it is ready and active.
+        Updates the APM domain.
 
 
         :param str apm_domain_id: (required)
-            OCID of the APM Domain
+            The OCID of the APM domain
 
         :param oci.apm_control_plane.models.UpdateApmDomainDetails update_apm_domain_details: (required)
-            The information to be updated for the APM Domain.
+            The information to be updated for the APM domain.
 
         :param str if_match: (optional)
-            For optimistic concurrency control. In the PUT or DELETE call
-            for a resource, set the `if-match` parameter to the value of the
-            etag from a previous GET or POST response for that resource.
+            For optimistic concurrency control. Set the `if-match` parameter
+            to the value of the etag from a previous GET or POST response for that resource.
             The resource will be updated or deleted only if the etag you
             provide matches the resource's current etag value.
 

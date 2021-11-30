@@ -9,6 +9,8 @@ from .blockchain_platform import BlockchainPlatform
 from .blockchain_platform_by_hostname import BlockchainPlatformByHostname
 from .blockchain_platform_collection import BlockchainPlatformCollection
 from .blockchain_platform_component_details import BlockchainPlatformComponentDetails
+from .blockchain_platform_patch_collection import BlockchainPlatformPatchCollection
+from .blockchain_platform_patch_summary import BlockchainPlatformPatchSummary
 from .blockchain_platform_summary import BlockchainPlatformSummary
 from .change_blockchain_platform_compartment_details import ChangeBlockchainPlatformCompartmentDetails
 from .create_blockchain_platform_details import CreateBlockchainPlatformDetails
@@ -33,6 +35,7 @@ from .scaled_platform_metering_preview import ScaledPlatformMeteringPreview
 from .update_blockchain_platform_details import UpdateBlockchainPlatformDetails
 from .update_osn_details import UpdateOsnDetails
 from .update_peer_details import UpdatePeerDetails
+from .upgrade_blockchain_platform_details import UpgradeBlockchainPlatformDetails
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
 from .work_request_error import WorkRequestError
@@ -50,6 +53,8 @@ blockchain_type_mapping = {
     "BlockchainPlatformByHostname": BlockchainPlatformByHostname,
     "BlockchainPlatformCollection": BlockchainPlatformCollection,
     "BlockchainPlatformComponentDetails": BlockchainPlatformComponentDetails,
+    "BlockchainPlatformPatchCollection": BlockchainPlatformPatchCollection,
+    "BlockchainPlatformPatchSummary": BlockchainPlatformPatchSummary,
     "BlockchainPlatformSummary": BlockchainPlatformSummary,
     "ChangeBlockchainPlatformCompartmentDetails": ChangeBlockchainPlatformCompartmentDetails,
     "CreateBlockchainPlatformDetails": CreateBlockchainPlatformDetails,
@@ -74,6 +79,7 @@ blockchain_type_mapping = {
     "UpdateBlockchainPlatformDetails": UpdateBlockchainPlatformDetails,
     "UpdateOsnDetails": UpdateOsnDetails,
     "UpdatePeerDetails": UpdatePeerDetails,
+    "UpgradeBlockchainPlatformDetails": UpgradeBlockchainPlatformDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,
     "WorkRequestError": WorkRequestError,

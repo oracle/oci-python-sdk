@@ -34,6 +34,9 @@ Core Services
     oci.core.models.AddSecurityRuleDetails
     oci.core.models.AddVcnCidrDetails
     oci.core.models.AddedNetworkSecurityGroupSecurityRules
+    oci.core.models.AllowedIkeIPSecParameters
+    oci.core.models.AllowedPhaseOneParameters
+    oci.core.models.AllowedPhaseTwoParameters
     oci.core.models.AmdMilanBmLaunchInstancePlatformConfig
     oci.core.models.AmdMilanBmPlatformConfig
     oci.core.models.AmdRomeBmLaunchInstancePlatformConfig
@@ -209,6 +212,8 @@ Core Services
     oci.core.models.DedicatedVmHostShapeSummary
     oci.core.models.DedicatedVmHostSummary
     oci.core.models.DefaultDrgRouteTables
+    oci.core.models.DefaultPhaseOneParameters
+    oci.core.models.DefaultPhaseTwoParameters
     oci.core.models.DeleteVirtualCircuitPublicPrefixDetails
     oci.core.models.DetachInstancePoolInstanceDetails
     oci.core.models.DetachLoadBalancerDetails
@@ -217,6 +222,7 @@ Core Services
     oci.core.models.DhcpOption
     oci.core.models.DhcpOptions
     oci.core.models.DhcpSearchDomainOption
+    oci.core.models.DpdConfig
     oci.core.models.Drg
     oci.core.models.DrgAttachment
     oci.core.models.DrgAttachmentIdDrgRouteDistributionMatchCriteria
@@ -247,6 +253,7 @@ Core Services
     oci.core.models.IPSecConnectionDeviceConfig
     oci.core.models.IPSecConnectionDeviceStatus
     oci.core.models.IPSecConnectionTunnel
+    oci.core.models.IPSecConnectionTunnelErrorDetails
     oci.core.models.IPSecConnectionTunnelSharedSecret
     oci.core.models.IScsiVolumeAttachment
     oci.core.models.IcmpOptions
@@ -339,6 +346,8 @@ Core Services
     oci.core.models.NetworkingTopology
     oci.core.models.ParavirtualizedVolumeAttachment
     oci.core.models.PeerRegionForRemotePeering
+    oci.core.models.PhaseOneConfigDetails
+    oci.core.models.PhaseTwoConfigDetails
     oci.core.models.PlatformConfig
     oci.core.models.PortRange
     oci.core.models.PreemptibleInstanceConfigDetails
@@ -386,6 +395,10 @@ Core Services
     oci.core.models.TopologyRoutesToRelationshipDetails
     oci.core.models.TunnelConfig
     oci.core.models.TunnelCpeDeviceConfig
+    oci.core.models.TunnelPhaseOneDetails
+    oci.core.models.TunnelPhaseTwoDetails
+    oci.core.models.TunnelRouteSummary
+    oci.core.models.TunnelSecurityAssociationSummary
     oci.core.models.TunnelStatus
     oci.core.models.UdpOptions
     oci.core.models.UpdateBootVolumeBackupDetails

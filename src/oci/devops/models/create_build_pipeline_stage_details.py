@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateBuildPipelineStageDetails(object):
     """
-    The information about new Stage.
+    The information about a new stage.
     """
 
     def __init__(self, **kwargs):
@@ -108,7 +108,7 @@ class CreateBuildPipelineStageDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateBuildPipelineStageDetails.
-        Stage identifier which can be renamed and is not necessarily unique
+        Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateBuildPipelineStageDetails.
@@ -120,7 +120,7 @@ class CreateBuildPipelineStageDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateBuildPipelineStageDetails.
-        Stage identifier which can be renamed and is not necessarily unique
+        Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateBuildPipelineStageDetails.
@@ -132,7 +132,7 @@ class CreateBuildPipelineStageDetails(object):
     def description(self):
         """
         Gets the description of this CreateBuildPipelineStageDetails.
-        Optional description about the Stage
+        Optional description about the stage.
 
 
         :return: The description of this CreateBuildPipelineStageDetails.
@@ -144,7 +144,7 @@ class CreateBuildPipelineStageDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateBuildPipelineStageDetails.
-        Optional description about the Stage
+        Optional description about the stage.
 
 
         :param description: The description of this CreateBuildPipelineStageDetails.
@@ -156,8 +156,7 @@ class CreateBuildPipelineStageDetails(object):
     def build_pipeline_stage_type(self):
         """
         **[Required]** Gets the build_pipeline_stage_type of this CreateBuildPipelineStageDetails.
-        List of stage types. It includes 'Wait stage', 'Build Stage', 'Deliver Artifact Stage' and
-        'Trigger Deployment Stage'.
+        Defines the stage type, which is one of the following: Build, Deliver Artifacts, Wait, and Trigger Deployment.
 
 
         :return: The build_pipeline_stage_type of this CreateBuildPipelineStageDetails.
@@ -169,8 +168,7 @@ class CreateBuildPipelineStageDetails(object):
     def build_pipeline_stage_type(self, build_pipeline_stage_type):
         """
         Sets the build_pipeline_stage_type of this CreateBuildPipelineStageDetails.
-        List of stage types. It includes 'Wait stage', 'Build Stage', 'Deliver Artifact Stage' and
-        'Trigger Deployment Stage'.
+        Defines the stage type, which is one of the following: Build, Deliver Artifacts, Wait, and Trigger Deployment.
 
 
         :param build_pipeline_stage_type: The build_pipeline_stage_type of this CreateBuildPipelineStageDetails.
@@ -182,7 +180,7 @@ class CreateBuildPipelineStageDetails(object):
     def build_pipeline_id(self):
         """
         **[Required]** Gets the build_pipeline_id of this CreateBuildPipelineStageDetails.
-        buildPipeline Identifier
+        The OCID of the build pipeline.
 
 
         :return: The build_pipeline_id of this CreateBuildPipelineStageDetails.
@@ -194,7 +192,7 @@ class CreateBuildPipelineStageDetails(object):
     def build_pipeline_id(self, build_pipeline_id):
         """
         Sets the build_pipeline_id of this CreateBuildPipelineStageDetails.
-        buildPipeline Identifier
+        The OCID of the build pipeline.
 
 
         :param build_pipeline_id: The build_pipeline_id of this CreateBuildPipelineStageDetails.

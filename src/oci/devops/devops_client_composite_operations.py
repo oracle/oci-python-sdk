@@ -70,7 +70,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.devops.models.CancelBuildRunDetails cancel_build_run_details: (required)
-            Details the input parameters required to cancel a build run.
+            Parameter details required to cancel a build run.
 
         :param str build_run_id: (required)
             Unique build run identifier.
@@ -193,7 +193,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.devops.models.CreateBuildPipelineDetails create_build_pipeline_details: (required)
-            Details for the new BuildPipeline.
+            Details for the new build pipeline.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`
@@ -231,7 +231,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.devops.models.CreateBuildPipelineStageDetails create_build_pipeline_stage_details: (required)
-            Details for the new Stage.
+            Details for the new stage.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`
@@ -269,7 +269,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.devops.models.CreateBuildRunDetails create_build_run_details: (required)
-            Details the input parameters required to create a new build run.
+            Parameter details required to create a new build run.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.BuildRun.lifecycle_state`
@@ -307,7 +307,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.devops.models.CreateConnectionDetails create_connection_details: (required)
-            Details for the new Connection.
+            Details for the new connection.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`
@@ -573,7 +573,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.devops.models.CreateRepositoryDetails create_repository_details: (required)
-            Details for the new Repository.
+            Details for the new repository.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`
@@ -611,7 +611,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.devops.models.CreateTriggerDetails create_trigger_details: (required)
-            Details for the new Trigger.
+            Details for the new trigger.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`
@@ -649,7 +649,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str build_pipeline_id: (required)
-            unique BuildPipeline identifier
+            Unique build pipeline identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`
@@ -741,7 +741,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str connection_id: (required)
-            unique Connection identifier
+            Unique connection identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`
@@ -1017,10 +1017,10 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str repository_id: (required)
-            unique Repository identifier.
+            Unique repository identifier.
 
         :param str ref_name: (required)
-            A filter to return only resources that match the given Ref name.
+            A filter to return only resources that match the given reference name.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`
@@ -1066,7 +1066,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str repository_id: (required)
-            unique Repository identifier.
+            Unique repository identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`
@@ -1112,7 +1112,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str trigger_id: (required)
-            unique Trigger identifier
+            Unique trigger identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`
@@ -1158,7 +1158,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str repository_id: (required)
-            unique Repository identifier.
+            Unique repository identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`
@@ -1196,13 +1196,13 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str repository_id: (required)
-            unique Repository identifier.
+            Unique repository identifier.
 
         :param str ref_name: (required)
-            A filter to return only resources that match the given Ref name.
+            A filter to return only resources that match the given reference name.
 
         :param oci.devops.models.PutRepositoryRefDetails put_repository_ref_details: (required)
-            The information to create a Ref with the type specified in the query
+            The information to create a reference with the type specified in the query.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`
@@ -1240,7 +1240,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str build_pipeline_id: (required)
-            unique BuildPipeline identifier
+            Unique build pipeline identifier.
 
         :param oci.devops.models.UpdateBuildPipelineDetails update_build_pipeline_details: (required)
             The information to be updated.
@@ -1363,7 +1363,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str connection_id: (required)
-            unique Connection identifier
+            Unique connection identifier.
 
         :param oci.devops.models.UpdateConnectionDetails update_connection_details: (required)
             The information to be updated.
@@ -1650,7 +1650,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str repository_id: (required)
-            unique Repository identifier.
+            Unique repository identifier.
 
         :param oci.devops.models.UpdateRepositoryDetails update_repository_details: (required)
             The information to be updated.
@@ -1691,7 +1691,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str trigger_id: (required)
-            unique Trigger identifier
+            Unique trigger identifier.
 
         :param oci.devops.models.UpdateTriggerDetails update_trigger_details: (required)
             The information to be updated.

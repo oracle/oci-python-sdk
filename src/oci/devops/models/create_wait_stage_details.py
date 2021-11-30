@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateWaitStageDetails(CreateBuildPipelineStageDetails):
     """
-    Specifies the Wait Stage. User can specify variable wait times or an absolute duration.
+    Specifies the Wait stage. You can specify variable wait times or an absolute duration.
     """
 
     def __init__(self, **kwargs):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GithubFilterAttributes(object):
     """
-    Attributes to filter Github events
+    Attributes to filter GitHub events.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class GithubFilterAttributes(object):
     def head_ref(self):
         """
         Gets the head_ref of this GithubFilterAttributes.
-        Branch for push event; source branch for pull requests
+        Branch for push event; source branch for pull requests.
 
 
         :return: The head_ref of this GithubFilterAttributes.
@@ -56,7 +56,7 @@ class GithubFilterAttributes(object):
     def head_ref(self, head_ref):
         """
         Sets the head_ref of this GithubFilterAttributes.
-        Branch for push event; source branch for pull requests
+        Branch for push event; source branch for pull requests.
 
 
         :param head_ref: The head_ref of this GithubFilterAttributes.
@@ -68,7 +68,7 @@ class GithubFilterAttributes(object):
     def base_ref(self):
         """
         Gets the base_ref of this GithubFilterAttributes.
-        The target branch for pull requests; not applicable for push
+        The target branch for pull requests; not applicable for push requests.
 
 
         :return: The base_ref of this GithubFilterAttributes.
@@ -80,7 +80,7 @@ class GithubFilterAttributes(object):
     def base_ref(self, base_ref):
         """
         Sets the base_ref of this GithubFilterAttributes.
-        The target branch for pull requests; not applicable for push
+        The target branch for pull requests; not applicable for push requests.
 
 
         :param base_ref: The base_ref of this GithubFilterAttributes.

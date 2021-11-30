@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildPipelineStageCollection(object):
     """
-    Result of a stages search.
+    Result of a stage search.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class BuildPipelineStageCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this BuildPipelineStageCollection.
-        Summary of list of stages found for the search
+        Summary of the list of stages found for the search.
 
 
         :return: The items of this BuildPipelineStageCollection.
@@ -49,7 +49,7 @@ class BuildPipelineStageCollection(object):
     def items(self, items):
         """
         Sets the items of this BuildPipelineStageCollection.
-        Summary of list of stages found for the search
+        Summary of the list of stages found for the search.
 
 
         :param items: The items of this BuildPipelineStageCollection.

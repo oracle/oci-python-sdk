@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateWaitCriteriaDetails(object):
     """
-    Specifies wait criteria for wait stage.
+    Specifies wait criteria for the Wait stage.
     """
 
     #: A constant which can be used with the wait_type property of a CreateWaitCriteriaDetails.
@@ -59,7 +59,7 @@ class CreateWaitCriteriaDetails(object):
     def wait_type(self):
         """
         **[Required]** Gets the wait_type of this CreateWaitCriteriaDetails.
-        wait criteria sub type
+        Wait criteria type.
 
         Allowed values for this property are: "ABSOLUTE_WAIT"
 
@@ -73,7 +73,7 @@ class CreateWaitCriteriaDetails(object):
     def wait_type(self, wait_type):
         """
         Sets the wait_type of this CreateWaitCriteriaDetails.
-        wait criteria sub type
+        Wait criteria type.
 
 
         :param wait_type: The wait_type of this CreateWaitCriteriaDetails.

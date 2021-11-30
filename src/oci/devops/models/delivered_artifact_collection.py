@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DeliveredArtifactCollection(object):
     """
-    Specifies the list of Artifacts delivered via DeliverArtifactStage
+    Specifies the list of artifacts delivered through the Deliver Artifacts stage.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DeliveredArtifactCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DeliveredArtifactCollection.
-        List of Artifacts delivered via DeliverArtifactStage
+        List of artifacts delivered through the Deliver Artifacts stage.
 
 
         :return: The items of this DeliveredArtifactCollection.
@@ -49,7 +49,7 @@ class DeliveredArtifactCollection(object):
     def items(self, items):
         """
         Sets the items of this DeliveredArtifactCollection.
-        List of Artifacts delivered via DeliverArtifactStage
+        List of artifacts delivered through the Deliver Artifacts stage.
 
 
         :param items: The items of this DeliveredArtifactCollection.

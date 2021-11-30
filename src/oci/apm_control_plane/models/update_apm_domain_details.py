@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateApmDomainDetails(object):
     """
-    The information to be updated.
+    The information that can be updated by update APM domain operation.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class UpdateApmDomainDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateApmDomainDetails.
-        Display name of the APM Domain
+        Display name of the APM domain.
 
 
         :return: The display_name of this UpdateApmDomainDetails.
@@ -70,7 +70,7 @@ class UpdateApmDomainDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateApmDomainDetails.
-        Display name of the APM Domain
+        Display name of the APM domain.
 
 
         :param display_name: The display_name of this UpdateApmDomainDetails.
@@ -82,7 +82,7 @@ class UpdateApmDomainDetails(object):
     def description(self):
         """
         Gets the description of this UpdateApmDomainDetails.
-        Description of the APM Domain
+        Description of the APM domain.
 
 
         :return: The description of this UpdateApmDomainDetails.
@@ -94,7 +94,7 @@ class UpdateApmDomainDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateApmDomainDetails.
-        Description of the APM Domain
+        Description of the APM domain.
 
 
         :param description: The description of this UpdateApmDomainDetails.

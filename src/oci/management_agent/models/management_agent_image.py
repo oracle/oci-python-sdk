@@ -21,6 +21,10 @@ class ManagementAgentImage(object):
     #: This constant has a value of "WINDOWS"
     PLATFORM_TYPE_WINDOWS = "WINDOWS"
 
+    #: A constant which can be used with the platform_type property of a ManagementAgentImage.
+    #: This constant has a value of "SOLARIS"
+    PLATFORM_TYPE_SOLARIS = "SOLARIS"
+
     #: A constant which can be used with the lifecycle_state property of a ManagementAgentImage.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -64,7 +68,7 @@ class ManagementAgentImage(object):
 
         :param platform_type:
             The value to assign to the platform_type property of this ManagementAgentImage.
-            Allowed values for this property are: "LINUX", "WINDOWS"
+            Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS"
         :type platform_type: str
 
         :param platform_name:
@@ -154,7 +158,7 @@ class ManagementAgentImage(object):
         **[Required]** Gets the platform_type of this ManagementAgentImage.
         Agent image platform type
 
-        Allowed values for this property are: "LINUX", "WINDOWS"
+        Allowed values for this property are: "LINUX", "WINDOWS", "SOLARIS"
 
 
         :return: The platform_type of this ManagementAgentImage.
@@ -172,7 +176,7 @@ class ManagementAgentImage(object):
         :param platform_type: The platform_type of this ManagementAgentImage.
         :type: str
         """
-        allowed_values = ["LINUX", "WINDOWS"]
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             raise ValueError(
                 "Invalid value for `platform_type`, must be None or one of {0}"

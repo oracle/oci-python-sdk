@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Connection(object):
     """
-    The properties that define a connection
+    The properties that define a connection to external repositories.
     """
 
     #: A constant which can be used with the connection_type property of a Connection.
@@ -151,7 +151,7 @@ class Connection(object):
     def id(self):
         """
         **[Required]** Gets the id of this Connection.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :return: The id of this Connection.
@@ -163,7 +163,7 @@ class Connection(object):
     def id(self, id):
         """
         Sets the id of this Connection.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :param id: The id of this Connection.
@@ -175,7 +175,7 @@ class Connection(object):
     def description(self):
         """
         Gets the description of this Connection.
-        Optional description about the connection
+        Optional description about the connection.
 
 
         :return: The description of this Connection.
@@ -187,7 +187,7 @@ class Connection(object):
     def description(self, description):
         """
         Sets the description of this Connection.
-        Optional description about the connection
+        Optional description about the connection.
 
 
         :param description: The description of this Connection.
@@ -199,7 +199,7 @@ class Connection(object):
     def display_name(self):
         """
         Gets the display_name of this Connection.
-        Connection identifier which can be renamed and is not necessarily unique
+        Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :return: The display_name of this Connection.
@@ -211,7 +211,7 @@ class Connection(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Connection.
-        Connection identifier which can be renamed and is not necessarily unique
+        Connection display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this Connection.
@@ -223,7 +223,7 @@ class Connection(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Connection.
-        Compartment Identifier
+        The OCID of the compartment containing the connection.
 
 
         :return: The compartment_id of this Connection.
@@ -235,7 +235,7 @@ class Connection(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Connection.
-        Compartment Identifier
+        The OCID of the compartment containing the connection.
 
 
         :param compartment_id: The compartment_id of this Connection.
@@ -247,7 +247,7 @@ class Connection(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this Connection.
-        Project Identifier
+        The OCID of the DevOps project.
 
 
         :return: The project_id of this Connection.
@@ -259,7 +259,7 @@ class Connection(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this Connection.
-        Project Identifier
+        The OCID of the DevOps project.
 
 
         :param project_id: The project_id of this Connection.
@@ -301,7 +301,9 @@ class Connection(object):
     def time_created(self):
         """
         Gets the time_created of this Connection.
-        The time the Connection was created. An RFC3339 formatted datetime string
+        The time the connection was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_created of this Connection.
@@ -313,7 +315,9 @@ class Connection(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Connection.
-        The time the Connection was created. An RFC3339 formatted datetime string
+        The time the connection was created. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_created: The time_created of this Connection.
@@ -325,7 +329,9 @@ class Connection(object):
     def time_updated(self):
         """
         Gets the time_updated of this Connection.
-        The time at which the Connection was updated. An RFC3339 formatted datetime string
+        The time the connection was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :return: The time_updated of this Connection.
@@ -337,7 +343,9 @@ class Connection(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Connection.
-        The time at which the Connection was updated. An RFC3339 formatted datetime string
+        The time the connection was updated. Format defined by `RFC3339`__.
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
 
 
         :param time_updated: The time_updated of this Connection.
@@ -349,7 +357,7 @@ class Connection(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Connection.
-        The current state of the Connection.
+        The current state of the connection.
 
         Allowed values for this property are: "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -364,7 +372,7 @@ class Connection(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Connection.
-        The current state of the Connection.
+        The current state of the connection.
 
 
         :param lifecycle_state: The lifecycle_state of this Connection.

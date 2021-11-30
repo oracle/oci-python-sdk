@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DiffCollection(object):
     """
-    Result of a compare diff.
+    Result of a compare difference.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DiffCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DiffCollection.
-        List of objects describing diffs for all changed files.
+        List of objects describing differences for all changed files.
 
 
         :return: The items of this DiffCollection.
@@ -49,7 +49,7 @@ class DiffCollection(object):
     def items(self, items):
         """
         Sets the items of this DiffCollection.
-        List of objects describing diffs for all changed files.
+        List of objects describing differences for all changed files.
 
 
         :param items: The items of this DiffCollection.

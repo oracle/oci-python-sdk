@@ -67,6 +67,34 @@ class IPSecConnectionTunnel(object):
     #: This constant has a value of "POLICY"
     ROUTING_POLICY = "POLICY"
 
+    #: A constant which can be used with the oracle_can_initiate property of a IPSecConnectionTunnel.
+    #: This constant has a value of "INITIATOR_OR_RESPONDER"
+    ORACLE_CAN_INITIATE_INITIATOR_OR_RESPONDER = "INITIATOR_OR_RESPONDER"
+
+    #: A constant which can be used with the oracle_can_initiate property of a IPSecConnectionTunnel.
+    #: This constant has a value of "RESPONDER_ONLY"
+    ORACLE_CAN_INITIATE_RESPONDER_ONLY = "RESPONDER_ONLY"
+
+    #: A constant which can be used with the nat_translation_enabled property of a IPSecConnectionTunnel.
+    #: This constant has a value of "ENABLED"
+    NAT_TRANSLATION_ENABLED_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the nat_translation_enabled property of a IPSecConnectionTunnel.
+    #: This constant has a value of "DISABLED"
+    NAT_TRANSLATION_ENABLED_DISABLED = "DISABLED"
+
+    #: A constant which can be used with the nat_translation_enabled property of a IPSecConnectionTunnel.
+    #: This constant has a value of "AUTO"
+    NAT_TRANSLATION_ENABLED_AUTO = "AUTO"
+
+    #: A constant which can be used with the dpd_mode property of a IPSecConnectionTunnel.
+    #: This constant has a value of "INITIATE_AND_RESPOND"
+    DPD_MODE_INITIATE_AND_RESPOND = "INITIATE_AND_RESPOND"
+
+    #: A constant which can be used with the dpd_mode property of a IPSecConnectionTunnel.
+    #: This constant has a value of "RESPOND_ONLY"
+    DPD_MODE_RESPOND_ONLY = "RESPOND_ONLY"
+
     def __init__(self, **kwargs):
         """
         Initializes a new IPSecConnectionTunnel object with values from keyword arguments.
@@ -132,6 +160,36 @@ class IPSecConnectionTunnel(object):
             The value to assign to the time_status_updated property of this IPSecConnectionTunnel.
         :type time_status_updated: datetime
 
+        :param oracle_can_initiate:
+            The value to assign to the oracle_can_initiate property of this IPSecConnectionTunnel.
+            Allowed values for this property are: "INITIATOR_OR_RESPONDER", "RESPONDER_ONLY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type oracle_can_initiate: str
+
+        :param nat_translation_enabled:
+            The value to assign to the nat_translation_enabled property of this IPSecConnectionTunnel.
+            Allowed values for this property are: "ENABLED", "DISABLED", "AUTO", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type nat_translation_enabled: str
+
+        :param dpd_mode:
+            The value to assign to the dpd_mode property of this IPSecConnectionTunnel.
+            Allowed values for this property are: "INITIATE_AND_RESPOND", "RESPOND_ONLY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type dpd_mode: str
+
+        :param dpd_timeout_in_sec:
+            The value to assign to the dpd_timeout_in_sec property of this IPSecConnectionTunnel.
+        :type dpd_timeout_in_sec: int
+
+        :param phase_one_details:
+            The value to assign to the phase_one_details property of this IPSecConnectionTunnel.
+        :type phase_one_details: oci.core.models.TunnelPhaseOneDetails
+
+        :param phase_two_details:
+            The value to assign to the phase_two_details property of this IPSecConnectionTunnel.
+        :type phase_two_details: oci.core.models.TunnelPhaseTwoDetails
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -146,7 +204,13 @@ class IPSecConnectionTunnel(object):
             'encryption_domain_config': 'EncryptionDomainConfig',
             'routing': 'str',
             'time_created': 'datetime',
-            'time_status_updated': 'datetime'
+            'time_status_updated': 'datetime',
+            'oracle_can_initiate': 'str',
+            'nat_translation_enabled': 'str',
+            'dpd_mode': 'str',
+            'dpd_timeout_in_sec': 'int',
+            'phase_one_details': 'TunnelPhaseOneDetails',
+            'phase_two_details': 'TunnelPhaseTwoDetails'
         }
 
         self.attribute_map = {
@@ -162,7 +226,13 @@ class IPSecConnectionTunnel(object):
             'encryption_domain_config': 'encryptionDomainConfig',
             'routing': 'routing',
             'time_created': 'timeCreated',
-            'time_status_updated': 'timeStatusUpdated'
+            'time_status_updated': 'timeStatusUpdated',
+            'oracle_can_initiate': 'oracleCanInitiate',
+            'nat_translation_enabled': 'natTranslationEnabled',
+            'dpd_mode': 'dpdMode',
+            'dpd_timeout_in_sec': 'dpdTimeoutInSec',
+            'phase_one_details': 'phaseOneDetails',
+            'phase_two_details': 'phaseTwoDetails'
         }
 
         self._compartment_id = None
@@ -178,6 +248,12 @@ class IPSecConnectionTunnel(object):
         self._routing = None
         self._time_created = None
         self._time_status_updated = None
+        self._oracle_can_initiate = None
+        self._nat_translation_enabled = None
+        self._dpd_mode = None
+        self._dpd_timeout_in_sec = None
+        self._phase_one_details = None
+        self._phase_two_details = None
 
     @property
     def compartment_id(self):
@@ -540,6 +616,160 @@ class IPSecConnectionTunnel(object):
         :type: datetime
         """
         self._time_status_updated = time_status_updated
+
+    @property
+    def oracle_can_initiate(self):
+        """
+        Gets the oracle_can_initiate of this IPSecConnectionTunnel.
+        Indicates whether Oracle can either initiate the tunnel or respond, or respond only.
+
+        Allowed values for this property are: "INITIATOR_OR_RESPONDER", "RESPONDER_ONLY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The oracle_can_initiate of this IPSecConnectionTunnel.
+        :rtype: str
+        """
+        return self._oracle_can_initiate
+
+    @oracle_can_initiate.setter
+    def oracle_can_initiate(self, oracle_can_initiate):
+        """
+        Sets the oracle_can_initiate of this IPSecConnectionTunnel.
+        Indicates whether Oracle can either initiate the tunnel or respond, or respond only.
+
+
+        :param oracle_can_initiate: The oracle_can_initiate of this IPSecConnectionTunnel.
+        :type: str
+        """
+        allowed_values = ["INITIATOR_OR_RESPONDER", "RESPONDER_ONLY"]
+        if not value_allowed_none_or_none_sentinel(oracle_can_initiate, allowed_values):
+            oracle_can_initiate = 'UNKNOWN_ENUM_VALUE'
+        self._oracle_can_initiate = oracle_can_initiate
+
+    @property
+    def nat_translation_enabled(self):
+        """
+        Gets the nat_translation_enabled of this IPSecConnectionTunnel.
+        Whether NAT-T Enabled on the tunnel
+
+        Allowed values for this property are: "ENABLED", "DISABLED", "AUTO", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The nat_translation_enabled of this IPSecConnectionTunnel.
+        :rtype: str
+        """
+        return self._nat_translation_enabled
+
+    @nat_translation_enabled.setter
+    def nat_translation_enabled(self, nat_translation_enabled):
+        """
+        Sets the nat_translation_enabled of this IPSecConnectionTunnel.
+        Whether NAT-T Enabled on the tunnel
+
+
+        :param nat_translation_enabled: The nat_translation_enabled of this IPSecConnectionTunnel.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED", "AUTO"]
+        if not value_allowed_none_or_none_sentinel(nat_translation_enabled, allowed_values):
+            nat_translation_enabled = 'UNKNOWN_ENUM_VALUE'
+        self._nat_translation_enabled = nat_translation_enabled
+
+    @property
+    def dpd_mode(self):
+        """
+        Gets the dpd_mode of this IPSecConnectionTunnel.
+        dpd mode
+
+        Allowed values for this property are: "INITIATE_AND_RESPOND", "RESPOND_ONLY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The dpd_mode of this IPSecConnectionTunnel.
+        :rtype: str
+        """
+        return self._dpd_mode
+
+    @dpd_mode.setter
+    def dpd_mode(self, dpd_mode):
+        """
+        Sets the dpd_mode of this IPSecConnectionTunnel.
+        dpd mode
+
+
+        :param dpd_mode: The dpd_mode of this IPSecConnectionTunnel.
+        :type: str
+        """
+        allowed_values = ["INITIATE_AND_RESPOND", "RESPOND_ONLY"]
+        if not value_allowed_none_or_none_sentinel(dpd_mode, allowed_values):
+            dpd_mode = 'UNKNOWN_ENUM_VALUE'
+        self._dpd_mode = dpd_mode
+
+    @property
+    def dpd_timeout_in_sec(self):
+        """
+        Gets the dpd_timeout_in_sec of this IPSecConnectionTunnel.
+        Dead peer detection (DPD) timeout in seconds.
+
+
+        :return: The dpd_timeout_in_sec of this IPSecConnectionTunnel.
+        :rtype: int
+        """
+        return self._dpd_timeout_in_sec
+
+    @dpd_timeout_in_sec.setter
+    def dpd_timeout_in_sec(self, dpd_timeout_in_sec):
+        """
+        Sets the dpd_timeout_in_sec of this IPSecConnectionTunnel.
+        Dead peer detection (DPD) timeout in seconds.
+
+
+        :param dpd_timeout_in_sec: The dpd_timeout_in_sec of this IPSecConnectionTunnel.
+        :type: int
+        """
+        self._dpd_timeout_in_sec = dpd_timeout_in_sec
+
+    @property
+    def phase_one_details(self):
+        """
+        Gets the phase_one_details of this IPSecConnectionTunnel.
+
+        :return: The phase_one_details of this IPSecConnectionTunnel.
+        :rtype: oci.core.models.TunnelPhaseOneDetails
+        """
+        return self._phase_one_details
+
+    @phase_one_details.setter
+    def phase_one_details(self, phase_one_details):
+        """
+        Sets the phase_one_details of this IPSecConnectionTunnel.
+
+        :param phase_one_details: The phase_one_details of this IPSecConnectionTunnel.
+        :type: oci.core.models.TunnelPhaseOneDetails
+        """
+        self._phase_one_details = phase_one_details
+
+    @property
+    def phase_two_details(self):
+        """
+        Gets the phase_two_details of this IPSecConnectionTunnel.
+
+        :return: The phase_two_details of this IPSecConnectionTunnel.
+        :rtype: oci.core.models.TunnelPhaseTwoDetails
+        """
+        return self._phase_two_details
+
+    @phase_two_details.setter
+    def phase_two_details(self, phase_two_details):
+        """
+        Sets the phase_two_details of this IPSecConnectionTunnel.
+
+        :param phase_two_details: The phase_two_details of this IPSecConnectionTunnel.
+        :type: oci.core.models.TunnelPhaseTwoDetails
+        """
+        self._phase_two_details = phase_two_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

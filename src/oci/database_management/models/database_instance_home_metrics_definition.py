@@ -44,6 +44,10 @@ class DatabaseInstanceHomeMetricsDefinition(object):
             The value to assign to the memory_aggregate_metrics property of this DatabaseInstanceHomeMetricsDefinition.
         :type memory_aggregate_metrics: oci.database_management.models.MemoryAggregateMetrics
 
+        :param cpu_utilization_aggregate_metrics:
+            The value to assign to the cpu_utilization_aggregate_metrics property of this DatabaseInstanceHomeMetricsDefinition.
+        :type cpu_utilization_aggregate_metrics: oci.database_management.models.CpuUtilizationAggregateMetrics
+
         """
         self.swagger_types = {
             'instance_name': 'str',
@@ -51,7 +55,8 @@ class DatabaseInstanceHomeMetricsDefinition(object):
             'activity_time_series_metrics': 'list[ActivityTimeSeriesMetrics]',
             'db_time_aggregate_metrics': 'DatabaseTimeAggregateMetrics',
             'io_aggregate_metrics': 'DatabaseIOAggregateMetrics',
-            'memory_aggregate_metrics': 'MemoryAggregateMetrics'
+            'memory_aggregate_metrics': 'MemoryAggregateMetrics',
+            'cpu_utilization_aggregate_metrics': 'CpuUtilizationAggregateMetrics'
         }
 
         self.attribute_map = {
@@ -60,7 +65,8 @@ class DatabaseInstanceHomeMetricsDefinition(object):
             'activity_time_series_metrics': 'activityTimeSeriesMetrics',
             'db_time_aggregate_metrics': 'dbTimeAggregateMetrics',
             'io_aggregate_metrics': 'ioAggregateMetrics',
-            'memory_aggregate_metrics': 'memoryAggregateMetrics'
+            'memory_aggregate_metrics': 'memoryAggregateMetrics',
+            'cpu_utilization_aggregate_metrics': 'cpuUtilizationAggregateMetrics'
         }
 
         self._instance_name = None
@@ -69,6 +75,7 @@ class DatabaseInstanceHomeMetricsDefinition(object):
         self._db_time_aggregate_metrics = None
         self._io_aggregate_metrics = None
         self._memory_aggregate_metrics = None
+        self._cpu_utilization_aggregate_metrics = None
 
     @property
     def instance_name(self):
@@ -209,6 +216,26 @@ class DatabaseInstanceHomeMetricsDefinition(object):
         :type: oci.database_management.models.MemoryAggregateMetrics
         """
         self._memory_aggregate_metrics = memory_aggregate_metrics
+
+    @property
+    def cpu_utilization_aggregate_metrics(self):
+        """
+        Gets the cpu_utilization_aggregate_metrics of this DatabaseInstanceHomeMetricsDefinition.
+
+        :return: The cpu_utilization_aggregate_metrics of this DatabaseInstanceHomeMetricsDefinition.
+        :rtype: oci.database_management.models.CpuUtilizationAggregateMetrics
+        """
+        return self._cpu_utilization_aggregate_metrics
+
+    @cpu_utilization_aggregate_metrics.setter
+    def cpu_utilization_aggregate_metrics(self, cpu_utilization_aggregate_metrics):
+        """
+        Sets the cpu_utilization_aggregate_metrics of this DatabaseInstanceHomeMetricsDefinition.
+
+        :param cpu_utilization_aggregate_metrics: The cpu_utilization_aggregate_metrics of this DatabaseInstanceHomeMetricsDefinition.
+        :type: oci.database_management.models.CpuUtilizationAggregateMetrics
+        """
+        self._cpu_utilization_aggregate_metrics = cpu_utilization_aggregate_metrics
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeDbManagementPrivateEndpointCompartmentDetails(object):
     """
-    The details used to change the compartment of a Database Management private endpoint.
+    The details used to move the Database Management private endpoint to another compartment.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,9 @@ class ChangeDbManagementPrivateEndpointCompartmentDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this ChangeDbManagementPrivateEndpointCompartmentDetails.
-        The OCID of the new compartment.
+        The `OCID`__ of the compartment to which the Database Management private endpoint needs to be moved.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ChangeDbManagementPrivateEndpointCompartmentDetails.
@@ -49,7 +51,9 @@ class ChangeDbManagementPrivateEndpointCompartmentDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ChangeDbManagementPrivateEndpointCompartmentDetails.
-        The OCID of the new compartment.
+        The `OCID`__ of the compartment to which the Database Management private endpoint needs to be moved.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ChangeDbManagementPrivateEndpointCompartmentDetails.

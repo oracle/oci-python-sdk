@@ -106,7 +106,7 @@ class WorkRequestLogEntry(object):
     def message(self):
         """
         **[Required]** Gets the message of this WorkRequestLogEntry.
-        Human-readable log message.
+        A human-readable log message.
 
 
         :return: The message of this WorkRequestLogEntry.
@@ -118,7 +118,7 @@ class WorkRequestLogEntry(object):
     def message(self, message):
         """
         Sets the message of this WorkRequestLogEntry.
-        Human-readable log message.
+        A human-readable log message.
 
 
         :param message: The message of this WorkRequestLogEntry.
@@ -130,8 +130,9 @@ class WorkRequestLogEntry(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this WorkRequestLogEntry.
-        The time the log message was written.
-        An RFC3339 formatted datetime string. The precision for the time object is milliseconds.
+        The date and time the log message was written, described in `RFC 3339`__. The precision for the time object is in milliseconds.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :return: The timestamp of this WorkRequestLogEntry.
@@ -143,8 +144,9 @@ class WorkRequestLogEntry(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this WorkRequestLogEntry.
-        The time the log message was written.
-        An RFC3339 formatted datetime string. The precision for the time object is milliseconds.
+        The date and time the log message was written, described in `RFC 3339`__. The precision for the time object is in milliseconds.
+
+        __ https://tools.ietf.org/rfc/rfc3339
 
 
         :param timestamp: The timestamp of this WorkRequestLogEntry.

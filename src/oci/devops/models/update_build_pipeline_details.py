@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateBuildPipelineDetails(object):
     """
-    The information to be updated for the given BuildPipeline.
+    The information to be updated for the given build pipeline.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class UpdateBuildPipelineDetails(object):
     def description(self):
         """
         Gets the description of this UpdateBuildPipelineDetails.
-        Optional description about the BuildPipeline
+        Optional description about the build pipeline.
 
 
         :return: The description of this UpdateBuildPipelineDetails.
@@ -77,7 +77,7 @@ class UpdateBuildPipelineDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateBuildPipelineDetails.
-        Optional description about the BuildPipeline
+        Optional description about the build pipeline.
 
 
         :param description: The description of this UpdateBuildPipelineDetails.
@@ -89,7 +89,7 @@ class UpdateBuildPipelineDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateBuildPipelineDetails.
-        BuildPipeline display name
+        Build pipeline display name. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateBuildPipelineDetails.
@@ -101,7 +101,7 @@ class UpdateBuildPipelineDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateBuildPipelineDetails.
-        BuildPipeline display name
+        Build pipeline display name. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateBuildPipelineDetails.

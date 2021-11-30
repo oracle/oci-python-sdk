@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildSourceCollection(object):
     """
-    Collection of Build Sources.
+    Collection of build sources.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class BuildSourceCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this BuildSourceCollection.
-        Collection of Build sources. In case of UPDATE operation, replaces existing Build sources list. Merging with existing Build Sources is not supported.
+        Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
 
 
         :return: The items of this BuildSourceCollection.
@@ -49,7 +49,7 @@ class BuildSourceCollection(object):
     def items(self, items):
         """
         Sets the items of this BuildSourceCollection.
-        Collection of Build sources. In case of UPDATE operation, replaces existing Build sources list. Merging with existing Build Sources is not supported.
+        Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
 
 
         :param items: The items of this BuildSourceCollection.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PutRepositoryRefDetails(object):
     """
-    The information needed to create a ref. If the ref already exists, it can be used to update it.
+    The information needed to create a reference. If the reference already exists, then it can be used to update the reference.
     """
 
     #: A constant which can be used with the ref_type property of a PutRepositoryRefDetails.
@@ -67,7 +67,7 @@ class PutRepositoryRefDetails(object):
     def ref_type(self):
         """
         **[Required]** Gets the ref_type of this PutRepositoryRefDetails.
-        The type of Ref (Branch or Tag)
+        The type of reference (Branch or Tag).
 
         Allowed values for this property are: "BRANCH", "TAG"
 
@@ -81,7 +81,7 @@ class PutRepositoryRefDetails(object):
     def ref_type(self, ref_type):
         """
         Sets the ref_type of this PutRepositoryRefDetails.
-        The type of Ref (Branch or Tag)
+        The type of reference (Branch or Tag).
 
 
         :param ref_type: The ref_type of this PutRepositoryRefDetails.

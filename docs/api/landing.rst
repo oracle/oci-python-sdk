@@ -47,6 +47,7 @@ API Reference
 * :doc:`Data Science <data_science/client/oci.data_science.DataScienceClient>`
 * :doc:`Database <database/client/oci.database.DatabaseClient>`
 * :doc:`Db Management <database_management/client/oci.database_management.DbManagementClient>`
+* :doc:`Sql Tuning <database_management/client/oci.database_management.SqlTuningClient>`
 * :doc:`Database Migration <database_migration/client/oci.database_migration.DatabaseMigrationClient>`
 * :doc:`Database Tools <database_tools/client/oci.database_tools.DatabaseToolsClient>`
 * :doc:`Devops <devops/client/oci.devops.DevopsClient>`

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateBuildPipelineDetails(object):
     """
-    The information about new BuildPipeline to be created.
+    Information about the new build pipeline to be created.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class CreateBuildPipelineDetails(object):
     def description(self):
         """
         Gets the description of this CreateBuildPipelineDetails.
-        Optional description about the BuildPipeline
+        Optional description about the build pipeline.
 
 
         :return: The description of this CreateBuildPipelineDetails.
@@ -84,7 +84,7 @@ class CreateBuildPipelineDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateBuildPipelineDetails.
-        Optional description about the BuildPipeline
+        Optional description about the build pipeline.
 
 
         :param description: The description of this CreateBuildPipelineDetails.
@@ -96,7 +96,7 @@ class CreateBuildPipelineDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateBuildPipelineDetails.
-        BuildPipeline display name
+        Build pipeline display name. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateBuildPipelineDetails.
@@ -108,7 +108,7 @@ class CreateBuildPipelineDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateBuildPipelineDetails.
-        BuildPipeline display name
+        Build pipeline display name. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateBuildPipelineDetails.
@@ -120,7 +120,7 @@ class CreateBuildPipelineDetails(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this CreateBuildPipelineDetails.
-        Project Identifier
+        The OCID of the DevOps project.
 
 
         :return: The project_id of this CreateBuildPipelineDetails.
@@ -132,7 +132,7 @@ class CreateBuildPipelineDetails(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this CreateBuildPipelineDetails.
-        Project Identifier
+        The OCID of the DevOps project.
 
 
         :param project_id: The project_id of this CreateBuildPipelineDetails.

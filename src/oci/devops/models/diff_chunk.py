@@ -161,7 +161,7 @@ class DiffChunk(object):
     def diff_sections(self):
         """
         Gets the diff_sections of this DiffChunk.
-        List of DiffSection.
+        List of difference section.
 
 
         :return: The diff_sections of this DiffChunk.
@@ -173,7 +173,7 @@ class DiffChunk(object):
     def diff_sections(self, diff_sections):
         """
         Sets the diff_sections of this DiffChunk.
-        List of DiffSection.
+        List of difference section.
 
 
         :param diff_sections: The diff_sections of this DiffChunk.

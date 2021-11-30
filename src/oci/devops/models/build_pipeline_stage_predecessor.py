@@ -37,7 +37,7 @@ class BuildPipelineStagePredecessor(object):
     def id(self):
         """
         **[Required]** Gets the id of this BuildPipelineStagePredecessor.
-        The id of the predecessor stage. If a stages is the first stage in the pipeline, then the id is the pipeline's id.
+        The ID of the predecessor stage. If a stage is the first stage in the pipeline, then the ID is the pipeline's ID.
 
 
         :return: The id of this BuildPipelineStagePredecessor.
@@ -49,7 +49,7 @@ class BuildPipelineStagePredecessor(object):
     def id(self, id):
         """
         Sets the id of this BuildPipelineStagePredecessor.
-        The id of the predecessor stage. If a stages is the first stage in the pipeline, then the id is the pipeline's id.
+        The ID of the predecessor stage. If a stage is the first stage in the pipeline, then the ID is the pipeline's ID.
 
 
         :param id: The id of this BuildPipelineStagePredecessor.

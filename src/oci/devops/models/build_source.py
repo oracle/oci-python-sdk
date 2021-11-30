@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildSource(object):
     """
-    Build Source required for Build Stage.
+    Build source required for the Build stage.
     """
 
     #: A constant which can be used with the connection_type property of a BuildSource.
@@ -97,7 +97,7 @@ class BuildSource(object):
     def name(self):
         """
         **[Required]** Gets the name of this BuildSource.
-        Name of the Build source. This must be unique within a BuildSourceCollection. The name can be used by customers to locate the working directory pertinent to this repository.
+        Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
 
 
         :return: The name of this BuildSource.
@@ -109,7 +109,7 @@ class BuildSource(object):
     def name(self, name):
         """
         Sets the name of this BuildSource.
-        Name of the Build source. This must be unique within a BuildSourceCollection. The name can be used by customers to locate the working directory pertinent to this repository.
+        Name of the build source. This must be unique within a build source collection. The name can be used by customers to locate the working directory pertinent to this repository.
 
 
         :param name: The name of this BuildSource.
@@ -121,7 +121,7 @@ class BuildSource(object):
     def connection_type(self):
         """
         **[Required]** Gets the connection_type of this BuildSource.
-        The type of Source Provider.
+        The type of source provider.
 
         Allowed values for this property are: "GITHUB", "GITLAB", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -136,7 +136,7 @@ class BuildSource(object):
     def connection_type(self, connection_type):
         """
         Sets the connection_type of this BuildSource.
-        The type of Source Provider.
+        The type of source provider.
 
 
         :param connection_type: The connection_type of this BuildSource.
@@ -151,7 +151,7 @@ class BuildSource(object):
     def repository_url(self):
         """
         **[Required]** Gets the repository_url of this BuildSource.
-        Url for repository
+        URL for the repository.
 
 
         :return: The repository_url of this BuildSource.
@@ -163,7 +163,7 @@ class BuildSource(object):
     def repository_url(self, repository_url):
         """
         Sets the repository_url of this BuildSource.
-        Url for repository
+        URL for the repository.
 
 
         :param repository_url: The repository_url of this BuildSource.
@@ -175,7 +175,7 @@ class BuildSource(object):
     def branch(self):
         """
         **[Required]** Gets the branch of this BuildSource.
-        branch name
+        Branch name.
 
 
         :return: The branch of this BuildSource.
@@ -187,7 +187,7 @@ class BuildSource(object):
     def branch(self, branch):
         """
         Sets the branch of this BuildSource.
-        branch name
+        Branch name.
 
 
         :param branch: The branch of this BuildSource.
