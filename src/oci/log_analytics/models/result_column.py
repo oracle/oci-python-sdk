@@ -60,7 +60,8 @@ class ResultColumn(object):
 
         :param value_type:
             The value to assign to the value_type property of this ResultColumn.
-            Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET"
+            Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type value_type: str
 
         """
@@ -134,7 +135,8 @@ class ResultColumn(object):
         Gets the value_type of this ResultColumn.
         Field denoting column data type.
 
-        Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET"
+        Allowed values for this property are: "BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The value_type of this ResultColumn.
@@ -154,10 +156,7 @@ class ResultColumn(object):
         """
         allowed_values = ["BOOLEAN", "STRING", "DOUBLE", "FLOAT", "LONG", "INTEGER", "TIMESTAMP", "FACET"]
         if not value_allowed_none_or_none_sentinel(value_type, allowed_values):
-            raise ValueError(
-                "Invalid value for `value_type`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            value_type = 'UNKNOWN_ENUM_VALUE'
         self._value_type = value_type
 
     def __repr__(self):

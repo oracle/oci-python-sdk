@@ -88,6 +88,10 @@ class LogAnalyticsLookup(object):
             The value to assign to the time_updated property of this LogAnalyticsLookup.
         :type time_updated: datetime
 
+        :param categories:
+            The value to assign to the categories property of this LogAnalyticsLookup.
+        :type categories: list[oci.log_analytics.models.LogAnalyticsCategory]
+
         """
         self.swagger_types = {
             'active_edit_version': 'int',
@@ -104,7 +108,8 @@ class LogAnalyticsLookup(object):
             'lookup_display_name': 'str',
             'referring_sources': 'AutoLookups',
             'status_summary': 'StatusSummary',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'categories': 'list[LogAnalyticsCategory]'
         }
 
         self.attribute_map = {
@@ -122,7 +127,8 @@ class LogAnalyticsLookup(object):
             'lookup_display_name': 'lookupDisplayName',
             'referring_sources': 'referringSources',
             'status_summary': 'statusSummary',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'categories': 'categories'
         }
 
         self._active_edit_version = None
@@ -140,6 +146,7 @@ class LogAnalyticsLookup(object):
         self._referring_sources = None
         self._status_summary = None
         self._time_updated = None
+        self._categories = None
 
     @property
     def active_edit_version(self):
@@ -502,6 +509,32 @@ class LogAnalyticsLookup(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def categories(self):
+        """
+        Gets the categories of this LogAnalyticsLookup.
+        An array of categories assigned to this lookup.
+        The isSystem flag denotes if each category assignment is user-created or Oracle-defined.
+
+
+        :return: The categories of this LogAnalyticsLookup.
+        :rtype: list[oci.log_analytics.models.LogAnalyticsCategory]
+        """
+        return self._categories
+
+    @categories.setter
+    def categories(self, categories):
+        """
+        Sets the categories of this LogAnalyticsLookup.
+        An array of categories assigned to this lookup.
+        The isSystem flag denotes if each category assignment is user-created or Oracle-defined.
+
+
+        :param categories: The categories of this LogAnalyticsLookup.
+        :type: list[oci.log_analytics.models.LogAnalyticsCategory]
+        """
+        self._categories = categories
 
     def __repr__(self):
         return formatted_flat_dict(self)

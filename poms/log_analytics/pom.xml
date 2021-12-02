@@ -167,7 +167,7 @@
       <dependency>
         <groupId>com.oracle.loganalytics.api</groupId>
         <artifactId>logan-api-spec</artifactId>
-        <version>0.1.307</version>
+        <version>0.1.314</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

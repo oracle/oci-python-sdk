@@ -39,6 +39,10 @@ class ManagedInstanceUsage(object):
             The value to assign to the hostname property of this ManagedInstanceUsage.
         :type hostname: str
 
+        :param host_id:
+            The value to assign to the host_id property of this ManagedInstanceUsage.
+        :type host_id: str
+
         :param operating_system:
             The value to assign to the operating_system property of this ManagedInstanceUsage.
         :type operating_system: oci.jms.models.OperatingSystem
@@ -76,6 +80,7 @@ class ManagedInstanceUsage(object):
             'managed_instance_id': 'str',
             'managed_instance_type': 'str',
             'hostname': 'str',
+            'host_id': 'str',
             'operating_system': 'OperatingSystem',
             'approximate_application_count': 'int',
             'approximate_installation_count': 'int',
@@ -90,6 +95,7 @@ class ManagedInstanceUsage(object):
             'managed_instance_id': 'managedInstanceId',
             'managed_instance_type': 'managedInstanceType',
             'hostname': 'hostname',
+            'host_id': 'hostId',
             'operating_system': 'operatingSystem',
             'approximate_application_count': 'approximateApplicationCount',
             'approximate_installation_count': 'approximateInstallationCount',
@@ -103,6 +109,7 @@ class ManagedInstanceUsage(object):
         self._managed_instance_id = None
         self._managed_instance_type = None
         self._hostname = None
+        self._host_id = None
         self._operating_system = None
         self._approximate_application_count = None
         self._approximate_installation_count = None
@@ -193,6 +200,34 @@ class ManagedInstanceUsage(object):
         :type: str
         """
         self._hostname = hostname
+
+    @property
+    def host_id(self):
+        """
+        Gets the host_id of this ManagedInstanceUsage.
+        The host `OCID`__ of the related managed instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The host_id of this ManagedInstanceUsage.
+        :rtype: str
+        """
+        return self._host_id
+
+    @host_id.setter
+    def host_id(self, host_id):
+        """
+        Sets the host_id of this ManagedInstanceUsage.
+        The host `OCID`__ of the related managed instance.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param host_id: The host_id of this ManagedInstanceUsage.
+        :type: str
+        """
+        self._host_id = host_id
 
     @property
     def operating_system(self):

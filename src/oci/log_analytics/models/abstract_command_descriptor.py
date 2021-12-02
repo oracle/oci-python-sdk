@@ -74,6 +74,14 @@ class AbstractCommandDescriptor(object):
     NAME_EXTRACT = "EXTRACT"
 
     #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "JSON_EXTRACT"
+    NAME_JSON_EXTRACT = "JSON_EXTRACT"
+
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
+    #: This constant has a value of "XML_EXTRACT"
+    NAME_XML_EXTRACT = "XML_EXTRACT"
+
+    #: A constant which can be used with the name property of a AbstractCommandDescriptor.
     #: This constant has a value of "EVENT_STATS"
     NAME_EVENT_STATS = "EVENT_STATS"
 
@@ -203,6 +211,7 @@ class AbstractCommandDescriptor(object):
         * :class:`~oci.log_analytics.models.DemoModeCommandDescriptor`
         * :class:`~oci.log_analytics.models.FieldSummaryCommandDescriptor`
         * :class:`~oci.log_analytics.models.GeoStatsCommandDescriptor`
+        * :class:`~oci.log_analytics.models.JsonExtractCommandDescriptor`
         * :class:`~oci.log_analytics.models.MapCommandDescriptor`
         * :class:`~oci.log_analytics.models.EventStatsCommandDescriptor`
         * :class:`~oci.log_analytics.models.HighlightGroupsCommandDescriptor`
@@ -233,12 +242,13 @@ class AbstractCommandDescriptor(object):
         * :class:`~oci.log_analytics.models.AddFieldsCommandDescriptor`
         * :class:`~oci.log_analytics.models.EvalCommandDescriptor`
         * :class:`~oci.log_analytics.models.RenameCommandDescriptor`
+        * :class:`~oci.log_analytics.models.XmlExtractCommandDescriptor`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param name:
             The value to assign to the name property of this AbstractCommandDescriptor.
-            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type name: str
 
@@ -335,6 +345,9 @@ class AbstractCommandDescriptor(object):
         if type == 'GEO_STATS':
             return 'GeoStatsCommandDescriptor'
 
+        if type == 'JSON_EXTRACT':
+            return 'JsonExtractCommandDescriptor'
+
         if type == 'MAP':
             return 'MapCommandDescriptor'
 
@@ -424,6 +437,9 @@ class AbstractCommandDescriptor(object):
 
         if type == 'RENAME':
             return 'RenameCommandDescriptor'
+
+        if type == 'XML_EXTRACT':
+            return 'XmlExtractCommandDescriptor'
         else:
             return 'AbstractCommandDescriptor'
 
@@ -433,7 +449,7 @@ class AbstractCommandDescriptor(object):
         **[Required]** Gets the name of this AbstractCommandDescriptor.
         Name of querylanguage command
 
-        Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -452,7 +468,7 @@ class AbstractCommandDescriptor(object):
         :param name: The name of this AbstractCommandDescriptor.
         :type: str
         """
-        allowed_values = ["COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE"]
+        allowed_values = ["COMMAND", "SEARCH", "STATS", "GEO_STATS", "TIME_STATS", "SORT", "FIELDS", "ADD_FIELDS", "LINK", "LINK_DETAILS", "CLUSTER", "CLUSTER_DETAILS", "CLUSTER_SPLIT", "EVAL", "EXTRACT", "JSON_EXTRACT", "XML_EXTRACT", "EVENT_STATS", "BUCKET", "CLASSIFY", "TOP", "BOTTOM", "HEAD", "TAIL", "FIELD_SUMMARY", "REGEX", "RENAME", "TIME_COMPARE", "WHERE", "CLUSTER_COMPARE", "DELETE", "DELTA", "DISTINCT", "SEARCH_LOOKUP", "LOOKUP", "DEMO_MODE", "MACRO", "MULTI_SEARCH", "HIGHLIGHT", "HIGHLIGHT_ROWS", "HIGHLIGHT_GROUPS", "CREATE_VIEW", "MAP", "NLP", "COMPARE"]
         if not value_allowed_none_or_none_sentinel(name, allowed_values):
             name = 'UNKNOWN_ENUM_VALUE'
         self._name = name

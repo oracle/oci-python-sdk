@@ -194,7 +194,7 @@ class InstallationUsage(object):
     def path(self):
         """
         **[Required]** Gets the path of this InstallationUsage.
-        The file system path of the installation.
+        The file system path of the Java installation.
 
 
         :return: The path of this InstallationUsage.
@@ -206,7 +206,7 @@ class InstallationUsage(object):
     def path(self, path):
         """
         Sets the path of this InstallationUsage.
-        The file system path of the installation.
+        The file system path of the Java installation.
 
 
         :param path: The path of this InstallationUsage.

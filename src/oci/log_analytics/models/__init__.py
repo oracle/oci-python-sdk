@@ -42,6 +42,9 @@ from .column_name import ColumnName
 from .column_name_collection import ColumnNameCollection
 from .command_descriptor import CommandDescriptor
 from .compare_command_descriptor import CompareCommandDescriptor
+from .compare_content_details import CompareContentDetails
+from .compare_content_result import CompareContentResult
+from .compare_line_result import CompareLineResult
 from .create_acceleration_task_details import CreateAccelerationTaskDetails
 from .create_log_analytics_em_bridge_details import CreateLogAnalyticsEmBridgeDetails
 from .create_log_analytics_entity_details import CreateLogAnalyticsEntityDetails
@@ -103,6 +106,7 @@ from .highlight_command_descriptor import HighlightCommandDescriptor
 from .highlight_groups_command_descriptor import HighlightGroupsCommandDescriptor
 from .highlight_rows_command_descriptor import HighlightRowsCommandDescriptor
 from .indexes import Indexes
+from .json_extract_command_descriptor import JsonExtractCommandDescriptor
 from .label_names import LabelNames
 from .label_priority import LabelPriority
 from .label_priority_collection import LabelPriorityCollection
@@ -118,6 +122,8 @@ from .log_analytics_association import LogAnalyticsAssociation
 from .log_analytics_association_collection import LogAnalyticsAssociationCollection
 from .log_analytics_association_parameter import LogAnalyticsAssociationParameter
 from .log_analytics_association_parameter_collection import LogAnalyticsAssociationParameterCollection
+from .log_analytics_category import LogAnalyticsCategory
+from .log_analytics_category_collection import LogAnalyticsCategoryCollection
 from .log_analytics_config_work_request import LogAnalyticsConfigWorkRequest
 from .log_analytics_config_work_request_collection import LogAnalyticsConfigWorkRequestCollection
 from .log_analytics_config_work_request_payload import LogAnalyticsConfigWorkRequestPayload
@@ -130,6 +136,10 @@ from .log_analytics_entity import LogAnalyticsEntity
 from .log_analytics_entity_collection import LogAnalyticsEntityCollection
 from .log_analytics_entity_summary import LogAnalyticsEntitySummary
 from .log_analytics_entity_summary_report import LogAnalyticsEntitySummaryReport
+from .log_analytics_entity_topology_collection import LogAnalyticsEntityTopologyCollection
+from .log_analytics_entity_topology_link import LogAnalyticsEntityTopologyLink
+from .log_analytics_entity_topology_link_collection import LogAnalyticsEntityTopologyLinkCollection
+from .log_analytics_entity_topology_summary import LogAnalyticsEntityTopologySummary
 from .log_analytics_entity_type import LogAnalyticsEntityType
 from .log_analytics_entity_type_collection import LogAnalyticsEntityTypeCollection
 from .log_analytics_entity_type_summary import LogAnalyticsEntityTypeSummary
@@ -178,6 +188,9 @@ from .log_analytics_pattern_filter import LogAnalyticsPatternFilter
 from .log_analytics_preference import LogAnalyticsPreference
 from .log_analytics_preference_collection import LogAnalyticsPreferenceCollection
 from .log_analytics_preference_details import LogAnalyticsPreferenceDetails
+from .log_analytics_resource_category import LogAnalyticsResourceCategory
+from .log_analytics_resource_category_collection import LogAnalyticsResourceCategoryCollection
+from .log_analytics_resource_category_details import LogAnalyticsResourceCategoryDetails
 from .log_analytics_source import LogAnalyticsSource
 from .log_analytics_source_collection import LogAnalyticsSourceCollection
 from .log_analytics_source_data_filter import LogAnalyticsSourceDataFilter
@@ -305,6 +318,7 @@ from .work_request_log import WorkRequestLog
 from .work_request_log_collection import WorkRequestLogCollection
 from .work_request_resource import WorkRequestResource
 from .work_request_summary import WorkRequestSummary
+from .xml_extract_command_descriptor import XmlExtractCommandDescriptor
 
 # Maps type names to classes for log_analytics services.
 log_analytics_type_mapping = {
@@ -346,6 +360,9 @@ log_analytics_type_mapping = {
     "ColumnNameCollection": ColumnNameCollection,
     "CommandDescriptor": CommandDescriptor,
     "CompareCommandDescriptor": CompareCommandDescriptor,
+    "CompareContentDetails": CompareContentDetails,
+    "CompareContentResult": CompareContentResult,
+    "CompareLineResult": CompareLineResult,
     "CreateAccelerationTaskDetails": CreateAccelerationTaskDetails,
     "CreateLogAnalyticsEmBridgeDetails": CreateLogAnalyticsEmBridgeDetails,
     "CreateLogAnalyticsEntityDetails": CreateLogAnalyticsEntityDetails,
@@ -407,6 +424,7 @@ log_analytics_type_mapping = {
     "HighlightGroupsCommandDescriptor": HighlightGroupsCommandDescriptor,
     "HighlightRowsCommandDescriptor": HighlightRowsCommandDescriptor,
     "Indexes": Indexes,
+    "JsonExtractCommandDescriptor": JsonExtractCommandDescriptor,
     "LabelNames": LabelNames,
     "LabelPriority": LabelPriority,
     "LabelPriorityCollection": LabelPriorityCollection,
@@ -422,6 +440,8 @@ log_analytics_type_mapping = {
     "LogAnalyticsAssociationCollection": LogAnalyticsAssociationCollection,
     "LogAnalyticsAssociationParameter": LogAnalyticsAssociationParameter,
     "LogAnalyticsAssociationParameterCollection": LogAnalyticsAssociationParameterCollection,
+    "LogAnalyticsCategory": LogAnalyticsCategory,
+    "LogAnalyticsCategoryCollection": LogAnalyticsCategoryCollection,
     "LogAnalyticsConfigWorkRequest": LogAnalyticsConfigWorkRequest,
     "LogAnalyticsConfigWorkRequestCollection": LogAnalyticsConfigWorkRequestCollection,
     "LogAnalyticsConfigWorkRequestPayload": LogAnalyticsConfigWorkRequestPayload,
@@ -434,6 +454,10 @@ log_analytics_type_mapping = {
     "LogAnalyticsEntityCollection": LogAnalyticsEntityCollection,
     "LogAnalyticsEntitySummary": LogAnalyticsEntitySummary,
     "LogAnalyticsEntitySummaryReport": LogAnalyticsEntitySummaryReport,
+    "LogAnalyticsEntityTopologyCollection": LogAnalyticsEntityTopologyCollection,
+    "LogAnalyticsEntityTopologyLink": LogAnalyticsEntityTopologyLink,
+    "LogAnalyticsEntityTopologyLinkCollection": LogAnalyticsEntityTopologyLinkCollection,
+    "LogAnalyticsEntityTopologySummary": LogAnalyticsEntityTopologySummary,
     "LogAnalyticsEntityType": LogAnalyticsEntityType,
     "LogAnalyticsEntityTypeCollection": LogAnalyticsEntityTypeCollection,
     "LogAnalyticsEntityTypeSummary": LogAnalyticsEntityTypeSummary,
@@ -482,6 +506,9 @@ log_analytics_type_mapping = {
     "LogAnalyticsPreference": LogAnalyticsPreference,
     "LogAnalyticsPreferenceCollection": LogAnalyticsPreferenceCollection,
     "LogAnalyticsPreferenceDetails": LogAnalyticsPreferenceDetails,
+    "LogAnalyticsResourceCategory": LogAnalyticsResourceCategory,
+    "LogAnalyticsResourceCategoryCollection": LogAnalyticsResourceCategoryCollection,
+    "LogAnalyticsResourceCategoryDetails": LogAnalyticsResourceCategoryDetails,
     "LogAnalyticsSource": LogAnalyticsSource,
     "LogAnalyticsSourceCollection": LogAnalyticsSourceCollection,
     "LogAnalyticsSourceDataFilter": LogAnalyticsSourceDataFilter,
@@ -608,5 +635,6 @@ log_analytics_type_mapping = {
     "WorkRequestLog": WorkRequestLog,
     "WorkRequestLogCollection": WorkRequestLogCollection,
     "WorkRequestResource": WorkRequestResource,
-    "WorkRequestSummary": WorkRequestSummary
+    "WorkRequestSummary": WorkRequestSummary,
+    "XmlExtractCommandDescriptor": XmlExtractCommandDescriptor
 }

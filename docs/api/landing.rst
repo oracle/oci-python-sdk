@@ -18,6 +18,7 @@ API Reference
 * :doc:`Query <apm_traces/client/oci.apm_traces.QueryClient>`
 * :doc:`Trace <apm_traces/client/oci.apm_traces.TraceClient>`
 * :doc:`Application Migration <application_migration/client/oci.application_migration.ApplicationMigrationClient>`
+* :doc:`Appmgmt Control <appmgmt_control/client/oci.appmgmt_control.AppmgmtControlClient>`
 * :doc:`Artifacts <artifacts/client/oci.artifacts.ArtifactsClient>`
 * :doc:`Audit <audit/client/oci.audit.AuditClient>`
 * :doc:`Auto Scaling <autoscaling/client/oci.autoscaling.AutoScalingClient>`
@@ -165,6 +166,7 @@ API Reference
     apm_synthetics
     apm_traces
     application_migration
+    appmgmt_control
     artifacts
     audit
     autoscaling

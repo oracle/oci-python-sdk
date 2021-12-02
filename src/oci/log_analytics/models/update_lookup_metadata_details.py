@@ -34,25 +34,32 @@ class UpdateLookupMetadataDetails(object):
             The value to assign to the max_matches property of this UpdateLookupMetadataDetails.
         :type max_matches: int
 
+        :param categories:
+            The value to assign to the categories property of this UpdateLookupMetadataDetails.
+        :type categories: list[oci.log_analytics.models.LogAnalyticsCategory]
+
         """
         self.swagger_types = {
             'default_match_value': 'str',
             'description': 'str',
             'fields': 'list[LogAnalyticsLookupFields]',
-            'max_matches': 'int'
+            'max_matches': 'int',
+            'categories': 'list[LogAnalyticsCategory]'
         }
 
         self.attribute_map = {
             'default_match_value': 'defaultMatchValue',
             'description': 'description',
             'fields': 'fields',
-            'max_matches': 'maxMatches'
+            'max_matches': 'maxMatches',
+            'categories': 'categories'
         }
 
         self._default_match_value = None
         self._description = None
         self._fields = None
         self._max_matches = None
+        self._categories = None
 
     @property
     def default_match_value(self):
@@ -149,6 +156,32 @@ class UpdateLookupMetadataDetails(object):
         :type: int
         """
         self._max_matches = max_matches
+
+    @property
+    def categories(self):
+        """
+        Gets the categories of this UpdateLookupMetadataDetails.
+        An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice.
+        Oracle-defined category assignments cannot be removed.
+
+
+        :return: The categories of this UpdateLookupMetadataDetails.
+        :rtype: list[oci.log_analytics.models.LogAnalyticsCategory]
+        """
+        return self._categories
+
+    @categories.setter
+    def categories(self, categories):
+        """
+        Sets the categories of this UpdateLookupMetadataDetails.
+        An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice.
+        Oracle-defined category assignments cannot be removed.
+
+
+        :param categories: The categories of this UpdateLookupMetadataDetails.
+        :type: list[oci.log_analytics.models.LogAnalyticsCategory]
+        """
+        self._categories = categories
 
     def __repr__(self):
         return formatted_flat_dict(self)

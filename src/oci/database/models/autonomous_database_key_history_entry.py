@@ -24,6 +24,10 @@ class AutonomousDatabaseKeyHistoryEntry(object):
             The value to assign to the id property of this AutonomousDatabaseKeyHistoryEntry.
         :type id: str
 
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this AutonomousDatabaseKeyHistoryEntry.
+        :type kms_key_version_id: str
+
         :param vault_id:
             The value to assign to the vault_id property of this AutonomousDatabaseKeyHistoryEntry.
         :type vault_id: str
@@ -35,17 +39,20 @@ class AutonomousDatabaseKeyHistoryEntry(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'kms_key_version_id': 'str',
             'vault_id': 'str',
             'time_activated': 'datetime'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'kms_key_version_id': 'kmsKeyVersionId',
             'vault_id': 'vaultId',
             'time_activated': 'timeActivated'
         }
 
         self._id = None
+        self._kms_key_version_id = None
         self._vault_id = None
         self._time_activated = None
 
@@ -76,6 +83,30 @@ class AutonomousDatabaseKeyHistoryEntry(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def kms_key_version_id(self):
+        """
+        Gets the kms_key_version_id of this AutonomousDatabaseKeyHistoryEntry.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :return: The kms_key_version_id of this AutonomousDatabaseKeyHistoryEntry.
+        :rtype: str
+        """
+        return self._kms_key_version_id
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, kms_key_version_id):
+        """
+        Sets the kms_key_version_id of this AutonomousDatabaseKeyHistoryEntry.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :param kms_key_version_id: The kms_key_version_id of this AutonomousDatabaseKeyHistoryEntry.
+        :type: str
+        """
+        self._kms_key_version_id = kms_key_version_id
 
     @property
     def vault_id(self):

@@ -132,3 +132,4 @@
 ^src/oci/usage/.*\.py$
 ^src/oci/database_tools/.*\.py$
 ^src/oci/service_manager_proxy/.*\.py$
+^src/oci/appmgmt_control/.*\.py$
