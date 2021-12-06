@@ -782,7 +782,7 @@ class BaseClient(object):
         response_data = response_data.decode('utf8')
 
         try:
-            json_response = json.loads(response_data)
+            json_response = json.loads(response_data, strict=False)
             # Load everything as JSON and then verify that the object returned
             # is a string (six.text_type) if the response type is a string.
             # This is matches the previous behavior, which happens to strip
