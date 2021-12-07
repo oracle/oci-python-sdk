@@ -154,6 +154,14 @@ class AutonomousContainerDatabase(object):
             The value to assign to the vault_id property of this AutonomousContainerDatabase.
         :type vault_id: str
 
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this AutonomousContainerDatabase.
+        :type kms_key_version_id: str
+
+        :param key_history_entry:
+            The value to assign to the key_history_entry property of this AutonomousContainerDatabase.
+        :type key_history_entry: list[oci.database.models.AutonomousDatabaseKeyHistoryEntry]
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousContainerDatabase.
             Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "BACKUP_IN_PROGRESS", "RESTORING", "RESTORE_FAILED", "RESTARTING", "MAINTENANCE_IN_PROGRESS", "ROLE_CHANGE_IN_PROGRESS", "UNAVAILABLE", 'UNKNOWN_ENUM_VALUE'.
@@ -240,6 +248,8 @@ class AutonomousContainerDatabase(object):
             'infrastructure_type': 'str',
             'kms_key_id': 'str',
             'vault_id': 'str',
+            'kms_key_version_id': 'str',
+            'key_history_entry': 'list[AutonomousDatabaseKeyHistoryEntry]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime',
@@ -270,6 +280,8 @@ class AutonomousContainerDatabase(object):
             'infrastructure_type': 'infrastructureType',
             'kms_key_id': 'kmsKeyId',
             'vault_id': 'vaultId',
+            'kms_key_version_id': 'kmsKeyVersionId',
+            'key_history_entry': 'keyHistoryEntry',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
@@ -299,6 +311,8 @@ class AutonomousContainerDatabase(object):
         self._infrastructure_type = None
         self._kms_key_id = None
         self._vault_id = None
+        self._kms_key_version_id = None
+        self._key_history_entry = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_created = None
@@ -574,6 +588,54 @@ class AutonomousContainerDatabase(object):
         :type: str
         """
         self._vault_id = vault_id
+
+    @property
+    def kms_key_version_id(self):
+        """
+        Gets the kms_key_version_id of this AutonomousContainerDatabase.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :return: The kms_key_version_id of this AutonomousContainerDatabase.
+        :rtype: str
+        """
+        return self._kms_key_version_id
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, kms_key_version_id):
+        """
+        Sets the kms_key_version_id of this AutonomousContainerDatabase.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :param kms_key_version_id: The kms_key_version_id of this AutonomousContainerDatabase.
+        :type: str
+        """
+        self._kms_key_version_id = kms_key_version_id
+
+    @property
+    def key_history_entry(self):
+        """
+        Gets the key_history_entry of this AutonomousContainerDatabase.
+        Key History Entry.
+
+
+        :return: The key_history_entry of this AutonomousContainerDatabase.
+        :rtype: list[oci.database.models.AutonomousDatabaseKeyHistoryEntry]
+        """
+        return self._key_history_entry
+
+    @key_history_entry.setter
+    def key_history_entry(self, key_history_entry):
+        """
+        Sets the key_history_entry of this AutonomousContainerDatabase.
+        Key History Entry.
+
+
+        :param key_history_entry: The key_history_entry of this AutonomousContainerDatabase.
+        :type: list[oci.database.models.AutonomousDatabaseKeyHistoryEntry]
+        """
+        self._key_history_entry = key_history_entry
 
     @property
     def lifecycle_state(self):

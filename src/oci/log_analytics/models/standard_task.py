@@ -63,7 +63,7 @@ class StandardTask(ScheduledTask):
 
         :param pause_reason:
             The value to assign to the pause_reason property of this StandardTask.
-            Allowed values for this property are: "METRIC_EXTRACTION_NOT_VALID", "SAVED_SEARCH_NOT_VALID", "SAVED_SEARCH_NOT_FOUND", "QUERY_STRING_NOT_VALID", "USER_ACTION", "TENANCY_LIFECYCLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "METRIC_EXTRACTION_NOT_VALID", "SAVED_SEARCH_NOT_VALID", "SAVED_SEARCH_NOT_FOUND", "QUERY_STRING_NOT_VALID", "USER_ACTION", "TENANCY_LIFECYCLE", "PURGE_RESOURCE_NOT_FOUND", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type pause_reason: str
 

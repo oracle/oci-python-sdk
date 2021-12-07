@@ -290,6 +290,10 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the kms_key_lifecycle_details property of this AutonomousDatabaseSummary.
         :type kms_key_lifecycle_details: str
 
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this AutonomousDatabaseSummary.
+        :type kms_key_version_id: str
+
         :param db_name:
             The value to assign to the db_name property of this AutonomousDatabaseSummary.
         :type db_name: str
@@ -597,6 +601,7 @@ class AutonomousDatabaseSummary(object):
             'kms_key_id': 'str',
             'vault_id': 'str',
             'kms_key_lifecycle_details': 'str',
+            'kms_key_version_id': 'str',
             'db_name': 'str',
             'is_free_tier': 'bool',
             'system_tags': 'dict(str, dict(str, object))',
@@ -675,6 +680,7 @@ class AutonomousDatabaseSummary(object):
             'kms_key_id': 'kmsKeyId',
             'vault_id': 'vaultId',
             'kms_key_lifecycle_details': 'kmsKeyLifecycleDetails',
+            'kms_key_version_id': 'kmsKeyVersionId',
             'db_name': 'dbName',
             'is_free_tier': 'isFreeTier',
             'system_tags': 'systemTags',
@@ -752,6 +758,7 @@ class AutonomousDatabaseSummary(object):
         self._kms_key_id = None
         self._vault_id = None
         self._kms_key_lifecycle_details = None
+        self._kms_key_version_id = None
         self._db_name = None
         self._is_free_tier = None
         self._system_tags = None
@@ -1008,6 +1015,30 @@ class AutonomousDatabaseSummary(object):
         :type: str
         """
         self._kms_key_lifecycle_details = kms_key_lifecycle_details
+
+    @property
+    def kms_key_version_id(self):
+        """
+        Gets the kms_key_version_id of this AutonomousDatabaseSummary.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :return: The kms_key_version_id of this AutonomousDatabaseSummary.
+        :rtype: str
+        """
+        return self._kms_key_version_id
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, kms_key_version_id):
+        """
+        Sets the kms_key_version_id of this AutonomousDatabaseSummary.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :param kms_key_version_id: The kms_key_version_id of this AutonomousDatabaseSummary.
+        :type: str
+        """
+        self._kms_key_version_id = kms_key_version_id
 
     @property
     def db_name(self):

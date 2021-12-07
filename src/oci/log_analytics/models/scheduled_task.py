@@ -77,6 +77,10 @@ class ScheduledTask(object):
     #: This constant has a value of "TENANCY_LIFECYCLE"
     PAUSE_REASON_TENANCY_LIFECYCLE = "TENANCY_LIFECYCLE"
 
+    #: A constant which can be used with the pause_reason property of a ScheduledTask.
+    #: This constant has a value of "PURGE_RESOURCE_NOT_FOUND"
+    PAUSE_REASON_PURGE_RESOURCE_NOT_FOUND = "PURGE_RESOURCE_NOT_FOUND"
+
     #: A constant which can be used with the lifecycle_state property of a ScheduledTask.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -130,7 +134,7 @@ class ScheduledTask(object):
 
         :param pause_reason:
             The value to assign to the pause_reason property of this ScheduledTask.
-            Allowed values for this property are: "METRIC_EXTRACTION_NOT_VALID", "SAVED_SEARCH_NOT_VALID", "SAVED_SEARCH_NOT_FOUND", "QUERY_STRING_NOT_VALID", "USER_ACTION", "TENANCY_LIFECYCLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "METRIC_EXTRACTION_NOT_VALID", "SAVED_SEARCH_NOT_VALID", "SAVED_SEARCH_NOT_FOUND", "QUERY_STRING_NOT_VALID", "USER_ACTION", "TENANCY_LIFECYCLE", "PURGE_RESOURCE_NOT_FOUND", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type pause_reason: str
 
@@ -442,7 +446,7 @@ class ScheduledTask(object):
         Gets the pause_reason of this ScheduledTask.
         reason for taskStatus PAUSED.
 
-        Allowed values for this property are: "METRIC_EXTRACTION_NOT_VALID", "SAVED_SEARCH_NOT_VALID", "SAVED_SEARCH_NOT_FOUND", "QUERY_STRING_NOT_VALID", "USER_ACTION", "TENANCY_LIFECYCLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "METRIC_EXTRACTION_NOT_VALID", "SAVED_SEARCH_NOT_VALID", "SAVED_SEARCH_NOT_FOUND", "QUERY_STRING_NOT_VALID", "USER_ACTION", "TENANCY_LIFECYCLE", "PURGE_RESOURCE_NOT_FOUND", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -461,7 +465,7 @@ class ScheduledTask(object):
         :param pause_reason: The pause_reason of this ScheduledTask.
         :type: str
         """
-        allowed_values = ["METRIC_EXTRACTION_NOT_VALID", "SAVED_SEARCH_NOT_VALID", "SAVED_SEARCH_NOT_FOUND", "QUERY_STRING_NOT_VALID", "USER_ACTION", "TENANCY_LIFECYCLE"]
+        allowed_values = ["METRIC_EXTRACTION_NOT_VALID", "SAVED_SEARCH_NOT_VALID", "SAVED_SEARCH_NOT_FOUND", "QUERY_STRING_NOT_VALID", "USER_ACTION", "TENANCY_LIFECYCLE", "PURGE_RESOURCE_NOT_FOUND"]
         if not value_allowed_none_or_none_sentinel(pause_reason, allowed_values):
             pause_reason = 'UNKNOWN_ENUM_VALUE'
         self._pause_reason = pause_reason

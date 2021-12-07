@@ -34,6 +34,7 @@ Jms
     oci.jms.models.ManagedInstanceUsage
     oci.jms.models.ManagedInstanceUsageCollection
     oci.jms.models.OperatingSystem
+    oci.jms.models.ResourceInventory
     oci.jms.models.UpdateFleetAgentConfigurationDetails
     oci.jms.models.UpdateFleetDetails
     oci.jms.models.WorkRequest

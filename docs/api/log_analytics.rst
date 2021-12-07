@@ -56,6 +56,9 @@ Log Analytics
     oci.log_analytics.models.ColumnNameCollection
     oci.log_analytics.models.CommandDescriptor
     oci.log_analytics.models.CompareCommandDescriptor
+    oci.log_analytics.models.CompareContentDetails
+    oci.log_analytics.models.CompareContentResult
+    oci.log_analytics.models.CompareLineResult
     oci.log_analytics.models.CreateAccelerationTaskDetails
     oci.log_analytics.models.CreateLogAnalyticsEmBridgeDetails
     oci.log_analytics.models.CreateLogAnalyticsEntityDetails
@@ -117,6 +120,7 @@ Log Analytics
     oci.log_analytics.models.HighlightGroupsCommandDescriptor
     oci.log_analytics.models.HighlightRowsCommandDescriptor
     oci.log_analytics.models.Indexes
+    oci.log_analytics.models.JsonExtractCommandDescriptor
     oci.log_analytics.models.LabelNames
     oci.log_analytics.models.LabelPriority
     oci.log_analytics.models.LabelPriorityCollection
@@ -132,6 +136,8 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsAssociationCollection
     oci.log_analytics.models.LogAnalyticsAssociationParameter
     oci.log_analytics.models.LogAnalyticsAssociationParameterCollection
+    oci.log_analytics.models.LogAnalyticsCategory
+    oci.log_analytics.models.LogAnalyticsCategoryCollection
     oci.log_analytics.models.LogAnalyticsConfigWorkRequest
     oci.log_analytics.models.LogAnalyticsConfigWorkRequestCollection
     oci.log_analytics.models.LogAnalyticsConfigWorkRequestPayload
@@ -144,6 +150,10 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsEntityCollection
     oci.log_analytics.models.LogAnalyticsEntitySummary
     oci.log_analytics.models.LogAnalyticsEntitySummaryReport
+    oci.log_analytics.models.LogAnalyticsEntityTopologyCollection
+    oci.log_analytics.models.LogAnalyticsEntityTopologyLink
+    oci.log_analytics.models.LogAnalyticsEntityTopologyLinkCollection
+    oci.log_analytics.models.LogAnalyticsEntityTopologySummary
     oci.log_analytics.models.LogAnalyticsEntityType
     oci.log_analytics.models.LogAnalyticsEntityTypeCollection
     oci.log_analytics.models.LogAnalyticsEntityTypeSummary
@@ -192,6 +202,9 @@ Log Analytics
     oci.log_analytics.models.LogAnalyticsPreference
     oci.log_analytics.models.LogAnalyticsPreferenceCollection
     oci.log_analytics.models.LogAnalyticsPreferenceDetails
+    oci.log_analytics.models.LogAnalyticsResourceCategory
+    oci.log_analytics.models.LogAnalyticsResourceCategoryCollection
+    oci.log_analytics.models.LogAnalyticsResourceCategoryDetails
     oci.log_analytics.models.LogAnalyticsSource
     oci.log_analytics.models.LogAnalyticsSourceCollection
     oci.log_analytics.models.LogAnalyticsSourceDataFilter
@@ -319,3 +332,4 @@ Log Analytics
     oci.log_analytics.models.WorkRequestLogCollection
     oci.log_analytics.models.WorkRequestResource
     oci.log_analytics.models.WorkRequestSummary
+    oci.log_analytics.models.XmlExtractCommandDescriptor

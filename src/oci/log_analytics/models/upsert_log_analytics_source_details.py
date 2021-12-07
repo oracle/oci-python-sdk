@@ -130,6 +130,10 @@ class UpsertLogAnalyticsSourceDetails(object):
             The value to assign to the user_parsers property of this UpsertLogAnalyticsSourceDetails.
         :type user_parsers: list[oci.log_analytics.models.LogAnalyticsParser]
 
+        :param categories:
+            The value to assign to the categories property of this UpsertLogAnalyticsSourceDetails.
+        :type categories: list[oci.log_analytics.models.LogAnalyticsCategory]
+
         """
         self.swagger_types = {
             'label_conditions': 'list[LogAnalyticsSourceLabelCondition]',
@@ -159,7 +163,8 @@ class UpsertLogAnalyticsSourceDetails(object):
             'label_definitions': 'list[LogAnalyticsLabelDefinition]',
             'entity_types': 'list[LogAnalyticsSourceEntityType]',
             'is_timezone_override': 'bool',
-            'user_parsers': 'list[LogAnalyticsParser]'
+            'user_parsers': 'list[LogAnalyticsParser]',
+            'categories': 'list[LogAnalyticsCategory]'
         }
 
         self.attribute_map = {
@@ -190,7 +195,8 @@ class UpsertLogAnalyticsSourceDetails(object):
             'label_definitions': 'labelDefinitions',
             'entity_types': 'entityTypes',
             'is_timezone_override': 'isTimezoneOverride',
-            'user_parsers': 'userParsers'
+            'user_parsers': 'userParsers',
+            'categories': 'categories'
         }
 
         self._label_conditions = None
@@ -221,6 +227,7 @@ class UpsertLogAnalyticsSourceDetails(object):
         self._entity_types = None
         self._is_timezone_override = None
         self._user_parsers = None
+        self._categories = None
 
     @property
     def label_conditions(self):
@@ -895,6 +902,32 @@ class UpsertLogAnalyticsSourceDetails(object):
         :type: list[oci.log_analytics.models.LogAnalyticsParser]
         """
         self._user_parsers = user_parsers
+
+    @property
+    def categories(self):
+        """
+        Gets the categories of this UpsertLogAnalyticsSourceDetails.
+        An array of categories to assign to the source. Specifying the name attribute for each category would suffice.
+        Oracle-defined category assignments cannot be removed.
+
+
+        :return: The categories of this UpsertLogAnalyticsSourceDetails.
+        :rtype: list[oci.log_analytics.models.LogAnalyticsCategory]
+        """
+        return self._categories
+
+    @categories.setter
+    def categories(self, categories):
+        """
+        Sets the categories of this UpsertLogAnalyticsSourceDetails.
+        An array of categories to assign to the source. Specifying the name attribute for each category would suffice.
+        Oracle-defined category assignments cannot be removed.
+
+
+        :param categories: The categories of this UpsertLogAnalyticsSourceDetails.
+        :type: list[oci.log_analytics.models.LogAnalyticsCategory]
+        """
+        self._categories = categories
 
     def __repr__(self):
         return formatted_flat_dict(self)

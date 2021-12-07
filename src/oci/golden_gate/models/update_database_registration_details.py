@@ -13,6 +13,14 @@ class UpdateDatabaseRegistrationDetails(object):
     The information to update for a DatabaseRegistration.
     """
 
+    #: A constant which can be used with the session_mode property of a UpdateDatabaseRegistrationDetails.
+    #: This constant has a value of "DIRECT"
+    SESSION_MODE_DIRECT = "DIRECT"
+
+    #: A constant which can be used with the session_mode property of a UpdateDatabaseRegistrationDetails.
+    #: This constant has a value of "REDIRECT"
+    SESSION_MODE_REDIRECT = "REDIRECT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDatabaseRegistrationDetails object with values from keyword arguments.
@@ -50,6 +58,11 @@ class UpdateDatabaseRegistrationDetails(object):
             The value to assign to the connection_string property of this UpdateDatabaseRegistrationDetails.
         :type connection_string: str
 
+        :param session_mode:
+            The value to assign to the session_mode property of this UpdateDatabaseRegistrationDetails.
+            Allowed values for this property are: "DIRECT", "REDIRECT"
+        :type session_mode: str
+
         :param wallet:
             The value to assign to the wallet property of this UpdateDatabaseRegistrationDetails.
         :type wallet: str
@@ -68,6 +81,7 @@ class UpdateDatabaseRegistrationDetails(object):
             'username': 'str',
             'password': 'str',
             'connection_string': 'str',
+            'session_mode': 'str',
             'wallet': 'str',
             'alias_name': 'str'
         }
@@ -81,6 +95,7 @@ class UpdateDatabaseRegistrationDetails(object):
             'username': 'username',
             'password': 'password',
             'connection_string': 'connectionString',
+            'session_mode': 'sessionMode',
             'wallet': 'wallet',
             'alias_name': 'aliasName'
         }
@@ -93,6 +108,7 @@ class UpdateDatabaseRegistrationDetails(object):
         self._username = None
         self._password = None
         self._connection_string = None
+        self._session_mode = None
         self._wallet = None
         self._alias_name = None
 
@@ -291,6 +307,38 @@ class UpdateDatabaseRegistrationDetails(object):
         :type: str
         """
         self._connection_string = connection_string
+
+    @property
+    def session_mode(self):
+        """
+        Gets the session_mode of this UpdateDatabaseRegistrationDetails.
+        The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+
+        Allowed values for this property are: "DIRECT", "REDIRECT"
+
+
+        :return: The session_mode of this UpdateDatabaseRegistrationDetails.
+        :rtype: str
+        """
+        return self._session_mode
+
+    @session_mode.setter
+    def session_mode(self, session_mode):
+        """
+        Sets the session_mode of this UpdateDatabaseRegistrationDetails.
+        The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+
+
+        :param session_mode: The session_mode of this UpdateDatabaseRegistrationDetails.
+        :type: str
+        """
+        allowed_values = ["DIRECT", "REDIRECT"]
+        if not value_allowed_none_or_none_sentinel(session_mode, allowed_values):
+            raise ValueError(
+                "Invalid value for `session_mode`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._session_mode = session_mode
 
     @property
     def wallet(self):
