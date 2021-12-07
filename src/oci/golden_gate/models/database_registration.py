@@ -61,6 +61,14 @@ class DatabaseRegistration(object):
     #: This constant has a value of "SUCCEEDED"
     LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
 
+    #: A constant which can be used with the session_mode property of a DatabaseRegistration.
+    #: This constant has a value of "DIRECT"
+    SESSION_MODE_DIRECT = "DIRECT"
+
+    #: A constant which can be used with the session_mode property of a DatabaseRegistration.
+    #: This constant has a value of "REDIRECT"
+    SESSION_MODE_REDIRECT = "REDIRECT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseRegistration object with values from keyword arguments.
@@ -140,6 +148,12 @@ class DatabaseRegistration(object):
             The value to assign to the connection_string property of this DatabaseRegistration.
         :type connection_string: str
 
+        :param session_mode:
+            The value to assign to the session_mode property of this DatabaseRegistration.
+            Allowed values for this property are: "DIRECT", "REDIRECT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type session_mode: str
+
         :param alias_name:
             The value to assign to the alias_name property of this DatabaseRegistration.
         :type alias_name: str
@@ -180,6 +194,7 @@ class DatabaseRegistration(object):
             'system_tags': 'dict(str, dict(str, object))',
             'username': 'str',
             'connection_string': 'str',
+            'session_mode': 'str',
             'alias_name': 'str',
             'vault_id': 'str',
             'key_id': 'str',
@@ -206,6 +221,7 @@ class DatabaseRegistration(object):
             'system_tags': 'systemTags',
             'username': 'username',
             'connection_string': 'connectionString',
+            'session_mode': 'sessionMode',
             'alias_name': 'aliasName',
             'vault_id': 'vaultId',
             'key_id': 'keyId',
@@ -231,6 +247,7 @@ class DatabaseRegistration(object):
         self._system_tags = None
         self._username = None
         self._connection_string = None
+        self._session_mode = None
         self._alias_name = None
         self._vault_id = None
         self._key_id = None
@@ -708,6 +725,36 @@ class DatabaseRegistration(object):
         :type: str
         """
         self._connection_string = connection_string
+
+    @property
+    def session_mode(self):
+        """
+        Gets the session_mode of this DatabaseRegistration.
+        The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+
+        Allowed values for this property are: "DIRECT", "REDIRECT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The session_mode of this DatabaseRegistration.
+        :rtype: str
+        """
+        return self._session_mode
+
+    @session_mode.setter
+    def session_mode(self, session_mode):
+        """
+        Sets the session_mode of this DatabaseRegistration.
+        The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+
+
+        :param session_mode: The session_mode of this DatabaseRegistration.
+        :type: str
+        """
+        allowed_values = ["DIRECT", "REDIRECT"]
+        if not value_allowed_none_or_none_sentinel(session_mode, allowed_values):
+            session_mode = 'UNKNOWN_ENUM_VALUE'
+        self._session_mode = session_mode
 
     @property
     def alias_name(self):

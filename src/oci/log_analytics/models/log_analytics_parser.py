@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LogAnalyticsParser(object):
     """
-    LoganParserDetails
+    LogAnalyticsParser
     """
 
     #: A constant which can be used with the type property of a LogAnalyticsParser.
@@ -168,6 +168,10 @@ class LogAnalyticsParser(object):
             The value to assign to the is_namespace_aware property of this LogAnalyticsParser.
         :type is_namespace_aware: bool
 
+        :param categories:
+            The value to assign to the categories property of this LogAnalyticsParser.
+        :type categories: list[oci.log_analytics.models.LogAnalyticsCategory]
+
         """
         self.swagger_types = {
             'content': 'str',
@@ -201,7 +205,8 @@ class LogAnalyticsParser(object):
             'field_qualifier': 'str',
             'type': 'str',
             'is_user_deleted': 'bool',
-            'is_namespace_aware': 'bool'
+            'is_namespace_aware': 'bool',
+            'categories': 'list[LogAnalyticsCategory]'
         }
 
         self.attribute_map = {
@@ -236,7 +241,8 @@ class LogAnalyticsParser(object):
             'field_qualifier': 'fieldQualifier',
             'type': 'type',
             'is_user_deleted': 'isUserDeleted',
-            'is_namespace_aware': 'isNamespaceAware'
+            'is_namespace_aware': 'isNamespaceAware',
+            'categories': 'categories'
         }
 
         self._content = None
@@ -271,6 +277,7 @@ class LogAnalyticsParser(object):
         self._type = None
         self._is_user_deleted = None
         self._is_namespace_aware = None
+        self._categories = None
 
     @property
     def content(self):
@@ -1043,6 +1050,32 @@ class LogAnalyticsParser(object):
         :type: bool
         """
         self._is_namespace_aware = is_namespace_aware
+
+    @property
+    def categories(self):
+        """
+        Gets the categories of this LogAnalyticsParser.
+        An array of categories assigned to this parser.
+        The isSystem flag denotes if each category assignment is user-created or Oracle-defined.
+
+
+        :return: The categories of this LogAnalyticsParser.
+        :rtype: list[oci.log_analytics.models.LogAnalyticsCategory]
+        """
+        return self._categories
+
+    @categories.setter
+    def categories(self, categories):
+        """
+        Sets the categories of this LogAnalyticsParser.
+        An array of categories assigned to this parser.
+        The isSystem flag denotes if each category assignment is user-created or Oracle-defined.
+
+
+        :param categories: The categories of this LogAnalyticsParser.
+        :type: list[oci.log_analytics.models.LogAnalyticsCategory]
+        """
+        self._categories = categories
 
     def __repr__(self):
         return formatted_flat_dict(self)

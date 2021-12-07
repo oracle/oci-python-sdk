@@ -139,6 +139,10 @@ class UpsertLogAnalyticsParserDetails(object):
             The value to assign to the is_namespace_aware property of this UpsertLogAnalyticsParserDetails.
         :type is_namespace_aware: bool
 
+        :param categories:
+            The value to assign to the categories property of this UpsertLogAnalyticsParserDetails.
+        :type categories: list[oci.log_analytics.models.LogAnalyticsCategory]
+
         """
         self.swagger_types = {
             'content': 'str',
@@ -165,7 +169,8 @@ class UpsertLogAnalyticsParserDetails(object):
             'field_delimiter': 'str',
             'field_qualifier': 'str',
             'type': 'str',
-            'is_namespace_aware': 'bool'
+            'is_namespace_aware': 'bool',
+            'categories': 'list[LogAnalyticsCategory]'
         }
 
         self.attribute_map = {
@@ -193,7 +198,8 @@ class UpsertLogAnalyticsParserDetails(object):
             'field_delimiter': 'fieldDelimiter',
             'field_qualifier': 'fieldQualifier',
             'type': 'type',
-            'is_namespace_aware': 'isNamespaceAware'
+            'is_namespace_aware': 'isNamespaceAware',
+            'categories': 'categories'
         }
 
         self._content = None
@@ -221,6 +227,7 @@ class UpsertLogAnalyticsParserDetails(object):
         self._field_qualifier = None
         self._type = None
         self._is_namespace_aware = None
+        self._categories = None
 
     @property
     def content(self):
@@ -831,6 +838,32 @@ class UpsertLogAnalyticsParserDetails(object):
         :type: bool
         """
         self._is_namespace_aware = is_namespace_aware
+
+    @property
+    def categories(self):
+        """
+        Gets the categories of this UpsertLogAnalyticsParserDetails.
+        An array of categories to assign to the parser. Specifying the name attribute for each category would suffice.
+        Oracle-defined category assignments cannot be removed.
+
+
+        :return: The categories of this UpsertLogAnalyticsParserDetails.
+        :rtype: list[oci.log_analytics.models.LogAnalyticsCategory]
+        """
+        return self._categories
+
+    @categories.setter
+    def categories(self, categories):
+        """
+        Sets the categories of this UpsertLogAnalyticsParserDetails.
+        An array of categories to assign to the parser. Specifying the name attribute for each category would suffice.
+        Oracle-defined category assignments cannot be removed.
+
+
+        :param categories: The categories of this UpsertLogAnalyticsParserDetails.
+        :type: list[oci.log_analytics.models.LogAnalyticsCategory]
+        """
+        self._categories = categories
 
     def __repr__(self):
         return formatted_flat_dict(self)

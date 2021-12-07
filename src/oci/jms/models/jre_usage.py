@@ -13,10 +13,52 @@ class JreUsage(object):
     Java Runtime usage during a specified time period. A Java Runtime is identified by its vendor and version.
     """
 
+    #: A constant which can be used with the security_status property of a JreUsage.
+    #: This constant has a value of "UNKNOWN"
+    SECURITY_STATUS_UNKNOWN = "UNKNOWN"
+
+    #: A constant which can be used with the security_status property of a JreUsage.
+    #: This constant has a value of "UP_TO_DATE"
+    SECURITY_STATUS_UP_TO_DATE = "UP_TO_DATE"
+
+    #: A constant which can be used with the security_status property of a JreUsage.
+    #: This constant has a value of "UPDATE_REQUIRED"
+    SECURITY_STATUS_UPDATE_REQUIRED = "UPDATE_REQUIRED"
+
+    #: A constant which can be used with the security_status property of a JreUsage.
+    #: This constant has a value of "UPGRADE_REQUIRED"
+    SECURITY_STATUS_UPGRADE_REQUIRED = "UPGRADE_REQUIRED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new JreUsage object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param id:
+            The value to assign to the id property of this JreUsage.
+        :type id: str
+
+        :param fleet_id:
+            The value to assign to the fleet_id property of this JreUsage.
+        :type fleet_id: str
+
+        :param managed_instance_id:
+            The value to assign to the managed_instance_id property of this JreUsage.
+        :type managed_instance_id: str
+
+        :param security_status:
+            The value to assign to the security_status property of this JreUsage.
+            Allowed values for this property are: "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type security_status: str
+
+        :param release_date:
+            The value to assign to the release_date property of this JreUsage.
+        :type release_date: datetime
+
+        :param end_of_support_life_date:
+            The value to assign to the end_of_support_life_date property of this JreUsage.
+        :type end_of_support_life_date: datetime
 
         :param vendor:
             The value to assign to the vendor property of this JreUsage.
@@ -64,6 +106,12 @@ class JreUsage(object):
 
         """
         self.swagger_types = {
+            'id': 'str',
+            'fleet_id': 'str',
+            'managed_instance_id': 'str',
+            'security_status': 'str',
+            'release_date': 'datetime',
+            'end_of_support_life_date': 'datetime',
             'vendor': 'str',
             'distribution': 'str',
             'version': 'str',
@@ -78,6 +126,12 @@ class JreUsage(object):
         }
 
         self.attribute_map = {
+            'id': 'id',
+            'fleet_id': 'fleetId',
+            'managed_instance_id': 'managedInstanceId',
+            'security_status': 'securityStatus',
+            'release_date': 'releaseDate',
+            'end_of_support_life_date': 'endOfSupportLifeDate',
             'vendor': 'vendor',
             'distribution': 'distribution',
             'version': 'version',
@@ -91,6 +145,12 @@ class JreUsage(object):
             'time_last_seen': 'timeLastSeen'
         }
 
+        self._id = None
+        self._fleet_id = None
+        self._managed_instance_id = None
+        self._security_status = None
+        self._release_date = None
+        self._end_of_support_life_date = None
         self._vendor = None
         self._distribution = None
         self._version = None
@@ -102,6 +162,172 @@ class JreUsage(object):
         self._time_end = None
         self._time_first_seen = None
         self._time_last_seen = None
+
+    @property
+    def id(self):
+        """
+        Gets the id of this JreUsage.
+        The internal identifier of the Java Runtime.
+
+
+        :return: The id of this JreUsage.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this JreUsage.
+        The internal identifier of the Java Runtime.
+
+
+        :param id: The id of this JreUsage.
+        :type: str
+        """
+        self._id = id
+
+    @property
+    def fleet_id(self):
+        """
+        Gets the fleet_id of this JreUsage.
+        The `OCID`__ of the related fleet.  This property value is present only for /actions/listJreUsage.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The fleet_id of this JreUsage.
+        :rtype: str
+        """
+        return self._fleet_id
+
+    @fleet_id.setter
+    def fleet_id(self, fleet_id):
+        """
+        Sets the fleet_id of this JreUsage.
+        The `OCID`__ of the related fleet.  This property value is present only for /actions/listJreUsage.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param fleet_id: The fleet_id of this JreUsage.
+        :type: str
+        """
+        self._fleet_id = fleet_id
+
+    @property
+    def managed_instance_id(self):
+        """
+        Gets the managed_instance_id of this JreUsage.
+        The `OCID`__ of the related managed instance. This property value is present only for /actions/listJreUsage.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The managed_instance_id of this JreUsage.
+        :rtype: str
+        """
+        return self._managed_instance_id
+
+    @managed_instance_id.setter
+    def managed_instance_id(self, managed_instance_id):
+        """
+        Sets the managed_instance_id of this JreUsage.
+        The `OCID`__ of the related managed instance. This property value is present only for /actions/listJreUsage.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param managed_instance_id: The managed_instance_id of this JreUsage.
+        :type: str
+        """
+        self._managed_instance_id = managed_instance_id
+
+    @property
+    def security_status(self):
+        """
+        Gets the security_status of this JreUsage.
+        The security status of the Java Runtime.
+
+        Allowed values for this property are: "UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The security_status of this JreUsage.
+        :rtype: str
+        """
+        return self._security_status
+
+    @security_status.setter
+    def security_status(self, security_status):
+        """
+        Sets the security_status of this JreUsage.
+        The security status of the Java Runtime.
+
+
+        :param security_status: The security_status of this JreUsage.
+        :type: str
+        """
+        allowed_values = ["UNKNOWN", "UP_TO_DATE", "UPDATE_REQUIRED", "UPGRADE_REQUIRED"]
+        if not value_allowed_none_or_none_sentinel(security_status, allowed_values):
+            security_status = 'UNKNOWN_ENUM_VALUE'
+        self._security_status = security_status
+
+    @property
+    def release_date(self):
+        """
+        Gets the release_date of this JreUsage.
+        The release date of the Java Runtime (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
+
+
+        :return: The release_date of this JreUsage.
+        :rtype: datetime
+        """
+        return self._release_date
+
+    @release_date.setter
+    def release_date(self, release_date):
+        """
+        Sets the release_date of this JreUsage.
+        The release date of the Java Runtime (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
+
+
+        :param release_date: The release_date of this JreUsage.
+        :type: datetime
+        """
+        self._release_date = release_date
+
+    @property
+    def end_of_support_life_date(self):
+        """
+        Gets the end_of_support_life_date of this JreUsage.
+        The End of Support Life (EOSL) date of the Java Runtime (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
+
+
+        :return: The end_of_support_life_date of this JreUsage.
+        :rtype: datetime
+        """
+        return self._end_of_support_life_date
+
+    @end_of_support_life_date.setter
+    def end_of_support_life_date(self, end_of_support_life_date):
+        """
+        Sets the end_of_support_life_date of this JreUsage.
+        The End of Support Life (EOSL) date of the Java Runtime (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
+
+
+        :param end_of_support_life_date: The end_of_support_life_date of this JreUsage.
+        :type: datetime
+        """
+        self._end_of_support_life_date = end_of_support_life_date
 
     @property
     def vendor(self):

@@ -114,6 +114,10 @@ class AutonomousDatabaseBackup(object):
             The value to assign to the vault_id property of this AutonomousDatabaseBackup.
         :type vault_id: str
 
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this AutonomousDatabaseBackup.
+        :type kms_key_version_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -131,7 +135,8 @@ class AutonomousDatabaseBackup(object):
             'key_store_id': 'str',
             'key_store_wallet_name': 'str',
             'kms_key_id': 'str',
-            'vault_id': 'str'
+            'vault_id': 'str',
+            'kms_key_version_id': 'str'
         }
 
         self.attribute_map = {
@@ -150,7 +155,8 @@ class AutonomousDatabaseBackup(object):
             'key_store_id': 'keyStoreId',
             'key_store_wallet_name': 'keyStoreWalletName',
             'kms_key_id': 'kmsKeyId',
-            'vault_id': 'vaultId'
+            'vault_id': 'vaultId',
+            'kms_key_version_id': 'kmsKeyVersionId'
         }
 
         self._id = None
@@ -169,6 +175,7 @@ class AutonomousDatabaseBackup(object):
         self._key_store_wallet_name = None
         self._kms_key_id = None
         self._vault_id = None
+        self._kms_key_version_id = None
 
     @property
     def id(self):
@@ -587,6 +594,30 @@ class AutonomousDatabaseBackup(object):
         :type: str
         """
         self._vault_id = vault_id
+
+    @property
+    def kms_key_version_id(self):
+        """
+        Gets the kms_key_version_id of this AutonomousDatabaseBackup.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :return: The kms_key_version_id of this AutonomousDatabaseBackup.
+        :rtype: str
+        """
+        return self._kms_key_version_id
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, kms_key_version_id):
+        """
+        Sets the kms_key_version_id of this AutonomousDatabaseBackup.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :param kms_key_version_id: The kms_key_version_id of this AutonomousDatabaseBackup.
+        :type: str
+        """
+        self._kms_key_version_id = kms_key_version_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -162,6 +162,10 @@ class LogAnalyticsSource(object):
             The value to assign to the event_types property of this LogAnalyticsSource.
         :type event_types: list[oci.log_analytics.models.EventType]
 
+        :param categories:
+            The value to assign to the categories property of this LogAnalyticsSource.
+        :type categories: list[oci.log_analytics.models.LogAnalyticsCategory]
+
         """
         self.swagger_types = {
             'label_conditions': 'list[LogAnalyticsSourceLabelCondition]',
@@ -199,7 +203,8 @@ class LogAnalyticsSource(object):
             'is_timezone_override': 'bool',
             'user_parsers': 'list[LogAnalyticsParser]',
             'time_updated': 'datetime',
-            'event_types': 'list[EventType]'
+            'event_types': 'list[EventType]',
+            'categories': 'list[LogAnalyticsCategory]'
         }
 
         self.attribute_map = {
@@ -238,7 +243,8 @@ class LogAnalyticsSource(object):
             'is_timezone_override': 'isTimezoneOverride',
             'user_parsers': 'userParsers',
             'time_updated': 'timeUpdated',
-            'event_types': 'eventTypes'
+            'event_types': 'eventTypes',
+            'categories': 'categories'
         }
 
         self._label_conditions = None
@@ -277,6 +283,7 @@ class LogAnalyticsSource(object):
         self._user_parsers = None
         self._time_updated = None
         self._event_types = None
+        self._categories = None
 
     @property
     def label_conditions(self):
@@ -1143,6 +1150,32 @@ class LogAnalyticsSource(object):
         :type: list[oci.log_analytics.models.EventType]
         """
         self._event_types = event_types
+
+    @property
+    def categories(self):
+        """
+        Gets the categories of this LogAnalyticsSource.
+        An array of categories assigned to this source.
+        The isSystem flag denotes if each category assignment is user-created or Oracle-defined.
+
+
+        :return: The categories of this LogAnalyticsSource.
+        :rtype: list[oci.log_analytics.models.LogAnalyticsCategory]
+        """
+        return self._categories
+
+    @categories.setter
+    def categories(self, categories):
+        """
+        Sets the categories of this LogAnalyticsSource.
+        An array of categories assigned to this source.
+        The isSystem flag denotes if each category assignment is user-created or Oracle-defined.
+
+
+        :param categories: The categories of this LogAnalyticsSource.
+        :type: list[oci.log_analytics.models.LogAnalyticsCategory]
+        """
+        self._categories = categories
 
     def __repr__(self):
         return formatted_flat_dict(self)

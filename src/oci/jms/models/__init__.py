@@ -20,6 +20,7 @@ from .jre_usage_collection import JreUsageCollection
 from .managed_instance_usage import ManagedInstanceUsage
 from .managed_instance_usage_collection import ManagedInstanceUsageCollection
 from .operating_system import OperatingSystem
+from .resource_inventory import ResourceInventory
 from .update_fleet_agent_configuration_details import UpdateFleetAgentConfigurationDetails
 from .update_fleet_details import UpdateFleetDetails
 from .work_request import WorkRequest
@@ -48,6 +49,7 @@ jms_type_mapping = {
     "ManagedInstanceUsage": ManagedInstanceUsage,
     "ManagedInstanceUsageCollection": ManagedInstanceUsageCollection,
     "OperatingSystem": OperatingSystem,
+    "ResourceInventory": ResourceInventory,
     "UpdateFleetAgentConfigurationDetails": UpdateFleetAgentConfigurationDetails,
     "UpdateFleetDetails": UpdateFleetDetails,
     "WorkRequest": WorkRequest,
