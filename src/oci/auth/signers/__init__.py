@@ -6,5 +6,7 @@ from .security_token_signer import SecurityTokenSigner, X509FederationClientBase
 from .instance_principals_security_token_signer import InstancePrincipalsSecurityTokenSigner  # noqa: F401
 from .instance_principals_delegation_token_signer import InstancePrincipalsDelegationTokenSigner  # noqa: F401
 from .resource_principals_federation_signer import ResourcePrincipalsFederationSigner  # noqa: F401
+from .resource_principals_delegation_token_signer import ResourcePrincipalsDelegationTokenSigner  # noqa: F401
 from .ephemeral_resource_principals_signer import EphemeralResourcePrincipalSigner  # noqa: F401
-from .resource_principals_signer import get_resource_principals_signer  # noqa: F401
+from .ephemeral_resource_principals_delegation_token_signer import EphemeralResourcePrincipalsDelegationTokenSigner  # noqa: F401
+from .resource_principals_signer import get_resource_principals_signer, get_resource_principal_delegation_token_signer  # noqa: F401
