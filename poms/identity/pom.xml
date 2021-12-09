@@ -135,7 +135,7 @@
       <dependency>
         <groupId>com.oracle.pic.identity</groupId>
         <artifactId>identity-control-plane-api-spec</artifactId>
-        <version>0.4.241</version>
+        <version>0.4.243</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

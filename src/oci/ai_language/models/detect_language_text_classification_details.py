@@ -37,7 +37,7 @@ class DetectLanguageTextClassificationDetails(object):
     def text(self):
         """
         **[Required]** Gets the text of this DetectLanguageTextClassificationDetails.
-        Document text for detect text labels.
+        Document text for detect text classes.
 
 
         :return: The text of this DetectLanguageTextClassificationDetails.
@@ -49,7 +49,7 @@ class DetectLanguageTextClassificationDetails(object):
     def text(self, text):
         """
         Sets the text of this DetectLanguageTextClassificationDetails.
-        Document text for detect text labels.
+        Document text for detect text classes.
 
 
         :param text: The text of this DetectLanguageTextClassificationDetails.

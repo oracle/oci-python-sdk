@@ -148,6 +148,10 @@ class CloudVmCluster(object):
             The value to assign to the cpu_core_count property of this CloudVmCluster.
         :type cpu_core_count: int
 
+        :param ocpu_count:
+            The value to assign to the ocpu_count property of this CloudVmCluster.
+        :type ocpu_count: float
+
         :param cluster_name:
             The value to assign to the cluster_name property of this CloudVmCluster.
         :type cluster_name: str
@@ -251,6 +255,7 @@ class CloudVmCluster(object):
             'hostname': 'str',
             'domain': 'str',
             'cpu_core_count': 'int',
+            'ocpu_count': 'float',
             'cluster_name': 'str',
             'data_storage_percentage': 'int',
             'is_local_backup_enabled': 'bool',
@@ -294,6 +299,7 @@ class CloudVmCluster(object):
             'hostname': 'hostname',
             'domain': 'domain',
             'cpu_core_count': 'cpuCoreCount',
+            'ocpu_count': 'ocpuCount',
             'cluster_name': 'clusterName',
             'data_storage_percentage': 'dataStoragePercentage',
             'is_local_backup_enabled': 'isLocalBackupEnabled',
@@ -336,6 +342,7 @@ class CloudVmCluster(object):
         self._hostname = None
         self._domain = None
         self._cpu_core_count = None
+        self._ocpu_count = None
         self._cluster_name = None
         self._data_storage_percentage = None
         self._is_local_backup_enabled = None
@@ -919,6 +926,30 @@ class CloudVmCluster(object):
         :type: int
         """
         self._cpu_core_count = cpu_core_count
+
+    @property
+    def ocpu_count(self):
+        """
+        Gets the ocpu_count of this CloudVmCluster.
+        The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+
+
+        :return: The ocpu_count of this CloudVmCluster.
+        :rtype: float
+        """
+        return self._ocpu_count
+
+    @ocpu_count.setter
+    def ocpu_count(self, ocpu_count):
+        """
+        Sets the ocpu_count of this CloudVmCluster.
+        The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+
+
+        :param ocpu_count: The ocpu_count of this CloudVmCluster.
+        :type: float
+        """
+        self._ocpu_count = ocpu_count
 
     @property
     def cluster_name(self):

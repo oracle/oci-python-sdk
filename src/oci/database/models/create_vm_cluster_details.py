@@ -43,6 +43,10 @@ class CreateVmClusterDetails(object):
             The value to assign to the cpu_core_count property of this CreateVmClusterDetails.
         :type cpu_core_count: int
 
+        :param ocpu_count:
+            The value to assign to the ocpu_count property of this CreateVmClusterDetails.
+        :type ocpu_count: float
+
         :param memory_size_in_gbs:
             The value to assign to the memory_size_in_gbs property of this CreateVmClusterDetails.
         :type memory_size_in_gbs: int
@@ -54,6 +58,10 @@ class CreateVmClusterDetails(object):
         :param data_storage_size_in_tbs:
             The value to assign to the data_storage_size_in_tbs property of this CreateVmClusterDetails.
         :type data_storage_size_in_tbs: float
+
+        :param data_storage_size_in_gbs:
+            The value to assign to the data_storage_size_in_gbs property of this CreateVmClusterDetails.
+        :type data_storage_size_in_gbs: float
 
         :param ssh_public_keys:
             The value to assign to the ssh_public_keys property of this CreateVmClusterDetails.
@@ -102,9 +110,11 @@ class CreateVmClusterDetails(object):
             'display_name': 'str',
             'exadata_infrastructure_id': 'str',
             'cpu_core_count': 'int',
+            'ocpu_count': 'float',
             'memory_size_in_gbs': 'int',
             'db_node_storage_size_in_gbs': 'int',
             'data_storage_size_in_tbs': 'float',
+            'data_storage_size_in_gbs': 'float',
             'ssh_public_keys': 'list[str]',
             'vm_cluster_network_id': 'str',
             'license_model': 'str',
@@ -122,9 +132,11 @@ class CreateVmClusterDetails(object):
             'display_name': 'displayName',
             'exadata_infrastructure_id': 'exadataInfrastructureId',
             'cpu_core_count': 'cpuCoreCount',
+            'ocpu_count': 'ocpuCount',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'ssh_public_keys': 'sshPublicKeys',
             'vm_cluster_network_id': 'vmClusterNetworkId',
             'license_model': 'licenseModel',
@@ -141,9 +153,11 @@ class CreateVmClusterDetails(object):
         self._display_name = None
         self._exadata_infrastructure_id = None
         self._cpu_core_count = None
+        self._ocpu_count = None
         self._memory_size_in_gbs = None
         self._db_node_storage_size_in_gbs = None
         self._data_storage_size_in_tbs = None
+        self._data_storage_size_in_gbs = None
         self._ssh_public_keys = None
         self._vm_cluster_network_id = None
         self._license_model = None
@@ -260,6 +274,30 @@ class CreateVmClusterDetails(object):
         self._cpu_core_count = cpu_core_count
 
     @property
+    def ocpu_count(self):
+        """
+        Gets the ocpu_count of this CreateVmClusterDetails.
+        The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for the fractional part.
+
+
+        :return: The ocpu_count of this CreateVmClusterDetails.
+        :rtype: float
+        """
+        return self._ocpu_count
+
+    @ocpu_count.setter
+    def ocpu_count(self, ocpu_count):
+        """
+        Sets the ocpu_count of this CreateVmClusterDetails.
+        The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for the fractional part.
+
+
+        :param ocpu_count: The ocpu_count of this CreateVmClusterDetails.
+        :type: float
+        """
+        self._ocpu_count = ocpu_count
+
+    @property
     def memory_size_in_gbs(self):
         """
         Gets the memory_size_in_gbs of this CreateVmClusterDetails.
@@ -330,6 +368,30 @@ class CreateVmClusterDetails(object):
         :type: float
         """
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
+
+    @property
+    def data_storage_size_in_gbs(self):
+        """
+        Gets the data_storage_size_in_gbs of this CreateVmClusterDetails.
+        The data disk group size to be allocated in GBs.
+
+
+        :return: The data_storage_size_in_gbs of this CreateVmClusterDetails.
+        :rtype: float
+        """
+        return self._data_storage_size_in_gbs
+
+    @data_storage_size_in_gbs.setter
+    def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
+        """
+        Sets the data_storage_size_in_gbs of this CreateVmClusterDetails.
+        The data disk group size to be allocated in GBs.
+
+
+        :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this CreateVmClusterDetails.
+        :type: float
+        """
+        self._data_storage_size_in_gbs = data_storage_size_in_gbs
 
     @property
     def ssh_public_keys(self):

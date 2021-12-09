@@ -58,12 +58,15 @@ Database
     oci.database.models.BackupDestinationSummary
     oci.database.models.BackupSummary
     oci.database.models.ChangeAutonomousVmClusterCompartmentDetails
+    oci.database.models.ChangeCloudAutonomousVmClusterCompartmentDetails
     oci.database.models.ChangeCloudExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeCloudVmClusterCompartmentDetails
     oci.database.models.ChangeCompartmentDetails
     oci.database.models.ChangeExadataInfrastructureCompartmentDetails
     oci.database.models.ChangeKeyStoreCompartmentDetails
     oci.database.models.ChangeVmClusterCompartmentDetails
+    oci.database.models.CloudAutonomousVmCluster
+    oci.database.models.CloudAutonomousVmClusterSummary
     oci.database.models.CloudDatabaseManagementConfig
     oci.database.models.CloudExadataInfrastructure
     oci.database.models.CloudExadataInfrastructureSummary
@@ -85,6 +88,7 @@ Database
     oci.database.models.CreateAutonomousVmClusterDetails
     oci.database.models.CreateBackupDestinationDetails
     oci.database.models.CreateBackupDetails
+    oci.database.models.CreateCloudAutonomousVmClusterDetails
     oci.database.models.CreateCloudExadataInfrastructureDetails
     oci.database.models.CreateCloudVmClusterDetails
     oci.database.models.CreateConsoleConnectionDetails
@@ -239,6 +243,7 @@ Database
     oci.database.models.RestoreAutonomousDatabaseDetails
     oci.database.models.RestoreDatabaseDetails
     oci.database.models.ScanDetails
+    oci.database.models.ScheduledOperationDetails
     oci.database.models.SelfMountDetails
     oci.database.models.SwitchoverDataGuardAssociationDetails
     oci.database.models.Update
@@ -248,6 +253,7 @@ Database
     oci.database.models.UpdateAutonomousExadataInfrastructureDetails
     oci.database.models.UpdateAutonomousVmClusterDetails
     oci.database.models.UpdateBackupDestinationDetails
+    oci.database.models.UpdateCloudAutonomousVmClusterDetails
     oci.database.models.UpdateCloudExadataInfrastructureDetails
     oci.database.models.UpdateCloudVmClusterDetails
     oci.database.models.UpdateDataGuardAssociationDetails

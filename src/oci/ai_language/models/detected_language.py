@@ -51,7 +51,8 @@ class DetectedLanguage(object):
     def name(self):
         """
         **[Required]** Gets the name of this DetectedLanguage.
-        Language Name
+        Full language name.
+        Example: `English, Hindi, and so on`
 
 
         :return: The name of this DetectedLanguage.
@@ -63,7 +64,8 @@ class DetectedLanguage(object):
     def name(self, name):
         """
         Sets the name of this DetectedLanguage.
-        Language Name
+        Full language name.
+        Example: `English, Hindi, and so on`
 
 
         :param name: The name of this DetectedLanguage.
@@ -75,8 +77,8 @@ class DetectedLanguage(object):
     def code(self):
         """
         **[Required]** Gets the code of this DetectedLanguage.
-        Detected language code with standard `ISO 639-1`__.
-        Example: en, fr, hi etc.
+        Detected language code as per `ISO 639-1`__ standard.
+        Example: `en, fr, hi etc`.
 
         __ https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 
@@ -90,8 +92,8 @@ class DetectedLanguage(object):
     def code(self, code):
         """
         Sets the code of this DetectedLanguage.
-        Detected language code with standard `ISO 639-1`__.
-        Example: en, fr, hi etc.
+        Detected language code as per `ISO 639-1`__ standard.
+        Example: `en, fr, hi etc`.
 
         __ https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 
@@ -105,7 +107,8 @@ class DetectedLanguage(object):
     def score(self):
         """
         **[Required]** Gets the score of this DetectedLanguage.
-        Score or confidence for prediction.
+        Score or confidence of detected language code.
+        Example: `0.9999856066867399`
 
 
         :return: The score of this DetectedLanguage.
@@ -117,7 +120,8 @@ class DetectedLanguage(object):
     def score(self, score):
         """
         Sets the score of this DetectedLanguage.
-        Score or confidence for prediction.
+        Score or confidence of detected language code.
+        Example: `0.9999856066867399`
 
 
         :param score: The score of this DetectedLanguage.

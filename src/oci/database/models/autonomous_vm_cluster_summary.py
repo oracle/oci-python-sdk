@@ -100,6 +100,10 @@ class AutonomousVmClusterSummary(object):
             The value to assign to the cpus_enabled property of this AutonomousVmClusterSummary.
         :type cpus_enabled: int
 
+        :param ocpus_enabled:
+            The value to assign to the ocpus_enabled property of this AutonomousVmClusterSummary.
+        :type ocpus_enabled: float
+
         :param available_cpus:
             The value to assign to the available_cpus property of this AutonomousVmClusterSummary.
         :type available_cpus: int
@@ -115,6 +119,10 @@ class AutonomousVmClusterSummary(object):
         :param data_storage_size_in_tbs:
             The value to assign to the data_storage_size_in_tbs property of this AutonomousVmClusterSummary.
         :type data_storage_size_in_tbs: float
+
+        :param data_storage_size_in_gbs:
+            The value to assign to the data_storage_size_in_gbs property of this AutonomousVmClusterSummary.
+        :type data_storage_size_in_gbs: float
 
         :param available_data_storage_size_in_tbs:
             The value to assign to the available_data_storage_size_in_tbs property of this AutonomousVmClusterSummary.
@@ -147,10 +155,12 @@ class AutonomousVmClusterSummary(object):
             'vm_cluster_network_id': 'str',
             'is_local_backup_enabled': 'bool',
             'cpus_enabled': 'int',
+            'ocpus_enabled': 'float',
             'available_cpus': 'int',
             'memory_size_in_gbs': 'int',
             'db_node_storage_size_in_gbs': 'int',
             'data_storage_size_in_tbs': 'float',
+            'data_storage_size_in_gbs': 'float',
             'available_data_storage_size_in_tbs': 'float',
             'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -169,10 +179,12 @@ class AutonomousVmClusterSummary(object):
             'vm_cluster_network_id': 'vmClusterNetworkId',
             'is_local_backup_enabled': 'isLocalBackupEnabled',
             'cpus_enabled': 'cpusEnabled',
+            'ocpus_enabled': 'ocpusEnabled',
             'available_cpus': 'availableCpus',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'available_data_storage_size_in_tbs': 'availableDataStorageSizeInTBs',
             'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
@@ -190,10 +202,12 @@ class AutonomousVmClusterSummary(object):
         self._vm_cluster_network_id = None
         self._is_local_backup_enabled = None
         self._cpus_enabled = None
+        self._ocpus_enabled = None
         self._available_cpus = None
         self._memory_size_in_gbs = None
         self._db_node_storage_size_in_gbs = None
         self._data_storage_size_in_tbs = None
+        self._data_storage_size_in_gbs = None
         self._available_data_storage_size_in_tbs = None
         self._license_model = None
         self._freeform_tags = None
@@ -490,6 +504,30 @@ class AutonomousVmClusterSummary(object):
         self._cpus_enabled = cpus_enabled
 
     @property
+    def ocpus_enabled(self):
+        """
+        Gets the ocpus_enabled of this AutonomousVmClusterSummary.
+        The number of enabled OCPU cores.
+
+
+        :return: The ocpus_enabled of this AutonomousVmClusterSummary.
+        :rtype: float
+        """
+        return self._ocpus_enabled
+
+    @ocpus_enabled.setter
+    def ocpus_enabled(self, ocpus_enabled):
+        """
+        Sets the ocpus_enabled of this AutonomousVmClusterSummary.
+        The number of enabled OCPU cores.
+
+
+        :param ocpus_enabled: The ocpus_enabled of this AutonomousVmClusterSummary.
+        :type: float
+        """
+        self._ocpus_enabled = ocpus_enabled
+
+    @property
     def available_cpus(self):
         """
         Gets the available_cpus of this AutonomousVmClusterSummary.
@@ -584,6 +622,30 @@ class AutonomousVmClusterSummary(object):
         :type: float
         """
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
+
+    @property
+    def data_storage_size_in_gbs(self):
+        """
+        Gets the data_storage_size_in_gbs of this AutonomousVmClusterSummary.
+        The total data storage allocated in GBs
+
+
+        :return: The data_storage_size_in_gbs of this AutonomousVmClusterSummary.
+        :rtype: float
+        """
+        return self._data_storage_size_in_gbs
+
+    @data_storage_size_in_gbs.setter
+    def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
+        """
+        Sets the data_storage_size_in_gbs of this AutonomousVmClusterSummary.
+        The total data storage allocated in GBs
+
+
+        :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this AutonomousVmClusterSummary.
+        :type: float
+        """
+        self._data_storage_size_in_gbs = data_storage_size_in_gbs
 
     @property
     def available_data_storage_size_in_tbs(self):

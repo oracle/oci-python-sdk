@@ -11,6 +11,10 @@ from oci.decorators import init_model_state_from_kwargs
 class ObjectStorageTargetDetails(TargetDetails):
     """
     The bucket used for the Object Storage target.
+    For configuration instructions, see
+    `To create a service connector`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
     """
 
     def __init__(self, **kwargs):

@@ -30,6 +30,10 @@ class ValidatePatternResult(object):
             The value to assign to the expression property of this ValidatePatternResult.
         :type expression: str
 
+        :param file_path_prefix:
+            The value to assign to the file_path_prefix property of this ValidatePatternResult.
+        :type file_path_prefix: str
+
         :param derived_logical_entities:
             The value to assign to the derived_logical_entities property of this ValidatePatternResult.
         :type derived_logical_entities: list[oci.data_catalog.models.DerivedLogicalEntities]
@@ -39,6 +43,7 @@ class ValidatePatternResult(object):
             'message': 'str',
             'status': 'str',
             'expression': 'str',
+            'file_path_prefix': 'str',
             'derived_logical_entities': 'list[DerivedLogicalEntities]'
         }
 
@@ -46,12 +51,14 @@ class ValidatePatternResult(object):
             'message': 'message',
             'status': 'status',
             'expression': 'expression',
+            'file_path_prefix': 'filePathPrefix',
             'derived_logical_entities': 'derivedLogicalEntities'
         }
 
         self._message = None
         self._status = None
         self._expression = None
+        self._file_path_prefix = None
         self._derived_logical_entities = None
 
     @property
@@ -127,10 +134,34 @@ class ValidatePatternResult(object):
         self._expression = expression
 
     @property
+    def file_path_prefix(self):
+        """
+        Gets the file_path_prefix of this ValidatePatternResult.
+        The prefix used in the pattern validation.
+
+
+        :return: The file_path_prefix of this ValidatePatternResult.
+        :rtype: str
+        """
+        return self._file_path_prefix
+
+    @file_path_prefix.setter
+    def file_path_prefix(self, file_path_prefix):
+        """
+        Sets the file_path_prefix of this ValidatePatternResult.
+        The prefix used in the pattern validation.
+
+
+        :param file_path_prefix: The file_path_prefix of this ValidatePatternResult.
+        :type: str
+        """
+        self._file_path_prefix = file_path_prefix
+
+    @property
     def derived_logical_entities(self):
         """
         Gets the derived_logical_entities of this ValidatePatternResult.
-        Collection of logical entities derived from the expression applied to a list of file paths.
+        Collection of logical entities derived from the pattern, as applied to a list of file paths.
 
 
         :return: The derived_logical_entities of this ValidatePatternResult.
@@ -142,7 +173,7 @@ class ValidatePatternResult(object):
     def derived_logical_entities(self, derived_logical_entities):
         """
         Sets the derived_logical_entities of this ValidatePatternResult.
-        Collection of logical entities derived from the expression applied to a list of file paths.
+        Collection of logical entities derived from the pattern, as applied to a list of file paths.
 
 
         :param derived_logical_entities: The derived_logical_entities of this ValidatePatternResult.

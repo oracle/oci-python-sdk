@@ -86,6 +86,10 @@ class User(object):
             The value to assign to the email_verified property of this User.
         :type email_verified: bool
 
+        :param db_user_name:
+            The value to assign to the db_user_name property of this User.
+        :type db_user_name: str
+
         :param identity_provider_id:
             The value to assign to the identity_provider_id property of this User.
         :type identity_provider_id: str
@@ -140,6 +144,7 @@ class User(object):
             'description': 'str',
             'email': 'str',
             'email_verified': 'bool',
+            'db_user_name': 'str',
             'identity_provider_id': 'str',
             'external_identifier': 'str',
             'time_created': 'datetime',
@@ -160,6 +165,7 @@ class User(object):
             'description': 'description',
             'email': 'email',
             'email_verified': 'emailVerified',
+            'db_user_name': 'dbUserName',
             'identity_provider_id': 'identityProviderId',
             'external_identifier': 'externalIdentifier',
             'time_created': 'timeCreated',
@@ -179,6 +185,7 @@ class User(object):
         self._description = None
         self._email = None
         self._email_verified = None
+        self._db_user_name = None
         self._identity_provider_id = None
         self._external_identifier = None
         self._time_created = None
@@ -338,6 +345,30 @@ class User(object):
         :type: bool
         """
         self._email_verified = email_verified
+
+    @property
+    def db_user_name(self):
+        """
+        Gets the db_user_name of this User.
+        DB username of the DB credential. Has to be unique across the tenancy.
+
+
+        :return: The db_user_name of this User.
+        :rtype: str
+        """
+        return self._db_user_name
+
+    @db_user_name.setter
+    def db_user_name(self, db_user_name):
+        """
+        Sets the db_user_name of this User.
+        DB username of the DB credential. Has to be unique across the tenancy.
+
+
+        :param db_user_name: The db_user_name of this User.
+        :type: str
+        """
+        self._db_user_name = db_user_name
 
     @property
     def identity_provider_id(self):

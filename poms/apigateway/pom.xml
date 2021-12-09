@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.apigw</groupId>
         <artifactId>public-api-spec</artifactId>
-        <version>1.11.79</version>
+        <version>1.11.81</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

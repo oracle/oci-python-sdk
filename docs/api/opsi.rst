@@ -23,11 +23,20 @@ Opsi
     oci.opsi.models.AutonomousDatabaseConfigurationSummary
     oci.opsi.models.AutonomousDatabaseInsight
     oci.opsi.models.AutonomousDatabaseInsightSummary
+    oci.opsi.models.AwrHub
+    oci.opsi.models.AwrHubSummary
+    oci.opsi.models.AwrHubSummaryCollection
+    oci.opsi.models.AwrHubs
+    oci.opsi.models.AwrReport
+    oci.opsi.models.AwrSnapshotCollection
+    oci.opsi.models.AwrSnapshotSummary
+    oci.opsi.models.AwrSourceSummary
     oci.opsi.models.ChangeDatabaseInsightCompartmentDetails
     oci.opsi.models.ChangeEnterpriseManagerBridgeCompartmentDetails
     oci.opsi.models.ChangeExadataInsightCompartmentDetails
     oci.opsi.models.ChangeHostInsightCompartmentDetails
     oci.opsi.models.ConnectionDetails
+    oci.opsi.models.CreateAwrHubDetails
     oci.opsi.models.CreateDatabaseInsightDetails
     oci.opsi.models.CreateEmManagedExternalDatabaseInsightDetails
     oci.opsi.models.CreateEmManagedExternalExadataInsightDetails
@@ -37,6 +46,8 @@ Opsi
     oci.opsi.models.CreateExadataInsightDetails
     oci.opsi.models.CreateHostInsightDetails
     oci.opsi.models.CreateMacsManagedExternalHostInsightDetails
+    oci.opsi.models.CreateOperationsInsightsWarehouseDetails
+    oci.opsi.models.CreateOperationsInsightsWarehouseUserDetails
     oci.opsi.models.CredentialDetails
     oci.opsi.models.CredentialsBySource
     oci.opsi.models.DBExternalInstance
@@ -51,6 +62,7 @@ Opsi
     oci.opsi.models.DatabaseInsights
     oci.opsi.models.DatabaseInsightsCollection
     oci.opsi.models.DiskGroupDetails
+    oci.opsi.models.DownloadOperationsInsightsWarehouseWalletDetails
     oci.opsi.models.EmManagedExternalDatabaseConfigurationSummary
     oci.opsi.models.EmManagedExternalDatabaseInsight
     oci.opsi.models.EmManagedExternalDatabaseInsightSummary
@@ -133,6 +145,8 @@ Opsi
     oci.opsi.models.IngestSqlBucketResponseDetails
     oci.opsi.models.IngestSqlPlanLinesDetails
     oci.opsi.models.IngestSqlPlanLinesResponseDetails
+    oci.opsi.models.IngestSqlStatsDetails
+    oci.opsi.models.IngestSqlStatsResponseDetails
     oci.opsi.models.IngestSqlTextDetails
     oci.opsi.models.IngestSqlTextResponseDetails
     oci.opsi.models.InstanceMetrics
@@ -142,6 +156,14 @@ Opsi
     oci.opsi.models.MacsManagedExternalHostConfigurationSummary
     oci.opsi.models.MacsManagedExternalHostInsight
     oci.opsi.models.MacsManagedExternalHostInsightSummary
+    oci.opsi.models.OperationsInsightsWarehouse
+    oci.opsi.models.OperationsInsightsWarehouseSummary
+    oci.opsi.models.OperationsInsightsWarehouseSummaryCollection
+    oci.opsi.models.OperationsInsightsWarehouseUser
+    oci.opsi.models.OperationsInsightsWarehouseUserSummary
+    oci.opsi.models.OperationsInsightsWarehouseUserSummaryCollection
+    oci.opsi.models.OperationsInsightsWarehouseUsers
+    oci.opsi.models.OperationsInsightsWarehouses
     oci.opsi.models.ProjectedDataItem
     oci.opsi.models.ResourceCapacityTrendAggregation
     oci.opsi.models.ResourceInsightCurrentUtilization
@@ -174,10 +196,12 @@ Opsi
     oci.opsi.models.SqlStatisticsTimeSeriesAggregationCollection
     oci.opsi.models.SqlStatisticsTimeSeriesByPlanAggregation
     oci.opsi.models.SqlStatisticsTimeSeriesByPlanAggregationCollection
+    oci.opsi.models.SqlStats
     oci.opsi.models.SqlText
     oci.opsi.models.SqlTextCollection
     oci.opsi.models.SqlTextSummary
     oci.opsi.models.StorageServerDetails
+    oci.opsi.models.SummarizeAwrSourcesSummariesCollection
     oci.opsi.models.SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection
     oci.opsi.models.SummarizeDatabaseInsightResourceForecastTrendAggregation
     oci.opsi.models.SummarizeDatabaseInsightResourceStatisticsAggregationCollection
@@ -199,10 +223,12 @@ Opsi
     oci.opsi.models.SummarizeHostInsightResourceUsageAggregation
     oci.opsi.models.SummarizeHostInsightResourceUsageTrendAggregationCollection
     oci.opsi.models.SummarizeHostInsightResourceUtilizationInsightAggregation
+    oci.opsi.models.SummarizeOperationsInsightsWarehouseResourceUsageAggregation
     oci.opsi.models.SummaryStatistics
     oci.opsi.models.TablespaceUsageTrend
     oci.opsi.models.TablespaceUsageTrendAggregation
     oci.opsi.models.UpdateAutonomousDatabaseInsightDetails
+    oci.opsi.models.UpdateAwrHubDetails
     oci.opsi.models.UpdateDatabaseInsightDetails
     oci.opsi.models.UpdateEmManagedExternalDatabaseInsightDetails
     oci.opsi.models.UpdateEmManagedExternalExadataInsightDetails
@@ -212,6 +238,8 @@ Opsi
     oci.opsi.models.UpdateHostInsightDetails
     oci.opsi.models.UpdateMacsManagedExternalDatabaseInsightDetails
     oci.opsi.models.UpdateMacsManagedExternalHostInsightDetails
+    oci.opsi.models.UpdateOperationsInsightsWarehouseDetails
+    oci.opsi.models.UpdateOperationsInsightsWarehouseUserDetails
     oci.opsi.models.WorkRequest
     oci.opsi.models.WorkRequestCollection
     oci.opsi.models.WorkRequestError

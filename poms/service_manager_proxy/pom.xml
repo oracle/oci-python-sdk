@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.smproxy</groupId>
         <artifactId>service-manager-proxy-spec</artifactId>
-        <version>0.1.355</version>
+        <version>0.1.514</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -44,12 +44,15 @@ from .backup_destination_details import BackupDestinationDetails
 from .backup_destination_summary import BackupDestinationSummary
 from .backup_summary import BackupSummary
 from .change_autonomous_vm_cluster_compartment_details import ChangeAutonomousVmClusterCompartmentDetails
+from .change_cloud_autonomous_vm_cluster_compartment_details import ChangeCloudAutonomousVmClusterCompartmentDetails
 from .change_cloud_exadata_infrastructure_compartment_details import ChangeCloudExadataInfrastructureCompartmentDetails
 from .change_cloud_vm_cluster_compartment_details import ChangeCloudVmClusterCompartmentDetails
 from .change_compartment_details import ChangeCompartmentDetails
 from .change_exadata_infrastructure_compartment_details import ChangeExadataInfrastructureCompartmentDetails
 from .change_key_store_compartment_details import ChangeKeyStoreCompartmentDetails
 from .change_vm_cluster_compartment_details import ChangeVmClusterCompartmentDetails
+from .cloud_autonomous_vm_cluster import CloudAutonomousVmCluster
+from .cloud_autonomous_vm_cluster_summary import CloudAutonomousVmClusterSummary
 from .cloud_database_management_config import CloudDatabaseManagementConfig
 from .cloud_exadata_infrastructure import CloudExadataInfrastructure
 from .cloud_exadata_infrastructure_summary import CloudExadataInfrastructureSummary
@@ -71,6 +74,7 @@ from .create_autonomous_database_from_backup_timestamp_details import CreateAuto
 from .create_autonomous_vm_cluster_details import CreateAutonomousVmClusterDetails
 from .create_backup_destination_details import CreateBackupDestinationDetails
 from .create_backup_details import CreateBackupDetails
+from .create_cloud_autonomous_vm_cluster_details import CreateCloudAutonomousVmClusterDetails
 from .create_cloud_exadata_infrastructure_details import CreateCloudExadataInfrastructureDetails
 from .create_cloud_vm_cluster_details import CreateCloudVmClusterDetails
 from .create_console_connection_details import CreateConsoleConnectionDetails
@@ -225,6 +229,7 @@ from .remove_virtual_machine_from_vm_cluster_details import RemoveVirtualMachine
 from .restore_autonomous_database_details import RestoreAutonomousDatabaseDetails
 from .restore_database_details import RestoreDatabaseDetails
 from .scan_details import ScanDetails
+from .scheduled_operation_details import ScheduledOperationDetails
 from .self_mount_details import SelfMountDetails
 from .switchover_data_guard_association_details import SwitchoverDataGuardAssociationDetails
 from .update import Update
@@ -234,6 +239,7 @@ from .update_autonomous_database_wallet_details import UpdateAutonomousDatabaseW
 from .update_autonomous_exadata_infrastructure_details import UpdateAutonomousExadataInfrastructureDetails
 from .update_autonomous_vm_cluster_details import UpdateAutonomousVmClusterDetails
 from .update_backup_destination_details import UpdateBackupDestinationDetails
+from .update_cloud_autonomous_vm_cluster_details import UpdateCloudAutonomousVmClusterDetails
 from .update_cloud_exadata_infrastructure_details import UpdateCloudExadataInfrastructureDetails
 from .update_cloud_vm_cluster_details import UpdateCloudVmClusterDetails
 from .update_data_guard_association_details import UpdateDataGuardAssociationDetails
@@ -313,12 +319,15 @@ database_type_mapping = {
     "BackupDestinationSummary": BackupDestinationSummary,
     "BackupSummary": BackupSummary,
     "ChangeAutonomousVmClusterCompartmentDetails": ChangeAutonomousVmClusterCompartmentDetails,
+    "ChangeCloudAutonomousVmClusterCompartmentDetails": ChangeCloudAutonomousVmClusterCompartmentDetails,
     "ChangeCloudExadataInfrastructureCompartmentDetails": ChangeCloudExadataInfrastructureCompartmentDetails,
     "ChangeCloudVmClusterCompartmentDetails": ChangeCloudVmClusterCompartmentDetails,
     "ChangeCompartmentDetails": ChangeCompartmentDetails,
     "ChangeExadataInfrastructureCompartmentDetails": ChangeExadataInfrastructureCompartmentDetails,
     "ChangeKeyStoreCompartmentDetails": ChangeKeyStoreCompartmentDetails,
     "ChangeVmClusterCompartmentDetails": ChangeVmClusterCompartmentDetails,
+    "CloudAutonomousVmCluster": CloudAutonomousVmCluster,
+    "CloudAutonomousVmClusterSummary": CloudAutonomousVmClusterSummary,
     "CloudDatabaseManagementConfig": CloudDatabaseManagementConfig,
     "CloudExadataInfrastructure": CloudExadataInfrastructure,
     "CloudExadataInfrastructureSummary": CloudExadataInfrastructureSummary,
@@ -340,6 +349,7 @@ database_type_mapping = {
     "CreateAutonomousVmClusterDetails": CreateAutonomousVmClusterDetails,
     "CreateBackupDestinationDetails": CreateBackupDestinationDetails,
     "CreateBackupDetails": CreateBackupDetails,
+    "CreateCloudAutonomousVmClusterDetails": CreateCloudAutonomousVmClusterDetails,
     "CreateCloudExadataInfrastructureDetails": CreateCloudExadataInfrastructureDetails,
     "CreateCloudVmClusterDetails": CreateCloudVmClusterDetails,
     "CreateConsoleConnectionDetails": CreateConsoleConnectionDetails,
@@ -494,6 +504,7 @@ database_type_mapping = {
     "RestoreAutonomousDatabaseDetails": RestoreAutonomousDatabaseDetails,
     "RestoreDatabaseDetails": RestoreDatabaseDetails,
     "ScanDetails": ScanDetails,
+    "ScheduledOperationDetails": ScheduledOperationDetails,
     "SelfMountDetails": SelfMountDetails,
     "SwitchoverDataGuardAssociationDetails": SwitchoverDataGuardAssociationDetails,
     "Update": Update,
@@ -503,6 +514,7 @@ database_type_mapping = {
     "UpdateAutonomousExadataInfrastructureDetails": UpdateAutonomousExadataInfrastructureDetails,
     "UpdateAutonomousVmClusterDetails": UpdateAutonomousVmClusterDetails,
     "UpdateBackupDestinationDetails": UpdateBackupDestinationDetails,
+    "UpdateCloudAutonomousVmClusterDetails": UpdateCloudAutonomousVmClusterDetails,
     "UpdateCloudExadataInfrastructureDetails": UpdateCloudExadataInfrastructureDetails,
     "UpdateCloudVmClusterDetails": UpdateCloudVmClusterDetails,
     "UpdateDataGuardAssociationDetails": UpdateDataGuardAssociationDetails,

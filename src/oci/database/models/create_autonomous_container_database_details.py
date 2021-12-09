@@ -72,6 +72,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
             Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE"
         :type protection_mode: str
 
+        :param peer_cloud_autonomous_vm_cluster_id:
+            The value to assign to the peer_cloud_autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDetails.
+        :type peer_cloud_autonomous_vm_cluster_id: str
+
         :param peer_autonomous_vm_cluster_id:
             The value to assign to the peer_autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDetails.
         :type peer_autonomous_vm_cluster_id: str
@@ -91,6 +95,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :param autonomous_vm_cluster_id:
             The value to assign to the autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDetails.
         :type autonomous_vm_cluster_id: str
+
+        :param cloud_autonomous_vm_cluster_id:
+            The value to assign to the cloud_autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDetails.
+        :type cloud_autonomous_vm_cluster_id: str
 
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateAutonomousContainerDatabaseDetails.
@@ -146,11 +154,13 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'peer_autonomous_exadata_infrastructure_id': 'str',
             'peer_autonomous_container_database_display_name': 'str',
             'protection_mode': 'str',
+            'peer_cloud_autonomous_vm_cluster_id': 'str',
             'peer_autonomous_vm_cluster_id': 'str',
             'peer_autonomous_container_database_compartment_id': 'str',
             'peer_autonomous_container_database_backup_config': 'PeerAutonomousContainerDatabaseBackupConfig',
             'peer_db_unique_name': 'str',
             'autonomous_vm_cluster_id': 'str',
+            'cloud_autonomous_vm_cluster_id': 'str',
             'compartment_id': 'str',
             'patch_model': 'str',
             'maintenance_window_details': 'MaintenanceWindow',
@@ -172,11 +182,13 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'peer_autonomous_exadata_infrastructure_id': 'peerAutonomousExadataInfrastructureId',
             'peer_autonomous_container_database_display_name': 'peerAutonomousContainerDatabaseDisplayName',
             'protection_mode': 'protectionMode',
+            'peer_cloud_autonomous_vm_cluster_id': 'peerCloudAutonomousVmClusterId',
             'peer_autonomous_vm_cluster_id': 'peerAutonomousVmClusterId',
             'peer_autonomous_container_database_compartment_id': 'peerAutonomousContainerDatabaseCompartmentId',
             'peer_autonomous_container_database_backup_config': 'peerAutonomousContainerDatabaseBackupConfig',
             'peer_db_unique_name': 'peerDbUniqueName',
             'autonomous_vm_cluster_id': 'autonomousVmClusterId',
+            'cloud_autonomous_vm_cluster_id': 'cloudAutonomousVmClusterId',
             'compartment_id': 'compartmentId',
             'patch_model': 'patchModel',
             'maintenance_window_details': 'maintenanceWindowDetails',
@@ -197,11 +209,13 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._peer_autonomous_exadata_infrastructure_id = None
         self._peer_autonomous_container_database_display_name = None
         self._protection_mode = None
+        self._peer_cloud_autonomous_vm_cluster_id = None
         self._peer_autonomous_vm_cluster_id = None
         self._peer_autonomous_container_database_compartment_id = None
         self._peer_autonomous_container_database_backup_config = None
         self._peer_db_unique_name = None
         self._autonomous_vm_cluster_id = None
+        self._cloud_autonomous_vm_cluster_id = None
         self._compartment_id = None
         self._patch_model = None
         self._maintenance_window_details = None
@@ -407,6 +421,30 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._protection_mode = protection_mode
 
     @property
+    def peer_cloud_autonomous_vm_cluster_id(self):
+        """
+        Gets the peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        The OCID of the peer cloud Autonomous VM Cluster.
+
+
+        :return: The peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._peer_cloud_autonomous_vm_cluster_id
+
+    @peer_cloud_autonomous_vm_cluster_id.setter
+    def peer_cloud_autonomous_vm_cluster_id(self, peer_cloud_autonomous_vm_cluster_id):
+        """
+        Sets the peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        The OCID of the peer cloud Autonomous VM Cluster.
+
+
+        :param peer_cloud_autonomous_vm_cluster_id: The peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._peer_cloud_autonomous_vm_cluster_id = peer_cloud_autonomous_vm_cluster_id
+
+    @property
     def peer_autonomous_vm_cluster_id(self):
         """
         Gets the peer_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
@@ -531,6 +569,30 @@ class CreateAutonomousContainerDatabaseDetails(object):
         :type: str
         """
         self._autonomous_vm_cluster_id = autonomous_vm_cluster_id
+
+    @property
+    def cloud_autonomous_vm_cluster_id(self):
+        """
+        Gets the cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        The OCID of the cloud Autonomous VM Cluster.
+
+
+        :return: The cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: str
+        """
+        return self._cloud_autonomous_vm_cluster_id
+
+    @cloud_autonomous_vm_cluster_id.setter
+    def cloud_autonomous_vm_cluster_id(self, cloud_autonomous_vm_cluster_id):
+        """
+        Sets the cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        The OCID of the cloud Autonomous VM Cluster.
+
+
+        :param cloud_autonomous_vm_cluster_id: The cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
+        :type: str
+        """
+        self._cloud_autonomous_vm_cluster_id = cloud_autonomous_vm_cluster_id
 
     @property
     def compartment_id(self):

@@ -10,7 +10,12 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FunctionTaskDetails(TaskDetails):
     """
-    The function task. Batch input can be limited by either size or time. The first limit reached determines the boundary of the batch.
+    The Functions task.
+    Batch input for a function can be limited by either size or time. The first limit reached determines the boundary of the batch.
+    For configuration instructions, see
+    `To create a service connector`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
     """
 
     def __init__(self, **kwargs):

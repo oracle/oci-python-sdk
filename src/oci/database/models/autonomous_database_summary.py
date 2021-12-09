@@ -592,6 +592,10 @@ class AutonomousDatabaseSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type autonomous_maintenance_schedule_type: str
 
+        :param scheduled_operations:
+            The value to assign to the scheduled_operations property of this AutonomousDatabaseSummary.
+        :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -669,7 +673,8 @@ class AutonomousDatabaseSummary(object):
             'time_data_guard_role_changed': 'datetime',
             'peer_db_ids': 'list[str]',
             'is_mtls_connection_required': 'bool',
-            'autonomous_maintenance_schedule_type': 'str'
+            'autonomous_maintenance_schedule_type': 'str',
+            'scheduled_operations': 'list[ScheduledOperationDetails]'
         }
 
         self.attribute_map = {
@@ -748,7 +753,8 @@ class AutonomousDatabaseSummary(object):
             'time_data_guard_role_changed': 'timeDataGuardRoleChanged',
             'peer_db_ids': 'peerDbIds',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
-            'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType'
+            'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
+            'scheduled_operations': 'scheduledOperations'
         }
 
         self._id = None
@@ -827,6 +833,7 @@ class AutonomousDatabaseSummary(object):
         self._peer_db_ids = None
         self._is_mtls_connection_required = None
         self._autonomous_maintenance_schedule_type = None
+        self._scheduled_operations = None
 
     @property
     def id(self):
@@ -2923,6 +2930,30 @@ class AutonomousDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(autonomous_maintenance_schedule_type, allowed_values):
             autonomous_maintenance_schedule_type = 'UNKNOWN_ENUM_VALUE'
         self._autonomous_maintenance_schedule_type = autonomous_maintenance_schedule_type
+
+    @property
+    def scheduled_operations(self):
+        """
+        Gets the scheduled_operations of this AutonomousDatabaseSummary.
+        list of scheduled operations
+
+
+        :return: The scheduled_operations of this AutonomousDatabaseSummary.
+        :rtype: list[oci.database.models.ScheduledOperationDetails]
+        """
+        return self._scheduled_operations
+
+    @scheduled_operations.setter
+    def scheduled_operations(self, scheduled_operations):
+        """
+        Sets the scheduled_operations of this AutonomousDatabaseSummary.
+        list of scheduled operations
+
+
+        :param scheduled_operations: The scheduled_operations of this AutonomousDatabaseSummary.
+        :type: list[oci.database.models.ScheduledOperationDetails]
+        """
+        self._scheduled_operations = scheduled_operations
 
     def __repr__(self):
         return formatted_flat_dict(self)

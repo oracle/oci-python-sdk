@@ -239,6 +239,46 @@ def test_change_host_insight_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_create_awr_hub(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'CreateAwrHub'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'CreateAwrHub')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='CreateAwrHub')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.create_awr_hub(
+                create_awr_hub_details=request.pop(util.camelize('CreateAwrHubDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'CreateAwrHub',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrHub',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_create_database_insight(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'CreateDatabaseInsight'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -394,6 +434,126 @@ def test_create_host_insight(testing_service_client):
             service_error,
             'hostInsight',
             False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_create_operations_insights_warehouse(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'CreateOperationsInsightsWarehouse'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'CreateOperationsInsightsWarehouse')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='CreateOperationsInsightsWarehouse')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.create_operations_insights_warehouse(
+                create_operations_insights_warehouse_details=request.pop(util.camelize('CreateOperationsInsightsWarehouseDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'CreateOperationsInsightsWarehouse',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'operationsInsightsWarehouse',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_create_operations_insights_warehouse_user(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'CreateOperationsInsightsWarehouseUser'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'CreateOperationsInsightsWarehouseUser')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='CreateOperationsInsightsWarehouseUser')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.create_operations_insights_warehouse_user(
+                create_operations_insights_warehouse_user_details=request.pop(util.camelize('CreateOperationsInsightsWarehouseUserDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'CreateOperationsInsightsWarehouseUser',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'operationsInsightsWarehouseUser',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_delete_awr_hub(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'DeleteAwrHub'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'DeleteAwrHub')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='DeleteAwrHub')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_awr_hub(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'DeleteAwrHub',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_awr_hub',
+            True,
             False
         )
 
@@ -559,6 +719,86 @@ def test_delete_host_insight(testing_service_client):
 
 
 # IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_delete_operations_insights_warehouse(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'DeleteOperationsInsightsWarehouse'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'DeleteOperationsInsightsWarehouse')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='DeleteOperationsInsightsWarehouse')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_operations_insights_warehouse(
+                operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'DeleteOperationsInsightsWarehouse',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_operations_insights_warehouse',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_delete_operations_insights_warehouse_user(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'DeleteOperationsInsightsWarehouseUser'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'DeleteOperationsInsightsWarehouseUser')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='DeleteOperationsInsightsWarehouseUser')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_operations_insights_warehouse_user(
+                operations_insights_warehouse_user_id=request.pop(util.camelize('operationsInsightsWarehouseUserId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'DeleteOperationsInsightsWarehouseUser',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_operations_insights_warehouse_user',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_disable_database_insight(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'DisableDatabaseInsight'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -673,6 +913,47 @@ def test_disable_host_insight(testing_service_client):
             result,
             service_error,
             'disable_host_insight',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_download_operations_insights_warehouse_wallet(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'DownloadOperationsInsightsWarehouseWallet'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'DownloadOperationsInsightsWarehouseWallet')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='DownloadOperationsInsightsWarehouseWallet')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.download_operations_insights_warehouse_wallet(
+                operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                download_operations_insights_warehouse_wallet_details=request.pop(util.camelize('DownloadOperationsInsightsWarehouseWalletDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'DownloadOperationsInsightsWarehouseWallet',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
             False,
             False
         )
@@ -796,6 +1077,87 @@ def test_enable_host_insight(testing_service_client):
             result,
             service_error,
             'enable_host_insight',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_get_awr_hub(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'GetAwrHub'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'GetAwrHub')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='GetAwrHub')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.get_awr_hub(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'GetAwrHub',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrHub',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_get_awr_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'GetAwrReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'GetAwrReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='GetAwrReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.get_awr_report(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'GetAwrReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrReport',
             False,
             False
         )
@@ -956,6 +1318,86 @@ def test_get_host_insight(testing_service_client):
             result,
             service_error,
             'hostInsight',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_get_operations_insights_warehouse(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'GetOperationsInsightsWarehouse'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'GetOperationsInsightsWarehouse')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='GetOperationsInsightsWarehouse')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.get_operations_insights_warehouse(
+                operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'GetOperationsInsightsWarehouse',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'operationsInsightsWarehouse',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_get_operations_insights_warehouse_user(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'GetOperationsInsightsWarehouseUser'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'GetOperationsInsightsWarehouseUser')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='GetOperationsInsightsWarehouseUser')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.get_operations_insights_warehouse_user(
+                operations_insights_warehouse_user_id=request.pop(util.camelize('operationsInsightsWarehouseUserId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'GetOperationsInsightsWarehouseUser',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'operationsInsightsWarehouseUser',
             False,
             False
         )
@@ -1204,6 +1646,46 @@ def test_ingest_sql_plan_lines(testing_service_client):
 
 
 # IssueRoutingInfo tag="sqlLoader" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_ingest_sql_stats(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'IngestSqlStats'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'IngestSqlStats')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='IngestSqlStats')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.ingest_sql_stats(
+                ingest_sql_stats_details=request.pop(util.camelize('IngestSqlStatsDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'IngestSqlStats',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'ingestSqlStatsResponseDetails',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="sqlLoader" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_ingest_sql_text(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'IngestSqlText'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1240,6 +1722,129 @@ def test_ingest_sql_text(testing_service_client):
             'ingestSqlTextResponseDetails',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_list_awr_hubs(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ListAwrHubs'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ListAwrHubs')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ListAwrHubs')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.list_awr_hubs(
+                operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_awr_hubs(
+                    operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_awr_hubs(
+                        operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ListAwrHubs',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrHubSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_list_awr_snapshots(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ListAwrSnapshots'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ListAwrSnapshots')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ListAwrSnapshots')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.list_awr_snapshots(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_awr_snapshots(
+                    awr_hub_id=request.pop(util.camelize('awrHubId')),
+                    awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_awr_snapshots(
+                        awr_hub_id=request.pop(util.camelize('awrHubId')),
+                        awr_source_database_identifier=request.pop(util.camelize('awrSourceDatabaseIdentifier')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ListAwrSnapshots',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'awrSnapshotCollection',
+            False,
+            True
         )
 
 
@@ -1825,6 +2430,123 @@ def test_list_importable_enterprise_manager_entities(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_list_operations_insights_warehouse_users(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ListOperationsInsightsWarehouseUsers'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ListOperationsInsightsWarehouseUsers')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ListOperationsInsightsWarehouseUsers')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.list_operations_insights_warehouse_users(
+                operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_operations_insights_warehouse_users(
+                    operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_operations_insights_warehouse_users(
+                        operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ListOperationsInsightsWarehouseUsers',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'operationsInsightsWarehouseUserSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_list_operations_insights_warehouses(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'ListOperationsInsightsWarehouses'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'ListOperationsInsightsWarehouses')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='ListOperationsInsightsWarehouses')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.list_operations_insights_warehouses(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_operations_insights_warehouses(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_operations_insights_warehouses(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'ListOperationsInsightsWarehouses',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'operationsInsightsWarehouseSummaryCollection',
+            False,
+            True
+        )
+
+
 # IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_list_sql_plans(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'ListSqlPlans'):
@@ -2189,6 +2911,106 @@ def test_list_work_requests(testing_service_client):
             result,
             service_error,
             'workRequestCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_rotate_operations_insights_warehouse_wallet(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'RotateOperationsInsightsWarehouseWallet'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'RotateOperationsInsightsWarehouseWallet')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='RotateOperationsInsightsWarehouseWallet')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.rotate_operations_insights_warehouse_wallet(
+                operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'RotateOperationsInsightsWarehouseWallet',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'rotate_operations_insights_warehouse_wallet',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_awr_sources_summaries(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeAwrSourcesSummaries'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeAwrSourcesSummaries')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeAwrSourcesSummaries')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_awr_sources_summaries(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.summarize_awr_sources_summaries(
+                    awr_hub_id=request.pop(util.camelize('awrHubId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.summarize_awr_sources_summaries(
+                        awr_hub_id=request.pop(util.camelize('awrHubId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeAwrSourcesSummaries',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'summarizeAwrSourcesSummariesCollection',
             False,
             True
         )
@@ -3592,6 +4414,46 @@ def test_summarize_host_insight_resource_utilization_insight(testing_service_cli
         )
 
 
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_summarize_operations_insights_warehouse_resource_usage(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'SummarizeOperationsInsightsWarehouseResourceUsage'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'SummarizeOperationsInsightsWarehouseResourceUsage')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='SummarizeOperationsInsightsWarehouseResourceUsage')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.summarize_operations_insights_warehouse_resource_usage(
+                operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'SummarizeOperationsInsightsWarehouseResourceUsage',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'summarizeOperationsInsightsWarehouseResourceUsageAggregation',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="sqlWarehouse" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_summarize_sql_insights(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'SummarizeSqlInsights'):
@@ -3965,6 +4827,47 @@ def test_summarize_sql_statistics_time_series_by_plan(testing_service_client):
 
 
 # IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_update_awr_hub(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'UpdateAwrHub'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'UpdateAwrHub')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='UpdateAwrHub')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.update_awr_hub(
+                awr_hub_id=request.pop(util.camelize('awrHubId')),
+                update_awr_hub_details=request.pop(util.camelize('UpdateAwrHubDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'UpdateAwrHub',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_awr_hub',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
 def test_update_database_insight(testing_service_client):
     if not testing_service_client.is_api_enabled('opsi', 'UpdateDatabaseInsight'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -4123,6 +5026,88 @@ def test_update_host_insight(testing_service_client):
             result,
             service_error,
             'update_host_insight',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_update_operations_insights_warehouse(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'UpdateOperationsInsightsWarehouse'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'UpdateOperationsInsightsWarehouse')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='UpdateOperationsInsightsWarehouse')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.update_operations_insights_warehouse(
+                operations_insights_warehouse_id=request.pop(util.camelize('operationsInsightsWarehouseId')),
+                update_operations_insights_warehouse_details=request.pop(util.camelize('UpdateOperationsInsightsWarehouseDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'UpdateOperationsInsightsWarehouse',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_operations_insights_warehouse',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="controlPlane" email="dbx_dev_ww_grp@oracle.com" jiraProject="DBX" opsJiraProject="DBXSD"
+def test_update_operations_insights_warehouse_user(testing_service_client):
+    if not testing_service_client.is_api_enabled('opsi', 'UpdateOperationsInsightsWarehouseUser'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('opsi', util.camelize('operations_insights'), 'UpdateOperationsInsightsWarehouseUser')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='opsi', api_name='UpdateOperationsInsightsWarehouseUser')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.opsi.OperationsInsightsClient(config, service_endpoint=service_endpoint)
+            response = client.update_operations_insights_warehouse_user(
+                operations_insights_warehouse_user_id=request.pop(util.camelize('operationsInsightsWarehouseUserId')),
+                update_operations_insights_warehouse_user_details=request.pop(util.camelize('UpdateOperationsInsightsWarehouseUserDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'opsi',
+            'UpdateOperationsInsightsWarehouseUser',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_operations_insights_warehouse_user',
             False,
             False
         )

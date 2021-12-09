@@ -159,6 +159,10 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             Allowed values for this property are: "EARLY", "REGULAR"
         :type autonomous_maintenance_schedule_type: str
 
+        :param scheduled_operations:
+            The value to assign to the scheduled_operations property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
+
         :param source_id:
             The value to assign to the source_id property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type source_id: str
@@ -202,6 +206,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'customer_contacts': 'list[CustomerContact]',
             'is_mtls_connection_required': 'bool',
             'autonomous_maintenance_schedule_type': 'str',
+            'scheduled_operations': 'list[ScheduledOperationDetails]',
             'source_id': 'str',
             'refreshable_mode': 'str'
         }
@@ -239,6 +244,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'customer_contacts': 'customerContacts',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
+            'scheduled_operations': 'scheduledOperations',
             'source_id': 'sourceId',
             'refreshable_mode': 'refreshableMode'
         }
@@ -275,6 +281,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
         self._customer_contacts = None
         self._is_mtls_connection_required = None
         self._autonomous_maintenance_schedule_type = None
+        self._scheduled_operations = None
         self._source_id = None
         self._refreshable_mode = None
         self._source = 'CLONE_TO_REFRESHABLE'

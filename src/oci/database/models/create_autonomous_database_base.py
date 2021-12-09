@@ -222,6 +222,10 @@ class CreateAutonomousDatabaseBase(object):
             Allowed values for this property are: "EARLY", "REGULAR"
         :type autonomous_maintenance_schedule_type: str
 
+        :param scheduled_operations:
+            The value to assign to the scheduled_operations property of this CreateAutonomousDatabaseBase.
+        :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -255,7 +259,8 @@ class CreateAutonomousDatabaseBase(object):
             'source': 'str',
             'customer_contacts': 'list[CustomerContact]',
             'is_mtls_connection_required': 'bool',
-            'autonomous_maintenance_schedule_type': 'str'
+            'autonomous_maintenance_schedule_type': 'str',
+            'scheduled_operations': 'list[ScheduledOperationDetails]'
         }
 
         self.attribute_map = {
@@ -290,7 +295,8 @@ class CreateAutonomousDatabaseBase(object):
             'source': 'source',
             'customer_contacts': 'customerContacts',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
-            'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType'
+            'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
+            'scheduled_operations': 'scheduledOperations'
         }
 
         self._compartment_id = None
@@ -325,6 +331,7 @@ class CreateAutonomousDatabaseBase(object):
         self._customer_contacts = None
         self._is_mtls_connection_required = None
         self._autonomous_maintenance_schedule_type = None
+        self._scheduled_operations = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -1365,6 +1372,30 @@ class CreateAutonomousDatabaseBase(object):
                 .format(allowed_values)
             )
         self._autonomous_maintenance_schedule_type = autonomous_maintenance_schedule_type
+
+    @property
+    def scheduled_operations(self):
+        """
+        Gets the scheduled_operations of this CreateAutonomousDatabaseBase.
+        list of scheduled operations
+
+
+        :return: The scheduled_operations of this CreateAutonomousDatabaseBase.
+        :rtype: list[oci.database.models.ScheduledOperationDetails]
+        """
+        return self._scheduled_operations
+
+    @scheduled_operations.setter
+    def scheduled_operations(self, scheduled_operations):
+        """
+        Sets the scheduled_operations of this CreateAutonomousDatabaseBase.
+        list of scheduled operations
+
+
+        :param scheduled_operations: The scheduled_operations of this CreateAutonomousDatabaseBase.
+        :type: list[oci.database.models.ScheduledOperationDetails]
+        """
+        self._scheduled_operations = scheduled_operations
 
     def __repr__(self):
         return formatted_flat_dict(self)

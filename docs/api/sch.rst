@@ -20,8 +20,11 @@ Sch
 
     oci.sch.models.ChangeServiceConnectorCompartmentDetails
     oci.sch.models.CreateServiceConnectorDetails
+    oci.sch.models.DimensionDetails
+    oci.sch.models.DimensionValueDetails
     oci.sch.models.FunctionTaskDetails
     oci.sch.models.FunctionsTargetDetails
+    oci.sch.models.JmesPathDimensionValue
     oci.sch.models.LatestStreamingCursor
     oci.sch.models.LogRuleTaskDetails
     oci.sch.models.LogSource
@@ -34,6 +37,7 @@ Sch
     oci.sch.models.ServiceConnectorCollection
     oci.sch.models.ServiceConnectorSummary
     oci.sch.models.SourceDetails
+    oci.sch.models.StaticDimensionValue
     oci.sch.models.StreamingCursorDetails
     oci.sch.models.StreamingSourceDetails
     oci.sch.models.StreamingTargetDetails

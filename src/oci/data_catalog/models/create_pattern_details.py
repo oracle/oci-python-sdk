@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreatePatternDetails(object):
     """
-    Properties used in data asset create operations.
+    Properties used in pattern create operations.
     """
 
     def __init__(self, **kwargs):
@@ -29,6 +29,10 @@ class CreatePatternDetails(object):
         :param expression:
             The value to assign to the expression property of this CreatePatternDetails.
         :type expression: str
+
+        :param file_path_prefix:
+            The value to assign to the file_path_prefix property of this CreatePatternDetails.
+        :type file_path_prefix: str
 
         :param check_file_path_list:
             The value to assign to the check_file_path_list property of this CreatePatternDetails.
@@ -51,6 +55,7 @@ class CreatePatternDetails(object):
             'display_name': 'str',
             'description': 'str',
             'expression': 'str',
+            'file_path_prefix': 'str',
             'check_file_path_list': 'list[str]',
             'is_enable_check_failure_limit': 'bool',
             'check_failure_limit': 'int',
@@ -61,6 +66,7 @@ class CreatePatternDetails(object):
             'display_name': 'displayName',
             'description': 'description',
             'expression': 'expression',
+            'file_path_prefix': 'filePathPrefix',
             'check_file_path_list': 'checkFilePathList',
             'is_enable_check_failure_limit': 'isEnableCheckFailureLimit',
             'check_failure_limit': 'checkFailureLimit',
@@ -70,6 +76,7 @@ class CreatePatternDetails(object):
         self._display_name = None
         self._description = None
         self._expression = None
+        self._file_path_prefix = None
         self._check_file_path_list = None
         self._is_enable_check_failure_limit = None
         self._check_failure_limit = None
@@ -129,7 +136,9 @@ class CreatePatternDetails(object):
     def expression(self):
         """
         Gets the expression of this CreatePatternDetails.
-        The expression used in the pattern that may include qualifiers. Refer to the user documentation for details of the format and examples.
+        Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
 
 
         :return: The expression of this CreatePatternDetails.
@@ -141,7 +150,9 @@ class CreatePatternDetails(object):
     def expression(self, expression):
         """
         Sets the expression of this CreatePatternDetails.
-        The expression used in the pattern that may include qualifiers. Refer to the user documentation for details of the format and examples.
+        Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
 
 
         :param expression: The expression of this CreatePatternDetails.
@@ -150,10 +161,38 @@ class CreatePatternDetails(object):
         self._expression = expression
 
     @property
+    def file_path_prefix(self):
+        """
+        Gets the file_path_prefix of this CreatePatternDetails.
+        Input string which drives the selection process.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
+
+
+        :return: The file_path_prefix of this CreatePatternDetails.
+        :rtype: str
+        """
+        return self._file_path_prefix
+
+    @file_path_prefix.setter
+    def file_path_prefix(self, file_path_prefix):
+        """
+        Sets the file_path_prefix of this CreatePatternDetails.
+        Input string which drives the selection process.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
+
+
+        :param file_path_prefix: The file_path_prefix of this CreatePatternDetails.
+        :type: str
+        """
+        self._file_path_prefix = file_path_prefix
+
+    @property
     def check_file_path_list(self):
         """
         Gets the check_file_path_list of this CreatePatternDetails.
-        List of file paths against which the expression can be tried, as a check. This documents, for reference
+        List of file paths against which the pattern can be tried, as a check. This documents, for reference
         purposes, some example objects a pattern is meant to work with. If isEnableCheckFailureLimit is set to true,
         this will be run as a validation during the request, such that if the check fails the request fails. If
         isEnableCheckFailureLimit instead is set to (the default) false, a pattern will still be created or updated even
@@ -169,7 +208,7 @@ class CreatePatternDetails(object):
     def check_file_path_list(self, check_file_path_list):
         """
         Sets the check_file_path_list of this CreatePatternDetails.
-        List of file paths against which the expression can be tried, as a check. This documents, for reference
+        List of file paths against which the pattern can be tried, as a check. This documents, for reference
         purposes, some example objects a pattern is meant to work with. If isEnableCheckFailureLimit is set to true,
         this will be run as a validation during the request, such that if the check fails the request fails. If
         isEnableCheckFailureLimit instead is set to (the default) false, a pattern will still be created or updated even
@@ -185,7 +224,7 @@ class CreatePatternDetails(object):
     def is_enable_check_failure_limit(self):
         """
         Gets the is_enable_check_failure_limit of this CreatePatternDetails.
-        Indicates whether the expression check, against the checkFilePathList, will fail the request if the count of
+        Indicates whether the pattern check, against the checkFilePathList, will fail the request if the count of
         UNMATCHED files is above the checkFailureLimit.
 
 
@@ -198,7 +237,7 @@ class CreatePatternDetails(object):
     def is_enable_check_failure_limit(self, is_enable_check_failure_limit):
         """
         Sets the is_enable_check_failure_limit of this CreatePatternDetails.
-        Indicates whether the expression check, against the checkFilePathList, will fail the request if the count of
+        Indicates whether the pattern check, against the checkFilePathList, will fail the request if the count of
         UNMATCHED files is above the checkFailureLimit.
 
 

@@ -42,6 +42,10 @@ class CreateEntityDetails(object):
             The value to assign to the business_name property of this CreateEntityDetails.
         :type business_name: str
 
+        :param type_key:
+            The value to assign to the type_key property of this CreateEntityDetails.
+        :type type_key: str
+
         :param description:
             The value to assign to the description property of this CreateEntityDetails.
         :type description: str
@@ -91,6 +95,7 @@ class CreateEntityDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'business_name': 'str',
+            'type_key': 'str',
             'description': 'str',
             'time_external': 'datetime',
             'is_logical': 'bool',
@@ -107,6 +112,7 @@ class CreateEntityDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'business_name': 'businessName',
+            'type_key': 'typeKey',
             'description': 'description',
             'time_external': 'timeExternal',
             'is_logical': 'isLogical',
@@ -122,6 +128,7 @@ class CreateEntityDetails(object):
 
         self._display_name = None
         self._business_name = None
+        self._type_key = None
         self._description = None
         self._time_external = None
         self._is_logical = None
@@ -183,6 +190,30 @@ class CreateEntityDetails(object):
         :type: str
         """
         self._business_name = business_name
+
+    @property
+    def type_key(self):
+        """
+        Gets the type_key of this CreateEntityDetails.
+        The type of data entity object. Type key's can be found via the '/types' endpoint.
+
+
+        :return: The type_key of this CreateEntityDetails.
+        :rtype: str
+        """
+        return self._type_key
+
+    @type_key.setter
+    def type_key(self, type_key):
+        """
+        Sets the type_key of this CreateEntityDetails.
+        The type of data entity object. Type key's can be found via the '/types' endpoint.
+
+
+        :param type_key: The type_key of this CreateEntityDetails.
+        :type: str
+        """
+        self._type_key = type_key
 
     @property
     def description(self):

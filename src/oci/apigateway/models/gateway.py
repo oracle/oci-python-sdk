@@ -121,6 +121,10 @@ class Gateway(object):
             The value to assign to the defined_tags property of this Gateway.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param ca_bundles:
+            The value to assign to the ca_bundles property of this Gateway.
+        :type ca_bundles: list[oci.apigateway.models.CaBundle]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -138,7 +142,8 @@ class Gateway(object):
             'ip_addresses': 'list[IpAddress]',
             'response_cache_details': 'ResponseCacheDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'ca_bundles': 'list[CaBundle]'
         }
 
         self.attribute_map = {
@@ -157,7 +162,8 @@ class Gateway(object):
             'ip_addresses': 'ipAddresses',
             'response_cache_details': 'responseCacheDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'ca_bundles': 'caBundles'
         }
 
         self._id = None
@@ -176,6 +182,7 @@ class Gateway(object):
         self._response_cache_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._ca_bundles = None
 
     @property
     def id(self):
@@ -628,6 +635,30 @@ class Gateway(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def ca_bundles(self):
+        """
+        Gets the ca_bundles of this Gateway.
+        An array of CA bundles that should be used on the Gateway for TLS validation.
+
+
+        :return: The ca_bundles of this Gateway.
+        :rtype: list[oci.apigateway.models.CaBundle]
+        """
+        return self._ca_bundles
+
+    @ca_bundles.setter
+    def ca_bundles(self, ca_bundles):
+        """
+        Sets the ca_bundles of this Gateway.
+        An array of CA bundles that should be used on the Gateway for TLS validation.
+
+
+        :param ca_bundles: The ca_bundles of this Gateway.
+        :type: list[oci.apigateway.models.CaBundle]
+        """
+        self._ca_bundles = ca_bundles
 
     def __repr__(self):
         return formatted_flat_dict(self)

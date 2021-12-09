@@ -34,6 +34,206 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_batch_detect_dominant_language(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'BatchDetectDominantLanguage'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'BatchDetectDominantLanguage')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='BatchDetectDominantLanguage')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.batch_detect_dominant_language(
+                batch_detect_dominant_language_details=request.pop(util.camelize('BatchDetectDominantLanguageDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'BatchDetectDominantLanguage',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'batchDetectDominantLanguageResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_batch_detect_language_entities(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'BatchDetectLanguageEntities'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'BatchDetectLanguageEntities')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='BatchDetectLanguageEntities')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.batch_detect_language_entities(
+                batch_detect_language_entities_details=request.pop(util.camelize('BatchDetectLanguageEntitiesDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'BatchDetectLanguageEntities',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'batchDetectLanguageEntitiesResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_batch_detect_language_key_phrases(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'BatchDetectLanguageKeyPhrases'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'BatchDetectLanguageKeyPhrases')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='BatchDetectLanguageKeyPhrases')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.batch_detect_language_key_phrases(
+                batch_detect_language_key_phrases_details=request.pop(util.camelize('BatchDetectLanguageKeyPhrasesDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'BatchDetectLanguageKeyPhrases',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'batchDetectLanguageKeyPhrasesResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_batch_detect_language_sentiments(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'BatchDetectLanguageSentiments'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'BatchDetectLanguageSentiments')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='BatchDetectLanguageSentiments')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.batch_detect_language_sentiments(
+                batch_detect_language_sentiments_details=request.pop(util.camelize('BatchDetectLanguageSentimentsDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'BatchDetectLanguageSentiments',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'batchDetectLanguageSentimentsResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
+def test_batch_detect_language_text_classification(testing_service_client):
+    if not testing_service_client.is_api_enabled('ai_language', 'BatchDetectLanguageTextClassification'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('ai_language', util.camelize('ai_service_language'), 'BatchDetectLanguageTextClassification')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='ai_language', api_name='BatchDetectLanguageTextClassification')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.ai_language.AIServiceLanguageClient(config, service_endpoint=service_endpoint)
+            response = client.batch_detect_language_text_classification(
+                batch_detect_language_text_classification_details=request.pop(util.camelize('BatchDetectLanguageTextClassificationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'ai_language',
+            'BatchDetectLanguageTextClassification',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'batchDetectLanguageTextClassificationResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_ocas_ops_ww_grp@oracle.com" jiraProject="OCAS" opsJiraProject="OCAS"
 def test_detect_dominant_language(testing_service_client):
     if not testing_service_client.is_api_enabled('ai_language', 'DetectDominantLanguage'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

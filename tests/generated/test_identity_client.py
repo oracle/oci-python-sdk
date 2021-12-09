@@ -642,6 +642,47 @@ def test_create_customer_secret_key(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_create_db_credential(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'CreateDbCredential'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'CreateDbCredential')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='CreateDbCredential')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.create_db_credential(
+                create_db_credential_details=request.pop(util.camelize('CreateDbCredentialDetails')),
+                user_id=request.pop(util.camelize('userId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'CreateDbCredential',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dbCredential',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
 def test_create_domain(testing_service_client):
     if not testing_service_client.is_api_enabled('identity', 'CreateDomain'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1525,6 +1566,47 @@ def test_delete_customer_secret_key(testing_service_client):
             result,
             service_error,
             'delete_customer_secret_key',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_delete_db_credential(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'DeleteDbCredential'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'DeleteDbCredential')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='DeleteDbCredential')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.delete_db_credential(
+                user_id=request.pop(util.camelize('userId')),
+                db_credential_id=request.pop(util.camelize('dbCredentialId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'DeleteDbCredential',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_db_credential',
             True,
             False
         )
@@ -3534,6 +3616,66 @@ def test_list_customer_secret_keys(testing_service_client):
             'customerSecretKeySummary',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_identity_team_us_grp@oracle.com" jiraProject="ID" opsJiraProject="ID"
+def test_list_db_credentials(testing_service_client):
+    if not testing_service_client.is_api_enabled('identity', 'ListDbCredentials'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('identity', util.camelize('identity'), 'ListDbCredentials')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='identity', api_name='ListDbCredentials')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.identity.IdentityClient(config, service_endpoint=service_endpoint)
+            response = client.list_db_credentials(
+                user_id=request.pop(util.camelize('userId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_db_credentials(
+                    user_id=request.pop(util.camelize('userId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_db_credentials(
+                        user_id=request.pop(util.camelize('userId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'identity',
+            'ListDbCredentials',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dbCredentialSummary',
+            False,
+            True
         )
 
 

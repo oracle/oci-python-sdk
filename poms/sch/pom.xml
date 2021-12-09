@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.connectors</groupId>
         <artifactId>connectors-spec</artifactId>
-        <version>0.2.38</version>
+        <version>0.2.56</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

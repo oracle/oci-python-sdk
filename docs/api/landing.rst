@@ -69,6 +69,7 @@ API Reference
 * :doc:`Golden Gate <golden_gate/client/oci.golden_gate.GoldenGateClient>`
 * :doc:`Health Checks <healthchecks/client/oci.healthchecks.HealthChecksClient>`
 * :doc:`Identity <identity/client/oci.identity.IdentityClient>`
+* :doc:`Dataplane <identity_data_plane/client/oci.identity_data_plane.DataplaneClient>`
 * :doc:`Integration Instance <integration/client/oci.integration.IntegrationInstanceClient>`
 * :doc:`Java Management Service <jms/client/oci.jms.JavaManagementServiceClient>`
 * :doc:`Kms Crypto <key_management/client/oci.key_management.KmsCryptoClient>`
@@ -109,6 +110,7 @@ API Reference
 * :doc:`Optimizer <optimizer/client/oci.optimizer.OptimizerClient>`
 * :doc:`Event <os_management/client/oci.os_management.EventClient>`
 * :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
+* :doc:`Invoice Service <osp_gateway/client/oci.osp_gateway.InvoiceServiceClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
 * :doc:`Rover Cluster <rover/client/oci.rover.RoverClusterClient>`
@@ -203,6 +205,7 @@ API Reference
     golden_gate
     healthchecks
     identity
+    identity_data_plane
     integration
     jms
     key_management
@@ -228,6 +231,7 @@ API Reference
     opsi
     optimizer
     os_management
+    osp_gateway
     resource_manager
     resource_search
     rover

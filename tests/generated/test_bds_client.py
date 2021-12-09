@@ -34,6 +34,48 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_activate_bds_metastore_configuration(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'ActivateBdsMetastoreConfiguration'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'ActivateBdsMetastoreConfiguration')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='ActivateBdsMetastoreConfiguration')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.activate_bds_metastore_configuration(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                metastore_config_id=request.pop(util.camelize('metastoreConfigId')),
+                activate_bds_metastore_configuration_details=request.pop(util.camelize('ActivateBdsMetastoreConfigurationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'ActivateBdsMetastoreConfiguration',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'activate_bds_metastore_configuration',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
 def test_add_auto_scaling_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('bds', 'AddAutoScalingConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -361,6 +403,47 @@ def test_create_bds_instance(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_create_bds_metastore_configuration(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'CreateBdsMetastoreConfiguration'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'CreateBdsMetastoreConfiguration')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='CreateBdsMetastoreConfiguration')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.create_bds_metastore_configuration(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                create_bds_metastore_configuration_details=request.pop(util.camelize('CreateBdsMetastoreConfigurationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'CreateBdsMetastoreConfiguration',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_bds_metastore_configuration',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
 def test_delete_bds_api_key(testing_service_client):
     if not testing_service_client.is_api_enabled('bds', 'DeleteBdsApiKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -436,6 +519,47 @@ def test_delete_bds_instance(testing_service_client):
             result,
             service_error,
             'delete_bds_instance',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_delete_bds_metastore_configuration(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'DeleteBdsMetastoreConfiguration'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'DeleteBdsMetastoreConfiguration')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='DeleteBdsMetastoreConfiguration')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.delete_bds_metastore_configuration(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                metastore_config_id=request.pop(util.camelize('metastoreConfigId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'DeleteBdsMetastoreConfiguration',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_bds_metastore_configuration',
             True,
             False
         )
@@ -558,6 +682,47 @@ def test_get_bds_instance(testing_service_client):
             result,
             service_error,
             'bdsInstance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_get_bds_metastore_configuration(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'GetBdsMetastoreConfiguration'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'GetBdsMetastoreConfiguration')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='GetBdsMetastoreConfiguration')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.get_bds_metastore_configuration(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                metastore_config_id=request.pop(util.camelize('metastoreConfigId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'GetBdsMetastoreConfiguration',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'bdsMetastoreConfiguration',
             False,
             False
         )
@@ -781,6 +946,66 @@ def test_list_bds_instances(testing_service_client):
             result,
             service_error,
             'bdsInstanceSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_list_bds_metastore_configurations(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'ListBdsMetastoreConfigurations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'ListBdsMetastoreConfigurations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='ListBdsMetastoreConfigurations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.list_bds_metastore_configurations(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_bds_metastore_configurations(
+                    bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_bds_metastore_configurations(
+                        bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'ListBdsMetastoreConfigurations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'bdsMetastoreConfigurationSummary',
             False,
             True
         )
@@ -1091,6 +1316,48 @@ def test_restart_node(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_test_bds_metastore_configuration(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'TestBdsMetastoreConfiguration'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'TestBdsMetastoreConfiguration')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='TestBdsMetastoreConfiguration')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.test_bds_metastore_configuration(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                metastore_config_id=request.pop(util.camelize('metastoreConfigId')),
+                test_bds_metastore_configuration_details=request.pop(util.camelize('TestBdsMetastoreConfigurationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'TestBdsMetastoreConfiguration',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'test_bds_metastore_configuration',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
 def test_test_bds_object_storage_connection(testing_service_client):
     if not testing_service_client.is_api_enabled('bds', 'TestBdsObjectStorageConnection'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1210,6 +1477,48 @@ def test_update_bds_instance(testing_service_client):
             result,
             service_error,
             'update_bds_instance',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="bdcs_dev_ww_grp@oracle.com" jiraProject="BDCS" opsJiraProject="OBDS"
+def test_update_bds_metastore_configuration(testing_service_client):
+    if not testing_service_client.is_api_enabled('bds', 'UpdateBdsMetastoreConfiguration'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('bds', util.camelize('bds'), 'UpdateBdsMetastoreConfiguration')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='bds', api_name='UpdateBdsMetastoreConfiguration')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.bds.BdsClient(config, service_endpoint=service_endpoint)
+            response = client.update_bds_metastore_configuration(
+                bds_instance_id=request.pop(util.camelize('bdsInstanceId')),
+                metastore_config_id=request.pop(util.camelize('metastoreConfigId')),
+                update_bds_metastore_configuration_details=request.pop(util.camelize('UpdateBdsMetastoreConfigurationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'bds',
+            'UpdateBdsMetastoreConfiguration',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_bds_metastore_configuration',
             False,
             False
         )

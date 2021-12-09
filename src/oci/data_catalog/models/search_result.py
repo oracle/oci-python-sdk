@@ -178,6 +178,10 @@ class SearchResult(object):
             The value to assign to the custom_properties property of this SearchResult.
         :type custom_properties: list[oci.data_catalog.models.FacetedSearchCustomProperty]
 
+        :param properties:
+            The value to assign to the properties property of this SearchResult.
+        :type properties: dict(str, dict(str, str))
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -210,7 +214,8 @@ class SearchResult(object):
             'lifecycle_state': 'str',
             'attribute_type': 'str',
             'expression': 'str',
-            'custom_properties': 'list[FacetedSearchCustomProperty]'
+            'custom_properties': 'list[FacetedSearchCustomProperty]',
+            'properties': 'dict(str, dict(str, str))'
         }
 
         self.attribute_map = {
@@ -244,7 +249,8 @@ class SearchResult(object):
             'lifecycle_state': 'lifecycleState',
             'attribute_type': 'attributeType',
             'expression': 'expression',
-            'custom_properties': 'customProperties'
+            'custom_properties': 'customProperties',
+            'properties': 'properties'
         }
 
         self._key = None
@@ -278,6 +284,7 @@ class SearchResult(object):
         self._attribute_type = None
         self._expression = None
         self._custom_properties = None
+        self._properties = None
 
     @property
     def key(self):
@@ -1040,6 +1047,36 @@ class SearchResult(object):
         :type: list[oci.data_catalog.models.FacetedSearchCustomProperty]
         """
         self._custom_properties = custom_properties
+
+    @property
+    def properties(self):
+        """
+        Gets the properties of this SearchResult.
+        A map of maps that contains the properties which are specific to the element type in the search result.
+        The map keys are category names and the values are maps of property name to property value. Every property
+        is contained inside of a category. Most element types have required properties within the \"default\" category.
+        Example: `{\"properties\": { \"default\": { \"key1\": \"value1\"}}}`
+
+
+        :return: The properties of this SearchResult.
+        :rtype: dict(str, dict(str, str))
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties):
+        """
+        Sets the properties of this SearchResult.
+        A map of maps that contains the properties which are specific to the element type in the search result.
+        The map keys are category names and the values are maps of property name to property value. Every property
+        is contained inside of a category. Most element types have required properties within the \"default\" category.
+        Example: `{\"properties\": { \"default\": { \"key1\": \"value1\"}}}`
+
+
+        :param properties: The properties of this SearchResult.
+        :type: dict(str, dict(str, str))
+        """
+        self._properties = properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

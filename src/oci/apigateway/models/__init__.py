@@ -24,9 +24,12 @@ from .api_validations import ApiValidations
 from .authentication_only_route_authorization_policy import AuthenticationOnlyRouteAuthorizationPolicy
 from .authentication_policy import AuthenticationPolicy
 from .body_validation_request_policy import BodyValidationRequestPolicy
+from .ca_bundle import CaBundle
 from .certificate import Certificate
 from .certificate_collection import CertificateCollection
 from .certificate_summary import CertificateSummary
+from .certificates_ca_bundle import CertificatesCaBundle
+from .certificates_certificate_authority import CertificatesCertificateAuthority
 from .change_api_compartment_details import ChangeApiCompartmentDetails
 from .change_certificate_compartment_details import ChangeCertificateCompartmentDetails
 from .change_deployment_compartment_details import ChangeDeploymentCompartmentDetails
@@ -61,6 +64,7 @@ from .ip_address import IpAddress
 from .json_web_key import JsonWebKey
 from .json_web_token_claim import JsonWebTokenClaim
 from .jwt_authentication_policy import JwtAuthenticationPolicy
+from .mutual_tls_details import MutualTlsDetails
 from .no_cache import NoCache
 from .no_content_validation import NoContentValidation
 from .oracle_function_backend import OracleFunctionBackend
@@ -134,9 +138,12 @@ apigateway_type_mapping = {
     "AuthenticationOnlyRouteAuthorizationPolicy": AuthenticationOnlyRouteAuthorizationPolicy,
     "AuthenticationPolicy": AuthenticationPolicy,
     "BodyValidationRequestPolicy": BodyValidationRequestPolicy,
+    "CaBundle": CaBundle,
     "Certificate": Certificate,
     "CertificateCollection": CertificateCollection,
     "CertificateSummary": CertificateSummary,
+    "CertificatesCaBundle": CertificatesCaBundle,
+    "CertificatesCertificateAuthority": CertificatesCertificateAuthority,
     "ChangeApiCompartmentDetails": ChangeApiCompartmentDetails,
     "ChangeCertificateCompartmentDetails": ChangeCertificateCompartmentDetails,
     "ChangeDeploymentCompartmentDetails": ChangeDeploymentCompartmentDetails,
@@ -171,6 +178,7 @@ apigateway_type_mapping = {
     "JsonWebKey": JsonWebKey,
     "JsonWebTokenClaim": JsonWebTokenClaim,
     "JwtAuthenticationPolicy": JwtAuthenticationPolicy,
+    "MutualTlsDetails": MutualTlsDetails,
     "NoCache": NoCache,
     "NoContentValidation": NoContentValidation,
     "OracleFunctionBackend": OracleFunctionBackend,
