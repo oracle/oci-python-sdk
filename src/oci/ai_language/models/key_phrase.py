@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class KeyPhrase(object):
     """
-    Key phrase and score for the given text.
+    Key phrase for the given text.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class KeyPhrase(object):
     def text(self):
         """
         **[Required]** Gets the text of this KeyPhrase.
-        Key phrase of the the given text.
+        Key phrase exreacted from given text.
 
 
         :return: The text of this KeyPhrase.
@@ -56,7 +56,7 @@ class KeyPhrase(object):
     def text(self, text):
         """
         Sets the text of this KeyPhrase.
-        Key phrase of the the given text.
+        Key phrase exreacted from given text.
 
 
         :param text: The text of this KeyPhrase.
@@ -68,7 +68,8 @@ class KeyPhrase(object):
     def score(self):
         """
         **[Required]** Gets the score of this KeyPhrase.
-        Score of the given key phrase.
+        Score or confidence of the key phrase.
+        Example: `0.9999856066867399`
 
 
         :return: The score of this KeyPhrase.
@@ -80,7 +81,8 @@ class KeyPhrase(object):
     def score(self, score):
         """
         Sets the score of this KeyPhrase.
-        Score of the given key phrase.
+        Score or confidence of the key phrase.
+        Example: `0.9999856066867399`
 
 
         :param score: The score of this KeyPhrase.

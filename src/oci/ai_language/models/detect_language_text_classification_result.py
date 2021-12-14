@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetectLanguageTextClassificationResult(object):
     """
-    Result of text labels detect call.
+    Result of text classification detect call.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DetectLanguageTextClassificationResult(object):
     def text_classification(self):
         """
         **[Required]** Gets the text_classification of this DetectLanguageTextClassificationResult.
-        List of categories
+        List of detected text classes.
 
 
         :return: The text_classification of this DetectLanguageTextClassificationResult.
@@ -49,7 +49,7 @@ class DetectLanguageTextClassificationResult(object):
     def text_classification(self, text_classification):
         """
         Sets the text_classification of this DetectLanguageTextClassificationResult.
-        List of categories
+        List of detected text classes.
 
 
         :param text_classification: The text_classification of this DetectLanguageTextClassificationResult.

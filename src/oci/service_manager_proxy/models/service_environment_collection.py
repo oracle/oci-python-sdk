@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ServiceEnvironmentCollection(object):
     """
-    Collection of Service environements.
+    Collection of service environments.
+
+    **Note:** Service URL formats may vary from the provided example.
     """
 
     def __init__(self, **kwargs):

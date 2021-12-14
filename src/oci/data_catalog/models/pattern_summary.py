@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PatternSummary(object):
     """
-    Summary of a pattern. A Pattern is defined using an expression and can be used as data selectors or filters
-    to provide a singular view of an entity across multiple physical data artifacts.
+    Summary of a pattern. A pattern is a data selector or filter which can provide a singular,
+    logical entity view aggregating multiple physical data artifacts for ease of use.
     """
 
     #: A constant which can be used with the lifecycle_state property of a PatternSummary.
@@ -75,6 +75,10 @@ class PatternSummary(object):
             The value to assign to the expression property of this PatternSummary.
         :type expression: str
 
+        :param file_path_prefix:
+            The value to assign to the file_path_prefix property of this PatternSummary.
+        :type file_path_prefix: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this PatternSummary.
             Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING", 'UNKNOWN_ENUM_VALUE'.
@@ -89,6 +93,7 @@ class PatternSummary(object):
             'catalog_id': 'str',
             'time_created': 'datetime',
             'expression': 'str',
+            'file_path_prefix': 'str',
             'lifecycle_state': 'str'
         }
 
@@ -99,6 +104,7 @@ class PatternSummary(object):
             'catalog_id': 'catalogId',
             'time_created': 'timeCreated',
             'expression': 'expression',
+            'file_path_prefix': 'filePathPrefix',
             'lifecycle_state': 'lifecycleState'
         }
 
@@ -108,6 +114,7 @@ class PatternSummary(object):
         self._catalog_id = None
         self._time_created = None
         self._expression = None
+        self._file_path_prefix = None
         self._lifecycle_state = None
 
     @property
@@ -242,7 +249,9 @@ class PatternSummary(object):
     def expression(self):
         """
         Gets the expression of this PatternSummary.
-        The expression used in the pattern that may include qualifiers.
+        Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
 
 
         :return: The expression of this PatternSummary.
@@ -254,13 +263,43 @@ class PatternSummary(object):
     def expression(self, expression):
         """
         Sets the expression of this PatternSummary.
-        The expression used in the pattern that may include qualifiers.
+        Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
 
 
         :param expression: The expression of this PatternSummary.
         :type: str
         """
         self._expression = expression
+
+    @property
+    def file_path_prefix(self):
+        """
+        Gets the file_path_prefix of this PatternSummary.
+        Input string which drives the selection process.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
+
+
+        :return: The file_path_prefix of this PatternSummary.
+        :rtype: str
+        """
+        return self._file_path_prefix
+
+    @file_path_prefix.setter
+    def file_path_prefix(self, file_path_prefix):
+        """
+        Sets the file_path_prefix of this PatternSummary.
+        Input string which drives the selection process.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
+
+
+        :param file_path_prefix: The file_path_prefix of this PatternSummary.
+        :type: str
+        """
+        self._file_path_prefix = file_path_prefix
 
     @property
     def lifecycle_state(self):

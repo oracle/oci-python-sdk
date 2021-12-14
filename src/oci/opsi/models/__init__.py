@@ -9,11 +9,20 @@ from .add_exadata_insight_members_details import AddExadataInsightMembersDetails
 from .autonomous_database_configuration_summary import AutonomousDatabaseConfigurationSummary
 from .autonomous_database_insight import AutonomousDatabaseInsight
 from .autonomous_database_insight_summary import AutonomousDatabaseInsightSummary
+from .awr_hub import AwrHub
+from .awr_hub_summary import AwrHubSummary
+from .awr_hub_summary_collection import AwrHubSummaryCollection
+from .awr_hubs import AwrHubs
+from .awr_report import AwrReport
+from .awr_snapshot_collection import AwrSnapshotCollection
+from .awr_snapshot_summary import AwrSnapshotSummary
+from .awr_source_summary import AwrSourceSummary
 from .change_database_insight_compartment_details import ChangeDatabaseInsightCompartmentDetails
 from .change_enterprise_manager_bridge_compartment_details import ChangeEnterpriseManagerBridgeCompartmentDetails
 from .change_exadata_insight_compartment_details import ChangeExadataInsightCompartmentDetails
 from .change_host_insight_compartment_details import ChangeHostInsightCompartmentDetails
 from .connection_details import ConnectionDetails
+from .create_awr_hub_details import CreateAwrHubDetails
 from .create_database_insight_details import CreateDatabaseInsightDetails
 from .create_em_managed_external_database_insight_details import CreateEmManagedExternalDatabaseInsightDetails
 from .create_em_managed_external_exadata_insight_details import CreateEmManagedExternalExadataInsightDetails
@@ -23,6 +32,8 @@ from .create_enterprise_manager_bridge_details import CreateEnterpriseManagerBri
 from .create_exadata_insight_details import CreateExadataInsightDetails
 from .create_host_insight_details import CreateHostInsightDetails
 from .create_macs_managed_external_host_insight_details import CreateMacsManagedExternalHostInsightDetails
+from .create_operations_insights_warehouse_details import CreateOperationsInsightsWarehouseDetails
+from .create_operations_insights_warehouse_user_details import CreateOperationsInsightsWarehouseUserDetails
 from .credential_details import CredentialDetails
 from .credentials_by_source import CredentialsBySource
 from .db_external_instance import DBExternalInstance
@@ -37,6 +48,7 @@ from .database_insight_summary import DatabaseInsightSummary
 from .database_insights import DatabaseInsights
 from .database_insights_collection import DatabaseInsightsCollection
 from .disk_group_details import DiskGroupDetails
+from .download_operations_insights_warehouse_wallet_details import DownloadOperationsInsightsWarehouseWalletDetails
 from .em_managed_external_database_configuration_summary import EmManagedExternalDatabaseConfigurationSummary
 from .em_managed_external_database_insight import EmManagedExternalDatabaseInsight
 from .em_managed_external_database_insight_summary import EmManagedExternalDatabaseInsightSummary
@@ -119,6 +131,8 @@ from .ingest_sql_bucket_details import IngestSqlBucketDetails
 from .ingest_sql_bucket_response_details import IngestSqlBucketResponseDetails
 from .ingest_sql_plan_lines_details import IngestSqlPlanLinesDetails
 from .ingest_sql_plan_lines_response_details import IngestSqlPlanLinesResponseDetails
+from .ingest_sql_stats_details import IngestSqlStatsDetails
+from .ingest_sql_stats_response_details import IngestSqlStatsResponseDetails
 from .ingest_sql_text_details import IngestSqlTextDetails
 from .ingest_sql_text_response_details import IngestSqlTextResponseDetails
 from .instance_metrics import InstanceMetrics
@@ -128,6 +142,14 @@ from .macs_managed_external_database_insight_summary import MacsManagedExternalD
 from .macs_managed_external_host_configuration_summary import MacsManagedExternalHostConfigurationSummary
 from .macs_managed_external_host_insight import MacsManagedExternalHostInsight
 from .macs_managed_external_host_insight_summary import MacsManagedExternalHostInsightSummary
+from .operations_insights_warehouse import OperationsInsightsWarehouse
+from .operations_insights_warehouse_summary import OperationsInsightsWarehouseSummary
+from .operations_insights_warehouse_summary_collection import OperationsInsightsWarehouseSummaryCollection
+from .operations_insights_warehouse_user import OperationsInsightsWarehouseUser
+from .operations_insights_warehouse_user_summary import OperationsInsightsWarehouseUserSummary
+from .operations_insights_warehouse_user_summary_collection import OperationsInsightsWarehouseUserSummaryCollection
+from .operations_insights_warehouse_users import OperationsInsightsWarehouseUsers
+from .operations_insights_warehouses import OperationsInsightsWarehouses
 from .projected_data_item import ProjectedDataItem
 from .resource_capacity_trend_aggregation import ResourceCapacityTrendAggregation
 from .resource_insight_current_utilization import ResourceInsightCurrentUtilization
@@ -160,10 +182,12 @@ from .sql_statistics_time_series_aggregation import SqlStatisticsTimeSeriesAggre
 from .sql_statistics_time_series_aggregation_collection import SqlStatisticsTimeSeriesAggregationCollection
 from .sql_statistics_time_series_by_plan_aggregation import SqlStatisticsTimeSeriesByPlanAggregation
 from .sql_statistics_time_series_by_plan_aggregation_collection import SqlStatisticsTimeSeriesByPlanAggregationCollection
+from .sql_stats import SqlStats
 from .sql_text import SqlText
 from .sql_text_collection import SqlTextCollection
 from .sql_text_summary import SqlTextSummary
 from .storage_server_details import StorageServerDetails
+from .summarize_awr_sources_summaries_collection import SummarizeAwrSourcesSummariesCollection
 from .summarize_database_insight_resource_capacity_trend_aggregation_collection import SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection
 from .summarize_database_insight_resource_forecast_trend_aggregation import SummarizeDatabaseInsightResourceForecastTrendAggregation
 from .summarize_database_insight_resource_statistics_aggregation_collection import SummarizeDatabaseInsightResourceStatisticsAggregationCollection
@@ -185,10 +209,12 @@ from .summarize_host_insight_resource_statistics_aggregation_collection import S
 from .summarize_host_insight_resource_usage_aggregation import SummarizeHostInsightResourceUsageAggregation
 from .summarize_host_insight_resource_usage_trend_aggregation_collection import SummarizeHostInsightResourceUsageTrendAggregationCollection
 from .summarize_host_insight_resource_utilization_insight_aggregation import SummarizeHostInsightResourceUtilizationInsightAggregation
+from .summarize_operations_insights_warehouse_resource_usage_aggregation import SummarizeOperationsInsightsWarehouseResourceUsageAggregation
 from .summary_statistics import SummaryStatistics
 from .tablespace_usage_trend import TablespaceUsageTrend
 from .tablespace_usage_trend_aggregation import TablespaceUsageTrendAggregation
 from .update_autonomous_database_insight_details import UpdateAutonomousDatabaseInsightDetails
+from .update_awr_hub_details import UpdateAwrHubDetails
 from .update_database_insight_details import UpdateDatabaseInsightDetails
 from .update_em_managed_external_database_insight_details import UpdateEmManagedExternalDatabaseInsightDetails
 from .update_em_managed_external_exadata_insight_details import UpdateEmManagedExternalExadataInsightDetails
@@ -198,6 +224,8 @@ from .update_exadata_insight_details import UpdateExadataInsightDetails
 from .update_host_insight_details import UpdateHostInsightDetails
 from .update_macs_managed_external_database_insight_details import UpdateMacsManagedExternalDatabaseInsightDetails
 from .update_macs_managed_external_host_insight_details import UpdateMacsManagedExternalHostInsightDetails
+from .update_operations_insights_warehouse_details import UpdateOperationsInsightsWarehouseDetails
+from .update_operations_insights_warehouse_user_details import UpdateOperationsInsightsWarehouseUserDetails
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
 from .work_request_error import WorkRequestError
@@ -214,11 +242,20 @@ opsi_type_mapping = {
     "AutonomousDatabaseConfigurationSummary": AutonomousDatabaseConfigurationSummary,
     "AutonomousDatabaseInsight": AutonomousDatabaseInsight,
     "AutonomousDatabaseInsightSummary": AutonomousDatabaseInsightSummary,
+    "AwrHub": AwrHub,
+    "AwrHubSummary": AwrHubSummary,
+    "AwrHubSummaryCollection": AwrHubSummaryCollection,
+    "AwrHubs": AwrHubs,
+    "AwrReport": AwrReport,
+    "AwrSnapshotCollection": AwrSnapshotCollection,
+    "AwrSnapshotSummary": AwrSnapshotSummary,
+    "AwrSourceSummary": AwrSourceSummary,
     "ChangeDatabaseInsightCompartmentDetails": ChangeDatabaseInsightCompartmentDetails,
     "ChangeEnterpriseManagerBridgeCompartmentDetails": ChangeEnterpriseManagerBridgeCompartmentDetails,
     "ChangeExadataInsightCompartmentDetails": ChangeExadataInsightCompartmentDetails,
     "ChangeHostInsightCompartmentDetails": ChangeHostInsightCompartmentDetails,
     "ConnectionDetails": ConnectionDetails,
+    "CreateAwrHubDetails": CreateAwrHubDetails,
     "CreateDatabaseInsightDetails": CreateDatabaseInsightDetails,
     "CreateEmManagedExternalDatabaseInsightDetails": CreateEmManagedExternalDatabaseInsightDetails,
     "CreateEmManagedExternalExadataInsightDetails": CreateEmManagedExternalExadataInsightDetails,
@@ -228,6 +265,8 @@ opsi_type_mapping = {
     "CreateExadataInsightDetails": CreateExadataInsightDetails,
     "CreateHostInsightDetails": CreateHostInsightDetails,
     "CreateMacsManagedExternalHostInsightDetails": CreateMacsManagedExternalHostInsightDetails,
+    "CreateOperationsInsightsWarehouseDetails": CreateOperationsInsightsWarehouseDetails,
+    "CreateOperationsInsightsWarehouseUserDetails": CreateOperationsInsightsWarehouseUserDetails,
     "CredentialDetails": CredentialDetails,
     "CredentialsBySource": CredentialsBySource,
     "DBExternalInstance": DBExternalInstance,
@@ -242,6 +281,7 @@ opsi_type_mapping = {
     "DatabaseInsights": DatabaseInsights,
     "DatabaseInsightsCollection": DatabaseInsightsCollection,
     "DiskGroupDetails": DiskGroupDetails,
+    "DownloadOperationsInsightsWarehouseWalletDetails": DownloadOperationsInsightsWarehouseWalletDetails,
     "EmManagedExternalDatabaseConfigurationSummary": EmManagedExternalDatabaseConfigurationSummary,
     "EmManagedExternalDatabaseInsight": EmManagedExternalDatabaseInsight,
     "EmManagedExternalDatabaseInsightSummary": EmManagedExternalDatabaseInsightSummary,
@@ -324,6 +364,8 @@ opsi_type_mapping = {
     "IngestSqlBucketResponseDetails": IngestSqlBucketResponseDetails,
     "IngestSqlPlanLinesDetails": IngestSqlPlanLinesDetails,
     "IngestSqlPlanLinesResponseDetails": IngestSqlPlanLinesResponseDetails,
+    "IngestSqlStatsDetails": IngestSqlStatsDetails,
+    "IngestSqlStatsResponseDetails": IngestSqlStatsResponseDetails,
     "IngestSqlTextDetails": IngestSqlTextDetails,
     "IngestSqlTextResponseDetails": IngestSqlTextResponseDetails,
     "InstanceMetrics": InstanceMetrics,
@@ -333,6 +375,14 @@ opsi_type_mapping = {
     "MacsManagedExternalHostConfigurationSummary": MacsManagedExternalHostConfigurationSummary,
     "MacsManagedExternalHostInsight": MacsManagedExternalHostInsight,
     "MacsManagedExternalHostInsightSummary": MacsManagedExternalHostInsightSummary,
+    "OperationsInsightsWarehouse": OperationsInsightsWarehouse,
+    "OperationsInsightsWarehouseSummary": OperationsInsightsWarehouseSummary,
+    "OperationsInsightsWarehouseSummaryCollection": OperationsInsightsWarehouseSummaryCollection,
+    "OperationsInsightsWarehouseUser": OperationsInsightsWarehouseUser,
+    "OperationsInsightsWarehouseUserSummary": OperationsInsightsWarehouseUserSummary,
+    "OperationsInsightsWarehouseUserSummaryCollection": OperationsInsightsWarehouseUserSummaryCollection,
+    "OperationsInsightsWarehouseUsers": OperationsInsightsWarehouseUsers,
+    "OperationsInsightsWarehouses": OperationsInsightsWarehouses,
     "ProjectedDataItem": ProjectedDataItem,
     "ResourceCapacityTrendAggregation": ResourceCapacityTrendAggregation,
     "ResourceInsightCurrentUtilization": ResourceInsightCurrentUtilization,
@@ -365,10 +415,12 @@ opsi_type_mapping = {
     "SqlStatisticsTimeSeriesAggregationCollection": SqlStatisticsTimeSeriesAggregationCollection,
     "SqlStatisticsTimeSeriesByPlanAggregation": SqlStatisticsTimeSeriesByPlanAggregation,
     "SqlStatisticsTimeSeriesByPlanAggregationCollection": SqlStatisticsTimeSeriesByPlanAggregationCollection,
+    "SqlStats": SqlStats,
     "SqlText": SqlText,
     "SqlTextCollection": SqlTextCollection,
     "SqlTextSummary": SqlTextSummary,
     "StorageServerDetails": StorageServerDetails,
+    "SummarizeAwrSourcesSummariesCollection": SummarizeAwrSourcesSummariesCollection,
     "SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection": SummarizeDatabaseInsightResourceCapacityTrendAggregationCollection,
     "SummarizeDatabaseInsightResourceForecastTrendAggregation": SummarizeDatabaseInsightResourceForecastTrendAggregation,
     "SummarizeDatabaseInsightResourceStatisticsAggregationCollection": SummarizeDatabaseInsightResourceStatisticsAggregationCollection,
@@ -390,10 +442,12 @@ opsi_type_mapping = {
     "SummarizeHostInsightResourceUsageAggregation": SummarizeHostInsightResourceUsageAggregation,
     "SummarizeHostInsightResourceUsageTrendAggregationCollection": SummarizeHostInsightResourceUsageTrendAggregationCollection,
     "SummarizeHostInsightResourceUtilizationInsightAggregation": SummarizeHostInsightResourceUtilizationInsightAggregation,
+    "SummarizeOperationsInsightsWarehouseResourceUsageAggregation": SummarizeOperationsInsightsWarehouseResourceUsageAggregation,
     "SummaryStatistics": SummaryStatistics,
     "TablespaceUsageTrend": TablespaceUsageTrend,
     "TablespaceUsageTrendAggregation": TablespaceUsageTrendAggregation,
     "UpdateAutonomousDatabaseInsightDetails": UpdateAutonomousDatabaseInsightDetails,
+    "UpdateAwrHubDetails": UpdateAwrHubDetails,
     "UpdateDatabaseInsightDetails": UpdateDatabaseInsightDetails,
     "UpdateEmManagedExternalDatabaseInsightDetails": UpdateEmManagedExternalDatabaseInsightDetails,
     "UpdateEmManagedExternalExadataInsightDetails": UpdateEmManagedExternalExadataInsightDetails,
@@ -403,6 +457,8 @@ opsi_type_mapping = {
     "UpdateHostInsightDetails": UpdateHostInsightDetails,
     "UpdateMacsManagedExternalDatabaseInsightDetails": UpdateMacsManagedExternalDatabaseInsightDetails,
     "UpdateMacsManagedExternalHostInsightDetails": UpdateMacsManagedExternalHostInsightDetails,
+    "UpdateOperationsInsightsWarehouseDetails": UpdateOperationsInsightsWarehouseDetails,
+    "UpdateOperationsInsightsWarehouseUserDetails": UpdateOperationsInsightsWarehouseUserDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,
     "WorkRequestError": WorkRequestError,

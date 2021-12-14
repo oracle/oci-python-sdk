@@ -96,7 +96,7 @@ class Entity(object):
     def length(self):
         """
         Gets the length of this Entity.
-        Length of text
+        Length of entity text
 
 
         :return: The length of this Entity.
@@ -108,7 +108,7 @@ class Entity(object):
     def length(self, length):
         """
         Sets the length of this Entity.
-        Length of text
+        Length of entity text
 
 
         :param length: The length of this Entity.
@@ -192,7 +192,8 @@ class Entity(object):
     def score(self):
         """
         Gets the score of this Entity.
-        Score or confidence for prediction.
+        Score or confidence of extracted entity type.
+        Example: `0.9999856066867399`
 
 
         :return: The score of this Entity.
@@ -204,7 +205,8 @@ class Entity(object):
     def score(self, score):
         """
         Sets the score of this Entity.
-        Score or confidence for prediction.
+        Score or confidence of extracted entity type.
+        Example: `0.9999856066867399`
 
 
         :param score: The score of this Entity.

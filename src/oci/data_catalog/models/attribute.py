@@ -121,6 +121,10 @@ class Attribute(object):
             The value to assign to the is_nullable property of this Attribute.
         :type is_nullable: bool
 
+        :param type_key:
+            The value to assign to the type_key property of this Attribute.
+        :type type_key: str
+
         :param min_collection_count:
             The value to assign to the min_collection_count property of this Attribute.
         :type min_collection_count: int
@@ -215,6 +219,7 @@ class Attribute(object):
             'external_key': 'str',
             'is_incremental_data': 'bool',
             'is_nullable': 'bool',
+            'type_key': 'str',
             'min_collection_count': 'int',
             'max_collection_count': 'int',
             'datatype_entity_key': 'str',
@@ -251,6 +256,7 @@ class Attribute(object):
             'external_key': 'externalKey',
             'is_incremental_data': 'isIncrementalData',
             'is_nullable': 'isNullable',
+            'type_key': 'typeKey',
             'min_collection_count': 'minCollectionCount',
             'max_collection_count': 'maxCollectionCount',
             'datatype_entity_key': 'datatypeEntityKey',
@@ -286,6 +292,7 @@ class Attribute(object):
         self._external_key = None
         self._is_incremental_data = None
         self._is_nullable = None
+        self._type_key = None
         self._min_collection_count = None
         self._max_collection_count = None
         self._datatype_entity_key = None
@@ -665,6 +672,30 @@ class Attribute(object):
         :type: bool
         """
         self._is_nullable = is_nullable
+
+    @property
+    def type_key(self):
+        """
+        Gets the type_key of this Attribute.
+        The type of the attribute. Type keys can be found via the '/types' endpoint.
+
+
+        :return: The type_key of this Attribute.
+        :rtype: str
+        """
+        return self._type_key
+
+    @type_key.setter
+    def type_key(self, type_key):
+        """
+        Sets the type_key of this Attribute.
+        The type of the attribute. Type keys can be found via the '/types' endpoint.
+
+
+        :param type_key: The type_key of this Attribute.
+        :type: str
+        """
+        self._type_key = type_key
 
     @property
     def min_collection_count(self):

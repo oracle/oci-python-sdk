@@ -68,6 +68,14 @@ class EntitySummary(object):
             The value to assign to the description property of this EntitySummary.
         :type description: str
 
+        :param is_logical:
+            The value to assign to the is_logical property of this EntitySummary.
+        :type is_logical: bool
+
+        :param is_partition:
+            The value to assign to the is_partition property of this EntitySummary.
+        :type is_partition: bool
+
         :param data_asset_key:
             The value to assign to the data_asset_key property of this EntitySummary.
         :type data_asset_key: str
@@ -122,12 +130,18 @@ class EntitySummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param properties:
+            The value to assign to the properties property of this EntitySummary.
+        :type properties: dict(str, dict(str, str))
+
         """
         self.swagger_types = {
             'key': 'str',
             'display_name': 'str',
             'business_name': 'str',
             'description': 'str',
+            'is_logical': 'bool',
+            'is_partition': 'bool',
             'data_asset_key': 'str',
             'folder_key': 'str',
             'folder_name': 'str',
@@ -140,7 +154,8 @@ class EntitySummary(object):
             'time_updated': 'datetime',
             'updated_by_id': 'str',
             'uri': 'str',
-            'lifecycle_state': 'str'
+            'lifecycle_state': 'str',
+            'properties': 'dict(str, dict(str, str))'
         }
 
         self.attribute_map = {
@@ -148,6 +163,8 @@ class EntitySummary(object):
             'display_name': 'displayName',
             'business_name': 'businessName',
             'description': 'description',
+            'is_logical': 'isLogical',
+            'is_partition': 'isPartition',
             'data_asset_key': 'dataAssetKey',
             'folder_key': 'folderKey',
             'folder_name': 'folderName',
@@ -160,13 +177,16 @@ class EntitySummary(object):
             'time_updated': 'timeUpdated',
             'updated_by_id': 'updatedById',
             'uri': 'uri',
-            'lifecycle_state': 'lifecycleState'
+            'lifecycle_state': 'lifecycleState',
+            'properties': 'properties'
         }
 
         self._key = None
         self._display_name = None
         self._business_name = None
         self._description = None
+        self._is_logical = None
+        self._is_partition = None
         self._data_asset_key = None
         self._folder_key = None
         self._folder_name = None
@@ -180,6 +200,7 @@ class EntitySummary(object):
         self._updated_by_id = None
         self._uri = None
         self._lifecycle_state = None
+        self._properties = None
 
     @property
     def key(self):
@@ -278,6 +299,56 @@ class EntitySummary(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def is_logical(self):
+        """
+        Gets the is_logical of this EntitySummary.
+        Property that identifies if the object is a physical object (materialized) or virtual/logical object
+        defined on other objects.
+
+
+        :return: The is_logical of this EntitySummary.
+        :rtype: bool
+        """
+        return self._is_logical
+
+    @is_logical.setter
+    def is_logical(self, is_logical):
+        """
+        Sets the is_logical of this EntitySummary.
+        Property that identifies if the object is a physical object (materialized) or virtual/logical object
+        defined on other objects.
+
+
+        :param is_logical: The is_logical of this EntitySummary.
+        :type: bool
+        """
+        self._is_logical = is_logical
+
+    @property
+    def is_partition(self):
+        """
+        Gets the is_partition of this EntitySummary.
+        Property that identifies if an object is a sub object of a physical or materialized parent object.
+
+
+        :return: The is_partition of this EntitySummary.
+        :rtype: bool
+        """
+        return self._is_partition
+
+    @is_partition.setter
+    def is_partition(self, is_partition):
+        """
+        Sets the is_partition of this EntitySummary.
+        Property that identifies if an object is a sub object of a physical or materialized parent object.
+
+
+        :param is_partition: The is_partition of this EntitySummary.
+        :type: bool
+        """
+        self._is_partition = is_partition
 
     @property
     def data_asset_key(self):
@@ -606,6 +677,38 @@ class EntitySummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def properties(self):
+        """
+        Gets the properties of this EntitySummary.
+        A map of maps that contains the properties which are specific to the entity type. Each entity type
+        definition defines it's set of required and optional properties. The map keys are category names and the
+        values are maps of property name to property value. Every property is contained inside of a category. Most
+        data entities have required properties within the \"default\" category.
+        Example: `{\"properties\": { \"default\": { \"key1\": \"value1\"}}}`
+
+
+        :return: The properties of this EntitySummary.
+        :rtype: dict(str, dict(str, str))
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties):
+        """
+        Sets the properties of this EntitySummary.
+        A map of maps that contains the properties which are specific to the entity type. Each entity type
+        definition defines it's set of required and optional properties. The map keys are category names and the
+        values are maps of property name to property value. Every property is contained inside of a category. Most
+        data entities have required properties within the \"default\" category.
+        Example: `{\"properties\": { \"default\": { \"key1\": \"value1\"}}}`
+
+
+        :param properties: The properties of this EntitySummary.
+        :type: dict(str, dict(str, str))
+        """
+        self._properties = properties
 
     def __repr__(self):
         return formatted_flat_dict(self)

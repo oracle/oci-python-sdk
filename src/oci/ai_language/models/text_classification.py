@@ -68,7 +68,8 @@ class TextClassification(object):
     def score(self):
         """
         **[Required]** Gets the score of this TextClassification.
-        Score of the given text.
+        Score or confidence of extracted text label.
+        Example: `0.9999856066867399`
 
 
         :return: The score of this TextClassification.
@@ -80,7 +81,8 @@ class TextClassification(object):
     def score(self, score):
         """
         Sets the score of this TextClassification.
-        Score of the given text.
+        Score or confidence of extracted text label.
+        Example: `0.9999856066867399`
 
 
         :param score: The score of this TextClassification.

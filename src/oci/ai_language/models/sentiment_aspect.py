@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SentimentAspect(object):
     """
-    Aspect object.
+    Sentiment aspect object.
     """
 
     def __init__(self, **kwargs):
@@ -89,7 +89,7 @@ class SentimentAspect(object):
     def length(self):
         """
         Gets the length of this SentimentAspect.
-        Length of text.
+        Length of aspect text.
 
 
         :return: The length of this SentimentAspect.
@@ -101,7 +101,7 @@ class SentimentAspect(object):
     def length(self, length):
         """
         Sets the length of this SentimentAspect.
-        Length of text.
+        Length of aspect text.
 
 
         :param length: The length of this SentimentAspect.
@@ -161,8 +161,8 @@ class SentimentAspect(object):
     def scores(self):
         """
         Gets the scores of this SentimentAspect.
-        Scores for each sentiment.
-        Example: \"{\\\"positive\\\": 1.0, \\\"negative\\\": 0.0}\"
+        Scores or confidences for each sentiment.
+        Example: `{\"positive\": 1.0, \"negative\": 0.0}`
 
 
         :return: The scores of this SentimentAspect.
@@ -174,8 +174,8 @@ class SentimentAspect(object):
     def scores(self, scores):
         """
         Sets the scores of this SentimentAspect.
-        Scores for each sentiment.
-        Example: \"{\\\"positive\\\": 1.0, \\\"negative\\\": 0.0}\"
+        Scores or confidences for each sentiment.
+        Example: `{\"positive\": 1.0, \"negative\": 0.0}`
 
 
         :param scores: The scores of this SentimentAspect.

@@ -22,6 +22,10 @@ class ValidatePatternDetails(object):
             The value to assign to the expression property of this ValidatePatternDetails.
         :type expression: str
 
+        :param file_path_prefix:
+            The value to assign to the file_path_prefix property of this ValidatePatternDetails.
+        :type file_path_prefix: str
+
         :param check_file_path_list:
             The value to assign to the check_file_path_list property of this ValidatePatternDetails.
         :type check_file_path_list: list[str]
@@ -33,17 +37,20 @@ class ValidatePatternDetails(object):
         """
         self.swagger_types = {
             'expression': 'str',
+            'file_path_prefix': 'str',
             'check_file_path_list': 'list[str]',
             'check_failure_limit': 'int'
         }
 
         self.attribute_map = {
             'expression': 'expression',
+            'file_path_prefix': 'filePathPrefix',
             'check_file_path_list': 'checkFilePathList',
             'check_failure_limit': 'checkFailureLimit'
         }
 
         self._expression = None
+        self._file_path_prefix = None
         self._check_file_path_list = None
         self._check_failure_limit = None
 
@@ -51,7 +58,9 @@ class ValidatePatternDetails(object):
     def expression(self):
         """
         Gets the expression of this ValidatePatternDetails.
-        The expression used in the pattern that may include qualifiers. Refer to the user documentation for details of the format and examples.
+        Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
 
 
         :return: The expression of this ValidatePatternDetails.
@@ -63,7 +72,9 @@ class ValidatePatternDetails(object):
     def expression(self, expression):
         """
         Sets the expression of this ValidatePatternDetails.
-        The expression used in the pattern that may include qualifiers. Refer to the user documentation for details of the format and examples.
+        Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
 
 
         :param expression: The expression of this ValidatePatternDetails.
@@ -72,10 +83,38 @@ class ValidatePatternDetails(object):
         self._expression = expression
 
     @property
+    def file_path_prefix(self):
+        """
+        Gets the file_path_prefix of this ValidatePatternDetails.
+        Input string which drives the selection process.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
+
+
+        :return: The file_path_prefix of this ValidatePatternDetails.
+        :rtype: str
+        """
+        return self._file_path_prefix
+
+    @file_path_prefix.setter
+    def file_path_prefix(self, file_path_prefix):
+        """
+        Sets the file_path_prefix of this ValidatePatternDetails.
+        Input string which drives the selection process.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
+
+
+        :param file_path_prefix: The file_path_prefix of this ValidatePatternDetails.
+        :type: str
+        """
+        self._file_path_prefix = file_path_prefix
+
+    @property
     def check_file_path_list(self):
         """
         Gets the check_file_path_list of this ValidatePatternDetails.
-        List of file paths against which the expression can be tried, as a check. This documents, for reference
+        List of file paths against which the pattern can be tried, as a check. This documents, for reference
         purposes, some example objects a pattern is meant to work with.
 
         If provided with the request,this overrides the list which already exists as part of the pattern, if any.
@@ -90,7 +129,7 @@ class ValidatePatternDetails(object):
     def check_file_path_list(self, check_file_path_list):
         """
         Sets the check_file_path_list of this ValidatePatternDetails.
-        List of file paths against which the expression can be tried, as a check. This documents, for reference
+        List of file paths against which the pattern can be tried, as a check. This documents, for reference
         purposes, some example objects a pattern is meant to work with.
 
         If provided with the request,this overrides the list which already exists as part of the pattern, if any.

@@ -124,6 +124,10 @@ class AttributeSummary(object):
             The value to assign to the external_data_type property of this AttributeSummary.
         :type external_data_type: str
 
+        :param type_key:
+            The value to assign to the type_key property of this AttributeSummary.
+        :type type_key: str
+
         :param min_collection_count:
             The value to assign to the min_collection_count property of this AttributeSummary.
         :type min_collection_count: int
@@ -191,6 +195,7 @@ class AttributeSummary(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'external_data_type': 'str',
+            'type_key': 'str',
             'min_collection_count': 'int',
             'max_collection_count': 'int',
             'datatype_entity_key': 'str',
@@ -221,6 +226,7 @@ class AttributeSummary(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'external_data_type': 'externalDataType',
+            'type_key': 'typeKey',
             'min_collection_count': 'minCollectionCount',
             'max_collection_count': 'maxCollectionCount',
             'datatype_entity_key': 'datatypeEntityKey',
@@ -250,6 +256,7 @@ class AttributeSummary(object):
         self._lifecycle_state = None
         self._time_created = None
         self._external_data_type = None
+        self._type_key = None
         self._min_collection_count = None
         self._max_collection_count = None
         self._datatype_entity_key = None
@@ -636,6 +643,30 @@ class AttributeSummary(object):
         :type: str
         """
         self._external_data_type = external_data_type
+
+    @property
+    def type_key(self):
+        """
+        Gets the type_key of this AttributeSummary.
+        The type of the attribute. Type keys can be found via the '/types' endpoint.
+
+
+        :return: The type_key of this AttributeSummary.
+        :rtype: str
+        """
+        return self._type_key
+
+    @type_key.setter
+    def type_key(self, type_key):
+        """
+        Sets the type_key of this AttributeSummary.
+        The type of the attribute. Type keys can be found via the '/types' endpoint.
+
+
+        :param type_key: The type_key of this AttributeSummary.
+        :type: str
+        """
+        self._type_key = type_key
 
     @property
     def min_collection_count(self):

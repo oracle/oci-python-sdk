@@ -108,6 +108,10 @@ class VmCluster(object):
             The value to assign to the cpus_enabled property of this VmCluster.
         :type cpus_enabled: int
 
+        :param ocpus_enabled:
+            The value to assign to the ocpus_enabled property of this VmCluster.
+        :type ocpus_enabled: float
+
         :param memory_size_in_gbs:
             The value to assign to the memory_size_in_gbs property of this VmCluster.
         :type memory_size_in_gbs: int
@@ -119,6 +123,10 @@ class VmCluster(object):
         :param data_storage_size_in_tbs:
             The value to assign to the data_storage_size_in_tbs property of this VmCluster.
         :type data_storage_size_in_tbs: float
+
+        :param data_storage_size_in_gbs:
+            The value to assign to the data_storage_size_in_gbs property of this VmCluster.
+        :type data_storage_size_in_gbs: float
 
         :param shape:
             The value to assign to the shape property of this VmCluster.
@@ -169,9 +177,11 @@ class VmCluster(object):
             'is_sparse_diskgroup_enabled': 'bool',
             'vm_cluster_network_id': 'str',
             'cpus_enabled': 'int',
+            'ocpus_enabled': 'float',
             'memory_size_in_gbs': 'int',
             'db_node_storage_size_in_gbs': 'int',
             'data_storage_size_in_tbs': 'float',
+            'data_storage_size_in_gbs': 'float',
             'shape': 'str',
             'gi_version': 'str',
             'system_version': 'str',
@@ -196,9 +206,11 @@ class VmCluster(object):
             'is_sparse_diskgroup_enabled': 'isSparseDiskgroupEnabled',
             'vm_cluster_network_id': 'vmClusterNetworkId',
             'cpus_enabled': 'cpusEnabled',
+            'ocpus_enabled': 'ocpusEnabled',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'shape': 'shape',
             'gi_version': 'giVersion',
             'system_version': 'systemVersion',
@@ -222,9 +234,11 @@ class VmCluster(object):
         self._is_sparse_diskgroup_enabled = None
         self._vm_cluster_network_id = None
         self._cpus_enabled = None
+        self._ocpus_enabled = None
         self._memory_size_in_gbs = None
         self._db_node_storage_size_in_gbs = None
         self._data_storage_size_in_tbs = None
+        self._data_storage_size_in_gbs = None
         self._shape = None
         self._gi_version = None
         self._system_version = None
@@ -577,6 +591,30 @@ class VmCluster(object):
         self._cpus_enabled = cpus_enabled
 
     @property
+    def ocpus_enabled(self):
+        """
+        Gets the ocpus_enabled of this VmCluster.
+        The number of enabled OCPU cores.
+
+
+        :return: The ocpus_enabled of this VmCluster.
+        :rtype: float
+        """
+        return self._ocpus_enabled
+
+    @ocpus_enabled.setter
+    def ocpus_enabled(self, ocpus_enabled):
+        """
+        Sets the ocpus_enabled of this VmCluster.
+        The number of enabled OCPU cores.
+
+
+        :param ocpus_enabled: The ocpus_enabled of this VmCluster.
+        :type: float
+        """
+        self._ocpus_enabled = ocpus_enabled
+
+    @property
     def memory_size_in_gbs(self):
         """
         Gets the memory_size_in_gbs of this VmCluster.
@@ -647,6 +685,30 @@ class VmCluster(object):
         :type: float
         """
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
+
+    @property
+    def data_storage_size_in_gbs(self):
+        """
+        Gets the data_storage_size_in_gbs of this VmCluster.
+        Size, in gigabytes, of the DATA disk group.
+
+
+        :return: The data_storage_size_in_gbs of this VmCluster.
+        :rtype: float
+        """
+        return self._data_storage_size_in_gbs
+
+    @data_storage_size_in_gbs.setter
+    def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
+        """
+        Sets the data_storage_size_in_gbs of this VmCluster.
+        Size, in gigabytes, of the DATA disk group.
+
+
+        :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this VmCluster.
+        :type: float
+        """
+        self._data_storage_size_in_gbs = data_storage_size_in_gbs
 
     @property
     def shape(self):

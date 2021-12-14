@@ -312,6 +312,8 @@ class ServiceConnectorClient(object):
         Creates a new service connector in the specified compartment.
         A service connector is a logically defined flow for moving data from
         a source service to a destination service in Oracle Cloud Infrastructure.
+        For instructions, see
+        `To create a service connector`__.
         For general information about service connectors, see
         `Service Connector Hub Overview`__.
 
@@ -328,6 +330,7 @@ class ServiceConnectorClient(object):
         activating service connectors, see
         `To activate or deactivate a service connector`__.
 
+        __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
         __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm

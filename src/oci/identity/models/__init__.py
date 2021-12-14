@@ -31,6 +31,7 @@ from .create_api_key_details import CreateApiKeyDetails
 from .create_auth_token_details import CreateAuthTokenDetails
 from .create_compartment_details import CreateCompartmentDetails
 from .create_customer_secret_key_details import CreateCustomerSecretKeyDetails
+from .create_db_credential_details import CreateDbCredentialDetails
 from .create_domain_details import CreateDomainDetails
 from .create_dynamic_group_details import CreateDynamicGroupDetails
 from .create_group_details import CreateGroupDetails
@@ -49,6 +50,8 @@ from .create_tag_namespace_details import CreateTagNamespaceDetails
 from .create_user_details import CreateUserDetails
 from .customer_secret_key import CustomerSecretKey
 from .customer_secret_key_summary import CustomerSecretKeySummary
+from .db_credential import DbCredential
+from .db_credential_summary import DbCredentialSummary
 from .default_tag_definition_validator import DefaultTagDefinitionValidator
 from .domain import Domain
 from .domain_replication import DomainReplication
@@ -164,6 +167,7 @@ identity_type_mapping = {
     "CreateAuthTokenDetails": CreateAuthTokenDetails,
     "CreateCompartmentDetails": CreateCompartmentDetails,
     "CreateCustomerSecretKeyDetails": CreateCustomerSecretKeyDetails,
+    "CreateDbCredentialDetails": CreateDbCredentialDetails,
     "CreateDomainDetails": CreateDomainDetails,
     "CreateDynamicGroupDetails": CreateDynamicGroupDetails,
     "CreateGroupDetails": CreateGroupDetails,
@@ -182,6 +186,8 @@ identity_type_mapping = {
     "CreateUserDetails": CreateUserDetails,
     "CustomerSecretKey": CustomerSecretKey,
     "CustomerSecretKeySummary": CustomerSecretKeySummary,
+    "DbCredential": DbCredential,
+    "DbCredentialSummary": DbCredentialSummary,
     "DefaultTagDefinitionValidator": DefaultTagDefinitionValidator,
     "Domain": Domain,
     "DomainReplication": DomainReplication,

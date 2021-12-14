@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ServiceEnvironmentEndPointOverview(object):
     """
-    Model describing the properties of service environment endPoint overview.
+    An overview of service environment endpoints.
     """
 
     #: A constant which can be used with the environment_type property of a ServiceEnvironmentEndPointOverview.
@@ -25,6 +25,10 @@ class ServiceEnvironmentEndPointOverview(object):
     #: This constant has a value of "INSTANCE_URL_DEV"
     ENVIRONMENT_TYPE_INSTANCE_URL_DEV = "INSTANCE_URL_DEV"
 
+    #: A constant which can be used with the environment_type property of a ServiceEnvironmentEndPointOverview.
+    #: This constant has a value of "OTHER"
+    ENVIRONMENT_TYPE_OTHER = "OTHER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ServiceEnvironmentEndPointOverview object with values from keyword arguments.
@@ -32,7 +36,7 @@ class ServiceEnvironmentEndPointOverview(object):
 
         :param environment_type:
             The value to assign to the environment_type property of this ServiceEnvironmentEndPointOverview.
-            Allowed values for this property are: "INSTANCE_URL_PROD", "INSTANCE_URL_TEST", "INSTANCE_URL_DEV", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INSTANCE_URL_PROD", "INSTANCE_URL_TEST", "INSTANCE_URL_DEV", "OTHER", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type environment_type: str
 
@@ -40,27 +44,34 @@ class ServiceEnvironmentEndPointOverview(object):
             The value to assign to the url property of this ServiceEnvironmentEndPointOverview.
         :type url: str
 
+        :param description:
+            The value to assign to the description property of this ServiceEnvironmentEndPointOverview.
+        :type description: str
+
         """
         self.swagger_types = {
             'environment_type': 'str',
-            'url': 'str'
+            'url': 'str',
+            'description': 'str'
         }
 
         self.attribute_map = {
             'environment_type': 'environmentType',
-            'url': 'url'
+            'url': 'url',
+            'description': 'description'
         }
 
         self._environment_type = None
         self._url = None
+        self._description = None
 
     @property
     def environment_type(self):
         """
         **[Required]** Gets the environment_type of this ServiceEnvironmentEndPointOverview.
-        Service Environemnt EndPoint type.
+        Service environment endpoint type.
 
-        Allowed values for this property are: "INSTANCE_URL_PROD", "INSTANCE_URL_TEST", "INSTANCE_URL_DEV", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INSTANCE_URL_PROD", "INSTANCE_URL_TEST", "INSTANCE_URL_DEV", "OTHER", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -73,13 +84,13 @@ class ServiceEnvironmentEndPointOverview(object):
     def environment_type(self, environment_type):
         """
         Sets the environment_type of this ServiceEnvironmentEndPointOverview.
-        Service Environemnt EndPoint type.
+        Service environment endpoint type.
 
 
         :param environment_type: The environment_type of this ServiceEnvironmentEndPointOverview.
         :type: str
         """
-        allowed_values = ["INSTANCE_URL_PROD", "INSTANCE_URL_TEST", "INSTANCE_URL_DEV"]
+        allowed_values = ["INSTANCE_URL_PROD", "INSTANCE_URL_TEST", "INSTANCE_URL_DEV", "OTHER"]
         if not value_allowed_none_or_none_sentinel(environment_type, allowed_values):
             environment_type = 'UNKNOWN_ENUM_VALUE'
         self._environment_type = environment_type
@@ -88,7 +99,7 @@ class ServiceEnvironmentEndPointOverview(object):
     def url(self):
         """
         **[Required]** Gets the url of this ServiceEnvironmentEndPointOverview.
-        Service Environemnt Instance EndPoint url.
+        Service environment instance URL.
 
 
         :return: The url of this ServiceEnvironmentEndPointOverview.
@@ -100,13 +111,37 @@ class ServiceEnvironmentEndPointOverview(object):
     def url(self, url):
         """
         Sets the url of this ServiceEnvironmentEndPointOverview.
-        Service Environemnt Instance EndPoint url.
+        Service environment instance URL.
 
 
         :param url: The url of this ServiceEnvironmentEndPointOverview.
         :type: str
         """
         self._url = url
+
+    @property
+    def description(self):
+        """
+        Gets the description of this ServiceEnvironmentEndPointOverview.
+        Description of the environment link
+
+
+        :return: The description of this ServiceEnvironmentEndPointOverview.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this ServiceEnvironmentEndPointOverview.
+        Description of the environment link
+
+
+        :param description: The description of this ServiceEnvironmentEndPointOverview.
+        :type: str
+        """
+        self._description = description
 
     def __repr__(self):
         return formatted_flat_dict(self)

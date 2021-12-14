@@ -34,6 +34,10 @@ class UserCapabilities(object):
             The value to assign to the can_use_smtp_credentials property of this UserCapabilities.
         :type can_use_smtp_credentials: bool
 
+        :param can_use_db_credentials:
+            The value to assign to the can_use_db_credentials property of this UserCapabilities.
+        :type can_use_db_credentials: bool
+
         :param can_use_customer_secret_keys:
             The value to assign to the can_use_customer_secret_keys property of this UserCapabilities.
         :type can_use_customer_secret_keys: bool
@@ -48,6 +52,7 @@ class UserCapabilities(object):
             'can_use_api_keys': 'bool',
             'can_use_auth_tokens': 'bool',
             'can_use_smtp_credentials': 'bool',
+            'can_use_db_credentials': 'bool',
             'can_use_customer_secret_keys': 'bool',
             'can_use_o_auth2_client_credentials': 'bool'
         }
@@ -57,6 +62,7 @@ class UserCapabilities(object):
             'can_use_api_keys': 'canUseApiKeys',
             'can_use_auth_tokens': 'canUseAuthTokens',
             'can_use_smtp_credentials': 'canUseSmtpCredentials',
+            'can_use_db_credentials': 'canUseDbCredentials',
             'can_use_customer_secret_keys': 'canUseCustomerSecretKeys',
             'can_use_o_auth2_client_credentials': 'canUseOAuth2ClientCredentials'
         }
@@ -65,6 +71,7 @@ class UserCapabilities(object):
         self._can_use_api_keys = None
         self._can_use_auth_tokens = None
         self._can_use_smtp_credentials = None
+        self._can_use_db_credentials = None
         self._can_use_customer_secret_keys = None
         self._can_use_o_auth2_client_credentials = None
 
@@ -163,6 +170,30 @@ class UserCapabilities(object):
         :type: bool
         """
         self._can_use_smtp_credentials = can_use_smtp_credentials
+
+    @property
+    def can_use_db_credentials(self):
+        """
+        Gets the can_use_db_credentials of this UserCapabilities.
+        Indicates if the user can use DB passwords.
+
+
+        :return: The can_use_db_credentials of this UserCapabilities.
+        :rtype: bool
+        """
+        return self._can_use_db_credentials
+
+    @can_use_db_credentials.setter
+    def can_use_db_credentials(self, can_use_db_credentials):
+        """
+        Sets the can_use_db_credentials of this UserCapabilities.
+        Indicates if the user can use DB passwords.
+
+
+        :param can_use_db_credentials: The can_use_db_credentials of this UserCapabilities.
+        :type: bool
+        """
+        self._can_use_db_credentials = can_use_db_credentials
 
     @property
     def can_use_customer_secret_keys(self):

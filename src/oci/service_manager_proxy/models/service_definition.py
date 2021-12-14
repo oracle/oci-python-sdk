@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ServiceDefinition(object):
     """
-    Model for details associated with service
+    Details for a service definition.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,8 @@ class ServiceDefinition(object):
     def type(self):
         """
         **[Required]** Gets the type of this ServiceDefinition.
-        The service definition type.
+        The service definition type. For example, a service definition type \"RGBUOROMS\"
+        would be for the service \"Oracle Retail Order Management Cloud Service\".
 
 
         :return: The type of this ServiceDefinition.
@@ -63,7 +64,8 @@ class ServiceDefinition(object):
     def type(self, type):
         """
         Sets the type of this ServiceDefinition.
-        The service definition type.
+        The service definition type. For example, a service definition type \"RGBUOROMS\"
+        would be for the service \"Oracle Retail Order Management Cloud Service\".
 
 
         :param type: The type of this ServiceDefinition.
@@ -75,7 +77,7 @@ class ServiceDefinition(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ServiceDefinition.
-        Display name of the service.
+        Display name of the service. For example, \"Oracle Retail Order Management Cloud Service\".
 
 
         :return: The display_name of this ServiceDefinition.
@@ -87,7 +89,7 @@ class ServiceDefinition(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ServiceDefinition.
-        Display name of the service.
+        Display name of the service. For example, \"Oracle Retail Order Management Cloud Service\".
 
 
         :param display_name: The display_name of this ServiceDefinition.
@@ -99,7 +101,7 @@ class ServiceDefinition(object):
     def short_display_name(self):
         """
         **[Required]** Gets the short_display_name of this ServiceDefinition.
-        Short display name of the service.
+        Short display name of the service. For example, \"Retail Order Management\".
 
 
         :return: The short_display_name of this ServiceDefinition.
@@ -111,7 +113,7 @@ class ServiceDefinition(object):
     def short_display_name(self, short_display_name):
         """
         Sets the short_display_name of this ServiceDefinition.
-        Short display name of the service.
+        Short display name of the service. For example, \"Retail Order Management\".
 
 
         :param short_display_name: The short_display_name of this ServiceDefinition.

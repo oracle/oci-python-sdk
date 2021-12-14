@@ -359,7 +359,7 @@ class CreateSddcDetails(object):
         (see :func:`create_esxi_host`).
 
         **Note:** If you later delete EXSi hosts from the SDDC to total less than 3,
-        you are still billed for the 3 minimum recommended EXSi hosts. Also,
+        you are still billed for the 3 minimum recommended ESXi hosts. Also,
         you cannot add more VMware workloads to the SDDC until it again has at least
         3 ESXi hosts.
 
@@ -377,7 +377,7 @@ class CreateSddcDetails(object):
         (see :func:`create_esxi_host`).
 
         **Note:** If you later delete EXSi hosts from the SDDC to total less than 3,
-        you are still billed for the 3 minimum recommended EXSi hosts. Also,
+        you are still billed for the 3 minimum recommended ESXi hosts. Also,
         you cannot add more VMware workloads to the SDDC until it again has at least
         3 ESXi hosts.
 

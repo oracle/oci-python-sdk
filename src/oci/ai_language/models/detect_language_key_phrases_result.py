@@ -37,7 +37,7 @@ class DetectLanguageKeyPhrasesResult(object):
     def key_phrases(self):
         """
         **[Required]** Gets the key_phrases of this DetectLanguageKeyPhrasesResult.
-        List of keyPhrases.
+        List of detected keyPhrases.
 
 
         :return: The key_phrases of this DetectLanguageKeyPhrasesResult.
@@ -49,7 +49,7 @@ class DetectLanguageKeyPhrasesResult(object):
     def key_phrases(self, key_phrases):
         """
         Sets the key_phrases of this DetectLanguageKeyPhrasesResult.
-        List of keyPhrases.
+        List of detected keyPhrases.
 
 
         :param key_phrases: The key_phrases of this DetectLanguageKeyPhrasesResult.

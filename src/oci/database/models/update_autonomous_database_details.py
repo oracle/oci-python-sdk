@@ -193,6 +193,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the is_mtls_connection_required property of this UpdateAutonomousDatabaseDetails.
         :type is_mtls_connection_required: bool
 
+        :param scheduled_operations:
+            The value to assign to the scheduled_operations property of this UpdateAutonomousDatabaseDetails.
+        :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -223,7 +227,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'private_endpoint_label': 'str',
             'nsg_ids': 'list[str]',
             'customer_contacts': 'list[CustomerContact]',
-            'is_mtls_connection_required': 'bool'
+            'is_mtls_connection_required': 'bool',
+            'scheduled_operations': 'list[ScheduledOperationDetails]'
         }
 
         self.attribute_map = {
@@ -255,7 +260,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'private_endpoint_label': 'privateEndpointLabel',
             'nsg_ids': 'nsgIds',
             'customer_contacts': 'customerContacts',
-            'is_mtls_connection_required': 'isMtlsConnectionRequired'
+            'is_mtls_connection_required': 'isMtlsConnectionRequired',
+            'scheduled_operations': 'scheduledOperations'
         }
 
         self._cpu_core_count = None
@@ -287,6 +293,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._nsg_ids = None
         self._customer_contacts = None
         self._is_mtls_connection_required = None
+        self._scheduled_operations = None
 
     @property
     def cpu_core_count(self):
@@ -1199,6 +1206,30 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: bool
         """
         self._is_mtls_connection_required = is_mtls_connection_required
+
+    @property
+    def scheduled_operations(self):
+        """
+        Gets the scheduled_operations of this UpdateAutonomousDatabaseDetails.
+        list of scheduled operations
+
+
+        :return: The scheduled_operations of this UpdateAutonomousDatabaseDetails.
+        :rtype: list[oci.database.models.ScheduledOperationDetails]
+        """
+        return self._scheduled_operations
+
+    @scheduled_operations.setter
+    def scheduled_operations(self, scheduled_operations):
+        """
+        Sets the scheduled_operations of this UpdateAutonomousDatabaseDetails.
+        list of scheduled operations
+
+
+        :param scheduled_operations: The scheduled_operations of this UpdateAutonomousDatabaseDetails.
+        :type: list[oci.database.models.ScheduledOperationDetails]
+        """
+        self._scheduled_operations = scheduled_operations
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -5,9 +5,11 @@
 import io
 import hashlib
 import base64
+import logging
 from . import md5 as MD5
 from multiprocessing.dummy import Pool
 from os import stat
+from cryptography.exceptions import InternalError
 from ..constants import DEFAULT_PART_SIZE
 from ..constants import MEBIBYTE
 from .buffered_part_reader import BufferedPartReader
@@ -28,6 +30,7 @@ SSEC_PARAM_NAMES = [
     'opc_sse_customer_key',
     'opc_sse_customer_key_sha256'
 ]
+logger = logging.getLogger(__name__)
 
 
 class MultipartObjectAssembler:
@@ -174,11 +177,15 @@ class MultipartObjectAssembler:
         # Determine if we can use the hashlib version of md5 or the bundled
         # version of md5
         if is_fips_mode():
-            md5 = MD5.md5
+            try:
+                md5 = MD5.md5()
+            except InternalError as ex:
+                logger.warning("An exception occur due to {}. Fallback to using hashlib.new('md5', usedforsecurity=false) for md5.".format(ex))
+                md5 = hashlib.new('md5', usedforsecurity=False)
         else:
-            md5 = hashlib.md5
+            md5 = hashlib.md5()
 
-        m = md5()
+        m = md5
         with io.open(file_path, mode='rb') as f:
             bpr = BufferedPartReader(f, offset, chunk)
             while True:

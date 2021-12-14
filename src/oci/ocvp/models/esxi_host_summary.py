@@ -124,6 +124,18 @@ class EsxiHostSummary(object):
             The value to assign to the billing_contract_end_date property of this EsxiHostSummary.
         :type billing_contract_end_date: datetime
 
+        :param failed_esxi_host_id:
+            The value to assign to the failed_esxi_host_id property of this EsxiHostSummary.
+        :type failed_esxi_host_id: str
+
+        :param replacement_esxi_host_id:
+            The value to assign to the replacement_esxi_host_id property of this EsxiHostSummary.
+        :type replacement_esxi_host_id: str
+
+        :param grace_period_end_date:
+            The value to assign to the grace_period_end_date property of this EsxiHostSummary.
+        :type grace_period_end_date: datetime
+
         :param compute_availability_domain:
             The value to assign to the compute_availability_domain property of this EsxiHostSummary.
         :type compute_availability_domain: str
@@ -149,6 +161,9 @@ class EsxiHostSummary(object):
             'current_sku': 'str',
             'next_sku': 'str',
             'billing_contract_end_date': 'datetime',
+            'failed_esxi_host_id': 'str',
+            'replacement_esxi_host_id': 'str',
+            'grace_period_end_date': 'datetime',
             'compute_availability_domain': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -166,6 +181,9 @@ class EsxiHostSummary(object):
             'current_sku': 'currentSku',
             'next_sku': 'nextSku',
             'billing_contract_end_date': 'billingContractEndDate',
+            'failed_esxi_host_id': 'failedEsxiHostId',
+            'replacement_esxi_host_id': 'replacementEsxiHostId',
+            'grace_period_end_date': 'gracePeriodEndDate',
             'compute_availability_domain': 'computeAvailabilityDomain',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -182,6 +200,9 @@ class EsxiHostSummary(object):
         self._current_sku = None
         self._next_sku = None
         self._billing_contract_end_date = None
+        self._failed_esxi_host_id = None
+        self._replacement_esxi_host_id = None
+        self._grace_period_end_date = None
         self._compute_availability_domain = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -519,6 +540,98 @@ class EsxiHostSummary(object):
         :type: datetime
         """
         self._billing_contract_end_date = billing_contract_end_date
+
+    @property
+    def failed_esxi_host_id(self):
+        """
+        Gets the failed_esxi_host_id of this EsxiHostSummary.
+        The `OCID`__ of the esxi host that
+        is failed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The failed_esxi_host_id of this EsxiHostSummary.
+        :rtype: str
+        """
+        return self._failed_esxi_host_id
+
+    @failed_esxi_host_id.setter
+    def failed_esxi_host_id(self, failed_esxi_host_id):
+        """
+        Sets the failed_esxi_host_id of this EsxiHostSummary.
+        The `OCID`__ of the esxi host that
+        is failed.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param failed_esxi_host_id: The failed_esxi_host_id of this EsxiHostSummary.
+        :type: str
+        """
+        self._failed_esxi_host_id = failed_esxi_host_id
+
+    @property
+    def replacement_esxi_host_id(self):
+        """
+        Gets the replacement_esxi_host_id of this EsxiHostSummary.
+        The `OCID`__ of the esxi host that
+        is newly created to replace the failed node.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The replacement_esxi_host_id of this EsxiHostSummary.
+        :rtype: str
+        """
+        return self._replacement_esxi_host_id
+
+    @replacement_esxi_host_id.setter
+    def replacement_esxi_host_id(self, replacement_esxi_host_id):
+        """
+        Sets the replacement_esxi_host_id of this EsxiHostSummary.
+        The `OCID`__ of the esxi host that
+        is newly created to replace the failed node.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param replacement_esxi_host_id: The replacement_esxi_host_id of this EsxiHostSummary.
+        :type: str
+        """
+        self._replacement_esxi_host_id = replacement_esxi_host_id
+
+    @property
+    def grace_period_end_date(self):
+        """
+        Gets the grace_period_end_date of this EsxiHostSummary.
+        The date and time when the new esxi host should start billing cycle.
+        `RFC3339`__.
+        Example: `2021-07-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The grace_period_end_date of this EsxiHostSummary.
+        :rtype: datetime
+        """
+        return self._grace_period_end_date
+
+    @grace_period_end_date.setter
+    def grace_period_end_date(self, grace_period_end_date):
+        """
+        Sets the grace_period_end_date of this EsxiHostSummary.
+        The date and time when the new esxi host should start billing cycle.
+        `RFC3339`__.
+        Example: `2021-07-25T21:10:29.600Z`
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param grace_period_end_date: The grace_period_end_date of this EsxiHostSummary.
+        :type: datetime
+        """
+        self._grace_period_end_date = grace_period_end_date
 
     @property
     def compute_availability_domain(self):

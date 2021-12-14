@@ -65,6 +65,38 @@ class WorkRequest(object):
     #: This constant has a value of "AUTOSCALE_RUN"
     OPERATION_TYPE_AUTOSCALE_RUN = "AUTOSCALE_RUN"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_API_KEY"
+    OPERATION_TYPE_CREATE_API_KEY = "CREATE_API_KEY"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_API_KEY"
+    OPERATION_TYPE_DELETE_API_KEY = "DELETE_API_KEY"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "TEST_OBJECT_STORE_CONNECTION"
+    OPERATION_TYPE_TEST_OBJECT_STORE_CONNECTION = "TEST_OBJECT_STORE_CONNECTION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_METASTORE_CONFIG"
+    OPERATION_TYPE_CREATE_METASTORE_CONFIG = "CREATE_METASTORE_CONFIG"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_METASTORE_CONFIG"
+    OPERATION_TYPE_DELETE_METASTORE_CONFIG = "DELETE_METASTORE_CONFIG"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_METASTORE_CONFIG"
+    OPERATION_TYPE_UPDATE_METASTORE_CONFIG = "UPDATE_METASTORE_CONFIG"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ACTIVATE_METASTORE_CONFIG"
+    OPERATION_TYPE_ACTIVATE_METASTORE_CONFIG = "ACTIVATE_METASTORE_CONFIG"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "TEST_METASTORE_CONFIG"
+    OPERATION_TYPE_TEST_METASTORE_CONFIG = "TEST_METASTORE_CONFIG"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -104,7 +136,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", "AUTOSCALE_CONFIG", "AUTOSCALE_RUN", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", "AUTOSCALE_CONFIG", "AUTOSCALE_RUN", "CREATE_API_KEY", "DELETE_API_KEY", "TEST_OBJECT_STORE_CONNECTION", "CREATE_METASTORE_CONFIG", "DELETE_METASTORE_CONFIG", "UPDATE_METASTORE_CONFIG", "ACTIVATE_METASTORE_CONFIG", "TEST_METASTORE_CONFIG", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -223,7 +255,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The type of this work request.
 
-        Allowed values for this property are: "CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", "AUTOSCALE_CONFIG", "AUTOSCALE_RUN", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", "AUTOSCALE_CONFIG", "AUTOSCALE_RUN", "CREATE_API_KEY", "DELETE_API_KEY", "TEST_OBJECT_STORE_CONNECTION", "CREATE_METASTORE_CONFIG", "DELETE_METASTORE_CONFIG", "UPDATE_METASTORE_CONFIG", "ACTIVATE_METASTORE_CONFIG", "TEST_METASTORE_CONFIG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -242,7 +274,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", "AUTOSCALE_CONFIG", "AUTOSCALE_RUN"]
+        allowed_values = ["CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", "AUTOSCALE_CONFIG", "AUTOSCALE_RUN", "CREATE_API_KEY", "DELETE_API_KEY", "TEST_OBJECT_STORE_CONNECTION", "CREATE_METASTORE_CONFIG", "DELETE_METASTORE_CONFIG", "UPDATE_METASTORE_CONFIG", "ACTIVATE_METASTORE_CONFIG", "TEST_METASTORE_CONFIG"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
