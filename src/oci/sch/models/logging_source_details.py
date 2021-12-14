@@ -10,7 +10,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LoggingSourceDetails(SourceDetails):
     """
-    The logging source.
+    The Logging source.
+    For configuration instructions, see
+    `To create a service connector`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
     """
 
     def __init__(self, **kwargs):
@@ -47,7 +51,7 @@ class LoggingSourceDetails(SourceDetails):
     def log_sources(self):
         """
         **[Required]** Gets the log_sources of this LoggingSourceDetails.
-        The resources affected by this work request.
+        The logs for this Logging source.
 
 
         :return: The log_sources of this LoggingSourceDetails.
@@ -59,7 +63,7 @@ class LoggingSourceDetails(SourceDetails):
     def log_sources(self, log_sources):
         """
         Sets the log_sources of this LoggingSourceDetails.
-        The resources affected by this work request.
+        The logs for this Logging source.
 
 
         :param log_sources: The log_sources of this LoggingSourceDetails.

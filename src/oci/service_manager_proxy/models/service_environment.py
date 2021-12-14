@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ServiceEnvironment(object):
     """
-    Model describing service environment properties.
+    Detailed information about a service environment.
+
+    **Note:** Service URL formats may vary from the provided example.
     """
 
     #: A constant which can be used with the status property of a ServiceEnvironment.
@@ -195,6 +197,10 @@ class ServiceEnvironment(object):
         **[Required]** Gets the id of this ServiceEnvironment.
         Unqiue identifier for the entitlement related to the environment.
 
+        **Note:** Not an `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
 
         :return: The id of this ServiceEnvironment.
         :rtype: str
@@ -207,6 +213,10 @@ class ServiceEnvironment(object):
         Sets the id of this ServiceEnvironment.
         Unqiue identifier for the entitlement related to the environment.
 
+        **Note:** Not an `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
 
         :param id: The id of this ServiceEnvironment.
         :type: str
@@ -217,7 +227,11 @@ class ServiceEnvironment(object):
     def subscription_id(self):
         """
         **[Required]** Gets the subscription_id of this ServiceEnvironment.
-        The subscription Id corresponding to the service environment Id.
+        The unique subscription ID associated with the service environment ID.
+
+        **Note:** Not an `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this ServiceEnvironment.
@@ -229,7 +243,11 @@ class ServiceEnvironment(object):
     def subscription_id(self, subscription_id):
         """
         Sets the subscription_id of this ServiceEnvironment.
-        The subscription Id corresponding to the service environment Id.
+        The unique subscription ID associated with the service environment ID.
+
+        **Note:** Not an `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this ServiceEnvironment.
@@ -271,7 +289,9 @@ class ServiceEnvironment(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ServiceEnvironment.
-        Compartment Id associated with the service.
+        The `OCID`__ for the compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ServiceEnvironment.
@@ -283,7 +303,9 @@ class ServiceEnvironment(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ServiceEnvironment.
-        Compartment Id associated with the service.
+        The `OCID`__ for the compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ServiceEnvironment.

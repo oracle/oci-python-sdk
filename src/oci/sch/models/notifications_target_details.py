@@ -11,6 +11,10 @@ from oci.decorators import init_model_state_from_kwargs
 class NotificationsTargetDetails(TargetDetails):
     """
     The topic used for the Notifications target.
+    For configuration instructions, see
+    `To create a service connector`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
     """
 
     def __init__(self, **kwargs):

@@ -1,0 +1,11 @@
+DbCredentialSummary
+===================
+
+.. currentmodule:: oci.identity.models
+
+.. autoclass:: DbCredentialSummary
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

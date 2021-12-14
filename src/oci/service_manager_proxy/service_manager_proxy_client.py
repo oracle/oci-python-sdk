@@ -18,7 +18,8 @@ missing = Sentinel("Missing")
 
 class ServiceManagerProxyClient(object):
     """
-    API to manage Service manager proxy.
+    Use the Service Manager Proxy API to obtain information about SaaS environments provisioned by Service Manager.
+    You can get information such as service types and service environment URLs.
     """
 
     def __init__(self, config, **kwargs):
@@ -100,14 +101,20 @@ class ServiceManagerProxyClient(object):
 
     def get_service_environment(self, service_environment_id, compartment_id, **kwargs):
         """
-        Gets details of the service environment specified by the serviceEnvironmentId.
+        Get the detailed information for a specific service environment.
 
 
         :param str service_environment_id: (required)
-            The Id associated with the service environment.
+            The unique identifier associated with the service environment.
+
+            **Note:** Not an `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str compartment_id: (required)
-            The unique identifier for the compartment.
+            The `OCID`__ for the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
@@ -190,19 +197,25 @@ class ServiceManagerProxyClient(object):
 
     def list_service_environments(self, compartment_id, **kwargs):
         """
-        List details of environments which the service is authorized to view.
-        This includes the service instance endpoints and service definition
-        details.
+        List the details of Software as a Service (SaaS) environments provisioned by Service Manager.
+        Information includes the service instance endpoints and service definition details.
 
 
         :param str compartment_id: (required)
-            The unique identifier for the compartment.
+            The `OCID`__ for the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str service_environment_id: (optional)
-            The Id associated with the service environment.
+            The unique identifier associated with the service environment.
+
+            **Note:** Not an `OCID`__.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str service_environment_type: (optional)
-            The service definition type of the environment.
+            The environment's service definition type.
+            For example, \"RGBUOROMS\" is the service definition type for \"Oracle Retail Order Management Cloud Service\".
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,

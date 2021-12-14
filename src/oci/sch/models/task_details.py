@@ -14,8 +14,11 @@ class TaskDetails(object):
     An example task is a filter for error logs.
     For more information about flows defined by service connectors, see
     `Service Connector Hub Overview`__.
+    For configuration instructions, see
+    `To create a service connector`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
     """
 
     #: A constant which can be used with the kind property of a TaskDetails.

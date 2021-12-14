@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ServiceEnvironmentSummary(object):
     """
-    Model describing service environment details.
+    Summary of service environment details.
     """
 
     #: A constant which can be used with the status property of a ServiceEnvironmentSummary.
@@ -209,6 +209,10 @@ class ServiceEnvironmentSummary(object):
         **[Required]** Gets the id of this ServiceEnvironmentSummary.
         Unqiue identifier for the entitlement related to the environment.
 
+        **Note:** Not an `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
 
         :return: The id of this ServiceEnvironmentSummary.
         :rtype: str
@@ -221,6 +225,10 @@ class ServiceEnvironmentSummary(object):
         Sets the id of this ServiceEnvironmentSummary.
         Unqiue identifier for the entitlement related to the environment.
 
+        **Note:** Not an `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
 
         :param id: The id of this ServiceEnvironmentSummary.
         :type: str
@@ -231,7 +239,11 @@ class ServiceEnvironmentSummary(object):
     def subscription_id(self):
         """
         **[Required]** Gets the subscription_id of this ServiceEnvironmentSummary.
-        The subscription Id corresponding to the service environment Id.
+        The unique subscription ID associated with the service environment ID.
+
+        **Note:** Not an `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The subscription_id of this ServiceEnvironmentSummary.
@@ -243,7 +255,11 @@ class ServiceEnvironmentSummary(object):
     def subscription_id(self, subscription_id):
         """
         Sets the subscription_id of this ServiceEnvironmentSummary.
-        The subscription Id corresponding to the service environment Id.
+        The unique subscription ID associated with the service environment ID.
+
+        **Note:** Not an `OCID`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param subscription_id: The subscription_id of this ServiceEnvironmentSummary.
@@ -285,7 +301,9 @@ class ServiceEnvironmentSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ServiceEnvironmentSummary.
-        Compartment Id associated with the service.
+        The `OCID`__ for the compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this ServiceEnvironmentSummary.
@@ -297,7 +315,9 @@ class ServiceEnvironmentSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ServiceEnvironmentSummary.
-        Compartment Id associated with the service.
+        The `OCID`__ for the compartment.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this ServiceEnvironmentSummary.
@@ -377,8 +397,12 @@ class ServiceEnvironmentSummary(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this ServiceEnvironmentSummary.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The defined_tags of this ServiceEnvironmentSummary.
@@ -390,8 +414,12 @@ class ServiceEnvironmentSummary(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this ServiceEnvironmentSummary.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        Defined tags for this resource. Each key is predefined and scoped to a
+        namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param defined_tags: The defined_tags of this ServiceEnvironmentSummary.
@@ -403,8 +431,12 @@ class ServiceEnvironmentSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this ServiceEnvironmentSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"CostCenter\": \"42\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :return: The freeform_tags of this ServiceEnvironmentSummary.
@@ -416,8 +448,12 @@ class ServiceEnvironmentSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this ServiceEnvironmentSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        Free-form tags for this resource. Each tag is a simple key-value pair with no
+        predefined name, type, or namespace. For more information, see `Resource Tags`__.
+
+        Example: `{\"CostCenter\": \"42\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
 
 
         :param freeform_tags: The freeform_tags of this ServiceEnvironmentSummary.

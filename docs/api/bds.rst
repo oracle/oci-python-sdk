@@ -18,6 +18,7 @@ Bds
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.bds.models.ActivateBdsMetastoreConfigurationDetails
     oci.bds.models.AddAutoScalingConfigurationDetails
     oci.bds.models.AddBlockStorageDetails
     oci.bds.models.AddCloudSqlDetails
@@ -31,6 +32,8 @@ Bds
     oci.bds.models.BdsApiKeySummary
     oci.bds.models.BdsInstance
     oci.bds.models.BdsInstanceSummary
+    oci.bds.models.BdsMetastoreConfiguration
+    oci.bds.models.BdsMetastoreConfigurationSummary
     oci.bds.models.ChangeBdsInstanceCompartmentDetails
     oci.bds.models.ChangeShapeDetails
     oci.bds.models.ChangeShapeNodes
@@ -38,6 +41,7 @@ Bds
     oci.bds.models.ClusterDetails
     oci.bds.models.CreateBdsApiKeyDetails
     oci.bds.models.CreateBdsInstanceDetails
+    oci.bds.models.CreateBdsMetastoreConfigurationDetails
     oci.bds.models.CreateNodeDetails
     oci.bds.models.DefaultError
     oci.bds.models.KerberosDetails
@@ -47,9 +51,11 @@ Bds
     oci.bds.models.RemoveAutoScalingConfigurationDetails
     oci.bds.models.RemoveCloudSqlDetails
     oci.bds.models.RestartNodeDetails
+    oci.bds.models.TestBdsMetastoreConfigurationDetails
     oci.bds.models.TestBdsObjectStorageConnectionDetails
     oci.bds.models.UpdateAutoScalingConfigurationDetails
     oci.bds.models.UpdateBdsInstanceDetails
+    oci.bds.models.UpdateBdsMetastoreConfigurationDetails
     oci.bds.models.VolumeAttachmentDetail
     oci.bds.models.WorkRequest
     oci.bds.models.WorkRequestError

@@ -72,6 +72,10 @@ class CreateEsxiHostDetails(object):
             The value to assign to the compute_availability_domain property of this CreateEsxiHostDetails.
         :type compute_availability_domain: str
 
+        :param failed_esxi_host_id:
+            The value to assign to the failed_esxi_host_id property of this CreateEsxiHostDetails.
+        :type failed_esxi_host_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateEsxiHostDetails.
         :type freeform_tags: dict(str, str)
@@ -87,6 +91,7 @@ class CreateEsxiHostDetails(object):
             'current_sku': 'str',
             'next_sku': 'str',
             'compute_availability_domain': 'str',
+            'failed_esxi_host_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -97,6 +102,7 @@ class CreateEsxiHostDetails(object):
             'current_sku': 'currentSku',
             'next_sku': 'nextSku',
             'compute_availability_domain': 'computeAvailabilityDomain',
+            'failed_esxi_host_id': 'failedEsxiHostId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -106,6 +112,7 @@ class CreateEsxiHostDetails(object):
         self._current_sku = None
         self._next_sku = None
         self._compute_availability_domain = None
+        self._failed_esxi_host_id = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -276,6 +283,40 @@ class CreateEsxiHostDetails(object):
         :type: str
         """
         self._compute_availability_domain = compute_availability_domain
+
+    @property
+    def failed_esxi_host_id(self):
+        """
+        Gets the failed_esxi_host_id of this CreateEsxiHostDetails.
+        The `OCID`__ of the esxi host that
+        is failed. It is an optional param, when user supplies this param, new Esxi
+        Host will be created to replace the failed one, and failedEsxiHostId field
+        will be udpated in the newly created EsxiHost.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The failed_esxi_host_id of this CreateEsxiHostDetails.
+        :rtype: str
+        """
+        return self._failed_esxi_host_id
+
+    @failed_esxi_host_id.setter
+    def failed_esxi_host_id(self, failed_esxi_host_id):
+        """
+        Sets the failed_esxi_host_id of this CreateEsxiHostDetails.
+        The `OCID`__ of the esxi host that
+        is failed. It is an optional param, when user supplies this param, new Esxi
+        Host will be created to replace the failed one, and failedEsxiHostId field
+        will be udpated in the newly created EsxiHost.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param failed_esxi_host_id: The failed_esxi_host_id of this CreateEsxiHostDetails.
+        :type: str
+        """
+        self._failed_esxi_host_id = failed_esxi_host_id
 
     @property
     def freeform_tags(self):

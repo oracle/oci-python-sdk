@@ -11,11 +11,14 @@ from oci.decorators import init_model_state_from_kwargs
 class TargetDetails(object):
     """
     An object that represents the target of the flow defined by the service connector.
-    An example target is a stream.
+    An example target is a stream (Streaming service).
     For more information about flows defined by service connectors, see
     `Service Connector Hub Overview`__.
+    For configuration instructions, see
+    `To create a service connector`__.
 
     __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/overview.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
     """
 
     #: A constant which can be used with the kind property of a TargetDetails.

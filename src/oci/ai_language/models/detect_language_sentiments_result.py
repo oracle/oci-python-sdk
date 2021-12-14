@@ -37,7 +37,7 @@ class DetectLanguageSentimentsResult(object):
     def aspects(self):
         """
         **[Required]** Gets the aspects of this DetectLanguageSentimentsResult.
-        List of aspects.
+        List of detected aspects.
 
 
         :return: The aspects of this DetectLanguageSentimentsResult.
@@ -49,7 +49,7 @@ class DetectLanguageSentimentsResult(object):
     def aspects(self, aspects):
         """
         Sets the aspects of this DetectLanguageSentimentsResult.
-        List of aspects.
+        List of detected aspects.
 
 
         :param aspects: The aspects of this DetectLanguageSentimentsResult.

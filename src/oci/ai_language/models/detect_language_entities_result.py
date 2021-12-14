@@ -37,7 +37,7 @@ class DetectLanguageEntitiesResult(object):
     def entities(self):
         """
         **[Required]** Gets the entities of this DetectLanguageEntitiesResult.
-        List of entities.
+        List of detected entities.
 
 
         :return: The entities of this DetectLanguageEntitiesResult.
@@ -49,7 +49,7 @@ class DetectLanguageEntitiesResult(object):
     def entities(self, entities):
         """
         Sets the entities of this DetectLanguageEntitiesResult.
-        List of entities.
+        List of detected entities.
 
 
         :param entities: The entities of this DetectLanguageEntitiesResult.

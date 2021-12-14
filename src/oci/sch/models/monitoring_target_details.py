@@ -11,6 +11,10 @@ from oci.decorators import init_model_state_from_kwargs
 class MonitoringTargetDetails(TargetDetails):
     """
     The metric and metric namespace used for the Monitoring target.
+    For configuration instructions, see
+    `To create a service connector`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/service-connector-hub/managingconnectors.htm#create
     """
 
     def __init__(self, **kwargs):
@@ -36,25 +40,32 @@ class MonitoringTargetDetails(TargetDetails):
             The value to assign to the metric property of this MonitoringTargetDetails.
         :type metric: str
 
+        :param dimensions:
+            The value to assign to the dimensions property of this MonitoringTargetDetails.
+        :type dimensions: list[oci.sch.models.DimensionDetails]
+
         """
         self.swagger_types = {
             'kind': 'str',
             'compartment_id': 'str',
             'metric_namespace': 'str',
-            'metric': 'str'
+            'metric': 'str',
+            'dimensions': 'list[DimensionDetails]'
         }
 
         self.attribute_map = {
             'kind': 'kind',
             'compartment_id': 'compartmentId',
             'metric_namespace': 'metricNamespace',
-            'metric': 'metric'
+            'metric': 'metric',
+            'dimensions': 'dimensions'
         }
 
         self._kind = None
         self._compartment_id = None
         self._metric_namespace = None
         self._metric = None
+        self._dimensions = None
         self._kind = 'monitoring'
 
     @property
@@ -140,6 +151,30 @@ class MonitoringTargetDetails(TargetDetails):
         :type: str
         """
         self._metric = metric
+
+    @property
+    def dimensions(self):
+        """
+        Gets the dimensions of this MonitoringTargetDetails.
+        List of dimension names and values.
+
+
+        :return: The dimensions of this MonitoringTargetDetails.
+        :rtype: list[oci.sch.models.DimensionDetails]
+        """
+        return self._dimensions
+
+    @dimensions.setter
+    def dimensions(self, dimensions):
+        """
+        Sets the dimensions of this MonitoringTargetDetails.
+        List of dimension names and values.
+
+
+        :param dimensions: The dimensions of this MonitoringTargetDetails.
+        :type: list[oci.sch.models.DimensionDetails]
+        """
+        self._dimensions = dimensions
 
     def __repr__(self):
         return formatted_flat_dict(self)

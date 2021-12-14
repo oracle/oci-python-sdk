@@ -45,6 +45,7 @@ Identity
     oci.identity.models.CreateAuthTokenDetails
     oci.identity.models.CreateCompartmentDetails
     oci.identity.models.CreateCustomerSecretKeyDetails
+    oci.identity.models.CreateDbCredentialDetails
     oci.identity.models.CreateDomainDetails
     oci.identity.models.CreateDynamicGroupDetails
     oci.identity.models.CreateGroupDetails
@@ -63,6 +64,8 @@ Identity
     oci.identity.models.CreateUserDetails
     oci.identity.models.CustomerSecretKey
     oci.identity.models.CustomerSecretKeySummary
+    oci.identity.models.DbCredential
+    oci.identity.models.DbCredentialSummary
     oci.identity.models.DefaultTagDefinitionValidator
     oci.identity.models.Domain
     oci.identity.models.DomainReplication

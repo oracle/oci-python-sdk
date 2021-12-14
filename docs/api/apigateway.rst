@@ -44,9 +44,12 @@ Apigateway
     oci.apigateway.models.AuthenticationOnlyRouteAuthorizationPolicy
     oci.apigateway.models.AuthenticationPolicy
     oci.apigateway.models.BodyValidationRequestPolicy
+    oci.apigateway.models.CaBundle
     oci.apigateway.models.Certificate
     oci.apigateway.models.CertificateCollection
     oci.apigateway.models.CertificateSummary
+    oci.apigateway.models.CertificatesCaBundle
+    oci.apigateway.models.CertificatesCertificateAuthority
     oci.apigateway.models.ChangeApiCompartmentDetails
     oci.apigateway.models.ChangeCertificateCompartmentDetails
     oci.apigateway.models.ChangeDeploymentCompartmentDetails
@@ -81,6 +84,7 @@ Apigateway
     oci.apigateway.models.JsonWebKey
     oci.apigateway.models.JsonWebTokenClaim
     oci.apigateway.models.JwtAuthenticationPolicy
+    oci.apigateway.models.MutualTlsDetails
     oci.apigateway.models.NoCache
     oci.apigateway.models.NoContentValidation
     oci.apigateway.models.OracleFunctionBackend

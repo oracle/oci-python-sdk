@@ -10,7 +10,7 @@ from ..security_token_container import SecurityTokenContainer
 
 
 class EphemeralResourcePrincipalSigner(SecurityTokenSigner):
-    def __init__(self, session_token=None, private_key=None, private_key_passphrase=None, region=None):
+    def __init__(self, session_token=None, private_key=None, private_key_passphrase=None, region=None, generic_headers=None, **kwargs):
         """
         This signer takes the following parameters:
         - session_token
@@ -47,8 +47,13 @@ class EphemeralResourcePrincipalSigner(SecurityTokenSigner):
         self._reset_claims()
 
         # Get the Resource Principal Session Token and use it to set up the signer
-        super(EphemeralResourcePrincipalSigner, self).__init__(self.security_token.security_token,
-                                                               self.session_key_supplier.get_key_pair()['private'])
+        if generic_headers:
+            super(EphemeralResourcePrincipalSigner, self).__init__(self.security_token.security_token,
+                                                                   self.session_key_supplier.get_key_pair()['private'],
+                                                                   generic_headers=generic_headers)
+        else:
+            super(EphemeralResourcePrincipalSigner, self).__init__(self.security_token.security_token,
+                                                                   self.session_key_supplier.get_key_pair()['private'])
 
     def _initialize_and_return_region(self, region_raw=None):
         if hasattr(self, 'region'):

@@ -146,6 +146,10 @@ class AutonomousContainerDatabaseSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type infrastructure_type: str
 
+        :param cloud_autonomous_vm_cluster_id:
+            The value to assign to the cloud_autonomous_vm_cluster_id property of this AutonomousContainerDatabaseSummary.
+        :type cloud_autonomous_vm_cluster_id: str
+
         :param kms_key_id:
             The value to assign to the kms_key_id property of this AutonomousContainerDatabaseSummary.
         :type kms_key_id: str
@@ -246,6 +250,7 @@ class AutonomousContainerDatabaseSummary(object):
             'autonomous_exadata_infrastructure_id': 'str',
             'autonomous_vm_cluster_id': 'str',
             'infrastructure_type': 'str',
+            'cloud_autonomous_vm_cluster_id': 'str',
             'kms_key_id': 'str',
             'vault_id': 'str',
             'kms_key_version_id': 'str',
@@ -278,6 +283,7 @@ class AutonomousContainerDatabaseSummary(object):
             'autonomous_exadata_infrastructure_id': 'autonomousExadataInfrastructureId',
             'autonomous_vm_cluster_id': 'autonomousVmClusterId',
             'infrastructure_type': 'infrastructureType',
+            'cloud_autonomous_vm_cluster_id': 'cloudAutonomousVmClusterId',
             'kms_key_id': 'kmsKeyId',
             'vault_id': 'vaultId',
             'kms_key_version_id': 'kmsKeyVersionId',
@@ -309,6 +315,7 @@ class AutonomousContainerDatabaseSummary(object):
         self._autonomous_exadata_infrastructure_id = None
         self._autonomous_vm_cluster_id = None
         self._infrastructure_type = None
+        self._cloud_autonomous_vm_cluster_id = None
         self._kms_key_id = None
         self._vault_id = None
         self._kms_key_version_id = None
@@ -534,6 +541,30 @@ class AutonomousContainerDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(infrastructure_type, allowed_values):
             infrastructure_type = 'UNKNOWN_ENUM_VALUE'
         self._infrastructure_type = infrastructure_type
+
+    @property
+    def cloud_autonomous_vm_cluster_id(self):
+        """
+        Gets the cloud_autonomous_vm_cluster_id of this AutonomousContainerDatabaseSummary.
+        The OCID of the cloud Autonomous VM Cluster.
+
+
+        :return: The cloud_autonomous_vm_cluster_id of this AutonomousContainerDatabaseSummary.
+        :rtype: str
+        """
+        return self._cloud_autonomous_vm_cluster_id
+
+    @cloud_autonomous_vm_cluster_id.setter
+    def cloud_autonomous_vm_cluster_id(self, cloud_autonomous_vm_cluster_id):
+        """
+        Sets the cloud_autonomous_vm_cluster_id of this AutonomousContainerDatabaseSummary.
+        The OCID of the cloud Autonomous VM Cluster.
+
+
+        :param cloud_autonomous_vm_cluster_id: The cloud_autonomous_vm_cluster_id of this AutonomousContainerDatabaseSummary.
+        :type: str
+        """
+        self._cloud_autonomous_vm_cluster_id = cloud_autonomous_vm_cluster_id
 
     @property
     def kms_key_id(self):

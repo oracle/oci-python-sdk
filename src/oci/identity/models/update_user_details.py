@@ -26,6 +26,10 @@ class UpdateUserDetails(object):
             The value to assign to the email property of this UpdateUserDetails.
         :type email: str
 
+        :param db_user_name:
+            The value to assign to the db_user_name property of this UpdateUserDetails.
+        :type db_user_name: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateUserDetails.
         :type freeform_tags: dict(str, str)
@@ -38,6 +42,7 @@ class UpdateUserDetails(object):
         self.swagger_types = {
             'description': 'str',
             'email': 'str',
+            'db_user_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -45,12 +50,14 @@ class UpdateUserDetails(object):
         self.attribute_map = {
             'description': 'description',
             'email': 'email',
+            'db_user_name': 'dbUserName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._description = None
         self._email = None
+        self._db_user_name = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -101,6 +108,30 @@ class UpdateUserDetails(object):
         :type: str
         """
         self._email = email
+
+    @property
+    def db_user_name(self):
+        """
+        Gets the db_user_name of this UpdateUserDetails.
+        DB username of the DB credential. Has to be unique across the tenancy.
+
+
+        :return: The db_user_name of this UpdateUserDetails.
+        :rtype: str
+        """
+        return self._db_user_name
+
+    @db_user_name.setter
+    def db_user_name(self, db_user_name):
+        """
+        Sets the db_user_name of this UpdateUserDetails.
+        DB username of the DB credential. Has to be unique across the tenancy.
+
+
+        :param db_user_name: The db_user_name of this UpdateUserDetails.
+        :type: str
+        """
+        self._db_user_name = db_user_name
 
     @property
     def freeform_tags(self):

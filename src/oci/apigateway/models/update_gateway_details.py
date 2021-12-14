@@ -42,6 +42,10 @@ class UpdateGatewayDetails(object):
             The value to assign to the defined_tags property of this UpdateGatewayDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param ca_bundles:
+            The value to assign to the ca_bundles property of this UpdateGatewayDetails.
+        :type ca_bundles: list[oci.apigateway.models.CaBundle]
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -49,7 +53,8 @@ class UpdateGatewayDetails(object):
             'certificate_id': 'str',
             'response_cache_details': 'ResponseCacheDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'ca_bundles': 'list[CaBundle]'
         }
 
         self.attribute_map = {
@@ -58,7 +63,8 @@ class UpdateGatewayDetails(object):
             'certificate_id': 'certificateId',
             'response_cache_details': 'responseCacheDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'ca_bundles': 'caBundles'
         }
 
         self._display_name = None
@@ -67,6 +73,7 @@ class UpdateGatewayDetails(object):
         self._response_cache_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._ca_bundles = None
 
     @property
     def display_name(self):
@@ -241,6 +248,30 @@ class UpdateGatewayDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def ca_bundles(self):
+        """
+        Gets the ca_bundles of this UpdateGatewayDetails.
+        An array of CA bundles that should be used on the Gateway for TLS validation.
+
+
+        :return: The ca_bundles of this UpdateGatewayDetails.
+        :rtype: list[oci.apigateway.models.CaBundle]
+        """
+        return self._ca_bundles
+
+    @ca_bundles.setter
+    def ca_bundles(self, ca_bundles):
+        """
+        Sets the ca_bundles of this UpdateGatewayDetails.
+        An array of CA bundles that should be used on the Gateway for TLS validation.
+
+
+        :param ca_bundles: The ca_bundles of this UpdateGatewayDetails.
+        :type: list[oci.apigateway.models.CaBundle]
+        """
+        self._ca_bundles = ca_bundles
 
     def __repr__(self):
         return formatted_flat_dict(self)

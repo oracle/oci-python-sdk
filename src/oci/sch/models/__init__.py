@@ -6,8 +6,11 @@ from __future__ import absolute_import
 
 from .change_service_connector_compartment_details import ChangeServiceConnectorCompartmentDetails
 from .create_service_connector_details import CreateServiceConnectorDetails
+from .dimension_details import DimensionDetails
+from .dimension_value_details import DimensionValueDetails
 from .function_task_details import FunctionTaskDetails
 from .functions_target_details import FunctionsTargetDetails
+from .jmes_path_dimension_value import JmesPathDimensionValue
 from .latest_streaming_cursor import LatestStreamingCursor
 from .log_rule_task_details import LogRuleTaskDetails
 from .log_source import LogSource
@@ -20,6 +23,7 @@ from .service_connector import ServiceConnector
 from .service_connector_collection import ServiceConnectorCollection
 from .service_connector_summary import ServiceConnectorSummary
 from .source_details import SourceDetails
+from .static_dimension_value import StaticDimensionValue
 from .streaming_cursor_details import StreamingCursorDetails
 from .streaming_source_details import StreamingSourceDetails
 from .streaming_target_details import StreamingTargetDetails
@@ -39,8 +43,11 @@ from .work_request_resource import WorkRequestResource
 sch_type_mapping = {
     "ChangeServiceConnectorCompartmentDetails": ChangeServiceConnectorCompartmentDetails,
     "CreateServiceConnectorDetails": CreateServiceConnectorDetails,
+    "DimensionDetails": DimensionDetails,
+    "DimensionValueDetails": DimensionValueDetails,
     "FunctionTaskDetails": FunctionTaskDetails,
     "FunctionsTargetDetails": FunctionsTargetDetails,
+    "JmesPathDimensionValue": JmesPathDimensionValue,
     "LatestStreamingCursor": LatestStreamingCursor,
     "LogRuleTaskDetails": LogRuleTaskDetails,
     "LogSource": LogSource,
@@ -53,6 +60,7 @@ sch_type_mapping = {
     "ServiceConnectorCollection": ServiceConnectorCollection,
     "ServiceConnectorSummary": ServiceConnectorSummary,
     "SourceDetails": SourceDetails,
+    "StaticDimensionValue": StaticDimensionValue,
     "StreamingCursorDetails": StreamingCursorDetails,
     "StreamingSourceDetails": StreamingSourceDetails,
     "StreamingTargetDetails": StreamingTargetDetails,

@@ -34,6 +34,10 @@ class UpdateCloudVmClusterDetails(object):
             The value to assign to the cpu_core_count property of this UpdateCloudVmClusterDetails.
         :type cpu_core_count: int
 
+        :param ocpu_count:
+            The value to assign to the ocpu_count property of this UpdateCloudVmClusterDetails.
+        :type ocpu_count: float
+
         :param license_model:
             The value to assign to the license_model property of this UpdateCloudVmClusterDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
@@ -75,6 +79,7 @@ class UpdateCloudVmClusterDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'cpu_core_count': 'int',
+            'ocpu_count': 'float',
             'license_model': 'str',
             'ssh_public_keys': 'list[str]',
             'update_details': 'UpdateDetails',
@@ -89,6 +94,7 @@ class UpdateCloudVmClusterDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'cpu_core_count': 'cpuCoreCount',
+            'ocpu_count': 'ocpuCount',
             'license_model': 'licenseModel',
             'ssh_public_keys': 'sshPublicKeys',
             'update_details': 'updateDetails',
@@ -102,6 +108,7 @@ class UpdateCloudVmClusterDetails(object):
 
         self._display_name = None
         self._cpu_core_count = None
+        self._ocpu_count = None
         self._license_model = None
         self._ssh_public_keys = None
         self._update_details = None
@@ -159,6 +166,30 @@ class UpdateCloudVmClusterDetails(object):
         :type: int
         """
         self._cpu_core_count = cpu_core_count
+
+    @property
+    def ocpu_count(self):
+        """
+        Gets the ocpu_count of this UpdateCloudVmClusterDetails.
+        The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+
+
+        :return: The ocpu_count of this UpdateCloudVmClusterDetails.
+        :rtype: float
+        """
+        return self._ocpu_count
+
+    @ocpu_count.setter
+    def ocpu_count(self, ocpu_count):
+        """
+        Sets the ocpu_count of this UpdateCloudVmClusterDetails.
+        The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+
+
+        :param ocpu_count: The ocpu_count of this UpdateCloudVmClusterDetails.
+        :type: float
+        """
+        self._ocpu_count = ocpu_count
 
     @property
     def license_model(self):

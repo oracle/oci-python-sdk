@@ -78,6 +78,10 @@ class TermRelationshipSummary(object):
             The value to assign to the related_term_path property of this TermRelationshipSummary.
         :type related_term_path: str
 
+        :param related_term_glossary_key:
+            The value to assign to the related_term_glossary_key property of this TermRelationshipSummary.
+        :type related_term_glossary_key: str
+
         :param uri:
             The value to assign to the uri property of this TermRelationshipSummary.
         :type uri: str
@@ -98,6 +102,10 @@ class TermRelationshipSummary(object):
             The value to assign to the parent_term_path property of this TermRelationshipSummary.
         :type parent_term_path: str
 
+        :param parent_term_glossary_key:
+            The value to assign to the parent_term_glossary_key property of this TermRelationshipSummary.
+        :type parent_term_glossary_key: str
+
         :param time_created:
             The value to assign to the time_created property of this TermRelationshipSummary.
         :type time_created: datetime
@@ -117,11 +125,13 @@ class TermRelationshipSummary(object):
             'related_term_display_name': 'str',
             'related_term_description': 'str',
             'related_term_path': 'str',
+            'related_term_glossary_key': 'str',
             'uri': 'str',
             'parent_term_key': 'str',
             'parent_term_display_name': 'str',
             'parent_term_description': 'str',
             'parent_term_path': 'str',
+            'parent_term_glossary_key': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str'
         }
@@ -134,11 +144,13 @@ class TermRelationshipSummary(object):
             'related_term_display_name': 'relatedTermDisplayName',
             'related_term_description': 'relatedTermDescription',
             'related_term_path': 'relatedTermPath',
+            'related_term_glossary_key': 'relatedTermGlossaryKey',
             'uri': 'uri',
             'parent_term_key': 'parentTermKey',
             'parent_term_display_name': 'parentTermDisplayName',
             'parent_term_description': 'parentTermDescription',
             'parent_term_path': 'parentTermPath',
+            'parent_term_glossary_key': 'parentTermGlossaryKey',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState'
         }
@@ -150,11 +162,13 @@ class TermRelationshipSummary(object):
         self._related_term_display_name = None
         self._related_term_description = None
         self._related_term_path = None
+        self._related_term_glossary_key = None
         self._uri = None
         self._parent_term_key = None
         self._parent_term_display_name = None
         self._parent_term_description = None
         self._parent_term_path = None
+        self._parent_term_glossary_key = None
         self._time_created = None
         self._lifecycle_state = None
 
@@ -329,6 +343,30 @@ class TermRelationshipSummary(object):
         self._related_term_path = related_term_path
 
     @property
+    def related_term_glossary_key(self):
+        """
+        Gets the related_term_glossary_key of this TermRelationshipSummary.
+        Glossary key of the related term.
+
+
+        :return: The related_term_glossary_key of this TermRelationshipSummary.
+        :rtype: str
+        """
+        return self._related_term_glossary_key
+
+    @related_term_glossary_key.setter
+    def related_term_glossary_key(self, related_term_glossary_key):
+        """
+        Sets the related_term_glossary_key of this TermRelationshipSummary.
+        Glossary key of the related term.
+
+
+        :param related_term_glossary_key: The related_term_glossary_key of this TermRelationshipSummary.
+        :type: str
+        """
+        self._related_term_glossary_key = related_term_glossary_key
+
+    @property
     def uri(self):
         """
         Gets the uri of this TermRelationshipSummary.
@@ -447,6 +485,30 @@ class TermRelationshipSummary(object):
         :type: str
         """
         self._parent_term_path = parent_term_path
+
+    @property
+    def parent_term_glossary_key(self):
+        """
+        Gets the parent_term_glossary_key of this TermRelationshipSummary.
+        Glossary key of the parent term.
+
+
+        :return: The parent_term_glossary_key of this TermRelationshipSummary.
+        :rtype: str
+        """
+        return self._parent_term_glossary_key
+
+    @parent_term_glossary_key.setter
+    def parent_term_glossary_key(self, parent_term_glossary_key):
+        """
+        Sets the parent_term_glossary_key of this TermRelationshipSummary.
+        Glossary key of the parent term.
+
+
+        :param parent_term_glossary_key: The parent_term_glossary_key of this TermRelationshipSummary.
+        :type: str
+        """
+        self._parent_term_glossary_key = parent_term_glossary_key
 
     @property
     def time_created(self):

@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Pattern(object):
     """
-    Pattern representation. A Pattern is defined using an expression and can be used as data selectors or filters
-    to provide a singular view of an entity across multiple physical data artifacts.
+    A pattern is a data selector or filter which can provide a singular,
+    logical entity view aggregating multiple physical data artifacts for ease of use.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Pattern.
@@ -93,6 +93,10 @@ class Pattern(object):
             The value to assign to the expression property of this Pattern.
         :type expression: str
 
+        :param file_path_prefix:
+            The value to assign to the file_path_prefix property of this Pattern.
+        :type file_path_prefix: str
+
         :param check_file_path_list:
             The value to assign to the check_file_path_list property of this Pattern.
         :type check_file_path_list: list[str]
@@ -121,6 +125,7 @@ class Pattern(object):
             'created_by_id': 'str',
             'updated_by_id': 'str',
             'expression': 'str',
+            'file_path_prefix': 'str',
             'check_file_path_list': 'list[str]',
             'is_enable_check_failure_limit': 'bool',
             'check_failure_limit': 'int',
@@ -138,6 +143,7 @@ class Pattern(object):
             'created_by_id': 'createdById',
             'updated_by_id': 'updatedById',
             'expression': 'expression',
+            'file_path_prefix': 'filePathPrefix',
             'check_file_path_list': 'checkFilePathList',
             'is_enable_check_failure_limit': 'isEnableCheckFailureLimit',
             'check_failure_limit': 'checkFailureLimit',
@@ -154,6 +160,7 @@ class Pattern(object):
         self._created_by_id = None
         self._updated_by_id = None
         self._expression = None
+        self._file_path_prefix = None
         self._check_file_path_list = None
         self._is_enable_check_failure_limit = None
         self._check_failure_limit = None
@@ -261,7 +268,7 @@ class Pattern(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this Pattern.
-        The current state of the data asset.
+        The current state of the pattern.
 
         Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -276,7 +283,7 @@ class Pattern(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Pattern.
-        The current state of the data asset.
+        The current state of the pattern.
 
 
         :param lifecycle_state: The lifecycle_state of this Pattern.
@@ -397,7 +404,9 @@ class Pattern(object):
     def expression(self):
         """
         Gets the expression of this Pattern.
-        The expression used in the pattern that may include qualifiers. Refer to the user documentation for details of the format and examples.
+        Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
 
 
         :return: The expression of this Pattern.
@@ -409,7 +418,9 @@ class Pattern(object):
     def expression(self, expression):
         """
         Sets the expression of this Pattern.
-        The expression used in the pattern that may include qualifiers. Refer to the user documentation for details of the format and examples.
+        Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
 
 
         :param expression: The expression of this Pattern.
@@ -418,10 +429,38 @@ class Pattern(object):
         self._expression = expression
 
     @property
+    def file_path_prefix(self):
+        """
+        Gets the file_path_prefix of this Pattern.
+        Input string which drives the selection process.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
+
+
+        :return: The file_path_prefix of this Pattern.
+        :rtype: str
+        """
+        return self._file_path_prefix
+
+    @file_path_prefix.setter
+    def file_path_prefix(self, file_path_prefix):
+        """
+        Sets the file_path_prefix of this Pattern.
+        Input string which drives the selection process.
+        Refer to the user documentation for details of the format and examples. A pattern cannot include both
+        a prefix and an expression.
+
+
+        :param file_path_prefix: The file_path_prefix of this Pattern.
+        :type: str
+        """
+        self._file_path_prefix = file_path_prefix
+
+    @property
     def check_file_path_list(self):
         """
         Gets the check_file_path_list of this Pattern.
-        List of file paths against which the expression can be tried, as a check. This documents, for reference
+        List of file paths against which the pattern can be tried, as a check. This documents, for reference
         purposes, some example objects a pattern is meant to work with. If isEnableCheckFailureLimit is set to true,
         this will be run as a validation during the request, such that if the check fails the request fails. If
         isEnableCheckFailureLimit instead is set to (the default) false, a pattern will still be created or updated even
@@ -437,7 +476,7 @@ class Pattern(object):
     def check_file_path_list(self, check_file_path_list):
         """
         Sets the check_file_path_list of this Pattern.
-        List of file paths against which the expression can be tried, as a check. This documents, for reference
+        List of file paths against which the pattern can be tried, as a check. This documents, for reference
         purposes, some example objects a pattern is meant to work with. If isEnableCheckFailureLimit is set to true,
         this will be run as a validation during the request, such that if the check fails the request fails. If
         isEnableCheckFailureLimit instead is set to (the default) false, a pattern will still be created or updated even
@@ -453,7 +492,7 @@ class Pattern(object):
     def is_enable_check_failure_limit(self):
         """
         Gets the is_enable_check_failure_limit of this Pattern.
-        Indicates whether the expression check, against the checkFilePathList, will fail the request if the count of
+        Indicates whether the pattern check, against the checkFilePathList, will fail the request if the count of
         UNMATCHED files is above the checkFailureLimit.
 
 
@@ -466,7 +505,7 @@ class Pattern(object):
     def is_enable_check_failure_limit(self, is_enable_check_failure_limit):
         """
         Sets the is_enable_check_failure_limit of this Pattern.
-        Indicates whether the expression check, against the checkFilePathList, will fail the request if the count of
+        Indicates whether the pattern check, against the checkFilePathList, will fail the request if the count of
         UNMATCHED files is above the checkFailureLimit.
 
 

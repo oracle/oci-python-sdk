@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class AIServiceLanguageClient(object):
     """
-    OCI AI Service solutions can help Enterprise customers integrate AI into their products immediately using our proven,
+    OCI Language Service solutions can help enterprise customers integrate AI into their products immediately using our proven,
         pre-trained and custom models or containers, without a need to set up an house team of AI and ML experts.
         This allows enterprises to focus on business drivers and development work rather than AI and ML operations, which shortens the time to market.
     """
@@ -100,6 +100,375 @@ class AIServiceLanguageClient(object):
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
 
+    def batch_detect_dominant_language(self, batch_detect_dominant_language_details, **kwargs):
+        """
+        Make a detect call to language detection pre-deployed model.
+
+
+        :param oci.ai_language.models.BatchDetectDominantLanguageDetails batch_detect_dominant_language_details: (required)
+            The details to make a language detection detect call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ai_language.models.BatchDetectDominantLanguageResult`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/batch_detect_dominant_language.py.html>`__ to see an example of how to use batch_detect_dominant_language API.
+        """
+        resource_path = "/actions/batchDetectDominantLanguage"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "batch_detect_dominant_language got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=batch_detect_dominant_language_details,
+                response_type="BatchDetectDominantLanguageResult")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=batch_detect_dominant_language_details,
+                response_type="BatchDetectDominantLanguageResult")
+
+    def batch_detect_language_entities(self, batch_detect_language_entities_details, **kwargs):
+        """
+        Make a batch detect call to entity pre-deployed model
+
+
+        :param oci.ai_language.models.BatchDetectLanguageEntitiesDetails batch_detect_language_entities_details: (required)
+            The details to make a Entity detect call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ai_language.models.BatchDetectLanguageEntitiesResult`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/batch_detect_language_entities.py.html>`__ to see an example of how to use batch_detect_language_entities API.
+        """
+        resource_path = "/actions/batchDetectLanguageEntities"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "batch_detect_language_entities got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=batch_detect_language_entities_details,
+                response_type="BatchDetectLanguageEntitiesResult")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=batch_detect_language_entities_details,
+                response_type="BatchDetectLanguageEntitiesResult")
+
+    def batch_detect_language_key_phrases(self, batch_detect_language_key_phrases_details, **kwargs):
+        """
+        Make a detect call to the keyPhrase pre-deployed model.
+
+
+        :param oci.ai_language.models.BatchDetectLanguageKeyPhrasesDetails batch_detect_language_key_phrases_details: (required)
+            The details to make keyPhrase detect call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ai_language.models.BatchDetectLanguageKeyPhrasesResult`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/batch_detect_language_key_phrases.py.html>`__ to see an example of how to use batch_detect_language_key_phrases API.
+        """
+        resource_path = "/actions/batchDetectLanguageKeyPhrases"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "batch_detect_language_key_phrases got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=batch_detect_language_key_phrases_details,
+                response_type="BatchDetectLanguageKeyPhrasesResult")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=batch_detect_language_key_phrases_details,
+                response_type="BatchDetectLanguageKeyPhrasesResult")
+
+    def batch_detect_language_sentiments(self, batch_detect_language_sentiments_details, **kwargs):
+        """
+        Make a detect call to sentiment pre-deployed model.
+
+
+        :param oci.ai_language.models.BatchDetectLanguageSentimentsDetails batch_detect_language_sentiments_details: (required)
+            The details to make sentiment detect call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param list[str] level: (optional)
+            Set this parameter for sentence and aspect level sentiment analysis.
+            Allowed values are:
+               - ASPECT
+               - SENTENCE
+
+            Allowed values are: "ASPECT", "SENTENCE"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ai_language.models.BatchDetectLanguageSentimentsResult`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/batch_detect_language_sentiments.py.html>`__ to see an example of how to use batch_detect_language_sentiments API.
+        """
+        resource_path = "/actions/batchDetectLanguageSentiments"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id",
+            "level"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "batch_detect_language_sentiments got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'level' in kwargs:
+            level_allowed_values = ["ASPECT", "SENTENCE"]
+            for level_item in kwargs['level']:
+                if level_item not in level_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `level`, must be one of {0}".format(level_allowed_values)
+                    )
+
+        query_params = {
+            "level": self.base_client.generate_collection_format_param(kwargs.get("level", missing), 'multi')
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=batch_detect_language_sentiments_details,
+                response_type="BatchDetectLanguageSentimentsResult")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=batch_detect_language_sentiments_details,
+                response_type="BatchDetectLanguageSentimentsResult")
+
+    def batch_detect_language_text_classification(self, batch_detect_language_text_classification_details, **kwargs):
+        """
+        Make a detect call to text classification from the pre-deployed model.
+
+
+        :param oci.ai_language.models.BatchDetectLanguageTextClassificationDetails batch_detect_language_text_classification_details: (required)
+            The details to make text classification detect call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ai_language.models.BatchDetectLanguageTextClassificationResult`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ailanguage/batch_detect_language_text_classification.py.html>`__ to see an example of how to use batch_detect_language_text_classification API.
+        """
+        resource_path = "/actions/batchDetectLanguageTextClassification"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "batch_detect_language_text_classification got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=batch_detect_language_text_classification_details,
+                response_type="BatchDetectLanguageTextClassificationResult")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=batch_detect_language_text_classification_details,
+                response_type="BatchDetectLanguageTextClassificationResult")
+
     def detect_dominant_language(self, detect_dominant_language_details, **kwargs):
         """
         Make a detect call to language detection pre-deployed model.
@@ -107,8 +476,6 @@ class AIServiceLanguageClient(object):
 
         :param oci.ai_language.models.DetectDominantLanguageDetails detect_dominant_language_details: (required)
             The details to make a language detection detect call.
-            Example: `{\"text\": \"If an emerging growth company, indicate by check mark if the registrant has elected not
-                        to use the extended transition period for complying\"}`
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -178,8 +545,6 @@ class AIServiceLanguageClient(object):
 
         :param oci.ai_language.models.DetectLanguageEntitiesDetails detect_language_entities_details: (required)
             The details to make a Entity detect call.
-            Example: `{\"text\": \"If an emerging growth company, indicate by check mark if the registrant has elected not
-                       to use the extended transition period for complying\"}`
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -275,8 +640,6 @@ class AIServiceLanguageClient(object):
 
         :param oci.ai_language.models.DetectLanguageKeyPhrasesDetails detect_language_key_phrases_details: (required)
             The details to make keyPhrase detect call.
-             Example: `{\"text\": \"If an emerging growth company, indicate by check mark if the registrant has elected not
-                           to use the extended transition period for complying\"}`
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -346,8 +709,6 @@ class AIServiceLanguageClient(object):
 
         :param oci.ai_language.models.DetectLanguageSentimentsDetails detect_language_sentiments_details: (required)
             The details to make sentiment detect call.
-            Example: `{\"text\": \"If an emerging growth company, indicate by check mark if the registrant has elected not
-                        to use the extended transition period for complying\"}`
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -417,7 +778,6 @@ class AIServiceLanguageClient(object):
 
         :param oci.ai_language.models.DetectLanguageTextClassificationDetails detect_language_text_classification_details: (required)
             The details to make text classification detect call.
-            Example: `{\"text\": \"If an emerging growth company, indicate by check mark if the registrant has elected not to use the extended transition period for complying\"}`
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.

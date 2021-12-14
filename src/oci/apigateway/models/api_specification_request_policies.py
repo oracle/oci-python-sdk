@@ -30,22 +30,29 @@ class ApiSpecificationRequestPolicies(object):
             The value to assign to the cors property of this ApiSpecificationRequestPolicies.
         :type cors: oci.apigateway.models.CorsPolicy
 
+        :param mutual_tls:
+            The value to assign to the mutual_tls property of this ApiSpecificationRequestPolicies.
+        :type mutual_tls: oci.apigateway.models.MutualTlsDetails
+
         """
         self.swagger_types = {
             'authentication': 'AuthenticationPolicy',
             'rate_limiting': 'RateLimitingPolicy',
-            'cors': 'CorsPolicy'
+            'cors': 'CorsPolicy',
+            'mutual_tls': 'MutualTlsDetails'
         }
 
         self.attribute_map = {
             'authentication': 'authentication',
             'rate_limiting': 'rateLimiting',
-            'cors': 'cors'
+            'cors': 'cors',
+            'mutual_tls': 'mutualTls'
         }
 
         self._authentication = None
         self._rate_limiting = None
         self._cors = None
+        self._mutual_tls = None
 
     @property
     def authentication(self):
@@ -106,6 +113,26 @@ class ApiSpecificationRequestPolicies(object):
         :type: oci.apigateway.models.CorsPolicy
         """
         self._cors = cors
+
+    @property
+    def mutual_tls(self):
+        """
+        Gets the mutual_tls of this ApiSpecificationRequestPolicies.
+
+        :return: The mutual_tls of this ApiSpecificationRequestPolicies.
+        :rtype: oci.apigateway.models.MutualTlsDetails
+        """
+        return self._mutual_tls
+
+    @mutual_tls.setter
+    def mutual_tls(self, mutual_tls):
+        """
+        Sets the mutual_tls of this ApiSpecificationRequestPolicies.
+
+        :param mutual_tls: The mutual_tls of this ApiSpecificationRequestPolicies.
+        :type: oci.apigateway.models.MutualTlsDetails
+        """
+        self._mutual_tls = mutual_tls
 
     def __repr__(self):
         return formatted_flat_dict(self)

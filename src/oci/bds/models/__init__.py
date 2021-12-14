@@ -4,6 +4,7 @@
 
 from __future__ import absolute_import
 
+from .activate_bds_metastore_configuration_details import ActivateBdsMetastoreConfigurationDetails
 from .add_auto_scaling_configuration_details import AddAutoScalingConfigurationDetails
 from .add_block_storage_details import AddBlockStorageDetails
 from .add_cloud_sql_details import AddCloudSqlDetails
@@ -17,6 +18,8 @@ from .bds_api_key import BdsApiKey
 from .bds_api_key_summary import BdsApiKeySummary
 from .bds_instance import BdsInstance
 from .bds_instance_summary import BdsInstanceSummary
+from .bds_metastore_configuration import BdsMetastoreConfiguration
+from .bds_metastore_configuration_summary import BdsMetastoreConfigurationSummary
 from .change_bds_instance_compartment_details import ChangeBdsInstanceCompartmentDetails
 from .change_shape_details import ChangeShapeDetails
 from .change_shape_nodes import ChangeShapeNodes
@@ -24,6 +27,7 @@ from .cloud_sql_details import CloudSqlDetails
 from .cluster_details import ClusterDetails
 from .create_bds_api_key_details import CreateBdsApiKeyDetails
 from .create_bds_instance_details import CreateBdsInstanceDetails
+from .create_bds_metastore_configuration_details import CreateBdsMetastoreConfigurationDetails
 from .create_node_details import CreateNodeDetails
 from .default_error import DefaultError
 from .kerberos_details import KerberosDetails
@@ -33,9 +37,11 @@ from .node import Node
 from .remove_auto_scaling_configuration_details import RemoveAutoScalingConfigurationDetails
 from .remove_cloud_sql_details import RemoveCloudSqlDetails
 from .restart_node_details import RestartNodeDetails
+from .test_bds_metastore_configuration_details import TestBdsMetastoreConfigurationDetails
 from .test_bds_object_storage_connection_details import TestBdsObjectStorageConnectionDetails
 from .update_auto_scaling_configuration_details import UpdateAutoScalingConfigurationDetails
 from .update_bds_instance_details import UpdateBdsInstanceDetails
+from .update_bds_metastore_configuration_details import UpdateBdsMetastoreConfigurationDetails
 from .volume_attachment_detail import VolumeAttachmentDetail
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -44,6 +50,7 @@ from .work_request_resource import WorkRequestResource
 
 # Maps type names to classes for bds services.
 bds_type_mapping = {
+    "ActivateBdsMetastoreConfigurationDetails": ActivateBdsMetastoreConfigurationDetails,
     "AddAutoScalingConfigurationDetails": AddAutoScalingConfigurationDetails,
     "AddBlockStorageDetails": AddBlockStorageDetails,
     "AddCloudSqlDetails": AddCloudSqlDetails,
@@ -57,6 +64,8 @@ bds_type_mapping = {
     "BdsApiKeySummary": BdsApiKeySummary,
     "BdsInstance": BdsInstance,
     "BdsInstanceSummary": BdsInstanceSummary,
+    "BdsMetastoreConfiguration": BdsMetastoreConfiguration,
+    "BdsMetastoreConfigurationSummary": BdsMetastoreConfigurationSummary,
     "ChangeBdsInstanceCompartmentDetails": ChangeBdsInstanceCompartmentDetails,
     "ChangeShapeDetails": ChangeShapeDetails,
     "ChangeShapeNodes": ChangeShapeNodes,
@@ -64,6 +73,7 @@ bds_type_mapping = {
     "ClusterDetails": ClusterDetails,
     "CreateBdsApiKeyDetails": CreateBdsApiKeyDetails,
     "CreateBdsInstanceDetails": CreateBdsInstanceDetails,
+    "CreateBdsMetastoreConfigurationDetails": CreateBdsMetastoreConfigurationDetails,
     "CreateNodeDetails": CreateNodeDetails,
     "DefaultError": DefaultError,
     "KerberosDetails": KerberosDetails,
@@ -73,9 +83,11 @@ bds_type_mapping = {
     "RemoveAutoScalingConfigurationDetails": RemoveAutoScalingConfigurationDetails,
     "RemoveCloudSqlDetails": RemoveCloudSqlDetails,
     "RestartNodeDetails": RestartNodeDetails,
+    "TestBdsMetastoreConfigurationDetails": TestBdsMetastoreConfigurationDetails,
     "TestBdsObjectStorageConnectionDetails": TestBdsObjectStorageConnectionDetails,
     "UpdateAutoScalingConfigurationDetails": UpdateAutoScalingConfigurationDetails,
     "UpdateBdsInstanceDetails": UpdateBdsInstanceDetails,
+    "UpdateBdsMetastoreConfigurationDetails": UpdateBdsMetastoreConfigurationDetails,
     "VolumeAttachmentDetail": VolumeAttachmentDetail,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,
