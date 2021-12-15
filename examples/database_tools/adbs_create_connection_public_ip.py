@@ -11,7 +11,7 @@ Creates a connection to an Autonomous Databases with Shared Exadata Infrastructu
 
 If variable do_clean_up_at_end is set to True, connection, secrets and DB are removed upon completion.
 
-Pre-requisite are:
+Prerequisites are:
 - A compartment_id where the vcn, autonomous database, vault and connection will reside.
 - vault_id: a Vault created in KMS with at least one master key.
 
@@ -25,9 +25,9 @@ from zipfile import ZipFile
 import io
 import base64
 
-# Specify Compartment and subnet to use for tests
+# Specify Compartment to use for tests
 compartment_id = "ocid1.compartment.oc1.changeme"
-# Specify vault id to use in the test. Must be in compartment_id and contain a master Key
+# Specify Vault id to use in the test. Must be in compartment_id and contain a master Key
 vault_id = "ocid1.vault.oc1.phx.changeme"
 
 dbname = "DB12151133"
@@ -63,7 +63,7 @@ def get_dbtools_clients(oci_config):
     return client, composite_client
 
 
-def get_database_client(oci_config):
+def get_database_clients(oci_config):
     client = oci.database.DatabaseClient(config=oci_config)
     # Composite client waits for async operations to complete.
     composite_client = oci.database.DatabaseClientCompositeOperations(client)
@@ -85,7 +85,7 @@ def get_kms_management_client(oci_config, service_endpoint):
     return client
 
 
-def get_vaults_client(oci_config):
+def get_vaults_clients(oci_config):
     client = oci.vault.VaultsClient(config=oci_config)
     # Composite client waits for async operations to complete.
     composite_client = oci.vault.VaultsClientCompositeOperations(client)
@@ -93,8 +93,8 @@ def get_vaults_client(oci_config):
 
 
 # Prepare all clients that we will need
-db_client, db_async_client = get_database_client(oci_config)
-vaults_client, vaults_async_client = get_vaults_client(oci_config)
+db_client, db_async_client = get_database_clients(oci_config)
+vaults_client, vaults_async_client = get_vaults_clients(oci_config)
 kms_vault_client = get_kms_vault_client(oci_config)
 secrets_client = get_secrets_client(oci_config)
 dbtools_client, dbtools_async_client = get_dbtools_clients(oci_config)
