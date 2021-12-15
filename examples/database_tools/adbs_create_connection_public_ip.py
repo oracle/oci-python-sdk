@@ -301,9 +301,10 @@ def do_connection_tests():
     assert autonomous_database.connection_strings.profiles
     profiles = autonomous_database.connection_strings.profiles
 
+    m_tls = oci.database.models.DatabaseConnectionStringProfile.TLS_AUTHENTICATION_MUTUAL
+    low = oci.database.models.DatabaseConnectionStringProfile.CONSUMER_GROUP_LOW
     connection_string = next((p.value for p in profiles if
-                              p.tls_authentication == oci.database.models.DatabaseConnectionStringProfile.TLS_AUTHENTICATION_MUTUAL
-                              and p.consumer_group == oci.database.models.DatabaseConnectionStringProfile.CONSUMER_GROUP_LOW), None)
+                              p.tls_authentication == m_tls and p.consumer_group == low), None)
 
     print(f"Using connection_string {connection_string}")
 
