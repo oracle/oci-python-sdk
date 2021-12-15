@@ -246,7 +246,7 @@ def get_wallet_and_create_secrets():
     # 2. Extract Wallet from DB
     # Create a wallet details object
     db_wallet = oci.database.models.GenerateAutonomousDatabaseWalletDetails(
-        password="Welcome9"
+        password="example-password"
     )
 
     print("Extracting Wallet...")
