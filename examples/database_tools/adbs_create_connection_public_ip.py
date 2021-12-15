@@ -31,10 +31,10 @@ compartment_id = "ocid1.compartment.oc1.changeme"
 vault_id = "ocid1.vault.oc1.phx.changeme"
 
 dbname = "DB12151133"
-db_password = "ChangeMe1111####"
+db_password = "example-password"
 
-db_password_secret_name = "db_password_SDK" + dbname
-db_wallet_secret_name = "wallet_SDK_" + dbname
+db_password_secret_name = "db" + "this-is-not-the-secret" + dbname
+db_wallet_secret_name = "wallet" + "this-is-not-the-secret" + dbname
 
 # Display OCI Python SDK version
 print("oci version:", pkg_resources.get_distribution("oci").version)
