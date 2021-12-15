@@ -8,6 +8,9 @@ import pytest
 
 from oci.regions import endpoint_for, get_region_from_short_name, get_realm_from_region, is_region, is_region_short_name, REGIONS_SHORT_NAMES, REGIONS, REGION_REALMS, REALMS, _has_been_read_external_sources, ExternalSources
 from oci._vendor import six
+from oci.core import BlockstorageClient, ComputeClient
+from oci.identity import IdentityClient
+from oci.analytics import AnalyticsClient
 
 
 def reset_external_sources_dict():
@@ -83,6 +86,211 @@ def test_endpoint_for_service_template():
     # second level domain template with oc3 region
     endpoint = endpoint_for('blockstorage', 'us-gov-ashburn-1', None, 'https://test.{secondLevelDomain}')
     assert endpoint == 'https://test.oraclegovcloud.com'
+
+    # second level domain template with oc4 region
+    endpoint = endpoint_for('blockstorage', 'uk-gov-london-1', None, 'https://test.{secondLevelDomain}')
+    assert endpoint == 'https://test.oraclegovcloud.uk'
+
+    # Same for a service not in service_endpoints.py
+    # set region template
+    endpoint = endpoint_for('analytics', 'foo_region', None, 'https://{region}.bar.com')
+    assert endpoint == 'https://foo_region.bar.com'
+
+    # no template
+    try:
+        endpoint = endpoint_for('analytics', 'us-foo_region-1', None, None)
+        assert False  # this should have failed
+    except ValueError:
+        pass
+
+    # second level domain template with unknown region
+    endpoint = endpoint_for('analytics', 'us-foo_region-1', None, 'https://test.{secondLevelDomain}')
+    assert endpoint == 'https://test.oraclecloud.com'
+
+    # second level domain template with oc1 region
+    endpoint = endpoint_for('analytics', 'us-phoenix-1', None, 'https://test.{secondLevelDomain}')
+    assert endpoint == 'https://test.oraclecloud.com'
+
+    # second level domain template with oc2 region
+    endpoint = endpoint_for('analytics', 'us-langley-1', None, 'https://test.{secondLevelDomain}')
+    assert endpoint == 'https://test.oraclegovcloud.com'
+
+    # second level domain template with oc3 region
+    endpoint = endpoint_for('analytics', 'us-gov-ashburn-1', None, 'https://test.{secondLevelDomain}')
+    assert endpoint == 'https://test.oraclegovcloud.com'
+
+    # second level domain template with oc4 region
+    endpoint = endpoint_for('analytics', 'uk-gov-london-1', None, 'https://test.{secondLevelDomain}')
+    assert endpoint == 'https://test.oraclegovcloud.uk'
+
+
+def test_endpoint_for_dot_in_region_with_endpoint_service_name():
+    reset_external_sources_dict()
+    # set region template
+    endpoint = endpoint_for('blockstorage', 'some.customerdomain.com', None, 'https://{region}.bar.com', 'iaas')
+    assert endpoint == 'https://iaas.some.customerdomain.com'
+
+    # no template
+    endpoint = endpoint_for('blockstorage', 'some.customerdomain.com', None, None, 'iaas')
+    assert endpoint == 'https://iaas.some.customerdomain.com'
+
+    service = 'compute'
+    region = 'broom6.us.oracle.com'
+    endpoint = endpoint_for(service, region, None, None, 'iaas')
+    assert endpoint == 'https://iaas.broom6.us.oracle.com'
+
+    service = 'identity'
+    region = 'broom6.us.oracle.com'
+    endpoint = endpoint_for(service, region, None, None, 'identity')
+    assert endpoint == 'https://identity.broom6.us.oracle.com'
+
+    service = 'identity'
+    region = 'broom6.us.oracle.com'
+    endpoint_input = 'something.completely.different'
+    endpoint = endpoint_for(service, region, endpoint_input, None, 'identity')
+    assert endpoint == 'https://identity.something.completely.different'
+
+    service = 'identity'
+    region = 'broom6.us.oracle.com'
+    endpoint = endpoint_for(service, region, None, None, 'iam')
+    assert endpoint == 'https://iam.broom6.us.oracle.com'
+
+    # Same for a service not in service_endpoints.py
+    # set region template
+    endpoint = endpoint_for('analytics', 'some.customerdomain.com', None, 'https://{region}.bar.com', 'analytics')
+    assert endpoint == 'https://analytics.some.customerdomain.com'
+
+    # no template
+    endpoint = endpoint_for('analytics', 'some.customerdomain.com', None, None, 'analytics')
+    assert endpoint == 'https://analytics.some.customerdomain.com'
+
+    service = 'analytics'
+    region = 'broom6.us.oracle.com'
+    endpoint = endpoint_for(service, region, None, None, 'analytics')
+    assert endpoint == 'https://analytics.broom6.us.oracle.com'
+
+    service = 'analytics'
+    region = 'broom6.us.oracle.com'
+    endpoint_input = 'something.completely.different'
+    endpoint = endpoint_for(service, region, endpoint_input, None, 'analytics')
+    assert endpoint == 'https://analytics.something.completely.different'
+
+    service = 'analytics'
+    region = 'broom6.us.oracle.com'
+    endpoint = endpoint_for(service, region, None, None, 'ml')
+    assert endpoint == 'https://ml.broom6.us.oracle.com'
+
+
+def test_endpoint_for_dot_in_region_and_no_endpoint_service_name():
+    reset_external_sources_dict()
+    # set region template
+    endpoint = endpoint_for('blockstorage', 'some.customerdomain.com', None, 'https://iaas.{region}.{secondLevelDomain}', None)
+    assert endpoint == 'https://iaas.some.customerdomain.com'
+
+    # no template
+    endpoint = endpoint_for('blockstorage', 'some.customerdomain.com', None, None, None)
+    assert endpoint == 'https://iaas.some.customerdomain.com'
+
+    service = 'compute'
+    region = 'broom6.us.oracle.com'
+    endpoint = endpoint_for(service, region, None, 'https://iaas.{region}.{secondLevelDomain}', None)
+    assert endpoint == 'https://iaas.broom6.us.oracle.com'
+
+    service = 'identity'
+    region = 'broom6.us.oracle.com'
+    endpoint = endpoint_for(service, region, None, 'https://identity.{region}.oci.{secondLevelDomain}', None)
+    assert endpoint == 'https://identity.broom6.us.oracle.com'
+
+    service = 'identity'
+    region = 'broom6.us.oracle.com'
+    endpoint_input = 'something.completely.different'
+    endpoint = endpoint_for(service, region, endpoint_input, 'https://identity.{region}.oci.{secondLevelDomain}', None)
+    assert endpoint == 'https://identity.something.completely.different'
+
+    service = 'identity'
+    region = 'broom6.us.oracle.com'
+    endpoint = endpoint_for(service, region, None, 'https://identity.{region}.oci.{secondLevelDomain}', None)
+    assert endpoint == 'https://identity.broom6.us.oracle.com'
+
+    # Same for a service not in service_endpoints.py
+    # set region template
+    endpoint = endpoint_for('analytics', 'some.customerdomain.com', None, 'https://analytics.{region}.{secondLevelDomain}', None)
+    assert endpoint == 'https://analytics.some.customerdomain.com'
+
+    # no template
+    try:
+        endpoint = endpoint_for('analytics', 'some.customerdomain.com', None, None, None)
+        assert False  # should have failed; we have no endpoint template, and no endpoint service name
+    except ValueError:
+        pass
+
+    service = 'analytics'
+    region = 'broom6.us.oracle.com'
+    endpoint = endpoint_for(service, region, None, 'https://analytics.{region}.{secondLevelDomain}', None)
+    assert endpoint == 'https://analytics.broom6.us.oracle.com'
+
+    service = 'analytics'
+    region = 'broom6.us.oracle.com'
+    endpoint = endpoint_for(service, region, None, 'https://analytics.{region}.oci.{secondLevelDomain}', None)
+    assert endpoint == 'https://analytics.broom6.us.oracle.com'
+
+    service = 'analytics'
+    region = 'broom6.us.oracle.com'
+    endpoint_input = 'something.completely.different'
+    endpoint = endpoint_for(service, region, endpoint_input, 'https://analytics.{region}.oci.{secondLevelDomain}', None)
+    assert endpoint == 'https://analytics.something.completely.different'
+
+
+def test_endpoint_for_dot_in_region_and_both_endpoint_template_and_endpoint_service_name():
+    reset_external_sources_dict()
+    service = 'identity'
+    region = 'broom6.us.oracle.com'
+    endpoint = endpoint_for(service, region, None, 'https://identity.{region}.oci.{secondLevelDomain}', 'iam')
+    assert endpoint == 'https://iam.broom6.us.oracle.com'
+
+    # Same for a service not in service_endpoints.py
+    service = 'analytics'
+    region = 'broom6.us.oracle.com'
+    endpoint = endpoint_for(service, region, None, 'https://analytics.{region}.oci.{secondLevelDomain}', 'analytics')
+    assert endpoint == 'https://analytics.broom6.us.oracle.com'
+
+
+def test_endpoint_for_dot_in_region_real_client():
+    config = {
+        'log_requests': True,
+        'user': 'ocid1.user.oc1..abc',
+        'fingerprint': '01:23:45:67:89:ab:cd:ef:01:23:45:67:89:ab:cd:ef',
+        'key_file': 'keys/no_permissions_unencrypted_key.pem',
+        'tenancy': 'ocid1.tenancy.oc1..abc',
+        'region': 'us-phoenix-1'
+    }
+
+    config_dotted_region = config.copy()
+    config_dotted_region['region'] = "broom6.us.oracle.com"
+
+    client = IdentityClient(config)
+    assert client.base_client.endpoint == 'https://identity.us-phoenix-1.oci.oraclecloud.com/20160918'
+
+    client = ComputeClient(config)
+    assert client.base_client.endpoint == 'https://iaas.us-phoenix-1.oraclecloud.com/20160918'
+
+    client = BlockstorageClient(config)
+    assert client.base_client.endpoint == 'https://iaas.us-phoenix-1.oraclecloud.com/20160918'
+
+    client = AnalyticsClient(config)
+    assert client.base_client.endpoint == 'https://analytics.us-phoenix-1.ocp.oraclecloud.com/20190331'
+
+    client = IdentityClient(config_dotted_region)
+    assert client.base_client.endpoint == 'https://identity.broom6.us.oracle.com/20160918'
+
+    client = ComputeClient(config_dotted_region)
+    assert client.base_client.endpoint == 'https://iaas.broom6.us.oracle.com/20160918'
+
+    client = BlockstorageClient(config_dotted_region)
+    assert client.base_client.endpoint == 'https://iaas.broom6.us.oracle.com/20160918'
+
+    client = AnalyticsClient(config_dotted_region)
+    assert client.base_client.endpoint == 'https://analytics.broom6.us.oracle.com/20190331'
 
 
 def test_endpoint_for_endpoint():
