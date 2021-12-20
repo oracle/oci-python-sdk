@@ -490,7 +490,11 @@ class MultipartObjectAssembler:
 
     def _upload_stream_part(self, part_num, part_bytes, **kwargs):
         try:
-            m = hashlib.md5()
+            if is_fips_mode:
+                m = MD5.md5()
+            else:
+                m = hashlib.md5()
+
             m.update(part_bytes)
 
             new_kwargs = {'content_md5': base64.b64encode(m.digest()).decode("utf-8")}
