@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.53.1 - 2021-12-21
+====================
+
+Fixed
+-----
+* Fixes the potential data corruption issue as described in https://github.com/oracle/oci-python-sdk/issues/410. Customers using FIPS compliant openssl versions are advised to enable FIPS with the ways described in https://oracle-cloud-infrastructure-python-sdk.readthedocs.io/en/latest/fips-libraries.html.
+
+====================
 2.53.0 - 2021-12-14
 ====================
 

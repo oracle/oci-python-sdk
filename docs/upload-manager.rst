@@ -17,4 +17,7 @@ The Object Storage service supports multipart uploads to make large object uploa
 The `UploadObject <https://github.com/oracle/oci-python-sdk/blob/master/examples/multipart_object_upload.py>`_ example shows how :py:class:`~oci.object_storage.UploadManager` can be used to upload files to object storage.
 
 .. warning::
+    Potential data corruption with Python SDK on UploadManager.upload_stream() in FIPS mode and Cloud Shell (versions 2.53.0 and below), for more information please see :ref:`Known Issues<known-issues>` section.
+
+.. warning::
     Potential data corruption with Python SDK on binary upload in versions 2.8.0 and below, for more information please see :ref:`Known Issues<known-issues>` section.

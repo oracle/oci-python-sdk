@@ -4,6 +4,14 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~
 These are the current known issues for the Python SDK.
 
+Potential data corruption with Python SDK on UploadManager.upload_stream() in FIPS mode and Cloud Shell (versions 2.53.0 and below)
+===================================================================================================================================
+**Details:** When using the Python SDK to perform stream upload operations you may encounter an issue with data corruption if you are using UploadManager.upload_stream. This issue is known to affect the customers using FIPS mode and Cloud Shell.
+
+**Impacted Versions:** v2.53.0 and below
+
+**Direct link to this issue:** `Potential data corruption issue for multipart stream upload for OCI Python SDK <https://github.com/oracle/oci-python-sdk/issues/410>`_
+
 Performance regression in oci v2.38.4 and above
 ===============================================
 In OCI Python SDK version 2.38.4 and later versions, you may encounter performance regressions when using the SDK with some OCI services. The regression surfaces itself as a 3-second increase in latency in SDK operations made to some OCI services. This issue has been confirmed to impact the OCI Streaming service, and likely impacts the following services:

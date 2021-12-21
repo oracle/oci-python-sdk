@@ -6,6 +6,10 @@
             window.location.href = 'https://oracle-bare-metal-cloud-services-python-sdk.readthedocs.io/en/latest/deprecation-notice.html';
         }
     </script>
+
+.. warning::
+    Potential data corruption with Python SDK on UploadManager.upload_stream() in FIPS mode and Cloud Shell (versions 2.53.0 and below), for more information please see :ref:`Known Issues<known-issues>` section.
+
 .. warning::
     Potential data corruption with Python SDK on binary upload in versions 2.8.0 and below, for more information please see :ref:`Known Issues<known-issues>` section.
 

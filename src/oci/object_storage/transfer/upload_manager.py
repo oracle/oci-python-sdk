@@ -61,6 +61,9 @@ class UploadManager:
 
         Stream uploads are not currently resumable.
 
+        PLEASE NOTE that for oci versions < 2.53.1, this operation potentially causes data corruption. For more information, please see
+        this `github issue <https://github.com/oracle/oci-python-sdk/issues/410>`_
+
         :param str namespace_name:
             The namespace containing the bucket in which to store the object.
 
