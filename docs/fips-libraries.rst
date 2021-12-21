@@ -28,9 +28,10 @@ Setting the Environment Variables
 
 If you do not want to run ``enable_fips_mode()`` for every session, you can set an environment variable so that the SDK uses the library every time.
 
-Set the following environment variable to the path to the libcrypto library:
+Set the one of the following environment variables to the path to the libcrypto library, listed according to priority:
 
 - FIPS_LIBCRYPTO_PATH
+- OCI_PYTHON_SDK_FIPS_LIBCRYPTO_PATH
 
 Verifying the Configuration
 ---------------------------
