@@ -117,7 +117,7 @@ def get_realm_from_region(region):
         return REGION_REALMS[region]
 
 
-def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=None):
+def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=None, endpoint_service_name=None):
     """Returns the base URl for a service, either in the given region or at the specified endpoint.
 
     If endpoint and region are provided, endpoint is used.
@@ -152,13 +152,13 @@ def endpoint_for(service, region=None, endpoint=None, service_endpoint_template=
 
     if endpoint:
         # endpoint takes priority
-        return _format_endpoint(service, endpoint, service_endpoint_template)
+        return _format_endpoint(service, endpoint, service_endpoint_template, endpoint_service_name)
 
     region = region.lower()
     # If unable to find region information from existing maps, check the other sources and add
     if not (region in REGIONS or region in REGIONS_SHORT_NAMES):
         _check_and_add_region_metadata(region)
-    return _endpoint_for(service, region, service_endpoint_template)
+    return _endpoint_for(service, region, service_endpoint_template, endpoint_service_name)
 
 
 def skip_instance_metadata_service():
@@ -195,6 +195,9 @@ def _check_and_add_region_metadata(region):
     elif _set_region_from_instance_metadata_service(region):
         logger.debug("Added metadata information for {} region from IMDS".format(region))
         return True
+    elif '.' in region:
+        logger.debug("Unknown regionId '{}', contains '.', will use it as domain (<service>.<domain>)".format(region))
+        return False
     elif second_level_domain_fallback:
         logger.debug("Unknown regionId '{}', default realm is defined, will fallback to '{}'".format(region, second_level_domain_fallback))
         return False
@@ -352,14 +355,19 @@ def _add_region_information_to_lookup(region_metadata, region):
     return False
 
 
-def _endpoint_for(service, region=None, service_endpoint_template=None):
+def _endpoint_for(service, region=None, service_endpoint_template=None, endpoint_service_name=None):
     # Convert short code to region identifier
     if region in REGIONS_SHORT_NAMES:
         region = REGIONS_SHORT_NAMES[region]
     # for backwards compatibility, if region already has a '.'
     # then consider it the full domain and do not append '.oraclecloud.com'
     if '.' in region:
-        return _format_endpoint(service, region, service_endpoint_template)
+        if endpoint_service_name:
+            endpoint = 'https://{}.{}'.format(endpoint_service_name, region)
+            logger.debug("Construction endpoint from endpoint service name {} and region {} with '.' as domain. Endpoint: {}".format(endpoint_service_name, region, endpoint))
+            return endpoint
+        endpoint = _format_endpoint(service, region, service_endpoint_template, endpoint_service_name)
+        return endpoint
     else:
         # get endpoint from template
         return _endpoint(service, region, service_endpoint_template)
@@ -396,12 +404,16 @@ def _second_level_domain(region):
     return REALMS[realm]
 
 
-def _format_endpoint(service, domain, service_endpoint_template=None):
+def _format_endpoint(service, domain, service_endpoint_template=None, endpoint_service_name=None):
     url_format = None
 
     if service.lower() not in SERVICE_ENDPOINTS:
         if service_endpoint_template is None:
-            raise ValueError("Unknown service {!r}".format(service))
+            if endpoint_service_name:
+                # No service_endpoint_template, but the spec specified the "service" portion of the endpoint in the spec
+                url_format = "https://" + endpoint_service_name + ".{domain}"
+            else:
+                raise ValueError("Unknown service {!r}".format(service))
         else:
             # If there is no entry in SERVICE_ENDPOINTS and there is
             # a service_enpoint_template attempt to convert from new service template
@@ -416,4 +428,6 @@ def _format_endpoint(service, domain, service_endpoint_template=None):
     if url_format is None:
         raise ValueError("Unable to format endpoint for service, {} , and service_endpoint_template, {}".format(service, service_endpoint_template))
 
-    return url_format.format(domain=domain)
+    endpoint = url_format.format(domain=domain)
+
+    return endpoint

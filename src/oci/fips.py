@@ -91,6 +91,8 @@ def enable_fips_mode(fips_libcrypto_path=None):
     if not fips_libcrypto_path:
         if 'FIPS_LIBCRYPTO_PATH' in os.environ:
             fips_libcrypto_path = os.environ['FIPS_LIBCRYPTO_PATH']
+        elif 'OCI_PYTHON_SDK_FIPS_LIBCRYPTO_PATH' in os.environ:
+            fips_libcrypto_path = os.environ['OCI_PYTHON_SDK_FIPS_LIBCRYPTO_PATH']
 
     if fips_libcrypto_path:
         override_libcrypto(fips_libcrypto_path)

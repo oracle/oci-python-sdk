@@ -31,6 +31,7 @@ REGIONS_SHORT_NAMES = {
     'sin': 'ap-singapore-1',
     'auh': 'me-abudhabi-1',
     'lin': 'eu-milan-1',
+    'arn': 'eu-stockholm-1',
     'lfi': 'us-langley-1',
     'luf': 'us-luke-1',
     'ric': 'us-gov-ashburn-1',
@@ -70,6 +71,7 @@ REGION_REALMS = {
     'ap-singapore-1': 'oc1',
     'me-abudhabi-1': 'oc1',
     'eu-milan-1': 'oc1',
+    'eu-stockholm-1': 'oc1',
 
     'us-langley-1': 'oc2',
     'us-luke-1': 'oc2',
@@ -120,6 +122,7 @@ REGIONS = [
     'ap-singapore-1',
     'me-abudhabi-1',
     'eu-milan-1',
+    'eu-stockholm-1',
     'us-langley-1',
     'us-luke-1',
     'us-gov-ashburn-1',

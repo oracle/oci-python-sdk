@@ -490,7 +490,17 @@ class MultipartObjectAssembler:
 
     def _upload_stream_part(self, part_num, part_bytes, **kwargs):
         try:
-            m = hashlib.md5()
+            if is_fips_mode():
+                try:
+                    m = MD5.md5()
+                except InternalError as ex:
+                    logger.warning(
+                        "An exception occur due to {}. Fallback to using hashlib.new('md5', usedforsecurity=false) for md5.".format(
+                            ex))
+                    m = hashlib.new('md5', usedforsecurity=False)
+            else:
+                m = hashlib.md5()
+
             m.update(part_bytes)
 
             new_kwargs = {'content_md5': base64.b64encode(m.digest()).decode("utf-8")}
