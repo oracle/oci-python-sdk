@@ -83,6 +83,9 @@ else
       ./tests
 fi
 
+py.test tests/integ/test_upload_manager.py::test_upload_stream_part_throws_all_exceptions
+py.test tests/integ/test_upload_manager.py::test_upload_stream_part_throws_api_errors
+
 echo installing Wheel
 pip install wheel
 

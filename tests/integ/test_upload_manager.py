@@ -16,8 +16,18 @@ from oci._vendor import six
 from oci.object_storage.transfer.constants import MEBIBYTE
 from oci.object_storage import MultipartObjectAssembler
 from oci.object_storage import UploadManager
+from oci.object_storage.transfer.upload_manager import MultipartUploadError
+from oci.exceptions import ServiceError
 from tests.util import get_resource_path, unique_name
 from . import util
+
+try:
+    import unittest.mock as mock
+except ImportError:
+    import mock  # noqa: F401
+
+from mock import patch
+
 
 LARGE_CONTENT_FILE_SIZE_IN_MEBIBYTES = 3
 
@@ -367,3 +377,67 @@ class TestUploadManager:
         assert filecmp.cmp(content_input_file, downloaded_file_path, shallow=False)
 
         os.remove(downloaded_file_path)
+
+
+# ------------------ Test upload_stream throws exceptions ------------------ #
+
+# Testing for two scenarios -
+# 1. Whether md5 hashing related errors are reported successfully (this has caused data corruption issues in the past)
+# 2. Whether API errors are reported successfully
+
+def test_upload_stream_part_throws_all_exceptions(object_storage, non_vcr_bucket):
+
+    object_name = 'test_upload_stream_part_throws_all_exceptions'
+    namespace = object_storage.get_namespace().data
+
+    b = b'0123456789abcdefg'
+    data_size = 10 * MEBIBYTE
+    data = (b * (data_size // len(b))) + (b'x' * (data_size % len(b)))
+    assert len(data) == data_size
+    part_size = 2 * MEBIBYTE
+    # Upload
+    s = io.BytesIO(data)
+    # The object storage client has retries enabled already
+    upload_manager = oci.object_storage.UploadManager(
+        object_storage,
+        allow_parallel_uploads=True,
+        parallel_process_count=3)
+
+    # Mock the md5.update() to throw an error. Assert if it is reported
+    with pytest.raises(MultipartUploadError):
+        with patch('hashlib.md5') as mock_md5:
+            mock_md5.update.side_effect = Exception("Made up exception")
+            upload_manager.upload_stream(
+                namespace,
+                non_vcr_bucket,
+                object_name,
+                s,
+                part_size=part_size)
+
+
+def test_upload_stream_part_throws_api_errors(object_storage):
+
+    object_name = 'test_upload_stream_part_throws_api_errors'
+    namespace = object_storage.get_namespace().data
+
+    b = b'0123456789abcdefg'
+    data_size = 10 * MEBIBYTE
+    data = (b * (data_size // len(b))) + (b'x' * (data_size % len(b)))
+    assert len(data) == data_size
+    part_size = 2 * MEBIBYTE
+    # Upload
+    s = io.BytesIO(data)
+    # The object storage client has retries enabled already
+    upload_manager = oci.object_storage.UploadManager(
+        object_storage,
+        allow_parallel_uploads=True,
+        parallel_process_count=3)
+
+    # Pass a garbage bucket name to throw an error. Assert if it is reported
+    with pytest.raises(ServiceError):
+        upload_manager.upload_stream(
+            namespace,
+            "garbage_bucket_name_which_raises_service_error",
+            object_name,
+            s,
+            part_size=part_size)
