@@ -541,6 +541,13 @@ class MultipartObjectAssembler:
 
             if 'progress_callback' in kwargs:
                 kwargs['progress_callback'](len(part_bytes))
+
+        except Exception as e:
+            if 'shared_dict' in kwargs:
+                kwargs['shared_dict']['should_continue'] = False
+                kwargs['shared_dict']['exceptions'].put(e)
+            raise
+
         finally:
             if 'semaphore' in kwargs:
                 kwargs['semaphore'].release()
