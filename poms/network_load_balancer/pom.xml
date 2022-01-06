@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.nlb</groupId>
         <artifactId>network-load-balancer-spec</artifactId>
-        <version>0.1.505</version>
+        <version>0.1.1096</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

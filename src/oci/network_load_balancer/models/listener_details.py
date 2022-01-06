@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -17,6 +17,14 @@ class ListenerDetails(object):
     __ https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm
     """
 
+    #: A constant which can be used with the ip_version property of a ListenerDetails.
+    #: This constant has a value of "IPV4"
+    IP_VERSION_IPV4 = "IPV4"
+
+    #: A constant which can be used with the ip_version property of a ListenerDetails.
+    #: This constant has a value of "IPV6"
+    IP_VERSION_IPV6 = "IPV6"
+
     #: A constant which can be used with the protocol property of a ListenerDetails.
     #: This constant has a value of "ANY"
     PROTOCOL_ANY = "ANY"
@@ -28,6 +36,10 @@ class ListenerDetails(object):
     #: A constant which can be used with the protocol property of a ListenerDetails.
     #: This constant has a value of "UDP"
     PROTOCOL_UDP = "UDP"
+
+    #: A constant which can be used with the protocol property of a ListenerDetails.
+    #: This constant has a value of "TCP_AND_UDP"
+    PROTOCOL_TCP_AND_UDP = "TCP_AND_UDP"
 
     def __init__(self, **kwargs):
         """
@@ -42,19 +54,25 @@ class ListenerDetails(object):
             The value to assign to the default_backend_set_name property of this ListenerDetails.
         :type default_backend_set_name: str
 
+        :param ip_version:
+            The value to assign to the ip_version property of this ListenerDetails.
+            Allowed values for this property are: "IPV4", "IPV6"
+        :type ip_version: str
+
         :param port:
             The value to assign to the port property of this ListenerDetails.
         :type port: int
 
         :param protocol:
             The value to assign to the protocol property of this ListenerDetails.
-            Allowed values for this property are: "ANY", "TCP", "UDP"
+            Allowed values for this property are: "ANY", "TCP", "UDP", "TCP_AND_UDP"
         :type protocol: str
 
         """
         self.swagger_types = {
             'name': 'str',
             'default_backend_set_name': 'str',
+            'ip_version': 'str',
             'port': 'int',
             'protocol': 'str'
         }
@@ -62,12 +80,14 @@ class ListenerDetails(object):
         self.attribute_map = {
             'name': 'name',
             'default_backend_set_name': 'defaultBackendSetName',
+            'ip_version': 'ipVersion',
             'port': 'port',
             'protocol': 'protocol'
         }
 
         self._name = None
         self._default_backend_set_name = None
+        self._ip_version = None
         self._port = None
         self._protocol = None
 
@@ -128,6 +148,38 @@ class ListenerDetails(object):
         self._default_backend_set_name = default_backend_set_name
 
     @property
+    def ip_version(self):
+        """
+        Gets the ip_version of this ListenerDetails.
+        IP version associated with the listener.
+
+        Allowed values for this property are: "IPV4", "IPV6"
+
+
+        :return: The ip_version of this ListenerDetails.
+        :rtype: str
+        """
+        return self._ip_version
+
+    @ip_version.setter
+    def ip_version(self, ip_version):
+        """
+        Sets the ip_version of this ListenerDetails.
+        IP version associated with the listener.
+
+
+        :param ip_version: The ip_version of this ListenerDetails.
+        :type: str
+        """
+        allowed_values = ["IPV4", "IPV6"]
+        if not value_allowed_none_or_none_sentinel(ip_version, allowed_values):
+            raise ValueError(
+                "Invalid value for `ip_version`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._ip_version = ip_version
+
+    @property
     def port(self):
         """
         **[Required]** Gets the port of this ListenerDetails.
@@ -167,7 +219,7 @@ class ListenerDetails(object):
 
         Example: `TCP`
 
-        Allowed values for this property are: "ANY", "TCP", "UDP"
+        Allowed values for this property are: "ANY", "TCP", "UDP", "TCP_AND_UDP"
 
 
         :return: The protocol of this ListenerDetails.
@@ -191,7 +243,7 @@ class ListenerDetails(object):
         :param protocol: The protocol of this ListenerDetails.
         :type: str
         """
-        allowed_values = ["ANY", "TCP", "UDP"]
+        allowed_values = ["ANY", "TCP", "UDP", "TCP_AND_UDP"]
         if not value_allowed_none_or_none_sentinel(protocol, allowed_values):
             raise ValueError(
                 "Invalid value for `protocol`, must be None or one of {0}"

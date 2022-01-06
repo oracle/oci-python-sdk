@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -15,6 +15,14 @@ class UpdateNetworkLoadBalancerDetails(object):
     **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
     """
 
+    #: A constant which can be used with the nlb_ip_version property of a UpdateNetworkLoadBalancerDetails.
+    #: This constant has a value of "IPV4"
+    NLB_IP_VERSION_IPV4 = "IPV4"
+
+    #: A constant which can be used with the nlb_ip_version property of a UpdateNetworkLoadBalancerDetails.
+    #: This constant has a value of "IPV4_AND_IPV6"
+    NLB_IP_VERSION_IPV4_AND_IPV6 = "IPV4_AND_IPV6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateNetworkLoadBalancerDetails object with values from keyword arguments.
@@ -28,6 +36,11 @@ class UpdateNetworkLoadBalancerDetails(object):
             The value to assign to the is_preserve_source_destination property of this UpdateNetworkLoadBalancerDetails.
         :type is_preserve_source_destination: bool
 
+        :param nlb_ip_version:
+            The value to assign to the nlb_ip_version property of this UpdateNetworkLoadBalancerDetails.
+            Allowed values for this property are: "IPV4", "IPV4_AND_IPV6"
+        :type nlb_ip_version: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateNetworkLoadBalancerDetails.
         :type freeform_tags: dict(str, str)
@@ -40,6 +53,7 @@ class UpdateNetworkLoadBalancerDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'is_preserve_source_destination': 'bool',
+            'nlb_ip_version': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -47,12 +61,14 @@ class UpdateNetworkLoadBalancerDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'is_preserve_source_destination': 'isPreserveSourceDestination',
+            'nlb_ip_version': 'nlbIpVersion',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
         self._is_preserve_source_destination = None
+        self._nlb_ip_version = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -111,6 +127,38 @@ class UpdateNetworkLoadBalancerDetails(object):
         :type: bool
         """
         self._is_preserve_source_destination = is_preserve_source_destination
+
+    @property
+    def nlb_ip_version(self):
+        """
+        Gets the nlb_ip_version of this UpdateNetworkLoadBalancerDetails.
+        IP version associated with the NLB.
+
+        Allowed values for this property are: "IPV4", "IPV4_AND_IPV6"
+
+
+        :return: The nlb_ip_version of this UpdateNetworkLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._nlb_ip_version
+
+    @nlb_ip_version.setter
+    def nlb_ip_version(self, nlb_ip_version):
+        """
+        Sets the nlb_ip_version of this UpdateNetworkLoadBalancerDetails.
+        IP version associated with the NLB.
+
+
+        :param nlb_ip_version: The nlb_ip_version of this UpdateNetworkLoadBalancerDetails.
+        :type: str
+        """
+        allowed_values = ["IPV4", "IPV4_AND_IPV6"]
+        if not value_allowed_none_or_none_sentinel(nlb_ip_version, allowed_values):
+            raise ValueError(
+                "Invalid value for `nlb_ip_version`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._nlb_ip_version = nlb_ip_version
 
     @property
     def freeform_tags(self):

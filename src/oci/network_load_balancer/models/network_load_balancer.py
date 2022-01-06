@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -51,6 +51,14 @@ class NetworkLoadBalancer(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the nlb_ip_version property of a NetworkLoadBalancer.
+    #: This constant has a value of "IPV4"
+    NLB_IP_VERSION_IPV4 = "IPV4"
+
+    #: A constant which can be used with the nlb_ip_version property of a NetworkLoadBalancer.
+    #: This constant has a value of "IPV4_AND_IPV6"
+    NLB_IP_VERSION_IPV4_AND_IPV6 = "IPV4_AND_IPV6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new NetworkLoadBalancer object with values from keyword arguments.
@@ -77,6 +85,12 @@ class NetworkLoadBalancer(object):
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this NetworkLoadBalancer.
         :type lifecycle_details: str
+
+        :param nlb_ip_version:
+            The value to assign to the nlb_ip_version property of this NetworkLoadBalancer.
+            Allowed values for this property are: "IPV4", "IPV4_AND_IPV6", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type nlb_ip_version: str
 
         :param time_created:
             The value to assign to the time_created property of this NetworkLoadBalancer.
@@ -133,6 +147,7 @@ class NetworkLoadBalancer(object):
             'display_name': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'nlb_ip_version': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'ip_addresses': 'list[IpAddress]',
@@ -153,6 +168,7 @@ class NetworkLoadBalancer(object):
             'display_name': 'displayName',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'nlb_ip_version': 'nlbIpVersion',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'ip_addresses': 'ipAddresses',
@@ -172,6 +188,7 @@ class NetworkLoadBalancer(object):
         self._display_name = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._nlb_ip_version = None
         self._time_created = None
         self._time_updated = None
         self._ip_addresses = None
@@ -324,6 +341,36 @@ class NetworkLoadBalancer(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def nlb_ip_version(self):
+        """
+        Gets the nlb_ip_version of this NetworkLoadBalancer.
+        IP version associated with the NLB.
+
+        Allowed values for this property are: "IPV4", "IPV4_AND_IPV6", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The nlb_ip_version of this NetworkLoadBalancer.
+        :rtype: str
+        """
+        return self._nlb_ip_version
+
+    @nlb_ip_version.setter
+    def nlb_ip_version(self, nlb_ip_version):
+        """
+        Sets the nlb_ip_version of this NetworkLoadBalancer.
+        IP version associated with the NLB.
+
+
+        :param nlb_ip_version: The nlb_ip_version of this NetworkLoadBalancer.
+        :type: str
+        """
+        allowed_values = ["IPV4", "IPV4_AND_IPV6"]
+        if not value_allowed_none_or_none_sentinel(nlb_ip_version, allowed_values):
+            nlb_ip_version = 'UNKNOWN_ENUM_VALUE'
+        self._nlb_ip_version = nlb_ip_version
 
     @property
     def time_created(self):

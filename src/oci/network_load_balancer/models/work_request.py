@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -73,6 +73,14 @@ class WorkRequest(object):
     #: This constant has a value of "CHANGE_COMPARTMENT"
     OPERATION_TYPE_CHANGE_COMPARTMENT = "CHANGE_COMPARTMENT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "ATTACH_NLB_TO_POD"
+    OPERATION_TYPE_ATTACH_NLB_TO_POD = "ATTACH_NLB_TO_POD"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DETACH_NLB_FROM_POD"
+    OPERATION_TYPE_DETACH_NLB_FROM_POD = "DETACH_NLB_FROM_POD"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -104,7 +112,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_NETWORK_LOAD_BALANCER", "UPDATE_NETWORK_LOAD_BALANCER", "DELETE_NETWORK_LOAD_BALANCER", "CREATE_BACKEND", "UPDATE_BACKEND", "DELETE_BACKEND", "CREATE_LISTENER", "UPDATE_LISTENER", "DELETE_LISTENER", "CREATE_BACKENDSET", "UPDATE_BACKENDSET", "DELETE_BACKENDSET", "UPDATE_NSGS", "UPDATE_HEALTH_CHECKER", "CHANGE_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_NETWORK_LOAD_BALANCER", "UPDATE_NETWORK_LOAD_BALANCER", "DELETE_NETWORK_LOAD_BALANCER", "CREATE_BACKEND", "UPDATE_BACKEND", "DELETE_BACKEND", "CREATE_LISTENER", "UPDATE_LISTENER", "DELETE_LISTENER", "CREATE_BACKENDSET", "UPDATE_BACKENDSET", "DELETE_BACKENDSET", "UPDATE_NSGS", "UPDATE_HEALTH_CHECKER", "CHANGE_COMPARTMENT", "ATTACH_NLB_TO_POD", "DETACH_NLB_FROM_POD", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -183,7 +191,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         Type of work request.
 
-        Allowed values for this property are: "CREATE_NETWORK_LOAD_BALANCER", "UPDATE_NETWORK_LOAD_BALANCER", "DELETE_NETWORK_LOAD_BALANCER", "CREATE_BACKEND", "UPDATE_BACKEND", "DELETE_BACKEND", "CREATE_LISTENER", "UPDATE_LISTENER", "DELETE_LISTENER", "CREATE_BACKENDSET", "UPDATE_BACKENDSET", "DELETE_BACKENDSET", "UPDATE_NSGS", "UPDATE_HEALTH_CHECKER", "CHANGE_COMPARTMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_NETWORK_LOAD_BALANCER", "UPDATE_NETWORK_LOAD_BALANCER", "DELETE_NETWORK_LOAD_BALANCER", "CREATE_BACKEND", "UPDATE_BACKEND", "DELETE_BACKEND", "CREATE_LISTENER", "UPDATE_LISTENER", "DELETE_LISTENER", "CREATE_BACKENDSET", "UPDATE_BACKENDSET", "DELETE_BACKENDSET", "UPDATE_NSGS", "UPDATE_HEALTH_CHECKER", "CHANGE_COMPARTMENT", "ATTACH_NLB_TO_POD", "DETACH_NLB_FROM_POD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -202,7 +210,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_NETWORK_LOAD_BALANCER", "UPDATE_NETWORK_LOAD_BALANCER", "DELETE_NETWORK_LOAD_BALANCER", "CREATE_BACKEND", "UPDATE_BACKEND", "DELETE_BACKEND", "CREATE_LISTENER", "UPDATE_LISTENER", "DELETE_LISTENER", "CREATE_BACKENDSET", "UPDATE_BACKENDSET", "DELETE_BACKENDSET", "UPDATE_NSGS", "UPDATE_HEALTH_CHECKER", "CHANGE_COMPARTMENT"]
+        allowed_values = ["CREATE_NETWORK_LOAD_BALANCER", "UPDATE_NETWORK_LOAD_BALANCER", "DELETE_NETWORK_LOAD_BALANCER", "CREATE_BACKEND", "UPDATE_BACKEND", "DELETE_BACKEND", "CREATE_LISTENER", "UPDATE_LISTENER", "DELETE_LISTENER", "CREATE_BACKENDSET", "UPDATE_BACKENDSET", "DELETE_BACKENDSET", "UPDATE_NSGS", "UPDATE_HEALTH_CHECKER", "CHANGE_COMPARTMENT", "ATTACH_NLB_TO_POD", "DETACH_NLB_FROM_POD"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -29,6 +29,18 @@ class UpdateListenerDetails(object):
     #: This constant has a value of "UDP"
     PROTOCOL_UDP = "UDP"
 
+    #: A constant which can be used with the protocol property of a UpdateListenerDetails.
+    #: This constant has a value of "TCP_AND_UDP"
+    PROTOCOL_TCP_AND_UDP = "TCP_AND_UDP"
+
+    #: A constant which can be used with the ip_version property of a UpdateListenerDetails.
+    #: This constant has a value of "IPV4"
+    IP_VERSION_IPV4 = "IPV4"
+
+    #: A constant which can be used with the ip_version property of a UpdateListenerDetails.
+    #: This constant has a value of "IPV6"
+    IP_VERSION_IPV6 = "IPV6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateListenerDetails object with values from keyword arguments.
@@ -44,25 +56,33 @@ class UpdateListenerDetails(object):
 
         :param protocol:
             The value to assign to the protocol property of this UpdateListenerDetails.
-            Allowed values for this property are: "ANY", "TCP", "UDP"
+            Allowed values for this property are: "ANY", "TCP", "UDP", "TCP_AND_UDP"
         :type protocol: str
+
+        :param ip_version:
+            The value to assign to the ip_version property of this UpdateListenerDetails.
+            Allowed values for this property are: "IPV4", "IPV6"
+        :type ip_version: str
 
         """
         self.swagger_types = {
             'default_backend_set_name': 'str',
             'port': 'int',
-            'protocol': 'str'
+            'protocol': 'str',
+            'ip_version': 'str'
         }
 
         self.attribute_map = {
             'default_backend_set_name': 'defaultBackendSetName',
             'port': 'port',
-            'protocol': 'protocol'
+            'protocol': 'protocol',
+            'ip_version': 'ipVersion'
         }
 
         self._default_backend_set_name = None
         self._port = None
         self._protocol = None
+        self._ip_version = None
 
     @property
     def default_backend_set_name(self):
@@ -132,7 +152,7 @@ class UpdateListenerDetails(object):
 
         Example: `TCP`
 
-        Allowed values for this property are: "ANY", "TCP", "UDP"
+        Allowed values for this property are: "ANY", "TCP", "UDP", "TCP_AND_UDP"
 
 
         :return: The protocol of this UpdateListenerDetails.
@@ -156,13 +176,45 @@ class UpdateListenerDetails(object):
         :param protocol: The protocol of this UpdateListenerDetails.
         :type: str
         """
-        allowed_values = ["ANY", "TCP", "UDP"]
+        allowed_values = ["ANY", "TCP", "UDP", "TCP_AND_UDP"]
         if not value_allowed_none_or_none_sentinel(protocol, allowed_values):
             raise ValueError(
                 "Invalid value for `protocol`, must be None or one of {0}"
                 .format(allowed_values)
             )
         self._protocol = protocol
+
+    @property
+    def ip_version(self):
+        """
+        Gets the ip_version of this UpdateListenerDetails.
+        IP version associated with the listener.
+
+        Allowed values for this property are: "IPV4", "IPV6"
+
+
+        :return: The ip_version of this UpdateListenerDetails.
+        :rtype: str
+        """
+        return self._ip_version
+
+    @ip_version.setter
+    def ip_version(self, ip_version):
+        """
+        Sets the ip_version of this UpdateListenerDetails.
+        IP version associated with the listener.
+
+
+        :param ip_version: The ip_version of this UpdateListenerDetails.
+        :type: str
+        """
+        allowed_values = ["IPV4", "IPV6"]
+        if not value_allowed_none_or_none_sentinel(ip_version, allowed_values):
+            raise ValueError(
+                "Invalid value for `ip_version`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._ip_version = ip_version
 
     def __repr__(self):
         return formatted_flat_dict(self)
