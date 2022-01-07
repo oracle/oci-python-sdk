@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -277,7 +277,7 @@ class ApplicationUsage(object):
     def time_start(self):
         """
         Gets the time_start of this ApplicationUsage.
-        Lower bound of the specified time period filter.
+        Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
 
 
         :return: The time_start of this ApplicationUsage.
@@ -289,7 +289,7 @@ class ApplicationUsage(object):
     def time_start(self, time_start):
         """
         Sets the time_start of this ApplicationUsage.
-        Lower bound of the specified time period filter.
+        Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
 
 
         :param time_start: The time_start of this ApplicationUsage.
@@ -301,7 +301,7 @@ class ApplicationUsage(object):
     def time_end(self):
         """
         Gets the time_end of this ApplicationUsage.
-        Upper bound of the specified time period filter.
+        Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
 
 
         :return: The time_end of this ApplicationUsage.
@@ -313,7 +313,7 @@ class ApplicationUsage(object):
     def time_end(self, time_end):
         """
         Sets the time_end of this ApplicationUsage.
-        Upper bound of the specified time period filter.
+        Upper bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
 
 
         :param time_end: The time_end of this ApplicationUsage.

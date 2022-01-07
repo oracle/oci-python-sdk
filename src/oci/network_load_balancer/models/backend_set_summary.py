@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -31,6 +31,14 @@ class BackendSetSummary(object):
     #: This constant has a value of "FIVE_TUPLE"
     POLICY_FIVE_TUPLE = "FIVE_TUPLE"
 
+    #: A constant which can be used with the ip_version property of a BackendSetSummary.
+    #: This constant has a value of "IPV4"
+    IP_VERSION_IPV4 = "IPV4"
+
+    #: A constant which can be used with the ip_version property of a BackendSetSummary.
+    #: This constant has a value of "IPV6"
+    IP_VERSION_IPV6 = "IPV6"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BackendSetSummary object with values from keyword arguments.
@@ -50,6 +58,12 @@ class BackendSetSummary(object):
             The value to assign to the is_preserve_source property of this BackendSetSummary.
         :type is_preserve_source: bool
 
+        :param ip_version:
+            The value to assign to the ip_version property of this BackendSetSummary.
+            Allowed values for this property are: "IPV4", "IPV6", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type ip_version: str
+
         :param backends:
             The value to assign to the backends property of this BackendSetSummary.
         :type backends: list[oci.network_load_balancer.models.Backend]
@@ -63,6 +77,7 @@ class BackendSetSummary(object):
             'name': 'str',
             'policy': 'str',
             'is_preserve_source': 'bool',
+            'ip_version': 'str',
             'backends': 'list[Backend]',
             'health_checker': 'HealthChecker'
         }
@@ -71,6 +86,7 @@ class BackendSetSummary(object):
             'name': 'name',
             'policy': 'policy',
             'is_preserve_source': 'isPreserveSource',
+            'ip_version': 'ipVersion',
             'backends': 'backends',
             'health_checker': 'healthChecker'
         }
@@ -78,6 +94,7 @@ class BackendSetSummary(object):
         self._name = None
         self._policy = None
         self._is_preserve_source = None
+        self._ip_version = None
         self._backends = None
         self._health_checker = None
 
@@ -153,8 +170,8 @@ class BackendSetSummary(object):
     def is_preserve_source(self):
         """
         Gets the is_preserve_source of this BackendSetSummary.
-        If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
-        Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
+        If this parameter is enabled, the network load balancer preserves the source IP of the packet forwarded to the backend servers.
+        Backend servers see the original source IP. If the `isPreserveSourceDestination` parameter is enabled for the network load balancer resource, this parameter cannot be disabled.
         The value is true by default.
 
 
@@ -167,8 +184,8 @@ class BackendSetSummary(object):
     def is_preserve_source(self, is_preserve_source):
         """
         Sets the is_preserve_source of this BackendSetSummary.
-        If this parameter is enabled, then the network load balancer preserves the source IP of the packet when it is forwarded to backends.
-        Backends see the original source IP. If the isPreserveSourceDestination parameter is enabled for the network load balancer resource, then this parameter cannot be disabled.
+        If this parameter is enabled, the network load balancer preserves the source IP of the packet forwarded to the backend servers.
+        Backend servers see the original source IP. If the `isPreserveSourceDestination` parameter is enabled for the network load balancer resource, this parameter cannot be disabled.
         The value is true by default.
 
 
@@ -176,6 +193,36 @@ class BackendSetSummary(object):
         :type: bool
         """
         self._is_preserve_source = is_preserve_source
+
+    @property
+    def ip_version(self):
+        """
+        Gets the ip_version of this BackendSetSummary.
+        IP version associated with the backend set.
+
+        Allowed values for this property are: "IPV4", "IPV6", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The ip_version of this BackendSetSummary.
+        :rtype: str
+        """
+        return self._ip_version
+
+    @ip_version.setter
+    def ip_version(self, ip_version):
+        """
+        Sets the ip_version of this BackendSetSummary.
+        IP version associated with the backend set.
+
+
+        :param ip_version: The ip_version of this BackendSetSummary.
+        :type: str
+        """
+        allowed_values = ["IPV4", "IPV6"]
+        if not value_allowed_none_or_none_sentinel(ip_version, allowed_values):
+            ip_version = 'UNKNOWN_ENUM_VALUE'
+        self._ip_version = ip_version
 
     @property
     def backends(self):

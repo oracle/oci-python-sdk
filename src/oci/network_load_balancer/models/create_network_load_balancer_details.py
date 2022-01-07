@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -26,6 +26,14 @@ class CreateNetworkLoadBalancerDetails(object):
     __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm
     __ https://docs.cloud.oracle.com/Content/API/Concepts/sdks.htm
     """
+
+    #: A constant which can be used with the nlb_ip_version property of a CreateNetworkLoadBalancerDetails.
+    #: This constant has a value of "IPV4"
+    NLB_IP_VERSION_IPV4 = "IPV4"
+
+    #: A constant which can be used with the nlb_ip_version property of a CreateNetworkLoadBalancerDetails.
+    #: This constant has a value of "IPV4_AND_IPV6"
+    NLB_IP_VERSION_IPV4_AND_IPV6 = "IPV4_AND_IPV6"
 
     def __init__(self, **kwargs):
         """
@@ -60,6 +68,11 @@ class CreateNetworkLoadBalancerDetails(object):
             The value to assign to the network_security_group_ids property of this CreateNetworkLoadBalancerDetails.
         :type network_security_group_ids: list[str]
 
+        :param nlb_ip_version:
+            The value to assign to the nlb_ip_version property of this CreateNetworkLoadBalancerDetails.
+            Allowed values for this property are: "IPV4", "IPV4_AND_IPV6"
+        :type nlb_ip_version: str
+
         :param listeners:
             The value to assign to the listeners property of this CreateNetworkLoadBalancerDetails.
         :type listeners: dict(str, ListenerDetails)
@@ -85,6 +98,7 @@ class CreateNetworkLoadBalancerDetails(object):
             'is_private': 'bool',
             'subnet_id': 'str',
             'network_security_group_ids': 'list[str]',
+            'nlb_ip_version': 'str',
             'listeners': 'dict(str, ListenerDetails)',
             'backend_sets': 'dict(str, BackendSetDetails)',
             'freeform_tags': 'dict(str, str)',
@@ -99,6 +113,7 @@ class CreateNetworkLoadBalancerDetails(object):
             'is_private': 'isPrivate',
             'subnet_id': 'subnetId',
             'network_security_group_ids': 'networkSecurityGroupIds',
+            'nlb_ip_version': 'nlbIpVersion',
             'listeners': 'listeners',
             'backend_sets': 'backendSets',
             'freeform_tags': 'freeformTags',
@@ -112,6 +127,7 @@ class CreateNetworkLoadBalancerDetails(object):
         self._is_private = None
         self._subnet_id = None
         self._network_security_group_ids = None
+        self._nlb_ip_version = None
         self._listeners = None
         self._backend_sets = None
         self._freeform_tags = None
@@ -352,6 +368,38 @@ class CreateNetworkLoadBalancerDetails(object):
         :type: list[str]
         """
         self._network_security_group_ids = network_security_group_ids
+
+    @property
+    def nlb_ip_version(self):
+        """
+        Gets the nlb_ip_version of this CreateNetworkLoadBalancerDetails.
+        IP version associated with the NLB.
+
+        Allowed values for this property are: "IPV4", "IPV4_AND_IPV6"
+
+
+        :return: The nlb_ip_version of this CreateNetworkLoadBalancerDetails.
+        :rtype: str
+        """
+        return self._nlb_ip_version
+
+    @nlb_ip_version.setter
+    def nlb_ip_version(self, nlb_ip_version):
+        """
+        Sets the nlb_ip_version of this CreateNetworkLoadBalancerDetails.
+        IP version associated with the NLB.
+
+
+        :param nlb_ip_version: The nlb_ip_version of this CreateNetworkLoadBalancerDetails.
+        :type: str
+        """
+        allowed_values = ["IPV4", "IPV4_AND_IPV6"]
+        if not value_allowed_none_or_none_sentinel(nlb_ip_version, allowed_values):
+            raise ValueError(
+                "Invalid value for `nlb_ip_version`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._nlb_ip_version = nlb_ip_version
 
     @property
     def listeners(self):

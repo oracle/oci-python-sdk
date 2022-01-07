@@ -1,20 +1,23 @@
-#!/usr/bin/env python3
-"""
-Creates a connection to a VM DB System with Private Endpoint (PE) in a Private Subnet
-- Requires Database Tools Private Endpoint Reverse Connection: Yes
-- Requires a KeyStore: No
+# coding: utf-8
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
-1- Create a Database Tools Private Endpoint for A Reverse Connection to the VM DB System
-2- Create required secrets
-3- Create a connection
-4- Validate the connection
 
-Prerequisites are:
-- An DB system created following the instructions from: https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/creatingDBsystem.htm with NSG for port 1521
-- A compartment Id where the vcn, DB System, vault, private endpoint and connection will reside
-- vault_id: a vault created in KMS with at least one master key.
-- subnet_id of the Database Tools Private Endpoint and the DB system. Best practice is to use a private subnet.
-"""
+# Creates a connection to a VM DB System with Private Endpoint (PE) in a Private Subnet
+# - Requires Database Tools Private Endpoint Reverse Connection: Yes
+# - Requires a KeyStore: No
+#
+# 1- Create a Database Tools Private Endpoint for A Reverse Connection to the VM DB System
+# 2- Create required secrets
+# 3- Create a connection
+# 4- Validate the connection
+#
+# Prerequisites are:
+# - An DB system created following the instructions from: https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/creatingDBsystem.htm with NSG for port 1521
+# - A compartment Id where the vcn, DB System, vault, private endpoint and connection will reside
+# - vault_id: a vault created in KMS with at least one master key.
+# - subnet_id of the Database Tools Private Endpoint and the DB system. Best practice is to use a private subnet.
+
 import oci
 from oci.config import from_file, validate_config
 from utils.dbtools import get_dbtools_clients, get_database_clients, get_secrets_client, \

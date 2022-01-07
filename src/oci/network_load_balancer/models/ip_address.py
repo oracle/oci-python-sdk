@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -12,6 +12,14 @@ class IpAddress(object):
     """
     A load balancer IP address.
     """
+
+    #: A constant which can be used with the ip_version property of a IpAddress.
+    #: This constant has a value of "IPV4"
+    IP_VERSION_IPV4 = "IPV4"
+
+    #: A constant which can be used with the ip_version property of a IpAddress.
+    #: This constant has a value of "IPV6"
+    IP_VERSION_IPV6 = "IPV6"
 
     def __init__(self, **kwargs):
         """
@@ -26,6 +34,12 @@ class IpAddress(object):
             The value to assign to the is_public property of this IpAddress.
         :type is_public: bool
 
+        :param ip_version:
+            The value to assign to the ip_version property of this IpAddress.
+            Allowed values for this property are: "IPV4", "IPV6", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type ip_version: str
+
         :param reserved_ip:
             The value to assign to the reserved_ip property of this IpAddress.
         :type reserved_ip: oci.network_load_balancer.models.ReservedIP
@@ -34,17 +48,20 @@ class IpAddress(object):
         self.swagger_types = {
             'ip_address': 'str',
             'is_public': 'bool',
+            'ip_version': 'str',
             'reserved_ip': 'ReservedIP'
         }
 
         self.attribute_map = {
             'ip_address': 'ipAddress',
             'is_public': 'isPublic',
+            'ip_version': 'ipVersion',
             'reserved_ip': 'reservedIp'
         }
 
         self._ip_address = None
         self._is_public = None
+        self._ip_version = None
         self._reserved_ip = None
 
     @property
@@ -106,6 +123,36 @@ class IpAddress(object):
         :type: bool
         """
         self._is_public = is_public
+
+    @property
+    def ip_version(self):
+        """
+        Gets the ip_version of this IpAddress.
+        IP version associated with this IP address.
+
+        Allowed values for this property are: "IPV4", "IPV6", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The ip_version of this IpAddress.
+        :rtype: str
+        """
+        return self._ip_version
+
+    @ip_version.setter
+    def ip_version(self, ip_version):
+        """
+        Sets the ip_version of this IpAddress.
+        IP version associated with this IP address.
+
+
+        :param ip_version: The ip_version of this IpAddress.
+        :type: str
+        """
+        allowed_values = ["IPV4", "IPV6"]
+        if not value_allowed_none_or_none_sentinel(ip_version, allowed_values):
+            ip_version = 'UNKNOWN_ENUM_VALUE'
+        self._ip_version = ip_version
 
     @property
     def reserved_ip(self):

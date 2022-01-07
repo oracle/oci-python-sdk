@@ -1,21 +1,23 @@
-#!/usr/bin/env python3
-"""
-Creates a connection to an Autonomous Databases with Shared Exadata Infrastructure. With a Public IP.
-- Requires Database Tools Private Endpoint Reverse Connection: No
-- Requires a KeyStore: Yes, for mTLS
+# coding: utf-8
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
-1- Create a new Autonomous Database
-2- Create required secrets
-3- Create a connection
-4- Validate the connection
 
-If variable do_clean_up_at_end is set to True, connection, secrets and DB are removed upon completion.
+# Creates a connection to an Autonomous Databases with Shared Exadata Infrastructure. With a Public IP.
+# - Requires Database Tools Private Endpoint Reverse Connection: No
+# - Requires a KeyStore: Yes, for mTLS
+#
+# 1- Create a new Autonomous Database
+# 2- Create required secrets
+# 3- Create a connection
+# 4- Validate the connection
+#
+# If variable do_clean_up_at_end is set to True, connection, secrets and DB are removed upon completion.
+#
+# Prerequisites are:
+# - A compartment_id where the vcn, autonomous database, vault and connection will reside.
+# - vault_id: a Vault created in KMS with at least one master key.
 
-Prerequisites are:
-- A compartment_id where the vcn, autonomous database, vault and connection will reside.
-- vault_id: a Vault created in KMS with at least one master key.
-
-"""
 import oci
 from oci.config import from_file, validate_config
 from utils.dbtools import get_dbtools_clients, get_database_clients, get_secrets_client, \
