@@ -12,6 +12,7 @@ This section describes SDK-specific behaviors:
 * :doc:`Signing bodies </sdk_behaviors/signing_bodies>`
 * :doc:`Enable Selective Service Imports </sdk_behaviors/enable_selective_service_imports>`
 * :doc:`Circuit Breakers </sdk_behaviors/circuit_breakers>`
+* :doc:`Allow control characters in response </sdk_behaviors/allow_control_chars_response>`
 
 .. toctree::
     :hidden:
@@ -25,3 +26,4 @@ This section describes SDK-specific behaviors:
     signing_bodies
     enable_selective_service_imports
     circuit_breakers
+    allow_control_chars_response
