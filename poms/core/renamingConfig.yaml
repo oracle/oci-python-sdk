@@ -24,3 +24,4 @@ languages:
           identifier: "service_allowed_values"
         includes:
           - ShapeNumaNodesPerSocketPlatformOptions
+          - ShapeMemoryEncryptionTechnologyOptions
