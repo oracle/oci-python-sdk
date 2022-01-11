@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+21.12.12 - 2021-12-12
+=====================
+* Added option to run report on all Tenants when multi tenants loaded
+
+=====================
 21.11.02 - 2021-11-02
 =====================
 * Amended APEX application for version 21.1

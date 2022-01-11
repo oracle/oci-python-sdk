@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 REGIONS_SHORT_NAMES = {
@@ -32,6 +32,7 @@ REGIONS_SHORT_NAMES = {
     'auh': 'me-abudhabi-1',
     'lin': 'eu-milan-1',
     'arn': 'eu-stockholm-1',
+    'jnb': 'af-johannesburg-1',
     'lfi': 'us-langley-1',
     'luf': 'us-luke-1',
     'ric': 'us-gov-ashburn-1',
@@ -72,6 +73,7 @@ REGION_REALMS = {
     'me-abudhabi-1': 'oc1',
     'eu-milan-1': 'oc1',
     'eu-stockholm-1': 'oc1',
+    'af-johannesburg-1': 'oc1',
 
     'us-langley-1': 'oc2',
     'us-luke-1': 'oc2',
@@ -123,6 +125,7 @@ REGIONS = [
     'me-abudhabi-1',
     'eu-milan-1',
     'eu-stockholm-1',
+    'af-johannesburg-1',
     'us-langley-1',
     'us-luke-1',
     'us-gov-ashburn-1',

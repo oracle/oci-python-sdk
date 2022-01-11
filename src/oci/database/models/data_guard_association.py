@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -160,6 +160,10 @@ class DataGuardAssociation(object):
             The value to assign to the time_created property of this DataGuardAssociation.
         :type time_created: datetime
 
+        :param is_active_data_guard_enabled:
+            The value to assign to the is_active_data_guard_enabled property of this DataGuardAssociation.
+        :type is_active_data_guard_enabled: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -176,7 +180,8 @@ class DataGuardAssociation(object):
             'apply_rate': 'str',
             'protection_mode': 'str',
             'transport_type': 'str',
-            'time_created': 'datetime'
+            'time_created': 'datetime',
+            'is_active_data_guard_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -194,7 +199,8 @@ class DataGuardAssociation(object):
             'apply_rate': 'applyRate',
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
-            'time_created': 'timeCreated'
+            'time_created': 'timeCreated',
+            'is_active_data_guard_enabled': 'isActiveDataGuardEnabled'
         }
 
         self._id = None
@@ -212,6 +218,7 @@ class DataGuardAssociation(object):
         self._protection_mode = None
         self._transport_type = None
         self._time_created = None
+        self._is_active_data_guard_enabled = None
 
     @property
     def id(self):
@@ -654,6 +661,30 @@ class DataGuardAssociation(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def is_active_data_guard_enabled(self):
+        """
+        Gets the is_active_data_guard_enabled of this DataGuardAssociation.
+        True if active Data Guard is enabled.
+
+
+        :return: The is_active_data_guard_enabled of this DataGuardAssociation.
+        :rtype: bool
+        """
+        return self._is_active_data_guard_enabled
+
+    @is_active_data_guard_enabled.setter
+    def is_active_data_guard_enabled(self, is_active_data_guard_enabled):
+        """
+        Sets the is_active_data_guard_enabled of this DataGuardAssociation.
+        True if active Data Guard is enabled.
+
+
+        :param is_active_data_guard_enabled: The is_active_data_guard_enabled of this DataGuardAssociation.
+        :type: bool
+        """
+        self._is_active_data_guard_enabled = is_active_data_guard_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

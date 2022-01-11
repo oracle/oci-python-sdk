@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
@@ -259,6 +259,8 @@ class BaseClient(object):
         "object": object
     }
 
+    ALLOW_CONTROL_CHARACTERS = False
+
     def __init__(self, service, config, signer, type_mapping, **kwargs):
         validate_config(config, signer=signer)
         self.signer = signer
@@ -272,6 +274,9 @@ class BaseClient(object):
         self._base_path = kwargs.get('base_path')
         self.service_endpoint_template = kwargs.get('service_endpoint_template')
         self.endpoint_service_name = kwargs.get('endpoint_service_name')
+
+        # By default self._allow_control_chars will be None. The user would need to explicitly set it to True or False
+        self._allow_control_chars = kwargs.get('allow_control_chars')
 
         if self.regional_client:
             if kwargs.get('service_endpoint'):
@@ -365,13 +370,22 @@ class BaseClient(object):
         else:
             raise TypeError('Setting the region is not allowed for non-regional service clients. You must instead set the endpoint')
 
+    @property
+    def allow_control_chars(self):
+        return self._allow_control_chars
+
+    @allow_control_chars.setter
+    def allow_control_chars(self, bool):
+        self._allow_control_chars = bool
+
     def call_api(self, resource_path, method,
                  path_params=None,
                  query_params=None,
                  header_params=None,
                  body=None,
                  response_type=None,
-                 enforce_content_headers=True):
+                 enforce_content_headers=True,
+                 allow_control_chars=None):
         """
         Makes the HTTP request and return the deserialized data.
 
@@ -384,6 +398,7 @@ class BaseClient(object):
         :param response_type: (optional) Response data type.
         :param enforce_content_headers: (optional) Whether content headers should be added for
             PUT and POST requests when not present.  Defaults to True.
+        :param allow_control_chars: (optional) Boolean that allows whether or not the response object can contain control chars
         :return: A Response object, or throw in the case of an error.
 
         """
@@ -445,7 +460,7 @@ class BaseClient(object):
             call_attempts = 0
             while call_attempts < 2:
                 try:
-                    return self.request(request)
+                    return self.request(request, allow_control_chars)
                 except exceptions.ServiceError as e:
                     call_attempts += 1
                     if e.status == 401 and call_attempts < 2:
@@ -454,7 +469,7 @@ class BaseClient(object):
                         raise
         else:
             start = timer()
-            response = self.request(request)
+            response = self.request(request, allow_control_chars)
             end = timer()
             self.logger.debug('time elapsed for request: {}'.format(str(end - start)))
             return response
@@ -533,7 +548,7 @@ class BaseClient(object):
 
         return processed_query_params
 
-    def request(self, request):
+    def request(self, request, allow_control_chars=None):
         self.logger.info(utc_now() + "Request: %s %s" % (str(request.method), request.url))
 
         initial_circuit_breaker_state = None
@@ -576,7 +591,7 @@ class BaseClient(object):
 
         # Raise Service Error or Transient Service Error
         if not 200 <= response.status_code <= 299:
-            service_code, message = self.get_deserialized_service_code_and_message(response)
+            service_code, message = self.get_deserialized_service_code_and_message(response, allow_control_chars)
             if isinstance(self.circuit_breaker_strategy, CircuitBreakerStrategy) and self.circuit_breaker_strategy.is_transient_error(response.status_code, service_code):
                 new_circuit_breaker_state = CircuitBreakerMonitor.get(self.circuit_breaker_name).state
                 if initial_circuit_breaker_state != new_circuit_breaker_state:
@@ -592,7 +607,7 @@ class BaseClient(object):
             # Don't deserialize data responses.
             deserialized_data = response.content
         elif response_type:
-            deserialized_data = self.deserialize_response_data(response.content, response_type)
+            deserialized_data = self.deserialize_response_data(response.content, response_type, allow_control_chars)
         else:
             deserialized_data = None
 
@@ -755,8 +770,8 @@ class BaseClient(object):
             message,
             original_request=request)
 
-    def get_deserialized_service_code_and_message(self, response):
-        deserialized_data = self.deserialize_response_data(response.content, 'object')
+    def get_deserialized_service_code_and_message(self, response, allow_control_chars=None):
+        deserialized_data = self.deserialize_response_data(response.content, 'object', allow_control_chars)
         service_code = None
         message = None
 
@@ -771,13 +786,14 @@ class BaseClient(object):
 
         return service_code, message
 
-    def deserialize_response_data(self, response_data, response_type):
+    def deserialize_response_data(self, response_data, response_type, allow_control_chars=None):
         """
         Deserializes response into an object.
 
         :param response_data: object to be deserialized.
         :param response_type: class literal for
             deserialized object, or string of class name.
+        :param allow_control_chars: boolean to allow control character in a response. Defaults to None
 
         :return: deserialized object.
         """
@@ -785,7 +801,10 @@ class BaseClient(object):
         response_data = response_data.decode('utf8')
 
         try:
-            json_response = json.loads(response_data)
+            should_allow_control_chars = self.should_allow_control_chars(allow_control_chars)
+
+            # Taking the inverse result because strict=True means we do not allow control characters.
+            json_response = json.loads(response_data, strict=not should_allow_control_chars)
             # Load everything as JSON and then verify that the object returned
             # is a string (six.text_type) if the response type is a string.
             # This is matches the previous behavior, which happens to strip
@@ -944,3 +963,22 @@ class BaseClient(object):
         elif retry.GLOBAL_RETRY_STRATEGY:
             retry_strategy = retry.GLOBAL_RETRY_STRATEGY
         return retry_strategy
+
+    def should_allow_control_chars(self, allow_control_chars):
+        request_configuration = allow_control_chars
+        client_configuration = self._allow_control_chars
+        global_configuration = BaseClient.ALLOW_CONTROL_CHARACTERS
+
+        # Check at the request level
+        if request_configuration is not None:
+            return request_configuration
+
+        # Check at the client level
+        if client_configuration is not None:
+            return client_configuration
+
+        # Check at the global level
+        if global_configuration is True:
+            return True
+
+        return False

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
@@ -65,6 +65,10 @@ class DataCatalogClient(object):
 
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
+
+        :param allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
+            allow control characters to be in the response object.
         """
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -95,6 +99,8 @@ class DataCatalogClient(object):
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
         if base_client_init_kwargs.get('circuit_breaker_strategy') is None:
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
+        if 'allow_control_chars' in kwargs:
+            base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
         self.base_client = BaseClient("data_catalog", config, signer, data_catalog_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -138,6 +144,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
 
@@ -149,6 +159,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -245,6 +256,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Type`
         :rtype: :class:`~oci.response.Response`
 
@@ -256,6 +271,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -349,6 +365,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -360,6 +380,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -443,6 +464,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -454,6 +479,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -534,6 +560,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -545,6 +575,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -625,6 +656,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -636,6 +671,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -722,6 +758,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Attribute`
         :rtype: :class:`~oci.response.Response`
 
@@ -733,6 +773,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -827,6 +868,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.AttributeTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -838,6 +883,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -922,6 +968,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -933,6 +983,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -999,6 +1050,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1010,6 +1065,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1082,6 +1138,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Connection`
         :rtype: :class:`~oci.response.Response`
 
@@ -1093,6 +1153,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1180,6 +1241,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CustomProperty`
         :rtype: :class:`~oci.response.Response`
 
@@ -1191,6 +1256,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1275,6 +1341,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
 
@@ -1286,6 +1356,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1372,6 +1443,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAssetTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -1383,6 +1458,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1470,6 +1546,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Entity`
         :rtype: :class:`~oci.response.Response`
 
@@ -1481,6 +1561,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1571,6 +1652,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -1582,6 +1667,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1670,6 +1756,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Folder`
         :rtype: :class:`~oci.response.Response`
 
@@ -1681,6 +1771,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1771,6 +1862,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.FolderTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -1782,6 +1877,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1867,6 +1963,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Glossary`
         :rtype: :class:`~oci.response.Response`
 
@@ -1878,6 +1978,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1961,6 +2062,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Job`
         :rtype: :class:`~oci.response.Response`
 
@@ -1972,6 +2077,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2055,6 +2161,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobDefinition`
         :rtype: :class:`~oci.response.Response`
 
@@ -2066,6 +2176,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2152,6 +2263,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobExecution`
         :rtype: :class:`~oci.response.Response`
 
@@ -2163,6 +2278,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2244,6 +2360,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2255,6 +2375,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -2324,6 +2445,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Namespace`
         :rtype: :class:`~oci.response.Response`
 
@@ -2335,6 +2460,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2418,6 +2544,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Pattern`
         :rtype: :class:`~oci.response.Response`
 
@@ -2429,6 +2559,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2515,6 +2646,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Term`
         :rtype: :class:`~oci.response.Response`
 
@@ -2526,6 +2661,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2616,6 +2752,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TermRelationship`
         :rtype: :class:`~oci.response.Response`
 
@@ -2627,6 +2767,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2718,6 +2859,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2729,6 +2874,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -2819,6 +2965,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2830,6 +2980,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -2909,6 +3060,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2920,6 +3075,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -2995,6 +3151,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3006,6 +3166,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3087,6 +3248,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3098,6 +3263,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3181,6 +3347,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3192,6 +3362,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3272,6 +3443,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3283,6 +3458,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3365,6 +3541,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3376,6 +3556,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3459,6 +3640,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3470,6 +3655,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3556,6 +3742,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3567,6 +3757,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3651,6 +3842,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3662,6 +3857,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3748,6 +3944,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3759,6 +3959,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3840,6 +4041,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3851,6 +4056,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3930,6 +4136,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3941,6 +4151,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4020,6 +4231,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4031,6 +4246,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4107,6 +4323,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4118,6 +4338,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4196,6 +4417,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4207,6 +4432,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4286,6 +4512,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4297,6 +4527,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4379,6 +4610,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4390,6 +4625,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4476,6 +4712,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4487,6 +4727,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4568,6 +4809,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4579,6 +4824,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4669,6 +4915,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Type`
         :rtype: :class:`~oci.response.Response`
 
@@ -4680,6 +4930,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -4766,6 +5017,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.GlossaryTreeElement`
         :rtype: :class:`~oci.response.Response`
 
@@ -4777,6 +5032,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -4864,6 +5120,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type str
         :rtype: :class:`~oci.response.Response`
 
@@ -4875,6 +5135,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_relationship_exported",
             "opc_request_id",
@@ -4972,6 +5233,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Attribute`
         :rtype: :class:`~oci.response.Response`
 
@@ -4983,6 +5248,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_include_object_relationships",
             "fields",
@@ -5091,6 +5357,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.AttributeTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -5102,6 +5372,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -5192,6 +5463,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Catalog`
         :rtype: :class:`~oci.response.Response`
 
@@ -5203,6 +5478,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5273,6 +5549,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CatalogPrivateEndpoint`
         :rtype: :class:`~oci.response.Response`
 
@@ -5284,6 +5564,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5365,6 +5646,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Connection`
         :rtype: :class:`~oci.response.Response`
 
@@ -5376,6 +5661,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -5475,6 +5761,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CustomProperty`
         :rtype: :class:`~oci.response.Response`
 
@@ -5486,6 +5776,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -5582,6 +5873,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
 
@@ -5593,6 +5888,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -5691,6 +5987,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAssetTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -5702,6 +6002,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -5804,6 +6105,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Entity`
         :rtype: :class:`~oci.response.Response`
 
@@ -5815,6 +6120,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_include_object_relationships",
             "fields",
@@ -5919,6 +6225,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -5930,6 +6240,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -6033,6 +6344,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Folder`
         :rtype: :class:`~oci.response.Response`
 
@@ -6044,6 +6359,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_include_object_relationships",
             "fields",
@@ -6148,6 +6464,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.FolderTag`
         :rtype: :class:`~oci.response.Response`
 
@@ -6159,6 +6479,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -6256,6 +6577,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Glossary`
         :rtype: :class:`~oci.response.Response`
 
@@ -6267,6 +6592,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -6362,6 +6688,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Job`
         :rtype: :class:`~oci.response.Response`
 
@@ -6373,6 +6703,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -6468,6 +6799,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobDefinition`
         :rtype: :class:`~oci.response.Response`
 
@@ -6479,6 +6814,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -6577,6 +6913,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobExecution`
         :rtype: :class:`~oci.response.Response`
 
@@ -6588,6 +6928,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -6690,6 +7031,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobLog`
         :rtype: :class:`~oci.response.Response`
 
@@ -6701,6 +7046,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -6804,6 +7150,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobMetric`
         :rtype: :class:`~oci.response.Response`
 
@@ -6815,6 +7165,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -6904,6 +7255,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Metastore`
         :rtype: :class:`~oci.response.Response`
 
@@ -6915,6 +7270,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6993,6 +7349,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Namespace`
         :rtype: :class:`~oci.response.Response`
 
@@ -7004,6 +7364,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -7099,6 +7460,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Pattern`
         :rtype: :class:`~oci.response.Response`
 
@@ -7110,6 +7475,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -7208,6 +7574,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Term`
         :rtype: :class:`~oci.response.Response`
 
@@ -7219,6 +7589,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -7321,6 +7692,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TermRelationship`
         :rtype: :class:`~oci.response.Response`
 
@@ -7332,6 +7707,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -7429,6 +7805,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Type`
         :rtype: :class:`~oci.response.Response`
 
@@ -7440,6 +7820,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "opc_request_id"
@@ -7527,6 +7908,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -7538,6 +7923,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7628,6 +8014,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Connection`
         :rtype: :class:`~oci.response.Response`
 
@@ -7639,6 +8029,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -7736,6 +8127,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ImportDataAssetJobResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -7747,6 +8142,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_missing_value_ignored",
             "opc_request_id",
@@ -7853,6 +8249,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7864,6 +8264,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_relationship_imported",
             "opc_request_id",
@@ -7979,6 +8380,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -7990,6 +8395,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "fields",
             "display_name_contains",
@@ -8156,6 +8562,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.AttributeTagCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -8167,6 +8577,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "name",
             "lifecycle_state",
@@ -8388,6 +8799,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.AttributeCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -8399,6 +8814,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "business_name",
@@ -8576,6 +8992,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.CatalogPrivateEndpointSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -8587,6 +9007,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "limit",
@@ -8709,6 +9130,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.CatalogSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -8720,6 +9145,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "limit",
@@ -8882,6 +9308,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ConnectionCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -8893,6 +9323,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -9092,6 +9523,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CustomPropertyCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -9103,6 +9538,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -9299,6 +9735,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAssetTagCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -9310,6 +9750,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "name",
             "lifecycle_state",
@@ -9494,6 +9935,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAssetCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -9505,6 +9950,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -9676,6 +10122,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -9687,6 +10137,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name_contains",
             "sort_by",
@@ -9891,6 +10342,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -9902,6 +10357,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "business_name",
@@ -10114,6 +10570,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.EntityTagCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10125,6 +10585,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "name",
             "lifecycle_state",
@@ -10303,6 +10764,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.FolderTagCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10314,6 +10779,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "name",
             "lifecycle_state",
@@ -10521,6 +10987,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.FolderCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10532,6 +11002,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "business_name",
@@ -10733,6 +11204,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.GlossaryCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10744,6 +11219,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -10945,6 +11421,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobDefinitionCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10956,6 +11436,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -11197,6 +11678,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobExecutionCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11208,6 +11693,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "lifecycle_state",
             "time_created",
@@ -11414,6 +11900,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobLogCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11425,6 +11915,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "lifecycle_state",
             "severity",
@@ -11626,6 +12117,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobMetricCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11637,6 +12132,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -11864,6 +12360,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11875,6 +12375,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -12062,6 +12563,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.MetastoreSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -12073,6 +12578,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "limit",
@@ -12221,6 +12727,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.NamespaceCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12232,6 +12742,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -12411,6 +12922,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.PatternCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12422,6 +12937,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -12620,6 +13136,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.RuleCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12631,6 +13151,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -12816,6 +13337,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TermCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12827,6 +13352,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -12988,6 +13514,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TermRelationshipCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12999,6 +13529,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -13173,6 +13704,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TermCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13184,6 +13719,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "display_name_contains",
@@ -13365,6 +13901,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TypeCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13376,6 +13916,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "name",
             "lifecycle_state",
@@ -13521,6 +14062,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.WorkRequestError`
         :rtype: :class:`~oci.response.Response`
 
@@ -13532,6 +14077,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "page",
@@ -13646,6 +14192,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.WorkRequestLog`
         :rtype: :class:`~oci.response.Response`
 
@@ -13657,6 +14207,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "page",
@@ -13761,6 +14312,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -13772,6 +14327,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "page",
@@ -13857,6 +14413,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type str
         :rtype: :class:`~oci.response.Response`
 
@@ -13868,6 +14428,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "sort_by",
             "sort_order",
@@ -13982,6 +14543,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.data_catalog.models.ConnectionAliasSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -13993,6 +14558,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "connection_key",
             "opc_request_id",
@@ -14086,6 +14652,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ProcessRecommendationDetails`
         :rtype: :class:`~oci.response.Response`
 
@@ -14097,6 +14667,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -14189,6 +14760,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.RecommendationCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -14200,6 +14775,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "recommendation_status",
             "opc_request_id"
@@ -14319,6 +14895,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
 
@@ -14330,6 +14910,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -14441,6 +15022,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.SearchResultCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -14452,6 +15037,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "search_criteria_details",
             "display_name",
@@ -14579,6 +15165,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.SuggestResults`
         :rtype: :class:`~oci.response.Response`
 
@@ -14590,6 +15180,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "timeout",
             "limit",
@@ -14689,6 +15280,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -14700,6 +15295,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -14801,6 +15397,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ValidateConnectionResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -14812,6 +15412,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -14906,6 +15507,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Attribute`
         :rtype: :class:`~oci.response.Response`
 
@@ -14917,6 +15522,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -15002,6 +15608,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Catalog`
         :rtype: :class:`~oci.response.Response`
 
@@ -15013,6 +15623,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -15095,6 +15706,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -15106,6 +15721,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -15192,6 +15808,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Connection`
         :rtype: :class:`~oci.response.Response`
 
@@ -15203,6 +15823,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -15293,6 +15914,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.CustomProperty`
         :rtype: :class:`~oci.response.Response`
 
@@ -15304,6 +15929,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -15391,6 +16017,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.DataAsset`
         :rtype: :class:`~oci.response.Response`
 
@@ -15402,6 +16032,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -15491,6 +16122,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Entity`
         :rtype: :class:`~oci.response.Response`
 
@@ -15502,6 +16137,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -15592,6 +16228,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Folder`
         :rtype: :class:`~oci.response.Response`
 
@@ -15603,6 +16243,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -15690,6 +16331,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Glossary`
         :rtype: :class:`~oci.response.Response`
 
@@ -15701,6 +16346,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -15787,6 +16433,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Job`
         :rtype: :class:`~oci.response.Response`
 
@@ -15798,6 +16448,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -15884,6 +16535,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.JobDefinition`
         :rtype: :class:`~oci.response.Response`
 
@@ -15895,6 +16550,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -15978,6 +16634,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Metastore`
         :rtype: :class:`~oci.response.Response`
 
@@ -15989,6 +16649,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -16074,6 +16735,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Namespace`
         :rtype: :class:`~oci.response.Response`
 
@@ -16085,6 +16750,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -16171,6 +16837,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Pattern`
         :rtype: :class:`~oci.response.Response`
 
@@ -16182,6 +16852,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -16271,6 +16942,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Term`
         :rtype: :class:`~oci.response.Response`
 
@@ -16282,6 +16957,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -16375,6 +17051,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.TermRelationship`
         :rtype: :class:`~oci.response.Response`
 
@@ -16386,6 +17066,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -16484,6 +17165,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.Connection`
         :rtype: :class:`~oci.response.Response`
 
@@ -16495,6 +17180,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -16588,6 +17274,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type str
         :rtype: :class:`~oci.response.Response`
 
@@ -16599,6 +17289,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "sort_by",
             "sort_order",
@@ -16710,6 +17401,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ValidateConnectionResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -16721,6 +17416,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -16810,6 +17506,10 @@ class DataCatalogClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.data_catalog.models.ValidatePatternResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -16821,6 +17521,7 @@ class DataCatalogClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"

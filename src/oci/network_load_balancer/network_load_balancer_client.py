@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class NetworkLoadBalancerClient(object):
     """
-    A description of the network load balancer API
+    This describes the network load balancer API.
     """
 
     def __init__(self, config, **kwargs):
@@ -64,6 +64,10 @@ class NetworkLoadBalancerClient(object):
 
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
+
+        :param allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
+            allow control characters to be in the response object.
         """
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -94,6 +98,8 @@ class NetworkLoadBalancerClient(object):
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
         if base_client_init_kwargs.get('circuit_breaker_strategy') is None:
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
+        if 'allow_control_chars' in kwargs:
+            base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
         self.base_client = BaseClient("network_load_balancer", config, signer, network_load_balancer_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -140,6 +146,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -151,6 +161,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -249,6 +260,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -260,6 +275,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -354,6 +370,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -365,6 +385,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -458,6 +479,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -469,6 +494,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -550,6 +576,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.NetworkLoadBalancer`
         :rtype: :class:`~oci.response.Response`
 
@@ -561,6 +591,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -619,7 +650,10 @@ class NetworkLoadBalancerClient(object):
             Example: `example_backend_set`
 
         :param str backend_name: (required)
-            The name of the backend server to remove. This is specified as <ip>:<port>, or as <ip> <OCID>:<port>.
+            The name of the backend server to remove.
+            If the backend was created with an explicitly specified name, that name should be used here.
+            If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
+            If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
 
             Example: `10.0.0.3:8080` or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080`
 
@@ -642,6 +676,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -653,6 +691,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -740,6 +779,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -751,6 +794,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -835,6 +879,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -846,6 +894,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -925,6 +974,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -936,6 +989,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -1001,7 +1055,10 @@ class NetworkLoadBalancerClient(object):
             Example: `example_backend_set`
 
         :param str backend_name: (required)
-            The name of the backend server to retrieve. This is specified as <ip>:<port>, or as <ip> <OCID>:<port>.
+            The name of the backend server to retrieve.
+            If the backend was created with an explicitly specified name, that name should be used here.
+            If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
+            If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
 
             Example: `10.0.0.3:8080` or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080`
 
@@ -1024,6 +1081,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.Backend`
         :rtype: :class:`~oci.response.Response`
 
@@ -1035,6 +1096,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_none_match"
@@ -1104,7 +1166,10 @@ class NetworkLoadBalancerClient(object):
             Example: `example_backend_set`
 
         :param str backend_name: (required)
-            The name of the backend server for which to retrieve the health status, specified as <ip>:<port> or as <ip> <OCID>:<port>.
+            The name of the backend server to retrieve health status for.
+            If the backend was created with an explicitly specified name, that name should be used here.
+            If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
+            If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
 
             Example: `10.0.0.3:8080` or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080`
 
@@ -1120,6 +1185,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.BackendHealth`
         :rtype: :class:`~oci.response.Response`
 
@@ -1131,6 +1200,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1216,6 +1286,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.BackendSet`
         :rtype: :class:`~oci.response.Response`
 
@@ -1227,6 +1301,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_none_match"
@@ -1306,6 +1381,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.BackendSetHealth`
         :rtype: :class:`~oci.response.Response`
 
@@ -1317,6 +1396,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1408,6 +1488,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.HealthChecker`
         :rtype: :class:`~oci.response.Response`
 
@@ -1419,6 +1503,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -1508,6 +1593,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.Listener`
         :rtype: :class:`~oci.response.Response`
 
@@ -1519,6 +1608,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_none_match"
@@ -1600,6 +1690,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.NetworkLoadBalancer`
         :rtype: :class:`~oci.response.Response`
 
@@ -1611,6 +1705,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_none_match",
             "opc_request_id"
@@ -1684,6 +1779,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.NetworkLoadBalancerHealth`
         :rtype: :class:`~oci.response.Response`
 
@@ -1695,6 +1794,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1764,6 +1864,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -1775,6 +1879,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1863,6 +1968,12 @@ class NetworkLoadBalancerClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+            The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+
+            Allowed values are: "timeCreated", "displayName"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -1870,6 +1981,10 @@ class NetworkLoadBalancerClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.BackendSetCollection`
         :rtype: :class:`~oci.response.Response`
@@ -1882,12 +1997,14 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_none_match",
             "limit",
             "page",
-            "sort_order"
+            "sort_order",
+            "sort_by"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -1911,10 +2028,18 @@ class NetworkLoadBalancerClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -1996,6 +2121,12 @@ class NetworkLoadBalancerClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+            The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+
+            Allowed values are: "timeCreated", "displayName"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2003,6 +2134,10 @@ class NetworkLoadBalancerClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.BackendCollection`
         :rtype: :class:`~oci.response.Response`
@@ -2015,12 +2150,14 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_none_match",
             "limit",
             "page",
-            "sort_order"
+            "sort_order",
+            "sort_by"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2045,10 +2182,18 @@ class NetworkLoadBalancerClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2125,6 +2270,12 @@ class NetworkLoadBalancerClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+            The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+
+            Allowed values are: "timeCreated", "displayName"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2132,6 +2283,10 @@ class NetworkLoadBalancerClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.ListenerCollection`
         :rtype: :class:`~oci.response.Response`
@@ -2144,12 +2299,14 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_none_match",
             "limit",
             "page",
-            "sort_order"
+            "sort_order",
+            "sort_by"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2173,10 +2330,18 @@ class NetworkLoadBalancerClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2260,6 +2425,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.NetworkLoadBalancerHealthCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2271,6 +2440,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "sort_order",
             "sort_by",
@@ -2391,6 +2561,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.NetworkLoadBalancerCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2402,6 +2576,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "lifecycle_state",
             "display_name",
@@ -2506,6 +2681,12 @@ class NetworkLoadBalancerClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+            The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+
+            Allowed values are: "timeCreated", "displayName"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2513,6 +2694,10 @@ class NetworkLoadBalancerClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.NetworkLoadBalancersPolicyCollection`
         :rtype: :class:`~oci.response.Response`
@@ -2525,11 +2710,13 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
             "page",
-            "sort_order"
+            "sort_order",
+            "sort_by"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2543,10 +2730,18 @@ class NetworkLoadBalancerClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2583,6 +2778,7 @@ class NetworkLoadBalancerClient(object):
 
     def list_network_load_balancers_protocols(self, **kwargs):
         """
+        This API has been deprecated so it won't return the updated list of supported protocls.
         Lists all supported traffic protocols.
 
 
@@ -2608,6 +2804,12 @@ class NetworkLoadBalancerClient(object):
 
             Allowed values are: "ASC", "DESC"
 
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order can be provided. The default order for timeCreated is descending.
+            The default order for displayName is ascending. If no value is specified, then timeCreated is the default.
+
+            Allowed values are: "timeCreated", "displayName"
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -2615,6 +2817,10 @@ class NetworkLoadBalancerClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.NetworkLoadBalancersProtocolCollection`
         :rtype: :class:`~oci.response.Response`
@@ -2627,11 +2833,13 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
             "page",
-            "sort_order"
+            "sort_order",
+            "sort_by"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -2645,10 +2853,18 @@ class NetworkLoadBalancerClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
-            "sortOrder": kwargs.get("sort_order", missing)
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -2721,6 +2937,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.WorkRequestErrorCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2732,6 +2952,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "page",
@@ -2830,6 +3051,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.WorkRequestLogEntryCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2841,6 +3066,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "page",
@@ -2936,6 +3162,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.network_load_balancer.models.WorkRequestCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -2947,6 +3177,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -3014,7 +3245,10 @@ class NetworkLoadBalancerClient(object):
             Example: `example_backend_set`
 
         :param str backend_name: (required)
-            The name of the backend server to update. This is specified as <ip>:<port>, or as <ip> <OCID>:<port>.
+            The name of the backend server to update.
+            If the backend was created with an explicitly specified name, that name should be used here.
+            If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>.
+            If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.
 
             Example: `10.0.0.3:8080` or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080`
 
@@ -3044,6 +3278,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3055,6 +3293,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -3155,6 +3394,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3166,6 +3409,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -3265,6 +3509,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3276,6 +3524,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -3375,6 +3624,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3386,6 +3639,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -3443,7 +3697,7 @@ class NetworkLoadBalancerClient(object):
 
     def update_network_load_balancer(self, network_load_balancer_id, update_network_load_balancer_details, **kwargs):
         """
-        Updates the network load balancer.
+        Updates the network load balancer
 
 
         :param str network_load_balancer_id: (required)
@@ -3473,6 +3727,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3484,6 +3742,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3574,6 +3833,10 @@ class NetworkLoadBalancerClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3585,6 +3848,7 @@ class NetworkLoadBalancerClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from .host_insight import HostInsight
@@ -16,6 +16,14 @@ class EmManagedExternalHostInsight(HostInsight):
     #: A constant which can be used with the platform_type property of a EmManagedExternalHostInsight.
     #: This constant has a value of "LINUX"
     PLATFORM_TYPE_LINUX = "LINUX"
+
+    #: A constant which can be used with the platform_type property of a EmManagedExternalHostInsight.
+    #: This constant has a value of "SOLARIS"
+    PLATFORM_TYPE_SOLARIS = "SOLARIS"
+
+    #: A constant which can be used with the platform_type property of a EmManagedExternalHostInsight.
+    #: This constant has a value of "SUNOS"
+    PLATFORM_TYPE_SUNOS = "SUNOS"
 
     def __init__(self, **kwargs):
         """
@@ -115,7 +123,7 @@ class EmManagedExternalHostInsight(HostInsight):
 
         :param platform_type:
             The value to assign to the platform_type property of this EmManagedExternalHostInsight.
-            Allowed values for this property are: "LINUX", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "LINUX", "SOLARIS", "SUNOS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type platform_type: str
 
@@ -364,8 +372,10 @@ class EmManagedExternalHostInsight(HostInsight):
         """
         Gets the platform_type of this EmManagedExternalHostInsight.
         Platform type.
+        Supported platformType(s) for MACS-managed external host insight: [LINUX].
+        Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
 
-        Allowed values for this property are: "LINUX", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "LINUX", "SOLARIS", "SUNOS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -379,12 +389,14 @@ class EmManagedExternalHostInsight(HostInsight):
         """
         Sets the platform_type of this EmManagedExternalHostInsight.
         Platform type.
+        Supported platformType(s) for MACS-managed external host insight: [LINUX].
+        Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
 
 
         :param platform_type: The platform_type of this EmManagedExternalHostInsight.
         :type: str
         """
-        allowed_values = ["LINUX"]
+        allowed_values = ["LINUX", "SOLARIS", "SUNOS"]
         if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
             platform_type = 'UNKNOWN_ENUM_VALUE'
         self._platform_type = platform_type
