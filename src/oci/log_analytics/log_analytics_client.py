@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
@@ -65,6 +65,10 @@ class LogAnalyticsClient(object):
 
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
+
+        :param allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
+            allow control characters to be in the response object.
         """
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -95,6 +99,8 @@ class LogAnalyticsClient(object):
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
         if base_client_init_kwargs.get('circuit_breaker_strategy') is None:
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
+        if 'allow_control_chars' in kwargs:
+            base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
         self.base_client = BaseClient("log_analytics", config, signer, log_analytics_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -138,6 +144,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -149,6 +159,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -240,6 +251,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -251,6 +266,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -357,6 +373,10 @@ class LogAnalyticsClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
         :param int buffer_limit: (optional)
             A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
             If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
@@ -376,6 +396,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "buffer_limit",
             "is_force",
@@ -509,6 +530,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLabelCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -520,6 +545,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -635,6 +661,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -646,6 +676,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -735,6 +766,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -746,6 +781,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -844,6 +880,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -855,6 +895,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -953,6 +994,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -964,6 +1009,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -1057,6 +1103,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1068,6 +1118,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -1164,6 +1215,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1175,6 +1230,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -1273,6 +1329,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1284,6 +1344,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "time_start",
             "time_end",
@@ -1367,6 +1428,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.CompareContentResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -1378,6 +1443,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1462,6 +1528,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEmBridge`
         :rtype: :class:`~oci.response.Response`
 
@@ -1473,6 +1543,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -1560,6 +1631,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntity`
         :rtype: :class:`~oci.response.Response`
 
@@ -1571,6 +1646,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -1658,6 +1734,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1669,6 +1749,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1754,6 +1835,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLogGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -1765,6 +1850,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -1845,6 +1931,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsObjectCollectionRule`
         :rtype: :class:`~oci.response.Response`
 
@@ -1856,6 +1946,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1940,6 +2031,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ScheduledTask`
         :rtype: :class:`~oci.response.Response`
 
@@ -1951,6 +2046,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2038,6 +2134,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2049,6 +2149,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -2141,6 +2242,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2152,6 +2257,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -2241,6 +2347,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2252,6 +2362,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -2334,6 +2445,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2345,6 +2460,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -2424,6 +2540,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2435,6 +2555,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -2514,6 +2635,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2525,6 +2650,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -2604,6 +2730,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2615,6 +2745,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -2697,6 +2828,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2708,6 +2843,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -2797,6 +2933,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2808,6 +2948,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_force",
             "opc_retry_token",
@@ -2905,6 +3046,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2916,6 +3061,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -2999,6 +3145,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3010,6 +3160,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -3096,6 +3247,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3107,6 +3262,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -3190,6 +3346,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3201,6 +3361,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -3277,6 +3438,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3288,6 +3453,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -3362,6 +3528,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3373,6 +3543,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -3448,6 +3619,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Success`
         :rtype: :class:`~oci.response.Response`
 
@@ -3459,6 +3634,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -3544,6 +3720,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3555,6 +3735,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -3644,6 +3825,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3655,6 +3840,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -3738,6 +3924,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Success`
         :rtype: :class:`~oci.response.Response`
 
@@ -3749,6 +3939,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -3834,6 +4025,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3845,6 +4040,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -3934,6 +4130,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3945,6 +4145,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -4038,6 +4239,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.EstimatePurgeDataSizeResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -4049,6 +4254,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -4131,6 +4337,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.EstimateRecallDataSizeResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -4142,6 +4352,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -4219,6 +4430,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.EstimateReleaseDataSizeResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -4230,6 +4445,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -4314,6 +4530,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -4325,6 +4545,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -4405,6 +4626,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -4416,6 +4641,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -4505,6 +4731,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ExtractLogFieldResults`
         :rtype: :class:`~oci.response.Response`
 
@@ -4516,6 +4746,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "parser_type",
             "opc_retry_token",
@@ -4623,6 +4854,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ExtractLogHeaderResults`
         :rtype: :class:`~oci.response.Response`
 
@@ -4634,6 +4869,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "parser_type",
             "opc_retry_token",
@@ -4729,6 +4965,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.FilterOutput`
         :rtype: :class:`~oci.response.Response`
 
@@ -4740,6 +4980,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -4817,6 +5058,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.AssociationSummaryReport`
         :rtype: :class:`~oci.response.Response`
 
@@ -4828,6 +5073,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -4906,6 +5152,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsCategory`
         :rtype: :class:`~oci.response.Response`
 
@@ -4917,6 +5167,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -4996,6 +5247,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ColumnNameCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -5007,6 +5262,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -5090,6 +5346,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -5101,6 +5361,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5173,6 +5434,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsField`
         :rtype: :class:`~oci.response.Response`
 
@@ -5184,6 +5449,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5256,6 +5522,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.FieldSummaryReport`
         :rtype: :class:`~oci.response.Response`
 
@@ -5267,6 +5537,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_show_detail",
             "opc_request_id"
@@ -5346,6 +5617,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLabel`
         :rtype: :class:`~oci.response.Response`
 
@@ -5357,6 +5632,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5426,6 +5702,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LabelSummaryReport`
         :rtype: :class:`~oci.response.Response`
 
@@ -5437,6 +5717,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5508,6 +5789,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEmBridge`
         :rtype: :class:`~oci.response.Response`
 
@@ -5519,6 +5804,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5591,6 +5877,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEmBridgeSummaryReport`
         :rtype: :class:`~oci.response.Response`
 
@@ -5602,6 +5892,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5680,6 +5971,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntitySummaryReport`
         :rtype: :class:`~oci.response.Response`
 
@@ -5691,6 +5986,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5769,6 +6065,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntity`
         :rtype: :class:`~oci.response.Response`
 
@@ -5780,6 +6080,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5852,6 +6153,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntityType`
         :rtype: :class:`~oci.response.Response`
 
@@ -5863,6 +6168,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5935,6 +6241,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLogGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -5946,6 +6256,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6018,6 +6329,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogGroupSummaryReport`
         :rtype: :class:`~oci.response.Response`
 
@@ -6029,6 +6344,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6109,6 +6425,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsObjectCollectionRule`
         :rtype: :class:`~oci.response.Response`
 
@@ -6120,6 +6440,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6189,6 +6510,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogSetsCount`
         :rtype: :class:`~oci.response.Response`
 
@@ -6200,6 +6525,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6271,6 +6597,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLookup`
         :rtype: :class:`~oci.response.Response`
 
@@ -6282,6 +6612,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6351,6 +6682,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LookupSummaryReport`
         :rtype: :class:`~oci.response.Response`
 
@@ -6362,6 +6697,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6430,6 +6766,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Namespace`
         :rtype: :class:`~oci.response.Response`
 
@@ -6441,6 +6781,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6512,6 +6853,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsParser`
         :rtype: :class:`~oci.response.Response`
 
@@ -6523,6 +6868,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6592,6 +6938,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ParserSummaryReport`
         :rtype: :class:`~oci.response.Response`
 
@@ -6603,6 +6953,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6687,6 +7038,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsPreferenceCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -6698,6 +7053,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "sort_order",
             "sort_by",
@@ -6817,6 +7173,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.QueryAggregation`
         :rtype: :class:`~oci.response.Response`
 
@@ -6828,6 +7188,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "page",
             "limit",
@@ -6925,6 +7286,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.QueryWorkRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -6936,6 +7301,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7009,6 +7375,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ScheduledTask`
         :rtype: :class:`~oci.response.Response`
 
@@ -7020,6 +7390,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7095,6 +7466,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsSource`
         :rtype: :class:`~oci.response.Response`
 
@@ -7106,6 +7481,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7182,6 +7558,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.SourceSummaryReport`
         :rtype: :class:`~oci.response.Response`
 
@@ -7193,6 +7573,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7261,6 +7642,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Storage`
         :rtype: :class:`~oci.response.Response`
 
@@ -7272,6 +7657,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7341,6 +7727,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.StorageUsage`
         :rtype: :class:`~oci.response.Response`
 
@@ -7352,6 +7742,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7426,6 +7817,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.StorageWorkRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -7437,6 +7832,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7506,6 +7902,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.UnprocessedDataBucket`
         :rtype: :class:`~oci.response.Response`
 
@@ -7517,6 +7917,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7588,6 +7989,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Upload`
         :rtype: :class:`~oci.response.Response`
 
@@ -7599,6 +8004,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7673,6 +8079,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -7684,6 +8094,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7771,6 +8182,10 @@ class LogAnalyticsClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
         :param int buffer_limit: (optional)
             A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
             If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
@@ -7790,6 +8205,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "buffer_limit",
             "is_overwrite",
@@ -7929,6 +8345,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.AssociableEntityCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -7940,6 +8360,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "type",
             "search_text",
@@ -8079,6 +8500,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsAssociatedEntityCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -8090,6 +8515,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "entity_id",
             "entity_type",
@@ -8212,6 +8638,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.AutoAssociationCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -8223,6 +8653,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -8348,6 +8779,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsCategoryCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -8359,6 +8794,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "category_type",
             "category_display_text",
@@ -8477,6 +8913,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsConfigWorkRequestCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -8488,6 +8928,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "sort_order",
             "sort_by",
@@ -8607,6 +9048,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntityCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -8618,6 +9063,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "direct_or_all_associations",
             "limit",
@@ -8763,6 +9209,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsAssociationCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -8774,6 +9224,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "entity_id",
             "entity_type",
@@ -8939,6 +9390,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsFieldCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -8950,6 +9405,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_match_all",
             "source_ids",
@@ -9075,6 +9531,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LabelPriorityCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -9086,6 +9546,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -9184,6 +9645,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LabelSourceCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -9195,6 +9660,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "label_name",
             "limit",
@@ -9336,6 +9802,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLabelCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -9347,6 +9817,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "label_name",
             "label_display_text",
@@ -9506,6 +9977,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEmBridgeCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -9517,6 +9992,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "lifecycle_state",
@@ -9705,6 +10181,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntityCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -9716,6 +10196,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "name",
             "name_contains",
@@ -9885,6 +10366,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntityTopologyCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -9896,6 +10381,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "lifecycle_state",
             "limit",
@@ -10038,6 +10524,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntityTypeCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10049,6 +10539,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "name",
             "name_contains",
@@ -10190,6 +10681,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLogGroupSummaryCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10201,6 +10696,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "limit",
@@ -10328,6 +10824,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsObjectCollectionRuleCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10339,6 +10839,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "name",
             "lifecycle_state",
@@ -10461,6 +10962,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogSetCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10472,6 +10977,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -10604,6 +11110,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLookupCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10615,6 +11125,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "lookup_display_text",
             "is_system",
@@ -10758,6 +11269,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsMetaSourceTypeCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10769,6 +11284,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -10866,6 +11382,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.NamespaceCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10877,6 +11397,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -10959,6 +11480,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsParserFunctionCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -10970,6 +11495,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "parser_name",
             "limit",
@@ -11084,6 +11610,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsParserMetaPluginCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11095,6 +11625,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -11243,6 +11774,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsParserCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11254,6 +11789,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_match_all",
             "source_type",
@@ -11409,6 +11945,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.QueryWorkRequestCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11420,6 +11960,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "mode",
             "opc_request_id",
@@ -11549,6 +12090,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.RecalledDataCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11560,6 +12105,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -11688,6 +12234,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsResourceCategoryCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11699,6 +12249,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "categories",
             "resource_types",
@@ -11835,6 +12386,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ScheduledTaskCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -11846,6 +12401,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -11990,6 +12546,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsAssociationCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12001,6 +12561,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "entity_id",
             "life_cycle_state",
@@ -12145,6 +12706,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.EventTypeCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12156,6 +12721,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_text",
             "is_system",
@@ -12285,6 +12851,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsSourceExtendedFieldDefinitionCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12296,6 +12866,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -12409,6 +12980,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLabelOperatorCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12420,6 +12995,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -12532,6 +13108,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsMetaFunctionCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12543,6 +13123,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -12661,6 +13242,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsSourcePatternCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12672,6 +13257,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_include",
             "limit",
@@ -12822,6 +13408,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsSourceCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12833,6 +13423,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "entity_type",
             "source_display_text",
@@ -12975,6 +13566,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.WorkRequestErrorCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12986,6 +13581,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -13126,6 +13722,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.StorageWorkRequestCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13137,6 +13737,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -13266,6 +13867,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.CharEncodingCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13277,6 +13882,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -13361,6 +13967,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.TimezoneCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13372,6 +13982,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -13478,6 +14089,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.UploadFileCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13489,6 +14104,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -13607,6 +14223,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.UploadWarningCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13618,6 +14238,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -13727,6 +14348,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.UploadCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13738,6 +14363,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "name",
             "name_contains",
@@ -13906,6 +14532,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsWarningCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -13917,6 +14547,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "warning_state",
             "source_name",
@@ -14052,6 +14683,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.WorkRequestErrorCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -14063,6 +14698,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "page",
@@ -14153,6 +14789,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.WorkRequestLogCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -14164,6 +14804,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "page",
@@ -14252,6 +14893,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.WorkRequestCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -14263,6 +14908,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "page",
@@ -14349,6 +14995,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -14360,6 +15010,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -14436,6 +15087,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -14447,6 +15102,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -14519,6 +15175,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ParseQueryOutput`
         :rtype: :class:`~oci.response.Response`
 
@@ -14530,6 +15190,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -14615,6 +15276,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ScheduledTask`
         :rtype: :class:`~oci.response.Response`
 
@@ -14626,6 +15291,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -14715,6 +15381,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -14726,6 +15396,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -14815,6 +15486,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.QueryWorkRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -14826,6 +15501,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -14906,6 +15582,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.QueryAggregation`
         :rtype: :class:`~oci.response.Response`
 
@@ -14917,6 +15597,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "page",
             "opc_request_id",
@@ -15018,6 +15699,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -15029,6 +15714,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -15138,6 +15824,10 @@ class LogAnalyticsClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
         :param int buffer_limit: (optional)
             A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
             If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
@@ -15157,6 +15847,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "buffer_limit",
             "name",
@@ -15295,6 +15986,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -15306,6 +16001,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -15403,6 +16099,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -15414,6 +16114,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -15502,6 +16203,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -15513,6 +16218,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -15591,6 +16297,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -15602,6 +16312,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -15687,6 +16398,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -15698,6 +16413,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -15785,6 +16501,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ScheduledTask`
         :rtype: :class:`~oci.response.Response`
 
@@ -15796,6 +16516,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -15888,6 +16609,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -15899,6 +16624,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "time_start",
             "time_end",
@@ -15988,6 +16714,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.UnprocessedDataBucket`
         :rtype: :class:`~oci.response.Response`
 
@@ -15999,6 +16729,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_enabled",
             "opc_request_id"
@@ -16079,6 +16810,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.SuggestOutput`
         :rtype: :class:`~oci.response.Response`
 
@@ -16090,6 +16825,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -16177,6 +16913,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -16188,6 +16928,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -16289,6 +17030,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ParserTestResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -16300,6 +17045,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "scope",
             "req_origin_module",
@@ -16407,6 +17153,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -16418,6 +17168,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -16513,6 +17264,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEmBridge`
         :rtype: :class:`~oci.response.Response`
 
@@ -16524,6 +17279,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -16614,6 +17370,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsEntity`
         :rtype: :class:`~oci.response.Response`
 
@@ -16625,6 +17385,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -16715,6 +17476,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -16726,6 +17491,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -16814,6 +17580,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLogGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -16825,6 +17595,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -16917,6 +17688,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsObjectCollectionRule`
         :rtype: :class:`~oci.response.Response`
 
@@ -16928,6 +17703,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -17025,6 +17801,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLookup`
         :rtype: :class:`~oci.response.Response`
 
@@ -17036,6 +17816,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -17146,6 +17927,10 @@ class LogAnalyticsClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
         :param int buffer_limit: (optional)
             A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
             If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
@@ -17165,6 +17950,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "buffer_limit",
             "is_force",
@@ -17286,6 +18072,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -17297,6 +18087,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -17375,6 +18166,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -17386,6 +18181,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -17473,6 +18269,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ScheduledTask`
         :rtype: :class:`~oci.response.Response`
 
@@ -17484,6 +18284,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -17571,6 +18372,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.Storage`
         :rtype: :class:`~oci.response.Response`
 
@@ -17582,6 +18387,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -17690,6 +18496,10 @@ class LogAnalyticsClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
         :param int buffer_limit: (optional)
             A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
             If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
@@ -17709,6 +18519,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "buffer_limit",
             "opc_request_id",
@@ -17799,6 +18610,7 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=upload_log_events_file_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
                 enforce_content_headers=False)
         else:
             return self.base_client.call_api(
@@ -17808,6 +18620,7 @@ class LogAnalyticsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=upload_log_events_file_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
                 enforce_content_headers=False)
 
     def upload_log_file(self, namespace_name, upload_name, log_source_name, filename, opc_meta_loggrpid, upload_log_file_body, **kwargs):
@@ -17887,6 +18700,10 @@ class LogAnalyticsClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
         :param int buffer_limit: (optional)
             A buffer limit for the stream to be buffered. buffer_limit is used to set the buffer size capacity. Streams will be read until the size of the buffer reaches the buffer_limit.
             If the stream size is greater than the buffer_limit, a BufferError exception will be thrown.
@@ -17906,6 +18723,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "buffer_limit",
             "entity_id",
@@ -18005,6 +18823,7 @@ class LogAnalyticsClient(object):
                 header_params=header_params,
                 body=upload_log_file_body,
                 response_type="Upload",
+                allow_control_chars=kwargs.get('allow_control_chars'),
                 enforce_content_headers=False)
         else:
             return self.base_client.call_api(
@@ -18015,6 +18834,7 @@ class LogAnalyticsClient(object):
                 header_params=header_params,
                 body=upload_log_file_body,
                 response_type="Upload",
+                allow_control_chars=kwargs.get('allow_control_chars'),
                 enforce_content_headers=False)
 
     def upsert_associations(self, namespace_name, upsert_log_analytics_association_details, **kwargs):
@@ -18049,6 +18869,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -18060,6 +18884,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "is_from_republish",
             "opc_retry_token",
@@ -18160,6 +18985,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsField`
         :rtype: :class:`~oci.response.Response`
 
@@ -18171,6 +19000,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -18267,6 +19097,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsLabel`
         :rtype: :class:`~oci.response.Response`
 
@@ -18278,6 +19112,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -18374,6 +19209,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsParser`
         :rtype: :class:`~oci.response.Response`
 
@@ -18385,6 +19224,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -18492,6 +19332,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsSource`
         :rtype: :class:`~oci.response.Response`
 
@@ -18503,6 +19347,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "create_like_source_id",
             "is_incremental",
@@ -18620,6 +19465,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.LogAnalyticsAssociationParameterCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -18631,6 +19480,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -18742,6 +19592,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.FileValidationResponse`
         :rtype: :class:`~oci.response.Response`
 
@@ -18753,6 +19607,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -18850,6 +19705,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.SourceValidateResults`
         :rtype: :class:`~oci.response.Response`
 
@@ -18861,6 +19720,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "create_like_source_id",
             "is_incremental",
@@ -18960,6 +19820,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.ExtendedFieldsValidationResult`
         :rtype: :class:`~oci.response.Response`
 
@@ -18971,6 +19835,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -19057,6 +19922,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.SourceMappingResponse`
         :rtype: :class:`~oci.response.Response`
 
@@ -19068,6 +19937,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -19163,6 +20033,10 @@ class LogAnalyticsClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.log_analytics.models.VerifyOutput`
         :rtype: :class:`~oci.response.Response`
 
@@ -19174,6 +20048,7 @@ class LogAnalyticsClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "should_include_results",
             "opc_request_id",

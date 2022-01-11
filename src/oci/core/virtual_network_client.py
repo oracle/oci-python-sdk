@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
@@ -68,6 +68,10 @@ class VirtualNetworkClient(object):
 
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
+
+        :param allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
+            allow control characters to be in the response object.
         """
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -98,6 +102,8 @@ class VirtualNetworkClient(object):
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
         if base_client_init_kwargs.get('circuit_breaker_strategy') is None:
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
+        if 'allow_control_chars' in kwargs:
+            base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
         self.base_client = BaseClient("virtual_network", config, signer, core_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -124,6 +130,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteDistributionStatement`
         :rtype: :class:`~oci.response.Response`
@@ -209,6 +219,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteRule`
         :rtype: :class:`~oci.response.Response`
 
@@ -220,6 +234,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -307,6 +322,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -318,6 +337,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -390,6 +410,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.AddedNetworkSecurityGroupSecurityRules`
         :rtype: :class:`~oci.response.Response`
@@ -481,6 +505,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIpPool`
         :rtype: :class:`~oci.response.Response`
 
@@ -492,6 +520,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -589,6 +618,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -600,6 +633,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -677,6 +711,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -688,6 +726,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -770,6 +809,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ServiceGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -781,6 +824,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -855,6 +899,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
@@ -933,6 +981,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
@@ -1024,6 +1076,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1035,6 +1091,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1123,6 +1180,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1134,6 +1195,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1222,6 +1284,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1233,6 +1299,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1321,6 +1388,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1332,6 +1403,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1420,6 +1492,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1431,6 +1507,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1519,6 +1596,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1530,6 +1611,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1618,6 +1700,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1629,6 +1715,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1717,6 +1804,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1728,6 +1819,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1816,6 +1908,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1827,6 +1923,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1915,6 +2012,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1926,6 +2027,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2013,6 +2115,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2024,6 +2130,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2115,6 +2222,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2126,6 +2237,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2214,6 +2326,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2225,6 +2341,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2313,6 +2430,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2324,6 +2445,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2412,6 +2534,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2423,6 +2549,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2511,6 +2638,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2522,6 +2653,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2610,6 +2742,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2621,6 +2757,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2709,6 +2846,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2720,6 +2861,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2808,6 +2950,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2819,6 +2965,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2907,6 +3054,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2918,6 +3069,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -3011,6 +3163,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3022,6 +3178,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -3105,6 +3262,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
@@ -3190,6 +3351,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -3271,6 +3436,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ByoipRange`
         :rtype: :class:`~oci.response.Response`
 
@@ -3282,6 +3451,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -3367,6 +3537,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Cpe`
         :rtype: :class:`~oci.response.Response`
 
@@ -3378,6 +3552,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -3464,6 +3639,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnect`
         :rtype: :class:`~oci.response.Response`
 
@@ -3475,6 +3654,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -3557,6 +3737,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnectGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -3568,6 +3752,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -3646,6 +3831,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DhcpOptions`
         :rtype: :class:`~oci.response.Response`
 
@@ -3657,6 +3846,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -3736,6 +3926,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Drg`
         :rtype: :class:`~oci.response.Response`
 
@@ -3747,6 +3941,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -3824,6 +4019,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgAttachment`
         :rtype: :class:`~oci.response.Response`
 
@@ -3835,6 +4034,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -3901,6 +4101,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteDistribution`
         :rtype: :class:`~oci.response.Response`
 
@@ -3912,6 +4116,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -3976,6 +4181,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteTable`
         :rtype: :class:`~oci.response.Response`
 
@@ -3987,6 +4196,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -4073,6 +4283,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InternetGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -4084,6 +4298,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -4179,6 +4394,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnection`
         :rtype: :class:`~oci.response.Response`
 
@@ -4190,6 +4409,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -4257,6 +4477,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Ipv6`
         :rtype: :class:`~oci.response.Response`
 
@@ -4268,6 +4492,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -4333,6 +4558,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.LocalPeeringGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -4344,6 +4573,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -4408,6 +4638,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.NatGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -4419,6 +4653,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -4482,6 +4717,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.NetworkSecurityGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -4493,6 +4732,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -4560,6 +4800,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PrivateIp`
         :rtype: :class:`~oci.response.Response`
 
@@ -4571,6 +4815,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -4657,6 +4902,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIp`
         :rtype: :class:`~oci.response.Response`
 
@@ -4668,6 +4917,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -4735,6 +4985,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIpPool`
         :rtype: :class:`~oci.response.Response`
 
@@ -4746,6 +5000,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -4811,6 +5066,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.RemotePeeringConnection`
         :rtype: :class:`~oci.response.Response`
 
@@ -4822,6 +5081,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -4905,6 +5165,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.RouteTable`
         :rtype: :class:`~oci.response.Response`
 
@@ -4916,6 +5180,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -4998,6 +5263,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.SecurityList`
         :rtype: :class:`~oci.response.Response`
 
@@ -5009,6 +5278,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -5084,6 +5354,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ServiceGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -5095,6 +5369,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -5198,6 +5473,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Subnet`
         :rtype: :class:`~oci.response.Response`
 
@@ -5209,6 +5488,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -5313,6 +5593,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vcn`
         :rtype: :class:`~oci.response.Response`
 
@@ -5324,6 +5608,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -5413,6 +5698,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VirtualCircuit`
         :rtype: :class:`~oci.response.Response`
 
@@ -5424,6 +5713,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -5491,6 +5781,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vlan`
         :rtype: :class:`~oci.response.Response`
 
@@ -5502,6 +5796,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -5577,6 +5872,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5588,6 +5887,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -5662,6 +5962,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5673,6 +5977,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -5744,6 +6049,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5755,6 +6064,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -5827,6 +6137,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5838,6 +6152,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -5912,6 +6227,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5923,6 +6242,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -5996,6 +6316,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6007,6 +6331,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -6079,6 +6404,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6090,6 +6419,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -6162,6 +6492,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6173,6 +6507,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -6243,6 +6578,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6254,6 +6593,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -6328,6 +6668,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6339,6 +6683,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -6416,6 +6761,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6427,6 +6776,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -6504,6 +6854,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6515,6 +6869,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -6590,6 +6945,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6601,6 +6960,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -6675,6 +7035,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6686,6 +7050,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -6765,6 +7130,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6776,6 +7145,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -6859,6 +7229,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6870,6 +7244,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -6956,6 +7331,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6967,6 +7346,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -7045,6 +7425,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7056,6 +7440,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -7131,6 +7516,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7142,6 +7531,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -7216,6 +7606,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7227,6 +7621,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -7301,6 +7696,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7312,6 +7711,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -7383,6 +7783,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7394,6 +7798,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -7466,6 +7871,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7477,6 +7886,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -7549,6 +7959,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7560,6 +7974,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -7634,6 +8049,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7645,6 +8064,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -7719,6 +8139,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7730,6 +8154,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -7816,6 +8241,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ServiceGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -7827,6 +8256,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -7924,6 +8354,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgAttachmentInfo`
         :rtype: :class:`~oci.response.Response`
 
@@ -7935,6 +8369,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -8022,6 +8457,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.AllowedIkeIPSecParameters`
         :rtype: :class:`~oci.response.Response`
 
@@ -8033,6 +8472,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -8094,6 +8534,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ByoipRange`
         :rtype: :class:`~oci.response.Response`
 
@@ -8105,6 +8549,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -8171,6 +8616,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Cpe`
         :rtype: :class:`~oci.response.Response`
@@ -8265,6 +8714,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -8276,6 +8729,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -8355,6 +8809,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CpeDeviceShapeDetail`
         :rtype: :class:`~oci.response.Response`
 
@@ -8366,6 +8824,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -8432,6 +8891,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnect`
         :rtype: :class:`~oci.response.Response`
@@ -8505,6 +8968,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnectGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -8576,6 +9043,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.LetterOfAuthority`
         :rtype: :class:`~oci.response.Response`
@@ -8649,6 +9120,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnectStatus`
         :rtype: :class:`~oci.response.Response`
 
@@ -8720,6 +9195,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DhcpOptions`
         :rtype: :class:`~oci.response.Response`
@@ -8793,6 +9272,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Drg`
         :rtype: :class:`~oci.response.Response`
 
@@ -8864,6 +9347,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgAttachment`
         :rtype: :class:`~oci.response.Response`
@@ -8944,6 +9431,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRedundancyStatus`
         :rtype: :class:`~oci.response.Response`
 
@@ -8955,6 +9446,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9021,6 +9513,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteDistribution`
         :rtype: :class:`~oci.response.Response`
@@ -9093,6 +9589,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteTable`
         :rtype: :class:`~oci.response.Response`
@@ -9168,6 +9668,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.FastConnectProviderService`
         :rtype: :class:`~oci.response.Response`
@@ -9248,6 +9752,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.FastConnectProviderServiceKey`
         :rtype: :class:`~oci.response.Response`
 
@@ -9320,6 +9828,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InternetGateway`
         :rtype: :class:`~oci.response.Response`
@@ -9394,6 +9906,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnection`
         :rtype: :class:`~oci.response.Response`
@@ -9470,6 +9986,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionDeviceConfig`
         :rtype: :class:`~oci.response.Response`
 
@@ -9542,6 +10062,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionDeviceStatus`
         :rtype: :class:`~oci.response.Response`
@@ -9622,6 +10146,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionTunnel`
         :rtype: :class:`~oci.response.Response`
 
@@ -9699,6 +10227,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionTunnelErrorDetails`
         :rtype: :class:`~oci.response.Response`
@@ -9778,6 +10310,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionTunnelSharedSecret`
         :rtype: :class:`~oci.response.Response`
@@ -9874,6 +10410,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -9885,6 +10425,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9962,6 +10503,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Ipv6`
         :rtype: :class:`~oci.response.Response`
 
@@ -9973,6 +10518,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -10039,6 +10585,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.LocalPeeringGateway`
         :rtype: :class:`~oci.response.Response`
@@ -10111,6 +10661,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.NatGateway`
         :rtype: :class:`~oci.response.Response`
@@ -10189,6 +10743,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.NetworkSecurityGroup`
         :rtype: :class:`~oci.response.Response`
@@ -10294,6 +10852,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.NetworkingTopology`
         :rtype: :class:`~oci.response.Response`
 
@@ -10305,6 +10867,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "access_level",
             "query_compartment_subtree",
@@ -10387,6 +10950,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PrivateIp`
         :rtype: :class:`~oci.response.Response`
@@ -10474,6 +11041,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIp`
         :rtype: :class:`~oci.response.Response`
 
@@ -10550,6 +11121,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIp`
         :rtype: :class:`~oci.response.Response`
 
@@ -10624,6 +11199,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIp`
         :rtype: :class:`~oci.response.Response`
 
@@ -10692,6 +11271,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIpPool`
         :rtype: :class:`~oci.response.Response`
 
@@ -10703,6 +11286,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -10769,6 +11353,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.RemotePeeringConnection`
         :rtype: :class:`~oci.response.Response`
@@ -10842,6 +11430,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.RouteTable`
         :rtype: :class:`~oci.response.Response`
 
@@ -10913,6 +11505,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.SecurityList`
         :rtype: :class:`~oci.response.Response`
@@ -10986,6 +11582,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Service`
         :rtype: :class:`~oci.response.Response`
 
@@ -11058,6 +11658,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ServiceGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -11129,6 +11733,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Subnet`
         :rtype: :class:`~oci.response.Response`
@@ -11239,6 +11847,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.SubnetTopology`
         :rtype: :class:`~oci.response.Response`
 
@@ -11250,6 +11862,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "access_level",
             "query_compartment_subtree",
@@ -11341,6 +11954,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.TunnelCpeDeviceConfig`
         :rtype: :class:`~oci.response.Response`
 
@@ -11352,6 +11969,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -11446,6 +12064,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -11457,6 +12079,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -11529,6 +12152,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.UpgradeStatus`
         :rtype: :class:`~oci.response.Response`
 
@@ -11540,6 +12167,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -11606,6 +12234,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vcn`
         :rtype: :class:`~oci.response.Response`
@@ -11683,6 +12315,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VcnDnsResolverAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -11694,6 +12330,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -11798,6 +12435,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VcnTopology`
         :rtype: :class:`~oci.response.Response`
 
@@ -11809,6 +12450,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "access_level",
             "query_compartment_subtree",
@@ -11887,6 +12529,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VirtualCircuit`
         :rtype: :class:`~oci.response.Response`
 
@@ -11963,6 +12609,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vlan`
         :rtype: :class:`~oci.response.Response`
 
@@ -11974,6 +12624,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -12046,6 +12697,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vnic`
         :rtype: :class:`~oci.response.Response`
 
@@ -12115,6 +12770,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.PeerRegionForRemotePeering`
         :rtype: :class:`~oci.response.Response`
@@ -12197,6 +12856,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ByoipAllocatedRangeCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12208,6 +12871,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -12330,6 +12994,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ByoipRangeCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12341,6 +13009,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -12458,6 +13127,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.CpeDeviceShapeSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -12469,6 +13142,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -12550,6 +13224,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Cpe`
         :rtype: :class:`~oci.response.Response`
 
@@ -12561,6 +13239,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -12667,6 +13346,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.CrossConnectGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -12678,6 +13361,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -12787,6 +13471,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.CrossConnectLocation`
         :rtype: :class:`~oci.response.Response`
 
@@ -12798,6 +13486,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -12866,6 +13555,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnectMappingDetailsCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -12877,6 +13570,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -12995,6 +13689,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.CrossConnect`
         :rtype: :class:`~oci.response.Response`
 
@@ -13006,6 +13704,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "cross_connect_group_id",
             "limit",
@@ -13118,6 +13817,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.CrossConnectPortSpeedShape`
         :rtype: :class:`~oci.response.Response`
 
@@ -13129,6 +13832,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -13243,6 +13947,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DhcpOptions`
         :rtype: :class:`~oci.response.Response`
 
@@ -13254,6 +13962,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "vcn_id",
             "limit",
@@ -13421,6 +14130,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgAttachment`
         :rtype: :class:`~oci.response.Response`
 
@@ -13432,6 +14145,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "vcn_id",
             "drg_id",
@@ -13568,6 +14282,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteDistributionStatement`
         :rtype: :class:`~oci.response.Response`
 
@@ -13579,6 +14297,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -13717,6 +14436,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteDistribution`
         :rtype: :class:`~oci.response.Response`
 
@@ -13728,6 +14451,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -13842,6 +14566,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteRule`
         :rtype: :class:`~oci.response.Response`
 
@@ -13853,6 +14581,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -13986,6 +14715,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteTable`
         :rtype: :class:`~oci.response.Response`
 
@@ -13997,6 +14730,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -14107,6 +14841,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Drg`
         :rtype: :class:`~oci.response.Response`
 
@@ -14118,6 +14856,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -14206,6 +14945,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.FastConnectProviderService`
         :rtype: :class:`~oci.response.Response`
 
@@ -14217,6 +14960,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -14301,6 +15045,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VirtualCircuitBandwidthShape`
         :rtype: :class:`~oci.response.Response`
 
@@ -14312,6 +15060,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -14435,6 +15184,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.InternetGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -14446,6 +15199,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "vcn_id",
             "limit",
@@ -14568,6 +15322,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.TunnelRouteSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -14579,6 +15337,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -14684,6 +15443,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.TunnelSecurityAssociationSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -14695,6 +15458,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -14786,6 +15550,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.IPSecConnectionTunnel`
         :rtype: :class:`~oci.response.Response`
 
@@ -14797,6 +15565,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -14898,6 +15667,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.IPSecConnection`
         :rtype: :class:`~oci.response.Response`
 
@@ -14909,6 +15682,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "drg_id",
             "cpe_id",
@@ -15015,6 +15789,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Ipv6`
         :rtype: :class:`~oci.response.Response`
 
@@ -15026,6 +15804,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -15119,6 +15898,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.LocalPeeringGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -15130,6 +15913,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -15244,6 +16028,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.NatGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -15255,6 +16043,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "vcn_id",
             "limit",
@@ -15382,6 +16171,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.SecurityRule`
         :rtype: :class:`~oci.response.Response`
 
@@ -15393,6 +16186,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "direction",
             "limit",
@@ -15521,6 +16315,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.NetworkSecurityGroupVnic`
         :rtype: :class:`~oci.response.Response`
 
@@ -15532,6 +16330,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -15678,6 +16477,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.NetworkSecurityGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -15689,6 +16492,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "compartment_id",
             "vlan_id",
@@ -15835,6 +16639,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.PrivateIp`
         :rtype: :class:`~oci.response.Response`
 
@@ -15846,6 +16654,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -15961,6 +16770,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIpPoolCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -15972,6 +16785,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -16122,6 +16936,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.PublicIp`
         :rtype: :class:`~oci.response.Response`
 
@@ -16133,6 +16951,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -16238,6 +17057,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.RemotePeeringConnection`
         :rtype: :class:`~oci.response.Response`
 
@@ -16249,6 +17072,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "drg_id",
             "limit",
@@ -16365,6 +17189,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.RouteTable`
         :rtype: :class:`~oci.response.Response`
 
@@ -16376,6 +17204,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -16519,6 +17348,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.SecurityList`
         :rtype: :class:`~oci.response.Response`
 
@@ -16530,6 +17363,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -16670,6 +17504,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.ServiceGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -16681,6 +17519,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "vcn_id",
             "limit",
@@ -16785,6 +17624,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Service`
         :rtype: :class:`~oci.response.Response`
 
@@ -16796,6 +17639,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -16907,6 +17751,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Subnet`
         :rtype: :class:`~oci.response.Response`
 
@@ -16918,6 +17766,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -17055,6 +17904,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Vcn`
         :rtype: :class:`~oci.response.Response`
 
@@ -17066,6 +17919,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -17176,6 +18030,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VirtualCircuitBandwidthShape`
         :rtype: :class:`~oci.response.Response`
 
@@ -17187,6 +18045,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -17259,6 +18118,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VirtualCircuitPublicPrefix`
         :rtype: :class:`~oci.response.Response`
 
@@ -17270,6 +18133,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "verification_state"
         ]
@@ -17392,6 +18256,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.VirtualCircuit`
         :rtype: :class:`~oci.response.Response`
 
@@ -17403,6 +18271,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -17547,6 +18416,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.Vlan`
         :rtype: :class:`~oci.response.Response`
 
@@ -17558,6 +18431,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -17682,6 +18556,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -17693,6 +18571,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -17768,6 +18647,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -17842,6 +18725,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
@@ -17924,6 +18811,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgAttachment`
         :rtype: :class:`~oci.response.Response`
 
@@ -17935,6 +18826,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -18014,6 +18906,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteTable`
         :rtype: :class:`~oci.response.Response`
 
@@ -18025,6 +18921,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -18097,6 +18994,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
@@ -18184,6 +19085,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIpPool`
         :rtype: :class:`~oci.response.Response`
 
@@ -18195,6 +19100,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -18290,6 +19196,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -18301,6 +19211,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -18385,6 +19296,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ByoipRange`
         :rtype: :class:`~oci.response.Response`
 
@@ -18396,6 +19311,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -18476,6 +19392,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Cpe`
         :rtype: :class:`~oci.response.Response`
 
@@ -18487,6 +19407,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -18564,6 +19485,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnect`
         :rtype: :class:`~oci.response.Response`
 
@@ -18575,6 +19500,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -18653,6 +19579,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.CrossConnectGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -18664,6 +19594,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -18744,6 +19675,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DhcpOptions`
         :rtype: :class:`~oci.response.Response`
 
@@ -18755,6 +19690,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -18832,6 +19768,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Drg`
         :rtype: :class:`~oci.response.Response`
 
@@ -18843,6 +19783,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -18921,6 +19862,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgAttachment`
         :rtype: :class:`~oci.response.Response`
 
@@ -18932,6 +19877,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -19009,6 +19955,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteDistribution`
         :rtype: :class:`~oci.response.Response`
 
@@ -19020,6 +19970,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -19091,6 +20042,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteDistributionStatement`
         :rtype: :class:`~oci.response.Response`
@@ -19168,6 +20123,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.core.models.DrgRouteRule`
         :rtype: :class:`~oci.response.Response`
@@ -19251,6 +20210,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.DrgRouteTable`
         :rtype: :class:`~oci.response.Response`
 
@@ -19262,6 +20225,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -19343,6 +20307,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.InternetGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -19354,6 +20322,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -19434,6 +20403,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnection`
         :rtype: :class:`~oci.response.Response`
 
@@ -19445,6 +20418,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -19542,6 +20516,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionTunnel`
         :rtype: :class:`~oci.response.Response`
 
@@ -19553,6 +20531,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -19640,6 +20619,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.IPSecConnectionTunnelSharedSecret`
         :rtype: :class:`~oci.response.Response`
 
@@ -19651,6 +20634,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -19741,6 +20725,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Ipv6`
         :rtype: :class:`~oci.response.Response`
 
@@ -19752,6 +20740,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -19831,6 +20820,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.LocalPeeringGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -19842,6 +20835,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -19919,6 +20913,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.NatGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -19930,6 +20928,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -20023,6 +21022,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.NetworkSecurityGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -20034,6 +21037,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -20106,6 +21110,10 @@ class VirtualNetworkClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.UpdatedNetworkSecurityGroupSecurityRules`
         :rtype: :class:`~oci.response.Response`
@@ -20200,6 +21208,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PrivateIp`
         :rtype: :class:`~oci.response.Response`
 
@@ -20211,6 +21223,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -20329,6 +21342,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIp`
         :rtype: :class:`~oci.response.Response`
 
@@ -20340,6 +21357,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -20421,6 +21439,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.PublicIpPool`
         :rtype: :class:`~oci.response.Response`
 
@@ -20432,6 +21454,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -20511,6 +21534,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.RemotePeeringConnection`
         :rtype: :class:`~oci.response.Response`
 
@@ -20522,6 +21549,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -20602,6 +21630,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.RouteTable`
         :rtype: :class:`~oci.response.Response`
 
@@ -20613,6 +21645,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -20694,6 +21727,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.SecurityList`
         :rtype: :class:`~oci.response.Response`
 
@@ -20705,6 +21742,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -20783,6 +21821,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.ServiceGateway`
         :rtype: :class:`~oci.response.Response`
 
@@ -20794,6 +21836,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -20871,6 +21914,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Subnet`
         :rtype: :class:`~oci.response.Response`
 
@@ -20882,6 +21929,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -20977,6 +22025,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.TunnelCpeDeviceConfig`
         :rtype: :class:`~oci.response.Response`
 
@@ -20988,6 +22040,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_retry_token",
@@ -21071,6 +22124,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vcn`
         :rtype: :class:`~oci.response.Response`
 
@@ -21082,6 +22139,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -21184,6 +22242,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.VirtualCircuit`
         :rtype: :class:`~oci.response.Response`
 
@@ -21195,6 +22257,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -21277,6 +22340,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vlan`
         :rtype: :class:`~oci.response.Response`
 
@@ -21288,6 +22355,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -21367,6 +22435,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.core.models.Vnic`
         :rtype: :class:`~oci.response.Response`
 
@@ -21378,6 +22450,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -21459,6 +22532,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -21470,6 +22547,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -21545,6 +22623,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -21556,6 +22638,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -21625,6 +22708,10 @@ class VirtualNetworkClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -21636,6 +22723,7 @@ class VirtualNetworkClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]

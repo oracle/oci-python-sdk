@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from .create_data_guard_association_details import CreateDataGuardAssociationDetails
@@ -41,6 +41,10 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
             The value to assign to the creation_type property of this CreateDataGuardAssociationToExistingVmClusterDetails.
         :type creation_type: str
 
+        :param is_active_data_guard_enabled:
+            The value to assign to the is_active_data_guard_enabled property of this CreateDataGuardAssociationToExistingVmClusterDetails.
+        :type is_active_data_guard_enabled: bool
+
         :param peer_db_unique_name:
             The value to assign to the peer_db_unique_name property of this CreateDataGuardAssociationToExistingVmClusterDetails.
         :type peer_db_unique_name: str
@@ -64,6 +68,7 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
             'protection_mode': 'str',
             'transport_type': 'str',
             'creation_type': 'str',
+            'is_active_data_guard_enabled': 'bool',
             'peer_db_unique_name': 'str',
             'peer_sid_prefix': 'str',
             'peer_vm_cluster_id': 'str',
@@ -76,6 +81,7 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
             'protection_mode': 'protectionMode',
             'transport_type': 'transportType',
             'creation_type': 'creationType',
+            'is_active_data_guard_enabled': 'isActiveDataGuardEnabled',
             'peer_db_unique_name': 'peerDbUniqueName',
             'peer_sid_prefix': 'peerSidPrefix',
             'peer_vm_cluster_id': 'peerVmClusterId',
@@ -87,6 +93,7 @@ class CreateDataGuardAssociationToExistingVmClusterDetails(CreateDataGuardAssoci
         self._protection_mode = None
         self._transport_type = None
         self._creation_type = None
+        self._is_active_data_guard_enabled = None
         self._peer_db_unique_name = None
         self._peer_sid_prefix = None
         self._peer_vm_cluster_id = None

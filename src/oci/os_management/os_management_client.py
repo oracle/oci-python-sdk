@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
@@ -65,6 +65,10 @@ class OsManagementClient(object):
 
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
+
+        :param allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
+            allow control characters to be in the response object.
         """
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -95,6 +99,8 @@ class OsManagementClient(object):
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
         if base_client_init_kwargs.get('circuit_breaker_strategy') is None:
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
+        if 'allow_control_chars' in kwargs:
+            base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
         self.base_client = BaseClient("os_management", config, signer, os_management_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -121,6 +127,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -132,6 +142,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -212,6 +223,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -223,6 +238,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -307,6 +323,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -318,6 +338,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -407,6 +428,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -418,6 +443,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -507,6 +533,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -518,6 +548,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -609,6 +640,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -620,6 +655,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -711,6 +747,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -722,6 +762,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -804,6 +845,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.ManagedInstanceGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -815,6 +860,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -886,6 +932,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.ScheduledJob`
         :rtype: :class:`~oci.response.Response`
 
@@ -897,6 +947,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -967,6 +1018,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.SoftwareSource`
         :rtype: :class:`~oci.response.Response`
 
@@ -978,6 +1033,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1046,6 +1102,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1057,6 +1117,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -1132,6 +1193,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1143,6 +1208,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -1218,6 +1284,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1229,6 +1299,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -1308,6 +1379,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1319,6 +1394,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1400,6 +1476,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1411,6 +1491,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1498,6 +1579,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1509,6 +1594,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -1580,6 +1666,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.Erratum`
         :rtype: :class:`~oci.response.Response`
 
@@ -1591,6 +1681,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1659,6 +1750,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.ManagedInstance`
         :rtype: :class:`~oci.response.Response`
 
@@ -1670,6 +1765,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1738,6 +1834,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.ManagedInstanceGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -1749,6 +1849,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1817,6 +1918,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.ScheduledJob`
         :rtype: :class:`~oci.response.Response`
 
@@ -1828,6 +1933,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1899,6 +2005,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.SoftwarePackage`
         :rtype: :class:`~oci.response.Response`
 
@@ -1910,6 +2020,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -1979,6 +2090,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.SoftwareSource`
         :rtype: :class:`~oci.response.Response`
 
@@ -1990,6 +2105,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -2058,6 +2174,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.WindowsUpdate`
         :rtype: :class:`~oci.response.Response`
 
@@ -2069,6 +2189,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -2137,6 +2258,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.WorkRequest`
         :rtype: :class:`~oci.response.Response`
 
@@ -2148,6 +2273,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -2228,6 +2354,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2239,6 +2369,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "update_type",
             "opc_request_id",
@@ -2335,6 +2466,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2346,6 +2481,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "update_type",
             "opc_request_id",
@@ -2442,6 +2578,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2453,6 +2593,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "update_type",
             "opc_request_id",
@@ -2547,6 +2688,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2558,6 +2703,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2644,6 +2790,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2655,6 +2805,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2743,6 +2894,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2754,6 +2909,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -2854,6 +3010,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.InstallablePackageSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -2865,6 +3025,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "compartment_id",
@@ -2989,6 +3150,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.AvailableSoftwareSourceSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -3000,6 +3165,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "compartment_id",
@@ -3124,6 +3290,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.AvailableUpdateSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -3135,6 +3305,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "compartment_id",
@@ -3264,6 +3435,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.AvailableWindowsUpdateSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -3275,6 +3450,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "compartment_id",
@@ -3418,6 +3594,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.ErratumSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -3429,6 +3609,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "compartment_id",
             "erratum_id",
@@ -3547,6 +3728,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.ErratumSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -3558,6 +3743,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "compartment_id",
@@ -3689,6 +3875,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.ManagedInstanceGroupSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -3700,6 +3890,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "limit",
@@ -3831,6 +4022,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.ManagedInstanceSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -3842,6 +4037,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "limit",
@@ -3962,6 +4158,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.InstalledPackageSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -3973,6 +4173,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "compartment_id",
@@ -4118,6 +4319,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.ScheduledJobSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -4129,6 +4334,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "managed_instance_id",
@@ -4273,6 +4479,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.SoftwarePackageSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -4284,6 +4494,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "compartment_id",
             "display_name",
@@ -4410,6 +4621,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.SoftwareSourceSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -4421,6 +4636,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "limit",
@@ -4559,6 +4775,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.ScheduledJobSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -4570,6 +4790,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "limit",
@@ -4701,6 +4922,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.WindowsUpdateSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -4712,6 +4937,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "compartment_id",
             "display_name",
@@ -4824,6 +5050,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.InstalledWindowsUpdateSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -4835,6 +5065,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "compartment_id",
@@ -4951,6 +5182,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.WorkRequestError`
         :rtype: :class:`~oci.response.Response`
 
@@ -4962,6 +5197,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -5074,6 +5310,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.WorkRequestLogEntry`
         :rtype: :class:`~oci.response.Response`
 
@@ -5085,6 +5325,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -5210,6 +5451,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.WorkRequestSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -5221,6 +5466,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "display_name",
             "managed_instance_id",
@@ -5329,6 +5575,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5340,6 +5590,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -5419,6 +5670,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5430,6 +5685,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -5513,6 +5769,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5524,6 +5784,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -5621,6 +5882,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.os_management.models.SoftwarePackageSearchSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -5632,6 +5897,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "software_package_name",
             "display_name",
@@ -5737,6 +6003,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5748,6 +6018,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -5829,6 +6100,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.ManagedInstance`
         :rtype: :class:`~oci.response.Response`
 
@@ -5840,6 +6115,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -5922,6 +6198,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.ManagedInstanceGroup`
         :rtype: :class:`~oci.response.Response`
 
@@ -5933,6 +6213,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -6015,6 +6296,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.ScheduledJob`
         :rtype: :class:`~oci.response.Response`
 
@@ -6026,6 +6311,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -6108,6 +6394,10 @@ class OsManagementClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.os_management.models.SoftwareSource`
         :rtype: :class:`~oci.response.Response`
 
@@ -6119,6 +6409,7 @@ class OsManagementClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"

@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 
@@ -58,22 +58,29 @@ class UpdateDataGuardAssociationDetails(object):
             Allowed values for this property are: "SYNC", "ASYNC", "FASTSYNC"
         :type transport_type: str
 
+        :param is_active_data_guard_enabled:
+            The value to assign to the is_active_data_guard_enabled property of this UpdateDataGuardAssociationDetails.
+        :type is_active_data_guard_enabled: bool
+
         """
         self.swagger_types = {
             'database_admin_password': 'str',
             'protection_mode': 'str',
-            'transport_type': 'str'
+            'transport_type': 'str',
+            'is_active_data_guard_enabled': 'bool'
         }
 
         self.attribute_map = {
             'database_admin_password': 'databaseAdminPassword',
             'protection_mode': 'protectionMode',
-            'transport_type': 'transportType'
+            'transport_type': 'transportType',
+            'is_active_data_guard_enabled': 'isActiveDataGuardEnabled'
         }
 
         self._database_admin_password = None
         self._protection_mode = None
         self._transport_type = None
+        self._is_active_data_guard_enabled = None
 
     @property
     def database_admin_password(self):
@@ -212,6 +219,30 @@ class UpdateDataGuardAssociationDetails(object):
                 .format(allowed_values)
             )
         self._transport_type = transport_type
+
+    @property
+    def is_active_data_guard_enabled(self):
+        """
+        Gets the is_active_data_guard_enabled of this UpdateDataGuardAssociationDetails.
+        True if active Data Guard is enabled. Update this parameter to change the Data Guard setting.
+
+
+        :return: The is_active_data_guard_enabled of this UpdateDataGuardAssociationDetails.
+        :rtype: bool
+        """
+        return self._is_active_data_guard_enabled
+
+    @is_active_data_guard_enabled.setter
+    def is_active_data_guard_enabled(self, is_active_data_guard_enabled):
+        """
+        Sets the is_active_data_guard_enabled of this UpdateDataGuardAssociationDetails.
+        True if active Data Guard is enabled. Update this parameter to change the Data Guard setting.
+
+
+        :param is_active_data_guard_enabled: The is_active_data_guard_enabled of this UpdateDataGuardAssociationDetails.
+        :type: bool
+        """
+        self._is_active_data_guard_enabled = is_active_data_guard_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

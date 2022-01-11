@@ -301,6 +301,7 @@ class ShowOCIService(object):
     # API gateways
     C_API = "apis"
     C_API_GATEWAYS = "gateways"
+    C_API_DEPLOYMENT = "deployments"
 
     # Data and AI
     C_DATA_AI = "data_ai"
@@ -3956,8 +3957,8 @@ class ShowOCIService(object):
                            'shape_networking_bandwidth_in_gbps': 0,
                            'shape_processor_description': "",
                            'console_vnc_connection_string': "",
-                           'image': "Not Found",
-                           'image_os': "Oracle Linux",
+                           'image': "Unknown",
+                           'image_os': "Unknown",
                            'agent_is_management_disabled ': "",
                            'agent_is_monitoring_disabled': "",
                            'metadata': arr.metadata,
@@ -6549,7 +6550,7 @@ class ShowOCIService(object):
 
                     # export set
                     try:
-                        exp = file_storage.get_export_set(es.export_set_id).data
+                        exp = file_storage.get_export_set(es.export_set_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
                         if exp:
                             valexp = {'id': str(exp.id), 'compartment_id': str(exp.compartment_id),
                                       'availability_domain': str(exp.availability_domain),
@@ -7904,7 +7905,7 @@ class ShowOCIService(object):
                              'sum_count': ("0" if dbs.lifecycle_state == oci.database.models.AutonomousDatabaseSummary.LIFECYCLE_STATE_STOPPED else str(dbs.cpu_core_count)),
                              'db_version': str(dbs.db_version),
                              'service_console_url': str(dbs.service_console_url),
-                             'connection_strings': str(dbs.connection_strings),
+                             'connection_strings': "",
                              'connection_urls': str(dbs.connection_urls),
                              'time_created': str(dbs.time_created),
                              'compartment_name': str(compartment['name']),
@@ -7949,6 +7950,12 @@ class ShowOCIService(object):
                              'available_upgrade_versions': str(dbs.available_upgrade_versions),
                              'role': str(dbs.role)
                              }
+
+                    # connection string
+                    if dbs.connection_strings:
+                        if dbs.connection_strings.all_connection_strings:
+                            dbarr = dbs.connection_strings.all_connection_strings
+                            value['connection_strings'] = str(', '.join(key + "=" + dbarr[key] for key in dbarr.keys()))
 
                     # if standby object exist
                     if dbs.standby_db:
@@ -9047,22 +9054,27 @@ class ShowOCIService(object):
         try:
             print("API Gateways...")
 
-            # GatewayClient
+            # GatewayClient and DeploymentClient
             api_gw_client = oci.apigateway.GatewayClient(self.config, signer=self.signer, timeout=2)
+            api_deployment_client = oci.apigateway.DeploymentClient(self.config, signer=self.signer, timeout=2)
+
             if self.flags.proxy:
                 api_gw_client.base_client.session.proxies = {'https': self.flags.proxy}
+                api_deployment_client.base_client.session.proxies = {'https': self.flags.proxy}
 
             # reference to compartments
             compartments = self.get_compartment()
 
             # add the key if not exists
             self.__initialize_data_key(self.C_API, self.C_API_GATEWAYS)
+            self.__initialize_data_key(self.C_API, self.C_API_DEPLOYMENT)
 
             # reference to api
             apic = self.data[self.C_API]
 
             # append the data
             apic[self.C_API_GATEWAYS] += self.__load_api_gateways(api_gw_client, compartments)
+            apic[self.C_API_DEPLOYMENT] += self.__load_api_deployments(api_deployment_client, compartments)
             print("")
 
         except oci.exceptions.RequestException:
@@ -9123,7 +9135,9 @@ class ShowOCIService(object):
                            'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
                            'defined_tags': [] if apig.defined_tags is None else apig.defined_tags,
                            'freeform_tags': [] if apig.freeform_tags is None else apig.freeform_tags,
-                           'region_name': str(self.config['region'])}
+                           'region_name': str(self.config['region']),
+                           'deployments': []
+                           }
 
                     # add the data
                     cnt += 1
@@ -9139,6 +9153,76 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_api_gateways", e)
+            return data
+
+    ##########################################################################
+    # __load_api_deployments
+    ##########################################################################
+
+    def __load_api_deployments(self, api_deployment_client, compartments):
+
+        data = []
+        cnt = 0
+        start_time = time.time()
+
+        try:
+            self.__load_print_status("API Deployments")
+
+            # loop on all compartments
+            for compartment in compartments:
+                if self.__if_managed_paas_compartment(compartment['name']):
+                    print(".", end="")
+                    continue
+
+                apids = []
+                try:
+                    apids = oci.pagination.list_call_get_all_results(
+                        api_deployment_client.list_deployments, compartment_id=compartment['id'],
+                        lifecycle_state="ACTIVE",
+                        retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+                    ).data
+
+                except oci.exceptions.ServiceError as e:
+                    if self.__check_request_error(e):
+                        return data
+
+                    if self.__check_service_error(e.code):
+                        self.__load_print_auth_warning()
+                        continue
+                    raise
+
+                print(".", end="")
+
+                # load deployment
+                for apid in apids:
+                    val = {'id': str(apid.id),
+                           'gateway_id': str(apid.gateway_id),
+                           'display_name': str(apid.display_name),
+                           'path_prefix': str(apid.path_prefix),
+                           'endpoint': str(apid.endpoint),
+                           'time_created': str(apid.time_created),
+                           'time_updated': str(apid.time_updated),
+                           'compartment_name': str(compartment['name']),
+                           'compartment_id': str(compartment['id']),
+                           'defined_tags': [] if apid.defined_tags is None else apid.defined_tags,
+                           'freeform_tags': [] if apid.freeform_tags is None else apid.freeform_tags,
+                           'region_name': str(self.config['region']),
+                           }
+
+                    # add the data
+                    cnt += 1
+                    data.append(val)
+
+            self.__load_print_cnt(cnt, start_time)
+            return data
+
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+
+            raise
+        except Exception as e:
+            self.__print_error("__load_api_deployments", e)
             return data
 
     ##########################################################################

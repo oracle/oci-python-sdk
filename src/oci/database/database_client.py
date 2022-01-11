@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 from __future__ import absolute_import
@@ -64,6 +64,10 @@ class DatabaseClient(object):
 
         :param function circuit_breaker_callback: (optional)
             Callback function to receive any exceptions triggerred by the circuit breaker.
+
+        :param allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this client should allow control characters in the response object. By default, the client will not
+            allow control characters to be in the response object.
         """
         validate_config(config, signer=kwargs.get('signer'))
         if 'signer' in kwargs:
@@ -94,6 +98,8 @@ class DatabaseClient(object):
             base_client_init_kwargs['timeout'] = kwargs.get('timeout')
         if base_client_init_kwargs.get('circuit_breaker_strategy') is None:
             base_client_init_kwargs['circuit_breaker_strategy'] = circuit_breaker.DEFAULT_CIRCUIT_BREAKER_STRATEGY
+        if 'allow_control_chars' in kwargs:
+            base_client_init_kwargs['allow_control_chars'] = kwargs.get('allow_control_chars')
         self.base_client = BaseClient("database", config, signer, database_type_mapping, **base_client_init_kwargs)
         self.retry_strategy = kwargs.get('retry_strategy')
         self.circuit_breaker_callback = kwargs.get('circuit_breaker_callback')
@@ -131,6 +137,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
 
@@ -142,6 +152,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -229,6 +240,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
 
@@ -240,6 +255,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -330,6 +346,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -341,6 +361,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -433,6 +454,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -444,6 +469,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_retry_token",
@@ -540,6 +566,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -551,6 +581,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -645,6 +676,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -656,6 +691,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -750,6 +786,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -761,6 +801,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -852,6 +893,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -863,6 +908,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -957,6 +1003,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -968,6 +1018,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -1059,6 +1110,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1070,6 +1125,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -1162,6 +1218,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1173,6 +1233,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -1263,6 +1324,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1274,6 +1339,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -1368,6 +1434,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1379,6 +1449,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -1480,6 +1551,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1491,6 +1566,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -1582,6 +1658,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1593,6 +1673,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -1688,6 +1769,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1699,6 +1784,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -1793,6 +1879,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1804,6 +1894,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -1901,6 +1992,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -1912,6 +2007,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -2006,6 +2102,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2017,6 +2117,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -2108,6 +2209,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2119,6 +2224,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -2208,6 +2314,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2219,6 +2329,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -2308,6 +2419,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalBackupJob`
         :rtype: :class:`~oci.response.Response`
 
@@ -2319,6 +2434,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_retry_token"
@@ -2413,6 +2529,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -2424,6 +2544,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -2507,6 +2628,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
 
@@ -2518,6 +2643,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -2594,6 +2720,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -2605,6 +2735,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -2671,6 +2802,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -2682,6 +2817,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -2750,6 +2886,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabaseBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -2761,6 +2901,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -2829,6 +2970,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousVmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -2840,6 +2985,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -2905,6 +3051,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Backup`
         :rtype: :class:`~oci.response.Response`
 
@@ -2916,6 +3066,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -2982,6 +3133,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.BackupDestination`
         :rtype: :class:`~oci.response.Response`
 
@@ -2993,6 +3148,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -3061,6 +3217,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudAutonomousVmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -3072,6 +3232,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -3144,6 +3305,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
 
@@ -3155,6 +3320,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -3225,6 +3391,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudVmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -3236,6 +3406,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -3308,6 +3479,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ConsoleConnection`
         :rtype: :class:`~oci.response.Response`
 
@@ -3319,6 +3494,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -3409,6 +3585,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DataGuardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -3420,6 +3600,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -3498,6 +3679,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
 
@@ -3509,6 +3694,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -3574,6 +3760,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DatabaseSoftwareImage`
         :rtype: :class:`~oci.response.Response`
 
@@ -3585,6 +3775,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -3648,6 +3839,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbHome`
         :rtype: :class:`~oci.response.Response`
 
@@ -3659,6 +3854,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -3726,6 +3922,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
 
@@ -3737,6 +3937,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -3806,6 +4007,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalBackupJob`
         :rtype: :class:`~oci.response.Response`
 
@@ -3817,6 +4022,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -3883,6 +4089,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalContainerDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -3894,6 +4104,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -3962,6 +4173,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalDatabaseConnector`
         :rtype: :class:`~oci.response.Response`
 
@@ -3973,6 +4188,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -4041,6 +4257,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalNonContainerDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -4052,6 +4272,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -4121,6 +4342,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalPluggableDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -4132,6 +4357,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -4200,6 +4426,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.KeyStore`
         :rtype: :class:`~oci.response.Response`
 
@@ -4211,6 +4441,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -4280,6 +4511,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PluggableDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -4291,6 +4526,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -4360,6 +4596,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -4371,6 +4611,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -4445,6 +4686,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmClusterNetwork`
         :rtype: :class:`~oci.response.Response`
 
@@ -4456,6 +4701,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id"
@@ -4557,6 +4803,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbNode`
         :rtype: :class:`~oci.response.Response`
 
@@ -4568,6 +4818,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "if_match"
@@ -4653,6 +4904,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4664,6 +4919,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4739,6 +4995,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4750,6 +5010,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4822,6 +5083,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4833,6 +5098,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -4906,6 +5172,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -4917,6 +5187,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -4992,6 +5263,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5003,6 +5278,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5081,6 +5357,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5092,6 +5372,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "is_delete_vm_clusters",
@@ -5175,6 +5456,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5186,6 +5471,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5261,6 +5547,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5272,6 +5562,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -5355,6 +5646,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5366,6 +5661,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "perform_final_backup",
@@ -5446,6 +5742,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5457,6 +5757,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -5536,6 +5837,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5547,6 +5852,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "perform_final_backup"
@@ -5628,6 +5934,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5639,6 +5949,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5716,6 +6027,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5727,6 +6042,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -5805,6 +6121,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5816,6 +6136,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5891,6 +6212,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5902,6 +6227,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -5978,6 +6304,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -5989,6 +6319,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -6064,6 +6395,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6075,6 +6410,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -6150,6 +6486,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6161,6 +6501,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -6236,6 +6577,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6247,6 +6592,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -6328,6 +6674,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6339,6 +6689,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -6413,6 +6764,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6424,6 +6779,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "deregister_autonomous_database_data_safe_details"
@@ -6495,6 +6851,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6506,6 +6866,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6574,6 +6935,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6585,6 +6950,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -6665,6 +7031,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
 
@@ -6676,6 +7046,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -6763,6 +7134,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6774,6 +7149,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -6863,6 +7239,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6874,6 +7254,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -6959,6 +7340,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -6970,6 +7355,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -7059,6 +7445,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7070,6 +7460,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -7155,6 +7546,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7166,6 +7561,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -7246,6 +7642,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -7257,6 +7657,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -7342,6 +7743,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -7353,6 +7758,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -7439,6 +7845,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -7450,6 +7860,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -7524,6 +7935,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7535,6 +7950,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7603,6 +8019,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7614,6 +8034,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -7697,6 +8118,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
 
@@ -7708,6 +8133,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -7804,6 +8230,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7815,6 +8245,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -7909,6 +8340,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -7920,6 +8355,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -8010,6 +8446,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -8021,6 +8461,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -8115,6 +8556,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -8126,6 +8571,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -8216,6 +8662,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -8227,6 +8677,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -8321,6 +8772,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -8332,6 +8787,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_retry_token",
@@ -8424,6 +8880,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -8435,6 +8895,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -8520,6 +8981,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DataGuardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -8531,6 +8996,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -8614,6 +9080,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type stream
         :rtype: :class:`~oci.response.Response`
 
@@ -8625,6 +9095,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -8710,6 +9181,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmClusterNetworkDetails`
         :rtype: :class:`~oci.response.Response`
 
@@ -8721,6 +9196,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -8792,6 +9268,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabase`
         :rtype: :class:`~oci.response.Response`
@@ -8870,6 +9350,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -8946,6 +9430,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -8957,6 +9445,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9027,6 +9516,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabaseBackup`
         :rtype: :class:`~oci.response.Response`
 
@@ -9038,6 +9531,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9113,6 +9607,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -9124,6 +9622,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9190,6 +9689,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabaseWallet`
         :rtype: :class:`~oci.response.Response`
 
@@ -9201,6 +9704,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9259,6 +9763,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabaseWallet`
         :rtype: :class:`~oci.response.Response`
 
@@ -9270,6 +9778,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9336,6 +9845,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
@@ -9408,6 +9921,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousPatch`
         :rtype: :class:`~oci.response.Response`
@@ -9484,6 +10001,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousVmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -9495,6 +10016,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9561,6 +10083,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Backup`
         :rtype: :class:`~oci.response.Response`
@@ -9637,6 +10163,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.BackupDestination`
         :rtype: :class:`~oci.response.Response`
 
@@ -9648,6 +10178,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9718,6 +10249,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudAutonomousVmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -9729,6 +10264,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9799,6 +10335,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
 
@@ -9810,6 +10350,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9880,6 +10421,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudVmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -9891,6 +10436,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -9962,6 +10508,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataIormConfig`
         :rtype: :class:`~oci.response.Response`
 
@@ -9973,6 +10523,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -10048,6 +10599,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Update`
         :rtype: :class:`~oci.response.Response`
 
@@ -10059,6 +10614,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -10135,6 +10691,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.UpdateHistoryEntry`
         :rtype: :class:`~oci.response.Response`
 
@@ -10146,6 +10706,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -10216,6 +10777,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ConsoleConnection`
         :rtype: :class:`~oci.response.Response`
@@ -10295,6 +10860,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DataGuardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -10368,6 +10937,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
 
@@ -10439,6 +11012,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DatabaseSoftwareImage`
         :rtype: :class:`~oci.response.Response`
@@ -10520,6 +11097,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DatabaseUpgradeHistoryEntry`
         :rtype: :class:`~oci.response.Response`
 
@@ -10531,6 +11112,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -10598,6 +11180,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbHome`
         :rtype: :class:`~oci.response.Response`
@@ -10675,6 +11261,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Patch`
         :rtype: :class:`~oci.response.Response`
@@ -10754,6 +11344,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PatchHistoryEntry`
         :rtype: :class:`~oci.response.Response`
 
@@ -10826,6 +11420,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbNode`
         :rtype: :class:`~oci.response.Response`
@@ -10907,6 +11505,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbServer`
         :rtype: :class:`~oci.response.Response`
 
@@ -10918,6 +11520,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -10999,6 +11602,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbSystem`
         :rtype: :class:`~oci.response.Response`
 
@@ -11075,6 +11682,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Patch`
         :rtype: :class:`~oci.response.Response`
@@ -11154,6 +11765,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PatchHistoryEntry`
         :rtype: :class:`~oci.response.Response`
 
@@ -11231,6 +11846,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
 
@@ -11242,6 +11861,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -11312,6 +11932,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.OCPUs`
         :rtype: :class:`~oci.response.Response`
 
@@ -11323,6 +11947,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -11404,6 +12029,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataIormConfig`
         :rtype: :class:`~oci.response.Response`
 
@@ -11415,6 +12044,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -11485,6 +12115,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalBackupJob`
         :rtype: :class:`~oci.response.Response`
@@ -11561,6 +12195,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalContainerDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -11572,6 +12210,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -11643,6 +12282,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalDatabaseConnector`
         :rtype: :class:`~oci.response.Response`
 
@@ -11654,6 +12297,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -11724,6 +12368,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalNonContainerDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -11735,6 +12383,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -11806,6 +12455,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalPluggableDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -11817,6 +12470,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -11887,6 +12541,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.KeyStore`
         :rtype: :class:`~oci.response.Response`
 
@@ -11898,6 +12556,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -11962,6 +12621,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.MaintenanceRun`
         :rtype: :class:`~oci.response.Response`
@@ -12043,6 +12706,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PdbConversionHistoryEntry`
         :rtype: :class:`~oci.response.Response`
 
@@ -12054,6 +12721,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -12121,6 +12789,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PluggableDatabase`
         :rtype: :class:`~oci.response.Response`
@@ -12197,6 +12869,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -12208,6 +12884,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -12284,6 +12961,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmClusterNetwork`
         :rtype: :class:`~oci.response.Response`
 
@@ -12295,6 +12976,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -12367,6 +13049,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Patch`
         :rtype: :class:`~oci.response.Response`
@@ -12445,6 +13131,10 @@ class DatabaseClient(object):
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
 
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PatchHistoryEntry`
         :rtype: :class:`~oci.response.Response`
@@ -12527,6 +13217,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmClusterUpdate`
         :rtype: :class:`~oci.response.Response`
 
@@ -12538,6 +13232,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -12614,6 +13309,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmClusterUpdateHistoryEntry`
         :rtype: :class:`~oci.response.Response`
 
@@ -12625,6 +13324,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -12698,6 +13398,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
 
@@ -12709,6 +13413,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -12793,6 +13498,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbSystem`
         :rtype: :class:`~oci.response.Response`
 
@@ -12804,6 +13513,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token"
         ]
@@ -12868,6 +13578,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -12879,6 +13593,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -13005,6 +13720,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousContainerDatabaseSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -13016,6 +13735,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "autonomous_exadata_infrastructure_id",
             "autonomous_vm_cluster_id",
@@ -13161,6 +13881,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDatabaseBackupSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -13172,6 +13896,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "autonomous_database_id",
             "compartment_id",
@@ -13309,6 +14034,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDatabaseSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -13320,6 +14049,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -13442,6 +14172,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -13453,6 +14187,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -13585,6 +14320,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDatabaseSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -13596,6 +14335,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "autonomous_container_database_id",
             "limit",
@@ -13743,6 +14483,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDbPreviewVersionSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -13754,6 +14498,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -13857,6 +14602,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousDbVersionSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -13868,6 +14617,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -13964,6 +14714,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousExadataInfrastructureShapeSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -13975,6 +14729,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -14071,6 +14826,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousExadataInfrastructureSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -14082,6 +14841,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -14206,6 +14966,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousVmClusterSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -14217,6 +14981,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "exadata_infrastructure_id",
             "limit",
@@ -14326,6 +15091,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.BackupDestinationSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -14337,6 +15106,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -14416,6 +15186,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.BackupSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -14427,6 +15201,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "database_id",
             "compartment_id",
@@ -14526,6 +15301,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.CloudAutonomousVmClusterSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -14537,6 +15316,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "cloud_exadata_infrastructure_id",
             "limit",
@@ -14663,6 +15443,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.CloudExadataInfrastructureSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -14674,6 +15458,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -14783,6 +15568,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.UpdateHistoryEntrySummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -14794,6 +15583,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "update_type",
             "limit",
@@ -14894,6 +15684,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.UpdateSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -14905,6 +15699,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "update_type",
             "limit",
@@ -15021,6 +15816,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.CloudVmClusterSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -15032,6 +15831,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "cloud_exadata_infrastructure_id",
             "limit",
@@ -15129,6 +15929,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.ConsoleConnectionSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -15212,6 +16016,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.AutonomousPatchSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -15223,6 +16031,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -15304,6 +16113,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DataGuardAssociationSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -15315,6 +16128,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -15426,6 +16240,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DatabaseSoftwareImageSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -15437,6 +16255,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -15578,6 +16397,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DatabaseUpgradeHistoryEntrySummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -15589,6 +16412,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "upgrade_action",
             "lifecycle_state",
@@ -15736,6 +16560,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DatabaseSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -15747,6 +16575,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "db_home_id",
             "system_id",
@@ -15849,6 +16678,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchHistoryEntrySummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -15860,6 +16693,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -15940,6 +16774,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -15951,6 +16789,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -16067,6 +16906,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbHomeSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -16078,6 +16921,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "db_system_id",
             "vm_cluster_id",
@@ -16214,6 +17058,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbNodeSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -16225,6 +17073,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "db_system_id",
             "vm_cluster_id",
@@ -16353,6 +17202,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbServerSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -16364,6 +17217,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -16466,6 +17320,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchHistoryEntrySummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -16477,6 +17335,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -16557,6 +17416,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -16568,6 +17431,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -16651,6 +17515,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbSystemShapeSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -16662,6 +17530,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "availability_domain",
             "limit",
@@ -16768,6 +17637,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbSystemSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -16779,6 +17652,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -16902,6 +17776,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.DbVersionSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -16913,6 +17791,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -17021,6 +17900,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.ExadataInfrastructureSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -17032,6 +17915,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -17157,6 +18041,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.ExternalContainerDatabaseSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -17168,6 +18056,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -17298,6 +18187,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.ExternalDatabaseConnectorSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -17309,6 +18202,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -17435,6 +18329,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.ExternalNonContainerDatabaseSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -17446,6 +18344,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "limit",
@@ -17577,6 +18476,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.ExternalPluggableDatabaseSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -17588,6 +18491,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "external_container_database_id",
@@ -17704,6 +18608,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.FlexComponentCollection`
         :rtype: :class:`~oci.response.Response`
 
@@ -17715,6 +18623,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "name",
             "sort_order",
@@ -17812,6 +18721,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.GiVersionSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -17823,6 +18736,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -17906,6 +18820,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.KeyStoreSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -17917,6 +18835,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -18022,6 +18941,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.MaintenanceRunSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -18033,6 +18956,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "target_resource_id",
             "target_resource_type",
@@ -18174,6 +19098,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PdbConversionHistoryEntrySummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -18185,6 +19113,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "pdb_conversion_action",
             "lifecycle_state",
@@ -18327,6 +19256,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PluggableDatabaseSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -18338,6 +19271,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "compartment_id",
             "database_id",
@@ -18465,6 +19399,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.VmClusterNetworkSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -18476,6 +19414,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page",
@@ -18589,6 +19528,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchHistoryEntrySummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -18600,6 +19543,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -18680,6 +19624,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.PatchSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -18691,6 +19639,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "limit",
             "page"
@@ -18784,6 +19733,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.VmClusterUpdateHistoryEntrySummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -18795,6 +19748,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "update_type",
             "lifecycle_state",
@@ -18909,6 +19863,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.VmClusterUpdateSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -18920,6 +19878,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "update_type",
             "lifecycle_state",
@@ -19046,6 +20005,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type list of :class:`~oci.database.models.VmClusterSummary`
         :rtype: :class:`~oci.response.Response`
 
@@ -19057,6 +20020,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "exadata_infrastructure_id",
             "limit",
@@ -19172,6 +20136,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PluggableDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -19183,6 +20151,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -19275,6 +20244,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataDbSystemMigration`
         :rtype: :class:`~oci.response.Response`
 
@@ -19286,6 +20259,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match",
@@ -19378,6 +20352,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
 
@@ -19389,6 +20367,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_retry_token",
@@ -19481,6 +20460,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
 
@@ -19492,6 +20475,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -19572,6 +20556,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -19583,6 +20571,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "register_autonomous_database_data_safe_details"
@@ -19661,6 +20650,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -19672,6 +20665,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -19753,6 +20747,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DataGuardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -19764,6 +20762,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -19852,6 +20851,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PluggableDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -19863,6 +20866,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -19955,6 +20959,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -19966,6 +20974,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -20048,6 +21057,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -20059,6 +21072,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -20133,6 +21147,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -20144,6 +21162,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -20219,6 +21238,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -20230,6 +21253,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -20307,6 +21331,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
 
@@ -20318,6 +21346,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -20404,6 +21433,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -20415,6 +21448,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_retry_token",
@@ -20504,6 +21538,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -20515,6 +21553,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_retry_token",
@@ -20602,6 +21641,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -20613,6 +21656,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -20698,6 +21742,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -20709,6 +21757,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
             "opc_request_id",
@@ -20794,6 +21843,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -20805,6 +21858,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -20890,6 +21944,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -20901,6 +21959,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token",
@@ -20988,6 +22047,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
 
@@ -20999,6 +22062,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_retry_token",
@@ -21088,6 +22152,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -21099,6 +22167,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"
@@ -21179,6 +22248,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -21190,6 +22263,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -21272,6 +22346,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PluggableDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -21283,6 +22361,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -21363,6 +22442,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -21374,6 +22457,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -21458,6 +22542,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PluggableDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -21469,6 +22557,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id",
@@ -21553,6 +22642,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabaseDataguardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -21564,6 +22657,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -21654,6 +22748,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -21665,6 +22763,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_retry_token",
@@ -21761,6 +22860,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DataGuardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -21772,6 +22875,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -21847,6 +22951,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -21858,6 +22966,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -21928,6 +23037,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -21939,6 +23052,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -22016,6 +23130,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -22027,6 +23145,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -22100,6 +23219,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousContainerDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -22111,6 +23234,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -22191,6 +23315,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -22202,6 +23330,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -22274,6 +23403,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -22285,6 +23418,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -22346,6 +23480,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type None
         :rtype: :class:`~oci.response.Response`
 
@@ -22357,6 +23495,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id"
         ]
@@ -22432,6 +23571,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
 
@@ -22443,6 +23586,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -22523,6 +23667,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.AutonomousVmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -22534,6 +23682,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -22619,6 +23768,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.BackupDestination`
         :rtype: :class:`~oci.response.Response`
 
@@ -22630,6 +23783,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -22712,6 +23866,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudAutonomousVmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -22723,6 +23881,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -22805,6 +23964,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
 
@@ -22816,6 +23979,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -22898,6 +24062,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.CloudVmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -22909,6 +24077,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -22991,6 +24160,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataIormConfig`
         :rtype: :class:`~oci.response.Response`
 
@@ -23002,6 +24175,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -23089,6 +24263,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DataGuardAssociation`
         :rtype: :class:`~oci.response.Response`
 
@@ -23100,6 +24278,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -23180,6 +24359,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
 
@@ -23191,6 +24374,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -23268,6 +24452,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DatabaseSoftwareImage`
         :rtype: :class:`~oci.response.Response`
 
@@ -23279,6 +24467,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -23356,6 +24545,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbHome`
         :rtype: :class:`~oci.response.Response`
 
@@ -23367,6 +24560,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -23451,6 +24645,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.DbSystem`
         :rtype: :class:`~oci.response.Response`
 
@@ -23462,6 +24660,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -23543,6 +24742,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataInfrastructure`
         :rtype: :class:`~oci.response.Response`
 
@@ -23554,6 +24757,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -23646,6 +24850,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExadataIormConfig`
         :rtype: :class:`~oci.response.Response`
 
@@ -23657,6 +24865,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "if_match"
@@ -23742,6 +24951,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalContainerDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -23753,6 +24966,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -23836,6 +25050,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalDatabaseConnector`
         :rtype: :class:`~oci.response.Response`
 
@@ -23847,6 +25065,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -23929,6 +25148,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalNonContainerDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -23940,6 +25163,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -24024,6 +25248,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.ExternalPluggableDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -24035,6 +25263,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -24117,6 +25346,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.KeyStore`
         :rtype: :class:`~oci.response.Response`
 
@@ -24128,6 +25361,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -24205,6 +25439,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.MaintenanceRun`
         :rtype: :class:`~oci.response.Response`
 
@@ -24216,6 +25454,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -24293,6 +25532,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.PluggableDatabase`
         :rtype: :class:`~oci.response.Response`
 
@@ -24304,6 +25547,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match"
         ]
@@ -24384,6 +25628,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmCluster`
         :rtype: :class:`~oci.response.Response`
 
@@ -24395,6 +25643,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -24483,6 +25732,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmClusterNetwork`
         :rtype: :class:`~oci.response.Response`
 
@@ -24494,6 +25747,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -24577,6 +25831,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.Database`
         :rtype: :class:`~oci.response.Response`
 
@@ -24588,6 +25846,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "if_match",
             "opc_request_id"
@@ -24674,6 +25933,10 @@ class DatabaseClient(object):
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
 
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
         :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.database.models.VmClusterNetwork`
         :rtype: :class:`~oci.response.Response`
 
@@ -24685,6 +25948,7 @@ class DatabaseClient(object):
 
         # Don't accept unknown kwargs
         expected_kwargs = [
+            "allow_control_chars",
             "retry_strategy",
             "opc_request_id",
             "opc_retry_token"

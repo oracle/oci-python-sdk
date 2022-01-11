@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+22.01.17 - 22.01.17
+=====================
+* Fixed database connection for ADB
+* Added database edition and license model to the CSV extract
+* Added APIGW and Deployment + added to the CSV
+
+=====================
 21.11.16 - 21.11.16
 =====================
 * Added Compute Capacity Reservation

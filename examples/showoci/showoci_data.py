@@ -2358,6 +2358,7 @@ class ShowOCIData(object):
                          'cpu_core_count': dbs['cpu_core_count'],
                          'node_count': dbs['node_count'],
                          'version': (dbs['version'] + " - ") if dbs['version'] != "None" else "" + ((dbs['database_edition'] + " - ") if dbs['database_edition'] != "None" else "") + dbs['license_model'],
+                         'version_only': dbs['version'],
                          'host': dbs['hostname'],
                          'domain': dbs['domain'],
                          'data_subnet': dbs['data_subnet'],
@@ -3399,6 +3400,16 @@ class ShowOCIData(object):
                     # subnet
                     if ap['subnet_id']:
                         val['subnet_name'] = self.__get_core_network_subnet_name(ap['subnet_id'])
+
+                    # deployments
+                    apidep = self.service.search_multi_items(self.service.C_API, self.service.C_API_DEPLOYMENT, 'region_name', region_name, 'gateway_id', val['id'])
+                    if apidep:
+                        for apid in apidep:
+                            vald = apid
+                            vald['logs'] = self.service.get_logging_log(vald['id'])
+
+                            # add deployment to apigw
+                            val['deployments'].append(vald)
 
                     data.append(val)
             return data
