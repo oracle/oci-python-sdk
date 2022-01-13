@@ -43,6 +43,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/visual_builder/pom.xml</module>
     <module>poms/identity_data_plane/pom.xml</module>
     <module>poms/osp_gateway/pom.xml</module>
     <module>poms/appmgmt_control/pom.xml</module>

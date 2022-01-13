@@ -26,6 +26,10 @@ class UpdateDatasetDetails(object):
             The value to assign to the description property of this UpdateDatasetDetails.
         :type description: str
 
+        :param labeling_instructions:
+            The value to assign to the labeling_instructions property of this UpdateDatasetDetails.
+        :type labeling_instructions: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateDatasetDetails.
         :type freeform_tags: dict(str, str)
@@ -38,6 +42,7 @@ class UpdateDatasetDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
+            'labeling_instructions': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -45,12 +50,14 @@ class UpdateDatasetDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
+            'labeling_instructions': 'labelingInstructions',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
         self._description = None
+        self._labeling_instructions = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -103,11 +110,35 @@ class UpdateDatasetDetails(object):
         self._description = description
 
     @property
+    def labeling_instructions(self):
+        """
+        Gets the labeling_instructions of this UpdateDatasetDetails.
+        The labeling instructions for human labelers in rich text format
+
+
+        :return: The labeling_instructions of this UpdateDatasetDetails.
+        :rtype: str
+        """
+        return self._labeling_instructions
+
+    @labeling_instructions.setter
+    def labeling_instructions(self, labeling_instructions):
+        """
+        Sets the labeling_instructions of this UpdateDatasetDetails.
+        The labeling instructions for human labelers in rich text format
+
+
+        :param labeling_instructions: The labeling_instructions of this UpdateDatasetDetails.
+        :type: str
+        """
+        self._labeling_instructions = labeling_instructions
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateDatasetDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this UpdateDatasetDetails.
@@ -119,8 +150,8 @@ class UpdateDatasetDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateDatasetDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this UpdateDatasetDetails.
@@ -132,8 +163,8 @@ class UpdateDatasetDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this UpdateDatasetDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this UpdateDatasetDetails.
@@ -145,8 +176,8 @@ class UpdateDatasetDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this UpdateDatasetDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this UpdateDatasetDetails.

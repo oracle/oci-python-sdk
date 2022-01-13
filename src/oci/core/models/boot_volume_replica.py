@@ -108,6 +108,10 @@ class BootVolumeReplica(object):
             The value to assign to the total_data_transferred_in_gbs property of this BootVolumeReplica.
         :type total_data_transferred_in_gbs: int
 
+        :param volume_group_replica_id:
+            The value to assign to the volume_group_replica_id property of this BootVolumeReplica.
+        :type volume_group_replica_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -122,7 +126,8 @@ class BootVolumeReplica(object):
             'time_last_synced': 'datetime',
             'boot_volume_id': 'str',
             'image_id': 'str',
-            'total_data_transferred_in_gbs': 'int'
+            'total_data_transferred_in_gbs': 'int',
+            'volume_group_replica_id': 'str'
         }
 
         self.attribute_map = {
@@ -138,7 +143,8 @@ class BootVolumeReplica(object):
             'time_last_synced': 'timeLastSynced',
             'boot_volume_id': 'bootVolumeId',
             'image_id': 'imageId',
-            'total_data_transferred_in_gbs': 'totalDataTransferredInGBs'
+            'total_data_transferred_in_gbs': 'totalDataTransferredInGBs',
+            'volume_group_replica_id': 'volumeGroupReplicaId'
         }
 
         self._availability_domain = None
@@ -154,6 +160,7 @@ class BootVolumeReplica(object):
         self._boot_volume_id = None
         self._image_id = None
         self._total_data_transferred_in_gbs = None
+        self._volume_group_replica_id = None
 
     @property
     def availability_domain(self):
@@ -510,6 +517,30 @@ class BootVolumeReplica(object):
         :type: int
         """
         self._total_data_transferred_in_gbs = total_data_transferred_in_gbs
+
+    @property
+    def volume_group_replica_id(self):
+        """
+        Gets the volume_group_replica_id of this BootVolumeReplica.
+        The OCID of the volume group replica.
+
+
+        :return: The volume_group_replica_id of this BootVolumeReplica.
+        :rtype: str
+        """
+        return self._volume_group_replica_id
+
+    @volume_group_replica_id.setter
+    def volume_group_replica_id(self, volume_group_replica_id):
+        """
+        Sets the volume_group_replica_id of this BootVolumeReplica.
+        The OCID of the volume group replica.
+
+
+        :param volume_group_replica_id: The volume_group_replica_id of this BootVolumeReplica.
+        :type: str
+        """
+        self._volume_group_replica_id = volume_group_replica_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

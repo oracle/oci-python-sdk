@@ -143,7 +143,7 @@
       <dependency>
         <groupId>com.oracle.pic.dbaas</groupId>
         <artifactId>dbaas-api-spec</artifactId>
-        <version>0.1.805</version>
+        <version>0.1.820</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -10235,6 +10235,48 @@ def test_update_autonomous_container_database(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="dbaas-atp-d" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_update_autonomous_container_database_dataguard_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousContainerDatabaseDataguardAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpdateAutonomousContainerDatabaseDataguardAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpdateAutonomousContainerDatabaseDataguardAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.update_autonomous_container_database_dataguard_association(
+                autonomous_container_database_id=request.pop(util.camelize('autonomousContainerDatabaseId')),
+                autonomous_container_database_dataguard_association_id=request.pop(util.camelize('autonomousContainerDatabaseDataguardAssociationId')),
+                update_autonomous_container_database_data_guard_association_details=request.pop(util.camelize('UpdateAutonomousContainerDatabaseDataGuardAssociationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpdateAutonomousContainerDatabaseDataguardAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousContainerDatabaseDataguardAssociation',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_update_autonomous_database(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'UpdateAutonomousDatabase'):

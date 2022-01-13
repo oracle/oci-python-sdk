@@ -67,7 +67,7 @@ class DataLabelingClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.data_labeling_service_dataplane.models.CreateRecordDetails create_record_details: (required)
-            Details for the new Record.
+            The details for the new record.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_labeling_service_dataplane.models.Record.lifecycle_state`
@@ -105,7 +105,7 @@ class DataLabelingClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str annotation_id: (required)
-            unique Annotation identifier
+            A unique annotation identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_labeling_service_dataplane.models.Annotation.lifecycle_state`
@@ -152,7 +152,7 @@ class DataLabelingClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str record_id: (required)
-            The OCID of the record annotated
+            The OCID of the record annotated.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_labeling_service_dataplane.models.Record.lifecycle_state`
@@ -199,10 +199,10 @@ class DataLabelingClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str annotation_id: (required)
-            unique Annotation identifier
+            A unique annotation identifier.
 
         :param oci.data_labeling_service_dataplane.models.UpdateAnnotationDetails update_annotation_details: (required)
-            Information to be updated.
+            The information to be updated.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.data_labeling_service_dataplane.models.Annotation.lifecycle_state`
@@ -240,7 +240,7 @@ class DataLabelingClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str record_id: (required)
-            The OCID of the record annotated
+            The OCID of the record annotated.
 
         :param oci.data_labeling_service_dataplane.models.UpdateRecordDetails update_record_details: (required)
             Information to be updated.

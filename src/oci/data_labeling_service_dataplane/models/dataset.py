@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Dataset(object):
     """
-    A dataset is a logical collection of records. The dataset contains all the information necessary to describe a record's source, format, type of annotations allowed on these records, and labels allowed on annotations.
+    A dataset is a logical collection of records. The dataset contains all the information necessary to describe a record's source, format, the type of annotations allowed for the record, and the labels allowed on annotations.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Dataset.
@@ -100,6 +100,10 @@ class Dataset(object):
             The value to assign to the initial_record_generation_configuration property of this Dataset.
         :type initial_record_generation_configuration: oci.data_labeling_service_dataplane.models.InitialRecordGenerationConfiguration
 
+        :param labeling_instructions:
+            The value to assign to the labeling_instructions property of this Dataset.
+        :type labeling_instructions: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Dataset.
         :type freeform_tags: dict(str, str)
@@ -127,6 +131,7 @@ class Dataset(object):
             'dataset_format_details': 'DatasetFormatDetails',
             'label_set': 'LabelSet',
             'initial_record_generation_configuration': 'InitialRecordGenerationConfiguration',
+            'labeling_instructions': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -146,6 +151,7 @@ class Dataset(object):
             'dataset_format_details': 'datasetFormatDetails',
             'label_set': 'labelSet',
             'initial_record_generation_configuration': 'initialRecordGenerationConfiguration',
+            'labeling_instructions': 'labelingInstructions',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -164,6 +170,7 @@ class Dataset(object):
         self._dataset_format_details = None
         self._label_set = None
         self._initial_record_generation_configuration = None
+        self._labeling_instructions = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -172,7 +179,7 @@ class Dataset(object):
     def id(self):
         """
         **[Required]** Gets the id of this Dataset.
-        The OCID of the Dataset.
+        The OCID of the dataset.
 
 
         :return: The id of this Dataset.
@@ -184,7 +191,7 @@ class Dataset(object):
     def id(self, id):
         """
         Sets the id of this Dataset.
-        The OCID of the Dataset.
+        The OCID of the dataset.
 
 
         :param id: The id of this Dataset.
@@ -244,7 +251,7 @@ class Dataset(object):
     def description(self):
         """
         Gets the description of this Dataset.
-        A user provided description of the dataset
+        A user-provided description of the dataset
 
 
         :return: The description of this Dataset.
@@ -256,7 +263,7 @@ class Dataset(object):
     def description(self, description):
         """
         Sets the description of this Dataset.
-        A user provided description of the dataset
+        A user-provided description of the dataset
 
 
         :param description: The description of this Dataset.
@@ -317,10 +324,10 @@ class Dataset(object):
         """
         **[Required]** Gets the lifecycle_state of this Dataset.
         The state of a dataset.
-        CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
+        CREATING - The dataset is being created.  It transitions to ACTIVE when it is ready for labeling.
         ACTIVE   - The dataset is ready for labeling.
-        UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
-        NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
+        UPDATING - The dataset is being updated.  It, and its related resources, might be unavailable for other updates until it returns to ACTIVE.
+        NEEDS_ATTENTION - A dataset updaten operation has failed due to validation or other errors, and needs attention.
         DELETING - The dataset and its related resources are being deleted.
         DELETED  - The dataset has been deleted and is no longer available.
         FAILED   - The dataset has failed due to validation or other errors.
@@ -339,10 +346,10 @@ class Dataset(object):
         """
         Sets the lifecycle_state of this Dataset.
         The state of a dataset.
-        CREATING - The dataset is being created.  It will transition to ACTIVE when it is ready for labeling.
+        CREATING - The dataset is being created.  It transitions to ACTIVE when it is ready for labeling.
         ACTIVE   - The dataset is ready for labeling.
-        UPDATING - The dataset is being updated.  It and its related resources may be unavailable for other updates until it returns to ACTIVE.
-        NEEDS_ATTENTION - A dataset updation operation has failed due to validation or other errors and needs attention.
+        UPDATING - The dataset is being updated.  It, and its related resources, might be unavailable for other updates until it returns to ACTIVE.
+        NEEDS_ATTENTION - A dataset updaten operation has failed due to validation or other errors, and needs attention.
         DELETING - The dataset and its related resources are being deleted.
         DELETED  - The dataset has been deleted and is no longer available.
         FAILED   - The dataset has failed due to validation or other errors.
@@ -485,11 +492,35 @@ class Dataset(object):
         self._initial_record_generation_configuration = initial_record_generation_configuration
 
     @property
+    def labeling_instructions(self):
+        """
+        Gets the labeling_instructions of this Dataset.
+        The labeling instructions for human labelers in rich text format
+
+
+        :return: The labeling_instructions of this Dataset.
+        :rtype: str
+        """
+        return self._labeling_instructions
+
+    @labeling_instructions.setter
+    def labeling_instructions(self, labeling_instructions):
+        """
+        Sets the labeling_instructions of this Dataset.
+        The labeling instructions for human labelers in rich text format
+
+
+        :param labeling_instructions: The labeling_instructions of this Dataset.
+        :type: str
+        """
+        self._labeling_instructions = labeling_instructions
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Dataset.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this Dataset.
@@ -501,8 +532,8 @@ class Dataset(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this Dataset.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this Dataset.
@@ -514,8 +545,8 @@ class Dataset(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this Dataset.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this Dataset.
@@ -527,8 +558,8 @@ class Dataset(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this Dataset.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this Dataset.
@@ -540,8 +571,8 @@ class Dataset(object):
     def system_tags(self):
         """
         Gets the system_tags of this Dataset.
-        Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        The usage of system tag keys. These predefined keys are scoped to namespaces.
+        For example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 
         :return: The system_tags of this Dataset.
@@ -553,8 +584,8 @@ class Dataset(object):
     def system_tags(self, system_tags):
         """
         Sets the system_tags of this Dataset.
-        Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        The usage of system tag keys. These predefined keys are scoped to namespaces.
+        For example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 
         :param system_tags: The system_tags of this Dataset.

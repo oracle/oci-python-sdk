@@ -46,6 +46,10 @@ class CreateVolumeGroupDetails(object):
             The value to assign to the source_details property of this CreateVolumeGroupDetails.
         :type source_details: oci.core.models.VolumeGroupSourceDetails
 
+        :param volume_group_replicas:
+            The value to assign to the volume_group_replicas property of this CreateVolumeGroupDetails.
+        :type volume_group_replicas: list[oci.core.models.VolumeGroupReplicaDetails]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -54,7 +58,8 @@ class CreateVolumeGroupDetails(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'source_details': 'VolumeGroupSourceDetails'
+            'source_details': 'VolumeGroupSourceDetails',
+            'volume_group_replicas': 'list[VolumeGroupReplicaDetails]'
         }
 
         self.attribute_map = {
@@ -64,7 +69,8 @@ class CreateVolumeGroupDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'source_details': 'sourceDetails'
+            'source_details': 'sourceDetails',
+            'volume_group_replicas': 'volumeGroupReplicas'
         }
 
         self._availability_domain = None
@@ -74,6 +80,7 @@ class CreateVolumeGroupDetails(object):
         self._display_name = None
         self._freeform_tags = None
         self._source_details = None
+        self._volume_group_replicas = None
 
     @property
     def availability_domain(self):
@@ -262,6 +269,32 @@ class CreateVolumeGroupDetails(object):
         :type: oci.core.models.VolumeGroupSourceDetails
         """
         self._source_details = source_details
+
+    @property
+    def volume_group_replicas(self):
+        """
+        Gets the volume_group_replicas of this CreateVolumeGroupDetails.
+        The list of volume group replicas that this volume group will be enabled to have
+        in the specified destination availability domains.
+
+
+        :return: The volume_group_replicas of this CreateVolumeGroupDetails.
+        :rtype: list[oci.core.models.VolumeGroupReplicaDetails]
+        """
+        return self._volume_group_replicas
+
+    @volume_group_replicas.setter
+    def volume_group_replicas(self, volume_group_replicas):
+        """
+        Sets the volume_group_replicas of this CreateVolumeGroupDetails.
+        The list of volume group replicas that this volume group will be enabled to have
+        in the specified destination availability domains.
+
+
+        :param volume_group_replicas: The volume_group_replicas of this CreateVolumeGroupDetails.
+        :type: list[oci.core.models.VolumeGroupReplicaDetails]
+        """
+        self._volume_group_replicas = volume_group_replicas
 
     def __repr__(self):
         return formatted_flat_dict(self)

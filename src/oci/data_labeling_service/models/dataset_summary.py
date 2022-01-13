@@ -326,8 +326,8 @@ class DatasetSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this DatasetSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this DatasetSummary.
@@ -339,8 +339,8 @@ class DatasetSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this DatasetSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this DatasetSummary.
@@ -352,8 +352,8 @@ class DatasetSummary(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this DatasetSummary.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this DatasetSummary.
@@ -365,8 +365,8 @@ class DatasetSummary(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this DatasetSummary.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this DatasetSummary.
@@ -378,8 +378,8 @@ class DatasetSummary(object):
     def system_tags(self):
         """
         Gets the system_tags of this DatasetSummary.
-        Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        The usage of system tag keys. These predefined keys are scoped to namespaces.
+        For example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 
         :return: The system_tags of this DatasetSummary.
@@ -391,8 +391,8 @@ class DatasetSummary(object):
     def system_tags(self, system_tags):
         """
         Sets the system_tags of this DatasetSummary.
-        Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        The usage of system tag keys. These predefined keys are scoped to namespaces.
+        For example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 
         :param system_tags: The system_tags of this DatasetSummary.

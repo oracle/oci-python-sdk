@@ -162,6 +162,10 @@ class AutonomousDatabaseDataguardAssociation(object):
             The value to assign to the apply_rate property of this AutonomousDatabaseDataguardAssociation.
         :type apply_rate: str
 
+        :param is_automatic_failover_enabled:
+            The value to assign to the is_automatic_failover_enabled property of this AutonomousDatabaseDataguardAssociation.
+        :type is_automatic_failover_enabled: bool
+
         :param transport_lag:
             The value to assign to the transport_lag property of this AutonomousDatabaseDataguardAssociation.
         :type transport_lag: str
@@ -191,6 +195,7 @@ class AutonomousDatabaseDataguardAssociation(object):
             'protection_mode': 'str',
             'apply_lag': 'str',
             'apply_rate': 'str',
+            'is_automatic_failover_enabled': 'bool',
             'transport_lag': 'str',
             'time_last_synced': 'datetime',
             'time_created': 'datetime',
@@ -209,6 +214,7 @@ class AutonomousDatabaseDataguardAssociation(object):
             'protection_mode': 'protectionMode',
             'apply_lag': 'applyLag',
             'apply_rate': 'applyRate',
+            'is_automatic_failover_enabled': 'isAutomaticFailoverEnabled',
             'transport_lag': 'transportLag',
             'time_last_synced': 'timeLastSynced',
             'time_created': 'timeCreated',
@@ -226,6 +232,7 @@ class AutonomousDatabaseDataguardAssociation(object):
         self._protection_mode = None
         self._apply_lag = None
         self._apply_rate = None
+        self._is_automatic_failover_enabled = None
         self._transport_lag = None
         self._time_last_synced = None
         self._time_created = None
@@ -550,6 +557,30 @@ class AutonomousDatabaseDataguardAssociation(object):
         :type: str
         """
         self._apply_rate = apply_rate
+
+    @property
+    def is_automatic_failover_enabled(self):
+        """
+        Gets the is_automatic_failover_enabled of this AutonomousDatabaseDataguardAssociation.
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+
+
+        :return: The is_automatic_failover_enabled of this AutonomousDatabaseDataguardAssociation.
+        :rtype: bool
+        """
+        return self._is_automatic_failover_enabled
+
+    @is_automatic_failover_enabled.setter
+    def is_automatic_failover_enabled(self, is_automatic_failover_enabled):
+        """
+        Sets the is_automatic_failover_enabled of this AutonomousDatabaseDataguardAssociation.
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+
+
+        :param is_automatic_failover_enabled: The is_automatic_failover_enabled of this AutonomousDatabaseDataguardAssociation.
+        :type: bool
+        """
+        self._is_automatic_failover_enabled = is_automatic_failover_enabled
 
     @property
     def transport_lag(self):

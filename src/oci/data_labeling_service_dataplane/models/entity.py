@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Entity(object):
     """
-    An entity allows the labeler to identify an object in the record to label.  This can be a snippet of text, an entire image, a bounding box within an image, or, eventually, a custom format that works for them.  All entity types will have an array of labels that we'll index. If more than one label is provided, but the annotationType on the corresponding Dataset is for single class, the API will reject the create annotation request.
+    An entity allows the labeler to identify an object in the record to label.  This can be, for example, a snippet of text, an entire image, or a bounding box within an image.  All entity types have an array of labels that are indexed. If more than one label is provided, but the annotationType on the corresponding dataset is for a single class, the API rejects the create annotation request.
     """
 
     #: A constant which can be used with the entity_type property of a Entity.
@@ -76,10 +76,10 @@ class Entity(object):
     def entity_type(self):
         """
         **[Required]** Gets the entity_type of this Entity.
-        The entity type described in the annotation
+        The entity type described in the annotation.
         GENERIC  - An extensible entity type that is the base entity type for some annotation formats.
         IMAGEOBJECTSELECTION- - This allows the labeler to use specify a bounding polygon on the image to represent an object and apply labels to it.
-        TEXTSELECTION - This allows the labeler to highlight text by specifying an offset and a length and apply labels to it.
+        TEXTSELECTION - This allows the labeler to highlight text, by specifying an offset and a length, and apply labels to it.
 
         Allowed values for this property are: "GENERIC", "IMAGEOBJECTSELECTION", "TEXTSELECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -94,10 +94,10 @@ class Entity(object):
     def entity_type(self, entity_type):
         """
         Sets the entity_type of this Entity.
-        The entity type described in the annotation
+        The entity type described in the annotation.
         GENERIC  - An extensible entity type that is the base entity type for some annotation formats.
         IMAGEOBJECTSELECTION- - This allows the labeler to use specify a bounding polygon on the image to represent an object and apply labels to it.
-        TEXTSELECTION - This allows the labeler to highlight text by specifying an offset and a length and apply labels to it.
+        TEXTSELECTION - This allows the labeler to highlight text, by specifying an offset and a length, and apply labels to it.
 
 
         :param entity_type: The entity_type of this Entity.

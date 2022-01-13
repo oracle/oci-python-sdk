@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateRecordDetails(object):
     """
-    Assuming we support tags, tags are supposed to be updatable.
+    The details of the tags that is updated.
     """
 
     def __init__(self, **kwargs):
@@ -26,26 +26,33 @@ class UpdateRecordDetails(object):
             The value to assign to the defined_tags property of this UpdateRecordDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param record_metadata:
+            The value to assign to the record_metadata property of this UpdateRecordDetails.
+        :type record_metadata: oci.data_labeling_service_dataplane.models.RecordMetadata
+
         """
         self.swagger_types = {
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'record_metadata': 'RecordMetadata'
         }
 
         self.attribute_map = {
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'record_metadata': 'recordMetadata'
         }
 
         self._freeform_tags = None
         self._defined_tags = None
+        self._record_metadata = None
 
     @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateRecordDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this UpdateRecordDetails.
@@ -57,8 +64,8 @@ class UpdateRecordDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateRecordDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this UpdateRecordDetails.
@@ -70,8 +77,8 @@ class UpdateRecordDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this UpdateRecordDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this UpdateRecordDetails.
@@ -83,14 +90,34 @@ class UpdateRecordDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this UpdateRecordDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this UpdateRecordDetails.
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def record_metadata(self):
+        """
+        Gets the record_metadata of this UpdateRecordDetails.
+
+        :return: The record_metadata of this UpdateRecordDetails.
+        :rtype: oci.data_labeling_service_dataplane.models.RecordMetadata
+        """
+        return self._record_metadata
+
+    @record_metadata.setter
+    def record_metadata(self, record_metadata):
+        """
+        Sets the record_metadata of this UpdateRecordDetails.
+
+        :param record_metadata: The record_metadata of this UpdateRecordDetails.
+        :type: oci.data_labeling_service_dataplane.models.RecordMetadata
+        """
+        self._record_metadata = record_metadata
 
     def __repr__(self):
         return formatted_flat_dict(self)

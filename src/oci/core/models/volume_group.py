@@ -98,6 +98,10 @@ class VolumeGroup(object):
             The value to assign to the is_hydrated property of this VolumeGroup.
         :type is_hydrated: bool
 
+        :param volume_group_replicas:
+            The value to assign to the volume_group_replicas property of this VolumeGroup.
+        :type volume_group_replicas: list[oci.core.models.VolumeGroupReplicaInfo]
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -112,7 +116,8 @@ class VolumeGroup(object):
             'source_details': 'VolumeGroupSourceDetails',
             'time_created': 'datetime',
             'volume_ids': 'list[str]',
-            'is_hydrated': 'bool'
+            'is_hydrated': 'bool',
+            'volume_group_replicas': 'list[VolumeGroupReplicaInfo]'
         }
 
         self.attribute_map = {
@@ -128,7 +133,8 @@ class VolumeGroup(object):
             'source_details': 'sourceDetails',
             'time_created': 'timeCreated',
             'volume_ids': 'volumeIds',
-            'is_hydrated': 'isHydrated'
+            'is_hydrated': 'isHydrated',
+            'volume_group_replicas': 'volumeGroupReplicas'
         }
 
         self._availability_domain = None
@@ -144,6 +150,7 @@ class VolumeGroup(object):
         self._time_created = None
         self._volume_ids = None
         self._is_hydrated = None
+        self._volume_group_replicas = None
 
     @property
     def availability_domain(self):
@@ -486,6 +493,30 @@ class VolumeGroup(object):
         :type: bool
         """
         self._is_hydrated = is_hydrated
+
+    @property
+    def volume_group_replicas(self):
+        """
+        Gets the volume_group_replicas of this VolumeGroup.
+        The list of volume group replicas of this volume group.
+
+
+        :return: The volume_group_replicas of this VolumeGroup.
+        :rtype: list[oci.core.models.VolumeGroupReplicaInfo]
+        """
+        return self._volume_group_replicas
+
+    @volume_group_replicas.setter
+    def volume_group_replicas(self, volume_group_replicas):
+        """
+        Sets the volume_group_replicas of this VolumeGroup.
+        The list of volume group replicas of this volume group.
+
+
+        :param volume_group_replicas: The volume_group_replicas of this VolumeGroup.
+        :type: list[oci.core.models.VolumeGroupReplicaInfo]
+        """
+        self._volume_group_replicas = volume_group_replicas
 
     def __repr__(self):
         return formatted_flat_dict(self)

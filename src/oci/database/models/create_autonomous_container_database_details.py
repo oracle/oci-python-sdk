@@ -72,6 +72,10 @@ class CreateAutonomousContainerDatabaseDetails(object):
             Allowed values for this property are: "MAXIMUM_AVAILABILITY", "MAXIMUM_PERFORMANCE"
         :type protection_mode: str
 
+        :param is_automatic_failover_enabled:
+            The value to assign to the is_automatic_failover_enabled property of this CreateAutonomousContainerDatabaseDetails.
+        :type is_automatic_failover_enabled: bool
+
         :param peer_cloud_autonomous_vm_cluster_id:
             The value to assign to the peer_cloud_autonomous_vm_cluster_id property of this CreateAutonomousContainerDatabaseDetails.
         :type peer_cloud_autonomous_vm_cluster_id: str
@@ -154,6 +158,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'peer_autonomous_exadata_infrastructure_id': 'str',
             'peer_autonomous_container_database_display_name': 'str',
             'protection_mode': 'str',
+            'is_automatic_failover_enabled': 'bool',
             'peer_cloud_autonomous_vm_cluster_id': 'str',
             'peer_autonomous_vm_cluster_id': 'str',
             'peer_autonomous_container_database_compartment_id': 'str',
@@ -182,6 +187,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
             'peer_autonomous_exadata_infrastructure_id': 'peerAutonomousExadataInfrastructureId',
             'peer_autonomous_container_database_display_name': 'peerAutonomousContainerDatabaseDisplayName',
             'protection_mode': 'protectionMode',
+            'is_automatic_failover_enabled': 'isAutomaticFailoverEnabled',
             'peer_cloud_autonomous_vm_cluster_id': 'peerCloudAutonomousVmClusterId',
             'peer_autonomous_vm_cluster_id': 'peerAutonomousVmClusterId',
             'peer_autonomous_container_database_compartment_id': 'peerAutonomousContainerDatabaseCompartmentId',
@@ -209,6 +215,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
         self._peer_autonomous_exadata_infrastructure_id = None
         self._peer_autonomous_container_database_display_name = None
         self._protection_mode = None
+        self._is_automatic_failover_enabled = None
         self._peer_cloud_autonomous_vm_cluster_id = None
         self._peer_autonomous_vm_cluster_id = None
         self._peer_autonomous_container_database_compartment_id = None
@@ -419,6 +426,30 @@ class CreateAutonomousContainerDatabaseDetails(object):
                 .format(allowed_values)
             )
         self._protection_mode = protection_mode
+
+    @property
+    def is_automatic_failover_enabled(self):
+        """
+        Gets the is_automatic_failover_enabled of this CreateAutonomousContainerDatabaseDetails.
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+
+
+        :return: The is_automatic_failover_enabled of this CreateAutonomousContainerDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_automatic_failover_enabled
+
+    @is_automatic_failover_enabled.setter
+    def is_automatic_failover_enabled(self, is_automatic_failover_enabled):
+        """
+        Sets the is_automatic_failover_enabled of this CreateAutonomousContainerDatabaseDetails.
+        Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
+
+
+        :param is_automatic_failover_enabled: The is_automatic_failover_enabled of this CreateAutonomousContainerDatabaseDetails.
+        :type: bool
+        """
+        self._is_automatic_failover_enabled = is_automatic_failover_enabled
 
     @property
     def peer_cloud_autonomous_vm_cluster_id(self):

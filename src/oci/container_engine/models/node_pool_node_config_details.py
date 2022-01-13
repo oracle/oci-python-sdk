@@ -26,6 +26,14 @@ class NodePoolNodeConfigDetails(object):
             The value to assign to the nsg_ids property of this NodePoolNodeConfigDetails.
         :type nsg_ids: list[str]
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this NodePoolNodeConfigDetails.
+        :type kms_key_id: str
+
+        :param is_pv_encryption_in_transit_enabled:
+            The value to assign to the is_pv_encryption_in_transit_enabled property of this NodePoolNodeConfigDetails.
+        :type is_pv_encryption_in_transit_enabled: bool
+
         :param placement_configs:
             The value to assign to the placement_configs property of this NodePoolNodeConfigDetails.
         :type placement_configs: list[oci.container_engine.models.NodePoolPlacementConfigDetails]
@@ -34,17 +42,23 @@ class NodePoolNodeConfigDetails(object):
         self.swagger_types = {
             'size': 'int',
             'nsg_ids': 'list[str]',
+            'kms_key_id': 'str',
+            'is_pv_encryption_in_transit_enabled': 'bool',
             'placement_configs': 'list[NodePoolPlacementConfigDetails]'
         }
 
         self.attribute_map = {
             'size': 'size',
             'nsg_ids': 'nsgIds',
+            'kms_key_id': 'kmsKeyId',
+            'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
             'placement_configs': 'placementConfigs'
         }
 
         self._size = None
         self._nsg_ids = None
+        self._kms_key_id = None
+        self._is_pv_encryption_in_transit_enabled = None
         self._placement_configs = None
 
     @property
@@ -94,6 +108,54 @@ class NodePoolNodeConfigDetails(object):
         :type: list[str]
         """
         self._nsg_ids = nsg_ids
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this NodePoolNodeConfigDetails.
+        The OCID of the Key Management Service key assigned to the boot volume.
+
+
+        :return: The kms_key_id of this NodePoolNodeConfigDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this NodePoolNodeConfigDetails.
+        The OCID of the Key Management Service key assigned to the boot volume.
+
+
+        :param kms_key_id: The kms_key_id of this NodePoolNodeConfigDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
+
+    @property
+    def is_pv_encryption_in_transit_enabled(self):
+        """
+        Gets the is_pv_encryption_in_transit_enabled of this NodePoolNodeConfigDetails.
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
+
+
+        :return: The is_pv_encryption_in_transit_enabled of this NodePoolNodeConfigDetails.
+        :rtype: bool
+        """
+        return self._is_pv_encryption_in_transit_enabled
+
+    @is_pv_encryption_in_transit_enabled.setter
+    def is_pv_encryption_in_transit_enabled(self, is_pv_encryption_in_transit_enabled):
+        """
+        Sets the is_pv_encryption_in_transit_enabled of this NodePoolNodeConfigDetails.
+        Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
+
+
+        :param is_pv_encryption_in_transit_enabled: The is_pv_encryption_in_transit_enabled of this NodePoolNodeConfigDetails.
+        :type: bool
+        """
+        self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
 
     @property
     def placement_configs(self):

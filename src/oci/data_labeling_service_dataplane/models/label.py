@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Label(object):
     """
-    A label is a string value.  The API will validate that it's one of the dataset's pre-defined labels. In the future, we'll be able to support a confidence score.
+    A label is a string value.  The API validates that it's one of the dataset's pre-defined labels.
     """
 
     def __init__(self, **kwargs):

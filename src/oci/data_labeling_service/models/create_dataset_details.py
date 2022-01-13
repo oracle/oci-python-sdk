@@ -50,6 +50,10 @@ class CreateDatasetDetails(object):
             The value to assign to the label_set property of this CreateDatasetDetails.
         :type label_set: oci.data_labeling_service.models.LabelSet
 
+        :param labeling_instructions:
+            The value to assign to the labeling_instructions property of this CreateDatasetDetails.
+        :type labeling_instructions: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateDatasetDetails.
         :type freeform_tags: dict(str, str)
@@ -68,6 +72,7 @@ class CreateDatasetDetails(object):
             'dataset_format_details': 'DatasetFormatDetails',
             'initial_record_generation_configuration': 'InitialRecordGenerationConfiguration',
             'label_set': 'LabelSet',
+            'labeling_instructions': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -81,6 +86,7 @@ class CreateDatasetDetails(object):
             'dataset_format_details': 'datasetFormatDetails',
             'initial_record_generation_configuration': 'initialRecordGenerationConfiguration',
             'label_set': 'labelSet',
+            'labeling_instructions': 'labelingInstructions',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -93,6 +99,7 @@ class CreateDatasetDetails(object):
         self._dataset_format_details = None
         self._initial_record_generation_configuration = None
         self._label_set = None
+        self._labeling_instructions = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -273,11 +280,35 @@ class CreateDatasetDetails(object):
         self._label_set = label_set
 
     @property
+    def labeling_instructions(self):
+        """
+        Gets the labeling_instructions of this CreateDatasetDetails.
+        The labeling instructions for human labelers in rich text format
+
+
+        :return: The labeling_instructions of this CreateDatasetDetails.
+        :rtype: str
+        """
+        return self._labeling_instructions
+
+    @labeling_instructions.setter
+    def labeling_instructions(self, labeling_instructions):
+        """
+        Sets the labeling_instructions of this CreateDatasetDetails.
+        The labeling instructions for human labelers in rich text format
+
+
+        :param labeling_instructions: The labeling_instructions of this CreateDatasetDetails.
+        :type: str
+        """
+        self._labeling_instructions = labeling_instructions
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateDatasetDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this CreateDatasetDetails.
@@ -289,8 +320,8 @@ class CreateDatasetDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateDatasetDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this CreateDatasetDetails.
@@ -302,8 +333,8 @@ class CreateDatasetDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this CreateDatasetDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this CreateDatasetDetails.
@@ -315,8 +346,8 @@ class CreateDatasetDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this CreateDatasetDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this CreateDatasetDetails.

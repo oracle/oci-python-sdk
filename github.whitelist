@@ -135,3 +135,4 @@
 ^src/oci/appmgmt_control/.*\.py$
 ^src/oci/osp_gateway/.*\.py$
 ^src/oci/identity_data_plane/.*\.py$
+^src/oci/visual_builder/.*\.py$

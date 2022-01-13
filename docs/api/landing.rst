@@ -134,6 +134,7 @@ API Reference
 * :doc:`Rewards <usage/client/oci.usage.RewardsClient>`
 * :doc:`Usageapi <usage_api/client/oci.usage_api.UsageapiClient>`
 * :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
+* :doc:`Vb Instance <visual_builder/client/oci.visual_builder.VbInstanceClient>`
 * :doc:`Vulnerability Scanning <vulnerability_scanning/client/oci.vulnerability_scanning.VulnerabilityScanningClient>`
 * :doc:`Redirect <waas/client/oci.waas.RedirectClient>`
 * :doc:`Waas <waas/client/oci.waas.WaasClient>`
@@ -244,6 +245,7 @@ API Reference
     usage
     usage_api
     vault
+    visual_builder
     vulnerability_scanning
     waas
     waf

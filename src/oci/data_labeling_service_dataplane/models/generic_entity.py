@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GenericEntity(Entity):
     """
-    This is an extensible entity type for users and the base entity type for some annotation formats
+    This is an extensible entity type for users, and the base entity type for some annotation formats.
     """
 
     def __init__(self, **kwargs):
@@ -54,7 +54,7 @@ class GenericEntity(Entity):
     def labels(self):
         """
         **[Required]** Gets the labels of this GenericEntity.
-        collection of Label entities
+        A collection of label entities.
 
 
         :return: The labels of this GenericEntity.
@@ -66,7 +66,7 @@ class GenericEntity(Entity):
     def labels(self, labels):
         """
         Sets the labels of this GenericEntity.
-        collection of Label entities
+        A collection of label entities.
 
 
         :param labels: The labels of this GenericEntity.
@@ -78,8 +78,8 @@ class GenericEntity(Entity):
     def extended_metadata(self):
         """
         Gets the extended_metadata of this GenericEntity.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The extended_metadata of this GenericEntity.
@@ -91,8 +91,8 @@ class GenericEntity(Entity):
     def extended_metadata(self, extended_metadata):
         """
         Sets the extended_metadata of this GenericEntity.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param extended_metadata: The extended_metadata of this GenericEntity.

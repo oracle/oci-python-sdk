@@ -338,6 +338,7 @@ Core Services
     oci.core.models.MeasuredBootEntry
     oci.core.models.MeasuredBootReport
     oci.core.models.MeasuredBootReportMeasurements
+    oci.core.models.MemberReplica
     oci.core.models.ModifyVcnCidrDetails
     oci.core.models.MultipathDevice
     oci.core.models.NatGateway
@@ -490,9 +491,13 @@ Core Services
     oci.core.models.VolumeBackupSchedule
     oci.core.models.VolumeGroup
     oci.core.models.VolumeGroupBackup
+    oci.core.models.VolumeGroupReplica
+    oci.core.models.VolumeGroupReplicaDetails
+    oci.core.models.VolumeGroupReplicaInfo
     oci.core.models.VolumeGroupSourceDetails
     oci.core.models.VolumeGroupSourceFromVolumeGroupBackupDetails
     oci.core.models.VolumeGroupSourceFromVolumeGroupDetails
+    oci.core.models.VolumeGroupSourceFromVolumeGroupReplicaDetails
     oci.core.models.VolumeGroupSourceFromVolumesDetails
     oci.core.models.VolumeKmsKey
     oci.core.models.VolumeSourceDetails

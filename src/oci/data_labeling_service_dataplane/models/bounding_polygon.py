@@ -37,7 +37,7 @@ class BoundingPolygon(object):
     def normalized_vertices(self):
         """
         **[Required]** Gets the normalized_vertices of this BoundingPolygon.
-        The normalized vertices that make up the polygon.  They are in order of the segments that they connect.
+        The normalized vertices that make up the polygon.  They are in the order of the segments they connect.
 
 
         :return: The normalized_vertices of this BoundingPolygon.
@@ -49,7 +49,7 @@ class BoundingPolygon(object):
     def normalized_vertices(self, normalized_vertices):
         """
         Sets the normalized_vertices of this BoundingPolygon.
-        The normalized vertices that make up the polygon.  They are in order of the segments that they connect.
+        The normalized vertices that make up the polygon.  They are in the order of the segments they connect.
 
 
         :param normalized_vertices: The normalized_vertices of this BoundingPolygon.

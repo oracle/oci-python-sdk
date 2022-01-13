@@ -233,6 +233,7 @@ from .scheduled_operation_details import ScheduledOperationDetails
 from .self_mount_details import SelfMountDetails
 from .switchover_data_guard_association_details import SwitchoverDataGuardAssociationDetails
 from .update import Update
+from .update_autonomous_container_database_data_guard_association_details import UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
 from .update_autonomous_container_database_details import UpdateAutonomousContainerDatabaseDetails
 from .update_autonomous_database_details import UpdateAutonomousDatabaseDetails
 from .update_autonomous_database_wallet_details import UpdateAutonomousDatabaseWalletDetails
@@ -508,6 +509,7 @@ database_type_mapping = {
     "SelfMountDetails": SelfMountDetails,
     "SwitchoverDataGuardAssociationDetails": SwitchoverDataGuardAssociationDetails,
     "Update": Update,
+    "UpdateAutonomousContainerDatabaseDataGuardAssociationDetails": UpdateAutonomousContainerDatabaseDataGuardAssociationDetails,
     "UpdateAutonomousContainerDatabaseDetails": UpdateAutonomousContainerDatabaseDetails,
     "UpdateAutonomousDatabaseDetails": UpdateAutonomousDatabaseDetails,
     "UpdateAutonomousDatabaseWalletDetails": UpdateAutonomousDatabaseWalletDetails,
