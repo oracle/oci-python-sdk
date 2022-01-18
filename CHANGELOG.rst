@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.54.1 - 2022-01-18
+====================
+
+Added
+------
+* Support for calling Oracle Cloud Infrastructure services in the me-dcc-muscat-1 region
+* Support for the Visual Builder service
+* Support for cross-region replication of volume groups in the Block Storage service
+* Support for boot volume encryption in the Container Engine for Kubernetes service
+* Support for adding metadata to records when creating and updating records in the Data Labeling service
+* Support for global export formats in snapshot datasets in the Data Labeling service
+* Support for adding labeling instructions to datasets in the Data Labeling service
+* Support for updating autonomous dataguard associations for autonomous container databases in the Database service
+* Support for setting up automatic failover when creating autonomous container databases in the Database service
+* Support for setting the RECO storage size when updating a database system in the Database service
+* Support for reconnecting refreshable clones to source for autonomous databases on shared infrastructure in the Database service
+* Support for checking if an autonomous database on shared infrastructure can be reconnected to source, in the Database service
+
+====================
 2.54.0 - 2022-01-11
 ====================
 

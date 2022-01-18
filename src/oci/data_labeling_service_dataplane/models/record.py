@@ -68,6 +68,10 @@ class Record(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param record_metadata:
+            The value to assign to the record_metadata property of this Record.
+        :type record_metadata: oci.data_labeling_service_dataplane.models.RecordMetadata
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this Record.
         :type freeform_tags: dict(str, str)
@@ -87,6 +91,7 @@ class Record(object):
             'source_details': 'SourceDetails',
             'is_labeled': 'bool',
             'lifecycle_state': 'str',
+            'record_metadata': 'RecordMetadata',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -101,6 +106,7 @@ class Record(object):
             'source_details': 'sourceDetails',
             'is_labeled': 'isLabeled',
             'lifecycle_state': 'lifecycleState',
+            'record_metadata': 'recordMetadata',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -114,6 +120,7 @@ class Record(object):
         self._source_details = None
         self._is_labeled = None
         self._lifecycle_state = None
+        self._record_metadata = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -121,7 +128,7 @@ class Record(object):
     def id(self):
         """
         **[Required]** Gets the id of this Record.
-        The OCID of the record
+        The OCID of the record.
 
 
         :return: The id of this Record.
@@ -133,7 +140,7 @@ class Record(object):
     def id(self, id):
         """
         Sets the id of this Record.
-        The OCID of the record
+        The OCID of the record.
 
 
         :param id: The id of this Record.
@@ -145,7 +152,7 @@ class Record(object):
     def name(self):
         """
         **[Required]** Gets the name of this Record.
-        This will be created by Customer. It will be unique and immutable.
+        The name is created by the user. It is unique and immutable.
 
 
         :return: The name of this Record.
@@ -157,7 +164,7 @@ class Record(object):
     def name(self, name):
         """
         Sets the name of this Record.
-        This will be created by Customer. It will be unique and immutable.
+        The name is created by the user. It is unique and immutable.
 
 
         :param name: The name of this Record.
@@ -217,7 +224,7 @@ class Record(object):
     def dataset_id(self):
         """
         **[Required]** Gets the dataset_id of this Record.
-        The OCID of the dataset to associate the record with
+        The OCID of the dataset to associate the record with.
 
 
         :return: The dataset_id of this Record.
@@ -229,7 +236,7 @@ class Record(object):
     def dataset_id(self, dataset_id):
         """
         Sets the dataset_id of this Record.
-        The OCID of the dataset to associate the record with
+        The OCID of the dataset to associate the record with.
 
 
         :param dataset_id: The dataset_id of this Record.
@@ -285,7 +292,7 @@ class Record(object):
     def is_labeled(self):
         """
         **[Required]** Gets the is_labeled of this Record.
-        Whether the record has been labeled and has associated annotations.
+        Whether or not the record has been labeled and has associated annotations.
 
 
         :return: The is_labeled of this Record.
@@ -297,7 +304,7 @@ class Record(object):
     def is_labeled(self, is_labeled):
         """
         Sets the is_labeled of this Record.
-        Whether the record has been labeled and has associated annotations.
+        Whether or not the record has been labeled and has associated annotations.
 
 
         :param is_labeled: The is_labeled of this Record.
@@ -309,10 +316,10 @@ class Record(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Record.
-        Lifecycle state of the Record.
-        ACTIVE - Record is active and ready for labeling.
-        INACTIVE - Record has been marked as inactive and should not be used for labeling.
-        DELETED - Record has been deleted and no longer available for labeling.
+        The lifecycle state of the record.
+        ACTIVE - The record is active and ready for labeling.
+        INACTIVE - The record has been marked as inactive and should not be used for labeling.
+        DELETED - The record has been deleted and is no longer available for labeling.
 
         Allowed values for this property are: "ACTIVE", "INACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -327,10 +334,10 @@ class Record(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Record.
-        Lifecycle state of the Record.
-        ACTIVE - Record is active and ready for labeling.
-        INACTIVE - Record has been marked as inactive and should not be used for labeling.
-        DELETED - Record has been deleted and no longer available for labeling.
+        The lifecycle state of the record.
+        ACTIVE - The record is active and ready for labeling.
+        INACTIVE - The record has been marked as inactive and should not be used for labeling.
+        DELETED - The record has been deleted and is no longer available for labeling.
 
 
         :param lifecycle_state: The lifecycle_state of this Record.
@@ -342,11 +349,31 @@ class Record(object):
         self._lifecycle_state = lifecycle_state
 
     @property
+    def record_metadata(self):
+        """
+        Gets the record_metadata of this Record.
+
+        :return: The record_metadata of this Record.
+        :rtype: oci.data_labeling_service_dataplane.models.RecordMetadata
+        """
+        return self._record_metadata
+
+    @record_metadata.setter
+    def record_metadata(self, record_metadata):
+        """
+        Sets the record_metadata of this Record.
+
+        :param record_metadata: The record_metadata of this Record.
+        :type: oci.data_labeling_service_dataplane.models.RecordMetadata
+        """
+        self._record_metadata = record_metadata
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Record.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this Record.
@@ -358,8 +385,8 @@ class Record(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this Record.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this Record.
@@ -371,8 +398,8 @@ class Record(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this Record.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this Record.
@@ -384,8 +411,8 @@ class Record(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this Record.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this Record.

@@ -140,7 +140,7 @@ class ObjectStorageSourceDetails(SourceDetails):
     def length(self):
         """
         Gets the length of this ObjectStorageSourceDetails.
-        The length from offset into the file containing the content.
+        The length from the offset into the file containing the content.
 
 
         :return: The length of this ObjectStorageSourceDetails.
@@ -152,7 +152,7 @@ class ObjectStorageSourceDetails(SourceDetails):
     def length(self, length):
         """
         Sets the length of this ObjectStorageSourceDetails.
-        The length from offset into the file containing the content.
+        The length from the offset into the file containing the content.
 
 
         :param length: The length of this ObjectStorageSourceDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SourceDetails(object):
     """
-    The source information is a polymorphic entity. It captures the details of data used for record creation. The discriminator type must match the dataset's source type. The convention will be enforced by the API.
+    The source information is a polymorphic entity. It captures the details of data used for record creation. The discriminator type must match the dataset's source type. The convention is enforced by the API.
     """
 
     #: A constant which can be used with the source_type property of a SourceDetails.
@@ -61,7 +61,7 @@ class SourceDetails(object):
         """
         **[Required]** Gets the source_type of this SourceDetails.
         The type of data source.
-        OBJECT_STORAGE - source details for an object storage bucket.
+        OBJECT_STORAGE - The source details for an object storage bucket.
 
         Allowed values for this property are: "OBJECT_STORAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -77,7 +77,7 @@ class SourceDetails(object):
         """
         Sets the source_type of this SourceDetails.
         The type of data source.
-        OBJECT_STORAGE - source details for an object storage bucket.
+        OBJECT_STORAGE - The source details for an object storage bucket.
 
 
         :param source_type: The source_type of this SourceDetails.

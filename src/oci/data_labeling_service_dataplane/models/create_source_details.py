@@ -60,7 +60,7 @@ class CreateSourceDetails(object):
         """
         **[Required]** Gets the source_type of this CreateSourceDetails.
         The type of data source.
-        OBJECT_STORAGE - source details for an object storage bucket.
+        OBJECT_STORAGE - The source details for an object storage bucket.
 
         Allowed values for this property are: "OBJECT_STORAGE"
 
@@ -75,7 +75,7 @@ class CreateSourceDetails(object):
         """
         Sets the source_type of this CreateSourceDetails.
         The type of data source.
-        OBJECT_STORAGE - source details for an object storage bucket.
+        OBJECT_STORAGE - The source details for an object storage bucket.
 
 
         :param source_type: The source_type of this CreateSourceDetails.

@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class DataLabelingManagementClient(object):
     """
-    A description of the DataLabelingService API
+    Use Data Labeling Management API to create, list, edit & delete datasets.
     """
 
     def __init__(self, config, **kwargs):

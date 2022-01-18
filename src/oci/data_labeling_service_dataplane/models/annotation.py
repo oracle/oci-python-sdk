@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Annotation(object):
     """
-    An Annotation represents a user/machine generated annotation for a given record.  The details of the annotation are captured in the RecordAnnotationDetails.
+    An annotation represents a user- or machine-generated annotation for a given record.  The details of the annotation are captured in the RecordAnnotationDetails.
     """
 
     #: A constant which can be used with the lifecycle_state property of a Annotation.
@@ -121,7 +121,7 @@ class Annotation(object):
     def id(self):
         """
         **[Required]** Gets the id of this Annotation.
-        The OCID of the annotation
+        The OCID of the annotation.
 
 
         :return: The id of this Annotation.
@@ -133,7 +133,7 @@ class Annotation(object):
     def id(self, id):
         """
         Sets the id of this Annotation.
-        The OCID of the annotation
+        The OCID of the annotation.
 
 
         :param id: The id of this Annotation.
@@ -193,7 +193,7 @@ class Annotation(object):
     def created_by(self):
         """
         **[Required]** Gets the created_by of this Annotation.
-        The OCID of the principal who created the annotation
+        The OCID of the principal which created the annotation.
 
 
         :return: The created_by of this Annotation.
@@ -205,7 +205,7 @@ class Annotation(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this Annotation.
-        The OCID of the principal who created the annotation
+        The OCID of the principal which created the annotation.
 
 
         :param created_by: The created_by of this Annotation.
@@ -217,7 +217,7 @@ class Annotation(object):
     def updated_by(self):
         """
         **[Required]** Gets the updated_by of this Annotation.
-        The OCID of the principal who updated the annotation
+        The OCID of the principal which updated the annotation.
 
 
         :return: The updated_by of this Annotation.
@@ -229,7 +229,7 @@ class Annotation(object):
     def updated_by(self, updated_by):
         """
         Sets the updated_by of this Annotation.
-        The OCID of the principal who updated the annotation
+        The OCID of the principal which updated the annotation.
 
 
         :param updated_by: The updated_by of this Annotation.
@@ -241,7 +241,7 @@ class Annotation(object):
     def record_id(self):
         """
         **[Required]** Gets the record_id of this Annotation.
-        The OCID of the record annotated
+        The OCID of the record annotated.
 
 
         :return: The record_id of this Annotation.
@@ -253,7 +253,7 @@ class Annotation(object):
     def record_id(self, record_id):
         """
         Sets the record_id of this Annotation.
-        The OCID of the record annotated
+        The OCID of the record annotated.
 
 
         :param record_id: The record_id of this Annotation.
@@ -265,7 +265,7 @@ class Annotation(object):
     def entities(self):
         """
         **[Required]** Gets the entities of this Annotation.
-        The entity types will be validated against the dataset to ensure consistency.
+        The entity types are validated against the dataset to ensure consistency.
 
 
         :return: The entities of this Annotation.
@@ -277,7 +277,7 @@ class Annotation(object):
     def entities(self, entities):
         """
         Sets the entities of this Annotation.
-        The entity types will be validated against the dataset to ensure consistency.
+        The entity types are validated against the dataset to ensure consistency.
 
 
         :param entities: The entities of this Annotation.
@@ -313,10 +313,10 @@ class Annotation(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Annotation.
-        Lifecycle State of an Annotation.
-        ACTIVE - Annotation is active to be used for labeling.
-        INACTIVE - Annotation has been marked as inactive and should not be used for labeling.
-        DELETED - Annotation been deleted and no longer available for labeling.
+        The lifecycle state of an annotation.
+        ACTIVE - The annotation is active to be used for labeling.
+        INACTIVE - The annotation has been marked as inactive and should not be used for labeling.
+        DELETED - Tha annotation been deleted and no longer available for labeling.
 
         Allowed values for this property are: "ACTIVE", "INACTIVE", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -331,10 +331,10 @@ class Annotation(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Annotation.
-        Lifecycle State of an Annotation.
-        ACTIVE - Annotation is active to be used for labeling.
-        INACTIVE - Annotation has been marked as inactive and should not be used for labeling.
-        DELETED - Annotation been deleted and no longer available for labeling.
+        The lifecycle state of an annotation.
+        ACTIVE - The annotation is active to be used for labeling.
+        INACTIVE - The annotation has been marked as inactive and should not be used for labeling.
+        DELETED - Tha annotation been deleted and no longer available for labeling.
 
 
         :param lifecycle_state: The lifecycle_state of this Annotation.
@@ -349,8 +349,8 @@ class Annotation(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Annotation.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this Annotation.
@@ -362,8 +362,8 @@ class Annotation(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this Annotation.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this Annotation.
@@ -375,8 +375,8 @@ class Annotation(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this Annotation.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this Annotation.
@@ -388,8 +388,8 @@ class Annotation(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this Annotation.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this Annotation.

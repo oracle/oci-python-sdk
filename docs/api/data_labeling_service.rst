@@ -30,6 +30,7 @@ Data Labeling Service
     oci.data_labeling_service.models.DatasetSourceDetails
     oci.data_labeling_service.models.DatasetSummary
     oci.data_labeling_service.models.DocumentDatasetFormatDetails
+    oci.data_labeling_service.models.ExportFormat
     oci.data_labeling_service.models.GenerateDatasetRecordsDetails
     oci.data_labeling_service.models.ImageDatasetFormatDetails
     oci.data_labeling_service.models.InitialRecordGenerationConfiguration

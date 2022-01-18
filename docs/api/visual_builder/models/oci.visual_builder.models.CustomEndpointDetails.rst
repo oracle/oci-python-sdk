@@ -1,0 +1,11 @@
+CustomEndpointDetails
+=====================
+
+.. currentmodule:: oci.visual_builder.models
+
+.. autoclass:: CustomEndpointDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

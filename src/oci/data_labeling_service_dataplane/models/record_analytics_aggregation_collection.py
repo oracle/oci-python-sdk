@@ -37,7 +37,7 @@ class RecordAnalyticsAggregationCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this RecordAnalyticsAggregationCollection.
-        List of Record entities.
+        The list of record entities.
 
 
         :return: The items of this RecordAnalyticsAggregationCollection.
@@ -49,7 +49,7 @@ class RecordAnalyticsAggregationCollection(object):
     def items(self, items):
         """
         Sets the items of this RecordAnalyticsAggregationCollection.
-        List of Record entities.
+        The list of record entities.
 
 
         :param items: The items of this RecordAnalyticsAggregationCollection.

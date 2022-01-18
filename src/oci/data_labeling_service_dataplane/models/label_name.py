@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LabelName(object):
     """
-    Represents a label.
+    It represents a label.
     """
 
     def __init__(self, **kwargs):

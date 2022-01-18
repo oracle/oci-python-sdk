@@ -100,7 +100,7 @@ class RecordSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this RecordSummary.
-        The OCID of the record
+        The OCID of the record.
 
 
         :return: The id of this RecordSummary.
@@ -112,7 +112,7 @@ class RecordSummary(object):
     def id(self, id):
         """
         Sets the id of this RecordSummary.
-        The OCID of the record
+        The OCID of the record.
 
 
         :param id: The id of this RecordSummary.
@@ -124,7 +124,7 @@ class RecordSummary(object):
     def name(self):
         """
         **[Required]** Gets the name of this RecordSummary.
-        This will be automatically assigned by the service. It will be unique and immutable
+        The name is automatically assigned by the service. It is unique and immutable
 
 
         :return: The name of this RecordSummary.
@@ -136,7 +136,7 @@ class RecordSummary(object):
     def name(self, name):
         """
         Sets the name of this RecordSummary.
-        This will be automatically assigned by the service. It will be unique and immutable
+        The name is automatically assigned by the service. It is unique and immutable
 
 
         :param name: The name of this RecordSummary.
@@ -196,7 +196,7 @@ class RecordSummary(object):
     def dataset_id(self):
         """
         **[Required]** Gets the dataset_id of this RecordSummary.
-        The OCID of the dataset to associate the record with
+        The OCID of the dataset to associate the record with.
 
 
         :return: The dataset_id of this RecordSummary.
@@ -208,7 +208,7 @@ class RecordSummary(object):
     def dataset_id(self, dataset_id):
         """
         Sets the dataset_id of this RecordSummary.
-        The OCID of the dataset to associate the record with
+        The OCID of the dataset to associate the record with.
 
 
         :param dataset_id: The dataset_id of this RecordSummary.
@@ -244,7 +244,7 @@ class RecordSummary(object):
     def is_labeled(self):
         """
         **[Required]** Gets the is_labeled of this RecordSummary.
-        Whether the record has been labeled and has associated annotations.
+        Whether or not the record has been labeled and has associated annotations.
 
 
         :return: The is_labeled of this RecordSummary.
@@ -256,7 +256,7 @@ class RecordSummary(object):
     def is_labeled(self, is_labeled):
         """
         Sets the is_labeled of this RecordSummary.
-        Whether the record has been labeled and has associated annotations.
+        Whether or not the record has been labeled and has associated annotations.
 
 
         :param is_labeled: The is_labeled of this RecordSummary.
@@ -292,8 +292,8 @@ class RecordSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this RecordSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this RecordSummary.
@@ -305,8 +305,8 @@ class RecordSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this RecordSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this RecordSummary.
@@ -318,8 +318,8 @@ class RecordSummary(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this RecordSummary.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this RecordSummary.
@@ -331,8 +331,8 @@ class RecordSummary(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this RecordSummary.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this RecordSummary.

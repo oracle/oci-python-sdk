@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RecordCollection(object):
     """
-    Results of a record search. Contains both RecordSummary items and other data.
+    The results of a record search. It contains RecordSummary items and other data.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class RecordCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this RecordCollection.
-        List of records.
+        The list of records.
 
 
         :return: The items of this RecordCollection.
@@ -49,7 +49,7 @@ class RecordCollection(object):
     def items(self, items):
         """
         Sets the items of this RecordCollection.
-        List of records.
+        The list of records.
 
 
         :param items: The items of this RecordCollection.

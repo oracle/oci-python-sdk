@@ -584,6 +584,14 @@ class AutonomousDatabase(object):
             The value to assign to the is_mtls_connection_required property of this AutonomousDatabase.
         :type is_mtls_connection_required: bool
 
+        :param is_reconnect_clone_enabled:
+            The value to assign to the is_reconnect_clone_enabled property of this AutonomousDatabase.
+        :type is_reconnect_clone_enabled: bool
+
+        :param time_until_reconnect_clone_enabled:
+            The value to assign to the time_until_reconnect_clone_enabled property of this AutonomousDatabase.
+        :type time_until_reconnect_clone_enabled: datetime
+
         :param autonomous_maintenance_schedule_type:
             The value to assign to the autonomous_maintenance_schedule_type property of this AutonomousDatabase.
             Allowed values for this property are: "EARLY", "REGULAR", 'UNKNOWN_ENUM_VALUE'.
@@ -671,6 +679,8 @@ class AutonomousDatabase(object):
             'time_data_guard_role_changed': 'datetime',
             'peer_db_ids': 'list[str]',
             'is_mtls_connection_required': 'bool',
+            'is_reconnect_clone_enabled': 'bool',
+            'time_until_reconnect_clone_enabled': 'datetime',
             'autonomous_maintenance_schedule_type': 'str',
             'scheduled_operations': 'list[ScheduledOperationDetails]'
         }
@@ -751,6 +761,8 @@ class AutonomousDatabase(object):
             'time_data_guard_role_changed': 'timeDataGuardRoleChanged',
             'peer_db_ids': 'peerDbIds',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
+            'is_reconnect_clone_enabled': 'isReconnectCloneEnabled',
+            'time_until_reconnect_clone_enabled': 'timeUntilReconnectCloneEnabled',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'scheduled_operations': 'scheduledOperations'
         }
@@ -830,6 +842,8 @@ class AutonomousDatabase(object):
         self._time_data_guard_role_changed = None
         self._peer_db_ids = None
         self._is_mtls_connection_required = None
+        self._is_reconnect_clone_enabled = None
+        self._time_until_reconnect_clone_enabled = None
         self._autonomous_maintenance_schedule_type = None
         self._scheduled_operations = None
 
@@ -2896,6 +2910,54 @@ class AutonomousDatabase(object):
         :type: bool
         """
         self._is_mtls_connection_required = is_mtls_connection_required
+
+    @property
+    def is_reconnect_clone_enabled(self):
+        """
+        Gets the is_reconnect_clone_enabled of this AutonomousDatabase.
+        Indicates if the refreshable clone can be reconnected to its source database.
+
+
+        :return: The is_reconnect_clone_enabled of this AutonomousDatabase.
+        :rtype: bool
+        """
+        return self._is_reconnect_clone_enabled
+
+    @is_reconnect_clone_enabled.setter
+    def is_reconnect_clone_enabled(self, is_reconnect_clone_enabled):
+        """
+        Sets the is_reconnect_clone_enabled of this AutonomousDatabase.
+        Indicates if the refreshable clone can be reconnected to its source database.
+
+
+        :param is_reconnect_clone_enabled: The is_reconnect_clone_enabled of this AutonomousDatabase.
+        :type: bool
+        """
+        self._is_reconnect_clone_enabled = is_reconnect_clone_enabled
+
+    @property
+    def time_until_reconnect_clone_enabled(self):
+        """
+        Gets the time_until_reconnect_clone_enabled of this AutonomousDatabase.
+        The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
+
+
+        :return: The time_until_reconnect_clone_enabled of this AutonomousDatabase.
+        :rtype: datetime
+        """
+        return self._time_until_reconnect_clone_enabled
+
+    @time_until_reconnect_clone_enabled.setter
+    def time_until_reconnect_clone_enabled(self, time_until_reconnect_clone_enabled):
+        """
+        Sets the time_until_reconnect_clone_enabled of this AutonomousDatabase.
+        The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
+
+
+        :param time_until_reconnect_clone_enabled: The time_until_reconnect_clone_enabled of this AutonomousDatabase.
+        :type: datetime
+        """
+        self._time_until_reconnect_clone_enabled = time_until_reconnect_clone_enabled
 
     @property
     def autonomous_maintenance_schedule_type(self):

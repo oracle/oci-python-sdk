@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnnotationAggregationDimensions(object):
     """
-    Dimensions to summarize annotations for a given dataset
+    The dimensions to summarize annotations for a given dataset.
     """
 
     def __init__(self, **kwargs):
@@ -64,7 +64,7 @@ class AnnotationAggregationDimensions(object):
     def updated_by(self):
         """
         Gets the updated_by of this AnnotationAggregationDimensions.
-        The OCID of the principal who updated the resource.
+        The OCID of the principal which updated the resource.
 
 
         :return: The updated_by of this AnnotationAggregationDimensions.
@@ -76,7 +76,7 @@ class AnnotationAggregationDimensions(object):
     def updated_by(self, updated_by):
         """
         Sets the updated_by of this AnnotationAggregationDimensions.
-        The OCID of the principal who updated the resource.
+        The OCID of the principal which updated the resource.
 
 
         :param updated_by: The updated_by of this AnnotationAggregationDimensions.

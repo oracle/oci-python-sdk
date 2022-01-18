@@ -44,6 +44,10 @@ class UpdateDbSystemDetails(object):
             The value to assign to the data_storage_size_in_gbs property of this UpdateDbSystemDetails.
         :type data_storage_size_in_gbs: int
 
+        :param reco_storage_size_in_gbs:
+            The value to assign to the reco_storage_size_in_gbs property of this UpdateDbSystemDetails.
+        :type reco_storage_size_in_gbs: int
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateDbSystemDetails.
         :type freeform_tags: dict(str, str)
@@ -79,6 +83,7 @@ class UpdateDbSystemDetails(object):
             'version': 'PatchDetails',
             'ssh_public_keys': 'list[str]',
             'data_storage_size_in_gbs': 'int',
+            'reco_storage_size_in_gbs': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'shape': 'str',
@@ -93,6 +98,7 @@ class UpdateDbSystemDetails(object):
             'version': 'version',
             'ssh_public_keys': 'sshPublicKeys',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
+            'reco_storage_size_in_gbs': 'recoStorageSizeInGBs',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'shape': 'shape',
@@ -106,6 +112,7 @@ class UpdateDbSystemDetails(object):
         self._version = None
         self._ssh_public_keys = None
         self._data_storage_size_in_gbs = None
+        self._reco_storage_size_in_gbs = None
         self._freeform_tags = None
         self._defined_tags = None
         self._shape = None
@@ -205,6 +212,30 @@ class UpdateDbSystemDetails(object):
         :type: int
         """
         self._data_storage_size_in_gbs = data_storage_size_in_gbs
+
+    @property
+    def reco_storage_size_in_gbs(self):
+        """
+        Gets the reco_storage_size_in_gbs of this UpdateDbSystemDetails.
+        The size, in gigabytes, to scale the attached RECO storage up to for this virtual machine DB system. This value must be greater than current storage size. Note that the resulting total storage size attached will be greater than the amount requested to allow for the software volume. Applies only to virtual machine DB systems.
+
+
+        :return: The reco_storage_size_in_gbs of this UpdateDbSystemDetails.
+        :rtype: int
+        """
+        return self._reco_storage_size_in_gbs
+
+    @reco_storage_size_in_gbs.setter
+    def reco_storage_size_in_gbs(self, reco_storage_size_in_gbs):
+        """
+        Sets the reco_storage_size_in_gbs of this UpdateDbSystemDetails.
+        The size, in gigabytes, to scale the attached RECO storage up to for this virtual machine DB system. This value must be greater than current storage size. Note that the resulting total storage size attached will be greater than the amount requested to allow for the software volume. Applies only to virtual machine DB systems.
+
+
+        :param reco_storage_size_in_gbs: The reco_storage_size_in_gbs of this UpdateDbSystemDetails.
+        :type: int
+        """
+        self._reco_storage_size_in_gbs = reco_storage_size_in_gbs
 
     @property
     def freeform_tags(self):
