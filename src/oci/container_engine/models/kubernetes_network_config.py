@@ -44,7 +44,7 @@ class KubernetesNetworkConfig(object):
     def pods_cidr(self):
         """
         Gets the pods_cidr of this KubernetesNetworkConfig.
-        The CIDR block for Kubernetes pods.
+        The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
 
 
         :return: The pods_cidr of this KubernetesNetworkConfig.
@@ -56,7 +56,7 @@ class KubernetesNetworkConfig(object):
     def pods_cidr(self, pods_cidr):
         """
         Sets the pods_cidr of this KubernetesNetworkConfig.
-        The CIDR block for Kubernetes pods.
+        The CIDR block for Kubernetes pods. Optional, defaults to 10.244.0.0/16.
 
 
         :param pods_cidr: The pods_cidr of this KubernetesNetworkConfig.
@@ -68,7 +68,7 @@ class KubernetesNetworkConfig(object):
     def services_cidr(self):
         """
         Gets the services_cidr of this KubernetesNetworkConfig.
-        The CIDR block for Kubernetes services.
+        The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
 
 
         :return: The services_cidr of this KubernetesNetworkConfig.
@@ -80,7 +80,7 @@ class KubernetesNetworkConfig(object):
     def services_cidr(self, services_cidr):
         """
         Sets the services_cidr of this KubernetesNetworkConfig.
-        The CIDR block for Kubernetes services.
+        The CIDR block for Kubernetes services. Optional, defaults to 10.96.0.0/16.
 
 
         :param services_cidr: The services_cidr of this KubernetesNetworkConfig.

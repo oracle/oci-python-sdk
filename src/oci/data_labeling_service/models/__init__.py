@@ -16,6 +16,7 @@ from .dataset_format_details import DatasetFormatDetails
 from .dataset_source_details import DatasetSourceDetails
 from .dataset_summary import DatasetSummary
 from .document_dataset_format_details import DocumentDatasetFormatDetails
+from .export_format import ExportFormat
 from .generate_dataset_records_details import GenerateDatasetRecordsDetails
 from .image_dataset_format_details import ImageDatasetFormatDetails
 from .initial_record_generation_configuration import InitialRecordGenerationConfiguration
@@ -52,6 +53,7 @@ data_labeling_service_type_mapping = {
     "DatasetSourceDetails": DatasetSourceDetails,
     "DatasetSummary": DatasetSummary,
     "DocumentDatasetFormatDetails": DocumentDatasetFormatDetails,
+    "ExportFormat": ExportFormat,
     "GenerateDatasetRecordsDetails": GenerateDatasetRecordsDetails,
     "ImageDatasetFormatDetails": ImageDatasetFormatDetails,
     "InitialRecordGenerationConfiguration": InitialRecordGenerationConfiguration,

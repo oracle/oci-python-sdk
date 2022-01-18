@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImageObjectSelectionEntity(Entity):
     """
-    This allows the labeler to use specify a series of coordinates in the image to represent an object and apply labels to it.  The coordinates will be connected in the order that they are provided and the last coordinate in the array will be connected to the first.
+    This lets the labeler specify a series of coordinates in the image to represent an object and apply labels to it.  The coordinates are connected in the order that they are provided. The last coordinate in the array is connected to the first coordinate.
     """
 
     def __init__(self, **kwargs):
@@ -61,7 +61,7 @@ class ImageObjectSelectionEntity(Entity):
     def labels(self):
         """
         **[Required]** Gets the labels of this ImageObjectSelectionEntity.
-        Collection of Label entities
+        A collection of label entities.
 
 
         :return: The labels of this ImageObjectSelectionEntity.
@@ -73,7 +73,7 @@ class ImageObjectSelectionEntity(Entity):
     def labels(self, labels):
         """
         Sets the labels of this ImageObjectSelectionEntity.
-        Collection of Label entities
+        A collection of label entities.
 
 
         :param labels: The labels of this ImageObjectSelectionEntity.
@@ -105,8 +105,8 @@ class ImageObjectSelectionEntity(Entity):
     def extended_metadata(self):
         """
         Gets the extended_metadata of this ImageObjectSelectionEntity.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The extended_metadata of this ImageObjectSelectionEntity.
@@ -118,8 +118,8 @@ class ImageObjectSelectionEntity(Entity):
     def extended_metadata(self, extended_metadata):
         """
         Sets the extended_metadata of this ImageObjectSelectionEntity.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param extended_metadata: The extended_metadata of this ImageObjectSelectionEntity.

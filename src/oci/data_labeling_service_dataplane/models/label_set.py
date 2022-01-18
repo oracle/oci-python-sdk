@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LabelSet(object):
     """
-    An ordered collection of Labels that are unique by name.
+    An ordered collection of labels that are unique by name.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class LabelSet(object):
     def items(self):
         """
         Gets the items of this LabelSet.
-        An ordered collection of Labels that are unique by name.
+        An ordered collection of labels that are unique by name.
 
 
         :return: The items of this LabelSet.
@@ -49,7 +49,7 @@ class LabelSet(object):
     def items(self, items):
         """
         Sets the items of this LabelSet.
-        An ordered collection of Labels that are unique by name.
+        An ordered collection of labels that are unique by name.
 
 
         :param items: The items of this LabelSet.

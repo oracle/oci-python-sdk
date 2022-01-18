@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnnotationAnalyticsAggregation(object):
     """
-    Aggregation entities are required by the api consistency guidelines for API Consistency Guidelines#AnalyticsAPIs.  These are used to summarize annotations for a given dataset and will be used to populate UI elements.  Aggregations need to have the fields that identify the exact scope that they're summarizing.  Any filters to the list API we apply would have to show up in the aggregation. We should limit the number of filters and dimensions as much as possible.
+    Aggregation entities are required by the API consistency guidelines for API Consistency Guidelines#AnalyticsAPIs.  These are used to summarize annotations for a given dataset and will be used to populate UI elements.  Aggregations need to have the fields that identify the exact scope that they're summarizing.  Any filters applied to the list API, have to show up in the aggregation.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class AnnotationAnalyticsAggregation(object):
     def count(self):
         """
         **[Required]** Gets the count of this AnnotationAnalyticsAggregation.
-        the count of the matching results
+        The count of the matching results.
 
 
         :return: The count of this AnnotationAnalyticsAggregation.
@@ -84,7 +84,7 @@ class AnnotationAnalyticsAggregation(object):
     def count(self, count):
         """
         Sets the count of this AnnotationAnalyticsAggregation.
-        the count of the matching results
+        The count of the matching results.
 
 
         :param count: The count of this AnnotationAnalyticsAggregation.
@@ -96,7 +96,7 @@ class AnnotationAnalyticsAggregation(object):
     def dataset_id(self):
         """
         **[Required]** Gets the dataset_id of this AnnotationAnalyticsAggregation.
-        OCID of the dataset the annotations belongs to
+        The OCID of the dataset the annotations belong to.
 
 
         :return: The dataset_id of this AnnotationAnalyticsAggregation.
@@ -108,7 +108,7 @@ class AnnotationAnalyticsAggregation(object):
     def dataset_id(self, dataset_id):
         """
         Sets the dataset_id of this AnnotationAnalyticsAggregation.
-        OCID of the dataset the annotations belongs to
+        The OCID of the dataset the annotations belong to.
 
 
         :param dataset_id: The dataset_id of this AnnotationAnalyticsAggregation.
@@ -140,7 +140,7 @@ class AnnotationAnalyticsAggregation(object):
     def updated_by(self):
         """
         Gets the updated_by of this AnnotationAnalyticsAggregation.
-        The OCID of the principal who updated the annotation
+        The OCID of the principal which updated the annotation.
 
 
         :return: The updated_by of this AnnotationAnalyticsAggregation.
@@ -152,7 +152,7 @@ class AnnotationAnalyticsAggregation(object):
     def updated_by(self, updated_by):
         """
         Sets the updated_by of this AnnotationAnalyticsAggregation.
-        The OCID of the principal who updated the annotation
+        The OCID of the principal which updated the annotation.
 
 
         :param updated_by: The updated_by of this AnnotationAnalyticsAggregation.
@@ -164,7 +164,7 @@ class AnnotationAnalyticsAggregation(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this AnnotationAnalyticsAggregation.
-        OCID of the compartment containing the annotations
+        The OCID of the compartment containing the annotations.
 
 
         :return: The compartment_id of this AnnotationAnalyticsAggregation.
@@ -176,7 +176,7 @@ class AnnotationAnalyticsAggregation(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AnnotationAnalyticsAggregation.
-        OCID of the compartment containing the annotations
+        The OCID of the compartment containing the annotations.
 
 
         :param compartment_id: The compartment_id of this AnnotationAnalyticsAggregation.

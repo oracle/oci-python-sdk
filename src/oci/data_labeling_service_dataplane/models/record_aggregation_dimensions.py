@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RecordAggregationDimensions(object):
     """
-    Dimensions to summarize record information for a given dataset
+    The dimensions to summarize record information for a given dataset.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class RecordAggregationDimensions(object):
     def is_labeled(self):
         """
         Gets the is_labeled of this RecordAggregationDimensions.
-        Whether the record has been labeled and has associated annotations.
+        Whether or not the record has been labeled and has associated annotations.
 
 
         :return: The is_labeled of this RecordAggregationDimensions.
@@ -56,7 +56,7 @@ class RecordAggregationDimensions(object):
     def is_labeled(self, is_labeled):
         """
         Sets the is_labeled of this RecordAggregationDimensions.
-        Whether the record has been labeled and has associated annotations.
+        Whether or not the record has been labeled and has associated annotations.
 
 
         :param is_labeled: The is_labeled of this RecordAggregationDimensions.
@@ -68,7 +68,7 @@ class RecordAggregationDimensions(object):
     def annotation_label_contains(self):
         """
         Gets the annotation_label_contains of this RecordAggregationDimensions.
-        Whether the annotation contains label.
+        Whether or not the annotation contains a label.
 
 
         :return: The annotation_label_contains of this RecordAggregationDimensions.
@@ -80,7 +80,7 @@ class RecordAggregationDimensions(object):
     def annotation_label_contains(self, annotation_label_contains):
         """
         Sets the annotation_label_contains of this RecordAggregationDimensions.
-        Whether the annotation contains label.
+        Whether or not the annotation contains a label.
 
 
         :param annotation_label_contains: The annotation_label_contains of this RecordAggregationDimensions.

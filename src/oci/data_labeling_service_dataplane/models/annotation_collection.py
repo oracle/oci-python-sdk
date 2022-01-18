@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnnotationCollection(object):
     """
-    Results of a annotations search. Contains boh AnnotationSummary items and other information, such as metadata.
+    The results of an annotations search. It contains AnnotationSummary items and other information, such as metadata.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class AnnotationCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this AnnotationCollection.
-        List of annotations.
+        The list of annotations.
 
 
         :return: The items of this AnnotationCollection.
@@ -49,7 +49,7 @@ class AnnotationCollection(object):
     def items(self, items):
         """
         Sets the items of this AnnotationCollection.
-        List of annotations.
+        The list of annotations.
 
 
         :param items: The items of this AnnotationCollection.

@@ -18,6 +18,7 @@ class VolumeGroupSourceDetails(object):
         Initializes a new VolumeGroupSourceDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.core.models.VolumeGroupSourceFromVolumeGroupReplicaDetails`
         * :class:`~oci.core.models.VolumeGroupSourceFromVolumeGroupDetails`
         * :class:`~oci.core.models.VolumeGroupSourceFromVolumesDetails`
         * :class:`~oci.core.models.VolumeGroupSourceFromVolumeGroupBackupDetails`
@@ -46,6 +47,9 @@ class VolumeGroupSourceDetails(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['type']
+
+        if type == 'volumeGroupReplicaId':
+            return 'VolumeGroupSourceFromVolumeGroupReplicaDetails'
 
         if type == 'volumeGroupId':
             return 'VolumeGroupSourceFromVolumeGroupDetails'

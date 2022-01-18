@@ -41,7 +41,8 @@ REGIONS_SHORT_NAMES = {
     'ltn': 'uk-gov-london-1',
     'brs': 'uk-gov-cardiff-1',
     'nja': 'ap-chiyoda-1',
-    'ukb': 'ap-ibaraki-1'
+    'ukb': 'ap-ibaraki-1',
+    'mct': 'me-dcc-muscat-1'
 }
 REGION_REALMS = {
     'ap-chuncheon-1': 'oc1',
@@ -86,14 +87,17 @@ REGION_REALMS = {
     'uk-gov-cardiff-1': 'oc4',
 
     'ap-chiyoda-1': 'oc8',
-    'ap-ibaraki-1': 'oc8'
+    'ap-ibaraki-1': 'oc8',
+
+    'me-dcc-muscat-1': 'oc9'
 }
 REALMS = {
     'oc1': 'oraclecloud.com',
     'oc2': 'oraclegovcloud.com',
     'oc3': 'oraclegovcloud.com',
     'oc4': 'oraclegovcloud.uk',
-    'oc8': 'oraclecloud8.com'
+    'oc8': 'oraclecloud8.com',
+    'oc9': 'oraclecloud9.com'
 }
 REGIONS = [
     'ap-chuncheon-1',
@@ -134,5 +138,6 @@ REGIONS = [
     'uk-gov-london-1',
     'uk-gov-cardiff-1',
     'ap-chiyoda-1',
-    'ap-ibaraki-1'
+    'ap-ibaraki-1',
+    'me-dcc-muscat-1'
 ]

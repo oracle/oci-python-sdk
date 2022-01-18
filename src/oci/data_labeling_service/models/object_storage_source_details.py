@@ -109,7 +109,7 @@ class ObjectStorageSourceDetails(DatasetSourceDetails):
     def prefix(self):
         """
         Gets the prefix of this ObjectStorageSourceDetails.
-        A common path prefix shared by the objects that make up the dataset.
+        A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
 
 
         :return: The prefix of this ObjectStorageSourceDetails.
@@ -121,7 +121,7 @@ class ObjectStorageSourceDetails(DatasetSourceDetails):
     def prefix(self, prefix):
         """
         Sets the prefix of this ObjectStorageSourceDetails.
-        A common path prefix shared by the objects that make up the dataset.
+        A common path prefix shared by the objects that make up the dataset. Records will not be generated for objects whose name match exactly with prefix.
 
 
         :param prefix: The prefix of this ObjectStorageSourceDetails.

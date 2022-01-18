@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImageDatasetFormatDetails(DatasetFormatDetails):
     """
-    Indicates the dataset is comprised of images.
+    It indicates the dataset is comprised of images.
     """
 
     def __init__(self, **kwargs):

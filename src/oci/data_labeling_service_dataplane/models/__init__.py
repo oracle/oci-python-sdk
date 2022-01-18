@@ -19,9 +19,11 @@ from .dataset import Dataset
 from .dataset_format_details import DatasetFormatDetails
 from .dataset_source_details import DatasetSourceDetails
 from .document_dataset_format_details import DocumentDatasetFormatDetails
+from .document_metadata import DocumentMetadata
 from .entity import Entity
 from .generic_entity import GenericEntity
 from .image_dataset_format_details import ImageDatasetFormatDetails
+from .image_metadata import ImageMetadata
 from .image_object_selection_entity import ImageObjectSelectionEntity
 from .initial_record_generation_configuration import InitialRecordGenerationConfiguration
 from .label import Label
@@ -35,9 +37,11 @@ from .record_aggregation_dimensions import RecordAggregationDimensions
 from .record_analytics_aggregation import RecordAnalyticsAggregation
 from .record_analytics_aggregation_collection import RecordAnalyticsAggregationCollection
 from .record_collection import RecordCollection
+from .record_metadata import RecordMetadata
 from .record_summary import RecordSummary
 from .source_details import SourceDetails
 from .text_dataset_format_details import TextDatasetFormatDetails
+from .text_metadata import TextMetadata
 from .text_selection_entity import TextSelectionEntity
 from .text_span import TextSpan
 from .update_annotation_details import UpdateAnnotationDetails
@@ -60,9 +64,11 @@ data_labeling_service_dataplane_type_mapping = {
     "DatasetFormatDetails": DatasetFormatDetails,
     "DatasetSourceDetails": DatasetSourceDetails,
     "DocumentDatasetFormatDetails": DocumentDatasetFormatDetails,
+    "DocumentMetadata": DocumentMetadata,
     "Entity": Entity,
     "GenericEntity": GenericEntity,
     "ImageDatasetFormatDetails": ImageDatasetFormatDetails,
+    "ImageMetadata": ImageMetadata,
     "ImageObjectSelectionEntity": ImageObjectSelectionEntity,
     "InitialRecordGenerationConfiguration": InitialRecordGenerationConfiguration,
     "Label": Label,
@@ -76,9 +82,11 @@ data_labeling_service_dataplane_type_mapping = {
     "RecordAnalyticsAggregation": RecordAnalyticsAggregation,
     "RecordAnalyticsAggregationCollection": RecordAnalyticsAggregationCollection,
     "RecordCollection": RecordCollection,
+    "RecordMetadata": RecordMetadata,
     "RecordSummary": RecordSummary,
     "SourceDetails": SourceDetails,
     "TextDatasetFormatDetails": TextDatasetFormatDetails,
+    "TextMetadata": TextMetadata,
     "TextSelectionEntity": TextSelectionEntity,
     "TextSpan": TextSpan,
     "UpdateAnnotationDetails": UpdateAnnotationDetails,

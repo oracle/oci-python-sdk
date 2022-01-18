@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TextSpan(object):
     """
-    A wrapper class for offset and length, which together represent a span of text in a text document.
+    A wrapper class for offset and length, which together, represent a span of text in a text document.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class TextSpan(object):
     def offset(self):
         """
         Gets the offset of this TextSpan.
-        Offset of the selected text within the entire text.
+        The offset of the selected text within the entire text.
 
 
         :return: The offset of this TextSpan.
@@ -56,7 +56,7 @@ class TextSpan(object):
     def offset(self, offset):
         """
         Sets the offset of this TextSpan.
-        Offset of the selected text within the entire text.
+        The offset of the selected text within the entire text.
 
 
         :param offset: The offset of this TextSpan.
@@ -68,7 +68,7 @@ class TextSpan(object):
     def length(self):
         """
         Gets the length of this TextSpan.
-        Length of the selected text.
+        The length of the selected text.
 
 
         :return: The length of this TextSpan.
@@ -80,7 +80,7 @@ class TextSpan(object):
     def length(self, length):
         """
         Sets the length of this TextSpan.
-        Length of the selected text.
+        The length of the selected text.
 
 
         :param length: The length of this TextSpan.

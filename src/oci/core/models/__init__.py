@@ -318,6 +318,7 @@ from .macsec_properties import MacsecProperties
 from .measured_boot_entry import MeasuredBootEntry
 from .measured_boot_report import MeasuredBootReport
 from .measured_boot_report_measurements import MeasuredBootReportMeasurements
+from .member_replica import MemberReplica
 from .modify_vcn_cidr_details import ModifyVcnCidrDetails
 from .multipath_device import MultipathDevice
 from .nat_gateway import NatGateway
@@ -470,9 +471,13 @@ from .volume_backup_policy_assignment import VolumeBackupPolicyAssignment
 from .volume_backup_schedule import VolumeBackupSchedule
 from .volume_group import VolumeGroup
 from .volume_group_backup import VolumeGroupBackup
+from .volume_group_replica import VolumeGroupReplica
+from .volume_group_replica_details import VolumeGroupReplicaDetails
+from .volume_group_replica_info import VolumeGroupReplicaInfo
 from .volume_group_source_details import VolumeGroupSourceDetails
 from .volume_group_source_from_volume_group_backup_details import VolumeGroupSourceFromVolumeGroupBackupDetails
 from .volume_group_source_from_volume_group_details import VolumeGroupSourceFromVolumeGroupDetails
+from .volume_group_source_from_volume_group_replica_details import VolumeGroupSourceFromVolumeGroupReplicaDetails
 from .volume_group_source_from_volumes_details import VolumeGroupSourceFromVolumesDetails
 from .volume_kms_key import VolumeKmsKey
 from .volume_source_details import VolumeSourceDetails
@@ -796,6 +801,7 @@ core_type_mapping = {
     "MeasuredBootEntry": MeasuredBootEntry,
     "MeasuredBootReport": MeasuredBootReport,
     "MeasuredBootReportMeasurements": MeasuredBootReportMeasurements,
+    "MemberReplica": MemberReplica,
     "ModifyVcnCidrDetails": ModifyVcnCidrDetails,
     "MultipathDevice": MultipathDevice,
     "NatGateway": NatGateway,
@@ -948,9 +954,13 @@ core_type_mapping = {
     "VolumeBackupSchedule": VolumeBackupSchedule,
     "VolumeGroup": VolumeGroup,
     "VolumeGroupBackup": VolumeGroupBackup,
+    "VolumeGroupReplica": VolumeGroupReplica,
+    "VolumeGroupReplicaDetails": VolumeGroupReplicaDetails,
+    "VolumeGroupReplicaInfo": VolumeGroupReplicaInfo,
     "VolumeGroupSourceDetails": VolumeGroupSourceDetails,
     "VolumeGroupSourceFromVolumeGroupBackupDetails": VolumeGroupSourceFromVolumeGroupBackupDetails,
     "VolumeGroupSourceFromVolumeGroupDetails": VolumeGroupSourceFromVolumeGroupDetails,
+    "VolumeGroupSourceFromVolumeGroupReplicaDetails": VolumeGroupSourceFromVolumeGroupReplicaDetails,
     "VolumeGroupSourceFromVolumesDetails": VolumeGroupSourceFromVolumesDetails,
     "VolumeKmsKey": VolumeKmsKey,
     "VolumeSourceDetails": VolumeSourceDetails,

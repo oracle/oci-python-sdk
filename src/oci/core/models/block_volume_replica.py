@@ -104,6 +104,10 @@ class BlockVolumeReplica(object):
             The value to assign to the total_data_transferred_in_gbs property of this BlockVolumeReplica.
         :type total_data_transferred_in_gbs: int
 
+        :param volume_group_replica_id:
+            The value to assign to the volume_group_replica_id property of this BlockVolumeReplica.
+        :type volume_group_replica_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
@@ -117,7 +121,8 @@ class BlockVolumeReplica(object):
             'time_created': 'datetime',
             'time_last_synced': 'datetime',
             'block_volume_id': 'str',
-            'total_data_transferred_in_gbs': 'int'
+            'total_data_transferred_in_gbs': 'int',
+            'volume_group_replica_id': 'str'
         }
 
         self.attribute_map = {
@@ -132,7 +137,8 @@ class BlockVolumeReplica(object):
             'time_created': 'timeCreated',
             'time_last_synced': 'timeLastSynced',
             'block_volume_id': 'blockVolumeId',
-            'total_data_transferred_in_gbs': 'totalDataTransferredInGBs'
+            'total_data_transferred_in_gbs': 'totalDataTransferredInGBs',
+            'volume_group_replica_id': 'volumeGroupReplicaId'
         }
 
         self._availability_domain = None
@@ -147,6 +153,7 @@ class BlockVolumeReplica(object):
         self._time_last_synced = None
         self._block_volume_id = None
         self._total_data_transferred_in_gbs = None
+        self._volume_group_replica_id = None
 
     @property
     def availability_domain(self):
@@ -479,6 +486,30 @@ class BlockVolumeReplica(object):
         :type: int
         """
         self._total_data_transferred_in_gbs = total_data_transferred_in_gbs
+
+    @property
+    def volume_group_replica_id(self):
+        """
+        Gets the volume_group_replica_id of this BlockVolumeReplica.
+        The OCID of the volume group replica.
+
+
+        :return: The volume_group_replica_id of this BlockVolumeReplica.
+        :rtype: str
+        """
+        return self._volume_group_replica_id
+
+    @volume_group_replica_id.setter
+    def volume_group_replica_id(self, volume_group_replica_id):
+        """
+        Sets the volume_group_replica_id of this BlockVolumeReplica.
+        The OCID of the volume group replica.
+
+
+        :param volume_group_replica_id: The volume_group_replica_id of this BlockVolumeReplica.
+        :type: str
+        """
+        self._volume_group_replica_id = volume_group_replica_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

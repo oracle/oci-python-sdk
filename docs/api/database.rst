@@ -247,6 +247,7 @@ Database
     oci.database.models.SelfMountDetails
     oci.database.models.SwitchoverDataGuardAssociationDetails
     oci.database.models.Update
+    oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
     oci.database.models.UpdateAutonomousContainerDatabaseDetails
     oci.database.models.UpdateAutonomousDatabaseDetails
     oci.database.models.UpdateAutonomousDatabaseWalletDetails

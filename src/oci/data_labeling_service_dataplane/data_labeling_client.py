@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class DataLabelingClient(object):
     """
-    A description of the DlsDataPlane API.
+    Use Data Labeling API to create Annotations on Images, Texts & Documents, and generate snapshots.
     """
 
     def __init__(self, config, **kwargs):
@@ -113,9 +113,9 @@ class DataLabelingClient(object):
             Details for the new CreateAnnotation.
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            A token that uniquely identifies a request so it can be retried, without risk of executing that same action again, if there is a timeout or
+            server error. Retry tokens expire after 24
+            hours, but can be invalidated before then if there are conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -190,16 +190,16 @@ class DataLabelingClient(object):
 
     def create_record(self, create_record_details, **kwargs):
         """
-        Creates a Record.
+        Creates a record.
 
 
         :param oci.data_labeling_service_dataplane.models.CreateRecordDetails create_record_details: (required)
-            Details for the new Record.
+            The details for the new record.
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
-            hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+            A token that uniquely identifies a request so it can be retried, without risk of executing that same action again, if there is a timeout or
+            server error. Retry tokens expire after 24
+            hours, but can be invalidated before then if there are conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
 
@@ -274,17 +274,17 @@ class DataLabelingClient(object):
 
     def delete_annotation(self, annotation_id, **kwargs):
         """
-        Deletes an Annotation resource by identifier
+        It deletes an annotation resource by identifier.
 
 
         :param str annotation_id: (required)
-            unique Annotation identifier
+            A unique annotation identifier.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the etag you
+            The resource is updated or deleted only if the etag you
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -365,17 +365,17 @@ class DataLabelingClient(object):
 
     def delete_record(self, record_id, **kwargs):
         """
-        Deletes a Record resource by identifier
+        Deletes a record resource by identifier.
 
 
         :param str record_id: (required)
-            The OCID of the record annotated
+            The OCID of the record annotated.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the etag you
+            The resource is updated or deleted only if the etag you
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -456,11 +456,11 @@ class DataLabelingClient(object):
 
     def get_annotation(self, annotation_id, **kwargs):
         """
-        Gets an Annotation
+        Gets an annotation.
 
 
         :param str annotation_id: (required)
-            unique Annotation identifier
+            A unique annotation identifier.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -540,11 +540,11 @@ class DataLabelingClient(object):
 
     def get_dataset(self, dataset_id, **kwargs):
         """
-        Gets a Dataset by identifier
+        Gets a dataset by identifier.
 
 
         :param str dataset_id: (required)
-            Unique Dataset OCID
+            A unique dataset OCID.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -624,11 +624,11 @@ class DataLabelingClient(object):
 
     def get_record(self, record_id, **kwargs):
         """
-        Gets a record
+        Gets a record.
 
 
         :param str record_id: (required)
-            The OCID of the record annotated
+            The OCID of the record annotated.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -708,11 +708,11 @@ class DataLabelingClient(object):
 
     def get_record_content(self, record_id, **kwargs):
         """
-        Retrieves the content of the record from the Dataset source.
+        Retrieves the content of the record from the dataset source.
 
 
         :param str record_id: (required)
-            The OCID of the record annotated
+            The OCID of the record annotated.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -801,11 +801,11 @@ class DataLabelingClient(object):
 
     def get_record_preview_content(self, record_id, **kwargs):
         """
-        Retrieves the preview of the record content from the Dataset source.
+        Retrieves the preview of the record content from the dataset source.
 
 
         :param str record_id: (required)
-            The OCID of the record annotated
+            The OCID of the record annotated.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -894,28 +894,28 @@ class DataLabelingClient(object):
 
     def list_annotations(self, compartment_id, dataset_id, **kwargs):
         """
-        Returns a list of Annotations.
+        Returns a list of annotations.
 
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
 
         :param str dataset_id: (required)
-            Filter results by the OCID of the dataset.
+            Filter the results by the OCID of the dataset.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources whose lifecycleState matches the given lifecycleState.
 
             Allowed values are: "ACTIVE", "INACTIVE", "DELETED"
 
         :param str id: (optional)
-            Unique OCID identifier
+            The unique OCID identifier.
 
         :param str updated_by: (optional)
-            The OCID of the principal who updated the annotation.
+            The OCID of the principal which updated the annotation.
 
         :param str record_id: (optional)
-            The OCID of the record annotated
+            The OCID of the record annotated.
 
         :param datetime time_created_greater_than_or_equal_to: (optional)
             The date and time the resource was created, in the timestamp format defined by RFC3339.
@@ -935,7 +935,7 @@ class DataLabelingClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+            The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. If no value is specified timeCreated is used by default.
 
             Allowed values are: "timeCreated", "label"
 
@@ -1054,31 +1054,31 @@ class DataLabelingClient(object):
 
     def list_records(self, compartment_id, dataset_id, **kwargs):
         """
-        List Record in the specified compartment.
+        The list of records in the specified compartment.
 
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
 
         :param str dataset_id: (required)
-            Filter results by the OCID of the dataset.
+            Filter the results by the OCID of the dataset.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources whose lifecycleState matches the given lifecycleState.
 
             Allowed values are: "ACTIVE", "INACTIVE", "DELETED"
 
         :param str name: (optional)
-            Name of the record
+            The name of the record.
 
         :param str id: (optional)
-            Unique OCID identifier
+            The unique OCID identifier.
 
         :param bool is_labeled: (optional)
             Whether the record has been labeled and has associated annotations.
 
         :param list[str] annotation_labels_contains: (optional)
-            Allows the user to filter records based on the related annotations.
+            Lets the user filter records based on the related annotations.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1092,7 +1092,7 @@ class DataLabelingClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending. If no value is specified timeCreated is default.
+            The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for name is ascending. If no value is specified, timeCreated is used by default.
 
             Allowed values are: "timeCreated", "name"
 
@@ -1209,22 +1209,22 @@ class DataLabelingClient(object):
 
     def summarize_annotation_analytics(self, compartment_id, dataset_id, **kwargs):
         """
-        Summarize annotations created for a given dataset
+        Summarize the annotations created for a given dataset.
 
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
 
         :param str dataset_id: (required)
-            Filter results by the OCID of the dataset.
+            Filter the results by the OCID of the dataset.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources whose lifecycleState matches the given lifecycleState.
 
             Allowed values are: "ACTIVE", "INACTIVE", "DELETED"
 
         :param str label: (optional)
-            This field is used to summarize annotations with specified label.
+            It summarizes annotations with the specified label.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1238,12 +1238,12 @@ class DataLabelingClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order is descending. If no value is specified updatedBy is default.
+            The field to sort by. Only one sort order may be provided. The default order is descending. If no value is specified, updatedBy is used by default.
 
             Allowed values are: "count", "label", "updatedBy"
 
         :param str annotation_group_by: (optional)
-            The field to group by. If no value is specified updatedBy is default.
+            The field to group by. If no value is specified, updatedBy is used by default.
 
             Allowed values are: "updatedBy", "label"
 
@@ -1363,17 +1363,17 @@ class DataLabelingClient(object):
 
     def summarize_record_analytics(self, compartment_id, dataset_id, **kwargs):
         """
-        Summarize records created for a given dataset
+        Summarize the records created for a given dataset.
 
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
 
         :param str dataset_id: (required)
-            Filter results by the OCID of the dataset.
+            Filter the results by the OCID of the dataset.
 
         :param str lifecycle_state: (optional)
-            A filter to return only resources their lifecycleState matches the given lifecycleState.
+            A filter to return only resources whose lifecycleState matches the given lifecycleState.
 
             Allowed values are: "ACTIVE", "INACTIVE", "DELETED"
 
@@ -1389,12 +1389,12 @@ class DataLabelingClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str record_group_by: (optional)
-            The field to group by. If no value is specified isLabeled is default.
+            The field to group by. If no value is specified isLabeled is used by default.
 
             Allowed values are: "isLabeled", "annotationLabelContains"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order is descending. If no value is specified count is default.
+            The field to sort by. Only one sort order may be provided. The default order is descending. If no value is specified, count is used by default.
 
             Allowed values are: "count", "isLabeled"
 
@@ -1516,16 +1516,16 @@ class DataLabelingClient(object):
 
 
         :param str annotation_id: (required)
-            unique Annotation identifier
+            A unique annotation identifier.
 
         :param oci.data_labeling_service_dataplane.models.UpdateAnnotationDetails update_annotation_details: (required)
-            Information to be updated.
+            The information to be updated.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the etag you
+            The resource is updated or deleted only if the etag you
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)
@@ -1610,11 +1610,11 @@ class DataLabelingClient(object):
 
     def update_record(self, record_id, update_record_details, **kwargs):
         """
-        Updates record.
+        Updates a record.
 
 
         :param str record_id: (required)
-            The OCID of the record annotated
+            The OCID of the record annotated.
 
         :param oci.data_labeling_service_dataplane.models.UpdateRecordDetails update_record_details: (required)
             Information to be updated.
@@ -1623,7 +1623,7 @@ class DataLabelingClient(object):
             For optimistic concurrency control. In the PUT or DELETE call
             for a resource, set the `if-match` parameter to the value of the
             etag from a previous GET or POST response for that resource.
-            The resource will be updated or deleted only if the etag you
+            The resource is updated or deleted only if the etag you
             provide matches the resource's current etag value.
 
         :param str opc_request_id: (optional)

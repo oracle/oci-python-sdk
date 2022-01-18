@@ -34,6 +34,10 @@ class CreateRecordDetails(object):
             The value to assign to the source_details property of this CreateRecordDetails.
         :type source_details: oci.data_labeling_service_dataplane.models.CreateSourceDetails
 
+        :param record_metadata:
+            The value to assign to the record_metadata property of this CreateRecordDetails.
+        :type record_metadata: oci.data_labeling_service_dataplane.models.RecordMetadata
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateRecordDetails.
         :type freeform_tags: dict(str, str)
@@ -48,6 +52,7 @@ class CreateRecordDetails(object):
             'dataset_id': 'str',
             'compartment_id': 'str',
             'source_details': 'CreateSourceDetails',
+            'record_metadata': 'RecordMetadata',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -57,6 +62,7 @@ class CreateRecordDetails(object):
             'dataset_id': 'datasetId',
             'compartment_id': 'compartmentId',
             'source_details': 'sourceDetails',
+            'record_metadata': 'recordMetadata',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -65,6 +71,7 @@ class CreateRecordDetails(object):
         self._dataset_id = None
         self._compartment_id = None
         self._source_details = None
+        self._record_metadata = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -72,7 +79,7 @@ class CreateRecordDetails(object):
     def name(self):
         """
         **[Required]** Gets the name of this CreateRecordDetails.
-        This will be automatically assigned by the service. It will be unique and immutable.
+        The name is automatically assigned by the service. It is unique and immutable.
 
 
         :return: The name of this CreateRecordDetails.
@@ -84,7 +91,7 @@ class CreateRecordDetails(object):
     def name(self, name):
         """
         Sets the name of this CreateRecordDetails.
-        This will be automatically assigned by the service. It will be unique and immutable.
+        The name is automatically assigned by the service. It is unique and immutable.
 
 
         :param name: The name of this CreateRecordDetails.
@@ -161,11 +168,31 @@ class CreateRecordDetails(object):
         self._source_details = source_details
 
     @property
+    def record_metadata(self):
+        """
+        Gets the record_metadata of this CreateRecordDetails.
+
+        :return: The record_metadata of this CreateRecordDetails.
+        :rtype: oci.data_labeling_service_dataplane.models.RecordMetadata
+        """
+        return self._record_metadata
+
+    @record_metadata.setter
+    def record_metadata(self, record_metadata):
+        """
+        Sets the record_metadata of this CreateRecordDetails.
+
+        :param record_metadata: The record_metadata of this CreateRecordDetails.
+        :type: oci.data_labeling_service_dataplane.models.RecordMetadata
+        """
+        self._record_metadata = record_metadata
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateRecordDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this CreateRecordDetails.
@@ -177,8 +204,8 @@ class CreateRecordDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateRecordDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this CreateRecordDetails.
@@ -190,8 +217,8 @@ class CreateRecordDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this CreateRecordDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this CreateRecordDetails.
@@ -203,8 +230,8 @@ class CreateRecordDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this CreateRecordDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this CreateRecordDetails.

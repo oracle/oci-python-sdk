@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateAnnotationDetails(object):
     """
-    This is the payload sent in the CreateAnnotation operation.  It contains all the information required for a user to create an Annotation for a record.
+    This is the payload sent in the CreateAnnotation operation.  It contains all the information required for a user to create an annotation for a record.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class CreateAnnotationDetails(object):
     def record_id(self):
         """
         **[Required]** Gets the record_id of this CreateAnnotationDetails.
-        The OCID of the record annotated
+        The OCID of the record annotated.
 
 
         :return: The record_id of this CreateAnnotationDetails.
@@ -77,7 +77,7 @@ class CreateAnnotationDetails(object):
     def record_id(self, record_id):
         """
         Sets the record_id of this CreateAnnotationDetails.
-        The OCID of the record annotated
+        The OCID of the record annotated.
 
 
         :param record_id: The record_id of this CreateAnnotationDetails.
@@ -89,7 +89,7 @@ class CreateAnnotationDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateAnnotationDetails.
-        The OCID of the compartment for the annotation
+        The OCID of the compartment for the annotation.
 
 
         :return: The compartment_id of this CreateAnnotationDetails.
@@ -101,7 +101,7 @@ class CreateAnnotationDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateAnnotationDetails.
-        The OCID of the compartment for the annotation
+        The OCID of the compartment for the annotation.
 
 
         :param compartment_id: The compartment_id of this CreateAnnotationDetails.
@@ -113,7 +113,7 @@ class CreateAnnotationDetails(object):
     def entities(self):
         """
         **[Required]** Gets the entities of this CreateAnnotationDetails.
-        The entity types will be validated against the dataset to ensure consistency.
+        The entity types are validated against the dataset to ensure consistency.
 
 
         :return: The entities of this CreateAnnotationDetails.
@@ -125,7 +125,7 @@ class CreateAnnotationDetails(object):
     def entities(self, entities):
         """
         Sets the entities of this CreateAnnotationDetails.
-        The entity types will be validated against the dataset to ensure consistency.
+        The entity types are validated against the dataset to ensure consistency.
 
 
         :param entities: The entities of this CreateAnnotationDetails.
@@ -137,8 +137,8 @@ class CreateAnnotationDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateAnnotationDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this CreateAnnotationDetails.
@@ -150,8 +150,8 @@ class CreateAnnotationDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateAnnotationDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this CreateAnnotationDetails.
@@ -163,8 +163,8 @@ class CreateAnnotationDetails(object):
     def defined_tags(self):
         """
         Gets the defined_tags of this CreateAnnotationDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this CreateAnnotationDetails.
@@ -176,8 +176,8 @@ class CreateAnnotationDetails(object):
     def defined_tags(self, defined_tags):
         """
         Sets the defined_tags of this CreateAnnotationDetails.
-        Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        The defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this CreateAnnotationDetails.

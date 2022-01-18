@@ -30,22 +30,29 @@ class SnapshotDatasetDetails(object):
             The value to assign to the export_details property of this SnapshotDatasetDetails.
         :type export_details: oci.data_labeling_service.models.ObjectStorageSnapshotExportDetails
 
+        :param export_format:
+            The value to assign to the export_format property of this SnapshotDatasetDetails.
+        :type export_format: oci.data_labeling_service.models.ExportFormat
+
         """
         self.swagger_types = {
             'are_annotations_included': 'bool',
             'are_unannotated_records_included': 'bool',
-            'export_details': 'ObjectStorageSnapshotExportDetails'
+            'export_details': 'ObjectStorageSnapshotExportDetails',
+            'export_format': 'ExportFormat'
         }
 
         self.attribute_map = {
             'are_annotations_included': 'areAnnotationsIncluded',
             'are_unannotated_records_included': 'areUnannotatedRecordsIncluded',
-            'export_details': 'exportDetails'
+            'export_details': 'exportDetails',
+            'export_format': 'exportFormat'
         }
 
         self._are_annotations_included = None
         self._are_unannotated_records_included = None
         self._export_details = None
+        self._export_format = None
 
     @property
     def are_annotations_included(self):
@@ -114,6 +121,26 @@ class SnapshotDatasetDetails(object):
         :type: oci.data_labeling_service.models.ObjectStorageSnapshotExportDetails
         """
         self._export_details = export_details
+
+    @property
+    def export_format(self):
+        """
+        Gets the export_format of this SnapshotDatasetDetails.
+
+        :return: The export_format of this SnapshotDatasetDetails.
+        :rtype: oci.data_labeling_service.models.ExportFormat
+        """
+        return self._export_format
+
+    @export_format.setter
+    def export_format(self, export_format):
+        """
+        Sets the export_format of this SnapshotDatasetDetails.
+
+        :param export_format: The export_format of this SnapshotDatasetDetails.
+        :type: oci.data_labeling_service.models.ExportFormat
+        """
+        self._export_format = export_format
 
     def __repr__(self):
         return formatted_flat_dict(self)

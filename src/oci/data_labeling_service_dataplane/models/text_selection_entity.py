@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TextSelectionEntity(Entity):
     """
-    This allows the labeler to highlight text by specifying an offset and a length and apply labels to it.
+    This lets the labeler highlight text, by specifying an offset and a length, and apply labels to it.
     """
 
     def __init__(self, **kwargs):
@@ -61,7 +61,7 @@ class TextSelectionEntity(Entity):
     def labels(self):
         """
         **[Required]** Gets the labels of this TextSelectionEntity.
-        Collection of Label entities
+        A collection of label entities.
 
 
         :return: The labels of this TextSelectionEntity.
@@ -73,7 +73,7 @@ class TextSelectionEntity(Entity):
     def labels(self, labels):
         """
         Sets the labels of this TextSelectionEntity.
-        Collection of Label entities
+        A collection of label entities.
 
 
         :param labels: The labels of this TextSelectionEntity.
@@ -105,8 +105,8 @@ class TextSelectionEntity(Entity):
     def extended_metadata(self):
         """
         Gets the extended_metadata of this TextSelectionEntity.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The extended_metadata of this TextSelectionEntity.
@@ -118,8 +118,8 @@ class TextSelectionEntity(Entity):
     def extended_metadata(self, extended_metadata):
         """
         Sets the extended_metadata of this TextSelectionEntity.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param extended_metadata: The extended_metadata of this TextSelectionEntity.
