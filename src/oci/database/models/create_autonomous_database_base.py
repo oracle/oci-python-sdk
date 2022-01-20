@@ -734,8 +734,8 @@ class CreateAutonomousDatabaseBase(object):
         Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
@@ -754,8 +754,8 @@ class CreateAutonomousDatabaseBase(object):
         Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :param license_model: The license_model of this CreateAutonomousDatabaseBase.
@@ -775,7 +775,7 @@ class CreateAutonomousDatabaseBase(object):
         Gets the is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
         If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for databases on `shared Exadata infrastructure`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :return: The is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
@@ -789,7 +789,7 @@ class CreateAutonomousDatabaseBase(object):
         Sets the is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
         If set to `TRUE`, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for databases on `shared Exadata infrastructure`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :param is_preview_version_with_service_terms_accepted: The is_preview_version_with_service_terms_accepted of this CreateAutonomousDatabaseBase.
@@ -827,7 +827,7 @@ class CreateAutonomousDatabaseBase(object):
         Gets the is_dedicated of this CreateAutonomousDatabaseBase.
         True if the database is on `dedicated Exadata infrastructure`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :return: The is_dedicated of this CreateAutonomousDatabaseBase.
@@ -841,7 +841,7 @@ class CreateAutonomousDatabaseBase(object):
         Sets the is_dedicated of this CreateAutonomousDatabaseBase.
         True if the database is on `dedicated Exadata infrastructure`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :param is_dedicated: The is_dedicated of this CreateAutonomousDatabaseBase.
@@ -928,7 +928,7 @@ class CreateAutonomousDatabaseBase(object):
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :return: The whitelisted_ips of this CreateAutonomousDatabaseBase.
@@ -951,7 +951,7 @@ class CreateAutonomousDatabaseBase(object):
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :param whitelisted_ips: The whitelisted_ips of this CreateAutonomousDatabaseBase.
@@ -1002,7 +1002,7 @@ class CreateAutonomousDatabaseBase(object):
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :return: The standby_whitelisted_ips of this CreateAutonomousDatabaseBase.
@@ -1025,7 +1025,7 @@ class CreateAutonomousDatabaseBase(object):
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :param standby_whitelisted_ips: The standby_whitelisted_ips of this CreateAutonomousDatabaseBase.
@@ -1037,7 +1037,8 @@ class CreateAutonomousDatabaseBase(object):
     def is_data_guard_enabled(self):
         """
         Gets the is_data_guard_enabled of this CreateAutonomousDatabaseBase.
-        Indicates whether the Autonomous Database has Data Guard enabled.
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
+        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :return: The is_data_guard_enabled of this CreateAutonomousDatabaseBase.
@@ -1049,7 +1050,8 @@ class CreateAutonomousDatabaseBase(object):
     def is_data_guard_enabled(self, is_data_guard_enabled):
         """
         Sets the is_data_guard_enabled of this CreateAutonomousDatabaseBase.
-        Indicates whether the Autonomous Database has Data Guard enabled.
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
+        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :param is_data_guard_enabled: The is_data_guard_enabled of this CreateAutonomousDatabaseBase.
@@ -1253,12 +1255,12 @@ class CreateAutonomousDatabaseBase(object):
     def source(self):
         """
         Gets the source of this CreateAutonomousDatabaseBase.
-        The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database.
+        The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
 
-        For Autonomous Databases on `shared Exadata infrastructure`__, the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see `Cloning an Autonomous Database`__.
+        For Autonomous Databases on `shared Exadata infrastructure`__, the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see `Cloning and Moving an Autonomous Database`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
-        __ https://docs.cloud.oracle.com/Content/Database/Tasks/adbcloning.htm
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC
 
         Allowed values for this property are: "NONE", "DATABASE", "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "CLONE_TO_REFRESHABLE", "CROSS_REGION_DATAGUARD"
 
@@ -1272,12 +1274,12 @@ class CreateAutonomousDatabaseBase(object):
     def source(self, source):
         """
         Sets the source of this CreateAutonomousDatabaseBase.
-        The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database.
+        The source of the database: Use `NONE` for creating a new Autonomous Database. Use `DATABASE` for creating a new Autonomous Database by cloning an existing Autonomous Database. Use `CROSS_REGION_DATAGUARD` to create a standby Data Guard database in another region.
 
-        For Autonomous Databases on `shared Exadata infrastructure`__, the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see `Cloning an Autonomous Database`__.
+        For Autonomous Databases on `shared Exadata infrastructure`__, the following cloning options are available: Use `BACKUP_FROM_ID` for creating a new Autonomous Database from a specified backup. Use `BACKUP_FROM_TIMESTAMP` for creating a point-in-time Autonomous Database clone using backups. For more information, see `Cloning and Moving an Autonomous Database`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
-        __ https://docs.cloud.oracle.com/Content/Database/Tasks/adbcloning.htm
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/clone-autonomous-database.html#GUID-D771796F-5081-4CFB-A7FF-0F893EABD7BC
 
 
         :param source: The source of this CreateAutonomousDatabaseBase.

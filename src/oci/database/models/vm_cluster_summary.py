@@ -690,7 +690,7 @@ class VmClusterSummary(object):
     def data_storage_size_in_gbs(self):
         """
         Gets the data_storage_size_in_gbs of this VmClusterSummary.
-        Size, in gigabytes, of the DATA disk group.
+        Size of the DATA disk group in GBs.
 
 
         :return: The data_storage_size_in_gbs of this VmClusterSummary.
@@ -702,7 +702,7 @@ class VmClusterSummary(object):
     def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
         """
         Sets the data_storage_size_in_gbs of this VmClusterSummary.
-        Size, in gigabytes, of the DATA disk group.
+        Size of the DATA disk group in GBs.
 
 
         :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this VmClusterSummary.

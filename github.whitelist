@@ -136,3 +136,7 @@
 ^src/oci/osp_gateway/.*\.py$
 ^src/oci/identity_data_plane/.*\.py$
 ^src/oci/visual_builder/.*\.py$
+^src/oci/osub_usage/.*\.py$
+^src/oci/osub_subscription/.*\.py$
+^src/oci/osub_organization_subscription/.*\.py$
+^src/oci/osub_billing_schedule/.*\.py$

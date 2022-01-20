@@ -53,6 +53,22 @@ class Run(object):
     #: This constant has a value of "SUCCEEDED"
     LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
 
+    #: A constant which can be used with the lifecycle_state property of a Run.
+    #: This constant has a value of "STOPPING"
+    LIFECYCLE_STATE_STOPPING = "STOPPING"
+
+    #: A constant which can be used with the lifecycle_state property of a Run.
+    #: This constant has a value of "STOPPED"
+    LIFECYCLE_STATE_STOPPED = "STOPPED"
+
+    #: A constant which can be used with the type property of a Run.
+    #: This constant has a value of "BATCH"
+    TYPE_BATCH = "BATCH"
+
+    #: A constant which can be used with the type property of a Run.
+    #: This constant has a value of "STREAMING"
+    TYPE_STREAMING = "STREAMING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Run object with values from keyword arguments.
@@ -134,7 +150,7 @@ class Run(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Run.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", "STOPPING", "STOPPED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -206,6 +222,12 @@ class Run(object):
             The value to assign to the total_o_cpu property of this Run.
         :type total_o_cpu: int
 
+        :param type:
+            The value to assign to the type property of this Run.
+            Allowed values for this property are: "BATCH", "STREAMING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type type: str
+
         :param warehouse_bucket_uri:
             The value to assign to the warehouse_bucket_uri property of this Run.
         :type warehouse_bucket_uri: str
@@ -248,6 +270,7 @@ class Run(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'total_o_cpu': 'int',
+            'type': 'str',
             'warehouse_bucket_uri': 'str'
         }
 
@@ -288,6 +311,7 @@ class Run(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'total_o_cpu': 'totalOCpu',
+            'type': 'type',
             'warehouse_bucket_uri': 'warehouseBucketUri'
         }
 
@@ -327,6 +351,7 @@ class Run(object):
         self._time_created = None
         self._time_updated = None
         self._total_o_cpu = None
+        self._type = None
         self._warehouse_bucket_uri = None
 
     @property
@@ -821,7 +846,7 @@ class Run(object):
         **[Required]** Gets the lifecycle_state of this Run.
         The current state of this run.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", "STOPPING", "STOPPED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -840,7 +865,7 @@ class Run(object):
         :param lifecycle_state: The lifecycle_state of this Run.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED"]
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", "STOPPING", "STOPPED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -1284,6 +1309,36 @@ class Run(object):
         :type: int
         """
         self._total_o_cpu = total_o_cpu
+
+    @property
+    def type(self):
+        """
+        Gets the type of this Run.
+        The Spark application processing type.
+
+        Allowed values for this property are: "BATCH", "STREAMING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The type of this Run.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this Run.
+        The Spark application processing type.
+
+
+        :param type: The type of this Run.
+        :type: str
+        """
+        allowed_values = ["BATCH", "STREAMING"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            type = 'UNKNOWN_ENUM_VALUE'
+        self._type = type
 
     @property
     def warehouse_bucket_uri(self):

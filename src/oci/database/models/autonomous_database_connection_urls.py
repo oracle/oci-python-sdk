@@ -14,7 +14,7 @@ class AutonomousDatabaseConnectionUrls(object):
 
     Example: `{\"sqlDevWebUrl\": \"https://<hostname>/ords...\", \"apexUrl\", \"https://<hostname>/ords...\"}`
 
-    __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+    __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
     """
 
     def __init__(self, **kwargs):

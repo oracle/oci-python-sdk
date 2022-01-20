@@ -455,7 +455,9 @@ class CreateAutonomousContainerDatabaseDetails(object):
     def peer_cloud_autonomous_vm_cluster_id(self):
         """
         Gets the peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
-        The OCID of the peer cloud Autonomous VM Cluster.
+        The `OCID`__ of the peer cloud Autonomous Exadata VM Cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
@@ -467,7 +469,9 @@ class CreateAutonomousContainerDatabaseDetails(object):
     def peer_cloud_autonomous_vm_cluster_id(self, peer_cloud_autonomous_vm_cluster_id):
         """
         Sets the peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
-        The OCID of the peer cloud Autonomous VM Cluster.
+        The `OCID`__ of the peer cloud Autonomous Exadata VM Cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param peer_cloud_autonomous_vm_cluster_id: The peer_cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
@@ -605,7 +609,9 @@ class CreateAutonomousContainerDatabaseDetails(object):
     def cloud_autonomous_vm_cluster_id(self):
         """
         Gets the cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
-        The OCID of the cloud Autonomous VM Cluster.
+        The `OCID`__ of the cloud Autonomous Exadata VM Cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
@@ -617,7 +623,9 @@ class CreateAutonomousContainerDatabaseDetails(object):
     def cloud_autonomous_vm_cluster_id(self, cloud_autonomous_vm_cluster_id):
         """
         Sets the cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.
-        The OCID of the cloud Autonomous VM Cluster.
+        The `OCID`__ of the cloud Autonomous Exadata VM Cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_autonomous_vm_cluster_id: The cloud_autonomous_vm_cluster_id of this CreateAutonomousContainerDatabaseDetails.

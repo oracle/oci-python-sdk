@@ -41,6 +41,14 @@ class ApplicationSummary(object):
     #: This constant has a value of "INACTIVE"
     LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
+    #: A constant which can be used with the type property of a ApplicationSummary.
+    #: This constant has a value of "BATCH"
+    TYPE_BATCH = "BATCH"
+
+    #: A constant which can be used with the type property of a ApplicationSummary.
+    #: This constant has a value of "STREAMING"
+    TYPE_STREAMING = "STREAMING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ApplicationSummary object with values from keyword arguments.
@@ -98,6 +106,12 @@ class ApplicationSummary(object):
             The value to assign to the time_updated property of this ApplicationSummary.
         :type time_updated: datetime
 
+        :param type:
+            The value to assign to the type property of this ApplicationSummary.
+            Allowed values for this property are: "BATCH", "STREAMING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type type: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -111,7 +125,8 @@ class ApplicationSummary(object):
             'owner_user_name': 'str',
             'spark_version': 'str',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'type': 'str'
         }
 
         self.attribute_map = {
@@ -126,7 +141,8 @@ class ApplicationSummary(object):
             'owner_user_name': 'ownerUserName',
             'spark_version': 'sparkVersion',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'type': 'type'
         }
 
         self._compartment_id = None
@@ -141,6 +157,7 @@ class ApplicationSummary(object):
         self._spark_version = None
         self._time_created = None
         self._time_updated = None
+        self._type = None
 
     @property
     def compartment_id(self):
@@ -469,6 +486,36 @@ class ApplicationSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def type(self):
+        """
+        Gets the type of this ApplicationSummary.
+        The Spark application processing type.
+
+        Allowed values for this property are: "BATCH", "STREAMING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The type of this ApplicationSummary.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this ApplicationSummary.
+        The Spark application processing type.
+
+
+        :param type: The type of this ApplicationSummary.
+        :type: str
+        """
+        allowed_values = ["BATCH", "STREAMING"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            type = 'UNKNOWN_ENUM_VALUE'
+        self._type = type
 
     def __repr__(self):
         return formatted_flat_dict(self)

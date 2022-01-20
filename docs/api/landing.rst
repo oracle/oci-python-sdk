@@ -111,6 +111,12 @@ API Reference
 * :doc:`Event <os_management/client/oci.os_management.EventClient>`
 * :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
 * :doc:`Invoice Service <osp_gateway/client/oci.osp_gateway.InvoiceServiceClient>`
+* :doc:`Billing Schedule <osub_billing_schedule/client/oci.osub_billing_schedule.BillingScheduleClient>`
+* :doc:`Organization Subscription <osub_organization_subscription/client/oci.osub_organization_subscription.OrganizationSubscriptionClient>`
+* :doc:`Commitment <osub_subscription/client/oci.osub_subscription.CommitmentClient>`
+* :doc:`Ratecard <osub_subscription/client/oci.osub_subscription.RatecardClient>`
+* :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
+* :doc:`Computed Usage <osub_usage/client/oci.osub_usage.ComputedUsageClient>`
 * :doc:`Resource Manager <resource_manager/client/oci.resource_manager.ResourceManagerClient>`
 * :doc:`Resource Search <resource_search/client/oci.resource_search.ResourceSearchClient>`
 * :doc:`Rover Cluster <rover/client/oci.rover.RoverClusterClient>`
@@ -233,6 +239,10 @@ API Reference
     optimizer
     os_management
     osp_gateway
+    osub_billing_schedule
+    osub_organization_subscription
+    osub_subscription
+    osub_usage
     resource_manager
     resource_search
     rover

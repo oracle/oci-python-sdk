@@ -10,9 +10,11 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutonomousExadataInfrastructureSummary(object):
     """
+    **Deprecated** These APIs are deprecated with the introduction of the Autonomous Exadata VM Cluster resource and a shift to a common Exadata Infrastructure resource for all Exadata Cloud-based services, including Autonomous Database on dedicated Exadata infrastructure. For more details, see `Latest Resource Model`__.
+
     Infrastructure that enables the running of multiple Autonomous Databases within a dedicated DB system.
     For more information about Autonomous Exadata Infrastructure, see
-    `Overview of Autonomous Database`__.
+    `Oracle Autonomous Database`__.
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see `Getting Started with Policies`__.
 
@@ -25,7 +27,8 @@ class AutonomousExadataInfrastructureSummary(object):
     To get a list of availability domains, use the ListAvailabilityDomains operation
     in the Identity service API.
 
-    __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm
+    __ https://docs.oracle.com/en/cloud/paas/autonomous-database/flddd/#articletitle
+    __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
     __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm

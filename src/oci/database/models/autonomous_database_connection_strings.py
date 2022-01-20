@@ -14,7 +14,7 @@ class AutonomousDatabaseConnectionStrings(object):
 
     Example output for connection strings. See :func:`database_connection_string_profile` for additional details:
 
-    \t\t\"connectionStrings\": {
+    \t\"connectionStrings\": {
     \"allConnectionStrings\": {
     \"HIGH\": \"adb.region.oraclecloud.com:1522/unique_id_databasename_high.adwc.oraclecloud.com\",
     \"LOW\": \"adb.region.oraclecloud.com:1522/unique_id_databasename_low.adwc.oraclecloud.com\",

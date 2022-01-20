@@ -11,6 +11,43 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDatabaseBase):
     """
     Details to create an Autonomous Data Guard association for an existing Autonomous Database where the standby is in a different (remote) region from the source primary database.
+    The following parameters are required for the cross-region standby database and must contain the same values as the source Autonomous Database:
+    - dbName
+    - cpuCoreCount
+    - dataStorageSizeInTB
+    - dbVersion
+    The following parameters are optional for the cross-region standby database. If included in the request, these parameters contain the same values as the source Autonomous Database:
+    - customerContacts
+    - scheduledOperations
+    - isAutoScalingForStorageEnabled
+    - definedTags
+    - freeformTags
+    - licenseModel
+    - whitelistedIps
+    - isMtlsConnectionRequired
+    Example I - Creating a cross-region standby with required parameters only:
+    {
+    \"compartmentId\": \"ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>\",
+    \"cpuCoreCount\": 1,
+    \"dbName\": \"adatabasedb1\",
+    \"sourceId\": \"ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>\",
+    \"dataStorageSizeInTBs\": 1,
+    \"source\": \"CROSS_REGION_DATAGUARD\",
+    \"adminPassword\" : \"<var>&lt;password&gt;</var>\",
+    }
+    Example II - Creating a cross-region standby that specifies optional parameters in addition to the required parameters:
+    {
+    \"compartmentId\": \"ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>\",
+    \"cpuCoreCount\": 1,
+    \"dbName\": \"adatabasedb1\",
+    \"sourceId\": \"ocid1.autonomousdatabase.oc1.phx..<var>&lt;unique_ID&gt;</var>\",
+    \"dataStorageSizeInTBs\": 1,
+    \"source\": \"CROSS_REGION_DATAGUARD\",
+    \"adminPassword\" : \"<var>&lt;password&gt;</var>\",
+    \"dbVersion\": \"19c\",
+    \"licenseModel\": \"LICENSE_INCLUDED\",
+    \"isAutoScalingForStorageEnabled\": \"true\"
+    }
     """
 
     def __init__(self, **kwargs):

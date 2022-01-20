@@ -627,7 +627,7 @@ class AutonomousVmClusterSummary(object):
     def data_storage_size_in_gbs(self):
         """
         Gets the data_storage_size_in_gbs of this AutonomousVmClusterSummary.
-        The total data storage allocated in GBs
+        The total data storage allocated in GBs.
 
 
         :return: The data_storage_size_in_gbs of this AutonomousVmClusterSummary.
@@ -639,7 +639,7 @@ class AutonomousVmClusterSummary(object):
     def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
         """
         Sets the data_storage_size_in_gbs of this AutonomousVmClusterSummary.
-        The total data storage allocated in GBs
+        The total data storage allocated in GBs.
 
 
         :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this AutonomousVmClusterSummary.

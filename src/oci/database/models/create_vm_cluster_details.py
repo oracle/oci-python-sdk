@@ -277,7 +277,7 @@ class CreateVmClusterDetails(object):
     def ocpu_count(self):
         """
         Gets the ocpu_count of this CreateVmClusterDetails.
-        The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for the fractional part.
+        The number of OCPU cores to enable for the VM cluster. Only one decimal place is allowed for the fractional part.
 
 
         :return: The ocpu_count of this CreateVmClusterDetails.
@@ -289,7 +289,7 @@ class CreateVmClusterDetails(object):
     def ocpu_count(self, ocpu_count):
         """
         Sets the ocpu_count of this CreateVmClusterDetails.
-        The number of OCPU cores to enable for the VM cluster. Only 1 decimal place is allowed for the fractional part.
+        The number of OCPU cores to enable for the VM cluster. Only one decimal place is allowed for the fractional part.
 
 
         :param ocpu_count: The ocpu_count of this CreateVmClusterDetails.

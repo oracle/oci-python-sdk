@@ -170,7 +170,7 @@ class AutonomousDbVersionSummary(object):
         Gets the is_dedicated of this AutonomousDbVersionSummary.
         True if the database uses `dedicated Exadata infrastructure`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :return: The is_dedicated of this AutonomousDbVersionSummary.
@@ -184,7 +184,7 @@ class AutonomousDbVersionSummary(object):
         Sets the is_dedicated of this AutonomousDbVersionSummary.
         True if the database uses `dedicated Exadata infrastructure`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :param is_dedicated: The is_dedicated of this AutonomousDbVersionSummary.

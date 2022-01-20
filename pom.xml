@@ -43,6 +43,10 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/osub_billing_schedule/pom.xml</module>
+    <module>poms/osub_organization_subscription/pom.xml</module>
+    <module>poms/osub_subscription/pom.xml</module>
+    <module>poms/osub_usage/pom.xml</module>
     <module>poms/visual_builder/pom.xml</module>
     <module>poms/identity_data_plane/pom.xml</module>
     <module>poms/osp_gateway/pom.xml</module>
