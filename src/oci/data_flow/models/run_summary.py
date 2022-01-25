@@ -53,6 +53,22 @@ class RunSummary(object):
     #: This constant has a value of "SUCCEEDED"
     LIFECYCLE_STATE_SUCCEEDED = "SUCCEEDED"
 
+    #: A constant which can be used with the lifecycle_state property of a RunSummary.
+    #: This constant has a value of "STOPPING"
+    LIFECYCLE_STATE_STOPPING = "STOPPING"
+
+    #: A constant which can be used with the lifecycle_state property of a RunSummary.
+    #: This constant has a value of "STOPPED"
+    LIFECYCLE_STATE_STOPPED = "STOPPED"
+
+    #: A constant which can be used with the type property of a RunSummary.
+    #: This constant has a value of "BATCH"
+    TYPE_BATCH = "BATCH"
+
+    #: A constant which can be used with the type property of a RunSummary.
+    #: This constant has a value of "STREAMING"
+    TYPE_STREAMING = "STREAMING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new RunSummary object with values from keyword arguments.
@@ -102,7 +118,7 @@ class RunSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this RunSummary.
-            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", "STOPPING", "STOPPED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -134,6 +150,12 @@ class RunSummary(object):
             The value to assign to the time_updated property of this RunSummary.
         :type time_updated: datetime
 
+        :param type:
+            The value to assign to the type property of this RunSummary.
+            Allowed values for this property are: "BATCH", "STREAMING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type type: str
+
         """
         self.swagger_types = {
             'application_id': 'str',
@@ -153,7 +175,8 @@ class RunSummary(object):
             'run_duration_in_milliseconds': 'int',
             'total_o_cpu': 'int',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'type': 'str'
         }
 
         self.attribute_map = {
@@ -174,7 +197,8 @@ class RunSummary(object):
             'run_duration_in_milliseconds': 'runDurationInMilliseconds',
             'total_o_cpu': 'totalOCpu',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'type': 'type'
         }
 
         self._application_id = None
@@ -195,6 +219,7 @@ class RunSummary(object):
         self._total_o_cpu = None
         self._time_created = None
         self._time_updated = None
+        self._type = None
 
     @property
     def application_id(self):
@@ -462,7 +487,7 @@ class RunSummary(object):
         **[Required]** Gets the lifecycle_state of this RunSummary.
         The current state of this run.
 
-        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", "STOPPING", "STOPPED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -481,7 +506,7 @@ class RunSummary(object):
         :param lifecycle_state: The lifecycle_state of this RunSummary.
         :type: str
         """
-        allowed_values = ["ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED"]
+        allowed_values = ["ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", "STOPPING", "STOPPED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -669,6 +694,36 @@ class RunSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def type(self):
+        """
+        Gets the type of this RunSummary.
+        The Spark application processing type.
+
+        Allowed values for this property are: "BATCH", "STREAMING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The type of this RunSummary.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this RunSummary.
+        The Spark application processing type.
+
+
+        :param type: The type of this RunSummary.
+        :type: str
+        """
+        allowed_values = ["BATCH", "STREAMING"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            type = 'UNKNOWN_ENUM_VALUE'
+        self._type = type
 
     def __repr__(self):
         return formatted_flat_dict(self)

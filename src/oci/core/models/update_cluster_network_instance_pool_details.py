@@ -38,13 +38,18 @@ class UpdateClusterNetworkInstancePoolDetails(object):
             The value to assign to the size property of this UpdateClusterNetworkInstancePoolDetails.
         :type size: int
 
+        :param instance_configuration_id:
+            The value to assign to the instance_configuration_id property of this UpdateClusterNetworkInstancePoolDetails.
+        :type instance_configuration_id: str
+
         """
         self.swagger_types = {
             'id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
-            'size': 'int'
+            'size': 'int',
+            'instance_configuration_id': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class UpdateClusterNetworkInstancePoolDetails(object):
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
-            'size': 'size'
+            'size': 'size',
+            'instance_configuration_id': 'instanceConfigurationId'
         }
 
         self._id = None
@@ -60,6 +66,7 @@ class UpdateClusterNetworkInstancePoolDetails(object):
         self._display_name = None
         self._freeform_tags = None
         self._size = None
+        self._instance_configuration_id = None
 
     @property
     def id(self):
@@ -206,6 +213,34 @@ class UpdateClusterNetworkInstancePoolDetails(object):
         :type: int
         """
         self._size = size
+
+    @property
+    def instance_configuration_id(self):
+        """
+        Gets the instance_configuration_id of this UpdateClusterNetworkInstancePoolDetails.
+        The `OCID`__ of the instance configuration associated with the instance pool.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :return: The instance_configuration_id of this UpdateClusterNetworkInstancePoolDetails.
+        :rtype: str
+        """
+        return self._instance_configuration_id
+
+    @instance_configuration_id.setter
+    def instance_configuration_id(self, instance_configuration_id):
+        """
+        Sets the instance_configuration_id of this UpdateClusterNetworkInstancePoolDetails.
+        The `OCID`__ of the instance configuration associated with the instance pool.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+
+        :param instance_configuration_id: The instance_configuration_id of this UpdateClusterNetworkInstancePoolDetails.
+        :type: str
+        """
+        self._instance_configuration_id = instance_configuration_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

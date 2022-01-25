@@ -556,7 +556,7 @@ class VolumeAttachment(object):
     def is_multipath(self):
         """
         Gets the is_multipath of this VolumeAttachment.
-        Whether the attachment is multipath or not.
+        Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
 
 
         :return: The is_multipath of this VolumeAttachment.
@@ -568,7 +568,7 @@ class VolumeAttachment(object):
     def is_multipath(self, is_multipath):
         """
         Sets the is_multipath of this VolumeAttachment.
-        Whether the attachment is multipath or not.
+        Whether the Iscsi or Paravirtualized attachment is multipath or not, it is not applicable to NVMe attachment.
 
 
         :param is_multipath: The is_multipath of this VolumeAttachment.
@@ -580,7 +580,7 @@ class VolumeAttachment(object):
     def iscsi_login_state(self):
         """
         Gets the iscsi_login_state of this VolumeAttachment.
-        The iscsi login state of the volume attachment. For a multipath volume attachment,
+        The iscsi login state of the volume attachment. For a Iscsi volume attachment,
         all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
 
         Allowed values for this property are: "UNKNOWN", "LOGGING_IN", "LOGIN_SUCCEEDED", "LOGIN_FAILED", "LOGGING_OUT", "LOGOUT_SUCCEEDED", "LOGOUT_FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -596,7 +596,7 @@ class VolumeAttachment(object):
     def iscsi_login_state(self, iscsi_login_state):
         """
         Sets the iscsi_login_state of this VolumeAttachment.
-        The iscsi login state of the volume attachment. For a multipath volume attachment,
+        The iscsi login state of the volume attachment. For a Iscsi volume attachment,
         all iscsi sessions need to be all logged-in or logged-out to be in logged-in or logged-out state.
 
 

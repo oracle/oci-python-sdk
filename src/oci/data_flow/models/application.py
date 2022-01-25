@@ -41,6 +41,14 @@ class Application(object):
     #: This constant has a value of "INACTIVE"
     LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
+    #: A constant which can be used with the type property of a Application.
+    #: This constant has a value of "BATCH"
+    TYPE_BATCH = "BATCH"
+
+    #: A constant which can be used with the type property of a Application.
+    #: This constant has a value of "STREAMING"
+    TYPE_STREAMING = "STREAMING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Application object with values from keyword arguments.
@@ -154,6 +162,12 @@ class Application(object):
             The value to assign to the time_updated property of this Application.
         :type time_updated: datetime
 
+        :param type:
+            The value to assign to the type property of this Application.
+            Allowed values for this property are: "BATCH", "STREAMING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type type: str
+
         :param warehouse_bucket_uri:
             The value to assign to the warehouse_bucket_uri property of this Application.
         :type warehouse_bucket_uri: str
@@ -186,6 +200,7 @@ class Application(object):
             'spark_version': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'type': 'str',
             'warehouse_bucket_uri': 'str'
         }
 
@@ -216,6 +231,7 @@ class Application(object):
             'spark_version': 'sparkVersion',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'type': 'type',
             'warehouse_bucket_uri': 'warehouseBucketUri'
         }
 
@@ -245,6 +261,7 @@ class Application(object):
         self._spark_version = None
         self._time_created = None
         self._time_updated = None
+        self._type = None
         self._warehouse_bucket_uri = None
 
     @property
@@ -952,6 +969,36 @@ class Application(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def type(self):
+        """
+        Gets the type of this Application.
+        The Spark application processing type.
+
+        Allowed values for this property are: "BATCH", "STREAMING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The type of this Application.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this Application.
+        The Spark application processing type.
+
+
+        :param type: The type of this Application.
+        :type: str
+        """
+        allowed_values = ["BATCH", "STREAMING"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            type = 'UNKNOWN_ENUM_VALUE'
+        self._type = type
 
     @property
     def warehouse_bucket_uri(self):

@@ -29,6 +29,14 @@ class CreateApplicationDetails(object):
     #: This constant has a value of "SQL"
     LANGUAGE_SQL = "SQL"
 
+    #: A constant which can be used with the type property of a CreateApplicationDetails.
+    #: This constant has a value of "BATCH"
+    TYPE_BATCH = "BATCH"
+
+    #: A constant which can be used with the type property of a CreateApplicationDetails.
+    #: This constant has a value of "STREAMING"
+    TYPE_STREAMING = "STREAMING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateApplicationDetails object with values from keyword arguments.
@@ -115,6 +123,11 @@ class CreateApplicationDetails(object):
             The value to assign to the spark_version property of this CreateApplicationDetails.
         :type spark_version: str
 
+        :param type:
+            The value to assign to the type property of this CreateApplicationDetails.
+            Allowed values for this property are: "BATCH", "STREAMING"
+        :type type: str
+
         :param warehouse_bucket_uri:
             The value to assign to the warehouse_bucket_uri property of this CreateApplicationDetails.
         :type warehouse_bucket_uri: str
@@ -141,6 +154,7 @@ class CreateApplicationDetails(object):
             'parameters': 'list[ApplicationParameter]',
             'private_endpoint_id': 'str',
             'spark_version': 'str',
+            'type': 'str',
             'warehouse_bucket_uri': 'str'
         }
 
@@ -165,6 +179,7 @@ class CreateApplicationDetails(object):
             'parameters': 'parameters',
             'private_endpoint_id': 'privateEndpointId',
             'spark_version': 'sparkVersion',
+            'type': 'type',
             'warehouse_bucket_uri': 'warehouseBucketUri'
         }
 
@@ -188,6 +203,7 @@ class CreateApplicationDetails(object):
         self._parameters = None
         self._private_endpoint_id = None
         self._spark_version = None
+        self._type = None
         self._warehouse_bucket_uri = None
 
     @property
@@ -733,6 +749,38 @@ class CreateApplicationDetails(object):
         :type: str
         """
         self._spark_version = spark_version
+
+    @property
+    def type(self):
+        """
+        Gets the type of this CreateApplicationDetails.
+        The Spark application processing type.
+
+        Allowed values for this property are: "BATCH", "STREAMING"
+
+
+        :return: The type of this CreateApplicationDetails.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this CreateApplicationDetails.
+        The Spark application processing type.
+
+
+        :param type: The type of this CreateApplicationDetails.
+        :type: str
+        """
+        allowed_values = ["BATCH", "STREAMING"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            raise ValueError(
+                "Invalid value for `type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._type = type
 
     @property
     def warehouse_bucket_uri(self):

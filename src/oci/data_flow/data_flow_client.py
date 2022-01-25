@@ -1776,7 +1776,7 @@ class DataFlowClient(object):
         :param str lifecycle_state: (optional)
             The LifecycleState of the run.
 
-            Allowed values are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED"
+            Allowed values are: "ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", "STOPPING", "STOPPED"
 
         :param datetime time_created_greater_than: (optional)
             The epoch time that the resource was created.
@@ -1844,7 +1844,7 @@ class DataFlowClient(object):
                 "list_runs got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED"]
+            lifecycle_state_allowed_values = ["ACCEPTED", "IN_PROGRESS", "CANCELING", "CANCELED", "FAILED", "SUCCEEDED", "STOPPING", "STOPPED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
