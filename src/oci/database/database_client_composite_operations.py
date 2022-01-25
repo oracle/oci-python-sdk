@@ -4662,7 +4662,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.LaunchAutonomousExadataInfrastructureDetails launch_autonomous_exadata_infrastructure_details: (required)
-            Request to create an Autonomous Exadata Infrastructure resource.
+            **Deprecated.** Use the :func:`create_cloud_exadata_infrastructure` or :func:`create_cloud_autonomous_vm_cluster` operations instead.
 
         :param list[str] work_request_states: (optional)
             An array of work requests states to wait on. These should be valid values for :py:attr:`~oci.work_requests.models.WorkRequest.status`
@@ -4697,7 +4697,7 @@ class DatabaseClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.database.models.LaunchAutonomousExadataInfrastructureDetails launch_autonomous_exadata_infrastructure_details: (required)
-            Request to create an Autonomous Exadata Infrastructure resource.
+            **Deprecated.** Use the :func:`create_cloud_exadata_infrastructure` or :func:`create_cloud_autonomous_vm_cluster` operations instead.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.database.models.AutonomousExadataInfrastructure.lifecycle_state`

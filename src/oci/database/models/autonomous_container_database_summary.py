@@ -546,7 +546,9 @@ class AutonomousContainerDatabaseSummary(object):
     def cloud_autonomous_vm_cluster_id(self):
         """
         Gets the cloud_autonomous_vm_cluster_id of this AutonomousContainerDatabaseSummary.
-        The OCID of the cloud Autonomous VM Cluster.
+        The `OCID`__ of the cloud Autonomous Exadata VM Cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :return: The cloud_autonomous_vm_cluster_id of this AutonomousContainerDatabaseSummary.
@@ -558,7 +560,9 @@ class AutonomousContainerDatabaseSummary(object):
     def cloud_autonomous_vm_cluster_id(self, cloud_autonomous_vm_cluster_id):
         """
         Sets the cloud_autonomous_vm_cluster_id of this AutonomousContainerDatabaseSummary.
-        The OCID of the cloud Autonomous VM Cluster.
+        The `OCID`__ of the cloud Autonomous Exadata VM Cluster.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
 
         :param cloud_autonomous_vm_cluster_id: The cloud_autonomous_vm_cluster_id of this AutonomousContainerDatabaseSummary.

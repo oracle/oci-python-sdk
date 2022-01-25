@@ -45,6 +45,14 @@ class CreateRunDetails(object):
     the corresponding properties of the run will not update.
     """
 
+    #: A constant which can be used with the type property of a CreateRunDetails.
+    #: This constant has a value of "BATCH"
+    TYPE_BATCH = "BATCH"
+
+    #: A constant which can be used with the type property of a CreateRunDetails.
+    #: This constant has a value of "STREAMING"
+    TYPE_STREAMING = "STREAMING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateRunDetails object with values from keyword arguments.
@@ -114,6 +122,11 @@ class CreateRunDetails(object):
             The value to assign to the spark_version property of this CreateRunDetails.
         :type spark_version: str
 
+        :param type:
+            The value to assign to the type property of this CreateRunDetails.
+            Allowed values for this property are: "BATCH", "STREAMING"
+        :type type: str
+
         :param warehouse_bucket_uri:
             The value to assign to the warehouse_bucket_uri property of this CreateRunDetails.
         :type warehouse_bucket_uri: str
@@ -136,6 +149,7 @@ class CreateRunDetails(object):
             'num_executors': 'int',
             'parameters': 'list[ApplicationParameter]',
             'spark_version': 'str',
+            'type': 'str',
             'warehouse_bucket_uri': 'str'
         }
 
@@ -156,6 +170,7 @@ class CreateRunDetails(object):
             'num_executors': 'numExecutors',
             'parameters': 'parameters',
             'spark_version': 'sparkVersion',
+            'type': 'type',
             'warehouse_bucket_uri': 'warehouseBucketUri'
         }
 
@@ -175,6 +190,7 @@ class CreateRunDetails(object):
         self._num_executors = None
         self._parameters = None
         self._spark_version = None
+        self._type = None
         self._warehouse_bucket_uri = None
 
     @property
@@ -614,6 +630,38 @@ class CreateRunDetails(object):
         :type: str
         """
         self._spark_version = spark_version
+
+    @property
+    def type(self):
+        """
+        Gets the type of this CreateRunDetails.
+        The Spark application processing type.
+
+        Allowed values for this property are: "BATCH", "STREAMING"
+
+
+        :return: The type of this CreateRunDetails.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type):
+        """
+        Sets the type of this CreateRunDetails.
+        The Spark application processing type.
+
+
+        :param type: The type of this CreateRunDetails.
+        :type: str
+        """
+        allowed_values = ["BATCH", "STREAMING"]
+        if not value_allowed_none_or_none_sentinel(type, allowed_values):
+            raise ValueError(
+                "Invalid value for `type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._type = type
 
     @property
     def warehouse_bucket_uri(self):

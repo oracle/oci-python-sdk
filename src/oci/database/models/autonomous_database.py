@@ -1389,7 +1389,7 @@ class AutonomousDatabase(object):
         Gets the is_dedicated of this AutonomousDatabase.
         True if the database uses `dedicated Exadata infrastructure`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :return: The is_dedicated of this AutonomousDatabase.
@@ -1403,7 +1403,7 @@ class AutonomousDatabase(object):
         Sets the is_dedicated of this AutonomousDatabase.
         True if the database uses `dedicated Exadata infrastructure`__.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :param is_dedicated: The is_dedicated of this AutonomousDatabase.
@@ -1564,8 +1564,8 @@ class AutonomousDatabase(object):
         Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1585,8 +1585,8 @@ class AutonomousDatabase(object):
         Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :param license_model: The license_model of this AutonomousDatabase.
@@ -1976,7 +1976,7 @@ class AutonomousDatabase(object):
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :return: The whitelisted_ips of this AutonomousDatabase.
@@ -1999,7 +1999,7 @@ class AutonomousDatabase(object):
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :param whitelisted_ips: The whitelisted_ips of this AutonomousDatabase.
@@ -2050,7 +2050,7 @@ class AutonomousDatabase(object):
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :return: The standby_whitelisted_ips of this AutonomousDatabase.
@@ -2073,7 +2073,7 @@ class AutonomousDatabase(object):
 
         For an update operation, if you want to delete all the IPs in the ACL, use an array with a single empty string entry.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :param standby_whitelisted_ips: The standby_whitelisted_ips of this AutonomousDatabase.
@@ -2563,7 +2563,8 @@ class AutonomousDatabase(object):
     def is_data_guard_enabled(self):
         """
         Gets the is_data_guard_enabled of this AutonomousDatabase.
-        Indicates whether the Autonomous Database has Data Guard enabled.
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
+        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :return: The is_data_guard_enabled of this AutonomousDatabase.
@@ -2575,7 +2576,8 @@ class AutonomousDatabase(object):
     def is_data_guard_enabled(self, is_data_guard_enabled):
         """
         Sets the is_data_guard_enabled of this AutonomousDatabase.
-        Indicates whether the Autonomous Database has Data Guard enabled.
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
+        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :param is_data_guard_enabled: The is_data_guard_enabled of this AutonomousDatabase.
@@ -2809,7 +2811,7 @@ class AutonomousDatabase(object):
     def dataguard_region_type(self):
         """
         Gets the dataguard_region_type of this AutonomousDatabase.
-        The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the \"primary\" role is operating in a remote Data Guard standby region.```
+        The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the \"primary\" role is operating in a remote Data Guard standby region.
 
         Allowed values for this property are: "PRIMARY_DG_REGION", "REMOTE_STANDBY_DG_REGION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -2824,7 +2826,7 @@ class AutonomousDatabase(object):
     def dataguard_region_type(self, dataguard_region_type):
         """
         Sets the dataguard_region_type of this AutonomousDatabase.
-        The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the \"primary\" role is operating in a remote Data Guard standby region.```
+        The Autonomous Data Guard region type of the Autonomous Database. For Autonomous Databases on shared Exadata infrastructure, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. The standby regions in Data Guard associations can be the same region designated as the primary region, or they can be remote regions. Certain database administrative operations may be available only in the primary region of the Data Guard association, and cannot be performed when the database using the \"primary\" role is operating in a remote Data Guard standby region.
 
 
         :param dataguard_region_type: The dataguard_region_type of this AutonomousDatabase.

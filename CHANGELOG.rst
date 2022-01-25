@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.55.0 - 2022-01-25
+====================
+
+Added
+-----
+* Support for OneSubscription services
+* Support for specifying if a run or application is streaming or batch in the Data Flow service
+* Support for updating the Instance Configuration of an Instance Pool within a Cluster Network in the Compute Management service
+* Updated documentation for Cross Region ADG feature for Autonomous Database in the Database service
+ 
+Breaking
+--------
+* Support for retries enabled by default on all operations in the Object Storage service
+====================
 2.54.1 - 2022-01-18
 ====================
 

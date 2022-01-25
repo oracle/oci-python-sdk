@@ -134,8 +134,8 @@ class UpdateCloudAutonomousVmClusterDetails(object):
         Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
         Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
 
@@ -154,8 +154,8 @@ class UpdateCloudAutonomousVmClusterDetails(object):
         Note that when provisioning an Autonomous Database on `dedicated Exadata infrastructure`__, this attribute must be null because the attribute is already set at the
         Autonomous Exadata Infrastructure level. When using `shared Exadata infrastructure`__, if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adbddoverview.htm
-        __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
 
 
         :param license_model: The license_model of this UpdateCloudAutonomousVmClusterDetails.

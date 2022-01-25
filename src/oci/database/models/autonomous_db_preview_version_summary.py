@@ -12,7 +12,7 @@ class AutonomousDbPreviewVersionSummary(object):
     """
     The Autonomous Database preview version. Note that preview version software is only available for databases on `shared Exadata infrastructure`__.
 
-    __ https://docs.cloud.oracle.com/Content/Database/Concepts/adboverview.htm#AEI
+    __ https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html
     """
 
     #: A constant which can be used with the db_workload property of a AutonomousDbPreviewVersionSummary.
