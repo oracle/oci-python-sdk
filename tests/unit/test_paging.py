@@ -58,6 +58,21 @@ def test_pagination_get_all_results_second_style(search_client):
     assert len(all_results_response.data) > 0
 
 
+def test_pagination_get_all_results_generator_second_style(config):
+    artifacts_client = oci.artifacts.ArtifactsClient(config)
+
+    all_container_images = []
+    # Iterate over the responses which yields more responses
+    for record in oci.pagination.list_call_get_all_results_generator(artifacts_client.list_container_images, 'record', config["tenancy"]):
+        assert record.display_name is not None
+        all_container_images.append(record)
+    assert len(all_container_images) > 1
+
+    all_container_images_response = oci.pagination.list_call_get_all_results(artifacts_client.list_container_images, config["tenancy"])
+
+    assert len(all_container_images) == len(all_container_images_response.data)
+
+
 def test_pagination_get_up_to_limit(identity, config):
     # There may not be 70 users, so only check that we get no more than what we ask for
     list_users_response = oci.pagination.list_call_get_up_to_limit(identity.list_users, 70, 10, config["tenancy"])
@@ -75,6 +90,21 @@ def test_pagination_get_up_to_limit_second_style(search_client):
                                                                         text="test"))
     assert all_results_response.has_next_page
     assert len(all_results_response.data) > 0
+
+
+def test_pagination_get_up_to_limit_generator_second_style(config):
+    artifacts_client = oci.artifacts.ArtifactsClient(config)
+
+    num_iterations = 0
+    all_container_images = []
+    for record in oci.pagination.list_call_get_up_to_limit_generator(artifacts_client.list_container_images, 70, 10, 'record', config["tenancy"]):
+        num_iterations += 1
+        assert record.display_name is not None
+        all_container_images.append(record)
+    assert num_iterations > 1
+    assert num_iterations <= 70
+    all_container_images_response = oci.pagination.list_call_get_up_to_limit(artifacts_client.list_container_images, 70, 10, config["tenancy"])
+    assert len(all_container_images) == len(all_container_images_response.data)
 
 
 def test_pagination_get_up_to_limit_none_limit(identity, config):
