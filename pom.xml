@@ -43,6 +43,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/dashboard_service/pom.xml</module>
     <module>poms/osub_billing_schedule/pom.xml</module>
     <module>poms/osub_organization_subscription/pom.xml</module>
     <module>poms/osub_subscription/pom.xml</module>

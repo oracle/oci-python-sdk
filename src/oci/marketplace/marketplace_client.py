@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class MarketplaceClient(object):
     """
-    Manage applications in Oracle Cloud Infrastructure Marketplace.
+    Use the Marketplace API to manage applications in Oracle Cloud Infrastructure Marketplace. For more information, see [Overview of Marketplace](/Content/Marketplace/Concepts/marketoverview.htm)
     """
 
     def __init__(self, config, **kwargs):
@@ -1543,6 +1543,9 @@ class MarketplaceClient(object):
         :param str listing_id: (optional)
             The unique identifier for the listing.
 
+        :param str image_id: (optional)
+            Image ID of the listing
+
         :param str publisher_id: (optional)
             Limit results to just this publisher.
 
@@ -1622,6 +1625,7 @@ class MarketplaceClient(object):
             "retry_strategy",
             "name",
             "listing_id",
+            "image_id",
             "publisher_id",
             "package_type",
             "opc_request_id",
@@ -1674,6 +1678,7 @@ class MarketplaceClient(object):
         query_params = {
             "name": self.base_client.generate_collection_format_param(kwargs.get("name", missing), 'multi'),
             "listingId": kwargs.get("listing_id", missing),
+            "imageId": kwargs.get("image_id", missing),
             "publisherId": kwargs.get("publisher_id", missing),
             "packageType": kwargs.get("package_type", missing),
             "limit": kwargs.get("limit", missing),
@@ -2363,7 +2368,9 @@ class MarketplaceClient(object):
             The type of the report.
 
         :param datetime date: (required)
-            Date, expressed in `YYYYMMDD` format, where `Y` represents the year, `M` represents the month, and `D` represents the day.
+            Date, expressed in `RFC 3339`__ timestamp format. The service only interprets the year, month, and day parts in the input value, and ignores the hour, minute, and second parts.
+
+            __ https://tools.ietf.org/html/rfc3339
 
         :param str compartment_id: (required)
             The unique identifier for the compartment.
@@ -2545,8 +2552,8 @@ class MarketplaceClient(object):
 
     def search_listings(self, search_listings_details, **kwargs):
         """
-        Find listings that match the specified criteria. The search query could be free text
-        or structured.
+        Queries all Marketplace Applications to find listings that match the specified criteria. To search
+        for a listing, you can use a free text or structured search.
 
 
         :param oci.marketplace.models.SearchListingsDetails search_listings_details: (required)

@@ -1,0 +1,11 @@
+UpdateDashboardGroupDetails
+===========================
+
+.. currentmodule:: oci.dashboard_service.models
+
+.. autoclass:: UpdateDashboardGroupDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

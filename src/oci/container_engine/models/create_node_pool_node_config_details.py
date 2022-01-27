@@ -34,6 +34,14 @@ class CreateNodePoolNodeConfigDetails(object):
             The value to assign to the is_pv_encryption_in_transit_enabled property of this CreateNodePoolNodeConfigDetails.
         :type is_pv_encryption_in_transit_enabled: bool
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateNodePoolNodeConfigDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateNodePoolNodeConfigDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param placement_configs:
             The value to assign to the placement_configs property of this CreateNodePoolNodeConfigDetails.
         :type placement_configs: list[oci.container_engine.models.NodePoolPlacementConfigDetails]
@@ -44,6 +52,8 @@ class CreateNodePoolNodeConfigDetails(object):
             'nsg_ids': 'list[str]',
             'kms_key_id': 'str',
             'is_pv_encryption_in_transit_enabled': 'bool',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'placement_configs': 'list[NodePoolPlacementConfigDetails]'
         }
 
@@ -52,6 +62,8 @@ class CreateNodePoolNodeConfigDetails(object):
             'nsg_ids': 'nsgIds',
             'kms_key_id': 'kmsKeyId',
             'is_pv_encryption_in_transit_enabled': 'isPvEncryptionInTransitEnabled',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'placement_configs': 'placementConfigs'
         }
 
@@ -59,6 +71,8 @@ class CreateNodePoolNodeConfigDetails(object):
         self._nsg_ids = None
         self._kms_key_id = None
         self._is_pv_encryption_in_transit_enabled = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._placement_configs = None
 
     @property
@@ -156,6 +170,70 @@ class CreateNodePoolNodeConfigDetails(object):
         :type: bool
         """
         self._is_pv_encryption_in_transit_enabled = is_pv_encryption_in_transit_enabled
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateNodePoolNodeConfigDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this CreateNodePoolNodeConfigDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateNodePoolNodeConfigDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateNodePoolNodeConfigDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateNodePoolNodeConfigDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this CreateNodePoolNodeConfigDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateNodePoolNodeConfigDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this CreateNodePoolNodeConfigDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     @property
     def placement_configs(self):

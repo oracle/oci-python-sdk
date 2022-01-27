@@ -2741,7 +2741,7 @@ class AutonomousDatabaseSummary(object):
     def supported_regions_to_clone_to(self):
         """
         Gets the supported_regions_to_clone_to of this AutonomousDatabaseSummary.
-        The list of regions that support the creation of Autonomous Data Guard standby database.
+        The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
 
 
         :return: The supported_regions_to_clone_to of this AutonomousDatabaseSummary.
@@ -2753,7 +2753,7 @@ class AutonomousDatabaseSummary(object):
     def supported_regions_to_clone_to(self, supported_regions_to_clone_to):
         """
         Sets the supported_regions_to_clone_to of this AutonomousDatabaseSummary.
-        The list of regions that support the creation of Autonomous Data Guard standby database.
+        The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
 
 
         :param supported_regions_to_clone_to: The supported_regions_to_clone_to of this AutonomousDatabaseSummary.

@@ -140,3 +140,4 @@
 ^src/oci/osub_subscription/.*\.py$
 ^src/oci/osub_organization_subscription/.*\.py$
 ^src/oci/osub_billing_schedule/.*\.py$
+^src/oci/dashboard_service/.*\.py$

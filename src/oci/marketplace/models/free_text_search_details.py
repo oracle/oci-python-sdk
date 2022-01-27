@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FreeTextSearchDetails(SearchListingsDetails):
     """
-    The model for a request that uses Search's Free text.
+    A request containing arbitrary text that must be present in the Marketplace Applications.
     """
 
     def __init__(self, **kwargs):

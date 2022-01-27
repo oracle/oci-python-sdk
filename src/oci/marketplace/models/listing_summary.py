@@ -62,6 +62,10 @@ class ListingSummary(object):
             The value to assign to the short_description property of this ListingSummary.
         :type short_description: str
 
+        :param is_rover_exportable:
+            The value to assign to the is_rover_exportable property of this ListingSummary.
+        :type is_rover_exportable: bool
+
         :param tagline:
             The value to assign to the tagline property of this ListingSummary.
         :type tagline: str
@@ -113,6 +117,7 @@ class ListingSummary(object):
             'id': 'str',
             'name': 'str',
             'short_description': 'str',
+            'is_rover_exportable': 'bool',
             'tagline': 'str',
             'icon': 'UploadData',
             'package_type': 'str',
@@ -129,6 +134,7 @@ class ListingSummary(object):
             'id': 'id',
             'name': 'name',
             'short_description': 'shortDescription',
+            'is_rover_exportable': 'isRoverExportable',
             'tagline': 'tagline',
             'icon': 'icon',
             'package_type': 'packageType',
@@ -144,6 +150,7 @@ class ListingSummary(object):
         self._id = None
         self._name = None
         self._short_description = None
+        self._is_rover_exportable = None
         self._tagline = None
         self._icon = None
         self._package_type = None
@@ -226,6 +233,30 @@ class ListingSummary(object):
         :type: str
         """
         self._short_description = short_description
+
+    @property
+    def is_rover_exportable(self):
+        """
+        Gets the is_rover_exportable of this ListingSummary.
+        True if this application is Rover exportable
+
+
+        :return: The is_rover_exportable of this ListingSummary.
+        :rtype: bool
+        """
+        return self._is_rover_exportable
+
+    @is_rover_exportable.setter
+    def is_rover_exportable(self, is_rover_exportable):
+        """
+        Sets the is_rover_exportable of this ListingSummary.
+        True if this application is Rover exportable
+
+
+        :param is_rover_exportable: The is_rover_exportable of this ListingSummary.
+        :type: bool
+        """
+        self._is_rover_exportable = is_rover_exportable
 
     @property
     def tagline(self):

@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class AccountClient(object):
     """
-    Manage applications in Oracle Cloud Infrastructure Marketplace.
+    Use the Marketplace API to manage applications in Oracle Cloud Infrastructure Marketplace. For more information, see [Overview of Marketplace](/Content/Marketplace/Concepts/marketoverview.htm)
     """
 
     def __init__(self, config, **kwargs):
