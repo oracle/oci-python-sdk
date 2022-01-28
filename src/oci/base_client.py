@@ -40,8 +40,8 @@ APPEND_USER_AGENT_ENV_VAR_NAME = "OCI_SDK_APPEND_USER_AGENT"
 APPEND_USER_AGENT = os.environ.get(APPEND_USER_AGENT_ENV_VAR_NAME)
 USER_INFO = "Oracle-PythonSDK/{}".format(__version__)
 
-DICT_VALUE_TYPE_REGEX = re.compile('dict\(str, (.+?)\)$')  # noqa: W605
-LIST_ITEM_TYPE_REGEX = re.compile('list\[(.+?)\]$')  # noqa: W605
+DICT_VALUE_TYPE_REGEX = re.compile(r'dict\(str, (.+?)\)$')  # noqa: W605
+LIST_ITEM_TYPE_REGEX = re.compile(r'list\[(.+?)\]$')  # noqa: W605
 
 # Expect header is enabled by default
 enable_expect_header = True
@@ -841,12 +841,12 @@ class BaseClient(object):
             return None
 
         if cls.startswith('list['):
-            sub_kls = re.match('list\[(.*)\]', cls).group(1)  # noqa: W605
+            sub_kls = re.match(r'list\[(.*)\]', cls).group(1)  # noqa: W605
             return [self.__deserialize(sub_data, sub_kls)
                     for sub_data in data]
 
         if cls.startswith('dict('):
-            sub_kls = re.match('dict\(([^,]*), (.*)\)', cls).group(2)  # noqa: W605
+            sub_kls = re.match(r'dict\(([^,]*), (.*)\)', cls).group(2)  # noqa: W605
             return {k: self.__deserialize(v, sub_kls)
                     for k, v in data.items()}
 
