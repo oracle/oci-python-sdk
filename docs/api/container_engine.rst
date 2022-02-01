@@ -52,6 +52,8 @@ Container Engine
     oci.container_engine.models.NodeSourceOption
     oci.container_engine.models.NodeSourceViaImageDetails
     oci.container_engine.models.NodeSourceViaImageOption
+    oci.container_engine.models.PersistentVolumeConfigDetails
+    oci.container_engine.models.ServiceLbConfigDetails
     oci.container_engine.models.UpdateClusterDetails
     oci.container_engine.models.UpdateClusterEndpointConfigDetails
     oci.container_engine.models.UpdateClusterOptionsDetails

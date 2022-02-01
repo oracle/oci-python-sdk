@@ -39,6 +39,8 @@ API Reference
 * :doc:`Compute <core/client/oci.core.ComputeClient>`
 * :doc:`Compute Management <core/client/oci.core.ComputeManagementClient>`
 * :doc:`Virtual Network <core/client/oci.core.VirtualNetworkClient>`
+* :doc:`Dashboard <dashboard_service/client/oci.dashboard_service.DashboardClient>`
+* :doc:`Dashboard Group <dashboard_service/client/oci.dashboard_service.DashboardGroupClient>`
 * :doc:`Data Catalog <data_catalog/client/oci.data_catalog.DataCatalogClient>`
 * :doc:`Data Flow <data_flow/client/oci.data_flow.DataFlowClient>`
 * :doc:`Data Integration <data_integration/client/oci.data_integration.DataIntegrationClient>`
@@ -190,6 +192,7 @@ API Reference
     compute_instance_agent
     container_engine
     core
+    dashboard_service
     data_catalog
     data_flow
     data_integration

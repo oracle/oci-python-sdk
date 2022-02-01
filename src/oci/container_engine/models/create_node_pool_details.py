@@ -74,6 +74,14 @@ class CreateNodePoolDetails(object):
             The value to assign to the node_config_details property of this CreateNodePoolDetails.
         :type node_config_details: oci.container_engine.models.CreateNodePoolNodeConfigDetails
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateNodePoolDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateNodePoolDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -89,7 +97,9 @@ class CreateNodePoolDetails(object):
             'ssh_public_key': 'str',
             'quantity_per_subnet': 'int',
             'subnet_ids': 'list[str]',
-            'node_config_details': 'CreateNodePoolNodeConfigDetails'
+            'node_config_details': 'CreateNodePoolNodeConfigDetails',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -106,7 +116,9 @@ class CreateNodePoolDetails(object):
             'ssh_public_key': 'sshPublicKey',
             'quantity_per_subnet': 'quantityPerSubnet',
             'subnet_ids': 'subnetIds',
-            'node_config_details': 'nodeConfigDetails'
+            'node_config_details': 'nodeConfigDetails',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._compartment_id = None
@@ -123,6 +135,8 @@ class CreateNodePoolDetails(object):
         self._quantity_per_subnet = None
         self._subnet_ids = None
         self._node_config_details = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def compartment_id(self):
@@ -471,6 +485,70 @@ class CreateNodePoolDetails(object):
         :type: oci.container_engine.models.CreateNodePoolNodeConfigDetails
         """
         self._node_config_details = node_config_details
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateNodePoolDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this CreateNodePoolDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateNodePoolDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateNodePoolDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateNodePoolDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this CreateNodePoolDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateNodePoolDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this CreateNodePoolDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

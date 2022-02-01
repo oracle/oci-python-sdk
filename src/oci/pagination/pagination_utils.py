@@ -281,7 +281,7 @@ def list_call_get_all_results_generator(list_func_ref, yield_mode, *list_func_ar
             elif isinstance(call_result.data, object_storage.models.ListObjects):
                 items_to_yield = call_result.data.objects
             else:
-                items_to_yield = call_result.data
+                items_to_yield = call_result.data if isinstance(call_result.data, list) else call_result.data.items
 
             for item in items_to_yield:
                 yield item

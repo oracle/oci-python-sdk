@@ -26,19 +26,26 @@ class NodePoolPlacementConfigDetails(object):
             The value to assign to the subnet_id property of this NodePoolPlacementConfigDetails.
         :type subnet_id: str
 
+        :param capacity_reservation_id:
+            The value to assign to the capacity_reservation_id property of this NodePoolPlacementConfigDetails.
+        :type capacity_reservation_id: str
+
         """
         self.swagger_types = {
             'availability_domain': 'str',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'capacity_reservation_id': 'str'
         }
 
         self.attribute_map = {
             'availability_domain': 'availabilityDomain',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'capacity_reservation_id': 'capacityReservationId'
         }
 
         self._availability_domain = None
         self._subnet_id = None
+        self._capacity_reservation_id = None
 
     @property
     def availability_domain(self):
@@ -89,6 +96,30 @@ class NodePoolPlacementConfigDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def capacity_reservation_id(self):
+        """
+        Gets the capacity_reservation_id of this NodePoolPlacementConfigDetails.
+        The OCID of the compute capacity reservation in which to place the compute instance.
+
+
+        :return: The capacity_reservation_id of this NodePoolPlacementConfigDetails.
+        :rtype: str
+        """
+        return self._capacity_reservation_id
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, capacity_reservation_id):
+        """
+        Sets the capacity_reservation_id of this NodePoolPlacementConfigDetails.
+        The OCID of the compute capacity reservation in which to place the compute instance.
+
+
+        :param capacity_reservation_id: The capacity_reservation_id of this NodePoolPlacementConfigDetails.
+        :type: str
+        """
+        self._capacity_reservation_id = capacity_reservation_id
 
     def __repr__(self):
         return formatted_flat_dict(self)
