@@ -34,25 +34,39 @@ class ClusterCreateOptions(object):
             The value to assign to the admission_controller_options property of this ClusterCreateOptions.
         :type admission_controller_options: oci.container_engine.models.AdmissionControllerOptions
 
+        :param persistent_volume_config:
+            The value to assign to the persistent_volume_config property of this ClusterCreateOptions.
+        :type persistent_volume_config: oci.container_engine.models.PersistentVolumeConfigDetails
+
+        :param service_lb_config:
+            The value to assign to the service_lb_config property of this ClusterCreateOptions.
+        :type service_lb_config: oci.container_engine.models.ServiceLbConfigDetails
+
         """
         self.swagger_types = {
             'service_lb_subnet_ids': 'list[str]',
             'kubernetes_network_config': 'KubernetesNetworkConfig',
             'add_ons': 'AddOnOptions',
-            'admission_controller_options': 'AdmissionControllerOptions'
+            'admission_controller_options': 'AdmissionControllerOptions',
+            'persistent_volume_config': 'PersistentVolumeConfigDetails',
+            'service_lb_config': 'ServiceLbConfigDetails'
         }
 
         self.attribute_map = {
             'service_lb_subnet_ids': 'serviceLbSubnetIds',
             'kubernetes_network_config': 'kubernetesNetworkConfig',
             'add_ons': 'addOns',
-            'admission_controller_options': 'admissionControllerOptions'
+            'admission_controller_options': 'admissionControllerOptions',
+            'persistent_volume_config': 'persistentVolumeConfig',
+            'service_lb_config': 'serviceLbConfig'
         }
 
         self._service_lb_subnet_ids = None
         self._kubernetes_network_config = None
         self._add_ons = None
         self._admission_controller_options = None
+        self._persistent_volume_config = None
+        self._service_lb_config = None
 
     @property
     def service_lb_subnet_ids(self):
@@ -149,6 +163,46 @@ class ClusterCreateOptions(object):
         :type: oci.container_engine.models.AdmissionControllerOptions
         """
         self._admission_controller_options = admission_controller_options
+
+    @property
+    def persistent_volume_config(self):
+        """
+        Gets the persistent_volume_config of this ClusterCreateOptions.
+
+        :return: The persistent_volume_config of this ClusterCreateOptions.
+        :rtype: oci.container_engine.models.PersistentVolumeConfigDetails
+        """
+        return self._persistent_volume_config
+
+    @persistent_volume_config.setter
+    def persistent_volume_config(self, persistent_volume_config):
+        """
+        Sets the persistent_volume_config of this ClusterCreateOptions.
+
+        :param persistent_volume_config: The persistent_volume_config of this ClusterCreateOptions.
+        :type: oci.container_engine.models.PersistentVolumeConfigDetails
+        """
+        self._persistent_volume_config = persistent_volume_config
+
+    @property
+    def service_lb_config(self):
+        """
+        Gets the service_lb_config of this ClusterCreateOptions.
+
+        :return: The service_lb_config of this ClusterCreateOptions.
+        :rtype: oci.container_engine.models.ServiceLbConfigDetails
+        """
+        return self._service_lb_config
+
+    @service_lb_config.setter
+    def service_lb_config(self, service_lb_config):
+        """
+        Sets the service_lb_config of this ClusterCreateOptions.
+
+        :param service_lb_config: The service_lb_config of this ClusterCreateOptions.
+        :type: oci.container_engine.models.ServiceLbConfigDetails
+        """
+        self._service_lb_config = service_lb_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

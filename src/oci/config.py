@@ -47,9 +47,9 @@ FALLBACK_DEFAULT_LOCATION = os.path.join('~', '.oraclebmc', 'config')
 DEFAULT_PROFILE = "DEFAULT"
 PATTERNS = {
     # Tenancy and user have the same shape
-    "tenancy": re.compile("^([0-9a-zA-Z-_]+[.:])([0-9a-zA-Z-_]*[.:]){3,}([0-9a-zA-Z-_]+)$"),
-    "user": re.compile("^([0-9a-zA-Z-_]+[.:])([0-9a-zA-Z-_]*[.:]){3,}([0-9a-zA-Z-_]+)$"),
-    "fingerprint": re.compile("^([0-9a-f]{2}:){15}[0-9a-f]{2}$")
+    "tenancy": re.compile(r"^([0-9a-zA-Z-_]+[.:])([0-9a-zA-Z-_]*[.:]){3,}([0-9a-zA-Z-_]+)$"),
+    "user": re.compile(r"^([0-9a-zA-Z-_]+[.:])([0-9a-zA-Z-_]*[.:]){3,}([0-9a-zA-Z-_]+)$"),
+    "fingerprint": re.compile(r"^([0-9a-f]{2}:){15}[0-9a-f]{2}$")
 }
 REQUIRED = {
     "user",

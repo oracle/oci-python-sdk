@@ -90,6 +90,18 @@ class NodePool(object):
             The value to assign to the node_config_details property of this NodePool.
         :type node_config_details: oci.container_engine.models.NodePoolNodeConfigDetails
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this NodePool.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this NodePool.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param system_tags:
+            The value to assign to the system_tags property of this NodePool.
+        :type system_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -109,7 +121,10 @@ class NodePool(object):
             'quantity_per_subnet': 'int',
             'subnet_ids': 'list[str]',
             'nodes': 'list[Node]',
-            'node_config_details': 'NodePoolNodeConfigDetails'
+            'node_config_details': 'NodePoolNodeConfigDetails',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'system_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -130,7 +145,10 @@ class NodePool(object):
             'quantity_per_subnet': 'quantityPerSubnet',
             'subnet_ids': 'subnetIds',
             'nodes': 'nodes',
-            'node_config_details': 'nodeConfigDetails'
+            'node_config_details': 'nodeConfigDetails',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
+            'system_tags': 'systemTags'
         }
 
         self._id = None
@@ -151,6 +169,9 @@ class NodePool(object):
         self._subnet_ids = None
         self._nodes = None
         self._node_config_details = None
+        self._freeform_tags = None
+        self._defined_tags = None
+        self._system_tags = None
 
     @property
     def id(self):
@@ -583,6 +604,96 @@ class NodePool(object):
         :type: oci.container_engine.models.NodePoolNodeConfigDetails
         """
         self._node_config_details = node_config_details
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this NodePool.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this NodePool.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this NodePool.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this NodePool.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this NodePool.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this NodePool.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this NodePool.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this NodePool.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def system_tags(self):
+        """
+        Gets the system_tags of this NodePool.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :return: The system_tags of this NodePool.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._system_tags
+
+    @system_tags.setter
+    def system_tags(self, system_tags):
+        """
+        Sets the system_tags of this NodePool.
+        Usage of system tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+
+
+        :param system_tags: The system_tags of this NodePool.
+        :type: dict(str, dict(str, object))
+        """
+        self._system_tags = system_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

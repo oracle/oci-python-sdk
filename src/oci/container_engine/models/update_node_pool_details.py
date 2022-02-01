@@ -62,6 +62,14 @@ class UpdateNodePoolDetails(object):
             The value to assign to the node_shape_config property of this UpdateNodePoolDetails.
         :type node_shape_config: oci.container_engine.models.UpdateNodeShapeConfigDetails
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this UpdateNodePoolDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this UpdateNodePoolDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -74,7 +82,9 @@ class UpdateNodePoolDetails(object):
             'node_source_details': 'NodeSourceDetails',
             'ssh_public_key': 'str',
             'node_shape': 'str',
-            'node_shape_config': 'UpdateNodeShapeConfigDetails'
+            'node_shape_config': 'UpdateNodeShapeConfigDetails',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
@@ -88,7 +98,9 @@ class UpdateNodePoolDetails(object):
             'node_source_details': 'nodeSourceDetails',
             'ssh_public_key': 'sshPublicKey',
             'node_shape': 'nodeShape',
-            'node_shape_config': 'nodeShapeConfig'
+            'node_shape_config': 'nodeShapeConfig',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._name = None
@@ -102,6 +114,8 @@ class UpdateNodePoolDetails(object):
         self._ssh_public_key = None
         self._node_shape = None
         self._node_shape_config = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @property
     def name(self):
@@ -384,6 +398,70 @@ class UpdateNodePoolDetails(object):
         :type: oci.container_engine.models.UpdateNodeShapeConfigDetails
         """
         self._node_shape_config = node_shape_config
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this UpdateNodePoolDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this UpdateNodePoolDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this UpdateNodePoolDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this UpdateNodePoolDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this UpdateNodePoolDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this UpdateNodePoolDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this UpdateNodePoolDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        For more information, see `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this UpdateNodePoolDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

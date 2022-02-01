@@ -38,6 +38,8 @@ from .node_source_details import NodeSourceDetails
 from .node_source_option import NodeSourceOption
 from .node_source_via_image_details import NodeSourceViaImageDetails
 from .node_source_via_image_option import NodeSourceViaImageOption
+from .persistent_volume_config_details import PersistentVolumeConfigDetails
+from .service_lb_config_details import ServiceLbConfigDetails
 from .update_cluster_details import UpdateClusterDetails
 from .update_cluster_endpoint_config_details import UpdateClusterEndpointConfigDetails
 from .update_cluster_options_details import UpdateClusterOptionsDetails
@@ -87,6 +89,8 @@ container_engine_type_mapping = {
     "NodeSourceOption": NodeSourceOption,
     "NodeSourceViaImageDetails": NodeSourceViaImageDetails,
     "NodeSourceViaImageOption": NodeSourceViaImageOption,
+    "PersistentVolumeConfigDetails": PersistentVolumeConfigDetails,
+    "ServiceLbConfigDetails": ServiceLbConfigDetails,
     "UpdateClusterDetails": UpdateClusterDetails,
     "UpdateClusterEndpointConfigDetails": UpdateClusterEndpointConfigDetails,
     "UpdateClusterOptionsDetails": UpdateClusterOptionsDetails,

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SearchListingsDetails(object):
     """
-    The base model for a Search Listings details.
+    A base request type that contains common criteria for Marketplace Search Listings details.
     """
 
     #: A constant which can be used with the type property of a SearchListingsDetails.
@@ -115,7 +115,7 @@ class SearchListingsDetails(object):
     def matching_context_type(self):
         """
         Gets the matching_context_type of this SearchListingsDetails.
-        The type of matching context returned in the response.
+        The type of matching context returned in the response. If you specify HIGHLIGHTS, then the service will highlight fragments in its response. The default value is NONE.
 
         Allowed values for this property are: "NONE", "HIGHLIGHTS"
 
@@ -129,7 +129,7 @@ class SearchListingsDetails(object):
     def matching_context_type(self, matching_context_type):
         """
         Sets the matching_context_type of this SearchListingsDetails.
-        The type of matching context returned in the response.
+        The type of matching context returned in the response. If you specify HIGHLIGHTS, then the service will highlight fragments in its response. The default value is NONE.
 
 
         :param matching_context_type: The matching_context_type of this SearchListingsDetails.
