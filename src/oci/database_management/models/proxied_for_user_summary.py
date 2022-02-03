@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProxiedForUserSummary(object):
     """
-    A collection of Users for which the current user acts as proxy.
+    A summary of users on whose behalf the current user acts as proxy.
     """
 
     #: A constant which can be used with the authentication property of a ProxiedForUserSummary.
@@ -79,7 +79,7 @@ class ProxiedForUserSummary(object):
     def name(self):
         """
         Gets the name of this ProxiedForUserSummary.
-        The name of a proxy user or name of the user who the proxy user can act as
+        The name of a proxy user or the name of the client user.
 
 
         :return: The name of this ProxiedForUserSummary.
@@ -91,7 +91,7 @@ class ProxiedForUserSummary(object):
     def name(self, name):
         """
         Sets the name of this ProxiedForUserSummary.
-        The name of a proxy user or name of the user who the proxy user can act as
+        The name of a proxy user or the name of the client user.
 
 
         :param name: The name of this ProxiedForUserSummary.
@@ -103,7 +103,7 @@ class ProxiedForUserSummary(object):
     def authentication(self):
         """
         Gets the authentication of this ProxiedForUserSummary.
-        Indicates whether the proxy is required to supply the client credentials (YES) or not (NO)
+        Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -118,7 +118,7 @@ class ProxiedForUserSummary(object):
     def authentication(self, authentication):
         """
         Sets the authentication of this ProxiedForUserSummary.
-        Indicates whether the proxy is required to supply the client credentials (YES) or not (NO)
+        Indicates whether the proxy is required to supply the client credentials (YES) or not (NO).
 
 
         :param authentication: The authentication of this ProxiedForUserSummary.
@@ -133,7 +133,7 @@ class ProxiedForUserSummary(object):
     def flags(self):
         """
         Gets the flags of this ProxiedForUserSummary.
-        Flags associated with the proxy/client pair
+        The flags associated with the proxy/client pair.
 
         Allowed values for this property are: "PROXY_MAY_ACTIVATE_ALL_CLIENT_ROLES", "NO_CLIENT_ROLES_MAY_BE_ACTIVATED", "PROXY_MAY_ACTIVATE_ROLE", "PROXY_MAY_NOT_ACTIVATE_ROLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -148,7 +148,7 @@ class ProxiedForUserSummary(object):
     def flags(self, flags):
         """
         Sets the flags of this ProxiedForUserSummary.
-        Flags associated with the proxy/client pair
+        The flags associated with the proxy/client pair.
 
 
         :param flags: The flags of this ProxiedForUserSummary.

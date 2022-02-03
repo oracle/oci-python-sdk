@@ -113,6 +113,7 @@ API Reference
 * :doc:`Event <os_management/client/oci.os_management.EventClient>`
 * :doc:`Os Management <os_management/client/oci.os_management.OsManagementClient>`
 * :doc:`Invoice Service <osp_gateway/client/oci.osp_gateway.InvoiceServiceClient>`
+* :doc:`Subscription Service <osp_gateway/client/oci.osp_gateway.SubscriptionServiceClient>`
 * :doc:`Billing Schedule <osub_billing_schedule/client/oci.osub_billing_schedule.BillingScheduleClient>`
 * :doc:`Organization Subscription <osub_organization_subscription/client/oci.osub_organization_subscription.OrganizationSubscriptionClient>`
 * :doc:`Commitment <osub_subscription/client/oci.osub_subscription.CommitmentClient>`

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlTuningAdvisorTaskSummaryReportStatementCounts(object):
     """
-    The statement counts data for the SQL Tuning Advisor summary report.
+    The number of statements in the SQL Tuning Advisor summary report.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class SqlTuningAdvisorTaskSummaryReportStatementCounts(object):
     def distinct_sql(self):
         """
         **[Required]** Gets the distinct_sql of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
-        The count of distinct SQL statements.
+        The number of distinct SQL statements.
 
 
         :return: The distinct_sql of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
@@ -70,7 +70,7 @@ class SqlTuningAdvisorTaskSummaryReportStatementCounts(object):
     def distinct_sql(self, distinct_sql):
         """
         Sets the distinct_sql of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
-        The count of distinct SQL statements.
+        The number of distinct SQL statements.
 
 
         :param distinct_sql: The distinct_sql of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
@@ -82,7 +82,7 @@ class SqlTuningAdvisorTaskSummaryReportStatementCounts(object):
     def total_sql(self):
         """
         **[Required]** Gets the total_sql of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
-        The total count of SQL statements.
+        The total number of SQL statements.
 
 
         :return: The total_sql of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
@@ -94,7 +94,7 @@ class SqlTuningAdvisorTaskSummaryReportStatementCounts(object):
     def total_sql(self, total_sql):
         """
         Sets the total_sql of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
-        The total count of SQL statements.
+        The total number of SQL statements.
 
 
         :param total_sql: The total_sql of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
@@ -106,7 +106,7 @@ class SqlTuningAdvisorTaskSummaryReportStatementCounts(object):
     def finding_count(self):
         """
         **[Required]** Gets the finding_count of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
-        The count of distinct SQL statements with findings.
+        The number of distinct SQL statements with findings.
 
 
         :return: The finding_count of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
@@ -118,7 +118,7 @@ class SqlTuningAdvisorTaskSummaryReportStatementCounts(object):
     def finding_count(self, finding_count):
         """
         Sets the finding_count of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
-        The count of distinct SQL statements with findings.
+        The number of distinct SQL statements with findings.
 
 
         :param finding_count: The finding_count of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
@@ -130,7 +130,7 @@ class SqlTuningAdvisorTaskSummaryReportStatementCounts(object):
     def error_count(self):
         """
         **[Required]** Gets the error_count of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
-        The count of distinct SQL statements with errors.
+        The number of distinct SQL statements with errors.
 
 
         :return: The error_count of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
@@ -142,7 +142,7 @@ class SqlTuningAdvisorTaskSummaryReportStatementCounts(object):
     def error_count(self, error_count):
         """
         Sets the error_count of this SqlTuningAdvisorTaskSummaryReportStatementCounts.
-        The count of distinct SQL statements with errors.
+        The number of distinct SQL statements with errors.
 
 
         :param error_count: The error_count of this SqlTuningAdvisorTaskSummaryReportStatementCounts.

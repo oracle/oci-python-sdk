@@ -11,7 +11,7 @@ from oci.decorators import init_model_state_from_kwargs
 class ApdexRules(Config):
     """
     The set of Apdex rules to be used in Apdex computation. In the current version, only one rule set can exist in the
-    configuration. This may change in the future.
+    configuration.
     """
 
     def __init__(self, **kwargs):
@@ -90,7 +90,7 @@ class ApdexRules(Config):
     def display_name(self):
         """
         Gets the display_name of this ApdexRules.
-        The name by which this rule set can be displayed to the user.
+        The name by which the rule set is displayed to the end user.
 
 
         :return: The display_name of this ApdexRules.
@@ -102,7 +102,7 @@ class ApdexRules(Config):
     def display_name(self, display_name):
         """
         Sets the display_name of this ApdexRules.
-        The name by which this rule set can be displayed to the user.
+        The name by which the rule set is displayed to the end user.
 
 
         :param display_name: The display_name of this ApdexRules.

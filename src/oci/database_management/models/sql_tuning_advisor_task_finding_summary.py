@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlTuningAdvisorTaskFindingSummary(object):
     """
-    A summary for all the findings of objects in a tuning task that match a given certain filter.
-    Includes what kind of findings were found, whether benefits were analyzed, and how many benefits can be obtained.
+    A summary of the findings of the objects in a tuning task that match a given filter.
+    This includes the kind of findings that were reported, whether the benefits were analyzed, and the number of benefits obtained.
     """
 
     def __init__(self, **kwargs):
@@ -150,7 +150,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def sql_tuning_advisor_task_id(self):
         """
         **[Required]** Gets the sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskFindingSummary.
-        Unique identifier of the task. It is not the `OCID`__.
+        The unique identifier of the SQL Tuning Advisor task. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -164,7 +164,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def sql_tuning_advisor_task_id(self, sql_tuning_advisor_task_id):
         """
         Sets the sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskFindingSummary.
-        Unique identifier of the task. It is not the `OCID`__.
+        The unique identifier of the SQL Tuning Advisor task. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -178,8 +178,8 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def sql_tuning_advisor_task_object_id(self):
         """
         **[Required]** Gets the sql_tuning_advisor_task_object_id of this SqlTuningAdvisorTaskFindingSummary.
-        Key of the object to which these recommendations apply.
-        It is not the `OCID`__.
+        The key of the object to which these recommendations apply.
+        This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -193,8 +193,8 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def sql_tuning_advisor_task_object_id(self, sql_tuning_advisor_task_object_id):
         """
         Sets the sql_tuning_advisor_task_object_id of this SqlTuningAdvisorTaskFindingSummary.
-        Key of the object to which these recommendations apply.
-        It is not the `OCID`__.
+        The key of the object to which these recommendations apply.
+        This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -208,7 +208,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def sql_tuning_advisor_task_object_execution_id(self):
         """
         **[Required]** Gets the sql_tuning_advisor_task_object_execution_id of this SqlTuningAdvisorTaskFindingSummary.
-        Execution id of the analyzed SQL object. It is not the `OCID`__.
+        The execution id of the analyzed SQL object. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -222,7 +222,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def sql_tuning_advisor_task_object_execution_id(self, sql_tuning_advisor_task_object_execution_id):
         """
         Sets the sql_tuning_advisor_task_object_execution_id of this SqlTuningAdvisorTaskFindingSummary.
-        Execution id of the analyzed SQL object. It is not the `OCID`__.
+        The execution id of the analyzed SQL object. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -236,7 +236,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def sql_text(self):
         """
         **[Required]** Gets the sql_text of this SqlTuningAdvisorTaskFindingSummary.
-        Text of the SQL statement.
+        The text of the SQL statement.
 
 
         :return: The sql_text of this SqlTuningAdvisorTaskFindingSummary.
@@ -248,7 +248,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def sql_text(self, sql_text):
         """
         Sets the sql_text of this SqlTuningAdvisorTaskFindingSummary.
-        Text of the SQL statement.
+        The text of the SQL statement.
 
 
         :param sql_text: The sql_text of this SqlTuningAdvisorTaskFindingSummary.
@@ -260,7 +260,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def parsing_schema(self):
         """
         **[Required]** Gets the parsing_schema of this SqlTuningAdvisorTaskFindingSummary.
-        Parsing schema of the object.
+        The parsing schema of the object.
 
 
         :return: The parsing_schema of this SqlTuningAdvisorTaskFindingSummary.
@@ -272,7 +272,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def parsing_schema(self, parsing_schema):
         """
         Sets the parsing_schema of this SqlTuningAdvisorTaskFindingSummary.
-        Parsing schema of the object.
+        The parsing schema of the object.
 
 
         :param parsing_schema: The parsing_schema of this SqlTuningAdvisorTaskFindingSummary.
@@ -284,7 +284,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def sql_key(self):
         """
         **[Required]** Gets the sql_key of this SqlTuningAdvisorTaskFindingSummary.
-        Unique key of this SQL statement
+        The unique key of this SQL statement.
 
 
         :return: The sql_key of this SqlTuningAdvisorTaskFindingSummary.
@@ -296,7 +296,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def sql_key(self, sql_key):
         """
         Sets the sql_key of this SqlTuningAdvisorTaskFindingSummary.
-        Unique key of this SQL statement
+        The unique key of this SQL statement.
 
 
         :param sql_key: The sql_key of this SqlTuningAdvisorTaskFindingSummary.
@@ -308,7 +308,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def db_time_benefit(self):
         """
         Gets the db_time_benefit of this SqlTuningAdvisorTaskFindingSummary.
-        Time benefit in seconds for the highest-rated finding for this object.
+        The time benefit (in seconds) for the highest-rated finding for this object.
 
 
         :return: The db_time_benefit of this SqlTuningAdvisorTaskFindingSummary.
@@ -320,7 +320,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def db_time_benefit(self, db_time_benefit):
         """
         Sets the db_time_benefit of this SqlTuningAdvisorTaskFindingSummary.
-        Time benefit in seconds for the highest-rated finding for this object.
+        The time benefit (in seconds) for the highest-rated finding for this object.
 
 
         :param db_time_benefit: The db_time_benefit of this SqlTuningAdvisorTaskFindingSummary.
@@ -356,7 +356,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_stats_finding_present(self):
         """
         Gets the is_stats_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether a statistics recommendation was found for this SQL statement.
+        Indicates whether a statistics recommendation was reported for this SQL statement.
 
 
         :return: The is_stats_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -368,7 +368,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_stats_finding_present(self, is_stats_finding_present):
         """
         Sets the is_stats_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether a statistics recommendation was found for this SQL statement.
+        Indicates whether a statistics recommendation was reported for this SQL statement.
 
 
         :param is_stats_finding_present: The is_stats_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -380,7 +380,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_sql_profile_finding_present(self):
         """
         Gets the is_sql_profile_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether a SQL Profile recommendation was found for this SQL statement.
+        Indicates whether a SQL Profile recommendation was reported for this SQL statement.
 
 
         :return: The is_sql_profile_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -392,7 +392,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_sql_profile_finding_present(self, is_sql_profile_finding_present):
         """
         Sets the is_sql_profile_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether a SQL Profile recommendation was found for this SQL statement.
+        Indicates whether a SQL Profile recommendation was reported for this SQL statement.
 
 
         :param is_sql_profile_finding_present: The is_sql_profile_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -404,7 +404,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_sql_profile_finding_implemented(self):
         """
         Gets the is_sql_profile_finding_implemented of this SqlTuningAdvisorTaskFindingSummary.
-        Whether a SQL Profile recommendation has been implemented for this SQL statement.
+        Indicates whether a SQL Profile recommendation has been implemented for this SQL statement.
 
 
         :return: The is_sql_profile_finding_implemented of this SqlTuningAdvisorTaskFindingSummary.
@@ -416,7 +416,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_sql_profile_finding_implemented(self, is_sql_profile_finding_implemented):
         """
         Sets the is_sql_profile_finding_implemented of this SqlTuningAdvisorTaskFindingSummary.
-        Whether a SQL Profile recommendation has been implemented for this SQL statement.
+        Indicates whether a SQL Profile recommendation has been implemented for this SQL statement.
 
 
         :param is_sql_profile_finding_implemented: The is_sql_profile_finding_implemented of this SqlTuningAdvisorTaskFindingSummary.
@@ -428,7 +428,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_index_finding_present(self):
         """
         Gets the is_index_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether an index recommendation was found for this SQL statement.
+        Indicates whether an index recommendation was reported for this SQL statement.
 
 
         :return: The is_index_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -440,7 +440,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_index_finding_present(self, is_index_finding_present):
         """
         Sets the is_index_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether an index recommendation was found for this SQL statement.
+        Indicates whether an index recommendation was reported for this SQL statement.
 
 
         :param is_index_finding_present: The is_index_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -452,7 +452,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_restructure_sql_finding_present(self):
         """
         Gets the is_restructure_sql_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether a restructure SQL recommendation was found for this SQL statement.
+        Indicates whether a restructure SQL recommendation was reported for this SQL statement.
 
 
         :return: The is_restructure_sql_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -464,7 +464,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_restructure_sql_finding_present(self, is_restructure_sql_finding_present):
         """
         Sets the is_restructure_sql_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether a restructure SQL recommendation was found for this SQL statement.
+        Indicates whether a restructure SQL recommendation was reported for this SQL statement.
 
 
         :param is_restructure_sql_finding_present: The is_restructure_sql_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -476,7 +476,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_alternative_plan_finding_present(self):
         """
         Gets the is_alternative_plan_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether an alternative execution plan was found for this SQL statement.
+        Indicates whether an alternative execution plan was reported for this SQL statement.
 
 
         :return: The is_alternative_plan_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -488,7 +488,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_alternative_plan_finding_present(self, is_alternative_plan_finding_present):
         """
         Sets the is_alternative_plan_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether an alternative execution plan was found for this SQL statement.
+        Indicates whether an alternative execution plan was reported for this SQL statement.
 
 
         :param is_alternative_plan_finding_present: The is_alternative_plan_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -500,7 +500,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_miscellaneous_finding_present(self):
         """
         Gets the is_miscellaneous_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether a miscellaneous finding was found for this SQL statement.
+        Indicates whether a miscellaneous finding was reported for this SQL statement.
 
 
         :return: The is_miscellaneous_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -512,7 +512,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_miscellaneous_finding_present(self, is_miscellaneous_finding_present):
         """
         Sets the is_miscellaneous_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether a miscellaneous finding was found for this SQL statement.
+        Indicates whether a miscellaneous finding was reported for this SQL statement.
 
 
         :param is_miscellaneous_finding_present: The is_miscellaneous_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -524,7 +524,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_error_finding_present(self):
         """
         Gets the is_error_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether there is an error in this SQL statement.
+        Indicates whether there is an error in this SQL statement.
 
 
         :return: The is_error_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -536,7 +536,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_error_finding_present(self, is_error_finding_present):
         """
         Sets the is_error_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether there is an error in this SQL statement.
+        Indicates whether there is an error in this SQL statement.
 
 
         :param is_error_finding_present: The is_error_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -548,7 +548,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_timeout_finding_present(self):
         """
         Gets the is_timeout_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether the task timed out.
+        Indicates whether the task timed out.
 
 
         :return: The is_timeout_finding_present of this SqlTuningAdvisorTaskFindingSummary.
@@ -560,7 +560,7 @@ class SqlTuningAdvisorTaskFindingSummary(object):
     def is_timeout_finding_present(self, is_timeout_finding_present):
         """
         Sets the is_timeout_finding_present of this SqlTuningAdvisorTaskFindingSummary.
-        Whether the task timed out.
+        Indicates whether the task timed out.
 
 
         :param is_timeout_finding_present: The is_timeout_finding_present of this SqlTuningAdvisorTaskFindingSummary.

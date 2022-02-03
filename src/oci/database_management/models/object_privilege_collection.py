@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectPrivilegeCollection(object):
     """
-    A collection of ObjectPrivileges granted to the current User.
+    A collection of object privileges granted to the current user.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ObjectPrivilegeCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ObjectPrivilegeCollection.
-        An array of User resources.
+        An array of object privileges.
 
 
         :return: The items of this ObjectPrivilegeCollection.
@@ -49,7 +49,7 @@ class ObjectPrivilegeCollection(object):
     def items(self, items):
         """
         Sets the items of this ObjectPrivilegeCollection.
-        An array of User resources.
+        An array of object privileges.
 
 
         :param items: The items of this ObjectPrivilegeCollection.

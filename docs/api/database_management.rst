@@ -21,8 +21,12 @@ Database Management
     :template: autosummary/model_class.rst
 
     oci.database_management.models.ActivityTimeSeriesMetrics
+    oci.database_management.models.AddDataFilesDetails
     oci.database_management.models.AddManagedDatabaseToManagedDatabaseGroupDetails
     oci.database_management.models.AllowedParameterValue
+    oci.database_management.models.AsmProperty
+    oci.database_management.models.AsmPropertyCollection
+    oci.database_management.models.AsmPropertySummary
     oci.database_management.models.AssociatedDatabaseCollection
     oci.database_management.models.AssociatedDatabaseSummary
     oci.database_management.models.AwrDbCollection
@@ -65,6 +69,7 @@ Database Management
     oci.database_management.models.CreateJobDetails
     oci.database_management.models.CreateManagedDatabaseGroupDetails
     oci.database_management.models.CreateSqlJobDetails
+    oci.database_management.models.CreateTablespaceDetails
     oci.database_management.models.DataAccessContainerCollection
     oci.database_management.models.DataAccessContainerSummary
     oci.database_management.models.DatabaseCredentials
@@ -84,6 +89,7 @@ Database Management
     oci.database_management.models.DbManagementPrivateEndpointCollection
     oci.database_management.models.DbManagementPrivateEndpointSummary
     oci.database_management.models.DropSqlTuningTaskDetails
+    oci.database_management.models.DropTablespaceDetails
     oci.database_management.models.ExecutionPlanStatsComparision
     oci.database_management.models.FailedConnectionsAggregateMetrics
     oci.database_management.models.FleetMetricDefinition
@@ -126,8 +132,10 @@ Database Management
     oci.database_management.models.ProxiedForUserSummary
     oci.database_management.models.ProxyUserCollection
     oci.database_management.models.ProxyUserSummary
+    oci.database_management.models.RemoveDataFileDetails
     oci.database_management.models.RemoveManagedDatabaseFromManagedDatabaseGroupDetails
     oci.database_management.models.ResetDatabaseParametersDetails
+    oci.database_management.models.ResizeDataFileDetails
     oci.database_management.models.RoleCollection
     oci.database_management.models.RoleSummary
     oci.database_management.models.SqlJob
@@ -158,7 +166,12 @@ Database Management
     oci.database_management.models.SystemPrivilegeCollection
     oci.database_management.models.SystemPrivilegeSummary
     oci.database_management.models.Tablespace
+    oci.database_management.models.TablespaceAdminCredentialDetails
+    oci.database_management.models.TablespaceAdminPasswordCredentialDetails
+    oci.database_management.models.TablespaceAdminSecretCredentialDetails
+    oci.database_management.models.TablespaceAdminStatus
     oci.database_management.models.TablespaceCollection
+    oci.database_management.models.TablespaceStorageSize
     oci.database_management.models.TablespaceSummary
     oci.database_management.models.TimeSeriesMetricDataPoint
     oci.database_management.models.TimeSeriesMetricDefinition
@@ -167,6 +180,7 @@ Database Management
     oci.database_management.models.UpdateJobDetails
     oci.database_management.models.UpdateManagedDatabaseGroupDetails
     oci.database_management.models.UpdateSqlJobDetails
+    oci.database_management.models.UpdateTablespaceDetails
     oci.database_management.models.User
     oci.database_management.models.UserCollection
     oci.database_management.models.UserSummary

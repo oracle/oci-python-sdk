@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class StartSqlTuningTaskDetails(object):
     """
-    Request to start a SQL tuning task
+    The request to start a SQL tuning task.
     """
 
     #: A constant which can be used with the scope property of a StartSqlTuningTaskDetails.
@@ -102,7 +102,7 @@ class StartSqlTuningTaskDetails(object):
     def task_name(self):
         """
         **[Required]** Gets the task_name of this StartSqlTuningTaskDetails.
-        The name of the SQL tuning task. The name is unique per user in a database, and it is case sensitive.
+        The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
 
 
         :return: The task_name of this StartSqlTuningTaskDetails.
@@ -114,7 +114,7 @@ class StartSqlTuningTaskDetails(object):
     def task_name(self, task_name):
         """
         Sets the task_name of this StartSqlTuningTaskDetails.
-        The name of the SQL tuning task. The name is unique per user in a database, and it is case sensitive.
+        The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
 
 
         :param task_name: The task_name of this StartSqlTuningTaskDetails.
@@ -195,7 +195,7 @@ class StartSqlTuningTaskDetails(object):
         """
         **[Required]** Gets the scope of this StartSqlTuningTaskDetails.
         The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation
-        is excluded, so the task is faster. For COMPREHENSIVE scope, the SQL profile recommendation
+        is excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile recommendation
         is included.
 
         Allowed values for this property are: "LIMITED", "COMPREHENSIVE"
@@ -211,7 +211,7 @@ class StartSqlTuningTaskDetails(object):
         """
         Sets the scope of this StartSqlTuningTaskDetails.
         The scope for the SQL tuning task. For LIMITED scope, the SQL profile recommendation
-        is excluded, so the task is faster. For COMPREHENSIVE scope, the SQL profile recommendation
+        is excluded, so the task is executed faster. For COMPREHENSIVE scope, the SQL profile recommendation
         is included.
 
 
@@ -230,8 +230,8 @@ class StartSqlTuningTaskDetails(object):
     def statement_time_limit_in_minutes(self):
         """
         Gets the statement_time_limit_in_minutes of this StartSqlTuningTaskDetails.
-        The time limit per SQL statement in minutes. This is for task with COMPREHENSIVE scope.
-        Per statement time limit should not be larger than the total time limit.
+        The time limit per SQL statement (in minutes). This is for a task with the COMPREHENSIVE scope.
+        The time limit per SQL statement should not be more than the total time limit.
 
 
         :return: The statement_time_limit_in_minutes of this StartSqlTuningTaskDetails.
@@ -243,8 +243,8 @@ class StartSqlTuningTaskDetails(object):
     def statement_time_limit_in_minutes(self, statement_time_limit_in_minutes):
         """
         Sets the statement_time_limit_in_minutes of this StartSqlTuningTaskDetails.
-        The time limit per SQL statement in minutes. This is for task with COMPREHENSIVE scope.
-        Per statement time limit should not be larger than the total time limit.
+        The time limit per SQL statement (in minutes). This is for a task with the COMPREHENSIVE scope.
+        The time limit per SQL statement should not be more than the total time limit.
 
 
         :param statement_time_limit_in_minutes: The statement_time_limit_in_minutes of this StartSqlTuningTaskDetails.
@@ -256,7 +256,7 @@ class StartSqlTuningTaskDetails(object):
     def sql_details(self):
         """
         **[Required]** Gets the sql_details of this StartSqlTuningTaskDetails.
-        The array of the details of SQL statments on which the tuning is performed.
+        The array of the details of SQL statement on which tuning is performed.
 
 
         :return: The sql_details of this StartSqlTuningTaskDetails.
@@ -268,7 +268,7 @@ class StartSqlTuningTaskDetails(object):
     def sql_details(self, sql_details):
         """
         Sets the sql_details of this StartSqlTuningTaskDetails.
-        The array of the details of SQL statments on which the tuning is performed.
+        The array of the details of SQL statement on which tuning is performed.
 
 
         :param sql_details: The sql_details of this StartSqlTuningTaskDetails.
@@ -280,7 +280,7 @@ class StartSqlTuningTaskDetails(object):
     def time_started(self):
         """
         **[Required]** Gets the time_started of this StartSqlTuningTaskDetails.
-        The start time of the period, in which SQL statements are running.
+        The start time of the period in which SQL statements are running.
 
 
         :return: The time_started of this StartSqlTuningTaskDetails.
@@ -292,7 +292,7 @@ class StartSqlTuningTaskDetails(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this StartSqlTuningTaskDetails.
-        The start time of the period, in which SQL statements are running.
+        The start time of the period in which SQL statements are running.
 
 
         :param time_started: The time_started of this StartSqlTuningTaskDetails.
@@ -304,7 +304,7 @@ class StartSqlTuningTaskDetails(object):
     def time_ended(self):
         """
         **[Required]** Gets the time_ended of this StartSqlTuningTaskDetails.
-        The end time of the period, in which SQL statements are running.
+        The end time of the period in which SQL statements are running.
 
 
         :return: The time_ended of this StartSqlTuningTaskDetails.
@@ -316,7 +316,7 @@ class StartSqlTuningTaskDetails(object):
     def time_ended(self, time_ended):
         """
         Sets the time_ended of this StartSqlTuningTaskDetails.
-        The end time of the period, in which SQL statements are running.
+        The end time of the period in which SQL statements are running.
 
 
         :param time_ended: The time_ended of this StartSqlTuningTaskDetails.

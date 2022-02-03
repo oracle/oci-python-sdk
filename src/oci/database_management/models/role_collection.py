@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RoleCollection(object):
     """
-    A collection of Roles granted to the current User.
+    A collection of roles granted to the current User.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class RoleCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this RoleCollection.
-        An array of User resources.
+        An array of roles.
 
 
         :return: The items of this RoleCollection.
@@ -49,7 +49,7 @@ class RoleCollection(object):
     def items(self, items):
         """
         Sets the items of this RoleCollection.
-        An array of User resources.
+        An array of roles.
 
 
         :param items: The items of this RoleCollection.

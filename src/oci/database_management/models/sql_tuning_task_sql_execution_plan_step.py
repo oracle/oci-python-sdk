@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlTuningTaskSqlExecutionPlanStep(object):
     """
-    A step of a SQL execution plan.
+    A step in the SQL execution plan.
     """
 
     def __init__(self, **kwargs):
@@ -233,7 +233,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def plan_hash_value(self):
         """
         Gets the plan_hash_value of this SqlTuningTaskSqlExecutionPlanStep.
-        Numerical representation of the execution plan
+        The numerical representation of the SQL execution plan.
 
 
         :return: The plan_hash_value of this SqlTuningTaskSqlExecutionPlanStep.
@@ -245,7 +245,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def plan_hash_value(self, plan_hash_value):
         """
         Sets the plan_hash_value of this SqlTuningTaskSqlExecutionPlanStep.
-        Numerical representation of the execution plan
+        The numerical representation of the SQL execution plan.
 
 
         :param plan_hash_value: The plan_hash_value of this SqlTuningTaskSqlExecutionPlanStep.
@@ -257,8 +257,8 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def step_id(self):
         """
         Gets the step_id of this SqlTuningTaskSqlExecutionPlanStep.
-        Identification number for this step in the execution plan. It is unique within the execution plan.
-        It is not the `OCID`__.
+        The identification number of a step in the SQL execution plan. This is unique within the SQL execution plan.
+        This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -272,8 +272,8 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def step_id(self, step_id):
         """
         Sets the step_id of this SqlTuningTaskSqlExecutionPlanStep.
-        Identification number for this step in the execution plan. It is unique within the execution plan.
-        It is not the `OCID`__.
+        The identification number of a step in the SQL execution plan. This is unique within the SQL execution plan.
+        This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -287,8 +287,8 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def parent_step_id(self):
         """
         Gets the parent_step_id of this SqlTuningTaskSqlExecutionPlanStep.
-        ID of the next step that operates on the results of this step.
-        It is not the `OCID`__.
+        The ID of the next step that operates on the results of this step.
+        This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -302,8 +302,8 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def parent_step_id(self, parent_step_id):
         """
         Sets the parent_step_id of this SqlTuningTaskSqlExecutionPlanStep.
-        ID of the next step that operates on the results of this step.
-        It is not the `OCID`__.
+        The ID of the next step that operates on the results of this step.
+        This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -317,7 +317,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def position(self):
         """
         Gets the position of this SqlTuningTaskSqlExecutionPlanStep.
-        Order of processing for steps with the same parent ID.
+        The order of processing for steps with the same parent ID.
 
 
         :return: The position of this SqlTuningTaskSqlExecutionPlanStep.
@@ -329,7 +329,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def position(self, position):
         """
         Sets the position of this SqlTuningTaskSqlExecutionPlanStep.
-        Order of processing for steps with the same parent ID.
+        The order of processing for steps with the same parent ID.
 
 
         :param position: The position of this SqlTuningTaskSqlExecutionPlanStep.
@@ -341,7 +341,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def operation(self):
         """
         Gets the operation of this SqlTuningTaskSqlExecutionPlanStep.
-        Name of the operation performed at this step
+        The name of the operation performed at this step.
 
 
         :return: The operation of this SqlTuningTaskSqlExecutionPlanStep.
@@ -353,7 +353,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def operation(self, operation):
         """
         Sets the operation of this SqlTuningTaskSqlExecutionPlanStep.
-        Name of the operation performed at this step
+        The name of the operation performed at this step.
 
 
         :param operation: The operation of this SqlTuningTaskSqlExecutionPlanStep.
@@ -365,7 +365,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def options(self):
         """
         Gets the options of this SqlTuningTaskSqlExecutionPlanStep.
-        Options used for the operation performed at this step.
+        The options used for the operation performed at this step.
 
 
         :return: The options of this SqlTuningTaskSqlExecutionPlanStep.
@@ -377,7 +377,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def options(self, options):
         """
         Sets the options of this SqlTuningTaskSqlExecutionPlanStep.
-        Options used for the operation performed at this step.
+        The options used for the operation performed at this step.
 
 
         :param options: The options of this SqlTuningTaskSqlExecutionPlanStep.
@@ -389,7 +389,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def optimizer_mode(self):
         """
         Gets the optimizer_mode of this SqlTuningTaskSqlExecutionPlanStep.
-        Current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000 etc).
+        The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
 
 
         :return: The optimizer_mode of this SqlTuningTaskSqlExecutionPlanStep.
@@ -401,7 +401,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def optimizer_mode(self, optimizer_mode):
         """
         Sets the optimizer_mode of this SqlTuningTaskSqlExecutionPlanStep.
-        Current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000 etc).
+        The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
 
 
         :param optimizer_mode: The optimizer_mode of this SqlTuningTaskSqlExecutionPlanStep.
@@ -413,7 +413,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def cost(self):
         """
         Gets the cost of this SqlTuningTaskSqlExecutionPlanStep.
-        Cost of the current operation estimated by the cost-based optimizer (CBO).
+        The cost of the current operation estimated by the cost-based optimizer (CBO).
 
 
         :return: The cost of this SqlTuningTaskSqlExecutionPlanStep.
@@ -425,7 +425,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def cost(self, cost):
         """
         Sets the cost of this SqlTuningTaskSqlExecutionPlanStep.
-        Cost of the current operation estimated by the cost-based optimizer (CBO).
+        The cost of the current operation estimated by the cost-based optimizer (CBO).
 
 
         :param cost: The cost of this SqlTuningTaskSqlExecutionPlanStep.
@@ -437,7 +437,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def cardinality(self):
         """
         Gets the cardinality of this SqlTuningTaskSqlExecutionPlanStep.
-        Number of rows returned by the current operation (estimated by the CBO).
+        The number of rows returned by the current operation (estimated by the CBO).
 
 
         :return: The cardinality of this SqlTuningTaskSqlExecutionPlanStep.
@@ -449,7 +449,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def cardinality(self, cardinality):
         """
         Sets the cardinality of this SqlTuningTaskSqlExecutionPlanStep.
-        Number of rows returned by the current operation (estimated by the CBO).
+        The number of rows returned by the current operation (estimated by the CBO).
 
 
         :param cardinality: The cardinality of this SqlTuningTaskSqlExecutionPlanStep.
@@ -461,7 +461,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def bytes(self):
         """
         Gets the bytes of this SqlTuningTaskSqlExecutionPlanStep.
-        Number of bytes returned by the current operation.
+        The number of bytes returned by the current operation.
 
 
         :return: The bytes of this SqlTuningTaskSqlExecutionPlanStep.
@@ -473,7 +473,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def bytes(self, bytes):
         """
         Sets the bytes of this SqlTuningTaskSqlExecutionPlanStep.
-        Number of bytes returned by the current operation.
+        The number of bytes returned by the current operation.
 
 
         :param bytes: The bytes of this SqlTuningTaskSqlExecutionPlanStep.
@@ -533,7 +533,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def temp_space(self):
         """
         Gets the temp_space of this SqlTuningTaskSqlExecutionPlanStep.
-        Temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
+        The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
 
 
         :return: The temp_space of this SqlTuningTaskSqlExecutionPlanStep.
@@ -545,7 +545,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def temp_space(self, temp_space):
         """
         Sets the temp_space of this SqlTuningTaskSqlExecutionPlanStep.
-        Temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
+        The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
 
 
         :param temp_space: The temp_space of this SqlTuningTaskSqlExecutionPlanStep.
@@ -557,7 +557,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def time(self):
         """
         Gets the time of this SqlTuningTaskSqlExecutionPlanStep.
-        Elapsed time (in seconds) of the operation as estimated by the CBO.
+        The elapsed time (in seconds) of the operation as estimated by the CBO.
 
 
         :return: The time of this SqlTuningTaskSqlExecutionPlanStep.
@@ -569,7 +569,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def time(self, time):
         """
         Sets the time of this SqlTuningTaskSqlExecutionPlanStep.
-        Elapsed time (in seconds) of the operation as estimated by the CBO.
+        The elapsed time (in seconds) of the operation as estimated by the CBO.
 
 
         :param time: The time of this SqlTuningTaskSqlExecutionPlanStep.
@@ -581,7 +581,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def object_node(self):
         """
         Gets the object_node of this SqlTuningTaskSqlExecutionPlanStep.
-        Name of the database link used to reference the object.
+        The name of the database link used to reference the object.
 
 
         :return: The object_node of this SqlTuningTaskSqlExecutionPlanStep.
@@ -593,7 +593,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def object_node(self, object_node):
         """
         Sets the object_node of this SqlTuningTaskSqlExecutionPlanStep.
-        Name of the database link used to reference the object.
+        The name of the database link used to reference the object.
 
 
         :param object_node: The object_node of this SqlTuningTaskSqlExecutionPlanStep.
@@ -605,7 +605,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def object_owner(self):
         """
         Gets the object_owner of this SqlTuningTaskSqlExecutionPlanStep.
-        Owner of the object.
+        The owner of the object.
 
 
         :return: The object_owner of this SqlTuningTaskSqlExecutionPlanStep.
@@ -617,7 +617,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def object_owner(self, object_owner):
         """
         Sets the object_owner of this SqlTuningTaskSqlExecutionPlanStep.
-        Owner of the object.
+        The owner of the object.
 
 
         :param object_owner: The object_owner of this SqlTuningTaskSqlExecutionPlanStep.
@@ -629,7 +629,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def object_name(self):
         """
         Gets the object_name of this SqlTuningTaskSqlExecutionPlanStep.
-        Name of the object.
+        The name of the object.
 
 
         :return: The object_name of this SqlTuningTaskSqlExecutionPlanStep.
@@ -641,7 +641,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def object_name(self, object_name):
         """
         Sets the object_name of this SqlTuningTaskSqlExecutionPlanStep.
-        Name of the object.
+        The name of the object.
 
 
         :param object_name: The object_name of this SqlTuningTaskSqlExecutionPlanStep.
@@ -653,7 +653,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def object_position(self):
         """
         Gets the object_position of this SqlTuningTaskSqlExecutionPlanStep.
-        Numbered position of the object name in the original SQL statement.
+        The numbered position of the object name in the original SQL statement.
 
 
         :return: The object_position of this SqlTuningTaskSqlExecutionPlanStep.
@@ -665,7 +665,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def object_position(self, object_position):
         """
         Sets the object_position of this SqlTuningTaskSqlExecutionPlanStep.
-        Numbered position of the object name in the original SQL statement.
+        The numbered position of the object name in the original SQL statement.
 
 
         :param object_position: The object_position of this SqlTuningTaskSqlExecutionPlanStep.
@@ -677,7 +677,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def object_type(self):
         """
         Gets the object_type of this SqlTuningTaskSqlExecutionPlanStep.
-        Descriptive modifier that further describes the type of object.
+        The descriptive modifier that further describes the type of object.
 
 
         :return: The object_type of this SqlTuningTaskSqlExecutionPlanStep.
@@ -689,7 +689,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def object_type(self, object_type):
         """
         Sets the object_type of this SqlTuningTaskSqlExecutionPlanStep.
-        Descriptive modifier that further describes the type of object.
+        The descriptive modifier that further describes the type of object.
 
 
         :param object_type: The object_type of this SqlTuningTaskSqlExecutionPlanStep.
@@ -701,9 +701,9 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def partition_start(self):
         """
         Gets the partition_start of this SqlTuningTaskSqlExecutionPlanStep.
-        A step may get data from a range of partitions of a partitioned object, such table or index,
+        A step may get data from a range of partitions of a partitioned object, such as table or index,
         based on predicates and sorting order. The partionStart is the starting partition of the range.
-        The partitionStop is the ending partition of the range
+        The partitionStop is the ending partition of the range.
 
 
         :return: The partition_start of this SqlTuningTaskSqlExecutionPlanStep.
@@ -715,9 +715,9 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def partition_start(self, partition_start):
         """
         Sets the partition_start of this SqlTuningTaskSqlExecutionPlanStep.
-        A step may get data from a range of partitions of a partitioned object, such table or index,
+        A step may get data from a range of partitions of a partitioned object, such as table or index,
         based on predicates and sorting order. The partionStart is the starting partition of the range.
-        The partitionStop is the ending partition of the range
+        The partitionStop is the ending partition of the range.
 
 
         :param partition_start: The partition_start of this SqlTuningTaskSqlExecutionPlanStep.
@@ -729,9 +729,9 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def partition_stop(self):
         """
         Gets the partition_stop of this SqlTuningTaskSqlExecutionPlanStep.
-        A step may get data from a range of partitions of a partitioned object, such table or index,
+        A step may get data from a range of partitions of a partitioned object, such as table or index,
         based on predicates and sorting order. The partionStart is the starting partition of the range.
-        The partitionStop is the ending partition of the range
+        The partitionStop is the ending partition of the range.
 
 
         :return: The partition_stop of this SqlTuningTaskSqlExecutionPlanStep.
@@ -743,9 +743,9 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def partition_stop(self, partition_stop):
         """
         Sets the partition_stop of this SqlTuningTaskSqlExecutionPlanStep.
-        A step may get data from a range of partitions of a partitioned object, such table or index,
+        A step may get data from a range of partitions of a partitioned object, such as table or index,
         based on predicates and sorting order. The partionStart is the starting partition of the range.
-        The partitionStop is the ending partition of the range
+        The partitionStop is the ending partition of the range.
 
 
         :param partition_stop: The partition_stop of this SqlTuningTaskSqlExecutionPlanStep.
@@ -757,7 +757,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def partition_id(self):
         """
         Gets the partition_id of this SqlTuningTaskSqlExecutionPlanStep.
-        The id of the step in the execution plan that has computed the pair of values of the partitionStart and partitionStop
+        The ID of the step in the execution plan that has computed the pair of values of partitionStart and partitionStop.
 
 
         :return: The partition_id of this SqlTuningTaskSqlExecutionPlanStep.
@@ -769,7 +769,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def partition_id(self, partition_id):
         """
         Sets the partition_id of this SqlTuningTaskSqlExecutionPlanStep.
-        The id of the step in the execution plan that has computed the pair of values of the partitionStart and partitionStop
+        The ID of the step in the execution plan that has computed the pair of values of partitionStart and partitionStop.
 
 
         :param partition_id: The partition_id of this SqlTuningTaskSqlExecutionPlanStep.
@@ -781,7 +781,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def remarks(self):
         """
         Gets the remarks of this SqlTuningTaskSqlExecutionPlanStep.
-        Place for comments that can be added to the steps of the execution plan.
+        The place for comments that can be added to the steps of the execution plan.
 
 
         :return: The remarks of this SqlTuningTaskSqlExecutionPlanStep.
@@ -793,7 +793,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def remarks(self, remarks):
         """
         Sets the remarks of this SqlTuningTaskSqlExecutionPlanStep.
-        Place for comments that can be added to the steps of the execution plan.
+        The place for comments that can be added to the steps of the execution plan.
 
 
         :param remarks: The remarks of this SqlTuningTaskSqlExecutionPlanStep.
@@ -805,7 +805,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def number_of_search_column(self):
         """
         Gets the number_of_search_column of this SqlTuningTaskSqlExecutionPlanStep.
-        Number of index columns with start and stop keys (that is, the number of columns with matching predicates)
+        Number of index columns with start and stop keys (that is, the number of columns with matching predicates).
 
 
         :return: The number_of_search_column of this SqlTuningTaskSqlExecutionPlanStep.
@@ -817,7 +817,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def number_of_search_column(self, number_of_search_column):
         """
         Sets the number_of_search_column of this SqlTuningTaskSqlExecutionPlanStep.
-        Number of index columns with start and stop keys (that is, the number of columns with matching predicates)
+        Number of index columns with start and stop keys (that is, the number of columns with matching predicates).
 
 
         :param number_of_search_column: The number_of_search_column of this SqlTuningTaskSqlExecutionPlanStep.
@@ -877,7 +877,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def attribute(self):
         """
         Gets the attribute of this SqlTuningTaskSqlExecutionPlanStep.
-        Text string identifying the type of the execution plan.
+        The text string identifying the type of execution plan.
 
 
         :return: The attribute of this SqlTuningTaskSqlExecutionPlanStep.
@@ -889,7 +889,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def attribute(self, attribute):
         """
         Sets the attribute of this SqlTuningTaskSqlExecutionPlanStep.
-        Text string identifying the type of the execution plan.
+        The text string identifying the type of execution plan.
 
 
         :param attribute: The attribute of this SqlTuningTaskSqlExecutionPlanStep.
@@ -901,7 +901,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def access_predicates(self):
         """
         Gets the access_predicates of this SqlTuningTaskSqlExecutionPlanStep.
-        Predicates used to locate rows in an access structure. For example,
+        The predicates used to locate rows in an access structure. For example,
         start or stop predicates for an index range scan.
 
 
@@ -914,7 +914,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def access_predicates(self, access_predicates):
         """
         Sets the access_predicates of this SqlTuningTaskSqlExecutionPlanStep.
-        Predicates used to locate rows in an access structure. For example,
+        The predicates used to locate rows in an access structure. For example,
         start or stop predicates for an index range scan.
 
 
@@ -927,7 +927,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def filter_predicates(self):
         """
         Gets the filter_predicates of this SqlTuningTaskSqlExecutionPlanStep.
-        Predicates used to filter rows before producing them.
+        The predicates used to filter rows before producing them.
 
 
         :return: The filter_predicates of this SqlTuningTaskSqlExecutionPlanStep.
@@ -939,7 +939,7 @@ class SqlTuningTaskSqlExecutionPlanStep(object):
     def filter_predicates(self, filter_predicates):
         """
         Sets the filter_predicates of this SqlTuningTaskSqlExecutionPlanStep.
-        Predicates used to filter rows before producing them.
+        The predicates used to filter rows before producing them.
 
 
         :param filter_predicates: The filter_predicates of this SqlTuningTaskSqlExecutionPlanStep.

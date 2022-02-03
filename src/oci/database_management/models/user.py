@@ -382,7 +382,7 @@ class User(object):
     def status(self):
         """
         **[Required]** Gets the status of this User.
-        The account status of the User
+        The status of the user account.
 
         Allowed values for this property are: "OPEN", "EXPIRED", "EXPIRED_GRACE", "LOCKED", "LOCKED_TIMED", "EXPIRED_AND_LOCKED", "EXPIRED_GRACE_AND_LOCKED", "EXPIRED_AND_LOCKED_TIMED", "EXPIRED_GRACE_AND_LOCKED_TIMED", "OPEN_AND_IN_ROLLOVER", "EXPIRED_AND_IN_ROLLOVER", "LOCKED_AND_IN_ROLLOVER", "EXPIRED_AND_LOCKED_AND_IN_ROLLOVER", "LOCKED_TIMED_AND_IN_ROLLOVER", "EXPIRED_AND_LOCKED_TIMED_AND_IN_ROL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -397,7 +397,7 @@ class User(object):
     def status(self, status):
         """
         Sets the status of this User.
-        The account status of the User
+        The status of the user account.
 
 
         :param status: The status of this User.
@@ -436,7 +436,7 @@ class User(object):
     def time_expiring(self):
         """
         Gets the time_expiring of this User.
-        The date of expiration of the account
+        The date and time of the expiration of the user account.
 
 
         :return: The time_expiring of this User.
@@ -448,7 +448,7 @@ class User(object):
     def time_expiring(self, time_expiring):
         """
         Sets the time_expiring of this User.
-        The date of expiration of the account
+        The date and time of the expiration of the user account.
 
 
         :param time_expiring: The time_expiring of this User.
@@ -508,7 +508,7 @@ class User(object):
     def local_temp_tablespace(self):
         """
         Gets the local_temp_tablespace of this User.
-        The default local temporary tablespace for the User.
+        The default local temporary tablespace for the user.
 
 
         :return: The local_temp_tablespace of this User.
@@ -520,7 +520,7 @@ class User(object):
     def local_temp_tablespace(self, local_temp_tablespace):
         """
         Sets the local_temp_tablespace of this User.
-        The default local temporary tablespace for the User.
+        The default local temporary tablespace for the user.
 
 
         :param local_temp_tablespace: The local_temp_tablespace of this User.
@@ -532,7 +532,7 @@ class User(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this User.
-        The User creation date.
+        The date and time the user was created.
 
 
         :return: The time_created of this User.
@@ -544,7 +544,7 @@ class User(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this User.
-        The User creation date.
+        The date and time the user was created.
 
 
         :param time_created: The time_created of this User.
@@ -604,7 +604,7 @@ class User(object):
     def external_name(self):
         """
         Gets the external_name of this User.
-        The external name of User.
+        The external name of the user.
 
 
         :return: The external_name of this User.
@@ -616,7 +616,7 @@ class User(object):
     def external_name(self, external_name):
         """
         Sets the external_name of this User.
-        The external name of User.
+        The external name of the user.
 
 
         :param external_name: The external_name of this User.
@@ -628,7 +628,7 @@ class User(object):
     def password_versions(self):
         """
         Gets the password_versions of this User.
-        The list of versions of the password hashes (also known as \"verifiers\") existing for the account.
+        The list of existing versions of the password hashes (also known as \"verifiers\") for the account.
 
 
         :return: The password_versions of this User.
@@ -640,7 +640,7 @@ class User(object):
     def password_versions(self, password_versions):
         """
         Sets the password_versions of this User.
-        The list of versions of the password hashes (also known as \"verifiers\") existing for the account.
+        The list of existing versions of the password hashes (also known as \"verifiers\") for the account.
 
 
         :param password_versions: The password_versions of this User.
@@ -652,7 +652,7 @@ class User(object):
     def editions_enabled(self):
         """
         Gets the editions_enabled of this User.
-        Indicates whether editions have been enabled for the corresponding user (Y) or not (N)
+        Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -667,7 +667,7 @@ class User(object):
     def editions_enabled(self, editions_enabled):
         """
         Sets the editions_enabled of this User.
-        Indicates whether editions have been enabled for the corresponding user (Y) or not (N)
+        Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
 
 
         :param editions_enabled: The editions_enabled of this User.
@@ -682,7 +682,7 @@ class User(object):
     def authentication(self):
         """
         Gets the authentication of this User.
-        The authentication mechanism for the user
+        The authentication mechanism for the user.
 
         Allowed values for this property are: "NONE", "EXTERNAL", "GLOBAL", "PASSWORD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -697,7 +697,7 @@ class User(object):
     def authentication(self, authentication):
         """
         Sets the authentication of this User.
-        The authentication mechanism for the user
+        The authentication mechanism for the user.
 
 
         :param authentication: The authentication of this User.
@@ -774,7 +774,7 @@ class User(object):
     def time_last_login(self):
         """
         Gets the time_last_login of this User.
-        The time of the last user login.
+        The date and time of the last user login.
         This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
 
 
@@ -787,7 +787,7 @@ class User(object):
     def time_last_login(self, time_last_login):
         """
         Sets the time_last_login of this User.
-        The time of the last user login.
+        The date and time of the last user login.
         This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
 
 
@@ -800,7 +800,7 @@ class User(object):
     def oracle_maintained(self):
         """
         Gets the oracle_maintained of this User.
-        Indicates whether the user was created, and is maintained, by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
+        Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -815,7 +815,7 @@ class User(object):
     def oracle_maintained(self, oracle_maintained):
         """
         Sets the oracle_maintained of this User.
-        Indicates whether the user was created, and is maintained, by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
+        Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
 
 
         :param oracle_maintained: The oracle_maintained of this User.
@@ -830,7 +830,7 @@ class User(object):
     def inherited(self):
         """
         Gets the inherited of this User.
-        Indicates whether the user definition was inherited from another container (YES) or not (NO)
+        Indicates whether the user definition is inherited from another container (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -845,7 +845,7 @@ class User(object):
     def inherited(self, inherited):
         """
         Sets the inherited of this User.
-        Indicates whether the user definition was inherited from another container (YES) or not (NO)
+        Indicates whether the user definition is inherited from another container (YES) or not (NO).
 
 
         :param inherited: The inherited of this User.
@@ -860,7 +860,7 @@ class User(object):
     def default_collation(self):
         """
         Gets the default_collation of this User.
-        The default collation for the user\u2019s schema.
+        The default collation for the user schema.
 
 
         :return: The default_collation of this User.
@@ -872,7 +872,7 @@ class User(object):
     def default_collation(self, default_collation):
         """
         Sets the default_collation of this User.
-        The default collation for the user\u2019s schema.
+        The default collation for the user schema.
 
 
         :param default_collation: The default_collation of this User.
@@ -884,7 +884,7 @@ class User(object):
     def implicit(self):
         """
         Gets the implicit of this User.
-        Indicates whether this user is a common user created by an implicit application (YES) or not (NO)
+        Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -899,7 +899,7 @@ class User(object):
     def implicit(self, implicit):
         """
         Sets the implicit of this User.
-        Indicates whether this user is a common user created by an implicit application (YES) or not (NO)
+        Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
 
 
         :param implicit: The implicit of this User.
@@ -914,7 +914,7 @@ class User(object):
     def all_shared(self):
         """
         Gets the all_shared of this User.
-        In a sharded database, the value in this column indicates whether the user was created with shard DDL enabled.
+        In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -929,7 +929,7 @@ class User(object):
     def all_shared(self, all_shared):
         """
         Sets the all_shared of this User.
-        In a sharded database, the value in this column indicates whether the user was created with shard DDL enabled.
+        In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
 
 
         :param all_shared: The all_shared of this User.
@@ -974,7 +974,7 @@ class User(object):
     def time_password_changed(self):
         """
         Gets the time_password_changed of this User.
-        The date on which the user's password was last set.
+        The date and time when the user password was last set.
         This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
 
 
@@ -987,7 +987,7 @@ class User(object):
     def time_password_changed(self, time_password_changed):
         """
         Sets the time_password_changed of this User.
-        The date on which the user's password was last set.
+        The date and time when the user password was last set.
         This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
 
 

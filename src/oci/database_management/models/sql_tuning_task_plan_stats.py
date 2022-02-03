@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlTuningTaskPlanStats(object):
     """
-    The statistics of an SQL execution plan.
+    The statistics of a SQL execution plan.
     """
 
     #: A constant which can be used with the plan_status property of a SqlTuningTaskPlanStats.
@@ -61,7 +61,7 @@ class SqlTuningTaskPlanStats(object):
     def plan_type(self):
         """
         **[Required]** Gets the plan_type of this SqlTuningTaskPlanStats.
-        The type of the plan for the original or the new plan with profile/index etc.
+        The type of the original or modified plan with profile, index, and so on.
 
 
         :return: The plan_type of this SqlTuningTaskPlanStats.
@@ -73,7 +73,7 @@ class SqlTuningTaskPlanStats(object):
     def plan_type(self, plan_type):
         """
         Sets the plan_type of this SqlTuningTaskPlanStats.
-        The type of the plan for the original or the new plan with profile/index etc.
+        The type of the original or modified plan with profile, index, and so on.
 
 
         :param plan_type: The plan_type of this SqlTuningTaskPlanStats.

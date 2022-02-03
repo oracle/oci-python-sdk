@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MetricGroupSummary(ConfigSummary):
     """
-    A Metric Group.
+    A metric group defines a set of metrics to collect from a span. It uses a span filter to specify which spans to
+    process. The set is then published to a namespace, which is a product level subdivision of metrics.
     """
 
     def __init__(self, **kwargs):
@@ -110,7 +111,7 @@ class MetricGroupSummary(ConfigSummary):
     def display_name(self):
         """
         Gets the display_name of this MetricGroupSummary.
-        The name of this metric group
+        The name of the metric group.
 
 
         :return: The display_name of this MetricGroupSummary.
@@ -122,7 +123,7 @@ class MetricGroupSummary(ConfigSummary):
     def display_name(self, display_name):
         """
         Sets the display_name of this MetricGroupSummary.
-        The name of this metric group
+        The name of the metric group.
 
 
         :param display_name: The display_name of this MetricGroupSummary.
@@ -135,7 +136,7 @@ class MetricGroupSummary(ConfigSummary):
         """
         Gets the filter_id of this MetricGroupSummary.
         The `OCID`__ of a Span Filter. The filterId is mandatory for the creation
-        of MetricGroups. A filterId will be generated when a Span Filter is created.
+        of MetricGroups. A filterId is generated when a Span Filter is created.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -150,7 +151,7 @@ class MetricGroupSummary(ConfigSummary):
         """
         Sets the filter_id of this MetricGroupSummary.
         The `OCID`__ of a Span Filter. The filterId is mandatory for the creation
-        of MetricGroups. A filterId will be generated when a Span Filter is created.
+        of MetricGroups. A filterId is generated when a Span Filter is created.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -164,7 +165,7 @@ class MetricGroupSummary(ConfigSummary):
     def namespace(self):
         """
         Gets the namespace of this MetricGroupSummary.
-        The namespace to write the metrics to
+        The namespace to which the metrics are published. It must be one of several predefined namespaces.
 
 
         :return: The namespace of this MetricGroupSummary.
@@ -176,7 +177,7 @@ class MetricGroupSummary(ConfigSummary):
     def namespace(self, namespace):
         """
         Sets the namespace of this MetricGroupSummary.
-        The namespace to write the metrics to
+        The namespace to which the metrics are published. It must be one of several predefined namespaces.
 
 
         :param namespace: The namespace of this MetricGroupSummary.
@@ -188,7 +189,7 @@ class MetricGroupSummary(ConfigSummary):
     def dimensions(self):
         """
         Gets the dimensions of this MetricGroupSummary.
-        A list of dimensions for this metric
+        A list of dimensions for the metric. This variable should not be used.
 
 
         :return: The dimensions of this MetricGroupSummary.
@@ -200,7 +201,7 @@ class MetricGroupSummary(ConfigSummary):
     def dimensions(self, dimensions):
         """
         Sets the dimensions of this MetricGroupSummary.
-        A list of dimensions for this metric
+        A list of dimensions for the metric. This variable should not be used.
 
 
         :param dimensions: The dimensions of this MetricGroupSummary.
@@ -212,6 +213,8 @@ class MetricGroupSummary(ConfigSummary):
     def metrics(self):
         """
         Gets the metrics of this MetricGroupSummary.
+        The list of metrics in this group.
+
 
         :return: The metrics of this MetricGroupSummary.
         :rtype: list[oci.apm_config.models.Metric]
@@ -222,6 +225,8 @@ class MetricGroupSummary(ConfigSummary):
     def metrics(self, metrics):
         """
         Sets the metrics of this MetricGroupSummary.
+        The list of metrics in this group.
+
 
         :param metrics: The metrics of this MetricGroupSummary.
         :type: list[oci.apm_config.models.Metric]

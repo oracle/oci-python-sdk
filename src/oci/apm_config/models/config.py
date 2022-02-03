@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Config(object):
     """
-    A configuration item. This item has a number of mutually exclusive properties that can be used to set specific
+    A configuration item, which has a number of mutually exclusive properties that can be used to set specific
     portions of the configuration.
     """
 
@@ -112,7 +112,7 @@ class Config(object):
     def id(self):
         """
         Gets the id of this Config.
-        The `OCID`__ of the configuration item. An OCID will be generated
+        The `OCID`__ of the configuration item. An OCID is generated
         when the item is created.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -127,7 +127,7 @@ class Config(object):
     def id(self, id):
         """
         Sets the id of this Config.
-        The `OCID`__ of the configuration item. An OCID will be generated
+        The `OCID`__ of the configuration item. An OCID is generated
         when the item is created.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
@@ -142,7 +142,7 @@ class Config(object):
     def config_type(self):
         """
         **[Required]** Gets the config_type of this Config.
-        The type of configuration item
+        The type of configuration item.
 
         Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -157,7 +157,7 @@ class Config(object):
     def config_type(self, config_type):
         """
         Sets the config_type of this Config.
-        The type of configuration item
+        The type of configuration item.
 
 
         :param config_type: The config_type of this Config.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SpanFilter(Config):
     """
-    A span filter is a named setting that specifies filter criteria to match a subset of the spans.
+    A named setting that specifies the filter criteria to match a subset of the spans.
     """
 
     def __init__(self, **kwargs):
@@ -96,7 +96,7 @@ class SpanFilter(Config):
     def display_name(self):
         """
         Gets the display_name of this SpanFilter.
-        The name by which this filter can be displayed in the UI.
+        The name by which the span filter is displayed to the end user.
 
 
         :return: The display_name of this SpanFilter.
@@ -108,7 +108,7 @@ class SpanFilter(Config):
     def display_name(self, display_name):
         """
         Sets the display_name of this SpanFilter.
-        The name by which this filter can be displayed in the UI.
+        The name by which the span filter is displayed to the end user.
 
 
         :param display_name: The display_name of this SpanFilter.
@@ -144,7 +144,7 @@ class SpanFilter(Config):
     def description(self):
         """
         Gets the description of this SpanFilter.
-        An optional string that describes what the filter is intended or used for.
+        An optional string that describes what the span filter is intended or used for.
 
 
         :return: The description of this SpanFilter.
@@ -156,7 +156,7 @@ class SpanFilter(Config):
     def description(self, description):
         """
         Sets the description of this SpanFilter.
-        An optional string that describes what the filter is intended or used for.
+        An optional string that describes what the span filter is intended or used for.
 
 
         :param description: The description of this SpanFilter.

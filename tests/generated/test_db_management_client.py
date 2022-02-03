@@ -34,6 +34,48 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_add_data_files(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'AddDataFiles'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'AddDataFiles')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='AddDataFiles')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.add_data_files(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                tablespace_name=request.pop(util.camelize('tablespaceName')),
+                add_data_files_details=request.pop(util.camelize('AddDataFilesDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'AddDataFiles',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tablespaceAdminStatus',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_add_managed_database_to_managed_database_group(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'AddManagedDatabaseToManagedDatabaseGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -359,6 +401,47 @@ def test_create_managed_database_group(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_create_tablespace(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'CreateTablespace'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'CreateTablespace')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='CreateTablespace')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.create_tablespace(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                create_tablespace_details=request.pop(util.camelize('CreateTablespaceDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'CreateTablespace',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tablespace',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_delete_db_management_private_endpoint(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'DeleteDbManagementPrivateEndpoint'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -474,6 +557,48 @@ def test_delete_managed_database_group(testing_service_client):
             service_error,
             'delete_managed_database_group',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_drop_tablespace(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'DropTablespace'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'DropTablespace')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='DropTablespace')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.drop_tablespace(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                tablespace_name=request.pop(util.camelize('tablespaceName')),
+                drop_tablespace_details=request.pop(util.camelize('DropTablespaceDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'DropTablespace',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tablespaceAdminStatus',
+            False,
             False
         )
 
@@ -969,6 +1094,47 @@ def test_get_pdb_metrics(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_get_tablespace(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'GetTablespace'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'GetTablespace')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='GetTablespace')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.get_tablespace(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                tablespace_name=request.pop(util.camelize('tablespaceName')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'GetTablespace',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tablespace',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_get_user(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'GetUser'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1046,6 +1212,66 @@ def test_get_work_request(testing_service_client):
             'workRequest',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_list_asm_properties(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ListAsmProperties'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ListAsmProperties')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ListAsmProperties')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.list_asm_properties(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_asm_properties(
+                    managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_asm_properties(
+                        managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ListAsmProperties',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'asmPropertyCollection',
+            False,
+            True
         )
 
 
@@ -2377,6 +2603,48 @@ def test_list_work_requests(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_remove_data_file(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'RemoveDataFile'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'RemoveDataFile')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='RemoveDataFile')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.remove_data_file(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                tablespace_name=request.pop(util.camelize('tablespaceName')),
+                remove_data_file_details=request.pop(util.camelize('RemoveDataFileDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'RemoveDataFile',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tablespaceAdminStatus',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
 def test_remove_managed_database_from_managed_database_group(testing_service_client):
     if not testing_service_client.is_api_enabled('database_management', 'RemoveManagedDatabaseFromManagedDatabaseGroup'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2453,6 +2721,48 @@ def test_reset_database_parameters(testing_service_client):
             result,
             service_error,
             'updateDatabaseParametersResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_resize_data_file(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'ResizeDataFile'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'ResizeDataFile')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='ResizeDataFile')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.resize_data_file(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                tablespace_name=request.pop(util.camelize('tablespaceName')),
+                resize_data_file_details=request.pop(util.camelize('ResizeDataFileDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'ResizeDataFile',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tablespaceAdminStatus',
             False,
             False
         )
@@ -3172,6 +3482,48 @@ def test_update_managed_database_group(testing_service_client):
             result,
             service_error,
             'managedDatabaseGroup',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="dpd_dev_grp@oracle.com" jiraProject="DPD" opsJiraProject="DPD"
+def test_update_tablespace(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_management', 'UpdateTablespace'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_management', util.camelize('db_management'), 'UpdateTablespace')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_management', api_name='UpdateTablespace')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_management.DbManagementClient(config, service_endpoint=service_endpoint)
+            response = client.update_tablespace(
+                managed_database_id=request.pop(util.camelize('managedDatabaseId')),
+                tablespace_name=request.pop(util.camelize('tablespaceName')),
+                update_tablespace_details=request.pop(util.camelize('UpdateTablespaceDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_management',
+            'UpdateTablespace',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tablespace',
             False,
             False
         )

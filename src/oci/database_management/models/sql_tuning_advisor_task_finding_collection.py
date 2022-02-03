@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlTuningAdvisorTaskFindingCollection(object):
     """
-    The SQL Tuning Advisor task finding list.
+    The list of findings for a SQL Tuning Advisor task.
     """
 
     def __init__(self, **kwargs):

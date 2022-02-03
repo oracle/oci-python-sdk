@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.apm.service.config</groupId>
         <artifactId>apm-config-api</artifactId>
-        <version>0.1.114</version>
+        <version>0.1.263</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

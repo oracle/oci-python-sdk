@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlTuningTaskPasswordCredentialDetails(SqlTuningTaskCredentialDetails):
     """
-    User provides a password to be used to connect to the database.
+    The password provided by the user to connect to the database.
     """
 
     def __init__(self, **kwargs):

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ApdexRulesSummary(ConfigSummary):
     """
-    The set of Apdex rules to be used in Apdex computation.
+    The set of Apdex rules used in Apdex computation.
     """
 
     def __init__(self, **kwargs):
@@ -109,7 +109,7 @@ class ApdexRulesSummary(ConfigSummary):
     def display_name(self):
         """
         Gets the display_name of this ApdexRulesSummary.
-        The name by which this rule set can be displayed to the user.
+        The name by which the rule set is displayed to the end user.
 
 
         :return: The display_name of this ApdexRulesSummary.
@@ -121,7 +121,7 @@ class ApdexRulesSummary(ConfigSummary):
     def display_name(self, display_name):
         """
         Sets the display_name of this ApdexRulesSummary.
-        The name by which this rule set can be displayed to the user.
+        The name by which the rule set is displayed to the end user.
 
 
         :param display_name: The display_name of this ApdexRulesSummary.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     """
-    The finding counts data for the SQL Tuning Advisor summary report.
+    The number of findings in the SQL Tuning Advisor summary report.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     def recommended_sql_profile(self):
         """
         **[Required]** Gets the recommended_sql_profile of this SqlTuningAdvisorTaskSummaryFindingCounts.
-        The count of distinct SQL statements with recommended SQL profiles.
+        The number of distinct SQL statements with recommended SQL profiles.
 
 
         :return: The recommended_sql_profile of this SqlTuningAdvisorTaskSummaryFindingCounts.
@@ -84,7 +84,7 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     def recommended_sql_profile(self, recommended_sql_profile):
         """
         Sets the recommended_sql_profile of this SqlTuningAdvisorTaskSummaryFindingCounts.
-        The count of distinct SQL statements with recommended SQL profiles.
+        The number of distinct SQL statements with recommended SQL profiles.
 
 
         :param recommended_sql_profile: The recommended_sql_profile of this SqlTuningAdvisorTaskSummaryFindingCounts.
@@ -96,7 +96,7 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     def implemented_sql_profile(self):
         """
         **[Required]** Gets the implemented_sql_profile of this SqlTuningAdvisorTaskSummaryFindingCounts.
-        The count of distinct SQL statements with implemented SQL profiles.
+        The number of distinct SQL statements with implemented SQL profiles.
 
 
         :return: The implemented_sql_profile of this SqlTuningAdvisorTaskSummaryFindingCounts.
@@ -108,7 +108,7 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     def implemented_sql_profile(self, implemented_sql_profile):
         """
         Sets the implemented_sql_profile of this SqlTuningAdvisorTaskSummaryFindingCounts.
-        The count of distinct SQL statements with implemented SQL profiles.
+        The number of distinct SQL statements with implemented SQL profiles.
 
 
         :param implemented_sql_profile: The implemented_sql_profile of this SqlTuningAdvisorTaskSummaryFindingCounts.
@@ -120,7 +120,7 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     def index(self):
         """
         **[Required]** Gets the index of this SqlTuningAdvisorTaskSummaryFindingCounts.
-        The count of distinct SQL statements with index recommendations.
+        The number of distinct SQL statements with index recommendations.
 
 
         :return: The index of this SqlTuningAdvisorTaskSummaryFindingCounts.
@@ -132,7 +132,7 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     def index(self, index):
         """
         Sets the index of this SqlTuningAdvisorTaskSummaryFindingCounts.
-        The count of distinct SQL statements with index recommendations.
+        The number of distinct SQL statements with index recommendations.
 
 
         :param index: The index of this SqlTuningAdvisorTaskSummaryFindingCounts.
@@ -144,7 +144,7 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     def restructure(self):
         """
         **[Required]** Gets the restructure of this SqlTuningAdvisorTaskSummaryFindingCounts.
-        The count of distinct SQL statements with restructure SQL recommendations.
+        The number of distinct SQL statements with restructured SQL recommendations.
 
 
         :return: The restructure of this SqlTuningAdvisorTaskSummaryFindingCounts.
@@ -156,7 +156,7 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     def restructure(self, restructure):
         """
         Sets the restructure of this SqlTuningAdvisorTaskSummaryFindingCounts.
-        The count of distinct SQL statements with restructure SQL recommendations.
+        The number of distinct SQL statements with restructured SQL recommendations.
 
 
         :param restructure: The restructure of this SqlTuningAdvisorTaskSummaryFindingCounts.
@@ -168,7 +168,7 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     def statistics(self):
         """
         **[Required]** Gets the statistics of this SqlTuningAdvisorTaskSummaryFindingCounts.
-        The count of distinct SQL statements with stale/missing optimizer statistics recommendations.
+        The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
 
 
         :return: The statistics of this SqlTuningAdvisorTaskSummaryFindingCounts.
@@ -180,7 +180,7 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     def statistics(self, statistics):
         """
         Sets the statistics of this SqlTuningAdvisorTaskSummaryFindingCounts.
-        The count of distinct SQL statements with stale/missing optimizer statistics recommendations.
+        The number of distinct SQL statements with stale or missing optimizer statistics recommendations.
 
 
         :param statistics: The statistics of this SqlTuningAdvisorTaskSummaryFindingCounts.
@@ -192,7 +192,7 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     def alternate_plan(self):
         """
         **[Required]** Gets the alternate_plan of this SqlTuningAdvisorTaskSummaryFindingCounts.
-        The count of distinct SQL statements with alternative plan recommendations.
+        The number of distinct SQL statements with alternative plan recommendations.
 
 
         :return: The alternate_plan of this SqlTuningAdvisorTaskSummaryFindingCounts.
@@ -204,7 +204,7 @@ class SqlTuningAdvisorTaskSummaryFindingCounts(object):
     def alternate_plan(self, alternate_plan):
         """
         Sets the alternate_plan of this SqlTuningAdvisorTaskSummaryFindingCounts.
-        The count of distinct SQL statements with alternative plan recommendations.
+        The number of distinct SQL statements with alternative plan recommendations.
 
 
         :param alternate_plan: The alternate_plan of this SqlTuningAdvisorTaskSummaryFindingCounts.

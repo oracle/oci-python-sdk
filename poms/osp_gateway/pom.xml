@@ -20,7 +20,7 @@
     <feature-id-file>${sdk-root-dir}/featureId.yaml</feature-id-file>
     <feature-id-dir>${sdk-root-dir}/codegenConfig/featureIds</feature-id-dir>
     <!-- Service Spec file goes here -->
-    <osp-gateway-api-spec-spec-file>source/invoice-20191001-api.cond.yaml</osp-gateway-api-spec-spec-file>
+    <osp-gateway-api-spec-spec-file>source/osp-gateway-20191001-api.cond.yaml</osp-gateway-api-spec-spec-file>
   </properties>
   <build>
     <directory>${sdk-root-dir}/target</directory>
@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.store</groupId>
         <artifactId>osp-gateway-api-spec</artifactId>
-        <version>0.1.5</version>
+        <version>0.2.9</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

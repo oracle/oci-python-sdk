@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RoleSummary(object):
     """
-    Summary of each role.
+    A summary of each role.
     """
 
     #: A constant which can be used with the admin_option property of a RoleSummary.
@@ -122,7 +122,7 @@ class RoleSummary(object):
     def name(self):
         """
         Gets the name of this RoleSummary.
-        The name of a granted role
+        The name of the role granted to the user.
 
 
         :return: The name of this RoleSummary.
@@ -134,7 +134,7 @@ class RoleSummary(object):
     def name(self, name):
         """
         Sets the name of this RoleSummary.
-        The name of a granted role
+        The name of the role granted to the user.
 
 
         :param name: The name of this RoleSummary.
@@ -146,7 +146,7 @@ class RoleSummary(object):
     def admin_option(self):
         """
         Gets the admin_option of this RoleSummary.
-        Indicates whether the grant was with the ADMIN OPTION (YES) or not (NO)
+        Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -161,7 +161,7 @@ class RoleSummary(object):
     def admin_option(self, admin_option):
         """
         Sets the admin_option of this RoleSummary.
-        Indicates whether the grant was with the ADMIN OPTION (YES) or not (NO)
+        Indicates whether the role is granted with the ADMIN OPTION (YES) or not (NO).
 
 
         :param admin_option: The admin_option of this RoleSummary.
@@ -176,7 +176,7 @@ class RoleSummary(object):
     def delegate_option(self):
         """
         Gets the delegate_option of this RoleSummary.
-        Indicates whether the grant was with the DELEGATE OPTION (YES) or not (NO)
+        Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -191,7 +191,7 @@ class RoleSummary(object):
     def delegate_option(self, delegate_option):
         """
         Sets the delegate_option of this RoleSummary.
-        Indicates whether the grant was with the DELEGATE OPTION (YES) or not (NO)
+        Indicates whether the role is granted with the DELEGATE OPTION (YES) or not (NO).
 
 
         :param delegate_option: The delegate_option of this RoleSummary.
@@ -206,7 +206,7 @@ class RoleSummary(object):
     def default_role(self):
         """
         Gets the default_role of this RoleSummary.
-        Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO)
+        Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -221,7 +221,7 @@ class RoleSummary(object):
     def default_role(self, default_role):
         """
         Sets the default_role of this RoleSummary.
-        Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO)
+        Indicates whether the role is designated as a DEFAULT ROLE for the user (YES) or not (NO).
 
 
         :param default_role: The default_role of this RoleSummary.
@@ -236,9 +236,9 @@ class RoleSummary(object):
     def common(self):
         """
         Gets the common of this RoleSummary.
-        Indicates how the grant was made. Possible values:
-        YES if the role was granted commonly (CONTAINER=ALL was used)
-        NO if the role was granted locally (CONTAINER=ALL was not used)
+        Indicates how the role was granted. Possible values:
+        YES if the role is granted commonly (CONTAINER=ALL is used)
+        NO if the role is granted locally (CONTAINER=ALL is not used)
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -253,9 +253,9 @@ class RoleSummary(object):
     def common(self, common):
         """
         Sets the common of this RoleSummary.
-        Indicates how the grant was made. Possible values:
-        YES if the role was granted commonly (CONTAINER=ALL was used)
-        NO if the role was granted locally (CONTAINER=ALL was not used)
+        Indicates how the role was granted. Possible values:
+        YES if the role is granted commonly (CONTAINER=ALL is used)
+        NO if the role is granted locally (CONTAINER=ALL is not used)
 
 
         :param common: The common of this RoleSummary.
@@ -270,7 +270,7 @@ class RoleSummary(object):
     def inherited(self):
         """
         Gets the inherited of this RoleSummary.
-        Indicates whether the role grant was inherited from another container (YES) or not (NO)
+        Indicates whether the granted role is inherited from another container (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -285,7 +285,7 @@ class RoleSummary(object):
     def inherited(self, inherited):
         """
         Sets the inherited of this RoleSummary.
-        Indicates whether the role grant was inherited from another container (YES) or not (NO)
+        Indicates whether the granted role is inherited from another container (YES) or not (NO).
 
 
         :param inherited: The inherited of this RoleSummary.

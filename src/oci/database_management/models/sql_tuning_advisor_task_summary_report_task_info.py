@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     """
-    SQL Tuning advisor task general info.
+    The general information regarding the SQL Tuning Advisor task.
     """
 
     #: A constant which can be used with the status property of a SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -108,7 +108,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def id(self):
         """
         **[Required]** Gets the id of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        The SQL Tuning Advisor task id. It is not the `OCID`__.
+        The ID of the SQL Tuning Advisor task. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -122,7 +122,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def id(self, id):
         """
         Sets the id of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        The SQL Tuning Advisor task id. It is not the `OCID`__.
+        The ID of the SQL Tuning Advisor task. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -136,7 +136,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def name(self):
         """
         **[Required]** Gets the name of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        The SQL Tuning Advisor task name.
+        The name of the SQL Tuning Advisor task.
 
 
         :return: The name of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -148,7 +148,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def name(self, name):
         """
         Sets the name of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        The SQL Tuning Advisor task name.
+        The name of the SQL Tuning Advisor task.
 
 
         :param name: The name of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -160,7 +160,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def description(self):
         """
         Gets the description of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        The SQL Tuning Advisor task description. Not defined on Auto SQL Tuning tasks.
+        The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
 
 
         :return: The description of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -172,7 +172,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def description(self, description):
         """
         Sets the description of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        The SQL Tuning Advisor task description. Not defined on Auto SQL Tuning tasks.
+        The description of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
 
 
         :param description: The description of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -184,7 +184,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def owner(self):
         """
         **[Required]** Gets the owner of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        The SQL Tuning Advisor task user owner.
+        The owner of the SQL Tuning Advisor task.
 
 
         :return: The owner of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -196,7 +196,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def owner(self, owner):
         """
         Sets the owner of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        The SQL Tuning Advisor task user owner.
+        The owner of the SQL Tuning Advisor task.
 
 
         :param owner: The owner of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -208,7 +208,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def status(self):
         """
         Gets the status of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        The SQL Tuning Advisor task status. Not defined on Auto SQL Tuning tasks.
+        The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
 
         Allowed values for this property are: "COMPLETED", "INITIAL", "EXECUTING", "INTERRUPTED", "ERROR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -223,7 +223,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def status(self, status):
         """
         Sets the status of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        The SQL Tuning Advisor task status. Not defined on Auto SQL Tuning tasks.
+        The status of the SQL Tuning Advisor task. This is not defined for Auto SQL Tuning tasks.
 
 
         :param status: The status of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -238,7 +238,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def time_started(self):
         """
         **[Required]** Gets the time_started of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        Start timestamp of task execution.
+        The start time of the task execution.
 
 
         :return: The time_started of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -250,7 +250,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        Start timestamp of task execution.
+        The start time of the task execution.
 
 
         :param time_started: The time_started of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -262,7 +262,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def time_ended(self):
         """
         **[Required]** Gets the time_ended of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        End timestamp of task execution.
+        The end time of the task execution.
 
 
         :return: The time_ended of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -274,7 +274,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def time_ended(self, time_ended):
         """
         Sets the time_ended of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        End timestamp of task execution.
+        The end time of the task execution.
 
 
         :param time_ended: The time_ended of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -286,7 +286,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def running_time(self):
         """
         Gets the running_time of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        The total running time in seconds. Not defined on Auto SQL Tuning tasks.
+        The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
 
 
         :return: The running_time of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
@@ -298,7 +298,7 @@ class SqlTuningAdvisorTaskSummaryReportTaskInfo(object):
     def running_time(self, running_time):
         """
         Sets the running_time of this SqlTuningAdvisorTaskSummaryReportTaskInfo.
-        The total running time in seconds. Not defined on Auto SQL Tuning tasks.
+        The total running time in seconds. This is not defined for Auto SQL Tuning tasks.
 
 
         :param running_time: The running_time of this SqlTuningAdvisorTaskSummaryReportTaskInfo.

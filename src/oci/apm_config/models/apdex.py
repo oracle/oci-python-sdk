@@ -11,20 +11,20 @@ from oci.decorators import init_model_state_from_kwargs
 class Apdex(object):
     """
     An Apdex configuration rule.
-    The Apdex Score is computed based on how the response time of a span compares to two predefined threshold values.
-    The first threshold defines the maximum response time that can still be considered satisfactory for the end user.
-    The second one defines the maximum response time that can be considered tolerable. All times larger than that will
+    The Apdex score is computed based on how the response time of a span compares to two predefined threshold values.
+    The first threshold defines the maximum response time that is considered satisfactory for the end user.
+    The second one defines the maximum response time that is considered tolerable. All times larger than that will
     be considered frustrating for the end user.
     An Apdex configuration rule works by selecting a subset of spans based on a filter expression and applying the
     two threshold comparisons to compute a score for each of the selected spans.
-    The rule has a property \"isApplyToErrorSpans\" that controls whether or not to compute the Apdex for spans that have
-    have been marked as errors. If this property is set to true, then error spans will have their Apdex score computed
-    the same as non-error ones. If set to false, then computation for error spans will be skipped, and the score will
-    be set to \"frustrating\" regardless of the configured thresholds. The default is \"false\".
-    The property \"isEnabled\" controls whether an Apdex score is computed for the spans. Can be used to disable Apdex
-    scores for certain spans. The default is \"true\".
-    The property \"priority\" is used to define the importance of the rule when it's part of a rule set.
-    Lower values indicate a higher priority. Rules with higher priorities will be evaluated first in the rule set. The
+    The rule has an \"isApplyToErrorSpans\" property that controls whether or not to compute the Apdex for spans that
+    have been marked as errors. If this property is set to \"true\", then the Apdex score for error spans is computed in
+    the same way as for non-error ones. If set to \"false\", then computation for error spans is skipped, and the score
+    is set to \"frustrating\" regardless of the configured thresholds. The default is \"false\".
+    The \"isEnabled\" property controls whether or not an Apdex score is computed and can be used to disable Apdex
+    score for certain spans. The default is \"true\".
+    The \"priority\" property specifies the importance of the rule within a rule set.
+    Lower values indicate a higher priority. Rules with higher priorities are evaluated first in the rule set. The
     priority of the rules must be unique within a rule set.
     """
 
@@ -146,8 +146,8 @@ class Apdex(object):
     def is_enabled(self):
         """
         Gets the is_enabled of this Apdex.
-        Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain
-        spans don't get an Apdex score. The default is \"true\".
+        Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable
+        Apdex score for spans that do not need or require it. The default is \"true\".
 
 
         :return: The is_enabled of this Apdex.
@@ -159,8 +159,8 @@ class Apdex(object):
     def is_enabled(self, is_enabled):
         """
         Sets the is_enabled of this Apdex.
-        Specifies if the Apdex rule will be computed for spans matching the rule. Can be used to make sure certain
-        spans don't get an Apdex score. The default is \"true\".
+        Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable
+        Apdex score for spans that do not need or require it. The default is \"true\".
 
 
         :param is_enabled: The is_enabled of this Apdex.
@@ -172,7 +172,7 @@ class Apdex(object):
     def satisfied_response_time(self):
         """
         Gets the satisfied_response_time of this Apdex.
-        The maximum response time in milliseconds that will be considered satisfactory for the end user.
+        The maximum response time in milliseconds that is considered \"satisfactory\" for the end user.
 
 
         :return: The satisfied_response_time of this Apdex.
@@ -184,7 +184,7 @@ class Apdex(object):
     def satisfied_response_time(self, satisfied_response_time):
         """
         Sets the satisfied_response_time of this Apdex.
-        The maximum response time in milliseconds that will be considered satisfactory for the end user.
+        The maximum response time in milliseconds that is considered \"satisfactory\" for the end user.
 
 
         :param satisfied_response_time: The satisfied_response_time of this Apdex.
@@ -196,8 +196,8 @@ class Apdex(object):
     def tolerating_response_time(self):
         """
         Gets the tolerating_response_time of this Apdex.
-        The maximum response time in milliseconds that will be considered tolerable for the end user. Response
-        times beyond this threshold will be considered frustrating.
+        The maximum response time in milliseconds that is considered \"tolerable\" for the end user. A response
+        time beyond this threshold is considered \"frustrating\".
         This value cannot be lower than \"satisfiedResponseTime\".
 
 
@@ -210,8 +210,8 @@ class Apdex(object):
     def tolerating_response_time(self, tolerating_response_time):
         """
         Sets the tolerating_response_time of this Apdex.
-        The maximum response time in milliseconds that will be considered tolerable for the end user. Response
-        times beyond this threshold will be considered frustrating.
+        The maximum response time in milliseconds that is considered \"tolerable\" for the end user. A response
+        time beyond this threshold is considered \"frustrating\".
         This value cannot be lower than \"satisfiedResponseTime\".
 
 
@@ -224,9 +224,9 @@ class Apdex(object):
     def is_apply_to_error_spans(self):
         """
         Gets the is_apply_to_error_spans of this Apdex.
-        If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false,
-        the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds.
-        Default is false.
+        Specifies whether an Apdex score should be computed for error spans. Setting it to \"true\" means that the Apdex
+        score is computed in the usual way. Setting it to \"false\" skips the Apdex computation and sets the Apdex
+        score to \"frustrating\" regardless of the configured thresholds. The default is \"false\".
 
 
         :return: The is_apply_to_error_spans of this Apdex.
@@ -238,9 +238,9 @@ class Apdex(object):
     def is_apply_to_error_spans(self, is_apply_to_error_spans):
         """
         Sets the is_apply_to_error_spans of this Apdex.
-        If true, the rule will compute the actual Apdex score for spans that have been marked as errors. If false,
-        the rule will always set the Apdex for error spans to frustrating, regardless of the configured thresholds.
-        Default is false.
+        Specifies whether an Apdex score should be computed for error spans. Setting it to \"true\" means that the Apdex
+        score is computed in the usual way. Setting it to \"false\" skips the Apdex computation and sets the Apdex
+        score to \"frustrating\" regardless of the configured thresholds. The default is \"false\".
 
 
         :param is_apply_to_error_spans: The is_apply_to_error_spans of this Apdex.
@@ -252,7 +252,7 @@ class Apdex(object):
     def display_name(self):
         """
         Gets the display_name of this Apdex.
-        A user-friendly name that provides a short description this rule.
+        A user-friendly name that provides a short description of this rule.
 
 
         :return: The display_name of this Apdex.
@@ -264,7 +264,7 @@ class Apdex(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Apdex.
-        A user-friendly name that provides a short description this rule.
+        A user-friendly name that provides a short description of this rule.
 
 
         :param display_name: The display_name of this Apdex.
