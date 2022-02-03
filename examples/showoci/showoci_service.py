@@ -6007,8 +6007,9 @@ class ShowOCIService(object):
 
                     if lp:
                         for lc in lp.items:
-                            val['object_lifecycle'] += ", LifeCycle: " + str(lc.name) + " - " + str(
-                                lc.action) + " - " + str(lc.time_amount) + " " + str(lc.time_unit)
+                            if val['object_lifecycle']:
+                                val['object_lifecycle'] += ", "
+                            val['object_lifecycle'] += str(lc.name) + " - " + str(lc.action) + " - " + str(lc.time_amount) + " " + str(lc.time_unit)
 
                     data.append(val)
                     cnt += 1
@@ -6708,15 +6709,76 @@ class ShowOCIService(object):
             self.__print_error("__load_database_maintatance", e)
 
     ##########################################################################
+    # __load_database_maintatance_estimate_date
+    ##########################################################################
+    def __load_database_maintatance_estimate_date(self, input_months, input_week, input_day):
+        try:
+            # define output dates
+            output_dates = []
+
+            # pre defined months and days
+            months_q1 = ['JANUARY', 'FEBRUARY', 'MARCH']
+            months_q2 = ['APRIL', 'MAY', 'JUNE']
+            months_q3 = ['JULY', 'AUGUST', 'SEPTEMBER']
+            months_q4 = ['OCTOBER', 'NOVEMBER', 'DECEMBER']
+            days = ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY', 'SUNDAY']
+
+            # limit to one month per quarter
+            months_to_check = []
+            for mm in months_q1:
+                if mm in input_months:
+                    months_to_check.append(mm)
+                    break
+            for mm in months_q2:
+                if mm in input_months:
+                    months_to_check.append(mm)
+                    break
+            for mm in months_q3:
+                if mm in input_months:
+                    months_to_check.append(mm)
+                    break
+            for mm in months_q4:
+                if mm in input_months:
+                    months_to_check.append(mm)
+                    break
+
+            # loop on future 365 days from tomorrow
+            timeNow = datetime.datetime.now() + datetime.timedelta(days=1)
+            for i in range(365):
+                newDate = timeNow + datetime.timedelta(days=i)
+                newWeek = (newDate.day - 1) // 7 + 1
+                newMonth = newDate.strftime('%B').upper()
+                newDay = days[newDate.weekday()]
+                if newMonth in months_to_check and newWeek == input_week and newDay == input_day:
+                    newDateStr = newDate.strftime('%d-%b-%Y')
+                    output_dates.append(newDateStr)
+
+            # result
+            return output_dates
+
+        except Exception as e:
+            self.__print_error("__load_database_maintatance_estimate_date", e)
+
+    ##########################################################################
     # __load_database_maintatance_windows
     ##########################################################################
-
     def __load_database_maintatance_windows(self, maintenance_window):
         try:
             if not maintenance_window:
                 return {}
 
             mw = maintenance_window
+
+            # estimate dates
+            estimate_dates_str = ""
+            if str(mw.preference) != "NO_PREFERENCE" and mw.months and mw.weeks_of_month and mw.days_of_week:
+                array_months = [x.name for x in mw.months]
+                week_of_month = [x for x in mw.weeks_of_month][0]
+                day_of_week = [x.name for x in mw.days_of_week][0]
+                estimate_dates = self.__load_database_maintatance_estimate_date(array_months, week_of_month, day_of_week)
+                if estimate_dates:
+                    estimate_dates_str = ", ".join([x for x in estimate_dates])
+
             value = {
                 'preference': str(mw.preference),
                 'months': ", ".join([x.name for x in mw.months]) if mw.months else "",
@@ -6724,8 +6786,9 @@ class ShowOCIService(object):
                 'hours_of_day': ", ".join([str(x) for x in mw.hours_of_day]) if mw.hours_of_day else "",
                 'days_of_week': ", ".join([str(x.name) for x in mw.days_of_week]) if mw.days_of_week else "",
                 'lead_time_in_weeks': str(mw.lead_time_in_weeks) if mw.lead_time_in_weeks else "",
+                'estimate_dates': estimate_dates_str
             }
-            value['display'] = str(mw.preference) if str(mw.preference) == "NO_PREFERENCE" else (str(mw.preference) + ": Months: " + value['months'] + ", Weeks: " + value['weeks_of_month'] + ", DOW: " + value['days_of_week'] + ", Hours: " + value['hours_of_day'] + ", Lead Weeks: " + value['lead_time_in_weeks'])
+            value['display'] = str(mw.preference) if str(mw.preference) == "NO_PREFERENCE" else (str(mw.preference) + ": Months: " + value['months'] + ", Weeks: " + value['weeks_of_month'] + ", DOW: " + value['days_of_week'] + ", Hours: " + value['hours_of_day'] + ", Lead Weeks: " + value['lead_time_in_weeks'] + ", Estimate Dates: " + estimate_dates_str)
             return value
 
         except Exception as e:
@@ -7415,7 +7478,8 @@ class ShowOCIService(object):
                      'db_version': str(db_home.db_version),
                      'time_created': str(db_home.time_created),
                      'databases': self.__load_database_dbsystems_dbhomes_databases(database_client, db_home.id, compartment),
-                     'patches': self.__load_database_dbsystems_home_patches(database_client, db_home.id)})
+                     'patches': self.__load_database_dbsystems_home_patches(database_client, db_home.id),
+                     'patches_history': self.__load_database_dbsystems_home_patches_history(database_client, db_home.id)})
 
             # add to main data
             return data
@@ -7543,6 +7607,51 @@ class ShowOCIService(object):
             raise
         except Exception as e:
             self.__print_error("__load_database_dbsystems_home_patches", e)
+            return data
+
+    ##########################################################################
+    # get db system patches history
+    ##########################################################################
+    def __load_database_dbsystems_home_patches_history(self, database_client, dbhome_id):
+
+        data = []
+        try:
+            dbps = oci.pagination.list_call_get_all_results(
+                database_client.list_db_home_patch_history_entries,
+                dbhome_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            for dbp in dbps:
+                patch_description = dbp.patch_id
+
+                # get patch info
+                try:
+                    patch = database_client.get_db_home_patch(dbhome_id, dbp.patch_id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                    patch_description = patch.description + " - " + patch.version
+                except Exception:
+                    pass
+
+                # Add data
+                data.append({'id': dbp.id, 'description': str(patch_description), 'action': str(dbp.action), 'lifecycle_state': str(dbp.lifecycle_state),
+                             'time_started': str(dbp.time_started), 'time_ended': str(dbp.time_ended)})
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                return data
+            else:
+                # Added in order to avoid internal error which happen often here
+                if 'InternalError' in str(e.code):
+                    print('p', end="")
+                    return data
+                raise
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            raise
+        except Exception as e:
+            self.__print_error("__load_database_dbsystems_home_patches_history", e)
             return data
 
     ##########################################################################
@@ -10475,6 +10584,7 @@ class ShowOCIService(object):
                            'display_name': str(arr.display_name),
                            'domain': str(arr.domain),
                            'time_created': str(arr.time_created),
+                           'lifecycle_state': str(arr.lifecycle_state),
                            'compartment_name': str(compartment['name']),
                            'compartment_id': str(compartment['id']),
                            'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
@@ -11175,7 +11285,6 @@ class ShowOCIService(object):
                             esxis = esxi_client.list_esxi_hosts(
                                 sddc_id=vmware.id,
                                 sort_by="displayName",
-                                lifecycle_state="ACTIVE",
                                 retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
                             ).data
 
@@ -11187,21 +11296,22 @@ class ShowOCIService(object):
                         # esxi = classoci.ocvp.models.EsxiHostSummary
                         if esxis:
                             for esxi in esxis.items:
-                                val['esxihosts'].append(
-                                    {
-                                        'id': str(esxi.id),
-                                        'display_name': str(esxi.display_name),
-                                        'compute_instance_id': str(esxi.compute_instance_id),
-                                        'billing_contract_end_date': str(esxi.billing_contract_end_date),
-                                        'current_sku': str(esxi.current_sku),
-                                        'next_sku': str(esxi.next_sku),
-                                        'time_created': str(esxi.time_created),
-                                        'time_updated': str(esxi.time_updated),
-                                        'lifecycle_state': str(esxi.lifecycle_state),
-                                        'defined_tags': [] if esxi.defined_tags is None else esxi.defined_tags,
-                                        'freeform_tags': [] if esxi.freeform_tags is None else esxi.freeform_tags
-                                    }
-                                )
+                                if esxi.lifecycle_state != 'TERMINATED':
+                                    val['esxihosts'].append(
+                                        {
+                                            'id': str(esxi.id),
+                                            'display_name': str(esxi.display_name),
+                                            'compute_instance_id': str(esxi.compute_instance_id),
+                                            'billing_contract_end_date': str(esxi.billing_contract_end_date),
+                                            'current_sku': str(esxi.current_sku),
+                                            'next_sku': str(esxi.next_sku),
+                                            'time_created': str(esxi.time_created),
+                                            'time_updated': str(esxi.time_updated),
+                                            'lifecycle_state': str(esxi.lifecycle_state),
+                                            'defined_tags': [] if esxi.defined_tags is None else esxi.defined_tags,
+                                            'freeform_tags': [] if esxi.freeform_tags is None else esxi.freeform_tags
+                                        }
+                                    )
 
                         # add the data
                         cnt += 1
@@ -12079,6 +12189,7 @@ class ShowOCIService(object):
                             'display_name': str(log_item.display_name),
                             'is_enabled': str(log_item.is_enabled),
                             'name': str(item.display_name) + " - " + str(log_item.display_name) + " - " + enabled_str,
+                            'archiving': "",
                             'source_service': "",
                             'source_category': "",
                             'source_sourcetype': "",
