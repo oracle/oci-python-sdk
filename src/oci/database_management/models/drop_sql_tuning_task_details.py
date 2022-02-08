@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DropSqlTuningTaskDetails(object):
     """
-    Request to drop a SQL tuning task.
+    The request to drop a SQL tuning task.
     """
 
     def __init__(self, **kwargs):
@@ -44,9 +44,9 @@ class DropSqlTuningTaskDetails(object):
     def task_id(self):
         """
         **[Required]** Gets the task_id of this DropSqlTuningTaskDetails.
-        The identifier of the task being dropped. This is not the `OCID`__.
+        The identifier of the SQL tuning task being dropped. This is not the `OCID`__.
         It can be retrieved from the following endpoint
-        :func:`list_sql_tuning_advisor_tasks`
+        :func:`list_sql_tuning_advisor_tasks`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -60,9 +60,9 @@ class DropSqlTuningTaskDetails(object):
     def task_id(self, task_id):
         """
         Sets the task_id of this DropSqlTuningTaskDetails.
-        The identifier of the task being dropped. This is not the `OCID`__.
+        The identifier of the SQL tuning task being dropped. This is not the `OCID`__.
         It can be retrieved from the following endpoint
-        :func:`list_sql_tuning_advisor_tasks`
+        :func:`list_sql_tuning_advisor_tasks`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

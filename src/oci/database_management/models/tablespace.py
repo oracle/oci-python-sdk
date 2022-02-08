@@ -245,6 +245,10 @@ class Tablespace(object):
     #: This constant has a value of "ADVANCED_HIGH"
     INDEX_COMPRESS_FOR_ADVANCED_HIGH = "ADVANCED_HIGH"
 
+    #: A constant which can be used with the index_compress_for property of a Tablespace.
+    #: This constant has a value of "NONE"
+    INDEX_COMPRESS_FOR_NONE = "NONE"
+
     #: A constant which can be used with the default_in_memory_service property of a Tablespace.
     #: This constant has a value of "DEFAULT"
     DEFAULT_IN_MEMORY_SERVICE_DEFAULT = "DEFAULT"
@@ -284,12 +288,14 @@ class Tablespace(object):
 
         :param type:
             The value to assign to the type property of this Tablespace.
-            Allowed values for this property are: "UNDO", "LOST_WRITE_PROTECTION", "PERMANENT", "TEMPORARY"
+            Allowed values for this property are: "UNDO", "LOST_WRITE_PROTECTION", "PERMANENT", "TEMPORARY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
         :param status:
             The value to assign to the status property of this Tablespace.
-            Allowed values for this property are: "ONLINE", "OFFLINE", "READ_ONLY"
+            Allowed values for this property are: "ONLINE", "OFFLINE", "READ_ONLY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type status: str
 
         :param block_size_bytes:
@@ -298,7 +304,8 @@ class Tablespace(object):
 
         :param logging:
             The value to assign to the logging property of this Tablespace.
-            Allowed values for this property are: "LOGGING", "NOLOGGING"
+            Allowed values for this property are: "LOGGING", "NOLOGGING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type logging: str
 
         :param is_force_logging:
@@ -307,12 +314,14 @@ class Tablespace(object):
 
         :param extent_management:
             The value to assign to the extent_management property of this Tablespace.
-            Allowed values for this property are: "LOCAL", "DICTIONARY"
+            Allowed values for this property are: "LOCAL", "DICTIONARY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type extent_management: str
 
         :param allocation_type:
             The value to assign to the allocation_type property of this Tablespace.
-            Allowed values for this property are: "SYSTEM", "UNIFORM", "USER"
+            Allowed values for this property are: "SYSTEM", "UNIFORM", "USER", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type allocation_type: str
 
         :param is_plugged_in:
@@ -321,17 +330,20 @@ class Tablespace(object):
 
         :param segment_space_management:
             The value to assign to the segment_space_management property of this Tablespace.
-            Allowed values for this property are: "MANUAL", "AUTO"
+            Allowed values for this property are: "MANUAL", "AUTO", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type segment_space_management: str
 
         :param default_table_compression:
             The value to assign to the default_table_compression property of this Tablespace.
-            Allowed values for this property are: "ENABLED", "DISABLED"
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type default_table_compression: str
 
         :param retention:
             The value to assign to the retention property of this Tablespace.
-            Allowed values for this property are: "GUARANTEE", "NOGUARANTEE", "NOT_APPLY"
+            Allowed values for this property are: "GUARANTEE", "NOGUARANTEE", "NOT_APPLY", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type retention: str
 
         :param is_bigfile:
@@ -340,7 +352,8 @@ class Tablespace(object):
 
         :param predicate_evaluation:
             The value to assign to the predicate_evaluation property of this Tablespace.
-            Allowed values for this property are: "HOST", "STORAGE"
+            Allowed values for this property are: "HOST", "STORAGE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type predicate_evaluation: str
 
         :param is_encrypted:
@@ -349,47 +362,56 @@ class Tablespace(object):
 
         :param compress_for:
             The value to assign to the compress_for property of this Tablespace.
-            Allowed values for this property are: "BASIC", "ADVANCED", "QUERY_LOW", "QUERY_HIGH", "ARCHIVE_LOW", "ARCHIVE_HIGH", "DIRECT_LOAD_ONLY", "FOR_ALL_OPERATIONS"
+            Allowed values for this property are: "BASIC", "ADVANCED", "QUERY_LOW", "QUERY_HIGH", "ARCHIVE_LOW", "ARCHIVE_HIGH", "DIRECT_LOAD_ONLY", "FOR_ALL_OPERATIONS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type compress_for: str
 
         :param default_in_memory:
             The value to assign to the default_in_memory property of this Tablespace.
-            Allowed values for this property are: "ENABLED", "DISABLED"
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type default_in_memory: str
 
         :param default_in_memory_priority:
             The value to assign to the default_in_memory_priority property of this Tablespace.
-            Allowed values for this property are: "LOW", "MEDIUM", "HIGH", "CRITICAL", "NONE"
+            Allowed values for this property are: "LOW", "MEDIUM", "HIGH", "CRITICAL", "NONE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type default_in_memory_priority: str
 
         :param default_in_memory_distribute:
             The value to assign to the default_in_memory_distribute property of this Tablespace.
-            Allowed values for this property are: "AUTO", "BY_ROWID_RANGE", "BY_PARTITION", "BY_SUBPARTITION"
+            Allowed values for this property are: "AUTO", "BY_ROWID_RANGE", "BY_PARTITION", "BY_SUBPARTITION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type default_in_memory_distribute: str
 
         :param default_in_memory_compression:
             The value to assign to the default_in_memory_compression property of this Tablespace.
-            Allowed values for this property are: "NO_MEMCOMPRESS", "FOR_DML", "FOR_QUERY_LOW", "FOR_QUERY_HIGH", "FOR_CAPACITY_LOW", "FOR_CAPACITY_HIGH"
+            Allowed values for this property are: "NO_MEMCOMPRESS", "FOR_DML", "FOR_QUERY_LOW", "FOR_QUERY_HIGH", "FOR_CAPACITY_LOW", "FOR_CAPACITY_HIGH", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type default_in_memory_compression: str
 
         :param default_in_memory_duplicate:
             The value to assign to the default_in_memory_duplicate property of this Tablespace.
-            Allowed values for this property are: "NO_DUPLICATE", "DUPLICATE", "DUPLICATE_ALL"
+            Allowed values for this property are: "NO_DUPLICATE", "DUPLICATE", "DUPLICATE_ALL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type default_in_memory_duplicate: str
 
         :param shared:
             The value to assign to the shared property of this Tablespace.
-            Allowed values for this property are: "SHARED", "LOCAL_ON_LEAF", "LOCAL_ON_ALL"
+            Allowed values for this property are: "SHARED", "LOCAL_ON_LEAF", "LOCAL_ON_ALL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type shared: str
 
         :param default_index_compression:
             The value to assign to the default_index_compression property of this Tablespace.
-            Allowed values for this property are: "ENABLED", "DISABLED"
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type default_index_compression: str
 
         :param index_compress_for:
             The value to assign to the index_compress_for property of this Tablespace.
-            Allowed values for this property are: "ADVANCED_LOW", "ADVANCED_HIGH"
+            Allowed values for this property are: "ADVANCED_LOW", "ADVANCED_HIGH", "NONE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type index_compress_for: str
 
         :param default_cell_memory:
@@ -398,7 +420,8 @@ class Tablespace(object):
 
         :param default_in_memory_service:
             The value to assign to the default_in_memory_service property of this Tablespace.
-            Allowed values for this property are: "DEFAULT", "NONE", "ALL", "USER_DEFINED"
+            Allowed values for this property are: "DEFAULT", "NONE", "ALL", "USER_DEFINED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type default_in_memory_service: str
 
         :param default_in_memory_service_name:
@@ -407,7 +430,8 @@ class Tablespace(object):
 
         :param lost_write_protect:
             The value to assign to the lost_write_protect property of this Tablespace.
-            Allowed values for this property are: "ENABLED", "PROTECT_OFF", "SUSPEND"
+            Allowed values for this property are: "ENABLED", "PROTECT_OFF", "SUSPEND", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lost_write_protect: str
 
         :param is_chunk_tablespace:
@@ -445,6 +469,10 @@ class Tablespace(object):
         :param used_percent_allocated:
             The value to assign to the used_percent_allocated property of this Tablespace.
         :type used_percent_allocated: float
+
+        :param is_default:
+            The value to assign to the is_default property of this Tablespace.
+        :type is_default: bool
 
         :param datafiles:
             The value to assign to the datafiles property of this Tablespace.
@@ -489,6 +517,7 @@ class Tablespace(object):
             'used_space_kb': 'float',
             'used_percent_available': 'float',
             'used_percent_allocated': 'float',
+            'is_default': 'bool',
             'datafiles': 'list[Datafile]'
         }
 
@@ -530,6 +559,7 @@ class Tablespace(object):
             'used_space_kb': 'usedSpaceKB',
             'used_percent_available': 'usedPercentAvailable',
             'used_percent_allocated': 'usedPercentAllocated',
+            'is_default': 'isDefault',
             'datafiles': 'datafiles'
         }
 
@@ -570,6 +600,7 @@ class Tablespace(object):
         self._used_space_kb = None
         self._used_percent_available = None
         self._used_percent_allocated = None
+        self._is_default = None
         self._datafiles = None
 
     @property
@@ -602,7 +633,8 @@ class Tablespace(object):
         **[Required]** Gets the type of this Tablespace.
         The type of tablespace.
 
-        Allowed values for this property are: "UNDO", "LOST_WRITE_PROTECTION", "PERMANENT", "TEMPORARY"
+        Allowed values for this property are: "UNDO", "LOST_WRITE_PROTECTION", "PERMANENT", "TEMPORARY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The type of this Tablespace.
@@ -622,10 +654,7 @@ class Tablespace(object):
         """
         allowed_values = ["UNDO", "LOST_WRITE_PROTECTION", "PERMANENT", "TEMPORARY"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
-            raise ValueError(
-                "Invalid value for `type`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
 
     @property
@@ -634,7 +663,8 @@ class Tablespace(object):
         Gets the status of this Tablespace.
         The status of the tablespace.
 
-        Allowed values for this property are: "ONLINE", "OFFLINE", "READ_ONLY"
+        Allowed values for this property are: "ONLINE", "OFFLINE", "READ_ONLY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The status of this Tablespace.
@@ -654,10 +684,7 @@ class Tablespace(object):
         """
         allowed_values = ["ONLINE", "OFFLINE", "READ_ONLY"]
         if not value_allowed_none_or_none_sentinel(status, allowed_values):
-            raise ValueError(
-                "Invalid value for `status`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            status = 'UNKNOWN_ENUM_VALUE'
         self._status = status
 
     @property
@@ -690,7 +717,8 @@ class Tablespace(object):
         Gets the logging of this Tablespace.
         The default logging attribute.
 
-        Allowed values for this property are: "LOGGING", "NOLOGGING"
+        Allowed values for this property are: "LOGGING", "NOLOGGING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The logging of this Tablespace.
@@ -710,10 +738,7 @@ class Tablespace(object):
         """
         allowed_values = ["LOGGING", "NOLOGGING"]
         if not value_allowed_none_or_none_sentinel(logging, allowed_values):
-            raise ValueError(
-                "Invalid value for `logging`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            logging = 'UNKNOWN_ENUM_VALUE'
         self._logging = logging
 
     @property
@@ -746,7 +771,8 @@ class Tablespace(object):
         Gets the extent_management of this Tablespace.
         Indicates whether the extents in the tablespace are Locally managed or Dictionary managed.
 
-        Allowed values for this property are: "LOCAL", "DICTIONARY"
+        Allowed values for this property are: "LOCAL", "DICTIONARY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The extent_management of this Tablespace.
@@ -766,10 +792,7 @@ class Tablespace(object):
         """
         allowed_values = ["LOCAL", "DICTIONARY"]
         if not value_allowed_none_or_none_sentinel(extent_management, allowed_values):
-            raise ValueError(
-                "Invalid value for `extent_management`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            extent_management = 'UNKNOWN_ENUM_VALUE'
         self._extent_management = extent_management
 
     @property
@@ -778,7 +801,8 @@ class Tablespace(object):
         Gets the allocation_type of this Tablespace.
         The type of extent allocation in effect for the tablespace.
 
-        Allowed values for this property are: "SYSTEM", "UNIFORM", "USER"
+        Allowed values for this property are: "SYSTEM", "UNIFORM", "USER", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The allocation_type of this Tablespace.
@@ -798,10 +822,7 @@ class Tablespace(object):
         """
         allowed_values = ["SYSTEM", "UNIFORM", "USER"]
         if not value_allowed_none_or_none_sentinel(allocation_type, allowed_values):
-            raise ValueError(
-                "Invalid value for `allocation_type`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            allocation_type = 'UNKNOWN_ENUM_VALUE'
         self._allocation_type = allocation_type
 
     @property
@@ -834,7 +855,8 @@ class Tablespace(object):
         Gets the segment_space_management of this Tablespace.
         Indicates whether the free and used segment space in the tablespace is managed using free lists (MANUAL) or bitmaps (AUTO).
 
-        Allowed values for this property are: "MANUAL", "AUTO"
+        Allowed values for this property are: "MANUAL", "AUTO", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The segment_space_management of this Tablespace.
@@ -854,10 +876,7 @@ class Tablespace(object):
         """
         allowed_values = ["MANUAL", "AUTO"]
         if not value_allowed_none_or_none_sentinel(segment_space_management, allowed_values):
-            raise ValueError(
-                "Invalid value for `segment_space_management`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            segment_space_management = 'UNKNOWN_ENUM_VALUE'
         self._segment_space_management = segment_space_management
 
     @property
@@ -866,7 +885,8 @@ class Tablespace(object):
         Gets the default_table_compression of this Tablespace.
         Indicates whether default table compression is enabled or disabled.
 
-        Allowed values for this property are: "ENABLED", "DISABLED"
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The default_table_compression of this Tablespace.
@@ -886,10 +906,7 @@ class Tablespace(object):
         """
         allowed_values = ["ENABLED", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(default_table_compression, allowed_values):
-            raise ValueError(
-                "Invalid value for `default_table_compression`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            default_table_compression = 'UNKNOWN_ENUM_VALUE'
         self._default_table_compression = default_table_compression
 
     @property
@@ -898,7 +915,8 @@ class Tablespace(object):
         Gets the retention of this Tablespace.
         Indicates whether undo retention guarantee is enabled for the tablespace.
 
-        Allowed values for this property are: "GUARANTEE", "NOGUARANTEE", "NOT_APPLY"
+        Allowed values for this property are: "GUARANTEE", "NOGUARANTEE", "NOT_APPLY", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The retention of this Tablespace.
@@ -918,10 +936,7 @@ class Tablespace(object):
         """
         allowed_values = ["GUARANTEE", "NOGUARANTEE", "NOT_APPLY"]
         if not value_allowed_none_or_none_sentinel(retention, allowed_values):
-            raise ValueError(
-                "Invalid value for `retention`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            retention = 'UNKNOWN_ENUM_VALUE'
         self._retention = retention
 
     @property
@@ -954,7 +969,8 @@ class Tablespace(object):
         Gets the predicate_evaluation of this Tablespace.
         Indicates whether predicates are evaluated by Host or by Storage.
 
-        Allowed values for this property are: "HOST", "STORAGE"
+        Allowed values for this property are: "HOST", "STORAGE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The predicate_evaluation of this Tablespace.
@@ -974,10 +990,7 @@ class Tablespace(object):
         """
         allowed_values = ["HOST", "STORAGE"]
         if not value_allowed_none_or_none_sentinel(predicate_evaluation, allowed_values):
-            raise ValueError(
-                "Invalid value for `predicate_evaluation`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            predicate_evaluation = 'UNKNOWN_ENUM_VALUE'
         self._predicate_evaluation = predicate_evaluation
 
     @property
@@ -1010,7 +1023,8 @@ class Tablespace(object):
         Gets the compress_for of this Tablespace.
         The operation type for which default compression is enabled.
 
-        Allowed values for this property are: "BASIC", "ADVANCED", "QUERY_LOW", "QUERY_HIGH", "ARCHIVE_LOW", "ARCHIVE_HIGH", "DIRECT_LOAD_ONLY", "FOR_ALL_OPERATIONS"
+        Allowed values for this property are: "BASIC", "ADVANCED", "QUERY_LOW", "QUERY_HIGH", "ARCHIVE_LOW", "ARCHIVE_HIGH", "DIRECT_LOAD_ONLY", "FOR_ALL_OPERATIONS", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The compress_for of this Tablespace.
@@ -1030,10 +1044,7 @@ class Tablespace(object):
         """
         allowed_values = ["BASIC", "ADVANCED", "QUERY_LOW", "QUERY_HIGH", "ARCHIVE_LOW", "ARCHIVE_HIGH", "DIRECT_LOAD_ONLY", "FOR_ALL_OPERATIONS"]
         if not value_allowed_none_or_none_sentinel(compress_for, allowed_values):
-            raise ValueError(
-                "Invalid value for `compress_for`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            compress_for = 'UNKNOWN_ENUM_VALUE'
         self._compress_for = compress_for
 
     @property
@@ -1042,7 +1053,8 @@ class Tablespace(object):
         Gets the default_in_memory of this Tablespace.
         Indicates whether the In-Memory Column Store (IM column store) is by default enabled or disabled for tables in the tablespace.
 
-        Allowed values for this property are: "ENABLED", "DISABLED"
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The default_in_memory of this Tablespace.
@@ -1062,10 +1074,7 @@ class Tablespace(object):
         """
         allowed_values = ["ENABLED", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(default_in_memory, allowed_values):
-            raise ValueError(
-                "Invalid value for `default_in_memory`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            default_in_memory = 'UNKNOWN_ENUM_VALUE'
         self._default_in_memory = default_in_memory
 
     @property
@@ -1074,7 +1083,8 @@ class Tablespace(object):
         Gets the default_in_memory_priority of this Tablespace.
         Indicates the default priority for In-Memory Column Store (IM column store) population for the tablespace.
 
-        Allowed values for this property are: "LOW", "MEDIUM", "HIGH", "CRITICAL", "NONE"
+        Allowed values for this property are: "LOW", "MEDIUM", "HIGH", "CRITICAL", "NONE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The default_in_memory_priority of this Tablespace.
@@ -1094,10 +1104,7 @@ class Tablespace(object):
         """
         allowed_values = ["LOW", "MEDIUM", "HIGH", "CRITICAL", "NONE"]
         if not value_allowed_none_or_none_sentinel(default_in_memory_priority, allowed_values):
-            raise ValueError(
-                "Invalid value for `default_in_memory_priority`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            default_in_memory_priority = 'UNKNOWN_ENUM_VALUE'
         self._default_in_memory_priority = default_in_memory_priority
 
     @property
@@ -1106,7 +1113,8 @@ class Tablespace(object):
         Gets the default_in_memory_distribute of this Tablespace.
         Indicates how the IM column store is distributed by default for the tablespace in an Oracle Real Application Clusters (Oracle RAC) environment.
 
-        Allowed values for this property are: "AUTO", "BY_ROWID_RANGE", "BY_PARTITION", "BY_SUBPARTITION"
+        Allowed values for this property are: "AUTO", "BY_ROWID_RANGE", "BY_PARTITION", "BY_SUBPARTITION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The default_in_memory_distribute of this Tablespace.
@@ -1126,10 +1134,7 @@ class Tablespace(object):
         """
         allowed_values = ["AUTO", "BY_ROWID_RANGE", "BY_PARTITION", "BY_SUBPARTITION"]
         if not value_allowed_none_or_none_sentinel(default_in_memory_distribute, allowed_values):
-            raise ValueError(
-                "Invalid value for `default_in_memory_distribute`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            default_in_memory_distribute = 'UNKNOWN_ENUM_VALUE'
         self._default_in_memory_distribute = default_in_memory_distribute
 
     @property
@@ -1138,7 +1143,8 @@ class Tablespace(object):
         Gets the default_in_memory_compression of this Tablespace.
         Indicates the default compression level for the IM column store for the tablespace.
 
-        Allowed values for this property are: "NO_MEMCOMPRESS", "FOR_DML", "FOR_QUERY_LOW", "FOR_QUERY_HIGH", "FOR_CAPACITY_LOW", "FOR_CAPACITY_HIGH"
+        Allowed values for this property are: "NO_MEMCOMPRESS", "FOR_DML", "FOR_QUERY_LOW", "FOR_QUERY_HIGH", "FOR_CAPACITY_LOW", "FOR_CAPACITY_HIGH", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The default_in_memory_compression of this Tablespace.
@@ -1158,10 +1164,7 @@ class Tablespace(object):
         """
         allowed_values = ["NO_MEMCOMPRESS", "FOR_DML", "FOR_QUERY_LOW", "FOR_QUERY_HIGH", "FOR_CAPACITY_LOW", "FOR_CAPACITY_HIGH"]
         if not value_allowed_none_or_none_sentinel(default_in_memory_compression, allowed_values):
-            raise ValueError(
-                "Invalid value for `default_in_memory_compression`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            default_in_memory_compression = 'UNKNOWN_ENUM_VALUE'
         self._default_in_memory_compression = default_in_memory_compression
 
     @property
@@ -1170,7 +1173,8 @@ class Tablespace(object):
         Gets the default_in_memory_duplicate of this Tablespace.
         Indicates the duplicate setting for the IM column store in an Oracle RAC environment.
 
-        Allowed values for this property are: "NO_DUPLICATE", "DUPLICATE", "DUPLICATE_ALL"
+        Allowed values for this property are: "NO_DUPLICATE", "DUPLICATE", "DUPLICATE_ALL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The default_in_memory_duplicate of this Tablespace.
@@ -1190,10 +1194,7 @@ class Tablespace(object):
         """
         allowed_values = ["NO_DUPLICATE", "DUPLICATE", "DUPLICATE_ALL"]
         if not value_allowed_none_or_none_sentinel(default_in_memory_duplicate, allowed_values):
-            raise ValueError(
-                "Invalid value for `default_in_memory_duplicate`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            default_in_memory_duplicate = 'UNKNOWN_ENUM_VALUE'
         self._default_in_memory_duplicate = default_in_memory_duplicate
 
     @property
@@ -1202,7 +1203,8 @@ class Tablespace(object):
         Gets the shared of this Tablespace.
         Indicates whether the tablespace is for shared tablespace, or for local temporary tablespace for leaf (read-only) instances, or for local temporary tablespace for all instance types.
 
-        Allowed values for this property are: "SHARED", "LOCAL_ON_LEAF", "LOCAL_ON_ALL"
+        Allowed values for this property are: "SHARED", "LOCAL_ON_LEAF", "LOCAL_ON_ALL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The shared of this Tablespace.
@@ -1222,10 +1224,7 @@ class Tablespace(object):
         """
         allowed_values = ["SHARED", "LOCAL_ON_LEAF", "LOCAL_ON_ALL"]
         if not value_allowed_none_or_none_sentinel(shared, allowed_values):
-            raise ValueError(
-                "Invalid value for `shared`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            shared = 'UNKNOWN_ENUM_VALUE'
         self._shared = shared
 
     @property
@@ -1234,7 +1233,8 @@ class Tablespace(object):
         Gets the default_index_compression of this Tablespace.
         Indicates whether default index compression is enabled or disabled.
 
-        Allowed values for this property are: "ENABLED", "DISABLED"
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The default_index_compression of this Tablespace.
@@ -1254,10 +1254,7 @@ class Tablespace(object):
         """
         allowed_values = ["ENABLED", "DISABLED"]
         if not value_allowed_none_or_none_sentinel(default_index_compression, allowed_values):
-            raise ValueError(
-                "Invalid value for `default_index_compression`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            default_index_compression = 'UNKNOWN_ENUM_VALUE'
         self._default_index_compression = default_index_compression
 
     @property
@@ -1266,7 +1263,8 @@ class Tablespace(object):
         Gets the index_compress_for of this Tablespace.
         The operation type for which default index compression is enabled.
 
-        Allowed values for this property are: "ADVANCED_LOW", "ADVANCED_HIGH"
+        Allowed values for this property are: "ADVANCED_LOW", "ADVANCED_HIGH", "NONE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The index_compress_for of this Tablespace.
@@ -1284,12 +1282,9 @@ class Tablespace(object):
         :param index_compress_for: The index_compress_for of this Tablespace.
         :type: str
         """
-        allowed_values = ["ADVANCED_LOW", "ADVANCED_HIGH"]
+        allowed_values = ["ADVANCED_LOW", "ADVANCED_HIGH", "NONE"]
         if not value_allowed_none_or_none_sentinel(index_compress_for, allowed_values):
-            raise ValueError(
-                "Invalid value for `index_compress_for`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            index_compress_for = 'UNKNOWN_ENUM_VALUE'
         self._index_compress_for = index_compress_for
 
     @property
@@ -1322,7 +1317,8 @@ class Tablespace(object):
         Gets the default_in_memory_service of this Tablespace.
         Indicates how the IM column store is populated on various instances by default for the tablespace.
 
-        Allowed values for this property are: "DEFAULT", "NONE", "ALL", "USER_DEFINED"
+        Allowed values for this property are: "DEFAULT", "NONE", "ALL", "USER_DEFINED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The default_in_memory_service of this Tablespace.
@@ -1342,10 +1338,7 @@ class Tablespace(object):
         """
         allowed_values = ["DEFAULT", "NONE", "ALL", "USER_DEFINED"]
         if not value_allowed_none_or_none_sentinel(default_in_memory_service, allowed_values):
-            raise ValueError(
-                "Invalid value for `default_in_memory_service`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            default_in_memory_service = 'UNKNOWN_ENUM_VALUE'
         self._default_in_memory_service = default_in_memory_service
 
     @property
@@ -1378,7 +1371,8 @@ class Tablespace(object):
         Gets the lost_write_protect of this Tablespace.
         The lost write protection setting for the tablespace.
 
-        Allowed values for this property are: "ENABLED", "PROTECT_OFF", "SUSPEND"
+        Allowed values for this property are: "ENABLED", "PROTECT_OFF", "SUSPEND", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
         :return: The lost_write_protect of this Tablespace.
@@ -1398,10 +1392,7 @@ class Tablespace(object):
         """
         allowed_values = ["ENABLED", "PROTECT_OFF", "SUSPEND"]
         if not value_allowed_none_or_none_sentinel(lost_write_protect, allowed_values):
-            raise ValueError(
-                "Invalid value for `lost_write_protect`, must be None or one of {0}"
-                .format(allowed_values)
-            )
+            lost_write_protect = 'UNKNOWN_ENUM_VALUE'
         self._lost_write_protect = lost_write_protect
 
     @property
@@ -1619,6 +1610,30 @@ class Tablespace(object):
         :type: float
         """
         self._used_percent_allocated = used_percent_allocated
+
+    @property
+    def is_default(self):
+        """
+        Gets the is_default of this Tablespace.
+        Indicates whether this is the default tablespace.
+
+
+        :return: The is_default of this Tablespace.
+        :rtype: bool
+        """
+        return self._is_default
+
+    @is_default.setter
+    def is_default(self, is_default):
+        """
+        Sets the is_default of this Tablespace.
+        Indicates whether this is the default tablespace.
+
+
+        :param is_default: The is_default of this Tablespace.
+        :type: bool
+        """
+        self._is_default = is_default
 
     @property
     def datafiles(self):

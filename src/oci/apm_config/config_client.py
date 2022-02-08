@@ -18,7 +18,8 @@ missing = Sentinel("Missing")
 
 class ConfigClient(object):
     """
-    An API for the APM Configuration service. Use this API to query and set APM configuration.
+    Use the Application Performance Monitoring Configuration API to query and set Application Performance Monitoring
+    configuration. For more information, see [Application Performance Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
     """
 
     def __init__(self, config, **kwargs):
@@ -106,14 +107,14 @@ class ConfigClient(object):
 
     def create_config(self, apm_domain_id, create_config_details, **kwargs):
         """
-        Creates a new Configuration item.
+        Creates a new configuration item.
 
 
         :param str apm_domain_id: (required)
-            The APM Domain Id the request is intended for.
+            The APM Domain ID the request is intended for.
 
         :param oci.apm_config.models.CreateConfigDetails create_config_details: (required)
-            The configuration details describing the new item
+            The configuration details of the new item.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -127,13 +128,13 @@ class ConfigClient(object):
             If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str opc_dry_run: (optional)
-            Indicates that this request is a dry-run.
-            If set to \"true\", nothing will be modified, only the validation will be performed.
+            Indicates that the request is a dry run, if set to \"true\". A dry run request does not modify the
+            configuration item details and is used only to perform validation on the submitted data.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -182,6 +183,8 @@ class ConfigClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -207,14 +210,16 @@ class ConfigClient(object):
 
     def delete_config(self, apm_domain_id, config_id, **kwargs):
         """
-        Deletes the specified configuration item
+        Deletes the configuration item identified by the OCID.
 
 
         :param str apm_domain_id: (required)
-            The APM Domain Id the request is intended for.
+            The APM Domain ID the request is intended for.
 
         :param str config_id: (required)
-            The OCID of the ConfiguredItem.
+            The `OCID`__ of the configuration item.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -230,7 +235,7 @@ class ConfigClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -287,6 +292,8 @@ class ConfigClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -309,14 +316,16 @@ class ConfigClient(object):
 
     def get_config(self, apm_domain_id, config_id, **kwargs):
         """
-        Get the configuration of the item identified by the OCID.
+        Gets the configuration item identified by the OCID.
 
 
         :param str apm_domain_id: (required)
-            The APM Domain Id the request is intended for.
+            The APM Domain ID the request is intended for.
 
         :param str config_id: (required)
-            The OCID of the ConfiguredItem.
+            The `OCID`__ of the configuration item.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
@@ -325,7 +334,7 @@ class ConfigClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -380,6 +389,8 @@ class ConfigClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -404,51 +415,49 @@ class ConfigClient(object):
 
     def list_configs(self, apm_domain_id, **kwargs):
         """
-        Returns all configured items optionally filtered by configuration type
+        Returns all configuration items, which can optionally be filtered by configuration type.
 
 
         :param str apm_domain_id: (required)
-            The APM Domain Id the request is intended for.
+            The APM Domain ID the request is intended for.
 
         :param str opc_request_id: (optional)
             Unique identifier for the request.
             If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str config_type: (optional)
-            A filter to match only configuration items of the given type.
+            A filter to match configuration items of a given type.
             Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
 
         :param str display_name: (optional)
-            A filter to return only resources that match the entire display name given.
+            A filter to return resources that match the given display name.
 
         :param int limit: (optional)
             The maximum number of items to return.
 
         :param str page: (optional)
-            For list pagination. The maximum number of results per page, or items to return in a paginated
-            \"List\" call. For important details about how pagination works, see
-            `List Pagination`__.
-
+            The maximum number of results per page, or items to return in a paginated \"List\" call. For information on
+            how pagination works, see `List Pagination`__.
             Example: `50`
 
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (`ASC`) or descending (`DESC`). The displayName sort order
-            is case sensitive.
+            is case-sensitive.
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. You can provide one sort by (`sortBy`). Default order for displayName, timeCreated and
-            timeUpdated is ascending. The displayName sort by is case sensitive.
+            The field to sort by. You can provide one \"sortBy\" value. The default order for displayName, timeCreated
+            and timeUpdated is ascending. The displayName sort by is case-sensitive.
 
             Allowed values are: "displayName", "timeCreated", "timeUpdated"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -519,6 +528,8 @@ class ConfigClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -541,17 +552,19 @@ class ConfigClient(object):
 
     def update_config(self, apm_domain_id, config_id, update_config_details, **kwargs):
         """
-        Updates the item.
+        Updates the details of the configuration item identified by the OCID.
 
 
         :param str apm_domain_id: (required)
-            The APM Domain Id the request is intended for.
+            The APM Domain ID the request is intended for.
 
         :param str config_id: (required)
-            The OCID of the ConfiguredItem.
+            The `OCID`__ of the configuration item.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.apm_config.models.UpdateConfigDetails update_config_details: (required)
-            The data to be updated.
+            The configuration details to be updated.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -565,13 +578,13 @@ class ConfigClient(object):
             If you need to contact Oracle about a particular request, please provide the request ID.
 
         :param str opc_dry_run: (optional)
-            Indicates that this request is a dry-run.
-            If set to \"true\", nothing will be modified, only the validation will be performed.
+            Indicates that the request is a dry run, if set to \"true\". A dry run request does not modify the
+            configuration item details and is used only to perform validation on the submitted data.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -630,6 +643,8 @@ class ConfigClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):

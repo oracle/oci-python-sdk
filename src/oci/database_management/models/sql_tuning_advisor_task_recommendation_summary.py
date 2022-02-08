@@ -123,7 +123,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
     def sql_tuning_advisor_task_id(self):
         """
         **[Required]** Gets the sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskRecommendationSummary.
-        Unique identifier of the task. It is not the `OCID`__.
+        The unique identifier of the task. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -137,7 +137,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
     def sql_tuning_advisor_task_id(self, sql_tuning_advisor_task_id):
         """
         Sets the sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskRecommendationSummary.
-        Unique identifier of the task. It is not the `OCID`__.
+        The unique identifier of the task. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -151,7 +151,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
     def sql_tuning_advisor_task_object_id(self):
         """
         **[Required]** Gets the sql_tuning_advisor_task_object_id of this SqlTuningAdvisorTaskRecommendationSummary.
-        Key of the object to which these recommendations apply. It is not the `OCID`__.
+        The key of the object to which these recommendations apply. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -165,7 +165,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
     def sql_tuning_advisor_task_object_id(self, sql_tuning_advisor_task_object_id):
         """
         Sets the sql_tuning_advisor_task_object_id of this SqlTuningAdvisorTaskRecommendationSummary.
-        Key of the object to which these recommendations apply. It is not the `OCID`__.
+        The key of the object to which these recommendations apply. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -179,7 +179,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
     def recommendation_key(self):
         """
         **[Required]** Gets the recommendation_key of this SqlTuningAdvisorTaskRecommendationSummary.
-        Unique identifier of the recommendation in the scope of the task.
+        The unique identifier of the recommendation in the scope of the task.
 
 
         :return: The recommendation_key of this SqlTuningAdvisorTaskRecommendationSummary.
@@ -191,7 +191,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
     def recommendation_key(self, recommendation_key):
         """
         Sets the recommendation_key of this SqlTuningAdvisorTaskRecommendationSummary.
-        Unique identifier of the recommendation in the scope of the task.
+        The unique identifier of the recommendation in the scope of the task.
 
 
         :param recommendation_key: The recommendation_key of this SqlTuningAdvisorTaskRecommendationSummary.
@@ -203,7 +203,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
     def recommendation_type(self):
         """
         **[Required]** Gets the recommendation_type of this SqlTuningAdvisorTaskRecommendationSummary.
-        Type of recommendation
+        Type of recommendation.
 
         Allowed values for this property are: "STATISTICS", "INDEX", "SQL_PROFILE", "RESTRUCTURE_SQL", "ALTERNATIVE_PLANS", "ERROR", "MISCELLANEOUS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -218,7 +218,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
     def recommendation_type(self, recommendation_type):
         """
         Sets the recommendation_type of this SqlTuningAdvisorTaskRecommendationSummary.
-        Type of recommendation
+        Type of recommendation.
 
 
         :param recommendation_type: The recommendation_type of this SqlTuningAdvisorTaskRecommendationSummary.
@@ -233,7 +233,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
     def finding(self):
         """
         Gets the finding of this SqlTuningAdvisorTaskRecommendationSummary.
-        Summary of the issue found for the SQL statement.
+        Summary of the issue found in the SQL statement.
 
 
         :return: The finding of this SqlTuningAdvisorTaskRecommendationSummary.
@@ -245,7 +245,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
     def finding(self, finding):
         """
         Sets the finding of this SqlTuningAdvisorTaskRecommendationSummary.
-        Summary of the issue found for the SQL statement.
+        Summary of the issue found in the SQL statement.
 
 
         :param finding: The finding of this SqlTuningAdvisorTaskRecommendationSummary.
@@ -257,7 +257,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
     def recommendation(self):
         """
         Gets the recommendation of this SqlTuningAdvisorTaskRecommendationSummary.
-        Particular recommendation for the finding.
+        The recommendation for a specific finding.
 
 
         :return: The recommendation of this SqlTuningAdvisorTaskRecommendationSummary.
@@ -269,7 +269,7 @@ class SqlTuningAdvisorTaskRecommendationSummary(object):
     def recommendation(self, recommendation):
         """
         Sets the recommendation of this SqlTuningAdvisorTaskRecommendationSummary.
-        Particular recommendation for the finding.
+        The recommendation for a specific finding.
 
 
         :param recommendation: The recommendation of this SqlTuningAdvisorTaskRecommendationSummary.

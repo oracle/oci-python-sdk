@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConsumerGroupPrivilegeCollection(object):
     """
-    A collection of ConsumerGroupPrivileges granted to the current User.
+    A collection of consumer group privileges granted to the current user.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ConsumerGroupPrivilegeCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ConsumerGroupPrivilegeCollection.
-        An array of User resources.
+        An array of consumer group privileges.
 
 
         :return: The items of this ConsumerGroupPrivilegeCollection.
@@ -49,7 +49,7 @@ class ConsumerGroupPrivilegeCollection(object):
     def items(self, items):
         """
         Sets the items of this ConsumerGroupPrivilegeCollection.
-        An array of User resources.
+        An array of consumer group privileges.
 
 
         :param items: The items of this ConsumerGroupPrivilegeCollection.

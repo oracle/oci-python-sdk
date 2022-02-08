@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectPrivilegeSummary(object):
     """
-    Summary of objectPrivileges.
+    A summary of object privileges.
     """
 
     #: A constant which can be used with the hierarchy property of a ObjectPrivilegeSummary.
@@ -157,7 +157,7 @@ class ObjectPrivilegeSummary(object):
     def schema_type(self):
         """
         Gets the schema_type of this ObjectPrivilegeSummary.
-        The type of the object.
+        The type of object.
 
 
         :return: The schema_type of this ObjectPrivilegeSummary.
@@ -169,7 +169,7 @@ class ObjectPrivilegeSummary(object):
     def schema_type(self, schema_type):
         """
         Sets the schema_type of this ObjectPrivilegeSummary.
-        The type of the object.
+        The type of object.
 
 
         :param schema_type: The schema_type of this ObjectPrivilegeSummary.
@@ -205,7 +205,7 @@ class ObjectPrivilegeSummary(object):
     def grantor(self):
         """
         Gets the grantor of this ObjectPrivilegeSummary.
-        The name of the user who performed the grant
+        The name of the user who granted the object privilege.
 
 
         :return: The grantor of this ObjectPrivilegeSummary.
@@ -217,7 +217,7 @@ class ObjectPrivilegeSummary(object):
     def grantor(self, grantor):
         """
         Sets the grantor of this ObjectPrivilegeSummary.
-        The name of the user who performed the grant
+        The name of the user who granted the object privilege.
 
 
         :param grantor: The grantor of this ObjectPrivilegeSummary.
@@ -229,7 +229,7 @@ class ObjectPrivilegeSummary(object):
     def hierarchy(self):
         """
         Gets the hierarchy of this ObjectPrivilegeSummary.
-        Indicates whether the privilege was granted with the HIERARCHY OPTION (YES) or not (NO)
+        Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -244,7 +244,7 @@ class ObjectPrivilegeSummary(object):
     def hierarchy(self, hierarchy):
         """
         Sets the hierarchy of this ObjectPrivilegeSummary.
-        Indicates whether the privilege was granted with the HIERARCHY OPTION (YES) or not (NO)
+        Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
 
 
         :param hierarchy: The hierarchy of this ObjectPrivilegeSummary.
@@ -283,7 +283,7 @@ class ObjectPrivilegeSummary(object):
     def grant_option(self):
         """
         Gets the grant_option of this ObjectPrivilegeSummary.
-        Indicates whether the privilege was granted with the GRANT OPTION (YES) or not (NO)
+        Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -298,7 +298,7 @@ class ObjectPrivilegeSummary(object):
     def grant_option(self, grant_option):
         """
         Sets the grant_option of this ObjectPrivilegeSummary.
-        Indicates whether the privilege was granted with the GRANT OPTION (YES) or not (NO)
+        Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
 
 
         :param grant_option: The grant_option of this ObjectPrivilegeSummary.
@@ -313,9 +313,9 @@ class ObjectPrivilegeSummary(object):
     def common(self):
         """
         Gets the common of this ObjectPrivilegeSummary.
-        Indicates how the grant was made. Possible values:
-        YES if the role was granted commonly (CONTAINER=ALL was used)
-        NO if the role was granted locally (CONTAINER=ALL was not used)
+        Indicates how the object privilege was granted. Possible values:
+        YES if the role is granted commonly (CONTAINER=ALL is used)
+        NO if the role is granted locally (CONTAINER=ALL is not used)
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -330,9 +330,9 @@ class ObjectPrivilegeSummary(object):
     def common(self, common):
         """
         Sets the common of this ObjectPrivilegeSummary.
-        Indicates how the grant was made. Possible values:
-        YES if the role was granted commonly (CONTAINER=ALL was used)
-        NO if the role was granted locally (CONTAINER=ALL was not used)
+        Indicates how the object privilege was granted. Possible values:
+        YES if the role is granted commonly (CONTAINER=ALL is used)
+        NO if the role is granted locally (CONTAINER=ALL is not used)
 
 
         :param common: The common of this ObjectPrivilegeSummary.
@@ -347,7 +347,7 @@ class ObjectPrivilegeSummary(object):
     def inherited(self):
         """
         Gets the inherited of this ObjectPrivilegeSummary.
-        Indicates whether the role grant was inherited from another container (YES) or not (NO)
+        Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -362,7 +362,7 @@ class ObjectPrivilegeSummary(object):
     def inherited(self, inherited):
         """
         Sets the inherited of this ObjectPrivilegeSummary.
-        Indicates whether the role grant was inherited from another container (YES) or not (NO)
+        Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
 
 
         :param inherited: The inherited of this ObjectPrivilegeSummary.

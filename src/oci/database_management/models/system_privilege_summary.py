@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SystemPrivilegeSummary(object):
     """
-    Summary of SystemPrivileges.
+    A Summary of system privileges.
     """
 
     #: A constant which can be used with the admin_option property of a SystemPrivilegeSummary.
@@ -88,7 +88,7 @@ class SystemPrivilegeSummary(object):
     def name(self):
         """
         Gets the name of this SystemPrivilegeSummary.
-        The name of a system privilege
+        The name of a system privilege.
 
 
         :return: The name of this SystemPrivilegeSummary.
@@ -100,7 +100,7 @@ class SystemPrivilegeSummary(object):
     def name(self, name):
         """
         Sets the name of this SystemPrivilegeSummary.
-        The name of a system privilege
+        The name of a system privilege.
 
 
         :param name: The name of this SystemPrivilegeSummary.
@@ -112,7 +112,7 @@ class SystemPrivilegeSummary(object):
     def admin_option(self):
         """
         Gets the admin_option of this SystemPrivilegeSummary.
-        Indicates whether the grant was with the ADMIN option (YES) or not (NO)
+        Indicates whether the system privilege is granted with the ADMIN option (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -127,7 +127,7 @@ class SystemPrivilegeSummary(object):
     def admin_option(self, admin_option):
         """
         Sets the admin_option of this SystemPrivilegeSummary.
-        Indicates whether the grant was with the ADMIN option (YES) or not (NO)
+        Indicates whether the system privilege is granted with the ADMIN option (YES) or not (NO).
 
 
         :param admin_option: The admin_option of this SystemPrivilegeSummary.
@@ -142,9 +142,9 @@ class SystemPrivilegeSummary(object):
     def common(self):
         """
         Gets the common of this SystemPrivilegeSummary.
-        Indicates how the grant was made. Possible values:
-        YES if the role was granted commonly (CONTAINER=ALL was used)
-        NO if the role was granted locally (CONTAINER=ALL was not used)
+        Indicates how the system privilege was granted. Possible values:
+        YES if the system privilege is granted commonly (CONTAINER=ALL is used)
+        NO if the system privilege is granted locally (CONTAINER=ALL is not used)
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -159,9 +159,9 @@ class SystemPrivilegeSummary(object):
     def common(self, common):
         """
         Sets the common of this SystemPrivilegeSummary.
-        Indicates how the grant was made. Possible values:
-        YES if the role was granted commonly (CONTAINER=ALL was used)
-        NO if the role was granted locally (CONTAINER=ALL was not used)
+        Indicates how the system privilege was granted. Possible values:
+        YES if the system privilege is granted commonly (CONTAINER=ALL is used)
+        NO if the system privilege is granted locally (CONTAINER=ALL is not used)
 
 
         :param common: The common of this SystemPrivilegeSummary.
@@ -176,7 +176,7 @@ class SystemPrivilegeSummary(object):
     def inherited(self):
         """
         Gets the inherited of this SystemPrivilegeSummary.
-        Indicates whether the role grant was inherited from another container (YES) or not (NO)
+        Indicates whether the granted system privilege is inherited from another container (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -191,7 +191,7 @@ class SystemPrivilegeSummary(object):
     def inherited(self, inherited):
         """
         Sets the inherited of this SystemPrivilegeSummary.
-        Indicates whether the role grant was inherited from another container (YES) or not (NO)
+        Indicates whether the granted system privilege is inherited from another container (YES) or not (NO).
 
 
         :param inherited: The inherited of this SystemPrivilegeSummary.

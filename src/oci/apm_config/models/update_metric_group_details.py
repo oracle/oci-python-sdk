@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateMetricGroupDetails(UpdateConfigDetails):
     """
-    A Metric Group.
+    A metric group defines a set of metrics to collect from a span. It uses a span filter to specify which spans to
+    process. The set is then published to a namespace, which is a product level subdivision of metrics.
     """
 
     def __init__(self, **kwargs):
@@ -89,7 +90,7 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
     def display_name(self):
         """
         Gets the display_name of this UpdateMetricGroupDetails.
-        The name of this metric group
+        The name of the metric group.
 
 
         :return: The display_name of this UpdateMetricGroupDetails.
@@ -101,7 +102,7 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateMetricGroupDetails.
-        The name of this metric group
+        The name of the metric group.
 
 
         :param display_name: The display_name of this UpdateMetricGroupDetails.
@@ -114,7 +115,7 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
         """
         Gets the filter_id of this UpdateMetricGroupDetails.
         The `OCID`__ of a Span Filter. The filterId is mandatory for the creation
-        of MetricGroups. A filterId will be generated when a Span Filter is created.
+        of MetricGroups. A filterId is generated when a Span Filter is created.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -129,7 +130,7 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
         """
         Sets the filter_id of this UpdateMetricGroupDetails.
         The `OCID`__ of a Span Filter. The filterId is mandatory for the creation
-        of MetricGroups. A filterId will be generated when a Span Filter is created.
+        of MetricGroups. A filterId is generated when a Span Filter is created.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -143,7 +144,7 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
     def namespace(self):
         """
         Gets the namespace of this UpdateMetricGroupDetails.
-        The namespace to write the metrics to
+        The namespace to which the metrics are published. It must be one of several predefined namespaces.
 
 
         :return: The namespace of this UpdateMetricGroupDetails.
@@ -155,7 +156,7 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
     def namespace(self, namespace):
         """
         Sets the namespace of this UpdateMetricGroupDetails.
-        The namespace to write the metrics to
+        The namespace to which the metrics are published. It must be one of several predefined namespaces.
 
 
         :param namespace: The namespace of this UpdateMetricGroupDetails.
@@ -167,7 +168,7 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
     def dimensions(self):
         """
         Gets the dimensions of this UpdateMetricGroupDetails.
-        A list of dimensions for this metric
+        A list of dimensions for the metric. This variable should not be used.
 
 
         :return: The dimensions of this UpdateMetricGroupDetails.
@@ -179,7 +180,7 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
     def dimensions(self, dimensions):
         """
         Sets the dimensions of this UpdateMetricGroupDetails.
-        A list of dimensions for this metric
+        A list of dimensions for the metric. This variable should not be used.
 
 
         :param dimensions: The dimensions of this UpdateMetricGroupDetails.
@@ -191,6 +192,8 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
     def metrics(self):
         """
         Gets the metrics of this UpdateMetricGroupDetails.
+        The list of metrics in this group.
+
 
         :return: The metrics of this UpdateMetricGroupDetails.
         :rtype: list[oci.apm_config.models.Metric]
@@ -201,6 +204,8 @@ class UpdateMetricGroupDetails(UpdateConfigDetails):
     def metrics(self, metrics):
         """
         Sets the metrics of this UpdateMetricGroupDetails.
+        The list of metrics in this group.
+
 
         :param metrics: The metrics of this UpdateMetricGroupDetails.
         :type: list[oci.apm_config.models.Metric]

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Metric(object):
     """
-    A metric. This a quantitative measurement of an entity.
+    A metric is a quantitative measurement of an entity.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class Metric(object):
     def name(self):
         """
         **[Required]** Gets the name of this Metric.
-        The name of the metric
+        The name of the metric. This must be a known metric name.
 
 
         :return: The name of this Metric.
@@ -70,7 +70,7 @@ class Metric(object):
     def name(self, name):
         """
         Sets the name of this Metric.
-        The name of the metric
+        The name of the metric. This must be a known metric name.
 
 
         :param name: The name of this Metric.
@@ -82,7 +82,7 @@ class Metric(object):
     def value_source(self):
         """
         Gets the value_source of this Metric.
-        Must be NULL at the moment, and \"name\" must be a known metric.
+        This must not be set.
 
 
         :return: The value_source of this Metric.
@@ -94,7 +94,7 @@ class Metric(object):
     def value_source(self, value_source):
         """
         Sets the value_source of this Metric.
-        Must be NULL at the moment, and \"name\" must be a known metric.
+        This must not be set.
 
 
         :param value_source: The value_source of this Metric.
@@ -106,7 +106,7 @@ class Metric(object):
     def unit(self):
         """
         Gets the unit of this Metric.
-        The unit of the metric
+        The unit of the metric.
 
 
         :return: The unit of this Metric.
@@ -118,7 +118,7 @@ class Metric(object):
     def unit(self, unit):
         """
         Sets the unit of this Metric.
-        The unit of the metric
+        The unit of the metric.
 
 
         :param unit: The unit of this Metric.
@@ -130,7 +130,7 @@ class Metric(object):
     def description(self):
         """
         Gets the description of this Metric.
-        A description of the metric
+        A description of the metric.
 
 
         :return: The description of this Metric.
@@ -142,7 +142,7 @@ class Metric(object):
     def description(self, description):
         """
         Sets the description of this Metric.
-        A description of the metric
+        A description of the metric.
 
 
         :param description: The description of this Metric.

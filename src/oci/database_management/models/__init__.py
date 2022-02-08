@@ -5,8 +5,12 @@
 from __future__ import absolute_import
 
 from .activity_time_series_metrics import ActivityTimeSeriesMetrics
+from .add_data_files_details import AddDataFilesDetails
 from .add_managed_database_to_managed_database_group_details import AddManagedDatabaseToManagedDatabaseGroupDetails
 from .allowed_parameter_value import AllowedParameterValue
+from .asm_property import AsmProperty
+from .asm_property_collection import AsmPropertyCollection
+from .asm_property_summary import AsmPropertySummary
 from .associated_database_collection import AssociatedDatabaseCollection
 from .associated_database_summary import AssociatedDatabaseSummary
 from .awr_db_collection import AwrDbCollection
@@ -49,6 +53,7 @@ from .create_db_management_private_endpoint_details import CreateDbManagementPri
 from .create_job_details import CreateJobDetails
 from .create_managed_database_group_details import CreateManagedDatabaseGroupDetails
 from .create_sql_job_details import CreateSqlJobDetails
+from .create_tablespace_details import CreateTablespaceDetails
 from .data_access_container_collection import DataAccessContainerCollection
 from .data_access_container_summary import DataAccessContainerSummary
 from .database_credentials import DatabaseCredentials
@@ -68,6 +73,7 @@ from .db_management_private_endpoint import DbManagementPrivateEndpoint
 from .db_management_private_endpoint_collection import DbManagementPrivateEndpointCollection
 from .db_management_private_endpoint_summary import DbManagementPrivateEndpointSummary
 from .drop_sql_tuning_task_details import DropSqlTuningTaskDetails
+from .drop_tablespace_details import DropTablespaceDetails
 from .execution_plan_stats_comparision import ExecutionPlanStatsComparision
 from .failed_connections_aggregate_metrics import FailedConnectionsAggregateMetrics
 from .fleet_metric_definition import FleetMetricDefinition
@@ -110,8 +116,10 @@ from .proxied_for_user_collection import ProxiedForUserCollection
 from .proxied_for_user_summary import ProxiedForUserSummary
 from .proxy_user_collection import ProxyUserCollection
 from .proxy_user_summary import ProxyUserSummary
+from .remove_data_file_details import RemoveDataFileDetails
 from .remove_managed_database_from_managed_database_group_details import RemoveManagedDatabaseFromManagedDatabaseGroupDetails
 from .reset_database_parameters_details import ResetDatabaseParametersDetails
+from .resize_data_file_details import ResizeDataFileDetails
 from .role_collection import RoleCollection
 from .role_summary import RoleSummary
 from .sql_job import SqlJob
@@ -142,7 +150,12 @@ from .statements_aggregate_metrics import StatementsAggregateMetrics
 from .system_privilege_collection import SystemPrivilegeCollection
 from .system_privilege_summary import SystemPrivilegeSummary
 from .tablespace import Tablespace
+from .tablespace_admin_credential_details import TablespaceAdminCredentialDetails
+from .tablespace_admin_password_credential_details import TablespaceAdminPasswordCredentialDetails
+from .tablespace_admin_secret_credential_details import TablespaceAdminSecretCredentialDetails
+from .tablespace_admin_status import TablespaceAdminStatus
 from .tablespace_collection import TablespaceCollection
+from .tablespace_storage_size import TablespaceStorageSize
 from .tablespace_summary import TablespaceSummary
 from .time_series_metric_data_point import TimeSeriesMetricDataPoint
 from .time_series_metric_definition import TimeSeriesMetricDefinition
@@ -151,6 +164,7 @@ from .update_db_management_private_endpoint_details import UpdateDbManagementPri
 from .update_job_details import UpdateJobDetails
 from .update_managed_database_group_details import UpdateManagedDatabaseGroupDetails
 from .update_sql_job_details import UpdateSqlJobDetails
+from .update_tablespace_details import UpdateTablespaceDetails
 from .user import User
 from .user_collection import UserCollection
 from .user_summary import UserSummary
@@ -166,8 +180,12 @@ from .work_request_summary import WorkRequestSummary
 # Maps type names to classes for database_management services.
 database_management_type_mapping = {
     "ActivityTimeSeriesMetrics": ActivityTimeSeriesMetrics,
+    "AddDataFilesDetails": AddDataFilesDetails,
     "AddManagedDatabaseToManagedDatabaseGroupDetails": AddManagedDatabaseToManagedDatabaseGroupDetails,
     "AllowedParameterValue": AllowedParameterValue,
+    "AsmProperty": AsmProperty,
+    "AsmPropertyCollection": AsmPropertyCollection,
+    "AsmPropertySummary": AsmPropertySummary,
     "AssociatedDatabaseCollection": AssociatedDatabaseCollection,
     "AssociatedDatabaseSummary": AssociatedDatabaseSummary,
     "AwrDbCollection": AwrDbCollection,
@@ -210,6 +228,7 @@ database_management_type_mapping = {
     "CreateJobDetails": CreateJobDetails,
     "CreateManagedDatabaseGroupDetails": CreateManagedDatabaseGroupDetails,
     "CreateSqlJobDetails": CreateSqlJobDetails,
+    "CreateTablespaceDetails": CreateTablespaceDetails,
     "DataAccessContainerCollection": DataAccessContainerCollection,
     "DataAccessContainerSummary": DataAccessContainerSummary,
     "DatabaseCredentials": DatabaseCredentials,
@@ -229,6 +248,7 @@ database_management_type_mapping = {
     "DbManagementPrivateEndpointCollection": DbManagementPrivateEndpointCollection,
     "DbManagementPrivateEndpointSummary": DbManagementPrivateEndpointSummary,
     "DropSqlTuningTaskDetails": DropSqlTuningTaskDetails,
+    "DropTablespaceDetails": DropTablespaceDetails,
     "ExecutionPlanStatsComparision": ExecutionPlanStatsComparision,
     "FailedConnectionsAggregateMetrics": FailedConnectionsAggregateMetrics,
     "FleetMetricDefinition": FleetMetricDefinition,
@@ -271,8 +291,10 @@ database_management_type_mapping = {
     "ProxiedForUserSummary": ProxiedForUserSummary,
     "ProxyUserCollection": ProxyUserCollection,
     "ProxyUserSummary": ProxyUserSummary,
+    "RemoveDataFileDetails": RemoveDataFileDetails,
     "RemoveManagedDatabaseFromManagedDatabaseGroupDetails": RemoveManagedDatabaseFromManagedDatabaseGroupDetails,
     "ResetDatabaseParametersDetails": ResetDatabaseParametersDetails,
+    "ResizeDataFileDetails": ResizeDataFileDetails,
     "RoleCollection": RoleCollection,
     "RoleSummary": RoleSummary,
     "SqlJob": SqlJob,
@@ -303,7 +325,12 @@ database_management_type_mapping = {
     "SystemPrivilegeCollection": SystemPrivilegeCollection,
     "SystemPrivilegeSummary": SystemPrivilegeSummary,
     "Tablespace": Tablespace,
+    "TablespaceAdminCredentialDetails": TablespaceAdminCredentialDetails,
+    "TablespaceAdminPasswordCredentialDetails": TablespaceAdminPasswordCredentialDetails,
+    "TablespaceAdminSecretCredentialDetails": TablespaceAdminSecretCredentialDetails,
+    "TablespaceAdminStatus": TablespaceAdminStatus,
     "TablespaceCollection": TablespaceCollection,
+    "TablespaceStorageSize": TablespaceStorageSize,
     "TablespaceSummary": TablespaceSummary,
     "TimeSeriesMetricDataPoint": TimeSeriesMetricDataPoint,
     "TimeSeriesMetricDefinition": TimeSeriesMetricDefinition,
@@ -312,6 +339,7 @@ database_management_type_mapping = {
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateManagedDatabaseGroupDetails": UpdateManagedDatabaseGroupDetails,
     "UpdateSqlJobDetails": UpdateSqlJobDetails,
+    "UpdateTablespaceDetails": UpdateTablespaceDetails,
     "User": User,
     "UserCollection": UserCollection,
     "UserSummary": UserSummary,

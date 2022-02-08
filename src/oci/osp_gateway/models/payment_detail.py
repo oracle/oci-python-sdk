@@ -144,7 +144,7 @@ class PaymentDetail(object):
     @property
     def payment_method(self):
         """
-        Gets the payment_method of this PaymentDetail.
+        **[Required]** Gets the payment_method of this PaymentDetail.
         Payment method
 
         Allowed values for this property are: "CREDIT_CARD", "PAYPAL", "OTHER", 'UNKNOWN_ENUM_VALUE'.

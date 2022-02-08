@@ -19,6 +19,7 @@ from .create_model_provenance_details import CreateModelProvenanceDetails
 from .create_notebook_session_details import CreateNotebookSessionDetails
 from .create_project_details import CreateProjectDetails
 from .default_job_configuration_details import DefaultJobConfigurationDetails
+from .fast_launch_job_config_summary import FastLaunchJobConfigSummary
 from .fixed_size_scaling_policy import FixedSizeScalingPolicy
 from .instance_configuration import InstanceConfiguration
 from .job import Job
@@ -84,6 +85,7 @@ data_science_type_mapping = {
     "CreateNotebookSessionDetails": CreateNotebookSessionDetails,
     "CreateProjectDetails": CreateProjectDetails,
     "DefaultJobConfigurationDetails": DefaultJobConfigurationDetails,
+    "FastLaunchJobConfigSummary": FastLaunchJobConfigSummary,
     "FixedSizeScalingPolicy": FixedSizeScalingPolicy,
     "InstanceConfiguration": InstanceConfiguration,
     "Job": Job,

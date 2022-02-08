@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConsumerGroupPrivilegeSummary(object):
     """
-    Summary of consumerGroupPrivileges.
+    A summary of consumer group privileges.
     """
 
     #: A constant which can be used with the grant_option property of a ConsumerGroupPrivilegeSummary.
@@ -71,7 +71,7 @@ class ConsumerGroupPrivilegeSummary(object):
     def name(self):
         """
         Gets the name of this ConsumerGroupPrivilegeSummary.
-        The name of granted consumer group.
+        The name of the granted consumer group privilege.
 
 
         :return: The name of this ConsumerGroupPrivilegeSummary.
@@ -83,7 +83,7 @@ class ConsumerGroupPrivilegeSummary(object):
     def name(self, name):
         """
         Sets the name of this ConsumerGroupPrivilegeSummary.
-        The name of granted consumer group.
+        The name of the granted consumer group privilege.
 
 
         :param name: The name of this ConsumerGroupPrivilegeSummary.
@@ -95,7 +95,7 @@ class ConsumerGroupPrivilegeSummary(object):
     def grant_option(self):
         """
         Gets the grant_option of this ConsumerGroupPrivilegeSummary.
-        Indicates whether the grant was with the GRANT option (YES) or not (NO).
+        Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -110,7 +110,7 @@ class ConsumerGroupPrivilegeSummary(object):
     def grant_option(self, grant_option):
         """
         Sets the grant_option of this ConsumerGroupPrivilegeSummary.
-        Indicates whether the grant was with the GRANT option (YES) or not (NO).
+        Indicates whether the privilege is granted with the GRANT option (YES) or not (NO).
 
 
         :param grant_option: The grant_option of this ConsumerGroupPrivilegeSummary.
@@ -125,7 +125,7 @@ class ConsumerGroupPrivilegeSummary(object):
     def initial_group(self):
         """
         Gets the initial_group of this ConsumerGroupPrivilegeSummary.
-        Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO)
+        Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
 
         Allowed values for this property are: "YES", "NO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -140,7 +140,7 @@ class ConsumerGroupPrivilegeSummary(object):
     def initial_group(self, initial_group):
         """
         Sets the initial_group of this ConsumerGroupPrivilegeSummary.
-        Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO)
+        Indicates whether the consumer group is designated as the default for this user or role (YES) or not (NO).
 
 
         :param initial_group: The initial_group of this ConsumerGroupPrivilegeSummary.

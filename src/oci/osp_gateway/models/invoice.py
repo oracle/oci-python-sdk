@@ -164,7 +164,7 @@ class Invoice(object):
 
         :param bill_to_address:
             The value to assign to the bill_to_address property of this Invoice.
-        :type bill_to_address: oci.osp_gateway.models.Address
+        :type bill_to_address: oci.osp_gateway.models.BillToAddress
 
         :param subscription_ids:
             The value to assign to the subscription_ids property of this Invoice.
@@ -195,7 +195,7 @@ class Invoice(object):
             'is_payable': 'bool',
             'payment_terms': 'str',
             'last_payment_detail': 'PaymentDetail',
-            'bill_to_address': 'Address',
+            'bill_to_address': 'BillToAddress',
             'subscription_ids': 'list[str]'
         }
 
@@ -815,7 +815,7 @@ class Invoice(object):
         Gets the bill_to_address of this Invoice.
 
         :return: The bill_to_address of this Invoice.
-        :rtype: oci.osp_gateway.models.Address
+        :rtype: oci.osp_gateway.models.BillToAddress
         """
         return self._bill_to_address
 
@@ -825,7 +825,7 @@ class Invoice(object):
         Sets the bill_to_address of this Invoice.
 
         :param bill_to_address: The bill_to_address of this Invoice.
-        :type: oci.osp_gateway.models.Address
+        :type: oci.osp_gateway.models.BillToAddress
         """
         self._bill_to_address = bill_to_address
 

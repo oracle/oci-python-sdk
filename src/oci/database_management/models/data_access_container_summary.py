@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataAccessContainerSummary(object):
     """
-    Summary of ContainerDataAccess user
+    A summary of the ContainerDataAccess user.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DataAccessContainerSummary(object):
     def name(self):
         """
         Gets the name of this DataAccessContainerSummary.
-        The name of a container included in this attribute if it does not apply to all containers.
+        The name of the container included in the attribute.
 
 
         :return: The name of this DataAccessContainerSummary.
@@ -49,7 +49,7 @@ class DataAccessContainerSummary(object):
     def name(self, name):
         """
         Sets the name of this DataAccessContainerSummary.
-        The name of a container included in this attribute if it does not apply to all containers.
+        The name of the container included in the attribute.
 
 
         :param name: The name of this DataAccessContainerSummary.

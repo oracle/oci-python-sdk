@@ -7,6 +7,8 @@ from __future__ import absolute_import
 
 from .invoice_service_client import InvoiceServiceClient
 from .invoice_service_client_composite_operations import InvoiceServiceClientCompositeOperations
+from .subscription_service_client import SubscriptionServiceClient
+from .subscription_service_client_composite_operations import SubscriptionServiceClientCompositeOperations
 from . import models
 
-__all__ = ["InvoiceServiceClient", "InvoiceServiceClientCompositeOperations", "models"]
+__all__ = ["InvoiceServiceClient", "InvoiceServiceClientCompositeOperations", "SubscriptionServiceClient", "SubscriptionServiceClientCompositeOperations", "models"]

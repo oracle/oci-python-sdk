@@ -33,6 +33,7 @@ Data Science
     oci.data_science.models.CreateNotebookSessionDetails
     oci.data_science.models.CreateProjectDetails
     oci.data_science.models.DefaultJobConfigurationDetails
+    oci.data_science.models.FastLaunchJobConfigSummary
     oci.data_science.models.FixedSizeScalingPolicy
     oci.data_science.models.InstanceConfiguration
     oci.data_science.models.Job

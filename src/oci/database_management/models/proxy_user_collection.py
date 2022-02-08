@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProxyUserCollection(object):
     """
-    A collection of proxy users for the current User.
+    A collection of proxy users for the current user.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ProxyUserCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ProxyUserCollection.
-        An array of User resources.
+        An array of user resources.
 
 
         :return: The items of this ProxyUserCollection.
@@ -49,7 +49,7 @@ class ProxyUserCollection(object):
     def items(self, items):
         """
         Sets the items of this ProxyUserCollection.
-        An array of User resources.
+        An array of user resources.
 
 
         :param items: The items of this ProxyUserCollection.

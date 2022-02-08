@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class InvoiceServiceClient(object):
     """
-    This site describes all the Rest endpoints of Billing Center Gateway.
+    This site describes all the Rest endpoints of OSP Gateway.
     """
 
     def __init__(self, config, **kwargs):

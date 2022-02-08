@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateConfigDetails(object):
     """
-    The request body used to update the Configuration entity. It must specify the data to update the item with.
+    The request body used to update the configuration item. It must specify the data to update the item with.
     """
 
     #: A constant which can be used with the config_type property of a UpdateConfigDetails.
@@ -89,7 +89,7 @@ class UpdateConfigDetails(object):
     def config_type(self):
         """
         **[Required]** Gets the config_type of this UpdateConfigDetails.
-        The type of configuration item
+        The type of configuration item.
 
         Allowed values for this property are: "SPAN_FILTER", "METRIC_GROUP", "APDEX"
 
@@ -103,7 +103,7 @@ class UpdateConfigDetails(object):
     def config_type(self, config_type):
         """
         Sets the config_type of this UpdateConfigDetails.
-        The type of configuration item
+        The type of configuration item.
 
 
         :param config_type: The config_type of this UpdateConfigDetails.

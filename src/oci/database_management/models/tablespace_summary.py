@@ -245,6 +245,10 @@ class TablespaceSummary(object):
     #: This constant has a value of "ADVANCED_HIGH"
     INDEX_COMPRESS_FOR_ADVANCED_HIGH = "ADVANCED_HIGH"
 
+    #: A constant which can be used with the index_compress_for property of a TablespaceSummary.
+    #: This constant has a value of "NONE"
+    INDEX_COMPRESS_FOR_NONE = "NONE"
+
     #: A constant which can be used with the default_in_memory_service property of a TablespaceSummary.
     #: This constant has a value of "DEFAULT"
     DEFAULT_IN_MEMORY_SERVICE_DEFAULT = "DEFAULT"
@@ -406,7 +410,7 @@ class TablespaceSummary(object):
 
         :param index_compress_for:
             The value to assign to the index_compress_for property of this TablespaceSummary.
-            Allowed values for this property are: "ADVANCED_LOW", "ADVANCED_HIGH", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ADVANCED_LOW", "ADVANCED_HIGH", "NONE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type index_compress_for: str
 
@@ -466,6 +470,10 @@ class TablespaceSummary(object):
             The value to assign to the used_percent_allocated property of this TablespaceSummary.
         :type used_percent_allocated: float
 
+        :param is_default:
+            The value to assign to the is_default property of this TablespaceSummary.
+        :type is_default: bool
+
         :param datafiles:
             The value to assign to the datafiles property of this TablespaceSummary.
         :type datafiles: list[oci.database_management.models.Datafile]
@@ -509,6 +517,7 @@ class TablespaceSummary(object):
             'used_space_kb': 'float',
             'used_percent_available': 'float',
             'used_percent_allocated': 'float',
+            'is_default': 'bool',
             'datafiles': 'list[Datafile]'
         }
 
@@ -550,6 +559,7 @@ class TablespaceSummary(object):
             'used_space_kb': 'usedSpaceKB',
             'used_percent_available': 'usedPercentAvailable',
             'used_percent_allocated': 'usedPercentAllocated',
+            'is_default': 'isDefault',
             'datafiles': 'datafiles'
         }
 
@@ -590,6 +600,7 @@ class TablespaceSummary(object):
         self._used_space_kb = None
         self._used_percent_available = None
         self._used_percent_allocated = None
+        self._is_default = None
         self._datafiles = None
 
     @property
@@ -1252,7 +1263,7 @@ class TablespaceSummary(object):
         Gets the index_compress_for of this TablespaceSummary.
         The operation type for which default index compression is enabled.
 
-        Allowed values for this property are: "ADVANCED_LOW", "ADVANCED_HIGH", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ADVANCED_LOW", "ADVANCED_HIGH", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1271,7 +1282,7 @@ class TablespaceSummary(object):
         :param index_compress_for: The index_compress_for of this TablespaceSummary.
         :type: str
         """
-        allowed_values = ["ADVANCED_LOW", "ADVANCED_HIGH"]
+        allowed_values = ["ADVANCED_LOW", "ADVANCED_HIGH", "NONE"]
         if not value_allowed_none_or_none_sentinel(index_compress_for, allowed_values):
             index_compress_for = 'UNKNOWN_ENUM_VALUE'
         self._index_compress_for = index_compress_for
@@ -1599,6 +1610,30 @@ class TablespaceSummary(object):
         :type: float
         """
         self._used_percent_allocated = used_percent_allocated
+
+    @property
+    def is_default(self):
+        """
+        Gets the is_default of this TablespaceSummary.
+        Indicates whether this is the default tablespace.
+
+
+        :return: The is_default of this TablespaceSummary.
+        :rtype: bool
+        """
+        return self._is_default
+
+    @is_default.setter
+    def is_default(self, is_default):
+        """
+        Sets the is_default of this TablespaceSummary.
+        Indicates whether this is the default tablespace.
+
+
+        :param is_default: The is_default of this TablespaceSummary.
+        :type: bool
+        """
+        self._is_default = is_default
 
     @property
     def datafiles(self):

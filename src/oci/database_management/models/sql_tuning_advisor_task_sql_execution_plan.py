@@ -37,7 +37,7 @@ class SqlTuningAdvisorTaskSqlExecutionPlan(object):
     def plan(self):
         """
         **[Required]** Gets the plan of this SqlTuningAdvisorTaskSqlExecutionPlan.
-        A SQL execution plan as a list of steps
+        A SQL execution plan as a list of steps.
 
 
         :return: The plan of this SqlTuningAdvisorTaskSqlExecutionPlan.
@@ -49,7 +49,7 @@ class SqlTuningAdvisorTaskSqlExecutionPlan(object):
     def plan(self, plan):
         """
         Sets the plan of this SqlTuningAdvisorTaskSqlExecutionPlan.
-        A SQL execution plan as a list of steps
+        A SQL execution plan as a list of steps.
 
 
         :param plan: The plan of this SqlTuningAdvisorTaskSqlExecutionPlan.

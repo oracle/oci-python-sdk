@@ -1,9 +1,9 @@
-Address
-=======
+PaySubscriptionReceipt
+======================
 
 .. currentmodule:: oci.osp_gateway.models
 
-.. autoclass:: Address
+.. autoclass:: PaySubscriptionReceipt
     :show-inheritance:
     :special-members: __init__
     :members:
