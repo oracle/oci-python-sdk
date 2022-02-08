@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlTuningTaskReturn(object):
     """
-    The returned object for starting/cloning a SQL tuning advisor task.
+    The returned object for starting or cloning a SQL tuning advisor task.
     """
 
     def __init__(self, **kwargs):
@@ -37,9 +37,9 @@ class SqlTuningTaskReturn(object):
     def sql_tuning_task_id(self):
         """
         **[Required]** Gets the sql_tuning_task_id of this SqlTuningTaskReturn.
-        The identifier of the task being cloned. This is not the `OCID`__.
+        The identifier of the task being started or cloned. This is not the `OCID`__.
         It can be retrieved from the following endpoint
-        :func:`list_sql_tuning_advisor_tasks`
+        :func:`list_sql_tuning_advisor_tasks`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -53,9 +53,9 @@ class SqlTuningTaskReturn(object):
     def sql_tuning_task_id(self, sql_tuning_task_id):
         """
         Sets the sql_tuning_task_id of this SqlTuningTaskReturn.
-        The identifier of the task being cloned. This is not the `OCID`__.
+        The identifier of the task being started or cloned. This is not the `OCID`__.
         It can be retrieved from the following endpoint
-        :func:`list_sql_tuning_advisor_tasks`
+        :func:`list_sql_tuning_advisor_tasks`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

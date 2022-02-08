@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataAccessContainerCollection(object):
     """
-    A collection of Containers if it does not apply to all containers for the current User.
+    A collection of specific containers for the current user. This is only applicable if ALL_CONTAINERS !='Y'.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class DataAccessContainerCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this DataAccessContainerCollection.
-        An array of Container resources.
+        An array of container resources.
 
 
         :return: The items of this DataAccessContainerCollection.
@@ -49,7 +49,7 @@ class DataAccessContainerCollection(object):
     def items(self, items):
         """
         Sets the items of this DataAccessContainerCollection.
-        An array of Container resources.
+        An array of container resources.
 
 
         :param items: The items of this DataAccessContainerCollection.

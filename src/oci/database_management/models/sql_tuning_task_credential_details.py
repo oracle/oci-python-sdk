@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlTuningTaskCredentialDetails(object):
     """
-    The credential to be used to connect to the database.
+    The credential used to connect to the database.
     """
 
     #: A constant which can be used with the sql_tuning_task_credential_type property of a SqlTuningTaskCredentialDetails.
@@ -90,7 +90,7 @@ class SqlTuningTaskCredentialDetails(object):
     def sql_tuning_task_credential_type(self):
         """
         **[Required]** Gets the sql_tuning_task_credential_type of this SqlTuningTaskCredentialDetails.
-        The type pf the credential for SQL tuning task.
+        The type of credential for the SQL tuning task.
 
         Allowed values for this property are: "SECRET", "PASSWORD"
 
@@ -104,7 +104,7 @@ class SqlTuningTaskCredentialDetails(object):
     def sql_tuning_task_credential_type(self, sql_tuning_task_credential_type):
         """
         Sets the sql_tuning_task_credential_type of this SqlTuningTaskCredentialDetails.
-        The type pf the credential for SQL tuning task.
+        The type of credential for the SQL tuning task.
 
 
         :param sql_tuning_task_credential_type: The sql_tuning_task_credential_type of this SqlTuningTaskCredentialDetails.
@@ -122,7 +122,7 @@ class SqlTuningTaskCredentialDetails(object):
     def username(self):
         """
         **[Required]** Gets the username of this SqlTuningTaskCredentialDetails.
-        The user to connect to the database.
+        The user name used to connect to the database.
 
 
         :return: The username of this SqlTuningTaskCredentialDetails.
@@ -134,7 +134,7 @@ class SqlTuningTaskCredentialDetails(object):
     def username(self, username):
         """
         Sets the username of this SqlTuningTaskCredentialDetails.
-        The user to connect to the database.
+        The user name used to connect to the database.
 
 
         :param username: The username of this SqlTuningTaskCredentialDetails.

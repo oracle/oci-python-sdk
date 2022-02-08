@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlTuningAdvisorTaskSummary(object):
     """
-    The summary for a SQL Tuning Advisor task.
+    The summary of a SQL Tuning Advisor task.
     """
 
     #: A constant which can be used with the task_status property of a SqlTuningAdvisorTaskSummary.
@@ -136,7 +136,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def sql_tuning_advisor_task_id(self):
         """
         **[Required]** Gets the sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskSummary.
-        Unique identifier of the task. It is not the `OCID`__.
+        The unique identifier of the SQL Tuning Advisor task. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -150,7 +150,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def sql_tuning_advisor_task_id(self, sql_tuning_advisor_task_id):
         """
         Sets the sql_tuning_advisor_task_id of this SqlTuningAdvisorTaskSummary.
-        Unique identifier of the task. It is not the `OCID`__.
+        The unique identifier of the SQL Tuning Advisor task. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -164,7 +164,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def instance_id(self):
         """
         Gets the instance_id of this SqlTuningAdvisorTaskSummary.
-        The instance id of the task. It is not the `OCID`__.
+        The instance ID of the SQL Tuning Advisor task. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -178,7 +178,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def instance_id(self, instance_id):
         """
         Sets the instance_id of this SqlTuningAdvisorTaskSummary.
-        The instance id of the task. It is not the `OCID`__.
+        The instance ID of the SQL Tuning Advisor task. This is not the `OCID`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -192,7 +192,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def name(self):
         """
         Gets the name of this SqlTuningAdvisorTaskSummary.
-        The name of the task.
+        The name of the SQL Tuning Advisor task.
 
 
         :return: The name of this SqlTuningAdvisorTaskSummary.
@@ -204,7 +204,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def name(self, name):
         """
         Sets the name of this SqlTuningAdvisorTaskSummary.
-        The name of the task.
+        The name of the SQL Tuning Advisor task.
 
 
         :param name: The name of this SqlTuningAdvisorTaskSummary.
@@ -216,7 +216,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def description(self):
         """
         Gets the description of this SqlTuningAdvisorTaskSummary.
-        The description of the task.
+        The description of the SQL Tuning Advisor task.
 
 
         :return: The description of this SqlTuningAdvisorTaskSummary.
@@ -228,7 +228,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def description(self, description):
         """
         Sets the description of this SqlTuningAdvisorTaskSummary.
-        The description of the task.
+        The description of the SQL Tuning Advisor task.
 
 
         :param description: The description of this SqlTuningAdvisorTaskSummary.
@@ -240,7 +240,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def owner(self):
         """
         Gets the owner of this SqlTuningAdvisorTaskSummary.
-        The owner of the task.
+        The owner of the SQL Tuning Advisor task.
 
 
         :return: The owner of this SqlTuningAdvisorTaskSummary.
@@ -252,7 +252,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def owner(self, owner):
         """
         Sets the owner of this SqlTuningAdvisorTaskSummary.
-        The owner of the task.
+        The owner of the SQL Tuning Advisor task.
 
 
         :param owner: The owner of this SqlTuningAdvisorTaskSummary.
@@ -264,7 +264,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def time_created(self):
         """
         Gets the time_created of this SqlTuningAdvisorTaskSummary.
-        Creation date of the task.
+        The Creation date of the SQL Tuning Advisor task.
 
 
         :return: The time_created of this SqlTuningAdvisorTaskSummary.
@@ -276,7 +276,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this SqlTuningAdvisorTaskSummary.
-        Creation date of the task.
+        The Creation date of the SQL Tuning Advisor task.
 
 
         :param time_created: The time_created of this SqlTuningAdvisorTaskSummary.
@@ -288,7 +288,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def task_status(self):
         """
         Gets the task_status of this SqlTuningAdvisorTaskSummary.
-        The status of the task.
+        The status of the SQL Tuning Advisor task.
 
         Allowed values for this property are: "COMPLETED", "INITIAL", "EXECUTING", "INTERRUPTED", "ERROR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -303,7 +303,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def task_status(self, task_status):
         """
         Sets the task_status of this SqlTuningAdvisorTaskSummary.
-        The status of the task.
+        The status of the SQL Tuning Advisor task.
 
 
         :param task_status: The task_status of this SqlTuningAdvisorTaskSummary.
@@ -318,7 +318,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def days_to_expire(self):
         """
         Gets the days_to_expire of this SqlTuningAdvisorTaskSummary.
-        Days to expire the task. If the value equals -1 then the task has no expiration time (UNLIMITED).
+        The number of days left before the task expires. If the value equals -1, then the task has no expiration time (UNLIMITED).
 
 
         :return: The days_to_expire of this SqlTuningAdvisorTaskSummary.
@@ -330,7 +330,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def days_to_expire(self, days_to_expire):
         """
         Sets the days_to_expire of this SqlTuningAdvisorTaskSummary.
-        Days to expire the task. If the value equals -1 then the task has no expiration time (UNLIMITED).
+        The number of days left before the task expires. If the value equals -1, then the task has no expiration time (UNLIMITED).
 
 
         :param days_to_expire: The days_to_expire of this SqlTuningAdvisorTaskSummary.
@@ -342,7 +342,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def time_execution_started(self):
         """
         Gets the time_execution_started of this SqlTuningAdvisorTaskSummary.
-        Start timestamp of task execution.
+        The start time of the task execution.
 
 
         :return: The time_execution_started of this SqlTuningAdvisorTaskSummary.
@@ -354,7 +354,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def time_execution_started(self, time_execution_started):
         """
         Sets the time_execution_started of this SqlTuningAdvisorTaskSummary.
-        Start timestamp of task execution.
+        The start time of the task execution.
 
 
         :param time_execution_started: The time_execution_started of this SqlTuningAdvisorTaskSummary.
@@ -366,7 +366,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def time_execution_ended(self):
         """
         Gets the time_execution_ended of this SqlTuningAdvisorTaskSummary.
-        End timestamp of task execution.
+        The end time of the task execution.
 
 
         :return: The time_execution_ended of this SqlTuningAdvisorTaskSummary.
@@ -378,7 +378,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def time_execution_ended(self, time_execution_ended):
         """
         Sets the time_execution_ended of this SqlTuningAdvisorTaskSummary.
-        End timestamp of task execution.
+        The end time of the task execution.
 
 
         :param time_execution_ended: The time_execution_ended of this SqlTuningAdvisorTaskSummary.
@@ -390,7 +390,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def total_sql_statements(self):
         """
         Gets the total_sql_statements of this SqlTuningAdvisorTaskSummary.
-        The total number of SQL statements related to the SQL tuning advisor task.
+        The total number of SQL statements related to the SQL Tuning Advisor task.
 
 
         :return: The total_sql_statements of this SqlTuningAdvisorTaskSummary.
@@ -402,7 +402,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def total_sql_statements(self, total_sql_statements):
         """
         Sets the total_sql_statements of this SqlTuningAdvisorTaskSummary.
-        The total number of SQL statements related to the SQL tuning advisor task.
+        The total number of SQL statements related to the SQL Tuning Advisor task.
 
 
         :param total_sql_statements: The total_sql_statements of this SqlTuningAdvisorTaskSummary.
@@ -414,7 +414,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def recommendation_count(self):
         """
         Gets the recommendation_count of this SqlTuningAdvisorTaskSummary.
-        Number of recommendations produced.
+        The number of recommendations provided for the SQL Tuning Advisor task.
 
 
         :return: The recommendation_count of this SqlTuningAdvisorTaskSummary.
@@ -426,7 +426,7 @@ class SqlTuningAdvisorTaskSummary(object):
     def recommendation_count(self, recommendation_count):
         """
         Sets the recommendation_count of this SqlTuningAdvisorTaskSummary.
-        Number of recommendations produced.
+        The number of recommendations provided for the SQL Tuning Advisor task.
 
 
         :param recommendation_count: The recommendation_count of this SqlTuningAdvisorTaskSummary.

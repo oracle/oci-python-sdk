@@ -165,7 +165,7 @@ class UserSummary(object):
     def status(self):
         """
         **[Required]** Gets the status of this UserSummary.
-        The account status of the User
+        The status of the user account.
 
         Allowed values for this property are: "OPEN", "EXPIRED", "EXPIRED_GRACE", "LOCKED", "LOCKED_TIMED", "EXPIRED_AND_LOCKED", "EXPIRED_GRACE_AND_LOCKED", "EXPIRED_AND_LOCKED_TIMED", "EXPIRED_GRACE_AND_LOCKED_TIMED", "OPEN_AND_IN_ROLLOVER", "EXPIRED_AND_IN_ROLLOVER", "LOCKED_AND_IN_ROLLOVER", "EXPIRED_AND_LOCKED_AND_IN_ROLLOVER", "LOCKED_TIMED_AND_IN_ROLLOVER", "EXPIRED_AND_LOCKED_TIMED_AND_IN_ROL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -180,7 +180,7 @@ class UserSummary(object):
     def status(self, status):
         """
         Sets the status of this UserSummary.
-        The account status of the User
+        The status of the user account.
 
 
         :param status: The status of this UserSummary.
@@ -195,7 +195,7 @@ class UserSummary(object):
     def time_expiring(self):
         """
         Gets the time_expiring of this UserSummary.
-        The date of expiration of the account
+        The date and time of the expiration of the user account.
 
 
         :return: The time_expiring of this UserSummary.
@@ -207,7 +207,7 @@ class UserSummary(object):
     def time_expiring(self, time_expiring):
         """
         Sets the time_expiring of this UserSummary.
-        The date of expiration of the account
+        The date and time of the expiration of the user account.
 
 
         :param time_expiring: The time_expiring of this UserSummary.
@@ -267,7 +267,7 @@ class UserSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this UserSummary.
-        The User creation date.
+        The date and time the user was created.
 
 
         :return: The time_created of this UserSummary.
@@ -279,7 +279,7 @@ class UserSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this UserSummary.
-        The User creation date.
+        The date and time the user was created.
 
 
         :param time_created: The time_created of this UserSummary.

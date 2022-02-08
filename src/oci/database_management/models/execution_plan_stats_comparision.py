@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ExecutionPlanStatsComparision(object):
     """
-    The comparision report of SQL execution plans' statistics between the original plan and modified plan.
+    The comparison report of the SQL execution plan statistics in the original and modified plan.
     """
 
     def __init__(self, **kwargs):

@@ -108,7 +108,7 @@ class SqlTuningClient(object):
 
     def clone_sql_tuning_task(self, managed_database_id, clone_sql_tuning_task_details, **kwargs):
         """
-        Clone and start a SQL tuning task for a given SQL tuning task.
+        Clones and runs a SQL tuning task in the database.
 
 
         :param str managed_database_id: (required)
@@ -117,7 +117,7 @@ class SqlTuningClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.CloneSqlTuningTaskDetails clone_sql_tuning_task_details: (required)
-            Detail inputs for cloning a SQL tuning task
+            The detailed inputs required to clone a SQL tuning task.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -209,7 +209,7 @@ class SqlTuningClient(object):
 
     def drop_sql_tuning_task(self, managed_database_id, drop_sql_tuning_task_details, **kwargs):
         """
-        Drop a SQL tuning task and its related results from the database.
+        Drops a SQL tuning task and its related results from the database.
 
 
         :param str managed_database_id: (required)
@@ -218,7 +218,7 @@ class SqlTuningClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.DropSqlTuningTaskDetails drop_sql_tuning_task_details: (required)
-            Detail inputs for dropping a SQL tuning task
+            The detailed inputs required to drop a SQL tuning task.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -308,8 +308,9 @@ class SqlTuningClient(object):
 
     def get_execution_plan_stats_comparision(self, managed_database_id, sql_tuning_advisor_task_id, sql_object_id, execution_id, **kwargs):
         """
-        A SQL tuning task may suggest new execution plan for a SQL. The API returns the
-        stats comparison report for the plans.
+        Retrieves a comparison of the existing SQL execution plan and a new plan.
+        A SQL tuning task may suggest a new execution plan for a SQL,
+        and this API retrieves the comparison report of the statistics of the two plans.
 
 
         :param str managed_database_id: (required)
@@ -323,12 +324,12 @@ class SqlTuningClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int sql_object_id: (required)
-            The SQL object id for the SQL tuning task. This is not the `OCID`__.
+            The SQL object ID for the SQL tuning task. This is not the `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int execution_id: (required)
-            The execution id for an execution of a SQL tuning task. This is not the `OCID`__.
+            The execution ID for an execution of a SQL tuning task. This is not the `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -419,7 +420,7 @@ class SqlTuningClient(object):
 
     def get_sql_execution_plan(self, managed_database_id, sql_tuning_advisor_task_id, sql_object_id, attribute, **kwargs):
         """
-        Retrieve a SQL execution plan for a SQL being tuned, for original or new plan
+        Retrieves a SQL execution plan for the SQL being tuned.
 
 
         :param str managed_database_id: (required)
@@ -433,7 +434,7 @@ class SqlTuningClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int sql_object_id: (required)
-            The SQL object id for the SQL tuning task. This is not the `OCID`__.
+            The SQL object ID for the SQL tuning task. This is not the `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -535,7 +536,7 @@ class SqlTuningClient(object):
 
     def get_sql_tuning_advisor_task_summary_report(self, managed_database_id, sql_tuning_advisor_task_id, **kwargs):
         """
-        Gets the summary report for the specific SQL Tuning Advisor task.
+        Gets the summary report for the specified SQL Tuning Advisor task.
 
 
         :param str managed_database_id: (required)
@@ -667,7 +668,7 @@ class SqlTuningClient(object):
 
     def list_sql_tuning_advisor_task_findings(self, managed_database_id, sql_tuning_advisor_task_id, **kwargs):
         """
-        Takes in a task id, and a finding/object type filter and applies some SQLs to find return the output.
+        Gets an array of the details of the findings that match specific filters.
 
 
         :param str managed_database_id: (required)
@@ -687,12 +688,13 @@ class SqlTuningClient(object):
             The optional less than or equal to query parameter to filter on the execution ID related to a specific SQL Tuning Advisor task.
 
         :param str search_period: (optional)
-            How far back the API will search for begin and end exec id, if not supplied. Unused if beginExecId and endExecId optional query params are both supplied.
+            The search period during which the API will search for begin and end exec id, if not supplied.
+            Unused if beginExecId and endExecId optional query params are both supplied.
 
             Allowed values are: "LAST_24HR", "LAST_7DAY", "LAST_31DAY", "SINCE_LAST", "ALL"
 
         :param str finding_filter: (optional)
-            Filters which findings get shown in the report
+            The filter used to display specific findings in the report.
 
             Allowed values are: "none", "FINDINGS", "NOFINDINGS", "ERRORS", "PROFILES", "INDICES", "STATS", "RESTRUCTURE", "ALTERNATIVE", "AUTO_PROFILES", "OTHER_PROFILES"
 
@@ -852,7 +854,8 @@ class SqlTuningClient(object):
 
     def list_sql_tuning_advisor_task_recommendations(self, managed_database_id, sql_tuning_advisor_task_id, sql_object_id, execution_id, **kwargs):
         """
-        Takes in a task id and object id and returns the recommendations/findings.
+        Gets the findings and possible actions for a given object in a SQL tuning task.
+        The task ID and object ID are used to retrieve the findings and recommendations.
 
 
         :param str managed_database_id: (required)
@@ -866,12 +869,12 @@ class SqlTuningClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int sql_object_id: (required)
-            The SQL object id for the SQL tuning task. This is not the `OCID`__.
+            The SQL object ID for the SQL tuning task. This is not the `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param int execution_id: (required)
-            The execution id for an execution of a SQL tuning task. This is not the `OCID`__.
+            The execution ID for an execution of a SQL tuning task. This is not the `OCID`__.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -1031,7 +1034,7 @@ class SqlTuningClient(object):
             The maximum number of records returned in the paginated response.
 
         :param str sort_by: (optional)
-            The option to sort the SQL Tuning advisor task summary data.
+            The option to sort the SQL Tuning Advisor task summary data.
 
             Allowed values are: "NAME", "START_TIME"
 
@@ -1161,8 +1164,7 @@ class SqlTuningClient(object):
 
     def start_sql_tuning_task(self, managed_database_id, start_sql_tuning_task_details, **kwargs):
         """
-        Start a SQL tuning task for a given set of SQLs from active session history
-        top SQLs.
+        Starts a SQL tuning task for a given set of SQL statements from the active session history top SQL statements.
 
 
         :param str managed_database_id: (required)
@@ -1171,7 +1173,7 @@ class SqlTuningClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param oci.database_management.models.StartSqlTuningTaskDetails start_sql_tuning_task_details: (required)
-            Detail inputs for starting a SQL tuning task
+            The detailed inputs required to start a SQL tuning task.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.

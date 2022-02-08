@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Dimension(object):
     """
-    A dimension is a label that can be used to describe or group metrics.
+    A dimension is a label that is used to describe or group metrics.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class Dimension(object):
     def name(self):
         """
         **[Required]** Gets the name of this Dimension.
-        The dimension name
+        The name of the dimension.
 
 
         :return: The name of this Dimension.
@@ -56,7 +56,7 @@ class Dimension(object):
     def name(self, name):
         """
         Sets the name of this Dimension.
-        The dimension name
+        The name of the dimension.
 
 
         :param name: The name of this Dimension.
@@ -68,7 +68,7 @@ class Dimension(object):
     def value_source(self):
         """
         Gets the value_source of this Dimension.
-        The source to populate the dimension. Must be NULL at the moment.
+        The source to populate the dimension. This must not be specified.
 
 
         :return: The value_source of this Dimension.
@@ -80,7 +80,7 @@ class Dimension(object):
     def value_source(self, value_source):
         """
         Sets the value_source of this Dimension.
-        The source to populate the dimension. Must be NULL at the moment.
+        The source to populate the dimension. This must not be specified.
 
 
         :param value_source: The value_source of this Dimension.

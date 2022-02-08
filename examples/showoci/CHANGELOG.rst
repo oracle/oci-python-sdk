@@ -5,7 +5,32 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
-22.01.17 - 22.01.17
+22.02.08 - 22.02.08
+=====================
+* Added estimate dates for exadata maintenance
+* Added system version to the db system / exadata csv
+* Split database_db_system csv to database_db_all, database_db_vm_bm, database_db_exacs, database_db_exacc
+* Added csv for network drg
+
+=====================
+22.02.01 - 22.02.01
+=====================
+* Added CSV for Object storage buckets
+* Added CSV for Security Bastions
+* Added CSV for Security Logging
+* Added CSV for Security Cloud Guard
+* Added CSV for Containers Kubernetes
+* Added CSV for Edge Waas Policies
+* Added CSV for Edge DNS Steering Policies
+* Added CSV for Edge Healthchecks
+
+=====================
+22.01.18 - 22.01.18
+=====================
+* Added database home patch history
+
+=====================
+22.01.11 - 22.01.11
 =====================
 * Fixed database connection for ADB
 * Added database edition and license model to the CSV extract

@@ -88,7 +88,7 @@ class UpdateApdexRulesDetails(UpdateConfigDetails):
     def display_name(self):
         """
         Gets the display_name of this UpdateApdexRulesDetails.
-        The name by which this rule set can be displayed to the user.
+        The name by which the rule set is displayed to the end user.
 
 
         :return: The display_name of this UpdateApdexRulesDetails.
@@ -100,7 +100,7 @@ class UpdateApdexRulesDetails(UpdateConfigDetails):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateApdexRulesDetails.
-        The name by which this rule set can be displayed to the user.
+        The name by which the rule set is displayed to the end user.
 
 
         :param display_name: The display_name of this UpdateApdexRulesDetails.

@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.56.0 - 2022-02-08
+====================
+
+Added
+-----
+* Support for managing tablespaces in the Database Management service
+* Support for upgrading and managing payment for subscriptions in the Account Management service
+* Support for listing fast launch job configurations in the Data Science service
+
+Breaking changes
+-----
+* Support for retries enabled by default on all operations in the Application Performance Monitoring service
+* The type for the `bill_to_address` parameter was changed from `Address` to `BillToAddress` in the invoice model of the Account Management service
+* `payment_method` was made a required property of the `payment_detail` model of the Account Management service
+
+====================
 2.55.1 - 2022-02-01
 ====================
 

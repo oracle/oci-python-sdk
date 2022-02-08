@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SqlTuningTaskSqlDetail(object):
     """
-    The detail of the SQL statements on which SQL tuning is performed.
+    The details of the SQL statements on which SQL tuning is performed.
     """
 
     def __init__(self, **kwargs):

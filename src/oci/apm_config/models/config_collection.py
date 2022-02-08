@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ConfigCollection(object):
     """
-    A collection of configuration entities
+    A collection of configuration items.
     """
 
     def __init__(self, **kwargs):

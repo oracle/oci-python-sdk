@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CloneSqlTuningTaskDetails(object):
     """
-    Request to clone and run a SQL tuning task. The new task uses same inputs as the one being cloned.
+    The request to clone and run a SQL tuning task. The new task uses the same inputs as the one being cloned.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class CloneSqlTuningTaskDetails(object):
     def task_name(self):
         """
         **[Required]** Gets the task_name of this CloneSqlTuningTaskDetails.
-        The name of the SQL tuning task. The name is unique per user in a database, and it is case sensitive.
+        The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
 
 
         :return: The task_name of this CloneSqlTuningTaskDetails.
@@ -70,7 +70,7 @@ class CloneSqlTuningTaskDetails(object):
     def task_name(self, task_name):
         """
         Sets the task_name of this CloneSqlTuningTaskDetails.
-        The name of the SQL tuning task. The name is unique per user in a database, and it is case sensitive.
+        The name of the SQL tuning task. The name is unique per user in a database, and it is case-sensitive.
 
 
         :param task_name: The task_name of this CloneSqlTuningTaskDetails.
@@ -82,9 +82,9 @@ class CloneSqlTuningTaskDetails(object):
     def original_task_id(self):
         """
         **[Required]** Gets the original_task_id of this CloneSqlTuningTaskDetails.
-        The identifier of the task being cloned. This is not the `OCID`__.
+        The identifier of the SQL tuning task being cloned. This is not the `OCID`__.
         It can be retrieved from the following endpoint
-        :func:`list_sql_tuning_advisor_tasks`
+        :func:`list_sql_tuning_advisor_tasks`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -98,9 +98,9 @@ class CloneSqlTuningTaskDetails(object):
     def original_task_id(self, original_task_id):
         """
         Sets the original_task_id of this CloneSqlTuningTaskDetails.
-        The identifier of the task being cloned. This is not the `OCID`__.
+        The identifier of the SQL tuning task being cloned. This is not the `OCID`__.
         It can be retrieved from the following endpoint
-        :func:`list_sql_tuning_advisor_tasks`
+        :func:`list_sql_tuning_advisor_tasks`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
