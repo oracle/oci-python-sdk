@@ -20,6 +20,8 @@ Apm Traces
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.apm_traces.models.AggregatedSnapshot
+    oci.apm_traces.models.AggregatedStackTrace
     oci.apm_traces.models.QueryDetails
     oci.apm_traces.models.QueryResultMetadataSummary
     oci.apm_traces.models.QueryResultResponse
@@ -28,10 +30,15 @@ Apm Traces
     oci.apm_traces.models.QueryResultsGroupedBySummary
     oci.apm_traces.models.QueryResultsOrderedBySummary
     oci.apm_traces.models.QuickPickSummary
+    oci.apm_traces.models.SnapshotDetail
     oci.apm_traces.models.Span
     oci.apm_traces.models.SpanLog
     oci.apm_traces.models.SpanLogCollection
+    oci.apm_traces.models.SpanSnapshot
+    oci.apm_traces.models.StackTraceElement
     oci.apm_traces.models.Tag
+    oci.apm_traces.models.ThreadSnapshot
     oci.apm_traces.models.Trace
     oci.apm_traces.models.TraceServiceSummary
+    oci.apm_traces.models.TraceSnapshot
     oci.apm_traces.models.TraceSpanSummary

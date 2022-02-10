@@ -5,6 +5,7 @@ API Reference
 
 * :doc:`Anomaly Detection <ai_anomaly_detection/client/oci.ai_anomaly_detection.AnomalyDetectionClient>`
 * :doc:`Ai Service Language <ai_language/client/oci.ai_language.AIServiceLanguageClient>`
+* :doc:`Ai Service Vision <ai_vision/client/oci.ai_vision.AIServiceVisionClient>`
 * :doc:`Analytics <analytics/client/oci.analytics.AnalyticsClient>`
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
 * :doc:`Announcements Preferences <announcements_service/client/oci.announcements_service.AnnouncementsPreferencesClient>`
@@ -140,6 +141,7 @@ API Reference
 * :doc:`Sender Invitation <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SenderInvitationClient>`
 * :doc:`Subscription <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.SubscriptionClient>`
 * :doc:`Work Request <work_requests/client/oci.work_requests.WorkRequestClient>`
+* :doc:`Threatintel <threat_intelligence/client/oci.threat_intelligence.ThreatintelClient>`
 * :doc:`Rewards <usage/client/oci.usage.RewardsClient>`
 * :doc:`Usageapi <usage_api/client/oci.usage_api.UsageapiClient>`
 * :doc:`Vaults <vault/client/oci.vault.VaultsClient>`
@@ -170,6 +172,7 @@ API Reference
 
     ai_anomaly_detection
     ai_language
+    ai_vision
     analytics
     announcements_service
     apigateway
@@ -256,6 +259,7 @@ API Reference
     service_manager_proxy
     streaming
     tenant_manager_control_plane
+    threat_intelligence
     usage
     usage_api
     vault

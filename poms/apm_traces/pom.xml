@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.apm.service.dataserver.spec</groupId>
         <artifactId>apm-dataserver-spec</artifactId>
-        <version>20200630.4.83</version>
+        <version>20200630.4.117</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

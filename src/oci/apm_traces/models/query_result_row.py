@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class QueryResultRow(object):
     """
-    An object that represents a single row of the query result.  It contains the queryResultRowData object that holds the actual data
-    represented by the elements of the query result row, and a queryResultRowMetadata object that holds the metadata about the data contained in
+    Object that represents a single row of the query result.  It contains the queryResultRowData object that contains the actual data
+    represented by the elements of the query result row, and a queryResultRowMetadata object that contains the metadata about the data contained in
     the query result row.
     """
 
@@ -51,10 +51,9 @@ class QueryResultRow(object):
         The value is the actual value of that attribute or aggregate function of the corresponding single row of the query result set.
         If an alias name is specified for an attribute or an aggregate function, then the key will be the alias name specified in the show
         clause.  If an alias name is not specified for the group by aggregate function in the show clause, then the corresponding key
-        will be the appropriate aggregate_function_name_column_name (Eg: count(traces) will be keyed as count_traces).  For more details
-        on the supported aggregate functions, look at the APM confluence doc on High Level Query Aggregation.  The datatype of the value
-        is presented in the queryResultRowTypeSummaries list in the queryResultMetadata structure, where the ith queryResultRowTypeSummary object
-        represents the datatype of the ith value when this map is iterated in order.
+        will be the appropriate aggregate_function_name_column_name (For example: count(traces) will be keyed as count_traces).  The datatype of the value
+        is presented in the queryResultRowTypeSummaries list in the queryResultMetadata structure, where the i-th queryResultRowTypeSummary object
+        represents the datatype of the i-th value when this map is iterated in order.
 
 
         :return: The query_result_row_data of this QueryResultRow.
@@ -71,10 +70,9 @@ class QueryResultRow(object):
         The value is the actual value of that attribute or aggregate function of the corresponding single row of the query result set.
         If an alias name is specified for an attribute or an aggregate function, then the key will be the alias name specified in the show
         clause.  If an alias name is not specified for the group by aggregate function in the show clause, then the corresponding key
-        will be the appropriate aggregate_function_name_column_name (Eg: count(traces) will be keyed as count_traces).  For more details
-        on the supported aggregate functions, look at the APM confluence doc on High Level Query Aggregation.  The datatype of the value
-        is presented in the queryResultRowTypeSummaries list in the queryResultMetadata structure, where the ith queryResultRowTypeSummary object
-        represents the datatype of the ith value when this map is iterated in order.
+        will be the appropriate aggregate_function_name_column_name (For example: count(traces) will be keyed as count_traces).  The datatype of the value
+        is presented in the queryResultRowTypeSummaries list in the queryResultMetadata structure, where the i-th queryResultRowTypeSummary object
+        represents the datatype of the i-th value when this map is iterated in order.
 
 
         :param query_result_row_data: The query_result_row_data of this QueryResultRow.
@@ -87,7 +85,7 @@ class QueryResultRow(object):
         """
         **[Required]** Gets the query_result_row_metadata of this QueryResultRow.
         A map containing metadata or add-on data for the data presented in the queryResultRowData map.  Data required to present drill down
-        information from the queryResultRowData is presented as key value pairs.
+        information from the queryResultRowData is presented as key-value pairs.
 
 
         :return: The query_result_row_metadata of this QueryResultRow.
@@ -100,7 +98,7 @@ class QueryResultRow(object):
         """
         Sets the query_result_row_metadata of this QueryResultRow.
         A map containing metadata or add-on data for the data presented in the queryResultRowData map.  Data required to present drill down
-        information from the queryResultRowData is presented as key value pairs.
+        information from the queryResultRowData is presented as key-value pairs.
 
 
         :param query_result_row_metadata: The query_result_row_metadata of this QueryResultRow.

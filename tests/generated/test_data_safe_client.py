@@ -75,6 +75,373 @@ def test_activate_target_database(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_add_masking_columns_from_sdm(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'AddMaskingColumnsFromSdm'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'AddMaskingColumnsFromSdm')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='AddMaskingColumnsFromSdm')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.add_masking_columns_from_sdm(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'AddMaskingColumnsFromSdm',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'add_masking_columns_from_sdm',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_apply_discovery_job_results(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ApplyDiscoveryJobResults'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ApplyDiscoveryJobResults')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ApplyDiscoveryJobResults')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.apply_discovery_job_results(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                apply_discovery_job_results_details=request.pop(util.camelize('ApplyDiscoveryJobResultsDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ApplyDiscoveryJobResults',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'apply_discovery_job_results',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_calculate_audit_volume_available(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CalculateAuditVolumeAvailable'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CalculateAuditVolumeAvailable')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CalculateAuditVolumeAvailable')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.calculate_audit_volume_available(
+                audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                calculate_audit_volume_available_details=request.pop(util.camelize('CalculateAuditVolumeAvailableDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CalculateAuditVolumeAvailable',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'calculate_audit_volume_available',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_calculate_audit_volume_collected(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CalculateAuditVolumeCollected'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CalculateAuditVolumeCollected')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CalculateAuditVolumeCollected')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.calculate_audit_volume_collected(
+                audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                calculate_audit_volume_collected_details=request.pop(util.camelize('CalculateAuditVolumeCollectedDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CalculateAuditVolumeCollected',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'calculate_audit_volume_collected',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_cancel_work_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CancelWorkRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CancelWorkRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CancelWorkRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.cancel_work_request(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CancelWorkRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cancel_work_request',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_alert_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeAlertCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeAlertCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeAlertCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_alert_compartment(
+                alert_id=request.pop(util.camelize('alertId')),
+                change_alert_compartment_details=request.pop(util.camelize('ChangeAlertCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeAlertCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_alert_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_audit_archive_retrieval_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeAuditArchiveRetrievalCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeAuditArchiveRetrievalCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeAuditArchiveRetrievalCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_audit_archive_retrieval_compartment(
+                audit_archive_retrieval_id=request.pop(util.camelize('auditArchiveRetrievalId')),
+                change_audit_archive_retrieval_compartment_details=request.pop(util.camelize('ChangeAuditArchiveRetrievalCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeAuditArchiveRetrievalCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_audit_archive_retrieval_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_audit_policy_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeAuditPolicyCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeAuditPolicyCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeAuditPolicyCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_audit_policy_compartment(
+                audit_policy_id=request.pop(util.camelize('auditPolicyId')),
+                change_audit_policy_compartment_details=request.pop(util.camelize('ChangeAuditPolicyCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeAuditPolicyCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_audit_policy_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_audit_profile_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeAuditProfileCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeAuditProfileCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeAuditProfileCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_audit_profile_compartment(
+                audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                change_audit_profile_compartment_details=request.pop(util.camelize('ChangeAuditProfileCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeAuditProfileCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_audit_profile_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_change_data_safe_private_endpoint_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'ChangeDataSafePrivateEndpointCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -110,6 +477,129 @@ def test_change_data_safe_private_endpoint_compartment(testing_service_client):
             result,
             service_error,
             'change_data_safe_private_endpoint_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_discovery_job_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeDiscoveryJobCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeDiscoveryJobCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeDiscoveryJobCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_discovery_job_compartment(
+                discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                change_discovery_job_compartment_details=request.pop(util.camelize('ChangeDiscoveryJobCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeDiscoveryJobCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_discovery_job_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_library_masking_format_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeLibraryMaskingFormatCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeLibraryMaskingFormatCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeLibraryMaskingFormatCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_library_masking_format_compartment(
+                library_masking_format_id=request.pop(util.camelize('libraryMaskingFormatId')),
+                change_library_masking_format_compartment_details=request.pop(util.camelize('ChangeLibraryMaskingFormatCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeLibraryMaskingFormatCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_library_masking_format_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_masking_policy_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeMaskingPolicyCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeMaskingPolicyCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeMaskingPolicyCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_masking_policy_compartment(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                change_masking_policy_compartment_details=request.pop(util.camelize('ChangeMaskingPolicyCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeMaskingPolicyCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_masking_policy_compartment',
             False,
             False
         )
@@ -157,6 +647,129 @@ def test_change_on_prem_connector_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_report_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeReportCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeReportCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeReportCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_report_compartment(
+                report_id=request.pop(util.camelize('reportId')),
+                change_report_compartment_details=request.pop(util.camelize('ChangeReportCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeReportCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_report_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_report_definition_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeReportDefinitionCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeReportDefinitionCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeReportDefinitionCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_report_definition_compartment(
+                report_definition_id=request.pop(util.camelize('reportDefinitionId')),
+                change_report_definition_compartment_details=request.pop(util.camelize('ChangeReportDefinitionCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeReportDefinitionCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_report_definition_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_retention(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeRetention'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeRetention')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeRetention')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_retention(
+                audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                change_retention_details=request.pop(util.camelize('ChangeRetentionDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeRetention',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_retention',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_change_security_assessment_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'ChangeSecurityAssessmentCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -192,6 +805,129 @@ def test_change_security_assessment_compartment(testing_service_client):
             result,
             service_error,
             'change_security_assessment_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_sensitive_data_model_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeSensitiveDataModelCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeSensitiveDataModelCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeSensitiveDataModelCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_sensitive_data_model_compartment(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                change_sensitive_data_model_compartment_details=request.pop(util.camelize('ChangeSensitiveDataModelCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeSensitiveDataModelCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_sensitive_data_model_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_sensitive_type_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeSensitiveTypeCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeSensitiveTypeCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeSensitiveTypeCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_sensitive_type_compartment(
+                sensitive_type_id=request.pop(util.camelize('sensitiveTypeId')),
+                change_sensitive_type_compartment_details=request.pop(util.camelize('ChangeSensitiveTypeCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeSensitiveTypeCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_sensitive_type_compartment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_change_target_alert_policy_association_compartment(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ChangeTargetAlertPolicyAssociationCompartment'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ChangeTargetAlertPolicyAssociationCompartment')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ChangeTargetAlertPolicyAssociationCompartment')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.change_target_alert_policy_association_compartment(
+                target_alert_policy_association_id=request.pop(util.camelize('targetAlertPolicyAssociationId')),
+                change_target_alert_policy_association_compartment_details=request.pop(util.camelize('ChangeTargetAlertPolicyAssociationCompartmentDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ChangeTargetAlertPolicyAssociationCompartment',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'change_target_alert_policy_association_compartment',
             False,
             False
         )
@@ -362,6 +1098,46 @@ def test_compare_user_assessment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_create_audit_archive_retrieval(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CreateAuditArchiveRetrieval'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CreateAuditArchiveRetrieval')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CreateAuditArchiveRetrieval')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.create_audit_archive_retrieval(
+                create_audit_archive_retrieval_details=request.pop(util.camelize('CreateAuditArchiveRetrievalDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CreateAuditArchiveRetrieval',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditArchiveRetrieval',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_create_data_safe_private_endpoint(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'CreateDataSafePrivateEndpoint'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -396,6 +1172,167 @@ def test_create_data_safe_private_endpoint(testing_service_client):
             result,
             service_error,
             'dataSafePrivateEndpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_create_discovery_job(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CreateDiscoveryJob'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CreateDiscoveryJob')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CreateDiscoveryJob')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.create_discovery_job(
+                create_discovery_job_details=request.pop(util.camelize('CreateDiscoveryJobDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CreateDiscoveryJob',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'discoveryJob',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_create_library_masking_format(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CreateLibraryMaskingFormat'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CreateLibraryMaskingFormat')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CreateLibraryMaskingFormat')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.create_library_masking_format(
+                create_library_masking_format_details=request.pop(util.camelize('CreateLibraryMaskingFormatDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CreateLibraryMaskingFormat',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'libraryMaskingFormat',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_create_masking_column(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CreateMaskingColumn'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CreateMaskingColumn')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CreateMaskingColumn')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.create_masking_column(
+                create_masking_column_details=request.pop(util.camelize('CreateMaskingColumnDetails')),
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CreateMaskingColumn',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_masking_column',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_create_masking_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CreateMaskingPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CreateMaskingPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CreateMaskingPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.create_masking_policy(
+                create_masking_policy_details=request.pop(util.camelize('CreateMaskingPolicyDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CreateMaskingPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maskingPolicy',
             False,
             False
         )
@@ -442,6 +1379,46 @@ def test_create_on_prem_connector(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_create_report_definition(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CreateReportDefinition'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CreateReportDefinition')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CreateReportDefinition')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.create_report_definition(
+                create_report_definition_details=request.pop(util.camelize('CreateReportDefinitionDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CreateReportDefinition',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'reportDefinition',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_create_security_assessment(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'CreateSecurityAssessment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -476,6 +1453,167 @@ def test_create_security_assessment(testing_service_client):
             result,
             service_error,
             'securityAssessment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_create_sensitive_column(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CreateSensitiveColumn'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CreateSensitiveColumn')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CreateSensitiveColumn')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.create_sensitive_column(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                create_sensitive_column_details=request.pop(util.camelize('CreateSensitiveColumnDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CreateSensitiveColumn',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'create_sensitive_column',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_create_sensitive_data_model(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CreateSensitiveDataModel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CreateSensitiveDataModel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CreateSensitiveDataModel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.create_sensitive_data_model(
+                create_sensitive_data_model_details=request.pop(util.camelize('CreateSensitiveDataModelDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CreateSensitiveDataModel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sensitiveDataModel',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_create_sensitive_type(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CreateSensitiveType'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CreateSensitiveType')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CreateSensitiveType')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.create_sensitive_type(
+                create_sensitive_type_details=request.pop(util.camelize('CreateSensitiveTypeDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CreateSensitiveType',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sensitiveType',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_create_target_alert_policy_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'CreateTargetAlertPolicyAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'CreateTargetAlertPolicyAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='CreateTargetAlertPolicyAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.create_target_alert_policy_association(
+                create_target_alert_policy_association_details=request.pop(util.camelize('CreateTargetAlertPolicyAssociationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'CreateTargetAlertPolicyAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'targetAlertPolicyAssociation',
             False,
             False
         )
@@ -602,6 +1740,86 @@ def test_deactivate_target_database(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_audit_archive_retrieval(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteAuditArchiveRetrieval'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteAuditArchiveRetrieval')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteAuditArchiveRetrieval')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_audit_archive_retrieval(
+                audit_archive_retrieval_id=request.pop(util.camelize('auditArchiveRetrievalId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteAuditArchiveRetrieval',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_audit_archive_retrieval',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_audit_trail(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteAuditTrail'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteAuditTrail')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteAuditTrail')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_audit_trail(
+                audit_trail_id=request.pop(util.camelize('auditTrailId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteAuditTrail',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_audit_trail',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_delete_data_safe_private_endpoint(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'DeleteDataSafePrivateEndpoint'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -636,6 +1854,208 @@ def test_delete_data_safe_private_endpoint(testing_service_client):
             result,
             service_error,
             'delete_data_safe_private_endpoint',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_discovery_job(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteDiscoveryJob'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteDiscoveryJob')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteDiscoveryJob')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_discovery_job(
+                discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteDiscoveryJob',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_discovery_job',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_discovery_job_result(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteDiscoveryJobResult'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteDiscoveryJobResult')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteDiscoveryJobResult')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_discovery_job_result(
+                discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                result_key=request.pop(util.camelize('resultKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteDiscoveryJobResult',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_discovery_job_result',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_library_masking_format(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteLibraryMaskingFormat'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteLibraryMaskingFormat')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteLibraryMaskingFormat')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_library_masking_format(
+                library_masking_format_id=request.pop(util.camelize('libraryMaskingFormatId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteLibraryMaskingFormat',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_library_masking_format',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_masking_column(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteMaskingColumn'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteMaskingColumn')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteMaskingColumn')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_masking_column(
+                masking_column_key=request.pop(util.camelize('maskingColumnKey')),
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteMaskingColumn',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_masking_column',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_masking_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteMaskingPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteMaskingPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteMaskingPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_masking_policy(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteMaskingPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_masking_policy',
             True,
             False
         )
@@ -682,6 +2102,46 @@ def test_delete_on_prem_connector(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_report_definition(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteReportDefinition'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteReportDefinition')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteReportDefinition')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_report_definition(
+                report_definition_id=request.pop(util.camelize('reportDefinitionId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteReportDefinition',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_report_definition',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_delete_security_assessment(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'DeleteSecurityAssessment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -716,6 +2176,167 @@ def test_delete_security_assessment(testing_service_client):
             result,
             service_error,
             'delete_security_assessment',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_sensitive_column(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteSensitiveColumn'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteSensitiveColumn')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteSensitiveColumn')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_sensitive_column(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                sensitive_column_key=request.pop(util.camelize('sensitiveColumnKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteSensitiveColumn',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_sensitive_column',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_sensitive_data_model(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteSensitiveDataModel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteSensitiveDataModel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteSensitiveDataModel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_sensitive_data_model(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteSensitiveDataModel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_sensitive_data_model',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_sensitive_type(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteSensitiveType'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteSensitiveType')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteSensitiveType')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_sensitive_type(
+                sensitive_type_id=request.pop(util.camelize('sensitiveTypeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteSensitiveType',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_sensitive_type',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_delete_target_alert_policy_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DeleteTargetAlertPolicyAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DeleteTargetAlertPolicyAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DeleteTargetAlertPolicyAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.delete_target_alert_policy_association(
+                target_alert_policy_association_id=request.pop(util.camelize('targetAlertPolicyAssociationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DeleteTargetAlertPolicyAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_target_alert_policy_association',
             True,
             False
         )
@@ -802,6 +2423,210 @@ def test_delete_user_assessment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_discover_audit_trails(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DiscoverAuditTrails'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DiscoverAuditTrails')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DiscoverAuditTrails')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.discover_audit_trails(
+                audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DiscoverAuditTrails',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'discover_audit_trails',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_download_discovery_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DownloadDiscoveryReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DownloadDiscoveryReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DownloadDiscoveryReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.download_discovery_report(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                download_discovery_report_details=request.pop(util.camelize('DownloadDiscoveryReportDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DownloadDiscoveryReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_download_masking_log(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DownloadMaskingLog'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DownloadMaskingLog')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DownloadMaskingLog')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.download_masking_log(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                download_masking_log_details=request.pop(util.camelize('DownloadMaskingLogDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DownloadMaskingLog',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_download_masking_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DownloadMaskingPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DownloadMaskingPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DownloadMaskingPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.download_masking_policy(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                download_masking_policy_details=request.pop(util.camelize('DownloadMaskingPolicyDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DownloadMaskingPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_download_masking_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DownloadMaskingReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DownloadMaskingReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DownloadMaskingReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.download_masking_report(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                download_masking_report_details=request.pop(util.camelize('DownloadMaskingReportDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DownloadMaskingReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_download_privilege_script(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'DownloadPrivilegeScript'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -871,6 +2696,47 @@ def test_download_security_assessment_report(testing_service_client):
         testing_service_client.validate_result(
             'data_safe',
             'DownloadSecurityAssessmentReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_download_sensitive_data_model(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'DownloadSensitiveDataModel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'DownloadSensitiveDataModel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='DownloadSensitiveDataModel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.download_sensitive_data_model(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                download_sensitive_data_model_details=request.pop(util.camelize('DownloadSensitiveDataModelDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'DownloadSensitiveDataModel',
             request_containers[i]['containerId'],
             request_containers[i]['request'],
             result,
@@ -963,6 +2829,129 @@ def test_enable_data_safe_configuration(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_generate_discovery_report_for_download(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GenerateDiscoveryReportForDownload'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GenerateDiscoveryReportForDownload')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GenerateDiscoveryReportForDownload')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.generate_discovery_report_for_download(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                generate_discovery_report_for_download_details=request.pop(util.camelize('GenerateDiscoveryReportForDownloadDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GenerateDiscoveryReportForDownload',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'generate_discovery_report_for_download',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_generate_masking_policy_for_download(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GenerateMaskingPolicyForDownload'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GenerateMaskingPolicyForDownload')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GenerateMaskingPolicyForDownload')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.generate_masking_policy_for_download(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                generate_masking_policy_for_download_details=request.pop(util.camelize('GenerateMaskingPolicyForDownloadDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GenerateMaskingPolicyForDownload',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'generate_masking_policy_for_download',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_generate_masking_report_for_download(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GenerateMaskingReportForDownload'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GenerateMaskingReportForDownload')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GenerateMaskingReportForDownload')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.generate_masking_report_for_download(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                generate_masking_report_for_download_details=request.pop(util.camelize('GenerateMaskingReportForDownloadDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GenerateMaskingReportForDownload',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'generate_masking_report_for_download',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_generate_on_prem_connector_configuration(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'GenerateOnPremConnectorConfiguration'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -998,6 +2987,47 @@ def test_generate_on_prem_connector_configuration(testing_service_client):
             result,
             service_error,
             'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_generate_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GenerateReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GenerateReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GenerateReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.generate_report(
+                report_definition_id=request.pop(util.camelize('reportDefinitionId')),
+                generate_report_details=request.pop(util.camelize('GenerateReportDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GenerateReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'generate_report',
             False,
             False
         )
@@ -1045,6 +3075,47 @@ def test_generate_security_assessment_report(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_generate_sensitive_data_model_for_download(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GenerateSensitiveDataModelForDownload'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GenerateSensitiveDataModelForDownload')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GenerateSensitiveDataModelForDownload')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.generate_sensitive_data_model_for_download(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                generate_sensitive_data_model_for_download_details=request.pop(util.camelize('GenerateSensitiveDataModelForDownloadDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GenerateSensitiveDataModelForDownload',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'generate_sensitive_data_model_for_download',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_generate_user_assessment_report(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'GenerateUserAssessmentReport'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1082,6 +3153,363 @@ def test_generate_user_assessment_report(testing_service_client):
             'generate_user_assessment_report',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_alert(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetAlert'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetAlert')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetAlert')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_alert(
+                alert_id=request.pop(util.camelize('alertId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetAlert',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'alert',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_alert_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetAlertPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetAlertPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetAlertPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_alert_policy(
+                alert_policy_id=request.pop(util.camelize('alertPolicyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetAlertPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'alertPolicy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_audit_archive_retrieval(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetAuditArchiveRetrieval'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetAuditArchiveRetrieval')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetAuditArchiveRetrieval')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_audit_archive_retrieval(
+                audit_archive_retrieval_id=request.pop(util.camelize('auditArchiveRetrievalId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetAuditArchiveRetrieval',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditArchiveRetrieval',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_audit_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetAuditPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetAuditPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetAuditPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_audit_policy(
+                audit_policy_id=request.pop(util.camelize('auditPolicyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetAuditPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditPolicy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_audit_profile(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetAuditProfile'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetAuditProfile')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetAuditProfile')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_audit_profile(
+                audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetAuditProfile',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditProfile',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_audit_trail(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetAuditTrail'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetAuditTrail')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetAuditTrail')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_audit_trail(
+                audit_trail_id=request.pop(util.camelize('auditTrailId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetAuditTrail',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditTrail',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_compatible_formats_for_data_types(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetCompatibleFormatsForDataTypes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetCompatibleFormatsForDataTypes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetCompatibleFormatsForDataTypes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_compatible_formats_for_data_types(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.get_compatible_formats_for_data_types(
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.get_compatible_formats_for_data_types(
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetCompatibleFormatsForDataTypes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'compatibleFormatsForDataTypes',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_compatible_formats_for_sensitive_types(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetCompatibleFormatsForSensitiveTypes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetCompatibleFormatsForSensitiveTypes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetCompatibleFormatsForSensitiveTypes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_compatible_formats_for_sensitive_types(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.get_compatible_formats_for_sensitive_types(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.get_compatible_formats_for_sensitive_types(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetCompatibleFormatsForSensitiveTypes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'compatibleFormatsForSensitiveTypes',
+            False,
+            True
         )
 
 
@@ -1165,6 +3593,248 @@ def test_get_data_safe_private_endpoint(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_discovery_job(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetDiscoveryJob'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetDiscoveryJob')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetDiscoveryJob')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_discovery_job(
+                discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetDiscoveryJob',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'discoveryJob',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_discovery_job_result(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetDiscoveryJobResult'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetDiscoveryJobResult')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetDiscoveryJobResult')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_discovery_job_result(
+                discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                result_key=request.pop(util.camelize('resultKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetDiscoveryJobResult',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'discoveryJobResult',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_library_masking_format(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetLibraryMaskingFormat'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetLibraryMaskingFormat')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetLibraryMaskingFormat')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_library_masking_format(
+                library_masking_format_id=request.pop(util.camelize('libraryMaskingFormatId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetLibraryMaskingFormat',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'libraryMaskingFormat',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_masking_column(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetMaskingColumn'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetMaskingColumn')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetMaskingColumn')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_masking_column(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                masking_column_key=request.pop(util.camelize('maskingColumnKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetMaskingColumn',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maskingColumn',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_masking_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetMaskingPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetMaskingPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetMaskingPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_masking_policy(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetMaskingPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maskingPolicy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_masking_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetMaskingReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetMaskingReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetMaskingReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_masking_report(
+                masking_report_id=request.pop(util.camelize('maskingReportId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetMaskingReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maskingReport',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_get_on_prem_connector(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'GetOnPremConnector'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1199,6 +3869,126 @@ def test_get_on_prem_connector(testing_service_client):
             result,
             service_error,
             'onPremConnector',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_report(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetReport'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetReport')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetReport')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_report(
+                report_id=request.pop(util.camelize('reportId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetReport',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'report',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_report_content(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetReportContent'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetReportContent')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetReportContent')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_report_content(
+                report_id=request.pop(util.camelize('reportId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetReportContent',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stream',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_report_definition(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetReportDefinition'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetReportDefinition')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetReportDefinition')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_report_definition(
+                report_definition_id=request.pop(util.camelize('reportDefinitionId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetReportDefinition',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'reportDefinition',
             False,
             False
         )
@@ -1280,6 +4070,167 @@ def test_get_security_assessment_comparison(testing_service_client):
             result,
             service_error,
             'securityAssessmentComparison',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_sensitive_column(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetSensitiveColumn'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetSensitiveColumn')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetSensitiveColumn')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_sensitive_column(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                sensitive_column_key=request.pop(util.camelize('sensitiveColumnKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetSensitiveColumn',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sensitiveColumn',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_sensitive_data_model(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetSensitiveDataModel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetSensitiveDataModel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetSensitiveDataModel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_sensitive_data_model(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetSensitiveDataModel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sensitiveDataModel',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_sensitive_type(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetSensitiveType'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetSensitiveType')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetSensitiveType')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_sensitive_type(
+                sensitive_type_id=request.pop(util.camelize('sensitiveTypeId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetSensitiveType',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sensitiveType',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_get_target_alert_policy_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'GetTargetAlertPolicyAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'GetTargetAlertPolicyAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='GetTargetAlertPolicyAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.get_target_alert_policy_association(
+                target_alert_policy_association_id=request.pop(util.camelize('targetAlertPolicyAssociationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'GetTargetAlertPolicyAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'targetAlertPolicyAssociation',
             False,
             False
         )
@@ -1447,6 +4398,912 @@ def test_get_work_request(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_alert_analytics(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAlertAnalytics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAlertAnalytics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAlertAnalytics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_alert_analytics(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_alert_analytics(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_alert_analytics(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAlertAnalytics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'alertAnalyticsCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_alert_policies(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAlertPolicies'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAlertPolicies')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAlertPolicies')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_alert_policies(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_alert_policies(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_alert_policies(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAlertPolicies',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'alertPolicyCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_alert_policy_rules(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAlertPolicyRules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAlertPolicyRules')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAlertPolicyRules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_alert_policy_rules(
+                alert_policy_id=request.pop(util.camelize('alertPolicyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_alert_policy_rules(
+                    alert_policy_id=request.pop(util.camelize('alertPolicyId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_alert_policy_rules(
+                        alert_policy_id=request.pop(util.camelize('alertPolicyId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAlertPolicyRules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'alertPolicyRuleCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_alerts(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAlerts'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAlerts')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAlerts')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_alerts(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_alerts(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_alerts(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAlerts',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'alertCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_audit_archive_retrievals(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAuditArchiveRetrievals'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAuditArchiveRetrievals')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAuditArchiveRetrievals')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_audit_archive_retrievals(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_audit_archive_retrievals(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_audit_archive_retrievals(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAuditArchiveRetrievals',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditArchiveRetrievalCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_audit_event_analytics(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAuditEventAnalytics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAuditEventAnalytics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAuditEventAnalytics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_audit_event_analytics(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_audit_event_analytics(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_audit_event_analytics(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAuditEventAnalytics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditEventAnalyticsCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_audit_events(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAuditEvents'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAuditEvents')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAuditEvents')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_audit_events(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_audit_events(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_audit_events(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAuditEvents',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditEventCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_audit_policies(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAuditPolicies'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAuditPolicies')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAuditPolicies')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_audit_policies(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_audit_policies(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_audit_policies(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAuditPolicies',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditPolicyCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_audit_profile_analytics(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAuditProfileAnalytics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAuditProfileAnalytics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAuditProfileAnalytics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_audit_profile_analytics(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_audit_profile_analytics(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_audit_profile_analytics(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAuditProfileAnalytics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditProfileAnalyticCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_audit_profiles(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAuditProfiles'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAuditProfiles')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAuditProfiles')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_audit_profiles(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_audit_profiles(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_audit_profiles(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAuditProfiles',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditProfileCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_audit_trail_analytics(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAuditTrailAnalytics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAuditTrailAnalytics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAuditTrailAnalytics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_audit_trail_analytics(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_audit_trail_analytics(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_audit_trail_analytics(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAuditTrailAnalytics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditTrailAnalyticCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_audit_trails(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAuditTrails'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAuditTrails')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAuditTrails')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_audit_trails(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_audit_trails(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_audit_trails(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAuditTrails',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'auditTrailCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_available_audit_volumes(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListAvailableAuditVolumes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListAvailableAuditVolumes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListAvailableAuditVolumes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_available_audit_volumes(
+                audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_available_audit_volumes(
+                    audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                    work_request_id=request.pop(util.camelize('workRequestId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_available_audit_volumes(
+                        audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                        work_request_id=request.pop(util.camelize('workRequestId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListAvailableAuditVolumes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'availableAuditVolumeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_collected_audit_volumes(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListCollectedAuditVolumes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListCollectedAuditVolumes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListCollectedAuditVolumes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_collected_audit_volumes(
+                audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_collected_audit_volumes(
+                    audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                    work_request_id=request.pop(util.camelize('workRequestId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_collected_audit_volumes(
+                        audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                        work_request_id=request.pop(util.camelize('workRequestId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListCollectedAuditVolumes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'collectedAuditVolumeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_columns(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListColumns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListColumns')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListColumns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_columns(
+                target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_columns(
+                    target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_columns(
+                        target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListColumns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'columnSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_list_data_safe_private_endpoints(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'ListDataSafePrivateEndpoints'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1501,6 +5358,186 @@ def test_list_data_safe_private_endpoints(testing_service_client):
             result,
             service_error,
             'dataSafePrivateEndpointSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_discovery_analytics(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListDiscoveryAnalytics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListDiscoveryAnalytics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListDiscoveryAnalytics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_discovery_analytics(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_discovery_analytics(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_discovery_analytics(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListDiscoveryAnalytics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'discoveryAnalyticsCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_discovery_job_results(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListDiscoveryJobResults'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListDiscoveryJobResults')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListDiscoveryJobResults')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_discovery_job_results(
+                discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_discovery_job_results(
+                    discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_discovery_job_results(
+                        discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListDiscoveryJobResults',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'discoveryJobResultCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_discovery_jobs(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListDiscoveryJobs'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListDiscoveryJobs')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListDiscoveryJobs')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_discovery_jobs(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_discovery_jobs(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_discovery_jobs(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListDiscoveryJobs',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'discoveryJobCollection',
             False,
             True
         )
@@ -1630,6 +5667,366 @@ def test_list_grants(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_library_masking_formats(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListLibraryMaskingFormats'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListLibraryMaskingFormats')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListLibraryMaskingFormats')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_library_masking_formats(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_library_masking_formats(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_library_masking_formats(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListLibraryMaskingFormats',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'libraryMaskingFormatCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_masked_columns(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListMaskedColumns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListMaskedColumns')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListMaskedColumns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_masked_columns(
+                masking_report_id=request.pop(util.camelize('maskingReportId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_masked_columns(
+                    masking_report_id=request.pop(util.camelize('maskingReportId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_masked_columns(
+                        masking_report_id=request.pop(util.camelize('maskingReportId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListMaskedColumns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maskedColumnCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_masking_analytics(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListMaskingAnalytics'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListMaskingAnalytics')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListMaskingAnalytics')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_masking_analytics(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_masking_analytics(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_masking_analytics(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListMaskingAnalytics',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maskingAnalyticsCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_masking_columns(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListMaskingColumns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListMaskingColumns')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListMaskingColumns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_masking_columns(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_masking_columns(
+                    masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_masking_columns(
+                        masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListMaskingColumns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maskingColumnCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_masking_policies(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListMaskingPolicies'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListMaskingPolicies')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListMaskingPolicies')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_masking_policies(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_masking_policies(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_masking_policies(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListMaskingPolicies',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maskingPolicyCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_masking_reports(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListMaskingReports'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListMaskingReports')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListMaskingReports')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_masking_reports(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_masking_reports(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_masking_reports(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListMaskingReports',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'maskingReportCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_list_on_prem_connectors(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'ListOnPremConnectors'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1690,6 +6087,246 @@ def test_list_on_prem_connectors(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_report_definitions(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListReportDefinitions'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListReportDefinitions')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListReportDefinitions')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_report_definitions(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_report_definitions(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_report_definitions(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListReportDefinitions',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'reportDefinitionCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_reports(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListReports'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListReports')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListReports')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_reports(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_reports(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_reports(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListReports',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'reportCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_roles(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListRoles'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListRoles')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListRoles')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_roles(
+                target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_roles(
+                    target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_roles(
+                        target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListRoles',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'roleSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_schemas(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListSchemas'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListSchemas')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListSchemas')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_schemas(
+                target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_schemas(
+                    target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_schemas(
+                        target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListSchemas',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'schemaSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_list_security_assessments(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'ListSecurityAssessments'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1744,6 +6381,306 @@ def test_list_security_assessments(testing_service_client):
             result,
             service_error,
             'securityAssessmentSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_sensitive_columns(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListSensitiveColumns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListSensitiveColumns')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListSensitiveColumns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_sensitive_columns(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_sensitive_columns(
+                    sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_sensitive_columns(
+                        sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListSensitiveColumns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sensitiveColumnCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_sensitive_data_models(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListSensitiveDataModels'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListSensitiveDataModels')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListSensitiveDataModels')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_sensitive_data_models(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_sensitive_data_models(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_sensitive_data_models(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListSensitiveDataModels',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sensitiveDataModelCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_sensitive_types(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListSensitiveTypes'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListSensitiveTypes')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListSensitiveTypes')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_sensitive_types(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_sensitive_types(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_sensitive_types(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListSensitiveTypes',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'sensitiveTypeCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_tables(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListTables'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListTables')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListTables')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_tables(
+                target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_tables(
+                    target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_tables(
+                        target_database_id=request.pop(util.camelize('targetDatabaseId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListTables',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'tableSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_list_target_alert_policy_associations(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ListTargetAlertPolicyAssociations'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ListTargetAlertPolicyAssociations')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ListTargetAlertPolicyAssociations')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.list_target_alert_policy_associations(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_target_alert_policy_associations(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_target_alert_policy_associations(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ListTargetAlertPolicyAssociations',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'targetAlertPolicyAssociationCollection',
             False,
             True
         )
@@ -2170,6 +7107,292 @@ def test_list_work_requests(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_mask_data(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'MaskData'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'MaskData')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='MaskData')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.mask_data(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                mask_data_details=request.pop(util.camelize('MaskDataDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'MaskData',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'mask_data',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_modify_global_settings(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ModifyGlobalSettings'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ModifyGlobalSettings')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ModifyGlobalSettings')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.modify_global_settings(
+                modify_global_settings_details=request.pop(util.camelize('ModifyGlobalSettingsDetails')),
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ModifyGlobalSettings',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'modify_global_settings',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_patch_alerts(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'PatchAlerts'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'PatchAlerts')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='PatchAlerts')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.patch_alerts(
+                patch_alerts_details=request.pop(util.camelize('PatchAlertsDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'PatchAlerts',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'patch_alerts',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_patch_discovery_job_results(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'PatchDiscoveryJobResults'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'PatchDiscoveryJobResults')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='PatchDiscoveryJobResults')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.patch_discovery_job_results(
+                discovery_job_id=request.pop(util.camelize('discoveryJobId')),
+                patch_discovery_job_result_details=request.pop(util.camelize('PatchDiscoveryJobResultDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'PatchDiscoveryJobResults',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'patch_discovery_job_results',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_patch_masking_columns(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'PatchMaskingColumns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'PatchMaskingColumns')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='PatchMaskingColumns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.patch_masking_columns(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                patch_masking_columns_details=request.pop(util.camelize('PatchMaskingColumnsDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'PatchMaskingColumns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'patch_masking_columns',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_patch_sensitive_columns(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'PatchSensitiveColumns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'PatchSensitiveColumns')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='PatchSensitiveColumns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.patch_sensitive_columns(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                patch_sensitive_column_details=request.pop(util.camelize('PatchSensitiveColumnDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'PatchSensitiveColumns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'patch_sensitive_columns',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_provision_audit_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ProvisionAuditPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ProvisionAuditPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ProvisionAuditPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.provision_audit_policy(
+                provision_audit_policy_details=request.pop(util.camelize('ProvisionAuditPolicyDetails')),
+                audit_policy_id=request.pop(util.camelize('auditPolicyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ProvisionAuditPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'provision_audit_policy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_refresh_security_assessment(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'RefreshSecurityAssessment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2246,6 +7469,126 @@ def test_refresh_user_assessment(testing_service_client):
             result,
             service_error,
             'refresh_user_assessment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_resume_audit_trail(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ResumeAuditTrail'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ResumeAuditTrail')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ResumeAuditTrail')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.resume_audit_trail(
+                audit_trail_id=request.pop(util.camelize('auditTrailId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ResumeAuditTrail',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resume_audit_trail',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_resume_work_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'ResumeWorkRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'ResumeWorkRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='ResumeWorkRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.resume_work_request(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'ResumeWorkRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'resume_work_request',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_retrieve_audit_policies(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'RetrieveAuditPolicies'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'RetrieveAuditPolicies')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='RetrieveAuditPolicies')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.retrieve_audit_policies(
+                audit_policy_id=request.pop(util.camelize('auditPolicyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'RetrieveAuditPolicies',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'retrieve_audit_policies',
             False,
             False
         )
@@ -2332,6 +7675,127 @@ def test_set_user_assessment_baseline(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_start_audit_trail(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'StartAuditTrail'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'StartAuditTrail')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='StartAuditTrail')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.start_audit_trail(
+                start_audit_trail_details=request.pop(util.camelize('StartAuditTrailDetails')),
+                audit_trail_id=request.pop(util.camelize('auditTrailId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'StartAuditTrail',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'start_audit_trail',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_stop_audit_trail(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'StopAuditTrail'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'StopAuditTrail')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='StopAuditTrail')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.stop_audit_trail(
+                audit_trail_id=request.pop(util.camelize('auditTrailId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'StopAuditTrail',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'stop_audit_trail',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_suspend_work_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'SuspendWorkRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'SuspendWorkRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='SuspendWorkRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.suspend_work_request(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'SuspendWorkRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'suspend_work_request',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_unset_security_assessment_baseline(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'UnsetSecurityAssessmentBaseline'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2412,6 +7876,211 @@ def test_unset_user_assessment_baseline(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_alert(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateAlert'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateAlert')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateAlert')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_alert(
+                alert_id=request.pop(util.camelize('alertId')),
+                update_alert_details=request.pop(util.camelize('UpdateAlertDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateAlert',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'alert',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_audit_archive_retrieval(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateAuditArchiveRetrieval'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateAuditArchiveRetrieval')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateAuditArchiveRetrieval')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_audit_archive_retrieval(
+                audit_archive_retrieval_id=request.pop(util.camelize('auditArchiveRetrievalId')),
+                update_audit_archive_retrieval_details=request.pop(util.camelize('UpdateAuditArchiveRetrievalDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateAuditArchiveRetrieval',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_audit_archive_retrieval',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_audit_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateAuditPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateAuditPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateAuditPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_audit_policy(
+                audit_policy_id=request.pop(util.camelize('auditPolicyId')),
+                update_audit_policy_details=request.pop(util.camelize('UpdateAuditPolicyDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateAuditPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_audit_policy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_audit_profile(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateAuditProfile'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateAuditProfile')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateAuditProfile')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_audit_profile(
+                audit_profile_id=request.pop(util.camelize('auditProfileId')),
+                update_audit_profile_details=request.pop(util.camelize('UpdateAuditProfileDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateAuditProfile',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_audit_profile',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_audit_trail(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateAuditTrail'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateAuditTrail')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateAuditTrail')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_audit_trail(
+                audit_trail_id=request.pop(util.camelize('auditTrailId')),
+                update_audit_trail_details=request.pop(util.camelize('UpdateAuditTrailDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateAuditTrail',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_audit_trail',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_update_data_safe_private_endpoint(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'UpdateDataSafePrivateEndpoint'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2447,6 +8116,130 @@ def test_update_data_safe_private_endpoint(testing_service_client):
             result,
             service_error,
             'update_data_safe_private_endpoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_library_masking_format(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateLibraryMaskingFormat'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateLibraryMaskingFormat')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateLibraryMaskingFormat')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_library_masking_format(
+                library_masking_format_id=request.pop(util.camelize('libraryMaskingFormatId')),
+                update_library_masking_format_details=request.pop(util.camelize('UpdateLibraryMaskingFormatDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateLibraryMaskingFormat',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_library_masking_format',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_masking_column(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateMaskingColumn'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateMaskingColumn')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateMaskingColumn')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_masking_column(
+                masking_column_key=request.pop(util.camelize('maskingColumnKey')),
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                update_masking_column_details=request.pop(util.camelize('UpdateMaskingColumnDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateMaskingColumn',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_masking_column',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_masking_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateMaskingPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateMaskingPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateMaskingPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_masking_policy(
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                update_masking_policy_details=request.pop(util.camelize('UpdateMaskingPolicyDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateMaskingPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_masking_policy',
             False,
             False
         )
@@ -2535,6 +8328,47 @@ def test_update_on_prem_connector_wallet(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_report_definition(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateReportDefinition'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateReportDefinition')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateReportDefinition')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_report_definition(
+                report_definition_id=request.pop(util.camelize('reportDefinitionId')),
+                update_report_definition_details=request.pop(util.camelize('UpdateReportDefinitionDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateReportDefinition',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_report_definition',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
 def test_update_security_assessment(testing_service_client):
     if not testing_service_client.is_api_enabled('data_safe', 'UpdateSecurityAssessment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2570,6 +8404,171 @@ def test_update_security_assessment(testing_service_client):
             result,
             service_error,
             'update_security_assessment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_sensitive_column(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateSensitiveColumn'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateSensitiveColumn')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateSensitiveColumn')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_sensitive_column(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                sensitive_column_key=request.pop(util.camelize('sensitiveColumnKey')),
+                update_sensitive_column_details=request.pop(util.camelize('UpdateSensitiveColumnDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateSensitiveColumn',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_sensitive_column',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_sensitive_data_model(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateSensitiveDataModel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateSensitiveDataModel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateSensitiveDataModel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_sensitive_data_model(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                update_sensitive_data_model_details=request.pop(util.camelize('UpdateSensitiveDataModelDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateSensitiveDataModel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_sensitive_data_model',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_sensitive_type(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateSensitiveType'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateSensitiveType')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateSensitiveType')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_sensitive_type(
+                sensitive_type_id=request.pop(util.camelize('sensitiveTypeId')),
+                update_sensitive_type_details=request.pop(util.camelize('UpdateSensitiveTypeDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateSensitiveType',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_sensitive_type',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_update_target_alert_policy_association(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UpdateTargetAlertPolicyAssociation'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UpdateTargetAlertPolicyAssociation')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UpdateTargetAlertPolicyAssociation')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.update_target_alert_policy_association(
+                target_alert_policy_association_id=request.pop(util.camelize('targetAlertPolicyAssociationId')),
+                update_target_alert_policy_association_details=request.pop(util.camelize('UpdateTargetAlertPolicyAssociationDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UpdateTargetAlertPolicyAssociation',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'update_target_alert_policy_association',
             False,
             False
         )
@@ -2652,6 +8651,88 @@ def test_update_user_assessment(testing_service_client):
             result,
             service_error,
             'update_user_assessment',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_upload_masking_policy(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UploadMaskingPolicy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UploadMaskingPolicy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UploadMaskingPolicy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.upload_masking_policy(
+                upload_masking_policy_details=request.pop(util.camelize('UploadMaskingPolicyDetails')),
+                masking_policy_id=request.pop(util.camelize('maskingPolicyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UploadMaskingPolicy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'upload_masking_policy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="datasafe_dex_ww_grp@oracle.com" jiraProject="DS" opsJiraProject="ADS"
+def test_upload_sensitive_data_model(testing_service_client):
+    if not testing_service_client.is_api_enabled('data_safe', 'UploadSensitiveDataModel'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('data_safe', util.camelize('data_safe'), 'UploadSensitiveDataModel')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='data_safe', api_name='UploadSensitiveDataModel')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.data_safe.DataSafeClient(config, service_endpoint=service_endpoint)
+            response = client.upload_sensitive_data_model(
+                sensitive_data_model_id=request.pop(util.camelize('sensitiveDataModelId')),
+                upload_sensitive_data_model_details=request.pop(util.camelize('UploadSensitiveDataModelDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'data_safe',
+            'UploadSensitiveDataModel',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'upload_sensitive_data_model',
             False,
             False
         )

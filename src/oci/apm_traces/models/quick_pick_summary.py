@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class QuickPickSummary(object):
     """
-    Summary of quick pick query objects that contains the quick pick queries.
+    Summary of the Quick Pick query objects.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class QuickPickSummary(object):
     def quick_pick_name(self):
         """
         **[Required]** Gets the quick_pick_name of this QuickPickSummary.
-        Quick pick name for the query.
+        Quick Pick name for the query.
 
 
         :return: The quick_pick_name of this QuickPickSummary.
@@ -56,7 +56,7 @@ class QuickPickSummary(object):
     def quick_pick_name(self, quick_pick_name):
         """
         Sets the quick_pick_name of this QuickPickSummary.
-        Quick pick name for the query.
+        Quick Pick name for the query.
 
 
         :param quick_pick_name: The quick_pick_name of this QuickPickSummary.
@@ -68,7 +68,7 @@ class QuickPickSummary(object):
     def quick_pick_query(self):
         """
         **[Required]** Gets the quick_pick_query of this QuickPickSummary.
-        Query for the quick pick.
+        Query for the Quick Pick.
 
 
         :return: The quick_pick_query of this QuickPickSummary.
@@ -80,7 +80,7 @@ class QuickPickSummary(object):
     def quick_pick_query(self, quick_pick_query):
         """
         Sets the quick_pick_query of this QuickPickSummary.
-        Query for the quick pick.
+        Query for the Quick Pick.
 
 
         :param quick_pick_query: The quick_pick_query of this QuickPickSummary.

@@ -115,8 +115,8 @@ class Span(object):
         """
         **[Required]** Gets the key of this Span.
         Unique identifier (spanId) for the span.  Note that this field is
-        defined as spanKey in the API to comply with OCI API fields naming conventions.
-        The spanKey maps to the spanId in the APM repository.
+        defined as spanKey in the API and it maps to the spanId in the trace data
+        in Application Performance Monitoring.
 
 
         :return: The key of this Span.
@@ -129,8 +129,8 @@ class Span(object):
         """
         Sets the key of this Span.
         Unique identifier (spanId) for the span.  Note that this field is
-        defined as spanKey in the API to comply with OCI API fields naming conventions.
-        The spanKey maps to the spanId in the APM repository.
+        defined as spanKey in the API and it maps to the spanId in the trace data
+        in Application Performance Monitoring.
 
 
         :param key: The key of this Span.
@@ -262,7 +262,7 @@ class Span(object):
     def operation_name(self):
         """
         **[Required]** Gets the operation_name of this Span.
-        Span name associated with the trace.  This is usually the method or uri of the request.
+        Span name associated with the trace.  This is usually the method or URI of the request.
 
 
         :return: The operation_name of this Span.
@@ -274,7 +274,7 @@ class Span(object):
     def operation_name(self, operation_name):
         """
         Sets the operation_name of this Span.
-        Span name associated with the trace.  This is usually the method or uri of the request.
+        Span name associated with the trace.  This is usually the method or URI of the request.
 
 
         :param operation_name: The operation_name of this Span.
@@ -382,7 +382,7 @@ class Span(object):
     def is_error(self):
         """
         **[Required]** Gets the is_error of this Span.
-        Indicates if the span has an error
+        Indicates if the span has an error.
 
 
         :return: The is_error of this Span.
@@ -394,7 +394,7 @@ class Span(object):
     def is_error(self, is_error):
         """
         Sets the is_error of this Span.
-        Indicates if the span has an error
+        Indicates if the span has an error.
 
 
         :param is_error: The is_error of this Span.

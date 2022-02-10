@@ -141,3 +141,5 @@
 ^src/oci/osub_organization_subscription/.*\.py$
 ^src/oci/osub_billing_schedule/.*\.py$
 ^src/oci/dashboard_service/.*\.py$
+^src/oci/threat_intelligence/.*\.py$
+^src/oci/ai_vision/.*\.py$

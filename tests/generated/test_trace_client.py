@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="tstaaden_directs_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
+def test_get_aggregated_snapshot(testing_service_client):
+    if not testing_service_client.is_api_enabled('apm_traces', 'GetAggregatedSnapshot'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apm_traces', util.camelize('trace'), 'GetAggregatedSnapshot')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apm_traces', api_name='GetAggregatedSnapshot')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apm_traces.TraceClient(config, service_endpoint=service_endpoint)
+            response = client.get_aggregated_snapshot(
+                apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                trace_key=request.pop(util.camelize('traceKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apm_traces',
+            'GetAggregatedSnapshot',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'aggregatedSnapshot',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="tstaaden_directs_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
 def test_get_span(testing_service_client):
     if not testing_service_client.is_api_enabled('apm_traces', 'GetSpan'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -111,6 +152,47 @@ def test_get_trace(testing_service_client):
             result,
             service_error,
             'trace',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="tstaaden_directs_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
+def test_get_trace_snapshot(testing_service_client):
+    if not testing_service_client.is_api_enabled('apm_traces', 'GetTraceSnapshot'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apm_traces', util.camelize('trace'), 'GetTraceSnapshot')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apm_traces', api_name='GetTraceSnapshot')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apm_traces.TraceClient(config, service_endpoint=service_endpoint)
+            response = client.get_trace_snapshot(
+                apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                trace_key=request.pop(util.camelize('traceKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apm_traces',
+            'GetTraceSnapshot',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'traceSnapshot',
             False,
             False
         )

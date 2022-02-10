@@ -43,6 +43,8 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/ai_vision/pom.xml</module>
+    <module>poms/threat_intelligence/pom.xml</module>
     <module>poms/dashboard_service/pom.xml</module>
     <module>poms/osub_billing_schedule/pom.xml</module>
     <module>poms/osub_organization_subscription/pom.xml</module>

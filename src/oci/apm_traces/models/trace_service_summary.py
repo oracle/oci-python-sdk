@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TraceServiceSummary(object):
     """
-    A summary of the spans in a trace by service.
+    Summary of the spans in a trace by service.
     """
 
     def __init__(self, **kwargs):
@@ -75,7 +75,7 @@ class TraceServiceSummary(object):
     def total_spans(self):
         """
         **[Required]** Gets the total_spans of this TraceServiceSummary.
-        Number of spans for serviceName in this trace.
+        Number of spans for serviceName in the trace.
 
 
         :return: The total_spans of this TraceServiceSummary.
@@ -87,7 +87,7 @@ class TraceServiceSummary(object):
     def total_spans(self, total_spans):
         """
         Sets the total_spans of this TraceServiceSummary.
-        Number of spans for serviceName in this trace.
+        Number of spans for serviceName in the trace.
 
 
         :param total_spans: The total_spans of this TraceServiceSummary.
@@ -99,7 +99,7 @@ class TraceServiceSummary(object):
     def error_spans(self):
         """
         **[Required]** Gets the error_spans of this TraceServiceSummary.
-        Number of spans with errorsfor serviceName in this trace.
+        Number of spans with errors for serviceName in the trace.
 
 
         :return: The error_spans of this TraceServiceSummary.
@@ -111,7 +111,7 @@ class TraceServiceSummary(object):
     def error_spans(self, error_spans):
         """
         Sets the error_spans of this TraceServiceSummary.
-        Number of spans with errorsfor serviceName in this trace.
+        Number of spans with errors for serviceName in the trace.
 
 
         :param error_spans: The error_spans of this TraceServiceSummary.

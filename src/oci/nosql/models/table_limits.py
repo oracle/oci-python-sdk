@@ -13,6 +13,14 @@ class TableLimits(object):
     Throughput and storage limits configuration of a table.
     """
 
+    #: A constant which can be used with the capacity_mode property of a TableLimits.
+    #: This constant has a value of "PROVISIONED"
+    CAPACITY_MODE_PROVISIONED = "PROVISIONED"
+
+    #: A constant which can be used with the capacity_mode property of a TableLimits.
+    #: This constant has a value of "ON_DEMAND"
+    CAPACITY_MODE_ON_DEMAND = "ON_DEMAND"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TableLimits object with values from keyword arguments.
@@ -30,22 +38,31 @@ class TableLimits(object):
             The value to assign to the max_storage_in_g_bs property of this TableLimits.
         :type max_storage_in_g_bs: int
 
+        :param capacity_mode:
+            The value to assign to the capacity_mode property of this TableLimits.
+            Allowed values for this property are: "PROVISIONED", "ON_DEMAND", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type capacity_mode: str
+
         """
         self.swagger_types = {
             'max_read_units': 'int',
             'max_write_units': 'int',
-            'max_storage_in_g_bs': 'int'
+            'max_storage_in_g_bs': 'int',
+            'capacity_mode': 'str'
         }
 
         self.attribute_map = {
             'max_read_units': 'maxReadUnits',
             'max_write_units': 'maxWriteUnits',
-            'max_storage_in_g_bs': 'maxStorageInGBs'
+            'max_storage_in_g_bs': 'maxStorageInGBs',
+            'capacity_mode': 'capacityMode'
         }
 
         self._max_read_units = None
         self._max_write_units = None
         self._max_storage_in_g_bs = None
+        self._capacity_mode = None
 
     @property
     def max_read_units(self):
@@ -118,6 +135,40 @@ class TableLimits(object):
         :type: int
         """
         self._max_storage_in_g_bs = max_storage_in_g_bs
+
+    @property
+    def capacity_mode(self):
+        """
+        Gets the capacity_mode of this TableLimits.
+        The capacity mode of the table.  If capacityMode = ON_DEMAND,
+        maxReadUnits and maxWriteUnits are not used, and both will have
+        the value of zero.
+
+        Allowed values for this property are: "PROVISIONED", "ON_DEMAND", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The capacity_mode of this TableLimits.
+        :rtype: str
+        """
+        return self._capacity_mode
+
+    @capacity_mode.setter
+    def capacity_mode(self, capacity_mode):
+        """
+        Sets the capacity_mode of this TableLimits.
+        The capacity mode of the table.  If capacityMode = ON_DEMAND,
+        maxReadUnits and maxWriteUnits are not used, and both will have
+        the value of zero.
+
+
+        :param capacity_mode: The capacity_mode of this TableLimits.
+        :type: str
+        """
+        allowed_values = ["PROVISIONED", "ON_DEMAND"]
+        if not value_allowed_none_or_none_sentinel(capacity_mode, allowed_values):
+            capacity_mode = 'UNKNOWN_ENUM_VALUE'
+        self._capacity_mode = capacity_mode
 
     def __repr__(self):
         return formatted_flat_dict(self)

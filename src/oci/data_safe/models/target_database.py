@@ -82,6 +82,10 @@ class TargetDatabase(object):
             The value to assign to the connection_option property of this TargetDatabase.
         :type connection_option: oci.data_safe.models.ConnectionOption
 
+        :param associated_resource_ids:
+            The value to assign to the associated_resource_ids property of this TargetDatabase.
+        :type associated_resource_ids: list[str]
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this TargetDatabase.
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "NEEDS_ATTENTION", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -122,6 +126,7 @@ class TargetDatabase(object):
             'credentials': 'Credentials',
             'tls_config': 'TlsConfig',
             'connection_option': 'ConnectionOption',
+            'associated_resource_ids': 'list[str]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime',
@@ -140,6 +145,7 @@ class TargetDatabase(object):
             'credentials': 'credentials',
             'tls_config': 'tlsConfig',
             'connection_option': 'connectionOption',
+            'associated_resource_ids': 'associatedResourceIds',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
@@ -157,6 +163,7 @@ class TargetDatabase(object):
         self._credentials = None
         self._tls_config = None
         self._connection_option = None
+        self._associated_resource_ids = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_created = None
@@ -340,6 +347,30 @@ class TargetDatabase(object):
         :type: oci.data_safe.models.ConnectionOption
         """
         self._connection_option = connection_option
+
+    @property
+    def associated_resource_ids(self):
+        """
+        Gets the associated_resource_ids of this TargetDatabase.
+        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+
+
+        :return: The associated_resource_ids of this TargetDatabase.
+        :rtype: list[str]
+        """
+        return self._associated_resource_ids
+
+    @associated_resource_ids.setter
+    def associated_resource_ids(self, associated_resource_ids):
+        """
+        Sets the associated_resource_ids of this TargetDatabase.
+        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+
+
+        :param associated_resource_ids: The associated_resource_ids of this TargetDatabase.
+        :type: list[str]
+        """
+        self._associated_resource_ids = associated_resource_ids
 
     @property
     def lifecycle_state(self):

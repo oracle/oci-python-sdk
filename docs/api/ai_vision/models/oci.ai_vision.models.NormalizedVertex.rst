@@ -1,0 +1,11 @@
+NormalizedVertex
+================
+
+.. currentmodule:: oci.ai_vision.models
+
+.. autoclass:: NormalizedVertex
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

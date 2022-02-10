@@ -30,22 +30,36 @@ class TableCollection(object):
             The value to assign to the auto_reclaimable_tables property of this TableCollection.
         :type auto_reclaimable_tables: int
 
+        :param on_demand_capacity_tables:
+            The value to assign to the on_demand_capacity_tables property of this TableCollection.
+        :type on_demand_capacity_tables: int
+
+        :param max_on_demand_capacity_tables:
+            The value to assign to the max_on_demand_capacity_tables property of this TableCollection.
+        :type max_on_demand_capacity_tables: int
+
         """
         self.swagger_types = {
             'items': 'list[TableSummary]',
             'max_auto_reclaimable_tables': 'int',
-            'auto_reclaimable_tables': 'int'
+            'auto_reclaimable_tables': 'int',
+            'on_demand_capacity_tables': 'int',
+            'max_on_demand_capacity_tables': 'int'
         }
 
         self.attribute_map = {
             'items': 'items',
             'max_auto_reclaimable_tables': 'maxAutoReclaimableTables',
-            'auto_reclaimable_tables': 'autoReclaimableTables'
+            'auto_reclaimable_tables': 'autoReclaimableTables',
+            'on_demand_capacity_tables': 'onDemandCapacityTables',
+            'max_on_demand_capacity_tables': 'maxOnDemandCapacityTables'
         }
 
         self._items = None
         self._max_auto_reclaimable_tables = None
         self._auto_reclaimable_tables = None
+        self._on_demand_capacity_tables = None
+        self._max_on_demand_capacity_tables = None
 
     @property
     def items(self):
@@ -118,6 +132,54 @@ class TableCollection(object):
         :type: int
         """
         self._auto_reclaimable_tables = auto_reclaimable_tables
+
+    @property
+    def on_demand_capacity_tables(self):
+        """
+        Gets the on_demand_capacity_tables of this TableCollection.
+        The current number of on demand capacity tables in the tenancy.
+
+
+        :return: The on_demand_capacity_tables of this TableCollection.
+        :rtype: int
+        """
+        return self._on_demand_capacity_tables
+
+    @on_demand_capacity_tables.setter
+    def on_demand_capacity_tables(self, on_demand_capacity_tables):
+        """
+        Sets the on_demand_capacity_tables of this TableCollection.
+        The current number of on demand capacity tables in the tenancy.
+
+
+        :param on_demand_capacity_tables: The on_demand_capacity_tables of this TableCollection.
+        :type: int
+        """
+        self._on_demand_capacity_tables = on_demand_capacity_tables
+
+    @property
+    def max_on_demand_capacity_tables(self):
+        """
+        Gets the max_on_demand_capacity_tables of this TableCollection.
+        The maximum number of on demand capacity tables allowed in the tenancy.
+
+
+        :return: The max_on_demand_capacity_tables of this TableCollection.
+        :rtype: int
+        """
+        return self._max_on_demand_capacity_tables
+
+    @max_on_demand_capacity_tables.setter
+    def max_on_demand_capacity_tables(self, max_on_demand_capacity_tables):
+        """
+        Sets the max_on_demand_capacity_tables of this TableCollection.
+        The maximum number of on demand capacity tables allowed in the tenancy.
+
+
+        :param max_on_demand_capacity_tables: The max_on_demand_capacity_tables of this TableCollection.
+        :type: int
+        """
+        self._max_on_demand_capacity_tables = max_on_demand_capacity_tables
 
     def __repr__(self):
         return formatted_flat_dict(self)
