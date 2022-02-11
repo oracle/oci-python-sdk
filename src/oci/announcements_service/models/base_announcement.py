@@ -109,6 +109,14 @@ class BaseAnnouncement(object):
     #: This constant has a value of "INACTIVE"
     LIFECYCLE_STATE_INACTIVE = "INACTIVE"
 
+    #: A constant which can be used with the platform_type property of a BaseAnnouncement.
+    #: This constant has a value of "IAAS"
+    PLATFORM_TYPE_IAAS = "IAAS"
+
+    #: A constant which can be used with the platform_type property of a BaseAnnouncement.
+    #: This constant has a value of "SAAS"
+    PLATFORM_TYPE_SAAS = "SAAS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BaseAnnouncement object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -191,6 +199,15 @@ class BaseAnnouncement(object):
             The value to assign to the time_updated property of this BaseAnnouncement.
         :type time_updated: datetime
 
+        :param environment_name:
+            The value to assign to the environment_name property of this BaseAnnouncement.
+        :type environment_name: str
+
+        :param platform_type:
+            The value to assign to the platform_type property of this BaseAnnouncement.
+            Allowed values for this property are: "IAAS", "SAAS"
+        :type platform_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -209,7 +226,9 @@ class BaseAnnouncement(object):
             'lifecycle_state': 'str',
             'is_banner': 'bool',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'environment_name': 'str',
+            'platform_type': 'str'
         }
 
         self.attribute_map = {
@@ -229,7 +248,9 @@ class BaseAnnouncement(object):
             'lifecycle_state': 'lifecycleState',
             'is_banner': 'isBanner',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'environment_name': 'environmentName',
+            'platform_type': 'platformType'
         }
 
         self._id = None
@@ -249,6 +270,8 @@ class BaseAnnouncement(object):
         self._is_banner = None
         self._time_created = None
         self._time_updated = None
+        self._environment_name = None
+        self._platform_type = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -731,6 +754,62 @@ class BaseAnnouncement(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def environment_name(self):
+        """
+        Gets the environment_name of this BaseAnnouncement.
+        The name of the environment that this announcement pertains to.
+
+
+        :return: The environment_name of this BaseAnnouncement.
+        :rtype: str
+        """
+        return self._environment_name
+
+    @environment_name.setter
+    def environment_name(self, environment_name):
+        """
+        Sets the environment_name of this BaseAnnouncement.
+        The name of the environment that this announcement pertains to.
+
+
+        :param environment_name: The environment_name of this BaseAnnouncement.
+        :type: str
+        """
+        self._environment_name = environment_name
+
+    @property
+    def platform_type(self):
+        """
+        Gets the platform_type of this BaseAnnouncement.
+        The platform type that this announcement pertains to.
+
+        Allowed values for this property are: "IAAS", "SAAS"
+
+
+        :return: The platform_type of this BaseAnnouncement.
+        :rtype: str
+        """
+        return self._platform_type
+
+    @platform_type.setter
+    def platform_type(self, platform_type):
+        """
+        Sets the platform_type of this BaseAnnouncement.
+        The platform type that this announcement pertains to.
+
+
+        :param platform_type: The platform_type of this BaseAnnouncement.
+        :type: str
+        """
+        allowed_values = ["IAAS", "SAAS"]
+        if not value_allowed_none_or_none_sentinel(platform_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `platform_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._platform_type = platform_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

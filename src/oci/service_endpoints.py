@@ -4,6 +4,7 @@
 
 SERVICE_ENDPOINTS = {
     "announcement": "https://announcements.{domain}",
+    "announcement_subscription": "https://announcements.{domain}",
     "announcements_preferences": "https://announcements.{domain}",
     "audit": "https://audit.{domain}",
     "auto_scaling": "None",

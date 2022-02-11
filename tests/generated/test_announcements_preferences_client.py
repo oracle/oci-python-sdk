@@ -33,7 +33,7 @@ def vcr_fixture(request):
             yield
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="announcement_service_engg_team_us_grp@oracle.com" jiraProject="AS" opsJiraProject="AS"
 def test_create_announcements_preference(testing_service_client):
     if not testing_service_client.is_api_enabled('announcements_service', 'CreateAnnouncementsPreference'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -73,7 +73,7 @@ def test_create_announcements_preference(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="announcement_service_engg_team_us_grp@oracle.com" jiraProject="AS" opsJiraProject="AS"
 def test_get_announcements_preference(testing_service_client):
     if not testing_service_client.is_api_enabled('announcements_service', 'GetAnnouncementsPreference'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -113,7 +113,7 @@ def test_get_announcements_preference(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="announcement_service_engg_team_us_grp@oracle.com" jiraProject="AS" opsJiraProject="AS"
 def test_list_announcements_preferences(testing_service_client):
     if not testing_service_client.is_api_enabled('announcements_service', 'ListAnnouncementsPreferences'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -173,7 +173,7 @@ def test_list_announcements_preferences(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="announcement_service_engg_team_us_grp@oracle.com" jiraProject="AS" opsJiraProject="AS"
 def test_update_announcements_preference(testing_service_client):
     if not testing_service_client.is_api_enabled('announcements_service', 'UpdateAnnouncementsPreference'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

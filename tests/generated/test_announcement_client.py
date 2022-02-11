@@ -33,7 +33,7 @@ def vcr_fixture(request):
             yield
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="announcement_service_engg_team_us_grp@oracle.com" jiraProject="AS" opsJiraProject="AS"
 def test_get_announcement(testing_service_client):
     if not testing_service_client.is_api_enabled('announcements_service', 'GetAnnouncement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -73,7 +73,7 @@ def test_get_announcement(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="announcement_service_engg_team_us_grp@oracle.com" jiraProject="AS" opsJiraProject="AS"
 def test_get_announcement_user_status(testing_service_client):
     if not testing_service_client.is_api_enabled('announcements_service', 'GetAnnouncementUserStatus'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -113,7 +113,7 @@ def test_get_announcement_user_status(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="announcement_service_engg_team_us_grp@oracle.com" jiraProject="AS" opsJiraProject="AS"
 def test_list_announcements(testing_service_client):
     if not testing_service_client.is_api_enabled('announcements_service', 'ListAnnouncements'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -173,7 +173,7 @@ def test_list_announcements(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="" email="" jiraProject="" opsJiraProject=""
+# IssueRoutingInfo tag="default" email="announcement_service_engg_team_us_grp@oracle.com" jiraProject="AS" opsJiraProject="AS"
 def test_update_announcement_user_status(testing_service_client):
     if not testing_service_client.is_api_enabled('announcements_service', 'UpdateAnnouncementUserStatus'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -208,7 +208,7 @@ def test_update_announcement_user_status(testing_service_client):
             request_containers[i]['request'],
             result,
             service_error,
-            'update_announcement_user_status',
+            'announcementUserStatusDetails',
             False,
             False
         )

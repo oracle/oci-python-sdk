@@ -1,0 +1,11 @@
+FilterGroup
+===========
+
+.. currentmodule:: oci.announcements_service.models
+
+.. autoclass:: FilterGroup
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

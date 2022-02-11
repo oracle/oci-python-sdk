@@ -8,6 +8,7 @@ API Reference
 * :doc:`Ai Service Vision <ai_vision/client/oci.ai_vision.AIServiceVisionClient>`
 * :doc:`Analytics <analytics/client/oci.analytics.AnalyticsClient>`
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
+* :doc:`Announcement Subscription <announcements_service/client/oci.announcements_service.AnnouncementSubscriptionClient>`
 * :doc:`Announcements Preferences <announcements_service/client/oci.announcements_service.AnnouncementsPreferencesClient>`
 * :doc:`Api Gateway <apigateway/client/oci.apigateway.ApiGatewayClient>`
 * :doc:`Deployment <apigateway/client/oci.apigateway.DeploymentClient>`
