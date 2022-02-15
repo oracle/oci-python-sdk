@@ -157,8 +157,8 @@ class Trace(object):
         """
         **[Required]** Gets the key of this Trace.
         Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
-        defined as traceKey in the API to comply with OCI API fields naming conventions.  The traceKey maps to
-        the traceId in the APM repository.
+        defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+        Monitoring.
 
 
         :return: The key of this Trace.
@@ -171,8 +171,8 @@ class Trace(object):
         """
         Sets the key of this Trace.
         Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
-        defined as traceKey in the API to comply with OCI API fields naming conventions.  The traceKey maps to
-        the traceId in the APM repository.
+        defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+        Monitoring.
 
 
         :param key: The key of this Trace.
@@ -184,8 +184,8 @@ class Trace(object):
     def root_span_operation_name(self):
         """
         Gets the root_span_operation_name of this Trace.
-        Root span name associated with the trace. This is usually the flow start operation name.
-        Null if the root span is not yet completed.
+        Root span name associated with the trace. This is the flow start operation name.
+        Null is displayed if the root span is not yet completed.
 
 
         :return: The root_span_operation_name of this Trace.
@@ -197,8 +197,8 @@ class Trace(object):
     def root_span_operation_name(self, root_span_operation_name):
         """
         Sets the root_span_operation_name of this Trace.
-        Root span name associated with the trace. This is usually the flow start operation name.
-        Null if the root span is not yet completed.
+        Root span name associated with the trace. This is the flow start operation name.
+        Null is displayed if the root span is not yet completed.
 
 
         :param root_span_operation_name: The root_span_operation_name of this Trace.
@@ -210,7 +210,7 @@ class Trace(object):
     def time_earliest_span_started(self):
         """
         Gets the time_earliest_span_started of this Trace.
-        Start time of the earliest span in this span collection.
+        Start time of the earliest span in the span collection.
 
 
         :return: The time_earliest_span_started of this Trace.
@@ -222,7 +222,7 @@ class Trace(object):
     def time_earliest_span_started(self, time_earliest_span_started):
         """
         Sets the time_earliest_span_started of this Trace.
-        Start time of the earliest span in this span collection.
+        Start time of the earliest span in the span collection.
 
 
         :param time_earliest_span_started: The time_earliest_span_started of this Trace.
@@ -234,7 +234,7 @@ class Trace(object):
     def time_latest_span_ended(self):
         """
         Gets the time_latest_span_ended of this Trace.
-        End time of the span that most recently ended in this span collection.
+        End time of the span that most recently ended in the span collection.
 
 
         :return: The time_latest_span_ended of this Trace.
@@ -246,7 +246,7 @@ class Trace(object):
     def time_latest_span_ended(self, time_latest_span_ended):
         """
         Sets the time_latest_span_ended of this Trace.
-        End time of the span that most recently ended in this span collection.
+        End time of the span that most recently ended in the span collection.
 
 
         :param time_latest_span_ended: The time_latest_span_ended of this Trace.
@@ -258,7 +258,7 @@ class Trace(object):
     def span_count(self):
         """
         Gets the span_count of this Trace.
-        The number of spans that have been processed by the system for this trace.  Note that there
+        The number of spans that have been processed by the system for the trace.  Note that there
         could be additional spans that have not been processed or reported yet if the trace is still
         in progress.
 
@@ -272,7 +272,7 @@ class Trace(object):
     def span_count(self, span_count):
         """
         Sets the span_count of this Trace.
-        The number of spans that have been processed by the system for this trace.  Note that there
+        The number of spans that have been processed by the system for the trace.  Note that there
         could be additional spans that have not been processed or reported yet if the trace is still
         in progress.
 
@@ -286,9 +286,8 @@ class Trace(object):
     def error_span_count(self):
         """
         Gets the error_span_count of this Trace.
-        The number of spans with error that have been processed by the system for this trace.
-        Note that the number of spans with errors may be less than the total number of actual spans
-        in this trace.
+        The number of spans with errors that have been processed by the system for the trace.
+        Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
 
 
         :return: The error_span_count of this Trace.
@@ -300,9 +299,8 @@ class Trace(object):
     def error_span_count(self, error_span_count):
         """
         Sets the error_span_count of this Trace.
-        The number of spans with error that have been processed by the system for this trace.
-        Note that the number of spans with errors may be less than the total number of actual spans
-        in this trace.
+        The number of spans with errors that have been processed by the system for the trace.
+        Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
 
 
         :param error_span_count: The error_span_count of this Trace.
@@ -314,7 +312,7 @@ class Trace(object):
     def root_span_service_name(self):
         """
         Gets the root_span_service_name of this Trace.
-        Service associated with this trace.
+        Service associated with the trace.
 
 
         :return: The root_span_service_name of this Trace.
@@ -326,7 +324,7 @@ class Trace(object):
     def root_span_service_name(self, root_span_service_name):
         """
         Sets the root_span_service_name of this Trace.
-        Service associated with this trace.
+        Service associated with the trace.
 
 
         :param root_span_service_name: The root_span_service_name of this Trace.
@@ -338,7 +336,7 @@ class Trace(object):
     def time_root_span_started(self):
         """
         Gets the time_root_span_started of this Trace.
-        Start time of the root span for this span collection.
+        Start time of the root span for the span collection.
 
 
         :return: The time_root_span_started of this Trace.
@@ -350,7 +348,7 @@ class Trace(object):
     def time_root_span_started(self, time_root_span_started):
         """
         Sets the time_root_span_started of this Trace.
-        Start time of the root span for this span collection.
+        Start time of the root span for the span collection.
 
 
         :param time_root_span_started: The time_root_span_started of this Trace.
@@ -362,7 +360,7 @@ class Trace(object):
     def time_root_span_ended(self):
         """
         Gets the time_root_span_ended of this Trace.
-        End time of the root span for this span collection.
+        End time of the root span for the span collection.
 
 
         :return: The time_root_span_ended of this Trace.
@@ -374,7 +372,7 @@ class Trace(object):
     def time_root_span_ended(self, time_root_span_ended):
         """
         Sets the time_root_span_ended of this Trace.
-        End time of the root span for this span collection.
+        End time of the root span for the span collection.
 
 
         :param time_root_span_ended: The time_root_span_ended of this Trace.
@@ -434,7 +432,7 @@ class Trace(object):
     def is_fault(self):
         """
         Gets the is_fault of this Trace.
-        Boolean flag that indicates whether the trace errored out.
+        Boolean flag that indicates whether the trace has an error.
 
 
         :return: The is_fault of this Trace.
@@ -446,7 +444,7 @@ class Trace(object):
     def is_fault(self, is_fault):
         """
         Sets the is_fault of this Trace.
-        Boolean flag that indicates whether the trace errored out.
+        Boolean flag that indicates whether the trace has an error.
 
 
         :param is_fault: The is_fault of this Trace.
@@ -460,7 +458,7 @@ class Trace(object):
         Gets the trace_status of this Trace.
         The status of the trace.
         The trace statuses are defined as follows:
-        complete \u2013 a root span has been recorded, but there is no information on the errors.
+        complete - a root span has been recorded, but there is no information on the errors.
         success - a complete root span is recorded there is a successful error type and error code - HTTP 200.
         incomplete - the root span has not yet been received.
         error - the root span returned with an error. There may or may not be an associated error code or error type.
@@ -477,7 +475,7 @@ class Trace(object):
         Sets the trace_status of this Trace.
         The status of the trace.
         The trace statuses are defined as follows:
-        complete \u2013 a root span has been recorded, but there is no information on the errors.
+        complete - a root span has been recorded, but there is no information on the errors.
         success - a complete root span is recorded there is a successful error type and error code - HTTP 200.
         incomplete - the root span has not yet been received.
         error - the root span returned with an error. There may or may not be an associated error code or error type.
@@ -540,7 +538,7 @@ class Trace(object):
     def service_summaries(self):
         """
         Gets the service_summaries of this Trace.
-        A summary of the spans by service
+        A summary of the spans by service.
 
 
         :return: The service_summaries of this Trace.
@@ -552,7 +550,7 @@ class Trace(object):
     def service_summaries(self, service_summaries):
         """
         Sets the service_summaries of this Trace.
-        A summary of the spans by service
+        A summary of the spans by service.
 
 
         :param service_summaries: The service_summaries of this Trace.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class QueryResultsOrderedBySummary(object):
     """
-    Summary of the sort attribute and order by which the query results are organized.
+    Summary of the sort and order by attribute based on which the query results are organized.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class QueryResultsOrderedBySummary(object):
     def query_results_ordered_by(self):
         """
         Gets the query_results_ordered_by of this QueryResultsOrderedBySummary.
-        Attribute by which the query result is sorted by.
+        Attribute by which the query results are sorted.
 
 
         :return: The query_results_ordered_by of this QueryResultsOrderedBySummary.
@@ -56,7 +56,7 @@ class QueryResultsOrderedBySummary(object):
     def query_results_ordered_by(self, query_results_ordered_by):
         """
         Sets the query_results_ordered_by of this QueryResultsOrderedBySummary.
-        Attribute by which the query result is sorted by.
+        Attribute by which the query results are sorted.
 
 
         :param query_results_ordered_by: The query_results_ordered_by of this QueryResultsOrderedBySummary.

@@ -106,6 +106,10 @@ class TargetDatabaseSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_type: str
 
+        :param associated_resource_ids:
+            The value to assign to the associated_resource_ids property of this TargetDatabaseSummary.
+        :type associated_resource_ids: list[str]
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this TargetDatabaseSummary.
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "NEEDS_ATTENTION", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -136,6 +140,7 @@ class TargetDatabaseSummary(object):
             'description': 'str',
             'infrastructure_type': 'str',
             'database_type': 'str',
+            'associated_resource_ids': 'list[str]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime',
@@ -150,6 +155,7 @@ class TargetDatabaseSummary(object):
             'description': 'description',
             'infrastructure_type': 'infrastructureType',
             'database_type': 'databaseType',
+            'associated_resource_ids': 'associatedResourceIds',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated',
@@ -163,6 +169,7 @@ class TargetDatabaseSummary(object):
         self._description = None
         self._infrastructure_type = None
         self._database_type = None
+        self._associated_resource_ids = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_created = None
@@ -324,6 +331,30 @@ class TargetDatabaseSummary(object):
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
             database_type = 'UNKNOWN_ENUM_VALUE'
         self._database_type = database_type
+
+    @property
+    def associated_resource_ids(self):
+        """
+        Gets the associated_resource_ids of this TargetDatabaseSummary.
+        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+
+
+        :return: The associated_resource_ids of this TargetDatabaseSummary.
+        :rtype: list[str]
+        """
+        return self._associated_resource_ids
+
+    @associated_resource_ids.setter
+    def associated_resource_ids(self, associated_resource_ids):
+        """
+        Sets the associated_resource_ids of this TargetDatabaseSummary.
+        The OCIDs of associated resources like Database, Data Safe private endpoint etc.
+
+
+        :param associated_resource_ids: The associated_resource_ids of this TargetDatabaseSummary.
+        :type: list[str]
+        """
+        self._associated_resource_ids = associated_resource_ids
 
     @property
     def lifecycle_state(self):

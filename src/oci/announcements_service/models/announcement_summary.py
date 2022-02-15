@@ -95,6 +95,16 @@ class AnnouncementSummary(BaseAnnouncement):
             The value to assign to the time_updated property of this AnnouncementSummary.
         :type time_updated: datetime
 
+        :param environment_name:
+            The value to assign to the environment_name property of this AnnouncementSummary.
+        :type environment_name: str
+
+        :param platform_type:
+            The value to assign to the platform_type property of this AnnouncementSummary.
+            Allowed values for this property are: "IAAS", "SAAS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type platform_type: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -113,7 +123,9 @@ class AnnouncementSummary(BaseAnnouncement):
             'lifecycle_state': 'str',
             'is_banner': 'bool',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'environment_name': 'str',
+            'platform_type': 'str'
         }
 
         self.attribute_map = {
@@ -133,7 +145,9 @@ class AnnouncementSummary(BaseAnnouncement):
             'lifecycle_state': 'lifecycleState',
             'is_banner': 'isBanner',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'environment_name': 'environmentName',
+            'platform_type': 'platformType'
         }
 
         self._id = None
@@ -153,6 +167,8 @@ class AnnouncementSummary(BaseAnnouncement):
         self._is_banner = None
         self._time_created = None
         self._time_updated = None
+        self._environment_name = None
+        self._platform_type = None
         self._type = 'AnnouncementSummary'
 
     def __repr__(self):

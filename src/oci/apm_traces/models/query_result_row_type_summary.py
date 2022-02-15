@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class QueryResultRowTypeSummary(object):
     """
-    A summary of the datatype, unit and related metadata of an individual row element of a query result row that is returned.
+    Summary of the datatype, unit and related metadata of an individual row element of a query result row that is returned.
     """
 
     def __init__(self, **kwargs):

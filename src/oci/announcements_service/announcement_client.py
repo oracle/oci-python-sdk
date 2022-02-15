@@ -90,7 +90,7 @@ class AnnouncementClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180904',
-            'service_endpoint_template': 'https://announcements.{region}.{secondLevelDomain}',
+            'service_endpoint_template': 'https://announcements.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False),
             'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
         }
@@ -107,6 +107,8 @@ class AnnouncementClient(object):
     def get_announcement(self, announcement_id, **kwargs):
         """
         Gets the details of a specific announcement.
+
+        This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
 
 
         :param str announcement_id: (required)
@@ -193,6 +195,8 @@ class AnnouncementClient(object):
         """
         Gets information about whether a specific announcement was acknowledged by a user.
 
+        This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
+
 
         :param str announcement_id: (required)
             The OCID of the announcement.
@@ -278,10 +282,11 @@ class AnnouncementClient(object):
         """
         Gets a list of announcements for the current tenancy.
 
+        This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
+
 
         :param str compartment_id: (required)
-            The OCID of the compartment. Because announcements are specific to a tenancy, this is the
-            OCID of the root compartment.
+            The OCID of the compartment.
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
@@ -315,6 +320,20 @@ class AnnouncementClient(object):
 
         :param datetime time_one_latest_time: (optional)
             The boundary for the latest `timeOneValue` date on announcements that you want to see.
+
+        :param str environment_name: (optional)
+            A filter to return only announcements that match a specific environment name.
+
+        :param str service: (optional)
+            A filter to return only announcements affecting a specific service.
+
+        :param str platform_type: (optional)
+            A filter to return only announcements affecting a specific platform.
+
+            Allowed values are: "IAAS", "SAAS"
+
+        :param list[str] exclude_announcement_types: (optional)
+            Exclude The type of announcement.
 
         :param str opc_request_id: (optional)
             The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
@@ -354,6 +373,10 @@ class AnnouncementClient(object):
             "sort_order",
             "time_one_earliest_time",
             "time_one_latest_time",
+            "environment_name",
+            "service",
+            "platform_type",
+            "exclude_announcement_types",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -382,6 +405,13 @@ class AnnouncementClient(object):
                     "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
                 )
 
+        if 'platform_type' in kwargs:
+            platform_type_allowed_values = ["IAAS", "SAAS"]
+            if kwargs['platform_type'] not in platform_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `platform_type`, must be one of {0}".format(platform_type_allowed_values)
+                )
+
         query_params = {
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -392,7 +422,11 @@ class AnnouncementClient(object):
             "sortBy": kwargs.get("sort_by", missing),
             "sortOrder": kwargs.get("sort_order", missing),
             "timeOneEarliestTime": kwargs.get("time_one_earliest_time", missing),
-            "timeOneLatestTime": kwargs.get("time_one_latest_time", missing)
+            "timeOneLatestTime": kwargs.get("time_one_latest_time", missing),
+            "environmentName": kwargs.get("environment_name", missing),
+            "service": kwargs.get("service", missing),
+            "platformType": kwargs.get("platform_type", missing),
+            "excludeAnnouncementTypes": self.base_client.generate_collection_format_param(kwargs.get("exclude_announcement_types", missing), 'multi')
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -431,6 +465,8 @@ class AnnouncementClient(object):
         """
         Updates the status of the specified announcement with regard to whether it has been marked as read.
 
+        This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
+
 
         :param str announcement_id: (required)
             The OCID of the announcement.
@@ -457,7 +493,7 @@ class AnnouncementClient(object):
             allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
             By default, the response will not allow control characters in strings
 
-        :return: A :class:`~oci.response.Response` object with data of type None
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.announcements_service.models.AnnouncementUserStatusDetails`
         :rtype: :class:`~oci.response.Response`
 
         :example:
@@ -511,11 +547,13 @@ class AnnouncementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=status_details)
+                body=status_details,
+                response_type="AnnouncementUserStatusDetails")
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=status_details)
+                body=status_details,
+                response_type="AnnouncementUserStatusDetails")

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class QueryDetails(object):
     """
-    Request object containing the query to be run against our repository.
+    Request object containing the query to be run against the trace data.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class QueryDetails(object):
     def query_text(self):
         """
         Gets the query_text of this QueryDetails.
-        APM defined query string to run against our repository and return results for.
+        Application Performance Monitoring defined query string that filters and retrieves trace data results.
 
 
         :return: The query_text of this QueryDetails.
@@ -49,7 +49,7 @@ class QueryDetails(object):
     def query_text(self, query_text):
         """
         Sets the query_text of this QueryDetails.
-        APM defined query string to run against our repository and return results for.
+        Application Performance Monitoring defined query string that filters and retrieves trace data results.
 
 
         :param query_text: The query_text of this QueryDetails.

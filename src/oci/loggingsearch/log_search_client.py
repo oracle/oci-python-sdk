@@ -108,6 +108,10 @@ class LogSearchClient(object):
         """
         Submit a query to search logs.
 
+        See `Using the API`__ for SDK examples.
+
+        __ https://docs.cloud.oracle.com/Content/Logging/Concepts/using_the_api_searchlogs.htm
+
 
         :param oci.loggingsearch.models.SearchLogsDetails search_logs_details: (required)
             Search request.
@@ -120,7 +124,10 @@ class LogSearchClient(object):
             The maximum number of items to return in a response. Pagination is not supported in this API.
 
         :param str page: (optional)
-            Reserved for future use. Pagination is not supported in this API.
+            For list pagination. The value of the opc-next-page response header from the previous \"Search\" call.
+            For important details about how pagination works, see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.

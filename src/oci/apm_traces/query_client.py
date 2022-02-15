@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class QueryClient(object):
     """
-    API for APM Trace service. Use this API to query the Traces and associated Spans.
+    Use the Application Performance Monitoring Trace Explorer API to query traces and associated spans in Trace Explorer. For more information, see [Application Performance Monitoring](https://docs.oracle.com/iaas/application-performance-monitoring/index.html).
     """
 
     def __init__(self, config, **kwargs):
@@ -106,12 +106,12 @@ class QueryClient(object):
 
     def list_quick_picks(self, apm_domain_id, **kwargs):
         """
-        Returns a list of predefined quick pick queries intended to assist the user
+        Returns a list of predefined Quick Pick queries intended to assist the user
         to choose a query to run.  There is no sorting applied on the results.
 
 
         :param str apm_domain_id: (required)
-            The APM Domain Id the request is intended for.
+            The APM Domain ID the request is intended for.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
@@ -198,23 +198,24 @@ class QueryClient(object):
 
     def query(self, apm_domain_id, time_span_started_greater_than_or_equal_to, time_span_started_less_than, query_details, **kwargs):
         """
-        Given a query, constructed according to the APM Defined Query Syntax, retrieves the results - selected attributes,
-        and aggregations of the queried entity.  Query Results are filtered by the filter criteria specified in the where clause.
+        Retrieves the results (selected attributes and aggregations) of a query constructed according to the Application Performance Monitoring Defined Query Syntax.
+        Query results are filtered by the filter criteria specified in the where clause.
         Further query results are grouped by the attributes specified in the group by clause.  Finally,
         ordering (asc/desc) is done by the specified attributes in the order by clause.
 
 
         :param str apm_domain_id: (required)
-            The APM Domain Id the request is intended for.
+            The APM Domain ID the request is intended for.
 
         :param datetime time_span_started_greater_than_or_equal_to: (required)
-            Include spans that have a `spanStartTime` equal to or greater this value.
+            Include spans that have a `spanStartTime` equal to or greater than this value.
 
         :param datetime time_span_started_less_than: (required)
             Include spans that have a `spanStartTime`less than this value.
 
         :param oci.apm_traces.models.QueryDetails query_details: (required)
-            Request body containing the query to be run against our repository.
+            Request body containing the query to be run against the trace data and to filter and
+            retrieve trace data results.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
@@ -260,115 +261,6 @@ class QueryClient(object):
         if extra_kwargs:
             raise ValueError(
                 "query got unknown kwargs: {!r}".format(extra_kwargs))
-
-        query_params = {
-            "apmDomainId": apm_domain_id,
-            "limit": kwargs.get("limit", missing),
-            "page": kwargs.get("page", missing),
-            "timeSpanStartedGreaterThanOrEqualTo": time_span_started_greater_than_or_equal_to,
-            "timeSpanStartedLessThan": time_span_started_less_than
-        }
-        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
-
-        header_params = {
-            "accept": "application/json",
-            "content-type": "application/json",
-            "opc-request-id": kwargs.get("opc_request_id", missing)
-        }
-        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
-
-        retry_strategy = self.base_client.get_preferred_retry_strategy(
-            operation_retry_strategy=kwargs.get('retry_strategy'),
-            client_retry_strategy=self.retry_strategy
-        )
-
-        if retry_strategy:
-            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
-                self.base_client.add_opc_client_retries_header(header_params)
-                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
-            return retry_strategy.make_retrying_call(
-                self.base_client.call_api,
-                resource_path=resource_path,
-                method=method,
-                query_params=query_params,
-                header_params=header_params,
-                body=query_details,
-                response_type="QueryResultResponse")
-        else:
-            return self.base_client.call_api(
-                resource_path=resource_path,
-                method=method,
-                query_params=query_params,
-                header_params=header_params,
-                body=query_details,
-                response_type="QueryResultResponse")
-
-    def query_old(self, apm_domain_id, time_span_started_greater_than_or_equal_to, time_span_started_less_than, query_details, **kwargs):
-        """
-        THIS API ENDPOINT WILL BE DEPRECATED AND INSTEAD /queries/actions/runQuery as defined below WILL BE USED GOING FORWARD.  THIS EXISTS JUST
-        AS A TEMPORARY PLACEHOLDER SO AS TO BE BACKWARDS COMPATIBLE WITH THE UI BETWEEN RELEASE CYCLES.
-        Given a query, constructed according to the APM Defined Query Syntax, retrieves the results - selected attributes,
-        and aggregations of the queried entity.  Query Results are filtered by the filter criteria specified in the where clause.
-        Further query results are grouped by the attributes specified in the group by clause.  Finally,
-        ordering (asc/desc) is done by the specified attributes in the order by clause.
-
-
-        :param str apm_domain_id: (required)
-            The APM Domain Id the request is intended for.
-
-        :param datetime time_span_started_greater_than_or_equal_to: (required)
-            Include spans that have a `spanStartTime` equal to or greater this value.
-
-        :param datetime time_span_started_less_than: (required)
-            Include spans that have a `spanStartTime`less than this value.
-
-        :param oci.apm_traces.models.QueryDetails query_details: (required)
-            Request body containing the query to be run against our repository.
-
-        :param str opc_request_id: (optional)
-            Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a
-            particular request, please provide the request ID.
-
-        :param int limit: (optional)
-            The maximum number of items to return.
-
-        :param str page: (optional)
-            The page token representing the page at which to start retrieving results.
-            This is usually retrieved from a previous response.
-
-        :param obj retry_strategy: (optional)
-            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
-
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
-            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
-
-            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
-
-        :param bool allow_control_chars: (optional)
-            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
-            By default, the response will not allow control characters in strings
-
-        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.apm_traces.models.QueryResultResponse`
-        :rtype: :class:`~oci.response.Response`
-
-        :example:
-        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/apmtraces/query_old.py.html>`__ to see an example of how to use query_old API.
-        """
-        resource_path = "/queries/action/runQuery"
-        method = "POST"
-
-        # Don't accept unknown kwargs
-        expected_kwargs = [
-            "allow_control_chars",
-            "retry_strategy",
-            "opc_request_id",
-            "limit",
-            "page"
-        ]
-        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
-        if extra_kwargs:
-            raise ValueError(
-                "query_old got unknown kwargs: {!r}".format(extra_kwargs))
 
         query_params = {
             "apmDomainId": apm_domain_id,

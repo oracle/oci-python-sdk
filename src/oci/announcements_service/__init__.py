@@ -7,8 +7,10 @@ from __future__ import absolute_import
 
 from .announcement_client import AnnouncementClient
 from .announcement_client_composite_operations import AnnouncementClientCompositeOperations
+from .announcement_subscription_client import AnnouncementSubscriptionClient
+from .announcement_subscription_client_composite_operations import AnnouncementSubscriptionClientCompositeOperations
 from .announcements_preferences_client import AnnouncementsPreferencesClient
 from .announcements_preferences_client_composite_operations import AnnouncementsPreferencesClientCompositeOperations
 from . import models
 
-__all__ = ["AnnouncementClient", "AnnouncementClientCompositeOperations", "AnnouncementsPreferencesClient", "AnnouncementsPreferencesClientCompositeOperations", "models"]
+__all__ = ["AnnouncementClient", "AnnouncementClientCompositeOperations", "AnnouncementSubscriptionClient", "AnnouncementSubscriptionClientCompositeOperations", "AnnouncementsPreferencesClient", "AnnouncementsPreferencesClientCompositeOperations", "models"]

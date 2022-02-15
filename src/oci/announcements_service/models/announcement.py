@@ -95,6 +95,16 @@ class Announcement(BaseAnnouncement):
             The value to assign to the time_updated property of this Announcement.
         :type time_updated: datetime
 
+        :param environment_name:
+            The value to assign to the environment_name property of this Announcement.
+        :type environment_name: str
+
+        :param platform_type:
+            The value to assign to the platform_type property of this Announcement.
+            Allowed values for this property are: "IAAS", "SAAS", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type platform_type: str
+
         :param description:
             The value to assign to the description property of this Announcement.
         :type description: str
@@ -126,6 +136,8 @@ class Announcement(BaseAnnouncement):
             'is_banner': 'bool',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'environment_name': 'str',
+            'platform_type': 'str',
             'description': 'str',
             'additional_information': 'str',
             'affected_resources': 'list[AffectedResource]'
@@ -149,6 +161,8 @@ class Announcement(BaseAnnouncement):
             'is_banner': 'isBanner',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'environment_name': 'environmentName',
+            'platform_type': 'platformType',
             'description': 'description',
             'additional_information': 'additionalInformation',
             'affected_resources': 'affectedResources'
@@ -171,6 +185,8 @@ class Announcement(BaseAnnouncement):
         self._is_banner = None
         self._time_created = None
         self._time_updated = None
+        self._environment_name = None
+        self._platform_type = None
         self._description = None
         self._additional_information = None
         self._affected_resources = None
