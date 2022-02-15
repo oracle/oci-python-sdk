@@ -90,7 +90,7 @@ class AnnouncementsPreferencesClient(object):
             'regional_client': True,
             'service_endpoint': kwargs.get('service_endpoint'),
             'base_path': '/20180904',
-            'service_endpoint_template': 'https://announcements.{region}.{secondLevelDomain}',
+            'service_endpoint_template': 'https://announcements.{region}.oci.{secondLevelDomain}',
             'skip_deserialization': kwargs.get('skip_deserialization', False),
             'circuit_breaker_strategy': kwargs.get('circuit_breaker_strategy', circuit_breaker.GLOBAL_CIRCUIT_BREAKER_STRATEGY)
         }
@@ -107,6 +107,8 @@ class AnnouncementsPreferencesClient(object):
     def create_announcements_preference(self, announcements_preference_details, **kwargs):
         """
         Creates a request that specifies preferences for the tenancy regarding receiving announcements by email.
+
+        This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
 
 
         :param oci.announcements_service.models.CreateAnnouncementsPreferencesDetails announcements_preference_details: (required)
@@ -188,6 +190,8 @@ class AnnouncementsPreferencesClient(object):
     def get_announcements_preference(self, preference_id, **kwargs):
         """
         Gets the current preferences of the tenancy regarding receiving announcements by email.
+
+        This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
 
 
         :param str preference_id: (required)
@@ -274,10 +278,11 @@ class AnnouncementsPreferencesClient(object):
         """
         Gets the current preferences of the tenancy regarding receiving announcements by email.
 
+        This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
+
 
         :param str compartment_id: (required)
-            The OCID of the compartment. Because announcements are specific to a tenancy, this is the
-            OCID of the root compartment.
+            The OCID of the compartment.
 
         :param int limit: (optional)
             The maximum number of items to return in a paginated \"List\" call.
@@ -364,6 +369,8 @@ class AnnouncementsPreferencesClient(object):
     def update_announcements_preference(self, preference_id, announcements_preference_details, **kwargs):
         """
         Updates the preferences of the tenancy regarding receiving announcements by email.
+
+        This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
 
 
         :param str preference_id: (required)

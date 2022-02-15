@@ -68,6 +68,14 @@ class DataSafeConfiguration(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param data_safe_nat_gateway_ip_address:
+            The value to assign to the data_safe_nat_gateway_ip_address property of this DataSafeConfiguration.
+        :type data_safe_nat_gateway_ip_address: str
+
+        :param global_settings:
+            The value to assign to the global_settings property of this DataSafeConfiguration.
+        :type global_settings: oci.data_safe.models.GlobalSettings
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DataSafeConfiguration.
         :type freeform_tags: dict(str, str)
@@ -83,6 +91,8 @@ class DataSafeConfiguration(object):
             'compartment_id': 'str',
             'time_enabled': 'datetime',
             'lifecycle_state': 'str',
+            'data_safe_nat_gateway_ip_address': 'str',
+            'global_settings': 'GlobalSettings',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -93,6 +103,8 @@ class DataSafeConfiguration(object):
             'compartment_id': 'compartmentId',
             'time_enabled': 'timeEnabled',
             'lifecycle_state': 'lifecycleState',
+            'data_safe_nat_gateway_ip_address': 'dataSafeNatGatewayIpAddress',
+            'global_settings': 'globalSettings',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -102,6 +114,8 @@ class DataSafeConfiguration(object):
         self._compartment_id = None
         self._time_enabled = None
         self._lifecycle_state = None
+        self._data_safe_nat_gateway_ip_address = None
+        self._global_settings = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -234,6 +248,50 @@ class DataSafeConfiguration(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def data_safe_nat_gateway_ip_address(self):
+        """
+        Gets the data_safe_nat_gateway_ip_address of this DataSafeConfiguration.
+        The Oracle Data Safe's NAT Gateway IP Address.
+
+
+        :return: The data_safe_nat_gateway_ip_address of this DataSafeConfiguration.
+        :rtype: str
+        """
+        return self._data_safe_nat_gateway_ip_address
+
+    @data_safe_nat_gateway_ip_address.setter
+    def data_safe_nat_gateway_ip_address(self, data_safe_nat_gateway_ip_address):
+        """
+        Sets the data_safe_nat_gateway_ip_address of this DataSafeConfiguration.
+        The Oracle Data Safe's NAT Gateway IP Address.
+
+
+        :param data_safe_nat_gateway_ip_address: The data_safe_nat_gateway_ip_address of this DataSafeConfiguration.
+        :type: str
+        """
+        self._data_safe_nat_gateway_ip_address = data_safe_nat_gateway_ip_address
+
+    @property
+    def global_settings(self):
+        """
+        Gets the global_settings of this DataSafeConfiguration.
+
+        :return: The global_settings of this DataSafeConfiguration.
+        :rtype: oci.data_safe.models.GlobalSettings
+        """
+        return self._global_settings
+
+    @global_settings.setter
+    def global_settings(self, global_settings):
+        """
+        Sets the global_settings of this DataSafeConfiguration.
+
+        :param global_settings: The global_settings of this DataSafeConfiguration.
+        :type: oci.data_safe.models.GlobalSettings
+        """
+        self._global_settings = global_settings
 
     @property
     def freeform_tags(self):

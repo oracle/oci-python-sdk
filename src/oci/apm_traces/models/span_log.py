@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class SpanLog(object):
     """
-    Definition of a log which is a key value pair of log data.
+    Definition of a log which is a key-value pair of log data.
     """
 
     def __init__(self, **kwargs):

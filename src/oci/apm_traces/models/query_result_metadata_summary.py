@@ -66,7 +66,7 @@ class QueryResultMetadataSummary(object):
         """
         Gets the query_result_row_type_summaries of this QueryResultMetadataSummary.
         A collection of QueryResultRowTypeSummary objects that describe the type and properties of the individual row elements of the query rows
-        being returned.  The ith element in this list contains the QueryResultRowTypeSummary of the ith key value pair in the QueryResultRowData map.
+        being returned.  The i-th element in this list contains the QueryResultRowTypeSummary of the i-th key-value pair in the QueryResultRowData map.
 
 
         :return: The query_result_row_type_summaries of this QueryResultMetadataSummary.
@@ -79,7 +79,7 @@ class QueryResultMetadataSummary(object):
         """
         Sets the query_result_row_type_summaries of this QueryResultMetadataSummary.
         A collection of QueryResultRowTypeSummary objects that describe the type and properties of the individual row elements of the query rows
-        being returned.  The ith element in this list contains the QueryResultRowTypeSummary of the ith key value pair in the QueryResultRowData map.
+        being returned.  The i-th element in this list contains the QueryResultRowTypeSummary of the i-th key-value pair in the QueryResultRowData map.
 
 
         :param query_result_row_type_summaries: The query_result_row_type_summaries of this QueryResultMetadataSummary.
@@ -91,7 +91,7 @@ class QueryResultMetadataSummary(object):
     def source_name(self):
         """
         Gets the source_name of this QueryResultMetadataSummary.
-        Source of the query result set (traces, spans, etc).
+        Source of the query result set (traces, spans, and so on).
 
 
         :return: The source_name of this QueryResultMetadataSummary.
@@ -103,7 +103,7 @@ class QueryResultMetadataSummary(object):
     def source_name(self, source_name):
         """
         Sets the source_name of this QueryResultMetadataSummary.
-        Source of the query result set (traces, spans, etc).
+        Source of the query result set (traces, spans, and so on).
 
 
         :param source_name: The source_name of this QueryResultMetadataSummary.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class QueryResultsGroupedBySummary(object):
     """
-    Summary of the attribute based on which the query results are grouped by.
+    Summary of the attribute based on which the query results are grouped.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class QueryResultsGroupedBySummary(object):
     def query_results_grouped_by_column(self):
         """
         Gets the query_results_grouped_by_column of this QueryResultsGroupedBySummary.
-        Column or attribute in the query result which is a group by value.
+        Column or attribute in the query result, which is a group by value.
 
 
         :return: The query_results_grouped_by_column of this QueryResultsGroupedBySummary.
@@ -49,7 +49,7 @@ class QueryResultsGroupedBySummary(object):
     def query_results_grouped_by_column(self, query_results_grouped_by_column):
         """
         Sets the query_results_grouped_by_column of this QueryResultsGroupedBySummary.
-        Column or attribute in the query result which is a group by value.
+        Column or attribute in the query result, which is a group by value.
 
 
         :param query_results_grouped_by_column: The query_results_grouped_by_column of this QueryResultsGroupedBySummary.

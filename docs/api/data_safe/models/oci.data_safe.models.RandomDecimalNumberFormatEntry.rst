@@ -1,0 +1,11 @@
+RandomDecimalNumberFormatEntry
+==============================
+
+.. currentmodule:: oci.data_safe.models
+
+.. autoclass:: RandomDecimalNumberFormatEntry
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:
