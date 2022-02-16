@@ -354,6 +354,7 @@ from .service_gateway import ServiceGateway
 from .service_id_request_details import ServiceIdRequestDetails
 from .service_id_response_details import ServiceIdResponseDetails
 from .shape import Shape
+from .shape_alternative_object import ShapeAlternativeObject
 from .shape_max_vnic_attachment_options import ShapeMaxVnicAttachmentOptions
 from .shape_measured_boot_options import ShapeMeasuredBootOptions
 from .shape_memory_options import ShapeMemoryOptions
@@ -837,6 +838,7 @@ core_type_mapping = {
     "ServiceIdRequestDetails": ServiceIdRequestDetails,
     "ServiceIdResponseDetails": ServiceIdResponseDetails,
     "Shape": Shape,
+    "ShapeAlternativeObject": ShapeAlternativeObject,
     "ShapeMaxVnicAttachmentOptions": ShapeMaxVnicAttachmentOptions,
     "ShapeMeasuredBootOptions": ShapeMeasuredBootOptions,
     "ShapeMemoryOptions": ShapeMemoryOptions,

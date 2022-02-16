@@ -65,6 +65,10 @@ class ProblemSummary(object):
     #: This constant has a value of "IAAS_CONFIGURATION_DETECTOR"
     DETECTOR_ID_IAAS_CONFIGURATION_DETECTOR = "IAAS_CONFIGURATION_DETECTOR"
 
+    #: A constant which can be used with the detector_id property of a ProblemSummary.
+    #: This constant has a value of "IAAS_THREAT_DETECTOR"
+    DETECTOR_ID_IAAS_THREAT_DETECTOR = "IAAS_THREAT_DETECTOR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ProblemSummary object with values from keyword arguments.
@@ -87,6 +91,10 @@ class ProblemSummary(object):
             Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type risk_level: str
+
+        :param risk_score:
+            The value to assign to the risk_score property of this ProblemSummary.
+        :type risk_score: float
 
         :param resource_id:
             The value to assign to the resource_id property of this ProblemSummary.
@@ -126,7 +134,7 @@ class ProblemSummary(object):
 
         :param detector_id:
             The value to assign to the detector_id property of this ProblemSummary.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector_id: str
 
@@ -148,6 +156,7 @@ class ProblemSummary(object):
             'compartment_id': 'str',
             'detector_rule_id': 'str',
             'risk_level': 'str',
+            'risk_score': 'float',
             'resource_id': 'str',
             'resource_name': 'str',
             'resource_type': 'str',
@@ -167,6 +176,7 @@ class ProblemSummary(object):
             'compartment_id': 'compartmentId',
             'detector_rule_id': 'detectorRuleId',
             'risk_level': 'riskLevel',
+            'risk_score': 'riskScore',
             'resource_id': 'resourceId',
             'resource_name': 'resourceName',
             'resource_type': 'resourceType',
@@ -185,6 +195,7 @@ class ProblemSummary(object):
         self._compartment_id = None
         self._detector_rule_id = None
         self._risk_level = None
+        self._risk_score = None
         self._resource_id = None
         self._resource_name = None
         self._resource_type = None
@@ -299,6 +310,30 @@ class ProblemSummary(object):
         if not value_allowed_none_or_none_sentinel(risk_level, allowed_values):
             risk_level = 'UNKNOWN_ENUM_VALUE'
         self._risk_level = risk_level
+
+    @property
+    def risk_score(self):
+        """
+        Gets the risk_score of this ProblemSummary.
+        Risk Score for the problem
+
+
+        :return: The risk_score of this ProblemSummary.
+        :rtype: float
+        """
+        return self._risk_score
+
+    @risk_score.setter
+    def risk_score(self, risk_score):
+        """
+        Sets the risk_score of this ProblemSummary.
+        Risk Score for the problem
+
+
+        :param risk_score: The risk_score of this ProblemSummary.
+        :type: float
+        """
+        self._risk_score = risk_score
 
     @property
     def resource_id(self):
@@ -510,7 +545,7 @@ class ProblemSummary(object):
         Gets the detector_id of this ProblemSummary.
         Id of detector associated with the Problem.
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -529,7 +564,7 @@ class ProblemSummary(object):
         :param detector_id: The detector_id of this ProblemSummary.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector_id, allowed_values):
             detector_id = 'UNKNOWN_ENUM_VALUE'
         self._detector_id = detector_id

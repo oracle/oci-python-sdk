@@ -339,6 +339,8 @@ class CreateVolumeDetails(object):
 
           * `20`: Represents Higher Performance option.
 
+        For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm
 
 
@@ -362,6 +364,8 @@ class CreateVolumeDetails(object):
           * `10`: Represents Balanced option.
 
           * `20`: Represents Higher Performance option.
+
+        For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm
 
@@ -473,7 +477,8 @@ class CreateVolumeDetails(object):
     def is_auto_tune_enabled(self):
         """
         Gets the is_auto_tune_enabled of this CreateVolumeDetails.
-        Specifies whether the auto-tune performance is enabled for this volume.
+        Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
+        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 
 
         :return: The is_auto_tune_enabled of this CreateVolumeDetails.
@@ -485,7 +490,8 @@ class CreateVolumeDetails(object):
     def is_auto_tune_enabled(self, is_auto_tune_enabled):
         """
         Sets the is_auto_tune_enabled of this CreateVolumeDetails.
-        Specifies whether the auto-tune performance is enabled for this volume.
+        Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated.
+        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 
 
         :param is_auto_tune_enabled: The is_auto_tune_enabled of this CreateVolumeDetails.

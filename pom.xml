@@ -43,6 +43,8 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/data_connectivity/pom.xml</module>
+    <module>poms/ai_speech/pom.xml</module>
     <module>poms/ai_vision/pom.xml</module>
     <module>poms/threat_intelligence/pom.xml</module>
     <module>poms/dashboard_service/pom.xml</module>

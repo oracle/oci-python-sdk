@@ -10,8 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AmdMilanBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
     """
-    The platform configuration used when launching a bare metal instance with an E4 shape
-    (the AMD Milan platform).
+    The platform configuration used when launching a bare metal instance with an E4 shape.
     """
 
     #: A constant which can be used with the numa_nodes_per_socket property of a AmdMilanBmLaunchInstancePlatformConfig.

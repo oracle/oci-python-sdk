@@ -565,6 +565,8 @@ class ManagedListSummary(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
+        Avoid entering confidential information.
+
 
         :return: The freeform_tags of this ManagedListSummary.
         :rtype: dict(str, str)
@@ -577,6 +579,8 @@ class ManagedListSummary(object):
         Sets the freeform_tags of this ManagedListSummary.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this ManagedListSummary.

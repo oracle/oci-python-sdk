@@ -77,6 +77,8 @@ Cloud Guard
     oci.cloud_guard.models.ProblemAggregation
     oci.cloud_guard.models.ProblemAggregationCollection
     oci.cloud_guard.models.ProblemCollection
+    oci.cloud_guard.models.ProblemEndpointCollection
+    oci.cloud_guard.models.ProblemEndpointSummary
     oci.cloud_guard.models.ProblemHistoryCollection
     oci.cloud_guard.models.ProblemHistorySummary
     oci.cloud_guard.models.ProblemSummary
@@ -84,6 +86,18 @@ Cloud Guard
     oci.cloud_guard.models.ProblemTrendAggregationCollection
     oci.cloud_guard.models.RecommendationSummary
     oci.cloud_guard.models.RecommendationSummaryCollection
+    oci.cloud_guard.models.RequestSummarizedTrendResourceRiskScoresDetails
+    oci.cloud_guard.models.ResourceProfile
+    oci.cloud_guard.models.ResourceProfileCollection
+    oci.cloud_guard.models.ResourceProfileEndpointCollection
+    oci.cloud_guard.models.ResourceProfileEndpointSummary
+    oci.cloud_guard.models.ResourceProfileImpactedResourceCollection
+    oci.cloud_guard.models.ResourceProfileImpactedResourceSummary
+    oci.cloud_guard.models.ResourceProfileRiskScoreAggregationSummary
+    oci.cloud_guard.models.ResourceProfileRiskScoreAggregationSummaryCollection
+    oci.cloud_guard.models.ResourceProfileSummary
+    oci.cloud_guard.models.ResourceRiskScoreAggregation
+    oci.cloud_guard.models.ResourceRiskScoreAggregationCollection
     oci.cloud_guard.models.ResourceTypeCollection
     oci.cloud_guard.models.ResourceTypeSummary
     oci.cloud_guard.models.ResponderActivityCollection
@@ -115,8 +129,18 @@ Cloud Guard
     oci.cloud_guard.models.SecurityScoreTrendAggregation
     oci.cloud_guard.models.SecurityScoreTrendAggregationCollection
     oci.cloud_guard.models.ServiceTypeSummary
+    oci.cloud_guard.models.Sighting
+    oci.cloud_guard.models.SightingCollection
+    oci.cloud_guard.models.SightingEndpointCollection
+    oci.cloud_guard.models.SightingEndpointSummary
+    oci.cloud_guard.models.SightingImpactedResourceCollection
+    oci.cloud_guard.models.SightingImpactedResourceSummary
+    oci.cloud_guard.models.SightingSummary
+    oci.cloud_guard.models.SightingType
     oci.cloud_guard.models.SimpleCondition
     oci.cloud_guard.models.SkipBulkResponderExecutionDetails
+    oci.cloud_guard.models.TacticCollection
+    oci.cloud_guard.models.TacticSummary
     oci.cloud_guard.models.Target
     oci.cloud_guard.models.TargetCollection
     oci.cloud_guard.models.TargetDetectorDetails
@@ -136,6 +160,8 @@ Cloud Guard
     oci.cloud_guard.models.TargetResponderRecipeSummary
     oci.cloud_guard.models.TargetSelected
     oci.cloud_guard.models.TargetSummary
+    oci.cloud_guard.models.TechniqueCollection
+    oci.cloud_guard.models.TechniqueSummary
     oci.cloud_guard.models.TriggerResponderDetails
     oci.cloud_guard.models.UpdateBulkProblemStatusDetails
     oci.cloud_guard.models.UpdateConfigurationDetails

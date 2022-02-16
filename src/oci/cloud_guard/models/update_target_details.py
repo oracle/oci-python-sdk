@@ -101,7 +101,9 @@ class UpdateTargetDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateTargetDetails.
-        DetectorTemplate Identifier
+        DetectorTemplate identifier.
+
+        Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateTargetDetails.
@@ -113,7 +115,9 @@ class UpdateTargetDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateTargetDetails.
-        DetectorTemplate Identifier
+        DetectorTemplate identifier.
+
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateTargetDetails.
@@ -208,6 +212,8 @@ class UpdateTargetDetails(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
+        Avoid entering confidential information.
+
 
         :return: The freeform_tags of this UpdateTargetDetails.
         :rtype: dict(str, str)
@@ -220,6 +226,8 @@ class UpdateTargetDetails(object):
         Sets the freeform_tags of this UpdateTargetDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this UpdateTargetDetails.

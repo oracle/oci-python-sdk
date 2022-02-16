@@ -1,0 +1,337 @@
+# coding: utf-8
+# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+# This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+
+
+from oci.util import formatted_flat_dict, NONE_SENTINEL, value_allowed_none_or_none_sentinel  # noqa: F401
+from oci.decorators import init_model_state_from_kwargs
+
+
+@init_model_state_from_kwargs
+class TypedObject(object):
+    """
+    The `TypedObject` class is a base class for any model object that has a type.
+    """
+
+    #: A constant which can be used with the model_type property of a TypedObject.
+    #: This constant has a value of "SHAPE"
+    MODEL_TYPE_SHAPE = "SHAPE"
+
+    #: A constant which can be used with the model_type property of a TypedObject.
+    #: This constant has a value of "SHAPE_FIELD"
+    MODEL_TYPE_SHAPE_FIELD = "SHAPE_FIELD"
+
+    #: A constant which can be used with the model_type property of a TypedObject.
+    #: This constant has a value of "NATIVE_SHAPE_FIELD"
+    MODEL_TYPE_NATIVE_SHAPE_FIELD = "NATIVE_SHAPE_FIELD"
+
+    def __init__(self, **kwargs):
+        """
+        Initializes a new TypedObject object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
+        to a service operations then you should favor using a subclass over the base class:
+
+        * :class:`~oci.data_connectivity.models.OutputPort`
+        * :class:`~oci.data_connectivity.models.Shape`
+        * :class:`~oci.data_connectivity.models.ShapeField`
+        * :class:`~oci.data_connectivity.models.InputPort`
+        * :class:`~oci.data_connectivity.models.Parameter`
+        * :class:`~oci.data_connectivity.models.NativeShapeField`
+
+        The following keyword arguments are supported (corresponding to the getters/setters of this class):
+
+        :param model_type:
+            The value to assign to the model_type property of this TypedObject.
+            Allowed values for this property are: "SHAPE", "SHAPE_FIELD", "NATIVE_SHAPE_FIELD"
+        :type model_type: str
+
+        :param key:
+            The value to assign to the key property of this TypedObject.
+        :type key: str
+
+        :param model_version:
+            The value to assign to the model_version property of this TypedObject.
+        :type model_version: str
+
+        :param parent_ref:
+            The value to assign to the parent_ref property of this TypedObject.
+        :type parent_ref: oci.data_connectivity.models.ParentReference
+
+        :param config_values:
+            The value to assign to the config_values property of this TypedObject.
+        :type config_values: oci.data_connectivity.models.ConfigValues
+
+        :param object_status:
+            The value to assign to the object_status property of this TypedObject.
+        :type object_status: int
+
+        :param name:
+            The value to assign to the name property of this TypedObject.
+        :type name: str
+
+        :param description:
+            The value to assign to the description property of this TypedObject.
+        :type description: str
+
+        """
+        self.swagger_types = {
+            'model_type': 'str',
+            'key': 'str',
+            'model_version': 'str',
+            'parent_ref': 'ParentReference',
+            'config_values': 'ConfigValues',
+            'object_status': 'int',
+            'name': 'str',
+            'description': 'str'
+        }
+
+        self.attribute_map = {
+            'model_type': 'modelType',
+            'key': 'key',
+            'model_version': 'modelVersion',
+            'parent_ref': 'parentRef',
+            'config_values': 'configValues',
+            'object_status': 'objectStatus',
+            'name': 'name',
+            'description': 'description'
+        }
+
+        self._model_type = None
+        self._key = None
+        self._model_version = None
+        self._parent_ref = None
+        self._config_values = None
+        self._object_status = None
+        self._name = None
+        self._description = None
+
+    @staticmethod
+    def get_subtype(object_dictionary):
+        """
+        Given the hash representation of a subtype of this class,
+        use the info in the hash to return the class of the subtype.
+        """
+        type = object_dictionary['modelType']
+
+        if type == 'OUTPUT_PORT':
+            return 'OutputPort'
+
+        if type == 'SHAPE':
+            return 'Shape'
+
+        if type == 'SHAPE_FIELD':
+            return 'ShapeField'
+
+        if type == 'INPUT_PORT':
+            return 'InputPort'
+
+        if type == 'PARAMETER':
+            return 'Parameter'
+
+        if type == 'NATIVE_SHAPE_FIELD':
+            return 'NativeShapeField'
+        else:
+            return 'TypedObject'
+
+    @property
+    def model_type(self):
+        """
+        **[Required]** Gets the model_type of this TypedObject.
+        The type of the types object.
+
+        Allowed values for this property are: "SHAPE", "SHAPE_FIELD", "NATIVE_SHAPE_FIELD"
+
+
+        :return: The model_type of this TypedObject.
+        :rtype: str
+        """
+        return self._model_type
+
+    @model_type.setter
+    def model_type(self, model_type):
+        """
+        Sets the model_type of this TypedObject.
+        The type of the types object.
+
+
+        :param model_type: The model_type of this TypedObject.
+        :type: str
+        """
+        allowed_values = ["SHAPE", "SHAPE_FIELD", "NATIVE_SHAPE_FIELD"]
+        if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `model_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._model_type = model_type
+
+    @property
+    def key(self):
+        """
+        Gets the key of this TypedObject.
+        The key of the object.
+
+
+        :return: The key of this TypedObject.
+        :rtype: str
+        """
+        return self._key
+
+    @key.setter
+    def key(self, key):
+        """
+        Sets the key of this TypedObject.
+        The key of the object.
+
+
+        :param key: The key of this TypedObject.
+        :type: str
+        """
+        self._key = key
+
+    @property
+    def model_version(self):
+        """
+        Gets the model_version of this TypedObject.
+        The model version of an object.
+
+
+        :return: The model_version of this TypedObject.
+        :rtype: str
+        """
+        return self._model_version
+
+    @model_version.setter
+    def model_version(self, model_version):
+        """
+        Sets the model_version of this TypedObject.
+        The model version of an object.
+
+
+        :param model_version: The model_version of this TypedObject.
+        :type: str
+        """
+        self._model_version = model_version
+
+    @property
+    def parent_ref(self):
+        """
+        Gets the parent_ref of this TypedObject.
+
+        :return: The parent_ref of this TypedObject.
+        :rtype: oci.data_connectivity.models.ParentReference
+        """
+        return self._parent_ref
+
+    @parent_ref.setter
+    def parent_ref(self, parent_ref):
+        """
+        Sets the parent_ref of this TypedObject.
+
+        :param parent_ref: The parent_ref of this TypedObject.
+        :type: oci.data_connectivity.models.ParentReference
+        """
+        self._parent_ref = parent_ref
+
+    @property
+    def config_values(self):
+        """
+        Gets the config_values of this TypedObject.
+
+        :return: The config_values of this TypedObject.
+        :rtype: oci.data_connectivity.models.ConfigValues
+        """
+        return self._config_values
+
+    @config_values.setter
+    def config_values(self, config_values):
+        """
+        Sets the config_values of this TypedObject.
+
+        :param config_values: The config_values of this TypedObject.
+        :type: oci.data_connectivity.models.ConfigValues
+        """
+        self._config_values = config_values
+
+    @property
+    def object_status(self):
+        """
+        Gets the object_status of this TypedObject.
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+
+
+        :return: The object_status of this TypedObject.
+        :rtype: int
+        """
+        return self._object_status
+
+    @object_status.setter
+    def object_status(self, object_status):
+        """
+        Sets the object_status of this TypedObject.
+        The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+
+
+        :param object_status: The object_status of this TypedObject.
+        :type: int
+        """
+        self._object_status = object_status
+
+    @property
+    def name(self):
+        """
+        Gets the name of this TypedObject.
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+
+
+        :return: The name of this TypedObject.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        """
+        Sets the name of this TypedObject.
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+
+
+        :param name: The name of this TypedObject.
+        :type: str
+        """
+        self._name = name
+
+    @property
+    def description(self):
+        """
+        Gets the description of this TypedObject.
+        Detailed description for the object.
+
+
+        :return: The description of this TypedObject.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """
+        Sets the description of this TypedObject.
+        Detailed description for the object.
+
+
+        :param description: The description of this TypedObject.
+        :type: str
+        """
+        self._description = description
+
+    def __repr__(self):
+        return formatted_flat_dict(self)
+
+    def __eq__(self, other):
+        if other is None:
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not self == other

@@ -91,6 +91,14 @@ class CrossConnectGroup(object):
             The value to assign to the macsec_properties property of this CrossConnectGroup.
         :type macsec_properties: oci.core.models.MacsecProperties
 
+        :param oci_physical_device_name:
+            The value to assign to the oci_physical_device_name property of this CrossConnectGroup.
+        :type oci_physical_device_name: str
+
+        :param oci_logical_device_name:
+            The value to assign to the oci_logical_device_name property of this CrossConnectGroup.
+        :type oci_logical_device_name: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -101,7 +109,9 @@ class CrossConnectGroup(object):
             'lifecycle_state': 'str',
             'customer_reference_name': 'str',
             'time_created': 'datetime',
-            'macsec_properties': 'MacsecProperties'
+            'macsec_properties': 'MacsecProperties',
+            'oci_physical_device_name': 'str',
+            'oci_logical_device_name': 'str'
         }
 
         self.attribute_map = {
@@ -113,7 +123,9 @@ class CrossConnectGroup(object):
             'lifecycle_state': 'lifecycleState',
             'customer_reference_name': 'customerReferenceName',
             'time_created': 'timeCreated',
-            'macsec_properties': 'macsecProperties'
+            'macsec_properties': 'macsecProperties',
+            'oci_physical_device_name': 'ociPhysicalDeviceName',
+            'oci_logical_device_name': 'ociLogicalDeviceName'
         }
 
         self._compartment_id = None
@@ -125,6 +137,8 @@ class CrossConnectGroup(object):
         self._customer_reference_name = None
         self._time_created = None
         self._macsec_properties = None
+        self._oci_physical_device_name = None
+        self._oci_logical_device_name = None
 
     @property
     def compartment_id(self):
@@ -379,6 +393,56 @@ class CrossConnectGroup(object):
         :type: oci.core.models.MacsecProperties
         """
         self._macsec_properties = macsec_properties
+
+    @property
+    def oci_physical_device_name(self):
+        """
+        Gets the oci_physical_device_name of this CrossConnectGroup.
+        The FastConnect device that terminates the physical connection.
+
+
+        :return: The oci_physical_device_name of this CrossConnectGroup.
+        :rtype: str
+        """
+        return self._oci_physical_device_name
+
+    @oci_physical_device_name.setter
+    def oci_physical_device_name(self, oci_physical_device_name):
+        """
+        Sets the oci_physical_device_name of this CrossConnectGroup.
+        The FastConnect device that terminates the physical connection.
+
+
+        :param oci_physical_device_name: The oci_physical_device_name of this CrossConnectGroup.
+        :type: str
+        """
+        self._oci_physical_device_name = oci_physical_device_name
+
+    @property
+    def oci_logical_device_name(self):
+        """
+        Gets the oci_logical_device_name of this CrossConnectGroup.
+        The FastConnect device that terminates the logical connection.
+        This device might be different than the device that terminates the physical connection.
+
+
+        :return: The oci_logical_device_name of this CrossConnectGroup.
+        :rtype: str
+        """
+        return self._oci_logical_device_name
+
+    @oci_logical_device_name.setter
+    def oci_logical_device_name(self, oci_logical_device_name):
+        """
+        Sets the oci_logical_device_name of this CrossConnectGroup.
+        The FastConnect device that terminates the logical connection.
+        This device might be different than the device that terminates the physical connection.
+
+
+        :param oci_logical_device_name: The oci_logical_device_name of this CrossConnectGroup.
+        :type: str
+        """
+        self._oci_logical_device_name = oci_logical_device_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

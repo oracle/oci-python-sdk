@@ -64,6 +64,18 @@ class TargetDetectorDetails(object):
             The value to assign to the is_configuration_allowed property of this TargetDetectorDetails.
         :type is_configuration_allowed: bool
 
+        :param problem_threshold:
+            The value to assign to the problem_threshold property of this TargetDetectorDetails.
+        :type problem_threshold: int
+
+        :param target_types:
+            The value to assign to the target_types property of this TargetDetectorDetails.
+        :type target_types: list[str]
+
+        :param sighting_types:
+            The value to assign to the sighting_types property of this TargetDetectorDetails.
+        :type sighting_types: list[oci.cloud_guard.models.SightingType]
+
         """
         self.swagger_types = {
             'is_enabled': 'bool',
@@ -71,7 +83,10 @@ class TargetDetectorDetails(object):
             'configurations': 'list[DetectorConfiguration]',
             'condition_groups': 'list[ConditionGroup]',
             'labels': 'list[str]',
-            'is_configuration_allowed': 'bool'
+            'is_configuration_allowed': 'bool',
+            'problem_threshold': 'int',
+            'target_types': 'list[str]',
+            'sighting_types': 'list[SightingType]'
         }
 
         self.attribute_map = {
@@ -80,7 +95,10 @@ class TargetDetectorDetails(object):
             'configurations': 'configurations',
             'condition_groups': 'conditionGroups',
             'labels': 'labels',
-            'is_configuration_allowed': 'isConfigurationAllowed'
+            'is_configuration_allowed': 'isConfigurationAllowed',
+            'problem_threshold': 'problemThreshold',
+            'target_types': 'targetTypes',
+            'sighting_types': 'sightingTypes'
         }
 
         self._is_enabled = None
@@ -89,6 +107,9 @@ class TargetDetectorDetails(object):
         self._condition_groups = None
         self._labels = None
         self._is_configuration_allowed = None
+        self._problem_threshold = None
+        self._target_types = None
+        self._sighting_types = None
 
     @property
     def is_enabled(self):
@@ -117,7 +138,7 @@ class TargetDetectorDetails(object):
     @property
     def risk_level(self):
         """
-        **[Required]** Gets the risk_level of this TargetDetectorDetails.
+        Gets the risk_level of this TargetDetectorDetails.
         The Risk Level
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
@@ -239,6 +260,78 @@ class TargetDetectorDetails(object):
         :type: bool
         """
         self._is_configuration_allowed = is_configuration_allowed
+
+    @property
+    def problem_threshold(self):
+        """
+        Gets the problem_threshold of this TargetDetectorDetails.
+        Cutover point for an elevated resource Risk Score to create a Problem
+
+
+        :return: The problem_threshold of this TargetDetectorDetails.
+        :rtype: int
+        """
+        return self._problem_threshold
+
+    @problem_threshold.setter
+    def problem_threshold(self, problem_threshold):
+        """
+        Sets the problem_threshold of this TargetDetectorDetails.
+        Cutover point for an elevated resource Risk Score to create a Problem
+
+
+        :param problem_threshold: The problem_threshold of this TargetDetectorDetails.
+        :type: int
+        """
+        self._problem_threshold = problem_threshold
+
+    @property
+    def target_types(self):
+        """
+        Gets the target_types of this TargetDetectorDetails.
+        List of target types for which the detector rule is applicable
+
+
+        :return: The target_types of this TargetDetectorDetails.
+        :rtype: list[str]
+        """
+        return self._target_types
+
+    @target_types.setter
+    def target_types(self, target_types):
+        """
+        Sets the target_types of this TargetDetectorDetails.
+        List of target types for which the detector rule is applicable
+
+
+        :param target_types: The target_types of this TargetDetectorDetails.
+        :type: list[str]
+        """
+        self._target_types = target_types
+
+    @property
+    def sighting_types(self):
+        """
+        Gets the sighting_types of this TargetDetectorDetails.
+        List of sighting types
+
+
+        :return: The sighting_types of this TargetDetectorDetails.
+        :rtype: list[oci.cloud_guard.models.SightingType]
+        """
+        return self._sighting_types
+
+    @sighting_types.setter
+    def sighting_types(self, sighting_types):
+        """
+        Sets the sighting_types of this TargetDetectorDetails.
+        List of sighting types
+
+
+        :param sighting_types: The sighting_types of this TargetDetectorDetails.
+        :type: list[oci.cloud_guard.models.SightingType]
+        """
+        self._sighting_types = sighting_types
 
     def __repr__(self):
         return formatted_flat_dict(self)

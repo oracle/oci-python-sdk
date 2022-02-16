@@ -225,7 +225,7 @@ class DataMaskRule(object):
     def display_name(self):
         """
         Gets the display_name of this DataMaskRule.
-        Data Mask Rule Identifier, can be renamed
+        Data Mask Rule Identifier, can be renamed.
 
 
         :return: The display_name of this DataMaskRule.
@@ -237,7 +237,7 @@ class DataMaskRule(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DataMaskRule.
-        Data Mask Rule Identifier, can be renamed
+        Data Mask Rule Identifier, can be renamed.
 
 
         :param display_name: The display_name of this DataMaskRule.
@@ -249,7 +249,7 @@ class DataMaskRule(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DataMaskRule.
-        Compartment Identifier where the resource is created
+        Compartment Identifier where the resource is created.
 
 
         :return: The compartment_id of this DataMaskRule.
@@ -261,7 +261,7 @@ class DataMaskRule(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DataMaskRule.
-        Compartment Identifier where the resource is created
+        Compartment Identifier where the resource is created.
 
 
         :param compartment_id: The compartment_id of this DataMaskRule.
@@ -506,6 +506,8 @@ class DataMaskRule(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
+        Avoid entering confidential information.
+
 
         :return: The freeform_tags of this DataMaskRule.
         :rtype: dict(str, str)
@@ -518,6 +520,8 @@ class DataMaskRule(object):
         Sets the freeform_tags of this DataMaskRule.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this DataMaskRule.

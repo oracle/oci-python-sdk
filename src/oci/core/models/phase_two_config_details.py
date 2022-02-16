@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PhaseTwoConfigDetails(object):
     """
-    Phase 2 Configuration Details
+    Configuration details for IPSec phase two configuration parameters.
     """
 
     #: A constant which can be used with the authentication_algorithm property of a PhaseTwoConfigDetails.
@@ -131,7 +131,7 @@ class PhaseTwoConfigDetails(object):
     def is_custom_phase_two_config(self):
         """
         Gets the is_custom_phase_two_config of this PhaseTwoConfigDetails.
-        Indicates whether custom phase two configuration is enabled.
+        Indicates whether custom configuration is enabled for phase two options.
 
 
         :return: The is_custom_phase_two_config of this PhaseTwoConfigDetails.
@@ -143,7 +143,7 @@ class PhaseTwoConfigDetails(object):
     def is_custom_phase_two_config(self, is_custom_phase_two_config):
         """
         Sets the is_custom_phase_two_config of this PhaseTwoConfigDetails.
-        Indicates whether custom phase two configuration is enabled.
+        Indicates whether custom configuration is enabled for phase two options.
 
 
         :param is_custom_phase_two_config: The is_custom_phase_two_config of this PhaseTwoConfigDetails.
@@ -155,7 +155,7 @@ class PhaseTwoConfigDetails(object):
     def authentication_algorithm(self):
         """
         Gets the authentication_algorithm of this PhaseTwoConfigDetails.
-        Phase two authentication algorithm supported during tunnel negotiation.
+        The authentication algorithm proposed during phase two tunnel negotiation.
 
         Allowed values for this property are: "HMAC_SHA2_256_128", "HMAC_SHA1_128"
 
@@ -169,7 +169,7 @@ class PhaseTwoConfigDetails(object):
     def authentication_algorithm(self, authentication_algorithm):
         """
         Sets the authentication_algorithm of this PhaseTwoConfigDetails.
-        Phase two authentication algorithm supported during tunnel negotiation.
+        The authentication algorithm proposed during phase two tunnel negotiation.
 
 
         :param authentication_algorithm: The authentication_algorithm of this PhaseTwoConfigDetails.
@@ -187,7 +187,7 @@ class PhaseTwoConfigDetails(object):
     def encryption_algorithm(self):
         """
         Gets the encryption_algorithm of this PhaseTwoConfigDetails.
-        Phase two encryption algorithm supported during tunnel negotiation.
+        The encryption algorithm proposed during phase two tunnel negotiation.
 
         Allowed values for this property are: "AES_256_GCM", "AES_192_GCM", "AES_128_GCM", "AES_256_CBC", "AES_192_CBC", "AES_128_CBC"
 
@@ -201,7 +201,7 @@ class PhaseTwoConfigDetails(object):
     def encryption_algorithm(self, encryption_algorithm):
         """
         Sets the encryption_algorithm of this PhaseTwoConfigDetails.
-        Phase two encryption algorithm supported during tunnel negotiation.
+        The encryption algorithm proposed during phase two tunnel negotiation.
 
 
         :param encryption_algorithm: The encryption_algorithm of this PhaseTwoConfigDetails.
@@ -219,7 +219,7 @@ class PhaseTwoConfigDetails(object):
     def lifetime_in_seconds(self):
         """
         Gets the lifetime_in_seconds of this PhaseTwoConfigDetails.
-        Lifetime in seconds for IPSec phase two.
+        Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
 
 
         :return: The lifetime_in_seconds of this PhaseTwoConfigDetails.
@@ -231,7 +231,7 @@ class PhaseTwoConfigDetails(object):
     def lifetime_in_seconds(self, lifetime_in_seconds):
         """
         Sets the lifetime_in_seconds of this PhaseTwoConfigDetails.
-        Lifetime in seconds for IPSec phase two.
+        Lifetime in seconds for the IPSec session key set in phase two. The default is 3600 which is equivalent to 1 hour.
 
 
         :param lifetime_in_seconds: The lifetime_in_seconds of this PhaseTwoConfigDetails.
@@ -267,7 +267,7 @@ class PhaseTwoConfigDetails(object):
     def pfs_dh_group(self):
         """
         Gets the pfs_dh_group of this PhaseTwoConfigDetails.
-        Diffie-Hellman group used for PFS.
+        The Diffie-Hellman group used for PFS, if PFS is enabled.
 
         Allowed values for this property are: "GROUP2", "GROUP5", "GROUP14", "GROUP19", "GROUP20", "GROUP24"
 
@@ -281,7 +281,7 @@ class PhaseTwoConfigDetails(object):
     def pfs_dh_group(self, pfs_dh_group):
         """
         Sets the pfs_dh_group of this PhaseTwoConfigDetails.
-        Diffie-Hellman group used for PFS.
+        The Diffie-Hellman group used for PFS, if PFS is enabled.
 
 
         :param pfs_dh_group: The pfs_dh_group of this PhaseTwoConfigDetails.

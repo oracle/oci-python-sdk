@@ -79,7 +79,9 @@ class CreateDetectorRecipeDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateDetectorRecipeDetails.
-        DetectorRecipe Display Name
+        Detector recipe display name.
+
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CreateDetectorRecipeDetails.
@@ -91,7 +93,9 @@ class CreateDetectorRecipeDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDetectorRecipeDetails.
-        DetectorRecipe Display Name
+        Detector recipe display name.
+
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateDetectorRecipeDetails.
@@ -103,7 +107,9 @@ class CreateDetectorRecipeDetails(object):
     def description(self):
         """
         Gets the description of this CreateDetectorRecipeDetails.
-        DetectorRecipe Description
+        Detector recipe description.
+
+        Avoid entering confidential information.
 
 
         :return: The description of this CreateDetectorRecipeDetails.
@@ -115,7 +121,9 @@ class CreateDetectorRecipeDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateDetectorRecipeDetails.
-        DetectorRecipe Description
+        Detector recipe description.
+
+        Avoid entering confidential information.
 
 
         :param description: The description of this CreateDetectorRecipeDetails.
@@ -202,6 +210,8 @@ class CreateDetectorRecipeDetails(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
+        Avoid entering confidential information.
+
 
         :return: The freeform_tags of this CreateDetectorRecipeDetails.
         :rtype: dict(str, str)
@@ -214,6 +224,8 @@ class CreateDetectorRecipeDetails(object):
         Sets the freeform_tags of this CreateDetectorRecipeDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this CreateDetectorRecipeDetails.

@@ -65,6 +65,10 @@ class Problem(object):
     #: This constant has a value of "IAAS_CONFIGURATION_DETECTOR"
     DETECTOR_ID_IAAS_CONFIGURATION_DETECTOR = "IAAS_CONFIGURATION_DETECTOR"
 
+    #: A constant which can be used with the detector_id property of a Problem.
+    #: This constant has a value of "IAAS_THREAT_DETECTOR"
+    DETECTOR_ID_IAAS_THREAT_DETECTOR = "IAAS_THREAT_DETECTOR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Problem object with values from keyword arguments.
@@ -95,6 +99,26 @@ class Problem(object):
             Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type risk_level: str
+
+        :param risk_score:
+            The value to assign to the risk_score property of this Problem.
+        :type risk_score: float
+
+        :param peak_risk_score_date:
+            The value to assign to the peak_risk_score_date property of this Problem.
+        :type peak_risk_score_date: str
+
+        :param peak_risk_score:
+            The value to assign to the peak_risk_score property of this Problem.
+        :type peak_risk_score: float
+
+        :param auto_resolve_date:
+            The value to assign to the auto_resolve_date property of this Problem.
+        :type auto_resolve_date: str
+
+        :param peak_risk_score_lookup_period_in_days:
+            The value to assign to the peak_risk_score_lookup_period_in_days property of this Problem.
+        :type peak_risk_score_lookup_period_in_days: int
 
         :param resource_id:
             The value to assign to the resource_id property of this Problem.
@@ -134,7 +158,7 @@ class Problem(object):
 
         :param detector_id:
             The value to assign to the detector_id property of this Problem.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector_id: str
 
@@ -166,6 +190,11 @@ class Problem(object):
             'region': 'str',
             'regions': 'list[str]',
             'risk_level': 'str',
+            'risk_score': 'float',
+            'peak_risk_score_date': 'str',
+            'peak_risk_score': 'float',
+            'auto_resolve_date': 'str',
+            'peak_risk_score_lookup_period_in_days': 'int',
             'resource_id': 'str',
             'resource_name': 'str',
             'resource_type': 'str',
@@ -189,6 +218,11 @@ class Problem(object):
             'region': 'region',
             'regions': 'regions',
             'risk_level': 'riskLevel',
+            'risk_score': 'riskScore',
+            'peak_risk_score_date': 'peakRiskScoreDate',
+            'peak_risk_score': 'peakRiskScore',
+            'auto_resolve_date': 'autoResolveDate',
+            'peak_risk_score_lookup_period_in_days': 'peakRiskScoreLookupPeriodInDays',
             'resource_id': 'resourceId',
             'resource_name': 'resourceName',
             'resource_type': 'resourceType',
@@ -211,6 +245,11 @@ class Problem(object):
         self._region = None
         self._regions = None
         self._risk_level = None
+        self._risk_score = None
+        self._peak_risk_score_date = None
+        self._peak_risk_score = None
+        self._auto_resolve_date = None
+        self._peak_risk_score_lookup_period_in_days = None
         self._resource_id = None
         self._resource_name = None
         self._resource_type = None
@@ -375,6 +414,126 @@ class Problem(object):
         if not value_allowed_none_or_none_sentinel(risk_level, allowed_values):
             risk_level = 'UNKNOWN_ENUM_VALUE'
         self._risk_level = risk_level
+
+    @property
+    def risk_score(self):
+        """
+        Gets the risk_score of this Problem.
+        Risk Score for the problem
+
+
+        :return: The risk_score of this Problem.
+        :rtype: float
+        """
+        return self._risk_score
+
+    @risk_score.setter
+    def risk_score(self, risk_score):
+        """
+        Sets the risk_score of this Problem.
+        Risk Score for the problem
+
+
+        :param risk_score: The risk_score of this Problem.
+        :type: float
+        """
+        self._risk_score = risk_score
+
+    @property
+    def peak_risk_score_date(self):
+        """
+        Gets the peak_risk_score_date of this Problem.
+        The date and time for the peak risk score that is observed. Format defined by RFC3339.
+
+
+        :return: The peak_risk_score_date of this Problem.
+        :rtype: str
+        """
+        return self._peak_risk_score_date
+
+    @peak_risk_score_date.setter
+    def peak_risk_score_date(self, peak_risk_score_date):
+        """
+        Sets the peak_risk_score_date of this Problem.
+        The date and time for the peak risk score that is observed. Format defined by RFC3339.
+
+
+        :param peak_risk_score_date: The peak_risk_score_date of this Problem.
+        :type: str
+        """
+        self._peak_risk_score_date = peak_risk_score_date
+
+    @property
+    def peak_risk_score(self):
+        """
+        Gets the peak_risk_score of this Problem.
+        Peak risk score for the problem
+
+
+        :return: The peak_risk_score of this Problem.
+        :rtype: float
+        """
+        return self._peak_risk_score
+
+    @peak_risk_score.setter
+    def peak_risk_score(self, peak_risk_score):
+        """
+        Sets the peak_risk_score of this Problem.
+        Peak risk score for the problem
+
+
+        :param peak_risk_score: The peak_risk_score of this Problem.
+        :type: float
+        """
+        self._peak_risk_score = peak_risk_score
+
+    @property
+    def auto_resolve_date(self):
+        """
+        Gets the auto_resolve_date of this Problem.
+        The date and time when the problem will be auto resolved. Format defined by RFC3339.
+
+
+        :return: The auto_resolve_date of this Problem.
+        :rtype: str
+        """
+        return self._auto_resolve_date
+
+    @auto_resolve_date.setter
+    def auto_resolve_date(self, auto_resolve_date):
+        """
+        Sets the auto_resolve_date of this Problem.
+        The date and time when the problem will be auto resolved. Format defined by RFC3339.
+
+
+        :param auto_resolve_date: The auto_resolve_date of this Problem.
+        :type: str
+        """
+        self._auto_resolve_date = auto_resolve_date
+
+    @property
+    def peak_risk_score_lookup_period_in_days(self):
+        """
+        Gets the peak_risk_score_lookup_period_in_days of this Problem.
+        Number of days for which peak score is calculated for the problem
+
+
+        :return: The peak_risk_score_lookup_period_in_days of this Problem.
+        :rtype: int
+        """
+        return self._peak_risk_score_lookup_period_in_days
+
+    @peak_risk_score_lookup_period_in_days.setter
+    def peak_risk_score_lookup_period_in_days(self, peak_risk_score_lookup_period_in_days):
+        """
+        Sets the peak_risk_score_lookup_period_in_days of this Problem.
+        Number of days for which peak score is calculated for the problem
+
+
+        :param peak_risk_score_lookup_period_in_days: The peak_risk_score_lookup_period_in_days of this Problem.
+        :type: int
+        """
+        self._peak_risk_score_lookup_period_in_days = peak_risk_score_lookup_period_in_days
 
     @property
     def resource_id(self):
@@ -586,7 +745,7 @@ class Problem(object):
         Gets the detector_id of this Problem.
         Id of the detector associated with the Problem.
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -605,7 +764,7 @@ class Problem(object):
         :param detector_id: The detector_id of this Problem.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector_id, allowed_values):
             detector_id = 'UNKNOWN_ENUM_VALUE'
         self._detector_id = detector_id

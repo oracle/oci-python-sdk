@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DefaultPhaseTwoParameters(object):
     """
-    Phase Two Parameters
+    Default phase two parameters.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class DefaultPhaseTwoParameters(object):
     def default_encryption_algorithms(self):
         """
         Gets the default_encryption_algorithms of this DefaultPhaseTwoParameters.
-        Default Phase Two Encryption Algorithms
+        Default phase two encryption algorithms.
 
 
         :return: The default_encryption_algorithms of this DefaultPhaseTwoParameters.
@@ -63,7 +63,7 @@ class DefaultPhaseTwoParameters(object):
     def default_encryption_algorithms(self, default_encryption_algorithms):
         """
         Sets the default_encryption_algorithms of this DefaultPhaseTwoParameters.
-        Default Phase Two Encryption Algorithms
+        Default phase two encryption algorithms.
 
 
         :param default_encryption_algorithms: The default_encryption_algorithms of this DefaultPhaseTwoParameters.
@@ -75,7 +75,7 @@ class DefaultPhaseTwoParameters(object):
     def default_authentication_algorithms(self):
         """
         Gets the default_authentication_algorithms of this DefaultPhaseTwoParameters.
-        Default Phase Two Authentication Algorithms
+        Default phase two authentication algorithms.
 
 
         :return: The default_authentication_algorithms of this DefaultPhaseTwoParameters.
@@ -87,7 +87,7 @@ class DefaultPhaseTwoParameters(object):
     def default_authentication_algorithms(self, default_authentication_algorithms):
         """
         Sets the default_authentication_algorithms of this DefaultPhaseTwoParameters.
-        Default Phase Two Authentication Algorithms
+        Default phase two authentication algorithms.
 
 
         :param default_authentication_algorithms: The default_authentication_algorithms of this DefaultPhaseTwoParameters.
@@ -99,7 +99,7 @@ class DefaultPhaseTwoParameters(object):
     def default_pfs_dh_group(self):
         """
         Gets the default_pfs_dh_group of this DefaultPhaseTwoParameters.
-        Default PFS DH Group
+        Default perfect forward secrecy Diffie-Hellman groups.
 
 
         :return: The default_pfs_dh_group of this DefaultPhaseTwoParameters.
@@ -111,7 +111,7 @@ class DefaultPhaseTwoParameters(object):
     def default_pfs_dh_group(self, default_pfs_dh_group):
         """
         Sets the default_pfs_dh_group of this DefaultPhaseTwoParameters.
-        Default PFS DH Group
+        Default perfect forward secrecy Diffie-Hellman groups.
 
 
         :param default_pfs_dh_group: The default_pfs_dh_group of this DefaultPhaseTwoParameters.

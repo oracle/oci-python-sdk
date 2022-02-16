@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IPSecConnectionTunnelErrorDetails(object):
     """
-    Ipsec tunnels error details
+    Details for an error on an IPSec tunnel.
     """
 
     def __init__(self, **kwargs):
@@ -72,7 +72,7 @@ class IPSecConnectionTunnelErrorDetails(object):
     def id(self):
         """
         **[Required]** Gets the id of this IPSecConnectionTunnelErrorDetails.
-        unique id generated for each error report
+        Unique ID generated for each error report.
 
 
         :return: The id of this IPSecConnectionTunnelErrorDetails.
@@ -84,7 +84,7 @@ class IPSecConnectionTunnelErrorDetails(object):
     def id(self, id):
         """
         Sets the id of this IPSecConnectionTunnelErrorDetails.
-        unique id generated for each error report
+        Unique ID generated for each error report.
 
 
         :param id: The id of this IPSecConnectionTunnelErrorDetails.
@@ -96,7 +96,7 @@ class IPSecConnectionTunnelErrorDetails(object):
     def error_code(self):
         """
         **[Required]** Gets the error_code of this IPSecConnectionTunnelErrorDetails.
-        unique code describes error type
+        Unique code describes the error type.
 
 
         :return: The error_code of this IPSecConnectionTunnelErrorDetails.
@@ -108,7 +108,7 @@ class IPSecConnectionTunnelErrorDetails(object):
     def error_code(self, error_code):
         """
         Sets the error_code of this IPSecConnectionTunnelErrorDetails.
-        unique code describes error type
+        Unique code describes the error type.
 
 
         :param error_code: The error_code of this IPSecConnectionTunnelErrorDetails.
@@ -120,7 +120,7 @@ class IPSecConnectionTunnelErrorDetails(object):
     def error_description(self):
         """
         **[Required]** Gets the error_description of this IPSecConnectionTunnelErrorDetails.
-        detailed description of the error
+        A detailed description of the error.
 
 
         :return: The error_description of this IPSecConnectionTunnelErrorDetails.
@@ -132,7 +132,7 @@ class IPSecConnectionTunnelErrorDetails(object):
     def error_description(self, error_description):
         """
         Sets the error_description of this IPSecConnectionTunnelErrorDetails.
-        detailed description of the error
+        A detailed description of the error.
 
 
         :param error_description: The error_description of this IPSecConnectionTunnelErrorDetails.
@@ -144,7 +144,7 @@ class IPSecConnectionTunnelErrorDetails(object):
     def solution(self):
         """
         **[Required]** Gets the solution of this IPSecConnectionTunnelErrorDetails.
-        how to resolve the error
+        Resolution for the error.
 
 
         :return: The solution of this IPSecConnectionTunnelErrorDetails.
@@ -156,7 +156,7 @@ class IPSecConnectionTunnelErrorDetails(object):
     def solution(self, solution):
         """
         Sets the solution of this IPSecConnectionTunnelErrorDetails.
-        how to resolve the error
+        Resolution for the error.
 
 
         :param solution: The solution of this IPSecConnectionTunnelErrorDetails.
@@ -168,7 +168,7 @@ class IPSecConnectionTunnelErrorDetails(object):
     def oci_resources_link(self):
         """
         **[Required]** Gets the oci_resources_link of this IPSecConnectionTunnelErrorDetails.
-        link to oracle resources
+        Link to more Oracle resources or relevant documentation.
 
 
         :return: The oci_resources_link of this IPSecConnectionTunnelErrorDetails.
@@ -180,7 +180,7 @@ class IPSecConnectionTunnelErrorDetails(object):
     def oci_resources_link(self, oci_resources_link):
         """
         Sets the oci_resources_link of this IPSecConnectionTunnelErrorDetails.
-        link to oracle resources
+        Link to more Oracle resources or relevant documentation.
 
 
         :param oci_resources_link: The oci_resources_link of this IPSecConnectionTunnelErrorDetails.
@@ -192,7 +192,7 @@ class IPSecConnectionTunnelErrorDetails(object):
     def timestamp(self):
         """
         **[Required]** Gets the timestamp of this IPSecConnectionTunnelErrorDetails.
-        timestamp when error occurred.
+        Timestamp when the error occurred.
 
 
         :return: The timestamp of this IPSecConnectionTunnelErrorDetails.
@@ -204,7 +204,7 @@ class IPSecConnectionTunnelErrorDetails(object):
     def timestamp(self, timestamp):
         """
         Sets the timestamp of this IPSecConnectionTunnelErrorDetails.
-        timestamp when error occurred.
+        Timestamp when the error occurred.
 
 
         :param timestamp: The timestamp of this IPSecConnectionTunnelErrorDetails.

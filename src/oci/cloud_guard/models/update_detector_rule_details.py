@@ -109,7 +109,7 @@ class UpdateDetectorRuleDetails(object):
     @property
     def risk_level(self):
         """
-        **[Required]** Gets the risk_level of this UpdateDetectorRuleDetails.
+        Gets the risk_level of this UpdateDetectorRuleDetails.
         The Risk Level
 
         Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR"

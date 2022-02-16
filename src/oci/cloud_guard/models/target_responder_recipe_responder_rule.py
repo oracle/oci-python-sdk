@@ -164,7 +164,7 @@ class TargetResponderRecipeResponderRule(object):
     def responder_rule_id(self):
         """
         **[Required]** Gets the responder_rule_id of this TargetResponderRecipeResponderRule.
-        Identifier for ResponderRule.
+        Unique ResponderRule identifier.
 
 
         :return: The responder_rule_id of this TargetResponderRecipeResponderRule.
@@ -176,7 +176,7 @@ class TargetResponderRecipeResponderRule(object):
     def responder_rule_id(self, responder_rule_id):
         """
         Sets the responder_rule_id of this TargetResponderRecipeResponderRule.
-        Identifier for ResponderRule.
+        Unique ResponderRule identifier.
 
 
         :param responder_rule_id: The responder_rule_id of this TargetResponderRecipeResponderRule.
@@ -188,7 +188,7 @@ class TargetResponderRecipeResponderRule(object):
     def display_name(self):
         """
         Gets the display_name of this TargetResponderRecipeResponderRule.
-        ResponderRule Display Name
+        ResponderRule display name.
 
 
         :return: The display_name of this TargetResponderRecipeResponderRule.
@@ -200,7 +200,7 @@ class TargetResponderRecipeResponderRule(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TargetResponderRecipeResponderRule.
-        ResponderRule Display Name
+        ResponderRule display name.
 
 
         :param display_name: The display_name of this TargetResponderRecipeResponderRule.
@@ -212,7 +212,7 @@ class TargetResponderRecipeResponderRule(object):
     def description(self):
         """
         Gets the description of this TargetResponderRecipeResponderRule.
-        ResponderRule Description
+        ResponderRule description.
 
 
         :return: The description of this TargetResponderRecipeResponderRule.
@@ -224,7 +224,7 @@ class TargetResponderRecipeResponderRule(object):
     def description(self, description):
         """
         Sets the description of this TargetResponderRecipeResponderRule.
-        ResponderRule Description
+        ResponderRule description.
 
 
         :param description: The description of this TargetResponderRecipeResponderRule.

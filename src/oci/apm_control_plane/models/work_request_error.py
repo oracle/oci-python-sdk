@@ -51,7 +51,7 @@ class WorkRequestError(object):
     def code(self):
         """
         **[Required]** Gets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed at
+        A machine-usable code for the error that occurred. Error codes are listed at
         `API Errors`__
 
         __ https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm
@@ -66,7 +66,7 @@ class WorkRequestError(object):
     def code(self, code):
         """
         Sets the code of this WorkRequestError.
-        A machine-usable code for the error that occured. Error codes are listed at
+        A machine-usable code for the error that occurred. Error codes are listed at
         `API Errors`__
 
         __ https://docs.cloud.oracle.com/iaas/Content/API/References/apierrors.htm

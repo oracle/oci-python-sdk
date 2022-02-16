@@ -310,6 +310,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
 
           * `20`: Represents Higher Performance option.
 
+        For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm
 
 
@@ -333,6 +335,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
           * `10`: Represents Balanced option.
 
           * `20`: Represents Higher Performance option.
+
+        For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm
 
