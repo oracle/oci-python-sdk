@@ -18,7 +18,9 @@ missing = Sentinel("Missing")
 
 class CloudGuardClient(object):
     """
-    A description of the Cloud Guard APIs
+    Use the Cloud Guard API to automate processes that you would otherwise perform through the Cloud Guard Console.
+
+    **Note:** You can perform Create, Update, and Delete operations only from the reporting region of your Cloud Guard tenancy. You can perform Read operations from any region.
     """
 
     def __init__(self, config, **kwargs):
@@ -1830,7 +1832,7 @@ class CloudGuardClient(object):
         :param str condition_metadata_type_id: (required)
             The type of the condition meta data.
 
-            Allowed values are: "ActivityCondition", "SecurityCondition", "CloudGuardCondition"
+            Allowed values are: "ActivityCondition", "SecurityCondition", "CloudGuardCondition", "ThreatCondition"
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -2599,6 +2601,90 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 response_type="Problem")
 
+    def get_resource_profile(self, resource_profile_id, **kwargs):
+        """
+        Returns resource profile details
+
+
+        :param str resource_profile_id: (required)
+            OCID of the resource profile.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.ResourceProfile`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_resource_profile.py.html>`__ to see an example of how to use get_resource_profile API.
+        """
+        resource_path = "/resourceProfiles/{resourceProfileId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_resource_profile got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "resourceProfileId": resource_profile_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ResourceProfile")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="ResourceProfile")
+
     def get_responder_execution(self, responder_execution_id, **kwargs):
         """
         Returns a Responder Execution identified by responderExecutionId
@@ -2938,6 +3024,90 @@ class CloudGuardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 response_type="ResponderRule")
+
+    def get_sighting(self, sighting_id, **kwargs):
+        """
+        Returns Sighting details
+
+
+        :param str sighting_id: (required)
+            OCID of the sighting.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.Sighting`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/get_sighting.py.html>`__ to see an example of how to use get_sighting API.
+        """
+        resource_path = "/sightings/{sightingId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_sighting got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "sightingId": sighting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Sighting")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="Sighting")
 
     def get_target(self, target_id, **kwargs):
         """
@@ -4885,6 +5055,134 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 response_type="PolicyCollection")
 
+    def list_problem_endpoints(self, problem_id, **kwargs):
+        """
+        Returns a list of endpoints associated with a cloud guard problem
+
+
+        :param str problem_id: (required)
+            OCId of the problem.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.ProblemEndpointCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_problem_endpoints.py.html>`__ to see an example of how to use list_problem_endpoints API.
+        """
+        resource_path = "/problems/{problemId}/endpoints"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_problem_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "problemId": problem_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ProblemEndpointCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ProblemEndpointCollection")
+
     def list_problem_histories(self, compartment_id, problem_id, **kwargs):
         """
         Returns a list of Actions done on CloudGuard Problem
@@ -5088,7 +5386,7 @@ class CloudGuardClient(object):
         :param str detector_type: (optional)
             The field to list the Problems by Detector Type. Valid values are IAAS_ACTIVITY_DETECTOR and IAAS_CONFIGURATION_DETECTOR
 
-            Allowed values are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR"
+            Allowed values are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"
 
         :param str target_id: (optional)
             The ID of the target in which to list resources.
@@ -5200,7 +5498,7 @@ class CloudGuardClient(object):
                 )
 
         if 'detector_type' in kwargs:
-            detector_type_allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR"]
+            detector_type_allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"]
             if kwargs['detector_type'] not in detector_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `detector_type`, must be one of {0}".format(detector_type_allowed_values)
@@ -5462,6 +5760,463 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 response_type="RecommendationSummaryCollection")
 
+    def list_resource_profile_endpoints(self, resource_profile_id, **kwargs):
+        """
+        Returns a list of endpoints for Cloud Guard resource profile
+
+
+        :param str resource_profile_id: (required)
+            OCID of the resource profile.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.ResourceProfileEndpointCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_profile_endpoints.py.html>`__ to see an example of how to use list_resource_profile_endpoints API.
+        """
+        resource_path = "/resourceProfiles/{resourceProfileId}/endpoints"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_resource_profile_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "resourceProfileId": resource_profile_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceProfileEndpointCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceProfileEndpointCollection")
+
+    def list_resource_profile_impacted_resources(self, resource_profile_id, **kwargs):
+        """
+        Returns a list of impacted resources for Cloud Guard resource profile
+
+
+        :param str resource_profile_id: (required)
+            OCID of the resource profile.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.ResourceProfileImpactedResourceCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_profile_impacted_resources.py.html>`__ to see an example of how to use list_resource_profile_impacted_resources API.
+        """
+        resource_path = "/resourceProfiles/{resourceProfileId}/impactedResources"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_resource_profile_impacted_resources got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "resourceProfileId": resource_profile_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceProfileImpactedResourceCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceProfileImpactedResourceCollection")
+
+    def list_resource_profiles(self, compartment_id, **kwargs):
+        """
+        Returns a list of all resource profiles identified by the Cloud Guard
+        The ListResourceProfiles operation returns only resource profiles that match the passed filters.
+
+        The ListResourceProfiles operation returns only the resource profiles in `compartmentId` passed.
+        The parameter `accessLevel` specifies whether to return only those compartments for which the
+        requestor has INSPECT permissions on at least one resource directly
+        or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        Principal doesn't have access to even one of the child compartments. This is valid only when
+        `compartmentIdInSubtree` is set to `true`.
+
+        The parameter `compartmentIdInSubtree` applies when you perform ListResourceProfiles on the
+        `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list resources.
+
+        :param datetime time_last_detected_greater_than_or_equal_to: (optional)
+            Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+
+        :param datetime time_last_detected_less_than_or_equal_to: (optional)
+            End time for a filter. If end time is not specified, end time will be set to current time.
+
+        :param datetime time_first_detected_greater_than_or_equal_to: (optional)
+            Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+
+        :param datetime time_first_detected_less_than_or_equal_to: (optional)
+            End time for a filter. If end time is not specified, end time will be set to current time.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed
+            and all compartments and subcompartments in the tenancy are
+            returned depending on the the setting of `accessLevel`.
+
+        :param str access_level: (optional)
+            Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
+            Setting this to `ACCESSIBLE` returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment).
+            When set to `RESTRICTED` permissions are checked and no partial results are displayed.
+
+            Allowed values are: "RESTRICTED", "ACCESSIBLE"
+
+        :param list[str] resource_types: (optional)
+            A filter to return only resources that match the list of resource types given
+
+        :param float risk_score_greater_than_or_equal_to: (optional)
+            risk score filter
+
+        :param float risk_score_less_than_or_equal_to: (optional)
+            risk score filter
+
+        :param list[str] techniques: (optional)
+            A filter to return only resources that match the list of techniques given
+
+        :param list[str] tactics: (optional)
+            A filter to return only resources that match the list of tactics given.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort resource profiles. Only one sort order may be provided. Default order for timeLastDetected is descending. If no value is specified timeLastDetected is default.
+
+            Allowed values are: "riskScore", "riskScoreGrowth", "timeFirstDetected", "timeLastDetected", "sightingsCount", "displayName", "type"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.ResourceProfileCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_resource_profiles.py.html>`__ to see an example of how to use list_resource_profiles API.
+        """
+        resource_path = "/resourceProfiles"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "time_last_detected_greater_than_or_equal_to",
+            "time_last_detected_less_than_or_equal_to",
+            "time_first_detected_greater_than_or_equal_to",
+            "time_first_detected_less_than_or_equal_to",
+            "compartment_id_in_subtree",
+            "access_level",
+            "resource_types",
+            "risk_score_greater_than_or_equal_to",
+            "risk_score_less_than_or_equal_to",
+            "techniques",
+            "tactics",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_resource_profiles got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["riskScore", "riskScoreGrowth", "timeFirstDetected", "timeLastDetected", "sightingsCount", "displayName", "type"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "timeLastDetectedGreaterThanOrEqualTo": kwargs.get("time_last_detected_greater_than_or_equal_to", missing),
+            "timeLastDetectedLessThanOrEqualTo": kwargs.get("time_last_detected_less_than_or_equal_to", missing),
+            "timeFirstDetectedGreaterThanOrEqualTo": kwargs.get("time_first_detected_greater_than_or_equal_to", missing),
+            "timeFirstDetectedLessThanOrEqualTo": kwargs.get("time_first_detected_less_than_or_equal_to", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "resourceTypes": self.base_client.generate_collection_format_param(kwargs.get("resource_types", missing), 'multi'),
+            "riskScoreGreaterThanOrEqualTo": kwargs.get("risk_score_greater_than_or_equal_to", missing),
+            "riskScoreLessThanOrEqualTo": kwargs.get("risk_score_less_than_or_equal_to", missing),
+            "techniques": self.base_client.generate_collection_format_param(kwargs.get("techniques", missing), 'multi'),
+            "tactics": self.base_client.generate_collection_format_param(kwargs.get("tactics", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceProfileCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceProfileCollection")
+
     def list_resource_types(self, compartment_id, **kwargs):
         """
         Returns a list of resource types.
@@ -5469,6 +6224,11 @@ class CloudGuardClient(object):
 
         :param str compartment_id: (required)
             The ID of the compartment in which to list resources.
+
+        :param str detector_id: (optional)
+            Detector type
+
+            Allowed values are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"
 
         :param str lifecycle_state: (optional)
             The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
@@ -5519,6 +6279,7 @@ class CloudGuardClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
+            "detector_id",
             "lifecycle_state",
             "limit",
             "page",
@@ -5530,6 +6291,13 @@ class CloudGuardClient(object):
         if extra_kwargs:
             raise ValueError(
                 "list_resource_types got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'detector_id' in kwargs:
+            detector_id_allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"]
+            if kwargs['detector_id'] not in detector_id_allowed_values:
+                raise ValueError(
+                    "Invalid value for `detector_id`, must be one of {0}".format(detector_id_allowed_values)
+                )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
@@ -5554,6 +6322,7 @@ class CloudGuardClient(object):
 
         query_params = {
             "compartmentId": compartment_id,
+            "detectorId": kwargs.get("detector_id", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
@@ -6410,6 +7179,568 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 response_type="ResponderRuleCollection")
 
+    def list_sighting_endpoints(self, sighting_id, **kwargs):
+        """
+        Returns Sighting endpoints details
+
+
+        :param str sighting_id: (required)
+            OCID of the sighting.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.SightingEndpointCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_sighting_endpoints.py.html>`__ to see an example of how to use list_sighting_endpoints API.
+        """
+        resource_path = "/sightings/{sightingId}/endpoints"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_sighting_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "sightingId": sighting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SightingEndpointCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SightingEndpointCollection")
+
+    def list_sighting_impacted_resources(self, sighting_id, **kwargs):
+        """
+        Return a list of Impacted Resources for a CloudGuard Sighting
+
+
+        :param str sighting_id: (required)
+            OCID of the sighting.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.SightingImpactedResourceCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_sighting_impacted_resources.py.html>`__ to see an example of how to use list_sighting_impacted_resources API.
+        """
+        resource_path = "/sightings/{sightingId}/impactedResources"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_sighting_impacted_resources got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "sightingId": sighting_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SightingImpactedResourceCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SightingImpactedResourceCollection")
+
+    def list_sightings(self, compartment_id, **kwargs):
+        """
+        Returns a list of all Sightings identified by the Cloud Guard
+        The ListSightings operation returns only sightings that match the passed filters.
+
+        The parameter `accessLevel` specifies whether to return only those compartments for which the
+        requestor has INSPECT permissions on at least one resource directly
+        or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+        Principal doesn't have access to even one of the child compartments. This is valid only when
+        `compartmentIdInSubtree` is set to `true`.
+
+        The parameter `compartmentIdInSubtree` applies when you perform ListSightings on the
+        `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+        To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list resources.
+
+        :param str problem_id: (optional)
+            OCID of the problem.
+
+        :param str resource_profile_id: (optional)
+            OCID of the resource profile.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed
+            and all compartments and subcompartments in the tenancy are
+            returned depending on the the setting of `accessLevel`.
+
+        :param str access_level: (optional)
+            Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
+            Setting this to `ACCESSIBLE` returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment).
+            When set to `RESTRICTED` permissions are checked and no partial results are displayed.
+
+            Allowed values are: "RESTRICTED", "ACCESSIBLE"
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. If no value is specified timeCreated is default.
+
+            Allowed values are: "timeCreated"
+
+        :param datetime time_last_detected_greater_than_or_equal_to: (optional)
+            Start time for a filter. If start time is not specified, start time will be set to current time - 30 days.
+
+        :param datetime time_last_detected_less_than_or_equal_to: (optional)
+            End time for a filter. If end time is not specified, end time will be set to current time.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.SightingCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_sightings.py.html>`__ to see an example of how to use list_sightings API.
+        """
+        resource_path = "/sightings"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "problem_id",
+            "resource_profile_id",
+            "compartment_id_in_subtree",
+            "access_level",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "time_last_detected_greater_than_or_equal_to",
+            "time_last_detected_less_than_or_equal_to",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_sightings got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "problemId": kwargs.get("problem_id", missing),
+            "resourceProfileId": kwargs.get("resource_profile_id", missing),
+            "compartmentId": compartment_id,
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "timeLastDetectedGreaterThanOrEqualTo": kwargs.get("time_last_detected_greater_than_or_equal_to", missing),
+            "timeLastDetectedLessThanOrEqualTo": kwargs.get("time_last_detected_less_than_or_equal_to", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SightingCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SightingCollection")
+
+    def list_tactics(self, compartment_id, **kwargs):
+        """
+        Returns a list of tactics associated with detector rules.
+
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list resources.
+
+        :param str lifecycle_state: (optional)
+            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for displayName is ascending. If no value is specified displayName is default.
+
+            Allowed values are: "displayName"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.TacticCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_tactics.py.html>`__ to see an example of how to use list_tactics API.
+        """
+        resource_path = "/tactics"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "lifecycle_state",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_tactics got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="TacticCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="TacticCollection")
+
     def list_target_detector_recipe_detector_rules(self, target_id, target_detector_recipe_id, compartment_id, **kwargs):
         """
         Returns a list of DetectorRule associated with DetectorRecipe within a Target.
@@ -7196,6 +8527,142 @@ class CloudGuardClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="TargetCollection")
+
+    def list_techniques(self, compartment_id, **kwargs):
+        """
+        Returns a list of techniques associated with detector rules.
+
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list resources.
+
+        :param list[str] tactics: (optional)
+            A filter to return only resources that match the list of tactics given.
+
+        :param str lifecycle_state: (optional)
+            The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str sort_order: (optional)
+            The sort order to use, either 'asc' or 'desc'.
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort by. Only one sort order may be provided. Default order for displayName is ascending. If no value is specified displayName is default.
+
+            Allowed values are: "displayName"
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.TechniqueCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/list_techniques.py.html>`__ to see an example of how to use list_techniques API.
+        """
+        resource_path = "/techniques"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "tactics",
+            "lifecycle_state",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_techniques got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED"]
+            if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
+                raise ValueError(
+                    "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "tactics": self.base_client.generate_collection_format_param(kwargs.get("tactics", missing), 'multi'),
+            "lifecycleState": kwargs.get("lifecycle_state", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="TechniqueCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="TechniqueCollection")
 
     def request_risk_scores(self, compartment_id, **kwargs):
         """
@@ -8099,6 +9566,150 @@ class CloudGuardClient(object):
                 header_params=header_params,
                 response_type="SecurityScoreAggregationCollection")
 
+    def request_summarized_top_trend_resource_profile_risk_scores(self, compartment_id, **kwargs):
+        """
+        Summarizes the resource profile risk score top trends for the given time range based on the search filters.
+
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list resources.
+
+        :param datetime time_score_computed_greater_than_or_equal_to: (optional)
+            Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
+
+        :param datetime time_score_computed_less_than_or_equal_to: (optional)
+            End time for a filter. If end time is not specified, end time will be set to today's current time.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed
+            and all compartments and subcompartments in the tenancy are
+            returned depending on the the setting of `accessLevel`.
+
+        :param str sort_by: (optional)
+            The field to sort trendlines for resource profiles. Only one sort order may be provided. If no value is specified riskScore is default.
+
+            Allowed values are: "riskScore", "riskScoreGrowth", "timeFirstDetected", "timeLastDetected"
+
+        :param int count: (optional)
+            Number of resource profile risk score trend-lines to be displayed. Default value is 10.
+
+        :param str access_level: (optional)
+            Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
+            Setting this to `ACCESSIBLE` returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment).
+            When set to `RESTRICTED` permissions are checked and no partial results are displayed.
+
+            Allowed values are: "RESTRICTED", "ACCESSIBLE"
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.ResourceProfileRiskScoreAggregationSummaryCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_top_trend_resource_profile_risk_scores.py.html>`__ to see an example of how to use request_summarized_top_trend_resource_profile_risk_scores API.
+        """
+        resource_path = "/resourceProfileRiskScores/actions/summarizeTopTrends"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "time_score_computed_greater_than_or_equal_to",
+            "time_score_computed_less_than_or_equal_to",
+            "compartment_id_in_subtree",
+            "sort_by",
+            "count",
+            "access_level",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "request_summarized_top_trend_resource_profile_risk_scores got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["riskScore", "riskScoreGrowth", "timeFirstDetected", "timeLastDetected"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "timeScoreComputedGreaterThanOrEqualTo": kwargs.get("time_score_computed_greater_than_or_equal_to", missing),
+            "timeScoreComputedLessThanOrEqualTo": kwargs.get("time_score_computed_less_than_or_equal_to", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "count": kwargs.get("count", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceProfileRiskScoreAggregationSummaryCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="ResourceProfileRiskScoreAggregationSummaryCollection")
+
     def request_summarized_trend_problems(self, compartment_id, **kwargs):
         """
         Returns the number of problems identified by cloud guard, for a given time period.
@@ -8234,6 +9845,136 @@ class CloudGuardClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="ProblemTrendAggregationCollection")
+
+    def request_summarized_trend_resource_risk_scores(self, request_summarized_trend_resource_risk_scores_details, compartment_id, **kwargs):
+        """
+        Summarizes the resource risk score trend for the given time range based on the search filters.
+
+
+        :param oci.cloud_guard.models.RequestSummarizedTrendResourceRiskScoresDetails request_summarized_trend_resource_risk_scores_details: (required)
+            The filter to fetch risk score trend.
+
+        :param str compartment_id: (required)
+            The ID of the compartment in which to list resources.
+
+        :param datetime time_score_computed_greater_than_or_equal_to: (optional)
+            Start time for a filter. If start time is not specified, start time will be set to today's current time - 30 days.
+
+        :param datetime time_score_computed_less_than_or_equal_to: (optional)
+            End time for a filter. If end time is not specified, end time will be set to today's current time.
+
+        :param bool compartment_id_in_subtree: (optional)
+            Default is false.
+            When set to true, the hierarchy of compartments is traversed
+            and all compartments and subcompartments in the tenancy are
+            returned depending on the the setting of `accessLevel`.
+
+        :param str access_level: (optional)
+            Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`.
+            Setting this to `ACCESSIBLE` returns only those compartments for which the
+            user has INSPECT permissions directly or indirectly (permissions can be on a
+            resource in a subcompartment).
+            When set to `RESTRICTED` permissions are checked and no partial results are displayed.
+
+            Allowed values are: "RESTRICTED", "ACCESSIBLE"
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str page: (optional)
+            The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
+
+        :param str opc_request_id: (optional)
+            The client request ID for tracing.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.cloud_guard.models.ResourceRiskScoreAggregationCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/cloudguard/request_summarized_trend_resource_risk_scores.py.html>`__ to see an example of how to use request_summarized_trend_resource_risk_scores API.
+        """
+        resource_path = "/resourceRiskScores/actions/summarizeTrend"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "time_score_computed_greater_than_or_equal_to",
+            "time_score_computed_less_than_or_equal_to",
+            "compartment_id_in_subtree",
+            "access_level",
+            "limit",
+            "page",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "request_summarized_trend_resource_risk_scores got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'access_level' in kwargs:
+            access_level_allowed_values = ["RESTRICTED", "ACCESSIBLE"]
+            if kwargs['access_level'] not in access_level_allowed_values:
+                raise ValueError(
+                    "Invalid value for `access_level`, must be one of {0}".format(access_level_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "timeScoreComputedGreaterThanOrEqualTo": kwargs.get("time_score_computed_greater_than_or_equal_to", missing),
+            "timeScoreComputedLessThanOrEqualTo": kwargs.get("time_score_computed_less_than_or_equal_to", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "accessLevel": kwargs.get("access_level", missing),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=request_summarized_trend_resource_risk_scores_details,
+                response_type="ResourceRiskScoreAggregationCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                body=request_summarized_trend_resource_risk_scores_details,
+                response_type="ResourceRiskScoreAggregationCollection")
 
     def request_summarized_trend_responder_executions(self, compartment_id, **kwargs):
         """

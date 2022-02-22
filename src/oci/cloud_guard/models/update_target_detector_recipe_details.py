@@ -36,7 +36,7 @@ class UpdateTargetDetectorRecipeDetails(object):
     @property
     def detector_rules(self):
         """
-        **[Required]** Gets the detector_rules of this UpdateTargetDetectorRecipeDetails.
+        Gets the detector_rules of this UpdateTargetDetectorRecipeDetails.
         Update detector rules associated with detector recipe in a target.
 
 

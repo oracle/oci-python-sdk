@@ -110,7 +110,7 @@ class TargetResponderRecipe(object):
     def id(self):
         """
         **[Required]** Gets the id of this TargetResponderRecipe.
-        Unique identifier of TargetResponderRecipe that is immutable on creation
+        Unique identifier of TargetResponderRecipe that can't be changed after creation.
 
 
         :return: The id of this TargetResponderRecipe.
@@ -122,7 +122,7 @@ class TargetResponderRecipe(object):
     def id(self, id):
         """
         Sets the id of this TargetResponderRecipe.
-        Unique identifier of TargetResponderRecipe that is immutable on creation
+        Unique identifier of TargetResponderRecipe that can't be changed after creation.
 
 
         :param id: The id of this TargetResponderRecipe.
@@ -134,7 +134,7 @@ class TargetResponderRecipe(object):
     def responder_recipe_id(self):
         """
         **[Required]** Gets the responder_recipe_id of this TargetResponderRecipe.
-        Unique identifier for Responder Recipe of which this is an extension
+        Unique identifier for Responder Recipe of which this is an extension.
 
 
         :return: The responder_recipe_id of this TargetResponderRecipe.
@@ -146,7 +146,7 @@ class TargetResponderRecipe(object):
     def responder_recipe_id(self, responder_recipe_id):
         """
         Sets the responder_recipe_id of this TargetResponderRecipe.
-        Unique identifier for Responder Recipe of which this is an extension
+        Unique identifier for Responder Recipe of which this is an extension.
 
 
         :param responder_recipe_id: The responder_recipe_id of this TargetResponderRecipe.
@@ -182,7 +182,7 @@ class TargetResponderRecipe(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this TargetResponderRecipe.
-        ResponderRecipe Identifier Name
+        ResponderRecipe display name.
 
 
         :return: The display_name of this TargetResponderRecipe.
@@ -194,7 +194,7 @@ class TargetResponderRecipe(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TargetResponderRecipe.
-        ResponderRecipe Identifier Name
+        ResponderRecipe display name.
 
 
         :param display_name: The display_name of this TargetResponderRecipe.
@@ -206,7 +206,7 @@ class TargetResponderRecipe(object):
     def description(self):
         """
         **[Required]** Gets the description of this TargetResponderRecipe.
-        ResponderRecipe Description
+        ResponderRecipe description.
 
 
         :return: The description of this TargetResponderRecipe.
@@ -218,7 +218,7 @@ class TargetResponderRecipe(object):
     def description(self, description):
         """
         Sets the description of this TargetResponderRecipe.
-        ResponderRecipe Description
+        ResponderRecipe description.
 
 
         :param description: The description of this TargetResponderRecipe.

@@ -65,7 +65,9 @@ class UpdateManagedListDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateManagedListDetails.
-        ManagedList display name
+        Managed list display name.
+
+        Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateManagedListDetails.
@@ -77,7 +79,9 @@ class UpdateManagedListDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateManagedListDetails.
-        ManagedList display name
+        Managed list display name.
+
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateManagedListDetails.
@@ -89,7 +93,8 @@ class UpdateManagedListDetails(object):
     def description(self):
         """
         Gets the description of this UpdateManagedListDetails.
-        ManagedList description
+        Managed list description.
+        Avoid entering confidential information.
 
 
         :return: The description of this UpdateManagedListDetails.
@@ -101,7 +106,8 @@ class UpdateManagedListDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateManagedListDetails.
-        ManagedList description
+        Managed list description.
+        Avoid entering confidential information.
 
 
         :param description: The description of this UpdateManagedListDetails.
@@ -140,6 +146,8 @@ class UpdateManagedListDetails(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
+        Avoid entering confidential information.
+
 
         :return: The freeform_tags of this UpdateManagedListDetails.
         :rtype: dict(str, str)
@@ -152,6 +160,8 @@ class UpdateManagedListDetails(object):
         Sets the freeform_tags of this UpdateManagedListDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this UpdateManagedListDetails.

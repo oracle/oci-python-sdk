@@ -7744,6 +7744,9 @@ class ComputeClient(object):
         To preserve the boot volume associated with the instance, specify `true` for `PreserveBootVolumeQueryParam`.
         To delete the boot volume when the instance is deleted, specify `false` or do not specify a value for `PreserveBootVolumeQueryParam`.
 
+        To preserve data volumes created with the instance, specify `true` for `PreserveDataVolumesQueryParam`.
+        To delete the data volumes when the instance itself is deleted, specify `false` or do not specify a value for `PreserveDataVolumesQueryParam`.
+
         This is an asynchronous operation. The instance's `lifecycleState` will change to TERMINATING temporarily
         until the instance is completely removed.
 
@@ -7760,6 +7763,10 @@ class ComputeClient(object):
 
         :param bool preserve_boot_volume: (optional)
             Specifies whether to delete or preserve the boot volume when terminating an instance.
+            When set to `true`, the boot volume is preserved. The default value is `false`.
+
+        :param bool preserve_data_volumes: (optional)
+            Specifies whether to delete or preserve the data volumes when terminating an instance.
             When set to `true`, the boot volume is preserved. The default value is `false`.
 
         :param obj retry_strategy: (optional)
@@ -7788,7 +7795,8 @@ class ComputeClient(object):
             "allow_control_chars",
             "retry_strategy",
             "if_match",
-            "preserve_boot_volume"
+            "preserve_boot_volume",
+            "preserve_data_volumes"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -7806,7 +7814,8 @@ class ComputeClient(object):
                 raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
 
         query_params = {
-            "preserveBootVolume": kwargs.get("preserve_boot_volume", missing)
+            "preserveBootVolume": kwargs.get("preserve_boot_volume", missing),
+            "preserveDataVolumes": kwargs.get("preserve_data_volumes", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 

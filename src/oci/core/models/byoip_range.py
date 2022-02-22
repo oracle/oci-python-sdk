@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ByoipRange(object):
     """
-    Oracle offers the ability to Bring Your Own IP (BYOIP), importing public IP addresses that you currently own to Oracle Cloud Infrastructure. A `ByoipRange` resource is a record of the imported address block (a BYOIP CIDR block) and also some associated metadata.
+    Oracle offers the ability to Bring Your Own IP (BYOIP), importing public IP addresses  that you currently own to Oracle Cloud Infrastructure. A `ByoipRange` resource is a record of the imported address block (a BYOIP CIDR block) and also some associated metadata.
     The process used to `Bring Your Own IP`__ is explained in the documentation.
 
     __ https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOIP.htm

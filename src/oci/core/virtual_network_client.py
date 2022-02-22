@@ -8442,7 +8442,7 @@ class VirtualNetworkClient(object):
 
     def get_allowed_ike_ip_sec_parameters(self, **kwargs):
         """
-        The allowed parameters for IKE IPSec
+        The parameters allowed for IKE IPSec tunnels.
 
 
         :param str opc_request_id: (optional)
@@ -10207,7 +10207,7 @@ class VirtualNetworkClient(object):
 
     def get_ip_sec_connection_tunnel_error(self, ipsc_id, tunnel_id, **kwargs):
         """
-        Get the identified error for the specified IPSec Tunnel ID.
+        Gets the identified error for the specified IPSec tunnel ID.
 
 
         :param str ipsc_id: (required)
@@ -15278,7 +15278,7 @@ class VirtualNetworkClient(object):
 
     def list_ip_sec_connection_tunnel_routes(self, ipsc_id, tunnel_id, **kwargs):
         """
-        The routes advertised to the Customer and the routes received from the Customer.
+        The routes advertised to the on-premises network and the routes received from the on-premises network.
 
 
         :param str ipsc_id: (required)
@@ -15308,9 +15308,9 @@ class VirtualNetworkClient(object):
             __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
 
         :param str advertiser: (optional)
-            Specifies the advertiser of the routes. If set to ORACLE, then returns only the
-            routes advertised by ORACLE, else if set to CUSTOMER, then returns only the
-            routes advertised by the CUSTOMER.
+            Specifies the advertiser of the routes. If set to `ORACLE`, this returns only the
+            routes advertised by Oracle. When set to `CUSTOMER`, this returns only the
+            routes advertised by the CPE.
 
             Allowed values are: "CUSTOMER", "ORACLE"
 
@@ -15406,7 +15406,7 @@ class VirtualNetworkClient(object):
 
     def list_ip_sec_connection_tunnel_security_associations(self, ipsc_id, tunnel_id, **kwargs):
         """
-        Lists the tunnel Security Associations information for the specified IPSec Tunnel ID.
+        Lists the tunnel security associations information for the specified IPSec tunnel ID.
 
 
         :param str ipsc_id: (required)

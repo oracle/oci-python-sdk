@@ -13,6 +13,14 @@ class CreateDbSystemDetails(object):
     Details required to create a DB System.
     """
 
+    #: A constant which can be used with the crash_recovery property of a CreateDbSystemDetails.
+    #: This constant has a value of "ENABLED"
+    CRASH_RECOVERY_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the crash_recovery property of a CreateDbSystemDetails.
+    #: This constant has a value of "DISABLED"
+    CRASH_RECOVERY_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDbSystemDetails object with values from keyword arguments.
@@ -106,6 +114,11 @@ class CreateDbSystemDetails(object):
             The value to assign to the defined_tags property of this CreateDbSystemDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param crash_recovery:
+            The value to assign to the crash_recovery property of this CreateDbSystemDetails.
+            Allowed values for this property are: "ENABLED", "DISABLED"
+        :type crash_recovery: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -129,7 +142,8 @@ class CreateDbSystemDetails(object):
             'source': 'CreateDbSystemSourceDetails',
             'maintenance': 'CreateMaintenanceDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'crash_recovery': 'str'
         }
 
         self.attribute_map = {
@@ -154,7 +168,8 @@ class CreateDbSystemDetails(object):
             'source': 'source',
             'maintenance': 'maintenance',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'crash_recovery': 'crashRecovery'
         }
 
         self._display_name = None
@@ -179,6 +194,7 @@ class CreateDbSystemDetails(object):
         self._maintenance = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._crash_recovery = None
 
     @property
     def display_name(self):
@@ -769,6 +785,40 @@ class CreateDbSystemDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def crash_recovery(self):
+        """
+        Gets the crash_recovery of this CreateDbSystemDetails.
+        Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
+        and whether to enable or disable syncing of the Binary Logs.
+
+        Allowed values for this property are: "ENABLED", "DISABLED"
+
+
+        :return: The crash_recovery of this CreateDbSystemDetails.
+        :rtype: str
+        """
+        return self._crash_recovery
+
+    @crash_recovery.setter
+    def crash_recovery(self, crash_recovery):
+        """
+        Sets the crash_recovery of this CreateDbSystemDetails.
+        Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
+        and whether to enable or disable syncing of the Binary Logs.
+
+
+        :param crash_recovery: The crash_recovery of this CreateDbSystemDetails.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(crash_recovery, allowed_values):
+            raise ValueError(
+                "Invalid value for `crash_recovery`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._crash_recovery = crash_recovery
 
     def __repr__(self):
         return formatted_flat_dict(self)

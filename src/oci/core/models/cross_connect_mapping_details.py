@@ -81,6 +81,10 @@ class CrossConnectMappingDetails(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type ipv6_bgp_status: str
 
+        :param oci_logical_device_name:
+            The value to assign to the oci_logical_device_name property of this CrossConnectMappingDetails.
+        :type oci_logical_device_name: str
+
         """
         self.swagger_types = {
             'bgp_md5_auth_key': 'str',
@@ -91,7 +95,8 @@ class CrossConnectMappingDetails(object):
             'oracle_bgp_peering_ipv6': 'str',
             'vlan': 'int',
             'ipv4_bgp_status': 'str',
-            'ipv6_bgp_status': 'str'
+            'ipv6_bgp_status': 'str',
+            'oci_logical_device_name': 'str'
         }
 
         self.attribute_map = {
@@ -103,7 +108,8 @@ class CrossConnectMappingDetails(object):
             'oracle_bgp_peering_ipv6': 'oracleBgpPeeringIpv6',
             'vlan': 'vlan',
             'ipv4_bgp_status': 'ipv4BgpStatus',
-            'ipv6_bgp_status': 'ipv6BgpStatus'
+            'ipv6_bgp_status': 'ipv6BgpStatus',
+            'oci_logical_device_name': 'ociLogicalDeviceName'
         }
 
         self._bgp_md5_auth_key = None
@@ -115,6 +121,7 @@ class CrossConnectMappingDetails(object):
         self._vlan = None
         self._ipv4_bgp_status = None
         self._ipv6_bgp_status = None
+        self._oci_logical_device_name = None
 
     @property
     def bgp_md5_auth_key(self):
@@ -427,6 +434,30 @@ class CrossConnectMappingDetails(object):
         if not value_allowed_none_or_none_sentinel(ipv6_bgp_status, allowed_values):
             ipv6_bgp_status = 'UNKNOWN_ENUM_VALUE'
         self._ipv6_bgp_status = ipv6_bgp_status
+
+    @property
+    def oci_logical_device_name(self):
+        """
+        Gets the oci_logical_device_name of this CrossConnectMappingDetails.
+        The FastConnect device that terminates the logical connection.
+
+
+        :return: The oci_logical_device_name of this CrossConnectMappingDetails.
+        :rtype: str
+        """
+        return self._oci_logical_device_name
+
+    @oci_logical_device_name.setter
+    def oci_logical_device_name(self, oci_logical_device_name):
+        """
+        Sets the oci_logical_device_name of this CrossConnectMappingDetails.
+        The FastConnect device that terminates the logical connection.
+
+
+        :param oci_logical_device_name: The oci_logical_device_name of this CrossConnectMappingDetails.
+        :type: str
+        """
+        self._oci_logical_device_name = oci_logical_device_name
 
     def __repr__(self):
         return formatted_flat_dict(self)

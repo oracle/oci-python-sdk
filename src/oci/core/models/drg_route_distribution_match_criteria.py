@@ -11,7 +11,7 @@ from oci.decorators import init_model_state_from_kwargs
 class DrgRouteDistributionMatchCriteria(object):
     """
     The match criteria in a route distribution statement. The match criteria outlines which routes
-    should be imported or exported. Leaving the match criteria empty implies match ALL.
+    should be imported or exported.
     """
 
     #: A constant which can be used with the match_type property of a DrgRouteDistributionMatchCriteria.

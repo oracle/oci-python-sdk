@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DefaultPhaseOneParameters(object):
     """
-    Phase One Parameters
+    Default phase one parameters.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class DefaultPhaseOneParameters(object):
     def default_encryption_algorithms(self):
         """
         Gets the default_encryption_algorithms of this DefaultPhaseOneParameters.
-        Default Phase One Encryption Algorithms
+        Default phase one encryption algorithms.
 
 
         :return: The default_encryption_algorithms of this DefaultPhaseOneParameters.
@@ -63,7 +63,7 @@ class DefaultPhaseOneParameters(object):
     def default_encryption_algorithms(self, default_encryption_algorithms):
         """
         Sets the default_encryption_algorithms of this DefaultPhaseOneParameters.
-        Default Phase One Encryption Algorithms
+        Default phase one encryption algorithms.
 
 
         :param default_encryption_algorithms: The default_encryption_algorithms of this DefaultPhaseOneParameters.
@@ -75,7 +75,7 @@ class DefaultPhaseOneParameters(object):
     def default_authentication_algorithms(self):
         """
         Gets the default_authentication_algorithms of this DefaultPhaseOneParameters.
-        Default Phase One Authentication Algorithms
+        Default phase one authentication algorithms.
 
 
         :return: The default_authentication_algorithms of this DefaultPhaseOneParameters.
@@ -87,7 +87,7 @@ class DefaultPhaseOneParameters(object):
     def default_authentication_algorithms(self, default_authentication_algorithms):
         """
         Sets the default_authentication_algorithms of this DefaultPhaseOneParameters.
-        Default Phase One Authentication Algorithms
+        Default phase one authentication algorithms.
 
 
         :param default_authentication_algorithms: The default_authentication_algorithms of this DefaultPhaseOneParameters.
@@ -99,7 +99,7 @@ class DefaultPhaseOneParameters(object):
     def default_dh_groups(self):
         """
         Gets the default_dh_groups of this DefaultPhaseOneParameters.
-        Default DH Groups
+        Default phase one Diffie-Hellman groups.
 
 
         :return: The default_dh_groups of this DefaultPhaseOneParameters.
@@ -111,7 +111,7 @@ class DefaultPhaseOneParameters(object):
     def default_dh_groups(self, default_dh_groups):
         """
         Sets the default_dh_groups of this DefaultPhaseOneParameters.
-        Default DH Groups
+        Default phase one Diffie-Hellman groups.
 
 
         :param default_dh_groups: The default_dh_groups of this DefaultPhaseOneParameters.

@@ -80,6 +80,10 @@ class CreateAnalyticsInstanceDetails(object):
             The value to assign to the freeform_tags property of this CreateAnalyticsInstanceDetails.
         :type freeform_tags: dict(str, str)
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CreateAnalyticsInstanceDetails.
+        :type kms_key_id: str
+
         """
         self.swagger_types = {
             'name': 'str',
@@ -92,7 +96,8 @@ class CreateAnalyticsInstanceDetails(object):
             'network_endpoint_details': 'NetworkEndpointDetails',
             'idcs_access_token': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
-            'freeform_tags': 'dict(str, str)'
+            'freeform_tags': 'dict(str, str)',
+            'kms_key_id': 'str'
         }
 
         self.attribute_map = {
@@ -106,7 +111,8 @@ class CreateAnalyticsInstanceDetails(object):
             'network_endpoint_details': 'networkEndpointDetails',
             'idcs_access_token': 'idcsAccessToken',
             'defined_tags': 'definedTags',
-            'freeform_tags': 'freeformTags'
+            'freeform_tags': 'freeformTags',
+            'kms_key_id': 'kmsKeyId'
         }
 
         self._name = None
@@ -120,6 +126,7 @@ class CreateAnalyticsInstanceDetails(object):
         self._idcs_access_token = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._kms_key_id = None
 
     @property
     def name(self):
@@ -412,6 +419,34 @@ class CreateAnalyticsInstanceDetails(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this CreateAnalyticsInstanceDetails.
+        The `OCID`__ of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The kms_key_id of this CreateAnalyticsInstanceDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this CreateAnalyticsInstanceDetails.
+        The `OCID`__ of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param kms_key_id: The kms_key_id of this CreateAnalyticsInstanceDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

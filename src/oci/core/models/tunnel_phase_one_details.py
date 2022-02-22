@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TunnelPhaseOneDetails(object):
     """
-    Tunnel detail information specific to IPSec phase 1.
+    IPSec tunnel details specific to ISAKMP phase one.
     """
 
     def __init__(self, **kwargs):
@@ -108,6 +108,7 @@ class TunnelPhaseOneDetails(object):
         """
         Gets the is_custom_phase_one_config of this TunnelPhaseOneDetails.
         Indicates whether custom phase one configuration is enabled.
+        If this option is not enabled, default settings are proposed.
 
 
         :return: The is_custom_phase_one_config of this TunnelPhaseOneDetails.
@@ -120,6 +121,7 @@ class TunnelPhaseOneDetails(object):
         """
         Sets the is_custom_phase_one_config of this TunnelPhaseOneDetails.
         Indicates whether custom phase one configuration is enabled.
+        If this option is not enabled, default settings are proposed.
 
 
         :param is_custom_phase_one_config: The is_custom_phase_one_config of this TunnelPhaseOneDetails.
@@ -131,7 +133,7 @@ class TunnelPhaseOneDetails(object):
     def lifetime(self):
         """
         Gets the lifetime of this TunnelPhaseOneDetails.
-        The total configured lifetime of an IKE security association.
+        The total configured lifetime of the IKE security association.
 
 
         :return: The lifetime of this TunnelPhaseOneDetails.
@@ -143,7 +145,7 @@ class TunnelPhaseOneDetails(object):
     def lifetime(self, lifetime):
         """
         Sets the lifetime of this TunnelPhaseOneDetails.
-        The total configured lifetime of an IKE security association.
+        The total configured lifetime of the IKE security association.
 
 
         :param lifetime: The lifetime of this TunnelPhaseOneDetails.
@@ -155,7 +157,7 @@ class TunnelPhaseOneDetails(object):
     def remaining_lifetime(self):
         """
         Gets the remaining_lifetime of this TunnelPhaseOneDetails.
-        The lifetime remaining before the key is refreshed.
+        The remaining lifetime before the key is refreshed.
 
 
         :return: The remaining_lifetime of this TunnelPhaseOneDetails.
@@ -167,7 +169,7 @@ class TunnelPhaseOneDetails(object):
     def remaining_lifetime(self, remaining_lifetime):
         """
         Sets the remaining_lifetime of this TunnelPhaseOneDetails.
-        The lifetime remaining before the key is refreshed.
+        The remaining lifetime before the key is refreshed.
 
 
         :param remaining_lifetime: The remaining_lifetime of this TunnelPhaseOneDetails.
@@ -179,7 +181,7 @@ class TunnelPhaseOneDetails(object):
     def custom_authentication_algorithm(self):
         """
         Gets the custom_authentication_algorithm of this TunnelPhaseOneDetails.
-        Custom authentication algorithm
+        The proposed custom authentication algorithm.
 
 
         :return: The custom_authentication_algorithm of this TunnelPhaseOneDetails.
@@ -191,7 +193,7 @@ class TunnelPhaseOneDetails(object):
     def custom_authentication_algorithm(self, custom_authentication_algorithm):
         """
         Sets the custom_authentication_algorithm of this TunnelPhaseOneDetails.
-        Custom authentication algorithm
+        The proposed custom authentication algorithm.
 
 
         :param custom_authentication_algorithm: The custom_authentication_algorithm of this TunnelPhaseOneDetails.
@@ -227,7 +229,7 @@ class TunnelPhaseOneDetails(object):
     def custom_encryption_algorithm(self):
         """
         Gets the custom_encryption_algorithm of this TunnelPhaseOneDetails.
-        Custom encryption algorithm.
+        The proposed custom encryption algorithm.
 
 
         :return: The custom_encryption_algorithm of this TunnelPhaseOneDetails.
@@ -239,7 +241,7 @@ class TunnelPhaseOneDetails(object):
     def custom_encryption_algorithm(self, custom_encryption_algorithm):
         """
         Sets the custom_encryption_algorithm of this TunnelPhaseOneDetails.
-        Custom encryption algorithm.
+        The proposed custom encryption algorithm.
 
 
         :param custom_encryption_algorithm: The custom_encryption_algorithm of this TunnelPhaseOneDetails.
@@ -275,7 +277,7 @@ class TunnelPhaseOneDetails(object):
     def custom_dh_group(self):
         """
         Gets the custom_dh_group of this TunnelPhaseOneDetails.
-        Custom Diffie-Hellman group.
+        The proposed custom Diffie-Hellman group.
 
 
         :return: The custom_dh_group of this TunnelPhaseOneDetails.
@@ -287,7 +289,7 @@ class TunnelPhaseOneDetails(object):
     def custom_dh_group(self, custom_dh_group):
         """
         Sets the custom_dh_group of this TunnelPhaseOneDetails.
-        Custom Diffie-Hellman group.
+        The proposed custom Diffie-Hellman group.
 
 
         :param custom_dh_group: The custom_dh_group of this TunnelPhaseOneDetails.
@@ -323,7 +325,7 @@ class TunnelPhaseOneDetails(object):
     def is_ike_established(self):
         """
         Gets the is_ike_established of this TunnelPhaseOneDetails.
-        Indicates whether IKE Phase 1 is established.
+        Indicates whether IKE phase one is established.
 
 
         :return: The is_ike_established of this TunnelPhaseOneDetails.
@@ -335,7 +337,7 @@ class TunnelPhaseOneDetails(object):
     def is_ike_established(self, is_ike_established):
         """
         Sets the is_ike_established of this TunnelPhaseOneDetails.
-        Indicates whether IKE Phase 1 is established.
+        Indicates whether IKE phase one is established.
 
 
         :param is_ike_established: The is_ike_established of this TunnelPhaseOneDetails.

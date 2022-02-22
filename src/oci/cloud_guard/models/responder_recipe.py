@@ -199,7 +199,7 @@ class ResponderRecipe(object):
     def display_name(self):
         """
         Gets the display_name of this ResponderRecipe.
-        ResponderRecipe Display Name
+        ResponderRecipe display name.
 
 
         :return: The display_name of this ResponderRecipe.
@@ -211,7 +211,7 @@ class ResponderRecipe(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ResponderRecipe.
-        ResponderRecipe Display Name
+        ResponderRecipe display name.
 
 
         :param display_name: The display_name of this ResponderRecipe.
@@ -223,7 +223,7 @@ class ResponderRecipe(object):
     def description(self):
         """
         Gets the description of this ResponderRecipe.
-        ResponderRecipe Description
+        ResponderRecipe description.
 
 
         :return: The description of this ResponderRecipe.
@@ -235,7 +235,7 @@ class ResponderRecipe(object):
     def description(self, description):
         """
         Sets the description of this ResponderRecipe.
-        ResponderRecipe Description
+        ResponderRecipe description.
 
 
         :param description: The description of this ResponderRecipe.
@@ -478,6 +478,8 @@ class ResponderRecipe(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
+        Avoid entering confidential information.
+
 
         :return: The freeform_tags of this ResponderRecipe.
         :rtype: dict(str, str)
@@ -490,6 +492,8 @@ class ResponderRecipe(object):
         Sets the freeform_tags of this ResponderRecipe.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this ResponderRecipe.

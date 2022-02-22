@@ -256,7 +256,7 @@ class ManagedList(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this ManagedList.
-        ManagedList display name
+        ManagedList display name.
 
 
         :return: The display_name of this ManagedList.
@@ -268,7 +268,7 @@ class ManagedList(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ManagedList.
-        ManagedList display name
+        ManagedList display name.
 
 
         :param display_name: The display_name of this ManagedList.
@@ -280,7 +280,7 @@ class ManagedList(object):
     def description(self):
         """
         Gets the description of this ManagedList.
-        ManagedList description
+        ManagedList description.
 
 
         :return: The description of this ManagedList.
@@ -292,7 +292,7 @@ class ManagedList(object):
     def description(self, description):
         """
         Sets the description of this ManagedList.
-        ManagedList description
+        ManagedList description.
 
 
         :param description: The description of this ManagedList.
@@ -565,6 +565,8 @@ class ManagedList(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
+        Avoid entering confidential information.
+
 
         :return: The freeform_tags of this ManagedList.
         :rtype: dict(str, str)
@@ -577,6 +579,8 @@ class ManagedList(object):
         Sets the freeform_tags of this ManagedList.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this ManagedList.

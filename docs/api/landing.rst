@@ -5,6 +5,7 @@ API Reference
 
 * :doc:`Anomaly Detection <ai_anomaly_detection/client/oci.ai_anomaly_detection.AnomalyDetectionClient>`
 * :doc:`Ai Service Language <ai_language/client/oci.ai_language.AIServiceLanguageClient>`
+* :doc:`Ai Service Speech <ai_speech/client/oci.ai_speech.AIServiceSpeechClient>`
 * :doc:`Ai Service Vision <ai_vision/client/oci.ai_vision.AIServiceVisionClient>`
 * :doc:`Analytics <analytics/client/oci.analytics.AnalyticsClient>`
 * :doc:`Announcement <announcements_service/client/oci.announcements_service.AnnouncementClient>`
@@ -44,6 +45,8 @@ API Reference
 * :doc:`Dashboard <dashboard_service/client/oci.dashboard_service.DashboardClient>`
 * :doc:`Dashboard Group <dashboard_service/client/oci.dashboard_service.DashboardGroupClient>`
 * :doc:`Data Catalog <data_catalog/client/oci.data_catalog.DataCatalogClient>`
+* :doc:`Data Connectivity Management <data_connectivity/client/oci.data_connectivity.DataConnectivityManagementClient>`
+* :doc:`Network Validation <data_connectivity/client/oci.data_connectivity.NetworkValidationClient>`
 * :doc:`Data Flow <data_flow/client/oci.data_flow.DataFlowClient>`
 * :doc:`Data Integration <data_integration/client/oci.data_integration.DataIntegrationClient>`
 * :doc:`Data Labeling Management <data_labeling_service/client/oci.data_labeling_service.DataLabelingManagementClient>`
@@ -173,6 +176,7 @@ API Reference
 
     ai_anomaly_detection
     ai_language
+    ai_speech
     ai_vision
     analytics
     announcements_service
@@ -199,6 +203,7 @@ API Reference
     core
     dashboard_service
     data_catalog
+    data_connectivity
     data_flow
     data_integration
     data_labeling_service

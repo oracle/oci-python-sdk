@@ -218,7 +218,7 @@ class CreateInternetGatewayDetails(object):
     def vcn_id(self):
         """
         **[Required]** Gets the vcn_id of this CreateInternetGatewayDetails.
-        The `OCID`__ of the VCN the internet gateway is attached to.
+        The `OCID`__ of the VCN the Internet Gateway is attached to.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -232,7 +232,7 @@ class CreateInternetGatewayDetails(object):
     def vcn_id(self, vcn_id):
         """
         Sets the vcn_id of this CreateInternetGatewayDetails.
-        The `OCID`__ of the VCN the internet gateway is attached to.
+        The `OCID`__ of the VCN the Internet Gateway is attached to.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 

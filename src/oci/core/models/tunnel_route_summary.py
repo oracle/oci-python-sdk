@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TunnelRouteSummary(object):
     """
-    The routes advertised to the Customer and the routes received from the Customer
+    A summary of the routes advertised to and received from the on-premises network.
     """
 
     #: A constant which can be used with the advertiser property of a TunnelRouteSummary.
@@ -75,7 +75,7 @@ class TunnelRouteSummary(object):
     def prefix(self):
         """
         Gets the prefix of this TunnelRouteSummary.
-        BGP Network Layer Reachability Information
+        The BGP network layer reachability information.
 
 
         :return: The prefix of this TunnelRouteSummary.
@@ -87,7 +87,7 @@ class TunnelRouteSummary(object):
     def prefix(self, prefix):
         """
         Sets the prefix of this TunnelRouteSummary.
-        BGP Network Layer Reachability Information
+        The BGP network layer reachability information.
 
 
         :param prefix: The prefix of this TunnelRouteSummary.
@@ -99,7 +99,7 @@ class TunnelRouteSummary(object):
     def age(self):
         """
         Gets the age of this TunnelRouteSummary.
-        The age of the route
+        The age of the route.
 
 
         :return: The age of this TunnelRouteSummary.
@@ -111,7 +111,7 @@ class TunnelRouteSummary(object):
     def age(self, age):
         """
         Sets the age of this TunnelRouteSummary.
-        The age of the route
+        The age of the route.
 
 
         :param age: The age of this TunnelRouteSummary.
@@ -123,7 +123,7 @@ class TunnelRouteSummary(object):
     def is_best_path(self):
         """
         Gets the is_best_path of this TunnelRouteSummary.
-        Is this the best route
+        Indicates this is the best route.
 
 
         :return: The is_best_path of this TunnelRouteSummary.
@@ -135,7 +135,7 @@ class TunnelRouteSummary(object):
     def is_best_path(self, is_best_path):
         """
         Sets the is_best_path of this TunnelRouteSummary.
-        Is this the best route
+        Indicates this is the best route.
 
 
         :param is_best_path: The is_best_path of this TunnelRouteSummary.
@@ -147,7 +147,7 @@ class TunnelRouteSummary(object):
     def as_path(self):
         """
         Gets the as_path of this TunnelRouteSummary.
-        List of ASNs in AS Path
+        A list of ASNs in AS_Path.
 
 
         :return: The as_path of this TunnelRouteSummary.
@@ -159,7 +159,7 @@ class TunnelRouteSummary(object):
     def as_path(self, as_path):
         """
         Sets the as_path of this TunnelRouteSummary.
-        List of ASNs in AS Path
+        A list of ASNs in AS_Path.
 
 
         :param as_path: The as_path of this TunnelRouteSummary.
@@ -171,7 +171,7 @@ class TunnelRouteSummary(object):
     def advertiser(self):
         """
         Gets the advertiser of this TunnelRouteSummary.
-        Route advertiser
+        The source of the route advertisement.
 
         Allowed values for this property are: "CUSTOMER", "ORACLE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -186,7 +186,7 @@ class TunnelRouteSummary(object):
     def advertiser(self, advertiser):
         """
         Sets the advertiser of this TunnelRouteSummary.
-        Route advertiser
+        The source of the route advertisement.
 
 
         :param advertiser: The advertiser of this TunnelRouteSummary.

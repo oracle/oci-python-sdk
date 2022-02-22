@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AllowedPhaseTwoParameters(object):
     """
-    Phase Two Parameters
+    Allowed phase two parameters.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class AllowedPhaseTwoParameters(object):
     def encryption_algorithms(self):
         """
         Gets the encryption_algorithms of this AllowedPhaseTwoParameters.
-        Phase Two Encryption Algorithms
+        Allowed phase two encryption algorithms.
 
 
         :return: The encryption_algorithms of this AllowedPhaseTwoParameters.
@@ -63,7 +63,7 @@ class AllowedPhaseTwoParameters(object):
     def encryption_algorithms(self, encryption_algorithms):
         """
         Sets the encryption_algorithms of this AllowedPhaseTwoParameters.
-        Phase Two Encryption Algorithms
+        Allowed phase two encryption algorithms.
 
 
         :param encryption_algorithms: The encryption_algorithms of this AllowedPhaseTwoParameters.
@@ -75,7 +75,7 @@ class AllowedPhaseTwoParameters(object):
     def authentication_algorithms(self):
         """
         Gets the authentication_algorithms of this AllowedPhaseTwoParameters.
-        Phase Two Authentication Algorithms
+        Allowed phase two authentication algorithms.
 
 
         :return: The authentication_algorithms of this AllowedPhaseTwoParameters.
@@ -87,7 +87,7 @@ class AllowedPhaseTwoParameters(object):
     def authentication_algorithms(self, authentication_algorithms):
         """
         Sets the authentication_algorithms of this AllowedPhaseTwoParameters.
-        Phase Two Authentication Algorithms
+        Allowed phase two authentication algorithms.
 
 
         :param authentication_algorithms: The authentication_algorithms of this AllowedPhaseTwoParameters.
@@ -99,7 +99,7 @@ class AllowedPhaseTwoParameters(object):
     def pfs_dh_groups(self):
         """
         Gets the pfs_dh_groups of this AllowedPhaseTwoParameters.
-        PFS DH Groups
+        Allowed perfect forward secrecy Diffie-Hellman groups.
 
 
         :return: The pfs_dh_groups of this AllowedPhaseTwoParameters.
@@ -111,7 +111,7 @@ class AllowedPhaseTwoParameters(object):
     def pfs_dh_groups(self, pfs_dh_groups):
         """
         Sets the pfs_dh_groups of this AllowedPhaseTwoParameters.
-        PFS DH Groups
+        Allowed perfect forward secrecy Diffie-Hellman groups.
 
 
         :param pfs_dh_groups: The pfs_dh_groups of this AllowedPhaseTwoParameters.

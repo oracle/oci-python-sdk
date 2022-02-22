@@ -21,6 +21,10 @@ class DetectorRecipeDetectorRuleSummary(object):
     #: This constant has a value of "IAAS_CONFIGURATION_DETECTOR"
     DETECTOR_IAAS_CONFIGURATION_DETECTOR = "IAAS_CONFIGURATION_DETECTOR"
 
+    #: A constant which can be used with the detector property of a DetectorRecipeDetectorRuleSummary.
+    #: This constant has a value of "IAAS_THREAT_DETECTOR"
+    DETECTOR_IAAS_THREAT_DETECTOR = "IAAS_THREAT_DETECTOR"
+
     #: A constant which can be used with the managed_list_types property of a DetectorRecipeDetectorRuleSummary.
     #: This constant has a value of "CIDR_BLOCK"
     MANAGED_LIST_TYPES_CIDR_BLOCK = "CIDR_BLOCK"
@@ -120,7 +124,7 @@ class DetectorRecipeDetectorRuleSummary(object):
 
         :param detector:
             The value to assign to the detector property of this DetectorRecipeDetectorRuleSummary.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -316,7 +320,7 @@ class DetectorRecipeDetectorRuleSummary(object):
         **[Required]** Gets the detector of this DetectorRecipeDetectorRuleSummary.
         possible type of detectors
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -335,7 +339,7 @@ class DetectorRecipeDetectorRuleSummary(object):
         :param detector: The detector of this DetectorRecipeDetectorRuleSummary.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector

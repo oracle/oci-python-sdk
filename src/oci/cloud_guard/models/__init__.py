@@ -63,6 +63,8 @@ from .problem import Problem
 from .problem_aggregation import ProblemAggregation
 from .problem_aggregation_collection import ProblemAggregationCollection
 from .problem_collection import ProblemCollection
+from .problem_endpoint_collection import ProblemEndpointCollection
+from .problem_endpoint_summary import ProblemEndpointSummary
 from .problem_history_collection import ProblemHistoryCollection
 from .problem_history_summary import ProblemHistorySummary
 from .problem_summary import ProblemSummary
@@ -70,6 +72,18 @@ from .problem_trend_aggregation import ProblemTrendAggregation
 from .problem_trend_aggregation_collection import ProblemTrendAggregationCollection
 from .recommendation_summary import RecommendationSummary
 from .recommendation_summary_collection import RecommendationSummaryCollection
+from .request_summarized_trend_resource_risk_scores_details import RequestSummarizedTrendResourceRiskScoresDetails
+from .resource_profile import ResourceProfile
+from .resource_profile_collection import ResourceProfileCollection
+from .resource_profile_endpoint_collection import ResourceProfileEndpointCollection
+from .resource_profile_endpoint_summary import ResourceProfileEndpointSummary
+from .resource_profile_impacted_resource_collection import ResourceProfileImpactedResourceCollection
+from .resource_profile_impacted_resource_summary import ResourceProfileImpactedResourceSummary
+from .resource_profile_risk_score_aggregation_summary import ResourceProfileRiskScoreAggregationSummary
+from .resource_profile_risk_score_aggregation_summary_collection import ResourceProfileRiskScoreAggregationSummaryCollection
+from .resource_profile_summary import ResourceProfileSummary
+from .resource_risk_score_aggregation import ResourceRiskScoreAggregation
+from .resource_risk_score_aggregation_collection import ResourceRiskScoreAggregationCollection
 from .resource_type_collection import ResourceTypeCollection
 from .resource_type_summary import ResourceTypeSummary
 from .responder_activity_collection import ResponderActivityCollection
@@ -101,8 +115,18 @@ from .security_score_aggregation_collection import SecurityScoreAggregationColle
 from .security_score_trend_aggregation import SecurityScoreTrendAggregation
 from .security_score_trend_aggregation_collection import SecurityScoreTrendAggregationCollection
 from .service_type_summary import ServiceTypeSummary
+from .sighting import Sighting
+from .sighting_collection import SightingCollection
+from .sighting_endpoint_collection import SightingEndpointCollection
+from .sighting_endpoint_summary import SightingEndpointSummary
+from .sighting_impacted_resource_collection import SightingImpactedResourceCollection
+from .sighting_impacted_resource_summary import SightingImpactedResourceSummary
+from .sighting_summary import SightingSummary
+from .sighting_type import SightingType
 from .simple_condition import SimpleCondition
 from .skip_bulk_responder_execution_details import SkipBulkResponderExecutionDetails
+from .tactic_collection import TacticCollection
+from .tactic_summary import TacticSummary
 from .target import Target
 from .target_collection import TargetCollection
 from .target_detector_details import TargetDetectorDetails
@@ -122,6 +146,8 @@ from .target_responder_recipe_responder_rule_summary import TargetResponderRecip
 from .target_responder_recipe_summary import TargetResponderRecipeSummary
 from .target_selected import TargetSelected
 from .target_summary import TargetSummary
+from .technique_collection import TechniqueCollection
+from .technique_summary import TechniqueSummary
 from .trigger_responder_details import TriggerResponderDetails
 from .update_bulk_problem_status_details import UpdateBulkProblemStatusDetails
 from .update_configuration_details import UpdateConfigurationDetails
@@ -209,6 +235,8 @@ cloud_guard_type_mapping = {
     "ProblemAggregation": ProblemAggregation,
     "ProblemAggregationCollection": ProblemAggregationCollection,
     "ProblemCollection": ProblemCollection,
+    "ProblemEndpointCollection": ProblemEndpointCollection,
+    "ProblemEndpointSummary": ProblemEndpointSummary,
     "ProblemHistoryCollection": ProblemHistoryCollection,
     "ProblemHistorySummary": ProblemHistorySummary,
     "ProblemSummary": ProblemSummary,
@@ -216,6 +244,18 @@ cloud_guard_type_mapping = {
     "ProblemTrendAggregationCollection": ProblemTrendAggregationCollection,
     "RecommendationSummary": RecommendationSummary,
     "RecommendationSummaryCollection": RecommendationSummaryCollection,
+    "RequestSummarizedTrendResourceRiskScoresDetails": RequestSummarizedTrendResourceRiskScoresDetails,
+    "ResourceProfile": ResourceProfile,
+    "ResourceProfileCollection": ResourceProfileCollection,
+    "ResourceProfileEndpointCollection": ResourceProfileEndpointCollection,
+    "ResourceProfileEndpointSummary": ResourceProfileEndpointSummary,
+    "ResourceProfileImpactedResourceCollection": ResourceProfileImpactedResourceCollection,
+    "ResourceProfileImpactedResourceSummary": ResourceProfileImpactedResourceSummary,
+    "ResourceProfileRiskScoreAggregationSummary": ResourceProfileRiskScoreAggregationSummary,
+    "ResourceProfileRiskScoreAggregationSummaryCollection": ResourceProfileRiskScoreAggregationSummaryCollection,
+    "ResourceProfileSummary": ResourceProfileSummary,
+    "ResourceRiskScoreAggregation": ResourceRiskScoreAggregation,
+    "ResourceRiskScoreAggregationCollection": ResourceRiskScoreAggregationCollection,
     "ResourceTypeCollection": ResourceTypeCollection,
     "ResourceTypeSummary": ResourceTypeSummary,
     "ResponderActivityCollection": ResponderActivityCollection,
@@ -247,8 +287,18 @@ cloud_guard_type_mapping = {
     "SecurityScoreTrendAggregation": SecurityScoreTrendAggregation,
     "SecurityScoreTrendAggregationCollection": SecurityScoreTrendAggregationCollection,
     "ServiceTypeSummary": ServiceTypeSummary,
+    "Sighting": Sighting,
+    "SightingCollection": SightingCollection,
+    "SightingEndpointCollection": SightingEndpointCollection,
+    "SightingEndpointSummary": SightingEndpointSummary,
+    "SightingImpactedResourceCollection": SightingImpactedResourceCollection,
+    "SightingImpactedResourceSummary": SightingImpactedResourceSummary,
+    "SightingSummary": SightingSummary,
+    "SightingType": SightingType,
     "SimpleCondition": SimpleCondition,
     "SkipBulkResponderExecutionDetails": SkipBulkResponderExecutionDetails,
+    "TacticCollection": TacticCollection,
+    "TacticSummary": TacticSummary,
     "Target": Target,
     "TargetCollection": TargetCollection,
     "TargetDetectorDetails": TargetDetectorDetails,
@@ -268,6 +318,8 @@ cloud_guard_type_mapping = {
     "TargetResponderRecipeSummary": TargetResponderRecipeSummary,
     "TargetSelected": TargetSelected,
     "TargetSummary": TargetSummary,
+    "TechniqueCollection": TechniqueCollection,
+    "TechniqueSummary": TechniqueSummary,
     "TriggerResponderDetails": TriggerResponderDetails,
     "UpdateBulkProblemStatusDetails": UpdateBulkProblemStatusDetails,
     "UpdateConfigurationDetails": UpdateConfigurationDetails,

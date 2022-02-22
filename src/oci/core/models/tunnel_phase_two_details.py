@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TunnelPhaseTwoDetails(object):
     """
-    Tunnel detail information specific to IPSec phase 2.
+    IPsec tunnel detail information specific to phase two.
     """
 
     def __init__(self, **kwargs):
@@ -115,6 +115,7 @@ class TunnelPhaseTwoDetails(object):
         """
         Gets the is_custom_phase_two_config of this TunnelPhaseTwoDetails.
         Indicates whether custom phase two configuration is enabled.
+        If this option is not enabled, default settings are proposed.
 
 
         :return: The is_custom_phase_two_config of this TunnelPhaseTwoDetails.
@@ -127,6 +128,7 @@ class TunnelPhaseTwoDetails(object):
         """
         Sets the is_custom_phase_two_config of this TunnelPhaseTwoDetails.
         Indicates whether custom phase two configuration is enabled.
+        If this option is not enabled, default settings are proposed.
 
 
         :param is_custom_phase_two_config: The is_custom_phase_two_config of this TunnelPhaseTwoDetails.
@@ -138,7 +140,7 @@ class TunnelPhaseTwoDetails(object):
     def lifetime(self):
         """
         Gets the lifetime of this TunnelPhaseTwoDetails.
-        The total configured lifetime of an IKE security association.
+        The total configured lifetime of the IKE security association.
 
 
         :return: The lifetime of this TunnelPhaseTwoDetails.
@@ -150,7 +152,7 @@ class TunnelPhaseTwoDetails(object):
     def lifetime(self, lifetime):
         """
         Sets the lifetime of this TunnelPhaseTwoDetails.
-        The total configured lifetime of an IKE security association.
+        The total configured lifetime of the IKE security association.
 
 
         :param lifetime: The lifetime of this TunnelPhaseTwoDetails.
@@ -162,7 +164,7 @@ class TunnelPhaseTwoDetails(object):
     def remaining_lifetime(self):
         """
         Gets the remaining_lifetime of this TunnelPhaseTwoDetails.
-        The lifetime remaining before the key is refreshed.
+        The remaining lifetime before the key is refreshed.
 
 
         :return: The remaining_lifetime of this TunnelPhaseTwoDetails.
@@ -174,7 +176,7 @@ class TunnelPhaseTwoDetails(object):
     def remaining_lifetime(self, remaining_lifetime):
         """
         Sets the remaining_lifetime of this TunnelPhaseTwoDetails.
-        The lifetime remaining before the key is refreshed.
+        The remaining lifetime before the key is refreshed.
 
 
         :param remaining_lifetime: The remaining_lifetime of this TunnelPhaseTwoDetails.
@@ -186,7 +188,7 @@ class TunnelPhaseTwoDetails(object):
     def custom_authentication_algorithm(self):
         """
         Gets the custom_authentication_algorithm of this TunnelPhaseTwoDetails.
-        Phase Two authentication algorithm supported during tunnel negotiation.
+        Phase two authentication algorithm proposed during tunnel negotiation.
 
 
         :return: The custom_authentication_algorithm of this TunnelPhaseTwoDetails.
@@ -198,7 +200,7 @@ class TunnelPhaseTwoDetails(object):
     def custom_authentication_algorithm(self, custom_authentication_algorithm):
         """
         Sets the custom_authentication_algorithm of this TunnelPhaseTwoDetails.
-        Phase Two authentication algorithm supported during tunnel negotiation.
+        Phase two authentication algorithm proposed during tunnel negotiation.
 
 
         :param custom_authentication_algorithm: The custom_authentication_algorithm of this TunnelPhaseTwoDetails.
@@ -210,7 +212,7 @@ class TunnelPhaseTwoDetails(object):
     def negotiated_authentication_algorithm(self):
         """
         Gets the negotiated_authentication_algorithm of this TunnelPhaseTwoDetails.
-        The negotiated authentication algorithm.
+        The negotiated phase two authentication algorithm.
 
 
         :return: The negotiated_authentication_algorithm of this TunnelPhaseTwoDetails.
@@ -222,7 +224,7 @@ class TunnelPhaseTwoDetails(object):
     def negotiated_authentication_algorithm(self, negotiated_authentication_algorithm):
         """
         Sets the negotiated_authentication_algorithm of this TunnelPhaseTwoDetails.
-        The negotiated authentication algorithm.
+        The negotiated phase two authentication algorithm.
 
 
         :param negotiated_authentication_algorithm: The negotiated_authentication_algorithm of this TunnelPhaseTwoDetails.
@@ -234,7 +236,7 @@ class TunnelPhaseTwoDetails(object):
     def custom_encryption_algorithm(self):
         """
         Gets the custom_encryption_algorithm of this TunnelPhaseTwoDetails.
-        Custom Encryption Algorithm
+        The proposed custom phase two encryption algorithm.
 
 
         :return: The custom_encryption_algorithm of this TunnelPhaseTwoDetails.
@@ -246,7 +248,7 @@ class TunnelPhaseTwoDetails(object):
     def custom_encryption_algorithm(self, custom_encryption_algorithm):
         """
         Sets the custom_encryption_algorithm of this TunnelPhaseTwoDetails.
-        Custom Encryption Algorithm
+        The proposed custom phase two encryption algorithm.
 
 
         :param custom_encryption_algorithm: The custom_encryption_algorithm of this TunnelPhaseTwoDetails.
@@ -282,7 +284,7 @@ class TunnelPhaseTwoDetails(object):
     def dh_group(self):
         """
         Gets the dh_group of this TunnelPhaseTwoDetails.
-        Proposed Diffie-Hellman group.
+        The proposed Diffie-Hellman group.
 
 
         :return: The dh_group of this TunnelPhaseTwoDetails.
@@ -294,7 +296,7 @@ class TunnelPhaseTwoDetails(object):
     def dh_group(self, dh_group):
         """
         Sets the dh_group of this TunnelPhaseTwoDetails.
-        Proposed Diffie-Hellman group.
+        The proposed Diffie-Hellman group.
 
 
         :param dh_group: The dh_group of this TunnelPhaseTwoDetails.
@@ -330,7 +332,7 @@ class TunnelPhaseTwoDetails(object):
     def is_esp_established(self):
         """
         Gets the is_esp_established of this TunnelPhaseTwoDetails.
-        ESP Phase 2 established
+        Indicates that ESP phase two is established.
 
 
         :return: The is_esp_established of this TunnelPhaseTwoDetails.
@@ -342,7 +344,7 @@ class TunnelPhaseTwoDetails(object):
     def is_esp_established(self, is_esp_established):
         """
         Sets the is_esp_established of this TunnelPhaseTwoDetails.
-        ESP Phase 2 established
+        Indicates that ESP phase two is established.
 
 
         :param is_esp_established: The is_esp_established of this TunnelPhaseTwoDetails.
@@ -354,7 +356,7 @@ class TunnelPhaseTwoDetails(object):
     def is_pfs_enabled(self):
         """
         Gets the is_pfs_enabled of this TunnelPhaseTwoDetails.
-        Is PFS (perfect forward secrecy) enabled
+        Indicates that PFS (perfect forward secrecy) is enabled.
 
 
         :return: The is_pfs_enabled of this TunnelPhaseTwoDetails.
@@ -366,7 +368,7 @@ class TunnelPhaseTwoDetails(object):
     def is_pfs_enabled(self, is_pfs_enabled):
         """
         Sets the is_pfs_enabled of this TunnelPhaseTwoDetails.
-        Is PFS (perfect forward secrecy) enabled
+        Indicates that PFS (perfect forward secrecy) is enabled.
 
 
         :param is_pfs_enabled: The is_pfs_enabled of this TunnelPhaseTwoDetails.
@@ -378,7 +380,7 @@ class TunnelPhaseTwoDetails(object):
     def remaining_lifetime_last_retrieved(self):
         """
         Gets the remaining_lifetime_last_retrieved of this TunnelPhaseTwoDetails.
-        The date and time we retrieved the remaining lifetime, in the format defined by `RFC3339`__.
+        The date and time the remaining lifetime was last retrieved, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -394,7 +396,7 @@ class TunnelPhaseTwoDetails(object):
     def remaining_lifetime_last_retrieved(self, remaining_lifetime_last_retrieved):
         """
         Sets the remaining_lifetime_last_retrieved of this TunnelPhaseTwoDetails.
-        The date and time we retrieved the remaining lifetime, in the format defined by `RFC3339`__.
+        The date and time the remaining lifetime was last retrieved, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 

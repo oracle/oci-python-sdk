@@ -65,7 +65,9 @@ class UpdateDetectorRecipeDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateDetectorRecipeDetails.
-        DisplayName of detector recipe
+        Display name of detector recipe.
+
+        Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateDetectorRecipeDetails.
@@ -77,7 +79,9 @@ class UpdateDetectorRecipeDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateDetectorRecipeDetails.
-        DisplayName of detector recipe
+        Display name of detector recipe.
+
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateDetectorRecipeDetails.
@@ -89,7 +93,9 @@ class UpdateDetectorRecipeDetails(object):
     def description(self):
         """
         Gets the description of this UpdateDetectorRecipeDetails.
-        Detector recipe description
+        Detector recipe description.
+
+        Avoid entering confidential information.
 
 
         :return: The description of this UpdateDetectorRecipeDetails.
@@ -101,7 +107,9 @@ class UpdateDetectorRecipeDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateDetectorRecipeDetails.
-        Detector recipe description
+        Detector recipe description.
+
+        Avoid entering confidential information.
 
 
         :param description: The description of this UpdateDetectorRecipeDetails.
@@ -140,6 +148,8 @@ class UpdateDetectorRecipeDetails(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
+        Avoid entering confidential information.
+
 
         :return: The freeform_tags of this UpdateDetectorRecipeDetails.
         :rtype: dict(str, str)
@@ -152,6 +162,8 @@ class UpdateDetectorRecipeDetails(object):
         Sets the freeform_tags of this UpdateDetectorRecipeDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this UpdateDetectorRecipeDetails.
