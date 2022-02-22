@@ -65,7 +65,9 @@ class UpdateResponderRecipeDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this UpdateResponderRecipeDetails.
-        ResponderRecipe Identifier
+        Responder recipe identifier.
+
+        Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateResponderRecipeDetails.
@@ -77,7 +79,9 @@ class UpdateResponderRecipeDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateResponderRecipeDetails.
-        ResponderRecipe Identifier
+        Responder recipe identifier.
+
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateResponderRecipeDetails.
@@ -89,7 +93,9 @@ class UpdateResponderRecipeDetails(object):
     def description(self):
         """
         Gets the description of this UpdateResponderRecipeDetails.
-        ResponderRecipe Description
+        Responder recipe description.
+
+        Avoid entering confidential information.
 
 
         :return: The description of this UpdateResponderRecipeDetails.
@@ -101,7 +107,9 @@ class UpdateResponderRecipeDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateResponderRecipeDetails.
-        ResponderRecipe Description
+        Responder recipe description.
+
+        Avoid entering confidential information.
 
 
         :param description: The description of this UpdateResponderRecipeDetails.
@@ -140,6 +148,8 @@ class UpdateResponderRecipeDetails(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
+        Avoid entering confidential information.
+
 
         :return: The freeform_tags of this UpdateResponderRecipeDetails.
         :rtype: dict(str, str)
@@ -152,6 +162,8 @@ class UpdateResponderRecipeDetails(object):
         Sets the freeform_tags of this UpdateResponderRecipeDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this UpdateResponderRecipeDetails.

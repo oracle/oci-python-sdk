@@ -21,6 +21,10 @@ class DetectorRecipeDetectorRule(object):
     #: This constant has a value of "IAAS_CONFIGURATION_DETECTOR"
     DETECTOR_IAAS_CONFIGURATION_DETECTOR = "IAAS_CONFIGURATION_DETECTOR"
 
+    #: A constant which can be used with the detector property of a DetectorRecipeDetectorRule.
+    #: This constant has a value of "IAAS_THREAT_DETECTOR"
+    DETECTOR_IAAS_THREAT_DETECTOR = "IAAS_THREAT_DETECTOR"
+
     #: A constant which can be used with the managed_list_types property of a DetectorRecipeDetectorRule.
     #: This constant has a value of "CIDR_BLOCK"
     MANAGED_LIST_TYPES_CIDR_BLOCK = "CIDR_BLOCK"
@@ -120,7 +124,7 @@ class DetectorRecipeDetectorRule(object):
 
         :param detector:
             The value to assign to the detector property of this DetectorRecipeDetectorRule.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -218,7 +222,7 @@ class DetectorRecipeDetectorRule(object):
     def detector_rule_id(self):
         """
         **[Required]** Gets the detector_rule_id of this DetectorRecipeDetectorRule.
-        The unique identifier of the detector rule
+        The unique identifier of the detector rule.
 
 
         :return: The detector_rule_id of this DetectorRecipeDetectorRule.
@@ -230,7 +234,7 @@ class DetectorRecipeDetectorRule(object):
     def detector_rule_id(self, detector_rule_id):
         """
         Sets the detector_rule_id of this DetectorRecipeDetectorRule.
-        The unique identifier of the detector rule
+        The unique identifier of the detector rule.
 
 
         :param detector_rule_id: The detector_rule_id of this DetectorRecipeDetectorRule.
@@ -242,7 +246,7 @@ class DetectorRecipeDetectorRule(object):
     def display_name(self):
         """
         Gets the display_name of this DetectorRecipeDetectorRule.
-        displayName
+        Display name for DetectorRecipeDetectorRule.
 
 
         :return: The display_name of this DetectorRecipeDetectorRule.
@@ -254,7 +258,7 @@ class DetectorRecipeDetectorRule(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DetectorRecipeDetectorRule.
-        displayName
+        Display name for DetectorRecipeDetectorRule.
 
 
         :param display_name: The display_name of this DetectorRecipeDetectorRule.
@@ -266,7 +270,7 @@ class DetectorRecipeDetectorRule(object):
     def description(self):
         """
         Gets the description of this DetectorRecipeDetectorRule.
-        Description for DetectorRecipeDetectorRule
+        Description for DetectorRecipeDetectorRule.
 
 
         :return: The description of this DetectorRecipeDetectorRule.
@@ -278,7 +282,7 @@ class DetectorRecipeDetectorRule(object):
     def description(self, description):
         """
         Sets the description of this DetectorRecipeDetectorRule.
-        Description for DetectorRecipeDetectorRule
+        Description for DetectorRecipeDetectorRule.
 
 
         :param description: The description of this DetectorRecipeDetectorRule.
@@ -316,7 +320,7 @@ class DetectorRecipeDetectorRule(object):
         **[Required]** Gets the detector of this DetectorRecipeDetectorRule.
         detector for the rule
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -335,7 +339,7 @@ class DetectorRecipeDetectorRule(object):
         :param detector: The detector of this DetectorRecipeDetectorRule.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector

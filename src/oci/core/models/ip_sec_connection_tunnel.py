@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IPSecConnectionTunnel(object):
     """
-    Information about a single tunnel in an IPSec connection. This object does not include the tunnel's
-    shared secret (pre-shared key). That is in the
+    Information about a single IPSec tunnel in an IPSec connection. This object does not include the tunnel's
+    shared secret (pre-shared key), which is found in the
     :class:`IPSecConnectionTunnelSharedSecret` object.
     """
 
@@ -315,7 +315,7 @@ class IPSecConnectionTunnel(object):
     def vpn_ip(self):
         """
         Gets the vpn_ip of this IPSecConnectionTunnel.
-        The IP address of Oracle's VPN headend.
+        The IP address of the Oracle VPN headend for the connection.
 
         Example: `203.0.113.21`
 
@@ -329,7 +329,7 @@ class IPSecConnectionTunnel(object):
     def vpn_ip(self, vpn_ip):
         """
         Sets the vpn_ip of this IPSecConnectionTunnel.
-        The IP address of Oracle's VPN headend.
+        The IP address of the Oracle VPN headend for the connection.
 
         Example: `203.0.113.21`
 
@@ -343,7 +343,7 @@ class IPSecConnectionTunnel(object):
     def cpe_ip(self):
         """
         Gets the cpe_ip of this IPSecConnectionTunnel.
-        The IP address of the CPE's VPN headend.
+        The IP address of the CPE device's VPN headend.
 
         Example: `203.0.113.22`
 
@@ -357,7 +357,7 @@ class IPSecConnectionTunnel(object):
     def cpe_ip(self, cpe_ip):
         """
         Sets the cpe_ip of this IPSecConnectionTunnel.
-        The IP address of the CPE's VPN headend.
+        The IP address of the CPE device's VPN headend.
 
         Example: `203.0.113.22`
 
@@ -527,7 +527,7 @@ class IPSecConnectionTunnel(object):
     def routing(self):
         """
         Gets the routing of this IPSecConnectionTunnel.
-        The type of routing used for this tunnel (either BGP dynamic routing or static routing).
+        The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
 
         Allowed values for this property are: "BGP", "STATIC", "POLICY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -542,7 +542,7 @@ class IPSecConnectionTunnel(object):
     def routing(self, routing):
         """
         Sets the routing of this IPSecConnectionTunnel.
-        The type of routing used for this tunnel (either BGP dynamic routing or static routing).
+        The type of routing used for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
 
 
         :param routing: The routing of this IPSecConnectionTunnel.
@@ -557,7 +557,7 @@ class IPSecConnectionTunnel(object):
     def time_created(self):
         """
         Gets the time_created of this IPSecConnectionTunnel.
-        The date and time the IPSec connection tunnel was created, in the format defined by `RFC3339`__.
+        The date and time the IPSec tunnel was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -573,7 +573,7 @@ class IPSecConnectionTunnel(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this IPSecConnectionTunnel.
-        The date and time the IPSec connection tunnel was created, in the format defined by `RFC3339`__.
+        The date and time the IPSec tunnel was created, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -589,7 +589,7 @@ class IPSecConnectionTunnel(object):
     def time_status_updated(self):
         """
         Gets the time_status_updated of this IPSecConnectionTunnel.
-        When the status of the tunnel last changed, in the format defined by `RFC3339`__.
+        When the status of the IPSec tunnel last changed, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -605,7 +605,7 @@ class IPSecConnectionTunnel(object):
     def time_status_updated(self, time_status_updated):
         """
         Sets the time_status_updated of this IPSecConnectionTunnel.
-        When the status of the tunnel last changed, in the format defined by `RFC3339`__.
+        When the status of the IPSec tunnel last changed, in the format defined by `RFC3339`__.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -621,7 +621,7 @@ class IPSecConnectionTunnel(object):
     def oracle_can_initiate(self):
         """
         Gets the oracle_can_initiate of this IPSecConnectionTunnel.
-        Indicates whether Oracle can either initiate the tunnel or respond, or respond only.
+        Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
 
         Allowed values for this property are: "INITIATOR_OR_RESPONDER", "RESPONDER_ONLY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -636,7 +636,7 @@ class IPSecConnectionTunnel(object):
     def oracle_can_initiate(self, oracle_can_initiate):
         """
         Sets the oracle_can_initiate of this IPSecConnectionTunnel.
-        Indicates whether Oracle can either initiate the tunnel or respond, or respond only.
+        Indicates whether Oracle can only respond to a request to start an IPSec tunnel from the CPE device, or both respond to and initiate requests.
 
 
         :param oracle_can_initiate: The oracle_can_initiate of this IPSecConnectionTunnel.
@@ -651,7 +651,17 @@ class IPSecConnectionTunnel(object):
     def nat_translation_enabled(self):
         """
         Gets the nat_translation_enabled of this IPSecConnectionTunnel.
-        Whether NAT-T Enabled on the tunnel
+        By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500,
+        and when it detects that the port used to forward packets has changed (most likely because a NAT device
+        is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+
+        The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+
+        The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T
+        even if it senses there may be a NAT device in use.
+
+
+        .
 
         Allowed values for this property are: "ENABLED", "DISABLED", "AUTO", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -666,7 +676,17 @@ class IPSecConnectionTunnel(object):
     def nat_translation_enabled(self, nat_translation_enabled):
         """
         Sets the nat_translation_enabled of this IPSecConnectionTunnel.
-        Whether NAT-T Enabled on the tunnel
+        By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500,
+        and when it detects that the port used to forward packets has changed (most likely because a NAT device
+        is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+
+        The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+
+        The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T
+        even if it senses there may be a NAT device in use.
+
+
+        .
 
 
         :param nat_translation_enabled: The nat_translation_enabled of this IPSecConnectionTunnel.
@@ -681,7 +701,9 @@ class IPSecConnectionTunnel(object):
     def dpd_mode(self):
         """
         Gets the dpd_mode of this IPSecConnectionTunnel.
-        dpd mode
+        Dead peer detection (DPD) mode set on the Oracle side of the connection.
+        This mode sets whether Oracle can only respond to a request from the CPE device to start DPD,
+        or both respond to and initiate requests.
 
         Allowed values for this property are: "INITIATE_AND_RESPOND", "RESPOND_ONLY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -696,7 +718,9 @@ class IPSecConnectionTunnel(object):
     def dpd_mode(self, dpd_mode):
         """
         Sets the dpd_mode of this IPSecConnectionTunnel.
-        dpd mode
+        Dead peer detection (DPD) mode set on the Oracle side of the connection.
+        This mode sets whether Oracle can only respond to a request from the CPE device to start DPD,
+        or both respond to and initiate requests.
 
 
         :param dpd_mode: The dpd_mode of this IPSecConnectionTunnel.
@@ -711,7 +735,7 @@ class IPSecConnectionTunnel(object):
     def dpd_timeout_in_sec(self):
         """
         Gets the dpd_timeout_in_sec of this IPSecConnectionTunnel.
-        Dead peer detection (DPD) timeout in seconds.
+        DPD timeout in seconds.
 
 
         :return: The dpd_timeout_in_sec of this IPSecConnectionTunnel.
@@ -723,7 +747,7 @@ class IPSecConnectionTunnel(object):
     def dpd_timeout_in_sec(self, dpd_timeout_in_sec):
         """
         Sets the dpd_timeout_in_sec of this IPSecConnectionTunnel.
-        Dead peer detection (DPD) timeout in seconds.
+        DPD timeout in seconds.
 
 
         :param dpd_timeout_in_sec: The dpd_timeout_in_sec of this IPSecConnectionTunnel.

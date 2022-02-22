@@ -177,7 +177,7 @@ class CreateIPSecConnectionTunnelDetails(object):
     def routing(self):
         """
         Gets the routing of this CreateIPSecConnectionTunnelDetails.
-        The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
+        The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
 
         Allowed values for this property are: "BGP", "STATIC", "POLICY"
 
@@ -191,7 +191,7 @@ class CreateIPSecConnectionTunnelDetails(object):
     def routing(self, routing):
         """
         Sets the routing of this CreateIPSecConnectionTunnelDetails.
-        The type of routing to use for this tunnel (either BGP dynamic routing or static routing).
+        The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
 
 
         :param routing: The routing of this CreateIPSecConnectionTunnelDetails.
@@ -291,7 +291,7 @@ class CreateIPSecConnectionTunnelDetails(object):
     def oracle_initiation(self):
         """
         Gets the oracle_initiation of this CreateIPSecConnectionTunnelDetails.
-        Whether Oracle side is the initiator for negotiation.
+        Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
 
         Allowed values for this property are: "INITIATOR_OR_RESPONDER", "RESPONDER_ONLY"
 
@@ -305,7 +305,7 @@ class CreateIPSecConnectionTunnelDetails(object):
     def oracle_initiation(self, oracle_initiation):
         """
         Sets the oracle_initiation of this CreateIPSecConnectionTunnelDetails.
-        Whether Oracle side is the initiator for negotiation.
+        Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
 
 
         :param oracle_initiation: The oracle_initiation of this CreateIPSecConnectionTunnelDetails.
@@ -323,7 +323,14 @@ class CreateIPSecConnectionTunnelDetails(object):
     def nat_translation_enabled(self):
         """
         Gets the nat_translation_enabled of this CreateIPSecConnectionTunnelDetails.
-        Whether NAT-T Enabled on the tunnel
+        By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500,
+        and when it detects that the port used to forward packets has changed (most likely because a NAT device
+        is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+
+        The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+
+        The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T
+        even if it senses there may be a NAT device in use.
 
         Allowed values for this property are: "ENABLED", "DISABLED", "AUTO"
 
@@ -337,7 +344,14 @@ class CreateIPSecConnectionTunnelDetails(object):
     def nat_translation_enabled(self, nat_translation_enabled):
         """
         Sets the nat_translation_enabled of this CreateIPSecConnectionTunnelDetails.
-        Whether NAT-T Enabled on the tunnel
+        By default (the `AUTO` setting), IKE sends packets with a source and destination port set to 500,
+        and when it detects that the port used to forward packets has changed (most likely because a NAT device
+        is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+
+        The `ENABLED` option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+
+        The `DISABLED` option directs IKE to completely refuse to negotiate NAT-T
+        even if it senses there may be a NAT device in use.
 
 
         :param nat_translation_enabled: The nat_translation_enabled of this CreateIPSecConnectionTunnelDetails.

@@ -193,7 +193,7 @@ class Target(object):
     def id(self):
         """
         **[Required]** Gets the id of this Target.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :return: The id of this Target.
@@ -205,7 +205,7 @@ class Target(object):
     def id(self, id):
         """
         Sets the id of this Target.
-        Unique identifier that is immutable on creation
+        Unique identifier that is immutable on creation.
 
 
         :param id: The id of this Target.
@@ -217,7 +217,7 @@ class Target(object):
     def display_name(self):
         """
         Gets the display_name of this Target.
-        Target Identifier, can be renamed
+        Target display name, can be renamed.
 
 
         :return: The display_name of this Target.
@@ -229,7 +229,7 @@ class Target(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Target.
-        Target Identifier, can be renamed
+        Target display name, can be renamed.
 
 
         :param display_name: The display_name of this Target.
@@ -544,6 +544,8 @@ class Target(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
+        Avoid entering confidential information.
+
 
         :return: The freeform_tags of this Target.
         :rtype: dict(str, str)
@@ -556,6 +558,8 @@ class Target(object):
         Sets the freeform_tags of this Target.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this Target.

@@ -142,7 +142,9 @@ class CreateTargetDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateTargetDetails.
-        DetectorTemplate Identifier
+        DetectorTemplate identifier.
+
+        Avoid entering confidential information.
 
 
         :return: The display_name of this CreateTargetDetails.
@@ -154,7 +156,9 @@ class CreateTargetDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateTargetDetails.
-        DetectorTemplate Identifier
+        DetectorTemplate identifier.
+
+        Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateTargetDetails.
@@ -192,6 +196,8 @@ class CreateTargetDetails(object):
         Gets the description of this CreateTargetDetails.
         The target description.
 
+        Avoid entering confidential information.
+
 
         :return: The description of this CreateTargetDetails.
         :rtype: str
@@ -203,6 +209,8 @@ class CreateTargetDetails(object):
         """
         Sets the description of this CreateTargetDetails.
         The target description.
+
+        Avoid entering confidential information.
 
 
         :param description: The description of this CreateTargetDetails.
@@ -353,6 +361,8 @@ class CreateTargetDetails(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
+        Avoid entering confidential information.
+
 
         :return: The freeform_tags of this CreateTargetDetails.
         :rtype: dict(str, str)
@@ -365,6 +375,8 @@ class CreateTargetDetails(object):
         Sets the freeform_tags of this CreateTargetDetails.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this CreateTargetDetails.

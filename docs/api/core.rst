@@ -374,6 +374,7 @@ Core Services
     oci.core.models.ServiceIdRequestDetails
     oci.core.models.ServiceIdResponseDetails
     oci.core.models.Shape
+    oci.core.models.ShapeAlternativeObject
     oci.core.models.ShapeMaxVnicAttachmentOptions
     oci.core.models.ShapeMeasuredBootOptions
     oci.core.models.ShapeMemoryOptions

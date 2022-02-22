@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AllowedIkeIPSecParameters(object):
     """
-    Allowed IKE IPSec Parameters
+    Lists the current allowed and default IPSec tunnel parameters.
     """
 
     def __init__(self, **kwargs):

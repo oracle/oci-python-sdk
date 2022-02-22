@@ -30,6 +30,18 @@ class Shape(object):
     #: This constant has a value of "BASELINE_1_1"
     BASELINE_OCPU_UTILIZATIONS_BASELINE_1_1 = "BASELINE_1_1"
 
+    #: A constant which can be used with the billing_type property of a Shape.
+    #: This constant has a value of "ALWAYS_FREE"
+    BILLING_TYPE_ALWAYS_FREE = "ALWAYS_FREE"
+
+    #: A constant which can be used with the billing_type property of a Shape.
+    #: This constant has a value of "LIMITED_FREE"
+    BILLING_TYPE_LIMITED_FREE = "LIMITED_FREE"
+
+    #: A constant which can be used with the billing_type property of a Shape.
+    #: This constant has a value of "PAID"
+    BILLING_TYPE_PAID = "PAID"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Shape object with values from keyword arguments.
@@ -113,6 +125,36 @@ class Shape(object):
             The value to assign to the platform_config_options property of this Shape.
         :type platform_config_options: oci.core.models.ShapePlatformConfigOptions
 
+        :param is_billed_for_stopped_instance:
+            The value to assign to the is_billed_for_stopped_instance property of this Shape.
+        :type is_billed_for_stopped_instance: bool
+
+        :param billing_type:
+            The value to assign to the billing_type property of this Shape.
+            Allowed values for this property are: "ALWAYS_FREE", "LIMITED_FREE", "PAID", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type billing_type: str
+
+        :param quota_names:
+            The value to assign to the quota_names property of this Shape.
+        :type quota_names: list[str]
+
+        :param is_subcore:
+            The value to assign to the is_subcore property of this Shape.
+        :type is_subcore: bool
+
+        :param is_flexible:
+            The value to assign to the is_flexible property of this Shape.
+        :type is_flexible: bool
+
+        :param resize_compatible_shapes:
+            The value to assign to the resize_compatible_shapes property of this Shape.
+        :type resize_compatible_shapes: list[str]
+
+        :param recommended_alternatives:
+            The value to assign to the recommended_alternatives property of this Shape.
+        :type recommended_alternatives: list[oci.core.models.ShapeAlternativeObject]
+
         """
         self.swagger_types = {
             'baseline_ocpu_utilizations': 'list[str]',
@@ -133,7 +175,14 @@ class Shape(object):
             'memory_options': 'ShapeMemoryOptions',
             'networking_bandwidth_options': 'ShapeNetworkingBandwidthOptions',
             'max_vnic_attachment_options': 'ShapeMaxVnicAttachmentOptions',
-            'platform_config_options': 'ShapePlatformConfigOptions'
+            'platform_config_options': 'ShapePlatformConfigOptions',
+            'is_billed_for_stopped_instance': 'bool',
+            'billing_type': 'str',
+            'quota_names': 'list[str]',
+            'is_subcore': 'bool',
+            'is_flexible': 'bool',
+            'resize_compatible_shapes': 'list[str]',
+            'recommended_alternatives': 'list[ShapeAlternativeObject]'
         }
 
         self.attribute_map = {
@@ -155,7 +204,14 @@ class Shape(object):
             'memory_options': 'memoryOptions',
             'networking_bandwidth_options': 'networkingBandwidthOptions',
             'max_vnic_attachment_options': 'maxVnicAttachmentOptions',
-            'platform_config_options': 'platformConfigOptions'
+            'platform_config_options': 'platformConfigOptions',
+            'is_billed_for_stopped_instance': 'isBilledForStoppedInstance',
+            'billing_type': 'billingType',
+            'quota_names': 'quotaNames',
+            'is_subcore': 'isSubcore',
+            'is_flexible': 'isFlexible',
+            'resize_compatible_shapes': 'resizeCompatibleShapes',
+            'recommended_alternatives': 'recommendedAlternatives'
         }
 
         self._baseline_ocpu_utilizations = None
@@ -177,6 +233,13 @@ class Shape(object):
         self._networking_bandwidth_options = None
         self._max_vnic_attachment_options = None
         self._platform_config_options = None
+        self._is_billed_for_stopped_instance = None
+        self._billing_type = None
+        self._quota_names = None
+        self._is_subcore = None
+        self._is_flexible = None
+        self._resize_compatible_shapes = None
+        self._recommended_alternatives = None
 
     @property
     def baseline_ocpu_utilizations(self):
@@ -635,6 +698,200 @@ class Shape(object):
         :type: oci.core.models.ShapePlatformConfigOptions
         """
         self._platform_config_options = platform_config_options
+
+    @property
+    def is_billed_for_stopped_instance(self):
+        """
+        Gets the is_billed_for_stopped_instance of this Shape.
+        Whether billing continues when the instances that use this shape are in the stopped state.
+
+
+        :return: The is_billed_for_stopped_instance of this Shape.
+        :rtype: bool
+        """
+        return self._is_billed_for_stopped_instance
+
+    @is_billed_for_stopped_instance.setter
+    def is_billed_for_stopped_instance(self, is_billed_for_stopped_instance):
+        """
+        Sets the is_billed_for_stopped_instance of this Shape.
+        Whether billing continues when the instances that use this shape are in the stopped state.
+
+
+        :param is_billed_for_stopped_instance: The is_billed_for_stopped_instance of this Shape.
+        :type: bool
+        """
+        self._is_billed_for_stopped_instance = is_billed_for_stopped_instance
+
+    @property
+    def billing_type(self):
+        """
+        Gets the billing_type of this Shape.
+        How instances that use this shape are charged.
+
+        Allowed values for this property are: "ALWAYS_FREE", "LIMITED_FREE", "PAID", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The billing_type of this Shape.
+        :rtype: str
+        """
+        return self._billing_type
+
+    @billing_type.setter
+    def billing_type(self, billing_type):
+        """
+        Sets the billing_type of this Shape.
+        How instances that use this shape are charged.
+
+
+        :param billing_type: The billing_type of this Shape.
+        :type: str
+        """
+        allowed_values = ["ALWAYS_FREE", "LIMITED_FREE", "PAID"]
+        if not value_allowed_none_or_none_sentinel(billing_type, allowed_values):
+            billing_type = 'UNKNOWN_ENUM_VALUE'
+        self._billing_type = billing_type
+
+    @property
+    def quota_names(self):
+        """
+        Gets the quota_names of this Shape.
+        The list of of compartment quotas for the shape.
+
+
+        :return: The quota_names of this Shape.
+        :rtype: list[str]
+        """
+        return self._quota_names
+
+    @quota_names.setter
+    def quota_names(self, quota_names):
+        """
+        Sets the quota_names of this Shape.
+        The list of of compartment quotas for the shape.
+
+
+        :param quota_names: The quota_names of this Shape.
+        :type: list[str]
+        """
+        self._quota_names = quota_names
+
+    @property
+    def is_subcore(self):
+        """
+        Gets the is_subcore of this Shape.
+        Whether the shape supports creating subcore or burstable instances. A `burstable instance`__
+        is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional
+        spikes in usage.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm
+
+
+        :return: The is_subcore of this Shape.
+        :rtype: bool
+        """
+        return self._is_subcore
+
+    @is_subcore.setter
+    def is_subcore(self, is_subcore):
+        """
+        Sets the is_subcore of this Shape.
+        Whether the shape supports creating subcore or burstable instances. A `burstable instance`__
+        is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional
+        spikes in usage.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/burstable-instances.htm
+
+
+        :param is_subcore: The is_subcore of this Shape.
+        :type: bool
+        """
+        self._is_subcore = is_subcore
+
+    @property
+    def is_flexible(self):
+        """
+        Gets the is_flexible of this Shape.
+        Whether the shape supports creating flexible instances. A `flexible shape`__
+        is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible
+
+
+        :return: The is_flexible of this Shape.
+        :rtype: bool
+        """
+        return self._is_flexible
+
+    @is_flexible.setter
+    def is_flexible(self, is_flexible):
+        """
+        Sets the is_flexible of this Shape.
+        Whether the shape supports creating flexible instances. A `flexible shape`__
+        is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible
+
+
+        :param is_flexible: The is_flexible of this Shape.
+        :type: bool
+        """
+        self._is_flexible = is_flexible
+
+    @property
+    def resize_compatible_shapes(self):
+        """
+        Gets the resize_compatible_shapes of this Shape.
+        The list of compatible shapes that this shape can be changed to. For more information,
+        see `Changing the Shape of an Instance`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
+
+
+        :return: The resize_compatible_shapes of this Shape.
+        :rtype: list[str]
+        """
+        return self._resize_compatible_shapes
+
+    @resize_compatible_shapes.setter
+    def resize_compatible_shapes(self, resize_compatible_shapes):
+        """
+        Sets the resize_compatible_shapes of this Shape.
+        The list of compatible shapes that this shape can be changed to. For more information,
+        see `Changing the Shape of an Instance`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm
+
+
+        :param resize_compatible_shapes: The resize_compatible_shapes of this Shape.
+        :type: list[str]
+        """
+        self._resize_compatible_shapes = resize_compatible_shapes
+
+    @property
+    def recommended_alternatives(self):
+        """
+        Gets the recommended_alternatives of this Shape.
+        The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
+
+
+        :return: The recommended_alternatives of this Shape.
+        :rtype: list[oci.core.models.ShapeAlternativeObject]
+        """
+        return self._recommended_alternatives
+
+    @recommended_alternatives.setter
+    def recommended_alternatives(self, recommended_alternatives):
+        """
+        Sets the recommended_alternatives of this Shape.
+        The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
+
+
+        :param recommended_alternatives: The recommended_alternatives of this Shape.
+        :type: list[oci.core.models.ShapeAlternativeObject]
+        """
+        self._recommended_alternatives = recommended_alternatives
 
     def __repr__(self):
         return formatted_flat_dict(self)

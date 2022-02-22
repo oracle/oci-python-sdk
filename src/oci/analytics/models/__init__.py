@@ -18,6 +18,7 @@ from .private_endpoint_details import PrivateEndpointDetails
 from .private_source_dns_zone import PrivateSourceDnsZone
 from .public_endpoint_details import PublicEndpointDetails
 from .scale_analytics_instance_details import ScaleAnalyticsInstanceDetails
+from .set_kms_key_details import SetKmsKeyDetails
 from .update_analytics_instance_details import UpdateAnalyticsInstanceDetails
 from .update_private_access_channel_details import UpdatePrivateAccessChannelDetails
 from .update_vanity_url_details import UpdateVanityUrlDetails
@@ -45,6 +46,7 @@ analytics_type_mapping = {
     "PrivateSourceDnsZone": PrivateSourceDnsZone,
     "PublicEndpointDetails": PublicEndpointDetails,
     "ScaleAnalyticsInstanceDetails": ScaleAnalyticsInstanceDetails,
+    "SetKmsKeyDetails": SetKmsKeyDetails,
     "UpdateAnalyticsInstanceDetails": UpdateAnalyticsInstanceDetails,
     "UpdatePrivateAccessChannelDetails": UpdatePrivateAccessChannelDetails,
     "UpdateVanityUrlDetails": UpdateVanityUrlDetails,

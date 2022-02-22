@@ -128,6 +128,10 @@ class AnalyticsInstance(object):
             The value to assign to the freeform_tags property of this AnalyticsInstance.
         :type freeform_tags: dict(str, str)
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this AnalyticsInstance.
+        :type kms_key_id: str
+
         :param time_created:
             The value to assign to the time_created property of this AnalyticsInstance.
         :type time_created: datetime
@@ -153,6 +157,7 @@ class AnalyticsInstance(object):
             'service_url': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)',
+            'kms_key_id': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime'
         }
@@ -173,6 +178,7 @@ class AnalyticsInstance(object):
             'service_url': 'serviceUrl',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags',
+            'kms_key_id': 'kmsKeyId',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated'
         }
@@ -192,6 +198,7 @@ class AnalyticsInstance(object):
         self._service_url = None
         self._defined_tags = None
         self._freeform_tags = None
+        self._kms_key_id = None
         self._time_created = None
         self._time_updated = None
 
@@ -584,6 +591,34 @@ class AnalyticsInstance(object):
         :type: dict(str, str)
         """
         self._freeform_tags = freeform_tags
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this AnalyticsInstance.
+        The `OCID`__ of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The kms_key_id of this AnalyticsInstance.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this AnalyticsInstance.
+        The `OCID`__ of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param kms_key_id: The kms_key_id of this AnalyticsInstance.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
 
     @property
     def time_created(self):

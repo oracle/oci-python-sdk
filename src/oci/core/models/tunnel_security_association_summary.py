@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class TunnelSecurityAssociationSummary(object):
     """
-    Detailed Tunnel SA
+    A summary of the IPSec tunnel security association details.
     """
 
     #: A constant which can be used with the tunnel_sa_status property of a TunnelSecurityAssociationSummary.
@@ -91,7 +91,7 @@ class TunnelSecurityAssociationSummary(object):
     def cpe_subnet(self):
         """
         Gets the cpe_subnet of this TunnelSecurityAssociationSummary.
-        IP and mask of the Partner Subnet for Policy Based VPNs or Static Routes
+        The IP address and mask of the partner subnet used in policy based VPNs or static routes.
 
 
         :return: The cpe_subnet of this TunnelSecurityAssociationSummary.
@@ -103,7 +103,7 @@ class TunnelSecurityAssociationSummary(object):
     def cpe_subnet(self, cpe_subnet):
         """
         Sets the cpe_subnet of this TunnelSecurityAssociationSummary.
-        IP and mask of the Partner Subnet for Policy Based VPNs or Static Routes
+        The IP address and mask of the partner subnet used in policy based VPNs or static routes.
 
 
         :param cpe_subnet: The cpe_subnet of this TunnelSecurityAssociationSummary.
@@ -115,7 +115,7 @@ class TunnelSecurityAssociationSummary(object):
     def oracle_subnet(self):
         """
         Gets the oracle_subnet of this TunnelSecurityAssociationSummary.
-        IP and mask of the Local Subnet for Policy Based VPNs or Static Routes
+        The IP address and mask of the local subnet used in policy based VPNs or static routes.
 
 
         :return: The oracle_subnet of this TunnelSecurityAssociationSummary.
@@ -127,7 +127,7 @@ class TunnelSecurityAssociationSummary(object):
     def oracle_subnet(self, oracle_subnet):
         """
         Sets the oracle_subnet of this TunnelSecurityAssociationSummary.
-        IP and mask of the Local Subnet for Policy Based VPNs or Static Routes
+        The IP address and mask of the local subnet used in policy based VPNs or static routes.
 
 
         :param oracle_subnet: The oracle_subnet of this TunnelSecurityAssociationSummary.
@@ -139,7 +139,7 @@ class TunnelSecurityAssociationSummary(object):
     def tunnel_sa_status(self):
         """
         Gets the tunnel_sa_status of this TunnelSecurityAssociationSummary.
-        Phase 1 Status of the Tunnel
+        The IPSec tunnel's phase one status.
 
         Allowed values for this property are: "INITIATING", "LISTENING", "UP", "DOWN", "ERROR", "UNKNOWN", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -154,7 +154,7 @@ class TunnelSecurityAssociationSummary(object):
     def tunnel_sa_status(self, tunnel_sa_status):
         """
         Sets the tunnel_sa_status of this TunnelSecurityAssociationSummary.
-        Phase 1 Status of the Tunnel
+        The IPSec tunnel's phase one status.
 
 
         :param tunnel_sa_status: The tunnel_sa_status of this TunnelSecurityAssociationSummary.
@@ -169,7 +169,7 @@ class TunnelSecurityAssociationSummary(object):
     def tunnel_sa_error_info(self):
         """
         Gets the tunnel_sa_error_info of this TunnelSecurityAssociationSummary.
-        Current state if status is not up, including phase1/phase2 and possible reason for tunnel not up
+        Current state if the IPSec tunnel status is not `UP`, including phase one and phase two details and a possible reason the tunnel is not `UP`.
 
 
         :return: The tunnel_sa_error_info of this TunnelSecurityAssociationSummary.
@@ -181,7 +181,7 @@ class TunnelSecurityAssociationSummary(object):
     def tunnel_sa_error_info(self, tunnel_sa_error_info):
         """
         Sets the tunnel_sa_error_info of this TunnelSecurityAssociationSummary.
-        Current state if status is not up, including phase1/phase2 and possible reason for tunnel not up
+        Current state if the IPSec tunnel status is not `UP`, including phase one and phase two details and a possible reason the tunnel is not `UP`.
 
 
         :param tunnel_sa_error_info: The tunnel_sa_error_info of this TunnelSecurityAssociationSummary.
@@ -193,7 +193,7 @@ class TunnelSecurityAssociationSummary(object):
     def time(self):
         """
         Gets the time of this TunnelSecurityAssociationSummary.
-        Seconds in current state
+        Time in the current state, in seconds.
 
 
         :return: The time of this TunnelSecurityAssociationSummary.
@@ -205,7 +205,7 @@ class TunnelSecurityAssociationSummary(object):
     def time(self, time):
         """
         Sets the time of this TunnelSecurityAssociationSummary.
-        Seconds in current state
+        Time in the current state, in seconds.
 
 
         :param time: The time of this TunnelSecurityAssociationSummary.

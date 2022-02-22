@@ -188,7 +188,7 @@ class ResponderRecipeResponderRule(object):
     def display_name(self):
         """
         Gets the display_name of this ResponderRecipeResponderRule.
-        ResponderRule Display Name
+        ResponderRule display name.
 
 
         :return: The display_name of this ResponderRecipeResponderRule.
@@ -200,7 +200,7 @@ class ResponderRecipeResponderRule(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ResponderRecipeResponderRule.
-        ResponderRule Display Name
+        ResponderRule display name.
 
 
         :param display_name: The display_name of this ResponderRecipeResponderRule.
@@ -212,7 +212,7 @@ class ResponderRecipeResponderRule(object):
     def description(self):
         """
         Gets the description of this ResponderRecipeResponderRule.
-        ResponderRule Description
+        ResponderRule description.
 
 
         :return: The description of this ResponderRecipeResponderRule.
@@ -224,7 +224,7 @@ class ResponderRecipeResponderRule(object):
     def description(self, description):
         """
         Sets the description of this ResponderRecipeResponderRule.
-        ResponderRule Description
+        ResponderRule description.
 
 
         :param description: The description of this ResponderRecipeResponderRule.

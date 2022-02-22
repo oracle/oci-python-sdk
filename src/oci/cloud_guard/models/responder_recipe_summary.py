@@ -192,7 +192,7 @@ class ResponderRecipeSummary(object):
     def display_name(self):
         """
         Gets the display_name of this ResponderRecipeSummary.
-        ResponderRecipe Display Name
+        ResponderRecipe display name.
 
 
         :return: The display_name of this ResponderRecipeSummary.
@@ -204,7 +204,7 @@ class ResponderRecipeSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ResponderRecipeSummary.
-        ResponderRecipe Display Name
+        ResponderRecipe display name.
 
 
         :param display_name: The display_name of this ResponderRecipeSummary.
@@ -216,7 +216,7 @@ class ResponderRecipeSummary(object):
     def description(self):
         """
         Gets the description of this ResponderRecipeSummary.
-        ResponderRecipe Description
+        ResponderRecipe description.
 
 
         :return: The description of this ResponderRecipeSummary.
@@ -228,7 +228,7 @@ class ResponderRecipeSummary(object):
     def description(self, description):
         """
         Sets the description of this ResponderRecipeSummary.
-        ResponderRecipe Description
+        ResponderRecipe description.
 
 
         :param description: The description of this ResponderRecipeSummary.
@@ -447,6 +447,8 @@ class ResponderRecipeSummary(object):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
 
+        Avoid entering confidential information.
+
 
         :return: The freeform_tags of this ResponderRecipeSummary.
         :rtype: dict(str, str)
@@ -459,6 +461,8 @@ class ResponderRecipeSummary(object):
         Sets the freeform_tags of this ResponderRecipeSummary.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this ResponderRecipeSummary.

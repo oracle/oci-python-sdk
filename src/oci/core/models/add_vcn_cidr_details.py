@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AddVcnCidrDetails(object):
     """
-    Details for adding a CIDR block to a VCN.
+    Details used to add a CIDR block to a VCN.
     """
 
     def __init__(self, **kwargs):

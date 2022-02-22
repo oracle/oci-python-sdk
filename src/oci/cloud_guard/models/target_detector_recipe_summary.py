@@ -29,6 +29,10 @@ class TargetDetectorRecipeSummary(object):
     #: This constant has a value of "IAAS_CONFIGURATION_DETECTOR"
     DETECTOR_IAAS_CONFIGURATION_DETECTOR = "IAAS_CONFIGURATION_DETECTOR"
 
+    #: A constant which can be used with the detector property of a TargetDetectorRecipeSummary.
+    #: This constant has a value of "IAAS_THREAT_DETECTOR"
+    DETECTOR_IAAS_THREAT_DETECTOR = "IAAS_THREAT_DETECTOR"
+
     #: A constant which can be used with the lifecycle_state property of a TargetDetectorRecipeSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -90,7 +94,7 @@ class TargetDetectorRecipeSummary(object):
 
         :param detector:
             The value to assign to the detector property of this TargetDetectorRecipeSummary.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -112,6 +116,10 @@ class TargetDetectorRecipeSummary(object):
             The value to assign to the lifecycle_details property of this TargetDetectorRecipeSummary.
         :type lifecycle_details: str
 
+        :param source_data_retention:
+            The value to assign to the source_data_retention property of this TargetDetectorRecipeSummary.
+        :type source_data_retention: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -124,7 +132,8 @@ class TargetDetectorRecipeSummary(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'source_data_retention': 'int'
         }
 
         self.attribute_map = {
@@ -138,7 +147,8 @@ class TargetDetectorRecipeSummary(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'source_data_retention': 'sourceDataRetention'
         }
 
         self._id = None
@@ -152,6 +162,7 @@ class TargetDetectorRecipeSummary(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_details = None
+        self._source_data_retention = None
 
     @property
     def id(self):
@@ -309,7 +320,7 @@ class TargetDetectorRecipeSummary(object):
         Gets the detector of this TargetDetectorRecipeSummary.
         Type of detector
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -328,7 +339,7 @@ class TargetDetectorRecipeSummary(object):
         :param detector: The detector of this TargetDetectorRecipeSummary.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector
@@ -434,6 +445,30 @@ class TargetDetectorRecipeSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def source_data_retention(self):
+        """
+        Gets the source_data_retention of this TargetDetectorRecipeSummary.
+        The number of days for which source data is retained
+
+
+        :return: The source_data_retention of this TargetDetectorRecipeSummary.
+        :rtype: int
+        """
+        return self._source_data_retention
+
+    @source_data_retention.setter
+    def source_data_retention(self, source_data_retention):
+        """
+        Sets the source_data_retention of this TargetDetectorRecipeSummary.
+        The number of days for which source data is retained
+
+
+        :param source_data_retention: The source_data_retention of this TargetDetectorRecipeSummary.
+        :type: int
+        """
+        self._source_data_retention = source_data_retention
 
     def __repr__(self):
         return formatted_flat_dict(self)

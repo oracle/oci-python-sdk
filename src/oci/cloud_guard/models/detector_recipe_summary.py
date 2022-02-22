@@ -29,6 +29,10 @@ class DetectorRecipeSummary(object):
     #: This constant has a value of "IAAS_CONFIGURATION_DETECTOR"
     DETECTOR_IAAS_CONFIGURATION_DETECTOR = "IAAS_CONFIGURATION_DETECTOR"
 
+    #: A constant which can be used with the detector property of a DetectorRecipeSummary.
+    #: This constant has a value of "IAAS_THREAT_DETECTOR"
+    DETECTOR_IAAS_THREAT_DETECTOR = "IAAS_THREAT_DETECTOR"
+
     #: A constant which can be used with the lifecycle_state property of a DetectorRecipeSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -90,7 +94,7 @@ class DetectorRecipeSummary(object):
 
         :param detector:
             The value to assign to the detector property of this DetectorRecipeSummary.
-            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type detector: str
 
@@ -111,6 +115,10 @@ class DetectorRecipeSummary(object):
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "INACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
+
+        :param source_data_retention:
+            The value to assign to the source_data_retention property of this DetectorRecipeSummary.
+        :type source_data_retention: int
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DetectorRecipeSummary.
@@ -137,6 +145,7 @@ class DetectorRecipeSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'source_data_retention': 'int',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -154,6 +163,7 @@ class DetectorRecipeSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'source_data_retention': 'sourceDataRetention',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -170,6 +180,7 @@ class DetectorRecipeSummary(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._source_data_retention = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -330,7 +341,7 @@ class DetectorRecipeSummary(object):
         **[Required]** Gets the detector of this DetectorRecipeSummary.
         Type of detector
 
-        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -349,7 +360,7 @@ class DetectorRecipeSummary(object):
         :param detector: The detector of this DetectorRecipeSummary.
         :type: str
         """
-        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR"]
+        allowed_values = ["IAAS_ACTIVITY_DETECTOR", "IAAS_CONFIGURATION_DETECTOR", "IAAS_THREAT_DETECTOR"]
         if not value_allowed_none_or_none_sentinel(detector, allowed_values):
             detector = 'UNKNOWN_ENUM_VALUE'
         self._detector = detector
@@ -457,11 +468,37 @@ class DetectorRecipeSummary(object):
         self._lifecycle_state = lifecycle_state
 
     @property
+    def source_data_retention(self):
+        """
+        Gets the source_data_retention of this DetectorRecipeSummary.
+        The number of days for which source data is retained
+
+
+        :return: The source_data_retention of this DetectorRecipeSummary.
+        :rtype: int
+        """
+        return self._source_data_retention
+
+    @source_data_retention.setter
+    def source_data_retention(self, source_data_retention):
+        """
+        Sets the source_data_retention of this DetectorRecipeSummary.
+        The number of days for which source data is retained
+
+
+        :param source_data_retention: The source_data_retention of this DetectorRecipeSummary.
+        :type: int
+        """
+        self._source_data_retention = source_data_retention
+
+    @property
     def freeform_tags(self):
         """
         Gets the freeform_tags of this DetectorRecipeSummary.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :return: The freeform_tags of this DetectorRecipeSummary.
@@ -475,6 +512,8 @@ class DetectorRecipeSummary(object):
         Sets the freeform_tags of this DetectorRecipeSummary.
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         Example: `{\"bar-key\": \"value\"}`
+
+        Avoid entering confidential information.
 
 
         :param freeform_tags: The freeform_tags of this DetectorRecipeSummary.

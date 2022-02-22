@@ -20,11 +20,11 @@ class DrgRouteDistribution(object):
 
     You can assign a route distribution as a DRG attachment's export distribution. Export route distribution statements specify how routes in a
     DRG attachment's assigned table are advertised out through the attachment. When a DRG attachment is created, a route distribution is created with a
-    single ACCEPT statement with an empty match criteria (empty match criteria implies match ALL).
+    single ACCEPT statement with match criteria MATCH_ALL.
     Exporting routes through VCN attachments is unsupported, so no VCN attachments are assigned an export distribution.
 
     The two auto-generated DRG route tables (one as the default for VCN attachments, and the other for all other types of attachments)
-    are each assigned an auto generated import route distribution. The default VCN table's import distribution has a single statement with empty match criteria statement to import routes from
+    are each assigned an auto generated import route distribution. The default VCN table's import distribution has a single statement with match criteria MATCH_ALL to import routes from
     each DRG attachment type. The other table's import distribution has a statement to import routes from attachments with the VCN type.
 
     The route distribution is always in the same compartment as the DRG.

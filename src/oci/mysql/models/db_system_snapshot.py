@@ -13,6 +13,14 @@ class DbSystemSnapshot(object):
     Snapshot of the DbSystem details at the time of the backup
     """
 
+    #: A constant which can be used with the crash_recovery property of a DbSystemSnapshot.
+    #: This constant has a value of "ENABLED"
+    CRASH_RECOVERY_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the crash_recovery property of a DbSystemSnapshot.
+    #: This constant has a value of "DISABLED"
+    CRASH_RECOVERY_DISABLED = "DISABLED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbSystemSnapshot object with values from keyword arguments.
@@ -106,6 +114,12 @@ class DbSystemSnapshot(object):
             The value to assign to the defined_tags property of this DbSystemSnapshot.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param crash_recovery:
+            The value to assign to the crash_recovery property of this DbSystemSnapshot.
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type crash_recovery: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -129,7 +143,8 @@ class DbSystemSnapshot(object):
             'endpoints': 'list[DbSystemEndpoint]',
             'maintenance': 'MaintenanceDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'crash_recovery': 'str'
         }
 
         self.attribute_map = {
@@ -154,7 +169,8 @@ class DbSystemSnapshot(object):
             'endpoints': 'endpoints',
             'maintenance': 'maintenance',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'crash_recovery': 'crashRecovery'
         }
 
         self._id = None
@@ -179,6 +195,7 @@ class DbSystemSnapshot(object):
         self._maintenance = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._crash_recovery = None
 
     @property
     def id(self):
@@ -725,6 +742,38 @@ class DbSystemSnapshot(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def crash_recovery(self):
+        """
+        Gets the crash_recovery of this DbSystemSnapshot.
+        Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
+        and whether to enable or disable syncing of the Binary Logs.
+
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The crash_recovery of this DbSystemSnapshot.
+        :rtype: str
+        """
+        return self._crash_recovery
+
+    @crash_recovery.setter
+    def crash_recovery(self, crash_recovery):
+        """
+        Sets the crash_recovery of this DbSystemSnapshot.
+        Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
+        and whether to enable or disable syncing of the Binary Logs.
+
+
+        :param crash_recovery: The crash_recovery of this DbSystemSnapshot.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(crash_recovery, allowed_values):
+            crash_recovery = 'UNKNOWN_ENUM_VALUE'
+        self._crash_recovery = crash_recovery
 
     def __repr__(self):
         return formatted_flat_dict(self)

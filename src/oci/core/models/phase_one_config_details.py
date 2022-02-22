@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PhaseOneConfigDetails(object):
     """
-    Phase 1 Configuration Details
+    Configuration details for IKE phase one (ISAKMP) configuration parameters.
     """
 
     #: A constant which can be used with the authentication_algorithm property of a PhaseOneConfigDetails.
@@ -116,7 +116,7 @@ class PhaseOneConfigDetails(object):
     def is_custom_phase_one_config(self):
         """
         Gets the is_custom_phase_one_config of this PhaseOneConfigDetails.
-        Indicates whether custom phase one configuration is enabled.
+        Indicates whether custom configuration is enabled for phase one options.
 
 
         :return: The is_custom_phase_one_config of this PhaseOneConfigDetails.
@@ -128,7 +128,7 @@ class PhaseOneConfigDetails(object):
     def is_custom_phase_one_config(self, is_custom_phase_one_config):
         """
         Sets the is_custom_phase_one_config of this PhaseOneConfigDetails.
-        Indicates whether custom phase one configuration is enabled.
+        Indicates whether custom configuration is enabled for phase one options.
 
 
         :param is_custom_phase_one_config: The is_custom_phase_one_config of this PhaseOneConfigDetails.
@@ -140,7 +140,7 @@ class PhaseOneConfigDetails(object):
     def authentication_algorithm(self):
         """
         Gets the authentication_algorithm of this PhaseOneConfigDetails.
-        Phase one authentication algorithm supported during tunnel negotiation.
+        The custom authentication algorithm proposed during phase one tunnel negotiation.
 
         Allowed values for this property are: "SHA2_384", "SHA2_256", "SHA1_96"
 
@@ -154,7 +154,7 @@ class PhaseOneConfigDetails(object):
     def authentication_algorithm(self, authentication_algorithm):
         """
         Sets the authentication_algorithm of this PhaseOneConfigDetails.
-        Phase one authentication algorithm supported during tunnel negotiation.
+        The custom authentication algorithm proposed during phase one tunnel negotiation.
 
 
         :param authentication_algorithm: The authentication_algorithm of this PhaseOneConfigDetails.
@@ -172,7 +172,7 @@ class PhaseOneConfigDetails(object):
     def encryption_algorithm(self):
         """
         Gets the encryption_algorithm of this PhaseOneConfigDetails.
-        Phase one encryption algorithm supported during tunnel negotiation.
+        The custom encryption algorithm proposed during phase one tunnel negotiation.
 
         Allowed values for this property are: "AES_256_CBC", "AES_192_CBC", "AES_128_CBC"
 
@@ -186,7 +186,7 @@ class PhaseOneConfigDetails(object):
     def encryption_algorithm(self, encryption_algorithm):
         """
         Sets the encryption_algorithm of this PhaseOneConfigDetails.
-        Phase one encryption algorithm supported during tunnel negotiation.
+        The custom encryption algorithm proposed during phase one tunnel negotiation.
 
 
         :param encryption_algorithm: The encryption_algorithm of this PhaseOneConfigDetails.
@@ -204,7 +204,7 @@ class PhaseOneConfigDetails(object):
     def diffie_helman_group(self):
         """
         Gets the diffie_helman_group of this PhaseOneConfigDetails.
-        Phase One Diffie Hellman group supported during tunnel negotiation.
+        The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
 
         Allowed values for this property are: "GROUP2", "GROUP5", "GROUP14", "GROUP19", "GROUP20", "GROUP24"
 
@@ -218,7 +218,7 @@ class PhaseOneConfigDetails(object):
     def diffie_helman_group(self, diffie_helman_group):
         """
         Sets the diffie_helman_group of this PhaseOneConfigDetails.
-        Phase One Diffie Hellman group supported during tunnel negotiation.
+        The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
 
 
         :param diffie_helman_group: The diffie_helman_group of this PhaseOneConfigDetails.
@@ -236,7 +236,7 @@ class PhaseOneConfigDetails(object):
     def lifetime_in_seconds(self):
         """
         Gets the lifetime_in_seconds of this PhaseOneConfigDetails.
-        IKE session key lifetime in seconds for IPSec phase one.
+        Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
 
 
         :return: The lifetime_in_seconds of this PhaseOneConfigDetails.
@@ -248,7 +248,7 @@ class PhaseOneConfigDetails(object):
     def lifetime_in_seconds(self, lifetime_in_seconds):
         """
         Sets the lifetime_in_seconds of this PhaseOneConfigDetails.
-        IKE session key lifetime in seconds for IPSec phase one.
+        Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
 
 
         :param lifetime_in_seconds: The lifetime_in_seconds of this PhaseOneConfigDetails.

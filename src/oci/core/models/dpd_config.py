@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DpdConfig(object):
     """
-    DPD Configuration Details
+    These configuration details are used for dead peer detection (DPD). DPD periodically checks the stability of the connection to the customer premises (CPE), and may be used to detect that the link to the CPE has gone down.
     """
 
     #: A constant which can be used with the dpd_mode property of a DpdConfig.
@@ -53,7 +53,7 @@ class DpdConfig(object):
     def dpd_mode(self):
         """
         Gets the dpd_mode of this DpdConfig.
-        dpd mode
+        This option defines whether DPD can be initiated from the Oracle side of the connection.
 
         Allowed values for this property are: "INITIATE_AND_RESPOND", "RESPOND_ONLY"
 
@@ -67,7 +67,7 @@ class DpdConfig(object):
     def dpd_mode(self, dpd_mode):
         """
         Sets the dpd_mode of this DpdConfig.
-        dpd mode
+        This option defines whether DPD can be initiated from the Oracle side of the connection.
 
 
         :param dpd_mode: The dpd_mode of this DpdConfig.
@@ -85,7 +85,7 @@ class DpdConfig(object):
     def dpd_timeout_in_sec(self):
         """
         Gets the dpd_timeout_in_sec of this DpdConfig.
-        DPD Timeout in seconds.
+        DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
 
 
         :return: The dpd_timeout_in_sec of this DpdConfig.
@@ -97,7 +97,7 @@ class DpdConfig(object):
     def dpd_timeout_in_sec(self, dpd_timeout_in_sec):
         """
         Sets the dpd_timeout_in_sec of this DpdConfig.
-        DPD Timeout in seconds.
+        DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
 
 
         :param dpd_timeout_in_sec: The dpd_timeout_in_sec of this DpdConfig.

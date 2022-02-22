@@ -76,7 +76,6 @@ class UpdateDrgRouteDistributionStatementDetails(object):
         """
         Gets the match_criteria of this UpdateDrgRouteDistributionStatementDetails.
         The action is applied only if all of the match criteria is met.
-        If there are no match criteria in a statement, match ALL is implied.
 
 
         :return: The match_criteria of this UpdateDrgRouteDistributionStatementDetails.
@@ -89,7 +88,6 @@ class UpdateDrgRouteDistributionStatementDetails(object):
         """
         Sets the match_criteria of this UpdateDrgRouteDistributionStatementDetails.
         The action is applied only if all of the match criteria is met.
-        If there are no match criteria in a statement, match ALL is implied.
 
 
         :param match_criteria: The match_criteria of this UpdateDrgRouteDistributionStatementDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AllowedPhaseOneParameters(object):
     """
-    Phase One Parameters
+    Allowed phase one parameters.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class AllowedPhaseOneParameters(object):
     def encryption_algorithms(self):
         """
         Gets the encryption_algorithms of this AllowedPhaseOneParameters.
-        Phase One Encryption Algorithms
+        Allowed phase one encryption algorithms.
 
 
         :return: The encryption_algorithms of this AllowedPhaseOneParameters.
@@ -63,7 +63,7 @@ class AllowedPhaseOneParameters(object):
     def encryption_algorithms(self, encryption_algorithms):
         """
         Sets the encryption_algorithms of this AllowedPhaseOneParameters.
-        Phase One Encryption Algorithms
+        Allowed phase one encryption algorithms.
 
 
         :param encryption_algorithms: The encryption_algorithms of this AllowedPhaseOneParameters.
@@ -75,7 +75,7 @@ class AllowedPhaseOneParameters(object):
     def authentication_algorithms(self):
         """
         Gets the authentication_algorithms of this AllowedPhaseOneParameters.
-        Phase One Authentication Algorithms
+        Allowed phase one authentication algorithms.
 
 
         :return: The authentication_algorithms of this AllowedPhaseOneParameters.
@@ -87,7 +87,7 @@ class AllowedPhaseOneParameters(object):
     def authentication_algorithms(self, authentication_algorithms):
         """
         Sets the authentication_algorithms of this AllowedPhaseOneParameters.
-        Phase One Authentication Algorithms
+        Allowed phase one authentication algorithms.
 
 
         :param authentication_algorithms: The authentication_algorithms of this AllowedPhaseOneParameters.
@@ -99,7 +99,7 @@ class AllowedPhaseOneParameters(object):
     def dh_groups(self):
         """
         Gets the dh_groups of this AllowedPhaseOneParameters.
-        DH Groups
+        Allowed phase one Diffie-Hellman groups.
 
 
         :return: The dh_groups of this AllowedPhaseOneParameters.
@@ -111,7 +111,7 @@ class AllowedPhaseOneParameters(object):
     def dh_groups(self, dh_groups):
         """
         Sets the dh_groups of this AllowedPhaseOneParameters.
-        DH Groups
+        Allowed phase one Diffie-Hellman groups.
 
 
         :param dh_groups: The dh_groups of this AllowedPhaseOneParameters.
