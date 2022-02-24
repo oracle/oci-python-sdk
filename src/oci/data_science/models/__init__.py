@@ -32,6 +32,7 @@ from .job_run_summary import JobRunSummary
 from .job_shape_summary import JobShapeSummary
 from .job_summary import JobSummary
 from .log_details import LogDetails
+from .managed_egress_standalone_job_infrastructure_configuration_details import ManagedEgressStandaloneJobInfrastructureConfigurationDetails
 from .metadata import Metadata
 from .model import Model
 from .model_configuration_details import ModelConfigurationDetails
@@ -42,6 +43,7 @@ from .model_deployment_summary import ModelDeploymentSummary
 from .model_provenance import ModelProvenance
 from .model_summary import ModelSummary
 from .notebook_session import NotebookSession
+from .notebook_session_config_details import NotebookSessionConfigDetails
 from .notebook_session_configuration_details import NotebookSessionConfigurationDetails
 from .notebook_session_shape_config_details import NotebookSessionShapeConfigDetails
 from .notebook_session_shape_summary import NotebookSessionShapeSummary
@@ -98,6 +100,7 @@ data_science_type_mapping = {
     "JobShapeSummary": JobShapeSummary,
     "JobSummary": JobSummary,
     "LogDetails": LogDetails,
+    "ManagedEgressStandaloneJobInfrastructureConfigurationDetails": ManagedEgressStandaloneJobInfrastructureConfigurationDetails,
     "Metadata": Metadata,
     "Model": Model,
     "ModelConfigurationDetails": ModelConfigurationDetails,
@@ -108,6 +111,7 @@ data_science_type_mapping = {
     "ModelProvenance": ModelProvenance,
     "ModelSummary": ModelSummary,
     "NotebookSession": NotebookSession,
+    "NotebookSessionConfigDetails": NotebookSessionConfigDetails,
     "NotebookSessionConfigurationDetails": NotebookSessionConfigurationDetails,
     "NotebookSessionShapeConfigDetails": NotebookSessionShapeConfigDetails,
     "NotebookSessionShapeSummary": NotebookSessionShapeSummary,

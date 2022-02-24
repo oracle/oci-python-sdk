@@ -155,6 +155,10 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             The value to assign to the scheduled_operations property of this CreateAutonomousDatabaseDetails.
         :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
 
+        :param is_auto_scaling_for_storage_enabled:
+            The value to assign to the is_auto_scaling_for_storage_enabled property of this CreateAutonomousDatabaseDetails.
+        :type is_auto_scaling_for_storage_enabled: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -189,7 +193,8 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'customer_contacts': 'list[CustomerContact]',
             'is_mtls_connection_required': 'bool',
             'autonomous_maintenance_schedule_type': 'str',
-            'scheduled_operations': 'list[ScheduledOperationDetails]'
+            'scheduled_operations': 'list[ScheduledOperationDetails]',
+            'is_auto_scaling_for_storage_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -225,7 +230,8 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
             'customer_contacts': 'customerContacts',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
-            'scheduled_operations': 'scheduledOperations'
+            'scheduled_operations': 'scheduledOperations',
+            'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled'
         }
 
         self._compartment_id = None
@@ -261,6 +267,7 @@ class CreateAutonomousDatabaseDetails(CreateAutonomousDatabaseBase):
         self._is_mtls_connection_required = None
         self._autonomous_maintenance_schedule_type = None
         self._scheduled_operations = None
+        self._is_auto_scaling_for_storage_enabled = None
         self._source = 'NONE'
 
     def __repr__(self):

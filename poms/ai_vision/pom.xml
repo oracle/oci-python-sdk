@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.ocas.vision</groupId>
         <artifactId>vision-service-api-spec</artifactId>
-        <version>0.3.85</version>
+        <version>0.3.89</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

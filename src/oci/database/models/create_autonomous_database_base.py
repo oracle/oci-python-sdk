@@ -226,6 +226,10 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the scheduled_operations property of this CreateAutonomousDatabaseBase.
         :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
 
+        :param is_auto_scaling_for_storage_enabled:
+            The value to assign to the is_auto_scaling_for_storage_enabled property of this CreateAutonomousDatabaseBase.
+        :type is_auto_scaling_for_storage_enabled: bool
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -260,7 +264,8 @@ class CreateAutonomousDatabaseBase(object):
             'customer_contacts': 'list[CustomerContact]',
             'is_mtls_connection_required': 'bool',
             'autonomous_maintenance_schedule_type': 'str',
-            'scheduled_operations': 'list[ScheduledOperationDetails]'
+            'scheduled_operations': 'list[ScheduledOperationDetails]',
+            'is_auto_scaling_for_storage_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -296,7 +301,8 @@ class CreateAutonomousDatabaseBase(object):
             'customer_contacts': 'customerContacts',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
-            'scheduled_operations': 'scheduledOperations'
+            'scheduled_operations': 'scheduledOperations',
+            'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled'
         }
 
         self._compartment_id = None
@@ -332,6 +338,7 @@ class CreateAutonomousDatabaseBase(object):
         self._is_mtls_connection_required = None
         self._autonomous_maintenance_schedule_type = None
         self._scheduled_operations = None
+        self._is_auto_scaling_for_storage_enabled = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -1398,6 +1405,30 @@ class CreateAutonomousDatabaseBase(object):
         :type: list[oci.database.models.ScheduledOperationDetails]
         """
         self._scheduled_operations = scheduled_operations
+
+    @property
+    def is_auto_scaling_for_storage_enabled(self):
+        """
+        Gets the is_auto_scaling_for_storage_enabled of this CreateAutonomousDatabaseBase.
+        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+
+
+        :return: The is_auto_scaling_for_storage_enabled of this CreateAutonomousDatabaseBase.
+        :rtype: bool
+        """
+        return self._is_auto_scaling_for_storage_enabled
+
+    @is_auto_scaling_for_storage_enabled.setter
+    def is_auto_scaling_for_storage_enabled(self, is_auto_scaling_for_storage_enabled):
+        """
+        Sets the is_auto_scaling_for_storage_enabled of this CreateAutonomousDatabaseBase.
+        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+
+
+        :param is_auto_scaling_for_storage_enabled: The is_auto_scaling_for_storage_enabled of this CreateAutonomousDatabaseBase.
+        :type: bool
+        """
+        self._is_auto_scaling_for_storage_enabled = is_auto_scaling_for_storage_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

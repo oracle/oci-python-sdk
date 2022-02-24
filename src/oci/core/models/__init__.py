@@ -207,6 +207,7 @@ from .drg import Drg
 from .drg_attachment import DrgAttachment
 from .drg_attachment_id_drg_route_distribution_match_criteria import DrgAttachmentIdDrgRouteDistributionMatchCriteria
 from .drg_attachment_info import DrgAttachmentInfo
+from .drg_attachment_match_all_drg_route_distribution_match_criteria import DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria
 from .drg_attachment_network_create_details import DrgAttachmentNetworkCreateDetails
 from .drg_attachment_network_details import DrgAttachmentNetworkDetails
 from .drg_attachment_network_update_details import DrgAttachmentNetworkUpdateDetails
@@ -691,6 +692,7 @@ core_type_mapping = {
     "DrgAttachment": DrgAttachment,
     "DrgAttachmentIdDrgRouteDistributionMatchCriteria": DrgAttachmentIdDrgRouteDistributionMatchCriteria,
     "DrgAttachmentInfo": DrgAttachmentInfo,
+    "DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria": DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria,
     "DrgAttachmentNetworkCreateDetails": DrgAttachmentNetworkCreateDetails,
     "DrgAttachmentNetworkDetails": DrgAttachmentNetworkDetails,
     "DrgAttachmentNetworkUpdateDetails": DrgAttachmentNetworkUpdateDetails,

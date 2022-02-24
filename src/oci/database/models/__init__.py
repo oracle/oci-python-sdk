@@ -147,6 +147,7 @@ from .db_node import DbNode
 from .db_node_summary import DbNodeSummary
 from .db_server import DbServer
 from .db_server_details import DbServerDetails
+from .db_server_patching_details import DbServerPatchingDetails
 from .db_server_summary import DbServerSummary
 from .db_system import DbSystem
 from .db_system_options import DbSystemOptions
@@ -162,6 +163,7 @@ from .enable_external_non_container_database_database_management_details import 
 from .enable_external_non_container_database_operations_insights_details import EnableExternalNonContainerDatabaseOperationsInsightsDetails
 from .enable_external_pluggable_database_database_management_details import EnableExternalPluggableDatabaseDatabaseManagementDetails
 from .enable_external_pluggable_database_operations_insights_details import EnableExternalPluggableDatabaseOperationsInsightsDetails
+from .estimated_patching_time import EstimatedPatchingTime
 from .exadata_db_system_migration import ExadataDbSystemMigration
 from .exadata_db_system_migration_summary import ExadataDbSystemMigrationSummary
 from .exadata_infrastructure import ExadataInfrastructure
@@ -423,6 +425,7 @@ database_type_mapping = {
     "DbNodeSummary": DbNodeSummary,
     "DbServer": DbServer,
     "DbServerDetails": DbServerDetails,
+    "DbServerPatchingDetails": DbServerPatchingDetails,
     "DbServerSummary": DbServerSummary,
     "DbSystem": DbSystem,
     "DbSystemOptions": DbSystemOptions,
@@ -438,6 +441,7 @@ database_type_mapping = {
     "EnableExternalNonContainerDatabaseOperationsInsightsDetails": EnableExternalNonContainerDatabaseOperationsInsightsDetails,
     "EnableExternalPluggableDatabaseDatabaseManagementDetails": EnableExternalPluggableDatabaseDatabaseManagementDetails,
     "EnableExternalPluggableDatabaseOperationsInsightsDetails": EnableExternalPluggableDatabaseOperationsInsightsDetails,
+    "EstimatedPatchingTime": EstimatedPatchingTime,
     "ExadataDbSystemMigration": ExadataDbSystemMigration,
     "ExadataDbSystemMigrationSummary": ExadataDbSystemMigrationSummary,
     "ExadataInfrastructure": ExadataInfrastructure,

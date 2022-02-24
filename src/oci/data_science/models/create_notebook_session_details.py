@@ -34,6 +34,10 @@ class CreateNotebookSessionDetails(object):
             The value to assign to the notebook_session_configuration_details property of this CreateNotebookSessionDetails.
         :type notebook_session_configuration_details: oci.data_science.models.NotebookSessionConfigurationDetails
 
+        :param notebook_session_config_details:
+            The value to assign to the notebook_session_config_details property of this CreateNotebookSessionDetails.
+        :type notebook_session_config_details: oci.data_science.models.NotebookSessionConfigDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateNotebookSessionDetails.
         :type freeform_tags: dict(str, str)
@@ -48,6 +52,7 @@ class CreateNotebookSessionDetails(object):
             'project_id': 'str',
             'compartment_id': 'str',
             'notebook_session_configuration_details': 'NotebookSessionConfigurationDetails',
+            'notebook_session_config_details': 'NotebookSessionConfigDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -57,6 +62,7 @@ class CreateNotebookSessionDetails(object):
             'project_id': 'projectId',
             'compartment_id': 'compartmentId',
             'notebook_session_configuration_details': 'notebookSessionConfigurationDetails',
+            'notebook_session_config_details': 'notebookSessionConfigDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -65,6 +71,7 @@ class CreateNotebookSessionDetails(object):
         self._project_id = None
         self._compartment_id = None
         self._notebook_session_configuration_details = None
+        self._notebook_session_config_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -153,7 +160,7 @@ class CreateNotebookSessionDetails(object):
     @property
     def notebook_session_configuration_details(self):
         """
-        **[Required]** Gets the notebook_session_configuration_details of this CreateNotebookSessionDetails.
+        Gets the notebook_session_configuration_details of this CreateNotebookSessionDetails.
 
         :return: The notebook_session_configuration_details of this CreateNotebookSessionDetails.
         :rtype: oci.data_science.models.NotebookSessionConfigurationDetails
@@ -169,6 +176,26 @@ class CreateNotebookSessionDetails(object):
         :type: oci.data_science.models.NotebookSessionConfigurationDetails
         """
         self._notebook_session_configuration_details = notebook_session_configuration_details
+
+    @property
+    def notebook_session_config_details(self):
+        """
+        Gets the notebook_session_config_details of this CreateNotebookSessionDetails.
+
+        :return: The notebook_session_config_details of this CreateNotebookSessionDetails.
+        :rtype: oci.data_science.models.NotebookSessionConfigDetails
+        """
+        return self._notebook_session_config_details
+
+    @notebook_session_config_details.setter
+    def notebook_session_config_details(self, notebook_session_config_details):
+        """
+        Sets the notebook_session_config_details of this CreateNotebookSessionDetails.
+
+        :param notebook_session_config_details: The notebook_session_config_details of this CreateNotebookSessionDetails.
+        :type: oci.data_science.models.NotebookSessionConfigDetails
+        """
+        self._notebook_session_config_details = notebook_session_config_details
 
     @property
     def freeform_tags(self):

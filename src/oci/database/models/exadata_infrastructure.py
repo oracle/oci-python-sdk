@@ -206,6 +206,14 @@ class ExadataInfrastructure(object):
             The value to assign to the maintenance_window property of this ExadataInfrastructure.
         :type maintenance_window: oci.database.models.MaintenanceWindow
 
+        :param storage_server_version:
+            The value to assign to the storage_server_version property of this ExadataInfrastructure.
+        :type storage_server_version: str
+
+        :param db_server_version:
+            The value to assign to the db_server_version property of this ExadataInfrastructure.
+        :type db_server_version: str
+
         :param last_maintenance_run_id:
             The value to assign to the last_maintenance_run_id property of this ExadataInfrastructure.
         :type last_maintenance_run_id: str
@@ -213,6 +221,10 @@ class ExadataInfrastructure(object):
         :param next_maintenance_run_id:
             The value to assign to the next_maintenance_run_id property of this ExadataInfrastructure.
         :type next_maintenance_run_id: str
+
+        :param is_cps_offline_report_enabled:
+            The value to assign to the is_cps_offline_report_enabled property of this ExadataInfrastructure.
+        :type is_cps_offline_report_enabled: bool
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this ExadataInfrastructure.
@@ -257,8 +269,11 @@ class ExadataInfrastructure(object):
             'contacts': 'list[ExadataInfrastructureContact]',
             'maintenance_slo_status': 'str',
             'maintenance_window': 'MaintenanceWindow',
+            'storage_server_version': 'str',
+            'db_server_version': 'str',
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
+            'is_cps_offline_report_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -297,8 +312,11 @@ class ExadataInfrastructure(object):
             'contacts': 'contacts',
             'maintenance_slo_status': 'maintenanceSLOStatus',
             'maintenance_window': 'maintenanceWindow',
+            'storage_server_version': 'storageServerVersion',
+            'db_server_version': 'dbServerVersion',
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
+            'is_cps_offline_report_enabled': 'isCpsOfflineReportEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -336,8 +354,11 @@ class ExadataInfrastructure(object):
         self._contacts = None
         self._maintenance_slo_status = None
         self._maintenance_window = None
+        self._storage_server_version = None
+        self._db_server_version = None
         self._last_maintenance_run_id = None
         self._next_maintenance_run_id = None
+        self._is_cps_offline_report_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -1154,6 +1175,54 @@ class ExadataInfrastructure(object):
         self._maintenance_window = maintenance_window
 
     @property
+    def storage_server_version(self):
+        """
+        Gets the storage_server_version of this ExadataInfrastructure.
+        The software version of the storage servers (cells) in the Exadata infrastructure.
+
+
+        :return: The storage_server_version of this ExadataInfrastructure.
+        :rtype: str
+        """
+        return self._storage_server_version
+
+    @storage_server_version.setter
+    def storage_server_version(self, storage_server_version):
+        """
+        Sets the storage_server_version of this ExadataInfrastructure.
+        The software version of the storage servers (cells) in the Exadata infrastructure.
+
+
+        :param storage_server_version: The storage_server_version of this ExadataInfrastructure.
+        :type: str
+        """
+        self._storage_server_version = storage_server_version
+
+    @property
+    def db_server_version(self):
+        """
+        Gets the db_server_version of this ExadataInfrastructure.
+        The software version of the database servers (dom0) in the Exadata infrastructure.
+
+
+        :return: The db_server_version of this ExadataInfrastructure.
+        :rtype: str
+        """
+        return self._db_server_version
+
+    @db_server_version.setter
+    def db_server_version(self, db_server_version):
+        """
+        Sets the db_server_version of this ExadataInfrastructure.
+        The software version of the database servers (dom0) in the Exadata infrastructure.
+
+
+        :param db_server_version: The db_server_version of this ExadataInfrastructure.
+        :type: str
+        """
+        self._db_server_version = db_server_version
+
+    @property
     def last_maintenance_run_id(self):
         """
         Gets the last_maintenance_run_id of this ExadataInfrastructure.
@@ -1208,6 +1277,34 @@ class ExadataInfrastructure(object):
         :type: str
         """
         self._next_maintenance_run_id = next_maintenance_run_id
+
+    @property
+    def is_cps_offline_report_enabled(self):
+        """
+        Gets the is_cps_offline_report_enabled of this ExadataInfrastructure.
+        Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration
+        for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time
+        using the UpdateExadatainfrastructure API.
+
+
+        :return: The is_cps_offline_report_enabled of this ExadataInfrastructure.
+        :rtype: bool
+        """
+        return self._is_cps_offline_report_enabled
+
+    @is_cps_offline_report_enabled.setter
+    def is_cps_offline_report_enabled(self, is_cps_offline_report_enabled):
+        """
+        Sets the is_cps_offline_report_enabled of this ExadataInfrastructure.
+        Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration
+        for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time
+        using the UpdateExadatainfrastructure API.
+
+
+        :param is_cps_offline_report_enabled: The is_cps_offline_report_enabled of this ExadataInfrastructure.
+        :type: bool
+        """
+        self._is_cps_offline_report_enabled = is_cps_offline_report_enabled
 
     @property
     def freeform_tags(self):

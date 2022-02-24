@@ -192,6 +192,10 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             The value to assign to the scheduled_operations property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
 
+        :param is_auto_scaling_for_storage_enabled:
+            The value to assign to the is_auto_scaling_for_storage_enabled property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
+        :type is_auto_scaling_for_storage_enabled: bool
+
         :param source_id:
             The value to assign to the source_id property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type source_id: str
@@ -231,6 +235,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             'is_mtls_connection_required': 'bool',
             'autonomous_maintenance_schedule_type': 'str',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
+            'is_auto_scaling_for_storage_enabled': 'bool',
             'source_id': 'str'
         }
 
@@ -268,6 +273,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'scheduled_operations': 'scheduledOperations',
+            'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
             'source_id': 'sourceId'
         }
 
@@ -304,6 +310,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
         self._is_mtls_connection_required = None
         self._autonomous_maintenance_schedule_type = None
         self._scheduled_operations = None
+        self._is_auto_scaling_for_storage_enabled = None
         self._source_id = None
         self._source = 'CROSS_REGION_DATAGUARD'
 

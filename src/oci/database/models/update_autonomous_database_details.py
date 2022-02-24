@@ -197,6 +197,10 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the scheduled_operations property of this UpdateAutonomousDatabaseDetails.
         :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
 
+        :param is_auto_scaling_for_storage_enabled:
+            The value to assign to the is_auto_scaling_for_storage_enabled property of this UpdateAutonomousDatabaseDetails.
+        :type is_auto_scaling_for_storage_enabled: bool
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -228,7 +232,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'nsg_ids': 'list[str]',
             'customer_contacts': 'list[CustomerContact]',
             'is_mtls_connection_required': 'bool',
-            'scheduled_operations': 'list[ScheduledOperationDetails]'
+            'scheduled_operations': 'list[ScheduledOperationDetails]',
+            'is_auto_scaling_for_storage_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -261,7 +266,8 @@ class UpdateAutonomousDatabaseDetails(object):
             'nsg_ids': 'nsgIds',
             'customer_contacts': 'customerContacts',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
-            'scheduled_operations': 'scheduledOperations'
+            'scheduled_operations': 'scheduledOperations',
+            'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled'
         }
 
         self._cpu_core_count = None
@@ -294,6 +300,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._customer_contacts = None
         self._is_mtls_connection_required = None
         self._scheduled_operations = None
+        self._is_auto_scaling_for_storage_enabled = None
 
     @property
     def cpu_core_count(self):
@@ -1252,6 +1259,30 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: list[oci.database.models.ScheduledOperationDetails]
         """
         self._scheduled_operations = scheduled_operations
+
+    @property
+    def is_auto_scaling_for_storage_enabled(self):
+        """
+        Gets the is_auto_scaling_for_storage_enabled of this UpdateAutonomousDatabaseDetails.
+        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+
+
+        :return: The is_auto_scaling_for_storage_enabled of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_auto_scaling_for_storage_enabled
+
+    @is_auto_scaling_for_storage_enabled.setter
+    def is_auto_scaling_for_storage_enabled(self, is_auto_scaling_for_storage_enabled):
+        """
+        Sets the is_auto_scaling_for_storage_enabled of this UpdateAutonomousDatabaseDetails.
+        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+
+
+        :param is_auto_scaling_for_storage_enabled: The is_auto_scaling_for_storage_enabled of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_auto_scaling_for_storage_enabled = is_auto_scaling_for_storage_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)
