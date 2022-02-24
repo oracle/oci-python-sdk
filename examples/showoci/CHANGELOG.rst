@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+22.02.22 - 22.02.22
+=====================
+* Added Support for ExaCS and ExaCC VMclusters in different compartment
+* Added CSV for PaaS OAC
+* Added CSV for PaaS OIC
+* Added CSV for PaaS OCVS
+* Added CSV for PaaS OCE
+* Added CSV for PaaS Data Science
+* Added CSV for PaaS Data Flow
+* Added CSV for PaaS Data Catalog
+* Added CSV for Big Data Service
+* Added CSV for Digital Assistance
+
+=====================
 22.02.08 - 22.02.08
 =====================
 * Added estimate dates for exadata maintenance
