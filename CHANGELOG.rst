@@ -4,12 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.58.1 - TBD
+2.59.0 - 2022-03-01
 ====================
 
 Added
 -----
-* TBD
+* Support for DRG route distribution statements to be specified with a new match type 'MATCH_ALL' for matching criteria in the Networking service
+* Support for VCN route types on DRG attachments for deciding whether to import VCN CIDRs or subnet CIDRs into route rules in the Networking service
+* Support for CPS offline reports in the Database service
+* Support for infrastructure patching v2 features in the Database service
+* Support for auto-scaling the storage of an autonomous database, as well as shrinking an autonomous database, in the Database service
+* Support for managed egress via a default networking option on jobs and notebooks in the Data Science service
+* Support for more types of saved search enums in the Management Dashboard service
+
+Breaking
+--------
+* Support for retries enabled by default on some operations in the AI Vision service
 
 ====================
 2.58.0 - 2022-02-22
