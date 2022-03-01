@@ -74,6 +74,10 @@ class NotebookSession(object):
             The value to assign to the notebook_session_configuration_details property of this NotebookSession.
         :type notebook_session_configuration_details: oci.data_science.models.NotebookSessionConfigurationDetails
 
+        :param notebook_session_config_details:
+            The value to assign to the notebook_session_config_details property of this NotebookSession.
+        :type notebook_session_config_details: oci.data_science.models.NotebookSessionConfigDetails
+
         :param notebook_session_url:
             The value to assign to the notebook_session_url property of this NotebookSession.
         :type notebook_session_url: str
@@ -105,6 +109,7 @@ class NotebookSession(object):
             'created_by': 'str',
             'compartment_id': 'str',
             'notebook_session_configuration_details': 'NotebookSessionConfigurationDetails',
+            'notebook_session_config_details': 'NotebookSessionConfigDetails',
             'notebook_session_url': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
@@ -120,6 +125,7 @@ class NotebookSession(object):
             'created_by': 'createdBy',
             'compartment_id': 'compartmentId',
             'notebook_session_configuration_details': 'notebookSessionConfigurationDetails',
+            'notebook_session_config_details': 'notebookSessionConfigDetails',
             'notebook_session_url': 'notebookSessionUrl',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
@@ -134,6 +140,7 @@ class NotebookSession(object):
         self._created_by = None
         self._compartment_id = None
         self._notebook_session_configuration_details = None
+        self._notebook_session_config_details = None
         self._notebook_session_url = None
         self._lifecycle_state = None
         self._lifecycle_details = None
@@ -327,6 +334,26 @@ class NotebookSession(object):
         :type: oci.data_science.models.NotebookSessionConfigurationDetails
         """
         self._notebook_session_configuration_details = notebook_session_configuration_details
+
+    @property
+    def notebook_session_config_details(self):
+        """
+        Gets the notebook_session_config_details of this NotebookSession.
+
+        :return: The notebook_session_config_details of this NotebookSession.
+        :rtype: oci.data_science.models.NotebookSessionConfigDetails
+        """
+        return self._notebook_session_config_details
+
+    @notebook_session_config_details.setter
+    def notebook_session_config_details(self, notebook_session_config_details):
+        """
+        Sets the notebook_session_config_details of this NotebookSession.
+
+        :param notebook_session_config_details: The notebook_session_config_details of this NotebookSession.
+        :type: oci.data_science.models.NotebookSessionConfigDetails
+        """
+        self._notebook_session_config_details = notebook_session_config_details
 
     @property
     def notebook_session_url(self):

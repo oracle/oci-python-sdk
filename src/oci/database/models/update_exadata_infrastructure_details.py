@@ -71,6 +71,10 @@ class UpdateExadataInfrastructureDetails(object):
             The value to assign to the time_zone property of this UpdateExadataInfrastructureDetails.
         :type time_zone: str
 
+        :param is_cps_offline_report_enabled:
+            The value to assign to the is_cps_offline_report_enabled property of this UpdateExadataInfrastructureDetails.
+        :type is_cps_offline_report_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateExadataInfrastructureDetails.
         :type freeform_tags: dict(str, str)
@@ -94,6 +98,7 @@ class UpdateExadataInfrastructureDetails(object):
             'dns_server': 'list[str]',
             'ntp_server': 'list[str]',
             'time_zone': 'str',
+            'is_cps_offline_report_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -112,6 +117,7 @@ class UpdateExadataInfrastructureDetails(object):
             'dns_server': 'dnsServer',
             'ntp_server': 'ntpServer',
             'time_zone': 'timeZone',
+            'is_cps_offline_report_enabled': 'isCpsOfflineReportEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -129,6 +135,7 @@ class UpdateExadataInfrastructureDetails(object):
         self._dns_server = None
         self._ntp_server = None
         self._time_zone = None
+        self._is_cps_offline_report_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -443,6 +450,34 @@ class UpdateExadataInfrastructureDetails(object):
         :type: str
         """
         self._time_zone = time_zone
+
+    @property
+    def is_cps_offline_report_enabled(self):
+        """
+        Gets the is_cps_offline_report_enabled of this UpdateExadataInfrastructureDetails.
+        Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration
+        for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time
+        using the UpdateExadatainfrastructure API.
+
+
+        :return: The is_cps_offline_report_enabled of this UpdateExadataInfrastructureDetails.
+        :rtype: bool
+        """
+        return self._is_cps_offline_report_enabled
+
+    @is_cps_offline_report_enabled.setter
+    def is_cps_offline_report_enabled(self, is_cps_offline_report_enabled):
+        """
+        Sets the is_cps_offline_report_enabled of this UpdateExadataInfrastructureDetails.
+        Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration
+        for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time
+        using the UpdateExadatainfrastructure API.
+
+
+        :param is_cps_offline_report_enabled: The is_cps_offline_report_enabled of this UpdateExadataInfrastructureDetails.
+        :type: bool
+        """
+        self._is_cps_offline_report_enabled = is_cps_offline_report_enabled
 
     @property
     def freeform_tags(self):

@@ -163,6 +163,10 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             The value to assign to the scheduled_operations property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
 
+        :param is_auto_scaling_for_storage_enabled:
+            The value to assign to the is_auto_scaling_for_storage_enabled property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type is_auto_scaling_for_storage_enabled: bool
+
         :param source_id:
             The value to assign to the source_id property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type source_id: str
@@ -207,6 +211,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'is_mtls_connection_required': 'bool',
             'autonomous_maintenance_schedule_type': 'str',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
+            'is_auto_scaling_for_storage_enabled': 'bool',
             'source_id': 'str',
             'refreshable_mode': 'str'
         }
@@ -245,6 +250,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'scheduled_operations': 'scheduledOperations',
+            'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
             'source_id': 'sourceId',
             'refreshable_mode': 'refreshableMode'
         }
@@ -282,6 +288,7 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
         self._is_mtls_connection_required = None
         self._autonomous_maintenance_schedule_type = None
         self._scheduled_operations = None
+        self._is_auto_scaling_for_storage_enabled = None
         self._source_id = None
         self._refreshable_mode = None
         self._source = 'CLONE_TO_REFRESHABLE'

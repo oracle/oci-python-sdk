@@ -21,6 +21,14 @@ class MaintenanceWindow(object):
     #: This constant has a value of "CUSTOM_PREFERENCE"
     PREFERENCE_CUSTOM_PREFERENCE = "CUSTOM_PREFERENCE"
 
+    #: A constant which can be used with the patching_mode property of a MaintenanceWindow.
+    #: This constant has a value of "ROLLING"
+    PATCHING_MODE_ROLLING = "ROLLING"
+
+    #: A constant which can be used with the patching_mode property of a MaintenanceWindow.
+    #: This constant has a value of "NONROLLING"
+    PATCHING_MODE_NONROLLING = "NONROLLING"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MaintenanceWindow object with values from keyword arguments.
@@ -31,6 +39,20 @@ class MaintenanceWindow(object):
             Allowed values for this property are: "NO_PREFERENCE", "CUSTOM_PREFERENCE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type preference: str
+
+        :param patching_mode:
+            The value to assign to the patching_mode property of this MaintenanceWindow.
+            Allowed values for this property are: "ROLLING", "NONROLLING", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type patching_mode: str
+
+        :param is_custom_action_timeout_enabled:
+            The value to assign to the is_custom_action_timeout_enabled property of this MaintenanceWindow.
+        :type is_custom_action_timeout_enabled: bool
+
+        :param custom_action_timeout_in_mins:
+            The value to assign to the custom_action_timeout_in_mins property of this MaintenanceWindow.
+        :type custom_action_timeout_in_mins: int
 
         :param months:
             The value to assign to the months property of this MaintenanceWindow.
@@ -55,6 +77,9 @@ class MaintenanceWindow(object):
         """
         self.swagger_types = {
             'preference': 'str',
+            'patching_mode': 'str',
+            'is_custom_action_timeout_enabled': 'bool',
+            'custom_action_timeout_in_mins': 'int',
             'months': 'list[Month]',
             'weeks_of_month': 'list[int]',
             'days_of_week': 'list[DayOfWeek]',
@@ -64,6 +89,9 @@ class MaintenanceWindow(object):
 
         self.attribute_map = {
             'preference': 'preference',
+            'patching_mode': 'patchingMode',
+            'is_custom_action_timeout_enabled': 'isCustomActionTimeoutEnabled',
+            'custom_action_timeout_in_mins': 'customActionTimeoutInMins',
             'months': 'months',
             'weeks_of_month': 'weeksOfMonth',
             'days_of_week': 'daysOfWeek',
@@ -72,6 +100,9 @@ class MaintenanceWindow(object):
         }
 
         self._preference = None
+        self._patching_mode = None
+        self._is_custom_action_timeout_enabled = None
+        self._custom_action_timeout_in_mins = None
         self._months = None
         self._weeks_of_month = None
         self._days_of_week = None
@@ -107,6 +138,94 @@ class MaintenanceWindow(object):
         if not value_allowed_none_or_none_sentinel(preference, allowed_values):
             preference = 'UNKNOWN_ENUM_VALUE'
         self._preference = preference
+
+    @property
+    def patching_mode(self):
+        """
+        Gets the patching_mode of this MaintenanceWindow.
+        Cloud Exadata infrastructure node patching method, either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See `Oracle-Managed Infrastructure Maintenance Updates`__ for more information.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
+
+        Allowed values for this property are: "ROLLING", "NONROLLING", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The patching_mode of this MaintenanceWindow.
+        :rtype: str
+        """
+        return self._patching_mode
+
+    @patching_mode.setter
+    def patching_mode(self, patching_mode):
+        """
+        Sets the patching_mode of this MaintenanceWindow.
+        Cloud Exadata infrastructure node patching method, either \"ROLLING\" or \"NONROLLING\". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See `Oracle-Managed Infrastructure Maintenance Updates`__ for more information.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle
+
+
+        :param patching_mode: The patching_mode of this MaintenanceWindow.
+        :type: str
+        """
+        allowed_values = ["ROLLING", "NONROLLING"]
+        if not value_allowed_none_or_none_sentinel(patching_mode, allowed_values):
+            patching_mode = 'UNKNOWN_ENUM_VALUE'
+        self._patching_mode = patching_mode
+
+    @property
+    def is_custom_action_timeout_enabled(self):
+        """
+        Gets the is_custom_action_timeout_enabled of this MaintenanceWindow.
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+
+
+        :return: The is_custom_action_timeout_enabled of this MaintenanceWindow.
+        :rtype: bool
+        """
+        return self._is_custom_action_timeout_enabled
+
+    @is_custom_action_timeout_enabled.setter
+    def is_custom_action_timeout_enabled(self, is_custom_action_timeout_enabled):
+        """
+        Sets the is_custom_action_timeout_enabled of this MaintenanceWindow.
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+
+
+        :param is_custom_action_timeout_enabled: The is_custom_action_timeout_enabled of this MaintenanceWindow.
+        :type: bool
+        """
+        self._is_custom_action_timeout_enabled = is_custom_action_timeout_enabled
+
+    @property
+    def custom_action_timeout_in_mins(self):
+        """
+        Gets the custom_action_timeout_in_mins of this MaintenanceWindow.
+        Determines the amount of time the system will wait before the start of each database server patching operation.
+        Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+
+
+        :return: The custom_action_timeout_in_mins of this MaintenanceWindow.
+        :rtype: int
+        """
+        return self._custom_action_timeout_in_mins
+
+    @custom_action_timeout_in_mins.setter
+    def custom_action_timeout_in_mins(self, custom_action_timeout_in_mins):
+        """
+        Sets the custom_action_timeout_in_mins of this MaintenanceWindow.
+        Determines the amount of time the system will wait before the start of each database server patching operation.
+        Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+
+
+        :param custom_action_timeout_in_mins: The custom_action_timeout_in_mins of this MaintenanceWindow.
+        :type: int
+        """
+        self._custom_action_timeout_in_mins = custom_action_timeout_in_mins
 
     @property
     def months(self):

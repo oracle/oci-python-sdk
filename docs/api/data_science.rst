@@ -46,6 +46,7 @@ Data Science
     oci.data_science.models.JobShapeSummary
     oci.data_science.models.JobSummary
     oci.data_science.models.LogDetails
+    oci.data_science.models.ManagedEgressStandaloneJobInfrastructureConfigurationDetails
     oci.data_science.models.Metadata
     oci.data_science.models.Model
     oci.data_science.models.ModelConfigurationDetails
@@ -56,6 +57,7 @@ Data Science
     oci.data_science.models.ModelProvenance
     oci.data_science.models.ModelSummary
     oci.data_science.models.NotebookSession
+    oci.data_science.models.NotebookSessionConfigDetails
     oci.data_science.models.NotebookSessionConfigurationDetails
     oci.data_science.models.NotebookSessionShapeConfigDetails
     oci.data_science.models.NotebookSessionShapeSummary

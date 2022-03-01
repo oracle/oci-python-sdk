@@ -604,6 +604,18 @@ class AutonomousDatabaseSummary(object):
             The value to assign to the scheduled_operations property of this AutonomousDatabaseSummary.
         :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
 
+        :param is_auto_scaling_for_storage_enabled:
+            The value to assign to the is_auto_scaling_for_storage_enabled property of this AutonomousDatabaseSummary.
+        :type is_auto_scaling_for_storage_enabled: bool
+
+        :param allocated_storage_size_in_tbs:
+            The value to assign to the allocated_storage_size_in_tbs property of this AutonomousDatabaseSummary.
+        :type allocated_storage_size_in_tbs: float
+
+        :param actual_used_data_storage_size_in_tbs:
+            The value to assign to the actual_used_data_storage_size_in_tbs property of this AutonomousDatabaseSummary.
+        :type actual_used_data_storage_size_in_tbs: float
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -684,7 +696,10 @@ class AutonomousDatabaseSummary(object):
             'is_reconnect_clone_enabled': 'bool',
             'time_until_reconnect_clone_enabled': 'datetime',
             'autonomous_maintenance_schedule_type': 'str',
-            'scheduled_operations': 'list[ScheduledOperationDetails]'
+            'scheduled_operations': 'list[ScheduledOperationDetails]',
+            'is_auto_scaling_for_storage_enabled': 'bool',
+            'allocated_storage_size_in_tbs': 'float',
+            'actual_used_data_storage_size_in_tbs': 'float'
         }
 
         self.attribute_map = {
@@ -766,7 +781,10 @@ class AutonomousDatabaseSummary(object):
             'is_reconnect_clone_enabled': 'isReconnectCloneEnabled',
             'time_until_reconnect_clone_enabled': 'timeUntilReconnectCloneEnabled',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
-            'scheduled_operations': 'scheduledOperations'
+            'scheduled_operations': 'scheduledOperations',
+            'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
+            'allocated_storage_size_in_tbs': 'allocatedStorageSizeInTBs',
+            'actual_used_data_storage_size_in_tbs': 'actualUsedDataStorageSizeInTBs'
         }
 
         self._id = None
@@ -848,6 +866,9 @@ class AutonomousDatabaseSummary(object):
         self._time_until_reconnect_clone_enabled = None
         self._autonomous_maintenance_schedule_type = None
         self._scheduled_operations = None
+        self._is_auto_scaling_for_storage_enabled = None
+        self._allocated_storage_size_in_tbs = None
+        self._actual_used_data_storage_size_in_tbs = None
 
     @property
     def id(self):
@@ -3018,6 +3039,82 @@ class AutonomousDatabaseSummary(object):
         :type: list[oci.database.models.ScheduledOperationDetails]
         """
         self._scheduled_operations = scheduled_operations
+
+    @property
+    def is_auto_scaling_for_storage_enabled(self):
+        """
+        Gets the is_auto_scaling_for_storage_enabled of this AutonomousDatabaseSummary.
+        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+
+
+        :return: The is_auto_scaling_for_storage_enabled of this AutonomousDatabaseSummary.
+        :rtype: bool
+        """
+        return self._is_auto_scaling_for_storage_enabled
+
+    @is_auto_scaling_for_storage_enabled.setter
+    def is_auto_scaling_for_storage_enabled(self, is_auto_scaling_for_storage_enabled):
+        """
+        Sets the is_auto_scaling_for_storage_enabled of this AutonomousDatabaseSummary.
+        Indicates if auto scaling is enabled for the Autonomous Database storage. The default value is `FALSE`.
+
+
+        :param is_auto_scaling_for_storage_enabled: The is_auto_scaling_for_storage_enabled of this AutonomousDatabaseSummary.
+        :type: bool
+        """
+        self._is_auto_scaling_for_storage_enabled = is_auto_scaling_for_storage_enabled
+
+    @property
+    def allocated_storage_size_in_tbs(self):
+        """
+        Gets the allocated_storage_size_in_tbs of this AutonomousDatabaseSummary.
+        The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
+
+        **Note:** Auto-scaling does not automatically decrease allocated storage when data is deleted from the database.
+
+
+        :return: The allocated_storage_size_in_tbs of this AutonomousDatabaseSummary.
+        :rtype: float
+        """
+        return self._allocated_storage_size_in_tbs
+
+    @allocated_storage_size_in_tbs.setter
+    def allocated_storage_size_in_tbs(self, allocated_storage_size_in_tbs):
+        """
+        Sets the allocated_storage_size_in_tbs of this AutonomousDatabaseSummary.
+        The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
+
+        **Note:** Auto-scaling does not automatically decrease allocated storage when data is deleted from the database.
+
+
+        :param allocated_storage_size_in_tbs: The allocated_storage_size_in_tbs of this AutonomousDatabaseSummary.
+        :type: float
+        """
+        self._allocated_storage_size_in_tbs = allocated_storage_size_in_tbs
+
+    @property
+    def actual_used_data_storage_size_in_tbs(self):
+        """
+        Gets the actual_used_data_storage_size_in_tbs of this AutonomousDatabaseSummary.
+        The current amount of storage in use for user and system data, in terabytes (TB).
+
+
+        :return: The actual_used_data_storage_size_in_tbs of this AutonomousDatabaseSummary.
+        :rtype: float
+        """
+        return self._actual_used_data_storage_size_in_tbs
+
+    @actual_used_data_storage_size_in_tbs.setter
+    def actual_used_data_storage_size_in_tbs(self, actual_used_data_storage_size_in_tbs):
+        """
+        Sets the actual_used_data_storage_size_in_tbs of this AutonomousDatabaseSummary.
+        The current amount of storage in use for user and system data, in terabytes (TB).
+
+
+        :param actual_used_data_storage_size_in_tbs: The actual_used_data_storage_size_in_tbs of this AutonomousDatabaseSummary.
+        :type: float
+        """
+        self._actual_used_data_storage_size_in_tbs = actual_used_data_storage_size_in_tbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

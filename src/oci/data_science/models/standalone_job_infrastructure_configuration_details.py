@@ -21,7 +21,7 @@ class StandaloneJobInfrastructureConfigurationDetails(JobInfrastructureConfigura
 
         :param job_infrastructure_type:
             The value to assign to the job_infrastructure_type property of this StandaloneJobInfrastructureConfigurationDetails.
-            Allowed values for this property are: "STANDALONE"
+            Allowed values for this property are: "STANDALONE", "ME_STANDALONE"
         :type job_infrastructure_type: str
 
         :param shape_name:

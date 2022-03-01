@@ -163,6 +163,10 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             The value to assign to the scheduled_operations property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type scheduled_operations: list[oci.database.models.ScheduledOperationDetails]
 
+        :param is_auto_scaling_for_storage_enabled:
+            The value to assign to the is_auto_scaling_for_storage_enabled property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type is_auto_scaling_for_storage_enabled: bool
+
         :param autonomous_database_id:
             The value to assign to the autonomous_database_id property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type autonomous_database_id: str
@@ -211,6 +215,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'is_mtls_connection_required': 'bool',
             'autonomous_maintenance_schedule_type': 'str',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
+            'is_auto_scaling_for_storage_enabled': 'bool',
             'autonomous_database_id': 'str',
             'timestamp': 'datetime',
             'clone_type': 'str'
@@ -250,6 +255,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'scheduled_operations': 'scheduledOperations',
+            'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
             'autonomous_database_id': 'autonomousDatabaseId',
             'timestamp': 'timestamp',
             'clone_type': 'cloneType'
@@ -288,6 +294,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         self._is_mtls_connection_required = None
         self._autonomous_maintenance_schedule_type = None
         self._scheduled_operations = None
+        self._is_auto_scaling_for_storage_enabled = None
         self._autonomous_database_id = None
         self._timestamp = None
         self._clone_type = None

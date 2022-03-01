@@ -29,6 +29,14 @@ class ManagementSavedSearch(object):
     #: This constant has a value of "WIDGET_DONT_SHOW_IN_DASHBOARD"
     TYPE_WIDGET_DONT_SHOW_IN_DASHBOARD = "WIDGET_DONT_SHOW_IN_DASHBOARD"
 
+    #: A constant which can be used with the type property of a ManagementSavedSearch.
+    #: This constant has a value of "FILTER_SHOW_IN_DASHBOARD"
+    TYPE_FILTER_SHOW_IN_DASHBOARD = "FILTER_SHOW_IN_DASHBOARD"
+
+    #: A constant which can be used with the type property of a ManagementSavedSearch.
+    #: This constant has a value of "FILTER_DONT_SHOW_IN_DASHBOARD"
+    TYPE_FILTER_DONT_SHOW_IN_DASHBOARD = "FILTER_DONT_SHOW_IN_DASHBOARD"
+
     #: A constant which can be used with the lifecycle_state property of a ManagementSavedSearch.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -76,7 +84,7 @@ class ManagementSavedSearch(object):
 
         :param type:
             The value to assign to the type property of this ManagementSavedSearch.
-            Allowed values for this property are: "SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD", "FILTER_SHOW_IN_DASHBOARD", "FILTER_DONT_SHOW_IN_DASHBOARD", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -447,7 +455,7 @@ class ManagementSavedSearch(object):
         **[Required]** Gets the type of this ManagementSavedSearch.
         Determines how the saved search is displayed in a dashboard.
 
-        Allowed values for this property are: "SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD", "FILTER_SHOW_IN_DASHBOARD", "FILTER_DONT_SHOW_IN_DASHBOARD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -466,7 +474,7 @@ class ManagementSavedSearch(object):
         :param type: The type of this ManagementSavedSearch.
         :type: str
         """
-        allowed_values = ["SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD"]
+        allowed_values = ["SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD", "FILTER_SHOW_IN_DASHBOARD", "FILTER_DONT_SHOW_IN_DASHBOARD"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
