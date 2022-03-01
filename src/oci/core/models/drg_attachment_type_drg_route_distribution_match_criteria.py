@@ -38,7 +38,7 @@ class DrgAttachmentTypeDrgRouteDistributionMatchCriteria(DrgRouteDistributionMat
 
         :param match_type:
             The value to assign to the match_type property of this DrgAttachmentTypeDrgRouteDistributionMatchCriteria.
-            Allowed values for this property are: "DRG_ATTACHMENT_TYPE", "DRG_ATTACHMENT_ID", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DRG_ATTACHMENT_TYPE", "DRG_ATTACHMENT_ID", "MATCH_ALL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type match_type: str
 

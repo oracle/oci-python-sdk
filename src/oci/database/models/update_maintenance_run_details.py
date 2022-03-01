@@ -47,13 +47,33 @@ class UpdateMaintenanceRunDetails(object):
             Allowed values for this property are: "ROLLING", "NONROLLING"
         :type patching_mode: str
 
+        :param is_custom_action_timeout_enabled:
+            The value to assign to the is_custom_action_timeout_enabled property of this UpdateMaintenanceRunDetails.
+        :type is_custom_action_timeout_enabled: bool
+
+        :param custom_action_timeout_in_mins:
+            The value to assign to the custom_action_timeout_in_mins property of this UpdateMaintenanceRunDetails.
+        :type custom_action_timeout_in_mins: int
+
+        :param current_custom_action_timeout_in_mins:
+            The value to assign to the current_custom_action_timeout_in_mins property of this UpdateMaintenanceRunDetails.
+        :type current_custom_action_timeout_in_mins: int
+
+        :param is_resume_patching:
+            The value to assign to the is_resume_patching property of this UpdateMaintenanceRunDetails.
+        :type is_resume_patching: bool
+
         """
         self.swagger_types = {
             'is_enabled': 'bool',
             'time_scheduled': 'datetime',
             'is_patch_now_enabled': 'bool',
             'patch_id': 'str',
-            'patching_mode': 'str'
+            'patching_mode': 'str',
+            'is_custom_action_timeout_enabled': 'bool',
+            'custom_action_timeout_in_mins': 'int',
+            'current_custom_action_timeout_in_mins': 'int',
+            'is_resume_patching': 'bool'
         }
 
         self.attribute_map = {
@@ -61,7 +81,11 @@ class UpdateMaintenanceRunDetails(object):
             'time_scheduled': 'timeScheduled',
             'is_patch_now_enabled': 'isPatchNowEnabled',
             'patch_id': 'patchId',
-            'patching_mode': 'patchingMode'
+            'patching_mode': 'patchingMode',
+            'is_custom_action_timeout_enabled': 'isCustomActionTimeoutEnabled',
+            'custom_action_timeout_in_mins': 'customActionTimeoutInMins',
+            'current_custom_action_timeout_in_mins': 'currentCustomActionTimeoutInMins',
+            'is_resume_patching': 'isResumePatching'
         }
 
         self._is_enabled = None
@@ -69,6 +93,10 @@ class UpdateMaintenanceRunDetails(object):
         self._is_patch_now_enabled = None
         self._patch_id = None
         self._patching_mode = None
+        self._is_custom_action_timeout_enabled = None
+        self._custom_action_timeout_in_mins = None
+        self._current_custom_action_timeout_in_mins = None
+        self._is_resume_patching = None
 
     @property
     def is_enabled(self):
@@ -209,6 +237,104 @@ class UpdateMaintenanceRunDetails(object):
                 .format(allowed_values)
             )
         self._patching_mode = patching_mode
+
+    @property
+    def is_custom_action_timeout_enabled(self):
+        """
+        Gets the is_custom_action_timeout_enabled of this UpdateMaintenanceRunDetails.
+        If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+
+
+        :return: The is_custom_action_timeout_enabled of this UpdateMaintenanceRunDetails.
+        :rtype: bool
+        """
+        return self._is_custom_action_timeout_enabled
+
+    @is_custom_action_timeout_enabled.setter
+    def is_custom_action_timeout_enabled(self, is_custom_action_timeout_enabled):
+        """
+        Sets the is_custom_action_timeout_enabled of this UpdateMaintenanceRunDetails.
+        If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+
+
+        :param is_custom_action_timeout_enabled: The is_custom_action_timeout_enabled of this UpdateMaintenanceRunDetails.
+        :type: bool
+        """
+        self._is_custom_action_timeout_enabled = is_custom_action_timeout_enabled
+
+    @property
+    def custom_action_timeout_in_mins(self):
+        """
+        Gets the custom_action_timeout_in_mins of this UpdateMaintenanceRunDetails.
+        Determines the amount of time the system will wait before the start of each database server patching operation.
+        Specify a number of minutes from 15 to 120.
+
+
+        :return: The custom_action_timeout_in_mins of this UpdateMaintenanceRunDetails.
+        :rtype: int
+        """
+        return self._custom_action_timeout_in_mins
+
+    @custom_action_timeout_in_mins.setter
+    def custom_action_timeout_in_mins(self, custom_action_timeout_in_mins):
+        """
+        Sets the custom_action_timeout_in_mins of this UpdateMaintenanceRunDetails.
+        Determines the amount of time the system will wait before the start of each database server patching operation.
+        Specify a number of minutes from 15 to 120.
+
+
+        :param custom_action_timeout_in_mins: The custom_action_timeout_in_mins of this UpdateMaintenanceRunDetails.
+        :type: int
+        """
+        self._custom_action_timeout_in_mins = custom_action_timeout_in_mins
+
+    @property
+    def current_custom_action_timeout_in_mins(self):
+        """
+        Gets the current_custom_action_timeout_in_mins of this UpdateMaintenanceRunDetails.
+        The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+
+
+        :return: The current_custom_action_timeout_in_mins of this UpdateMaintenanceRunDetails.
+        :rtype: int
+        """
+        return self._current_custom_action_timeout_in_mins
+
+    @current_custom_action_timeout_in_mins.setter
+    def current_custom_action_timeout_in_mins(self, current_custom_action_timeout_in_mins):
+        """
+        Sets the current_custom_action_timeout_in_mins of this UpdateMaintenanceRunDetails.
+        The current custom action timeout between the current database servers during waiting state in addition to custom action timeout, from 0 (zero) to 30 minutes.
+
+
+        :param current_custom_action_timeout_in_mins: The current_custom_action_timeout_in_mins of this UpdateMaintenanceRunDetails.
+        :type: int
+        """
+        self._current_custom_action_timeout_in_mins = current_custom_action_timeout_in_mins
+
+    @property
+    def is_resume_patching(self):
+        """
+        Gets the is_resume_patching of this UpdateMaintenanceRunDetails.
+        If true, then the patching is resumed and the next component will be patched immediately.
+
+
+        :return: The is_resume_patching of this UpdateMaintenanceRunDetails.
+        :rtype: bool
+        """
+        return self._is_resume_patching
+
+    @is_resume_patching.setter
+    def is_resume_patching(self, is_resume_patching):
+        """
+        Sets the is_resume_patching of this UpdateMaintenanceRunDetails.
+        If true, then the patching is resumed and the next component will be patched immediately.
+
+
+        :param is_resume_patching: The is_resume_patching of this UpdateMaintenanceRunDetails.
+        :type: bool
+        """
+        self._is_resume_patching = is_resume_patching
 
     def __repr__(self):
         return formatted_flat_dict(self)

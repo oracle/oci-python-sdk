@@ -161,6 +161,7 @@ Database
     oci.database.models.DbNodeSummary
     oci.database.models.DbServer
     oci.database.models.DbServerDetails
+    oci.database.models.DbServerPatchingDetails
     oci.database.models.DbServerSummary
     oci.database.models.DbSystem
     oci.database.models.DbSystemOptions
@@ -176,6 +177,7 @@ Database
     oci.database.models.EnableExternalNonContainerDatabaseOperationsInsightsDetails
     oci.database.models.EnableExternalPluggableDatabaseDatabaseManagementDetails
     oci.database.models.EnableExternalPluggableDatabaseOperationsInsightsDetails
+    oci.database.models.EstimatedPatchingTime
     oci.database.models.ExadataDbSystemMigration
     oci.database.models.ExadataDbSystemMigrationSummary
     oci.database.models.ExadataInfrastructure

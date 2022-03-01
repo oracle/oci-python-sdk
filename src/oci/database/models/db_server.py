@@ -104,6 +104,10 @@ class DbServer(object):
             The value to assign to the time_created property of this DbServer.
         :type time_created: datetime
 
+        :param db_server_patching_details:
+            The value to assign to the db_server_patching_details property of this DbServer.
+        :type db_server_patching_details: oci.database.models.DbServerPatchingDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DbServer.
         :type freeform_tags: dict(str, str)
@@ -129,6 +133,7 @@ class DbServer(object):
             'max_memory_in_gbs': 'int',
             'max_db_node_storage_in_gbs': 'int',
             'time_created': 'datetime',
+            'db_server_patching_details': 'DbServerPatchingDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -149,6 +154,7 @@ class DbServer(object):
             'max_memory_in_gbs': 'maxMemoryInGBs',
             'max_db_node_storage_in_gbs': 'maxDbNodeStorageInGBs',
             'time_created': 'timeCreated',
+            'db_server_patching_details': 'dbServerPatchingDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -168,6 +174,7 @@ class DbServer(object):
         self._max_memory_in_gbs = None
         self._max_db_node_storage_in_gbs = None
         self._time_created = None
+        self._db_server_patching_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -556,6 +563,26 @@ class DbServer(object):
         :type: datetime
         """
         self._time_created = time_created
+
+    @property
+    def db_server_patching_details(self):
+        """
+        Gets the db_server_patching_details of this DbServer.
+
+        :return: The db_server_patching_details of this DbServer.
+        :rtype: oci.database.models.DbServerPatchingDetails
+        """
+        return self._db_server_patching_details
+
+    @db_server_patching_details.setter
+    def db_server_patching_details(self, db_server_patching_details):
+        """
+        Sets the db_server_patching_details of this DbServer.
+
+        :param db_server_patching_details: The db_server_patching_details of this DbServer.
+        :type: oci.database.models.DbServerPatchingDetails
+        """
+        self._db_server_patching_details = db_server_patching_details
 
     @property
     def freeform_tags(self):

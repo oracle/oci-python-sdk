@@ -113,6 +113,18 @@ class MaintenanceRun(object):
     #: This constant has a value of "NONROLLING"
     PATCHING_MODE_NONROLLING = "NONROLLING"
 
+    #: A constant which can be used with the patching_status property of a MaintenanceRun.
+    #: This constant has a value of "PATCHING"
+    PATCHING_STATUS_PATCHING = "PATCHING"
+
+    #: A constant which can be used with the patching_status property of a MaintenanceRun.
+    #: This constant has a value of "WAITING"
+    PATCHING_STATUS_WAITING = "WAITING"
+
+    #: A constant which can be used with the patching_status property of a MaintenanceRun.
+    #: This constant has a value of "SCHEDULED"
+    PATCHING_STATUS_SCHEDULED = "SCHEDULED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new MaintenanceRun object with values from keyword arguments.
@@ -196,6 +208,52 @@ class MaintenanceRun(object):
             The value to assign to the patch_failure_count property of this MaintenanceRun.
         :type patch_failure_count: int
 
+        :param target_db_server_version:
+            The value to assign to the target_db_server_version property of this MaintenanceRun.
+        :type target_db_server_version: str
+
+        :param target_storage_server_version:
+            The value to assign to the target_storage_server_version property of this MaintenanceRun.
+        :type target_storage_server_version: str
+
+        :param is_custom_action_timeout_enabled:
+            The value to assign to the is_custom_action_timeout_enabled property of this MaintenanceRun.
+        :type is_custom_action_timeout_enabled: bool
+
+        :param custom_action_timeout_in_mins:
+            The value to assign to the custom_action_timeout_in_mins property of this MaintenanceRun.
+        :type custom_action_timeout_in_mins: int
+
+        :param current_custom_action_timeout_in_mins:
+            The value to assign to the current_custom_action_timeout_in_mins property of this MaintenanceRun.
+        :type current_custom_action_timeout_in_mins: int
+
+        :param patching_status:
+            The value to assign to the patching_status property of this MaintenanceRun.
+            Allowed values for this property are: "PATCHING", "WAITING", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type patching_status: str
+
+        :param patching_start_time:
+            The value to assign to the patching_start_time property of this MaintenanceRun.
+        :type patching_start_time: datetime
+
+        :param patching_end_time:
+            The value to assign to the patching_end_time property of this MaintenanceRun.
+        :type patching_end_time: datetime
+
+        :param estimated_patching_time:
+            The value to assign to the estimated_patching_time property of this MaintenanceRun.
+        :type estimated_patching_time: oci.database.models.EstimatedPatchingTime
+
+        :param current_patching_component:
+            The value to assign to the current_patching_component property of this MaintenanceRun.
+        :type current_patching_component: str
+
+        :param estimated_component_patching_start_time:
+            The value to assign to the estimated_component_patching_start_time property of this MaintenanceRun.
+        :type estimated_component_patching_start_time: datetime
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -214,7 +272,18 @@ class MaintenanceRun(object):
             'maintenance_subtype': 'str',
             'peer_maintenance_run_id': 'str',
             'patching_mode': 'str',
-            'patch_failure_count': 'int'
+            'patch_failure_count': 'int',
+            'target_db_server_version': 'str',
+            'target_storage_server_version': 'str',
+            'is_custom_action_timeout_enabled': 'bool',
+            'custom_action_timeout_in_mins': 'int',
+            'current_custom_action_timeout_in_mins': 'int',
+            'patching_status': 'str',
+            'patching_start_time': 'datetime',
+            'patching_end_time': 'datetime',
+            'estimated_patching_time': 'EstimatedPatchingTime',
+            'current_patching_component': 'str',
+            'estimated_component_patching_start_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -234,7 +303,18 @@ class MaintenanceRun(object):
             'maintenance_subtype': 'maintenanceSubtype',
             'peer_maintenance_run_id': 'peerMaintenanceRunId',
             'patching_mode': 'patchingMode',
-            'patch_failure_count': 'patchFailureCount'
+            'patch_failure_count': 'patchFailureCount',
+            'target_db_server_version': 'targetDbServerVersion',
+            'target_storage_server_version': 'targetStorageServerVersion',
+            'is_custom_action_timeout_enabled': 'isCustomActionTimeoutEnabled',
+            'custom_action_timeout_in_mins': 'customActionTimeoutInMins',
+            'current_custom_action_timeout_in_mins': 'currentCustomActionTimeoutInMins',
+            'patching_status': 'patchingStatus',
+            'patching_start_time': 'patchingStartTime',
+            'patching_end_time': 'patchingEndTime',
+            'estimated_patching_time': 'estimatedPatchingTime',
+            'current_patching_component': 'currentPatchingComponent',
+            'estimated_component_patching_start_time': 'estimatedComponentPatchingStartTime'
         }
 
         self._id = None
@@ -254,6 +334,17 @@ class MaintenanceRun(object):
         self._peer_maintenance_run_id = None
         self._patching_mode = None
         self._patch_failure_count = None
+        self._target_db_server_version = None
+        self._target_storage_server_version = None
+        self._is_custom_action_timeout_enabled = None
+        self._custom_action_timeout_in_mins = None
+        self._current_custom_action_timeout_in_mins = None
+        self._patching_status = None
+        self._patching_start_time = None
+        self._patching_end_time = None
+        self._estimated_patching_time = None
+        self._current_patching_component = None
+        self._estimated_component_patching_start_time = None
 
     @property
     def id(self):
@@ -704,6 +795,274 @@ class MaintenanceRun(object):
         :type: int
         """
         self._patch_failure_count = patch_failure_count
+
+    @property
+    def target_db_server_version(self):
+        """
+        Gets the target_db_server_version of this MaintenanceRun.
+        The target software version for the database server patching operation.
+
+
+        :return: The target_db_server_version of this MaintenanceRun.
+        :rtype: str
+        """
+        return self._target_db_server_version
+
+    @target_db_server_version.setter
+    def target_db_server_version(self, target_db_server_version):
+        """
+        Sets the target_db_server_version of this MaintenanceRun.
+        The target software version for the database server patching operation.
+
+
+        :param target_db_server_version: The target_db_server_version of this MaintenanceRun.
+        :type: str
+        """
+        self._target_db_server_version = target_db_server_version
+
+    @property
+    def target_storage_server_version(self):
+        """
+        Gets the target_storage_server_version of this MaintenanceRun.
+        The target Cell version that is to be patched to.
+
+
+        :return: The target_storage_server_version of this MaintenanceRun.
+        :rtype: str
+        """
+        return self._target_storage_server_version
+
+    @target_storage_server_version.setter
+    def target_storage_server_version(self, target_storage_server_version):
+        """
+        Sets the target_storage_server_version of this MaintenanceRun.
+        The target Cell version that is to be patched to.
+
+
+        :param target_storage_server_version: The target_storage_server_version of this MaintenanceRun.
+        :type: str
+        """
+        self._target_storage_server_version = target_storage_server_version
+
+    @property
+    def is_custom_action_timeout_enabled(self):
+        """
+        Gets the is_custom_action_timeout_enabled of this MaintenanceRun.
+        If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+
+
+        :return: The is_custom_action_timeout_enabled of this MaintenanceRun.
+        :rtype: bool
+        """
+        return self._is_custom_action_timeout_enabled
+
+    @is_custom_action_timeout_enabled.setter
+    def is_custom_action_timeout_enabled(self, is_custom_action_timeout_enabled):
+        """
+        Sets the is_custom_action_timeout_enabled of this MaintenanceRun.
+        If true, enables the configuration of a custom action timeout (waiting period) between database servers patching operations.
+
+
+        :param is_custom_action_timeout_enabled: The is_custom_action_timeout_enabled of this MaintenanceRun.
+        :type: bool
+        """
+        self._is_custom_action_timeout_enabled = is_custom_action_timeout_enabled
+
+    @property
+    def custom_action_timeout_in_mins(self):
+        """
+        Gets the custom_action_timeout_in_mins of this MaintenanceRun.
+        Determines the amount of time the system will wait before the start of each database server patching operation.
+        Specify a number of minutes, from 15 to 120.
+
+
+        :return: The custom_action_timeout_in_mins of this MaintenanceRun.
+        :rtype: int
+        """
+        return self._custom_action_timeout_in_mins
+
+    @custom_action_timeout_in_mins.setter
+    def custom_action_timeout_in_mins(self, custom_action_timeout_in_mins):
+        """
+        Sets the custom_action_timeout_in_mins of this MaintenanceRun.
+        Determines the amount of time the system will wait before the start of each database server patching operation.
+        Specify a number of minutes, from 15 to 120.
+
+
+        :param custom_action_timeout_in_mins: The custom_action_timeout_in_mins of this MaintenanceRun.
+        :type: int
+        """
+        self._custom_action_timeout_in_mins = custom_action_timeout_in_mins
+
+    @property
+    def current_custom_action_timeout_in_mins(self):
+        """
+        Gets the current_custom_action_timeout_in_mins of this MaintenanceRun.
+        Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+
+
+        :return: The current_custom_action_timeout_in_mins of this MaintenanceRun.
+        :rtype: int
+        """
+        return self._current_custom_action_timeout_in_mins
+
+    @current_custom_action_timeout_in_mins.setter
+    def current_custom_action_timeout_in_mins(self, current_custom_action_timeout_in_mins):
+        """
+        Sets the current_custom_action_timeout_in_mins of this MaintenanceRun.
+        Extend current custom action timeout between the current database servers during waiting state, from 0 (zero) to 30 minutes.
+
+
+        :param current_custom_action_timeout_in_mins: The current_custom_action_timeout_in_mins of this MaintenanceRun.
+        :type: int
+        """
+        self._current_custom_action_timeout_in_mins = current_custom_action_timeout_in_mins
+
+    @property
+    def patching_status(self):
+        """
+        Gets the patching_status of this MaintenanceRun.
+        The status of the patching operation.
+
+        Allowed values for this property are: "PATCHING", "WAITING", "SCHEDULED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The patching_status of this MaintenanceRun.
+        :rtype: str
+        """
+        return self._patching_status
+
+    @patching_status.setter
+    def patching_status(self, patching_status):
+        """
+        Sets the patching_status of this MaintenanceRun.
+        The status of the patching operation.
+
+
+        :param patching_status: The patching_status of this MaintenanceRun.
+        :type: str
+        """
+        allowed_values = ["PATCHING", "WAITING", "SCHEDULED"]
+        if not value_allowed_none_or_none_sentinel(patching_status, allowed_values):
+            patching_status = 'UNKNOWN_ENUM_VALUE'
+        self._patching_status = patching_status
+
+    @property
+    def patching_start_time(self):
+        """
+        Gets the patching_start_time of this MaintenanceRun.
+        The time when the patching operation started.
+
+
+        :return: The patching_start_time of this MaintenanceRun.
+        :rtype: datetime
+        """
+        return self._patching_start_time
+
+    @patching_start_time.setter
+    def patching_start_time(self, patching_start_time):
+        """
+        Sets the patching_start_time of this MaintenanceRun.
+        The time when the patching operation started.
+
+
+        :param patching_start_time: The patching_start_time of this MaintenanceRun.
+        :type: datetime
+        """
+        self._patching_start_time = patching_start_time
+
+    @property
+    def patching_end_time(self):
+        """
+        Gets the patching_end_time of this MaintenanceRun.
+        The time when the patching operation ended.
+
+
+        :return: The patching_end_time of this MaintenanceRun.
+        :rtype: datetime
+        """
+        return self._patching_end_time
+
+    @patching_end_time.setter
+    def patching_end_time(self, patching_end_time):
+        """
+        Sets the patching_end_time of this MaintenanceRun.
+        The time when the patching operation ended.
+
+
+        :param patching_end_time: The patching_end_time of this MaintenanceRun.
+        :type: datetime
+        """
+        self._patching_end_time = patching_end_time
+
+    @property
+    def estimated_patching_time(self):
+        """
+        Gets the estimated_patching_time of this MaintenanceRun.
+
+        :return: The estimated_patching_time of this MaintenanceRun.
+        :rtype: oci.database.models.EstimatedPatchingTime
+        """
+        return self._estimated_patching_time
+
+    @estimated_patching_time.setter
+    def estimated_patching_time(self, estimated_patching_time):
+        """
+        Sets the estimated_patching_time of this MaintenanceRun.
+
+        :param estimated_patching_time: The estimated_patching_time of this MaintenanceRun.
+        :type: oci.database.models.EstimatedPatchingTime
+        """
+        self._estimated_patching_time = estimated_patching_time
+
+    @property
+    def current_patching_component(self):
+        """
+        Gets the current_patching_component of this MaintenanceRun.
+        The name of the current infrastruture component that is getting patched.
+
+
+        :return: The current_patching_component of this MaintenanceRun.
+        :rtype: str
+        """
+        return self._current_patching_component
+
+    @current_patching_component.setter
+    def current_patching_component(self, current_patching_component):
+        """
+        Sets the current_patching_component of this MaintenanceRun.
+        The name of the current infrastruture component that is getting patched.
+
+
+        :param current_patching_component: The current_patching_component of this MaintenanceRun.
+        :type: str
+        """
+        self._current_patching_component = current_patching_component
+
+    @property
+    def estimated_component_patching_start_time(self):
+        """
+        Gets the estimated_component_patching_start_time of this MaintenanceRun.
+        The estimated start time of the next infrastruture component patching operation.
+
+
+        :return: The estimated_component_patching_start_time of this MaintenanceRun.
+        :rtype: datetime
+        """
+        return self._estimated_component_patching_start_time
+
+    @estimated_component_patching_start_time.setter
+    def estimated_component_patching_start_time(self, estimated_component_patching_start_time):
+        """
+        Sets the estimated_component_patching_start_time of this MaintenanceRun.
+        The estimated start time of the next infrastruture component patching operation.
+
+
+        :param estimated_component_patching_start_time: The estimated_component_patching_start_time of this MaintenanceRun.
+        :type: datetime
+        """
+        self._estimated_component_patching_start_time = estimated_component_patching_start_time
 
     def __repr__(self):
         return formatted_flat_dict(self)

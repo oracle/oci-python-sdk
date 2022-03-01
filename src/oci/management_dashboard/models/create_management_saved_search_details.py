@@ -29,6 +29,14 @@ class CreateManagementSavedSearchDetails(object):
     #: This constant has a value of "WIDGET_DONT_SHOW_IN_DASHBOARD"
     TYPE_WIDGET_DONT_SHOW_IN_DASHBOARD = "WIDGET_DONT_SHOW_IN_DASHBOARD"
 
+    #: A constant which can be used with the type property of a CreateManagementSavedSearchDetails.
+    #: This constant has a value of "FILTER_SHOW_IN_DASHBOARD"
+    TYPE_FILTER_SHOW_IN_DASHBOARD = "FILTER_SHOW_IN_DASHBOARD"
+
+    #: A constant which can be used with the type property of a CreateManagementSavedSearchDetails.
+    #: This constant has a value of "FILTER_DONT_SHOW_IN_DASHBOARD"
+    TYPE_FILTER_DONT_SHOW_IN_DASHBOARD = "FILTER_DONT_SHOW_IN_DASHBOARD"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateManagementSavedSearchDetails object with values from keyword arguments.
@@ -72,7 +80,7 @@ class CreateManagementSavedSearchDetails(object):
 
         :param type:
             The value to assign to the type property of this CreateManagementSavedSearchDetails.
-            Allowed values for this property are: "SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD"
+            Allowed values for this property are: "SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD", "FILTER_SHOW_IN_DASHBOARD", "FILTER_DONT_SHOW_IN_DASHBOARD"
         :type type: str
 
         :param ui_config:
@@ -405,7 +413,7 @@ class CreateManagementSavedSearchDetails(object):
         **[Required]** Gets the type of this CreateManagementSavedSearchDetails.
         Determines how the saved search is displayed in a dashboard.
 
-        Allowed values for this property are: "SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD"
+        Allowed values for this property are: "SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD", "FILTER_SHOW_IN_DASHBOARD", "FILTER_DONT_SHOW_IN_DASHBOARD"
 
 
         :return: The type of this CreateManagementSavedSearchDetails.
@@ -423,7 +431,7 @@ class CreateManagementSavedSearchDetails(object):
         :param type: The type of this CreateManagementSavedSearchDetails.
         :type: str
         """
-        allowed_values = ["SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD"]
+        allowed_values = ["SEARCH_SHOW_IN_DASHBOARD", "SEARCH_DONT_SHOW_IN_DASHBOARD", "WIDGET_SHOW_IN_DASHBOARD", "WIDGET_DONT_SHOW_IN_DASHBOARD", "FILTER_SHOW_IN_DASHBOARD", "FILTER_DONT_SHOW_IN_DASHBOARD"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 "Invalid value for `type`, must be None or one of {0}"

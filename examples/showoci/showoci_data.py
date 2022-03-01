@@ -352,7 +352,6 @@ class ShowOCIData(object):
                     if value is not None:
                         if len(value) > 0:
                             data['data_ai'] = value
-                            data['data_ai'] = value
                             has_data = True
 
                 if self.service.flags.read_function:
@@ -2189,57 +2188,60 @@ class ShowOCIData(object):
                     'vm_clusters': []
                 }
 
-                for vm in dbs['vm_clusters']:
-                    valvm = {
-                        'id': vm['id'],
-                        'cluster_name': vm['cluster_name'],
-                        'hostname': vm['hostname'],
-                        'compartment_id': vm['compartment_id'],
-                        'availability_domain': vm['availability_domain'],
-                        'data_subnet_id': vm['data_subnet_id'],
-                        'data_subnet': vm['data_subnet'],
-                        'backup_subnet_id': vm['backup_subnet_id'],
-                        'backup_subnet': vm['backup_subnet'],
-                        'nsg_ids': vm['nsg_ids'],
-                        'backup_network_nsg_ids': vm['backup_network_nsg_ids'],
-                        'last_update_history_entry_id': vm['last_update_history_entry_id'],
-                        'shape': vm['shape'],
-                        'listener_port': vm['listener_port'],
-                        'lifecycle_state': vm['lifecycle_state'],
-                        'node_count': vm['node_count'],
-                        'storage_size_in_gbs': vm['storage_size_in_gbs'],
-                        'display_name': vm['display_name'],
-                        'time_created': vm['time_created'],
-                        'lifecycle_details': vm['lifecycle_details'],
-                        'time_zone': vm['time_zone'],
-                        'domain': vm['domain'],
-                        'cpu_core_count': vm['cpu_core_count'],
-                        'data_storage_percentage': vm['data_storage_percentage'],
-                        'is_local_backup_enabled': vm['is_local_backup_enabled'],
-                        'is_sparse_diskgroup_enabled': vm['is_sparse_diskgroup_enabled'],
-                        'gi_version': vm['gi_version'],
-                        'system_version': vm['system_version'],
-                        'ssh_public_keys': vm['ssh_public_keys'],
-                        'license_model': vm['license_model'],
-                        'disk_redundancy': vm['disk_redundancy'],
-                        'scan_ip_ids': vm['scan_ip_ids'],
-                        'scan_ips': vm['scan_ips'],
-                        'vip_ids': vm['vip_ids'],
-                        'vip_ips': vm['vip_ips'],
-                        'scan_dns_record_id': vm['scan_dns_record_id'],
-                        'defined_tags': vm['defined_tags'],
-                        'freeform_tags': vm['freeform_tags'],
-                        'region_name': vm['region_name'],
-                        'sum_info': 'Database XP - ' + dbs['shape'] + " - " + vm['license_model'],
-                        'sum_info_storage': 'Database - Storage (GB)',
-                        'sum_size_gb': vm['storage_size_in_gbs'],
-                        'patches': self.__get_database_db_patches(vm['patches']),
-                        'db_homes': self.__get_database_db_homes(vm['db_homes']),
-                        'db_nodes': self.__get_database_db_nodes(vm['db_nodes']),
-                        'zone_id': vm['zone_id'],
-                        'scan_dns_name': vm['scan_dns_name']
-                    }
-                    value['vm_clusters'].append(valvm)
+                list_vms = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXADATA_VMS, 'region_name', region_name, 'cloud_exadata_infrastructure_id', dbs['id'])
+                if list_vms:
+                    for vm in list_vms:
+                        valvm = {
+                            'id': vm['id'],
+                            'cluster_name': vm['cluster_name'],
+                            'hostname': vm['hostname'],
+                            'compartment_id': vm['compartment_id'],
+                            'availability_domain': vm['availability_domain'],
+                            'data_subnet_id': vm['data_subnet_id'],
+                            'data_subnet': vm['data_subnet'],
+                            'backup_subnet_id': vm['backup_subnet_id'],
+                            'backup_subnet': vm['backup_subnet'],
+                            'nsg_ids': vm['nsg_ids'],
+                            'backup_network_nsg_ids': vm['backup_network_nsg_ids'],
+                            'last_update_history_entry_id': vm['last_update_history_entry_id'],
+                            'shape': vm['shape'],
+                            'listener_port': vm['listener_port'],
+                            'lifecycle_state': vm['lifecycle_state'],
+                            'node_count': vm['node_count'],
+                            'storage_size_in_gbs': vm['storage_size_in_gbs'],
+                            'display_name': vm['display_name'],
+                            'time_created': vm['time_created'],
+                            'lifecycle_details': vm['lifecycle_details'],
+                            'time_zone': vm['time_zone'],
+                            'domain': vm['domain'],
+                            'cpu_core_count': vm['cpu_core_count'],
+                            'data_storage_percentage': vm['data_storage_percentage'],
+                            'is_local_backup_enabled': vm['is_local_backup_enabled'],
+                            'is_sparse_diskgroup_enabled': vm['is_sparse_diskgroup_enabled'],
+                            'gi_version': vm['gi_version'],
+                            'system_version': vm['system_version'],
+                            'ssh_public_keys': vm['ssh_public_keys'],
+                            'license_model': vm['license_model'],
+                            'disk_redundancy': vm['disk_redundancy'],
+                            'scan_ip_ids': vm['scan_ip_ids'],
+                            'scan_ips': vm['scan_ips'],
+                            'vip_ids': vm['vip_ids'],
+                            'vip_ips': vm['vip_ips'],
+                            'scan_dns_record_id': vm['scan_dns_record_id'],
+                            'defined_tags': vm['defined_tags'],
+                            'freeform_tags': vm['freeform_tags'],
+                            'sum_info': 'Database XP - ' + dbs['shape'] + " - " + vm['license_model'],
+                            'sum_info_storage': 'Database - Storage (GB)',
+                            'sum_size_gb': vm['storage_size_in_gbs'],
+                            'patches': self.__get_database_db_patches(vm['patches']),
+                            'db_homes': self.__get_database_db_homes(vm['db_homes']),
+                            'db_nodes': self.__get_database_db_nodes(vm['db_nodes']),
+                            'zone_id': vm['zone_id'],
+                            'scan_dns_name': vm['scan_dns_name'],
+                            'compartment_name': vm['compartment_name'],
+                            'region_name': vm['region_name']
+                        }
+                        value['vm_clusters'].append(valvm)
 
                 data.append(value)
             return data
@@ -2305,38 +2307,42 @@ class ShowOCIData(object):
                     'name': dbs['display_name'] + " - " + dbs['shape'] + " - " + dbs['lifecycle_state']
                 }
 
-                for vm in dbs['vm_clusters']:
-                    valvm = {
-                        'id': vm['id'],
-                        'last_patch_history_entry_id': vm['last_patch_history_entry_id'],
-                        'lifecycle_state': vm['lifecycle_state'],
-                        'display_name': vm['display_name'],
-                        'time_created': vm['time_created'],
-                        'lifecycle_details': vm['lifecycle_details'],
-                        'time_zone': vm['time_zone'],
-                        'is_local_backup_enabled': vm['is_local_backup_enabled'],
-                        'exadata_infrastructure_id': vm['exadata_infrastructure_id'],
-                        'is_sparse_diskgroup_enabled': vm['is_sparse_diskgroup_enabled'],
-                        'vm_cluster_network_id': vm['vm_cluster_network_id'],
-                        'cpus_enabled': vm['cpus_enabled'],
-                        'memory_size_in_gbs': vm['memory_size_in_gbs'],
-                        'db_node_storage_size_in_gbs': vm['db_node_storage_size_in_gbs'],
-                        'data_storage_size_in_tbs': vm['data_storage_size_in_tbs'],
-                        'shape': vm['shape'],
-                        'gi_version': vm['gi_version'],
-                        'system_version': vm['system_version'],
-                        'license_model': vm['license_model'],
-                        'defined_tags': vm['defined_tags'],
-                        'freeform_tags': vm['freeform_tags'],
-                        'region_name': vm['region_name'],
-                        'sum_info': 'Database ExaCC - ' + dbs['shape'] + " - " + vm['license_model'],
-                        'sum_info_storage': 'Database - Storage (GB)',
-                        'sum_size_gb': vm['db_node_storage_size_in_gbs'],
-                        'patches': self.__get_database_db_patches(vm['patches']),
-                        'db_homes': self.__get_database_db_homes(vm['db_homes']),
-                        'db_nodes': self.__get_database_db_nodes(vm['db_nodes'])
-                    }
-                    value['vm_clusters'].append(valvm)
+                list_vms = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXACC_VMS, 'region_name', region_name, 'exadata_infrastructure_id', dbs['id'])
+                if list_vms:
+                    for vm in list_vms:
+                        valvm = {
+                            'id': vm['id'],
+                            'last_patch_history_entry_id': vm['last_patch_history_entry_id'],
+                            'lifecycle_state': vm['lifecycle_state'],
+                            'display_name': vm['display_name'],
+                            'time_created': vm['time_created'],
+                            'lifecycle_details': vm['lifecycle_details'],
+                            'time_zone': vm['time_zone'],
+                            'is_local_backup_enabled': vm['is_local_backup_enabled'],
+                            'exadata_infrastructure_id': vm['exadata_infrastructure_id'],
+                            'is_sparse_diskgroup_enabled': vm['is_sparse_diskgroup_enabled'],
+                            'vm_cluster_network_id': vm['vm_cluster_network_id'],
+                            'cpus_enabled': vm['cpus_enabled'],
+                            'memory_size_in_gbs': vm['memory_size_in_gbs'],
+                            'db_node_storage_size_in_gbs': vm['db_node_storage_size_in_gbs'],
+                            'data_storage_size_in_tbs': vm['data_storage_size_in_tbs'],
+                            'shape': vm['shape'],
+                            'gi_version': vm['gi_version'],
+                            'system_version': vm['system_version'],
+                            'license_model': vm['license_model'],
+                            'defined_tags': vm['defined_tags'],
+                            'freeform_tags': vm['freeform_tags'],
+                            'sum_info': 'Database ExaCC - ' + dbs['shape'] + " - " + vm['license_model'],
+                            'sum_info_storage': 'Database - Storage (GB)',
+                            'sum_size_gb': vm['db_node_storage_size_in_gbs'],
+                            'patches': self.__get_database_db_patches(vm['patches']),
+                            'db_homes': self.__get_database_db_homes(vm['db_homes']),
+                            'db_nodes': self.__get_database_db_nodes(vm['db_nodes']),
+                            'compartment_name': vm['compartment_name'],
+                            'compartment_id': vm['compartment_id'],
+                            'region_name': vm['region_name']
+                        }
+                        value['vm_clusters'].append(valvm)
 
                 data.append(value)
             return data
@@ -2569,6 +2575,7 @@ class ShowOCIData(object):
                          'subnet_id': infra['subnet_id'],
                          'subnet_name': infra['subnet_name'],
                          'nsg_ids': infra['nsg_ids'],
+                         'nsg_names': [],
                          'shape': infra['shape'],
                          'shape_ocpu': infra['shape_ocpu'],
                          'shape_memory_gb': infra['shape_memory_gb'],
@@ -2627,7 +2634,7 @@ class ShowOCIData(object):
             return data
 
         except Exception as e:
-            self.__print_error("__get_database_adb_d_infrastructure", e)
+            self.__print_error("__get_database_adb_dedicated", e)
             return data
 
     ##########################################################################

@@ -227,6 +227,7 @@ Core Services
     oci.core.models.DrgAttachment
     oci.core.models.DrgAttachmentIdDrgRouteDistributionMatchCriteria
     oci.core.models.DrgAttachmentInfo
+    oci.core.models.DrgAttachmentMatchAllDrgRouteDistributionMatchCriteria
     oci.core.models.DrgAttachmentNetworkCreateDetails
     oci.core.models.DrgAttachmentNetworkDetails
     oci.core.models.DrgAttachmentNetworkUpdateDetails
