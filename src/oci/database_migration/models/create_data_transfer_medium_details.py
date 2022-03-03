@@ -11,7 +11,8 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateDataTransferMediumDetails(object):
     """
     Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type
-    of data transfer medium can be specified.
+    of data transfer medium can be specified, except for the case of Amazon RDS Oracle as source, where Object Storage
+    Details along with AwsS3Details are required.
     """
 
     def __init__(self, **kwargs):
@@ -27,19 +28,26 @@ class CreateDataTransferMediumDetails(object):
             The value to assign to the object_storage_details property of this CreateDataTransferMediumDetails.
         :type object_storage_details: oci.database_migration.models.CreateObjectStoreBucket
 
+        :param aws_s3_details:
+            The value to assign to the aws_s3_details property of this CreateDataTransferMediumDetails.
+        :type aws_s3_details: oci.database_migration.models.CreateAwsS3Details
+
         """
         self.swagger_types = {
             'database_link_details': 'CreateDatabaseLinkDetails',
-            'object_storage_details': 'CreateObjectStoreBucket'
+            'object_storage_details': 'CreateObjectStoreBucket',
+            'aws_s3_details': 'CreateAwsS3Details'
         }
 
         self.attribute_map = {
             'database_link_details': 'databaseLinkDetails',
-            'object_storage_details': 'objectStorageDetails'
+            'object_storage_details': 'objectStorageDetails',
+            'aws_s3_details': 'awsS3Details'
         }
 
         self._database_link_details = None
         self._object_storage_details = None
+        self._aws_s3_details = None
 
     @property
     def database_link_details(self):
@@ -80,6 +88,26 @@ class CreateDataTransferMediumDetails(object):
         :type: oci.database_migration.models.CreateObjectStoreBucket
         """
         self._object_storage_details = object_storage_details
+
+    @property
+    def aws_s3_details(self):
+        """
+        Gets the aws_s3_details of this CreateDataTransferMediumDetails.
+
+        :return: The aws_s3_details of this CreateDataTransferMediumDetails.
+        :rtype: oci.database_migration.models.CreateAwsS3Details
+        """
+        return self._aws_s3_details
+
+    @aws_s3_details.setter
+    def aws_s3_details(self, aws_s3_details):
+        """
+        Sets the aws_s3_details of this CreateDataTransferMediumDetails.
+
+        :param aws_s3_details: The aws_s3_details of this CreateDataTransferMediumDetails.
+        :type: oci.database_migration.models.CreateAwsS3Details
+        """
+        self._aws_s3_details = aws_s3_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

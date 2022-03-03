@@ -26,19 +26,26 @@ class DataTransferMediumDetails(object):
             The value to assign to the object_storage_details property of this DataTransferMediumDetails.
         :type object_storage_details: oci.database_migration.models.ObjectStoreBucket
 
+        :param aws_s3_details:
+            The value to assign to the aws_s3_details property of this DataTransferMediumDetails.
+        :type aws_s3_details: oci.database_migration.models.AwsS3Details
+
         """
         self.swagger_types = {
             'database_link_details': 'DatabaseLinkDetails',
-            'object_storage_details': 'ObjectStoreBucket'
+            'object_storage_details': 'ObjectStoreBucket',
+            'aws_s3_details': 'AwsS3Details'
         }
 
         self.attribute_map = {
             'database_link_details': 'databaseLinkDetails',
-            'object_storage_details': 'objectStorageDetails'
+            'object_storage_details': 'objectStorageDetails',
+            'aws_s3_details': 'awsS3Details'
         }
 
         self._database_link_details = None
         self._object_storage_details = None
+        self._aws_s3_details = None
 
     @property
     def database_link_details(self):
@@ -79,6 +86,26 @@ class DataTransferMediumDetails(object):
         :type: oci.database_migration.models.ObjectStoreBucket
         """
         self._object_storage_details = object_storage_details
+
+    @property
+    def aws_s3_details(self):
+        """
+        Gets the aws_s3_details of this DataTransferMediumDetails.
+
+        :return: The aws_s3_details of this DataTransferMediumDetails.
+        :rtype: oci.database_migration.models.AwsS3Details
+        """
+        return self._aws_s3_details
+
+    @aws_s3_details.setter
+    def aws_s3_details(self, aws_s3_details):
+        """
+        Sets the aws_s3_details of this DataTransferMediumDetails.
+
+        :param aws_s3_details: The aws_s3_details of this DataTransferMediumDetails.
+        :type: oci.database_migration.models.AwsS3Details
+        """
+        self._aws_s3_details = aws_s3_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

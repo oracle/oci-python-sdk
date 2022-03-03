@@ -25,6 +25,14 @@ class Connection(object):
     #: This constant has a value of "USER_MANAGED_OCI"
     DATABASE_TYPE_USER_MANAGED_OCI = "USER_MANAGED_OCI"
 
+    #: A constant which can be used with the manual_database_sub_type property of a Connection.
+    #: This constant has a value of "ORACLE"
+    MANUAL_DATABASE_SUB_TYPE_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the manual_database_sub_type property of a Connection.
+    #: This constant has a value of "RDS_ORACLE"
+    MANUAL_DATABASE_SUB_TYPE_RDS_ORACLE = "RDS_ORACLE"
+
     #: A constant which can be used with the lifecycle_state property of a Connection.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -71,6 +79,16 @@ class Connection(object):
             Allowed values for this property are: "MANUAL", "AUTONOMOUS", "USER_MANAGED_OCI", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_type: str
+
+        :param manual_database_sub_type:
+            The value to assign to the manual_database_sub_type property of this Connection.
+            Allowed values for this property are: "ORACLE", "RDS_ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type manual_database_sub_type: str
+
+        :param is_dedicated:
+            The value to assign to the is_dedicated property of this Connection.
+        :type is_dedicated: bool
 
         :param display_name:
             The value to assign to the display_name property of this Connection.
@@ -143,6 +161,8 @@ class Connection(object):
             'id': 'str',
             'compartment_id': 'str',
             'database_type': 'str',
+            'manual_database_sub_type': 'str',
+            'is_dedicated': 'bool',
             'display_name': 'str',
             'database_id': 'str',
             'connect_descriptor': 'ConnectDescriptor',
@@ -165,6 +185,8 @@ class Connection(object):
             'id': 'id',
             'compartment_id': 'compartmentId',
             'database_type': 'databaseType',
+            'manual_database_sub_type': 'manualDatabaseSubType',
+            'is_dedicated': 'isDedicated',
             'display_name': 'displayName',
             'database_id': 'databaseId',
             'connect_descriptor': 'connectDescriptor',
@@ -186,6 +208,8 @@ class Connection(object):
         self._id = None
         self._compartment_id = None
         self._database_type = None
+        self._manual_database_sub_type = None
+        self._is_dedicated = None
         self._display_name = None
         self._database_id = None
         self._connect_descriptor = None
@@ -280,6 +304,60 @@ class Connection(object):
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
             database_type = 'UNKNOWN_ENUM_VALUE'
         self._database_type = database_type
+
+    @property
+    def manual_database_sub_type(self):
+        """
+        Gets the manual_database_sub_type of this Connection.
+        Database manual connection subtype. This value can only be specified for manual connections.
+
+        Allowed values for this property are: "ORACLE", "RDS_ORACLE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The manual_database_sub_type of this Connection.
+        :rtype: str
+        """
+        return self._manual_database_sub_type
+
+    @manual_database_sub_type.setter
+    def manual_database_sub_type(self, manual_database_sub_type):
+        """
+        Sets the manual_database_sub_type of this Connection.
+        Database manual connection subtype. This value can only be specified for manual connections.
+
+
+        :param manual_database_sub_type: The manual_database_sub_type of this Connection.
+        :type: str
+        """
+        allowed_values = ["ORACLE", "RDS_ORACLE"]
+        if not value_allowed_none_or_none_sentinel(manual_database_sub_type, allowed_values):
+            manual_database_sub_type = 'UNKNOWN_ENUM_VALUE'
+        self._manual_database_sub_type = manual_database_sub_type
+
+    @property
+    def is_dedicated(self):
+        """
+        Gets the is_dedicated of this Connection.
+        True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
+
+
+        :return: The is_dedicated of this Connection.
+        :rtype: bool
+        """
+        return self._is_dedicated
+
+    @is_dedicated.setter
+    def is_dedicated(self, is_dedicated):
+        """
+        Sets the is_dedicated of this Connection.
+        True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
+
+
+        :param is_dedicated: The is_dedicated of this Connection.
+        :type: bool
+        """
+        self._is_dedicated = is_dedicated
 
     @property
     def display_name(self):

@@ -77,6 +77,22 @@ class OceInstance(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_details property of a OceInstance.
+    #: This constant has a value of "STANDBY"
+    LIFECYCLE_DETAILS_STANDBY = "STANDBY"
+
+    #: A constant which can be used with the lifecycle_details property of a OceInstance.
+    #: This constant has a value of "FAILOVER"
+    LIFECYCLE_DETAILS_FAILOVER = "FAILOVER"
+
+    #: A constant which can be used with the lifecycle_details property of a OceInstance.
+    #: This constant has a value of "DOWN"
+    LIFECYCLE_DETAILS_DOWN = "DOWN"
+
+    #: A constant which can be used with the lifecycle_details property of a OceInstance.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_DETAILS_ACTIVE = "ACTIVE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new OceInstance object with values from keyword arguments.
@@ -130,6 +146,10 @@ class OceInstance(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type instance_usage_type: str
 
+        :param add_on_features:
+            The value to assign to the add_on_features property of this OceInstance.
+        :type add_on_features: list[str]
+
         :param object_storage_namespace:
             The value to assign to the object_storage_namespace property of this OceInstance.
         :type object_storage_namespace: str
@@ -168,6 +188,12 @@ class OceInstance(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param lifecycle_details:
+            The value to assign to the lifecycle_details property of this OceInstance.
+            Allowed values for this property are: "STANDBY", "FAILOVER", "DOWN", "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_details: str
+
         :param state_message:
             The value to assign to the state_message property of this OceInstance.
         :type state_message: str
@@ -201,6 +227,7 @@ class OceInstance(object):
             'upgrade_schedule': 'str',
             'identity_stripe': 'IdentityStripeDetails',
             'instance_usage_type': 'str',
+            'add_on_features': 'list[str]',
             'object_storage_namespace': 'str',
             'admin_email': 'str',
             'waf_primary_domain': 'str',
@@ -209,6 +236,7 @@ class OceInstance(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'lifecycle_details': 'str',
             'state_message': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -228,6 +256,7 @@ class OceInstance(object):
             'upgrade_schedule': 'upgradeSchedule',
             'identity_stripe': 'identityStripe',
             'instance_usage_type': 'instanceUsageType',
+            'add_on_features': 'addOnFeatures',
             'object_storage_namespace': 'objectStorageNamespace',
             'admin_email': 'adminEmail',
             'waf_primary_domain': 'wafPrimaryDomain',
@@ -236,6 +265,7 @@ class OceInstance(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'lifecycle_details': 'lifecycleDetails',
             'state_message': 'stateMessage',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -254,6 +284,7 @@ class OceInstance(object):
         self._upgrade_schedule = None
         self._identity_stripe = None
         self._instance_usage_type = None
+        self._add_on_features = None
         self._object_storage_namespace = None
         self._admin_email = None
         self._waf_primary_domain = None
@@ -262,6 +293,7 @@ class OceInstance(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._lifecycle_details = None
         self._state_message = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -543,6 +575,30 @@ class OceInstance(object):
         self._instance_usage_type = instance_usage_type
 
     @property
+    def add_on_features(self):
+        """
+        Gets the add_on_features of this OceInstance.
+        a list of add-on features for the ocm instance
+
+
+        :return: The add_on_features of this OceInstance.
+        :rtype: list[str]
+        """
+        return self._add_on_features
+
+    @add_on_features.setter
+    def add_on_features(self, add_on_features):
+        """
+        Sets the add_on_features of this OceInstance.
+        a list of add-on features for the ocm instance
+
+
+        :param add_on_features: The add_on_features of this OceInstance.
+        :type: list[str]
+        """
+        self._add_on_features = add_on_features
+
+    @property
     def object_storage_namespace(self):
         """
         **[Required]** Gets the object_storage_namespace of this OceInstance.
@@ -726,7 +782,7 @@ class OceInstance(object):
     def lifecycle_state(self):
         """
         Gets the lifecycle_state of this OceInstance.
-        The current state of the file system.
+        The current state of the instance lifecycle.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -741,7 +797,7 @@ class OceInstance(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this OceInstance.
-        The current state of the file system.
+        The current state of the instance lifecycle.
 
 
         :param lifecycle_state: The lifecycle_state of this OceInstance.
@@ -751,6 +807,36 @@ class OceInstance(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def lifecycle_details(self):
+        """
+        Gets the lifecycle_details of this OceInstance.
+        Details of the current state of the instance lifecycle
+
+        Allowed values for this property are: "STANDBY", "FAILOVER", "DOWN", "ACTIVE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_details of this OceInstance.
+        :rtype: str
+        """
+        return self._lifecycle_details
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, lifecycle_details):
+        """
+        Sets the lifecycle_details of this OceInstance.
+        Details of the current state of the instance lifecycle
+
+
+        :param lifecycle_details: The lifecycle_details of this OceInstance.
+        :type: str
+        """
+        allowed_values = ["STANDBY", "FAILOVER", "DOWN", "ACTIVE"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_details, allowed_values):
+            lifecycle_details = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_details = lifecycle_details
 
     @property
     def state_message(self):

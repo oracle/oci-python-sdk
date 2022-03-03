@@ -25,6 +25,14 @@ class ConnectionSummary(object):
     #: This constant has a value of "USER_MANAGED_OCI"
     DATABASE_TYPE_USER_MANAGED_OCI = "USER_MANAGED_OCI"
 
+    #: A constant which can be used with the manual_database_sub_type property of a ConnectionSummary.
+    #: This constant has a value of "ORACLE"
+    MANUAL_DATABASE_SUB_TYPE_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the manual_database_sub_type property of a ConnectionSummary.
+    #: This constant has a value of "RDS_ORACLE"
+    MANUAL_DATABASE_SUB_TYPE_RDS_ORACLE = "RDS_ORACLE"
+
     #: A constant which can be used with the lifecycle_state property of a ConnectionSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -72,6 +80,16 @@ class ConnectionSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type database_type: str
 
+        :param manual_database_sub_type:
+            The value to assign to the manual_database_sub_type property of this ConnectionSummary.
+            Allowed values for this property are: "ORACLE", "RDS_ORACLE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type manual_database_sub_type: str
+
+        :param is_dedicated:
+            The value to assign to the is_dedicated property of this ConnectionSummary.
+        :type is_dedicated: bool
+
         :param display_name:
             The value to assign to the display_name property of this ConnectionSummary.
         :type display_name: str
@@ -115,6 +133,8 @@ class ConnectionSummary(object):
             'id': 'str',
             'compartment_id': 'str',
             'database_type': 'str',
+            'manual_database_sub_type': 'str',
+            'is_dedicated': 'bool',
             'display_name': 'str',
             'database_id': 'str',
             'time_created': 'datetime',
@@ -130,6 +150,8 @@ class ConnectionSummary(object):
             'id': 'id',
             'compartment_id': 'compartmentId',
             'database_type': 'databaseType',
+            'manual_database_sub_type': 'manualDatabaseSubType',
+            'is_dedicated': 'isDedicated',
             'display_name': 'displayName',
             'database_id': 'databaseId',
             'time_created': 'timeCreated',
@@ -144,6 +166,8 @@ class ConnectionSummary(object):
         self._id = None
         self._compartment_id = None
         self._database_type = None
+        self._manual_database_sub_type = None
+        self._is_dedicated = None
         self._display_name = None
         self._database_id = None
         self._time_created = None
@@ -231,6 +255,60 @@ class ConnectionSummary(object):
         if not value_allowed_none_or_none_sentinel(database_type, allowed_values):
             database_type = 'UNKNOWN_ENUM_VALUE'
         self._database_type = database_type
+
+    @property
+    def manual_database_sub_type(self):
+        """
+        Gets the manual_database_sub_type of this ConnectionSummary.
+        Database manual connection subtype. This value can only be specified for manual connections.
+
+        Allowed values for this property are: "ORACLE", "RDS_ORACLE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The manual_database_sub_type of this ConnectionSummary.
+        :rtype: str
+        """
+        return self._manual_database_sub_type
+
+    @manual_database_sub_type.setter
+    def manual_database_sub_type(self, manual_database_sub_type):
+        """
+        Sets the manual_database_sub_type of this ConnectionSummary.
+        Database manual connection subtype. This value can only be specified for manual connections.
+
+
+        :param manual_database_sub_type: The manual_database_sub_type of this ConnectionSummary.
+        :type: str
+        """
+        allowed_values = ["ORACLE", "RDS_ORACLE"]
+        if not value_allowed_none_or_none_sentinel(manual_database_sub_type, allowed_values):
+            manual_database_sub_type = 'UNKNOWN_ENUM_VALUE'
+        self._manual_database_sub_type = manual_database_sub_type
+
+    @property
+    def is_dedicated(self):
+        """
+        Gets the is_dedicated of this ConnectionSummary.
+        True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
+
+
+        :return: The is_dedicated of this ConnectionSummary.
+        :rtype: bool
+        """
+        return self._is_dedicated
+
+    @is_dedicated.setter
+    def is_dedicated(self, is_dedicated):
+        """
+        Sets the is_dedicated of this ConnectionSummary.
+        True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
+
+
+        :param is_dedicated: The is_dedicated of this ConnectionSummary.
+        :type: bool
+        """
+        self._is_dedicated = is_dedicated
 
     @property
     def display_name(self):

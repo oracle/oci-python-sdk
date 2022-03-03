@@ -18,6 +18,9 @@ Database Migration
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.database_migration.models.ADBDedicatedAutoCreateTablespaceDetails
+    oci.database_migration.models.ADBDedicatedRemapTargetTablespaceDetails
+    oci.database_migration.models.ADBServerlesTablespaceDetails
     oci.database_migration.models.AdminCredentials
     oci.database_migration.models.AdvisorReport
     oci.database_migration.models.AdvisorReportBucketDetails
@@ -28,6 +31,7 @@ Database Migration
     oci.database_migration.models.AgentImageCollection
     oci.database_migration.models.AgentImageSummary
     oci.database_migration.models.AgentSummary
+    oci.database_migration.models.AwsS3Details
     oci.database_migration.models.ChangeAgentCompartmentDetails
     oci.database_migration.models.ChangeConnectionCompartmentDetails
     oci.database_migration.models.ChangeMigrationCompartmentDetails
@@ -36,9 +40,13 @@ Database Migration
     oci.database_migration.models.Connection
     oci.database_migration.models.ConnectionCollection
     oci.database_migration.models.ConnectionSummary
+    oci.database_migration.models.CreateADBDedicatedAutoCreateTablespaceDetails
+    oci.database_migration.models.CreateADBDedicatedRemapTargetTablespaceDetails
+    oci.database_migration.models.CreateADBServerlesTablespaceDetails
     oci.database_migration.models.CreateAdminCredentials
     oci.database_migration.models.CreateAdvisorSettings
     oci.database_migration.models.CreateAgentDetails
+    oci.database_migration.models.CreateAwsS3Details
     oci.database_migration.models.CreateConnectDescriptor
     oci.database_migration.models.CreateConnectionDetails
     oci.database_migration.models.CreateCurlTransferDetails
@@ -54,11 +62,14 @@ Database Migration
     oci.database_migration.models.CreateGoldenGateSettings
     oci.database_migration.models.CreateHostDumpTransferDetails
     oci.database_migration.models.CreateMigrationDetails
+    oci.database_migration.models.CreateNonADBAutoCreateTablespaceDetails
+    oci.database_migration.models.CreateNonADBRemapTablespaceDetails
     oci.database_migration.models.CreateObjectStoreBucket
     oci.database_migration.models.CreateOciCliDumpTransferDetails
     oci.database_migration.models.CreatePrivateEndpoint
     oci.database_migration.models.CreateReplicat
     oci.database_migration.models.CreateSshDetails
+    oci.database_migration.models.CreateTargetTypeTablespaceDetails
     oci.database_migration.models.CreateVaultDetails
     oci.database_migration.models.CurlTransferDetails
     oci.database_migration.models.DataPumpParameters
@@ -68,6 +79,8 @@ Database Migration
     oci.database_migration.models.DatabaseObject
     oci.database_migration.models.DirectoryObject
     oci.database_migration.models.DumpTransferDetails
+    oci.database_migration.models.ExcludedObjectSummary
+    oci.database_migration.models.ExcludedObjectSummaryCollection
     oci.database_migration.models.Extract
     oci.database_migration.models.GenerateToken
     oci.database_migration.models.GoldenGateDetails
@@ -85,11 +98,15 @@ Database Migration
     oci.database_migration.models.MigrationCollection
     oci.database_migration.models.MigrationJobProgressResource
     oci.database_migration.models.MigrationJobProgressSummary
+    oci.database_migration.models.MigrationObjectCollection
+    oci.database_migration.models.MigrationObjectSummary
     oci.database_migration.models.MigrationObjectTypeSummary
     oci.database_migration.models.MigrationObjectTypeSummaryCollection
     oci.database_migration.models.MigrationPhaseCollection
     oci.database_migration.models.MigrationPhaseSummary
     oci.database_migration.models.MigrationSummary
+    oci.database_migration.models.NonADBAutoCreateTablespaceDetails
+    oci.database_migration.models.NonADBRemapTablespaceDetails
     oci.database_migration.models.ObjectStoreBucket
     oci.database_migration.models.OciCliDumpTransferDetails
     oci.database_migration.models.ParLink
@@ -100,10 +117,15 @@ Database Migration
     oci.database_migration.models.ResumeJobDetails
     oci.database_migration.models.SshDetails
     oci.database_migration.models.StartMigrationDetails
+    oci.database_migration.models.TargetTypeTablespaceDetails
     oci.database_migration.models.UnsupportedDatabaseObject
+    oci.database_migration.models.UpdateADBDedicatedAutoCreateTablespaceDetails
+    oci.database_migration.models.UpdateADBDedicatedRemapTargetTablespaceDetails
+    oci.database_migration.models.UpdateADBServerlesTablespaceDetails
     oci.database_migration.models.UpdateAdminCredentials
     oci.database_migration.models.UpdateAdvisorSettings
     oci.database_migration.models.UpdateAgentDetails
+    oci.database_migration.models.UpdateAwsS3Details
     oci.database_migration.models.UpdateConnectDescriptor
     oci.database_migration.models.UpdateConnectionDetails
     oci.database_migration.models.UpdateCurlTransferDetails
@@ -120,11 +142,16 @@ Database Migration
     oci.database_migration.models.UpdateHostDumpTransferDetails
     oci.database_migration.models.UpdateJobDetails
     oci.database_migration.models.UpdateMigrationDetails
+    oci.database_migration.models.UpdateNonADBAutoCreateTablespaceDetails
+    oci.database_migration.models.UpdateNonADBRemapTablespaceDetails
     oci.database_migration.models.UpdateObjectStoreBucket
     oci.database_migration.models.UpdateOciCliDumpTransferDetails
     oci.database_migration.models.UpdatePrivateEndpoint
     oci.database_migration.models.UpdateReplicat
     oci.database_migration.models.UpdateSshDetails
+    oci.database_migration.models.UpdateTargetDefaultsAutoCreateTablespaceDetails
+    oci.database_migration.models.UpdateTargetDefaultsRemapTablespaceDetails
+    oci.database_migration.models.UpdateTargetTypeTablespaceDetails
     oci.database_migration.models.UpdateVaultDetails
     oci.database_migration.models.VaultDetails
     oci.database_migration.models.WorkRequest

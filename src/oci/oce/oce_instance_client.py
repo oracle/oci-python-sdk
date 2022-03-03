@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class OceInstanceClient(object):
     """
-    Oracle Content and Experience is a cloud-based content hub to drive omni-channel content management and accelerate experience delivery
+    Oracle Content Management is a cloud-based content hub to drive omni-channel content management and accelerate experience delivery
     """
 
     def __init__(self, config, **kwargs):

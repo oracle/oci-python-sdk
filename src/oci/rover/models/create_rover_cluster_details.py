@@ -13,6 +13,14 @@ class CreateRoverClusterDetails(object):
     The information required to create a RoverCluster.
     """
 
+    #: A constant which can be used with the cluster_type property of a CreateRoverClusterDetails.
+    #: This constant has a value of "STANDALONE"
+    CLUSTER_TYPE_STANDALONE = "STANDALONE"
+
+    #: A constant which can be used with the cluster_type property of a CreateRoverClusterDetails.
+    #: This constant has a value of "STATION"
+    CLUSTER_TYPE_STATION = "STATION"
+
     #: A constant which can be used with the enclosure_type property of a CreateRoverClusterDetails.
     #: This constant has a value of "RUGGADIZED"
     ENCLOSURE_TYPE_RUGGADIZED = "RUGGADIZED"
@@ -78,6 +86,11 @@ class CreateRoverClusterDetails(object):
             The value to assign to the cluster_workloads property of this CreateRoverClusterDetails.
         :type cluster_workloads: list[oci.rover.models.RoverWorkload]
 
+        :param cluster_type:
+            The value to assign to the cluster_type property of this CreateRoverClusterDetails.
+            Allowed values for this property are: "STANDALONE", "STATION"
+        :type cluster_type: str
+
         :param super_user_password:
             The value to assign to the super_user_password property of this CreateRoverClusterDetails.
         :type super_user_password: str
@@ -115,6 +128,10 @@ class CreateRoverClusterDetails(object):
         :param oracle_shipping_tracking_url:
             The value to assign to the oracle_shipping_tracking_url property of this CreateRoverClusterDetails.
         :type oracle_shipping_tracking_url: str
+
+        :param subscription_id:
+            The value to assign to the subscription_id property of this CreateRoverClusterDetails.
+        :type subscription_id: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this CreateRoverClusterDetails.
@@ -160,6 +177,7 @@ class CreateRoverClusterDetails(object):
             'cluster_size': 'int',
             'customer_shipping_address': 'ShippingAddress',
             'cluster_workloads': 'list[RoverWorkload]',
+            'cluster_type': 'str',
             'super_user_password': 'str',
             'enclosure_type': 'str',
             'unlock_passphrase': 'str',
@@ -169,6 +187,7 @@ class CreateRoverClusterDetails(object):
             'shipping_vendor': 'str',
             'time_pickup_expected': 'datetime',
             'oracle_shipping_tracking_url': 'str',
+            'subscription_id': 'str',
             'lifecycle_state': 'str',
             'lifecycle_state_details': 'str',
             'is_import_requested': 'bool',
@@ -186,6 +205,7 @@ class CreateRoverClusterDetails(object):
             'cluster_size': 'clusterSize',
             'customer_shipping_address': 'customerShippingAddress',
             'cluster_workloads': 'clusterWorkloads',
+            'cluster_type': 'clusterType',
             'super_user_password': 'superUserPassword',
             'enclosure_type': 'enclosureType',
             'unlock_passphrase': 'unlockPassphrase',
@@ -195,6 +215,7 @@ class CreateRoverClusterDetails(object):
             'shipping_vendor': 'shippingVendor',
             'time_pickup_expected': 'timePickupExpected',
             'oracle_shipping_tracking_url': 'oracleShippingTrackingUrl',
+            'subscription_id': 'subscriptionId',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_state_details': 'lifecycleStateDetails',
             'is_import_requested': 'isImportRequested',
@@ -211,6 +232,7 @@ class CreateRoverClusterDetails(object):
         self._cluster_size = None
         self._customer_shipping_address = None
         self._cluster_workloads = None
+        self._cluster_type = None
         self._super_user_password = None
         self._enclosure_type = None
         self._unlock_passphrase = None
@@ -220,6 +242,7 @@ class CreateRoverClusterDetails(object):
         self._shipping_vendor = None
         self._time_pickup_expected = None
         self._oracle_shipping_tracking_url = None
+        self._subscription_id = None
         self._lifecycle_state = None
         self._lifecycle_state_details = None
         self._is_import_requested = None
@@ -345,6 +368,38 @@ class CreateRoverClusterDetails(object):
         :type: list[oci.rover.models.RoverWorkload]
         """
         self._cluster_workloads = cluster_workloads
+
+    @property
+    def cluster_type(self):
+        """
+        Gets the cluster_type of this CreateRoverClusterDetails.
+        Type of cluster.
+
+        Allowed values for this property are: "STANDALONE", "STATION"
+
+
+        :return: The cluster_type of this CreateRoverClusterDetails.
+        :rtype: str
+        """
+        return self._cluster_type
+
+    @cluster_type.setter
+    def cluster_type(self, cluster_type):
+        """
+        Sets the cluster_type of this CreateRoverClusterDetails.
+        Type of cluster.
+
+
+        :param cluster_type: The cluster_type of this CreateRoverClusterDetails.
+        :type: str
+        """
+        allowed_values = ["STANDALONE", "STATION"]
+        if not value_allowed_none_or_none_sentinel(cluster_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `cluster_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._cluster_type = cluster_type
 
     @property
     def super_user_password(self):
@@ -577,6 +632,30 @@ class CreateRoverClusterDetails(object):
         :type: str
         """
         self._oracle_shipping_tracking_url = oracle_shipping_tracking_url
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this CreateRoverClusterDetails.
+        ID provided to customer after successful subscription to Rover Stations.
+
+
+        :return: The subscription_id of this CreateRoverClusterDetails.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this CreateRoverClusterDetails.
+        ID provided to customer after successful subscription to Rover Stations.
+
+
+        :param subscription_id: The subscription_id of this CreateRoverClusterDetails.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     @property
     def lifecycle_state(self):
