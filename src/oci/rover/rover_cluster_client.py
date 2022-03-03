@@ -584,6 +584,11 @@ class RoverClusterClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
+        :param str cluster_type: (optional)
+            A filter to return only Clusters of type matched with the given cluster type.
+
+            Allowed values are: "STANDALONE", "STATION"
+
         :param int limit: (optional)
             The maximum number of items to return.
 
@@ -634,6 +639,7 @@ class RoverClusterClient(object):
             "allow_control_chars",
             "retry_strategy",
             "display_name",
+            "cluster_type",
             "limit",
             "page",
             "lifecycle_state",
@@ -645,6 +651,13 @@ class RoverClusterClient(object):
         if extra_kwargs:
             raise ValueError(
                 "list_rover_clusters got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'cluster_type' in kwargs:
+            cluster_type_allowed_values = ["STANDALONE", "STATION"]
+            if kwargs['cluster_type'] not in cluster_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `cluster_type`, must be one of {0}".format(cluster_type_allowed_values)
+                )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
@@ -670,6 +683,7 @@ class RoverClusterClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
+            "clusterType": kwargs.get("cluster_type", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),

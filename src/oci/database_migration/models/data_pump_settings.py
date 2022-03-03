@@ -52,6 +52,10 @@ class DataPumpSettings(object):
             The value to assign to the metadata_remaps property of this DataPumpSettings.
         :type metadata_remaps: list[oci.database_migration.models.MetadataRemap]
 
+        :param tablespace_details:
+            The value to assign to the tablespace_details property of this DataPumpSettings.
+        :type tablespace_details: oci.database_migration.models.TargetTypeTablespaceDetails
+
         :param export_directory_object:
             The value to assign to the export_directory_object property of this DataPumpSettings.
         :type export_directory_object: oci.database_migration.models.DirectoryObject
@@ -65,6 +69,7 @@ class DataPumpSettings(object):
             'job_mode': 'str',
             'data_pump_parameters': 'DataPumpParameters',
             'metadata_remaps': 'list[MetadataRemap]',
+            'tablespace_details': 'TargetTypeTablespaceDetails',
             'export_directory_object': 'DirectoryObject',
             'import_directory_object': 'DirectoryObject'
         }
@@ -73,6 +78,7 @@ class DataPumpSettings(object):
             'job_mode': 'jobMode',
             'data_pump_parameters': 'dataPumpParameters',
             'metadata_remaps': 'metadataRemaps',
+            'tablespace_details': 'tablespaceDetails',
             'export_directory_object': 'exportDirectoryObject',
             'import_directory_object': 'importDirectoryObject'
         }
@@ -80,6 +86,7 @@ class DataPumpSettings(object):
         self._job_mode = None
         self._data_pump_parameters = None
         self._metadata_remaps = None
+        self._tablespace_details = None
         self._export_directory_object = None
         self._import_directory_object = None
 
@@ -168,6 +175,26 @@ class DataPumpSettings(object):
         :type: list[oci.database_migration.models.MetadataRemap]
         """
         self._metadata_remaps = metadata_remaps
+
+    @property
+    def tablespace_details(self):
+        """
+        Gets the tablespace_details of this DataPumpSettings.
+
+        :return: The tablespace_details of this DataPumpSettings.
+        :rtype: oci.database_migration.models.TargetTypeTablespaceDetails
+        """
+        return self._tablespace_details
+
+    @tablespace_details.setter
+    def tablespace_details(self, tablespace_details):
+        """
+        Sets the tablespace_details of this DataPumpSettings.
+
+        :param tablespace_details: The tablespace_details of this DataPumpSettings.
+        :type: oci.database_migration.models.TargetTypeTablespaceDetails
+        """
+        self._tablespace_details = tablespace_details
 
     @property
     def export_directory_object(self):

@@ -68,7 +68,7 @@ class UpdateObjectStorageConfigSourceDetails(UpdateConfigSourceDetails):
         """
         Gets the region of this UpdateObjectStorageConfigSourceDetails.
         The name of the bucket's region.
-        Example: `PHX`
+        Example: `us-phoenix-1`
 
 
         :return: The region of this UpdateObjectStorageConfigSourceDetails.
@@ -81,7 +81,7 @@ class UpdateObjectStorageConfigSourceDetails(UpdateConfigSourceDetails):
         """
         Sets the region of this UpdateObjectStorageConfigSourceDetails.
         The name of the bucket's region.
-        Example: `PHX`
+        Example: `us-phoenix-1`
 
 
         :param region: The region of this UpdateObjectStorageConfigSourceDetails.

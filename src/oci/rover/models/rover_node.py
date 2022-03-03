@@ -21,6 +21,10 @@ class RoverNode(object):
     #: This constant has a value of "CLUSTERED"
     NODE_TYPE_CLUSTERED = "CLUSTERED"
 
+    #: A constant which can be used with the node_type property of a RoverNode.
+    #: This constant has a value of "STATION"
+    NODE_TYPE_STATION = "STATION"
+
     #: A constant which can be used with the enclosure_type property of a RoverNode.
     #: This constant has a value of "RUGGADIZED"
     ENCLOSURE_TYPE_RUGGADIZED = "RUGGADIZED"
@@ -80,7 +84,7 @@ class RoverNode(object):
 
         :param node_type:
             The value to assign to the node_type property of this RoverNode.
-            Allowed values for this property are: "STANDALONE", "CLUSTERED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "STANDALONE", "CLUSTERED", "STATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type node_type: str
 
@@ -412,7 +416,7 @@ class RoverNode(object):
         Gets the node_type of this RoverNode.
         The type of node indicating if it belongs to a cluster
 
-        Allowed values for this property are: "STANDALONE", "CLUSTERED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "STANDALONE", "CLUSTERED", "STATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -431,7 +435,7 @@ class RoverNode(object):
         :param node_type: The node_type of this RoverNode.
         :type: str
         """
-        allowed_values = ["STANDALONE", "CLUSTERED"]
+        allowed_values = ["STANDALONE", "CLUSTERED", "STATION"]
         if not value_allowed_none_or_none_sentinel(node_type, allowed_values):
             node_type = 'UNKNOWN_ENUM_VALUE'
         self._node_type = node_type

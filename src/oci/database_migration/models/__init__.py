@@ -4,6 +4,9 @@
 
 from __future__ import absolute_import
 
+from .adb_dedicated_auto_create_tablespace_details import ADBDedicatedAutoCreateTablespaceDetails
+from .adb_dedicated_remap_target_tablespace_details import ADBDedicatedRemapTargetTablespaceDetails
+from .adb_serverles_tablespace_details import ADBServerlesTablespaceDetails
 from .admin_credentials import AdminCredentials
 from .advisor_report import AdvisorReport
 from .advisor_report_bucket_details import AdvisorReportBucketDetails
@@ -14,6 +17,7 @@ from .agent_collection import AgentCollection
 from .agent_image_collection import AgentImageCollection
 from .agent_image_summary import AgentImageSummary
 from .agent_summary import AgentSummary
+from .aws_s3_details import AwsS3Details
 from .change_agent_compartment_details import ChangeAgentCompartmentDetails
 from .change_connection_compartment_details import ChangeConnectionCompartmentDetails
 from .change_migration_compartment_details import ChangeMigrationCompartmentDetails
@@ -22,9 +26,13 @@ from .connect_descriptor import ConnectDescriptor
 from .connection import Connection
 from .connection_collection import ConnectionCollection
 from .connection_summary import ConnectionSummary
+from .create_adb_dedicated_auto_create_tablespace_details import CreateADBDedicatedAutoCreateTablespaceDetails
+from .create_adb_dedicated_remap_target_tablespace_details import CreateADBDedicatedRemapTargetTablespaceDetails
+from .create_adb_serverles_tablespace_details import CreateADBServerlesTablespaceDetails
 from .create_admin_credentials import CreateAdminCredentials
 from .create_advisor_settings import CreateAdvisorSettings
 from .create_agent_details import CreateAgentDetails
+from .create_aws_s3_details import CreateAwsS3Details
 from .create_connect_descriptor import CreateConnectDescriptor
 from .create_connection_details import CreateConnectionDetails
 from .create_curl_transfer_details import CreateCurlTransferDetails
@@ -40,11 +48,14 @@ from .create_golden_gate_hub import CreateGoldenGateHub
 from .create_golden_gate_settings import CreateGoldenGateSettings
 from .create_host_dump_transfer_details import CreateHostDumpTransferDetails
 from .create_migration_details import CreateMigrationDetails
+from .create_non_adb_auto_create_tablespace_details import CreateNonADBAutoCreateTablespaceDetails
+from .create_non_adb_remap_tablespace_details import CreateNonADBRemapTablespaceDetails
 from .create_object_store_bucket import CreateObjectStoreBucket
 from .create_oci_cli_dump_transfer_details import CreateOciCliDumpTransferDetails
 from .create_private_endpoint import CreatePrivateEndpoint
 from .create_replicat import CreateReplicat
 from .create_ssh_details import CreateSshDetails
+from .create_target_type_tablespace_details import CreateTargetTypeTablespaceDetails
 from .create_vault_details import CreateVaultDetails
 from .curl_transfer_details import CurlTransferDetails
 from .data_pump_parameters import DataPumpParameters
@@ -54,6 +65,8 @@ from .database_link_details import DatabaseLinkDetails
 from .database_object import DatabaseObject
 from .directory_object import DirectoryObject
 from .dump_transfer_details import DumpTransferDetails
+from .excluded_object_summary import ExcludedObjectSummary
+from .excluded_object_summary_collection import ExcludedObjectSummaryCollection
 from .extract import Extract
 from .generate_token import GenerateToken
 from .golden_gate_details import GoldenGateDetails
@@ -71,11 +84,15 @@ from .migration import Migration
 from .migration_collection import MigrationCollection
 from .migration_job_progress_resource import MigrationJobProgressResource
 from .migration_job_progress_summary import MigrationJobProgressSummary
+from .migration_object_collection import MigrationObjectCollection
+from .migration_object_summary import MigrationObjectSummary
 from .migration_object_type_summary import MigrationObjectTypeSummary
 from .migration_object_type_summary_collection import MigrationObjectTypeSummaryCollection
 from .migration_phase_collection import MigrationPhaseCollection
 from .migration_phase_summary import MigrationPhaseSummary
 from .migration_summary import MigrationSummary
+from .non_adb_auto_create_tablespace_details import NonADBAutoCreateTablespaceDetails
+from .non_adb_remap_tablespace_details import NonADBRemapTablespaceDetails
 from .object_store_bucket import ObjectStoreBucket
 from .oci_cli_dump_transfer_details import OciCliDumpTransferDetails
 from .par_link import ParLink
@@ -86,10 +103,15 @@ from .replicat import Replicat
 from .resume_job_details import ResumeJobDetails
 from .ssh_details import SshDetails
 from .start_migration_details import StartMigrationDetails
+from .target_type_tablespace_details import TargetTypeTablespaceDetails
 from .unsupported_database_object import UnsupportedDatabaseObject
+from .update_adb_dedicated_auto_create_tablespace_details import UpdateADBDedicatedAutoCreateTablespaceDetails
+from .update_adb_dedicated_remap_target_tablespace_details import UpdateADBDedicatedRemapTargetTablespaceDetails
+from .update_adb_serverles_tablespace_details import UpdateADBServerlesTablespaceDetails
 from .update_admin_credentials import UpdateAdminCredentials
 from .update_advisor_settings import UpdateAdvisorSettings
 from .update_agent_details import UpdateAgentDetails
+from .update_aws_s3_details import UpdateAwsS3Details
 from .update_connect_descriptor import UpdateConnectDescriptor
 from .update_connection_details import UpdateConnectionDetails
 from .update_curl_transfer_details import UpdateCurlTransferDetails
@@ -106,11 +128,16 @@ from .update_golden_gate_settings import UpdateGoldenGateSettings
 from .update_host_dump_transfer_details import UpdateHostDumpTransferDetails
 from .update_job_details import UpdateJobDetails
 from .update_migration_details import UpdateMigrationDetails
+from .update_non_adb_auto_create_tablespace_details import UpdateNonADBAutoCreateTablespaceDetails
+from .update_non_adb_remap_tablespace_details import UpdateNonADBRemapTablespaceDetails
 from .update_object_store_bucket import UpdateObjectStoreBucket
 from .update_oci_cli_dump_transfer_details import UpdateOciCliDumpTransferDetails
 from .update_private_endpoint import UpdatePrivateEndpoint
 from .update_replicat import UpdateReplicat
 from .update_ssh_details import UpdateSshDetails
+from .update_target_defaults_auto_create_tablespace_details import UpdateTargetDefaultsAutoCreateTablespaceDetails
+from .update_target_defaults_remap_tablespace_details import UpdateTargetDefaultsRemapTablespaceDetails
+from .update_target_type_tablespace_details import UpdateTargetTypeTablespaceDetails
 from .update_vault_details import UpdateVaultDetails
 from .vault_details import VaultDetails
 from .work_request import WorkRequest
@@ -124,6 +151,9 @@ from .work_request_summary import WorkRequestSummary
 
 # Maps type names to classes for database_migration services.
 database_migration_type_mapping = {
+    "ADBDedicatedAutoCreateTablespaceDetails": ADBDedicatedAutoCreateTablespaceDetails,
+    "ADBDedicatedRemapTargetTablespaceDetails": ADBDedicatedRemapTargetTablespaceDetails,
+    "ADBServerlesTablespaceDetails": ADBServerlesTablespaceDetails,
     "AdminCredentials": AdminCredentials,
     "AdvisorReport": AdvisorReport,
     "AdvisorReportBucketDetails": AdvisorReportBucketDetails,
@@ -134,6 +164,7 @@ database_migration_type_mapping = {
     "AgentImageCollection": AgentImageCollection,
     "AgentImageSummary": AgentImageSummary,
     "AgentSummary": AgentSummary,
+    "AwsS3Details": AwsS3Details,
     "ChangeAgentCompartmentDetails": ChangeAgentCompartmentDetails,
     "ChangeConnectionCompartmentDetails": ChangeConnectionCompartmentDetails,
     "ChangeMigrationCompartmentDetails": ChangeMigrationCompartmentDetails,
@@ -142,9 +173,13 @@ database_migration_type_mapping = {
     "Connection": Connection,
     "ConnectionCollection": ConnectionCollection,
     "ConnectionSummary": ConnectionSummary,
+    "CreateADBDedicatedAutoCreateTablespaceDetails": CreateADBDedicatedAutoCreateTablespaceDetails,
+    "CreateADBDedicatedRemapTargetTablespaceDetails": CreateADBDedicatedRemapTargetTablespaceDetails,
+    "CreateADBServerlesTablespaceDetails": CreateADBServerlesTablespaceDetails,
     "CreateAdminCredentials": CreateAdminCredentials,
     "CreateAdvisorSettings": CreateAdvisorSettings,
     "CreateAgentDetails": CreateAgentDetails,
+    "CreateAwsS3Details": CreateAwsS3Details,
     "CreateConnectDescriptor": CreateConnectDescriptor,
     "CreateConnectionDetails": CreateConnectionDetails,
     "CreateCurlTransferDetails": CreateCurlTransferDetails,
@@ -160,11 +195,14 @@ database_migration_type_mapping = {
     "CreateGoldenGateSettings": CreateGoldenGateSettings,
     "CreateHostDumpTransferDetails": CreateHostDumpTransferDetails,
     "CreateMigrationDetails": CreateMigrationDetails,
+    "CreateNonADBAutoCreateTablespaceDetails": CreateNonADBAutoCreateTablespaceDetails,
+    "CreateNonADBRemapTablespaceDetails": CreateNonADBRemapTablespaceDetails,
     "CreateObjectStoreBucket": CreateObjectStoreBucket,
     "CreateOciCliDumpTransferDetails": CreateOciCliDumpTransferDetails,
     "CreatePrivateEndpoint": CreatePrivateEndpoint,
     "CreateReplicat": CreateReplicat,
     "CreateSshDetails": CreateSshDetails,
+    "CreateTargetTypeTablespaceDetails": CreateTargetTypeTablespaceDetails,
     "CreateVaultDetails": CreateVaultDetails,
     "CurlTransferDetails": CurlTransferDetails,
     "DataPumpParameters": DataPumpParameters,
@@ -174,6 +212,8 @@ database_migration_type_mapping = {
     "DatabaseObject": DatabaseObject,
     "DirectoryObject": DirectoryObject,
     "DumpTransferDetails": DumpTransferDetails,
+    "ExcludedObjectSummary": ExcludedObjectSummary,
+    "ExcludedObjectSummaryCollection": ExcludedObjectSummaryCollection,
     "Extract": Extract,
     "GenerateToken": GenerateToken,
     "GoldenGateDetails": GoldenGateDetails,
@@ -191,11 +231,15 @@ database_migration_type_mapping = {
     "MigrationCollection": MigrationCollection,
     "MigrationJobProgressResource": MigrationJobProgressResource,
     "MigrationJobProgressSummary": MigrationJobProgressSummary,
+    "MigrationObjectCollection": MigrationObjectCollection,
+    "MigrationObjectSummary": MigrationObjectSummary,
     "MigrationObjectTypeSummary": MigrationObjectTypeSummary,
     "MigrationObjectTypeSummaryCollection": MigrationObjectTypeSummaryCollection,
     "MigrationPhaseCollection": MigrationPhaseCollection,
     "MigrationPhaseSummary": MigrationPhaseSummary,
     "MigrationSummary": MigrationSummary,
+    "NonADBAutoCreateTablespaceDetails": NonADBAutoCreateTablespaceDetails,
+    "NonADBRemapTablespaceDetails": NonADBRemapTablespaceDetails,
     "ObjectStoreBucket": ObjectStoreBucket,
     "OciCliDumpTransferDetails": OciCliDumpTransferDetails,
     "ParLink": ParLink,
@@ -206,10 +250,15 @@ database_migration_type_mapping = {
     "ResumeJobDetails": ResumeJobDetails,
     "SshDetails": SshDetails,
     "StartMigrationDetails": StartMigrationDetails,
+    "TargetTypeTablespaceDetails": TargetTypeTablespaceDetails,
     "UnsupportedDatabaseObject": UnsupportedDatabaseObject,
+    "UpdateADBDedicatedAutoCreateTablespaceDetails": UpdateADBDedicatedAutoCreateTablespaceDetails,
+    "UpdateADBDedicatedRemapTargetTablespaceDetails": UpdateADBDedicatedRemapTargetTablespaceDetails,
+    "UpdateADBServerlesTablespaceDetails": UpdateADBServerlesTablespaceDetails,
     "UpdateAdminCredentials": UpdateAdminCredentials,
     "UpdateAdvisorSettings": UpdateAdvisorSettings,
     "UpdateAgentDetails": UpdateAgentDetails,
+    "UpdateAwsS3Details": UpdateAwsS3Details,
     "UpdateConnectDescriptor": UpdateConnectDescriptor,
     "UpdateConnectionDetails": UpdateConnectionDetails,
     "UpdateCurlTransferDetails": UpdateCurlTransferDetails,
@@ -226,11 +275,16 @@ database_migration_type_mapping = {
     "UpdateHostDumpTransferDetails": UpdateHostDumpTransferDetails,
     "UpdateJobDetails": UpdateJobDetails,
     "UpdateMigrationDetails": UpdateMigrationDetails,
+    "UpdateNonADBAutoCreateTablespaceDetails": UpdateNonADBAutoCreateTablespaceDetails,
+    "UpdateNonADBRemapTablespaceDetails": UpdateNonADBRemapTablespaceDetails,
     "UpdateObjectStoreBucket": UpdateObjectStoreBucket,
     "UpdateOciCliDumpTransferDetails": UpdateOciCliDumpTransferDetails,
     "UpdatePrivateEndpoint": UpdatePrivateEndpoint,
     "UpdateReplicat": UpdateReplicat,
     "UpdateSshDetails": UpdateSshDetails,
+    "UpdateTargetDefaultsAutoCreateTablespaceDetails": UpdateTargetDefaultsAutoCreateTablespaceDetails,
+    "UpdateTargetDefaultsRemapTablespaceDetails": UpdateTargetDefaultsRemapTablespaceDetails,
+    "UpdateTargetTypeTablespaceDetails": UpdateTargetTypeTablespaceDetails,
     "UpdateVaultDetails": UpdateVaultDetails,
     "VaultDetails": VaultDetails,
     "WorkRequest": WorkRequest,

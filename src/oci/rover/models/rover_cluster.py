@@ -45,6 +45,14 @@ class RoverCluster(object):
     #: This constant has a value of "NON_RUGGADIZED"
     ENCLOSURE_TYPE_NON_RUGGADIZED = "NON_RUGGADIZED"
 
+    #: A constant which can be used with the cluster_type property of a RoverCluster.
+    #: This constant has a value of "STANDALONE"
+    CLUSTER_TYPE_STANDALONE = "STANDALONE"
+
+    #: A constant which can be used with the cluster_type property of a RoverCluster.
+    #: This constant has a value of "STATION"
+    CLUSTER_TYPE_STATION = "STATION"
+
     #: A constant which can be used with the shipping_preference property of a RoverCluster.
     #: This constant has a value of "ORACLE_SHIPPED"
     SHIPPING_PREFERENCE_ORACLE_SHIPPED = "ORACLE_SHIPPED"
@@ -117,6 +125,24 @@ class RoverCluster(object):
         :param cluster_workloads:
             The value to assign to the cluster_workloads property of this RoverCluster.
         :type cluster_workloads: list[oci.rover.models.RoverWorkload]
+
+        :param cluster_type:
+            The value to assign to the cluster_type property of this RoverCluster.
+            Allowed values for this property are: "STANDALONE", "STATION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type cluster_type: str
+
+        :param subscription_id:
+            The value to assign to the subscription_id property of this RoverCluster.
+        :type subscription_id: str
+
+        :param exterior_door_code:
+            The value to assign to the exterior_door_code property of this RoverCluster.
+        :type exterior_door_code: str
+
+        :param interior_alarm_disarm_code:
+            The value to assign to the interior_alarm_disarm_code property of this RoverCluster.
+        :type interior_alarm_disarm_code: str
 
         :param super_user_password:
             The value to assign to the super_user_password property of this RoverCluster.
@@ -216,6 +242,10 @@ class RoverCluster(object):
             'time_customer_returned': 'datetime',
             'delivery_tracking_info': 'str',
             'cluster_workloads': 'list[RoverWorkload]',
+            'cluster_type': 'str',
+            'subscription_id': 'str',
+            'exterior_door_code': 'str',
+            'interior_alarm_disarm_code': 'str',
             'super_user_password': 'str',
             'unlock_passphrase': 'str',
             'point_of_contact': 'str',
@@ -253,6 +283,10 @@ class RoverCluster(object):
             'time_customer_returned': 'timeCustomerReturned',
             'delivery_tracking_info': 'deliveryTrackingInfo',
             'cluster_workloads': 'clusterWorkloads',
+            'cluster_type': 'clusterType',
+            'subscription_id': 'subscriptionId',
+            'exterior_door_code': 'exteriorDoorCode',
+            'interior_alarm_disarm_code': 'interiorAlarmDisarmCode',
             'super_user_password': 'superUserPassword',
             'unlock_passphrase': 'unlockPassphrase',
             'point_of_contact': 'pointOfContact',
@@ -289,6 +323,10 @@ class RoverCluster(object):
         self._time_customer_returned = None
         self._delivery_tracking_info = None
         self._cluster_workloads = None
+        self._cluster_type = None
+        self._subscription_id = None
+        self._exterior_door_code = None
+        self._interior_alarm_disarm_code = None
         self._super_user_password = None
         self._unlock_passphrase = None
         self._point_of_contact = None
@@ -653,6 +691,108 @@ class RoverCluster(object):
         :type: list[oci.rover.models.RoverWorkload]
         """
         self._cluster_workloads = cluster_workloads
+
+    @property
+    def cluster_type(self):
+        """
+        Gets the cluster_type of this RoverCluster.
+        Type of cluster.
+
+        Allowed values for this property are: "STANDALONE", "STATION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The cluster_type of this RoverCluster.
+        :rtype: str
+        """
+        return self._cluster_type
+
+    @cluster_type.setter
+    def cluster_type(self, cluster_type):
+        """
+        Sets the cluster_type of this RoverCluster.
+        Type of cluster.
+
+
+        :param cluster_type: The cluster_type of this RoverCluster.
+        :type: str
+        """
+        allowed_values = ["STANDALONE", "STATION"]
+        if not value_allowed_none_or_none_sentinel(cluster_type, allowed_values):
+            cluster_type = 'UNKNOWN_ENUM_VALUE'
+        self._cluster_type = cluster_type
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this RoverCluster.
+        ID provided to customer after successful subscription to Rover Stations.
+
+
+        :return: The subscription_id of this RoverCluster.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this RoverCluster.
+        ID provided to customer after successful subscription to Rover Stations.
+
+
+        :param subscription_id: The subscription_id of this RoverCluster.
+        :type: str
+        """
+        self._subscription_id = subscription_id
+
+    @property
+    def exterior_door_code(self):
+        """
+        Gets the exterior_door_code of this RoverCluster.
+        Service generated code for the exterior trailer door of the trailer.
+
+
+        :return: The exterior_door_code of this RoverCluster.
+        :rtype: str
+        """
+        return self._exterior_door_code
+
+    @exterior_door_code.setter
+    def exterior_door_code(self, exterior_door_code):
+        """
+        Sets the exterior_door_code of this RoverCluster.
+        Service generated code for the exterior trailer door of the trailer.
+
+
+        :param exterior_door_code: The exterior_door_code of this RoverCluster.
+        :type: str
+        """
+        self._exterior_door_code = exterior_door_code
+
+    @property
+    def interior_alarm_disarm_code(self):
+        """
+        Gets the interior_alarm_disarm_code of this RoverCluster.
+        Service generated code to disarm the interior alarm of the trailer.
+
+
+        :return: The interior_alarm_disarm_code of this RoverCluster.
+        :rtype: str
+        """
+        return self._interior_alarm_disarm_code
+
+    @interior_alarm_disarm_code.setter
+    def interior_alarm_disarm_code(self, interior_alarm_disarm_code):
+        """
+        Sets the interior_alarm_disarm_code of this RoverCluster.
+        Service generated code to disarm the interior alarm of the trailer.
+
+
+        :param interior_alarm_disarm_code: The interior_alarm_disarm_code of this RoverCluster.
+        :type: str
+        """
+        self._interior_alarm_disarm_code = interior_alarm_disarm_code
 
     @property
     def super_user_password(self):

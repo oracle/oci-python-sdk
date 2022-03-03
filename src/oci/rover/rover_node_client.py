@@ -761,6 +761,11 @@ class RoverNodeClient(object):
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
 
+        :param str node_type: (optional)
+            A filter to return only Nodes of type matched with the given node type.
+
+            Allowed values are: "STANDALONE", "CLUSTERED", "STATION"
+
         :param int limit: (optional)
             The maximum number of items to return.
 
@@ -811,6 +816,7 @@ class RoverNodeClient(object):
             "allow_control_chars",
             "retry_strategy",
             "display_name",
+            "node_type",
             "limit",
             "page",
             "lifecycle_state",
@@ -822,6 +828,13 @@ class RoverNodeClient(object):
         if extra_kwargs:
             raise ValueError(
                 "list_rover_nodes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'node_type' in kwargs:
+            node_type_allowed_values = ["STANDALONE", "CLUSTERED", "STATION"]
+            if kwargs['node_type'] not in node_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `node_type`, must be one of {0}".format(node_type_allowed_values)
+                )
 
         if 'lifecycle_state' in kwargs:
             lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
@@ -847,6 +860,7 @@ class RoverNodeClient(object):
         query_params = {
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
+            "nodeType": kwargs.get("node_type", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),

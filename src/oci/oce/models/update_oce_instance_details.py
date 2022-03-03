@@ -60,6 +60,10 @@ class UpdateOceInstanceDetails(object):
             Allowed values for this property are: "PRIMARY", "NONPRIMARY"
         :type instance_usage_type: str
 
+        :param add_on_features:
+            The value to assign to the add_on_features property of this UpdateOceInstanceDetails.
+        :type add_on_features: list[str]
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateOceInstanceDetails.
         :type freeform_tags: dict(str, str)
@@ -74,6 +78,7 @@ class UpdateOceInstanceDetails(object):
             'waf_primary_domain': 'str',
             'instance_license_type': 'str',
             'instance_usage_type': 'str',
+            'add_on_features': 'list[str]',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -83,6 +88,7 @@ class UpdateOceInstanceDetails(object):
             'waf_primary_domain': 'wafPrimaryDomain',
             'instance_license_type': 'instanceLicenseType',
             'instance_usage_type': 'instanceUsageType',
+            'add_on_features': 'addOnFeatures',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -91,6 +97,7 @@ class UpdateOceInstanceDetails(object):
         self._waf_primary_domain = None
         self._instance_license_type = None
         self._instance_usage_type = None
+        self._add_on_features = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -205,6 +212,30 @@ class UpdateOceInstanceDetails(object):
                 .format(allowed_values)
             )
         self._instance_usage_type = instance_usage_type
+
+    @property
+    def add_on_features(self):
+        """
+        Gets the add_on_features of this UpdateOceInstanceDetails.
+        a list of add-on features for the ocm instance
+
+
+        :return: The add_on_features of this UpdateOceInstanceDetails.
+        :rtype: list[str]
+        """
+        return self._add_on_features
+
+    @add_on_features.setter
+    def add_on_features(self, add_on_features):
+        """
+        Sets the add_on_features of this UpdateOceInstanceDetails.
+        a list of add-on features for the ocm instance
+
+
+        :param add_on_features: The add_on_features of this UpdateOceInstanceDetails.
+        :type: list[str]
+        """
+        self._add_on_features = add_on_features
 
     @property
     def freeform_tags(self):

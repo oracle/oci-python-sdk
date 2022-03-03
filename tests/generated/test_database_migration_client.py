@@ -74,6 +74,47 @@ def test_abort_job(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="zdmdev_grp@oracle.com" jiraProject="ZDMCS" opsJiraProject="ZDMCS"
+def test_add_migration_objects(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_migration', 'AddMigrationObjects'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_migration', util.camelize('database_migration'), 'AddMigrationObjects')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_migration', api_name='AddMigrationObjects')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_migration.DatabaseMigrationClient(config, service_endpoint=service_endpoint)
+            response = client.add_migration_objects(
+                migration_id=request.pop(util.camelize('migrationId')),
+                add_migration_objects_details=request.pop(util.camelize('AddMigrationObjectsDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_migration',
+            'AddMigrationObjects',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'add_migration_objects',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="zdmdev_grp@oracle.com" jiraProject="ZDMCS" opsJiraProject="ZDMCS"
 def test_change_agent_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('database_migration', 'ChangeAgentCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -975,6 +1016,66 @@ def test_list_connections(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="zdmdev_grp@oracle.com" jiraProject="ZDMCS" opsJiraProject="ZDMCS"
+def test_list_excluded_objects(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_migration', 'ListExcludedObjects'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_migration', util.camelize('database_migration'), 'ListExcludedObjects')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_migration', api_name='ListExcludedObjects')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_migration.DatabaseMigrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_excluded_objects(
+                job_id=request.pop(util.camelize('jobId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_excluded_objects(
+                    job_id=request.pop(util.camelize('jobId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_excluded_objects(
+                        job_id=request.pop(util.camelize('jobId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_migration',
+            'ListExcludedObjects',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'excludedObjectSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="zdmdev_grp@oracle.com" jiraProject="ZDMCS" opsJiraProject="ZDMCS"
 def test_list_job_outputs(testing_service_client):
     if not testing_service_client.is_api_enabled('database_migration', 'ListJobOutputs'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1146,6 +1247,66 @@ def test_list_migration_object_types(testing_service_client):
             result,
             service_error,
             'migrationObjectTypeSummaryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="zdmdev_grp@oracle.com" jiraProject="ZDMCS" opsJiraProject="ZDMCS"
+def test_list_migration_objects(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_migration', 'ListMigrationObjects'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_migration', util.camelize('database_migration'), 'ListMigrationObjects')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database_migration', api_name='ListMigrationObjects')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_migration.DatabaseMigrationClient(config, service_endpoint=service_endpoint)
+            response = client.list_migration_objects(
+                migration_id=request.pop(util.camelize('migrationId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_migration_objects(
+                    migration_id=request.pop(util.camelize('migrationId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_migration_objects(
+                        migration_id=request.pop(util.camelize('migrationId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_migration',
+            'ListMigrationObjects',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'migrationObjectCollection',
             False,
             True
         )
@@ -1388,6 +1549,47 @@ def test_list_work_requests(testing_service_client):
             'workRequestCollection',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="zdmdev_grp@oracle.com" jiraProject="ZDMCS" opsJiraProject="ZDMCS"
+def test_remove_migration_objects(testing_service_client):
+    if not testing_service_client.is_api_enabled('database_migration', 'RemoveMigrationObjects'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database_migration', util.camelize('database_migration'), 'RemoveMigrationObjects')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database_migration', api_name='RemoveMigrationObjects')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database_migration.DatabaseMigrationClient(config, service_endpoint=service_endpoint)
+            response = client.remove_migration_objects(
+                migration_id=request.pop(util.camelize('migrationId')),
+                remove_migration_objects_details=request.pop(util.camelize('RemoveMigrationObjectsDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database_migration',
+            'RemoveMigrationObjects',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_migration_objects',
+            False,
+            False
         )
 
 
