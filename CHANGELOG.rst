@@ -182,6 +182,11 @@ Fixed
 -----
 * Fixed an issue where multipart upload operations to Object Storage service throws SSLError on Oracle Linux instances
 
+Breaking
+--------
+* Support for retries enabled by default on some operations in the Data Catalog service
+* Support for retries enabled by default on all operations in the Ocvp service
+
 ====================
 2.52.1 - 2021-12-07
 ====================
