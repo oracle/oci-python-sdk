@@ -14,6 +14,7 @@ def test_invalid_compartment(identity):
     tests.util.validate_service_error(excinfo.value, 404, "NotAuthorizedOrNotFound", "Authorization failed or requested resource not found")
 
 
+@pytest.mark.skip("Tests are failing because service is returning inconsistent responses")
 def test_invalid_policy(identity, config):
     request = oci.identity.models.CreatePolicyDetails()
     request.compartment_id = config["tenancy"]
