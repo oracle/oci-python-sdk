@@ -140,6 +140,14 @@ class Database(object):
             The value to assign to the kms_key_id property of this Database.
         :type kms_key_id: str
 
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this Database.
+        :type kms_key_version_id: str
+
+        :param vault_id:
+            The value to assign to the vault_id property of this Database.
+        :type vault_id: str
+
         :param source_database_point_in_time_recovery_timestamp:
             The value to assign to the source_database_point_in_time_recovery_timestamp property of this Database.
         :type source_database_point_in_time_recovery_timestamp: datetime
@@ -182,6 +190,8 @@ class Database(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'connection_strings': 'DatabaseConnectionStrings',
             'kms_key_id': 'str',
+            'kms_key_version_id': 'str',
+            'vault_id': 'str',
             'source_database_point_in_time_recovery_timestamp': 'datetime',
             'database_software_image_id': 'str',
             'is_cdb': 'bool',
@@ -210,6 +220,8 @@ class Database(object):
             'defined_tags': 'definedTags',
             'connection_strings': 'connectionStrings',
             'kms_key_id': 'kmsKeyId',
+            'kms_key_version_id': 'kmsKeyVersionId',
+            'vault_id': 'vaultId',
             'source_database_point_in_time_recovery_timestamp': 'sourceDatabasePointInTimeRecoveryTimestamp',
             'database_software_image_id': 'databaseSoftwareImageId',
             'is_cdb': 'isCdb',
@@ -237,6 +249,8 @@ class Database(object):
         self._defined_tags = None
         self._connection_strings = None
         self._kms_key_id = None
+        self._kms_key_version_id = None
+        self._vault_id = None
         self._source_database_point_in_time_recovery_timestamp = None
         self._database_software_image_id = None
         self._is_cdb = None
@@ -760,6 +774,60 @@ class Database(object):
         :type: str
         """
         self._kms_key_id = kms_key_id
+
+    @property
+    def kms_key_version_id(self):
+        """
+        Gets the kms_key_version_id of this Database.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :return: The kms_key_version_id of this Database.
+        :rtype: str
+        """
+        return self._kms_key_version_id
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, kms_key_version_id):
+        """
+        Sets the kms_key_version_id of this Database.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :param kms_key_version_id: The kms_key_version_id of this Database.
+        :type: str
+        """
+        self._kms_key_version_id = kms_key_version_id
+
+    @property
+    def vault_id(self):
+        """
+        Gets the vault_id of this Database.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :return: The vault_id of this Database.
+        :rtype: str
+        """
+        return self._vault_id
+
+    @vault_id.setter
+    def vault_id(self, vault_id):
+        """
+        Sets the vault_id of this Database.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :param vault_id: The vault_id of this Database.
+        :type: str
+        """
+        self._vault_id = vault_id
 
     @property
     def source_database_point_in_time_recovery_timestamp(self):

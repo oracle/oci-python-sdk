@@ -481,7 +481,7 @@ class CreateDbSystemDetails(object):
     @property
     def admin_username(self):
         """
-        **[Required]** Gets the admin_username of this CreateDbSystemDetails.
+        Gets the admin_username of this CreateDbSystemDetails.
         The username for the administrative user.
 
 
@@ -505,7 +505,7 @@ class CreateDbSystemDetails(object):
     @property
     def admin_password(self):
         """
-        **[Required]** Gets the admin_password of this CreateDbSystemDetails.
+        Gets the admin_password of this CreateDbSystemDetails.
         The password for the administrative user. The password must be
         between 8 and 32 characters long, and must contain at least 1
         numeric character, 1 lowercase character, 1 uppercase character, and

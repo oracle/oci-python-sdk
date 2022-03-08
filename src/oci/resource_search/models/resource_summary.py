@@ -66,6 +66,10 @@ class ResourceSummary(object):
             The value to assign to the identity_context property of this ResourceSummary.
         :type identity_context: dict(str, object)
 
+        :param additional_details:
+            The value to assign to the additional_details property of this ResourceSummary.
+        :type additional_details: dict(str, object)
+
         """
         self.swagger_types = {
             'resource_type': 'str',
@@ -79,7 +83,8 @@ class ResourceSummary(object):
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
             'search_context': 'SearchContext',
-            'identity_context': 'dict(str, object)'
+            'identity_context': 'dict(str, object)',
+            'additional_details': 'dict(str, object)'
         }
 
         self.attribute_map = {
@@ -94,7 +99,8 @@ class ResourceSummary(object):
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
             'search_context': 'searchContext',
-            'identity_context': 'identityContext'
+            'identity_context': 'identityContext',
+            'additional_details': 'additionalDetails'
         }
 
         self._resource_type = None
@@ -109,6 +115,7 @@ class ResourceSummary(object):
         self._system_tags = None
         self._search_context = None
         self._identity_context = None
+        self._additional_details = None
 
     @property
     def resource_type(self):
@@ -419,6 +426,40 @@ class ResourceSummary(object):
         :type: dict(str, object)
         """
         self._identity_context = identity_context
+
+    @property
+    def additional_details(self):
+        """
+        Gets the additional_details of this ResourceSummary.
+        Additional resource attribute fields of this resource that match queries with a return clause, if any.
+        For example, if you ran a query to find the private IP addresses, public IP addresses, and isPrimary field of
+        the VNIC attachment on instance resources, that field would be included in the ResourceSummary object as:
+        {\"additionalDetails\": {\"attachedVnic\": [{\"publicIP\" : \"172.110.110.110\",\"privateIP\" : \"10.10.10.10\",\"isPrimary\" : true},
+        {\"publicIP\" : \"172.110.110.111\",\"privateIP\" : \"10.10.10.11\",\"isPrimary\" : false}]}.
+        The structure of the additional details attribute fields depends on the matching resource.
+
+
+        :return: The additional_details of this ResourceSummary.
+        :rtype: dict(str, object)
+        """
+        return self._additional_details
+
+    @additional_details.setter
+    def additional_details(self, additional_details):
+        """
+        Sets the additional_details of this ResourceSummary.
+        Additional resource attribute fields of this resource that match queries with a return clause, if any.
+        For example, if you ran a query to find the private IP addresses, public IP addresses, and isPrimary field of
+        the VNIC attachment on instance resources, that field would be included in the ResourceSummary object as:
+        {\"additionalDetails\": {\"attachedVnic\": [{\"publicIP\" : \"172.110.110.110\",\"privateIP\" : \"10.10.10.10\",\"isPrimary\" : true},
+        {\"publicIP\" : \"172.110.110.111\",\"privateIP\" : \"10.10.10.11\",\"isPrimary\" : false}]}.
+        The structure of the additional details attribute fields depends on the matching resource.
+
+
+        :param additional_details: The additional_details of this ResourceSummary.
+        :type: dict(str, object)
+        """
+        self._additional_details = additional_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

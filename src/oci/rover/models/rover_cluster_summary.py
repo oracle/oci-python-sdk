@@ -13,6 +13,14 @@ class RoverClusterSummary(object):
     Summary of the RoverCluster.
     """
 
+    #: A constant which can be used with the cluster_type property of a RoverClusterSummary.
+    #: This constant has a value of "STANDALONE"
+    CLUSTER_TYPE_STANDALONE = "STANDALONE"
+
+    #: A constant which can be used with the cluster_type property of a RoverClusterSummary.
+    #: This constant has a value of "STATION"
+    CLUSTER_TYPE_STATION = "STATION"
+
     #: A constant which can be used with the lifecycle_state property of a RoverClusterSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -62,6 +70,16 @@ class RoverClusterSummary(object):
             The value to assign to the nodes property of this RoverClusterSummary.
         :type nodes: list[str]
 
+        :param cluster_size:
+            The value to assign to the cluster_size property of this RoverClusterSummary.
+        :type cluster_size: int
+
+        :param cluster_type:
+            The value to assign to the cluster_type property of this RoverClusterSummary.
+            Allowed values for this property are: "STANDALONE", "STATION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type cluster_type: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this RoverClusterSummary.
             Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
@@ -91,6 +109,8 @@ class RoverClusterSummary(object):
             'display_name': 'str',
             'time_created': 'datetime',
             'nodes': 'list[str]',
+            'cluster_size': 'int',
+            'cluster_type': 'str',
             'lifecycle_state': 'str',
             'lifecycle_state_details': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -104,6 +124,8 @@ class RoverClusterSummary(object):
             'display_name': 'displayName',
             'time_created': 'timeCreated',
             'nodes': 'nodes',
+            'cluster_size': 'clusterSize',
+            'cluster_type': 'clusterType',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_state_details': 'lifecycleStateDetails',
             'freeform_tags': 'freeformTags',
@@ -116,6 +138,8 @@ class RoverClusterSummary(object):
         self._display_name = None
         self._time_created = None
         self._nodes = None
+        self._cluster_size = None
+        self._cluster_type = None
         self._lifecycle_state = None
         self._lifecycle_state_details = None
         self._freeform_tags = None
@@ -241,6 +265,60 @@ class RoverClusterSummary(object):
         :type: list[str]
         """
         self._nodes = nodes
+
+    @property
+    def cluster_size(self):
+        """
+        Gets the cluster_size of this RoverClusterSummary.
+        Size of the cluster.
+
+
+        :return: The cluster_size of this RoverClusterSummary.
+        :rtype: int
+        """
+        return self._cluster_size
+
+    @cluster_size.setter
+    def cluster_size(self, cluster_size):
+        """
+        Sets the cluster_size of this RoverClusterSummary.
+        Size of the cluster.
+
+
+        :param cluster_size: The cluster_size of this RoverClusterSummary.
+        :type: int
+        """
+        self._cluster_size = cluster_size
+
+    @property
+    def cluster_type(self):
+        """
+        Gets the cluster_type of this RoverClusterSummary.
+        Type of cluster.
+
+        Allowed values for this property are: "STANDALONE", "STATION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The cluster_type of this RoverClusterSummary.
+        :rtype: str
+        """
+        return self._cluster_type
+
+    @cluster_type.setter
+    def cluster_type(self, cluster_type):
+        """
+        Sets the cluster_type of this RoverClusterSummary.
+        Type of cluster.
+
+
+        :param cluster_type: The cluster_type of this RoverClusterSummary.
+        :type: str
+        """
+        allowed_values = ["STANDALONE", "STATION"]
+        if not value_allowed_none_or_none_sentinel(cluster_type, allowed_values):
+            cluster_type = 'UNKNOWN_ENUM_VALUE'
+        self._cluster_type = cluster_type
 
     @property
     def lifecycle_state(self):

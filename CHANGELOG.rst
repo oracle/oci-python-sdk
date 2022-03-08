@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.60.0 - 2022-03-08
+====================
+
+Added
+-----
+* Support for the Sales Accelerator license option in the Content Management service
+* Support for VCN hostname cluster endpoints in the Container Engine for Kubernetes service
+* Support for optionally specifying an admin username and password when creating a database system during a restore operation in the MySQL Database service
+* Support for automatic tablespace creation on non-autonomous and autonomous database dedicated targets in the Database Migration service
+* Support for reporting excluded objects based on static exclusion rules and dynamic exclusion settings in the Database Migration service
+* Support for removing, listing, and adding database objects reported by the Cloud Premigration Advisor Tool (CPAT) in the Database Migration service
+* Support for migrating Oracle databases from the AWS RDS service to OCI as autonomous databases, using the AWS S3 service and DBLINK for data transfer, in the Database Migration service
+* Support for querying additional fields of a resource using return clauses in the Search service
+* Support for clusters and station clusters in the Roving Edge Infrastructure service
+* Support for creating database systems and database homes using customer-managed keys in the Database service
+ 
+Breaking
+--------
+* Support for retries enabled by default on operations in the Container Engine for Kubernetes service
+* Support for retries enabled by default on operations in the Resource Manager service
+* Support for retries enabled by default on operations in the Search service
+ 
+====================
 2.59.0 - 2022-03-01
 ====================
 
@@ -173,6 +196,11 @@ Added
 Fixed
 -----
 * Fixed an issue where multipart upload operations to Object Storage service throws SSLError on Oracle Linux instances
+
+Breaking
+--------
+* Support for retries enabled by default on some operations in the Data Catalog service
+* Support for retries enabled by default on all operations in the Ocvp service
 
 ====================
 2.52.1 - 2021-12-07

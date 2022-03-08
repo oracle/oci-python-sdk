@@ -77,6 +77,18 @@ class CreateDatabaseDetails(object):
             The value to assign to the defined_tags property of this CreateDatabaseDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param kms_key_id:
+            The value to assign to the kms_key_id property of this CreateDatabaseDetails.
+        :type kms_key_id: str
+
+        :param kms_key_version_id:
+            The value to assign to the kms_key_version_id property of this CreateDatabaseDetails.
+        :type kms_key_version_id: str
+
+        :param vault_id:
+            The value to assign to the vault_id property of this CreateDatabaseDetails.
+        :type vault_id: str
+
         :param sid_prefix:
             The value to assign to the sid_prefix property of this CreateDatabaseDetails.
         :type sid_prefix: str
@@ -95,6 +107,9 @@ class CreateDatabaseDetails(object):
             'db_backup_config': 'DbBackupConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'kms_key_id': 'str',
+            'kms_key_version_id': 'str',
+            'vault_id': 'str',
             'sid_prefix': 'str'
         }
 
@@ -111,6 +126,9 @@ class CreateDatabaseDetails(object):
             'db_backup_config': 'dbBackupConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'kms_key_id': 'kmsKeyId',
+            'kms_key_version_id': 'kmsKeyVersionId',
+            'vault_id': 'vaultId',
             'sid_prefix': 'sidPrefix'
         }
 
@@ -126,6 +144,9 @@ class CreateDatabaseDetails(object):
         self._db_backup_config = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._kms_key_id = None
+        self._kms_key_version_id = None
+        self._vault_id = None
         self._sid_prefix = None
 
     @property
@@ -445,6 +466,84 @@ class CreateDatabaseDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def kms_key_id(self):
+        """
+        Gets the kms_key_id of this CreateDatabaseDetails.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :return: The kms_key_id of this CreateDatabaseDetails.
+        :rtype: str
+        """
+        return self._kms_key_id
+
+    @kms_key_id.setter
+    def kms_key_id(self, kms_key_id):
+        """
+        Sets the kms_key_id of this CreateDatabaseDetails.
+        The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+
+
+        :param kms_key_id: The kms_key_id of this CreateDatabaseDetails.
+        :type: str
+        """
+        self._kms_key_id = kms_key_id
+
+    @property
+    def kms_key_version_id(self):
+        """
+        Gets the kms_key_version_id of this CreateDatabaseDetails.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :return: The kms_key_version_id of this CreateDatabaseDetails.
+        :rtype: str
+        """
+        return self._kms_key_version_id
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, kms_key_version_id):
+        """
+        Sets the kms_key_version_id of this CreateDatabaseDetails.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+
+
+        :param kms_key_version_id: The kms_key_version_id of this CreateDatabaseDetails.
+        :type: str
+        """
+        self._kms_key_version_id = kms_key_version_id
+
+    @property
+    def vault_id(self):
+        """
+        Gets the vault_id of this CreateDatabaseDetails.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :return: The vault_id of this CreateDatabaseDetails.
+        :rtype: str
+        """
+        return self._vault_id
+
+    @vault_id.setter
+    def vault_id(self, vault_id):
+        """
+        Sets the vault_id of this CreateDatabaseDetails.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :param vault_id: The vault_id of this CreateDatabaseDetails.
+        :type: str
+        """
+        self._vault_id = vault_id
 
     @property
     def sid_prefix(self):
