@@ -25,6 +25,14 @@ class CreateConnectionDetails(object):
     #: This constant has a value of "USER_MANAGED_OCI"
     DATABASE_TYPE_USER_MANAGED_OCI = "USER_MANAGED_OCI"
 
+    #: A constant which can be used with the manual_database_sub_type property of a CreateConnectionDetails.
+    #: This constant has a value of "ORACLE"
+    MANUAL_DATABASE_SUB_TYPE_ORACLE = "ORACLE"
+
+    #: A constant which can be used with the manual_database_sub_type property of a CreateConnectionDetails.
+    #: This constant has a value of "RDS_ORACLE"
+    MANUAL_DATABASE_SUB_TYPE_RDS_ORACLE = "RDS_ORACLE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateConnectionDetails object with values from keyword arguments.
@@ -42,6 +50,11 @@ class CreateConnectionDetails(object):
             The value to assign to the database_type property of this CreateConnectionDetails.
             Allowed values for this property are: "MANUAL", "AUTONOMOUS", "USER_MANAGED_OCI"
         :type database_type: str
+
+        :param manual_database_sub_type:
+            The value to assign to the manual_database_sub_type property of this CreateConnectionDetails.
+            Allowed values for this property are: "ORACLE", "RDS_ORACLE"
+        :type manual_database_sub_type: str
 
         :param database_id:
             The value to assign to the database_id property of this CreateConnectionDetails.
@@ -92,6 +105,7 @@ class CreateConnectionDetails(object):
             'compartment_id': 'str',
             'display_name': 'str',
             'database_type': 'str',
+            'manual_database_sub_type': 'str',
             'database_id': 'str',
             'connect_descriptor': 'CreateConnectDescriptor',
             'certificate_tdn': 'str',
@@ -109,6 +123,7 @@ class CreateConnectionDetails(object):
             'compartment_id': 'compartmentId',
             'display_name': 'displayName',
             'database_type': 'databaseType',
+            'manual_database_sub_type': 'manualDatabaseSubType',
             'database_id': 'databaseId',
             'connect_descriptor': 'connectDescriptor',
             'certificate_tdn': 'certificateTdn',
@@ -125,6 +140,7 @@ class CreateConnectionDetails(object):
         self._compartment_id = None
         self._display_name = None
         self._database_type = None
+        self._manual_database_sub_type = None
         self._database_id = None
         self._connect_descriptor = None
         self._certificate_tdn = None
@@ -216,6 +232,38 @@ class CreateConnectionDetails(object):
                 .format(allowed_values)
             )
         self._database_type = database_type
+
+    @property
+    def manual_database_sub_type(self):
+        """
+        Gets the manual_database_sub_type of this CreateConnectionDetails.
+        Database manual connection subtype. This value can only be specified for manual connections.
+
+        Allowed values for this property are: "ORACLE", "RDS_ORACLE"
+
+
+        :return: The manual_database_sub_type of this CreateConnectionDetails.
+        :rtype: str
+        """
+        return self._manual_database_sub_type
+
+    @manual_database_sub_type.setter
+    def manual_database_sub_type(self, manual_database_sub_type):
+        """
+        Sets the manual_database_sub_type of this CreateConnectionDetails.
+        Database manual connection subtype. This value can only be specified for manual connections.
+
+
+        :param manual_database_sub_type: The manual_database_sub_type of this CreateConnectionDetails.
+        :type: str
+        """
+        allowed_values = ["ORACLE", "RDS_ORACLE"]
+        if not value_allowed_none_or_none_sentinel(manual_database_sub_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `manual_database_sub_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._manual_database_sub_type = manual_database_sub_type
 
     @property
     def database_id(self):

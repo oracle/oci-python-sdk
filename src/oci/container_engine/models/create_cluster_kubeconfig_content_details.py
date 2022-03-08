@@ -25,6 +25,10 @@ class CreateClusterKubeconfigContentDetails(object):
     #: This constant has a value of "PRIVATE_ENDPOINT"
     ENDPOINT_PRIVATE_ENDPOINT = "PRIVATE_ENDPOINT"
 
+    #: A constant which can be used with the endpoint property of a CreateClusterKubeconfigContentDetails.
+    #: This constant has a value of "VCN_HOSTNAME"
+    ENDPOINT_VCN_HOSTNAME = "VCN_HOSTNAME"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateClusterKubeconfigContentDetails object with values from keyword arguments.
@@ -40,7 +44,7 @@ class CreateClusterKubeconfigContentDetails(object):
 
         :param endpoint:
             The value to assign to the endpoint property of this CreateClusterKubeconfigContentDetails.
-            Allowed values for this property are: "LEGACY_KUBERNETES", "PUBLIC_ENDPOINT", "PRIVATE_ENDPOINT"
+            Allowed values for this property are: "LEGACY_KUBERNETES", "PUBLIC_ENDPOINT", "PRIVATE_ENDPOINT", "VCN_HOSTNAME"
         :type endpoint: str
 
         """
@@ -114,7 +118,7 @@ class CreateClusterKubeconfigContentDetails(object):
         Gets the endpoint of this CreateClusterKubeconfigContentDetails.
         The endpoint to target. A cluster may have multiple endpoints exposed but the kubeconfig can only target one at a time.
 
-        Allowed values for this property are: "LEGACY_KUBERNETES", "PUBLIC_ENDPOINT", "PRIVATE_ENDPOINT"
+        Allowed values for this property are: "LEGACY_KUBERNETES", "PUBLIC_ENDPOINT", "PRIVATE_ENDPOINT", "VCN_HOSTNAME"
 
 
         :return: The endpoint of this CreateClusterKubeconfigContentDetails.
@@ -132,7 +136,7 @@ class CreateClusterKubeconfigContentDetails(object):
         :param endpoint: The endpoint of this CreateClusterKubeconfigContentDetails.
         :type: str
         """
-        allowed_values = ["LEGACY_KUBERNETES", "PUBLIC_ENDPOINT", "PRIVATE_ENDPOINT"]
+        allowed_values = ["LEGACY_KUBERNETES", "PUBLIC_ENDPOINT", "PRIVATE_ENDPOINT", "VCN_HOSTNAME"]
         if not value_allowed_none_or_none_sentinel(endpoint, allowed_values):
             raise ValueError(
                 "Invalid value for `endpoint`, must be None or one of {0}"

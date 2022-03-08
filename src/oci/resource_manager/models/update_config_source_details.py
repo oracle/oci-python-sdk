@@ -93,7 +93,14 @@ class UpdateConfigSourceDetails(object):
     def working_directory(self):
         """
         Gets the working_directory of this UpdateConfigSourceDetails.
-        The path of the directory from which to run terraform. If not specified, the the root will be used. This parameter is ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
+        File path to the directory to use for running Terraform.
+        If not specified, the root directory is used.
+        Required when using a zip Terraform configuration (`configSourceType` value of `ZIP_UPLOAD`) that contains folders.
+        Ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
+        For more information about required and recommended file structure, see
+        `File Structure (Terraform Configurations for Resource Manager)`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure
 
 
         :return: The working_directory of this UpdateConfigSourceDetails.
@@ -105,7 +112,14 @@ class UpdateConfigSourceDetails(object):
     def working_directory(self, working_directory):
         """
         Sets the working_directory of this UpdateConfigSourceDetails.
-        The path of the directory from which to run terraform. If not specified, the the root will be used. This parameter is ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
+        File path to the directory to use for running Terraform.
+        If not specified, the root directory is used.
+        Required when using a zip Terraform configuration (`configSourceType` value of `ZIP_UPLOAD`) that contains folders.
+        Ignored for the `configSourceType` value of `COMPARTMENT_CONFIG_SOURCE`.
+        For more information about required and recommended file structure, see
+        `File Structure (Terraform Configurations for Resource Manager)`__.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure
 
 
         :param working_directory: The working_directory of this UpdateConfigSourceDetails.

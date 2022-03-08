@@ -113,6 +113,10 @@ class UpdateRoverClusterDetails(object):
             The value to assign to the oracle_shipping_tracking_url property of this UpdateRoverClusterDetails.
         :type oracle_shipping_tracking_url: str
 
+        :param subscription_id:
+            The value to assign to the subscription_id property of this UpdateRoverClusterDetails.
+        :type subscription_id: str
+
         :param shipping_vendor:
             The value to assign to the shipping_vendor property of this UpdateRoverClusterDetails.
         :type shipping_vendor: str
@@ -164,6 +168,7 @@ class UpdateRoverClusterDetails(object):
             'point_of_contact_phone_number': 'str',
             'shipping_preference': 'str',
             'oracle_shipping_tracking_url': 'str',
+            'subscription_id': 'str',
             'shipping_vendor': 'str',
             'time_pickup_expected': 'datetime',
             'is_import_requested': 'bool',
@@ -189,6 +194,7 @@ class UpdateRoverClusterDetails(object):
             'point_of_contact_phone_number': 'pointOfContactPhoneNumber',
             'shipping_preference': 'shippingPreference',
             'oracle_shipping_tracking_url': 'oracleShippingTrackingUrl',
+            'subscription_id': 'subscriptionId',
             'shipping_vendor': 'shippingVendor',
             'time_pickup_expected': 'timePickupExpected',
             'is_import_requested': 'isImportRequested',
@@ -213,6 +219,7 @@ class UpdateRoverClusterDetails(object):
         self._point_of_contact_phone_number = None
         self._shipping_preference = None
         self._oracle_shipping_tracking_url = None
+        self._subscription_id = None
         self._shipping_vendor = None
         self._time_pickup_expected = None
         self._is_import_requested = None
@@ -554,6 +561,30 @@ class UpdateRoverClusterDetails(object):
         :type: str
         """
         self._oracle_shipping_tracking_url = oracle_shipping_tracking_url
+
+    @property
+    def subscription_id(self):
+        """
+        Gets the subscription_id of this UpdateRoverClusterDetails.
+        ID provided to customer after successful subscription to Rover Stations.
+
+
+        :return: The subscription_id of this UpdateRoverClusterDetails.
+        :rtype: str
+        """
+        return self._subscription_id
+
+    @subscription_id.setter
+    def subscription_id(self, subscription_id):
+        """
+        Sets the subscription_id of this UpdateRoverClusterDetails.
+        ID provided to customer after successful subscription to Rover Stations.
+
+
+        :param subscription_id: The subscription_id of this UpdateRoverClusterDetails.
+        :type: str
+        """
+        self._subscription_id = subscription_id
 
     @property
     def shipping_vendor(self):

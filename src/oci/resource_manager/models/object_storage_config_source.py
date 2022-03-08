@@ -69,7 +69,7 @@ class ObjectStorageConfigSource(ConfigSource):
         """
         **[Required]** Gets the region of this ObjectStorageConfigSource.
         The name of the bucket's region.
-        Example: `PHX`
+        Example: `us-phoenix-1`
 
 
         :return: The region of this ObjectStorageConfigSource.
@@ -82,7 +82,7 @@ class ObjectStorageConfigSource(ConfigSource):
         """
         Sets the region of this ObjectStorageConfigSource.
         The name of the bucket's region.
-        Example: `PHX`
+        Example: `us-phoenix-1`
 
 
         :param region: The region of this ObjectStorageConfigSource.

@@ -28,19 +28,40 @@ class MigrateVaultKeyDetails(object):
             The value to assign to the kms_key_version_id property of this MigrateVaultKeyDetails.
         :type kms_key_version_id: str
 
+        :param vault_id:
+            The value to assign to the vault_id property of this MigrateVaultKeyDetails.
+        :type vault_id: str
+
+        :param tde_wallet_password:
+            The value to assign to the tde_wallet_password property of this MigrateVaultKeyDetails.
+        :type tde_wallet_password: str
+
+        :param admin_password:
+            The value to assign to the admin_password property of this MigrateVaultKeyDetails.
+        :type admin_password: str
+
         """
         self.swagger_types = {
             'kms_key_id': 'str',
-            'kms_key_version_id': 'str'
+            'kms_key_version_id': 'str',
+            'vault_id': 'str',
+            'tde_wallet_password': 'str',
+            'admin_password': 'str'
         }
 
         self.attribute_map = {
             'kms_key_id': 'kmsKeyId',
-            'kms_key_version_id': 'kmsKeyVersionId'
+            'kms_key_version_id': 'kmsKeyVersionId',
+            'vault_id': 'vaultId',
+            'tde_wallet_password': 'tdeWalletPassword',
+            'admin_password': 'adminPassword'
         }
 
         self._kms_key_id = None
         self._kms_key_version_id = None
+        self._vault_id = None
+        self._tde_wallet_password = None
+        self._admin_password = None
 
     @property
     def kms_key_id(self):
@@ -89,6 +110,84 @@ class MigrateVaultKeyDetails(object):
         :type: str
         """
         self._kms_key_version_id = kms_key_version_id
+
+    @property
+    def vault_id(self):
+        """
+        Gets the vault_id of this MigrateVaultKeyDetails.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :return: The vault_id of this MigrateVaultKeyDetails.
+        :rtype: str
+        """
+        return self._vault_id
+
+    @vault_id.setter
+    def vault_id(self, vault_id):
+        """
+        Sets the vault_id of this MigrateVaultKeyDetails.
+        The `OCID`__ of the Oracle Cloud Infrastructure `vault`__.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+        __ https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts
+
+
+        :param vault_id: The vault_id of this MigrateVaultKeyDetails.
+        :type: str
+        """
+        self._vault_id = vault_id
+
+    @property
+    def tde_wallet_password(self):
+        """
+        Gets the tde_wallet_password of this MigrateVaultKeyDetails.
+        The existing TDE wallet password of the database.
+
+
+        :return: The tde_wallet_password of this MigrateVaultKeyDetails.
+        :rtype: str
+        """
+        return self._tde_wallet_password
+
+    @tde_wallet_password.setter
+    def tde_wallet_password(self, tde_wallet_password):
+        """
+        Sets the tde_wallet_password of this MigrateVaultKeyDetails.
+        The existing TDE wallet password of the database.
+
+
+        :param tde_wallet_password: The tde_wallet_password of this MigrateVaultKeyDetails.
+        :type: str
+        """
+        self._tde_wallet_password = tde_wallet_password
+
+    @property
+    def admin_password(self):
+        """
+        Gets the admin_password of this MigrateVaultKeyDetails.
+        The existing admin password of the database.
+
+
+        :return: The admin_password of this MigrateVaultKeyDetails.
+        :rtype: str
+        """
+        return self._admin_password
+
+    @admin_password.setter
+    def admin_password(self, admin_password):
+        """
+        Sets the admin_password of this MigrateVaultKeyDetails.
+        The existing admin password of the database.
+
+
+        :param admin_password: The admin_password of this MigrateVaultKeyDetails.
+        :type: str
+        """
+        self._admin_password = admin_password
 
     def __repr__(self):
         return formatted_flat_dict(self)

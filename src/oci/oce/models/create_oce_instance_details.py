@@ -83,6 +83,10 @@ class CreateOceInstanceDetails(object):
             Allowed values for this property are: "PRIMARY", "NONPRIMARY"
         :type instance_usage_type: str
 
+        :param add_on_features:
+            The value to assign to the add_on_features property of this CreateOceInstanceDetails.
+        :type add_on_features: list[str]
+
         :param object_storage_namespace:
             The value to assign to the object_storage_namespace property of this CreateOceInstanceDetails.
         :type object_storage_namespace: str
@@ -127,6 +131,7 @@ class CreateOceInstanceDetails(object):
             'identity_stripe': 'IdentityStripeDetails',
             'tenancy_name': 'str',
             'instance_usage_type': 'str',
+            'add_on_features': 'list[str]',
             'object_storage_namespace': 'str',
             'admin_email': 'str',
             'upgrade_schedule': 'str',
@@ -146,6 +151,7 @@ class CreateOceInstanceDetails(object):
             'identity_stripe': 'identityStripe',
             'tenancy_name': 'tenancyName',
             'instance_usage_type': 'instanceUsageType',
+            'add_on_features': 'addOnFeatures',
             'object_storage_namespace': 'objectStorageNamespace',
             'admin_email': 'adminEmail',
             'upgrade_schedule': 'upgradeSchedule',
@@ -164,6 +170,7 @@ class CreateOceInstanceDetails(object):
         self._identity_stripe = None
         self._tenancy_name = None
         self._instance_usage_type = None
+        self._add_on_features = None
         self._object_storage_namespace = None
         self._admin_email = None
         self._upgrade_schedule = None
@@ -368,6 +375,30 @@ class CreateOceInstanceDetails(object):
                 .format(allowed_values)
             )
         self._instance_usage_type = instance_usage_type
+
+    @property
+    def add_on_features(self):
+        """
+        Gets the add_on_features of this CreateOceInstanceDetails.
+        a list of add-on features for the ocm instance
+
+
+        :return: The add_on_features of this CreateOceInstanceDetails.
+        :rtype: list[str]
+        """
+        return self._add_on_features
+
+    @add_on_features.setter
+    def add_on_features(self, add_on_features):
+        """
+        Sets the add_on_features of this CreateOceInstanceDetails.
+        a list of add-on features for the ocm instance
+
+
+        :param add_on_features: The add_on_features of this CreateOceInstanceDetails.
+        :type: list[str]
+        """
+        self._add_on_features = add_on_features
 
     @property
     def object_storage_namespace(self):

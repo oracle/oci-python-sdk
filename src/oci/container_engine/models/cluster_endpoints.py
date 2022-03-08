@@ -30,22 +30,29 @@ class ClusterEndpoints(object):
             The value to assign to the private_endpoint property of this ClusterEndpoints.
         :type private_endpoint: str
 
+        :param vcn_hostname_endpoint:
+            The value to assign to the vcn_hostname_endpoint property of this ClusterEndpoints.
+        :type vcn_hostname_endpoint: str
+
         """
         self.swagger_types = {
             'kubernetes': 'str',
             'public_endpoint': 'str',
-            'private_endpoint': 'str'
+            'private_endpoint': 'str',
+            'vcn_hostname_endpoint': 'str'
         }
 
         self.attribute_map = {
             'kubernetes': 'kubernetes',
             'public_endpoint': 'publicEndpoint',
-            'private_endpoint': 'privateEndpoint'
+            'private_endpoint': 'privateEndpoint',
+            'vcn_hostname_endpoint': 'vcnHostnameEndpoint'
         }
 
         self._kubernetes = None
         self._public_endpoint = None
         self._private_endpoint = None
+        self._vcn_hostname_endpoint = None
 
     @property
     def kubernetes(self):
@@ -118,6 +125,32 @@ class ClusterEndpoints(object):
         :type: str
         """
         self._private_endpoint = private_endpoint
+
+    @property
+    def vcn_hostname_endpoint(self):
+        """
+        Gets the vcn_hostname_endpoint of this ClusterEndpoints.
+        The FQDN assigned to the Kubernetes API private endpoint.
+        Example: 'https://yourVcnHostnameEndpoint'
+
+
+        :return: The vcn_hostname_endpoint of this ClusterEndpoints.
+        :rtype: str
+        """
+        return self._vcn_hostname_endpoint
+
+    @vcn_hostname_endpoint.setter
+    def vcn_hostname_endpoint(self, vcn_hostname_endpoint):
+        """
+        Sets the vcn_hostname_endpoint of this ClusterEndpoints.
+        The FQDN assigned to the Kubernetes API private endpoint.
+        Example: 'https://yourVcnHostnameEndpoint'
+
+
+        :param vcn_hostname_endpoint: The vcn_hostname_endpoint of this ClusterEndpoints.
+        :type: str
+        """
+        self._vcn_hostname_endpoint = vcn_hostname_endpoint
 
     def __repr__(self):
         return formatted_flat_dict(self)

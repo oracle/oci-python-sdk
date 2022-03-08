@@ -13,6 +13,18 @@ class RoverNodeSummary(object):
     Summary of the RoverNode.
     """
 
+    #: A constant which can be used with the node_type property of a RoverNodeSummary.
+    #: This constant has a value of "STANDALONE"
+    NODE_TYPE_STANDALONE = "STANDALONE"
+
+    #: A constant which can be used with the node_type property of a RoverNodeSummary.
+    #: This constant has a value of "CLUSTERED"
+    NODE_TYPE_CLUSTERED = "CLUSTERED"
+
+    #: A constant which can be used with the node_type property of a RoverNodeSummary.
+    #: This constant has a value of "STATION"
+    NODE_TYPE_STATION = "STATION"
+
     #: A constant which can be used with the lifecycle_state property of a RoverNodeSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -58,6 +70,12 @@ class RoverNodeSummary(object):
             The value to assign to the serial_number property of this RoverNodeSummary.
         :type serial_number: str
 
+        :param node_type:
+            The value to assign to the node_type property of this RoverNodeSummary.
+            Allowed values for this property are: "STANDALONE", "CLUSTERED", "STATION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type node_type: str
+
         :param display_name:
             The value to assign to the display_name property of this RoverNodeSummary.
         :type display_name: str
@@ -94,6 +112,7 @@ class RoverNodeSummary(object):
             'compartment_id': 'str',
             'cluster_id': 'str',
             'serial_number': 'str',
+            'node_type': 'str',
             'display_name': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
@@ -108,6 +127,7 @@ class RoverNodeSummary(object):
             'compartment_id': 'compartmentId',
             'cluster_id': 'clusterId',
             'serial_number': 'serialNumber',
+            'node_type': 'nodeType',
             'display_name': 'displayName',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
@@ -121,6 +141,7 @@ class RoverNodeSummary(object):
         self._compartment_id = None
         self._cluster_id = None
         self._serial_number = None
+        self._node_type = None
         self._display_name = None
         self._time_created = None
         self._lifecycle_state = None
@@ -224,6 +245,36 @@ class RoverNodeSummary(object):
         :type: str
         """
         self._serial_number = serial_number
+
+    @property
+    def node_type(self):
+        """
+        Gets the node_type of this RoverNodeSummary.
+        The type of node indicating if it belongs to a cluster
+
+        Allowed values for this property are: "STANDALONE", "CLUSTERED", "STATION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The node_type of this RoverNodeSummary.
+        :rtype: str
+        """
+        return self._node_type
+
+    @node_type.setter
+    def node_type(self, node_type):
+        """
+        Sets the node_type of this RoverNodeSummary.
+        The type of node indicating if it belongs to a cluster
+
+
+        :param node_type: The node_type of this RoverNodeSummary.
+        :type: str
+        """
+        allowed_values = ["STANDALONE", "CLUSTERED", "STATION"]
+        if not value_allowed_none_or_none_sentinel(node_type, allowed_values):
+            node_type = 'UNKNOWN_ENUM_VALUE'
+        self._node_type = node_type
 
     @property
     def display_name(self):
