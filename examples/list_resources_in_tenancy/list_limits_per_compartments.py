@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 ##########################################################################
@@ -24,6 +24,7 @@
 #   -sc scope   - Filter by Scope = AD,REGION
 #   -js         - print in JSON format
 #   -csv file   - print to csv file
+#   -all        - show all limits without filter those with zero
 #
 ##########################################################################
 # Info:
@@ -291,9 +292,10 @@ parser.add_argument('-c', default="", dest='config_file', help='OCI CLI Config f
 parser.add_argument('-t', default="", dest='config_profile', help='Config Profile inside the config file')
 parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
 parser.add_argument('-rg', default="", dest='filter_region', help='filter by region (i.e. us-ashburn-1) ')
-parser.add_argument('-cp', default="", dest='filter_comp', help='filter by compartment (i.e. production) ')
+parser.add_argument('-cp', default="", dest='filter_comp', help='filter by compartment (i.e. production or root) ')
 parser.add_argument('-sr', default="", dest='filter_service', help='filter by service (i.e. compute) ')
 parser.add_argument('-sc', default="", dest='filter_scope', help='filter by scope (i.e. AD,REGION,GLOBAL) ')
+parser.add_argument('-all', action='store_true', default=False, dest='show_all', help='Show All Limits including 0')
 parser.add_argument('-ip', action='store_true', default=False, dest='is_instance_principals', help='Use Instance Principals for Authentication')
 parser.add_argument('-dt', action='store_true', default=False, dest='is_delegation_token', help='Use Delegation Token for Authentication')
 parser.add_argument('-js', action='store_true', default=False, dest='print_json', help='print in JSON format')
@@ -321,6 +323,7 @@ filter_region = cmd.filter_region
 filter_compartment = cmd.filter_comp
 filter_service = cmd.filter_service
 filter_scope = cmd.filter_scope
+show_all = cmd.show_all
 print_json = cmd.print_json
 
 try:
@@ -426,7 +429,7 @@ for region_name in [str(es.region_name) for es in regions]:
             for compartment in compartments:
                 if compartment.id != tenancy.id and compartment.lifecycle_state != oci.identity.models.Compartment.LIFECYCLE_STATE_ACTIVE:
                     continue
-                if filter_compartment and str(filter_compartment) not in compartment.name and str(filter_compartment) not in str(compartment.id):
+                if filter_compartment and not (str(filter_compartment) in compartment.name or filter_compartment == compartment.id or filter_compartment == "root" and compartment.id == tenancy.id):
                     continue
 
                 print(".", end="")
@@ -450,7 +453,7 @@ for region_name in [str(es.region_name) for es in regions]:
                     }
 
                     # only run on limit > 0
-                    if limit.value == 0:
+                    if limit.value == 0 and not show_all:
                         continue
 
                     # get usage per limit if available

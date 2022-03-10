@@ -1085,10 +1085,12 @@ class ShowOCIOutput(object):
                         print(self.tabs + "Port    : " + vm['listener_port'])
 
                     if 'gi_version' in vm:
-                        print(self.tabs + "GI      : " + vm['gi_version'])
+                        if vm['gi_version']:
+                            print(self.tabs + "Grid Ver       : " + vm['gi_version'] + "  " + vm['gi_version_date'])
 
                     if 'system_version' in vm:
-                        print(self.tabs + "System  : " + vm['system_version'])
+                        if vm['system_version']:
+                            print(self.tabs + "Sys Ver        : " + vm['system_version'] + "  " + vm['system_version_date'])
 
                     if 'data_storage_percentage' in vm:
                         print(self.tabs + "Data    : " + vm['data_storage_percentage'] + "%, Sparse: " + vm['is_sparse_diskgroup_enabled'] + ", Local Backup: " + vm['is_local_backup_enabled'])
@@ -1118,7 +1120,8 @@ class ShowOCIOutput(object):
 
                         # databases
                         for db in db_home['databases']:
-                            print(self.tabs + self.tabs + " DB : " + db['name'])
+                            pdbs = ", PDBS: " + str(', '.join(x['name'] for x in db['pdbs'])) if db['pdbs'] else ""
+                            print(self.tabs + self.tabs + " DB : " + db['name'] + pdbs)
 
                             # print data guard
                             for dg in db['dataguard']:
@@ -1203,11 +1206,11 @@ class ShowOCIOutput(object):
 
                     if 'gi_version' in vm:
                         if vm['gi_version']:
-                            print(self.tabs + "Grid Ver       : " + vm['gi_version'])
+                            print(self.tabs + "Grid Ver       : " + vm['gi_version'] + "  " + vm['gi_version_date'])
 
                     if 'system_version' in vm:
                         if vm['system_version']:
-                            print(self.tabs + "Sys Ver        : " + vm['system_version'])
+                            print(self.tabs + "Sys Ver        : " + vm['system_version'] + "  " + vm['system_version_date'])
 
                     if 'license_model' in vm:
                         if vm['license_model']:
@@ -1241,7 +1244,8 @@ class ShowOCIOutput(object):
 
                         # databases
                         for db in db_home['databases']:
-                            print(self.tabs + self.tabs + "        DB : " + db['name'])
+                            pdbs = ", PDBS: " + str(', '.join(x['name'] for x in db['pdbs'])) if db['pdbs'] else ""
+                            print(self.tabs + self.tabs + "        DB : " + db['name'] + pdbs)
 
                             # print data guard
                             for dg in db['dataguard']:
@@ -1262,7 +1266,7 @@ class ShowOCIOutput(object):
 
     def __print_database_db_system_details(self, dbs):
         try:
-            print(self.taba + "DBaaS   : " + dbs['name'] + " - " + dbs['version'])
+            print(self.taba + "DBaaS   : " + dbs['name'] + " - " + dbs['version'] + " " + dbs['version_date'])
             print(self.tabs + "Created : " + dbs['time_created'][0:16])
             print(self.tabs + "AD      : " + dbs['availability_domain'])
 
@@ -1371,7 +1375,8 @@ class ShowOCIOutput(object):
 
                     # databases
                     for db in db_home['databases']:
-                        print(self.tabs + self.tabs + " DB : " + db['name'])
+                        pdbs = ", PDBS: " + str(', '.join(x['name'] for x in db['pdbs'])) if db['pdbs'] else ""
+                        print(self.tabs + self.tabs + " DB : " + db['name'] + pdbs)
 
                         # print data guard
                         for dg in db['dataguard']:
@@ -2105,6 +2110,19 @@ class ShowOCIOutput(object):
                     print(self.taba + val['name'] + ", " + val['bastion_type'] + ", " + subnet + "Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
                     print("")
 
+            # kms_vaults
+            if 'kms_vaults' in security:
+                self.print_header("KMS Vaults", 2)
+                for val in security['kms_vaults']:
+                    print(self.taba + val['name'] + ", " + val['vault_type'] + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
+                    print(self.tabs2 + "Keys          : " + val['key_count'] + ", Versions: " + val['key_version_count'])
+                    print(self.tabs2 + "Software Keys : " + val['software_key_count'] + ", Versions: " + val['software_key_version_count'])
+                    print(self.tabs2 + "Management URL: " + val['management_endpoint'])
+                    print(self.tabs2 + "Crypto URL    : " + val['crypto_endpoint'])
+                    for rep in val['replicas']:
+                        print(self.tabs2 + "Replicas      : " + val['status'] + ", " + val['region'] + ", " + val['crypto_endpoint'])
+                    print("")
+
             # Logging
             if 'logging' in security:
                 self.print_header("Logging Groups", 2)
@@ -2168,6 +2186,14 @@ class ShowOCIOutput(object):
                 for val in data_ai['bds']:
                     print(self.taba + val['display_name'] + ", (" + val['cluster_version'] + "), Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'])
                     print(self.tabs + "Nodes: " + val['number_of_nodes'] + ", is_high_availability: " + val['is_high_availability'] + ", is_secure: " + val['is_secure'] + ", is_cloud_sql_configured: " + val['is_cloud_sql_configured'])
+                print("")
+
+            # DI
+            if 'data_integration' in data_ai:
+                self.print_header("Data Integration", 2)
+                for val in data_ai['data_integration']:
+                    description = (" (" + val['description'] + ")") if val['description'] != "None" else ""
+                    print(self.taba + val['display_name'] + description + ", Created: " + val['time_created'][0:16] + " (" + val['lifecycle_state'] + ")")
                 print("")
 
         except Exception as e:
@@ -2527,6 +2553,9 @@ class ShowOCIOutput(object):
             if 'volume_backup' in data:
                 self.__print_core_compute_boot_volume_backup(data['volume_backup'], "Block Volume Backups")
 
+            if 'volume_group_backup' in data:
+                self.__print_core_compute_boot_volume_backup(data['volume_group_backup'], "Block Volume Group Backups")
+
         except Exception as e:
             self.__print_error("__print_core_compute_main", e)
 
@@ -2748,6 +2777,10 @@ class ShowOCISummary(object):
                 self.__summary_core_size(security['logging'])
             if 'bastions' in security:
                 self.__summary_core_size(security['bastions'])
+            if 'kms_vaults' in security:
+                self.__summary_core_size(security['kms_vaults'])
+                self.__summary_core_size(security['kms_vaults'], "sum_info_hsm", 'key_count')
+                self.__summary_core_size(security['kms_vaults'], "sum_info_soft", 'software_key_count')
 
         except Exception as e:
             self.__print_error("__summary_security", e)
@@ -2772,6 +2805,8 @@ class ShowOCISummary(object):
                 self.__summary_core_size(data_ai['oda'])
             if 'bds' in data_ai:
                 self.__summary_core_size(data_ai['bds'])
+            if 'data_integration' in data_ai:
+                self.__summary_core_size(data_ai['data_integration'])
 
         except Exception as e:
             self.__print_error("__summary_data_ai_main", e)
@@ -3090,7 +3125,8 @@ class ShowOCISummary(object):
             for obj in objects:
                 if sum_info in obj and sum_size in obj:
                     if obj[sum_size] != '':
-                        self.summary_global_list.append({'type': obj[sum_info], 'size': float(obj[sum_size])})
+                        if float(obj[sum_size]) > 0:
+                            self.summary_global_list.append({'type': obj[sum_info], 'size': float(obj[sum_size])})
 
         except Exception as e:
             self.__print_error("__summary_core_size", e)
@@ -3130,6 +3166,9 @@ class ShowOCISummary(object):
 
             if 'boot_volume_backup' in data:
                 self.__summary_core_size(data['boot_volume_backup'])
+
+            if 'volume_group_backup' in data:
+                self.__summary_core_size(data['volume_group_backup'])
 
             if 'volume_backup' in data:
                 self.__summary_core_size(data['volume_backup'])
@@ -3377,6 +3416,7 @@ class ShowOCICSV(object):
     csv_identity_policies = []
     csv_compute = []
     csv_block_volumes = []
+    csv_block_volumes_backups = []
     csv_compute_reservations = []
     csv_db_exacc_vmclusters = []
     csv_db_exacs_vmclusters = []
@@ -3397,6 +3437,7 @@ class ShowOCICSV(object):
     csv_object_storage_buckets = []
     csv_security_bastions = []
     csv_security_logging = []
+    csv_security_kms_vault = []
     csv_security_cloud_guard = []
     csv_container = []
     csv_container_nodepool = []
@@ -3414,6 +3455,7 @@ class ShowOCICSV(object):
     csv_data_science = []
     csv_data_flow = []
     csv_data_catalog = []
+    csv_data_integration = []
     start_time = ""
     csv_add_date_field = True
 
@@ -3454,7 +3496,8 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("identity_groups", self.csv_identity_groups)
             self.__export_to_csv_file("compute", self.csv_compute)
             self.__export_to_csv_file("compute_reservations", self.csv_compute_reservations)
-            self.__export_to_csv_file("block_boot_volumes", self.csv_block_volumes)
+            self.__export_to_csv_file("block_volumes", self.csv_block_volumes)
+            self.__export_to_csv_file("block_volumes_backups", self.csv_block_volumes_backups)
             self.__export_to_csv_file("network_subnet", self.csv_network_subnet)
             self.__export_to_csv_file("network_drgs", self.csv_network_drg)
             self.__export_to_csv_file("network_routes", self.csv_network_routes)
@@ -3477,6 +3520,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("security_bastions", self.csv_security_bastions)
             self.__export_to_csv_file("security_loggings", self.csv_security_logging)
             self.__export_to_csv_file("security_cloud_guards", self.csv_security_cloud_guard)
+            self.__export_to_csv_file("security_kms_vaults", self.csv_security_kms_vault)
             self.__export_to_csv_file("containers", self.csv_container)
             self.__export_to_csv_file("containers_nodepools", self.csv_container_nodepool)
             self.__export_to_csv_file("edge_dns_steering_policies", self.csv_edge_dns_steering_policies)
@@ -3489,6 +3533,7 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("data_science", self.csv_data_science)
             self.__export_to_csv_file("data_flow", self.csv_data_flow)
             self.__export_to_csv_file("data_catalog", self.csv_data_catalog)
+            self.__export_to_csv_file("data_integration", self.csv_data_integration)
             self.__export_to_csv_file("digital_assistance", self.csv_data_ai_oda)
             self.__export_to_csv_file("big_data_service", self.csv_data_ai_bds)
 
@@ -4029,7 +4074,9 @@ class ShowOCICSV(object):
                         'local_storage_tb': dbs['shape_storage_tb'],
                         'node_count': len(dbs['db_nodes']),
                         'gi_version': dbs['version_only'],
+                        'gi_version_date': dbs['version_date'],
                         'system_version': "",
+                        'system_version_date': "",
                         'database_edition': dbs['database_edition_short'],
                         'license_model': dbs['license_model'],
                         'data_subnet': dbs['data_subnet'],
@@ -4080,6 +4127,7 @@ class ShowOCICSV(object):
                             'backup_subnet': dbs['backup_subnet'],
                             'scan_ips': str(', '.join(x for x in dbs['scan_ips'])),
                             'vip_ips': str(', '.join(x for x in dbs['vip_ips'])),
+                            'pdbs': str(', '.join(x['name'] for x in db['pdbs'])),
                             'cluster_name': dbs['cluster_name'],
                             'vm_name': dbs['display_name'],
                             'time_created': dbs['time_created'][0:16],
@@ -4138,7 +4186,9 @@ class ShowOCICSV(object):
                             'local_storage_tb': dbs['shape_storage_tb'],
                             'node_count': len(vm['db_nodes']),
                             'gi_version': vm['gi_version'],
+                            'gi_version_date': vm['gi_version_date'],
                             'system_version': vm['system_version'],
+                            'system_version_date': vm['system_version_date'],
                             'database_edition': 'XP',
                             'license_model': vm['license_model'],
                             'data_subnet': vm['data_subnet'],
@@ -4188,6 +4238,7 @@ class ShowOCICSV(object):
                                     'backup_subnet': vm['backup_subnet'],
                                     'scan_ips': str(', '.join(x for x in vm['scan_ips'])),
                                     'vip_ips': str(', '.join(x for x in vm['vip_ips'])),
+                                    'pdbs': str(', '.join(x['name'] for x in db['pdbs'])),
                                     'cluster_name': vm['cluster_name'],
                                     'vm_name': vm['display_name'],
                                     'time_created': vm['time_created'][0:16],
@@ -4246,7 +4297,9 @@ class ShowOCICSV(object):
                             'local_storage_tb': dbs['data_storage_size_in_tbs'],
                             'node_count': len(vm['db_nodes']),
                             'gi_version': vm['gi_version'],
+                            'gi_version_date': vm['gi_version_date'],
                             'system_version': vm['system_version'],
+                            'system_version_date': vm['system_version_date'],
                             'database_edition': 'XP',
                             'license_model': vm['license_model'],
                             'data_subnet': "",
@@ -4296,6 +4349,7 @@ class ShowOCICSV(object):
                                     'backup_subnet': "",
                                     'scan_ips': "",
                                     'vip_ips': "",
+                                    'pdbs': str(', '.join(x['name'] for x in db['pdbs'])),
                                     'cluster_name': vm['display_name'],
                                     'vm_name': vm['display_name'],
                                     'time_created': vm['time_created'][0:16],
@@ -4356,6 +4410,7 @@ class ShowOCICSV(object):
                         'backup_subnet': "",
                         'scan_ips': "",
                         'vip_ips': "",
+                        'pdbs': "",
                         'vm_name': "",
                         'cluster_name': "",
                         'time_created': dbs['time_created'],
@@ -4659,6 +4714,37 @@ class ShowOCICSV(object):
             self.__print_error("__csv_core_compute_block_volumes", e)
 
     ##########################################################################
+    # csv compute block volumes backups
+    ##########################################################################
+    def __csv_core_compute_block_volume_backups(self, region_name, blocks):
+
+        try:
+            if len(blocks) == 0:
+                return
+
+            for bv in blocks:
+
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': bv['compartment_name'],
+                    'desc': bv['desc'],
+                    'volume_type': bv['volume_type'],
+                    'backup_type': bv['backup_type'],
+                    'schedule_type': bv['schedule_type'],
+                    'source_name': bv['source_name'],
+                    'time_created': bv['time_created'],
+                    'expiration_time': bv['expiration_time'],
+                    'unique_size_in_gbs': bv['unique_size_in_gbs'],
+                    'size_in_gbs': bv['size_in_gbs'],
+                    'backup_id': bv['id'],
+                    'volume_id': bv['volume_id']
+                }
+                self.csv_block_volumes_backups.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_compute_block_volume_backups", e)
+
+    ##########################################################################
     # csv Compute
     ##########################################################################
     def __csv_core_compute_main(self, region_name, data):
@@ -4673,6 +4759,15 @@ class ShowOCICSV(object):
 
             if 'boot_not_attached' in data:
                 self.__csv_core_compute_block_not_attached(region_name, data['boot_not_attached'])
+
+            if 'boot_volume_backup' in data:
+                self.__csv_core_compute_block_volume_backups(region_name, data['boot_volume_backup'])
+
+            if 'volume_backup' in data:
+                self.__csv_core_compute_block_volume_backups(region_name, data['volume_backup'])
+
+            if 'volume_group_backup' in data:
+                self.__csv_core_compute_block_volume_backups(region_name, data['volume_group_backup'])
 
             if 'capacity_reservation' in data:
                 self.__csv_core_compute_capacity_reservation(region_name, data['capacity_reservation'])
@@ -4952,6 +5047,9 @@ class ShowOCICSV(object):
             if 'cloud_guard' in data:
                 self.__csv_security_cloud_guard(region_name, data['cloud_guard'])
 
+            if 'kms_vaults' in data:
+                self.__csv_security_kms_vaults(region_name, data['kms_vaults'])
+
         except Exception as e:
             self.__print_error("__csv_security_main", e)
 
@@ -5016,6 +5114,41 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_security_cloud_guard", e)
+
+    ##########################################################################
+    # KMS Vaults
+    ##########################################################################
+    def __csv_security_kms_vaults(self, region_name, kms_vaults):
+        try:
+
+            if len(kms_vaults) == 0:
+                return
+
+            if kms_vaults:
+                for ar in kms_vaults:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'name': ar['name'],
+                        'crypto_endpoint': ar['crypto_endpoint'],
+                        'management_endpoint': ar['management_endpoint'],
+                        'vault_type': ar['vault_type'],
+                        'key_count': ar['key_count'],
+                        'key_version_count': ar['key_version_count'],
+                        'software_key_count': ar['software_key_count'],
+                        'software_key_version_count': ar['software_key_version_count'],
+                        'time_created': ar['time_created'][0:16],
+                        'lifecycle_state': ar['lifecycle_state'],
+                        'id': ar['id'],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags'])
+                    }
+
+                    self.csv_security_kms_vault.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_security_kms_vaults", e)
 
     ##########################################################################
     # Bastions
@@ -5447,6 +5580,9 @@ class ShowOCICSV(object):
             if 'data_catalog' in data:
                 self.__csv_data_catalog(region_name, data['data_catalog'])
 
+            if 'data_integration' in data:
+                self.__csv_data_integration(region_name, data['data_integration'])
+
         except Exception as e:
             self.__print_error("__csv_data_ai_main", e)
 
@@ -5572,6 +5708,34 @@ class ShowOCICSV(object):
 
         except Exception as e:
             self.__print_error("__csv_data_catalog", e)
+
+    ##########################################################################
+    # Data Integration
+    ##########################################################################
+    def __csv_data_integration(self, region_name, services):
+        try:
+
+            if len(services) == 0:
+                return
+
+            if services:
+                for ar in services:
+
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': ar['compartment_name'],
+                        'name': ar['display_name'],
+                        'description': ar['description'],
+                        'time_created': ar['time_created'][0:16],
+                        'freeform_tags': self.__get_freeform_tags(ar['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(ar['defined_tags']),
+                        'id': ar['id']
+                    }
+
+                    self.csv_data_integration.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_data_integration", e)
 
     ##########################################################################
     # Data Science
