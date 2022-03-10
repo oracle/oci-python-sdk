@@ -141,6 +141,10 @@ class TaskSummaryFromRestTask(TaskSummary):
             The value to assign to the auth_details property of this TaskSummaryFromRestTask.
         :type auth_details: oci.data_integration.models.AuthDetails
 
+        :param auth_config:
+            The value to assign to the auth_config property of this TaskSummaryFromRestTask.
+        :type auth_config: oci.data_integration.models.AuthConfig
+
         :param endpoint:
             The value to assign to the endpoint property of this TaskSummaryFromRestTask.
         :type endpoint: oci.data_integration.models.Expression
@@ -183,6 +187,10 @@ class TaskSummaryFromRestTask(TaskSummary):
             The value to assign to the cancel_rest_call_config property of this TaskSummaryFromRestTask.
         :type cancel_rest_call_config: oci.data_integration.models.CancelRestCallConfig
 
+        :param poll_rest_call_config:
+            The value to assign to the poll_rest_call_config property of this TaskSummaryFromRestTask.
+        :type poll_rest_call_config: oci.data_integration.models.PollRestCallConfig
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -202,6 +210,7 @@ class TaskSummaryFromRestTask(TaskSummary):
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)',
             'auth_details': 'AuthDetails',
+            'auth_config': 'AuthConfig',
             'endpoint': 'Expression',
             'method_type': 'str',
             'headers': 'object',
@@ -210,7 +219,8 @@ class TaskSummaryFromRestTask(TaskSummary):
             'cancel_endpoint': 'Expression',
             'cancel_method_type': 'str',
             'execute_rest_call_config': 'ExecuteRestCallConfig',
-            'cancel_rest_call_config': 'CancelRestCallConfig'
+            'cancel_rest_call_config': 'CancelRestCallConfig',
+            'poll_rest_call_config': 'PollRestCallConfig'
         }
 
         self.attribute_map = {
@@ -231,6 +241,7 @@ class TaskSummaryFromRestTask(TaskSummary):
             'metadata': 'metadata',
             'key_map': 'keyMap',
             'auth_details': 'authDetails',
+            'auth_config': 'authConfig',
             'endpoint': 'endpoint',
             'method_type': 'methodType',
             'headers': 'headers',
@@ -239,7 +250,8 @@ class TaskSummaryFromRestTask(TaskSummary):
             'cancel_endpoint': 'cancelEndpoint',
             'cancel_method_type': 'cancelMethodType',
             'execute_rest_call_config': 'executeRestCallConfig',
-            'cancel_rest_call_config': 'cancelRestCallConfig'
+            'cancel_rest_call_config': 'cancelRestCallConfig',
+            'poll_rest_call_config': 'pollRestCallConfig'
         }
 
         self._model_type = None
@@ -259,6 +271,7 @@ class TaskSummaryFromRestTask(TaskSummary):
         self._metadata = None
         self._key_map = None
         self._auth_details = None
+        self._auth_config = None
         self._endpoint = None
         self._method_type = None
         self._headers = None
@@ -268,6 +281,7 @@ class TaskSummaryFromRestTask(TaskSummary):
         self._cancel_method_type = None
         self._execute_rest_call_config = None
         self._cancel_rest_call_config = None
+        self._poll_rest_call_config = None
         self._model_type = 'REST_TASK'
 
     @property
@@ -289,6 +303,26 @@ class TaskSummaryFromRestTask(TaskSummary):
         :type: oci.data_integration.models.AuthDetails
         """
         self._auth_details = auth_details
+
+    @property
+    def auth_config(self):
+        """
+        Gets the auth_config of this TaskSummaryFromRestTask.
+
+        :return: The auth_config of this TaskSummaryFromRestTask.
+        :rtype: oci.data_integration.models.AuthConfig
+        """
+        return self._auth_config
+
+    @auth_config.setter
+    def auth_config(self, auth_config):
+        """
+        Sets the auth_config of this TaskSummaryFromRestTask.
+
+        :param auth_config: The auth_config of this TaskSummaryFromRestTask.
+        :type: oci.data_integration.models.AuthConfig
+        """
+        self._auth_config = auth_config
 
     @property
     def endpoint(self):
@@ -503,6 +537,26 @@ class TaskSummaryFromRestTask(TaskSummary):
         :type: oci.data_integration.models.CancelRestCallConfig
         """
         self._cancel_rest_call_config = cancel_rest_call_config
+
+    @property
+    def poll_rest_call_config(self):
+        """
+        Gets the poll_rest_call_config of this TaskSummaryFromRestTask.
+
+        :return: The poll_rest_call_config of this TaskSummaryFromRestTask.
+        :rtype: oci.data_integration.models.PollRestCallConfig
+        """
+        return self._poll_rest_call_config
+
+    @poll_rest_call_config.setter
+    def poll_rest_call_config(self, poll_rest_call_config):
+        """
+        Sets the poll_rest_call_config of this TaskSummaryFromRestTask.
+
+        :param poll_rest_call_config: The poll_rest_call_config of this TaskSummaryFromRestTask.
+        :type: oci.data_integration.models.PollRestCallConfig
+        """
+        self._poll_rest_call_config = poll_rest_call_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

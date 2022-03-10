@@ -545,8 +545,7 @@ class EsxiHostSummary(object):
     def failed_esxi_host_id(self):
         """
         Gets the failed_esxi_host_id of this EsxiHostSummary.
-        The `OCID`__ of the esxi host that
-        is failed.
+        The `OCID`__ of the ESXi host that failed.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -560,8 +559,7 @@ class EsxiHostSummary(object):
     def failed_esxi_host_id(self, failed_esxi_host_id):
         """
         Sets the failed_esxi_host_id of this EsxiHostSummary.
-        The `OCID`__ of the esxi host that
-        is failed.
+        The `OCID`__ of the ESXi host that failed.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -575,8 +573,8 @@ class EsxiHostSummary(object):
     def replacement_esxi_host_id(self):
         """
         Gets the replacement_esxi_host_id of this EsxiHostSummary.
-        The `OCID`__ of the esxi host that
-        is newly created to replace the failed node.
+        The `OCID`__ of the ESXi host that
+        is newly created to replace the failed host.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -590,8 +588,8 @@ class EsxiHostSummary(object):
     def replacement_esxi_host_id(self, replacement_esxi_host_id):
         """
         Sets the replacement_esxi_host_id of this EsxiHostSummary.
-        The `OCID`__ of the esxi host that
-        is newly created to replace the failed node.
+        The `OCID`__ of the ESXi host that
+        is newly created to replace the failed host.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

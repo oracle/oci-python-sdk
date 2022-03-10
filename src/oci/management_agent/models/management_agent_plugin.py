@@ -13,6 +13,18 @@ class ManagementAgentPlugin(object):
     Summary of the ManagementAgentPlugin.
     """
 
+    #: A constant which can be used with the supported_platform_types property of a ManagementAgentPlugin.
+    #: This constant has a value of "LINUX"
+    SUPPORTED_PLATFORM_TYPES_LINUX = "LINUX"
+
+    #: A constant which can be used with the supported_platform_types property of a ManagementAgentPlugin.
+    #: This constant has a value of "WINDOWS"
+    SUPPORTED_PLATFORM_TYPES_WINDOWS = "WINDOWS"
+
+    #: A constant which can be used with the supported_platform_types property of a ManagementAgentPlugin.
+    #: This constant has a value of "SOLARIS"
+    SUPPORTED_PLATFORM_TYPES_SOLARIS = "SOLARIS"
+
     #: A constant which can be used with the lifecycle_state property of a ManagementAgentPlugin.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -64,7 +76,8 @@ class ManagementAgentPlugin(object):
 
         :param supported_platform_types:
             The value to assign to the supported_platform_types property of this ManagementAgentPlugin.
-        :type supported_platform_types: list[oci.management_agent.models.PlatformTypes]
+            Allowed values for items in this list are: "LINUX", "WINDOWS", "SOLARIS"
+        :type supported_platform_types: list[str]
 
         :param display_name:
             The value to assign to the display_name property of this ManagementAgentPlugin.
@@ -88,7 +101,7 @@ class ManagementAgentPlugin(object):
             'id': 'str',
             'name': 'str',
             'version': 'int',
-            'supported_platform_types': 'list[PlatformTypes]',
+            'supported_platform_types': 'list[str]',
             'display_name': 'str',
             'description': 'str',
             'is_console_deployable': 'bool',
@@ -193,9 +206,11 @@ class ManagementAgentPlugin(object):
         Gets the supported_platform_types of this ManagementAgentPlugin.
         Supported Platform Types
 
+        Allowed values for items in this list are: "LINUX", "WINDOWS", "SOLARIS"
+
 
         :return: The supported_platform_types of this ManagementAgentPlugin.
-        :rtype: list[oci.management_agent.models.PlatformTypes]
+        :rtype: list[str]
         """
         return self._supported_platform_types
 
@@ -207,8 +222,17 @@ class ManagementAgentPlugin(object):
 
 
         :param supported_platform_types: The supported_platform_types of this ManagementAgentPlugin.
-        :type: list[oci.management_agent.models.PlatformTypes]
+        :type: list[str]
         """
+        allowed_values = ["LINUX", "WINDOWS", "SOLARIS"]
+
+        if supported_platform_types and supported_platform_types is not NONE_SENTINEL:
+            for value in supported_platform_types:
+                if not value_allowed_none_or_none_sentinel(value, allowed_values):
+                    raise ValueError(
+                        "Invalid value for `supported_platform_types`, must be None or one of {0}"
+                        .format(allowed_values)
+                    )
         self._supported_platform_types = supported_platform_types
 
     @property

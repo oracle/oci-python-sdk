@@ -21,6 +21,7 @@ Data Integration
     oci.data_integration.models.AbstractDataOperationConfig
     oci.data_integration.models.AbstractField
     oci.data_integration.models.AbstractFormatAttribute
+    oci.data_integration.models.AbstractFormattedText
     oci.data_integration.models.AbstractFrequencyDetails
     oci.data_integration.models.AbstractReadAttribute
     oci.data_integration.models.AbstractWriteAttribute
@@ -30,12 +31,14 @@ Data Integration
     oci.data_integration.models.ApplicationDetails
     oci.data_integration.models.ApplicationSummary
     oci.data_integration.models.ApplicationSummaryCollection
+    oci.data_integration.models.AuthConfig
     oci.data_integration.models.AuthDetails
     oci.data_integration.models.AvroFormatAttribute
     oci.data_integration.models.BaseType
     oci.data_integration.models.BiccReadAttributes
     oci.data_integration.models.CancelRestCallConfig
     oci.data_integration.models.ChangeCompartmentDetails
+    oci.data_integration.models.ChangeDisApplicationCompartmentDetails
     oci.data_integration.models.ChildReference
     oci.data_integration.models.ChildReferenceDetail
     oci.data_integration.models.CompositeFieldMap
@@ -107,6 +110,7 @@ Data Integration
     oci.data_integration.models.CreateDataAssetFromOracle
     oci.data_integration.models.CreateDataFlowDetails
     oci.data_integration.models.CreateDataFlowValidationDetails
+    oci.data_integration.models.CreateDisApplicationDetails
     oci.data_integration.models.CreateEntityShapeDetails
     oci.data_integration.models.CreateEntityShapeFromFile
     oci.data_integration.models.CreateEntityShapeFromSQL
@@ -194,6 +198,9 @@ Data Integration
     oci.data_integration.models.DerivedType
     oci.data_integration.models.DirectFieldMap
     oci.data_integration.models.DirectNamedFieldMap
+    oci.data_integration.models.DisApplication
+    oci.data_integration.models.DisApplicationSummary
+    oci.data_integration.models.DisApplicationSummaryCollection
     oci.data_integration.models.Distinct
     oci.data_integration.models.DynamicInputField
     oci.data_integration.models.DynamicProxyField
@@ -240,6 +247,7 @@ Data Integration
     oci.data_integration.models.Join
     oci.data_integration.models.Joiner
     oci.data_integration.models.JsonFormatAttribute
+    oci.data_integration.models.JsonText
     oci.data_integration.models.Key
     oci.data_integration.models.KeyAttribute
     oci.data_integration.models.KeyRange
@@ -288,6 +296,7 @@ Data Integration
     oci.data_integration.models.PipelineValidation
     oci.data_integration.models.PipelineValidationSummary
     oci.data_integration.models.PipelineValidationSummaryCollection
+    oci.data_integration.models.PollRestCallConfig
     oci.data_integration.models.PrimaryKey
     oci.data_integration.models.Project
     oci.data_integration.models.ProjectDetails
@@ -315,6 +324,7 @@ Data Integration
     oci.data_integration.models.RegistryMetadata
     oci.data_integration.models.RenameRule
     oci.data_integration.models.ResourceConfiguration
+    oci.data_integration.models.ResourcePrincipalAuthConfig
     oci.data_integration.models.RestCallConfig
     oci.data_integration.models.RootObject
     oci.data_integration.models.RuleBasedFieldMap
@@ -326,6 +336,7 @@ Data Integration
     oci.data_integration.models.SchemaDriftConfig
     oci.data_integration.models.SchemaSummary
     oci.data_integration.models.SchemaSummaryCollection
+    oci.data_integration.models.ScopeReference
     oci.data_integration.models.Script
     oci.data_integration.models.SecretConfig
     oci.data_integration.models.Select
@@ -373,6 +384,7 @@ Data Integration
     oci.data_integration.models.TypeLibrary
     oci.data_integration.models.TypeListRule
     oci.data_integration.models.TypeSystem
+    oci.data_integration.models.TypedExpression
     oci.data_integration.models.TypedNamePatternRule
     oci.data_integration.models.TypedObject
     oci.data_integration.models.UIProperties
@@ -399,6 +411,7 @@ Data Integration
     oci.data_integration.models.UpdateDataAssetFromObjectStorage
     oci.data_integration.models.UpdateDataAssetFromOracle
     oci.data_integration.models.UpdateDataFlowDetails
+    oci.data_integration.models.UpdateDisApplicationDetails
     oci.data_integration.models.UpdateExternalPublicationDetails
     oci.data_integration.models.UpdateFolderDetails
     oci.data_integration.models.UpdateFunctionLibraryDetails

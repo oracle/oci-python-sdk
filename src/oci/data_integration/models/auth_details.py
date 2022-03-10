@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AuthDetails(object):
     """
-    Authentication type to be used for Generic REST invocation.
+    Authentication type to be used for Generic REST invocation. This is deprecated.
     """
 
     #: A constant which can be used with the model_type property of a AuthDetails.

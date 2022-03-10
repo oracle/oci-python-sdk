@@ -332,6 +332,10 @@ class AutonomousDatabase(object):
             The value to assign to the data_storage_size_in_tbs property of this AutonomousDatabase.
         :type data_storage_size_in_tbs: int
 
+        :param memory_per_oracle_compute_unit_in_gbs:
+            The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this AutonomousDatabase.
+        :type memory_per_oracle_compute_unit_in_gbs: int
+
         :param data_storage_size_in_gbs:
             The value to assign to the data_storage_size_in_gbs property of this AutonomousDatabase.
         :type data_storage_size_in_gbs: int
@@ -634,6 +638,7 @@ class AutonomousDatabase(object):
             'cpu_core_count': 'int',
             'ocpu_count': 'float',
             'data_storage_size_in_tbs': 'int',
+            'memory_per_oracle_compute_unit_in_gbs': 'int',
             'data_storage_size_in_gbs': 'int',
             'infrastructure_type': 'str',
             'is_dedicated': 'bool',
@@ -719,6 +724,7 @@ class AutonomousDatabase(object):
             'cpu_core_count': 'cpuCoreCount',
             'ocpu_count': 'ocpuCount',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
+            'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
             'infrastructure_type': 'infrastructureType',
             'is_dedicated': 'isDedicated',
@@ -803,6 +809,7 @@ class AutonomousDatabase(object):
         self._cpu_core_count = None
         self._ocpu_count = None
         self._data_storage_size_in_tbs = None
+        self._memory_per_oracle_compute_unit_in_gbs = None
         self._data_storage_size_in_gbs = None
         self._infrastructure_type = None
         self._is_dedicated = None
@@ -1349,6 +1356,30 @@ class AutonomousDatabase(object):
         :type: int
         """
         self._data_storage_size_in_tbs = data_storage_size_in_tbs
+
+    @property
+    def memory_per_oracle_compute_unit_in_gbs(self):
+        """
+        Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabase.
+        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+
+
+        :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabase.
+        :rtype: int
+        """
+        return self._memory_per_oracle_compute_unit_in_gbs
+
+    @memory_per_oracle_compute_unit_in_gbs.setter
+    def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
+        """
+        Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabase.
+        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+
+
+        :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousDatabase.
+        :type: int
+        """
+        self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
 
     @property
     def data_storage_size_in_gbs(self):

@@ -70,6 +70,10 @@ class MaintenanceRun(object):
     TARGET_RESOURCE_TYPE_EXACC_INFRASTRUCTURE = "EXACC_INFRASTRUCTURE"
 
     #: A constant which can be used with the target_resource_type property of a MaintenanceRun.
+    #: This constant has a value of "AUTONOMOUS_VM_CLUSTER"
+    TARGET_RESOURCE_TYPE_AUTONOMOUS_VM_CLUSTER = "AUTONOMOUS_VM_CLUSTER"
+
+    #: A constant which can be used with the target_resource_type property of a MaintenanceRun.
     #: This constant has a value of "AUTONOMOUS_DATABASE"
     TARGET_RESOURCE_TYPE_AUTONOMOUS_DATABASE = "AUTONOMOUS_DATABASE"
 
@@ -170,7 +174,7 @@ class MaintenanceRun(object):
 
         :param target_resource_type:
             The value to assign to the target_resource_type property of this MaintenanceRun.
-            Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_VM_CLUSTER", "AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type target_resource_type: str
 
@@ -574,7 +578,7 @@ class MaintenanceRun(object):
         Gets the target_resource_type of this MaintenanceRun.
         The type of the target resource on which the maintenance run occurs.
 
-        Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_VM_CLUSTER", "AUTONOMOUS_DATABASE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -593,7 +597,7 @@ class MaintenanceRun(object):
         :param target_resource_type: The target_resource_type of this MaintenanceRun.
         :type: str
         """
-        allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_DATABASE"]
+        allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_VM_CLUSTER", "AUTONOMOUS_DATABASE"]
         if not value_allowed_none_or_none_sentinel(target_resource_type, allowed_values):
             target_resource_type = 'UNKNOWN_ENUM_VALUE'
         self._target_resource_type = target_resource_type

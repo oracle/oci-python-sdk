@@ -34,25 +34,32 @@ class CreateManagementAgentInstallKeyDetails(object):
             The value to assign to the compartment_id property of this CreateManagementAgentInstallKeyDetails.
         :type compartment_id: str
 
+        :param is_unlimited:
+            The value to assign to the is_unlimited property of this CreateManagementAgentInstallKeyDetails.
+        :type is_unlimited: bool
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'allowed_key_install_count': 'int',
             'time_expires': 'datetime',
-            'compartment_id': 'str'
+            'compartment_id': 'str',
+            'is_unlimited': 'bool'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'allowed_key_install_count': 'allowedKeyInstallCount',
             'time_expires': 'timeExpires',
-            'compartment_id': 'compartmentId'
+            'compartment_id': 'compartmentId',
+            'is_unlimited': 'isUnlimited'
         }
 
         self._display_name = None
         self._allowed_key_install_count = None
         self._time_expires = None
         self._compartment_id = None
+        self._is_unlimited = None
 
     @property
     def display_name(self):
@@ -149,6 +156,30 @@ class CreateManagementAgentInstallKeyDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def is_unlimited(self):
+        """
+        Gets the is_unlimited of this CreateManagementAgentInstallKeyDetails.
+        If set to true, the install key has no expiration date or usage limit. Defaults to false
+
+
+        :return: The is_unlimited of this CreateManagementAgentInstallKeyDetails.
+        :rtype: bool
+        """
+        return self._is_unlimited
+
+    @is_unlimited.setter
+    def is_unlimited(self, is_unlimited):
+        """
+        Sets the is_unlimited of this CreateManagementAgentInstallKeyDetails.
+        If set to true, the install key has no expiration date or usage limit. Defaults to false
+
+
+        :param is_unlimited: The is_unlimited of this CreateManagementAgentInstallKeyDetails.
+        :type: bool
+        """
+        self._is_unlimited = is_unlimited
 
     def __repr__(self):
         return formatted_flat_dict(self)

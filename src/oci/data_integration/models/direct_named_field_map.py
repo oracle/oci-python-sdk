@@ -52,6 +52,14 @@ class DirectNamedFieldMap(FieldMap):
             The value to assign to the target_typed_object property of this DirectNamedFieldMap.
         :type target_typed_object: str
 
+        :param source_scope_reference:
+            The value to assign to the source_scope_reference property of this DirectNamedFieldMap.
+        :type source_scope_reference: oci.data_integration.models.ScopeReference
+
+        :param target_scope_reference:
+            The value to assign to the target_scope_reference property of this DirectNamedFieldMap.
+        :type target_scope_reference: oci.data_integration.models.ScopeReference
+
         :param source_field_name:
             The value to assign to the source_field_name property of this DirectNamedFieldMap.
         :type source_field_name: str
@@ -74,6 +82,8 @@ class DirectNamedFieldMap(FieldMap):
             'config_values': 'ConfigValues',
             'source_typed_object': 'str',
             'target_typed_object': 'str',
+            'source_scope_reference': 'ScopeReference',
+            'target_scope_reference': 'ScopeReference',
             'source_field_name': 'str',
             'target_field_name': 'str',
             'object_status': 'int'
@@ -88,6 +98,8 @@ class DirectNamedFieldMap(FieldMap):
             'config_values': 'configValues',
             'source_typed_object': 'sourceTypedObject',
             'target_typed_object': 'targetTypedObject',
+            'source_scope_reference': 'sourceScopeReference',
+            'target_scope_reference': 'targetScopeReference',
             'source_field_name': 'sourceFieldName',
             'target_field_name': 'targetFieldName',
             'object_status': 'objectStatus'
@@ -101,6 +113,8 @@ class DirectNamedFieldMap(FieldMap):
         self._config_values = None
         self._source_typed_object = None
         self._target_typed_object = None
+        self._source_scope_reference = None
+        self._target_scope_reference = None
         self._source_field_name = None
         self._target_field_name = None
         self._object_status = None
@@ -198,7 +212,7 @@ class DirectNamedFieldMap(FieldMap):
     def source_typed_object(self):
         """
         Gets the source_typed_object of this DirectNamedFieldMap.
-        Reference to a typed object.
+        Deprecated - Reference to a typed object.
 
 
         :return: The source_typed_object of this DirectNamedFieldMap.
@@ -210,7 +224,7 @@ class DirectNamedFieldMap(FieldMap):
     def source_typed_object(self, source_typed_object):
         """
         Sets the source_typed_object of this DirectNamedFieldMap.
-        Reference to a typed object.
+        Deprecated - Reference to a typed object.
 
 
         :param source_typed_object: The source_typed_object of this DirectNamedFieldMap.
@@ -222,7 +236,7 @@ class DirectNamedFieldMap(FieldMap):
     def target_typed_object(self):
         """
         Gets the target_typed_object of this DirectNamedFieldMap.
-        Reference to a typed object
+        Deprecated - Reference to a typed object
 
 
         :return: The target_typed_object of this DirectNamedFieldMap.
@@ -234,13 +248,53 @@ class DirectNamedFieldMap(FieldMap):
     def target_typed_object(self, target_typed_object):
         """
         Sets the target_typed_object of this DirectNamedFieldMap.
-        Reference to a typed object
+        Deprecated - Reference to a typed object
 
 
         :param target_typed_object: The target_typed_object of this DirectNamedFieldMap.
         :type: str
         """
         self._target_typed_object = target_typed_object
+
+    @property
+    def source_scope_reference(self):
+        """
+        Gets the source_scope_reference of this DirectNamedFieldMap.
+
+        :return: The source_scope_reference of this DirectNamedFieldMap.
+        :rtype: oci.data_integration.models.ScopeReference
+        """
+        return self._source_scope_reference
+
+    @source_scope_reference.setter
+    def source_scope_reference(self, source_scope_reference):
+        """
+        Sets the source_scope_reference of this DirectNamedFieldMap.
+
+        :param source_scope_reference: The source_scope_reference of this DirectNamedFieldMap.
+        :type: oci.data_integration.models.ScopeReference
+        """
+        self._source_scope_reference = source_scope_reference
+
+    @property
+    def target_scope_reference(self):
+        """
+        Gets the target_scope_reference of this DirectNamedFieldMap.
+
+        :return: The target_scope_reference of this DirectNamedFieldMap.
+        :rtype: oci.data_integration.models.ScopeReference
+        """
+        return self._target_scope_reference
+
+    @target_scope_reference.setter
+    def target_scope_reference(self, target_scope_reference):
+        """
+        Sets the target_scope_reference of this DirectNamedFieldMap.
+
+        :param target_scope_reference: The target_scope_reference of this DirectNamedFieldMap.
+        :type: oci.data_integration.models.ScopeReference
+        """
+        self._target_scope_reference = target_scope_reference
 
     @property
     def source_field_name(self):

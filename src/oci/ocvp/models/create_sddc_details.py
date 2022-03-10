@@ -123,6 +123,10 @@ class CreateSddcDetails(object):
             The value to assign to the provisioning_vlan_id property of this CreateSddcDetails.
         :type provisioning_vlan_id: str
 
+        :param is_shielded_instance_enabled:
+            The value to assign to the is_shielded_instance_enabled property of this CreateSddcDetails.
+        :type is_shielded_instance_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateSddcDetails.
         :type freeform_tags: dict(str, str)
@@ -155,6 +159,7 @@ class CreateSddcDetails(object):
             'nsx_edge_uplink2_vlan_id': 'str',
             'replication_vlan_id': 'str',
             'provisioning_vlan_id': 'str',
+            'is_shielded_instance_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -182,6 +187,7 @@ class CreateSddcDetails(object):
             'nsx_edge_uplink2_vlan_id': 'nsxEdgeUplink2VlanId',
             'replication_vlan_id': 'replicationVlanId',
             'provisioning_vlan_id': 'provisioningVlanId',
+            'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -208,6 +214,7 @@ class CreateSddcDetails(object):
         self._nsx_edge_uplink2_vlan_id = None
         self._replication_vlan_id = None
         self._provisioning_vlan_id = None
+        self._is_shielded_instance_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -856,6 +863,30 @@ class CreateSddcDetails(object):
         :type: str
         """
         self._provisioning_vlan_id = provisioning_vlan_id
+
+    @property
+    def is_shielded_instance_enabled(self):
+        """
+        Gets the is_shielded_instance_enabled of this CreateSddcDetails.
+        Indicates whether shielded instance is enabled for this SDDC.
+
+
+        :return: The is_shielded_instance_enabled of this CreateSddcDetails.
+        :rtype: bool
+        """
+        return self._is_shielded_instance_enabled
+
+    @is_shielded_instance_enabled.setter
+    def is_shielded_instance_enabled(self, is_shielded_instance_enabled):
+        """
+        Sets the is_shielded_instance_enabled of this CreateSddcDetails.
+        Indicates whether shielded instance is enabled for this SDDC.
+
+
+        :param is_shielded_instance_enabled: The is_shielded_instance_enabled of this CreateSddcDetails.
+        :type: bool
+        """
+        self._is_shielded_instance_enabled = is_shielded_instance_enabled
 
     @property
     def freeform_tags(self):
