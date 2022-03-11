@@ -2120,8 +2120,7 @@ class ShowOCIData(object):
                         'open_mode': pdb['open_mode'],
                         'is_restricted': pdb['is_restricted'],
                         'defined_tags': pdb['defined_tags'],
-                        'freeform_tags': pdb['freeform_tags']
-                     })
+                        'freeform_tags': pdb['freeform_tags']})
             return data
 
         except Exception as e:
