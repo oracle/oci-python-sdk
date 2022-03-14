@@ -4,12 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.60.1 - TBD
+2.60.1 - 2022-03-15
 ====================
 
 Added
 -----
-* TBD
+* Support for Ubuntu platforms and unlimited installation keys in the Management Agent Cloud service
+* Support for shielded instances in the VMWare Solution service
+* Support for application resources in the Data Integration service
+* Support for multi-AVM on Exadata Cloud at Customer infrastructure in the Database service
+* Support for heterogeneous (VM and AVM) clusters on Exadata Cloud at Customer infrastructure in the Database service
+* Support for custom maintenance schedules for AVM clusters on Exadata Cloud at Customer infrastructure in the Database service
+* Support for listing vulnerabilities, vulnerability-impacted containers, and vulnerability-impacted hosts in the Vulnerability Scanning service
+* Support for specifying an image count when creating or updating container scan recipes in the Vulnerability Scanning service
 
 ====================
 2.60.0 - 2022-03-08
