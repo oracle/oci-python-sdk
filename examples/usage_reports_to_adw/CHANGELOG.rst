@@ -5,6 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+22.02.22 - 22.02.22
+=====================
+* New Marketplace Version
+
+=====================
 21.12.12 - 2021-12-12
 =====================
 * Added option to run report on all Tenants when multi tenants loaded

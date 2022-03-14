@@ -52,25 +52,23 @@ Execute
 ```
 $ python3 tag_resources_in_tenancy.py --help
 
-usage: tag_resources_in_tenancy.py [-h] [-t CONFIG_PROFILE] [-p PROXY]
-                                   [-cp COMPARTMENT] [-rg REGION] [-ip] [-dt]
-                                   [-tag TAG]
-                                   [-action {add_defined,add_free,del_defined,del_free,list}]
-                                   [-output {list,json,summary}]
+usage: tag_resources_in_tenancy.py [-h] [-t CONFIG_PROFILE] [-p PROXY] [-cp COMPARTMENT] [-rg REGION] [-ip] [-dt] [-tag TAG]
+                                   [-tagseperator TAGSEPERATOR] [-action {add_defined,add_free,del_defined,del_free,list}]
+                                   [-output {list,json,summary}] [-force]
 
 optional arguments:
-  -h, --help            show this help message and exit
-  -t CONFIG_PROFILE     Config file section to use (tenancy profile)
-  -p PROXY              Set Proxy (i.e. www-proxy-server.com:80)
-  -cp COMPARTMENT       Filter by Compartment Name or Id
-  -rg REGION            Filter by Region Name
-  -ip                   Use Instance Principals for Authentication
-  -dt                   Use Delegation Token for Authentication
-  -tag TAG              Tag in format - namespace.key=value or key=value
-  -action {add_defined,add_free,del_defined,del_free,list}
-                        Action Type
-  -output {list,json,summary}
-                        Output type, default=summary
+  -h, --help                                                show this help message and exit
+  -t CONFIG_PROFILE                                         Config file section to use (tenancy profile)
+  -p PROXY                                                  Set Proxy (i.e. www-proxy-server.com:80)
+  -cp COMPARTMENT                                           Filter by Compartment Name or Id
+  -rg REGION                                                Filter by Region Name
+  -ip                                                       Use Instance Principals for Authentication
+  -dt                                                       Use Delegation Token for Authentication
+  -tag TAG                                                  Tags in format - namespace.key=value or key=value with comma seperator for multi tags
+  -tagseperator TAGSEPERATOR                                Tag Seperator for multiple tags, default=,
+  -action {add_defined,add_free,del_defined,del_free,list}  Action Type
+  -output {list,json,summary}                               Output type, default=summary
+  -force                                                    Force execution (do not confirm)
 ```
 
 ## Example Execution for adding defined Tags:
@@ -82,170 +80,114 @@ Loading Compartments...
     Total 1 compartments loaded.
 
 ##########################################################################################
-#                                  Running Tag Conpute                                   #
+#                                 Running Tag Resources                                  #
 ##########################################################################################
-Written By Adi Zohar, Nov 2020
-Starts at 2020-11-16 21:15:20
-Command Line  : -action add_defined -tag BillingNS.Division=TEST -cp TestCompartment -rg us-ashburn-1 
-Tag Namespace : BillingNS
-Tag Key       : Division
-Tag Value     : TEST
-Tenant Name   : test_tenant
-Tenant Id     : ocid1.tenancy.oc1..aaaaaaaaxxxxxxxxxx
-
+Written By Adi Zohar, Feb 2022
+Starts at 2022-02-03 12:33:40
+Command Line  : -cp Test -rg us-ashburn-1 -action add_defined -tag project.desc=description of the project,project.team=Team A
+Tag 1         : project.desc=description of the project
+Tag 2         : project.team=Team A
+Tag Seperator : ,
+Tenant Name   : orasenatdpltdevopsnetw02
+Tenant Id     : ocid1.tenancy.oc1..aaaaaaaaxtkkpxc5qwgpwx7y2wt5pinegyzea4uacnmck7iamsssjvw4s3bq
 
 Reading Tag Namespaces...
-   Found Tag Namespace 'BillingNS', id = ocid1.tagnamespace.oc1..aaaaaaaaxgdcknccy4dsmr7s64iafc6s6rznnc2bvitxxxxxxxxxxxx
-   Found Tag Key 'Division', id = ocid1.tagdefinition.oc1..aaaaaaaaxpbe55t574ezmwrgw5qbbwvkrm2r7k6lo4cxcxxxxxxxxxxxxx
+   Found Tag Namespace 'project', id = ocid1.tagnamespace.oc1..aaaaaaaaofnh6y66knfqxg3ihjd53e2olhotnetsisoxxxxx
+   Found Tag Key 'desc', id = ocid1.tagdefinition.oc1..aaaaaaaakvoslxfyen744cotrkdrv4hrlwrs3rqd3uhr64hmfxxxxxxx
+   Found Tag Namespace 'project', id = ocid1.tagnamespace.oc1..aaaaaaaaofnh6y66knfqxg3ihjd53e2olhotnetsisoxxxxx
+   Found Tag Key 'team', id = ocid1.tagdefinition.oc1..aaaaaaaauvpkmmewoxifdaih4g2p5u6j7m5xvsujeelsoha4xxxxxxxx
+
+Type yes to execute: yes
 
 Processing Regions...
 
 Region us-ashburn-1...
-    Compartment TestCompartment
-        Instances              - 2     Tag Added = 0         Tag Exist = 2
-        Boot Volumes           - 2     Tag Added = 0         Tag Exist = 2
-        Boot Volumes Backups   - 22    Tag Added = 0         Tag Exist = 22
-        Block Volumes          - 1     Tag Added = 0         Tag Exist = 1
+    Compartment Test
+        Instances              - 1     Tag Added = 0         Tag Updated = 1       Tag Exist = 1
+        Boot Volumes           - 1     Tag Added = 0         Tag Updated = 1       Tag Exist = 1
+        Boot Volumes Backups   - 7     Tag Added = 0         Tag Updated = 7       Tag Exist = 7
+        Block Volumes          - (-)
         Block Volumes Backups  - (-)
         Volume Groups          - (-)
         Volume Groups Backup   - (-)
-        Network VCNs           - 2     Tag Added = 0         Tag Exist = 2
-        Network Subnets        - 3     Tag Added = 0         Tag Exist = 3
-        Network CPEs           - (-)
-        Network DHCPs          - 2     Tag Added = 0         Tag Exist = 2
-        Network IGWs           - 1     Tag Added = 0         Tag Exist = 1
-        Network IPSECs         - (-)
-        Network LPGs           - 2     Tag Added = 0         Tag Exist = 2
-        Network NATGWs         - 2     Tag Added = 0         Tag Exist = 2
-        Network NSGs           - 2     Tag Added = 0         Tag Exist = 2
-        Network RPGs           - 1     Tag Added = 0         Tag Exist = 1
-        Network Routes         - 4     Tag Added = 0         Tag Exist = 4
-        Network SLs            - 2     Tag Added = 0         Tag Exist = 2
-        Network SGWs           - 1     Tag Added = 0         Tag Exist = 1
+        Network VCNs           - 4     Tag Added = 0         Tag Updated = 4       Tag Exist = 4
+        Network Subnets        - 6     Tag Added = 0         Tag Updated = 6       Tag Exist = 6
+        Network CPEs           - 1     Tag Added = 0         Tag Updated = 1       Tag Exist = 1
+        Network DHCPs          - 4     Tag Added = 0         Tag Updated = 4       Tag Exist = 4
+        Network IGWs           - 3     Tag Added = 0         Tag Updated = 3       Tag Exist = 3
+        Network IPSECs         - 1     Tag Added = 0         Tag Updated = 1       Tag Exist = 1
+        Network LPGs           - 2     Tag Added = 0         Tag Updated = 2       Tag Exist = 2
+        Network NATGWs         - 2     Tag Added = 0         Tag Updated = 2       Tag Exist = 2
+        Network RPGs           - 1     Tag Added = 0         Tag Updated = 1       Tag Exist = 1
+        Network Routes         - 8     Tag Added = 0         Tag Updated = 8       Tag Exist = 8
+        Network SLs            - 5     Tag Added = 0         Tag Updated = 5       Tag Exist = 5
+        Network SGWs           - 2     Tag Added = 0         Tag Updated = 2       Tag Exist = 2
         Network VCircuit       - (-)
-        Load Balancers         - 1     Tag Added = 0         Tag Exist = 1
-        DB DB Systems          - (-)
-        DB Autonomous          - 1     Tag Added = 0         Tag Exist = 1
-        Object Storage Buckets - 5     Tag Added = 5         Tag Exist = 0
+        Load Balancers         - 2     Tag Added = 0         Tag Updated = 2       Tag Exist = 2
+        DB DB Systems          - 1     Tag Added = 0         Tag Updated = 1       Tag Exist = 1
+        DB Autonomous          - 1     Tag Added = 0         Tag Updated = 1       Tag Exist = 1
+        Object Storage Buckets - 2     Tag Added = 0         Tag Updated = 2       Tag Exist = 2
 
 ##########################################################################################
 #                                     Output as List                                     #
 ##########################################################################################
-us-ashburn-1 | TestCompartment   | Instances              | adiwin               | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Boot Volumes           | adiwin (Boot Volume) | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Boot Volumes           | adiwork (Boot Volume)| Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Block Volumes          | adiwork-100g         | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network VCNs           | vcnspoke             | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network VCNs           | vcn                  | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network Subnets        | privsub              | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network Subnets        | pubsub               | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network IGWs           | igw                  | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network LPGs           | hubtospoke           | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network LPGs           | spoketohub           | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network NATGWs         | nat                  | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network NATGWs         | NATGW                | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network NSGs           | port80only           | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network NSGs           | vcn_nsg              | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network RPGs           | null                 | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network Routes         | route.lpg            | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Network SGWs           | sgw                  | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Load Balancers         | lb                   | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | DB Autonomous          | ADI_USAGE_19C        | Exist   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Object Storage Buckets | AuditBucket          | Added   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Object Storage Buckets | FlowLogs             | Added   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Object Storage Buckets | shared               | Added   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Object Storage Buckets | test_restore         | Added   |  | BillingNS.Division=TEST
-us-ashburn-1 | TestCompartment   | Object Storage Buckets | usage_cost_bucket    | Added   |  | BillingNS.Division=TEST
+us-ashburn-1 | Test             | Instances                | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Boot Volumes             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Boot Volumes Backups     | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Boot Volumes Backups     | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Boot Volumes Backups     | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Boot Volumes Backups     | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Boot Volumes Backups     | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Boot Volumes Backups     | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Boot Volumes Backups     | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network VCNs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network VCNs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network VCNs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network VCNs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Subnets          | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Subnets          | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Subnets          | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Subnets          | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Subnets          | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Subnets          | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network CPEs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network DHCPs            | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network DHCPs            | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network DHCPs            | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network DHCPs            | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network IGWs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network IGWs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network IGWs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network IPSECs           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network LPGs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network LPGs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network NATGWs           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network NATGWs           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network RPGs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Routes           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Routes           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Routes           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Routes           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Routes           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Routes           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Routes           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network Routes           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network SLs              | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network SLs              | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network SLs              | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network SLs              | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network SLs              | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network SGWs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Network SGWs             | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Load Balancers           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Load Balancers           | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | DB DB Systems            | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | DB Autonomous            | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Object Storage Buckets   | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
+us-ashburn-1 | Test             | Object Storage Buckets   | Added: 0     | Updated: 1   | Deleted: 0   | Exist: 1     | ...
 
 ##########################################################################################
-#                            Completed at 2020-11-16 21:15:37                            #
+#                            Completed at 2022-02-03 12:34:21                            #
 ##########################################################################################
-
-```
-## Example Execution for adding freeform tags:
-```
-python3 tag_resources_in_tenancy.py -cp cpTest -rg ashbu -tag "Prog=Test Space" -action add_free
-
-Connecting to Identity Service...
-Loading Compartments...
-    Total 1 compartments loaded.
-
-##########################################################################################
-#                                  Running Tag Conpute                                   #
-##########################################################################################
-Written By Adi Zohar, Nov 2020
-Starts at 2020-11-16 21:34:13
-Command Line  : -cp cpTest -rg ashbu -tag Prog=Test Space -action add_free
-Tag Key       : Prog
-Tag Value     : Test Space
-Tenant Name   : TestTenant
-Tenant Id     : ocid1.tenancy.oc1..aaaaaaaaxtkkpxc5qwgpwx7y2wt5pinegyzea4uacnmck7ixxxxxx
-
-
-Processing Regions...
-
-Region us-ashburn-1...
-    Compartment cpTest
-        Instances              - 2     Tag Added = 2         Tag Exist = 0
-        Boot Volumes           - 2     Tag Added = 2         Tag Exist = 0
-        Boot Volumes Backups   - 22    Tag Added = 22        Tag Exist = 0
-        Block Volumes          - 1     Tag Added = 1         Tag Exist = 0
-        Block Volumes Backups  - (-)
-        Volume Groups          - (-)
-        Volume Groups Backup   - (-)
-        Network VCNs           - 2     Tag Added = 2         Tag Exist = 0
-        Network Subnets        - 3     Tag Added = 3         Tag Exist = 0
-        Network CPEs           - (-)
-        Network DHCPs          - 2     Tag Added = 2         Tag Exist = 0
-        Network IGWs           - 1     Tag Added = 1         Tag Exist = 0
-        Network IPSECs         - (-)
-        Network LPGs           - 2     Tag Added = 2         Tag Exist = 0
-        Network NATGWs         - 2     Tag Added = 2         Tag Exist = 0
-        Network NSGs           - 2     Tag Added = 2         Tag Exist = 0
-        Network RPGs           - 1     Tag Added = 1         Tag Exist = 0
-        Network Routes         - 4     Tag Added = 4         Tag Exist = 0
-        Network SLs            - 2     Tag Added = 2         Tag Exist = 0
-        Network SGWs           - 1     Tag Added = 1         Tag Exist = 0
-        Network VCircuit       - (-)
-        Load Balancers         - 1     Tag Added = 1         Tag Exist = 0
-        DB DB Systems          - (-)
-        DB Autonomous          - 1     Tag Added = 1         Tag Exist = 0
-        Object Storage Buckets - 5     Tag Added = 5         Tag Exist = 0
-
-##########################################################################################
-#                                     Output as List                                     #
-##########################################################################################
-us-ashburn-1 | cpTest    | Instances              | adiwin               | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Instances              | adiwork              | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Boot Volumes           | adiwin (Boot Volume) | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Boot Volumes           | adiwork (Boot Volume)| Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Block Volumes          | adiwork-100g         | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network VCNs           | vcnspoke             | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network VCNs           | vcn                  | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network Subnets        | privsubspoke         | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network Subnets        | privsub              | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network Subnets        | pubsub               | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network IGWs           | igw                  | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network LPGs           | hubtospoke           | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network LPGs           | spoketohub           | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network NATGWs         | nat                  | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network NATGWs         | NATGW                | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network NSGs           | port80only           | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network NSGs           | vcn_nsg              | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network RPGs           | null                 | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network Routes         | route.lpg            | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Network SGWs           | sgw                  | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Load Balancers         | lb                   | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | DB Autonomous          | ADI_USAGE_19C        | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Object Storage Buckets | AuditBucket          | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Object Storage Buckets | FlowLogs             | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Object Storage Buckets | shared               | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Object Storage Buckets | test_restore         | Added   | Prog=Test Space 
-us-ashburn-1 | cpTest    | Object Storage Buckets | usage_cost_bucket    | Added   | Prog=Test Space 
-
-##########################################################################################
-#                            Completed at 2020-11-16 21:34:45                            #
-##########################################################################################
-
 
 ```

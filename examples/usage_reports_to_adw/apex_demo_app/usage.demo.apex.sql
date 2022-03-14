@@ -14,7 +14,7 @@ whenever sqlerror exit sql.sqlcode rollback
 begin
 wwv_flow_api.import_begin (
  p_version_yyyy_mm_dd=>'2021.04.15'
-,p_release=>'21.1.3'
+,p_release=>'21.1.7'
 ,p_default_workspace_id=>9710643564672463
 ,p_default_application_id=>100
 ,p_default_id_offset=>0
@@ -28,8 +28,8 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 -- Application Export:
 --   Application:     100
 --   Name:            OCI Usage and Cost Report
---   Date and Time:   21:25 Saturday December 11, 2021
---   Exported By:     ADIZOHAR
+--   Date and Time:   15:00 Wednesday February 16, 2022
+--   Exported By:     ADI.ZOHAR@ORACLE.COM
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                      9
@@ -69,7 +69,7 @@ prompt APPLICATION 100 - OCI Usage and Cost Report
 --       Reports:
 --       E-Mail:
 --     Supporting Objects:  Excluded
---   Version:         21.1.3
+--   Version:         21.1.7
 --   Instance ID:     9710412995014033
 --
 
@@ -106,7 +106,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 21.12.12'
+,p_flow_version=>'Release 22.2.22'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -126,8 +126,8 @@ wwv_flow_api.create_flow(
 ,p_friendly_url=>'N'
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'OCI Usage and Cost Report'
-,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20211211212358'
+,p_last_updated_by=>'ADI.ZOHAR@ORACLE.COM'
+,p_last_upd_yyyymmddhh24miss=>'20220216145958'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>3
 ,p_ui_type_name => null
@@ -11551,8 +11551,8 @@ wwv_flow_api.create_page(
 ,p_step_title=>'OCI Usage and Cost Report'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
-,p_last_updated_by=>'ADIZOHAR'
-,p_last_upd_yyyymmddhh24miss=>'20211211210018'
+,p_last_updated_by=>'ADI.ZOHAR@ORACLE.COM'
+,p_last_upd_yyyymmddhh24miss=>'20220216145958'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(9856082202688393)
@@ -11595,7 +11595,7 @@ wwv_flow_api.create_page_item(
 '',
 '     htp.p(''<H4>Welcome <FONT COLOR="RED">''||:USER||''</FONT> ...<br><br>''||',
 '     ''Usage and Cost Reports to Autonomous database''||',
-'     ''<br><br>Created by <b>Adi Zohar</b>, Feb 2020-Dec 2021<br><br>''||',
+'     ''<br><br>Created by <b>Adi Zohar</b>, Feb 2020-Feb 2022<br><br>''||',
 '     ''Application github link = <a target=_new href="https://github.com/oracle/oci-python-sdk/tree/master/examples/usage_reports_to_adw">usage_reports_to_adw</a><br><br>''||',
 '     ''Please check as well <a target=_new href="https://github.com/oracle/oci-python-sdk/tree/master/examples/showoci">showoci</a> application<br><br>''||',
 unistr('     ''<H6><b>DISCLAIMER \2013 This is not an official Oracle application<b></H6>'''),

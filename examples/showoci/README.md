@@ -8,7 +8,7 @@ Output can be printer friendly, CSV files or JSON file.
 [cost analysis](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/costanalysisoverview.htm) 
 and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm) features should be used instead.**
 
-**Developed by Adi Zohar, 2018-2021**
+**Developed by Adi Zohar, 2018-2022**
 
 ![](img/screen_xls.png)
 ![](img/screen_scr1.png)
@@ -58,7 +58,8 @@ and [usage reports](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/
 - oci.management_agent.ManagementAgentClient
 - oci.database_management.DbManagementClient
 - oci.bastion.BastionClient
-
+- oci.key_management.KmsVaultClient
+- oci.data_integration.DataIntegrationClient
 
 ## Executing using Cloud Shell:
 ```
@@ -152,9 +153,10 @@ Execute
 ```
 $ python3 showoci.py  
 
-usage: showoci.py [-h] [-a] [-ani] [-an] [-api] [-b] [-c] [-cn] [-d] [-e] [-edge] [-f] [-fun] [-i] [-ic] [-isc] [-l] [-lq] [-m] [-n] [-o] [-paas] [-dataai] [-rm] [-s] [-sec]
-                  [-nobackups] [-so] [-mc] [-nr] [-ip] [-dt] [-t PROFILE] [-p PROXY] [-rg REGION] [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH] [-tenantid TENANTID]
-                  [-cf CONFIG] [-csv CSV] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches] [--version]
+usage: showoci.py [-h] [-a] [-ani] [-an] [-api] [-b] [-c] [-cn] [-d] [-e] [-edge] [-f] [-fun] [-i] [-ic] [-isc] [-l] [-lq] [-m]
+                  [-n] [-o] [-paas] [-dataai] [-rm] [-s] [-sec] [-nobackups] [-so] [-mc] [-nr] [-ip] [-dt] [-t PROFILE] [-p PROXY]
+                  [-rg REGION] [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH] [-tenantid TENANTID] [-cf CONFIG]
+                  [-csv CSV] [-csv_nodate] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches] [--version]
 
 optional arguments:
   -h, --help           show this help message and exit
@@ -175,14 +177,14 @@ optional arguments:
   -isc                 Skip Identity User Credential extract
   -l                   Print Load Balancer
   -lq                  Print Limits and Quotas
-  -m                   Print Monitoring, Notifications and Events
+  -m                   Print Monitoring, Notifications, Events, Agents
   -n                   Print Network
   -o                   Print Object Storage
-  -paas                Print PaaS Platform Services - OIC OAC OCE
-  -dataai              Print - D.Science, D.Catalog, D.Flow, ODA and BDS
+  -paas                Print PaaS Platform Services - OIC OAC OCE OCVS
+  -dataai              Print - D.Science, D.Catalog, D.Flow, ODA, BDS, DI
   -rm                  Print Resource management
   -s                   Print Streams
-  -sec                 Print Security and Logging
+  -sec                 Print Security, Logging, Vaults
   -nobackups           Do not process backups
   -so                  Print Summary Only
   -mc                  exclude ManagedCompartmentForPaaS
@@ -198,6 +200,7 @@ optional arguments:
   -tenantid TENANTID   Override confile file tenancy_id
   -cf CONFIG           Config File (~/.oci/config)
   -csv CSV             Output to CSV files, Input as file header
+  -csv_nodate          Do not add date field to the csv
   -jf JOUTFILE         Output to file (JSON format)
   -js                  Output to screen (JSON format)
   -sjf SJOUTFILE       Output to screen (nice format) and JSON File
