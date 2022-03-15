@@ -18,7 +18,8 @@ missing = Sentinel("Missing")
 
 class ManagementAgentClient(object):
     """
-    API for Management Agent Cloud Service
+    Use the Management Agent API to manage your infrastructure's management agents, including their plugins and install keys.
+    For more information, see [Management Agent](https://docs.cloud.oracle.com/iaas/management-agents/index.html).
     """
 
     def __init__(self, config, **kwargs):
@@ -1285,7 +1286,7 @@ class ManagementAgentClient(object):
             The OCID of the compartment to which a request will be scoped.
 
         :param bool compartment_id_in_subtree: (optional)
-            if set to true then it fetches install key for all compartments where user has access to else only on the compartment specified.
+            if set to true then it fetches resources for all compartments where user has access to else only on the compartment specified.
 
         :param str access_level: (optional)
             Value of this is always \"ACCESSIBLE\" and any other value is not supported.
@@ -1570,7 +1571,8 @@ class ManagementAgentClient(object):
 
     def list_management_agents(self, compartment_id, **kwargs):
         """
-        Returns a list of Management Agent.
+        Returns a list of Management Agents.
+        If no explicit page size limit is specified, it will default to 5000.
 
 
         :param str compartment_id: (required)

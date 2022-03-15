@@ -79,6 +79,7 @@ class TypedObject(object):
         * :class:`~oci.data_integration.models.OutputField`
         * :class:`~oci.data_integration.models.MacroField`
         * :class:`~oci.data_integration.models.DerivedField`
+        * :class:`~oci.data_integration.models.TypedExpression`
         * :class:`~oci.data_integration.models.FlowPort`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -195,6 +196,9 @@ class TypedObject(object):
 
         if type == 'DERIVED_FIELD':
             return 'DerivedField'
+
+        if type == 'TYPED_EXPRESSION':
+            return 'TypedExpression'
 
         if type == 'FLOW_PORT':
             return 'FlowPort'

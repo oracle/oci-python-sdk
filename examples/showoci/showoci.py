@@ -72,18 +72,27 @@
 # - oci.management_agent.ManagementAgentClient
 # - oci.database_management.DbManagementClient
 # - oci.bastion.BastionClient
+# - oci.key_management.KmsVaultClient
+# - oci.data_integration.DataIntegrationClient
 #
 # Modules Not Yet Covered:
-# - oci.secrets.SecretsClient
-# - oci.vault.VaultsClient
 # - oci.blockchain.BlockchainPlatformClient
-# - oci.data_integration.DataIntegrationClient
 # - oci.data_safe.DataSafeClient
 # - oci.usage_api.UsageapiClient
 # - oci.sch.ServiceConnectorClient
 # - oci.os_management.OsManagementClient
 # - oci.log_analytics.LogAnalyticsClient
 # - oci.tenant_manager_control_plane.LinkClient
+# - oci.ai_anomaly_detection.AnomalyDetectionClient
+# - oci.ai_language.AIServiceLanguageClient
+# - oci.ai_vision.AIServiceVisionClient
+# - oci.apm_control_plane.ApmDomainClient
+# - oci.certificates.CertificatesClient
+# - oci.data_labeling_service.DataLabelingManagementClient
+# - oci.data_safe.DataSafeClient
+# - oci.devops.DevopsClient
+# - oci.jms.JavaManagementServiceClient
+# - oci.visual_builder.VbInstanceClient
 
 ##########################################################################
 from __future__ import print_function
@@ -96,7 +105,7 @@ import sys
 import argparse
 import datetime
 
-version = "22.02.22"
+version = "22.03.15"
 
 ##########################################################################
 # check OCI version
@@ -272,7 +281,7 @@ def return_error_message(service_error, service_warning, data_error, output_erro
 # set parser
 ##########################################################################
 def set_parser_arguments():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=80, width=130))
     parser.add_argument('-a', action='store_true', default=False, dest='all', help='Print All Resources')
     parser.add_argument('-ani', action='store_true', default=False, dest='allnoiam', help='Print All Resources but identity')
     parser.add_argument('-an', action='store_true', default=False, dest='announcement', help='Print Announcements')
@@ -294,10 +303,10 @@ def set_parser_arguments():
     parser.add_argument('-n', action='store_true', default=False, dest='network', help='Print Network')
     parser.add_argument('-o', action='store_true', default=False, dest='object', help='Print Object Storage')
     parser.add_argument('-paas', action='store_true', default=False, dest='paas_native', help='Print PaaS Platform Services - OIC OAC OCE OCVS')
-    parser.add_argument('-dataai', action='store_true', default=False, dest='data_ai', help='Print - D.Science, D.Catalog, D.Flow, ODA and BDS')
+    parser.add_argument('-dataai', action='store_true', default=False, dest='data_ai', help='Print - D.Science, D.Catalog, D.Flow, ODA, BDS, DI')
     parser.add_argument('-rm', action='store_true', default=False, dest='orm', help='Print Resource management')
     parser.add_argument('-s', action='store_true', default=False, dest='streams', help='Print Streams')
-    parser.add_argument('-sec', action='store_true', default=False, dest='security', help='Print Security and Logging')
+    parser.add_argument('-sec', action='store_true', default=False, dest='security', help='Print Security, Logging, Vaults')
 
     parser.add_argument('-nobackups', action='store_true', default=False, dest='skip_backups', help='Do not process backups')
     parser.add_argument('-so', action='store_true', default=False, dest='sumonly', help='Print Summary Only')

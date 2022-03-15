@@ -55,6 +55,26 @@ class CreateAutonomousVmClusterDetails(object):
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
         :type license_model: str
 
+        :param total_container_databases:
+            The value to assign to the total_container_databases property of this CreateAutonomousVmClusterDetails.
+        :type total_container_databases: int
+
+        :param cpu_core_count_per_node:
+            The value to assign to the cpu_core_count_per_node property of this CreateAutonomousVmClusterDetails.
+        :type cpu_core_count_per_node: int
+
+        :param memory_per_oracle_compute_unit_in_gbs:
+            The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this CreateAutonomousVmClusterDetails.
+        :type memory_per_oracle_compute_unit_in_gbs: int
+
+        :param autonomous_data_storage_size_in_tbs:
+            The value to assign to the autonomous_data_storage_size_in_tbs property of this CreateAutonomousVmClusterDetails.
+        :type autonomous_data_storage_size_in_tbs: float
+
+        :param maintenance_window_details:
+            The value to assign to the maintenance_window_details property of this CreateAutonomousVmClusterDetails.
+        :type maintenance_window_details: oci.database.models.MaintenanceWindow
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateAutonomousVmClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -72,6 +92,11 @@ class CreateAutonomousVmClusterDetails(object):
             'time_zone': 'str',
             'is_local_backup_enabled': 'bool',
             'license_model': 'str',
+            'total_container_databases': 'int',
+            'cpu_core_count_per_node': 'int',
+            'memory_per_oracle_compute_unit_in_gbs': 'int',
+            'autonomous_data_storage_size_in_tbs': 'float',
+            'maintenance_window_details': 'MaintenanceWindow',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -84,6 +109,11 @@ class CreateAutonomousVmClusterDetails(object):
             'time_zone': 'timeZone',
             'is_local_backup_enabled': 'isLocalBackupEnabled',
             'license_model': 'licenseModel',
+            'total_container_databases': 'totalContainerDatabases',
+            'cpu_core_count_per_node': 'cpuCoreCountPerNode',
+            'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
+            'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
+            'maintenance_window_details': 'maintenanceWindowDetails',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -95,6 +125,11 @@ class CreateAutonomousVmClusterDetails(object):
         self._time_zone = None
         self._is_local_backup_enabled = None
         self._license_model = None
+        self._total_container_databases = None
+        self._cpu_core_count_per_node = None
+        self._memory_per_oracle_compute_unit_in_gbs = None
+        self._autonomous_data_storage_size_in_tbs = None
+        self._maintenance_window_details = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -289,6 +324,122 @@ class CreateAutonomousVmClusterDetails(object):
                 .format(allowed_values)
             )
         self._license_model = license_model
+
+    @property
+    def total_container_databases(self):
+        """
+        Gets the total_container_databases of this CreateAutonomousVmClusterDetails.
+        The total number of Autonomous Container Databases that can be created.
+
+
+        :return: The total_container_databases of this CreateAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._total_container_databases
+
+    @total_container_databases.setter
+    def total_container_databases(self, total_container_databases):
+        """
+        Sets the total_container_databases of this CreateAutonomousVmClusterDetails.
+        The total number of Autonomous Container Databases that can be created.
+
+
+        :param total_container_databases: The total_container_databases of this CreateAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._total_container_databases = total_container_databases
+
+    @property
+    def cpu_core_count_per_node(self):
+        """
+        Gets the cpu_core_count_per_node of this CreateAutonomousVmClusterDetails.
+        The number of OCPU cores to enable per VM cluster node.
+
+
+        :return: The cpu_core_count_per_node of this CreateAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._cpu_core_count_per_node
+
+    @cpu_core_count_per_node.setter
+    def cpu_core_count_per_node(self, cpu_core_count_per_node):
+        """
+        Sets the cpu_core_count_per_node of this CreateAutonomousVmClusterDetails.
+        The number of OCPU cores to enable per VM cluster node.
+
+
+        :param cpu_core_count_per_node: The cpu_core_count_per_node of this CreateAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._cpu_core_count_per_node = cpu_core_count_per_node
+
+    @property
+    def memory_per_oracle_compute_unit_in_gbs(self):
+        """
+        Gets the memory_per_oracle_compute_unit_in_gbs of this CreateAutonomousVmClusterDetails.
+        The amount of memory (in GBs) to be enabled per each OCPU core.
+
+
+        :return: The memory_per_oracle_compute_unit_in_gbs of this CreateAutonomousVmClusterDetails.
+        :rtype: int
+        """
+        return self._memory_per_oracle_compute_unit_in_gbs
+
+    @memory_per_oracle_compute_unit_in_gbs.setter
+    def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
+        """
+        Sets the memory_per_oracle_compute_unit_in_gbs of this CreateAutonomousVmClusterDetails.
+        The amount of memory (in GBs) to be enabled per each OCPU core.
+
+
+        :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this CreateAutonomousVmClusterDetails.
+        :type: int
+        """
+        self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
+
+    @property
+    def autonomous_data_storage_size_in_tbs(self):
+        """
+        Gets the autonomous_data_storage_size_in_tbs of this CreateAutonomousVmClusterDetails.
+        The data disk group size to be allocated for Autonomous Databases, in TBs.
+
+
+        :return: The autonomous_data_storage_size_in_tbs of this CreateAutonomousVmClusterDetails.
+        :rtype: float
+        """
+        return self._autonomous_data_storage_size_in_tbs
+
+    @autonomous_data_storage_size_in_tbs.setter
+    def autonomous_data_storage_size_in_tbs(self, autonomous_data_storage_size_in_tbs):
+        """
+        Sets the autonomous_data_storage_size_in_tbs of this CreateAutonomousVmClusterDetails.
+        The data disk group size to be allocated for Autonomous Databases, in TBs.
+
+
+        :param autonomous_data_storage_size_in_tbs: The autonomous_data_storage_size_in_tbs of this CreateAutonomousVmClusterDetails.
+        :type: float
+        """
+        self._autonomous_data_storage_size_in_tbs = autonomous_data_storage_size_in_tbs
+
+    @property
+    def maintenance_window_details(self):
+        """
+        Gets the maintenance_window_details of this CreateAutonomousVmClusterDetails.
+
+        :return: The maintenance_window_details of this CreateAutonomousVmClusterDetails.
+        :rtype: oci.database.models.MaintenanceWindow
+        """
+        return self._maintenance_window_details
+
+    @maintenance_window_details.setter
+    def maintenance_window_details(self, maintenance_window_details):
+        """
+        Sets the maintenance_window_details of this CreateAutonomousVmClusterDetails.
+
+        :param maintenance_window_details: The maintenance_window_details of this CreateAutonomousVmClusterDetails.
+        :type: oci.database.models.MaintenanceWindow
+        """
+        self._maintenance_window_details = maintenance_window_details
 
     @property
     def freeform_tags(self):

@@ -46,3 +46,4 @@ Management Agent
     oci.management_agent.models.WorkRequestLogEntry
     oci.management_agent.models.WorkRequestResource
     oci.management_agent.models.WorkRequestSummary
+    oci.management_agent.models.WorkSubmissionKey

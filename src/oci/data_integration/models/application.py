@@ -13,6 +13,30 @@ class Application(object):
     The application type contains the audit summary information and the definition of the application.
     """
 
+    #: A constant which can be used with the lifecycle_state property of a Application.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Application.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a Application.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a Application.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a Application.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a Application.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Application object with values from keyword arguments.
@@ -74,6 +98,40 @@ class Application(object):
             The value to assign to the time_patched property of this Application.
         :type time_patched: datetime
 
+        :param id:
+            The value to assign to the id property of this Application.
+        :type id: str
+
+        :param compartment_id:
+            The value to assign to the compartment_id property of this Application.
+        :type compartment_id: str
+
+        :param display_name:
+            The value to assign to the display_name property of this Application.
+        :type display_name: str
+
+        :param time_created:
+            The value to assign to the time_created property of this Application.
+        :type time_created: datetime
+
+        :param time_updated:
+            The value to assign to the time_updated property of this Application.
+        :type time_updated: datetime
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this Application.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this Application.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this Application.
+            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type lifecycle_state: str
+
         :param metadata:
             The value to assign to the metadata property of this Application.
         :type metadata: oci.data_integration.models.ObjectMetadata
@@ -98,6 +156,14 @@ class Application(object):
             'published_object_metadata': 'dict(str, PatchObjectMetadata)',
             'source_application_info': 'SourceApplicationInfo',
             'time_patched': 'datetime',
+            'id': 'str',
+            'compartment_id': 'str',
+            'display_name': 'str',
+            'time_created': 'datetime',
+            'time_updated': 'datetime',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'lifecycle_state': 'str',
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)'
         }
@@ -117,6 +183,14 @@ class Application(object):
             'published_object_metadata': 'publishedObjectMetadata',
             'source_application_info': 'sourceApplicationInfo',
             'time_patched': 'timePatched',
+            'id': 'id',
+            'compartment_id': 'compartmentId',
+            'display_name': 'displayName',
+            'time_created': 'timeCreated',
+            'time_updated': 'timeUpdated',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
+            'lifecycle_state': 'lifecycleState',
             'metadata': 'metadata',
             'key_map': 'keyMap'
         }
@@ -135,6 +209,14 @@ class Application(object):
         self._published_object_metadata = None
         self._source_application_info = None
         self._time_patched = None
+        self._id = None
+        self._compartment_id = None
+        self._display_name = None
+        self._time_created = None
+        self._time_updated = None
+        self._freeform_tags = None
+        self._defined_tags = None
+        self._lifecycle_state = None
         self._metadata = None
         self._key_map = None
 
@@ -465,6 +547,210 @@ class Application(object):
         :type: datetime
         """
         self._time_patched = time_patched
+
+    @property
+    def id(self):
+        """
+        Gets the id of this Application.
+        OCID of the resource that is used to uniquely identify the application
+
+
+        :return: The id of this Application.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """
+        Sets the id of this Application.
+        OCID of the resource that is used to uniquely identify the application
+
+
+        :param id: The id of this Application.
+        :type: str
+        """
+        self._id = id
+
+    @property
+    def compartment_id(self):
+        """
+        Gets the compartment_id of this Application.
+        OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
+
+
+        :return: The compartment_id of this Application.
+        :rtype: str
+        """
+        return self._compartment_id
+
+    @compartment_id.setter
+    def compartment_id(self, compartment_id):
+        """
+        Sets the compartment_id of this Application.
+        OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
+
+
+        :param compartment_id: The compartment_id of this Application.
+        :type: str
+        """
+        self._compartment_id = compartment_id
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this Application.
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+
+
+        :return: The display_name of this Application.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this Application.
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+
+
+        :param display_name: The display_name of this Application.
+        :type: str
+        """
+        self._display_name = display_name
+
+    @property
+    def time_created(self):
+        """
+        Gets the time_created of this Application.
+        The date and time the application was created, in the timestamp format defined by RFC3339.
+
+
+        :return: The time_created of this Application.
+        :rtype: datetime
+        """
+        return self._time_created
+
+    @time_created.setter
+    def time_created(self, time_created):
+        """
+        Sets the time_created of this Application.
+        The date and time the application was created, in the timestamp format defined by RFC3339.
+
+
+        :param time_created: The time_created of this Application.
+        :type: datetime
+        """
+        self._time_created = time_created
+
+    @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this Application.
+        The date and time the application was updated, in the timestamp format defined by RFC3339.
+        example: 2019-08-25T21:10:29.41Z
+
+
+        :return: The time_updated of this Application.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this Application.
+        The date and time the application was updated, in the timestamp format defined by RFC3339.
+        example: 2019-08-25T21:10:29.41Z
+
+
+        :param time_updated: The time_updated of this Application.
+        :type: datetime
+        """
+        self._time_updated = time_updated
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this Application.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :return: The freeform_tags of this Application.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this Application.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        Example: `{\"bar-key\": \"value\"}`
+
+
+        :param freeform_tags: The freeform_tags of this Application.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this Application.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :return: The defined_tags of this Application.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this Application.
+        Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+
+        :param defined_tags: The defined_tags of this Application.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this Application.
+        The current state of the workspace.
+
+        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The lifecycle_state of this Application.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this Application.
+        The current state of the workspace.
+
+
+        :param lifecycle_state: The lifecycle_state of this Application.
+        :type: str
+        """
+        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            lifecycle_state = 'UNKNOWN_ENUM_VALUE'
+        self._lifecycle_state = lifecycle_state
 
     @property
     def metadata(self):

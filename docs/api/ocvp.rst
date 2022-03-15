@@ -33,6 +33,8 @@ Ocvp
     oci.ocvp.models.Sddc
     oci.ocvp.models.SddcCollection
     oci.ocvp.models.SddcSummary
+    oci.ocvp.models.SupportedHostShapeCollection
+    oci.ocvp.models.SupportedHostShapeSummary
     oci.ocvp.models.SupportedSkuSummary
     oci.ocvp.models.SupportedSkuSummaryCollection
     oci.ocvp.models.SupportedVmwareSoftwareVersionCollection

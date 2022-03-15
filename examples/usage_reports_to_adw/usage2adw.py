@@ -73,7 +73,7 @@ import requests
 import time
 
 
-version = "21.12.12"
+version = "22.02.22"
 usage_report_namespace = "bling"
 work_report_dir = os.curdir + "/work_report_dir"
 

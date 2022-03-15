@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 
 =====================
+22.03.15 - 22.03.15
+=====================
+* Added KMS Vaults
+* Added Data Integration Workspaces
+* Added gi_version_date and system_version_date based on gi and system versions
+
+=====================
+22.03.08 - 22.03.08
+=====================
+* Added CSV for Block Volume Backups and Boot Volumes Backups
+* Added Volume Group Backup
+* Added Database PDBs
+
+=====================
 22.02.22 - 22.02.22
 =====================
 * Added Support for ExaCS and ExaCC VMclusters in different compartment

@@ -15,6 +15,8 @@ from .hcx_license_summary import HcxLicenseSummary
 from .sddc import Sddc
 from .sddc_collection import SddcCollection
 from .sddc_summary import SddcSummary
+from .supported_host_shape_collection import SupportedHostShapeCollection
+from .supported_host_shape_summary import SupportedHostShapeSummary
 from .supported_sku_summary import SupportedSkuSummary
 from .supported_sku_summary_collection import SupportedSkuSummaryCollection
 from .supported_vmware_software_version_collection import SupportedVmwareSoftwareVersionCollection
@@ -42,6 +44,8 @@ ocvp_type_mapping = {
     "Sddc": Sddc,
     "SddcCollection": SddcCollection,
     "SddcSummary": SddcSummary,
+    "SupportedHostShapeCollection": SupportedHostShapeCollection,
+    "SupportedHostShapeSummary": SupportedHostShapeSummary,
     "SupportedSkuSummary": SupportedSkuSummary,
     "SupportedSkuSummaryCollection": SupportedSkuSummaryCollection,
     "SupportedVmwareSoftwareVersionCollection": SupportedVmwareSoftwareVersionCollection,
