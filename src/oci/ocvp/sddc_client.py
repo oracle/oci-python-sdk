@@ -887,6 +887,127 @@ class SddcClient(object):
                 header_params=header_params,
                 response_type="SddcCollection")
 
+    def list_supported_host_shapes(self, compartment_id, **kwargs):
+        """
+        Lists supported compute shapes for ESXi hosts.
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to return in a paginated
+            \"List\" call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from the previous \"List\"
+            call. For important details about how pagination works, see
+            `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine
+
+        :param str opc_request_id: (optional)
+            Unique identifier for the request. If you need to contact Oracle about a particular
+            request, please provide the request ID.
+
+        :param str name: (optional)
+            A filter to return only resources that match the given name exactly.
+
+        :param str sddc_type: (optional)
+            A filter to return only resources that match the given SDDC type exactly.
+
+            Allowed values are: "PRODUCTION", "NON_PRODUCTION"
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.ocvp.models.SupportedHostShapeCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/ocvp/list_supported_host_shapes.py.html>`__ to see an example of how to use list_supported_host_shapes API.
+        """
+        resource_path = "/supportedHostShapes"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "limit",
+            "page",
+            "opc_request_id",
+            "name",
+            "sddc_type"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_supported_host_shapes got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'sddc_type' in kwargs:
+            sddc_type_allowed_values = ["PRODUCTION", "NON_PRODUCTION"]
+            if kwargs['sddc_type'] not in sddc_type_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sddc_type`, must be one of {0}".format(sddc_type_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "name": kwargs.get("name", missing),
+            "sddcType": kwargs.get("sddc_type", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SupportedHostShapeCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SupportedHostShapeCollection")
+
     def list_supported_skus(self, compartment_id, **kwargs):
         """
         Lists supported SKUs.

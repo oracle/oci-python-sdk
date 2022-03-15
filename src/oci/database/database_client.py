@@ -18898,7 +18898,7 @@ class DatabaseClient(object):
         :param str target_resource_type: (optional)
             The type of the target resource.
 
-            Allowed values are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_DATABASE"
+            Allowed values are: "AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_VM_CLUSTER", "AUTONOMOUS_DATABASE"
 
         :param str maintenance_type: (optional)
             The maintenance type.
@@ -18972,7 +18972,7 @@ class DatabaseClient(object):
                 "list_maintenance_runs got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'target_resource_type' in kwargs:
-            target_resource_type_allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_DATABASE"]
+            target_resource_type_allowed_values = ["AUTONOMOUS_EXADATA_INFRASTRUCTURE", "AUTONOMOUS_CONTAINER_DATABASE", "EXADATA_DB_SYSTEM", "CLOUD_EXADATA_INFRASTRUCTURE", "EXACC_INFRASTRUCTURE", "AUTONOMOUS_VM_CLUSTER", "AUTONOMOUS_DATABASE"]
             if kwargs['target_resource_type'] not in target_resource_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `target_resource_type`, must be one of {0}".format(target_resource_type_allowed_values)

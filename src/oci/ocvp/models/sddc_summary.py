@@ -96,6 +96,10 @@ class SddcSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param is_shielded_instance_enabled:
+            The value to assign to the is_shielded_instance_enabled property of this SddcSummary.
+        :type is_shielded_instance_enabled: bool
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SddcSummary.
         :type freeform_tags: dict(str, str)
@@ -119,6 +123,7 @@ class SddcSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'is_shielded_instance_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -137,6 +142,7 @@ class SddcSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -154,6 +160,7 @@ class SddcSummary(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._is_shielded_instance_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -540,6 +547,30 @@ class SddcSummary(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def is_shielded_instance_enabled(self):
+        """
+        Gets the is_shielded_instance_enabled of this SddcSummary.
+        Indicates whether shielded instance is enabled at the SDDC level.
+
+
+        :return: The is_shielded_instance_enabled of this SddcSummary.
+        :rtype: bool
+        """
+        return self._is_shielded_instance_enabled
+
+    @is_shielded_instance_enabled.setter
+    def is_shielded_instance_enabled(self, is_shielded_instance_enabled):
+        """
+        Sets the is_shielded_instance_enabled of this SddcSummary.
+        Indicates whether shielded instance is enabled at the SDDC level.
+
+
+        :param is_shielded_instance_enabled: The is_shielded_instance_enabled of this SddcSummary.
+        :type: bool
+        """
+        self._is_shielded_instance_enabled = is_shielded_instance_enabled
 
     @property
     def freeform_tags(self):

@@ -240,6 +240,10 @@ class AutonomousContainerDatabase(object):
             The value to assign to the key_store_wallet_name property of this AutonomousContainerDatabase.
         :type key_store_wallet_name: str
 
+        :param memory_per_oracle_compute_unit_in_gbs:
+            The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this AutonomousContainerDatabase.
+        :type memory_per_oracle_compute_unit_in_gbs: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -271,7 +275,8 @@ class AutonomousContainerDatabase(object):
             'db_version': 'str',
             'backup_config': 'AutonomousContainerDatabaseBackupConfig',
             'key_store_id': 'str',
-            'key_store_wallet_name': 'str'
+            'key_store_wallet_name': 'str',
+            'memory_per_oracle_compute_unit_in_gbs': 'int'
         }
 
         self.attribute_map = {
@@ -304,7 +309,8 @@ class AutonomousContainerDatabase(object):
             'db_version': 'dbVersion',
             'backup_config': 'backupConfig',
             'key_store_id': 'keyStoreId',
-            'key_store_wallet_name': 'keyStoreWalletName'
+            'key_store_wallet_name': 'keyStoreWalletName',
+            'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs'
         }
 
         self._id = None
@@ -337,6 +343,7 @@ class AutonomousContainerDatabase(object):
         self._backup_config = None
         self._key_store_id = None
         self._key_store_wallet_name = None
+        self._memory_per_oracle_compute_unit_in_gbs = None
 
     @property
     def id(self):
@@ -1123,6 +1130,30 @@ class AutonomousContainerDatabase(object):
         :type: str
         """
         self._key_store_wallet_name = key_store_wallet_name
+
+    @property
+    def memory_per_oracle_compute_unit_in_gbs(self):
+        """
+        Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabase.
+        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+
+
+        :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabase.
+        :rtype: int
+        """
+        return self._memory_per_oracle_compute_unit_in_gbs
+
+    @memory_per_oracle_compute_unit_in_gbs.setter
+    def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
+        """
+        Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabase.
+        The amount of memory (in GBs) enabled per each OCPU core in Autonomous VM Cluster.
+
+
+        :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousContainerDatabase.
+        :type: int
+        """
+        self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -32,6 +32,7 @@ from .work_request_error import WorkRequestError
 from .work_request_log_entry import WorkRequestLogEntry
 from .work_request_resource import WorkRequestResource
 from .work_request_summary import WorkRequestSummary
+from .work_submission_key import WorkSubmissionKey
 
 # Maps type names to classes for management_agent services.
 management_agent_type_mapping = {
@@ -62,5 +63,6 @@ management_agent_type_mapping = {
     "WorkRequestError": WorkRequestError,
     "WorkRequestLogEntry": WorkRequestLogEntry,
     "WorkRequestResource": WorkRequestResource,
-    "WorkRequestSummary": WorkRequestSummary
+    "WorkRequestSummary": WorkRequestSummary,
+    "WorkSubmissionKey": WorkSubmissionKey
 }

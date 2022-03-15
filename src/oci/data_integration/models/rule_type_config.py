@@ -41,6 +41,10 @@ class RuleTypeConfig(DynamicTypeHandler):
             The value to assign to the scope property of this RuleTypeConfig.
         :type scope: object
 
+        :param scope_reference:
+            The value to assign to the scope_reference property of this RuleTypeConfig.
+        :type scope_reference: oci.data_integration.models.ScopeReference
+
         :param is_order_by_rule:
             The value to assign to the is_order_by_rule property of this RuleTypeConfig.
         :type is_order_by_rule: bool
@@ -64,6 +68,7 @@ class RuleTypeConfig(DynamicTypeHandler):
             'model_version': 'str',
             'parent_ref': 'ParentReference',
             'scope': 'object',
+            'scope_reference': 'ScopeReference',
             'is_order_by_rule': 'bool',
             'projection_rules': 'list[ProjectionRule]',
             'config_values': 'ConfigValues',
@@ -76,6 +81,7 @@ class RuleTypeConfig(DynamicTypeHandler):
             'model_version': 'modelVersion',
             'parent_ref': 'parentRef',
             'scope': 'scope',
+            'scope_reference': 'scopeReference',
             'is_order_by_rule': 'isOrderByRule',
             'projection_rules': 'projectionRules',
             'config_values': 'configValues',
@@ -87,6 +93,7 @@ class RuleTypeConfig(DynamicTypeHandler):
         self._model_version = None
         self._parent_ref = None
         self._scope = None
+        self._scope_reference = None
         self._is_order_by_rule = None
         self._projection_rules = None
         self._config_values = None
@@ -165,7 +172,7 @@ class RuleTypeConfig(DynamicTypeHandler):
     def scope(self):
         """
         Gets the scope of this RuleTypeConfig.
-        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a `TypedObject` or a full `TypedObject` definition.
+        Deprecated - Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a `TypedObject` or a full `TypedObject` definition.
 
 
         :return: The scope of this RuleTypeConfig.
@@ -177,13 +184,33 @@ class RuleTypeConfig(DynamicTypeHandler):
     def scope(self, scope):
         """
         Sets the scope of this RuleTypeConfig.
-        Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a `TypedObject` or a full `TypedObject` definition.
+        Deprecated - Reference to a typed object, this can be either a key value to an object within the document, a shall referenced to a `TypedObject` or a full `TypedObject` definition.
 
 
         :param scope: The scope of this RuleTypeConfig.
         :type: object
         """
         self._scope = scope
+
+    @property
+    def scope_reference(self):
+        """
+        Gets the scope_reference of this RuleTypeConfig.
+
+        :return: The scope_reference of this RuleTypeConfig.
+        :rtype: oci.data_integration.models.ScopeReference
+        """
+        return self._scope_reference
+
+    @scope_reference.setter
+    def scope_reference(self, scope_reference):
+        """
+        Sets the scope_reference of this RuleTypeConfig.
+
+        :param scope_reference: The scope_reference of this RuleTypeConfig.
+        :type: oci.data_integration.models.ScopeReference
+        """
+        self._scope_reference = scope_reference
 
     @property
     def is_order_by_rule(self):

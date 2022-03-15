@@ -108,6 +108,34 @@ class AutonomousVmClusterSummary(object):
             The value to assign to the available_cpus property of this AutonomousVmClusterSummary.
         :type available_cpus: int
 
+        :param total_container_databases:
+            The value to assign to the total_container_databases property of this AutonomousVmClusterSummary.
+        :type total_container_databases: int
+
+        :param memory_per_oracle_compute_unit_in_gbs:
+            The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this AutonomousVmClusterSummary.
+        :type memory_per_oracle_compute_unit_in_gbs: int
+
+        :param cpu_core_count_per_node:
+            The value to assign to the cpu_core_count_per_node property of this AutonomousVmClusterSummary.
+        :type cpu_core_count_per_node: int
+
+        :param autonomous_data_storage_size_in_tbs:
+            The value to assign to the autonomous_data_storage_size_in_tbs property of this AutonomousVmClusterSummary.
+        :type autonomous_data_storage_size_in_tbs: float
+
+        :param maintenance_window:
+            The value to assign to the maintenance_window property of this AutonomousVmClusterSummary.
+        :type maintenance_window: oci.database.models.MaintenanceWindow
+
+        :param last_maintenance_run_id:
+            The value to assign to the last_maintenance_run_id property of this AutonomousVmClusterSummary.
+        :type last_maintenance_run_id: str
+
+        :param next_maintenance_run_id:
+            The value to assign to the next_maintenance_run_id property of this AutonomousVmClusterSummary.
+        :type next_maintenance_run_id: str
+
         :param memory_size_in_gbs:
             The value to assign to the memory_size_in_gbs property of this AutonomousVmClusterSummary.
         :type memory_size_in_gbs: int
@@ -157,6 +185,13 @@ class AutonomousVmClusterSummary(object):
             'cpus_enabled': 'int',
             'ocpus_enabled': 'float',
             'available_cpus': 'int',
+            'total_container_databases': 'int',
+            'memory_per_oracle_compute_unit_in_gbs': 'int',
+            'cpu_core_count_per_node': 'int',
+            'autonomous_data_storage_size_in_tbs': 'float',
+            'maintenance_window': 'MaintenanceWindow',
+            'last_maintenance_run_id': 'str',
+            'next_maintenance_run_id': 'str',
             'memory_size_in_gbs': 'int',
             'db_node_storage_size_in_gbs': 'int',
             'data_storage_size_in_tbs': 'float',
@@ -181,6 +216,13 @@ class AutonomousVmClusterSummary(object):
             'cpus_enabled': 'cpusEnabled',
             'ocpus_enabled': 'ocpusEnabled',
             'available_cpus': 'availableCpus',
+            'total_container_databases': 'totalContainerDatabases',
+            'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
+            'cpu_core_count_per_node': 'cpuCoreCountPerNode',
+            'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
+            'maintenance_window': 'maintenanceWindow',
+            'last_maintenance_run_id': 'lastMaintenanceRunId',
+            'next_maintenance_run_id': 'nextMaintenanceRunId',
             'memory_size_in_gbs': 'memorySizeInGBs',
             'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
@@ -204,6 +246,13 @@ class AutonomousVmClusterSummary(object):
         self._cpus_enabled = None
         self._ocpus_enabled = None
         self._available_cpus = None
+        self._total_container_databases = None
+        self._memory_per_oracle_compute_unit_in_gbs = None
+        self._cpu_core_count_per_node = None
+        self._autonomous_data_storage_size_in_tbs = None
+        self._maintenance_window = None
+        self._last_maintenance_run_id = None
+        self._next_maintenance_run_id = None
         self._memory_size_in_gbs = None
         self._db_node_storage_size_in_gbs = None
         self._data_storage_size_in_tbs = None
@@ -550,6 +599,178 @@ class AutonomousVmClusterSummary(object):
         :type: int
         """
         self._available_cpus = available_cpus
+
+    @property
+    def total_container_databases(self):
+        """
+        Gets the total_container_databases of this AutonomousVmClusterSummary.
+        The total number of Autonomous Container Databases that can be created.
+
+
+        :return: The total_container_databases of this AutonomousVmClusterSummary.
+        :rtype: int
+        """
+        return self._total_container_databases
+
+    @total_container_databases.setter
+    def total_container_databases(self, total_container_databases):
+        """
+        Sets the total_container_databases of this AutonomousVmClusterSummary.
+        The total number of Autonomous Container Databases that can be created.
+
+
+        :param total_container_databases: The total_container_databases of this AutonomousVmClusterSummary.
+        :type: int
+        """
+        self._total_container_databases = total_container_databases
+
+    @property
+    def memory_per_oracle_compute_unit_in_gbs(self):
+        """
+        Gets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
+        The amount of memory (in GBs) enabled per each OCPU core.
+
+
+        :return: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
+        :rtype: int
+        """
+        return self._memory_per_oracle_compute_unit_in_gbs
+
+    @memory_per_oracle_compute_unit_in_gbs.setter
+    def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
+        """
+        Sets the memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
+        The amount of memory (in GBs) enabled per each OCPU core.
+
+
+        :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this AutonomousVmClusterSummary.
+        :type: int
+        """
+        self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
+
+    @property
+    def cpu_core_count_per_node(self):
+        """
+        Gets the cpu_core_count_per_node of this AutonomousVmClusterSummary.
+        The number of OCPU cores enabled per VM cluster node.
+
+
+        :return: The cpu_core_count_per_node of this AutonomousVmClusterSummary.
+        :rtype: int
+        """
+        return self._cpu_core_count_per_node
+
+    @cpu_core_count_per_node.setter
+    def cpu_core_count_per_node(self, cpu_core_count_per_node):
+        """
+        Sets the cpu_core_count_per_node of this AutonomousVmClusterSummary.
+        The number of OCPU cores enabled per VM cluster node.
+
+
+        :param cpu_core_count_per_node: The cpu_core_count_per_node of this AutonomousVmClusterSummary.
+        :type: int
+        """
+        self._cpu_core_count_per_node = cpu_core_count_per_node
+
+    @property
+    def autonomous_data_storage_size_in_tbs(self):
+        """
+        Gets the autonomous_data_storage_size_in_tbs of this AutonomousVmClusterSummary.
+        The data disk group size allocated for Autonomous Databases, in TBs.
+
+
+        :return: The autonomous_data_storage_size_in_tbs of this AutonomousVmClusterSummary.
+        :rtype: float
+        """
+        return self._autonomous_data_storage_size_in_tbs
+
+    @autonomous_data_storage_size_in_tbs.setter
+    def autonomous_data_storage_size_in_tbs(self, autonomous_data_storage_size_in_tbs):
+        """
+        Sets the autonomous_data_storage_size_in_tbs of this AutonomousVmClusterSummary.
+        The data disk group size allocated for Autonomous Databases, in TBs.
+
+
+        :param autonomous_data_storage_size_in_tbs: The autonomous_data_storage_size_in_tbs of this AutonomousVmClusterSummary.
+        :type: float
+        """
+        self._autonomous_data_storage_size_in_tbs = autonomous_data_storage_size_in_tbs
+
+    @property
+    def maintenance_window(self):
+        """
+        Gets the maintenance_window of this AutonomousVmClusterSummary.
+
+        :return: The maintenance_window of this AutonomousVmClusterSummary.
+        :rtype: oci.database.models.MaintenanceWindow
+        """
+        return self._maintenance_window
+
+    @maintenance_window.setter
+    def maintenance_window(self, maintenance_window):
+        """
+        Sets the maintenance_window of this AutonomousVmClusterSummary.
+
+        :param maintenance_window: The maintenance_window of this AutonomousVmClusterSummary.
+        :type: oci.database.models.MaintenanceWindow
+        """
+        self._maintenance_window = maintenance_window
+
+    @property
+    def last_maintenance_run_id(self):
+        """
+        Gets the last_maintenance_run_id of this AutonomousVmClusterSummary.
+        The `OCID`__ of the last maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The last_maintenance_run_id of this AutonomousVmClusterSummary.
+        :rtype: str
+        """
+        return self._last_maintenance_run_id
+
+    @last_maintenance_run_id.setter
+    def last_maintenance_run_id(self, last_maintenance_run_id):
+        """
+        Sets the last_maintenance_run_id of this AutonomousVmClusterSummary.
+        The `OCID`__ of the last maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param last_maintenance_run_id: The last_maintenance_run_id of this AutonomousVmClusterSummary.
+        :type: str
+        """
+        self._last_maintenance_run_id = last_maintenance_run_id
+
+    @property
+    def next_maintenance_run_id(self):
+        """
+        Gets the next_maintenance_run_id of this AutonomousVmClusterSummary.
+        The `OCID`__ of the next maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :return: The next_maintenance_run_id of this AutonomousVmClusterSummary.
+        :rtype: str
+        """
+        return self._next_maintenance_run_id
+
+    @next_maintenance_run_id.setter
+    def next_maintenance_run_id(self, next_maintenance_run_id):
+        """
+        Sets the next_maintenance_run_id of this AutonomousVmClusterSummary.
+        The `OCID`__ of the next maintenance run.
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+
+        :param next_maintenance_run_id: The next_maintenance_run_id of this AutonomousVmClusterSummary.
+        :type: str
+        """
+        self._next_maintenance_run_id = next_maintenance_run_id
 
     @property
     def memory_size_in_gbs(self):

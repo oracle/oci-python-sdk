@@ -1450,9 +1450,18 @@ class ShowOCIData(object):
                 value['type'] = backup['type'][0:4] + ", " + backup['source_type'][0:6] + ", " + backup['time_created'][0:16] + " -> " + backup['expiration_time'][0:16]
                 value['size'] = (str(backup['size_in_gbs']).rjust(3) + "GB " + ", Stored " + str(backup['unique_size_in_gbs']).rjust(3) + "GB")
                 value['sum_info'] = 'Object Storage - BV Backups (GB)'
-                value['sum_size_gb'] = (str(backup['unique_size_in_gbs']))
-                value[volume_name] = str(backup[volume_name])
-                value['id'] = str(backup[volume_name])
+                value['sum_size_gb'] = backup['unique_size_in_gbs']
+                value['volume_type'] = volume_name
+                value['volume_id'] = backup['volume_id']
+                value['source_name'] = backup['backup_name']
+                value['backup_type'] = backup['type']
+                value['schedule_type'] = backup['source_type']
+                value['time_created'] = backup['time_created'][0:16]
+                value['expiration_time'] = backup['expiration_time'][0:16]
+                value['unique_size_in_gbs'] = backup['unique_size_in_gbs']
+                value['size_in_gbs'] = backup['size_in_gbs']
+                value['compartment_name'] = backup['compartment_name']
+                value['id'] = backup['id']
 
                 data.append(value)
 
@@ -1917,13 +1926,17 @@ class ShowOCIData(object):
             if len(data) > 0:
                 return_data['volume_not_attached'] = data
 
-            data = self.__get_core_block_volume_boot_backup(region_name, compartment, 'boot_volume_id', self.service.C_BLOCK_BOOTBACK)
+            data = self.__get_core_block_volume_boot_backup(region_name, compartment, 'boot_volume', self.service.C_BLOCK_BOOTBACK)
             if len(data) > 0:
                 return_data['boot_volume_backup'] = data
 
-            data = self.__get_core_block_volume_boot_backup(region_name, compartment, 'volume_id', self.service.C_BLOCK_VOLBACK)
+            data = self.__get_core_block_volume_boot_backup(region_name, compartment, 'volume', self.service.C_BLOCK_VOLBACK)
             if len(data) > 0:
                 return_data['volume_backup'] = data
+
+            data = self.__get_core_block_volume_boot_backup(region_name, compartment, 'volume_group', self.service.C_BLOCK_VOLGRPBACK)
+            if len(data) > 0:
+                return_data['volume_group_backup'] = data
 
             return return_data
 
@@ -2002,6 +2015,7 @@ class ShowOCIData(object):
                                   str(db['ncharacter_set']) + " - " +
                                   str(db['lifecycle_state']) + backupstr),
                          'backups': self.__get_database_db_backups(db['backups']) if 'backups' in db else [],
+                         'pdbs': self.__get_database_db_pdbs(db['pdbs']) if 'pdbs' in db else [],
                          'time_created': db['time_created'],
                          'defined_tags': db['defined_tags'],
                          'dataguard': self.__get_database_db_dataguard(db['dataguard']),
@@ -2087,6 +2101,30 @@ class ShowOCIData(object):
 
         except Exception as e:
             self.__print_error("__get_database_db_backups", e)
+            return data
+
+    ##########################################################################
+    # print database db pdbs
+    ##########################################################################
+    def __get_database_db_pdbs(self, pdbs):
+
+        data = []
+        try:
+
+            for pdb in pdbs:
+                data.append(
+                    {
+                        'name': pdb['pdb_name'],
+                        'desc': pdb['pdb_name'] + " " + pdb['open_mode'],
+                        'lifecycle_state': pdb['lifecycle_state'],
+                        'open_mode': pdb['open_mode'],
+                        'is_restricted': pdb['is_restricted'],
+                        'defined_tags': pdb['defined_tags'],
+                        'freeform_tags': pdb['freeform_tags']})
+            return data
+
+        except Exception as e:
+            self.__print_error("__get_database_db_pdbs", e)
             return data
 
     ##########################################################################
@@ -2219,7 +2257,9 @@ class ShowOCIData(object):
                             'is_local_backup_enabled': vm['is_local_backup_enabled'],
                             'is_sparse_diskgroup_enabled': vm['is_sparse_diskgroup_enabled'],
                             'gi_version': vm['gi_version'],
+                            'gi_version_date': vm['gi_version_date'],
                             'system_version': vm['system_version'],
+                            'system_version_date': vm['system_version_date'],
                             'ssh_public_keys': vm['ssh_public_keys'],
                             'license_model': vm['license_model'],
                             'disk_redundancy': vm['disk_redundancy'],
@@ -2328,7 +2368,9 @@ class ShowOCIData(object):
                             'data_storage_size_in_tbs': vm['data_storage_size_in_tbs'],
                             'shape': vm['shape'],
                             'gi_version': vm['gi_version'],
+                            'gi_version_date': vm['gi_version_date'],
                             'system_version': vm['system_version'],
+                            'system_version_date': vm['system_version_date'],
                             'license_model': vm['license_model'],
                             'defined_tags': vm['defined_tags'],
                             'freeform_tags': vm['freeform_tags'],
@@ -2381,6 +2423,7 @@ class ShowOCIData(object):
                          'node_count': dbs['node_count'],
                          'version': (dbs['version'] + " - ") if dbs['version'] != "None" else "" + ((dbs['database_edition'] + " - ") if dbs['database_edition'] != "None" else "") + dbs['license_model'],
                          'version_only': dbs['version'],
+                         'version_date': dbs['version_date'],
                          'host': dbs['hostname'],
                          'domain': dbs['domain'],
                          'data_subnet': dbs['data_subnet'],
@@ -3633,6 +3676,11 @@ class ShowOCIData(object):
             if log:
                 security_services['logging'] = log
 
+            # kms_vaults
+            vaults = self.service.search_multi_items(self.service.C_SECURITY, self.service.C_SECURITY_VAULTS, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if vaults:
+                security_services['kms_vaults'] = vaults
+
             return security_services
 
         except Exception as e:
@@ -3670,6 +3718,11 @@ class ShowOCIData(object):
             dc = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_CATALOG, 'region_name', region_name, 'compartment_id', compartment['id'])
             if dc:
                 data_ai['data_catalog'] = dc
+
+            # Data Integration
+            di = self.service.search_multi_items(self.service.C_DATA_AI, self.service.C_DATA_AI_DI, 'region_name', region_name, 'compartment_id', compartment['id'])
+            if di:
+                data_ai['data_integration'] = di
 
             return data_ai
 

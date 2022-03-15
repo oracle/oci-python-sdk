@@ -56,6 +56,10 @@ class ProxyField(TypedObject):
             The value to assign to the scope property of this ProxyField.
         :type scope: object
 
+        :param scope_reference:
+            The value to assign to the scope_reference property of this ProxyField.
+        :type scope_reference: oci.data_integration.models.ScopeReference
+
         :param type:
             The value to assign to the type property of this ProxyField.
         :type type: oci.data_integration.models.BaseType
@@ -75,6 +79,7 @@ class ProxyField(TypedObject):
             'name': 'str',
             'description': 'str',
             'scope': 'object',
+            'scope_reference': 'ScopeReference',
             'type': 'BaseType',
             'labels': 'list[str]'
         }
@@ -89,6 +94,7 @@ class ProxyField(TypedObject):
             'name': 'name',
             'description': 'description',
             'scope': 'scope',
+            'scope_reference': 'scopeReference',
             'type': 'type',
             'labels': 'labels'
         }
@@ -102,6 +108,7 @@ class ProxyField(TypedObject):
         self._name = None
         self._description = None
         self._scope = None
+        self._scope_reference = None
         self._type = None
         self._labels = None
         self._model_type = 'PROXY_FIELD'
@@ -110,7 +117,7 @@ class ProxyField(TypedObject):
     def scope(self):
         """
         Gets the scope of this ProxyField.
-        Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
+        Deprecated - Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
 
 
         :return: The scope of this ProxyField.
@@ -122,13 +129,33 @@ class ProxyField(TypedObject):
     def scope(self, scope):
         """
         Sets the scope of this ProxyField.
-        Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
+        Deprecated - Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a `TypedObject`, or a full `TypedObject` definition.
 
 
         :param scope: The scope of this ProxyField.
         :type: object
         """
         self._scope = scope
+
+    @property
+    def scope_reference(self):
+        """
+        Gets the scope_reference of this ProxyField.
+
+        :return: The scope_reference of this ProxyField.
+        :rtype: oci.data_integration.models.ScopeReference
+        """
+        return self._scope_reference
+
+    @scope_reference.setter
+    def scope_reference(self, scope_reference):
+        """
+        Sets the scope_reference of this ProxyField.
+
+        :param scope_reference: The scope_reference of this ProxyField.
+        :type: oci.data_integration.models.ScopeReference
+        """
+        self._scope_reference = scope_reference
 
     @property
     def type(self):

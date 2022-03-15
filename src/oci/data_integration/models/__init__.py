@@ -7,6 +7,7 @@ from __future__ import absolute_import
 from .abstract_data_operation_config import AbstractDataOperationConfig
 from .abstract_field import AbstractField
 from .abstract_format_attribute import AbstractFormatAttribute
+from .abstract_formatted_text import AbstractFormattedText
 from .abstract_frequency_details import AbstractFrequencyDetails
 from .abstract_read_attribute import AbstractReadAttribute
 from .abstract_write_attribute import AbstractWriteAttribute
@@ -16,12 +17,14 @@ from .application import Application
 from .application_details import ApplicationDetails
 from .application_summary import ApplicationSummary
 from .application_summary_collection import ApplicationSummaryCollection
+from .auth_config import AuthConfig
 from .auth_details import AuthDetails
 from .avro_format_attribute import AvroFormatAttribute
 from .base_type import BaseType
 from .bicc_read_attributes import BiccReadAttributes
 from .cancel_rest_call_config import CancelRestCallConfig
 from .change_compartment_details import ChangeCompartmentDetails
+from .change_dis_application_compartment_details import ChangeDisApplicationCompartmentDetails
 from .child_reference import ChildReference
 from .child_reference_detail import ChildReferenceDetail
 from .composite_field_map import CompositeFieldMap
@@ -93,6 +96,7 @@ from .create_data_asset_from_object_storage import CreateDataAssetFromObjectStor
 from .create_data_asset_from_oracle import CreateDataAssetFromOracle
 from .create_data_flow_details import CreateDataFlowDetails
 from .create_data_flow_validation_details import CreateDataFlowValidationDetails
+from .create_dis_application_details import CreateDisApplicationDetails
 from .create_entity_shape_details import CreateEntityShapeDetails
 from .create_entity_shape_from_file import CreateEntityShapeFromFile
 from .create_entity_shape_from_sql import CreateEntityShapeFromSQL
@@ -180,6 +184,9 @@ from .derived_field import DerivedField
 from .derived_type import DerivedType
 from .direct_field_map import DirectFieldMap
 from .direct_named_field_map import DirectNamedFieldMap
+from .dis_application import DisApplication
+from .dis_application_summary import DisApplicationSummary
+from .dis_application_summary_collection import DisApplicationSummaryCollection
 from .distinct import Distinct
 from .dynamic_input_field import DynamicInputField
 from .dynamic_proxy_field import DynamicProxyField
@@ -226,6 +233,7 @@ from .java_type import JavaType
 from .join import Join
 from .joiner import Joiner
 from .json_format_attribute import JsonFormatAttribute
+from .json_text import JsonText
 from .key import Key
 from .key_attribute import KeyAttribute
 from .key_range import KeyRange
@@ -274,6 +282,7 @@ from .pipeline_summary_collection import PipelineSummaryCollection
 from .pipeline_validation import PipelineValidation
 from .pipeline_validation_summary import PipelineValidationSummary
 from .pipeline_validation_summary_collection import PipelineValidationSummaryCollection
+from .poll_rest_call_config import PollRestCallConfig
 from .primary_key import PrimaryKey
 from .project import Project
 from .project_details import ProjectDetails
@@ -301,6 +310,7 @@ from .reference_used_by import ReferenceUsedBy
 from .registry_metadata import RegistryMetadata
 from .rename_rule import RenameRule
 from .resource_configuration import ResourceConfiguration
+from .resource_principal_auth_config import ResourcePrincipalAuthConfig
 from .rest_call_config import RestCallConfig
 from .root_object import RootObject
 from .rule_based_field_map import RuleBasedFieldMap
@@ -312,6 +322,7 @@ from .schema import Schema
 from .schema_drift_config import SchemaDriftConfig
 from .schema_summary import SchemaSummary
 from .schema_summary_collection import SchemaSummaryCollection
+from .scope_reference import ScopeReference
 from .script import Script
 from .secret_config import SecretConfig
 from .select import Select
@@ -359,6 +370,7 @@ from .time import Time
 from .type_library import TypeLibrary
 from .type_list_rule import TypeListRule
 from .type_system import TypeSystem
+from .typed_expression import TypedExpression
 from .typed_name_pattern_rule import TypedNamePatternRule
 from .typed_object import TypedObject
 from .ui_properties import UIProperties
@@ -385,6 +397,7 @@ from .update_data_asset_from_my_sql import UpdateDataAssetFromMySQL
 from .update_data_asset_from_object_storage import UpdateDataAssetFromObjectStorage
 from .update_data_asset_from_oracle import UpdateDataAssetFromOracle
 from .update_data_flow_details import UpdateDataFlowDetails
+from .update_dis_application_details import UpdateDisApplicationDetails
 from .update_external_publication_details import UpdateExternalPublicationDetails
 from .update_folder_details import UpdateFolderDetails
 from .update_function_library_details import UpdateFunctionLibraryDetails
@@ -427,6 +440,7 @@ data_integration_type_mapping = {
     "AbstractDataOperationConfig": AbstractDataOperationConfig,
     "AbstractField": AbstractField,
     "AbstractFormatAttribute": AbstractFormatAttribute,
+    "AbstractFormattedText": AbstractFormattedText,
     "AbstractFrequencyDetails": AbstractFrequencyDetails,
     "AbstractReadAttribute": AbstractReadAttribute,
     "AbstractWriteAttribute": AbstractWriteAttribute,
@@ -436,12 +450,14 @@ data_integration_type_mapping = {
     "ApplicationDetails": ApplicationDetails,
     "ApplicationSummary": ApplicationSummary,
     "ApplicationSummaryCollection": ApplicationSummaryCollection,
+    "AuthConfig": AuthConfig,
     "AuthDetails": AuthDetails,
     "AvroFormatAttribute": AvroFormatAttribute,
     "BaseType": BaseType,
     "BiccReadAttributes": BiccReadAttributes,
     "CancelRestCallConfig": CancelRestCallConfig,
     "ChangeCompartmentDetails": ChangeCompartmentDetails,
+    "ChangeDisApplicationCompartmentDetails": ChangeDisApplicationCompartmentDetails,
     "ChildReference": ChildReference,
     "ChildReferenceDetail": ChildReferenceDetail,
     "CompositeFieldMap": CompositeFieldMap,
@@ -513,6 +529,7 @@ data_integration_type_mapping = {
     "CreateDataAssetFromOracle": CreateDataAssetFromOracle,
     "CreateDataFlowDetails": CreateDataFlowDetails,
     "CreateDataFlowValidationDetails": CreateDataFlowValidationDetails,
+    "CreateDisApplicationDetails": CreateDisApplicationDetails,
     "CreateEntityShapeDetails": CreateEntityShapeDetails,
     "CreateEntityShapeFromFile": CreateEntityShapeFromFile,
     "CreateEntityShapeFromSQL": CreateEntityShapeFromSQL,
@@ -600,6 +617,9 @@ data_integration_type_mapping = {
     "DerivedType": DerivedType,
     "DirectFieldMap": DirectFieldMap,
     "DirectNamedFieldMap": DirectNamedFieldMap,
+    "DisApplication": DisApplication,
+    "DisApplicationSummary": DisApplicationSummary,
+    "DisApplicationSummaryCollection": DisApplicationSummaryCollection,
     "Distinct": Distinct,
     "DynamicInputField": DynamicInputField,
     "DynamicProxyField": DynamicProxyField,
@@ -646,6 +666,7 @@ data_integration_type_mapping = {
     "Join": Join,
     "Joiner": Joiner,
     "JsonFormatAttribute": JsonFormatAttribute,
+    "JsonText": JsonText,
     "Key": Key,
     "KeyAttribute": KeyAttribute,
     "KeyRange": KeyRange,
@@ -694,6 +715,7 @@ data_integration_type_mapping = {
     "PipelineValidation": PipelineValidation,
     "PipelineValidationSummary": PipelineValidationSummary,
     "PipelineValidationSummaryCollection": PipelineValidationSummaryCollection,
+    "PollRestCallConfig": PollRestCallConfig,
     "PrimaryKey": PrimaryKey,
     "Project": Project,
     "ProjectDetails": ProjectDetails,
@@ -721,6 +743,7 @@ data_integration_type_mapping = {
     "RegistryMetadata": RegistryMetadata,
     "RenameRule": RenameRule,
     "ResourceConfiguration": ResourceConfiguration,
+    "ResourcePrincipalAuthConfig": ResourcePrincipalAuthConfig,
     "RestCallConfig": RestCallConfig,
     "RootObject": RootObject,
     "RuleBasedFieldMap": RuleBasedFieldMap,
@@ -732,6 +755,7 @@ data_integration_type_mapping = {
     "SchemaDriftConfig": SchemaDriftConfig,
     "SchemaSummary": SchemaSummary,
     "SchemaSummaryCollection": SchemaSummaryCollection,
+    "ScopeReference": ScopeReference,
     "Script": Script,
     "SecretConfig": SecretConfig,
     "Select": Select,
@@ -779,6 +803,7 @@ data_integration_type_mapping = {
     "TypeLibrary": TypeLibrary,
     "TypeListRule": TypeListRule,
     "TypeSystem": TypeSystem,
+    "TypedExpression": TypedExpression,
     "TypedNamePatternRule": TypedNamePatternRule,
     "TypedObject": TypedObject,
     "UIProperties": UIProperties,
@@ -805,6 +830,7 @@ data_integration_type_mapping = {
     "UpdateDataAssetFromObjectStorage": UpdateDataAssetFromObjectStorage,
     "UpdateDataAssetFromOracle": UpdateDataAssetFromOracle,
     "UpdateDataFlowDetails": UpdateDataFlowDetails,
+    "UpdateDisApplicationDetails": UpdateDisApplicationDetails,
     "UpdateExternalPublicationDetails": UpdateExternalPublicationDetails,
     "UpdateFolderDetails": UpdateFolderDetails,
     "UpdateFunctionLibraryDetails": UpdateFunctionLibraryDetails,

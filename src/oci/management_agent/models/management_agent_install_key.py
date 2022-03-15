@@ -100,6 +100,10 @@ class ManagementAgentInstallKey(object):
             The value to assign to the time_updated property of this ManagementAgentInstallKey.
         :type time_updated: datetime
 
+        :param is_unlimited:
+            The value to assign to the is_unlimited property of this ManagementAgentInstallKey.
+        :type is_unlimited: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -113,7 +117,8 @@ class ManagementAgentInstallKey(object):
             'lifecycle_details': 'str',
             'time_expires': 'datetime',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'is_unlimited': 'bool'
         }
 
         self.attribute_map = {
@@ -128,7 +133,8 @@ class ManagementAgentInstallKey(object):
             'lifecycle_details': 'lifecycleDetails',
             'time_expires': 'timeExpires',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'is_unlimited': 'isUnlimited'
         }
 
         self._id = None
@@ -143,6 +149,7 @@ class ManagementAgentInstallKey(object):
         self._time_expires = None
         self._time_created = None
         self._time_updated = None
+        self._is_unlimited = None
 
     @property
     def id(self):
@@ -437,6 +444,30 @@ class ManagementAgentInstallKey(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def is_unlimited(self):
+        """
+        Gets the is_unlimited of this ManagementAgentInstallKey.
+        If set to true, the install key has no expiration date or usage limit. Defaults to false
+
+
+        :return: The is_unlimited of this ManagementAgentInstallKey.
+        :rtype: bool
+        """
+        return self._is_unlimited
+
+    @is_unlimited.setter
+    def is_unlimited(self, is_unlimited):
+        """
+        Sets the is_unlimited of this ManagementAgentInstallKey.
+        If set to true, the install key has no expiration date or usage limit. Defaults to false
+
+
+        :param is_unlimited: The is_unlimited of this ManagementAgentInstallKey.
+        :type: bool
+        """
+        self._is_unlimited = is_unlimited
 
     def __repr__(self):
         return formatted_flat_dict(self)

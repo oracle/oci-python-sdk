@@ -288,10 +288,10 @@ class CreateEsxiHostDetails(object):
     def failed_esxi_host_id(self):
         """
         Gets the failed_esxi_host_id of this CreateEsxiHostDetails.
-        The `OCID`__ of the esxi host that
-        is failed. It is an optional param, when user supplies this param, new Esxi
-        Host will be created to replace the failed one, and failedEsxiHostId field
-        will be udpated in the newly created EsxiHost.
+        The `OCID`__ of the ESXi host that
+        is failed. This is an optional parameter. If this parameter is specified, a new ESXi
+        host will be created to replace the failed one, and the `failedEsxiHostId` field
+        will be udpated in the newly created Esxi host.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -305,10 +305,10 @@ class CreateEsxiHostDetails(object):
     def failed_esxi_host_id(self, failed_esxi_host_id):
         """
         Sets the failed_esxi_host_id of this CreateEsxiHostDetails.
-        The `OCID`__ of the esxi host that
-        is failed. It is an optional param, when user supplies this param, new Esxi
-        Host will be created to replace the failed one, and failedEsxiHostId field
-        will be udpated in the newly created EsxiHost.
+        The `OCID`__ of the ESXi host that
+        is failed. This is an optional parameter. If this parameter is specified, a new ESXi
+        host will be created to replace the failed one, and the `failedEsxiHostId` field
+        will be udpated in the newly created Esxi host.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

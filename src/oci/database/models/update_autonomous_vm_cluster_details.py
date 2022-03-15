@@ -26,6 +26,10 @@ class UpdateAutonomousVmClusterDetails(object):
         Initializes a new UpdateAutonomousVmClusterDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param maintenance_window_details:
+            The value to assign to the maintenance_window_details property of this UpdateAutonomousVmClusterDetails.
+        :type maintenance_window_details: oci.database.models.MaintenanceWindow
+
         :param license_model:
             The value to assign to the license_model property of this UpdateAutonomousVmClusterDetails.
             Allowed values for this property are: "LICENSE_INCLUDED", "BRING_YOUR_OWN_LICENSE"
@@ -41,20 +45,43 @@ class UpdateAutonomousVmClusterDetails(object):
 
         """
         self.swagger_types = {
+            'maintenance_window_details': 'MaintenanceWindow',
             'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
+            'maintenance_window_details': 'maintenanceWindowDetails',
             'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
+        self._maintenance_window_details = None
         self._license_model = None
         self._freeform_tags = None
         self._defined_tags = None
+
+    @property
+    def maintenance_window_details(self):
+        """
+        Gets the maintenance_window_details of this UpdateAutonomousVmClusterDetails.
+
+        :return: The maintenance_window_details of this UpdateAutonomousVmClusterDetails.
+        :rtype: oci.database.models.MaintenanceWindow
+        """
+        return self._maintenance_window_details
+
+    @maintenance_window_details.setter
+    def maintenance_window_details(self, maintenance_window_details):
+        """
+        Sets the maintenance_window_details of this UpdateAutonomousVmClusterDetails.
+
+        :param maintenance_window_details: The maintenance_window_details of this UpdateAutonomousVmClusterDetails.
+        :type: oci.database.models.MaintenanceWindow
+        """
+        self._maintenance_window_details = maintenance_window_details
 
     @property
     def license_model(self):

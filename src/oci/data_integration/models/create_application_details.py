@@ -17,6 +17,30 @@ class CreateApplicationDetails(object):
     #: This constant has a value of "INTEGRATION_APPLICATION"
     MODEL_TYPE_INTEGRATION_APPLICATION = "INTEGRATION_APPLICATION"
 
+    #: A constant which can be used with the lifecycle_state property of a CreateApplicationDetails.
+    #: This constant has a value of "CREATING"
+    LIFECYCLE_STATE_CREATING = "CREATING"
+
+    #: A constant which can be used with the lifecycle_state property of a CreateApplicationDetails.
+    #: This constant has a value of "ACTIVE"
+    LIFECYCLE_STATE_ACTIVE = "ACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a CreateApplicationDetails.
+    #: This constant has a value of "UPDATING"
+    LIFECYCLE_STATE_UPDATING = "UPDATING"
+
+    #: A constant which can be used with the lifecycle_state property of a CreateApplicationDetails.
+    #: This constant has a value of "DELETING"
+    LIFECYCLE_STATE_DELETING = "DELETING"
+
+    #: A constant which can be used with the lifecycle_state property of a CreateApplicationDetails.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a CreateApplicationDetails.
+    #: This constant has a value of "FAILED"
+    LIFECYCLE_STATE_FAILED = "FAILED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateApplicationDetails object with values from keyword arguments.
@@ -51,6 +75,23 @@ class CreateApplicationDetails(object):
             The value to assign to the identifier property of this CreateApplicationDetails.
         :type identifier: str
 
+        :param display_name:
+            The value to assign to the display_name property of this CreateApplicationDetails.
+        :type display_name: str
+
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this CreateApplicationDetails.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this CreateApplicationDetails.
+        :type defined_tags: dict(str, dict(str, object))
+
+        :param lifecycle_state:
+            The value to assign to the lifecycle_state property of this CreateApplicationDetails.
+            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
+        :type lifecycle_state: str
+
         :param source_application_info:
             The value to assign to the source_application_info property of this CreateApplicationDetails.
         :type source_application_info: oci.data_integration.models.CreateSourceApplicationInfo
@@ -68,6 +109,10 @@ class CreateApplicationDetails(object):
             'description': 'str',
             'object_status': 'int',
             'identifier': 'str',
+            'display_name': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
+            'lifecycle_state': 'str',
             'source_application_info': 'CreateSourceApplicationInfo',
             'registry_metadata': 'RegistryMetadata'
         }
@@ -80,6 +125,10 @@ class CreateApplicationDetails(object):
             'description': 'description',
             'object_status': 'objectStatus',
             'identifier': 'identifier',
+            'display_name': 'displayName',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
+            'lifecycle_state': 'lifecycleState',
             'source_application_info': 'sourceApplicationInfo',
             'registry_metadata': 'registryMetadata'
         }
@@ -91,6 +140,10 @@ class CreateApplicationDetails(object):
         self._description = None
         self._object_status = None
         self._identifier = None
+        self._display_name = None
+        self._freeform_tags = None
+        self._defined_tags = None
+        self._lifecycle_state = None
         self._source_application_info = None
         self._registry_metadata = None
 
@@ -269,6 +322,122 @@ class CreateApplicationDetails(object):
         :type: str
         """
         self._identifier = identifier
+
+    @property
+    def display_name(self):
+        """
+        Gets the display_name of this CreateApplicationDetails.
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+
+
+        :return: The display_name of this CreateApplicationDetails.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name):
+        """
+        Sets the display_name of this CreateApplicationDetails.
+        Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+
+
+        :param display_name: The display_name of this CreateApplicationDetails.
+        :type: str
+        """
+        self._display_name = display_name
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this CreateApplicationDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this CreateApplicationDetails.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this CreateApplicationDetails.
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See `Resource Tags`__.
+        Example: `{\"Department\": \"Finance\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this CreateApplicationDetails.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this CreateApplicationDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this CreateApplicationDetails.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this CreateApplicationDetails.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See `Resource Tags`__.
+        Example: `{\"Operations\": {\"CostCenter\": \"42\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this CreateApplicationDetails.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
+
+    @property
+    def lifecycle_state(self):
+        """
+        Gets the lifecycle_state of this CreateApplicationDetails.
+        The current state of the workspace.
+
+        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"
+
+
+        :return: The lifecycle_state of this CreateApplicationDetails.
+        :rtype: str
+        """
+        return self._lifecycle_state
+
+    @lifecycle_state.setter
+    def lifecycle_state(self, lifecycle_state):
+        """
+        Sets the lifecycle_state of this CreateApplicationDetails.
+        The current state of the workspace.
+
+
+        :param lifecycle_state: The lifecycle_state of this CreateApplicationDetails.
+        :type: str
+        """
+        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
+        if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
+            raise ValueError(
+                "Invalid value for `lifecycle_state`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._lifecycle_state = lifecycle_state
 
     @property
     def source_application_info(self):

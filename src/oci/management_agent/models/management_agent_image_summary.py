@@ -25,6 +25,22 @@ class ManagementAgentImageSummary(object):
     #: This constant has a value of "SOLARIS"
     PLATFORM_TYPE_SOLARIS = "SOLARIS"
 
+    #: A constant which can be used with the package_type property of a ManagementAgentImageSummary.
+    #: This constant has a value of "RPM"
+    PACKAGE_TYPE_RPM = "RPM"
+
+    #: A constant which can be used with the package_type property of a ManagementAgentImageSummary.
+    #: This constant has a value of "ZIP"
+    PACKAGE_TYPE_ZIP = "ZIP"
+
+    #: A constant which can be used with the package_architecture_type property of a ManagementAgentImageSummary.
+    #: This constant has a value of "X86_64"
+    PACKAGE_ARCHITECTURE_TYPE_X86_64 = "X86_64"
+
+    #: A constant which can be used with the package_architecture_type property of a ManagementAgentImageSummary.
+    #: This constant has a value of "SPARC"
+    PACKAGE_ARCHITECTURE_TYPE_SPARC = "SPARC"
+
     #: A constant which can be used with the lifecycle_state property of a ManagementAgentImageSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -76,6 +92,18 @@ class ManagementAgentImageSummary(object):
             The value to assign to the platform_name property of this ManagementAgentImageSummary.
         :type platform_name: str
 
+        :param package_type:
+            The value to assign to the package_type property of this ManagementAgentImageSummary.
+            Allowed values for this property are: "RPM", "ZIP", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type package_type: str
+
+        :param package_architecture_type:
+            The value to assign to the package_architecture_type property of this ManagementAgentImageSummary.
+            Allowed values for this property are: "X86_64", "SPARC", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type package_architecture_type: str
+
         :param version:
             The value to assign to the version property of this ManagementAgentImageSummary.
         :type version: str
@@ -103,6 +131,8 @@ class ManagementAgentImageSummary(object):
             'id': 'str',
             'platform_type': 'str',
             'platform_name': 'str',
+            'package_type': 'str',
+            'package_architecture_type': 'str',
             'version': 'str',
             'size': 'float',
             'checksum': 'str',
@@ -114,6 +144,8 @@ class ManagementAgentImageSummary(object):
             'id': 'id',
             'platform_type': 'platformType',
             'platform_name': 'platformName',
+            'package_type': 'packageType',
+            'package_architecture_type': 'packageArchitectureType',
             'version': 'version',
             'size': 'size',
             'checksum': 'checksum',
@@ -124,6 +156,8 @@ class ManagementAgentImageSummary(object):
         self._id = None
         self._platform_type = None
         self._platform_name = None
+        self._package_type = None
+        self._package_architecture_type = None
         self._version = None
         self._size = None
         self._checksum = None
@@ -207,6 +241,66 @@ class ManagementAgentImageSummary(object):
         :type: str
         """
         self._platform_name = platform_name
+
+    @property
+    def package_type(self):
+        """
+        Gets the package_type of this ManagementAgentImageSummary.
+        The installation package type
+
+        Allowed values for this property are: "RPM", "ZIP", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The package_type of this ManagementAgentImageSummary.
+        :rtype: str
+        """
+        return self._package_type
+
+    @package_type.setter
+    def package_type(self, package_type):
+        """
+        Sets the package_type of this ManagementAgentImageSummary.
+        The installation package type
+
+
+        :param package_type: The package_type of this ManagementAgentImageSummary.
+        :type: str
+        """
+        allowed_values = ["RPM", "ZIP"]
+        if not value_allowed_none_or_none_sentinel(package_type, allowed_values):
+            package_type = 'UNKNOWN_ENUM_VALUE'
+        self._package_type = package_type
+
+    @property
+    def package_architecture_type(self):
+        """
+        Gets the package_architecture_type of this ManagementAgentImageSummary.
+        The installation package target architecture type
+
+        Allowed values for this property are: "X86_64", "SPARC", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The package_architecture_type of this ManagementAgentImageSummary.
+        :rtype: str
+        """
+        return self._package_architecture_type
+
+    @package_architecture_type.setter
+    def package_architecture_type(self, package_architecture_type):
+        """
+        Sets the package_architecture_type of this ManagementAgentImageSummary.
+        The installation package target architecture type
+
+
+        :param package_architecture_type: The package_architecture_type of this ManagementAgentImageSummary.
+        :type: str
+        """
+        allowed_values = ["X86_64", "SPARC"]
+        if not value_allowed_none_or_none_sentinel(package_architecture_type, allowed_values):
+            package_architecture_type = 'UNKNOWN_ENUM_VALUE'
+        self._package_architecture_type = package_architecture_type
 
     @property
     def version(self):
