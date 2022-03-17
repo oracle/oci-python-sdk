@@ -168,6 +168,10 @@ class DbSystem(object):
             The value to assign to the maintenance property of this DbSystem.
         :type maintenance: oci.mysql.models.MaintenanceDetails
 
+        :param deletion_policy:
+            The value to assign to the deletion_policy property of this DbSystem.
+        :type deletion_policy: oci.mysql.models.DeletionPolicyDetails
+
         :param time_created:
             The value to assign to the time_created property of this DbSystem.
         :type time_created: datetime
@@ -220,6 +224,7 @@ class DbSystem(object):
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'maintenance': 'MaintenanceDetails',
+            'deletion_policy': 'DeletionPolicyDetails',
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'freeform_tags': 'dict(str, str)',
@@ -256,6 +261,7 @@ class DbSystem(object):
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'maintenance': 'maintenance',
+            'deletion_policy': 'deletionPolicy',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'freeform_tags': 'freeformTags',
@@ -291,6 +297,7 @@ class DbSystem(object):
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._maintenance = None
+        self._deletion_policy = None
         self._time_created = None
         self._time_updated = None
         self._freeform_tags = None
@@ -998,6 +1005,26 @@ class DbSystem(object):
         :type: oci.mysql.models.MaintenanceDetails
         """
         self._maintenance = maintenance
+
+    @property
+    def deletion_policy(self):
+        """
+        **[Required]** Gets the deletion_policy of this DbSystem.
+
+        :return: The deletion_policy of this DbSystem.
+        :rtype: oci.mysql.models.DeletionPolicyDetails
+        """
+        return self._deletion_policy
+
+    @deletion_policy.setter
+    def deletion_policy(self, deletion_policy):
+        """
+        Sets the deletion_policy of this DbSystem.
+
+        :param deletion_policy: The deletion_policy of this DbSystem.
+        :type: oci.mysql.models.DeletionPolicyDetails
+        """
+        self._deletion_policy = deletion_policy
 
     @property
     def time_created(self):

@@ -625,6 +625,220 @@ class OperationsInsightsClient(object):
                 header_params=header_params,
                 body=change_host_insight_compartment_details)
 
+    def change_operations_insights_private_endpoint_compartment(self, operations_insights_private_endpoint_id, change_operations_insights_private_endpoint_compartment_details, **kwargs):
+        """
+        Moves a private endpoint from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+
+
+        :param str operations_insights_private_endpoint_id: (required)
+            The `OCID`__ of the Operation Insights private endpoint.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.opsi.models.ChangeOperationsInsightsPrivateEndpointCompartmentDetails change_operations_insights_private_endpoint_compartment_details: (required)
+            The details used to change the compartment of a private endpoint
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request that can be retried in case of a timeout or
+            server error without risk of executing the same action again. Retry tokens expire after 24
+            hours.
+
+            *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+            operations, such as a resource being deleted or purged from the system.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/change_operations_insights_private_endpoint_compartment.py.html>`__ to see an example of how to use change_operations_insights_private_endpoint_compartment API.
+        """
+        resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}/actions/changeCompartment"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_operations_insights_private_endpoint_compartment got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "operationsInsightsPrivateEndpointId": operations_insights_private_endpoint_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_operations_insights_private_endpoint_compartment_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_operations_insights_private_endpoint_compartment_details)
+
+    def change_pe_comanaged_database_insight(self, database_insight_id, change_pe_comanaged_database_insight_details, **kwargs):
+        """
+        Change the connection details of a co-managed  database insight. When provided, If-Match is checked against ETag values of the resource.
+
+
+        :param str database_insight_id: (required)
+            Unique database insight identifier
+
+        :param oci.opsi.models.ChangePeComanagedDatabaseInsightDetails change_pe_comanaged_database_insight_details: (required)
+            The information to be updated.
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request that can be retried in case of a timeout or
+            server error without risk of executing the same action again. Retry tokens expire after 24
+            hours.
+
+            *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+            operations, such as a resource being deleted or purged from the system.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/change_pe_comanaged_database_insight.py.html>`__ to see an example of how to use change_pe_comanaged_database_insight API.
+        """
+        resource_path = "/databaseInsights/{databaseInsightId}/actions/changePeComanagedDatabaseInsightDetails"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id",
+            "opc_retry_token"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "change_pe_comanaged_database_insight got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "databaseInsightId": database_insight_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing),
+            "opc-retry-token": kwargs.get("opc_retry_token", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_pe_comanaged_database_insight_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=change_pe_comanaged_database_insight_details)
+
     def create_awr_hub(self, create_awr_hub_details, **kwargs):
         """
         Create a AWR hub resource for the tenant in Operations Insights.
@@ -1056,10 +1270,98 @@ class OperationsInsightsClient(object):
                 body=create_host_insight_details,
                 response_type="HostInsight")
 
+    def create_operations_insights_private_endpoint(self, create_operations_insights_private_endpoint_details, **kwargs):
+        """
+        Create a private endpoint resource for the tenant in Operations Insights.
+        This resource will be created in customer compartment.
+
+
+        :param oci.opsi.models.CreateOperationsInsightsPrivateEndpointDetails create_operations_insights_private_endpoint_details: (required)
+            Details to create a new private endpoint.
+
+        :param str opc_retry_token: (optional)
+            A token that uniquely identifies a request that can be retried in case of a timeout or
+            server error without risk of executing the same action again. Retry tokens expire after 24
+            hours.
+
+            *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+            operations, such as a resource being deleted or purged from the system.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.OperationsInsightsPrivateEndpoint`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/create_operations_insights_private_endpoint.py.html>`__ to see an example of how to use create_operations_insights_private_endpoint API.
+        """
+        resource_path = "/operationsInsightsPrivateEndpoints"
+        method = "POST"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_retry_token",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "create_operations_insights_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-retry-token": kwargs.get("opc_retry_token", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_retry_token_if_needed(header_params)
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_operations_insights_private_endpoint_details,
+                response_type="OperationsInsightsPrivateEndpoint")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                header_params=header_params,
+                body=create_operations_insights_private_endpoint_details,
+                response_type="OperationsInsightsPrivateEndpoint")
+
     def create_operations_insights_warehouse(self, create_operations_insights_warehouse_details, **kwargs):
         """
         Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
-        There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
+        There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
+        header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
 
 
         :param oci.opsi.models.CreateOperationsInsightsWarehouseDetails create_operations_insights_warehouse_details: (required)
@@ -1642,6 +1944,98 @@ class OperationsInsightsClient(object):
 
         path_params = {
             "hostInsightId": host_insight_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params)
+
+    def delete_operations_insights_private_endpoint(self, operations_insights_private_endpoint_id, **kwargs):
+        """
+        Deletes a private endpoint.
+
+
+        :param str operations_insights_private_endpoint_id: (required)
+            The `OCID`__ of the Operation Insights private endpoint.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/delete_operations_insights_private_endpoint.py.html>`__ to see an example of how to use delete_operations_insights_private_endpoint API.
+        """
+        resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}"
+        method = "DELETE"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "delete_operations_insights_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "operationsInsightsPrivateEndpointId": operations_insights_private_endpoint_id
         }
 
         path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
@@ -3145,6 +3539,93 @@ class OperationsInsightsClient(object):
                 header_params=header_params,
                 response_type="HostInsight")
 
+    def get_operations_insights_private_endpoint(self, operations_insights_private_endpoint_id, **kwargs):
+        """
+        Gets the details of the specified private endpoint.
+
+
+        :param str operations_insights_private_endpoint_id: (required)
+            The `OCID`__ of the Operation Insights private endpoint.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.OperationsInsightsPrivateEndpoint`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/get_operations_insights_private_endpoint.py.html>`__ to see an example of how to use get_operations_insights_private_endpoint API.
+        """
+        resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_operations_insights_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "operationsInsightsPrivateEndpointId": operations_insights_private_endpoint_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="OperationsInsightsPrivateEndpoint")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                response_type="OperationsInsightsPrivateEndpoint")
+
     def get_operations_insights_warehouse(self, operations_insights_warehouse_id, **kwargs):
         """
         Gets details of an Operations Insights Warehouse.
@@ -4552,7 +5033,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -4665,7 +5146,7 @@ class OperationsInsightsClient(object):
                 "list_database_configurations got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -4771,7 +5252,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -4817,6 +5298,9 @@ class OperationsInsightsClient(object):
         :param bool compartment_id_in_subtree: (optional)
             A flag to search all resources within a given compartment and all sub-compartments.
 
+        :param str opsi_private_endpoint_id: (optional)
+            Unique Operations Insights PrivateEndpoint identifier
+
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact
             Oracle about a particular request, please provide the request ID.
@@ -4860,6 +5344,7 @@ class OperationsInsightsClient(object):
             "sort_by",
             "exadata_insight_id",
             "compartment_id_in_subtree",
+            "opsi_private_endpoint_id",
             "opc_request_id"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -4884,7 +5369,7 @@ class OperationsInsightsClient(object):
                     )
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -4927,7 +5412,8 @@ class OperationsInsightsClient(object):
             "sortOrder": kwargs.get("sort_order", missing),
             "sortBy": kwargs.get("sort_by", missing),
             "exadataInsightId": kwargs.get("exadata_insight_id", missing),
-            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing),
+            "opsiPrivateEndpointId": kwargs.get("opsi_private_endpoint_id", missing)
         }
         query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
 
@@ -6345,6 +6831,179 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="ImportableEnterpriseManagerEntityCollection")
+
+    def list_operations_insights_private_endpoints(self, **kwargs):
+        """
+        Gets a list of Operation Insights private endpoints.
+
+
+        :param str compartment_id: (optional)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str display_name: (optional)
+            A filter to return only resources that match the entire display name.
+
+        :param str opsi_private_endpoint_id: (optional)
+            Unique Operations Insights PrivateEndpoint identifier
+
+        :param bool is_used_for_rac_dbs: (optional)
+            The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
+
+        :param str vcn_id: (optional)
+            The `OCID`__ of the VCN.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param list[str] lifecycle_state: (optional)
+            Lifecycle states
+
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str sort_order: (optional)
+            The sort order to use, either ascending (`ASC`) or descending (`DESC`).
+
+            Allowed values are: "ASC", "DESC"
+
+        :param str sort_by: (optional)
+            The field to sort private endpoints.
+
+            Allowed values are: "timeCreated", "id", "displayName"
+
+        :param bool compartment_id_in_subtree: (optional)
+            A flag to search all resources within a given compartment and all sub-compartments.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.OperationsInsightsPrivateEndpointCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/list_operations_insights_private_endpoints.py.html>`__ to see an example of how to use list_operations_insights_private_endpoints API.
+        """
+        resource_path = "/operationsInsightsPrivateEndpoints"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "compartment_id",
+            "display_name",
+            "opsi_private_endpoint_id",
+            "is_used_for_rac_dbs",
+            "vcn_id",
+            "lifecycle_state",
+            "limit",
+            "page",
+            "sort_order",
+            "sort_by",
+            "compartment_id_in_subtree",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "list_operations_insights_private_endpoints got unknown kwargs: {!r}".format(extra_kwargs))
+
+        if 'lifecycle_state' in kwargs:
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
+            for lifecycle_state_item in kwargs['lifecycle_state']:
+                if lifecycle_state_item not in lifecycle_state_allowed_values:
+                    raise ValueError(
+                        "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
+                    )
+
+        if 'sort_order' in kwargs:
+            sort_order_allowed_values = ["ASC", "DESC"]
+            if kwargs['sort_order'] not in sort_order_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_order`, must be one of {0}".format(sort_order_allowed_values)
+                )
+
+        if 'sort_by' in kwargs:
+            sort_by_allowed_values = ["timeCreated", "id", "displayName"]
+            if kwargs['sort_by'] not in sort_by_allowed_values:
+                raise ValueError(
+                    "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)
+                )
+
+        query_params = {
+            "compartmentId": kwargs.get("compartment_id", missing),
+            "displayName": kwargs.get("display_name", missing),
+            "opsiPrivateEndpointId": kwargs.get("opsi_private_endpoint_id", missing),
+            "isUsedForRacDbs": kwargs.get("is_used_for_rac_dbs", missing),
+            "vcnId": kwargs.get("vcn_id", missing),
+            "lifecycleState": self.base_client.generate_collection_format_param(kwargs.get("lifecycle_state", missing), 'multi'),
+            "limit": kwargs.get("limit", missing),
+            "page": kwargs.get("page", missing),
+            "sortOrder": kwargs.get("sort_order", missing),
+            "sortBy": kwargs.get("sort_by", missing),
+            "compartmentIdInSubtree": kwargs.get("compartment_id_in_subtree", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OperationsInsightsPrivateEndpointCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="OperationsInsightsPrivateEndpointCollection")
 
     def list_operations_insights_warehouse_users(self, operations_insights_warehouse_id, **kwargs):
         """
@@ -7805,7 +8464,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -7947,7 +8606,7 @@ class OperationsInsightsClient(object):
                 "summarize_database_insight_resource_capacity_trend got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -8070,7 +8729,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -8228,7 +8887,7 @@ class OperationsInsightsClient(object):
                 "summarize_database_insight_resource_forecast_trend got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -8353,7 +9012,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -8505,7 +9164,7 @@ class OperationsInsightsClient(object):
                 "summarize_database_insight_resource_statistics got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -8625,7 +9284,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -8741,7 +9400,7 @@ class OperationsInsightsClient(object):
                 "summarize_database_insight_resource_usage got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -8840,7 +9499,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -8964,7 +9623,7 @@ class OperationsInsightsClient(object):
                 "summarize_database_insight_resource_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -9077,7 +9736,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -9193,7 +9852,7 @@ class OperationsInsightsClient(object):
                 "summarize_database_insight_resource_utilization_insight got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -12727,7 +13386,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -12860,7 +13519,7 @@ class OperationsInsightsClient(object):
                 "summarize_sql_insights got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -13206,7 +13865,7 @@ class OperationsInsightsClient(object):
             Filter by one or more database type.
             Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
 
-            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"
+            Allowed values are: "ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"
 
         :param list[str] database_id: (optional)
             Optional list of database `OCIDs`__ of the associated DBaaS entity.
@@ -13373,7 +14032,7 @@ class OperationsInsightsClient(object):
                 "summarize_sql_statistics got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'database_type' in kwargs:
-            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB"]
+            database_type_allowed_values = ["ADW-S", "ATP-S", "ADW-D", "ATP-D", "EXTERNAL-PDB", "EXTERNAL-NONCDB", "COMANAGED-VM-CDB", "COMANAGED-VM-PDB", "COMANAGED-VM-NONCDB", "COMANAGED-BM-CDB", "COMANAGED-BM-PDB", "COMANAGED-BM-NONCDB", "COMANAGED-EXACS-CDB", "COMANAGED-EXACS-PDB", "COMANAGED-EXACS-NONCDB"]
             for database_type_item in kwargs['database_type']:
                 if database_type_item not in database_type_allowed_values:
                     raise ValueError(
@@ -14260,6 +14919,103 @@ class OperationsInsightsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_host_insight_details)
+
+    def update_operations_insights_private_endpoint(self, operations_insights_private_endpoint_id, update_operations_insights_private_endpoint_details, **kwargs):
+        """
+        Updates one or more attributes of the specified private endpoint.
+
+
+        :param str operations_insights_private_endpoint_id: (required)
+            The `OCID`__ of the Operation Insights private endpoint.
+
+            __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
+
+        :param oci.opsi.models.UpdateOperationsInsightsPrivateEndpointDetails update_operations_insights_private_endpoint_details: (required)
+            The details used to update a private endpoint.
+
+        :param str if_match: (optional)
+            Used for optimistic concurrency control. In the update or delete call for a resource, set the `if-match`
+            parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+            will be updated or deleted only if the etag you provide matches the resource's current etag value.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type None
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/update_operations_insights_private_endpoint.py.html>`__ to see an example of how to use update_operations_insights_private_endpoint API.
+        """
+        resource_path = "/operationsInsightsPrivateEndpoints/{operationsInsightsPrivateEndpointId}"
+        method = "PUT"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "if_match",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "update_operations_insights_private_endpoint got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "operationsInsightsPrivateEndpointId": operations_insights_private_endpoint_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "if-match": kwargs.get("if_match", missing),
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_operations_insights_private_endpoint_details)
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                header_params=header_params,
+                body=update_operations_insights_private_endpoint_details)
 
     def update_operations_insights_warehouse(self, operations_insights_warehouse_id, update_operations_insights_warehouse_details, **kwargs):
         """

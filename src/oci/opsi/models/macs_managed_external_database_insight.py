@@ -21,7 +21,7 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
 
         :param entity_source:
             The value to assign to the entity_source property of this MacsManagedExternalDatabaseInsight.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE"
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE"
         :type entity_source: str
 
         :param id:
@@ -78,6 +78,10 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
             The value to assign to the lifecycle_details property of this MacsManagedExternalDatabaseInsight.
         :type lifecycle_details: str
 
+        :param database_connection_status_details:
+            The value to assign to the database_connection_status_details property of this MacsManagedExternalDatabaseInsight.
+        :type database_connection_status_details: str
+
         :param management_agent_id:
             The value to assign to the management_agent_id property of this MacsManagedExternalDatabaseInsight.
         :type management_agent_id: str
@@ -130,6 +134,7 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'database_connection_status_details': 'str',
             'management_agent_id': 'str',
             'connector_id': 'str',
             'connection_details': 'ConnectionDetails',
@@ -156,6 +161,7 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'database_connection_status_details': 'databaseConnectionStatusDetails',
             'management_agent_id': 'managementAgentId',
             'connector_id': 'connectorId',
             'connection_details': 'connectionDetails',
@@ -181,6 +187,7 @@ class MacsManagedExternalDatabaseInsight(DatabaseInsight):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._database_connection_status_details = None
         self._management_agent_id = None
         self._connector_id = None
         self._connection_details = None

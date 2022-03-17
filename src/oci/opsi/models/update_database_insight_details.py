@@ -25,6 +25,10 @@ class UpdateDatabaseInsightDetails(object):
     #: This constant has a value of "MACS_MANAGED_EXTERNAL_DATABASE"
     ENTITY_SOURCE_MACS_MANAGED_EXTERNAL_DATABASE = "MACS_MANAGED_EXTERNAL_DATABASE"
 
+    #: A constant which can be used with the entity_source property of a UpdateDatabaseInsightDetails.
+    #: This constant has a value of "PE_COMANAGED_DATABASE"
+    ENTITY_SOURCE_PE_COMANAGED_DATABASE = "PE_COMANAGED_DATABASE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateDatabaseInsightDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -32,13 +36,14 @@ class UpdateDatabaseInsightDetails(object):
 
         * :class:`~oci.opsi.models.UpdateMacsManagedExternalDatabaseInsightDetails`
         * :class:`~oci.opsi.models.UpdateEmManagedExternalDatabaseInsightDetails`
+        * :class:`~oci.opsi.models.UpdatePeComanagedDatabaseInsightDetails`
         * :class:`~oci.opsi.models.UpdateAutonomousDatabaseInsightDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param entity_source:
             The value to assign to the entity_source property of this UpdateDatabaseInsightDetails.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE"
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE"
         :type entity_source: str
 
         :param freeform_tags:
@@ -80,6 +85,9 @@ class UpdateDatabaseInsightDetails(object):
         if type == 'EM_MANAGED_EXTERNAL_DATABASE':
             return 'UpdateEmManagedExternalDatabaseInsightDetails'
 
+        if type == 'PE_COMANAGED_DATABASE':
+            return 'UpdatePeComanagedDatabaseInsightDetails'
+
         if type == 'AUTONOMOUS_DATABASE':
             return 'UpdateAutonomousDatabaseInsightDetails'
         else:
@@ -91,7 +99,7 @@ class UpdateDatabaseInsightDetails(object):
         **[Required]** Gets the entity_source of this UpdateDatabaseInsightDetails.
         Source of the database entity.
 
-        Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE"
+        Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE"
 
 
         :return: The entity_source of this UpdateDatabaseInsightDetails.
@@ -109,7 +117,7 @@ class UpdateDatabaseInsightDetails(object):
         :param entity_source: The entity_source of this UpdateDatabaseInsightDetails.
         :type: str
         """
-        allowed_values = ["AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE"]
+        allowed_values = ["AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             raise ValueError(
                 "Invalid value for `entity_source`, must be None or one of {0}"

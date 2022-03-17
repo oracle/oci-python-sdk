@@ -21,7 +21,7 @@ class AutonomousDatabaseInsight(DatabaseInsight):
 
         :param entity_source:
             The value to assign to the entity_source property of this AutonomousDatabaseInsight.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE"
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE"
         :type entity_source: str
 
         :param id:
@@ -78,6 +78,10 @@ class AutonomousDatabaseInsight(DatabaseInsight):
             The value to assign to the lifecycle_details property of this AutonomousDatabaseInsight.
         :type lifecycle_details: str
 
+        :param database_connection_status_details:
+            The value to assign to the database_connection_status_details property of this AutonomousDatabaseInsight.
+        :type database_connection_status_details: str
+
         :param database_id:
             The value to assign to the database_id property of this AutonomousDatabaseInsight.
         :type database_id: str
@@ -114,6 +118,7 @@ class AutonomousDatabaseInsight(DatabaseInsight):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'database_connection_status_details': 'str',
             'database_id': 'str',
             'database_name': 'str',
             'database_display_name': 'str',
@@ -136,6 +141,7 @@ class AutonomousDatabaseInsight(DatabaseInsight):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'database_connection_status_details': 'databaseConnectionStatusDetails',
             'database_id': 'databaseId',
             'database_name': 'databaseName',
             'database_display_name': 'databaseDisplayName',
@@ -157,6 +163,7 @@ class AutonomousDatabaseInsight(DatabaseInsight):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._database_connection_status_details = None
         self._database_id = None
         self._database_name = None
         self._database_display_name = None

@@ -65,7 +65,7 @@ class AutonomousDatabaseInsightSummary(DatabaseInsightSummary):
 
         :param entity_source:
             The value to assign to the entity_source property of this AutonomousDatabaseInsightSummary.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE"
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE"
         :type entity_source: str
 
         :param processor_count:
@@ -94,6 +94,10 @@ class AutonomousDatabaseInsightSummary(DatabaseInsightSummary):
             The value to assign to the lifecycle_details property of this AutonomousDatabaseInsightSummary.
         :type lifecycle_details: str
 
+        :param database_connection_status_details:
+            The value to assign to the database_connection_status_details property of this AutonomousDatabaseInsightSummary.
+        :type database_connection_status_details: str
+
         :param database_resource_type:
             The value to assign to the database_resource_type property of this AutonomousDatabaseInsightSummary.
         :type database_resource_type: str
@@ -118,6 +122,7 @@ class AutonomousDatabaseInsightSummary(DatabaseInsightSummary):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'database_connection_status_details': 'str',
             'database_resource_type': 'str'
         }
 
@@ -140,6 +145,7 @@ class AutonomousDatabaseInsightSummary(DatabaseInsightSummary):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'database_connection_status_details': 'databaseConnectionStatusDetails',
             'database_resource_type': 'databaseResourceType'
         }
 
@@ -161,6 +167,7 @@ class AutonomousDatabaseInsightSummary(DatabaseInsightSummary):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._database_connection_status_details = None
         self._database_resource_type = None
         self._entity_source = 'AUTONOMOUS_DATABASE'
 

@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.dls.cp.dataset</groupId>
         <artifactId>data-labeling-service-spec</artifactId>
-        <version>1.0.112</version>
+        <version>1.0.115</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -216,6 +216,14 @@ class Deployment(object):
             The value to assign to the time_upgrade_required property of this Deployment.
         :type time_upgrade_required: datetime
 
+        :param storage_utilization_in_bytes:
+            The value to assign to the storage_utilization_in_bytes property of this Deployment.
+        :type storage_utilization_in_bytes: int
+
+        :param is_storage_utilization_limit_exceeded:
+            The value to assign to the is_storage_utilization_limit_exceeded property of this Deployment.
+        :type is_storage_utilization_limit_exceeded: bool
+
         :param deployment_type:
             The value to assign to the deployment_type property of this Deployment.
             Allowed values for this property are: "OGG", 'UNKNOWN_ENUM_VALUE'.
@@ -254,6 +262,8 @@ class Deployment(object):
             'system_tags': 'dict(str, dict(str, object))',
             'is_latest_version': 'bool',
             'time_upgrade_required': 'datetime',
+            'storage_utilization_in_bytes': 'int',
+            'is_storage_utilization_limit_exceeded': 'bool',
             'deployment_type': 'str',
             'ogg_data': 'OggDeployment'
         }
@@ -285,6 +295,8 @@ class Deployment(object):
             'system_tags': 'systemTags',
             'is_latest_version': 'isLatestVersion',
             'time_upgrade_required': 'timeUpgradeRequired',
+            'storage_utilization_in_bytes': 'storageUtilizationInBytes',
+            'is_storage_utilization_limit_exceeded': 'isStorageUtilizationLimitExceeded',
             'deployment_type': 'deploymentType',
             'ogg_data': 'oggData'
         }
@@ -315,6 +327,8 @@ class Deployment(object):
         self._system_tags = None
         self._is_latest_version = None
         self._time_upgrade_required = None
+        self._storage_utilization_in_bytes = None
+        self._is_storage_utilization_limit_exceeded = None
         self._deployment_type = None
         self._ogg_data = None
 
@@ -1003,11 +1017,58 @@ class Deployment(object):
         self._time_upgrade_required = time_upgrade_required
 
     @property
+    def storage_utilization_in_bytes(self):
+        """
+        Gets the storage_utilization_in_bytes of this Deployment.
+        The amount of storage being utilized (in bytes)
+
+
+        :return: The storage_utilization_in_bytes of this Deployment.
+        :rtype: int
+        """
+        return self._storage_utilization_in_bytes
+
+    @storage_utilization_in_bytes.setter
+    def storage_utilization_in_bytes(self, storage_utilization_in_bytes):
+        """
+        Sets the storage_utilization_in_bytes of this Deployment.
+        The amount of storage being utilized (in bytes)
+
+
+        :param storage_utilization_in_bytes: The storage_utilization_in_bytes of this Deployment.
+        :type: int
+        """
+        self._storage_utilization_in_bytes = storage_utilization_in_bytes
+
+    @property
+    def is_storage_utilization_limit_exceeded(self):
+        """
+        Gets the is_storage_utilization_limit_exceeded of this Deployment.
+        Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+
+
+        :return: The is_storage_utilization_limit_exceeded of this Deployment.
+        :rtype: bool
+        """
+        return self._is_storage_utilization_limit_exceeded
+
+    @is_storage_utilization_limit_exceeded.setter
+    def is_storage_utilization_limit_exceeded(self, is_storage_utilization_limit_exceeded):
+        """
+        Sets the is_storage_utilization_limit_exceeded of this Deployment.
+        Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+
+
+        :param is_storage_utilization_limit_exceeded: The is_storage_utilization_limit_exceeded of this Deployment.
+        :type: bool
+        """
+        self._is_storage_utilization_limit_exceeded = is_storage_utilization_limit_exceeded
+
+    @property
     def deployment_type(self):
         """
         **[Required]** Gets the deployment_type of this Deployment.
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
-              in favor of the equivalent DATABASE_ORACLE value.
+        The deployment type.
 
         Allowed values for this property are: "OGG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -1022,8 +1083,7 @@ class Deployment(object):
     def deployment_type(self, deployment_type):
         """
         Sets the deployment_type of this Deployment.
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
-              in favor of the equivalent DATABASE_ORACLE value.
+        The deployment type.
 
 
         :param deployment_type: The deployment_type of this Deployment.

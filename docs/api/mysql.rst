@@ -61,6 +61,7 @@ Mysql
     oci.mysql.models.CreateDbSystemSourceFromBackupDetails
     oci.mysql.models.CreateDbSystemSourceFromNoneDetails
     oci.mysql.models.CreateDbSystemSourceImportFromUrlDetails
+    oci.mysql.models.CreateDeletionPolicyDetails
     oci.mysql.models.CreateMaintenanceDetails
     oci.mysql.models.DbSystem
     oci.mysql.models.DbSystemEndpoint
@@ -71,6 +72,7 @@ Mysql
     oci.mysql.models.DbSystemSourceFromNone
     oci.mysql.models.DbSystemSourceImportFromUrl
     oci.mysql.models.DbSystemSummary
+    oci.mysql.models.DeletionPolicyDetails
     oci.mysql.models.HeatWaveCluster
     oci.mysql.models.HeatWaveClusterMemoryEstimate
     oci.mysql.models.HeatWaveClusterSchemaMemoryEstimate
@@ -92,6 +94,7 @@ Mysql
     oci.mysql.models.UpdateChannelTargetFromDbSystemDetails
     oci.mysql.models.UpdateConfigurationDetails
     oci.mysql.models.UpdateDbSystemDetails
+    oci.mysql.models.UpdateDeletionPolicyDetails
     oci.mysql.models.UpdateHeatWaveClusterDetails
     oci.mysql.models.UpdateMaintenanceDetails
     oci.mysql.models.Version

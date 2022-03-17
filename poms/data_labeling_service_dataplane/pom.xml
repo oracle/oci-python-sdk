@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.dls.dp</groupId>
         <artifactId>dls-data-plane-spec</artifactId>
-        <version>1.0.112</version>
+        <version>1.0.115</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

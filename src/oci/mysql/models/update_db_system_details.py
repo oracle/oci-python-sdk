@@ -106,6 +106,10 @@ class UpdateDbSystemDetails(object):
             The value to assign to the defined_tags property of this UpdateDbSystemDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param deletion_policy:
+            The value to assign to the deletion_policy property of this UpdateDbSystemDetails.
+        :type deletion_policy: oci.mysql.models.UpdateDeletionPolicyDetails
+
         :param crash_recovery:
             The value to assign to the crash_recovery property of this UpdateDbSystemDetails.
             Allowed values for this property are: "ENABLED", "DISABLED"
@@ -133,6 +137,7 @@ class UpdateDbSystemDetails(object):
             'maintenance': 'UpdateMaintenanceDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
+            'deletion_policy': 'UpdateDeletionPolicyDetails',
             'crash_recovery': 'str'
         }
 
@@ -157,6 +162,7 @@ class UpdateDbSystemDetails(object):
             'maintenance': 'maintenance',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
+            'deletion_policy': 'deletionPolicy',
             'crash_recovery': 'crashRecovery'
         }
 
@@ -180,6 +186,7 @@ class UpdateDbSystemDetails(object):
         self._maintenance = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._deletion_policy = None
         self._crash_recovery = None
 
     @property
@@ -725,6 +732,26 @@ class UpdateDbSystemDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def deletion_policy(self):
+        """
+        Gets the deletion_policy of this UpdateDbSystemDetails.
+
+        :return: The deletion_policy of this UpdateDbSystemDetails.
+        :rtype: oci.mysql.models.UpdateDeletionPolicyDetails
+        """
+        return self._deletion_policy
+
+    @deletion_policy.setter
+    def deletion_policy(self, deletion_policy):
+        """
+        Sets the deletion_policy of this UpdateDbSystemDetails.
+
+        :param deletion_policy: The deletion_policy of this UpdateDbSystemDetails.
+        :type: oci.mysql.models.UpdateDeletionPolicyDetails
+        """
+        self._deletion_policy = deletion_policy
 
     @property
     def crash_recovery(self):
