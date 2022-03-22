@@ -1,0 +1,11 @@
+CreateOperationsInsightsPrivateEndpointDetails
+==============================================
+
+.. currentmodule:: oci.opsi.models
+
+.. autoclass:: CreateOperationsInsightsPrivateEndpointDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

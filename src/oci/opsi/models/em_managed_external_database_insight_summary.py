@@ -65,7 +65,7 @@ class EmManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
 
         :param entity_source:
             The value to assign to the entity_source property of this EmManagedExternalDatabaseInsightSummary.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE"
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE"
         :type entity_source: str
 
         :param processor_count:
@@ -93,6 +93,10 @@ class EmManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this EmManagedExternalDatabaseInsightSummary.
         :type lifecycle_details: str
+
+        :param database_connection_status_details:
+            The value to assign to the database_connection_status_details property of this EmManagedExternalDatabaseInsightSummary.
+        :type database_connection_status_details: str
 
         :param enterprise_manager_identifier:
             The value to assign to the enterprise_manager_identifier property of this EmManagedExternalDatabaseInsightSummary.
@@ -142,6 +146,7 @@ class EmManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'database_connection_status_details': 'str',
             'enterprise_manager_identifier': 'str',
             'enterprise_manager_entity_name': 'str',
             'enterprise_manager_entity_type': 'str',
@@ -170,6 +175,7 @@ class EmManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'database_connection_status_details': 'databaseConnectionStatusDetails',
             'enterprise_manager_identifier': 'enterpriseManagerIdentifier',
             'enterprise_manager_entity_name': 'enterpriseManagerEntityName',
             'enterprise_manager_entity_type': 'enterpriseManagerEntityType',
@@ -197,6 +203,7 @@ class EmManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._database_connection_status_details = None
         self._enterprise_manager_identifier = None
         self._enterprise_manager_entity_name = None
         self._enterprise_manager_entity_type = None

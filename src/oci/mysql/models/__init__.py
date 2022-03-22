@@ -39,6 +39,7 @@ from .create_db_system_source_details import CreateDbSystemSourceDetails
 from .create_db_system_source_from_backup_details import CreateDbSystemSourceFromBackupDetails
 from .create_db_system_source_from_none_details import CreateDbSystemSourceFromNoneDetails
 from .create_db_system_source_import_from_url_details import CreateDbSystemSourceImportFromUrlDetails
+from .create_deletion_policy_details import CreateDeletionPolicyDetails
 from .create_maintenance_details import CreateMaintenanceDetails
 from .db_system import DbSystem
 from .db_system_endpoint import DbSystemEndpoint
@@ -49,6 +50,7 @@ from .db_system_source_from_backup import DbSystemSourceFromBackup
 from .db_system_source_from_none import DbSystemSourceFromNone
 from .db_system_source_import_from_url import DbSystemSourceImportFromUrl
 from .db_system_summary import DbSystemSummary
+from .deletion_policy_details import DeletionPolicyDetails
 from .heat_wave_cluster import HeatWaveCluster
 from .heat_wave_cluster_memory_estimate import HeatWaveClusterMemoryEstimate
 from .heat_wave_cluster_schema_memory_estimate import HeatWaveClusterSchemaMemoryEstimate
@@ -70,6 +72,7 @@ from .update_channel_target_details import UpdateChannelTargetDetails
 from .update_channel_target_from_db_system_details import UpdateChannelTargetFromDbSystemDetails
 from .update_configuration_details import UpdateConfigurationDetails
 from .update_db_system_details import UpdateDbSystemDetails
+from .update_deletion_policy_details import UpdateDeletionPolicyDetails
 from .update_heat_wave_cluster_details import UpdateHeatWaveClusterDetails
 from .update_maintenance_details import UpdateMaintenanceDetails
 from .version import Version
@@ -117,6 +120,7 @@ mysql_type_mapping = {
     "CreateDbSystemSourceFromBackupDetails": CreateDbSystemSourceFromBackupDetails,
     "CreateDbSystemSourceFromNoneDetails": CreateDbSystemSourceFromNoneDetails,
     "CreateDbSystemSourceImportFromUrlDetails": CreateDbSystemSourceImportFromUrlDetails,
+    "CreateDeletionPolicyDetails": CreateDeletionPolicyDetails,
     "CreateMaintenanceDetails": CreateMaintenanceDetails,
     "DbSystem": DbSystem,
     "DbSystemEndpoint": DbSystemEndpoint,
@@ -127,6 +131,7 @@ mysql_type_mapping = {
     "DbSystemSourceFromNone": DbSystemSourceFromNone,
     "DbSystemSourceImportFromUrl": DbSystemSourceImportFromUrl,
     "DbSystemSummary": DbSystemSummary,
+    "DeletionPolicyDetails": DeletionPolicyDetails,
     "HeatWaveCluster": HeatWaveCluster,
     "HeatWaveClusterMemoryEstimate": HeatWaveClusterMemoryEstimate,
     "HeatWaveClusterSchemaMemoryEstimate": HeatWaveClusterSchemaMemoryEstimate,
@@ -148,6 +153,7 @@ mysql_type_mapping = {
     "UpdateChannelTargetFromDbSystemDetails": UpdateChannelTargetFromDbSystemDetails,
     "UpdateConfigurationDetails": UpdateConfigurationDetails,
     "UpdateDbSystemDetails": UpdateDbSystemDetails,
+    "UpdateDeletionPolicyDetails": UpdateDeletionPolicyDetails,
     "UpdateHeatWaveClusterDetails": UpdateHeatWaveClusterDetails,
     "UpdateMaintenanceDetails": UpdateMaintenanceDetails,
     "Version": Version,

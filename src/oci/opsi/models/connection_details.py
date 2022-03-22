@@ -146,7 +146,7 @@ class ConnectionDetails(object):
     def service_name(self):
         """
         **[Required]** Gets the service_name of this ConnectionDetails.
-        Service name used for connection requests.
+        Database service name used for connection requests.
 
 
         :return: The service_name of this ConnectionDetails.
@@ -158,7 +158,7 @@ class ConnectionDetails(object):
     def service_name(self, service_name):
         """
         Sets the service_name of this ConnectionDetails.
-        Service name used for connection requests.
+        Database service name used for connection requests.
 
 
         :param service_name: The service_name of this ConnectionDetails.

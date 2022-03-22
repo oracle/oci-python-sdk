@@ -210,6 +210,14 @@ class DeploymentSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
+        :param storage_utilization_in_bytes:
+            The value to assign to the storage_utilization_in_bytes property of this DeploymentSummary.
+        :type storage_utilization_in_bytes: int
+
+        :param is_storage_utilization_limit_exceeded:
+            The value to assign to the is_storage_utilization_limit_exceeded property of this DeploymentSummary.
+        :type is_storage_utilization_limit_exceeded: bool
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -235,7 +243,9 @@ class DeploymentSummary(object):
             'system_tags': 'dict(str, dict(str, object))',
             'is_latest_version': 'bool',
             'time_upgrade_required': 'datetime',
-            'deployment_type': 'str'
+            'deployment_type': 'str',
+            'storage_utilization_in_bytes': 'int',
+            'is_storage_utilization_limit_exceeded': 'bool'
         }
 
         self.attribute_map = {
@@ -262,7 +272,9 @@ class DeploymentSummary(object):
             'system_tags': 'systemTags',
             'is_latest_version': 'isLatestVersion',
             'time_upgrade_required': 'timeUpgradeRequired',
-            'deployment_type': 'deploymentType'
+            'deployment_type': 'deploymentType',
+            'storage_utilization_in_bytes': 'storageUtilizationInBytes',
+            'is_storage_utilization_limit_exceeded': 'isStorageUtilizationLimitExceeded'
         }
 
         self._id = None
@@ -289,6 +301,8 @@ class DeploymentSummary(object):
         self._is_latest_version = None
         self._time_upgrade_required = None
         self._deployment_type = None
+        self._storage_utilization_in_bytes = None
+        self._is_storage_utilization_limit_exceeded = None
 
     @property
     def id(self):
@@ -898,8 +912,7 @@ class DeploymentSummary(object):
     def deployment_type(self):
         """
         Gets the deployment_type of this DeploymentSummary.
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
-              in favor of the equivalent DATABASE_ORACLE value.
+        The deployment type.
 
         Allowed values for this property are: "OGG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -914,8 +927,7 @@ class DeploymentSummary(object):
     def deployment_type(self, deployment_type):
         """
         Sets the deployment_type of this DeploymentSummary.
-        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged
-              in favor of the equivalent DATABASE_ORACLE value.
+        The deployment type.
 
 
         :param deployment_type: The deployment_type of this DeploymentSummary.
@@ -925,6 +937,54 @@ class DeploymentSummary(object):
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type
+
+    @property
+    def storage_utilization_in_bytes(self):
+        """
+        Gets the storage_utilization_in_bytes of this DeploymentSummary.
+        The amount of storage being utilized (in bytes)
+
+
+        :return: The storage_utilization_in_bytes of this DeploymentSummary.
+        :rtype: int
+        """
+        return self._storage_utilization_in_bytes
+
+    @storage_utilization_in_bytes.setter
+    def storage_utilization_in_bytes(self, storage_utilization_in_bytes):
+        """
+        Sets the storage_utilization_in_bytes of this DeploymentSummary.
+        The amount of storage being utilized (in bytes)
+
+
+        :param storage_utilization_in_bytes: The storage_utilization_in_bytes of this DeploymentSummary.
+        :type: int
+        """
+        self._storage_utilization_in_bytes = storage_utilization_in_bytes
+
+    @property
+    def is_storage_utilization_limit_exceeded(self):
+        """
+        Gets the is_storage_utilization_limit_exceeded of this DeploymentSummary.
+        Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+
+
+        :return: The is_storage_utilization_limit_exceeded of this DeploymentSummary.
+        :rtype: bool
+        """
+        return self._is_storage_utilization_limit_exceeded
+
+    @is_storage_utilization_limit_exceeded.setter
+    def is_storage_utilization_limit_exceeded(self, is_storage_utilization_limit_exceeded):
+        """
+        Sets the is_storage_utilization_limit_exceeded of this DeploymentSummary.
+        Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
+
+
+        :param is_storage_utilization_limit_exceeded: The is_storage_utilization_limit_exceeded of this DeploymentSummary.
+        :type: bool
+        """
+        self._is_storage_utilization_limit_exceeded = is_storage_utilization_limit_exceeded
 
     def __repr__(self):
         return formatted_flat_dict(self)

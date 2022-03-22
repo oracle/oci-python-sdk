@@ -21,6 +21,8 @@ from .change_database_insight_compartment_details import ChangeDatabaseInsightCo
 from .change_enterprise_manager_bridge_compartment_details import ChangeEnterpriseManagerBridgeCompartmentDetails
 from .change_exadata_insight_compartment_details import ChangeExadataInsightCompartmentDetails
 from .change_host_insight_compartment_details import ChangeHostInsightCompartmentDetails
+from .change_operations_insights_private_endpoint_compartment_details import ChangeOperationsInsightsPrivateEndpointCompartmentDetails
+from .change_pe_comanaged_database_insight_details import ChangePeComanagedDatabaseInsightDetails
 from .connection_details import ConnectionDetails
 from .create_awr_hub_details import CreateAwrHubDetails
 from .create_database_insight_details import CreateDatabaseInsightDetails
@@ -32,8 +34,11 @@ from .create_enterprise_manager_bridge_details import CreateEnterpriseManagerBri
 from .create_exadata_insight_details import CreateExadataInsightDetails
 from .create_host_insight_details import CreateHostInsightDetails
 from .create_macs_managed_external_host_insight_details import CreateMacsManagedExternalHostInsightDetails
+from .create_operations_insights_private_endpoint_details import CreateOperationsInsightsPrivateEndpointDetails
 from .create_operations_insights_warehouse_details import CreateOperationsInsightsWarehouseDetails
 from .create_operations_insights_warehouse_user_details import CreateOperationsInsightsWarehouseUserDetails
+from .create_pe_comanaged_database_insight_details import CreatePeComanagedDatabaseInsightDetails
+from .credential_by_vault import CredentialByVault
 from .credential_details import CredentialDetails
 from .credentials_by_source import CredentialsBySource
 from .db_external_instance import DBExternalInstance
@@ -64,6 +69,7 @@ from .enable_em_managed_external_host_insight_details import EnableEmManagedExte
 from .enable_exadata_insight_details import EnableExadataInsightDetails
 from .enable_host_insight_details import EnableHostInsightDetails
 from .enable_macs_managed_external_host_insight_details import EnableMacsManagedExternalHostInsightDetails
+from .enable_pe_comanaged_database_insight_details import EnablePeComanagedDatabaseInsightDetails
 from .enterprise_manager_bridge import EnterpriseManagerBridge
 from .enterprise_manager_bridge_collection import EnterpriseManagerBridgeCollection
 from .enterprise_manager_bridge_summary import EnterpriseManagerBridgeSummary
@@ -142,6 +148,9 @@ from .macs_managed_external_database_insight_summary import MacsManagedExternalD
 from .macs_managed_external_host_configuration_summary import MacsManagedExternalHostConfigurationSummary
 from .macs_managed_external_host_insight import MacsManagedExternalHostInsight
 from .macs_managed_external_host_insight_summary import MacsManagedExternalHostInsightSummary
+from .operations_insights_private_endpoint import OperationsInsightsPrivateEndpoint
+from .operations_insights_private_endpoint_collection import OperationsInsightsPrivateEndpointCollection
+from .operations_insights_private_endpoint_summary import OperationsInsightsPrivateEndpointSummary
 from .operations_insights_warehouse import OperationsInsightsWarehouse
 from .operations_insights_warehouse_summary import OperationsInsightsWarehouseSummary
 from .operations_insights_warehouse_summary_collection import OperationsInsightsWarehouseSummaryCollection
@@ -150,6 +159,11 @@ from .operations_insights_warehouse_user_summary import OperationsInsightsWareho
 from .operations_insights_warehouse_user_summary_collection import OperationsInsightsWarehouseUserSummaryCollection
 from .operations_insights_warehouse_users import OperationsInsightsWarehouseUsers
 from .operations_insights_warehouses import OperationsInsightsWarehouses
+from .pe_comanaged_database_connection_details import PeComanagedDatabaseConnectionDetails
+from .pe_comanaged_database_host_details import PeComanagedDatabaseHostDetails
+from .pe_comanaged_database_insight import PeComanagedDatabaseInsight
+from .pe_comanaged_database_insight_summary import PeComanagedDatabaseInsightSummary
+from .pe_comanaged_managed_external_database_configuration_summary import PeComanagedManagedExternalDatabaseConfigurationSummary
 from .projected_data_item import ProjectedDataItem
 from .resource_capacity_trend_aggregation import ResourceCapacityTrendAggregation
 from .resource_insight_current_utilization import ResourceInsightCurrentUtilization
@@ -224,8 +238,10 @@ from .update_exadata_insight_details import UpdateExadataInsightDetails
 from .update_host_insight_details import UpdateHostInsightDetails
 from .update_macs_managed_external_database_insight_details import UpdateMacsManagedExternalDatabaseInsightDetails
 from .update_macs_managed_external_host_insight_details import UpdateMacsManagedExternalHostInsightDetails
+from .update_operations_insights_private_endpoint_details import UpdateOperationsInsightsPrivateEndpointDetails
 from .update_operations_insights_warehouse_details import UpdateOperationsInsightsWarehouseDetails
 from .update_operations_insights_warehouse_user_details import UpdateOperationsInsightsWarehouseUserDetails
+from .update_pe_comanaged_database_insight_details import UpdatePeComanagedDatabaseInsightDetails
 from .work_request import WorkRequest
 from .work_request_collection import WorkRequestCollection
 from .work_request_error import WorkRequestError
@@ -254,6 +270,8 @@ opsi_type_mapping = {
     "ChangeEnterpriseManagerBridgeCompartmentDetails": ChangeEnterpriseManagerBridgeCompartmentDetails,
     "ChangeExadataInsightCompartmentDetails": ChangeExadataInsightCompartmentDetails,
     "ChangeHostInsightCompartmentDetails": ChangeHostInsightCompartmentDetails,
+    "ChangeOperationsInsightsPrivateEndpointCompartmentDetails": ChangeOperationsInsightsPrivateEndpointCompartmentDetails,
+    "ChangePeComanagedDatabaseInsightDetails": ChangePeComanagedDatabaseInsightDetails,
     "ConnectionDetails": ConnectionDetails,
     "CreateAwrHubDetails": CreateAwrHubDetails,
     "CreateDatabaseInsightDetails": CreateDatabaseInsightDetails,
@@ -265,8 +283,11 @@ opsi_type_mapping = {
     "CreateExadataInsightDetails": CreateExadataInsightDetails,
     "CreateHostInsightDetails": CreateHostInsightDetails,
     "CreateMacsManagedExternalHostInsightDetails": CreateMacsManagedExternalHostInsightDetails,
+    "CreateOperationsInsightsPrivateEndpointDetails": CreateOperationsInsightsPrivateEndpointDetails,
     "CreateOperationsInsightsWarehouseDetails": CreateOperationsInsightsWarehouseDetails,
     "CreateOperationsInsightsWarehouseUserDetails": CreateOperationsInsightsWarehouseUserDetails,
+    "CreatePeComanagedDatabaseInsightDetails": CreatePeComanagedDatabaseInsightDetails,
+    "CredentialByVault": CredentialByVault,
     "CredentialDetails": CredentialDetails,
     "CredentialsBySource": CredentialsBySource,
     "DBExternalInstance": DBExternalInstance,
@@ -297,6 +318,7 @@ opsi_type_mapping = {
     "EnableExadataInsightDetails": EnableExadataInsightDetails,
     "EnableHostInsightDetails": EnableHostInsightDetails,
     "EnableMacsManagedExternalHostInsightDetails": EnableMacsManagedExternalHostInsightDetails,
+    "EnablePeComanagedDatabaseInsightDetails": EnablePeComanagedDatabaseInsightDetails,
     "EnterpriseManagerBridge": EnterpriseManagerBridge,
     "EnterpriseManagerBridgeCollection": EnterpriseManagerBridgeCollection,
     "EnterpriseManagerBridgeSummary": EnterpriseManagerBridgeSummary,
@@ -375,6 +397,9 @@ opsi_type_mapping = {
     "MacsManagedExternalHostConfigurationSummary": MacsManagedExternalHostConfigurationSummary,
     "MacsManagedExternalHostInsight": MacsManagedExternalHostInsight,
     "MacsManagedExternalHostInsightSummary": MacsManagedExternalHostInsightSummary,
+    "OperationsInsightsPrivateEndpoint": OperationsInsightsPrivateEndpoint,
+    "OperationsInsightsPrivateEndpointCollection": OperationsInsightsPrivateEndpointCollection,
+    "OperationsInsightsPrivateEndpointSummary": OperationsInsightsPrivateEndpointSummary,
     "OperationsInsightsWarehouse": OperationsInsightsWarehouse,
     "OperationsInsightsWarehouseSummary": OperationsInsightsWarehouseSummary,
     "OperationsInsightsWarehouseSummaryCollection": OperationsInsightsWarehouseSummaryCollection,
@@ -383,6 +408,11 @@ opsi_type_mapping = {
     "OperationsInsightsWarehouseUserSummaryCollection": OperationsInsightsWarehouseUserSummaryCollection,
     "OperationsInsightsWarehouseUsers": OperationsInsightsWarehouseUsers,
     "OperationsInsightsWarehouses": OperationsInsightsWarehouses,
+    "PeComanagedDatabaseConnectionDetails": PeComanagedDatabaseConnectionDetails,
+    "PeComanagedDatabaseHostDetails": PeComanagedDatabaseHostDetails,
+    "PeComanagedDatabaseInsight": PeComanagedDatabaseInsight,
+    "PeComanagedDatabaseInsightSummary": PeComanagedDatabaseInsightSummary,
+    "PeComanagedManagedExternalDatabaseConfigurationSummary": PeComanagedManagedExternalDatabaseConfigurationSummary,
     "ProjectedDataItem": ProjectedDataItem,
     "ResourceCapacityTrendAggregation": ResourceCapacityTrendAggregation,
     "ResourceInsightCurrentUtilization": ResourceInsightCurrentUtilization,
@@ -457,8 +487,10 @@ opsi_type_mapping = {
     "UpdateHostInsightDetails": UpdateHostInsightDetails,
     "UpdateMacsManagedExternalDatabaseInsightDetails": UpdateMacsManagedExternalDatabaseInsightDetails,
     "UpdateMacsManagedExternalHostInsightDetails": UpdateMacsManagedExternalHostInsightDetails,
+    "UpdateOperationsInsightsPrivateEndpointDetails": UpdateOperationsInsightsPrivateEndpointDetails,
     "UpdateOperationsInsightsWarehouseDetails": UpdateOperationsInsightsWarehouseDetails,
     "UpdateOperationsInsightsWarehouseUserDetails": UpdateOperationsInsightsWarehouseUserDetails,
+    "UpdatePeComanagedDatabaseInsightDetails": UpdatePeComanagedDatabaseInsightDetails,
     "WorkRequest": WorkRequest,
     "WorkRequestCollection": WorkRequestCollection,
     "WorkRequestError": WorkRequestError,

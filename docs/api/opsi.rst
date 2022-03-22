@@ -35,6 +35,8 @@ Opsi
     oci.opsi.models.ChangeEnterpriseManagerBridgeCompartmentDetails
     oci.opsi.models.ChangeExadataInsightCompartmentDetails
     oci.opsi.models.ChangeHostInsightCompartmentDetails
+    oci.opsi.models.ChangeOperationsInsightsPrivateEndpointCompartmentDetails
+    oci.opsi.models.ChangePeComanagedDatabaseInsightDetails
     oci.opsi.models.ConnectionDetails
     oci.opsi.models.CreateAwrHubDetails
     oci.opsi.models.CreateDatabaseInsightDetails
@@ -46,8 +48,11 @@ Opsi
     oci.opsi.models.CreateExadataInsightDetails
     oci.opsi.models.CreateHostInsightDetails
     oci.opsi.models.CreateMacsManagedExternalHostInsightDetails
+    oci.opsi.models.CreateOperationsInsightsPrivateEndpointDetails
     oci.opsi.models.CreateOperationsInsightsWarehouseDetails
     oci.opsi.models.CreateOperationsInsightsWarehouseUserDetails
+    oci.opsi.models.CreatePeComanagedDatabaseInsightDetails
+    oci.opsi.models.CredentialByVault
     oci.opsi.models.CredentialDetails
     oci.opsi.models.CredentialsBySource
     oci.opsi.models.DBExternalInstance
@@ -78,6 +83,7 @@ Opsi
     oci.opsi.models.EnableExadataInsightDetails
     oci.opsi.models.EnableHostInsightDetails
     oci.opsi.models.EnableMacsManagedExternalHostInsightDetails
+    oci.opsi.models.EnablePeComanagedDatabaseInsightDetails
     oci.opsi.models.EnterpriseManagerBridge
     oci.opsi.models.EnterpriseManagerBridgeCollection
     oci.opsi.models.EnterpriseManagerBridgeSummary
@@ -156,6 +162,9 @@ Opsi
     oci.opsi.models.MacsManagedExternalHostConfigurationSummary
     oci.opsi.models.MacsManagedExternalHostInsight
     oci.opsi.models.MacsManagedExternalHostInsightSummary
+    oci.opsi.models.OperationsInsightsPrivateEndpoint
+    oci.opsi.models.OperationsInsightsPrivateEndpointCollection
+    oci.opsi.models.OperationsInsightsPrivateEndpointSummary
     oci.opsi.models.OperationsInsightsWarehouse
     oci.opsi.models.OperationsInsightsWarehouseSummary
     oci.opsi.models.OperationsInsightsWarehouseSummaryCollection
@@ -164,6 +173,11 @@ Opsi
     oci.opsi.models.OperationsInsightsWarehouseUserSummaryCollection
     oci.opsi.models.OperationsInsightsWarehouseUsers
     oci.opsi.models.OperationsInsightsWarehouses
+    oci.opsi.models.PeComanagedDatabaseConnectionDetails
+    oci.opsi.models.PeComanagedDatabaseHostDetails
+    oci.opsi.models.PeComanagedDatabaseInsight
+    oci.opsi.models.PeComanagedDatabaseInsightSummary
+    oci.opsi.models.PeComanagedManagedExternalDatabaseConfigurationSummary
     oci.opsi.models.ProjectedDataItem
     oci.opsi.models.ResourceCapacityTrendAggregation
     oci.opsi.models.ResourceInsightCurrentUtilization
@@ -238,8 +252,10 @@ Opsi
     oci.opsi.models.UpdateHostInsightDetails
     oci.opsi.models.UpdateMacsManagedExternalDatabaseInsightDetails
     oci.opsi.models.UpdateMacsManagedExternalHostInsightDetails
+    oci.opsi.models.UpdateOperationsInsightsPrivateEndpointDetails
     oci.opsi.models.UpdateOperationsInsightsWarehouseDetails
     oci.opsi.models.UpdateOperationsInsightsWarehouseUserDetails
+    oci.opsi.models.UpdatePeComanagedDatabaseInsightDetails
     oci.opsi.models.WorkRequest
     oci.opsi.models.WorkRequestCollection
     oci.opsi.models.WorkRequestError

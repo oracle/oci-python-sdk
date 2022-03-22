@@ -25,7 +25,7 @@ class MacsManagedExternalDatabaseConfigurationSummary(DatabaseConfigurationSumma
 
         :param entity_source:
             The value to assign to the entity_source property of this MacsManagedExternalDatabaseConfigurationSummary.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE"
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE"
         :type entity_source: str
 
         :param compartment_id:
