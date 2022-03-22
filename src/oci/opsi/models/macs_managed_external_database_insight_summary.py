@@ -65,7 +65,7 @@ class MacsManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
 
         :param entity_source:
             The value to assign to the entity_source property of this MacsManagedExternalDatabaseInsightSummary.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE"
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE"
         :type entity_source: str
 
         :param processor_count:
@@ -93,6 +93,10 @@ class MacsManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
         :param lifecycle_details:
             The value to assign to the lifecycle_details property of this MacsManagedExternalDatabaseInsightSummary.
         :type lifecycle_details: str
+
+        :param database_connection_status_details:
+            The value to assign to the database_connection_status_details property of this MacsManagedExternalDatabaseInsightSummary.
+        :type database_connection_status_details: str
 
         :param database_resource_type:
             The value to assign to the database_resource_type property of this MacsManagedExternalDatabaseInsightSummary.
@@ -126,6 +130,7 @@ class MacsManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
+            'database_connection_status_details': 'str',
             'database_resource_type': 'str',
             'management_agent_id': 'str',
             'connector_id': 'str'
@@ -150,6 +155,7 @@ class MacsManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
+            'database_connection_status_details': 'databaseConnectionStatusDetails',
             'database_resource_type': 'databaseResourceType',
             'management_agent_id': 'managementAgentId',
             'connector_id': 'connectorId'
@@ -173,6 +179,7 @@ class MacsManagedExternalDatabaseInsightSummary(DatabaseInsightSummary):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._database_connection_status_details = None
         self._database_resource_type = None
         self._management_agent_id = None
         self._connector_id = None

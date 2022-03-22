@@ -25,6 +25,10 @@ class DatabaseInsightSummary(object):
     #: This constant has a value of "MACS_MANAGED_EXTERNAL_DATABASE"
     ENTITY_SOURCE_MACS_MANAGED_EXTERNAL_DATABASE = "MACS_MANAGED_EXTERNAL_DATABASE"
 
+    #: A constant which can be used with the entity_source property of a DatabaseInsightSummary.
+    #: This constant has a value of "PE_COMANAGED_DATABASE"
+    ENTITY_SOURCE_PE_COMANAGED_DATABASE = "PE_COMANAGED_DATABASE"
+
     #: A constant which can be used with the status property of a DatabaseInsightSummary.
     #: This constant has a value of "DISABLED"
     STATUS_DISABLED = "DISABLED"
@@ -72,6 +76,7 @@ class DatabaseInsightSummary(object):
 
         * :class:`~oci.opsi.models.MacsManagedExternalDatabaseInsightSummary`
         * :class:`~oci.opsi.models.AutonomousDatabaseInsightSummary`
+        * :class:`~oci.opsi.models.PeComanagedDatabaseInsightSummary`
         * :class:`~oci.opsi.models.EmManagedExternalDatabaseInsightSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -122,7 +127,7 @@ class DatabaseInsightSummary(object):
 
         :param entity_source:
             The value to assign to the entity_source property of this DatabaseInsightSummary.
-            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type entity_source: str
 
@@ -154,6 +159,10 @@ class DatabaseInsightSummary(object):
             The value to assign to the lifecycle_details property of this DatabaseInsightSummary.
         :type lifecycle_details: str
 
+        :param database_connection_status_details:
+            The value to assign to the database_connection_status_details property of this DatabaseInsightSummary.
+        :type database_connection_status_details: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -173,7 +182,8 @@ class DatabaseInsightSummary(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
-            'lifecycle_details': 'str'
+            'lifecycle_details': 'str',
+            'database_connection_status_details': 'str'
         }
 
         self.attribute_map = {
@@ -194,7 +204,8 @@ class DatabaseInsightSummary(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
-            'lifecycle_details': 'lifecycleDetails'
+            'lifecycle_details': 'lifecycleDetails',
+            'database_connection_status_details': 'databaseConnectionStatusDetails'
         }
 
         self._id = None
@@ -215,6 +226,7 @@ class DatabaseInsightSummary(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._lifecycle_details = None
+        self._database_connection_status_details = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -229,6 +241,9 @@ class DatabaseInsightSummary(object):
 
         if type == 'AUTONOMOUS_DATABASE':
             return 'AutonomousDatabaseInsightSummary'
+
+        if type == 'PE_COMANAGED_DATABASE':
+            return 'PeComanagedDatabaseInsightSummary'
 
         if type == 'EM_MANAGED_EXTERNAL_DATABASE':
             return 'EmManagedExternalDatabaseInsightSummary'
@@ -523,7 +538,7 @@ class DatabaseInsightSummary(object):
         **[Required]** Gets the entity_source of this DatabaseInsightSummary.
         Source of the database entity.
 
-        Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -542,7 +557,7 @@ class DatabaseInsightSummary(object):
         :param entity_source: The entity_source of this DatabaseInsightSummary.
         :type: str
         """
-        allowed_values = ["AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE"]
+        allowed_values = ["AUTONOMOUS_DATABASE", "EM_MANAGED_EXTERNAL_DATABASE", "MACS_MANAGED_EXTERNAL_DATABASE", "PE_COMANAGED_DATABASE"]
         if not value_allowed_none_or_none_sentinel(entity_source, allowed_values):
             entity_source = 'UNKNOWN_ENUM_VALUE'
         self._entity_source = entity_source
@@ -702,6 +717,30 @@ class DatabaseInsightSummary(object):
         :type: str
         """
         self._lifecycle_details = lifecycle_details
+
+    @property
+    def database_connection_status_details(self):
+        """
+        Gets the database_connection_status_details of this DatabaseInsightSummary.
+        A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
+
+
+        :return: The database_connection_status_details of this DatabaseInsightSummary.
+        :rtype: str
+        """
+        return self._database_connection_status_details
+
+    @database_connection_status_details.setter
+    def database_connection_status_details(self, database_connection_status_details):
+        """
+        Sets the database_connection_status_details of this DatabaseInsightSummary.
+        A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
+
+
+        :param database_connection_status_details: The database_connection_status_details of this DatabaseInsightSummary.
+        :type: str
+        """
+        self._database_connection_status_details = database_connection_status_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

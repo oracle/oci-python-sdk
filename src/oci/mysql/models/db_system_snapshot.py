@@ -106,6 +106,10 @@ class DbSystemSnapshot(object):
             The value to assign to the maintenance property of this DbSystemSnapshot.
         :type maintenance: oci.mysql.models.MaintenanceDetails
 
+        :param deletion_policy:
+            The value to assign to the deletion_policy property of this DbSystemSnapshot.
+        :type deletion_policy: oci.mysql.models.DeletionPolicyDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DbSystemSnapshot.
         :type freeform_tags: dict(str, str)
@@ -142,6 +146,7 @@ class DbSystemSnapshot(object):
             'is_highly_available': 'bool',
             'endpoints': 'list[DbSystemEndpoint]',
             'maintenance': 'MaintenanceDetails',
+            'deletion_policy': 'DeletionPolicyDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'crash_recovery': 'str'
@@ -168,6 +173,7 @@ class DbSystemSnapshot(object):
             'is_highly_available': 'isHighlyAvailable',
             'endpoints': 'endpoints',
             'maintenance': 'maintenance',
+            'deletion_policy': 'deletionPolicy',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'crash_recovery': 'crashRecovery'
@@ -193,6 +199,7 @@ class DbSystemSnapshot(object):
         self._is_highly_available = None
         self._endpoints = None
         self._maintenance = None
+        self._deletion_policy = None
         self._freeform_tags = None
         self._defined_tags = None
         self._crash_recovery = None
@@ -690,6 +697,26 @@ class DbSystemSnapshot(object):
         :type: oci.mysql.models.MaintenanceDetails
         """
         self._maintenance = maintenance
+
+    @property
+    def deletion_policy(self):
+        """
+        **[Required]** Gets the deletion_policy of this DbSystemSnapshot.
+
+        :return: The deletion_policy of this DbSystemSnapshot.
+        :rtype: oci.mysql.models.DeletionPolicyDetails
+        """
+        return self._deletion_policy
+
+    @deletion_policy.setter
+    def deletion_policy(self, deletion_policy):
+        """
+        Sets the deletion_policy of this DbSystemSnapshot.
+
+        :param deletion_policy: The deletion_policy of this DbSystemSnapshot.
+        :type: oci.mysql.models.DeletionPolicyDetails
+        """
+        self._deletion_policy = deletion_policy
 
     @property
     def freeform_tags(self):

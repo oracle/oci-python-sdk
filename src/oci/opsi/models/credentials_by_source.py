@@ -25,7 +25,7 @@ class CredentialsBySource(CredentialDetails):
 
         :param credential_type:
             The value to assign to the credential_type property of this CredentialsBySource.
-            Allowed values for this property are: "CREDENTIALS_BY_SOURCE"
+            Allowed values for this property are: "CREDENTIALS_BY_SOURCE", "CREDENTIALS_BY_VAULT"
         :type credential_type: str
 
         """

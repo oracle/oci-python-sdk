@@ -94,6 +94,10 @@ class DbSystemSummary(object):
             The value to assign to the time_updated property of this DbSystemSummary.
         :type time_updated: datetime
 
+        :param deletion_policy:
+            The value to assign to the deletion_policy property of this DbSystemSummary.
+        :type deletion_policy: oci.mysql.models.DeletionPolicyDetails
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this DbSystemSummary.
         :type freeform_tags: dict(str, str)
@@ -127,6 +131,7 @@ class DbSystemSummary(object):
             'mysql_version': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
+            'deletion_policy': 'DeletionPolicyDetails',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'crash_recovery': 'str'
@@ -150,6 +155,7 @@ class DbSystemSummary(object):
             'mysql_version': 'mysqlVersion',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
+            'deletion_policy': 'deletionPolicy',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'crash_recovery': 'crashRecovery'
@@ -172,6 +178,7 @@ class DbSystemSummary(object):
         self._mysql_version = None
         self._time_created = None
         self._time_updated = None
+        self._deletion_policy = None
         self._freeform_tags = None
         self._defined_tags = None
         self._crash_recovery = None
@@ -599,6 +606,26 @@ class DbSystemSummary(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def deletion_policy(self):
+        """
+        Gets the deletion_policy of this DbSystemSummary.
+
+        :return: The deletion_policy of this DbSystemSummary.
+        :rtype: oci.mysql.models.DeletionPolicyDetails
+        """
+        return self._deletion_policy
+
+    @deletion_policy.setter
+    def deletion_policy(self, deletion_policy):
+        """
+        Sets the deletion_policy of this DbSystemSummary.
+
+        :param deletion_policy: The deletion_policy of this DbSystemSummary.
+        :type: oci.mysql.models.DeletionPolicyDetails
+        """
+        self._deletion_policy = deletion_policy
 
     @property
     def freeform_tags(self):
