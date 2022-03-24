@@ -126,6 +126,7 @@ class ShowOCIData(object):
             'config_profile': self.service.flags.config_section,
             'use_instance_principals': self.service.flags.use_instance_principals,
             'use_delegation_token': self.service.flags.use_delegation_token,
+            'use_security_token': self.service.flags.use_security_token,
             'version': self.service.flags.showoci_version,
             'override_tenant_id': self.service.flags.filter_by_tenancy_id,
             'datetime': start_time,
@@ -1174,6 +1175,8 @@ class ShowOCIData(object):
                     'drg_id': ips['drg_id'],
                     'cpe': cpe,
                     'cpe_id': ips['cpe_id'],
+                    'cpe_local_identifier': ips['cpe_local_identifier'],
+                    'cpe_local_identifier_type': ips['cpe_local_identifier_type'],
                     'routes': ips['static_routes'],
                     'tunnels': ips['tunnels'],
                     'defined_tags': ips['defined_tags'],
@@ -1951,20 +1954,14 @@ class ShowOCIData(object):
 
         data = []
         try:
-            nodeidstr = " "
-            nodeid = 0
             for db_node in db_nodes:
-                nodeid += 1
-
-                if len(db_nodes) > 1:
-                    nodeidstr = str(nodeid)
 
                 vnic_desc = ""
                 nsg_names = ""
                 nsg_ids = ""
                 if 'vnic_details' in db_node:
                     if 'dbdesc' in db_node['vnic_details']:
-                        vnic_desc = db_node['vnic_details']['dbdesc']
+                        vnic_desc = " - " + db_node['vnic_details']['dbdesc']
 
                     if 'nsg_names' in db_node['vnic_details']:
                         nsg_names = db_node['vnic_details']['nsg_names']
@@ -1972,7 +1969,7 @@ class ShowOCIData(object):
                     if 'nsg_ids' in db_node['vnic_details']:
                         nsg_ids = db_node['vnic_details']['nsg_ids']
 
-                value = {'desc': "Node " + str(nodeidstr) + "  : " + str(db_node['hostname']) + " - " + str(db_node['lifecycle_state']) + " - " + str(vnic_desc + ("" if db_node['fault_domain'] == "None" else " - " + str(db_node['fault_domain']))),
+                value = {'desc': "",
                          'software_storage_size_in_gb': db_node['software_storage_size_in_gb'],
                          'lifecycle_state': db_node['lifecycle_state'],
                          'hostname': db_node['hostname'],
@@ -1985,8 +1982,36 @@ class ShowOCIData(object):
                          'maintenance_type': db_node['maintenance_type'],
                          'time_maintenance_window_start': db_node['time_maintenance_window_start'],
                          'time_maintenance_window_end': db_node['time_maintenance_window_end'],
-                         'fault_domain': ("" if db_node['fault_domain'] == "None" else db_node['fault_domain'])
+                         'fault_domain': ("" if db_node['fault_domain'] == "None" else db_node['fault_domain']),
+                         'cpu_core_count': db_node['cpu_core_count'],
+                         'memory_size_in_gbs': db_node['memory_size_in_gbs'],
+                         'db_node_storage_size_in_gbs': db_node['db_node_storage_size_in_gbs'],
+                         'db_server_id': str(db_node['db_server_id']),
+                         'db_server_name': ""
                          }
+
+                # get db server name
+                dbserver_info = ""
+                if db_node['db_server_id']:
+                    dbserver = self.service.search_unique_item(self.service.C_DATABASE, self.service.C_DATABASE_EXACC_DBSERVERS, 'id', db_node['db_server_id'])
+                    if dbserver:
+                        value['db_server_name'] = dbserver['display_name']
+                        dbserver_info = " (" + dbserver['display_name'] + ")"
+
+                # cpu + mem
+                cpu_info = ""
+                if db_node['cpu_core_count'] != 'None':
+                    cpu_info = " - Cores: " + db_node['cpu_core_count']
+                if db_node['memory_size_in_gbs'] != 'None':
+                    cpu_info += " - Mem: " + db_node['memory_size_in_gbs']
+                if db_node['db_node_storage_size_in_gbs'] != 'None':
+                    cpu_info += " - Disk: " + db_node['db_node_storage_size_in_gbs']
+
+                lifecycle = (" - " + str(db_node['lifecycle_state'])) if db_node['lifecycle_state'] else ""
+                fault_domain = ("" if db_node['fault_domain'] == "None" else " - " + str(db_node['fault_domain']))
+
+                # desc
+                value['desc'] = str(db_node['hostname']) + dbserver_info + lifecycle + cpu_info + vnic_desc + fault_domain
 
                 data.append(value)
 
@@ -2229,6 +2254,7 @@ class ShowOCIData(object):
                 list_vms = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXADATA_VMS, 'region_name', region_name, 'cloud_exadata_infrastructure_id', dbs['id'])
                 if list_vms:
                     for vm in list_vms:
+                        db_nodes = self.__get_database_db_nodes(vm['db_nodes'])
                         valvm = {
                             'id': vm['id'],
                             'cluster_name': vm['cluster_name'],
@@ -2275,7 +2301,7 @@ class ShowOCIData(object):
                             'sum_size_gb': vm['storage_size_in_gbs'],
                             'patches': self.__get_database_db_patches(vm['patches']),
                             'db_homes': self.__get_database_db_homes(vm['db_homes']),
-                            'db_nodes': self.__get_database_db_nodes(vm['db_nodes']),
+                            'db_nodes': [] if not db_nodes else sorted(db_nodes, key=lambda i: i['desc']),
                             'zone_id': vm['zone_id'],
                             'scan_dns_name': vm['scan_dns_name'],
                             'compartment_name': vm['compartment_name'],
@@ -2344,12 +2370,14 @@ class ShowOCIData(object):
                     'sum_info_storage': 'Database - Storage (GB)',
                     'sum_size_gb': dbs['max_data_storage_in_t_bs'],
                     'vm_clusters': [],
+                    'db_servers': [] if not dbs['db_servers'] else sorted(dbs['db_servers'], key=lambda i: i['desc']),
                     'name': dbs['display_name'] + " - " + dbs['shape'] + " - " + dbs['lifecycle_state']
                 }
 
                 list_vms = self.service.search_multi_items(self.service.C_DATABASE, self.service.C_DATABASE_EXACC_VMS, 'region_name', region_name, 'exadata_infrastructure_id', dbs['id'])
                 if list_vms:
                     for vm in list_vms:
+                        db_nodes = self.__get_database_db_nodes(vm['db_nodes'])
                         valvm = {
                             'id': vm['id'],
                             'last_patch_history_entry_id': vm['last_patch_history_entry_id'],
@@ -2379,7 +2407,7 @@ class ShowOCIData(object):
                             'sum_size_gb': vm['db_node_storage_size_in_gbs'],
                             'patches': self.__get_database_db_patches(vm['patches']),
                             'db_homes': self.__get_database_db_homes(vm['db_homes']),
-                            'db_nodes': self.__get_database_db_nodes(vm['db_nodes']),
+                            'db_nodes': [] if not db_nodes else sorted(db_nodes, key=lambda i: i['desc']),
                             'compartment_name': vm['compartment_name'],
                             'compartment_id': vm['compartment_id'],
                             'region_name': vm['region_name']
