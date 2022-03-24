@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BuildStageRunStep(object):
     """
-    The details about each step in a Build stage.
+    The details about each step in a build stage.
     """
 
     #: A constant which can be used with the state property of a BuildStageRunStep.

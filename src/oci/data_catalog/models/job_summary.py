@@ -604,9 +604,8 @@ class JobSummary(object):
     def schedule_cron_expression(self):
         """
         Gets the schedule_cron_expression of this JobSummary.
-        Schedule specified in the cron expression format that has seven fields for second, minute, hour, day-of-month, month, day-of-week, year.
-        It can also include special characters like * for all and ? for any. There are also pre-defined schedules that can be specified using
-        special strings. For example, @hourly will run the job every hour.
+        Interval on which the job will be run. Value is specified as a cron-supported time specification \"nickname\".
+        The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
 
 
         :return: The schedule_cron_expression of this JobSummary.
@@ -618,9 +617,8 @@ class JobSummary(object):
     def schedule_cron_expression(self, schedule_cron_expression):
         """
         Sets the schedule_cron_expression of this JobSummary.
-        Schedule specified in the cron expression format that has seven fields for second, minute, hour, day-of-month, month, day-of-week, year.
-        It can also include special characters like * for all and ? for any. There are also pre-defined schedules that can be specified using
-        special strings. For example, @hourly will run the job every hour.
+        Interval on which the job will be run. Value is specified as a cron-supported time specification \"nickname\".
+        The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
 
 
         :param schedule_cron_expression: The schedule_cron_expression of this JobSummary.

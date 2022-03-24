@@ -29,7 +29,7 @@ class SingleDeployStageDeployment(Deployment):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this SingleDeployStageDeployment.
-            Allowed values for this property are: "PIPELINE_DEPLOYMENT", "PIPELINE_REDEPLOYMENT", "SINGLE_STAGE_DEPLOYMENT"
+            Allowed values for this property are: "PIPELINE_DEPLOYMENT", "PIPELINE_REDEPLOYMENT", "SINGLE_STAGE_DEPLOYMENT", "SINGLE_STAGE_REDEPLOYMENT"
         :type deployment_type: str
 
         :param id:

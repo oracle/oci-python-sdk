@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputeInstanceGroupByQuerySelector(ComputeInstanceGroupSelector):
     """
-    Specifies the Compute instance group environment filtered by DSL expression of the compute instances.
+    Specifies the Compute instance group environment filtered by the RQS query expression.
     """
 
     def __init__(self, **kwargs):

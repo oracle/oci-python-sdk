@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputeInstanceGroupBlueGreenDeployStageExecutionProgress(DeployStageExecutionProgress):
     """
-    Specifies the instance group blue-green deployment stage.
+    Specifies the Instance Group Blue-Green deployment stage.
     """
 
     def __init__(self, **kwargs):
@@ -52,6 +52,10 @@ class ComputeInstanceGroupBlueGreenDeployStageExecutionProgress(DeployStageExecu
             The value to assign to the deploy_stage_execution_progress_details property of this ComputeInstanceGroupBlueGreenDeployStageExecutionProgress.
         :type deploy_stage_execution_progress_details: list[oci.devops.models.DeployStageExecutionProgressDetails]
 
+        :param environment_id:
+            The value to assign to the environment_id property of this ComputeInstanceGroupBlueGreenDeployStageExecutionProgress.
+        :type environment_id: str
+
         """
         self.swagger_types = {
             'deploy_stage_display_name': 'str',
@@ -61,7 +65,8 @@ class ComputeInstanceGroupBlueGreenDeployStageExecutionProgress(DeployStageExecu
             'time_finished': 'datetime',
             'status': 'str',
             'deploy_stage_predecessors': 'DeployStagePredecessorCollection',
-            'deploy_stage_execution_progress_details': 'list[DeployStageExecutionProgressDetails]'
+            'deploy_stage_execution_progress_details': 'list[DeployStageExecutionProgressDetails]',
+            'environment_id': 'str'
         }
 
         self.attribute_map = {
@@ -72,7 +77,8 @@ class ComputeInstanceGroupBlueGreenDeployStageExecutionProgress(DeployStageExecu
             'time_finished': 'timeFinished',
             'status': 'status',
             'deploy_stage_predecessors': 'deployStagePredecessors',
-            'deploy_stage_execution_progress_details': 'deployStageExecutionProgressDetails'
+            'deploy_stage_execution_progress_details': 'deployStageExecutionProgressDetails',
+            'environment_id': 'environmentId'
         }
 
         self._deploy_stage_display_name = None
@@ -83,7 +89,32 @@ class ComputeInstanceGroupBlueGreenDeployStageExecutionProgress(DeployStageExecu
         self._status = None
         self._deploy_stage_predecessors = None
         self._deploy_stage_execution_progress_details = None
+        self._environment_id = None
         self._deploy_stage_type = 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT'
+
+    @property
+    def environment_id(self):
+        """
+        Gets the environment_id of this ComputeInstanceGroupBlueGreenDeployStageExecutionProgress.
+        The OCID of the environment where the artifacts were deployed.
+
+
+        :return: The environment_id of this ComputeInstanceGroupBlueGreenDeployStageExecutionProgress.
+        :rtype: str
+        """
+        return self._environment_id
+
+    @environment_id.setter
+    def environment_id(self, environment_id):
+        """
+        Sets the environment_id of this ComputeInstanceGroupBlueGreenDeployStageExecutionProgress.
+        The OCID of the environment where the artifacts were deployed.
+
+
+        :param environment_id: The environment_id of this ComputeInstanceGroupBlueGreenDeployStageExecutionProgress.
+        :type: str
+        """
+        self._environment_id = environment_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

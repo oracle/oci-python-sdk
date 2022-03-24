@@ -78,6 +78,14 @@ class VirtualCircuit(object):
     #: This constant has a value of "GLOBAL"
     ROUTING_POLICY_GLOBAL = "GLOBAL"
 
+    #: A constant which can be used with the bgp_admin_state property of a VirtualCircuit.
+    #: This constant has a value of "ENABLED"
+    BGP_ADMIN_STATE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the bgp_admin_state property of a VirtualCircuit.
+    #: This constant has a value of "DISABLED"
+    BGP_ADMIN_STATE_DISABLED = "DISABLED"
+
     #: A constant which can be used with the lifecycle_state property of a VirtualCircuit.
     #: This constant has a value of "PENDING_PROVIDER"
     LIFECYCLE_STATE_PENDING_PROVIDER = "PENDING_PROVIDER"
@@ -187,6 +195,16 @@ class VirtualCircuit(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type routing_policy: list[str]
 
+        :param bgp_admin_state:
+            The value to assign to the bgp_admin_state property of this VirtualCircuit.
+            Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type bgp_admin_state: str
+
+        :param is_bfd_enabled:
+            The value to assign to the is_bfd_enabled property of this VirtualCircuit.
+        :type is_bfd_enabled: bool
+
         :param customer_bgp_asn:
             The value to assign to the customer_bgp_asn property of this VirtualCircuit.
         :type customer_bgp_asn: int
@@ -290,6 +308,8 @@ class VirtualCircuit(object):
             'compartment_id': 'str',
             'cross_connect_mappings': 'list[CrossConnectMapping]',
             'routing_policy': 'list[str]',
+            'bgp_admin_state': 'str',
+            'is_bfd_enabled': 'bool',
             'customer_bgp_asn': 'int',
             'customer_asn': 'int',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -321,6 +341,8 @@ class VirtualCircuit(object):
             'compartment_id': 'compartmentId',
             'cross_connect_mappings': 'crossConnectMappings',
             'routing_policy': 'routingPolicy',
+            'bgp_admin_state': 'bgpAdminState',
+            'is_bfd_enabled': 'isBfdEnabled',
             'customer_bgp_asn': 'customerBgpAsn',
             'customer_asn': 'customerAsn',
             'defined_tags': 'definedTags',
@@ -351,6 +373,8 @@ class VirtualCircuit(object):
         self._compartment_id = None
         self._cross_connect_mappings = None
         self._routing_policy = None
+        self._bgp_admin_state = None
+        self._is_bfd_enabled = None
         self._customer_bgp_asn = None
         self._customer_asn = None
         self._defined_tags = None
@@ -592,6 +616,60 @@ class VirtualCircuit(object):
         if routing_policy:
             routing_policy[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in routing_policy]
         self._routing_policy = routing_policy
+
+    @property
+    def bgp_admin_state(self):
+        """
+        Gets the bgp_admin_state of this VirtualCircuit.
+        Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+
+        Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The bgp_admin_state of this VirtualCircuit.
+        :rtype: str
+        """
+        return self._bgp_admin_state
+
+    @bgp_admin_state.setter
+    def bgp_admin_state(self, bgp_admin_state):
+        """
+        Sets the bgp_admin_state of this VirtualCircuit.
+        Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+
+
+        :param bgp_admin_state: The bgp_admin_state of this VirtualCircuit.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(bgp_admin_state, allowed_values):
+            bgp_admin_state = 'UNKNOWN_ENUM_VALUE'
+        self._bgp_admin_state = bgp_admin_state
+
+    @property
+    def is_bfd_enabled(self):
+        """
+        Gets the is_bfd_enabled of this VirtualCircuit.
+        Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+
+
+        :return: The is_bfd_enabled of this VirtualCircuit.
+        :rtype: bool
+        """
+        return self._is_bfd_enabled
+
+    @is_bfd_enabled.setter
+    def is_bfd_enabled(self, is_bfd_enabled):
+        """
+        Sets the is_bfd_enabled of this VirtualCircuit.
+        Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+
+
+        :param is_bfd_enabled: The is_bfd_enabled of this VirtualCircuit.
+        :type: bool
+        """
+        self._is_bfd_enabled = is_bfd_enabled
 
     @property
     def customer_bgp_asn(self):

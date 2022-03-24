@@ -455,7 +455,7 @@ class BootVolume(object):
         Gets the vpus_per_gb of this BootVolume.
         The number of volume performance units (VPUs) that will be applied to this boot volume per GB,
         representing the Block Volume service's elastic performance options.
-        See `Block Volume Elastic Performance`__ for more information.
+        See `Block Volume Performance Levels`__ for more information.
 
         Allowed values:
 
@@ -463,9 +463,11 @@ class BootVolume(object):
 
           * `20`: Represents Higher Performance option.
 
-        For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+          * `30`-`120`: Represents the Ultra High Performance option.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm
+        For volumes with the auto-tuned performance feature enabled, this is set to the default (minimum) VPUs/GB.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
         :return: The vpus_per_gb of this BootVolume.
@@ -479,7 +481,7 @@ class BootVolume(object):
         Sets the vpus_per_gb of this BootVolume.
         The number of volume performance units (VPUs) that will be applied to this boot volume per GB,
         representing the Block Volume service's elastic performance options.
-        See `Block Volume Elastic Performance`__ for more information.
+        See `Block Volume Performance Levels`__ for more information.
 
         Allowed values:
 
@@ -487,9 +489,11 @@ class BootVolume(object):
 
           * `20`: Represents Higher Performance option.
 
-        For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
+          * `30`-`120`: Represents the Ultra High Performance option.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm
+        For volumes with the auto-tuned performance feature enabled, this is set to the default (minimum) VPUs/GB.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
         :param vpus_per_gb: The vpus_per_gb of this BootVolume.

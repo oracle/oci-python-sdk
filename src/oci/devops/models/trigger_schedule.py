@@ -59,9 +59,9 @@ class TriggerSchedule(object):
         """
         **[Required]** Gets the schedule_type of this TriggerSchedule.
         Different types of trigger schedule:
-        None - No automated synchronization schedule.
-        Default - Trigger schedule is every 30 minutes.
-        Custom - Custom triggering schedule.
+        NONE - No automated synchronization schedule.
+        DEFAULT - Trigger schedule is every 30 minutes.
+        CUSTOM - Custom triggering schedule.
 
         Allowed values for this property are: "NONE", "DEFAULT", "CUSTOM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -77,9 +77,9 @@ class TriggerSchedule(object):
         """
         Sets the schedule_type of this TriggerSchedule.
         Different types of trigger schedule:
-        None - No automated synchronization schedule.
-        Default - Trigger schedule is every 30 minutes.
-        Custom - Custom triggering schedule.
+        NONE - No automated synchronization schedule.
+        DEFAULT - Trigger schedule is every 30 minutes.
+        CUSTOM - Custom triggering schedule.
 
 
         :param schedule_type: The schedule_type of this TriggerSchedule.

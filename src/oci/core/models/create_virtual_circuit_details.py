@@ -29,6 +29,14 @@ class CreateVirtualCircuitDetails(object):
     #: This constant has a value of "GLOBAL"
     ROUTING_POLICY_GLOBAL = "GLOBAL"
 
+    #: A constant which can be used with the bgp_admin_state property of a CreateVirtualCircuitDetails.
+    #: This constant has a value of "ENABLED"
+    BGP_ADMIN_STATE_ENABLED = "ENABLED"
+
+    #: A constant which can be used with the bgp_admin_state property of a CreateVirtualCircuitDetails.
+    #: This constant has a value of "DISABLED"
+    BGP_ADMIN_STATE_DISABLED = "DISABLED"
+
     #: A constant which can be used with the type property of a CreateVirtualCircuitDetails.
     #: This constant has a value of "PUBLIC"
     TYPE_PUBLIC = "PUBLIC"
@@ -66,6 +74,15 @@ class CreateVirtualCircuitDetails(object):
             The value to assign to the routing_policy property of this CreateVirtualCircuitDetails.
             Allowed values for items in this list are: "ORACLE_SERVICE_NETWORK", "REGIONAL", "MARKET_LEVEL", "GLOBAL"
         :type routing_policy: list[str]
+
+        :param bgp_admin_state:
+            The value to assign to the bgp_admin_state property of this CreateVirtualCircuitDetails.
+            Allowed values for this property are: "ENABLED", "DISABLED"
+        :type bgp_admin_state: str
+
+        :param is_bfd_enabled:
+            The value to assign to the is_bfd_enabled property of this CreateVirtualCircuitDetails.
+        :type is_bfd_enabled: bool
 
         :param customer_bgp_asn:
             The value to assign to the customer_bgp_asn property of this CreateVirtualCircuitDetails.
@@ -131,6 +148,8 @@ class CreateVirtualCircuitDetails(object):
             'compartment_id': 'str',
             'cross_connect_mappings': 'list[CrossConnectMapping]',
             'routing_policy': 'list[str]',
+            'bgp_admin_state': 'str',
+            'is_bfd_enabled': 'bool',
             'customer_bgp_asn': 'int',
             'customer_asn': 'int',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -152,6 +171,8 @@ class CreateVirtualCircuitDetails(object):
             'compartment_id': 'compartmentId',
             'cross_connect_mappings': 'crossConnectMappings',
             'routing_policy': 'routingPolicy',
+            'bgp_admin_state': 'bgpAdminState',
+            'is_bfd_enabled': 'isBfdEnabled',
             'customer_bgp_asn': 'customerBgpAsn',
             'customer_asn': 'customerAsn',
             'defined_tags': 'definedTags',
@@ -172,6 +193,8 @@ class CreateVirtualCircuitDetails(object):
         self._compartment_id = None
         self._cross_connect_mappings = None
         self._routing_policy = None
+        self._bgp_admin_state = None
+        self._is_bfd_enabled = None
         self._customer_bgp_asn = None
         self._customer_asn = None
         self._defined_tags = None
@@ -317,6 +340,62 @@ class CreateVirtualCircuitDetails(object):
                         .format(allowed_values)
                     )
         self._routing_policy = routing_policy
+
+    @property
+    def bgp_admin_state(self):
+        """
+        Gets the bgp_admin_state of this CreateVirtualCircuitDetails.
+        Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+
+        Allowed values for this property are: "ENABLED", "DISABLED"
+
+
+        :return: The bgp_admin_state of this CreateVirtualCircuitDetails.
+        :rtype: str
+        """
+        return self._bgp_admin_state
+
+    @bgp_admin_state.setter
+    def bgp_admin_state(self, bgp_admin_state):
+        """
+        Sets the bgp_admin_state of this CreateVirtualCircuitDetails.
+        Set to ENABLED to activate the bgp session of virtual circuit, DISABLED to deactivate.
+
+
+        :param bgp_admin_state: The bgp_admin_state of this CreateVirtualCircuitDetails.
+        :type: str
+        """
+        allowed_values = ["ENABLED", "DISABLED"]
+        if not value_allowed_none_or_none_sentinel(bgp_admin_state, allowed_values):
+            raise ValueError(
+                "Invalid value for `bgp_admin_state`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._bgp_admin_state = bgp_admin_state
+
+    @property
+    def is_bfd_enabled(self):
+        """
+        Gets the is_bfd_enabled of this CreateVirtualCircuitDetails.
+        Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+
+
+        :return: The is_bfd_enabled of this CreateVirtualCircuitDetails.
+        :rtype: bool
+        """
+        return self._is_bfd_enabled
+
+    @is_bfd_enabled.setter
+    def is_bfd_enabled(self, is_bfd_enabled):
+        """
+        Sets the is_bfd_enabled of this CreateVirtualCircuitDetails.
+        Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+
+
+        :param is_bfd_enabled: The is_bfd_enabled of this CreateVirtualCircuitDetails.
+        :type: bool
+        """
+        self._is_bfd_enabled = is_bfd_enabled
 
     @property
     def customer_bgp_asn(self):

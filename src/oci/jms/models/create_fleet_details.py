@@ -30,6 +30,14 @@ class CreateFleetDetails(object):
             The value to assign to the description property of this CreateFleetDetails.
         :type description: str
 
+        :param inventory_log:
+            The value to assign to the inventory_log property of this CreateFleetDetails.
+        :type inventory_log: oci.jms.models.CustomLog
+
+        :param operation_log:
+            The value to assign to the operation_log property of this CreateFleetDetails.
+        :type operation_log: oci.jms.models.CustomLog
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateFleetDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -43,6 +51,8 @@ class CreateFleetDetails(object):
             'display_name': 'str',
             'compartment_id': 'str',
             'description': 'str',
+            'inventory_log': 'CustomLog',
+            'operation_log': 'CustomLog',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -51,6 +61,8 @@ class CreateFleetDetails(object):
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
             'description': 'description',
+            'inventory_log': 'inventoryLog',
+            'operation_log': 'operationLog',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
@@ -58,6 +70,8 @@ class CreateFleetDetails(object):
         self._display_name = None
         self._compartment_id = None
         self._description = None
+        self._inventory_log = None
+        self._operation_log = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -136,6 +150,46 @@ class CreateFleetDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def inventory_log(self):
+        """
+        Gets the inventory_log of this CreateFleetDetails.
+
+        :return: The inventory_log of this CreateFleetDetails.
+        :rtype: oci.jms.models.CustomLog
+        """
+        return self._inventory_log
+
+    @inventory_log.setter
+    def inventory_log(self, inventory_log):
+        """
+        Sets the inventory_log of this CreateFleetDetails.
+
+        :param inventory_log: The inventory_log of this CreateFleetDetails.
+        :type: oci.jms.models.CustomLog
+        """
+        self._inventory_log = inventory_log
+
+    @property
+    def operation_log(self):
+        """
+        Gets the operation_log of this CreateFleetDetails.
+
+        :return: The operation_log of this CreateFleetDetails.
+        :rtype: oci.jms.models.CustomLog
+        """
+        return self._operation_log
+
+    @operation_log.setter
+    def operation_log(self, operation_log):
+        """
+        Sets the operation_log of this CreateFleetDetails.
+
+        :param operation_log: The operation_log of this CreateFleetDetails.
+        :type: oci.jms.models.CustomLog
+        """
+        self._operation_log = operation_log
 
     @property
     def defined_tags(self):

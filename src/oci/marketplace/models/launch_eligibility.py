@@ -13,6 +13,46 @@ class LaunchEligibility(object):
     Tenant eligibility and other information for launching a PIC image
     """
 
+    #: A constant which can be used with the ineligibility_reason property of a LaunchEligibility.
+    #: This constant has a value of "INELIGIBLE_ACCOUNT_COUNTRY"
+    INELIGIBILITY_REASON_INELIGIBLE_ACCOUNT_COUNTRY = "INELIGIBLE_ACCOUNT_COUNTRY"
+
+    #: A constant which can be used with the ineligibility_reason property of a LaunchEligibility.
+    #: This constant has a value of "INELIGIBLE_REGION"
+    INELIGIBILITY_REASON_INELIGIBLE_REGION = "INELIGIBLE_REGION"
+
+    #: A constant which can be used with the ineligibility_reason property of a LaunchEligibility.
+    #: This constant has a value of "INELIGIBLE_ACCOUNT_BLACKLISTED"
+    INELIGIBILITY_REASON_INELIGIBLE_ACCOUNT_BLACKLISTED = "INELIGIBLE_ACCOUNT_BLACKLISTED"
+
+    #: A constant which can be used with the ineligibility_reason property of a LaunchEligibility.
+    #: This constant has a value of "INELIGIBLE_ACCOUNT_FEATURE_DISABLED"
+    INELIGIBILITY_REASON_INELIGIBLE_ACCOUNT_FEATURE_DISABLED = "INELIGIBLE_ACCOUNT_FEATURE_DISABLED"
+
+    #: A constant which can be used with the ineligibility_reason property of a LaunchEligibility.
+    #: This constant has a value of "INELIGIBLE_ACCOUNT_CURRENCY"
+    INELIGIBILITY_REASON_INELIGIBLE_ACCOUNT_CURRENCY = "INELIGIBLE_ACCOUNT_CURRENCY"
+
+    #: A constant which can be used with the ineligibility_reason property of a LaunchEligibility.
+    #: This constant has a value of "INELIGIBLE_ACCOUNT_NOT_PAID"
+    INELIGIBILITY_REASON_INELIGIBLE_ACCOUNT_NOT_PAID = "INELIGIBLE_ACCOUNT_NOT_PAID"
+
+    #: A constant which can be used with the ineligibility_reason property of a LaunchEligibility.
+    #: This constant has a value of "INELIGIBLE_ACCOUNT_INTERNAL"
+    INELIGIBILITY_REASON_INELIGIBLE_ACCOUNT_INTERNAL = "INELIGIBLE_ACCOUNT_INTERNAL"
+
+    #: A constant which can be used with the ineligibility_reason property of a LaunchEligibility.
+    #: This constant has a value of "INELIGIBLE_ACCOUNT_GOV_SUBSCRIPTION"
+    INELIGIBILITY_REASON_INELIGIBLE_ACCOUNT_GOV_SUBSCRIPTION = "INELIGIBLE_ACCOUNT_GOV_SUBSCRIPTION"
+
+    #: A constant which can be used with the ineligibility_reason property of a LaunchEligibility.
+    #: This constant has a value of "INELIGIBLE_PAID_LISTING_THROTTLED"
+    INELIGIBILITY_REASON_INELIGIBLE_PAID_LISTING_THROTTLED = "INELIGIBLE_PAID_LISTING_THROTTLED"
+
+    #: A constant which can be used with the ineligibility_reason property of a LaunchEligibility.
+    #: This constant has a value of "NOT_AUTHORIZED"
+    INELIGIBILITY_REASON_NOT_AUTHORIZED = "NOT_AUTHORIZED"
+
     def __init__(self, **kwargs):
         """
         Initializes a new LaunchEligibility object with values from keyword arguments.
@@ -30,22 +70,31 @@ class LaunchEligibility(object):
             The value to assign to the meters property of this LaunchEligibility.
         :type meters: str
 
+        :param ineligibility_reason:
+            The value to assign to the ineligibility_reason property of this LaunchEligibility.
+            Allowed values for this property are: "INELIGIBLE_ACCOUNT_COUNTRY", "INELIGIBLE_REGION", "INELIGIBLE_ACCOUNT_BLACKLISTED", "INELIGIBLE_ACCOUNT_FEATURE_DISABLED", "INELIGIBLE_ACCOUNT_CURRENCY", "INELIGIBLE_ACCOUNT_NOT_PAID", "INELIGIBLE_ACCOUNT_INTERNAL", "INELIGIBLE_ACCOUNT_GOV_SUBSCRIPTION", "INELIGIBLE_PAID_LISTING_THROTTLED", "NOT_AUTHORIZED", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type ineligibility_reason: str
+
         """
         self.swagger_types = {
             'image_id': 'str',
             'is_launch_allowed': 'bool',
-            'meters': 'str'
+            'meters': 'str',
+            'ineligibility_reason': 'str'
         }
 
         self.attribute_map = {
             'image_id': 'imageId',
             'is_launch_allowed': 'isLaunchAllowed',
-            'meters': 'meters'
+            'meters': 'meters',
+            'ineligibility_reason': 'ineligibilityReason'
         }
 
         self._image_id = None
         self._is_launch_allowed = None
         self._meters = None
+        self._ineligibility_reason = None
 
     @property
     def image_id(self):
@@ -118,6 +167,36 @@ class LaunchEligibility(object):
         :type: str
         """
         self._meters = meters
+
+    @property
+    def ineligibility_reason(self):
+        """
+        Gets the ineligibility_reason of this LaunchEligibility.
+        Reason the account is ineligible to launch paid listings
+
+        Allowed values for this property are: "INELIGIBLE_ACCOUNT_COUNTRY", "INELIGIBLE_REGION", "INELIGIBLE_ACCOUNT_BLACKLISTED", "INELIGIBLE_ACCOUNT_FEATURE_DISABLED", "INELIGIBLE_ACCOUNT_CURRENCY", "INELIGIBLE_ACCOUNT_NOT_PAID", "INELIGIBLE_ACCOUNT_INTERNAL", "INELIGIBLE_ACCOUNT_GOV_SUBSCRIPTION", "INELIGIBLE_PAID_LISTING_THROTTLED", "NOT_AUTHORIZED", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The ineligibility_reason of this LaunchEligibility.
+        :rtype: str
+        """
+        return self._ineligibility_reason
+
+    @ineligibility_reason.setter
+    def ineligibility_reason(self, ineligibility_reason):
+        """
+        Sets the ineligibility_reason of this LaunchEligibility.
+        Reason the account is ineligible to launch paid listings
+
+
+        :param ineligibility_reason: The ineligibility_reason of this LaunchEligibility.
+        :type: str
+        """
+        allowed_values = ["INELIGIBLE_ACCOUNT_COUNTRY", "INELIGIBLE_REGION", "INELIGIBLE_ACCOUNT_BLACKLISTED", "INELIGIBLE_ACCOUNT_FEATURE_DISABLED", "INELIGIBLE_ACCOUNT_CURRENCY", "INELIGIBLE_ACCOUNT_NOT_PAID", "INELIGIBLE_ACCOUNT_INTERNAL", "INELIGIBLE_ACCOUNT_GOV_SUBSCRIPTION", "INELIGIBLE_PAID_LISTING_THROTTLED", "NOT_AUTHORIZED"]
+        if not value_allowed_none_or_none_sentinel(ineligibility_reason, allowed_values):
+            ineligibility_reason = 'UNKNOWN_ENUM_VALUE'
+        self._ineligibility_reason = ineligibility_reason
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -18,13 +18,23 @@ class CreateDeployStageDetails(object):
         Initializes a new CreateDeployStageDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
-        * :class:`~oci.devops.models.CreateManualApprovalDeployStageDetails`
+        * :class:`~oci.devops.models.CreateOkeCanaryTrafficShiftDeployStageDetails`
+        * :class:`~oci.devops.models.CreateOkeBlueGreenTrafficShiftDeployStageDetails`
+        * :class:`~oci.devops.models.CreateComputeInstanceGroupCanaryDeployStageDetails`
         * :class:`~oci.devops.models.CreateWaitDeployStageDetails`
-        * :class:`~oci.devops.models.CreateOkeDeployStageDetails`
         * :class:`~oci.devops.models.CreateLoadBalancerTrafficShiftDeployStageDetails`
+        * :class:`~oci.devops.models.CreateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails`
+        * :class:`~oci.devops.models.CreateOkeBlueGreenDeployStageDetails`
         * :class:`~oci.devops.models.CreateComputeInstanceGroupDeployStageDetails`
         * :class:`~oci.devops.models.CreateInvokeFunctionDeployStageDetails`
         * :class:`~oci.devops.models.CreateFunctionDeployStageDetails`
+        * :class:`~oci.devops.models.CreateOkeCanaryDeployStageDetails`
+        * :class:`~oci.devops.models.CreateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails`
+        * :class:`~oci.devops.models.CreateComputeInstanceGroupCanaryApprovalDeployStageDetails`
+        * :class:`~oci.devops.models.CreateManualApprovalDeployStageDetails`
+        * :class:`~oci.devops.models.CreateOkeDeployStageDetails`
+        * :class:`~oci.devops.models.CreateComputeInstanceGroupBlueGreenDeployStageDetails`
+        * :class:`~oci.devops.models.CreateOkeCanaryApprovalDeployStageDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -93,17 +103,26 @@ class CreateDeployStageDetails(object):
         """
         type = object_dictionary['deployStageType']
 
-        if type == 'MANUAL_APPROVAL':
-            return 'CreateManualApprovalDeployStageDetails'
+        if type == 'OKE_CANARY_TRAFFIC_SHIFT':
+            return 'CreateOkeCanaryTrafficShiftDeployStageDetails'
+
+        if type == 'OKE_BLUE_GREEN_TRAFFIC_SHIFT':
+            return 'CreateOkeBlueGreenTrafficShiftDeployStageDetails'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT':
+            return 'CreateComputeInstanceGroupCanaryDeployStageDetails'
 
         if type == 'WAIT':
             return 'CreateWaitDeployStageDetails'
 
-        if type == 'OKE_DEPLOYMENT':
-            return 'CreateOkeDeployStageDetails'
-
         if type == 'LOAD_BALANCER_TRAFFIC_SHIFT':
             return 'CreateLoadBalancerTrafficShiftDeployStageDetails'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT':
+            return 'CreateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails'
+
+        if type == 'OKE_BLUE_GREEN_DEPLOYMENT':
+            return 'CreateOkeBlueGreenDeployStageDetails'
 
         if type == 'COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT':
             return 'CreateComputeInstanceGroupDeployStageDetails'
@@ -113,6 +132,27 @@ class CreateDeployStageDetails(object):
 
         if type == 'DEPLOY_FUNCTION':
             return 'CreateFunctionDeployStageDetails'
+
+        if type == 'OKE_CANARY_DEPLOYMENT':
+            return 'CreateOkeCanaryDeployStageDetails'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT':
+            return 'CreateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL':
+            return 'CreateComputeInstanceGroupCanaryApprovalDeployStageDetails'
+
+        if type == 'MANUAL_APPROVAL':
+            return 'CreateManualApprovalDeployStageDetails'
+
+        if type == 'OKE_DEPLOYMENT':
+            return 'CreateOkeDeployStageDetails'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT':
+            return 'CreateComputeInstanceGroupBlueGreenDeployStageDetails'
+
+        if type == 'OKE_CANARY_APPROVAL':
+            return 'CreateOkeCanaryApprovalDeployStageDetails'
         else:
             return 'CreateDeployStageDetails'
 

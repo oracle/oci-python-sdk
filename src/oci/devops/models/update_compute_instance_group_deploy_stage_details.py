@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateComputeInstanceGroupDeployStageDetails(UpdateDeployStageDetails):
     """
-    Specifies the instance group rolling deployment stage.
+    Specifies the Instance Group Rolling deployment stage.
     """
 
     def __init__(self, **kwargs):

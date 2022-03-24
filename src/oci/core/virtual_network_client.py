@@ -7212,7 +7212,7 @@ class VirtualNetworkClient(object):
 
 
         :param str private_ip_id: (required)
-            The `OCID`__ of the private IP.
+            The `OCID`__ of the private IP or IPv6.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -10939,7 +10939,7 @@ class VirtualNetworkClient(object):
 
 
         :param str private_ip_id: (required)
-            The `OCID`__ of the private IP.
+            The `OCID`__ of the private IP or IPv6.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -21188,7 +21188,7 @@ class VirtualNetworkClient(object):
 
 
         :param str private_ip_id: (required)
-            The `OCID`__ of the private IP.
+            The `OCID`__ of the private IP or IPv6.
 
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

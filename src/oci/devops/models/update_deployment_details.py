@@ -21,6 +21,7 @@ class UpdateDeploymentDetails(object):
         * :class:`~oci.devops.models.UpdateSingleDeployStageDeploymentDetails`
         * :class:`~oci.devops.models.UpdateDeployPipelineRedeploymentDetails`
         * :class:`~oci.devops.models.UpdateDeployPipelineDeploymentDetails`
+        * :class:`~oci.devops.models.UpdateSingleDeployStageRedeploymentDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -76,6 +77,9 @@ class UpdateDeploymentDetails(object):
 
         if type == 'PIPELINE_DEPLOYMENT':
             return 'UpdateDeployPipelineDeploymentDetails'
+
+        if type == 'SINGLE_STAGE_REDEPLOYMENT':
+            return 'UpdateSingleDeployStageRedeploymentDetails'
         else:
             return 'UpdateDeploymentDetails'
 

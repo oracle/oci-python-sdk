@@ -98,9 +98,17 @@ class FolderSummary(object):
             The value to assign to the time_created property of this FolderSummary.
         :type time_created: datetime
 
+        :param time_updated:
+            The value to assign to the time_updated property of this FolderSummary.
+        :type time_updated: datetime
+
         :param uri:
             The value to assign to the uri property of this FolderSummary.
         :type uri: str
+
+        :param object_storage_url:
+            The value to assign to the object_storage_url property of this FolderSummary.
+        :type object_storage_url: str
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this FolderSummary.
@@ -121,7 +129,9 @@ class FolderSummary(object):
             'external_key': 'str',
             'time_external': 'datetime',
             'time_created': 'datetime',
+            'time_updated': 'datetime',
             'uri': 'str',
+            'object_storage_url': 'str',
             'lifecycle_state': 'str'
         }
 
@@ -137,7 +147,9 @@ class FolderSummary(object):
             'external_key': 'externalKey',
             'time_external': 'timeExternal',
             'time_created': 'timeCreated',
+            'time_updated': 'timeUpdated',
             'uri': 'uri',
+            'object_storage_url': 'objectStorageUrl',
             'lifecycle_state': 'lifecycleState'
         }
 
@@ -152,7 +164,9 @@ class FolderSummary(object):
         self._external_key = None
         self._time_external = None
         self._time_created = None
+        self._time_updated = None
         self._uri = None
+        self._object_storage_url = None
         self._lifecycle_state = None
 
     @property
@@ -428,6 +442,34 @@ class FolderSummary(object):
         self._time_created = time_created
 
     @property
+    def time_updated(self):
+        """
+        Gets the time_updated of this FolderSummary.
+        The date and time the folder was last updated, in the format defined by `RFC3339`__. Example: 2019-03-25T21:10:29.600Z
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :return: The time_updated of this FolderSummary.
+        :rtype: datetime
+        """
+        return self._time_updated
+
+    @time_updated.setter
+    def time_updated(self, time_updated):
+        """
+        Sets the time_updated of this FolderSummary.
+        The date and time the folder was last updated, in the format defined by `RFC3339`__. Example: 2019-03-25T21:10:29.600Z
+
+        __ https://tools.ietf.org/html/rfc3339
+
+
+        :param time_updated: The time_updated of this FolderSummary.
+        :type: datetime
+        """
+        self._time_updated = time_updated
+
+    @property
     def uri(self):
         """
         Gets the uri of this FolderSummary.
@@ -450,6 +492,30 @@ class FolderSummary(object):
         :type: str
         """
         self._uri = uri
+
+    @property
+    def object_storage_url(self):
+        """
+        Gets the object_storage_url of this FolderSummary.
+        URL of the folder in the object store.
+
+
+        :return: The object_storage_url of this FolderSummary.
+        :rtype: str
+        """
+        return self._object_storage_url
+
+    @object_storage_url.setter
+    def object_storage_url(self, object_storage_url):
+        """
+        Sets the object_storage_url of this FolderSummary.
+        URL of the folder in the object store.
+
+
+        :param object_storage_url: The object_storage_url of this FolderSummary.
+        :type: str
+        """
+        self._object_storage_url = object_storage_url
 
     @property
     def lifecycle_state(self):

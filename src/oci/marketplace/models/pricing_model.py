@@ -45,6 +45,30 @@ class PricingModel(object):
     #: This constant has a value of "USD"
     CURRENCY_USD = "USD"
 
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "CAD"
+    CURRENCY_CAD = "CAD"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "INR"
+    CURRENCY_INR = "INR"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "GBP"
+    CURRENCY_GBP = "GBP"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "BRL"
+    CURRENCY_BRL = "BRL"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "JPY"
+    CURRENCY_JPY = "JPY"
+
+    #: A constant which can be used with the currency property of a PricingModel.
+    #: This constant has a value of "OMR"
+    CURRENCY_OMR = "OMR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new PricingModel object with values from keyword arguments.
@@ -64,7 +88,7 @@ class PricingModel(object):
 
         :param currency:
             The value to assign to the currency property of this PricingModel.
-            Allowed values for this property are: "USD", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type currency: str
 
@@ -72,25 +96,32 @@ class PricingModel(object):
             The value to assign to the rate property of this PricingModel.
         :type rate: float
 
+        :param international_market_price:
+            The value to assign to the international_market_price property of this PricingModel.
+        :type international_market_price: oci.marketplace.models.InternationalMarketPrice
+
         """
         self.swagger_types = {
             'type': 'str',
             'pay_go_strategy': 'str',
             'currency': 'str',
-            'rate': 'float'
+            'rate': 'float',
+            'international_market_price': 'InternationalMarketPrice'
         }
 
         self.attribute_map = {
             'type': 'type',
             'pay_go_strategy': 'payGoStrategy',
             'currency': 'currency',
-            'rate': 'rate'
+            'rate': 'rate',
+            'international_market_price': 'internationalMarketPrice'
         }
 
         self._type = None
         self._pay_go_strategy = None
         self._currency = None
         self._rate = None
+        self._international_market_price = None
 
     @property
     def type(self):
@@ -158,7 +189,7 @@ class PricingModel(object):
         Gets the currency of this PricingModel.
         The currency of the pricing model.
 
-        Allowed values for this property are: "USD", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -177,7 +208,7 @@ class PricingModel(object):
         :param currency: The currency of this PricingModel.
         :type: str
         """
-        allowed_values = ["USD"]
+        allowed_values = ["USD", "CAD", "INR", "GBP", "BRL", "JPY", "OMR"]
         if not value_allowed_none_or_none_sentinel(currency, allowed_values):
             currency = 'UNKNOWN_ENUM_VALUE'
         self._currency = currency
@@ -205,6 +236,26 @@ class PricingModel(object):
         :type: float
         """
         self._rate = rate
+
+    @property
+    def international_market_price(self):
+        """
+        Gets the international_market_price of this PricingModel.
+
+        :return: The international_market_price of this PricingModel.
+        :rtype: oci.marketplace.models.InternationalMarketPrice
+        """
+        return self._international_market_price
+
+    @international_market_price.setter
+    def international_market_price(self, international_market_price):
+        """
+        Sets the international_market_price of this PricingModel.
+
+        :param international_market_price: The international_market_price of this PricingModel.
+        :type: oci.marketplace.models.InternationalMarketPrice
+        """
+        self._international_market_price = international_market_price
 
     def __repr__(self):
         return formatted_flat_dict(self)

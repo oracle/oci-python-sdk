@@ -161,6 +161,10 @@ class Folder(object):
             The value to assign to the uri property of this Folder.
         :type uri: str
 
+        :param object_storage_url:
+            The value to assign to the object_storage_url property of this Folder.
+        :type object_storage_url: str
+
         """
         self.swagger_types = {
             'key': 'str',
@@ -184,7 +188,8 @@ class Folder(object):
             'lifecycle_state': 'str',
             'harvest_status': 'str',
             'last_job_key': 'str',
-            'uri': 'str'
+            'uri': 'str',
+            'object_storage_url': 'str'
         }
 
         self.attribute_map = {
@@ -209,7 +214,8 @@ class Folder(object):
             'lifecycle_state': 'lifecycleState',
             'harvest_status': 'harvestStatus',
             'last_job_key': 'lastJobKey',
-            'uri': 'uri'
+            'uri': 'uri',
+            'object_storage_url': 'objectStorageUrl'
         }
 
         self._key = None
@@ -234,6 +240,7 @@ class Folder(object):
         self._harvest_status = None
         self._last_job_key = None
         self._uri = None
+        self._object_storage_url = None
 
     @property
     def key(self):
@@ -798,6 +805,30 @@ class Folder(object):
         :type: str
         """
         self._uri = uri
+
+    @property
+    def object_storage_url(self):
+        """
+        Gets the object_storage_url of this Folder.
+        URL of the folder in the object store.
+
+
+        :return: The object_storage_url of this Folder.
+        :rtype: str
+        """
+        return self._object_storage_url
+
+    @object_storage_url.setter
+    def object_storage_url(self, object_storage_url):
+        """
+        Sets the object_storage_url of this Folder.
+        URL of the folder in the object store.
+
+
+        :param object_storage_url: The object_storage_url of this Folder.
+        :type: str
+        """
+        self._object_storage_url = object_storage_url
 
     def __repr__(self):
         return formatted_flat_dict(self)

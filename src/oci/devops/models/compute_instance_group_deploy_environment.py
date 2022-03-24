@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ComputeInstanceGroupDeployEnvironment(DeployEnvironment):
     """
-    Specifies the Compute instance group environment. The instances in the group is the combined results of each selectors in the instance group selectors.
+    Specifies the Compute instance group environment. The combination of instances matching the selectors are included in the instance group.
     """
 
     def __init__(self, **kwargs):
@@ -54,7 +54,7 @@ class ComputeInstanceGroupDeployEnvironment(DeployEnvironment):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ComputeInstanceGroupDeployEnvironment.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
         :type lifecycle_state: str
 
         :param lifecycle_details:

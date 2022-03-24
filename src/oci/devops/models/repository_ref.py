@@ -49,25 +49,39 @@ class RepositoryRef(object):
             The value to assign to the repository_id property of this RepositoryRef.
         :type repository_id: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this RepositoryRef.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this RepositoryRef.
+        :type defined_tags: dict(str, dict(str, object))
+
         """
         self.swagger_types = {
             'ref_name': 'str',
             'ref_type': 'str',
             'full_ref_name': 'str',
-            'repository_id': 'str'
+            'repository_id': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'ref_name': 'refName',
             'ref_type': 'refType',
             'full_ref_name': 'fullRefName',
-            'repository_id': 'repositoryId'
+            'repository_id': 'repositoryId',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags'
         }
 
         self._ref_name = None
         self._ref_type = None
         self._full_ref_name = None
         self._repository_id = None
+        self._freeform_tags = None
+        self._defined_tags = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -113,7 +127,7 @@ class RepositoryRef(object):
     def ref_type(self):
         """
         **[Required]** Gets the ref_type of this RepositoryRef.
-        The type of reference (Branch or Tag).
+        The type of reference (BRANCH or TAG).
 
         Allowed values for this property are: "BRANCH", "TAG", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -128,7 +142,7 @@ class RepositoryRef(object):
     def ref_type(self, ref_type):
         """
         Sets the ref_type of this RepositoryRef.
-        The type of reference (Branch or Tag).
+        The type of reference (BRANCH or TAG).
 
 
         :param ref_type: The ref_type of this RepositoryRef.
@@ -186,6 +200,62 @@ class RepositoryRef(object):
         :type: str
         """
         self._repository_id = repository_id
+
+    @property
+    def freeform_tags(self):
+        """
+        Gets the freeform_tags of this RepositoryRef.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See `Resource Tags`__. Example: `{\"bar-key\": \"value\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The freeform_tags of this RepositoryRef.
+        :rtype: dict(str, str)
+        """
+        return self._freeform_tags
+
+    @freeform_tags.setter
+    def freeform_tags(self, freeform_tags):
+        """
+        Sets the freeform_tags of this RepositoryRef.
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See `Resource Tags`__. Example: `{\"bar-key\": \"value\"}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param freeform_tags: The freeform_tags of this RepositoryRef.
+        :type: dict(str, str)
+        """
+        self._freeform_tags = freeform_tags
+
+    @property
+    def defined_tags(self):
+        """
+        Gets the defined_tags of this RepositoryRef.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See `Resource Tags`__. Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :return: The defined_tags of this RepositoryRef.
+        :rtype: dict(str, dict(str, object))
+        """
+        return self._defined_tags
+
+    @defined_tags.setter
+    def defined_tags(self, defined_tags):
+        """
+        Sets the defined_tags of this RepositoryRef.
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See `Resource Tags`__. Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+
+        __ https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm
+
+
+        :param defined_tags: The defined_tags of this RepositoryRef.
+        :type: dict(str, dict(str, object))
+        """
+        self._defined_tags = defined_tags
 
     def __repr__(self):
         return formatted_flat_dict(self)

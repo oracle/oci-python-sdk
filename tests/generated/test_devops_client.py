@@ -1807,6 +1807,89 @@ def test_get_ref(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_devlifecycle_group_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
+def test_get_repo_file_diff(testing_service_client):
+    if not testing_service_client.is_api_enabled('devops', 'GetRepoFileDiff'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('devops', util.camelize('devops'), 'GetRepoFileDiff')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='devops', api_name='GetRepoFileDiff')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
+            response = client.get_repo_file_diff(
+                repository_id=request.pop(util.camelize('repositoryId')),
+                base_version=request.pop(util.camelize('baseVersion')),
+                target_version=request.pop(util.camelize('targetVersion')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'devops',
+            'GetRepoFileDiff',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'fileDiffResponse',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_devlifecycle_group_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
+def test_get_repo_file_lines(testing_service_client):
+    if not testing_service_client.is_api_enabled('devops', 'GetRepoFileLines'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('devops', util.camelize('devops'), 'GetRepoFileLines')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='devops', api_name='GetRepoFileLines')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.devops.DevopsClient(config, service_endpoint=service_endpoint)
+            response = client.get_repo_file_lines(
+                repository_id=request.pop(util.camelize('repositoryId')),
+                revision=request.pop(util.camelize('revision')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'devops',
+            'GetRepoFileLines',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'repositoryFileLines',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_devlifecycle_group_us_grp@oracle.com" jiraProject="JIRA" opsJiraProject="JIRA-OPS"
 def test_get_repository(testing_service_client):
     if not testing_service_client.is_api_enabled('devops', 'GetRepository'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

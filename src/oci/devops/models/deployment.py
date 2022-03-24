@@ -25,6 +25,10 @@ class Deployment(object):
     #: This constant has a value of "SINGLE_STAGE_DEPLOYMENT"
     DEPLOYMENT_TYPE_SINGLE_STAGE_DEPLOYMENT = "SINGLE_STAGE_DEPLOYMENT"
 
+    #: A constant which can be used with the deployment_type property of a Deployment.
+    #: This constant has a value of "SINGLE_STAGE_REDEPLOYMENT"
+    DEPLOYMENT_TYPE_SINGLE_STAGE_REDEPLOYMENT = "SINGLE_STAGE_REDEPLOYMENT"
+
     #: A constant which can be used with the lifecycle_state property of a Deployment.
     #: This constant has a value of "ACCEPTED"
     LIFECYCLE_STATE_ACCEPTED = "ACCEPTED"
@@ -54,6 +58,7 @@ class Deployment(object):
         Initializes a new Deployment object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.devops.models.SingleDeployStageRedeployment`
         * :class:`~oci.devops.models.DeployPipelineDeployment`
         * :class:`~oci.devops.models.DeployPipelineRedeployment`
         * :class:`~oci.devops.models.SingleDeployStageDeployment`
@@ -70,7 +75,7 @@ class Deployment(object):
 
         :param deployment_type:
             The value to assign to the deployment_type property of this Deployment.
-            Allowed values for this property are: "PIPELINE_DEPLOYMENT", "PIPELINE_REDEPLOYMENT", "SINGLE_STAGE_DEPLOYMENT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PIPELINE_DEPLOYMENT", "PIPELINE_REDEPLOYMENT", "SINGLE_STAGE_DEPLOYMENT", "SINGLE_STAGE_REDEPLOYMENT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deployment_type: str
 
@@ -206,6 +211,9 @@ class Deployment(object):
         """
         type = object_dictionary['deploymentType']
 
+        if type == 'SINGLE_STAGE_REDEPLOYMENT':
+            return 'SingleDeployStageRedeployment'
+
         if type == 'PIPELINE_DEPLOYMENT':
             return 'DeployPipelineDeployment'
 
@@ -261,9 +269,9 @@ class Deployment(object):
     def deployment_type(self):
         """
         **[Required]** Gets the deployment_type of this Deployment.
-        Specifies type of Deployment
+        Specifies type of deployment.
 
-        Allowed values for this property are: "PIPELINE_DEPLOYMENT", "PIPELINE_REDEPLOYMENT", "SINGLE_STAGE_DEPLOYMENT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PIPELINE_DEPLOYMENT", "PIPELINE_REDEPLOYMENT", "SINGLE_STAGE_DEPLOYMENT", "SINGLE_STAGE_REDEPLOYMENT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -276,13 +284,13 @@ class Deployment(object):
     def deployment_type(self, deployment_type):
         """
         Sets the deployment_type of this Deployment.
-        Specifies type of Deployment
+        Specifies type of deployment.
 
 
         :param deployment_type: The deployment_type of this Deployment.
         :type: str
         """
-        allowed_values = ["PIPELINE_DEPLOYMENT", "PIPELINE_REDEPLOYMENT", "SINGLE_STAGE_DEPLOYMENT"]
+        allowed_values = ["PIPELINE_DEPLOYMENT", "PIPELINE_REDEPLOYMENT", "SINGLE_STAGE_DEPLOYMENT", "SINGLE_STAGE_REDEPLOYMENT"]
         if not value_allowed_none_or_none_sentinel(deployment_type, allowed_values):
             deployment_type = 'UNKNOWN_ENUM_VALUE'
         self._deployment_type = deployment_type

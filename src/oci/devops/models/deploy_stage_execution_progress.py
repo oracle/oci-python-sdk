@@ -54,13 +54,23 @@ class DeployStageExecutionProgress(object):
         Initializes a new DeployStageExecutionProgress object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
-        * :class:`~oci.devops.models.ManualApprovalDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.ComputeInstanceGroupCanaryDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.OkeBlueGreenDeployStageExecutionProgress`
         * :class:`~oci.devops.models.ComputeInstanceGroupDeployStageExecutionProgress`
-        * :class:`~oci.devops.models.OkeDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.OkeCanaryDeployStageExecutionProgress`
         * :class:`~oci.devops.models.LoadBalancerTrafficShiftDeployStageExecutionProgress`
-        * :class:`~oci.devops.models.FunctionDeployStageExecutionProgress`
-        * :class:`~oci.devops.models.InvokeFunctionDeployStageExecutionProgress`
         * :class:`~oci.devops.models.WaitDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.ComputeInstanceGroupCanaryTrafficShiftDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.OkeCanaryApprovalDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.ManualApprovalDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.OkeDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.FunctionDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.OkeBlueGreenTrafficShiftDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.InvokeFunctionDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.OkeCanaryTrafficShiftDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.ComputeInstanceGroupBlueGreenDeployStageExecutionProgress`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -138,26 +148,56 @@ class DeployStageExecutionProgress(object):
         """
         type = object_dictionary['deployStageType']
 
-        if type == 'MANUAL_APPROVAL':
-            return 'ManualApprovalDeployStageExecutionProgress'
+        if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT':
+            return 'ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT':
+            return 'ComputeInstanceGroupCanaryDeployStageExecutionProgress'
+
+        if type == 'OKE_BLUE_GREEN_DEPLOYMENT':
+            return 'OkeBlueGreenDeployStageExecutionProgress'
 
         if type == 'COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT':
             return 'ComputeInstanceGroupDeployStageExecutionProgress'
 
-        if type == 'OKE_DEPLOYMENT':
-            return 'OkeDeployStageExecutionProgress'
+        if type == 'OKE_CANARY_DEPLOYMENT':
+            return 'OkeCanaryDeployStageExecutionProgress'
 
         if type == 'LOAD_BALANCER_TRAFFIC_SHIFT':
             return 'LoadBalancerTrafficShiftDeployStageExecutionProgress'
 
+        if type == 'WAIT':
+            return 'WaitDeployStageExecutionProgress'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT':
+            return 'ComputeInstanceGroupCanaryTrafficShiftDeployStageExecutionProgress'
+
+        if type == 'OKE_CANARY_APPROVAL':
+            return 'OkeCanaryApprovalDeployStageExecutionProgress'
+
+        if type == 'MANUAL_APPROVAL':
+            return 'ManualApprovalDeployStageExecutionProgress'
+
+        if type == 'OKE_DEPLOYMENT':
+            return 'OkeDeployStageExecutionProgress'
+
         if type == 'DEPLOY_FUNCTION':
             return 'FunctionDeployStageExecutionProgress'
+
+        if type == 'OKE_BLUE_GREEN_TRAFFIC_SHIFT':
+            return 'OkeBlueGreenTrafficShiftDeployStageExecutionProgress'
 
         if type == 'INVOKE_FUNCTION':
             return 'InvokeFunctionDeployStageExecutionProgress'
 
-        if type == 'WAIT':
-            return 'WaitDeployStageExecutionProgress'
+        if type == 'OKE_CANARY_TRAFFIC_SHIFT':
+            return 'OkeCanaryTrafficShiftDeployStageExecutionProgress'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL':
+            return 'ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT':
+            return 'ComputeInstanceGroupBlueGreenDeployStageExecutionProgress'
         else:
             return 'DeployStageExecutionProgress'
 

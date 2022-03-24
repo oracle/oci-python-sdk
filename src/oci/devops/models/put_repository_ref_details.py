@@ -67,7 +67,7 @@ class PutRepositoryRefDetails(object):
     def ref_type(self):
         """
         **[Required]** Gets the ref_type of this PutRepositoryRefDetails.
-        The type of reference (Branch or Tag).
+        The type of reference (BRANCH or TAG).
 
         Allowed values for this property are: "BRANCH", "TAG"
 
@@ -81,7 +81,7 @@ class PutRepositoryRefDetails(object):
     def ref_type(self, ref_type):
         """
         Sets the ref_type of this PutRepositoryRefDetails.
-        The type of reference (Branch or Tag).
+        The type of reference (BRANCH or TAG).
 
 
         :param ref_type: The ref_type of this PutRepositoryRefDetails.

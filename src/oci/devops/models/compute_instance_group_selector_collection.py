@@ -37,7 +37,7 @@ class ComputeInstanceGroupSelectorCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this ComputeInstanceGroupSelectorCollection.
-        A list of selectors for the instance group. UNION operator is used for combining the instances selected by each selector.
+        A list of selectors for the instance group. Union operator is used for combining the instances selected by each selector.
 
 
         :return: The items of this ComputeInstanceGroupSelectorCollection.
@@ -49,7 +49,7 @@ class ComputeInstanceGroupSelectorCollection(object):
     def items(self, items):
         """
         Sets the items of this ComputeInstanceGroupSelectorCollection.
-        A list of selectors for the instance group. UNION operator is used for combining the instances selected by each selector.
+        A list of selectors for the instance group. Union operator is used for combining the instances selected by each selector.
 
 
         :param items: The items of this ComputeInstanceGroupSelectorCollection.

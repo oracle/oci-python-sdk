@@ -34,6 +34,46 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="autonomous_java-dev_us_grp@oracle.com" jiraProject="AJ" opsJiraProject="AJ"
+def test_cancel_work_request(testing_service_client):
+    if not testing_service_client.is_api_enabled('jms', 'CancelWorkRequest'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('jms', util.camelize('java_management_service'), 'CancelWorkRequest')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='jms', api_name='CancelWorkRequest')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
+            response = client.cancel_work_request(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'jms',
+            'CancelWorkRequest',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'cancel_work_request',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="autonomous_java-dev_us_grp@oracle.com" jiraProject="AJ" opsJiraProject="AJ"
 def test_change_fleet_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('jms', 'ChangeFleetCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -75,6 +115,47 @@ def test_change_fleet_compartment(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="autonomous_java-dev_us_grp@oracle.com" jiraProject="AJ" opsJiraProject="AJ"
+def test_create_blocklist(testing_service_client):
+    if not testing_service_client.is_api_enabled('jms', 'CreateBlocklist'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('jms', util.camelize('java_management_service'), 'CreateBlocklist')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='jms', api_name='CreateBlocklist')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
+            response = client.create_blocklist(
+                fleet_id=request.pop(util.camelize('fleetId')),
+                create_blocklist_details=request.pop(util.camelize('CreateBlocklistDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'jms',
+            'CreateBlocklist',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'blocklist',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="autonomous_java-dev_us_grp@oracle.com" jiraProject="AJ" opsJiraProject="AJ"
 def test_create_fleet(testing_service_client):
     if not testing_service_client.is_api_enabled('jms', 'CreateFleet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -110,6 +191,47 @@ def test_create_fleet(testing_service_client):
             service_error,
             'create_fleet',
             False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="autonomous_java-dev_us_grp@oracle.com" jiraProject="AJ" opsJiraProject="AJ"
+def test_delete_blocklist(testing_service_client):
+    if not testing_service_client.is_api_enabled('jms', 'DeleteBlocklist'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('jms', util.camelize('java_management_service'), 'DeleteBlocklist')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='jms', api_name='DeleteBlocklist')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
+            response = client.delete_blocklist(
+                fleet_id=request.pop(util.camelize('fleetId')),
+                blocklist_key=request.pop(util.camelize('blocklistKey')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'jms',
+            'DeleteBlocklist',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_blocklist',
+            True,
             False
         )
 
@@ -275,6 +397,66 @@ def test_get_work_request(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="autonomous_java-dev_us_grp@oracle.com" jiraProject="AJ" opsJiraProject="AJ"
+def test_list_blocklists(testing_service_client):
+    if not testing_service_client.is_api_enabled('jms', 'ListBlocklists'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('jms', util.camelize('java_management_service'), 'ListBlocklists')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='jms', api_name='ListBlocklists')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
+            response = client.list_blocklists(
+                fleet_id=request.pop(util.camelize('fleetId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_blocklists(
+                    fleet_id=request.pop(util.camelize('fleetId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_blocklists(
+                        fleet_id=request.pop(util.camelize('fleetId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'jms',
+            'ListBlocklists',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'blocklistCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="autonomous_java-dev_us_grp@oracle.com" jiraProject="AJ" opsJiraProject="AJ"
 def test_list_fleets(testing_service_client):
     if not testing_service_client.is_api_enabled('jms', 'ListFleets'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -332,6 +514,66 @@ def test_list_fleets(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="autonomous_java-dev_us_grp@oracle.com" jiraProject="AJ" opsJiraProject="AJ"
+def test_list_installation_sites(testing_service_client):
+    if not testing_service_client.is_api_enabled('jms', 'ListInstallationSites'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('jms', util.camelize('java_management_service'), 'ListInstallationSites')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='jms', api_name='ListInstallationSites')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
+            response = client.list_installation_sites(
+                fleet_id=request.pop(util.camelize('fleetId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_installation_sites(
+                    fleet_id=request.pop(util.camelize('fleetId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_installation_sites(
+                        fleet_id=request.pop(util.camelize('fleetId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'jms',
+            'ListInstallationSites',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'installationSiteCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="autonomous_java-dev_us_grp@oracle.com" jiraProject="AJ" opsJiraProject="AJ"
 def test_list_jre_usage(testing_service_client):
     if not testing_service_client.is_api_enabled('jms', 'ListJreUsage'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -383,6 +625,66 @@ def test_list_jre_usage(testing_service_client):
             result,
             service_error,
             'jreUsageCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="autonomous_java-dev_us_grp@oracle.com" jiraProject="AJ" opsJiraProject="AJ"
+def test_list_work_items(testing_service_client):
+    if not testing_service_client.is_api_enabled('jms', 'ListWorkItems'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('jms', util.camelize('java_management_service'), 'ListWorkItems')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='jms', api_name='ListWorkItems')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
+            response = client.list_work_items(
+                work_request_id=request.pop(util.camelize('workRequestId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_work_items(
+                    work_request_id=request.pop(util.camelize('workRequestId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_work_items(
+                        work_request_id=request.pop(util.camelize('workRequestId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'jms',
+            'ListWorkItems',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'workItemCollection',
             False,
             True
         )
@@ -562,6 +864,47 @@ def test_list_work_requests(testing_service_client):
             'workRequestCollection',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="autonomous_java-dev_us_grp@oracle.com" jiraProject="AJ" opsJiraProject="AJ"
+def test_remove_fleet_installation_sites(testing_service_client):
+    if not testing_service_client.is_api_enabled('jms', 'RemoveFleetInstallationSites'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('jms', util.camelize('java_management_service'), 'RemoveFleetInstallationSites')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='jms', api_name='RemoveFleetInstallationSites')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.jms.JavaManagementServiceClient(config, service_endpoint=service_endpoint)
+            response = client.remove_fleet_installation_sites(
+                fleet_id=request.pop(util.camelize('fleetId')),
+                remove_fleet_installation_sites_details=request.pop(util.camelize('RemoveFleetInstallationSitesDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'jms',
+            'RemoveFleetInstallationSites',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_fleet_installation_sites',
+            False,
+            False
         )
 
 
