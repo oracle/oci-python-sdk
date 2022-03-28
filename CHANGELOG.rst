@@ -4,13 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.61.1 - TBD
+2.62.0 - 2022-03-29
 ====================
 
 Added
 -----
-* TBD
-
+* Support for returning the number of network ports as part of listing shapes in the Compute service
+* Support for Java runtime removal and custom logs in the Java Management service
+* Support for new parameters for BGP admin state and enabling/disabling BFD in the Networking service
+* Support for private OKE clusters and blue-green deployments in the DevOps service
+* Support for international customers to consume and launch third-party paid listings in the Marketplace service
+* Support for additional fields on entities, attributes, and folders in the Data Catalog service
+ 
+Breaking
+--------
+* Support for retries by default on operations in the Marketplace service
+ 
 ====================
 2.61.0 - 2022-03-22
 ====================
