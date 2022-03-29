@@ -77,6 +77,7 @@ class ShowOCIFlags(object):
     config_section = oci.config.DEFAULT_PROFILE
     use_instance_principals = False
     use_delegation_token = False
+    use_security_token = False
 
     # pyton and host info
     machine = platform.node() + " (" + platform.machine() + ")"
@@ -238,6 +239,7 @@ class ShowOCIService(object):
     C_DATABASE_EXADATA_VMS = "exadata_vmclusters"
     C_DATABASE_EXACC = "exacc"
     C_DATABASE_EXACC_VMS = "exacc_vmclusters"
+    C_DATABASE_EXACC_DBSERVERS = "exacc_db_servers"
     C_DATABASE_ADB_DATABASE = "autonomous"
     C_DATABASE_ADB_D_INFRA = "autonomous_dedicated_infrastructure"
     C_DATABASE_NOSQL = "nosql"
@@ -486,9 +488,13 @@ class ShowOCIService(object):
         if flags.use_instance_principals:
             self.generate_signer_from_instance_principals()
 
-        # if delegation toekn for cloud shell
+        # if delegation token for cloud shell
         elif flags.use_delegation_token:
             self.generate_signer_from_delegation_token()
+
+        # if security token and config
+        elif flags.use_security_token:
+            self.generate_signer_from_config_and_security_token(flags.config_file, flags.config_section)
 
         # else use config file
         else:
@@ -514,6 +520,37 @@ class ShowOCIService(object):
             print("*********************************************************************")
             print("* " + str(e))
             print("* Aboting.                                                          *")
+            print("*********************************************************************")
+            print("")
+            raise SystemExit
+
+    ##########################################################################
+    # Generate Signer from config and security token
+    ###########################################################################
+    def generate_signer_from_config_and_security_token(self, config_file, config_section):
+
+        try:
+            # create signer from config and security token
+            self.config = oci.config.from_file(config_file, config_section)
+            security_token_file = self.config.get("security_token_file")
+            token = None
+            with open(security_token_file, 'r') as f:
+                token = f.read()
+            private_key = oci.signer.load_private_key_from_file(self.config['key_file'])
+            self.signer = oci.auth.signers.SecurityTokenSigner(token, private_key)
+
+        except oci.exceptions.ProfileNotFound as e:
+            print("*********************************************************************")
+            print("* " + str(e))
+            print("* Aborting.                                                          *")
+            print("*********************************************************************")
+            print("")
+            raise SystemExit
+
+        except Exception as e:
+            print("*********************************************************************")
+            print("* " + str(e))
+            print("* Aborting.                                                          *")
             print("*********************************************************************")
             print("")
             raise SystemExit
@@ -3835,7 +3872,7 @@ class ShowOCIService(object):
                         # ipss = oci.core.models.IPSecConnectionTunnel
                         data_tun = []
                         try:
-                            tunnels = virtual_network.list_ip_sec_connection_tunnels(arr.id).data
+                            tunnels = virtual_network.list_ip_sec_connection_tunnels(arr.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
                             tunnels_status = ""
                             for tunnel in tunnels:
                                 tun_val = {'id': str(tunnel.id),
@@ -3846,6 +3883,11 @@ class ShowOCIService(object):
                                            'routing': str(tunnel.routing),
                                            'cpe_ip': str(tunnel.cpe_ip),
                                            'vpn_ip': str(tunnel.vpn_ip),
+                                           'time_created': str(tunnel.time_created),
+                                           'oracle_can_initiate': str(tunnel.oracle_can_initiate),
+                                           'nat_translation_enabled': str(tunnel.nat_translation_enabled),
+                                           'dpd_mode': str(tunnel.dpd_mode),
+                                           'dpd_timeout_in_sec': str(tunnel.dpd_timeout_in_sec),
                                            'bgp_info': ""
                                            }
                                 if tunnels_status:
@@ -3864,6 +3906,8 @@ class ShowOCIService(object):
                                'name': str(arr.display_name),
                                'drg_id': str(arr.drg_id),
                                'tunnels_status': tunnels_status,
+                               'cpe_local_identifier': str(arr.cpe_local_identifier),
+                               'cpe_local_identifier_type': str(arr.cpe_local_identifier_type),
                                'cpe_id': str(arr.cpe_id), 'time_created': str(arr.time_created),
                                'compartment_name': str(compartment['name']), 'compartment_id': str(compartment['id']),
                                'defined_tags': [] if arr.defined_tags is None else arr.defined_tags,
@@ -6839,6 +6883,7 @@ class ShowOCIService(object):
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXADATA_VMS)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXACC)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXACC_VMS)
+            self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_EXACC_DBSERVERS)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_ADB_DATABASE)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_ADB_D_INFRA)
             self.__initialize_data_key(self.C_DATABASE, self.C_DATABASE_NOSQL)
@@ -6855,10 +6900,10 @@ class ShowOCIService(object):
 
             # append the data
             db[self.C_DATABASE_HOMES] += self.__load_database_homes(database_client, compartments)
-            db[self.C_DATABASE_EXADATA] += self.__load_database_exadata_infrastructure(database_client, virtual_network, compartments)
-            db[self.C_DATABASE_EXADATA_VMS] += self.__load_database_exadata_vm_clusters(database_client, virtual_network, compartments)
             db[self.C_DATABASE_EXACC] += self.__load_database_exacc_infrastructure(database_client, virtual_network, compartments)
             db[self.C_DATABASE_EXACC_VMS] += self.__load_database_exacc_vm_clusters(database_client, virtual_network, compartments)
+            db[self.C_DATABASE_EXADATA] += self.__load_database_exadata_infrastructure(database_client, virtual_network, compartments)
+            db[self.C_DATABASE_EXADATA_VMS] += self.__load_database_exadata_vm_clusters(database_client, virtual_network, compartments)
             db[self.C_DATABASE_DBSYSTEMS] += self.__load_database_dbsystems(database_client, virtual_network, compartments)
             db[self.C_DATABASE_ADB_D_INFRA] += self.__load_database_adb_d_infrastructure(database_client, compartments)
             db[self.C_DATABASE_ADB_DATABASE] += self.__load_database_adb_database(database_client, compartments)
@@ -7093,7 +7138,8 @@ class ShowOCIService(object):
                              'compartment_name': str(compartment['name']),
                              'compartment_id': str(compartment['id']),
                              'region_name': str(self.config['region']),
-                             'vm_clusters': []
+                             'vm_clusters': [],
+                             'db_servers': self.__load_database_exacc_dbservers(database_client, compartment, dbs.id)
                              }
 
                     # add the data
@@ -7207,6 +7253,71 @@ class ShowOCIService(object):
 
         except Exception as e:
             self.__print_error("__load_database_exacc_vm_clusters", e)
+            return data
+
+    ##########################################################################
+    # __load_database_exacc_dbservers
+    ##########################################################################
+    def __load_database_exacc_dbservers(self, database_client, compartment, dbs_id):
+
+        db = self.data[self.C_DATABASE]
+        data = []
+        try:
+            db_servers = database_client.list_db_servers(
+                compartment['id'],
+                exadata_infrastructure_id=dbs_id,
+                retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY
+            ).data
+
+            # db_server = oci.database.models.DbServerSummary
+            for db_server in db_servers:
+
+                value = {
+                    'id': str(db_server.id),
+                    'db_system_id': dbs_id,
+                    'display_name': str(db_server.display_name),
+                    'cpu_core_count': str(db_server.cpu_core_count),
+                    'memory_size_in_gbs': str(db_server.memory_size_in_gbs),
+                    'db_node_storage_size_in_gbs': str(db_server.db_node_storage_size_in_gbs),
+                    'vm_cluster_ids': db_server.vm_cluster_ids,
+                    'db_node_ids': db_server.db_node_ids,
+                    'lifecycle_state': str(db_server.lifecycle_state),
+                    'max_cpu_count': str(db_server.max_cpu_count),
+                    'max_memory_in_gbs': str(db_server.max_memory_in_gbs),
+                    'max_db_node_storage_in_gbs': str(db_server.max_db_node_storage_in_gbs),
+                    'time_created': str(db_server.time_created),
+                    'defined_tags': [] if db_server.defined_tags is None else db_server.defined_tags,
+                    'freeform_tags': [] if db_server.freeform_tags is None else db_server.freeform_tags
+                }
+
+                cpu_info = ""
+                if db_server.cpu_core_count:
+                    cpu_info = " - Cores: " + str(db_server.cpu_core_count) + " / " + str(db_server.max_cpu_count)
+                    cpu_info += " - Mem: " + str(db_server.memory_size_in_gbs) + " / " + str(db_server.max_memory_in_gbs)
+                    cpu_info += " - Disk: " + str(db_server.db_node_storage_size_in_gbs) + " / " + str(db_server.max_db_node_storage_in_gbs)
+
+                value['desc'] = str(db_server.display_name) + " - " + str(db_server.lifecycle_state) + cpu_info
+                data.append(value)
+
+            # add to main data
+            db[self.C_DATABASE_EXACC_DBSERVERS] += data
+            return data
+
+        except oci.exceptions.ServiceError as e:
+            if self.__check_service_error(e.code):
+                self.__load_print_auth_warning()
+                return data
+            else:
+                print("Error at __load_database_exacc_dbservers")
+                raise
+        except oci.exceptions.RequestException as e:
+            if self.__check_request_error(e):
+                return data
+            else:
+                print("Error at __load_database_exacc_dbservers")
+                raise
+        except Exception as e:
+            self.__print_error("__load_database_exacc_dbservers", e)
             return data
 
     ##########################################################################
@@ -7763,6 +7874,10 @@ class ShowOCIService(object):
                      'lifecycle_state': str(db_node.lifecycle_state),
                      'vnic_id': str(db_node.vnic_id),
                      'backup_vnic_id': str(db_node.backup_vnic_id),
+                     'cpu_core_count': str(db_node.cpu_core_count),
+                     'memory_size_in_gbs': str(db_node.memory_size_in_gbs),
+                     'db_node_storage_size_in_gbs': str(db_node.db_node_storage_size_in_gbs),
+                     'db_server_id': str(db_node.db_server_id),
                      'maintenance_type': str(db_node.maintenance_type),
                      'time_maintenance_window_start': str(db_node.time_maintenance_window_start),
                      'time_maintenance_window_end': str(db_node.time_maintenance_window_end),

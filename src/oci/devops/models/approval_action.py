@@ -36,19 +36,26 @@ class ApprovalAction(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type action: str
 
+        :param reason:
+            The value to assign to the reason property of this ApprovalAction.
+        :type reason: str
+
         """
         self.swagger_types = {
             'subject_id': 'str',
-            'action': 'str'
+            'action': 'str',
+            'reason': 'str'
         }
 
         self.attribute_map = {
             'subject_id': 'subjectId',
-            'action': 'action'
+            'action': 'action',
+            'reason': 'reason'
         }
 
         self._subject_id = None
         self._action = None
+        self._reason = None
 
     @property
     def subject_id(self):
@@ -103,6 +110,30 @@ class ApprovalAction(object):
         if not value_allowed_none_or_none_sentinel(action, allowed_values):
             action = 'UNKNOWN_ENUM_VALUE'
         self._action = action
+
+    @property
+    def reason(self):
+        """
+        Gets the reason of this ApprovalAction.
+        The reason for approving or rejecting the deployment.
+
+
+        :return: The reason of this ApprovalAction.
+        :rtype: str
+        """
+        return self._reason
+
+    @reason.setter
+    def reason(self, reason):
+        """
+        Sets the reason of this ApprovalAction.
+        The reason for approving or rejecting the deployment.
+
+
+        :param reason: The reason of this ApprovalAction.
+        :type: str
+        """
+        self._reason = reason
 
     def __repr__(self):
         return formatted_flat_dict(self)

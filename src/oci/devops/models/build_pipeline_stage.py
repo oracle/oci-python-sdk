@@ -11,7 +11,7 @@ from oci.decorators import init_model_state_from_kwargs
 class BuildPipelineStage(object):
     """
     A single node in a build pipeline. A stage takes a specific designated action.
-    There are many types of stages such as 'Build' and 'Deliver Artifacts'.
+    There are many types of stages such as 'BUILD' and 'DELIVER_ARTIFACT'.
     """
 
     #: A constant which can be used with the build_pipeline_stage_type property of a BuildPipelineStage.
@@ -353,7 +353,7 @@ class BuildPipelineStage(object):
     def build_pipeline_stage_type(self):
         """
         **[Required]** Gets the build_pipeline_stage_type of this BuildPipelineStage.
-        Defines the stage type, which is one of the following: Build, Deliver Artifacts, Wait, and Trigger Deployment.
+        Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 
         Allowed values for this property are: "WAIT", "BUILD", "DELIVER_ARTIFACT", "TRIGGER_DEPLOYMENT_PIPELINE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -368,7 +368,7 @@ class BuildPipelineStage(object):
     def build_pipeline_stage_type(self, build_pipeline_stage_type):
         """
         Sets the build_pipeline_stage_type of this BuildPipelineStage.
-        Defines the stage type, which is one of the following: Build, Deliver Artifacts, Wait, and Trigger Deployment.
+        Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 
 
         :param build_pipeline_stage_type: The build_pipeline_stage_type of this BuildPipelineStage.

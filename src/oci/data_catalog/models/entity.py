@@ -176,6 +176,10 @@ class Entity(object):
             The value to assign to the uri property of this Entity.
         :type uri: str
 
+        :param object_storage_url:
+            The value to assign to the object_storage_url property of this Entity.
+        :type object_storage_url: str
+
         :param custom_property_members:
             The value to assign to the custom_property_members property of this Entity.
         :type custom_property_members: list[oci.data_catalog.models.CustomPropertyGetUsage]
@@ -212,6 +216,7 @@ class Entity(object):
             'last_job_key': 'str',
             'type_key': 'str',
             'uri': 'str',
+            'object_storage_url': 'str',
             'custom_property_members': 'list[CustomPropertyGetUsage]',
             'properties': 'dict(str, dict(str, str))'
         }
@@ -243,6 +248,7 @@ class Entity(object):
             'last_job_key': 'lastJobKey',
             'type_key': 'typeKey',
             'uri': 'uri',
+            'object_storage_url': 'objectStorageUrl',
             'custom_property_members': 'customPropertyMembers',
             'properties': 'properties'
         }
@@ -273,6 +279,7 @@ class Entity(object):
         self._last_job_key = None
         self._type_key = None
         self._uri = None
+        self._object_storage_url = None
         self._custom_property_members = None
         self._properties = None
 
@@ -933,6 +940,30 @@ class Entity(object):
         :type: str
         """
         self._uri = uri
+
+    @property
+    def object_storage_url(self):
+        """
+        Gets the object_storage_url of this Entity.
+        URL of the data entity in the object store.
+
+
+        :return: The object_storage_url of this Entity.
+        :rtype: str
+        """
+        return self._object_storage_url
+
+    @object_storage_url.setter
+    def object_storage_url(self, object_storage_url):
+        """
+        Sets the object_storage_url of this Entity.
+        URL of the data entity in the object store.
+
+
+        :param object_storage_url: The object_storage_url of this Entity.
+        :type: str
+        """
+        self._object_storage_url = object_storage_url
 
     @property
     def custom_property_members(self):

@@ -21,6 +21,7 @@ class DeploymentSummary(object):
         * :class:`~oci.devops.models.SingleDeployStageDeploymentSummary`
         * :class:`~oci.devops.models.DeployPipelineRedeploymentSummary`
         * :class:`~oci.devops.models.DeployPipelineDeploymentSummary`
+        * :class:`~oci.devops.models.SingleDeployStageRedeploymentSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -153,6 +154,9 @@ class DeploymentSummary(object):
 
         if type == 'PIPELINE_DEPLOYMENT':
             return 'DeployPipelineDeploymentSummary'
+
+        if type == 'SINGLE_STAGE_REDEPLOYMENT':
+            return 'SingleDeployStageRedeploymentSummary'
         else:
             return 'DeploymentSummary'
 

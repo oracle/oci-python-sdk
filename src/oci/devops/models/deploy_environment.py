@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DeployEnvironment(object):
     """
-    The target OCI resources, such as Compute instances, Container Engine for Kubernetes(OKE) clusters, or Function, where artifacts will be deployed.
+    The target OCI resources, such as Compute instances, Container Engine for Kubernetes(OKE) clusters, or Function, where artifacts are deployed.
     """
 
     #: A constant which can be used with the deploy_environment_type property of a DeployEnvironment.
@@ -48,6 +48,10 @@ class DeployEnvironment(object):
     #: A constant which can be used with the lifecycle_state property of a DeployEnvironment.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
+
+    #: A constant which can be used with the lifecycle_state property of a DeployEnvironment.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
     def __init__(self, **kwargs):
         """
@@ -96,7 +100,7 @@ class DeployEnvironment(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DeployEnvironment.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -394,7 +398,7 @@ class DeployEnvironment(object):
         Gets the lifecycle_state of this DeployEnvironment.
         The current state of the deployment environment.
 
-        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -413,7 +417,7 @@ class DeployEnvironment(object):
         :param lifecycle_state: The lifecycle_state of this DeployEnvironment.
         :type: str
         """
-        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

@@ -26,6 +26,14 @@ class UpdateFleetDetails(object):
             The value to assign to the description property of this UpdateFleetDetails.
         :type description: str
 
+        :param inventory_log:
+            The value to assign to the inventory_log property of this UpdateFleetDetails.
+        :type inventory_log: oci.jms.models.CustomLog
+
+        :param operation_log:
+            The value to assign to the operation_log property of this UpdateFleetDetails.
+        :type operation_log: oci.jms.models.CustomLog
+
         :param defined_tags:
             The value to assign to the defined_tags property of this UpdateFleetDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -38,6 +46,8 @@ class UpdateFleetDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'description': 'str',
+            'inventory_log': 'CustomLog',
+            'operation_log': 'CustomLog',
             'defined_tags': 'dict(str, dict(str, object))',
             'freeform_tags': 'dict(str, str)'
         }
@@ -45,12 +55,16 @@ class UpdateFleetDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'description': 'description',
+            'inventory_log': 'inventoryLog',
+            'operation_log': 'operationLog',
             'defined_tags': 'definedTags',
             'freeform_tags': 'freeformTags'
         }
 
         self._display_name = None
         self._description = None
+        self._inventory_log = None
+        self._operation_log = None
         self._defined_tags = None
         self._freeform_tags = None
 
@@ -101,6 +115,46 @@ class UpdateFleetDetails(object):
         :type: str
         """
         self._description = description
+
+    @property
+    def inventory_log(self):
+        """
+        Gets the inventory_log of this UpdateFleetDetails.
+
+        :return: The inventory_log of this UpdateFleetDetails.
+        :rtype: oci.jms.models.CustomLog
+        """
+        return self._inventory_log
+
+    @inventory_log.setter
+    def inventory_log(self, inventory_log):
+        """
+        Sets the inventory_log of this UpdateFleetDetails.
+
+        :param inventory_log: The inventory_log of this UpdateFleetDetails.
+        :type: oci.jms.models.CustomLog
+        """
+        self._inventory_log = inventory_log
+
+    @property
+    def operation_log(self):
+        """
+        Gets the operation_log of this UpdateFleetDetails.
+
+        :return: The operation_log of this UpdateFleetDetails.
+        :rtype: oci.jms.models.CustomLog
+        """
+        return self._operation_log
+
+    @operation_log.setter
+    def operation_log(self, operation_log):
+        """
+        Sets the operation_log of this UpdateFleetDetails.
+
+        :param operation_log: The operation_log of this UpdateFleetDetails.
+        :type: oci.jms.models.CustomLog
+        """
+        self._operation_log = operation_log
 
     @property
     def defined_tags(self):

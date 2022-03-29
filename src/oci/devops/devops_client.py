@@ -1095,7 +1095,7 @@ class DevopsClient(object):
 
 
         :param oci.devops.models.CreateDeployStageDetails create_deploy_stage_details: (required)
-            Details for the new DeployStage.
+            Details for the new deployment stage.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
@@ -3460,7 +3460,7 @@ class DevopsClient(object):
 
     def get_file_diff(self, repository_id, file_path, base_version, target_version, **kwargs):
         """
-        Gets the line-by-line difference between files on different commits.
+        Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by \"/repositories/{repositoryId}/file/diffs\"
 
 
         :param str repository_id: (required)
@@ -4040,6 +4040,227 @@ class DevopsClient(object):
                 header_params=header_params,
                 response_type="RepositoryRef")
 
+    def get_repo_file_diff(self, repository_id, base_version, target_version, **kwargs):
+        """
+        Gets the line-by-line difference between file on different commits.
+
+
+        :param str repository_id: (required)
+            Unique repository identifier.
+
+        :param str base_version: (required)
+            The branch to compare changes against.
+
+        :param str target_version: (required)
+            The branch where changes are coming from.
+
+        :param str file_path: (optional)
+            A filter to return only commits that affect any of the specified paths.
+
+        :param bool is_comparison_from_merge_base: (optional)
+            Boolean to indicate whether to use merge base or most recent revision.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.devops.models.FileDiffResponse`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repo_file_diff.py.html>`__ to see an example of how to use get_repo_file_diff API.
+        """
+        resource_path = "/repositories/{repositoryId}/file/diffs"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "file_path",
+            "is_comparison_from_merge_base",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_repo_file_diff got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "repositoryId": repository_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "filePath": kwargs.get("file_path", missing),
+            "baseVersion": base_version,
+            "targetVersion": target_version,
+            "isComparisonFromMergeBase": kwargs.get("is_comparison_from_merge_base", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="FileDiffResponse")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="FileDiffResponse")
+
+    def get_repo_file_lines(self, repository_id, revision, **kwargs):
+        """
+        Retrieve lines of a specified file. Supports starting line number and limit.
+
+
+        :param str repository_id: (required)
+            Unique repository identifier.
+
+        :param str revision: (required)
+            Retrieve file lines from specific revision.
+
+        :param str file_path: (optional)
+            A filter to return only commits that affect any of the specified paths.
+
+        :param int start_line_number: (optional)
+            Line number from where to start returning file lines.
+
+        :param int limit: (optional)
+            The maximum number of items to return.
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.devops.models.RepositoryFileLines`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/devops/get_repo_file_lines.py.html>`__ to see an example of how to use get_repo_file_lines API.
+        """
+        resource_path = "/repositories/{repositoryId}/file/lines"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "file_path",
+            "start_line_number",
+            "limit",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "get_repo_file_lines got unknown kwargs: {!r}".format(extra_kwargs))
+
+        path_params = {
+            "repositoryId": repository_id
+        }
+
+        path_params = {k: v for (k, v) in six.iteritems(path_params) if v is not missing}
+
+        for (k, v) in six.iteritems(path_params):
+            if v is None or (isinstance(v, six.string_types) and len(v.strip()) == 0):
+                raise ValueError('Parameter {} cannot be None, whitespace or empty string'.format(k))
+
+        query_params = {
+            "filePath": kwargs.get("file_path", missing),
+            "revision": revision,
+            "startLineNumber": kwargs.get("start_line_number", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RepositoryFileLines")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                path_params=path_params,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="RepositoryFileLines")
+
     def get_repository(self, repository_id, **kwargs):
         """
         Retrieves a repository by identifier.
@@ -4251,7 +4472,7 @@ class DevopsClient(object):
 
     def get_repository_file_lines(self, repository_id, file_path, revision, **kwargs):
         """
-        Retrieve lines of a specified file. Supports starting line number and limit.
+        Retrieve lines of a specified file. Supports starting line number and limit. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by \"/repositories/{repositoryId}/file/lines\"
 
 
         :param str repository_id: (required)
@@ -5685,7 +5906,7 @@ class DevopsClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only DeployEnvironments that matches the given lifecycleState.
 
-            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
 
         :param str display_name: (optional)
             A filter to return only resources that match the entire display name given.
@@ -5751,7 +5972,7 @@ class DevopsClient(object):
                 "list_deploy_environments got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)

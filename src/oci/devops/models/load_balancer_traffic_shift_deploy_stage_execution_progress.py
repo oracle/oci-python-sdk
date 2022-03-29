@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LoadBalancerTrafficShiftDeployStageExecutionProgress(DeployStageExecutionProgress):
     """
-    Specifies the load balancer traffic shift stage execution details.
+    Specifies the load balancer Traffic Shift stage execution details.
     """
 
     def __init__(self, **kwargs):

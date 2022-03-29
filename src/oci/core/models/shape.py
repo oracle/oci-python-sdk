@@ -73,6 +73,10 @@ class Shape(object):
             The value to assign to the memory_in_gbs property of this Shape.
         :type memory_in_gbs: float
 
+        :param network_ports:
+            The value to assign to the network_ports property of this Shape.
+        :type network_ports: int
+
         :param networking_bandwidth_in_gbps:
             The value to assign to the networking_bandwidth_in_gbps property of this Shape.
         :type networking_bandwidth_in_gbps: float
@@ -100,6 +104,14 @@ class Shape(object):
         :param local_disk_description:
             The value to assign to the local_disk_description property of this Shape.
         :type local_disk_description: str
+
+        :param rdma_ports:
+            The value to assign to the rdma_ports property of this Shape.
+        :type rdma_ports: int
+
+        :param rdma_bandwidth_in_gbps:
+            The value to assign to the rdma_bandwidth_in_gbps property of this Shape.
+        :type rdma_bandwidth_in_gbps: int
 
         :param is_live_migration_supported:
             The value to assign to the is_live_migration_supported property of this Shape.
@@ -163,6 +175,7 @@ class Shape(object):
             'processor_description': 'str',
             'ocpus': 'float',
             'memory_in_gbs': 'float',
+            'network_ports': 'int',
             'networking_bandwidth_in_gbps': 'float',
             'max_vnic_attachments': 'int',
             'gpus': 'int',
@@ -170,6 +183,8 @@ class Shape(object):
             'local_disks': 'int',
             'local_disks_total_size_in_gbs': 'float',
             'local_disk_description': 'str',
+            'rdma_ports': 'int',
+            'rdma_bandwidth_in_gbps': 'int',
             'is_live_migration_supported': 'bool',
             'ocpu_options': 'ShapeOcpuOptions',
             'memory_options': 'ShapeMemoryOptions',
@@ -192,6 +207,7 @@ class Shape(object):
             'processor_description': 'processorDescription',
             'ocpus': 'ocpus',
             'memory_in_gbs': 'memoryInGBs',
+            'network_ports': 'networkPorts',
             'networking_bandwidth_in_gbps': 'networkingBandwidthInGbps',
             'max_vnic_attachments': 'maxVnicAttachments',
             'gpus': 'gpus',
@@ -199,6 +215,8 @@ class Shape(object):
             'local_disks': 'localDisks',
             'local_disks_total_size_in_gbs': 'localDisksTotalSizeInGBs',
             'local_disk_description': 'localDiskDescription',
+            'rdma_ports': 'rdmaPorts',
+            'rdma_bandwidth_in_gbps': 'rdmaBandwidthInGbps',
             'is_live_migration_supported': 'isLiveMigrationSupported',
             'ocpu_options': 'ocpuOptions',
             'memory_options': 'memoryOptions',
@@ -220,6 +238,7 @@ class Shape(object):
         self._processor_description = None
         self._ocpus = None
         self._memory_in_gbs = None
+        self._network_ports = None
         self._networking_bandwidth_in_gbps = None
         self._max_vnic_attachments = None
         self._gpus = None
@@ -227,6 +246,8 @@ class Shape(object):
         self._local_disks = None
         self._local_disks_total_size_in_gbs = None
         self._local_disk_description = None
+        self._rdma_ports = None
+        self._rdma_bandwidth_in_gbps = None
         self._is_live_migration_supported = None
         self._ocpu_options = None
         self._memory_options = None
@@ -394,6 +415,30 @@ class Shape(object):
         :type: float
         """
         self._memory_in_gbs = memory_in_gbs
+
+    @property
+    def network_ports(self):
+        """
+        Gets the network_ports of this Shape.
+        The number of physical network interface card (NIC) ports available for this shape.
+
+
+        :return: The network_ports of this Shape.
+        :rtype: int
+        """
+        return self._network_ports
+
+    @network_ports.setter
+    def network_ports(self, network_ports):
+        """
+        Sets the network_ports of this Shape.
+        The number of physical network interface card (NIC) ports available for this shape.
+
+
+        :param network_ports: The network_ports of this Shape.
+        :type: int
+        """
+        self._network_ports = network_ports
 
     @property
     def networking_bandwidth_in_gbps(self):
@@ -574,6 +619,60 @@ class Shape(object):
         :type: str
         """
         self._local_disk_description = local_disk_description
+
+    @property
+    def rdma_ports(self):
+        """
+        Gets the rdma_ports of this Shape.
+        The number of networking ports available for the remote direct memory access (RDMA) network between nodes in
+        a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this
+        value is `0`.
+
+
+        :return: The rdma_ports of this Shape.
+        :rtype: int
+        """
+        return self._rdma_ports
+
+    @rdma_ports.setter
+    def rdma_ports(self, rdma_ports):
+        """
+        Sets the rdma_ports of this Shape.
+        The number of networking ports available for the remote direct memory access (RDMA) network between nodes in
+        a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this
+        value is `0`.
+
+
+        :param rdma_ports: The rdma_ports of this Shape.
+        :type: int
+        """
+        self._rdma_ports = rdma_ports
+
+    @property
+    def rdma_bandwidth_in_gbps(self):
+        """
+        Gets the rdma_bandwidth_in_gbps of this Shape.
+        The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in
+        gigabits per second.
+
+
+        :return: The rdma_bandwidth_in_gbps of this Shape.
+        :rtype: int
+        """
+        return self._rdma_bandwidth_in_gbps
+
+    @rdma_bandwidth_in_gbps.setter
+    def rdma_bandwidth_in_gbps(self, rdma_bandwidth_in_gbps):
+        """
+        Sets the rdma_bandwidth_in_gbps of this Shape.
+        The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in
+        gigabits per second.
+
+
+        :param rdma_bandwidth_in_gbps: The rdma_bandwidth_in_gbps of this Shape.
+        :type: int
+        """
+        self._rdma_bandwidth_in_gbps = rdma_bandwidth_in_gbps
 
     @property
     def is_live_migration_supported(self):

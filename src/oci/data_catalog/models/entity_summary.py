@@ -124,6 +124,10 @@ class EntitySummary(object):
             The value to assign to the uri property of this EntitySummary.
         :type uri: str
 
+        :param object_storage_url:
+            The value to assign to the object_storage_url property of this EntitySummary.
+        :type object_storage_url: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this EntitySummary.
             Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", "MOVING", 'UNKNOWN_ENUM_VALUE'.
@@ -154,6 +158,7 @@ class EntitySummary(object):
             'time_updated': 'datetime',
             'updated_by_id': 'str',
             'uri': 'str',
+            'object_storage_url': 'str',
             'lifecycle_state': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
@@ -177,6 +182,7 @@ class EntitySummary(object):
             'time_updated': 'timeUpdated',
             'updated_by_id': 'updatedById',
             'uri': 'uri',
+            'object_storage_url': 'objectStorageUrl',
             'lifecycle_state': 'lifecycleState',
             'properties': 'properties'
         }
@@ -199,6 +205,7 @@ class EntitySummary(object):
         self._time_updated = None
         self._updated_by_id = None
         self._uri = None
+        self._object_storage_url = None
         self._lifecycle_state = None
         self._properties = None
 
@@ -647,6 +654,30 @@ class EntitySummary(object):
         :type: str
         """
         self._uri = uri
+
+    @property
+    def object_storage_url(self):
+        """
+        Gets the object_storage_url of this EntitySummary.
+        URL of the data entity in the object store.
+
+
+        :return: The object_storage_url of this EntitySummary.
+        :rtype: str
+        """
+        return self._object_storage_url
+
+    @object_storage_url.setter
+    def object_storage_url(self, object_storage_url):
+        """
+        Sets the object_storage_url of this EntitySummary.
+        URL of the data entity in the object store.
+
+
+        :param object_storage_url: The object_storage_url of this EntitySummary.
+        :type: str
+        """
+        self._object_storage_url = object_storage_url
 
     @property
     def lifecycle_state(self):

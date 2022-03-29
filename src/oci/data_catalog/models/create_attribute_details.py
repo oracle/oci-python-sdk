@@ -82,6 +82,10 @@ class CreateAttributeDetails(object):
             The value to assign to the custom_property_members property of this CreateAttributeDetails.
         :type custom_property_members: list[oci.data_catalog.models.CustomPropertySetUsage]
 
+        :param type_key:
+            The value to assign to the type_key property of this CreateAttributeDetails.
+        :type type_key: str
+
         :param properties:
             The value to assign to the properties property of this CreateAttributeDetails.
         :type properties: dict(str, dict(str, str))
@@ -104,6 +108,7 @@ class CreateAttributeDetails(object):
             'external_datatype_entity_key': 'str',
             'external_parent_attribute_key': 'str',
             'custom_property_members': 'list[CustomPropertySetUsage]',
+            'type_key': 'str',
             'properties': 'dict(str, dict(str, str))'
         }
 
@@ -124,6 +129,7 @@ class CreateAttributeDetails(object):
             'external_datatype_entity_key': 'externalDatatypeEntityKey',
             'external_parent_attribute_key': 'externalParentAttributeKey',
             'custom_property_members': 'customPropertyMembers',
+            'type_key': 'typeKey',
             'properties': 'properties'
         }
 
@@ -143,6 +149,7 @@ class CreateAttributeDetails(object):
         self._external_datatype_entity_key = None
         self._external_parent_attribute_key = None
         self._custom_property_members = None
+        self._type_key = None
         self._properties = None
 
     @property
@@ -534,6 +541,30 @@ class CreateAttributeDetails(object):
         :type: list[oci.data_catalog.models.CustomPropertySetUsage]
         """
         self._custom_property_members = custom_property_members
+
+    @property
+    def type_key(self):
+        """
+        Gets the type_key of this CreateAttributeDetails.
+        Type key of the object. Type keys can be found via the '/types' endpoint.
+
+
+        :return: The type_key of this CreateAttributeDetails.
+        :rtype: str
+        """
+        return self._type_key
+
+    @type_key.setter
+    def type_key(self, type_key):
+        """
+        Sets the type_key of this CreateAttributeDetails.
+        Type key of the object. Type keys can be found via the '/types' endpoint.
+
+
+        :param type_key: The type_key of this CreateAttributeDetails.
+        :type: str
+        """
+        self._type_key = type_key
 
     @property
     def properties(self):

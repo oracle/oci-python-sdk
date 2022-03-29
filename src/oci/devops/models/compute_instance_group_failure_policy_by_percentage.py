@@ -47,7 +47,7 @@ class ComputeInstanceGroupFailurePolicyByPercentage(ComputeInstanceGroupFailureP
     def failure_percentage(self):
         """
         **[Required]** Gets the failure_percentage of this ComputeInstanceGroupFailurePolicyByPercentage.
-        The failure percentage threshold, which when reached or exceeded sets the stage as FAILED. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
+        The failure percentage threshold, which when reached or exceeded sets the stage as Failed. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
 
 
         :return: The failure_percentage of this ComputeInstanceGroupFailurePolicyByPercentage.
@@ -59,7 +59,7 @@ class ComputeInstanceGroupFailurePolicyByPercentage(ComputeInstanceGroupFailureP
     def failure_percentage(self, failure_percentage):
         """
         Sets the failure_percentage of this ComputeInstanceGroupFailurePolicyByPercentage.
-        The failure percentage threshold, which when reached or exceeded sets the stage as FAILED. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
+        The failure percentage threshold, which when reached or exceeded sets the stage as Failed. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
 
 
         :param failure_percentage: The failure_percentage of this ComputeInstanceGroupFailurePolicyByPercentage.

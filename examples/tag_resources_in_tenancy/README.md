@@ -52,9 +52,9 @@ Execute
 ```
 $ python3 tag_resources_in_tenancy.py --help
 
-usage: tag_resources_in_tenancy.py [-h] [-t CONFIG_PROFILE] [-p PROXY] [-cp COMPARTMENT] [-rg REGION] [-ip] [-dt] [-tag TAG]
-                                   [-tagseperator TAGSEPERATOR] [-action {add_defined,add_free,del_defined,del_free,list}]
-                                   [-output {list,json,summary}] [-force]
+usage: tag_resources_in_tenancy.py [-h] [-t CONFIG_PROFILE] [-p PROXY] [-cp COMPARTMENT] [-rg REGION] [-ip] [-dt] [-tag TAG] [-tagseperator TAGSEPERATOR]
+                                   [-action {add_defined,add_free,del_defined,del_free,list}] [-output {list,json,summary}] [-force] [-service SERVICE]
+                                   [-filter_by_name FILTER_BY_NAME]
 
 optional arguments:
   -h, --help                                                show this help message and exit
@@ -69,6 +69,8 @@ optional arguments:
   -action {add_defined,add_free,del_defined,del_free,list}  Action Type
   -output {list,json,summary}                               Output type, default=summary
   -force                                                    Force execution (do not confirm)
+  -service SERVICE                                          Services = all,compute,block,network,identity,loadbalancer,database,object,file. default=all
+  -filter_by_name FILTER_BY_NAME                            Filter service by name, comma seperator for multi names
 ```
 
 ## Example Execution for adding defined Tags:

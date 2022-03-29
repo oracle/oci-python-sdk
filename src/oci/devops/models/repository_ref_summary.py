@@ -117,7 +117,7 @@ class RepositoryRefSummary(object):
     def ref_type(self):
         """
         **[Required]** Gets the ref_type of this RepositoryRefSummary.
-        The type of reference (Branch or Tag).
+        The type of reference (BRANCH or TAG).
 
 
         :return: The ref_type of this RepositoryRefSummary.
@@ -129,7 +129,7 @@ class RepositoryRefSummary(object):
     def ref_type(self, ref_type):
         """
         Sets the ref_type of this RepositoryRefSummary.
-        The type of reference (Branch or Tag).
+        The type of reference (BRANCH or TAG).
 
 
         :param ref_type: The ref_type of this RepositoryRefSummary.

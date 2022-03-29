@@ -47,7 +47,7 @@ class ComputeInstanceGroupFailurePolicyByCount(ComputeInstanceGroupFailurePolicy
     def failure_count(self):
         """
         **[Required]** Gets the failure_count of this ComputeInstanceGroupFailurePolicyByCount.
-        The threshold count of failed instances in the group, which when reached or exceeded sets the stage as FAILED.
+        The threshold count of failed instances in the group, which when reached or exceeded sets the stage as Failed.
 
 
         :return: The failure_count of this ComputeInstanceGroupFailurePolicyByCount.
@@ -59,7 +59,7 @@ class ComputeInstanceGroupFailurePolicyByCount(ComputeInstanceGroupFailurePolicy
     def failure_count(self, failure_count):
         """
         Sets the failure_count of this ComputeInstanceGroupFailurePolicyByCount.
-        The threshold count of failed instances in the group, which when reached or exceeded sets the stage as FAILED.
+        The threshold count of failed instances in the group, which when reached or exceeded sets the stage as Failed.
 
 
         :param failure_count: The failure_count of this ComputeInstanceGroupFailurePolicyByCount.

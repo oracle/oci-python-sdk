@@ -88,6 +88,10 @@ class JreUsage(object):
             The value to assign to the approximate_managed_instance_count property of this JreUsage.
         :type approximate_managed_instance_count: int
 
+        :param approximate_pending_work_request_count:
+            The value to assign to the approximate_pending_work_request_count property of this JreUsage.
+        :type approximate_pending_work_request_count: int
+
         :param time_start:
             The value to assign to the time_start property of this JreUsage.
         :type time_start: datetime
@@ -119,6 +123,7 @@ class JreUsage(object):
             'approximate_installation_count': 'int',
             'approximate_application_count': 'int',
             'approximate_managed_instance_count': 'int',
+            'approximate_pending_work_request_count': 'int',
             'time_start': 'datetime',
             'time_end': 'datetime',
             'time_first_seen': 'datetime',
@@ -139,6 +144,7 @@ class JreUsage(object):
             'approximate_installation_count': 'approximateInstallationCount',
             'approximate_application_count': 'approximateApplicationCount',
             'approximate_managed_instance_count': 'approximateManagedInstanceCount',
+            'approximate_pending_work_request_count': 'approximatePendingWorkRequestCount',
             'time_start': 'timeStart',
             'time_end': 'timeEnd',
             'time_first_seen': 'timeFirstSeen',
@@ -158,6 +164,7 @@ class JreUsage(object):
         self._approximate_installation_count = None
         self._approximate_application_count = None
         self._approximate_managed_instance_count = None
+        self._approximate_pending_work_request_count = None
         self._time_start = None
         self._time_end = None
         self._time_first_seen = None
@@ -496,6 +503,30 @@ class JreUsage(object):
         :type: int
         """
         self._approximate_managed_instance_count = approximate_managed_instance_count
+
+    @property
+    def approximate_pending_work_request_count(self):
+        """
+        Gets the approximate_pending_work_request_count of this JreUsage.
+        The approximate count of work requests working on this Java Runtime.
+
+
+        :return: The approximate_pending_work_request_count of this JreUsage.
+        :rtype: int
+        """
+        return self._approximate_pending_work_request_count
+
+    @approximate_pending_work_request_count.setter
+    def approximate_pending_work_request_count(self, approximate_pending_work_request_count):
+        """
+        Sets the approximate_pending_work_request_count of this JreUsage.
+        The approximate count of work requests working on this Java Runtime.
+
+
+        :param approximate_pending_work_request_count: The approximate_pending_work_request_count of this JreUsage.
+        :type: int
+        """
+        self._approximate_pending_work_request_count = approximate_pending_work_request_count
 
     @property
     def time_start(self):

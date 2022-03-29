@@ -18,12 +18,22 @@ class UpdateDeployStageDetails(object):
         Initializes a new UpdateDeployStageDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
-        * :class:`~oci.devops.models.UpdateOkeDeployStageDetails`
-        * :class:`~oci.devops.models.UpdateLoadBalancerTrafficShiftDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateOkeCanaryTrafficShiftDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateOkeCanaryDeployStageDetails`
         * :class:`~oci.devops.models.UpdateComputeInstanceGroupDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateOkeCanaryApprovalDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateOkeDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateComputeInstanceGroupCanaryApprovalDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateLoadBalancerTrafficShiftDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateOkeBlueGreenDeployStageDetails`
         * :class:`~oci.devops.models.UpdateWaitDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateOkeBlueGreenTrafficShiftDeployStageDetails`
         * :class:`~oci.devops.models.UpdateManualApprovalDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateComputeInstanceGroupBlueGreenDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateComputeInstanceGroupCanaryDeployStageDetails`
         * :class:`~oci.devops.models.UpdateFunctionDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails`
         * :class:`~oci.devops.models.UpdateInvokeFunctionDeployStageDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -86,23 +96,53 @@ class UpdateDeployStageDetails(object):
         """
         type = object_dictionary['deployStageType']
 
-        if type == 'OKE_DEPLOYMENT':
-            return 'UpdateOkeDeployStageDetails'
+        if type == 'OKE_CANARY_TRAFFIC_SHIFT':
+            return 'UpdateOkeCanaryTrafficShiftDeployStageDetails'
 
-        if type == 'LOAD_BALANCER_TRAFFIC_SHIFT':
-            return 'UpdateLoadBalancerTrafficShiftDeployStageDetails'
+        if type == 'OKE_CANARY_DEPLOYMENT':
+            return 'UpdateOkeCanaryDeployStageDetails'
 
         if type == 'COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT':
             return 'UpdateComputeInstanceGroupDeployStageDetails'
 
+        if type == 'OKE_CANARY_APPROVAL':
+            return 'UpdateOkeCanaryApprovalDeployStageDetails'
+
+        if type == 'OKE_DEPLOYMENT':
+            return 'UpdateOkeDeployStageDetails'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL':
+            return 'UpdateComputeInstanceGroupCanaryApprovalDeployStageDetails'
+
+        if type == 'LOAD_BALANCER_TRAFFIC_SHIFT':
+            return 'UpdateLoadBalancerTrafficShiftDeployStageDetails'
+
+        if type == 'OKE_BLUE_GREEN_DEPLOYMENT':
+            return 'UpdateOkeBlueGreenDeployStageDetails'
+
         if type == 'WAIT':
             return 'UpdateWaitDeployStageDetails'
+
+        if type == 'OKE_BLUE_GREEN_TRAFFIC_SHIFT':
+            return 'UpdateOkeBlueGreenTrafficShiftDeployStageDetails'
 
         if type == 'MANUAL_APPROVAL':
             return 'UpdateManualApprovalDeployStageDetails'
 
+        if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT':
+            return 'UpdateComputeInstanceGroupBlueGreenDeployStageDetails'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT':
+            return 'UpdateComputeInstanceGroupCanaryDeployStageDetails'
+
         if type == 'DEPLOY_FUNCTION':
             return 'UpdateFunctionDeployStageDetails'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT':
+            return 'UpdateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT':
+            return 'UpdateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails'
 
         if type == 'INVOKE_FUNCTION':
             return 'UpdateInvokeFunctionDeployStageDetails'

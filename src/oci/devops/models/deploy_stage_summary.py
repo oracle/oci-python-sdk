@@ -18,13 +18,23 @@ class DeployStageSummary(object):
         Initializes a new DeployStageSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.devops.models.ComputeInstanceGroupBlueGreenDeployStageSummary`
+        * :class:`~oci.devops.models.ComputeInstanceGroupBlueGreenTrafficShiftDeployStageSummary`
+        * :class:`~oci.devops.models.OkeBlueGreenDeployStageSummary`
         * :class:`~oci.devops.models.WaitDeployStageSummary`
-        * :class:`~oci.devops.models.ComputeInstanceGroupDeployStageSummary`
         * :class:`~oci.devops.models.OkeDeployStageSummary`
+        * :class:`~oci.devops.models.ComputeInstanceGroupCanaryApprovalDeployStageSummary`
         * :class:`~oci.devops.models.InvokeFunctionDeployStageSummary`
+        * :class:`~oci.devops.models.OkeCanaryTrafficShiftDeployStageSummary`
+        * :class:`~oci.devops.models.ComputeInstanceGroupDeployStageSummary`
+        * :class:`~oci.devops.models.ComputeInstanceGroupCanaryDeployStageSummary`
+        * :class:`~oci.devops.models.OkeCanaryApprovalDeployStageSummary`
+        * :class:`~oci.devops.models.OkeCanaryDeployStageSummary`
         * :class:`~oci.devops.models.LoadBalancerTrafficShiftDeployStageSummary`
         * :class:`~oci.devops.models.ManualApprovalDeployStageSummary`
+        * :class:`~oci.devops.models.OkeBlueGreenTrafficShiftDeployStageSummary`
         * :class:`~oci.devops.models.FunctionDeployStageSummary`
+        * :class:`~oci.devops.models.ComputeInstanceGroupCanaryTrafficShiftDeployStageSummary`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -149,17 +159,41 @@ class DeployStageSummary(object):
         """
         type = object_dictionary['deployStageType']
 
+        if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT':
+            return 'ComputeInstanceGroupBlueGreenDeployStageSummary'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT':
+            return 'ComputeInstanceGroupBlueGreenTrafficShiftDeployStageSummary'
+
+        if type == 'OKE_BLUE_GREEN_DEPLOYMENT':
+            return 'OkeBlueGreenDeployStageSummary'
+
         if type == 'WAIT':
             return 'WaitDeployStageSummary'
-
-        if type == 'COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT':
-            return 'ComputeInstanceGroupDeployStageSummary'
 
         if type == 'OKE_DEPLOYMENT':
             return 'OkeDeployStageSummary'
 
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL':
+            return 'ComputeInstanceGroupCanaryApprovalDeployStageSummary'
+
         if type == 'INVOKE_FUNCTION':
             return 'InvokeFunctionDeployStageSummary'
+
+        if type == 'OKE_CANARY_TRAFFIC_SHIFT':
+            return 'OkeCanaryTrafficShiftDeployStageSummary'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT':
+            return 'ComputeInstanceGroupDeployStageSummary'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT':
+            return 'ComputeInstanceGroupCanaryDeployStageSummary'
+
+        if type == 'OKE_CANARY_APPROVAL':
+            return 'OkeCanaryApprovalDeployStageSummary'
+
+        if type == 'OKE_CANARY_DEPLOYMENT':
+            return 'OkeCanaryDeployStageSummary'
 
         if type == 'LOAD_BALANCER_TRAFFIC_SHIFT':
             return 'LoadBalancerTrafficShiftDeployStageSummary'
@@ -167,8 +201,14 @@ class DeployStageSummary(object):
         if type == 'MANUAL_APPROVAL':
             return 'ManualApprovalDeployStageSummary'
 
+        if type == 'OKE_BLUE_GREEN_TRAFFIC_SHIFT':
+            return 'OkeBlueGreenTrafficShiftDeployStageSummary'
+
         if type == 'DEPLOY_FUNCTION':
             return 'FunctionDeployStageSummary'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT':
+            return 'ComputeInstanceGroupCanaryTrafficShiftDeployStageSummary'
         else:
             return 'DeployStageSummary'
 

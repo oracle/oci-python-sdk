@@ -1,0 +1,11 @@
+OkeCanaryDeployStageExecutionProgress
+=====================================
+
+.. currentmodule:: oci.devops.models
+
+.. autoclass:: OkeCanaryDeployStageExecutionProgress
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

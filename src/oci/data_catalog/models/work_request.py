@@ -53,6 +53,22 @@ class WorkRequest(object):
     #: This constant has a value of "DETACH_CATALOG_PRIVATE_ENDPOINT"
     OPERATION_TYPE_DETACH_CATALOG_PRIVATE_ENDPOINT = "DETACH_CATALOG_PRIVATE_ENDPOINT"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_METASTORE"
+    OPERATION_TYPE_CREATE_METASTORE = "CREATE_METASTORE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_METASTORE"
+    OPERATION_TYPE_UPDATE_METASTORE = "UPDATE_METASTORE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_METASTORE"
+    OPERATION_TYPE_DELETE_METASTORE = "DELETE_METASTORE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "MOVE_METASTORE"
+    OPERATION_TYPE_MOVE_METASTORE = "MOVE_METASTORE"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -84,7 +100,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_CATALOG", "UPDATE_CATALOG", "DELETE_CATALOG", "MOVE_CATALOG", "CREATE_CATALOG_PRIVATE_ENDPOINT", "DELETE_CATALOG_PRIVATE_ENDPOINT", "UPDATE_CATALOG_PRIVATE_ENDPOINT", "MOVE_CATALOG_PRIVATE_ENDPOINT", "ATTACH_CATALOG_PRIVATE_ENDPOINT", "DETACH_CATALOG_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_CATALOG", "UPDATE_CATALOG", "DELETE_CATALOG", "MOVE_CATALOG", "CREATE_CATALOG_PRIVATE_ENDPOINT", "DELETE_CATALOG_PRIVATE_ENDPOINT", "UPDATE_CATALOG_PRIVATE_ENDPOINT", "MOVE_CATALOG_PRIVATE_ENDPOINT", "ATTACH_CATALOG_PRIVATE_ENDPOINT", "DETACH_CATALOG_PRIVATE_ENDPOINT", "CREATE_METASTORE", "UPDATE_METASTORE", "DELETE_METASTORE", "MOVE_METASTORE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -163,7 +179,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         Type of the work request.
 
-        Allowed values for this property are: "CREATE_CATALOG", "UPDATE_CATALOG", "DELETE_CATALOG", "MOVE_CATALOG", "CREATE_CATALOG_PRIVATE_ENDPOINT", "DELETE_CATALOG_PRIVATE_ENDPOINT", "UPDATE_CATALOG_PRIVATE_ENDPOINT", "MOVE_CATALOG_PRIVATE_ENDPOINT", "ATTACH_CATALOG_PRIVATE_ENDPOINT", "DETACH_CATALOG_PRIVATE_ENDPOINT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_CATALOG", "UPDATE_CATALOG", "DELETE_CATALOG", "MOVE_CATALOG", "CREATE_CATALOG_PRIVATE_ENDPOINT", "DELETE_CATALOG_PRIVATE_ENDPOINT", "UPDATE_CATALOG_PRIVATE_ENDPOINT", "MOVE_CATALOG_PRIVATE_ENDPOINT", "ATTACH_CATALOG_PRIVATE_ENDPOINT", "DETACH_CATALOG_PRIVATE_ENDPOINT", "CREATE_METASTORE", "UPDATE_METASTORE", "DELETE_METASTORE", "MOVE_METASTORE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -182,7 +198,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_CATALOG", "UPDATE_CATALOG", "DELETE_CATALOG", "MOVE_CATALOG", "CREATE_CATALOG_PRIVATE_ENDPOINT", "DELETE_CATALOG_PRIVATE_ENDPOINT", "UPDATE_CATALOG_PRIVATE_ENDPOINT", "MOVE_CATALOG_PRIVATE_ENDPOINT", "ATTACH_CATALOG_PRIVATE_ENDPOINT", "DETACH_CATALOG_PRIVATE_ENDPOINT"]
+        allowed_values = ["CREATE_CATALOG", "UPDATE_CATALOG", "DELETE_CATALOG", "MOVE_CATALOG", "CREATE_CATALOG_PRIVATE_ENDPOINT", "DELETE_CATALOG_PRIVATE_ENDPOINT", "UPDATE_CATALOG_PRIVATE_ENDPOINT", "MOVE_CATALOG_PRIVATE_ENDPOINT", "ATTACH_CATALOG_PRIVATE_ENDPOINT", "DETACH_CATALOG_PRIVATE_ENDPOINT", "CREATE_METASTORE", "UPDATE_METASTORE", "DELETE_METASTORE", "MOVE_METASTORE"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

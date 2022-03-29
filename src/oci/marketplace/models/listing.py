@@ -13,6 +13,14 @@ class Listing(object):
     The model for an Oracle Cloud Infrastructure Marketplace listing.
     """
 
+    #: A constant which can be used with the compatible_architectures property of a Listing.
+    #: This constant has a value of "X86"
+    COMPATIBLE_ARCHITECTURES_X86 = "X86"
+
+    #: A constant which can be used with the compatible_architectures property of a Listing.
+    #: This constant has a value of "ARM"
+    COMPATIBLE_ARCHITECTURES_ARM = "ARM"
+
     #: A constant which can be used with the package_type property of a Listing.
     #: This constant has a value of "ORCHESTRATION"
     PACKAGE_TYPE_ORCHESTRATION = "ORCHESTRATION"
@@ -126,6 +134,12 @@ class Listing(object):
             The value to assign to the banner property of this Listing.
         :type banner: oci.marketplace.models.UploadData
 
+        :param compatible_architectures:
+            The value to assign to the compatible_architectures property of this Listing.
+            Allowed values for items in this list are: "X86", "ARM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compatible_architectures: list[str]
+
         :param regions:
             The value to assign to the regions property of this Listing.
         :type regions: list[oci.marketplace.models.Region]
@@ -182,6 +196,7 @@ class Listing(object):
             'documentation_links': 'list[DocumentationLink]',
             'icon': 'UploadData',
             'banner': 'UploadData',
+            'compatible_architectures': 'list[str]',
             'regions': 'list[Region]',
             'package_type': 'str',
             'default_package_version': 'str',
@@ -214,6 +229,7 @@ class Listing(object):
             'documentation_links': 'documentationLinks',
             'icon': 'icon',
             'banner': 'banner',
+            'compatible_architectures': 'compatibleArchitectures',
             'regions': 'regions',
             'package_type': 'packageType',
             'default_package_version': 'defaultPackageVersion',
@@ -245,6 +261,7 @@ class Listing(object):
         self._documentation_links = None
         self._icon = None
         self._banner = None
+        self._compatible_architectures = None
         self._regions = None
         self._package_type = None
         self._default_package_version = None
@@ -768,6 +785,36 @@ class Listing(object):
         :type: oci.marketplace.models.UploadData
         """
         self._banner = banner
+
+    @property
+    def compatible_architectures(self):
+        """
+        Gets the compatible_architectures of this Listing.
+        The list of compatible architectures supported by the listing
+
+        Allowed values for items in this list are: "X86", "ARM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compatible_architectures of this Listing.
+        :rtype: list[str]
+        """
+        return self._compatible_architectures
+
+    @compatible_architectures.setter
+    def compatible_architectures(self, compatible_architectures):
+        """
+        Sets the compatible_architectures of this Listing.
+        The list of compatible architectures supported by the listing
+
+
+        :param compatible_architectures: The compatible_architectures of this Listing.
+        :type: list[str]
+        """
+        allowed_values = ["X86", "ARM"]
+        if compatible_architectures:
+            compatible_architectures[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in compatible_architectures]
+        self._compatible_architectures = compatible_architectures
 
     @property
     def regions(self):

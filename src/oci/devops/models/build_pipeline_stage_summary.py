@@ -284,7 +284,7 @@ class BuildPipelineStageSummary(object):
     def build_pipeline_stage_type(self):
         """
         **[Required]** Gets the build_pipeline_stage_type of this BuildPipelineStageSummary.
-        Defines the stage type, which is one of the following: Build, Deliver Artifacts, Wait, and Trigger Deployment.
+        Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 
 
         :return: The build_pipeline_stage_type of this BuildPipelineStageSummary.
@@ -296,7 +296,7 @@ class BuildPipelineStageSummary(object):
     def build_pipeline_stage_type(self, build_pipeline_stage_type):
         """
         Sets the build_pipeline_stage_type of this BuildPipelineStageSummary.
-        Defines the stage type, which is one of the following: Build, Deliver Artifacts, Wait, and Trigger Deployment.
+        Defines the stage type, which is one of the following: BUILD, DELIVER_ARTIFACT, WAIT, and TRIGGER_DEPLOYMENT_PIPELINE.
 
 
         :param build_pipeline_stage_type: The build_pipeline_stage_type of this BuildPipelineStageSummary.
