@@ -3,6 +3,8 @@
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 # Copyright 2008-2016 Andrey Petrov and contributors
 
+from __future__ import absolute_import
+
 from .packages.six.moves.http_client import IncompleteRead as httplib_IncompleteRead
 
 # Base Exceptions
