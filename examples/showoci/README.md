@@ -154,9 +154,10 @@ Execute
 $ python3 showoci.py  
 
 usage: showoci.py [-h] [-a] [-ani] [-an] [-api] [-b] [-c] [-cn] [-d] [-e] [-edge] [-f] [-fun] [-i] [-ic] [-isc] [-l] [-lq] [-m]
-                  [-n] [-o] [-paas] [-dataai] [-rm] [-s] [-sec] [-nobackups] [-so] [-mc] [-nr] [-ip] [-dt] [-t PROFILE] [-p PROXY]
-                  [-rg REGION] [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH] [-tenantid TENANTID] [-cf CONFIG]
-                  [-csv CSV] [-csv_nodate] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches] [--version]
+                  [-n] [-o] [-paas] [-dataai] [-rm] [-s] [-sec] [-nobackups] [-so] [-mc] [-nr] [-ip] [-is] [-dt] [-t PROFILE]
+                  [-p PROXY] [-rg REGION] [-cp COMPART] [-cpr COMPART_RECUR] [-cpath COMPARTPATH] [-tenantid TENANTID]
+                  [-cf CONFIG] [-csv CSV] [-csv_nodate] [-jf JOUTFILE] [-js] [-sjf SJOUTFILE] [-cachef SERVICEFILE] [-caches]
+                  [--version]
 
 optional arguments:
   -h, --help           show this help message and exit
@@ -190,6 +191,7 @@ optional arguments:
   -mc                  exclude ManagedCompartmentForPaaS
   -nr                  Not include root compartment
   -ip                  Use Instance Principals for Authentication
+  -is                  Use Config and Security Token for Authentication
   -dt                  Use Delegation Token (Cloud shell)
   -t PROFILE           Config file section to use (tenancy profile)
   -p PROXY             Set Proxy (i.e. www-proxy-server.com:80)
@@ -207,7 +209,6 @@ optional arguments:
   -cachef SERVICEFILE  Output Cache to file (JSON format)
   -caches              Output Cache to screen (JSON format)
   --version            show program's version number and exit
-
 ```
 
 ## Below example of reports from few tenancies  

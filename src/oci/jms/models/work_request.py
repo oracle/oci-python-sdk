@@ -31,6 +31,14 @@ class WorkRequest(object):
     #: This constant has a value of "UPDATE_FLEET"
     OPERATION_TYPE_UPDATE_FLEET = "UPDATE_FLEET"
 
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_FLEET_AGENT_CONFIGURATION"
+    OPERATION_TYPE_UPDATE_FLEET_AGENT_CONFIGURATION = "UPDATE_FLEET_AGENT_CONFIGURATION"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_JAVA_INSTALLATION"
+    OPERATION_TYPE_DELETE_JAVA_INSTALLATION = "DELETE_JAVA_INSTALLATION"
+
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -62,7 +70,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -100,6 +108,22 @@ class WorkRequest(object):
             The value to assign to the time_finished property of this WorkRequest.
         :type time_finished: datetime
 
+        :param created_by:
+            The value to assign to the created_by property of this WorkRequest.
+        :type created_by: oci.jms.models.Principal
+
+        :param time_last_updated:
+            The value to assign to the time_last_updated property of this WorkRequest.
+        :type time_last_updated: datetime
+
+        :param total_task_count:
+            The value to assign to the total_task_count property of this WorkRequest.
+        :type total_task_count: int
+
+        :param completed_task_count:
+            The value to assign to the completed_task_count property of this WorkRequest.
+        :type completed_task_count: int
+
         """
         self.swagger_types = {
             'operation_type': 'str',
@@ -110,7 +134,11 @@ class WorkRequest(object):
             'percent_complete': 'float',
             'time_accepted': 'datetime',
             'time_started': 'datetime',
-            'time_finished': 'datetime'
+            'time_finished': 'datetime',
+            'created_by': 'Principal',
+            'time_last_updated': 'datetime',
+            'total_task_count': 'int',
+            'completed_task_count': 'int'
         }
 
         self.attribute_map = {
@@ -122,7 +150,11 @@ class WorkRequest(object):
             'percent_complete': 'percentComplete',
             'time_accepted': 'timeAccepted',
             'time_started': 'timeStarted',
-            'time_finished': 'timeFinished'
+            'time_finished': 'timeFinished',
+            'created_by': 'createdBy',
+            'time_last_updated': 'timeLastUpdated',
+            'total_task_count': 'totalTaskCount',
+            'completed_task_count': 'completedTaskCount'
         }
 
         self._operation_type = None
@@ -134,6 +166,10 @@ class WorkRequest(object):
         self._time_accepted = None
         self._time_started = None
         self._time_finished = None
+        self._created_by = None
+        self._time_last_updated = None
+        self._total_task_count = None
+        self._completed_task_count = None
 
     @property
     def operation_type(self):
@@ -141,7 +177,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The asynchronous operation tracked by this work request.
 
-        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -160,7 +196,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET"]
+        allowed_values = ["CREATE_FLEET", "DELETE_FLEET", "MOVE_FLEET", "UPDATE_FLEET", "UPDATE_FLEET_AGENT_CONFIGURATION", "DELETE_JAVA_INSTALLATION"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type
@@ -388,6 +424,102 @@ class WorkRequest(object):
         :type: datetime
         """
         self._time_finished = time_finished
+
+    @property
+    def created_by(self):
+        """
+        Gets the created_by of this WorkRequest.
+
+        :return: The created_by of this WorkRequest.
+        :rtype: oci.jms.models.Principal
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by):
+        """
+        Sets the created_by of this WorkRequest.
+
+        :param created_by: The created_by of this WorkRequest.
+        :type: oci.jms.models.Principal
+        """
+        self._created_by = created_by
+
+    @property
+    def time_last_updated(self):
+        """
+        Gets the time_last_updated of this WorkRequest.
+        The date and time the work request percentage was last updated. (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
+
+
+        :return: The time_last_updated of this WorkRequest.
+        :rtype: datetime
+        """
+        return self._time_last_updated
+
+    @time_last_updated.setter
+    def time_last_updated(self, time_last_updated):
+        """
+        Sets the time_last_updated of this WorkRequest.
+        The date and time the work request percentage was last updated. (formatted according to `RFC3339`__).
+
+        __ https://datatracker.ietf.org/doc/html/rfc3339
+
+
+        :param time_last_updated: The time_last_updated of this WorkRequest.
+        :type: datetime
+        """
+        self._time_last_updated = time_last_updated
+
+    @property
+    def total_task_count(self):
+        """
+        Gets the total_task_count of this WorkRequest.
+        The total number of tasks to be executed for this work request.
+
+
+        :return: The total_task_count of this WorkRequest.
+        :rtype: int
+        """
+        return self._total_task_count
+
+    @total_task_count.setter
+    def total_task_count(self, total_task_count):
+        """
+        Sets the total_task_count of this WorkRequest.
+        The total number of tasks to be executed for this work request.
+
+
+        :param total_task_count: The total_task_count of this WorkRequest.
+        :type: int
+        """
+        self._total_task_count = total_task_count
+
+    @property
+    def completed_task_count(self):
+        """
+        Gets the completed_task_count of this WorkRequest.
+        The number of tasks had been executed to a terminal state.
+
+
+        :return: The completed_task_count of this WorkRequest.
+        :rtype: int
+        """
+        return self._completed_task_count
+
+    @completed_task_count.setter
+    def completed_task_count(self, completed_task_count):
+        """
+        Sets the completed_task_count of this WorkRequest.
+        The number of tasks had been executed to a terminal state.
+
+
+        :param completed_task_count: The completed_task_count of this WorkRequest.
+        :type: int
+        """
+        self._completed_task_count = completed_task_count
 
     def __repr__(self):
         return formatted_flat_dict(self)

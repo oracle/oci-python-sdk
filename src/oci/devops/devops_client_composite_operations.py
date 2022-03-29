@@ -459,7 +459,7 @@ class DevopsClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.devops.models.CreateDeployStageDetails create_deploy_stage_details: (required)
-            Details for the new DeployStage.
+            Details for the new deployment stage.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.devops.models.WorkRequest.status`

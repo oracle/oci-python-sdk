@@ -61,7 +61,7 @@ class GenericDeployArtifactSource(DeployArtifactSource):
     def repository_id(self):
         """
         **[Required]** Gets the repository_id of this GenericDeployArtifactSource.
-        The OCID of a repository
+        The OCID of a repository.
 
 
         :return: The repository_id of this GenericDeployArtifactSource.
@@ -73,7 +73,7 @@ class GenericDeployArtifactSource(DeployArtifactSource):
     def repository_id(self, repository_id):
         """
         Sets the repository_id of this GenericDeployArtifactSource.
-        The OCID of a repository
+        The OCID of a repository.
 
 
         :param repository_id: The repository_id of this GenericDeployArtifactSource.

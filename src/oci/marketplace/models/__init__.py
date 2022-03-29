@@ -20,6 +20,7 @@ from .eula import Eula
 from .free_text_search_details import FreeTextSearchDetails
 from .image_listing_package import ImageListingPackage
 from .image_publication_package import ImagePublicationPackage
+from .international_market_price import InternationalMarketPrice
 from .item import Item
 from .launch_eligibility import LaunchEligibility
 from .link import Link
@@ -73,6 +74,7 @@ marketplace_type_mapping = {
     "FreeTextSearchDetails": FreeTextSearchDetails,
     "ImageListingPackage": ImageListingPackage,
     "ImagePublicationPackage": ImagePublicationPackage,
+    "InternationalMarketPrice": InternationalMarketPrice,
     "Item": Item,
     "LaunchEligibility": LaunchEligibility,
     "Link": Link,

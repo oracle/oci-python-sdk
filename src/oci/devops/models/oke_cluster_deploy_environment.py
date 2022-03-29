@@ -54,7 +54,7 @@ class OkeClusterDeployEnvironment(DeployEnvironment):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this OkeClusterDeployEnvironment.
-            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
+            Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", "NEEDS_ATTENTION"
         :type lifecycle_state: str
 
         :param lifecycle_details:
@@ -77,6 +77,10 @@ class OkeClusterDeployEnvironment(DeployEnvironment):
             The value to assign to the cluster_id property of this OkeClusterDeployEnvironment.
         :type cluster_id: str
 
+        :param network_channel:
+            The value to assign to the network_channel property of this OkeClusterDeployEnvironment.
+        :type network_channel: oci.devops.models.NetworkChannel
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -92,7 +96,8 @@ class OkeClusterDeployEnvironment(DeployEnvironment):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
-            'cluster_id': 'str'
+            'cluster_id': 'str',
+            'network_channel': 'NetworkChannel'
         }
 
         self.attribute_map = {
@@ -109,7 +114,8 @@ class OkeClusterDeployEnvironment(DeployEnvironment):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
-            'cluster_id': 'clusterId'
+            'cluster_id': 'clusterId',
+            'network_channel': 'networkChannel'
         }
 
         self._id = None
@@ -126,6 +132,7 @@ class OkeClusterDeployEnvironment(DeployEnvironment):
         self._defined_tags = None
         self._system_tags = None
         self._cluster_id = None
+        self._network_channel = None
         self._deploy_environment_type = 'OKE_CLUSTER'
 
     @property
@@ -151,6 +158,26 @@ class OkeClusterDeployEnvironment(DeployEnvironment):
         :type: str
         """
         self._cluster_id = cluster_id
+
+    @property
+    def network_channel(self):
+        """
+        Gets the network_channel of this OkeClusterDeployEnvironment.
+
+        :return: The network_channel of this OkeClusterDeployEnvironment.
+        :rtype: oci.devops.models.NetworkChannel
+        """
+        return self._network_channel
+
+    @network_channel.setter
+    def network_channel(self, network_channel):
+        """
+        Sets the network_channel of this OkeClusterDeployEnvironment.
+
+        :param network_channel: The network_channel of this OkeClusterDeployEnvironment.
+        :type: oci.devops.models.NetworkChannel
+        """
+        self._network_channel = network_channel
 
     def __repr__(self):
         return formatted_flat_dict(self)

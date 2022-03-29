@@ -20,23 +20,38 @@ Jms
 
     oci.jms.models.ApplicationUsage
     oci.jms.models.ApplicationUsageCollection
+    oci.jms.models.Blocklist
+    oci.jms.models.BlocklistCollection
+    oci.jms.models.BlocklistEntry
+    oci.jms.models.BlocklistTarget
     oci.jms.models.ChangeFleetCompartmentDetails
+    oci.jms.models.CreateBlocklistDetails
     oci.jms.models.CreateFleetDetails
+    oci.jms.models.CustomLog
+    oci.jms.models.ExistingInstallationSiteId
     oci.jms.models.Fleet
     oci.jms.models.FleetAgentConfiguration
     oci.jms.models.FleetAgentOsConfiguration
     oci.jms.models.FleetCollection
     oci.jms.models.FleetSummary
+    oci.jms.models.InstallationSite
+    oci.jms.models.InstallationSiteCollection
+    oci.jms.models.InstallationSiteSummary
     oci.jms.models.InstallationUsage
     oci.jms.models.InstallationUsageCollection
+    oci.jms.models.JavaRuntimeId
     oci.jms.models.JreUsage
     oci.jms.models.JreUsageCollection
     oci.jms.models.ManagedInstanceUsage
     oci.jms.models.ManagedInstanceUsageCollection
     oci.jms.models.OperatingSystem
+    oci.jms.models.Principal
+    oci.jms.models.RemoveFleetInstallationSitesDetails
     oci.jms.models.ResourceInventory
     oci.jms.models.UpdateFleetAgentConfigurationDetails
     oci.jms.models.UpdateFleetDetails
+    oci.jms.models.WorkItemCollection
+    oci.jms.models.WorkItemSummary
     oci.jms.models.WorkRequest
     oci.jms.models.WorkRequestCollection
     oci.jms.models.WorkRequestError

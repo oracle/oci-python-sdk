@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateOkeDeployStageDetails(UpdateDeployStageDetails):
     """
-    Specifies the Kubernetes cluster deployment stage.
+    Specifies the Container Engine for Kubernetes (OKE) cluster deployment stage.
     """
 
     def __init__(self, **kwargs):
@@ -126,7 +126,7 @@ class UpdateOkeDeployStageDetails(UpdateDeployStageDetails):
     def kubernetes_manifest_deploy_artifact_ids(self):
         """
         Gets the kubernetes_manifest_deploy_artifact_ids of this UpdateOkeDeployStageDetails.
-        List of Kubernetes manifest artifact OCIDs, the manifests should not include any job resource.
+        List of Kubernetes manifest artifact OCIDs.
 
 
         :return: The kubernetes_manifest_deploy_artifact_ids of this UpdateOkeDeployStageDetails.
@@ -138,7 +138,7 @@ class UpdateOkeDeployStageDetails(UpdateDeployStageDetails):
     def kubernetes_manifest_deploy_artifact_ids(self, kubernetes_manifest_deploy_artifact_ids):
         """
         Sets the kubernetes_manifest_deploy_artifact_ids of this UpdateOkeDeployStageDetails.
-        List of Kubernetes manifest artifact OCIDs, the manifests should not include any job resource.
+        List of Kubernetes manifest artifact OCIDs.
 
 
         :param kubernetes_manifest_deploy_artifact_ids: The kubernetes_manifest_deploy_artifact_ids of this UpdateOkeDeployStageDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InvokeFunctionDeployStageExecutionProgress(DeployStageExecutionProgress):
     """
-    Specifies the invoke function stage specific execution details.
+    Specifies the Invoke Function stage specific execution details.
     """
 
     def __init__(self, **kwargs):

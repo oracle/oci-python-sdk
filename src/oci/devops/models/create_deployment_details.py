@@ -21,6 +21,7 @@ class CreateDeploymentDetails(object):
         * :class:`~oci.devops.models.CreateDeployPipelineRedeploymentDetails`
         * :class:`~oci.devops.models.CreateDeployPipelineDeploymentDetails`
         * :class:`~oci.devops.models.CreateSingleDeployStageDeploymentDetails`
+        * :class:`~oci.devops.models.CreateSingleDeployStageRedeploymentDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -83,6 +84,9 @@ class CreateDeploymentDetails(object):
 
         if type == 'SINGLE_STAGE_DEPLOYMENT':
             return 'CreateSingleDeployStageDeploymentDetails'
+
+        if type == 'SINGLE_STAGE_REDEPLOYMENT':
+            return 'CreateSingleDeployStageRedeploymentDetails'
         else:
             return 'CreateDeploymentDetails'
 

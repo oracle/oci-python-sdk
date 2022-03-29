@@ -75,6 +75,10 @@ class OkeClusterDeployEnvironmentSummary(DeployEnvironmentSummary):
             The value to assign to the cluster_id property of this OkeClusterDeployEnvironmentSummary.
         :type cluster_id: str
 
+        :param network_channel:
+            The value to assign to the network_channel property of this OkeClusterDeployEnvironmentSummary.
+        :type network_channel: oci.devops.models.NetworkChannel
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -90,7 +94,8 @@ class OkeClusterDeployEnvironmentSummary(DeployEnvironmentSummary):
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))',
-            'cluster_id': 'str'
+            'cluster_id': 'str',
+            'network_channel': 'NetworkChannel'
         }
 
         self.attribute_map = {
@@ -107,7 +112,8 @@ class OkeClusterDeployEnvironmentSummary(DeployEnvironmentSummary):
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags',
-            'cluster_id': 'clusterId'
+            'cluster_id': 'clusterId',
+            'network_channel': 'networkChannel'
         }
 
         self._id = None
@@ -124,6 +130,7 @@ class OkeClusterDeployEnvironmentSummary(DeployEnvironmentSummary):
         self._defined_tags = None
         self._system_tags = None
         self._cluster_id = None
+        self._network_channel = None
         self._deploy_environment_type = 'OKE_CLUSTER'
 
     @property
@@ -149,6 +156,26 @@ class OkeClusterDeployEnvironmentSummary(DeployEnvironmentSummary):
         :type: str
         """
         self._cluster_id = cluster_id
+
+    @property
+    def network_channel(self):
+        """
+        Gets the network_channel of this OkeClusterDeployEnvironmentSummary.
+
+        :return: The network_channel of this OkeClusterDeployEnvironmentSummary.
+        :rtype: oci.devops.models.NetworkChannel
+        """
+        return self._network_channel
+
+    @network_channel.setter
+    def network_channel(self, network_channel):
+        """
+        Sets the network_channel of this OkeClusterDeployEnvironmentSummary.
+
+        :param network_channel: The network_channel of this OkeClusterDeployEnvironmentSummary.
+        :type: oci.devops.models.NetworkChannel
+        """
+        self._network_channel = network_channel
 
     def __repr__(self):
         return formatted_flat_dict(self)

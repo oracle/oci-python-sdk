@@ -22,6 +22,46 @@ class DeployStage(object):
     DEPLOY_STAGE_TYPE_COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT = "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT"
 
     #: A constant which can be used with the deploy_stage_type property of a DeployStage.
+    #: This constant has a value of "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT"
+    DEPLOY_STAGE_TYPE_COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT"
+
+    #: A constant which can be used with the deploy_stage_type property of a DeployStage.
+    #: This constant has a value of "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT"
+    DEPLOY_STAGE_TYPE_COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT"
+
+    #: A constant which can be used with the deploy_stage_type property of a DeployStage.
+    #: This constant has a value of "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT"
+    DEPLOY_STAGE_TYPE_COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT = "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT"
+
+    #: A constant which can be used with the deploy_stage_type property of a DeployStage.
+    #: This constant has a value of "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT"
+    DEPLOY_STAGE_TYPE_COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT = "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT"
+
+    #: A constant which can be used with the deploy_stage_type property of a DeployStage.
+    #: This constant has a value of "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL"
+    DEPLOY_STAGE_TYPE_COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL = "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL"
+
+    #: A constant which can be used with the deploy_stage_type property of a DeployStage.
+    #: This constant has a value of "OKE_BLUE_GREEN_DEPLOYMENT"
+    DEPLOY_STAGE_TYPE_OKE_BLUE_GREEN_DEPLOYMENT = "OKE_BLUE_GREEN_DEPLOYMENT"
+
+    #: A constant which can be used with the deploy_stage_type property of a DeployStage.
+    #: This constant has a value of "OKE_BLUE_GREEN_TRAFFIC_SHIFT"
+    DEPLOY_STAGE_TYPE_OKE_BLUE_GREEN_TRAFFIC_SHIFT = "OKE_BLUE_GREEN_TRAFFIC_SHIFT"
+
+    #: A constant which can be used with the deploy_stage_type property of a DeployStage.
+    #: This constant has a value of "OKE_CANARY_DEPLOYMENT"
+    DEPLOY_STAGE_TYPE_OKE_CANARY_DEPLOYMENT = "OKE_CANARY_DEPLOYMENT"
+
+    #: A constant which can be used with the deploy_stage_type property of a DeployStage.
+    #: This constant has a value of "OKE_CANARY_TRAFFIC_SHIFT"
+    DEPLOY_STAGE_TYPE_OKE_CANARY_TRAFFIC_SHIFT = "OKE_CANARY_TRAFFIC_SHIFT"
+
+    #: A constant which can be used with the deploy_stage_type property of a DeployStage.
+    #: This constant has a value of "OKE_CANARY_APPROVAL"
+    DEPLOY_STAGE_TYPE_OKE_CANARY_APPROVAL = "OKE_CANARY_APPROVAL"
+
+    #: A constant which can be used with the deploy_stage_type property of a DeployStage.
     #: This constant has a value of "OKE_DEPLOYMENT"
     DEPLOY_STAGE_TYPE_OKE_DEPLOYMENT = "OKE_DEPLOYMENT"
 
@@ -70,13 +110,23 @@ class DeployStage(object):
         Initializes a new DeployStage object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.devops.models.ComputeInstanceGroupBlueGreenTrafficShiftDeployStage`
         * :class:`~oci.devops.models.LoadBalancerTrafficShiftDeployStage`
         * :class:`~oci.devops.models.InvokeFunctionDeployStage`
-        * :class:`~oci.devops.models.WaitDeployStage`
+        * :class:`~oci.devops.models.OkeCanaryDeployStage`
         * :class:`~oci.devops.models.OkeDeployStage`
+        * :class:`~oci.devops.models.OkeCanaryTrafficShiftDeployStage`
+        * :class:`~oci.devops.models.FunctionDeployStage`
+        * :class:`~oci.devops.models.OkeBlueGreenDeployStage`
+        * :class:`~oci.devops.models.OkeCanaryApprovalDeployStage`
+        * :class:`~oci.devops.models.ComputeInstanceGroupCanaryTrafficShiftDeployStage`
+        * :class:`~oci.devops.models.ComputeInstanceGroupCanaryApprovalDeployStage`
+        * :class:`~oci.devops.models.WaitDeployStage`
+        * :class:`~oci.devops.models.ComputeInstanceGroupBlueGreenDeployStage`
+        * :class:`~oci.devops.models.ComputeInstanceGroupCanaryDeployStage`
+        * :class:`~oci.devops.models.OkeBlueGreenTrafficShiftDeployStage`
         * :class:`~oci.devops.models.ManualApprovalDeployStage`
         * :class:`~oci.devops.models.ComputeInstanceGroupDeployStage`
-        * :class:`~oci.devops.models.FunctionDeployStage`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -106,7 +156,7 @@ class DeployStage(object):
 
         :param deploy_stage_type:
             The value to assign to the deploy_stage_type property of this DeployStage.
-            Allowed values for this property are: "WAIT", "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT", "OKE_DEPLOYMENT", "DEPLOY_FUNCTION", "INVOKE_FUNCTION", "LOAD_BALANCER_TRAFFIC_SHIFT", "MANUAL_APPROVAL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "WAIT", "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT", "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT", "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT", "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT", "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT", "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL", "OKE_BLUE_GREEN_DEPLOYMENT", "OKE_BLUE_GREEN_TRAFFIC_SHIFT", "OKE_CANARY_DEPLOYMENT", "OKE_CANARY_TRAFFIC_SHIFT", "OKE_CANARY_APPROVAL", "OKE_DEPLOYMENT", "DEPLOY_FUNCTION", "INVOKE_FUNCTION", "LOAD_BALANCER_TRAFFIC_SHIFT", "MANUAL_APPROVAL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deploy_stage_type: str
 
@@ -205,26 +255,56 @@ class DeployStage(object):
         """
         type = object_dictionary['deployStageType']
 
+        if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT':
+            return 'ComputeInstanceGroupBlueGreenTrafficShiftDeployStage'
+
         if type == 'LOAD_BALANCER_TRAFFIC_SHIFT':
             return 'LoadBalancerTrafficShiftDeployStage'
 
         if type == 'INVOKE_FUNCTION':
             return 'InvokeFunctionDeployStage'
 
-        if type == 'WAIT':
-            return 'WaitDeployStage'
+        if type == 'OKE_CANARY_DEPLOYMENT':
+            return 'OkeCanaryDeployStage'
 
         if type == 'OKE_DEPLOYMENT':
             return 'OkeDeployStage'
+
+        if type == 'OKE_CANARY_TRAFFIC_SHIFT':
+            return 'OkeCanaryTrafficShiftDeployStage'
+
+        if type == 'DEPLOY_FUNCTION':
+            return 'FunctionDeployStage'
+
+        if type == 'OKE_BLUE_GREEN_DEPLOYMENT':
+            return 'OkeBlueGreenDeployStage'
+
+        if type == 'OKE_CANARY_APPROVAL':
+            return 'OkeCanaryApprovalDeployStage'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT':
+            return 'ComputeInstanceGroupCanaryTrafficShiftDeployStage'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL':
+            return 'ComputeInstanceGroupCanaryApprovalDeployStage'
+
+        if type == 'WAIT':
+            return 'WaitDeployStage'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT':
+            return 'ComputeInstanceGroupBlueGreenDeployStage'
+
+        if type == 'COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT':
+            return 'ComputeInstanceGroupCanaryDeployStage'
+
+        if type == 'OKE_BLUE_GREEN_TRAFFIC_SHIFT':
+            return 'OkeBlueGreenTrafficShiftDeployStage'
 
         if type == 'MANUAL_APPROVAL':
             return 'ManualApprovalDeployStage'
 
         if type == 'COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT':
             return 'ComputeInstanceGroupDeployStage'
-
-        if type == 'DEPLOY_FUNCTION':
-            return 'FunctionDeployStage'
         else:
             return 'DeployStage'
 
@@ -378,7 +458,7 @@ class DeployStage(object):
         **[Required]** Gets the deploy_stage_type of this DeployStage.
         Deployment stage type.
 
-        Allowed values for this property are: "WAIT", "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT", "OKE_DEPLOYMENT", "DEPLOY_FUNCTION", "INVOKE_FUNCTION", "LOAD_BALANCER_TRAFFIC_SHIFT", "MANUAL_APPROVAL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "WAIT", "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT", "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT", "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT", "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT", "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT", "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL", "OKE_BLUE_GREEN_DEPLOYMENT", "OKE_BLUE_GREEN_TRAFFIC_SHIFT", "OKE_CANARY_DEPLOYMENT", "OKE_CANARY_TRAFFIC_SHIFT", "OKE_CANARY_APPROVAL", "OKE_DEPLOYMENT", "DEPLOY_FUNCTION", "INVOKE_FUNCTION", "LOAD_BALANCER_TRAFFIC_SHIFT", "MANUAL_APPROVAL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -397,7 +477,7 @@ class DeployStage(object):
         :param deploy_stage_type: The deploy_stage_type of this DeployStage.
         :type: str
         """
-        allowed_values = ["WAIT", "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT", "OKE_DEPLOYMENT", "DEPLOY_FUNCTION", "INVOKE_FUNCTION", "LOAD_BALANCER_TRAFFIC_SHIFT", "MANUAL_APPROVAL"]
+        allowed_values = ["WAIT", "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT", "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT", "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT", "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT", "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT", "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL", "OKE_BLUE_GREEN_DEPLOYMENT", "OKE_BLUE_GREEN_TRAFFIC_SHIFT", "OKE_CANARY_DEPLOYMENT", "OKE_CANARY_TRAFFIC_SHIFT", "OKE_CANARY_APPROVAL", "OKE_DEPLOYMENT", "DEPLOY_FUNCTION", "INVOKE_FUNCTION", "LOAD_BALANCER_TRAFFIC_SHIFT", "MANUAL_APPROVAL"]
         if not value_allowed_none_or_none_sentinel(deploy_stage_type, allowed_values):
             deploy_stage_type = 'UNKNOWN_ENUM_VALUE'
         self._deploy_stage_type = deploy_stage_type

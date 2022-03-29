@@ -33,6 +33,14 @@ class ListingSummary(object):
     #: This constant has a value of "PAYGO"
     PRICING_TYPES_PAYGO = "PAYGO"
 
+    #: A constant which can be used with the compatible_architectures property of a ListingSummary.
+    #: This constant has a value of "X86"
+    COMPATIBLE_ARCHITECTURES_X86 = "X86"
+
+    #: A constant which can be used with the compatible_architectures property of a ListingSummary.
+    #: This constant has a value of "ARM"
+    COMPATIBLE_ARCHITECTURES_ARM = "ARM"
+
     #: A constant which can be used with the listing_type property of a ListingSummary.
     #: This constant has a value of "COMMUNITY"
     LISTING_TYPE_COMMUNITY = "COMMUNITY"
@@ -86,6 +94,12 @@ class ListingSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type pricing_types: list[str]
 
+        :param compatible_architectures:
+            The value to assign to the compatible_architectures property of this ListingSummary.
+            Allowed values for items in this list are: "X86", "ARM", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type compatible_architectures: list[str]
+
         :param regions:
             The value to assign to the regions property of this ListingSummary.
         :type regions: list[oci.marketplace.models.Region]
@@ -122,6 +136,7 @@ class ListingSummary(object):
             'icon': 'UploadData',
             'package_type': 'str',
             'pricing_types': 'list[str]',
+            'compatible_architectures': 'list[str]',
             'regions': 'list[Region]',
             'is_featured': 'bool',
             'categories': 'list[str]',
@@ -139,6 +154,7 @@ class ListingSummary(object):
             'icon': 'icon',
             'package_type': 'packageType',
             'pricing_types': 'pricingTypes',
+            'compatible_architectures': 'compatibleArchitectures',
             'regions': 'regions',
             'is_featured': 'isFeatured',
             'categories': 'categories',
@@ -155,6 +171,7 @@ class ListingSummary(object):
         self._icon = None
         self._package_type = None
         self._pricing_types = None
+        self._compatible_architectures = None
         self._regions = None
         self._is_featured = None
         self._categories = None
@@ -361,6 +378,36 @@ class ListingSummary(object):
         if pricing_types:
             pricing_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in pricing_types]
         self._pricing_types = pricing_types
+
+    @property
+    def compatible_architectures(self):
+        """
+        Gets the compatible_architectures of this ListingSummary.
+        The list of compatible architectures supported by the listing
+
+        Allowed values for items in this list are: "X86", "ARM", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The compatible_architectures of this ListingSummary.
+        :rtype: list[str]
+        """
+        return self._compatible_architectures
+
+    @compatible_architectures.setter
+    def compatible_architectures(self, compatible_architectures):
+        """
+        Sets the compatible_architectures of this ListingSummary.
+        The list of compatible architectures supported by the listing
+
+
+        :param compatible_architectures: The compatible_architectures of this ListingSummary.
+        :type: list[str]
+        """
+        allowed_values = ["X86", "ARM"]
+        if compatible_architectures:
+            compatible_architectures[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in compatible_architectures]
+        self._compatible_architectures = compatible_architectures
 
     @property
     def regions(self):

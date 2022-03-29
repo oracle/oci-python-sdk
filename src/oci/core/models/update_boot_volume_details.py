@@ -199,7 +199,7 @@ class UpdateBootVolumeDetails(object):
         Gets the vpus_per_gb of this UpdateBootVolumeDetails.
         The number of volume performance units (VPUs) that will be applied to this volume per GB,
         representing the Block Volume service's elastic performance options.
-        See `Block Volume Elastic Performance`__ for more information.
+        See `Block Volume Performance Levels`__ for more information.
 
         Allowed values:
 
@@ -207,9 +207,11 @@ class UpdateBootVolumeDetails(object):
 
           * `20`: Represents Higher Performance option.
 
+          * `30`-`120`: Represents the Ultra High Performance option.
+
         For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
         :return: The vpus_per_gb of this UpdateBootVolumeDetails.
@@ -223,7 +225,7 @@ class UpdateBootVolumeDetails(object):
         Sets the vpus_per_gb of this UpdateBootVolumeDetails.
         The number of volume performance units (VPUs) that will be applied to this volume per GB,
         representing the Block Volume service's elastic performance options.
-        See `Block Volume Elastic Performance`__ for more information.
+        See `Block Volume Performance Levels`__ for more information.
 
         Allowed values:
 
@@ -231,9 +233,11 @@ class UpdateBootVolumeDetails(object):
 
           * `20`: Represents Higher Performance option.
 
+          * `30`-`120`: Represents the Ultra High Performance option.
+
         For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
 
-        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeelasticperformance.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
         :param vpus_per_gb: The vpus_per_gb of this UpdateBootVolumeDetails.

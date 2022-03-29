@@ -54,7 +54,7 @@ class OcirDeployArtifactSource(DeployArtifactSource):
     def image_uri(self):
         """
         **[Required]** Gets the image_uri of this OcirDeployArtifactSource.
-        Specifies OCIR Image Path - optionally include tag.
+        Specifies OCIR image path - optionally include tag.
 
 
         :return: The image_uri of this OcirDeployArtifactSource.
@@ -66,7 +66,7 @@ class OcirDeployArtifactSource(DeployArtifactSource):
     def image_uri(self, image_uri):
         """
         Sets the image_uri of this OcirDeployArtifactSource.
-        Specifies OCIR Image Path - optionally include tag.
+        Specifies OCIR image path - optionally include tag.
 
 
         :param image_uri: The image_uri of this OcirDeployArtifactSource.

@@ -36,6 +36,14 @@ class RepositoryTag(RepositoryRef):
             The value to assign to the repository_id property of this RepositoryTag.
         :type repository_id: str
 
+        :param freeform_tags:
+            The value to assign to the freeform_tags property of this RepositoryTag.
+        :type freeform_tags: dict(str, str)
+
+        :param defined_tags:
+            The value to assign to the defined_tags property of this RepositoryTag.
+        :type defined_tags: dict(str, dict(str, object))
+
         :param object_id:
             The value to assign to the object_id property of this RepositoryTag.
         :type object_id: str
@@ -46,6 +54,8 @@ class RepositoryTag(RepositoryRef):
             'ref_type': 'str',
             'full_ref_name': 'str',
             'repository_id': 'str',
+            'freeform_tags': 'dict(str, str)',
+            'defined_tags': 'dict(str, dict(str, object))',
             'object_id': 'str'
         }
 
@@ -54,6 +64,8 @@ class RepositoryTag(RepositoryRef):
             'ref_type': 'refType',
             'full_ref_name': 'fullRefName',
             'repository_id': 'repositoryId',
+            'freeform_tags': 'freeformTags',
+            'defined_tags': 'definedTags',
             'object_id': 'objectId'
         }
 
@@ -61,6 +73,8 @@ class RepositoryTag(RepositoryRef):
         self._ref_type = None
         self._full_ref_name = None
         self._repository_id = None
+        self._freeform_tags = None
+        self._defined_tags = None
         self._object_id = None
         self._ref_type = 'TAG'
 

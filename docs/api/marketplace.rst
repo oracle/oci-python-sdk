@@ -36,6 +36,7 @@ Marketplace
     oci.marketplace.models.FreeTextSearchDetails
     oci.marketplace.models.ImageListingPackage
     oci.marketplace.models.ImagePublicationPackage
+    oci.marketplace.models.InternationalMarketPrice
     oci.marketplace.models.Item
     oci.marketplace.models.LaunchEligibility
     oci.marketplace.models.Link

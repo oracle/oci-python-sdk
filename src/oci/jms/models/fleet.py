@@ -34,6 +34,10 @@ class Fleet(object):
     LIFECYCLE_STATE_FAILED = "FAILED"
 
     #: A constant which can be used with the lifecycle_state property of a Fleet.
+    #: This constant has a value of "NEEDS_ATTENTION"
+    LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
+
+    #: A constant which can be used with the lifecycle_state property of a Fleet.
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
 
@@ -74,13 +78,21 @@ class Fleet(object):
             The value to assign to the approximate_managed_instance_count property of this Fleet.
         :type approximate_managed_instance_count: int
 
+        :param inventory_log:
+            The value to assign to the inventory_log property of this Fleet.
+        :type inventory_log: oci.jms.models.CustomLog
+
+        :param operation_log:
+            The value to assign to the operation_log property of this Fleet.
+        :type operation_log: oci.jms.models.CustomLog
+
         :param time_created:
             The value to assign to the time_created property of this Fleet.
         :type time_created: datetime
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this Fleet.
-            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "NEEDS_ATTENTION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -106,6 +118,8 @@ class Fleet(object):
             'approximate_installation_count': 'int',
             'approximate_application_count': 'int',
             'approximate_managed_instance_count': 'int',
+            'inventory_log': 'CustomLog',
+            'operation_log': 'CustomLog',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -122,6 +136,8 @@ class Fleet(object):
             'approximate_installation_count': 'approximateInstallationCount',
             'approximate_application_count': 'approximateApplicationCount',
             'approximate_managed_instance_count': 'approximateManagedInstanceCount',
+            'inventory_log': 'inventoryLog',
+            'operation_log': 'operationLog',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
             'defined_tags': 'definedTags',
@@ -137,6 +153,8 @@ class Fleet(object):
         self._approximate_installation_count = None
         self._approximate_application_count = None
         self._approximate_managed_instance_count = None
+        self._inventory_log = None
+        self._operation_log = None
         self._time_created = None
         self._lifecycle_state = None
         self._defined_tags = None
@@ -352,6 +370,46 @@ class Fleet(object):
         self._approximate_managed_instance_count = approximate_managed_instance_count
 
     @property
+    def inventory_log(self):
+        """
+        Gets the inventory_log of this Fleet.
+
+        :return: The inventory_log of this Fleet.
+        :rtype: oci.jms.models.CustomLog
+        """
+        return self._inventory_log
+
+    @inventory_log.setter
+    def inventory_log(self, inventory_log):
+        """
+        Sets the inventory_log of this Fleet.
+
+        :param inventory_log: The inventory_log of this Fleet.
+        :type: oci.jms.models.CustomLog
+        """
+        self._inventory_log = inventory_log
+
+    @property
+    def operation_log(self):
+        """
+        Gets the operation_log of this Fleet.
+
+        :return: The operation_log of this Fleet.
+        :rtype: oci.jms.models.CustomLog
+        """
+        return self._operation_log
+
+    @operation_log.setter
+    def operation_log(self, operation_log):
+        """
+        Sets the operation_log of this Fleet.
+
+        :param operation_log: The operation_log of this Fleet.
+        :type: oci.jms.models.CustomLog
+        """
+        self._operation_log = operation_log
+
+    @property
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Fleet.
@@ -385,7 +443,7 @@ class Fleet(object):
         **[Required]** Gets the lifecycle_state of this Fleet.
         The lifecycle state of the Fleet.
 
-        Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "NEEDS_ATTENTION", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -404,7 +462,7 @@ class Fleet(object):
         :param lifecycle_state: The lifecycle_state of this Fleet.
         :type: str
         """
-        allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "UPDATING"]
+        allowed_values = ["ACTIVE", "CREATING", "DELETED", "DELETING", "FAILED", "NEEDS_ATTENTION", "UPDATING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

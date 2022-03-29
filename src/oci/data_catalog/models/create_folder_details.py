@@ -71,6 +71,10 @@ class CreateFolderDetails(object):
             Allowed values for this property are: "COMPLETE", "ERROR", "IN_PROGRESS", "DEFERRED"
         :type harvest_status: str
 
+        :param type_key:
+            The value to assign to the type_key property of this CreateFolderDetails.
+        :type type_key: str
+
         """
         self.swagger_types = {
             'display_name': 'str',
@@ -81,7 +85,8 @@ class CreateFolderDetails(object):
             'parent_folder_key': 'str',
             'time_external': 'datetime',
             'last_job_key': 'str',
-            'harvest_status': 'str'
+            'harvest_status': 'str',
+            'type_key': 'str'
         }
 
         self.attribute_map = {
@@ -93,7 +98,8 @@ class CreateFolderDetails(object):
             'parent_folder_key': 'parentFolderKey',
             'time_external': 'timeExternal',
             'last_job_key': 'lastJobKey',
-            'harvest_status': 'harvestStatus'
+            'harvest_status': 'harvestStatus',
+            'type_key': 'typeKey'
         }
 
         self._display_name = None
@@ -105,6 +111,7 @@ class CreateFolderDetails(object):
         self._time_external = None
         self._last_job_key = None
         self._harvest_status = None
+        self._type_key = None
 
     @property
     def display_name(self):
@@ -345,6 +352,30 @@ class CreateFolderDetails(object):
                 .format(allowed_values)
             )
         self._harvest_status = harvest_status
+
+    @property
+    def type_key(self):
+        """
+        Gets the type_key of this CreateFolderDetails.
+        Type key of the object. Type keys can be found via the '/types' endpoint.
+
+
+        :return: The type_key of this CreateFolderDetails.
+        :rtype: str
+        """
+        return self._type_key
+
+    @type_key.setter
+    def type_key(self, type_key):
+        """
+        Sets the type_key of this CreateFolderDetails.
+        Type key of the object. Type keys can be found via the '/types' endpoint.
+
+
+        :param type_key: The type_key of this CreateFolderDetails.
+        :type: str
+        """
+        self._type_key = type_key
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -466,8 +466,8 @@ class Repository(object):
         """
         Gets the repository_type of this Repository.
         Type of repository:
-        Mirrored - Repository created by mirroring an existing repository.
-        Hosted - Repository created and hosted using OCI DevOps code repository.
+        MIRRORED - Repository created by mirroring an existing repository.
+        HOSTED - Repository created and hosted using OCI DevOps code repository.
 
         Allowed values for this property are: "MIRRORED", "HOSTED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -483,8 +483,8 @@ class Repository(object):
         """
         Sets the repository_type of this Repository.
         Type of repository:
-        Mirrored - Repository created by mirroring an existing repository.
-        Hosted - Repository created and hosted using OCI DevOps code repository.
+        MIRRORED - Repository created by mirroring an existing repository.
+        HOSTED - Repository created and hosted using OCI DevOps code repository.
 
 
         :param repository_type: The repository_type of this Repository.
@@ -702,8 +702,8 @@ class Repository(object):
         """
         Gets the trigger_build_events of this Repository.
         Trigger build events supported for this repository:
-        Push - Build is triggered when a push event occurs.
-        Commit updates - Build is triggered when new commits are mirrored into a repository.
+        PUSH - Build is triggered when a push event occurs.
+        COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 
         Allowed values for items in this list are: "PUSH", "COMMIT_UPDATES", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -719,8 +719,8 @@ class Repository(object):
         """
         Sets the trigger_build_events of this Repository.
         Trigger build events supported for this repository:
-        Push - Build is triggered when a push event occurs.
-        Commit updates - Build is triggered when new commits are mirrored into a repository.
+        PUSH - Build is triggered when a push event occurs.
+        COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
 
 
         :param trigger_build_events: The trigger_build_events of this Repository.

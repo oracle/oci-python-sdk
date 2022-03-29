@@ -157,7 +157,7 @@ class CreateRepositoryDetails(object):
     @property
     def repository_type(self):
         """
-        Gets the repository_type of this CreateRepositoryDetails.
+        **[Required]** Gets the repository_type of this CreateRepositoryDetails.
         Type of repository.
 
 

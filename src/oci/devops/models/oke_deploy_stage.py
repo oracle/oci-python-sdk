@@ -45,7 +45,7 @@ class OkeDeployStage(DeployStage):
 
         :param deploy_stage_type:
             The value to assign to the deploy_stage_type property of this OkeDeployStage.
-            Allowed values for this property are: "WAIT", "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT", "OKE_DEPLOYMENT", "DEPLOY_FUNCTION", "INVOKE_FUNCTION", "LOAD_BALANCER_TRAFFIC_SHIFT", "MANUAL_APPROVAL"
+            Allowed values for this property are: "WAIT", "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT", "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT", "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT", "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT", "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT", "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL", "OKE_BLUE_GREEN_DEPLOYMENT", "OKE_BLUE_GREEN_TRAFFIC_SHIFT", "OKE_CANARY_DEPLOYMENT", "OKE_CANARY_TRAFFIC_SHIFT", "OKE_CANARY_APPROVAL", "OKE_DEPLOYMENT", "DEPLOY_FUNCTION", "INVOKE_FUNCTION", "LOAD_BALANCER_TRAFFIC_SHIFT", "MANUAL_APPROVAL"
         :type deploy_stage_type: str
 
         :param time_created:
@@ -191,7 +191,7 @@ class OkeDeployStage(DeployStage):
     def kubernetes_manifest_deploy_artifact_ids(self):
         """
         **[Required]** Gets the kubernetes_manifest_deploy_artifact_ids of this OkeDeployStage.
-        List of Kubernetes manifest artifact OCIDs, the manifests should not include any job resource.
+        List of Kubernetes manifest artifact OCIDs.
 
 
         :return: The kubernetes_manifest_deploy_artifact_ids of this OkeDeployStage.
@@ -203,7 +203,7 @@ class OkeDeployStage(DeployStage):
     def kubernetes_manifest_deploy_artifact_ids(self, kubernetes_manifest_deploy_artifact_ids):
         """
         Sets the kubernetes_manifest_deploy_artifact_ids of this OkeDeployStage.
-        List of Kubernetes manifest artifact OCIDs, the manifests should not include any job resource.
+        List of Kubernetes manifest artifact OCIDs.
 
 
         :param kubernetes_manifest_deploy_artifact_ids: The kubernetes_manifest_deploy_artifact_ids of this OkeDeployStage.
@@ -215,7 +215,7 @@ class OkeDeployStage(DeployStage):
     def namespace(self):
         """
         **[Required]** Gets the namespace of this OkeDeployStage.
-        Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
+        Default namespace to be used for Kubernetes deployment when not specified in the manifest.
 
 
         :return: The namespace of this OkeDeployStage.
@@ -227,7 +227,7 @@ class OkeDeployStage(DeployStage):
     def namespace(self, namespace):
         """
         Sets the namespace of this OkeDeployStage.
-        Default Namespace to be used for Kubernetes deployment when not specified in the manifest.
+        Default namespace to be used for Kubernetes deployment when not specified in the manifest.
 
 
         :param namespace: The namespace of this OkeDeployStage.

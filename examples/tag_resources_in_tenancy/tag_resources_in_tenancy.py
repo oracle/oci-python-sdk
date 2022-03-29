@@ -9,7 +9,7 @@
 #
 # Supports Python  3
 #
-# DISCLAIMER � This is not an official Oracle application,  It does not supported by Oracle Support, It should NOT be used for utilization calculation purposes
+# DISCLAIMER - This is not an official Oracle application,  It does not supported by Oracle Support, It should NOT be used for utilization calculation purposes
 ##########################################################################
 # Info:
 #    Tag Resources in Tenancy
@@ -42,8 +42,10 @@
 #   -action add_defined | add_free | del_defined | del_free | list
 #   -tag            - tag information, can be either namespace.key=value or key=value with comma seperator for multiple tags
 #   -tagsep         - tag seperator default comma
+#   -service type   - Service Type default all, Services = all,compute,block,network,identity,loadbalancer,database,object,file
 #   -force          - don't confirm execution
 #   -output         - list | json | summary
+#   -filter_by_name - Filter service by name, comma seperator for multi names
 ##########################################################################
 
 import sys
@@ -74,6 +76,9 @@ def print_banner(cmd, tenancy, assign_tags):
     print("Tag Seperator : " + str(cmd.tagseperator))
     print("Tenant Name   : " + str(tenancy.name))
     print("Tenant Id     : " + tenancy.id)
+    print("Services      : " + cmd.service)
+    if cmd.filter_by_name:
+        print("Filter by Name: " + cmd.filter_by_name)
 
 
 ##########################################################################
@@ -118,7 +123,7 @@ def command_line():
 
     try:
         # Get Command Line Parser
-        parser = argparse.ArgumentParser(formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=80, width=130))
+        parser = argparse.ArgumentParser(formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=80, width=170))
         parser.add_argument('-t', default="", dest='config_profile', help='Config file section to use (tenancy profile)')
         parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
         parser.add_argument('-cp', default="", dest='compartment', help='Filter by Compartment Name or Id')
@@ -130,6 +135,8 @@ def command_line():
         parser.add_argument('-action', default="", dest='action', choices=['add_defined', 'add_free', 'del_defined', 'del_free', 'list'], help='Action Type')
         parser.add_argument('-output', default="list", dest='output', choices=['list', 'json', 'summary'], help='Output type, default=summary')
         parser.add_argument('-force', default=False, action='store_true', dest='force', help='Force execution (do not confirm)')
+        parser.add_argument('-service', default="all", dest='service', help='Services = all,compute,block,network,identity,loadbalancer,database,object,file. default=all')
+        parser.add_argument('-filter_by_name', default="", dest='filter_by_name', help='Filter service by name comma seperator for multi')
         cmd = parser.parse_args()
 
         # Check if action
@@ -363,7 +370,7 @@ def identity_read_compartments(identity, tenancy):
 ##########################################################################
 # Handle Object
 ##########################################################################
-def handle_object(compartment, region_name, assign_tags, obj_name, list_object, update_object, update_modal_obj, availability_domains=None, namespace=""):
+def handle_object(compartment, region_name, assign_tags, obj_name, list_object, update_object, update_modal_obj, availability_domains=None, namespace="", filter_by_name=""):
 
     global data
     global errors
@@ -383,7 +390,7 @@ def handle_object(compartment, region_name, assign_tags, obj_name, list_object, 
         for availability_domain in availability_domains_array:
             try:
                 if availability_domains:
-                    array = oci.pagination.list_call_get_all_results(list_object, availability_domain, compartment.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+                    array = oci.pagination.list_call_get_all_results(list_object, availability_domain=availability_domain, compartment_id=compartment.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
                 elif namespace:
                     array = oci.pagination.list_call_get_all_results(list_object, namespace, compartment.id, retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY, fields=['tags']).data
                 else:
@@ -401,10 +408,20 @@ def handle_object(compartment, region_name, assign_tags, obj_name, list_object, 
                     if arr.lifecycle_state == "TERMINATING" or arr.lifecycle_state == "TERMINATED":
                         continue
 
-                defined_tags, freeform_tags, tags_added, tags_deleted, tags_exist, tags_updated = handle_tags(arr.defined_tags, arr.freeform_tags, assign_tags)
-
                 # object id - diff between services
+                object_name = str(arr.name) if namespace else str(arr.display_name)
                 obj_id = str(arr.name) if namespace else str(arr.id)
+
+                # if filter by name - comma seperated
+                if filter_by_name:
+                    found = False
+                    for name in filter_by_name.split(","):
+                        if object_name == name:
+                            found = True
+                    if not found:
+                        continue
+
+                defined_tags, freeform_tags, tags_added, tags_deleted, tags_exist, tags_updated = handle_tags(arr.defined_tags, arr.freeform_tags, assign_tags)
 
                 # if tag modified:
                 if tags_added > 0 or tags_deleted > 0 or tags_updated > 0:
@@ -625,6 +642,7 @@ def main():
         loadbalancer_client = oci.load_balancer.LoadBalancerClient(config, signer=signer)
         database_client = oci.database.DatabaseClient(config, signer=signer)
         objectstorage_client = oci.object_storage.ObjectStorageClient(config, signer=signer)
+        filestorage_client = oci.file_storage.FileStorageClient(config, signer=signer)
 
         # If proxy
         if cmd.proxy:
@@ -635,12 +653,16 @@ def main():
             loadbalancer_client.base_client.session.proxies = {'https': cmd.proxy}
             database_client.base_client.session.proxies = {'https': cmd.proxy}
             objectstorage_client.base_client.session.proxies = {'https': cmd.proxy}
+            filestorage_client.base_client.session.proxies = {'https': cmd.proxy}
 
         # get availability_domains for the region
         availability_domains = identity_client.list_availability_domains(tenancy.id).data
 
         # get namespace for object storage
         namespace = objectstorage_client.get_namespace().data
+
+        # filter by name variable
+        filter_by_name = cmd.filter_by_name if cmd.filter_by_name else ""
 
         ############################################
         # Loop on all compartments for instances
@@ -651,40 +673,51 @@ def main():
                 print("    Compartment " + str(compartment.name))
 
                 # Compute
-                handle_object(compartment, region_name, assign_tags, "Instances", compute_client.list_instances, compute_client.update_instance, oci.core.models.UpdateInstanceDetails)
+                if "all" in cmd.service or "compute" in cmd.service:
+                    handle_object(compartment, region_name, assign_tags, "Instances", compute_client.list_instances, compute_client.update_instance, oci.core.models.UpdateInstanceDetails, filter_by_name=filter_by_name)
 
-                # Block
-                handle_object(compartment, region_name, assign_tags, "Boot Volumes", blockstorage_client.list_boot_volumes, blockstorage_client.update_boot_volume, oci.core.models.UpdateBootVolumeDetails, availability_domains)
-                handle_object(compartment, region_name, assign_tags, "Boot Volumes Backups", blockstorage_client.list_boot_volume_backups, blockstorage_client.update_boot_volume_backup, oci.core.models.UpdateBootVolumeBackupDetails)
-                handle_object(compartment, region_name, assign_tags, "Block Volumes", blockstorage_client.list_volumes, blockstorage_client.update_volume, oci.core.models.UpdateVolumeDetails)
-                handle_object(compartment, region_name, assign_tags, "Block Volumes Backups", blockstorage_client.list_volume_backups, blockstorage_client.update_volume_backup, oci.core.models.UpdateVolumeBackupDetails)
-                handle_object(compartment, region_name, assign_tags, "Volume Groups", blockstorage_client.list_volume_groups, blockstorage_client.update_volume_group, oci.core.models.UpdateVolumeGroupDetails)
-                handle_object(compartment, region_name, assign_tags, "Volume Groups Backup", blockstorage_client.list_volume_group_backups, blockstorage_client.update_volume_group_backup, oci.core.models.UpdateVolumeGroupBackupDetails)
+                # Block storage
+                if "all" in cmd.service or "block" in cmd.service:
+                    handle_object(compartment, region_name, assign_tags, "Boot Volumes", blockstorage_client.list_boot_volumes, blockstorage_client.update_boot_volume, oci.core.models.UpdateBootVolumeDetails, availability_domains, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Boot Volumes Backups", blockstorage_client.list_boot_volume_backups, blockstorage_client.update_boot_volume_backup, oci.core.models.UpdateBootVolumeBackupDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Block Volumes", blockstorage_client.list_volumes, blockstorage_client.update_volume, oci.core.models.UpdateVolumeDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Block Volumes Backups", blockstorage_client.list_volume_backups, blockstorage_client.update_volume_backup, oci.core.models.UpdateVolumeBackupDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Volume Groups", blockstorage_client.list_volume_groups, blockstorage_client.update_volume_group, oci.core.models.UpdateVolumeGroupDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Volume Groups Backup", blockstorage_client.list_volume_group_backups, blockstorage_client.update_volume_group_backup, oci.core.models.UpdateVolumeGroupBackupDetails, filter_by_name=filter_by_name)
+
+                # filestorage
+                if "all" in cmd.service or "file" in cmd.service:
+                    handle_object(compartment, region_name, assign_tags, "File Systems", filestorage_client.list_file_systems, filestorage_client.update_file_system, oci.file_storage.models.UpdateFileSystemDetails, availability_domains, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Mount Targets", filestorage_client.list_mount_targets, filestorage_client.update_mount_target, oci.file_storage.models.UpdateMountTargetDetails, availability_domains, filter_by_name=filter_by_name)
 
                 # Network
-                handle_object(compartment, region_name, assign_tags, "Network VCNs", network_client.list_vcns, network_client.update_vcn, oci.core.models.UpdateVcnDetails)
-                handle_object(compartment, region_name, assign_tags, "Network Subnets", network_client.list_subnets, network_client.update_subnet, oci.core.models.UpdateSubnetDetails)
-                handle_object(compartment, region_name, assign_tags, "Network CPEs", network_client.list_cpes, network_client.update_cpe, oci.core.models.UpdateCpeDetails)
-                handle_object(compartment, region_name, assign_tags, "Network DHCPs", network_client.list_dhcp_options, network_client.update_dhcp_options, oci.core.models.UpdateDhcpDetails)
-                handle_object(compartment, region_name, assign_tags, "Network IGWs", network_client.list_internet_gateways, network_client.update_internet_gateway, oci.core.models.UpdateInternetGatewayDetails)
-                handle_object(compartment, region_name, assign_tags, "Network IPSECs", network_client.list_ip_sec_connections, network_client.update_ip_sec_connection, oci.core.models.UpdateIPSecConnectionDetails)
-                handle_object(compartment, region_name, assign_tags, "Network LPGs", network_client.list_local_peering_gateways, network_client.update_local_peering_gateway, oci.core.models.UpdateLocalPeeringGatewayDetails)
-                handle_object(compartment, region_name, assign_tags, "Network NATGWs", network_client.list_nat_gateways, network_client.update_nat_gateway, oci.core.models.UpdateNatGatewayDetails)
-                handle_object(compartment, region_name, assign_tags, "Network RPGs", network_client.list_remote_peering_connections, network_client.update_remote_peering_connection, oci.core.models.UpdateRemotePeeringConnectionDetails)
-                handle_object(compartment, region_name, assign_tags, "Network Routes", network_client.list_route_tables, network_client.update_route_table, oci.core.models.UpdateRouteTableDetails)
-                handle_object(compartment, region_name, assign_tags, "Network SLs", network_client.list_security_lists, network_client.update_security_list, oci.core.models.UpdateSecurityListDetails)
-                handle_object(compartment, region_name, assign_tags, "Network SGWs", network_client.list_service_gateways, network_client.update_service_gateway, oci.core.models.UpdateServiceGatewayDetails)
-                handle_object(compartment, region_name, assign_tags, "Network VCircuit", network_client.list_virtual_circuits, network_client.update_virtual_circuit, oci.core.models.UpdateVirtualCircuitDetails)
+                if "all" in cmd.service or "network" in cmd.service:
+                    handle_object(compartment, region_name, assign_tags, "Network VCNs", network_client.list_vcns, network_client.update_vcn, oci.core.models.UpdateVcnDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Network Subnets", network_client.list_subnets, network_client.update_subnet, oci.core.models.UpdateSubnetDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Network CPEs", network_client.list_cpes, network_client.update_cpe, oci.core.models.UpdateCpeDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Network DHCPs", network_client.list_dhcp_options, network_client.update_dhcp_options, oci.core.models.UpdateDhcpDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Network IGWs", network_client.list_internet_gateways, network_client.update_internet_gateway, oci.core.models.UpdateInternetGatewayDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Network IPSECs", network_client.list_ip_sec_connections, network_client.update_ip_sec_connection, oci.core.models.UpdateIPSecConnectionDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Network LPGs", network_client.list_local_peering_gateways, network_client.update_local_peering_gateway, oci.core.models.UpdateLocalPeeringGatewayDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Network NATGWs", network_client.list_nat_gateways, network_client.update_nat_gateway, oci.core.models.UpdateNatGatewayDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Network RPGs", network_client.list_remote_peering_connections, network_client.update_remote_peering_connection, oci.core.models.UpdateRemotePeeringConnectionDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Network Routes", network_client.list_route_tables, network_client.update_route_table, oci.core.models.UpdateRouteTableDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Network SLs", network_client.list_security_lists, network_client.update_security_list, oci.core.models.UpdateSecurityListDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Network SGWs", network_client.list_service_gateways, network_client.update_service_gateway, oci.core.models.UpdateServiceGatewayDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "Network VCircuit", network_client.list_virtual_circuits, network_client.update_virtual_circuit, oci.core.models.UpdateVirtualCircuitDetails, filter_by_name=filter_by_name)
 
                 # load balancer
-                handle_object(compartment, region_name, assign_tags, "Load Balancers", loadbalancer_client.list_load_balancers, loadbalancer_client.update_load_balancer, oci.load_balancer.models.UpdateLoadBalancerDetails)
+                if "all" in cmd.service or "loadbalancer" in cmd.service:
+                    handle_object(compartment, region_name, assign_tags, "Load Balancers", loadbalancer_client.list_load_balancers, loadbalancer_client.update_load_balancer, oci.load_balancer.models.UpdateLoadBalancerDetails, filter_by_name=filter_by_name)
 
                 # Databases
-                handle_object(compartment, region_name, assign_tags, "DB DB Systems", database_client.list_db_systems, database_client.update_db_system, oci.database.models.UpdateDbSystemDetails)
-                handle_object(compartment, region_name, assign_tags, "DB Autonomous", database_client.list_autonomous_databases, database_client.update_autonomous_database, oci.database.models.UpdateAutonomousDatabaseDetails)
+                if "all" in cmd.service or "database" in cmd.service:
+                    handle_object(compartment, region_name, assign_tags, "DB DB Systems", database_client.list_db_systems, database_client.update_db_system, oci.database.models.UpdateDbSystemDetails, filter_by_name=filter_by_name)
+                    handle_object(compartment, region_name, assign_tags, "DB Autonomous", database_client.list_autonomous_databases, database_client.update_autonomous_database, oci.database.models.UpdateAutonomousDatabaseDetails, filter_by_name=filter_by_name)
 
                 # Object storage
-                handle_object(compartment, region_name, assign_tags, "Object Storage Buckets", objectstorage_client.list_buckets, objectstorage_client.update_bucket, oci.object_storage.models.UpdateBucketDetails, namespace=namespace)
+                if "all" in cmd.service or "object" in cmd.service:
+                    handle_object(compartment, region_name, assign_tags, "Object Storage Buckets", objectstorage_client.list_buckets, objectstorage_client.update_bucket, oci.object_storage.models.UpdateBucketDetails, namespace=namespace, filter_by_name=filter_by_name)
 
         except Exception as e:
             raise RuntimeError("\nError extracting Instances - " + str(e))

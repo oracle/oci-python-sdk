@@ -42,8 +42,23 @@ from .cancel_build_run_details import CancelBuildRunDetails
 from .cancel_deployment_details import CancelDeploymentDetails
 from .change_project_compartment_details import ChangeProjectCompartmentDetails
 from .commit_info import CommitInfo
+from .compute_instance_group_blue_green_deploy_stage import ComputeInstanceGroupBlueGreenDeployStage
+from .compute_instance_group_blue_green_deploy_stage_execution_progress import ComputeInstanceGroupBlueGreenDeployStageExecutionProgress
+from .compute_instance_group_blue_green_deploy_stage_summary import ComputeInstanceGroupBlueGreenDeployStageSummary
+from .compute_instance_group_blue_green_traffic_shift_deploy_stage import ComputeInstanceGroupBlueGreenTrafficShiftDeployStage
+from .compute_instance_group_blue_green_traffic_shift_deploy_stage_execution_progress import ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress
+from .compute_instance_group_blue_green_traffic_shift_deploy_stage_summary import ComputeInstanceGroupBlueGreenTrafficShiftDeployStageSummary
 from .compute_instance_group_by_ids_selector import ComputeInstanceGroupByIdsSelector
 from .compute_instance_group_by_query_selector import ComputeInstanceGroupByQuerySelector
+from .compute_instance_group_canary_approval_deploy_stage import ComputeInstanceGroupCanaryApprovalDeployStage
+from .compute_instance_group_canary_approval_deploy_stage_execution_progress import ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress
+from .compute_instance_group_canary_approval_deploy_stage_summary import ComputeInstanceGroupCanaryApprovalDeployStageSummary
+from .compute_instance_group_canary_deploy_stage import ComputeInstanceGroupCanaryDeployStage
+from .compute_instance_group_canary_deploy_stage_execution_progress import ComputeInstanceGroupCanaryDeployStageExecutionProgress
+from .compute_instance_group_canary_deploy_stage_summary import ComputeInstanceGroupCanaryDeployStageSummary
+from .compute_instance_group_canary_traffic_shift_deploy_stage import ComputeInstanceGroupCanaryTrafficShiftDeployStage
+from .compute_instance_group_canary_traffic_shift_deploy_stage_execution_progress import ComputeInstanceGroupCanaryTrafficShiftDeployStageExecutionProgress
+from .compute_instance_group_canary_traffic_shift_deploy_stage_summary import ComputeInstanceGroupCanaryTrafficShiftDeployStageSummary
 from .compute_instance_group_deploy_environment import ComputeInstanceGroupDeployEnvironment
 from .compute_instance_group_deploy_environment_summary import ComputeInstanceGroupDeployEnvironmentSummary
 from .compute_instance_group_deploy_stage import ComputeInstanceGroupDeployStage
@@ -67,6 +82,11 @@ from .create_build_pipeline_details import CreateBuildPipelineDetails
 from .create_build_pipeline_stage_details import CreateBuildPipelineStageDetails
 from .create_build_run_details import CreateBuildRunDetails
 from .create_build_stage_details import CreateBuildStageDetails
+from .create_compute_instance_group_blue_green_deploy_stage_details import CreateComputeInstanceGroupBlueGreenDeployStageDetails
+from .create_compute_instance_group_blue_green_traffic_shift_deploy_stage_details import CreateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails
+from .create_compute_instance_group_canary_approval_deploy_stage_details import CreateComputeInstanceGroupCanaryApprovalDeployStageDetails
+from .create_compute_instance_group_canary_deploy_stage_details import CreateComputeInstanceGroupCanaryDeployStageDetails
+from .create_compute_instance_group_canary_traffic_shift_deploy_stage_details import CreateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails
 from .create_compute_instance_group_deploy_environment_details import CreateComputeInstanceGroupDeployEnvironmentDetails
 from .create_compute_instance_group_deploy_stage_details import CreateComputeInstanceGroupDeployStageDetails
 from .create_connection_details import CreateConnectionDetails
@@ -88,11 +108,17 @@ from .create_gitlab_trigger_details import CreateGitlabTriggerDetails
 from .create_invoke_function_deploy_stage_details import CreateInvokeFunctionDeployStageDetails
 from .create_load_balancer_traffic_shift_deploy_stage_details import CreateLoadBalancerTrafficShiftDeployStageDetails
 from .create_manual_approval_deploy_stage_details import CreateManualApprovalDeployStageDetails
+from .create_oke_blue_green_deploy_stage_details import CreateOkeBlueGreenDeployStageDetails
+from .create_oke_blue_green_traffic_shift_deploy_stage_details import CreateOkeBlueGreenTrafficShiftDeployStageDetails
+from .create_oke_canary_approval_deploy_stage_details import CreateOkeCanaryApprovalDeployStageDetails
+from .create_oke_canary_deploy_stage_details import CreateOkeCanaryDeployStageDetails
+from .create_oke_canary_traffic_shift_deploy_stage_details import CreateOkeCanaryTrafficShiftDeployStageDetails
 from .create_oke_cluster_deploy_environment_details import CreateOkeClusterDeployEnvironmentDetails
 from .create_oke_deploy_stage_details import CreateOkeDeployStageDetails
 from .create_project_details import CreateProjectDetails
 from .create_repository_details import CreateRepositoryDetails
 from .create_single_deploy_stage_deployment_details import CreateSingleDeployStageDeploymentDetails
+from .create_single_deploy_stage_redeployment_details import CreateSingleDeployStageRedeploymentDetails
 from .create_trigger_deployment_stage_details import CreateTriggerDeploymentStageDetails
 from .create_trigger_details import CreateTriggerDetails
 from .create_wait_criteria_details import CreateWaitCriteriaDetails
@@ -202,14 +228,35 @@ from .manual_approval_deploy_stage_execution_progress import ManualApprovalDeplo
 from .manual_approval_deploy_stage_summary import ManualApprovalDeployStageSummary
 from .manual_build_run_source import ManualBuildRunSource
 from .mirror_repository_config import MirrorRepositoryConfig
+from .network_channel import NetworkChannel
+from .nginx_blue_green_strategy import NginxBlueGreenStrategy
+from .nginx_canary_strategy import NginxCanaryStrategy
 from .no_deploy_stage_rollback_policy import NoDeployStageRollbackPolicy
 from .notification_config import NotificationConfig
 from .ocir_deploy_artifact_source import OcirDeployArtifactSource
+from .oke_blue_green_deploy_stage import OkeBlueGreenDeployStage
+from .oke_blue_green_deploy_stage_execution_progress import OkeBlueGreenDeployStageExecutionProgress
+from .oke_blue_green_deploy_stage_summary import OkeBlueGreenDeployStageSummary
+from .oke_blue_green_strategy import OkeBlueGreenStrategy
+from .oke_blue_green_traffic_shift_deploy_stage import OkeBlueGreenTrafficShiftDeployStage
+from .oke_blue_green_traffic_shift_deploy_stage_execution_progress import OkeBlueGreenTrafficShiftDeployStageExecutionProgress
+from .oke_blue_green_traffic_shift_deploy_stage_summary import OkeBlueGreenTrafficShiftDeployStageSummary
+from .oke_canary_approval_deploy_stage import OkeCanaryApprovalDeployStage
+from .oke_canary_approval_deploy_stage_execution_progress import OkeCanaryApprovalDeployStageExecutionProgress
+from .oke_canary_approval_deploy_stage_summary import OkeCanaryApprovalDeployStageSummary
+from .oke_canary_deploy_stage import OkeCanaryDeployStage
+from .oke_canary_deploy_stage_execution_progress import OkeCanaryDeployStageExecutionProgress
+from .oke_canary_deploy_stage_summary import OkeCanaryDeployStageSummary
+from .oke_canary_strategy import OkeCanaryStrategy
+from .oke_canary_traffic_shift_deploy_stage import OkeCanaryTrafficShiftDeployStage
+from .oke_canary_traffic_shift_deploy_stage_execution_progress import OkeCanaryTrafficShiftDeployStageExecutionProgress
+from .oke_canary_traffic_shift_deploy_stage_summary import OkeCanaryTrafficShiftDeployStageSummary
 from .oke_cluster_deploy_environment import OkeClusterDeployEnvironment
 from .oke_cluster_deploy_environment_summary import OkeClusterDeployEnvironmentSummary
 from .oke_deploy_stage import OkeDeployStage
 from .oke_deploy_stage_execution_progress import OkeDeployStageExecutionProgress
 from .oke_deploy_stage_summary import OkeDeployStageSummary
+from .private_endpoint_channel import PrivateEndpointChannel
 from .project import Project
 from .project_collection import ProjectCollection
 from .project_summary import ProjectSummary
@@ -240,6 +287,8 @@ from .repository_tag import RepositoryTag
 from .repository_tag_summary import RepositoryTagSummary
 from .single_deploy_stage_deployment import SingleDeployStageDeployment
 from .single_deploy_stage_deployment_summary import SingleDeployStageDeploymentSummary
+from .single_deploy_stage_redeployment import SingleDeployStageRedeployment
+from .single_deploy_stage_redeployment_summary import SingleDeployStageRedeploymentSummary
 from .trigger import Trigger
 from .trigger_action import TriggerAction
 from .trigger_build_pipeline_action import TriggerBuildPipelineAction
@@ -256,6 +305,11 @@ from .update_build_pipeline_details import UpdateBuildPipelineDetails
 from .update_build_pipeline_stage_details import UpdateBuildPipelineStageDetails
 from .update_build_run_details import UpdateBuildRunDetails
 from .update_build_stage_details import UpdateBuildStageDetails
+from .update_compute_instance_group_blue_green_deploy_stage_details import UpdateComputeInstanceGroupBlueGreenDeployStageDetails
+from .update_compute_instance_group_blue_green_traffic_shift_deploy_stage_details import UpdateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails
+from .update_compute_instance_group_canary_approval_deploy_stage_details import UpdateComputeInstanceGroupCanaryApprovalDeployStageDetails
+from .update_compute_instance_group_canary_deploy_stage_details import UpdateComputeInstanceGroupCanaryDeployStageDetails
+from .update_compute_instance_group_canary_traffic_shift_deploy_stage_details import UpdateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails
 from .update_compute_instance_group_deploy_environment_details import UpdateComputeInstanceGroupDeployEnvironmentDetails
 from .update_compute_instance_group_deploy_stage_details import UpdateComputeInstanceGroupDeployStageDetails
 from .update_connection_details import UpdateConnectionDetails
@@ -277,11 +331,17 @@ from .update_gitlab_trigger_details import UpdateGitlabTriggerDetails
 from .update_invoke_function_deploy_stage_details import UpdateInvokeFunctionDeployStageDetails
 from .update_load_balancer_traffic_shift_deploy_stage_details import UpdateLoadBalancerTrafficShiftDeployStageDetails
 from .update_manual_approval_deploy_stage_details import UpdateManualApprovalDeployStageDetails
+from .update_oke_blue_green_deploy_stage_details import UpdateOkeBlueGreenDeployStageDetails
+from .update_oke_blue_green_traffic_shift_deploy_stage_details import UpdateOkeBlueGreenTrafficShiftDeployStageDetails
+from .update_oke_canary_approval_deploy_stage_details import UpdateOkeCanaryApprovalDeployStageDetails
+from .update_oke_canary_deploy_stage_details import UpdateOkeCanaryDeployStageDetails
+from .update_oke_canary_traffic_shift_deploy_stage_details import UpdateOkeCanaryTrafficShiftDeployStageDetails
 from .update_oke_cluster_deploy_environment_details import UpdateOkeClusterDeployEnvironmentDetails
 from .update_oke_deploy_stage_details import UpdateOkeDeployStageDetails
 from .update_project_details import UpdateProjectDetails
 from .update_repository_details import UpdateRepositoryDetails
 from .update_single_deploy_stage_deployment_details import UpdateSingleDeployStageDeploymentDetails
+from .update_single_deploy_stage_redeployment_details import UpdateSingleDeployStageRedeploymentDetails
 from .update_trigger_deployment_stage_details import UpdateTriggerDeploymentStageDetails
 from .update_trigger_details import UpdateTriggerDetails
 from .update_wait_criteria_details import UpdateWaitCriteriaDetails
@@ -344,8 +404,23 @@ devops_type_mapping = {
     "CancelDeploymentDetails": CancelDeploymentDetails,
     "ChangeProjectCompartmentDetails": ChangeProjectCompartmentDetails,
     "CommitInfo": CommitInfo,
+    "ComputeInstanceGroupBlueGreenDeployStage": ComputeInstanceGroupBlueGreenDeployStage,
+    "ComputeInstanceGroupBlueGreenDeployStageExecutionProgress": ComputeInstanceGroupBlueGreenDeployStageExecutionProgress,
+    "ComputeInstanceGroupBlueGreenDeployStageSummary": ComputeInstanceGroupBlueGreenDeployStageSummary,
+    "ComputeInstanceGroupBlueGreenTrafficShiftDeployStage": ComputeInstanceGroupBlueGreenTrafficShiftDeployStage,
+    "ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress": ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress,
+    "ComputeInstanceGroupBlueGreenTrafficShiftDeployStageSummary": ComputeInstanceGroupBlueGreenTrafficShiftDeployStageSummary,
     "ComputeInstanceGroupByIdsSelector": ComputeInstanceGroupByIdsSelector,
     "ComputeInstanceGroupByQuerySelector": ComputeInstanceGroupByQuerySelector,
+    "ComputeInstanceGroupCanaryApprovalDeployStage": ComputeInstanceGroupCanaryApprovalDeployStage,
+    "ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress": ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress,
+    "ComputeInstanceGroupCanaryApprovalDeployStageSummary": ComputeInstanceGroupCanaryApprovalDeployStageSummary,
+    "ComputeInstanceGroupCanaryDeployStage": ComputeInstanceGroupCanaryDeployStage,
+    "ComputeInstanceGroupCanaryDeployStageExecutionProgress": ComputeInstanceGroupCanaryDeployStageExecutionProgress,
+    "ComputeInstanceGroupCanaryDeployStageSummary": ComputeInstanceGroupCanaryDeployStageSummary,
+    "ComputeInstanceGroupCanaryTrafficShiftDeployStage": ComputeInstanceGroupCanaryTrafficShiftDeployStage,
+    "ComputeInstanceGroupCanaryTrafficShiftDeployStageExecutionProgress": ComputeInstanceGroupCanaryTrafficShiftDeployStageExecutionProgress,
+    "ComputeInstanceGroupCanaryTrafficShiftDeployStageSummary": ComputeInstanceGroupCanaryTrafficShiftDeployStageSummary,
     "ComputeInstanceGroupDeployEnvironment": ComputeInstanceGroupDeployEnvironment,
     "ComputeInstanceGroupDeployEnvironmentSummary": ComputeInstanceGroupDeployEnvironmentSummary,
     "ComputeInstanceGroupDeployStage": ComputeInstanceGroupDeployStage,
@@ -369,6 +444,11 @@ devops_type_mapping = {
     "CreateBuildPipelineStageDetails": CreateBuildPipelineStageDetails,
     "CreateBuildRunDetails": CreateBuildRunDetails,
     "CreateBuildStageDetails": CreateBuildStageDetails,
+    "CreateComputeInstanceGroupBlueGreenDeployStageDetails": CreateComputeInstanceGroupBlueGreenDeployStageDetails,
+    "CreateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails": CreateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails,
+    "CreateComputeInstanceGroupCanaryApprovalDeployStageDetails": CreateComputeInstanceGroupCanaryApprovalDeployStageDetails,
+    "CreateComputeInstanceGroupCanaryDeployStageDetails": CreateComputeInstanceGroupCanaryDeployStageDetails,
+    "CreateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails": CreateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails,
     "CreateComputeInstanceGroupDeployEnvironmentDetails": CreateComputeInstanceGroupDeployEnvironmentDetails,
     "CreateComputeInstanceGroupDeployStageDetails": CreateComputeInstanceGroupDeployStageDetails,
     "CreateConnectionDetails": CreateConnectionDetails,
@@ -390,11 +470,17 @@ devops_type_mapping = {
     "CreateInvokeFunctionDeployStageDetails": CreateInvokeFunctionDeployStageDetails,
     "CreateLoadBalancerTrafficShiftDeployStageDetails": CreateLoadBalancerTrafficShiftDeployStageDetails,
     "CreateManualApprovalDeployStageDetails": CreateManualApprovalDeployStageDetails,
+    "CreateOkeBlueGreenDeployStageDetails": CreateOkeBlueGreenDeployStageDetails,
+    "CreateOkeBlueGreenTrafficShiftDeployStageDetails": CreateOkeBlueGreenTrafficShiftDeployStageDetails,
+    "CreateOkeCanaryApprovalDeployStageDetails": CreateOkeCanaryApprovalDeployStageDetails,
+    "CreateOkeCanaryDeployStageDetails": CreateOkeCanaryDeployStageDetails,
+    "CreateOkeCanaryTrafficShiftDeployStageDetails": CreateOkeCanaryTrafficShiftDeployStageDetails,
     "CreateOkeClusterDeployEnvironmentDetails": CreateOkeClusterDeployEnvironmentDetails,
     "CreateOkeDeployStageDetails": CreateOkeDeployStageDetails,
     "CreateProjectDetails": CreateProjectDetails,
     "CreateRepositoryDetails": CreateRepositoryDetails,
     "CreateSingleDeployStageDeploymentDetails": CreateSingleDeployStageDeploymentDetails,
+    "CreateSingleDeployStageRedeploymentDetails": CreateSingleDeployStageRedeploymentDetails,
     "CreateTriggerDeploymentStageDetails": CreateTriggerDeploymentStageDetails,
     "CreateTriggerDetails": CreateTriggerDetails,
     "CreateWaitCriteriaDetails": CreateWaitCriteriaDetails,
@@ -504,14 +590,35 @@ devops_type_mapping = {
     "ManualApprovalDeployStageSummary": ManualApprovalDeployStageSummary,
     "ManualBuildRunSource": ManualBuildRunSource,
     "MirrorRepositoryConfig": MirrorRepositoryConfig,
+    "NetworkChannel": NetworkChannel,
+    "NginxBlueGreenStrategy": NginxBlueGreenStrategy,
+    "NginxCanaryStrategy": NginxCanaryStrategy,
     "NoDeployStageRollbackPolicy": NoDeployStageRollbackPolicy,
     "NotificationConfig": NotificationConfig,
     "OcirDeployArtifactSource": OcirDeployArtifactSource,
+    "OkeBlueGreenDeployStage": OkeBlueGreenDeployStage,
+    "OkeBlueGreenDeployStageExecutionProgress": OkeBlueGreenDeployStageExecutionProgress,
+    "OkeBlueGreenDeployStageSummary": OkeBlueGreenDeployStageSummary,
+    "OkeBlueGreenStrategy": OkeBlueGreenStrategy,
+    "OkeBlueGreenTrafficShiftDeployStage": OkeBlueGreenTrafficShiftDeployStage,
+    "OkeBlueGreenTrafficShiftDeployStageExecutionProgress": OkeBlueGreenTrafficShiftDeployStageExecutionProgress,
+    "OkeBlueGreenTrafficShiftDeployStageSummary": OkeBlueGreenTrafficShiftDeployStageSummary,
+    "OkeCanaryApprovalDeployStage": OkeCanaryApprovalDeployStage,
+    "OkeCanaryApprovalDeployStageExecutionProgress": OkeCanaryApprovalDeployStageExecutionProgress,
+    "OkeCanaryApprovalDeployStageSummary": OkeCanaryApprovalDeployStageSummary,
+    "OkeCanaryDeployStage": OkeCanaryDeployStage,
+    "OkeCanaryDeployStageExecutionProgress": OkeCanaryDeployStageExecutionProgress,
+    "OkeCanaryDeployStageSummary": OkeCanaryDeployStageSummary,
+    "OkeCanaryStrategy": OkeCanaryStrategy,
+    "OkeCanaryTrafficShiftDeployStage": OkeCanaryTrafficShiftDeployStage,
+    "OkeCanaryTrafficShiftDeployStageExecutionProgress": OkeCanaryTrafficShiftDeployStageExecutionProgress,
+    "OkeCanaryTrafficShiftDeployStageSummary": OkeCanaryTrafficShiftDeployStageSummary,
     "OkeClusterDeployEnvironment": OkeClusterDeployEnvironment,
     "OkeClusterDeployEnvironmentSummary": OkeClusterDeployEnvironmentSummary,
     "OkeDeployStage": OkeDeployStage,
     "OkeDeployStageExecutionProgress": OkeDeployStageExecutionProgress,
     "OkeDeployStageSummary": OkeDeployStageSummary,
+    "PrivateEndpointChannel": PrivateEndpointChannel,
     "Project": Project,
     "ProjectCollection": ProjectCollection,
     "ProjectSummary": ProjectSummary,
@@ -542,6 +649,8 @@ devops_type_mapping = {
     "RepositoryTagSummary": RepositoryTagSummary,
     "SingleDeployStageDeployment": SingleDeployStageDeployment,
     "SingleDeployStageDeploymentSummary": SingleDeployStageDeploymentSummary,
+    "SingleDeployStageRedeployment": SingleDeployStageRedeployment,
+    "SingleDeployStageRedeploymentSummary": SingleDeployStageRedeploymentSummary,
     "Trigger": Trigger,
     "TriggerAction": TriggerAction,
     "TriggerBuildPipelineAction": TriggerBuildPipelineAction,
@@ -558,6 +667,11 @@ devops_type_mapping = {
     "UpdateBuildPipelineStageDetails": UpdateBuildPipelineStageDetails,
     "UpdateBuildRunDetails": UpdateBuildRunDetails,
     "UpdateBuildStageDetails": UpdateBuildStageDetails,
+    "UpdateComputeInstanceGroupBlueGreenDeployStageDetails": UpdateComputeInstanceGroupBlueGreenDeployStageDetails,
+    "UpdateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails": UpdateComputeInstanceGroupBlueGreenTrafficShiftDeployStageDetails,
+    "UpdateComputeInstanceGroupCanaryApprovalDeployStageDetails": UpdateComputeInstanceGroupCanaryApprovalDeployStageDetails,
+    "UpdateComputeInstanceGroupCanaryDeployStageDetails": UpdateComputeInstanceGroupCanaryDeployStageDetails,
+    "UpdateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails": UpdateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails,
     "UpdateComputeInstanceGroupDeployEnvironmentDetails": UpdateComputeInstanceGroupDeployEnvironmentDetails,
     "UpdateComputeInstanceGroupDeployStageDetails": UpdateComputeInstanceGroupDeployStageDetails,
     "UpdateConnectionDetails": UpdateConnectionDetails,
@@ -579,11 +693,17 @@ devops_type_mapping = {
     "UpdateInvokeFunctionDeployStageDetails": UpdateInvokeFunctionDeployStageDetails,
     "UpdateLoadBalancerTrafficShiftDeployStageDetails": UpdateLoadBalancerTrafficShiftDeployStageDetails,
     "UpdateManualApprovalDeployStageDetails": UpdateManualApprovalDeployStageDetails,
+    "UpdateOkeBlueGreenDeployStageDetails": UpdateOkeBlueGreenDeployStageDetails,
+    "UpdateOkeBlueGreenTrafficShiftDeployStageDetails": UpdateOkeBlueGreenTrafficShiftDeployStageDetails,
+    "UpdateOkeCanaryApprovalDeployStageDetails": UpdateOkeCanaryApprovalDeployStageDetails,
+    "UpdateOkeCanaryDeployStageDetails": UpdateOkeCanaryDeployStageDetails,
+    "UpdateOkeCanaryTrafficShiftDeployStageDetails": UpdateOkeCanaryTrafficShiftDeployStageDetails,
     "UpdateOkeClusterDeployEnvironmentDetails": UpdateOkeClusterDeployEnvironmentDetails,
     "UpdateOkeDeployStageDetails": UpdateOkeDeployStageDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
     "UpdateRepositoryDetails": UpdateRepositoryDetails,
     "UpdateSingleDeployStageDeploymentDetails": UpdateSingleDeployStageDeploymentDetails,
+    "UpdateSingleDeployStageRedeploymentDetails": UpdateSingleDeployStageRedeploymentDetails,
     "UpdateTriggerDeploymentStageDetails": UpdateTriggerDeploymentStageDetails,
     "UpdateTriggerDetails": UpdateTriggerDetails,
     "UpdateWaitCriteriaDetails": UpdateWaitCriteriaDetails,

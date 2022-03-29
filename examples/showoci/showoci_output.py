@@ -121,6 +121,10 @@ class ShowOCIOutput(object):
                 print("Authentication  : Instance Principals With Delegation Token")
                 print("Config File     : " + data['config_file'])
                 print("Config Profile  : " + data['config_profile'])
+            elif data['use_security_token']:
+                print("Authentication  : Config File with Security Token")
+                print("Config File     : " + data['config_file'])
+                print("Config Profile  : " + data['config_profile'])
             else:
                 print("Authentication  : Config File")
                 print("Config File     : " + data['config_file'])
@@ -1010,33 +1014,33 @@ class ShowOCIOutput(object):
             for dbs in list_exadata:
                 print("")
 
-                print(self.taba + "ExaCS   : " + dbs['name'])
-                print(self.tabs + "Created : " + dbs['time_created'][0:16])
-                print(self.tabs + "AD      : " + dbs['availability_domain'])
+                print(self.taba + "ExaCS     : " + dbs['name'])
+                print(self.tabs + "Created   : " + dbs['time_created'][0:16])
+                print(self.tabs + "AD        : " + dbs['availability_domain'])
 
                 if 'compute_count' in dbs:
                     if dbs['compute_count'] != "None":
-                        print(self.tabs + "VM Hosts: " + str(dbs['compute_count']))
+                        print(self.tabs + "VM Hosts  : " + str(dbs['compute_count']))
 
                 if 'storage_count' in dbs:
                     if dbs['storage_count'] != "None" and dbs['total_storage_size_in_gbs'] != "None":
-                        print(self.tabs + "Storage : Hosts = " + str(dbs['storage_count']) + ", Total = " + str(dbs['total_storage_size_in_gbs']) + "GB")
+                        print(self.tabs + "Storage   : Hosts = " + str(dbs['storage_count']) + ", Total = " + str(dbs['total_storage_size_in_gbs']) + "GB")
 
                 if 'maintenance_window' in dbs:
                     if dbs['maintenance_window']:
-                        print(self.tabs + "Maint   : Window : " + dbs['maintenance_window']['display'])
+                        print(self.tabs + "Maint     : Window : " + dbs['maintenance_window']['display'])
 
                 if 'last_maintenance_run' in dbs:
                     if dbs['last_maintenance_run']:
-                        print(self.tabs + "Maint   : Last   : " + dbs['last_maintenance_run']['description'])
-                        print(self.tabs + "                 : " + dbs['last_maintenance_run']['maintenance_display'])
+                        print(self.tabs + "Maint     : Last   : " + dbs['last_maintenance_run']['description'])
+                        print(self.tabs + "                   : " + dbs['last_maintenance_run']['maintenance_display'])
 
                 if 'next_maintenance_run' in dbs:
                     if dbs['next_maintenance_run']:
-                        print(self.tabs + "Maint   : Next   : " + dbs['next_maintenance_run']['description'])
-                        print(self.tabs + "                 : " + dbs['next_maintenance_run']['maintenance_display'])
+                        print(self.tabs + "Maint     : Next   : " + dbs['next_maintenance_run']['description'])
+                        print(self.tabs + "                   : " + dbs['next_maintenance_run']['maintenance_display'])
                         if dbs['next_maintenance_run']['maintenance_alert']:
-                            print(self.tabs + "          Alert  : " + dbs['next_maintenance_run']['maintenance_alert'])
+                            print(self.tabs + "            Alert  : " + dbs['next_maintenance_run']['maintenance_alert'])
 
                 print("")
 
@@ -1044,67 +1048,67 @@ class ShowOCIOutput(object):
                 for vm in dbs['vm_clusters']:
 
                     if 'display_name' in vm:
-                        print(self.tabs + "VMCLSTR : " + str(vm['display_name']) + " (" + vm['lifecycle_state'] + ")")
+                        print(self.tabs + "VMCLSTR   : " + str(vm['display_name']) + " (" + vm['lifecycle_state'] + ")")
 
                     if 'cluster_name' in vm:
                         if vm['cluster_name']:
-                            print(self.tabs + "Cluster : " + vm['cluster_name'])
+                            print(self.tabs + "Cluster   : " + vm['cluster_name'])
 
                     if 'cpu_core_count' in vm:
-                        print(self.tabs + "Cores   : " + str(vm['cpu_core_count']))
+                        print(self.tabs + "Cores     : " + str(vm['cpu_core_count']))
 
                     if 'node_count' in vm:
                         if vm['node_count']:
-                            print(self.tabs + "Nodes   : " + str(vm['node_count']))
+                            print(self.tabs + "Nodes     : " + str(vm['node_count']))
 
                     if 'domain' in vm:
                         if vm['domain']:
-                            print(self.tabs + "Domain  : " + vm['domain'])
+                            print(self.tabs + "Domain    : " + vm['domain'])
 
                     if 'data_subnet' in vm:
                         if vm['data_subnet']:
-                            print(self.tabs + "DataSub : " + vm['data_subnet'])
+                            print(self.tabs + "DataSub   : " + vm['data_subnet'])
 
                     if 'backup_subnet' in vm:
                         if vm['backup_subnet']:
-                            print(self.tabs + "BackSub : " + vm['backup_subnet'])
+                            print(self.tabs + "BackSub   : " + vm['backup_subnet'])
 
                     if 'scan_dns' in vm:
                         if vm['scan_dns']:
-                            print(self.tabs + "Scan    : " + vm['scan_dns_name'])
+                            print(self.tabs + "Scan      : " + vm['scan_dns_name'])
 
                     if 'scan_ips' in vm:
                         for ip in vm['scan_ips']:
-                            print(self.tabs + "Scan Ips: " + ip)
+                            print(self.tabs + "Scan Ips  : " + ip)
 
                     if 'vip_ips' in vm:
                         for ip in vm['vip_ips']:
-                            print(self.tabs + "VIP Ips : " + ip)
+                            print(self.tabs + "VIP Ips   : " + ip)
 
                     if 'listener_port' in vm:
-                        print(self.tabs + "Port    : " + vm['listener_port'])
+                        print(self.tabs + "Port      : " + vm['listener_port'])
 
                     if 'gi_version' in vm:
                         if vm['gi_version']:
-                            print(self.tabs + "Grid Ver       : " + vm['gi_version'] + "  " + vm['gi_version_date'])
+                            print(self.tabs + "Grid Ver  : " + vm['gi_version'] + "  " + vm['gi_version_date'])
 
                     if 'system_version' in vm:
                         if vm['system_version']:
-                            print(self.tabs + "Sys Ver        : " + vm['system_version'] + "  " + vm['system_version_date'])
+                            print(self.tabs + "Sys Ver   : " + vm['system_version'] + "  " + vm['system_version_date'])
 
                     if 'data_storage_percentage' in vm:
-                        print(self.tabs + "Data    : " + vm['data_storage_percentage'] + "%, Sparse: " + vm['is_sparse_diskgroup_enabled'] + ", Local Backup: " + vm['is_local_backup_enabled'])
+                        print(self.tabs + "Data      : " + vm['data_storage_percentage'] + "%, Sparse: " + vm['is_sparse_diskgroup_enabled'] + ", Local Backup: " + vm['is_local_backup_enabled'])
 
                     if 'patches' in vm:
                         for p in vm['patches']:
-                            print(self.tabs + "Patches : " + p)
+                            print(self.tabs + "Patches   : " + p)
 
                     # db nodes
-                    for db_node in vm['db_nodes']:
-                        print(self.tabs + db_node['desc'])
+                    for index, db_node in enumerate(vm['db_nodes'], start=1):
+                        print(self.tabs + "DB Node " + str(index) + " : " + db_node['desc'])
                         if 'nsg_names' in db_node:
                             if db_node['nsg_names']:
-                                print(self.tabs + "        : SecGrp : " + db_node['nsg_names'])
+                                print(self.tabs + "          : SecGrp : " + db_node['nsg_names'])
 
                         if 'time_maintenance_window_start' in db_node:
                             if db_node['maintenance_type'] != "None":
@@ -1112,26 +1116,26 @@ class ShowOCIOutput(object):
 
                     # db homes
                     for db_home in vm['db_homes']:
-                        print(self.tabs + "Home    : " + db_home['home'])
+                        print(self.tabs + "Home      : " + db_home['home'])
 
                         # patches
                         for p in db_home['patches']:
-                            print(self.tabs + self.tabs + " PT : " + p)
+                            print(self.tabs + self.tabs + "   PT : " + p)
 
                         # databases
                         for db in db_home['databases']:
                             pdbs = ", PDBS: " + str(', '.join(x['name'] for x in db['pdbs'])) if db['pdbs'] else ""
-                            print(self.tabs + self.tabs + " DB : " + db['name'] + pdbs)
+                            print(self.tabs + self.tabs + "   DB : " + db['name'] + pdbs)
 
                             # print data guard
                             for dg in db['dataguard']:
-                                print(self.tabs + self.tabs + "      " + dg['name'])
+                                print(self.tabs + self.tabs + "        " + dg['name'])
 
                             # print backups
                             for backup in db['backups']:
                                 print(self.tabs + self.tabs + "      " + backup['name'] + " - " + backup['time'] + " - " + backup['size'])
 
-                        print(self.tabs + "        : " + '-' * 90)
+                        print(self.tabs + "          : " + '-' * 90)
 
         except Exception as e:
             self.__print_error("__print_database_db_exadata_infra", e)
@@ -1188,10 +1192,13 @@ class ShowOCIOutput(object):
                             print(self.tabs + "                 Alert  : " + dbs['next_maintenance_run']['maintenance_alert'])
 
                 print("")
+                for index, srv in enumerate(dbs['db_servers'], start=1):
+                    print(self.tabs + "DB Server " + str(index) + "    : " + srv['desc'])
 
                 # clusters
                 num = 0
                 for vm in dbs['vm_clusters']:
+                    print("")
                     num += 1
 
                     if 'display_name' in vm:
@@ -1224,8 +1231,8 @@ class ShowOCIOutput(object):
                             print(self.tabs + "Patches        : " + p)
 
                     # db nodes
-                    for db_node in vm['db_nodes']:
-                        print(self.tabs + "       " + db_node['desc'])
+                    for index, db_node in enumerate(vm['db_nodes'], start=1):
+                        print(self.tabs + "DB Node " + str(index) + "      : " + db_node['desc'])
                         if 'nsg_names' in db_node:
                             if db_node['nsg_names']:
                                 print(self.tabs + "        : SecGrp : " + db_node['nsg_names'])
@@ -3426,6 +3433,8 @@ class ShowOCICSV(object):
     csv_database = []
     csv_database_backups = []
     csv_network_drg = []
+    csv_network_drg_ipsec_tunnels = []
+    csv_network_drg_virtual_circuits = []
     csv_network_subnet = []
     csv_network_security_list = []
     csv_network_security_group = []
@@ -3500,6 +3509,8 @@ class ShowOCICSV(object):
             self.__export_to_csv_file("block_volumes_backups", self.csv_block_volumes_backups)
             self.__export_to_csv_file("network_subnet", self.csv_network_subnet)
             self.__export_to_csv_file("network_drgs", self.csv_network_drg)
+            self.__export_to_csv_file("network_drg_ipsec_tunnels", self.csv_network_drg_ipsec_tunnels)
+            self.__export_to_csv_file("network_drg_virtual_circuits", self.csv_network_drg_virtual_circuits)
             self.__export_to_csv_file("network_routes", self.csv_network_routes)
             self.__export_to_csv_file("network_security_list", self.csv_network_security_list)
             self.__export_to_csv_file("network_security_group", self.csv_network_security_group)
@@ -3863,6 +3874,81 @@ class ShowOCICSV(object):
             self.__print_error("__csv_core_network_drg", e)
 
     ##########################################################################
+    # CSV Network ipsec
+    ##########################################################################
+    def __csv_core_network_ipsec_tunnels(self, region_name, ipsecs):
+        try:
+            if not ipsecs:
+                return
+
+            for arr in ipsecs:
+                for tun in arr['tunnels']:
+                    data = {
+                        'region_name': region_name,
+                        'compartment_name': arr['compartment_name'],
+                        'tunnel_name': tun['display_name'],
+                        'status': tun['status'],
+                        'routing': tun['routing'],
+                        'time_created': tun['time_created'][0:16],
+                        'bgp_info': tun['bgp_info'],
+                        'ipsec_name': arr['name'],
+                        'drg': arr['drg'],
+                        'drg_route_table': arr['drg_route_table'],
+                        'cpe': arr['cpe'],
+                        'cpe_local_identifier': arr['cpe_local_identifier'],
+                        'cpe_time_created': arr['time_created'][0:16],
+                        'routes': str(', '.join(x for x in arr['routes'])),
+                        'drg_id': arr['drg_id'],
+                        'cpe_id': arr['cpe_id'],
+                        'ipsec_id': arr['id'],
+                        'id': tun['id'],
+                        'freeform_tags': self.__get_freeform_tags(arr['freeform_tags']),
+                        'defined_tags': self.__get_defined_tags(arr['defined_tags'])
+                    }
+                    self.csv_network_drg_ipsec_tunnels.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_network_ipsec_tunnels", e)
+
+    ##########################################################################
+    # CSV Network virtual circuits
+    ##########################################################################
+    def __csv_core_network_virtual_circuit(self, region_name, vcs):
+        try:
+            if not vcs:
+                return
+
+            for arr in vcs:
+                data = {
+                    'region_name': region_name,
+                    'compartment_name': arr['compartment_name'],
+                    'name': arr['name'],
+                    'bandwidth_shape_name': arr['bandwidth_shape_name'],
+                    'bgp_management': arr['bgp_management'],
+                    'bgp_session_state': arr['bgp_session_state'],
+                    'customer_bgp_asn': arr['customer_bgp_asn'],
+                    'drg': arr['drg'],
+                    'lifecycle_state': arr['lifecycle_state'],
+                    'oracle_bgp_asn': arr['oracle_bgp_asn'],
+                    'provider_name': arr['provider_name'],
+                    'provider_service_name': arr['provider_service_name'],
+                    'provider_state': arr['provider_state'],
+                    'reference_comment': arr['reference_comment'],
+                    'service_type': arr['service_type'],
+                    'time_created': arr['time_created'],
+                    'cross_connect_mappings': arr['cross_connect_mappings'],
+                    'type': arr['type'],
+                    'drg_route_table': arr['drg_route_table'],
+                    'drg_id': arr['drg_id'],
+                    'drg_route_table_id': arr['drg_route_table_id'],
+                    'id': arr['id']
+                }
+                self.csv_network_drg_virtual_circuits.append(data)
+
+        except Exception as e:
+            self.__print_error("__csv_core_network_virtual_circuit", e)
+
+    ##########################################################################
     # CSV for  Network vcn security group
     ##########################################################################
     def __csv_core_network_vcn_security_groups(self, region_name, nsg, vcn):
@@ -4046,6 +4132,12 @@ class ShowOCICSV(object):
 
             if 'drg' in data:
                 self.__csv_core_network_drg(region_name, data['drg'])
+
+            if 'ipsec' in data:
+                self.__csv_core_network_ipsec_tunnels(region_name, data['ipsec'])
+
+            if 'virtual_circuit' in data:
+                self.__csv_core_network_virtual_circuit(region_name, data['virtual_circuit'])
 
         except Exception as e:
             self.__print_error("__csv_core_network_main", e)

@@ -105,7 +105,7 @@ import sys
 import argparse
 import datetime
 
-version = "22.03.15"
+version = "22.03.29"
 
 ##########################################################################
 # check OCI version
@@ -313,6 +313,7 @@ def set_parser_arguments():
     parser.add_argument('-mc', action='store_true', default=False, dest='mgdcompart', help='exclude ManagedCompartmentForPaaS')
     parser.add_argument('-nr', action='store_true', default=False, dest='noroot', help='Not include root compartment')
     parser.add_argument('-ip', action='store_true', default=False, dest='instance_principals', help='Use Instance Principals for Authentication')
+    parser.add_argument('-is', action='store_true', default=False, dest='security_token', help='Use Config and Security Token for Authentication')
     parser.add_argument('-dt', action='store_true', default=False, dest='delegation_token', help='Use Delegation Token (Cloud shell)')
     parser.add_argument('-t', default="", dest='profile', help='Config file section to use (tenancy profile)')
     parser.add_argument('-p', default="", dest='proxy', help='Set Proxy (i.e. www-proxy-server.com:80) ')
@@ -461,6 +462,9 @@ def set_service_extract_flags(cmd):
 
     if cmd.delegation_token:
         prm.use_delegation_token = True
+
+    if cmd.security_token:
+        prm.use_security_token = True
 
     if cmd.skip_identity_user_credential:
         prm.skip_identity_user_credential = True

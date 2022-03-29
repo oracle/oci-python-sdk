@@ -10,7 +10,9 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class LoadBalancerConfig(object):
     """
-    Specifies config for load balancer traffic shift stages.
+    Specifies configuration for load balancer traffic shift stages.
+    The load balancer specified here should be an Application load balancer type.
+    Network load balancers are not supported.
     """
 
     def __init__(self, **kwargs):
