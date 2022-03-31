@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IamWorkRequestLogSummary(object):
     """
-    The log entity for a IAM work request.
+    (For tenancies that support identity domains) The log entity for a IAM work request.
     """
 
     def __init__(self, **kwargs):

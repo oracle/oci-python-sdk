@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class IdentityClient(object):
     """
-    APIs for managing users, groups, compartments, and policies.
+    APIs for managing users, groups, compartments, policies, and identity domains.
     """
 
     def __init__(self, config, **kwargs):
@@ -106,27 +106,17 @@ class IdentityClient(object):
 
     def activate_domain(self, domain_id, **kwargs):
         """
-        If the domain's {@code lifecycleState} is INACTIVE,
-        1. Set the {@code lifecycleDetails} to ACTIVATING and asynchronously starts enabling
-           the domain and return 202 ACCEPTED.
-            1.1 Sets the domain status to ENABLED and set specified domain's
-                {@code lifecycleState} to ACTIVE and set the {@code lifecycleDetails} to null.
+        (For tenancies that support identity domains) Activates a deactivated identity domain. You can only activate identity domains that your user account is not a part of.
 
-        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-        the async operation's status. Deactivate a domain can be done using HTTP POST
-        /domains/{domainId}/actions/deactivate.
+        After you send the request, the `lifecycleDetails` of the identity domain is set to ACTIVATING. When the operation completes, the
+        `lifecycleDetails` is set to null and the `lifecycleState` of the identity domain is set to ACTIVE.
 
-        - If the domain's {@code lifecycleState} is ACTIVE, returns 202 ACCEPTED with no action
-          taken on service side.
-        - If domain is of {@code type} DEFAULT or DEFAULT_LIGHTWEIGHT or domain's {@code lifecycleState} is not INACTIVE,
-          returns 400 BAD REQUEST.
-        - If the domain doesn't exists, returns 404 NOT FOUND.
-        - If the authenticated user is part of the domain to be activated, returns 400 BAD REQUEST
-        - If error occurs while activating domain, returns 500 INTERNAL SERVER ERROR.
+        To track the progress of the request, submitting an HTTP GET on the /iamWorkRequests/{iamWorkRequestsId} endpoint retrieves
+        the operation's status.
 
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -505,7 +495,7 @@ class IdentityClient(object):
         :class:`WorkRequest`. Use the :func:`get_work_request`
         API to monitor the status of the bulk action.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingregions.htm#Home
+        __ https://docs.cloud.oracle.com/Content/Identity/regions/managingregions.htm#Home
 
 
         :param str compartment_id: (required)
@@ -809,7 +799,7 @@ class IdentityClient(object):
         compartments. This operation creates a :class:`WorkRequest`.
         Use the :func:`get_work_request` API to monitor the status of the bulk action.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingregions.htm#Home
+        __ https://docs.cloud.oracle.com/Content/Identity/regions/managingregions.htm#Home
 
 
         :param str compartment_id: (required)
@@ -1025,25 +1015,17 @@ class IdentityClient(object):
 
     def change_domain_compartment(self, domain_id, change_domain_compartment_details, **kwargs):
         """
-        Change the containing compartment for a domain.
+        (For tenancies that support identity domains) Moves the identity domain to a different compartment in the tenancy.
 
-        This is an asynchronous call where the Domain's compartment is changed and is updated with the new compartment information.
-        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-        the async operation's status.
-
-        The compartment change is complete when accessed via domain URL and
-        also returns new compartment OCID.
-        - If the domain doesn't exists, returns 404 NOT FOUND.
-        - If Domain {@code type} is DEFAULT or DEFAULT_LIGHTWEIGHT, return 400 BAD Request
-        - If Domain is not active or being updated, returns 400 BAD REQUEST.
-        - If error occurs while changing compartment for domain, return 500 INTERNAL SERVER ERROR.
+        To track the progress of the request, submitting an HTTP GET on the /iamWorkRequests/{iamWorkRequestsId} endpoint retrieves
+        the operation's status.
 
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param oci.identity.models.ChangeDomainCompartmentDetails change_domain_compartment_details: (required)
-            the request object for moving compartment of a domain
+            The request object for moving the identity domain to a different compartment.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1141,28 +1123,22 @@ class IdentityClient(object):
 
     def change_domain_license_type(self, domain_id, change_domain_license_type_details, **kwargs):
         """
-        If the domain's {@code lifecycleState} is ACTIVE, validates the requested {@code licenseType} update
-        is allowed and
-        1. Set the {@code lifecycleDetails} to UPDATING
-        2. Asynchronously starts updating the domain and return 202 ACCEPTED.
-            2.1 Successfully updates specified domain's {@code licenseType}.
-        3. On completion set the {@code lifecycleDetails} to null.
-        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-        the async operation's status.
+        (For tenancies that support identity domains) Changes the license type of the given identity domain. The identity domain's
+        `lifecycleState` must be set to ACTIVE and the requested `licenseType` must be allowed. To retrieve the allowed `licenseType` for
+        the identity domain, use :func:`list_allowed_domain_license_types`.
 
-        - If license type update is successful, return 202 ACCEPTED
-        - If requested {@code licenseType} validation fails, returns 400 Bad request.
-        - If Domain is not active or being updated, returns 400 BAD REQUEST.
-        - If Domain {@code type} is DEFAULT or DEFAULT_LIGHTWEIGHT, return 400 BAD Request
-        - If the domain doesn't exists, returns 404 NOT FOUND
-        - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
+        After you send your request, the `lifecycleDetails` of this identity domain is set to UPDATING. When the update of the identity
+        domain completes, then the `lifecycleDetails` is set to null.
+
+        To track the progress of the request, submitting an HTTP GET on the /iamWorkRequests/{iamWorkRequestsId} endpoint retrieves
+        the operation's status.
 
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param oci.identity.models.ChangeDomainLicenseTypeDetails change_domain_license_type_details: (required)
-            the request object for domain license type update
+            The request object for an update to the license type of the identity domain.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -1267,7 +1243,7 @@ class IdentityClient(object):
 
         Moving a tag namespace moves all the tag key definitions contained in the tag namespace.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Reference/iampolicyreference.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policyreference/iampolicyreference.htm
 
 
         :param str tag_namespace_id: (required)
@@ -1370,7 +1346,7 @@ class IdentityClient(object):
         does not need to write a policy to give users this ability. To compare, administrators who have permission to the
         tenancy can use this operation to create an auth token for any user, including themselves.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm
 
 
         :param oci.identity.models.CreateAuthTokenDetails create_auth_token_details: (required)
@@ -1485,7 +1461,7 @@ class IdentityClient(object):
         object, first make sure its `lifecycleState` has changed to ACTIVE.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm
 
 
         :param oci.identity.models.CreateCompartmentDetails create_compartment_details: (required)
@@ -1576,7 +1552,7 @@ class IdentityClient(object):
         does not need to write a policy to give users this ability. To compare, administrators who have permission to the
         tenancy can use this operation to create a secret key for any user, including themselves.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm
 
 
         :param oci.identity.models.CreateCustomerSecretKeyDetails create_customer_secret_key_details: (required)
@@ -1770,26 +1746,18 @@ class IdentityClient(object):
 
     def create_domain(self, create_domain_details, **kwargs):
         """
-        Creates a new domain in the tenancy with domain home in {@code homeRegion}. This is an asynchronous call - where, at start,
-        {@code lifecycleState} of this domain is set to CREATING and {@code lifecycleDetails} to UPDATING. On domain creation completion
-        this Domain's {@code lifecycleState} will be set to ACTIVE and {@code lifecycleDetails} to null.
+        (For tenancies that support identity domains) Creates a new identity domain in the tenancy with the identity domain home in `homeRegion`.
+        After you send your request, the temporary `lifecycleState` of this identity domain is set to CREATING and `lifecycleDetails` to UPDATING.
+        When creation of the identity domain completes, this identity domain's `lifecycleState` is set to ACTIVE and `lifecycleDetails` to null.
 
-        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-        the async operation's status.
+        To track the progress of the request, submitting an HTTP GET on the /iamWorkRequests/{iamWorkRequestsId} endpoint retrieves
+        the operation's status.
 
-        After creating a `Domain`, make sure its `lifecycleState` changes from CREATING to ACTIVE
-        before using it.
-        If the domain's {@code displayName} already exists, returns 400 BAD REQUEST.
-        If any one of admin related fields are provided and one of the following 3 fields
-        - {@code adminEmail}, {@code adminLastName} and {@code adminUserName} - is not provided,
-        returns 400 BAD REQUEST.
-        - If {@code isNotificationBypassed} is NOT provided when admin information is provided,
-        returns 400 BAD REQUEST.
-        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+        After creating an `identity domain`, first make sure its `lifecycleState` changes from CREATING to ACTIVE before you use it.
 
 
         :param oci.identity.models.CreateDomainDetails create_domain_details: (required)
-            The request object for creating a new domain
+            The request object for creating a new identity domain.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
@@ -1888,7 +1856,7 @@ class IdentityClient(object):
         object, first make sure its `lifecycleState` has changed to ACTIVE.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm
 
 
         :param oci.identity.models.CreateDynamicGroupDetails create_dynamic_group_details: (required)
@@ -1990,7 +1958,7 @@ class IdentityClient(object):
         :func:`create_policy`.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm
 
 
         :param oci.identity.models.CreateGroupDetails create_group_details: (required)
@@ -2382,7 +2350,7 @@ class IdentityClient(object):
         IP address specified in your network source. For more information, see `Managing Network Sources`__.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm
         __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingnetworksources.htm
 
 
@@ -2565,10 +2533,14 @@ class IdentityClient(object):
         it within 7 days, the password will expire and you'll need to create a new one-time password for the
         user.
 
+        (For tenancies that support identity domains) Resetting a user's password generates a reset password email
+        with a link that the user must follow to reset their password. If the user does not reset their password before the
+        link expires, you'll need to reset the user's password again.
+
         **Note:** The user's Console login is the unique name you specified when you created the user
         (see :func:`create_user`).
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/usercredentials.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/usercred/usercredentials.htm
 
 
         :param str user_id: (required)
@@ -2658,7 +2630,7 @@ class IdentityClient(object):
     def create_policy(self, create_policy_details, **kwargs):
         """
         Creates a new policy in the specified compartment (either the tenancy or another of your compartments).
-        If you're new to policies, see `Getting Started with Policies`__.
+        If you're new to policies, see `Get Started with Policies`__.
 
         You must specify a *name* for the policy, which must be unique across all policies in your tenancy
         and cannot be changed.
@@ -2675,9 +2647,9 @@ class IdentityClient(object):
 
         New policies take effect typically within 10 seconds.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policiescommon/commonpolicies.htm
 
 
         :param oci.identity.models.CreatePolicyDetails create_policy_details: (required)
@@ -3354,7 +3326,7 @@ class IdentityClient(object):
     def create_user(self, create_user_details, **kwargs):
         """
         Creates a new user in your tenancy. For conceptual information about users, your tenancy, and other
-        IAM Service components, see `Overview of the IAM Service`__.
+        IAM Service components, see `Overview of IAM`__.
 
         You must specify your tenancy's OCID as the compartment ID in the request object (remember that the
         tenancy is simply the root compartment). Notice that IAM resources (users, groups, compartments, and
@@ -3389,7 +3361,7 @@ class IdentityClient(object):
 
         **Important:** Make sure to inform the new user which compartment(s) they have access to.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/getstarted/identity-domains.htm
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm
 
@@ -3470,28 +3442,19 @@ class IdentityClient(object):
 
     def deactivate_domain(self, domain_id, **kwargs):
         """
-        If the domain's {@code lifecycleState} is ACTIVE and no active Apps are present in domain,
-        1. Set the {@code lifecycleDetails} to DEACTIVATING and asynchronously starts disabling
-           the domain and return 202 ACCEPTED.
-            1.1 Sets the domain status to DISABLED and set specified domain's
-                {@code lifecycleState} to INACTIVE and set the {@code lifecycleDetails} to null.
+        (For tenancies that support identity domains) Deactivates the specified identity domain. Identity domains must be in an ACTIVE
+        `lifecycleState` and have no active apps present in the domain or underlying Identity Cloud Service stripe. You cannot deactivate
+        the default identity domain.
 
-        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-        the async operation's status. Activate a domain can be done using HTTP POST
-        /domains/{domainId}/actions/activate.
+        After you send your request, the `lifecycleDetails` of this identity domain is set to DEACTIVATING. When the operation completes,
+        then the `lifecycleDetails` is set to null and the `lifecycleState` is set to INACTIVE.
 
-        - If the domain's {@code lifecycleState} is INACTIVE, returns 202 ACCEPTED with no action
-          taken on service side.
-        - If domain is of {@code type} DEFAULT or DEFAULT_LIGHTWEIGHT or domain's {@code lifecycleState}
-          is not ACTIVE, returns 400 BAD REQUEST.
-        - If the domain doesn't exists, returns 404 NOT FOUND.
-        - If any active Apps in domain, returns 400 BAD REQUEST.
-        - If the authenticated user is part of the domain to be activated, returns 400 BAD REQUEST
-        - If error occurs while deactivating domain, returns 500 INTERNAL SERVER ERROR.
+        To track the progress of the request, submitting an HTTP GET on the /iamWorkRequests/{iamWorkRequestsId} endpoint retrieves
+        the operation's status.
 
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -3859,7 +3822,7 @@ class IdentityClient(object):
             The OCID of the user.
 
         :param str customer_secret_key_id: (required)
-            The OCID of the secret key.
+            The access token of the secret key.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -4034,27 +3997,17 @@ class IdentityClient(object):
 
     def delete_domain(self, domain_id, **kwargs):
         """
-        Soft Deletes a domain.
+        (For tenancies that support identity domains) Deletes an identity domain. The identity domain must have no active apps present in
+        the underlying IDCS stripe. You must also deactivate the identity domain, rendering the `lifecycleState` of the identity domain INACTIVE.
+        Furthermore, as the authenticated user performing the operation, you cannot be a member of the identity domain you are deleting.
+        Lastly, you cannot delete the default identity domain. A tenancy must always have at least the default identity domain.
 
-        This is an asynchronous API, where, if the domain's {@code lifecycleState} is INACTIVE and
-        no active Apps are present in underlying stripe,
-          1. Sets the specified domain's {@code lifecycleState} to DELETING.
-          2. Domains marked as DELETING will be cleaned up by a periodic task unless customer request it to be undo via ticket.
-          3. Work request is created and returned as opc-work-request-id along with 202 ACCEPTED.
-        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-        the async operation's status.
-
-        - If the domain's {@code lifecycleState} is DELETING, returns 202 Accepted as a deletion
-          is already in progress for this domain.
-        - If the domain doesn't exists, returns 404 NOT FOUND.
-        - If domain is of {@code type} DEFAULT or DEFAULT_LIGHTWEIGHT, returns 400 BAD REQUEST.
-        - If any active Apps in domain, returns 400 BAD REQUEST.
-        - If the authenticated user is part of the domain to be deleted, returns 400 BAD REQUEST.
-        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+        To track the progress of the request, submitting an HTTP GET on the /iamWorkRequests/{iamWorkRequestsId} endpoint retrieves
+        the operation's status.
 
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -4577,7 +4530,7 @@ class IdentityClient(object):
 
     def delete_network_source(self, network_source_id, **kwargs):
         """
-        Deletes the specified network source
+        Deletes the specified network source.
 
 
         :param str network_source_id: (required)
@@ -5389,26 +5342,23 @@ class IdentityClient(object):
 
     def enable_replication_to_region(self, domain_id, enable_replication_to_region_details, **kwargs):
         """
-        Replicate domain to a new region. This is an asynchronous call - where, at start,
-        {@code state} of this domain in replica region is set to ENABLING_REPLICATION.
-        On domain replication completion the {@code state} will be set to REPLICATION_ENABLED.
+        (For tenancies that support identity domains) Replicates the identity domain to a new region (provided that the region is the
+        tenancy home region or other region that the tenancy subscribes to). You can only replicate identity domains that are in an ACTIVE
+        `lifecycleState` and not currently updating or already replicating. You also can only trigger the replication of secondary identity domains.
+        The default identity domain is automatically replicated to all regions that the tenancy subscribes to.
 
-        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-        the async operation's status.
+        After you send the request, the `state` of the identity domain in the replica region is set to ENABLING_REPLICATION. When the operation
+        completes, the `state` is set to REPLICATION_ENABLED.
 
-        If the replica region's {@code state} is already ENABLING_REPLICATION or REPLICATION_ENABLED,
-        returns 409 CONFLICT.
-        - If the domain doesn't exists, returns 404 NOT FOUND.
-        - If home region is same as replication region, return 400 BAD REQUEST.
-        - If Domain is not active or being updated, returns 400 BAD REQUEST.
-        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+        To track the progress of the request, submitting an HTTP GET on the /iamWorkRequests/{iamWorkRequestsId} endpoint retrieves
+        the operation's status.
 
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param oci.identity.models.EnableReplicationToRegionDetails enable_replication_to_region_details: (required)
-            the request object for region we are replicating domain region
+            The request object for replicating the identity domain to another region.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -5752,14 +5702,11 @@ class IdentityClient(object):
 
     def get_domain(self, domain_id, **kwargs):
         """
-        Get the specified domain's information.
-
-        - If the domain doesn't exists, returns 404 NOT FOUND.
-        - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
+        (For tenancies that support identity domains) Gets the specified identity domain's information.
 
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -5992,11 +5939,7 @@ class IdentityClient(object):
 
     def get_iam_work_request(self, iam_work_request_id, **kwargs):
         """
-        Gets details on a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
-        iam work request id that can be provided in this API to track the current status of the operation.
-
-        - If workrequest exists, returns 202 ACCEPTED
-        - If workrequest does not exist, returns 404 NOT FOUND
+        Gets the details of a specified IAM work request. The workRequestID is returned in the opc-workrequest-id header for any asynchronous operation in the Identity and Access Management service.
 
 
         :param str iam_work_request_id: (required)
@@ -7309,17 +7252,15 @@ class IdentityClient(object):
 
     def list_allowed_domain_license_types(self, **kwargs):
         """
-        List the allowed domain license types supported by OCI
-        If {@code currentLicenseTypeName} provided, returns allowed license types a domain with the specified license type name can migrate to.
-        If {@code name} is provided, it filters and returns resources that match the given license type name.
-        Otherwise, returns all valid license types that are currently supported.
+        (For tenancies that support identity domains) Lists the license types for identity domains supported by Oracle Cloud Infrastructure.
+        (License types are also referred to as domain types.)
 
-        - If license type details are retrieved sucessfully, return 202 ACCEPTED.
-        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+        If `currentLicenseTypeName` is provided, then the request returns license types that the identity domain with the specified license
+        type name can change to. Otherwise, the request returns all valid license types currently supported.
 
 
         :param str current_license_type_name: (optional)
-            The domain license type
+            The license type of the identity domain.
 
         :param str opc_request_id: (optional)
             Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -7990,7 +7931,7 @@ class IdentityClient(object):
         Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
         cost-tracking tags, see `Using Cost-tracking Tags`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#costs
+        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/usingcosttrackingtags.htm
 
 
         :param str compartment_id: (required)
@@ -8304,30 +8245,29 @@ class IdentityClient(object):
 
     def list_domains(self, compartment_id, **kwargs):
         """
-        List all domains that are homed or have a replica region in current region.
-        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+        (For tenancies that support identity domains) Lists all identity domains within a tenancy.
 
 
         :param str compartment_id: (required)
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str display_name: (optional)
-            The mutable display name of the domain
+            The mutable display name of the identity domain.
 
         :param str url: (optional)
-            The region agnostic domain URL
+            The region-agnostic identity domain URL.
 
         :param str home_region_url: (optional)
-            The region specific domain URL
+            The region-specific identity domain URL.
 
         :param str type: (optional)
-            The domain type
+            The identity domain type.
 
         :param str license_type: (optional)
-            The domain license type
+            The license type of the identity domain.
 
         :param bool is_hidden_on_login: (optional)
-            Indicate if the domain is visible at login screen or not
+            Indicates whether or not the identity domain is visible at the sign-in screen.
 
         :param str page: (optional)
             The value of the `opc-next-page` response header from the previous \"List\" call.
@@ -8361,7 +8301,7 @@ class IdentityClient(object):
             particular request, please provide the request ID.
 
         :param str lifecycle_state: (optional)
-            A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
+            A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
 
             Allowed values are: "CREATING", "ACTIVE", "DELETING", "INACTIVE"
 
@@ -8633,7 +8573,7 @@ class IdentityClient(object):
             The OCID of the compartment (remember that the tenancy is simply the root compartment).
 
         :param str availability_domain: (required)
-            The name of the availibilityDomain.
+            The name of the availabilityDomain.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -8841,11 +8781,7 @@ class IdentityClient(object):
 
     def list_iam_work_request_errors(self, iam_work_request_id, **kwargs):
         """
-        Gets error details for a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
-        iam work request id that can be provided in this API to track the current status of the operation.
-
-        - If workrequest exists, returns 202 ACCEPTED
-        - If workrequest does not exist, returns 404 NOT FOUND
+        Gets error details for a specified IAM work request. The workRequestID is returned in the opc-workrequest-id header for any asynchronous operation in the Identity and Access Management service.
 
 
         :param str iam_work_request_id: (required)
@@ -8961,11 +8897,7 @@ class IdentityClient(object):
 
     def list_iam_work_request_logs(self, iam_work_request_id, **kwargs):
         """
-        Gets logs for a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
-        iam work request id that can be provided in this API to track the current status of the operation.
-
-        - If workrequest exists, returns 202 ACCEPTED
-        - If workrequest does not exist, returns 404 NOT FOUND
+        Gets logs for a specified IAM work request. The workRequestID is returned in the opc-workrequest-id header for any asynchronous operation in the Identity and Access Management service.
 
 
         :param str iam_work_request_id: (required)
@@ -9081,10 +9013,7 @@ class IdentityClient(object):
 
     def list_iam_work_requests(self, compartment_id, **kwargs):
         """
-        List the IAM work requests in compartment
-
-        - If IAM workrequest  details are retrieved sucessfully, return 202 ACCEPTED.
-        - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+        Lists the IAM work requests in compartment. The workRequestID is returned in the opc-workrequest-id header for any asynchronous operation in the Identity and Access Management service.
 
 
         :param str compartment_id: (required)
@@ -11387,7 +11316,7 @@ class IdentityClient(object):
         are aware of the implications for the compartment contents before you move it. For more
         information, see `Moving a Compartment`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcompartments.htm#MoveCompartment
+        __ https://docs.cloud.oracle.com/Content/Identity/compartments/managingcompartments.htm#MoveCompartment
 
 
         :param str compartment_id: (required)
@@ -11837,7 +11766,7 @@ class IdentityClient(object):
 
     def update_authentication_policy(self, compartment_id, update_authentication_policy_details, **kwargs):
         """
-        Updates authentication policy for the specified tenancy
+        Updates authentication policy for the specified tenancy.
 
 
         :param str compartment_id: (required)
@@ -12026,7 +11955,7 @@ class IdentityClient(object):
             The OCID of the user.
 
         :param str customer_secret_key_id: (required)
-            The OCID of the secret key.
+            The access token of the secret key.
 
         :param oci.identity.models.UpdateCustomerSecretKeyDetails update_customer_secret_key_details: (required)
             Request object for updating a secret key.
@@ -12114,25 +12043,17 @@ class IdentityClient(object):
 
     def update_domain(self, domain_id, update_domain_details, **kwargs):
         """
-        Updates domain information and associated stripe. This is an asynchronous call where
-        the associated stripe and domain are updated.
+        (For tenancies that support identity domains) Updates identity domain information and the associated Identity Cloud Service (IDCS) stripe.
 
-        To track progress, HTTP GET on /iamWorkRequests/{iamWorkRequestsId} endpoint will provide
-        the async operation's status.
-
-        - If the {@code displayName} is not unique within the tenancy, returns 400 BAD REQUEST.
-        - If any field other than {@code description} is requested to be updated for DEFAULT domain,
-        returns 400 BAD REQUEST.
-        - If Domain is not active or being updated, returns 400 BAD REQUEST.
-        - If Domain {@code type} is DEFAULT or DEFAULT_LIGHTWEIGHT, return 400 BAD Request
-        - If the domain doesn't exists, returns 404 NOT FOUND.
+        To track the progress of the request, submitting an HTTP GET on the /iamWorkRequests/{iamWorkRequestsId} endpoint retrieves
+        the operation's status.
 
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param oci.identity.models.UpdateDomainDetails update_domain_details: (required)
-            Request object for updating the Domain.
+            Request object for updating the identity domain.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call for a resource, set the `if-match`
@@ -13283,7 +13204,7 @@ class IdentityClient(object):
 
         You can't add a namespace with the same name as a retired namespace in the same tenancy.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
+        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys
 
 
         :param str tag_namespace_id: (required)

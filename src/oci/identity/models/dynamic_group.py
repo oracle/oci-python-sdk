@@ -23,7 +23,7 @@ class DynamicGroup(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using
     the API.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingdynamicgroups.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/dynamicgroups/managingdynamicgroups.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a DynamicGroup.
@@ -211,6 +211,8 @@ class DynamicGroup(object):
         **[Required]** Gets the description of this DynamicGroup.
         The description you assign to the group. Does not have to be unique, and it's changeable.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The description of this DynamicGroup.
         :rtype: str
@@ -222,6 +224,8 @@ class DynamicGroup(object):
         """
         Sets the description of this DynamicGroup.
         The description you assign to the group. Does not have to be unique, and it's changeable.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param description: The description of this DynamicGroup.
@@ -236,7 +240,7 @@ class DynamicGroup(object):
         A rule string that defines which instance certificates will be matched.
         For syntax, see `Managing Dynamic Groups`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingdynamicgroups.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/dynamicgroups/managingdynamicgroups.htm
 
 
         :return: The matching_rule of this DynamicGroup.
@@ -251,7 +255,7 @@ class DynamicGroup(object):
         A rule string that defines which instance certificates will be matched.
         For syntax, see `Managing Dynamic Groups`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingdynamicgroups.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/dynamicgroups/managingdynamicgroups.htm
 
 
         :param matching_rule: The matching_rule of this DynamicGroup.

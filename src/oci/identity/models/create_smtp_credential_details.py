@@ -39,6 +39,8 @@ class CreateSmtpCredentialDetails(object):
         **[Required]** Gets the description of this CreateSmtpCredentialDetails.
         The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The description of this CreateSmtpCredentialDetails.
         :rtype: str
@@ -50,6 +52,8 @@ class CreateSmtpCredentialDetails(object):
         """
         Sets the description of this CreateSmtpCredentialDetails.
         The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param description: The description of this CreateSmtpCredentialDetails.

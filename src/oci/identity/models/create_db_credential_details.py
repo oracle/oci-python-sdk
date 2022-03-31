@@ -70,6 +70,8 @@ class CreateDbCredentialDetails(object):
         **[Required]** Gets the description of this CreateDbCredentialDetails.
         The description you assign to the DB credentials during creation.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The description of this CreateDbCredentialDetails.
         :rtype: str
@@ -81,6 +83,8 @@ class CreateDbCredentialDetails(object):
         """
         Sets the description of this CreateDbCredentialDetails.
         The description you assign to the DB credentials during creation.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param description: The description of this CreateDbCredentialDetails.

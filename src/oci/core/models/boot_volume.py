@@ -453,7 +453,7 @@ class BootVolume(object):
     def vpus_per_gb(self):
         """
         Gets the vpus_per_gb of this BootVolume.
-        The number of volume performance units (VPUs) that will be applied to this boot volume per GB,
+        The number of volume performance units (VPUs) that will be applied to this volume per GB,
         representing the Block Volume service's elastic performance options.
         See `Block Volume Performance Levels`__ for more information.
 
@@ -464,8 +464,6 @@ class BootVolume(object):
           * `20`: Represents Higher Performance option.
 
           * `30`-`120`: Represents the Ultra High Performance option.
-
-        For volumes with the auto-tuned performance feature enabled, this is set to the default (minimum) VPUs/GB.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
@@ -479,7 +477,7 @@ class BootVolume(object):
     def vpus_per_gb(self, vpus_per_gb):
         """
         Sets the vpus_per_gb of this BootVolume.
-        The number of volume performance units (VPUs) that will be applied to this boot volume per GB,
+        The number of volume performance units (VPUs) that will be applied to this volume per GB,
         representing the Block Volume service's elastic performance options.
         See `Block Volume Performance Levels`__ for more information.
 
@@ -490,8 +488,6 @@ class BootVolume(object):
           * `20`: Represents Higher Performance option.
 
           * `30`-`120`: Represents the Ultra High Performance option.
-
-        For volumes with the auto-tuned performance feature enabled, this is set to the default (minimum) VPUs/GB.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
@@ -683,8 +679,7 @@ class BootVolume(object):
     def is_auto_tune_enabled(self):
         """
         Gets the is_auto_tune_enabled of this BootVolume.
-        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
-        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        Specifies whether the auto-tune performance is enabled for this boot volume.
 
 
         :return: The is_auto_tune_enabled of this BootVolume.
@@ -696,8 +691,7 @@ class BootVolume(object):
     def is_auto_tune_enabled(self, is_auto_tune_enabled):
         """
         Sets the is_auto_tune_enabled of this BootVolume.
-        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
-        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        Specifies whether the auto-tune performance is enabled for this boot volume.
 
 
         :param is_auto_tune_enabled: The is_auto_tune_enabled of this BootVolume.
@@ -709,7 +703,7 @@ class BootVolume(object):
     def auto_tuned_vpus_per_gb(self):
         """
         Gets the auto_tuned_vpus_per_gb of this BootVolume.
-        The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
+        The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
 
 
         :return: The auto_tuned_vpus_per_gb of this BootVolume.
@@ -721,7 +715,7 @@ class BootVolume(object):
     def auto_tuned_vpus_per_gb(self, auto_tuned_vpus_per_gb):
         """
         Sets the auto_tuned_vpus_per_gb of this BootVolume.
-        The number of Volume Performance Units per GB that this boot volume is effectively tuned to.
+        The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
 
 
         :param auto_tuned_vpus_per_gb: The auto_tuned_vpus_per_gb of this BootVolume.

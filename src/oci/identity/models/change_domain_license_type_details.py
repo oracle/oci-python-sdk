@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeDomainLicenseTypeDetails(object):
     """
-    Update domain license type
+    (For tenancies that support identity domains) Details for updating the license type of the identity domain.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class ChangeDomainLicenseTypeDetails(object):
     def license_type(self):
         """
         Gets the license_type of this ChangeDomainLicenseTypeDetails.
-        The License type of Domain
+        The license type of the identity domain.
 
 
         :return: The license_type of this ChangeDomainLicenseTypeDetails.
@@ -49,7 +49,7 @@ class ChangeDomainLicenseTypeDetails(object):
     def license_type(self, license_type):
         """
         Sets the license_type of this ChangeDomainLicenseTypeDetails.
-        The License type of Domain
+        The license type of the identity domain.
 
 
         :param license_type: The license_type of this ChangeDomainLicenseTypeDetails.

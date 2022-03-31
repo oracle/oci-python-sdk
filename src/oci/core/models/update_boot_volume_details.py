@@ -209,8 +209,6 @@ class UpdateBootVolumeDetails(object):
 
           * `30`-`120`: Represents the Ultra High Performance option.
 
-        For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
-
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
@@ -235,8 +233,6 @@ class UpdateBootVolumeDetails(object):
 
           * `30`-`120`: Represents the Ultra High Performance option.
 
-        For performance autotune enabled volumes, It would be the Default(Minimum) VPUs/GB.
-
         __ https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels
 
 
@@ -249,8 +245,7 @@ class UpdateBootVolumeDetails(object):
     def is_auto_tune_enabled(self):
         """
         Gets the is_auto_tune_enabled of this UpdateBootVolumeDetails.
-        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
-        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        Specifies whether the auto-tune performance is enabled for this boot volume.
 
 
         :return: The is_auto_tune_enabled of this UpdateBootVolumeDetails.
@@ -262,8 +257,7 @@ class UpdateBootVolumeDetails(object):
     def is_auto_tune_enabled(self, is_auto_tune_enabled):
         """
         Sets the is_auto_tune_enabled of this UpdateBootVolumeDetails.
-        Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated.
-        Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+        Specifies whether the auto-tune performance is enabled for this boot volume.
 
 
         :param is_auto_tune_enabled: The is_auto_tune_enabled of this UpdateBootVolumeDetails.

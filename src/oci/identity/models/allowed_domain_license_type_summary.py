@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AllowedDomainLicenseTypeSummary(object):
     """
-    The 'AllowedDomainLicenseTypeSummary' object contains information about the 'Domain License type'.
+    (For tenancies that support identity domains) The 'AllowedDomainLicenseTypeSummary' object contains information about the license type of the identity domain.
     """
 
     def __init__(self, **kwargs):

@@ -4242,6 +4242,8 @@ class ComputeClient(object):
 
 
 
+        - **DIAGNOSTICREBOOT** - **This feature currently only supports virtual machines** Powers off the VM instance then rebuilds and powers it back on.
+
 
         For more information about managing instance lifecycle states, see
         `Stopping and Starting an Instance`__.
@@ -4258,7 +4260,7 @@ class ComputeClient(object):
         :param str action: (required)
             The action to perform on the instance.
 
-            Allowed values are: "STOP", "START", "SOFTRESET", "RESET", "SOFTSTOP", "SENDDIAGNOSTICINTERRUPT"
+            Allowed values are: "STOP", "START", "SOFTRESET", "RESET", "SOFTSTOP", "SENDDIAGNOSTICINTERRUPT", "DIAGNOSTICREBOOT"
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or

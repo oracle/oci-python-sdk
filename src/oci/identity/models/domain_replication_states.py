@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DomainReplicationStates(object):
     """
-    Domain replication replication log for all domains for a given region
+    (For tenancies that support identity domains) The identity domain replication log for all identity domains for a given region.
     """
 
     #: A constant which can be used with the state property of a DomainReplicationStates.
@@ -72,7 +72,7 @@ class DomainReplicationStates(object):
     def domain_id(self):
         """
         **[Required]** Gets the domain_id of this DomainReplicationStates.
-        The OCID of the domain
+        The OCID of the identity domain.
 
 
         :return: The domain_id of this DomainReplicationStates.
@@ -84,7 +84,7 @@ class DomainReplicationStates(object):
     def domain_id(self, domain_id):
         """
         Sets the domain_id of this DomainReplicationStates.
-        The OCID of the domain
+        The OCID of the identity domain.
 
 
         :param domain_id: The domain_id of this DomainReplicationStates.
@@ -96,7 +96,7 @@ class DomainReplicationStates(object):
     def state(self):
         """
         **[Required]** Gets the state of this DomainReplicationStates.
-        The IDCS replicated region state
+        The IDCS-replicated region state.
 
         Allowed values for this property are: "ENABLING_REPLICATION", "REPLICATION_ENABLED", "DISABLING_REPLICATION", "REPLICATION_DISABLED", "DELETED"
 
@@ -110,7 +110,7 @@ class DomainReplicationStates(object):
     def state(self, state):
         """
         Sets the state of this DomainReplicationStates.
-        The IDCS replicated region state
+        The IDCS-replicated region state.
 
 
         :param state: The state of this DomainReplicationStates.
@@ -128,7 +128,7 @@ class DomainReplicationStates(object):
     def replica_region(self):
         """
         **[Required]** Gets the replica_region of this DomainReplicationStates.
-        The replica region for domain.
+        The replica region for the identity domain.
 
 
         :return: The replica_region of this DomainReplicationStates.
@@ -140,7 +140,7 @@ class DomainReplicationStates(object):
     def replica_region(self, replica_region):
         """
         Sets the replica_region of this DomainReplicationStates.
-        The replica region for domain.
+        The replica region for the identity domain.
 
 
         :param replica_region: The replica_region of this DomainReplicationStates.

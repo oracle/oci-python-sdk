@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ReplicatedRegionDetails(object):
     """
-    Properties for a region where a domain is replicated too.
+    (For tenancies that support identity domains) Properties for a region where a replica for the identity domain exists.
     """
 
     #: A constant which can be used with the state property of a ReplicatedRegionDetails.
@@ -105,7 +105,7 @@ class ReplicatedRegionDetails(object):
     def url(self):
         """
         Gets the url of this ReplicatedRegionDetails.
-        Region agnostic domain URL.
+        Region-agnostic identity domain URL.
 
 
         :return: The url of this ReplicatedRegionDetails.
@@ -117,7 +117,7 @@ class ReplicatedRegionDetails(object):
     def url(self, url):
         """
         Sets the url of this ReplicatedRegionDetails.
-        Region agnostic domain URL.
+        Region-agnostic identity domain URL.
 
 
         :param url: The url of this ReplicatedRegionDetails.
@@ -129,7 +129,7 @@ class ReplicatedRegionDetails(object):
     def state(self):
         """
         Gets the state of this ReplicatedRegionDetails.
-        The IDCS replicated region state
+        The IDCS-replicated region state.
 
         Allowed values for this property are: "ENABLING_REPLICATION", "REPLICATION_ENABLED", "DISABLING_REPLICATION", "REPLICATION_DISABLED", "DELETED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -144,7 +144,7 @@ class ReplicatedRegionDetails(object):
     def state(self, state):
         """
         Sets the state of this ReplicatedRegionDetails.
-        The IDCS replicated region state
+        The IDCS-replicated region state.
 
 
         :param state: The state of this ReplicatedRegionDetails.

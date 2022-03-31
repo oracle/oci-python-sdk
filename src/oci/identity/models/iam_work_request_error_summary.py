@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IamWorkRequestErrorSummary(object):
     """
-    An error encountered while executing an operation that is tracked by a IAM work request.
+    (For tenancies that support identity domains) An error encountered while executing an operation that is tracked by a IAM work request.
     """
 
     def __init__(self, **kwargs):

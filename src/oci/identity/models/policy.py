@@ -12,8 +12,8 @@ class Policy(object):
     """
     A document that specifies the type of access a group has to the resources in a compartment. For information about
     policies and other IAM Service components, see
-    `Overview of the IAM Service`__. If you're new to policies, see
-    `Getting Started with Policies`__.
+    `Overview of IAM`__. If you're new to policies, see
+    `Get Started with Policies`__.
 
     The word \"policy\" is used by people in different ways:
 
@@ -27,8 +27,8 @@ class Policy(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
     using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/getstarted/identity-domains.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Policy.

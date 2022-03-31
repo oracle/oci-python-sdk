@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IamWorkRequestSummary(object):
     """
-    The IAM work request summary. Tracks the status of the asynchronous operations.
+    (For tenancies that support identity domains) The IAM work request summary. Tracks the status of asynchronous operations.
     """
 
     #: A constant which can be used with the operation_type property of a IamWorkRequestSummary.
@@ -207,7 +207,7 @@ class IamWorkRequestSummary(object):
     def status(self):
         """
         **[Required]** Gets the status of this IamWorkRequestSummary.
-        Status of the work request
+        The status of the work request.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -222,7 +222,7 @@ class IamWorkRequestSummary(object):
     def status(self, status):
         """
         Sets the status of this IamWorkRequestSummary.
-        Status of the work request
+        The status of the work request.
 
 
         :param status: The status of this IamWorkRequestSummary.

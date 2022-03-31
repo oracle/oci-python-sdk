@@ -22,7 +22,7 @@ class BaseTagDefinitionValidator(object):
     To clear the validator call UpdateTag with
     `DefaultTagDefinitionValidator`__.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Limits
+    __ https://docs.cloud.oracle.com/Content/Tagging/Concepts/taggingoverview.htm#limits
     __ https://docs.cloud.oracle.com/api/#/en/identity/latest/datatypes/DefaultTagDefinitionValidator
     """
 

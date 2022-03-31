@@ -60,6 +60,8 @@ class UpdateDynamicGroupDetails(object):
         Gets the description of this UpdateDynamicGroupDetails.
         The description you assign to the dynamic group. Does not have to be unique, and it's changeable.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The description of this UpdateDynamicGroupDetails.
         :rtype: str
@@ -71,6 +73,8 @@ class UpdateDynamicGroupDetails(object):
         """
         Sets the description of this UpdateDynamicGroupDetails.
         The description you assign to the dynamic group. Does not have to be unique, and it's changeable.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param description: The description of this UpdateDynamicGroupDetails.
@@ -85,7 +89,7 @@ class UpdateDynamicGroupDetails(object):
         The matching rule to dynamically match an instance certificate to this dynamic group.
         For rule syntax, see `Managing Dynamic Groups`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingdynamicgroups.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/dynamicgroups/managingdynamicgroups.htm
 
 
         :return: The matching_rule of this UpdateDynamicGroupDetails.
@@ -100,7 +104,7 @@ class UpdateDynamicGroupDetails(object):
         The matching rule to dynamically match an instance certificate to this dynamic group.
         For rule syntax, see `Managing Dynamic Groups`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingdynamicgroups.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/dynamicgroups/managingdynamicgroups.htm
 
 
         :param matching_rule: The matching_rule of this UpdateDynamicGroupDetails.
