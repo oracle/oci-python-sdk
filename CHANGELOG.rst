@@ -4,12 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.62.1 - TBD
+2.62.1 - 2022-04-05
 ====================
 
 Added
 -----
-* TBD
+* Fixed the lifecycle state values for target databases in the Data Safe service
+* Support for content length and content type response headers when downloading PDFs in the Account Management service
+* Support for creating Enterprise Manager-based zLinux host targets, creating alarms, and viewing top process analytics in the Operations Insights service
+* Support for diagnostic reboots on VM instances in the Compute service
 
 ====================
 2.62.0 - 2022-03-29
