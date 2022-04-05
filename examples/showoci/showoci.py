@@ -342,9 +342,8 @@ def set_parser_arguments(argsList=[]):
             try:
                 result = parser.parse_args(args=argsList)
                 return result
-            except:
+            except Exception:
                 return None
-
 
     if len(sys.argv) < 2:
         parser.print_help()
@@ -503,3 +502,4 @@ def print_to_json_file(output, file_name, data, header):
 ##########################################################################
 if __name__ == "__main__":
     execute_extract()
+
