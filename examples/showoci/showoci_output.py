@@ -2648,7 +2648,7 @@ class ShowOCISummary(object):
     ############################################
     def __init__(self):
 
-        # Initate summary objects everytime class is instantiated
+        # Initiate summary objects every time class is instantiated
         self.summary_global_list = []
         self.summary_global_data = []
         self.summary_global_region_total = []

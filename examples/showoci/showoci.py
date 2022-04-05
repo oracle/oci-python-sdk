@@ -343,7 +343,7 @@ def set_parser_arguments(argsList=[]):
                 result = parser.parse_args(args=argsList)
                 return result
             except:
-                return False
+                return None
 
 
     if len(sys.argv) < 2:

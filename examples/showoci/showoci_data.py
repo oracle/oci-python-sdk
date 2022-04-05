@@ -41,7 +41,7 @@ class ShowOCIData(object):
         # initiate service object
         self.service = ShowOCIService(flags)
 
-        # Initate data list everytime class is instantiated
+        # Initiate data list everytime class is instantiated
         self.data = []
 
     ############################################
