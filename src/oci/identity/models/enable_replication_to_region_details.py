@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class EnableReplicationToRegionDetails(object):
     """
-    Domain replication request packet
+    (For tenancies that support identity domains) Identity domain replication request packet.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class EnableReplicationToRegionDetails(object):
     def replica_region(self):
         """
         Gets the replica_region of this EnableReplicationToRegionDetails.
-        A region for which domain replication is requested for.
+        A region to which you want identity domain replication to occur.
         See `Regions and Availability Domains`__
         for the full list of supported region names.
 
@@ -55,7 +55,7 @@ class EnableReplicationToRegionDetails(object):
     def replica_region(self, replica_region):
         """
         Sets the replica_region of this EnableReplicationToRegionDetails.
-        A region for which domain replication is requested for.
+        A region to which you want identity domain replication to occur.
         See `Regions and Availability Domains`__
         for the full list of supported region names.
 

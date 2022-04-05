@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateDomainDetails(object):
     """
-    Update domain details
+    (For tenancies that support identity domains) Update identity domain details.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class UpdateDomainDetails(object):
     def description(self):
         """
         Gets the description of this UpdateDomainDetails.
-        The domain description
+        The identity domain description. You can have an empty description.
 
 
         :return: The description of this UpdateDomainDetails.
@@ -77,7 +77,7 @@ class UpdateDomainDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateDomainDetails.
-        The domain description
+        The identity domain description. You can have an empty description.
 
 
         :param description: The description of this UpdateDomainDetails.
@@ -89,7 +89,7 @@ class UpdateDomainDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateDomainDetails.
-        The mutable display name of the domain
+        The mutable display name of the identity domain.
 
 
         :return: The display_name of this UpdateDomainDetails.
@@ -101,7 +101,7 @@ class UpdateDomainDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateDomainDetails.
-        The mutable display name of the domain
+        The mutable display name of the identity domain.
 
 
         :param display_name: The display_name of this UpdateDomainDetails.
@@ -113,7 +113,7 @@ class UpdateDomainDetails(object):
     def is_hidden_on_login(self):
         """
         Gets the is_hidden_on_login of this UpdateDomainDetails.
-        Indicates whether domain is hidden on login screen or not.
+        Indicates whether the identity domain is hidden on the sign-in screen or not.
 
 
         :return: The is_hidden_on_login of this UpdateDomainDetails.
@@ -125,7 +125,7 @@ class UpdateDomainDetails(object):
     def is_hidden_on_login(self, is_hidden_on_login):
         """
         Sets the is_hidden_on_login of this UpdateDomainDetails.
-        Indicates whether domain is hidden on login screen or not.
+        Indicates whether the identity domain is hidden on the sign-in screen or not.
 
 
         :param is_hidden_on_login: The is_hidden_on_login of this UpdateDomainDetails.

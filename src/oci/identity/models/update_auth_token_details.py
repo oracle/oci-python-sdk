@@ -39,6 +39,8 @@ class UpdateAuthTokenDetails(object):
         Gets the description of this UpdateAuthTokenDetails.
         The description you assign to the auth token. Does not have to be unique, and it's changeable.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The description of this UpdateAuthTokenDetails.
         :rtype: str
@@ -50,6 +52,8 @@ class UpdateAuthTokenDetails(object):
         """
         Sets the description of this UpdateAuthTokenDetails.
         The description you assign to the auth token. Does not have to be unique, and it's changeable.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param description: The description of this UpdateAuthTokenDetails.

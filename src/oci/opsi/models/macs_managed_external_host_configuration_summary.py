@@ -38,7 +38,7 @@ class MacsManagedExternalHostConfigurationSummary(HostConfigurationSummary):
 
         :param platform_type:
             The value to assign to the platform_type property of this MacsManagedExternalHostConfigurationSummary.
-            Allowed values for this property are: "LINUX", "SOLARIS", "SUNOS"
+            Allowed values for this property are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
         :type platform_type: str
 
         :param platform_version:

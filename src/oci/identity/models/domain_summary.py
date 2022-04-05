@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DomainSummary(object):
     """
-    As the name suggests, a `DomainSummary` object contains information about a `Domain`.
+    (For tenancies that support identity domains) As the name suggests, a `DomainSummary` object contains information about a `Domain`.
     """
 
     #: A constant which can be used with the type property of a DomainSummary.
@@ -184,7 +184,7 @@ class DomainSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this DomainSummary.
-        The OCID of the domain
+        The OCID of the identity domain.
 
 
         :return: The id of this DomainSummary.
@@ -196,7 +196,7 @@ class DomainSummary(object):
     def id(self, id):
         """
         Sets the id of this DomainSummary.
-        The OCID of the domain
+        The OCID of the identity domain.
 
 
         :param id: The id of this DomainSummary.
@@ -208,7 +208,7 @@ class DomainSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this DomainSummary.
-        The OCID of the comparment containing the domain.
+        The OCID of the compartment containing the identity domain.
 
 
         :return: The compartment_id of this DomainSummary.
@@ -220,7 +220,7 @@ class DomainSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this DomainSummary.
-        The OCID of the comparment containing the domain.
+        The OCID of the compartment containing the identity domain.
 
 
         :param compartment_id: The compartment_id of this DomainSummary.
@@ -232,7 +232,7 @@ class DomainSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this DomainSummary.
-        The mutable display name of the domain
+        The mutable display name of the identity domain.
 
 
         :return: The display_name of this DomainSummary.
@@ -244,7 +244,7 @@ class DomainSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this DomainSummary.
-        The mutable display name of the domain
+        The mutable display name of the identity domain.
 
 
         :param display_name: The display_name of this DomainSummary.
@@ -256,7 +256,7 @@ class DomainSummary(object):
     def description(self):
         """
         **[Required]** Gets the description of this DomainSummary.
-        The domain descripition
+        The identity domain description. You can have an empty description.
 
 
         :return: The description of this DomainSummary.
@@ -268,7 +268,7 @@ class DomainSummary(object):
     def description(self, description):
         """
         Sets the description of this DomainSummary.
-        The domain descripition
+        The identity domain description. You can have an empty description.
 
 
         :param description: The description of this DomainSummary.
@@ -280,7 +280,7 @@ class DomainSummary(object):
     def url(self):
         """
         **[Required]** Gets the url of this DomainSummary.
-        Region agnostic domain URL.
+        Region-agnostic identity domain URL.
 
 
         :return: The url of this DomainSummary.
@@ -292,7 +292,7 @@ class DomainSummary(object):
     def url(self, url):
         """
         Sets the url of this DomainSummary.
-        Region agnostic domain URL.
+        Region-agnostic identity domain URL.
 
 
         :param url: The url of this DomainSummary.
@@ -304,7 +304,7 @@ class DomainSummary(object):
     def home_region_url(self):
         """
         **[Required]** Gets the home_region_url of this DomainSummary.
-        Region specific domain URL.
+        Region-specific identity domain URL.
 
 
         :return: The home_region_url of this DomainSummary.
@@ -316,7 +316,7 @@ class DomainSummary(object):
     def home_region_url(self, home_region_url):
         """
         Sets the home_region_url of this DomainSummary.
-        Region specific domain URL.
+        Region-specific identity domain URL.
 
 
         :param home_region_url: The home_region_url of this DomainSummary.
@@ -328,7 +328,7 @@ class DomainSummary(object):
     def home_region(self):
         """
         **[Required]** Gets the home_region of this DomainSummary.
-        The home region for the domain.
+        The home region for the identity domain.
 
 
         :return: The home_region of this DomainSummary.
@@ -340,7 +340,7 @@ class DomainSummary(object):
     def home_region(self, home_region):
         """
         Sets the home_region of this DomainSummary.
-        The home region for the domain.
+        The home region for the identity domain.
 
 
         :param home_region: The home_region of this DomainSummary.
@@ -352,7 +352,7 @@ class DomainSummary(object):
     def replica_regions(self):
         """
         **[Required]** Gets the replica_regions of this DomainSummary.
-        The regions domain is replicated to.
+        The regions where replicas of the identity domain exist.
 
 
         :return: The replica_regions of this DomainSummary.
@@ -364,7 +364,7 @@ class DomainSummary(object):
     def replica_regions(self, replica_regions):
         """
         Sets the replica_regions of this DomainSummary.
-        The regions domain is replicated to.
+        The regions where replicas of the identity domain exist.
 
 
         :param replica_regions: The replica_regions of this DomainSummary.
@@ -376,7 +376,7 @@ class DomainSummary(object):
     def type(self):
         """
         **[Required]** Gets the type of this DomainSummary.
-        The type of the domain.
+        The type of the identity domain.
 
         Allowed values for this property are: "DEFAULT", "SECONDARY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -391,7 +391,7 @@ class DomainSummary(object):
     def type(self, type):
         """
         Sets the type of this DomainSummary.
-        The type of the domain.
+        The type of the identity domain.
 
 
         :param type: The type of this DomainSummary.
@@ -406,7 +406,7 @@ class DomainSummary(object):
     def license_type(self):
         """
         **[Required]** Gets the license_type of this DomainSummary.
-        The License type of Domain
+        The license type of the identity domain.
 
 
         :return: The license_type of this DomainSummary.
@@ -418,7 +418,7 @@ class DomainSummary(object):
     def license_type(self, license_type):
         """
         Sets the license_type of this DomainSummary.
-        The License type of Domain
+        The license type of the identity domain.
 
 
         :param license_type: The license_type of this DomainSummary.
@@ -430,7 +430,7 @@ class DomainSummary(object):
     def is_hidden_on_login(self):
         """
         **[Required]** Gets the is_hidden_on_login of this DomainSummary.
-        Indicates whether domain is hidden on login screen or not.
+        Indicates whether the identity domain is hidden on the sign-in screen or not.
 
 
         :return: The is_hidden_on_login of this DomainSummary.
@@ -442,7 +442,7 @@ class DomainSummary(object):
     def is_hidden_on_login(self, is_hidden_on_login):
         """
         Sets the is_hidden_on_login of this DomainSummary.
-        Indicates whether domain is hidden on login screen or not.
+        Indicates whether the identity domain is hidden on the sign-in screen or not.
 
 
         :param is_hidden_on_login: The is_hidden_on_login of this DomainSummary.
@@ -454,7 +454,7 @@ class DomainSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this DomainSummary.
-        Date and time the domain was created, in the format defined by RFC3339.
+        Date and time the identity domain was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -468,7 +468,7 @@ class DomainSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this DomainSummary.
-        Date and time the domain was created, in the format defined by RFC3339.
+        Date and time the identity domain was created, in the format defined by RFC3339.
 
         Example: `2016-08-25T21:10:29.600Z`
 
@@ -512,7 +512,7 @@ class DomainSummary(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this DomainSummary.
-        Any additional details about the current state of the Domain.
+        Any additional details about the current state of the identity domain.
 
         Allowed values for this property are: "DEACTIVATING", "ACTIVATING", "UPDATING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -527,7 +527,7 @@ class DomainSummary(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this DomainSummary.
-        Any additional details about the current state of the Domain.
+        Any additional details about the current state of the identity domain.
 
 
         :param lifecycle_details: The lifecycle_details of this DomainSummary.

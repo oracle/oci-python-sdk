@@ -96,8 +96,8 @@ class VcnDrgAttachmentNetworkUpdateDetails(DrgAttachmentNetworkUpdateDetails):
     def vcn_route_type(self):
         """
         Gets the vcn_route_type of this VcnDrgAttachmentNetworkUpdateDetails.
-        Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.
-        Routes from the VCN Ingress Route Table are always imported.
+        Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+        Routes from the VCN ingress route table are always imported.
 
 
         :return: The vcn_route_type of this VcnDrgAttachmentNetworkUpdateDetails.
@@ -109,8 +109,8 @@ class VcnDrgAttachmentNetworkUpdateDetails(DrgAttachmentNetworkUpdateDetails):
     def vcn_route_type(self, vcn_route_type):
         """
         Sets the vcn_route_type of this VcnDrgAttachmentNetworkUpdateDetails.
-        Indicates whether the VCN CIDR(s) or the individual Subnet CIDR(s) are imported from the attachment.
-        Routes from the VCN Ingress Route Table are always imported.
+        Indicates whether the VCN CIDRs or the individual subnet CIDRs are imported from the attachment.
+        Routes from the VCN ingress route table are always imported.
 
 
         :param vcn_route_type: The vcn_route_type of this VcnDrgAttachmentNetworkUpdateDetails.

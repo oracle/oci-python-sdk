@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDomainDetails(object):
     """
-    Create a domain details
+    (For tenancies that support identity domains) Details for creating an identity domain.
     """
 
     def __init__(self, **kwargs):
@@ -128,7 +128,7 @@ class CreateDomainDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateDomainDetails.
-        The OCID of the Compartment where domain is created
+        The OCID of the compartment where the identity domain is created.
 
 
         :return: The compartment_id of this CreateDomainDetails.
@@ -140,7 +140,7 @@ class CreateDomainDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateDomainDetails.
-        The OCID of the Compartment where domain is created
+        The OCID of the compartment where the identity domain is created.
 
 
         :param compartment_id: The compartment_id of this CreateDomainDetails.
@@ -152,7 +152,7 @@ class CreateDomainDetails(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this CreateDomainDetails.
-        The mutable display name of the domain.
+        The mutable display name of the identity domain.
 
 
         :return: The display_name of this CreateDomainDetails.
@@ -164,7 +164,7 @@ class CreateDomainDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDomainDetails.
-        The mutable display name of the domain.
+        The mutable display name of the identity domain.
 
 
         :param display_name: The display_name of this CreateDomainDetails.
@@ -176,7 +176,7 @@ class CreateDomainDetails(object):
     def description(self):
         """
         **[Required]** Gets the description of this CreateDomainDetails.
-        Domain entity description
+        The identity domain description. You can have an empty description.
 
 
         :return: The description of this CreateDomainDetails.
@@ -188,7 +188,7 @@ class CreateDomainDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateDomainDetails.
-        Domain entity description
+        The identity domain description. You can have an empty description.
 
 
         :param description: The description of this CreateDomainDetails.
@@ -234,7 +234,7 @@ class CreateDomainDetails(object):
     def license_type(self):
         """
         **[Required]** Gets the license_type of this CreateDomainDetails.
-        The License type of Domain
+        The license type of the identity domain.
 
 
         :return: The license_type of this CreateDomainDetails.
@@ -246,7 +246,7 @@ class CreateDomainDetails(object):
     def license_type(self, license_type):
         """
         Sets the license_type of this CreateDomainDetails.
-        The License type of Domain
+        The license type of the identity domain.
 
 
         :param license_type: The license_type of this CreateDomainDetails.
@@ -258,7 +258,7 @@ class CreateDomainDetails(object):
     def is_hidden_on_login(self):
         """
         Gets the is_hidden_on_login of this CreateDomainDetails.
-        Indicates whether domain is hidden on login screen or not.
+        Indicates whether the identity domain is hidden on the sign-in screen or not.
 
 
         :return: The is_hidden_on_login of this CreateDomainDetails.
@@ -270,7 +270,7 @@ class CreateDomainDetails(object):
     def is_hidden_on_login(self, is_hidden_on_login):
         """
         Sets the is_hidden_on_login of this CreateDomainDetails.
-        Indicates whether domain is hidden on login screen or not.
+        Indicates whether the identity domain is hidden on the sign-in screen or not.
 
 
         :param is_hidden_on_login: The is_hidden_on_login of this CreateDomainDetails.
@@ -282,7 +282,7 @@ class CreateDomainDetails(object):
     def admin_first_name(self):
         """
         Gets the admin_first_name of this CreateDomainDetails.
-        The admin first name
+        The administrator's first name.
 
 
         :return: The admin_first_name of this CreateDomainDetails.
@@ -294,7 +294,7 @@ class CreateDomainDetails(object):
     def admin_first_name(self, admin_first_name):
         """
         Sets the admin_first_name of this CreateDomainDetails.
-        The admin first name
+        The administrator's first name.
 
 
         :param admin_first_name: The admin_first_name of this CreateDomainDetails.
@@ -306,7 +306,7 @@ class CreateDomainDetails(object):
     def admin_last_name(self):
         """
         Gets the admin_last_name of this CreateDomainDetails.
-        The admin last name
+        The administrator's last name.
 
 
         :return: The admin_last_name of this CreateDomainDetails.
@@ -318,7 +318,7 @@ class CreateDomainDetails(object):
     def admin_last_name(self, admin_last_name):
         """
         Sets the admin_last_name of this CreateDomainDetails.
-        The admin last name
+        The administrator's last name.
 
 
         :param admin_last_name: The admin_last_name of this CreateDomainDetails.
@@ -330,7 +330,7 @@ class CreateDomainDetails(object):
     def admin_user_name(self):
         """
         Gets the admin_user_name of this CreateDomainDetails.
-        The admin user name
+        The administrator's user name.
 
 
         :return: The admin_user_name of this CreateDomainDetails.
@@ -342,7 +342,7 @@ class CreateDomainDetails(object):
     def admin_user_name(self, admin_user_name):
         """
         Sets the admin_user_name of this CreateDomainDetails.
-        The admin user name
+        The administrator's user name.
 
 
         :param admin_user_name: The admin_user_name of this CreateDomainDetails.
@@ -354,7 +354,7 @@ class CreateDomainDetails(object):
     def admin_email(self):
         """
         Gets the admin_email of this CreateDomainDetails.
-        The admin email address
+        The administrator's email address.
 
 
         :return: The admin_email of this CreateDomainDetails.
@@ -366,7 +366,7 @@ class CreateDomainDetails(object):
     def admin_email(self, admin_email):
         """
         Sets the admin_email of this CreateDomainDetails.
-        The admin email address
+        The administrator's email address.
 
 
         :param admin_email: The admin_email of this CreateDomainDetails.
@@ -378,9 +378,8 @@ class CreateDomainDetails(object):
     def is_notification_bypassed(self):
         """
         Gets the is_notification_bypassed of this CreateDomainDetails.
-        Indicates if admin user created in IDCS stripe would like to receive notification like welcome email
-        or not.
-        Required field only if admin information is provided, otherwise optional.
+        Indicates whether or not the administrator user created in the IDCS stripe would like to receive notifications like a welcome email.
+        This field is required only if admin information is provided. This field is otherwise optional.
 
 
         :return: The is_notification_bypassed of this CreateDomainDetails.
@@ -392,9 +391,8 @@ class CreateDomainDetails(object):
     def is_notification_bypassed(self, is_notification_bypassed):
         """
         Sets the is_notification_bypassed of this CreateDomainDetails.
-        Indicates if admin user created in IDCS stripe would like to receive notification like welcome email
-        or not.
-        Required field only if admin information is provided, otherwise optional.
+        Indicates whether or not the administrator user created in the IDCS stripe would like to receive notifications like a welcome email.
+        This field is required only if admin information is provided. This field is otherwise optional.
 
 
         :param is_notification_bypassed: The is_notification_bypassed of this CreateDomainDetails.
@@ -406,8 +404,7 @@ class CreateDomainDetails(object):
     def is_primary_email_required(self):
         """
         Gets the is_primary_email_required of this CreateDomainDetails.
-        Optional field to indicate whether users in the domain are required to have a primary email address or not
-        Defaults to true
+        Optional field to indicate whether users in the identity domain are required to have a primary email address or not. The default is true.
 
 
         :return: The is_primary_email_required of this CreateDomainDetails.
@@ -419,8 +416,7 @@ class CreateDomainDetails(object):
     def is_primary_email_required(self, is_primary_email_required):
         """
         Sets the is_primary_email_required of this CreateDomainDetails.
-        Optional field to indicate whether users in the domain are required to have a primary email address or not
-        Defaults to true
+        Optional field to indicate whether users in the identity domain are required to have a primary email address or not. The default is true.
 
 
         :param is_primary_email_required: The is_primary_email_required of this CreateDomainDetails.

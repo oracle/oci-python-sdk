@@ -38,7 +38,7 @@ class ChangeDomainCompartmentDetails(object):
         """
         **[Required]** Gets the compartment_id of this ChangeDomainCompartmentDetails.
         The `OCID`__ of the destination compartment
-        into which to move the domain.
+        into which to move the identity domain.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
@@ -53,7 +53,7 @@ class ChangeDomainCompartmentDetails(object):
         """
         Sets the compartment_id of this ChangeDomainCompartmentDetails.
         The `OCID`__ of the destination compartment
-        into which to move the domain.
+        into which to move the identity domain.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 

@@ -29,7 +29,7 @@ class IdentityClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`
@@ -298,10 +298,10 @@ class IdentityClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param oci.identity.models.ChangeDomainCompartmentDetails change_domain_compartment_details: (required)
-            the request object for moving compartment of a domain
+            The request object for moving the identity domain to a different compartment.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`
@@ -339,10 +339,10 @@ class IdentityClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param oci.identity.models.ChangeDomainLicenseTypeDetails change_domain_license_type_details: (required)
-            the request object for domain license type update
+            The request object for an update to the license type of the identity domain.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`
@@ -418,7 +418,7 @@ class IdentityClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.identity.models.CreateDomainDetails create_domain_details: (required)
-            The request object for creating a new domain
+            The request object for creating a new identity domain.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`
@@ -842,7 +842,7 @@ class IdentityClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`
@@ -926,7 +926,7 @@ class IdentityClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`
@@ -1350,10 +1350,10 @@ class IdentityClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param oci.identity.models.EnableReplicationToRegionDetails enable_replication_to_region_details: (required)
-            the request object for region we are replicating domain region
+            The request object for replicating the identity domain to another region.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`
@@ -1587,10 +1587,10 @@ class IdentityClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str domain_id: (required)
-            The OCID of the domain
+            The OCID of the identity domain.
 
         :param oci.identity.models.UpdateDomainDetails update_domain_details: (required)
-            Request object for updating the Domain.
+            Request object for updating the identity domain.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.identity.models.WorkRequest.status`

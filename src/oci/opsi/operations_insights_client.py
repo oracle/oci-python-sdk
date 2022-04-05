@@ -5999,9 +5999,9 @@ class OperationsInsightsClient(object):
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
             Supported platformType(s) for MACS-managed external host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -6108,7 +6108,7 @@ class OperationsInsightsClient(object):
                 "list_host_configurations got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -6211,9 +6211,9 @@ class OperationsInsightsClient(object):
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
             Supported platformType(s) for MACS-managed external host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
 
         :param int limit: (optional)
             For list pagination. The maximum number of results per page, or items to
@@ -6318,7 +6318,7 @@ class OperationsInsightsClient(object):
                     )
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -6424,9 +6424,9 @@ class OperationsInsightsClient(object):
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
             Supported platformType(s) for MACS-managed external host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
 
         :param str exadata_insight_id: (optional)
             `OCID`__ of exadata insight resource.
@@ -6505,7 +6505,7 @@ class OperationsInsightsClient(object):
                 "list_hosted_entities got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -11969,9 +11969,9 @@ class OperationsInsightsClient(object):
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
             Supported platformType(s) for MACS-managed external host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
@@ -12089,7 +12089,7 @@ class OperationsInsightsClient(object):
                 "summarize_host_insight_resource_capacity_trend got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -12206,9 +12206,9 @@ class OperationsInsightsClient(object):
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
             Supported platformType(s) for MACS-managed external host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
@@ -12342,7 +12342,7 @@ class OperationsInsightsClient(object):
                 "summarize_host_insight_resource_forecast_trend got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -12461,9 +12461,9 @@ class OperationsInsightsClient(object):
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
             Supported platformType(s) for MACS-managed external host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
@@ -12595,7 +12595,7 @@ class OperationsInsightsClient(object):
                 "summarize_host_insight_resource_statistics got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -12710,9 +12710,9 @@ class OperationsInsightsClient(object):
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
             Supported platformType(s) for MACS-managed external host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
@@ -12812,7 +12812,7 @@ class OperationsInsightsClient(object):
                 "summarize_host_insight_resource_usage got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -12907,9 +12907,9 @@ class OperationsInsightsClient(object):
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
             Supported platformType(s) for MACS-managed external host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
@@ -13017,7 +13017,7 @@ class OperationsInsightsClient(object):
                 "summarize_host_insight_resource_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -13126,9 +13126,9 @@ class OperationsInsightsClient(object):
         :param list[str] platform_type: (optional)
             Filter by one or more platform types.
             Supported platformType(s) for MACS-managed external host insight: [LINUX].
-            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS].
+            Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
 
-            Allowed values are: "LINUX", "SOLARIS", "SUNOS"
+            Allowed values are: "LINUX", "SOLARIS", "SUNOS", "ZLINUX"
 
         :param list[str] id: (optional)
             Optional list of host insight resource `OCIDs`__.
@@ -13228,7 +13228,7 @@ class OperationsInsightsClient(object):
                 "summarize_host_insight_resource_utilization_insight got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'platform_type' in kwargs:
-            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS"]
+            platform_type_allowed_values = ["LINUX", "SOLARIS", "SUNOS", "ZLINUX"]
             for platform_type_item in kwargs['platform_type']:
                 if platform_type_item not in platform_type_allowed_values:
                     raise ValueError(
@@ -13284,6 +13284,146 @@ class OperationsInsightsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 response_type="SummarizeHostInsightResourceUtilizationInsightAggregation")
+
+    def summarize_host_insight_top_processes_usage_trend(self, compartment_id, id, resource_metric, **kwargs):
+        """
+        Returns response with aggregated time series data (timeIntervalstart, timeIntervalEnd, commandArgs, usageData) for top processes.
+        Data is aggregated for the time period specified and proceses are sorted descendent by the proces metric specified (CPU, MEMORY, VIRTUAL_MEMORY).
+        HostInsight Id and Process metric must be specified
+
+
+        :param str compartment_id: (required)
+            The `OCID`__ of the compartment.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str id: (required)
+            Required `OCID`__ of the host insight resource.
+
+            __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
+
+        :param str resource_metric: (required)
+            Host top processes resource metric sort options.
+            Supported values are CPU, MEMORY, VIIRTUAL_MEMORY.
+
+        :param str analysis_time_interval: (optional)
+            Specify time period in ISO 8601 format with respect to current time.
+            Default is last 30 days represented by P30D.
+            If timeInterval is specified, then timeIntervalStart and timeIntervalEnd will be ignored.
+            Examples  P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months), . Maximum value allowed is 25 months prior to current time (P25M).
+
+        :param datetime time_interval_start: (optional)
+            Analysis start time in UTC in ISO 8601 format(inclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            The minimum allowed value is 2 years prior to the current day.
+            timeIntervalStart and timeIntervalEnd parameters are used together.
+            If analysisTimeInterval is specified, this parameter is ignored.
+
+        :param datetime time_interval_end: (optional)
+            Analysis end time in UTC in ISO 8601 format(exclusive).
+            Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+            timeIntervalStart and timeIntervalEnd are used together.
+            If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+
+        :param str page: (optional)
+            For list pagination. The value of the `opc-next-page` response header from
+            the previous \"List\" call. For important details about how pagination works,
+            see `List Pagination`__.
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param int limit: (optional)
+            For list pagination. The maximum number of results per page, or items to
+            return in a paginated \"List\" call.
+            For important details about how pagination works, see
+            `List Pagination`__.
+            Example: `50`
+
+            __ https://docs.cloud.oracle.com/Content/API/Concepts/usingapi.htm#nine
+
+        :param str opc_request_id: (optional)
+            Unique Oracle-assigned identifier for the request. If you need to contact
+            Oracle about a particular request, please provide the request ID.
+
+        :param obj retry_strategy: (optional)
+            A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
+
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
+
+            To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
+
+        :param bool allow_control_chars: (optional)
+            allow_control_chars is a boolean to indicate whether or not this request should allow control characters in the response object.
+            By default, the response will not allow control characters in strings
+
+        :return: A :class:`~oci.response.Response` object with data of type :class:`~oci.opsi.models.SummarizeHostInsightsTopProcessesUsageTrendCollection`
+        :rtype: :class:`~oci.response.Response`
+
+        :example:
+        Click `here <https://docs.cloud.oracle.com/en-us/iaas/tools/python-sdk-examples/latest/opsi/summarize_host_insight_top_processes_usage_trend.py.html>`__ to see an example of how to use summarize_host_insight_top_processes_usage_trend API.
+        """
+        resource_path = "/hostInsights/topProcessesUsageTrend"
+        method = "GET"
+
+        # Don't accept unknown kwargs
+        expected_kwargs = [
+            "allow_control_chars",
+            "retry_strategy",
+            "analysis_time_interval",
+            "time_interval_start",
+            "time_interval_end",
+            "page",
+            "limit",
+            "opc_request_id"
+        ]
+        extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
+        if extra_kwargs:
+            raise ValueError(
+                "summarize_host_insight_top_processes_usage_trend got unknown kwargs: {!r}".format(extra_kwargs))
+
+        query_params = {
+            "compartmentId": compartment_id,
+            "id": id,
+            "resourceMetric": resource_metric,
+            "analysisTimeInterval": kwargs.get("analysis_time_interval", missing),
+            "timeIntervalStart": kwargs.get("time_interval_start", missing),
+            "timeIntervalEnd": kwargs.get("time_interval_end", missing),
+            "page": kwargs.get("page", missing),
+            "limit": kwargs.get("limit", missing)
+        }
+        query_params = {k: v for (k, v) in six.iteritems(query_params) if v is not missing and v is not None}
+
+        header_params = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "opc-request-id": kwargs.get("opc_request_id", missing)
+        }
+        header_params = {k: v for (k, v) in six.iteritems(header_params) if v is not missing and v is not None}
+
+        retry_strategy = self.base_client.get_preferred_retry_strategy(
+            operation_retry_strategy=kwargs.get('retry_strategy'),
+            client_retry_strategy=self.retry_strategy
+        )
+
+        if retry_strategy:
+            if not isinstance(retry_strategy, retry.NoneRetryStrategy):
+                self.base_client.add_opc_client_retries_header(header_params)
+                retry_strategy.add_circuit_breaker_callback(self.circuit_breaker_callback)
+            return retry_strategy.make_retrying_call(
+                self.base_client.call_api,
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeHostInsightsTopProcessesUsageTrendCollection")
+        else:
+            return self.base_client.call_api(
+                resource_path=resource_path,
+                method=method,
+                query_params=query_params,
+                header_params=header_params,
+                response_type="SummarizeHostInsightsTopProcessesUsageTrendCollection")
 
     def summarize_operations_insights_warehouse_resource_usage(self, operations_insights_warehouse_id, **kwargs):
         """

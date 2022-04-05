@@ -326,7 +326,6 @@ class CreateVcnDetails(object):
         Gets the is_ipv6_enabled of this CreateVcnDetails.
         Whether IPv6 is enabled for the VCN. Default is `false`.
         If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
-        You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`.
         For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
 
         Example: `true`
@@ -345,7 +344,6 @@ class CreateVcnDetails(object):
         Sets the is_ipv6_enabled of this CreateVcnDetails.
         Whether IPv6 is enabled for the VCN. Default is `false`.
         If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
-        You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to `false`.
         For important details about IPv6 addressing in a VCN, see `IPv6 Addresses`__.
 
         Example: `true`

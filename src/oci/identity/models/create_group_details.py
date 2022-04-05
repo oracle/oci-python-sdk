@@ -117,6 +117,8 @@ class CreateGroupDetails(object):
         **[Required]** Gets the description of this CreateGroupDetails.
         The description you assign to the group during creation. Does not have to be unique, and it's changeable.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The description of this CreateGroupDetails.
         :rtype: str
@@ -128,6 +130,8 @@ class CreateGroupDetails(object):
         """
         Sets the description of this CreateGroupDetails.
         The description you assign to the group during creation. Does not have to be unique, and it's changeable.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param description: The description of this CreateGroupDetails.

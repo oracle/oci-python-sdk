@@ -121,6 +121,7 @@ from .host_product import HostProduct
 from .host_resource_allocation import HostResourceAllocation
 from .host_resource_capacity_trend_aggregation import HostResourceCapacityTrendAggregation
 from .host_resource_statistics import HostResourceStatistics
+from .host_top_processes import HostTopProcesses
 from .hosted_entity_collection import HostedEntityCollection
 from .hosted_entity_summary import HostedEntitySummary
 from .importable_agent_entity_summary import ImportableAgentEntitySummary
@@ -223,10 +224,13 @@ from .summarize_host_insight_resource_statistics_aggregation_collection import S
 from .summarize_host_insight_resource_usage_aggregation import SummarizeHostInsightResourceUsageAggregation
 from .summarize_host_insight_resource_usage_trend_aggregation_collection import SummarizeHostInsightResourceUsageTrendAggregationCollection
 from .summarize_host_insight_resource_utilization_insight_aggregation import SummarizeHostInsightResourceUtilizationInsightAggregation
+from .summarize_host_insights_top_processes_usage_trend_collection import SummarizeHostInsightsTopProcessesUsageTrendCollection
 from .summarize_operations_insights_warehouse_resource_usage_aggregation import SummarizeOperationsInsightsWarehouseResourceUsageAggregation
 from .summary_statistics import SummaryStatistics
 from .tablespace_usage_trend import TablespaceUsageTrend
 from .tablespace_usage_trend_aggregation import TablespaceUsageTrendAggregation
+from .top_processes_usage_trend import TopProcessesUsageTrend
+from .top_processes_usage_trend_aggregation import TopProcessesUsageTrendAggregation
 from .update_autonomous_database_insight_details import UpdateAutonomousDatabaseInsightDetails
 from .update_awr_hub_details import UpdateAwrHubDetails
 from .update_database_insight_details import UpdateDatabaseInsightDetails
@@ -370,6 +374,7 @@ opsi_type_mapping = {
     "HostResourceAllocation": HostResourceAllocation,
     "HostResourceCapacityTrendAggregation": HostResourceCapacityTrendAggregation,
     "HostResourceStatistics": HostResourceStatistics,
+    "HostTopProcesses": HostTopProcesses,
     "HostedEntityCollection": HostedEntityCollection,
     "HostedEntitySummary": HostedEntitySummary,
     "ImportableAgentEntitySummary": ImportableAgentEntitySummary,
@@ -472,10 +477,13 @@ opsi_type_mapping = {
     "SummarizeHostInsightResourceUsageAggregation": SummarizeHostInsightResourceUsageAggregation,
     "SummarizeHostInsightResourceUsageTrendAggregationCollection": SummarizeHostInsightResourceUsageTrendAggregationCollection,
     "SummarizeHostInsightResourceUtilizationInsightAggregation": SummarizeHostInsightResourceUtilizationInsightAggregation,
+    "SummarizeHostInsightsTopProcessesUsageTrendCollection": SummarizeHostInsightsTopProcessesUsageTrendCollection,
     "SummarizeOperationsInsightsWarehouseResourceUsageAggregation": SummarizeOperationsInsightsWarehouseResourceUsageAggregation,
     "SummaryStatistics": SummaryStatistics,
     "TablespaceUsageTrend": TablespaceUsageTrend,
     "TablespaceUsageTrendAggregation": TablespaceUsageTrendAggregation,
+    "TopProcessesUsageTrend": TopProcessesUsageTrend,
+    "TopProcessesUsageTrendAggregation": TopProcessesUsageTrendAggregation,
     "UpdateAutonomousDatabaseInsightDetails": UpdateAutonomousDatabaseInsightDetails,
     "UpdateAwrHubDetails": UpdateAwrHubDetails,
     "UpdateDatabaseInsightDetails": UpdateDatabaseInsightDetails,

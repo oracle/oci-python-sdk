@@ -15,7 +15,7 @@ class Compartment(object):
     of measuring usage and billing, access (through the use of IAM Service policies), and isolation (separating the
     resources for one project or business unit from another). A common approach is to create a compartment for each
     major part of your organization. For more information, see
-    `Overview of the IAM Service`__ and also
+    `Overview of IAM`__ and also
     `Setting Up Your Tenancy`__.
 
     To place a resource in a compartment, simply specify the compartment ID in the \"Create\" request object when
@@ -25,14 +25,14 @@ class Compartment(object):
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access,
-    see `Getting Started with Policies`__.
+    see `Get Started with Policies`__.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
     using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com//Content/Identity/getstarted/identity-domains.htm
     __ https://docs.cloud.oracle.com/Content/GSG/Concepts/settinguptenancy.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Compartment.

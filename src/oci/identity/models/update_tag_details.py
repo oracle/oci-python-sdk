@@ -99,7 +99,7 @@ class UpdateTagDetails(object):
         Whether the tag is retired.
         See `Retiring Key Definitions and Namespace Definitions`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
+        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys
 
 
         :return: The is_retired of this UpdateTagDetails.
@@ -114,7 +114,7 @@ class UpdateTagDetails(object):
         Whether the tag is retired.
         See `Retiring Key Definitions and Namespace Definitions`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
+        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys
 
 
         :param is_retired: The is_retired of this UpdateTagDetails.

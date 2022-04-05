@@ -39,6 +39,8 @@ class UpdateSwiftPasswordDetails(object):
         Gets the description of this UpdateSwiftPasswordDetails.
         The description you assign to the Swift password. Does not have to be unique, and it's changeable.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The description of this UpdateSwiftPasswordDetails.
         :rtype: str
@@ -50,6 +52,8 @@ class UpdateSwiftPasswordDetails(object):
         """
         Sets the description of this UpdateSwiftPasswordDetails.
         The description you assign to the Swift password. Does not have to be unique, and it's changeable.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param description: The description of this UpdateSwiftPasswordDetails.

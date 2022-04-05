@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AuthenticationPolicy(object):
     """
-    Authentication policy, currently set for the given compartment
+    Authentication policy, currently set for the given compartment.
     """
 
     def __init__(self, **kwargs):

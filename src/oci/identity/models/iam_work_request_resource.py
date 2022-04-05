@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IamWorkRequestResource(object):
     """
-    A IAM work request resource entry
+    (For tenancies that support identity domains) A IAM work request resource entry.
     """
 
     #: A constant which can be used with the action_type property of a IamWorkRequestResource.

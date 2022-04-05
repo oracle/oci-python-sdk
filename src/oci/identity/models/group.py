@@ -12,7 +12,7 @@ class Group(object):
     """
     A collection of users who all need the same type of access to a particular set of resources or compartment.
     For conceptual information about groups and other IAM Service components, see
-    `Overview of the IAM Service`__.
+    `Overview of IAM`__.
 
     If you're federating with an identity provider (IdP), you need to create mappings between the groups
     defined in the IdP and groups you define in the IAM service. For more information, see
@@ -22,14 +22,14 @@ class Group(object):
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access,
-    see `Getting Started with Policies`__.
+    see `Get Started with Policies`__.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
     using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/getstarted/identity-domains.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a Group.
@@ -210,6 +210,8 @@ class Group(object):
         **[Required]** Gets the description of this Group.
         The description you assign to the group. Does not have to be unique, and it's changeable.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The description of this Group.
         :rtype: str
@@ -221,6 +223,8 @@ class Group(object):
         """
         Sets the description of this Group.
         The description you assign to the group. Does not have to be unique, and it's changeable.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param description: The description of this Group.
