@@ -16,8 +16,8 @@ class User(object):
     :class:`UIPassword`, :class:`SwiftPassword` and
     :class:`AuthToken`).
     For more information, see `User Credentials`__). End users of your
-    application are not typically IAM Service users. For conceptual information about users and other IAM Service
-    components, see `Overview of the IAM Service`__.
+    application are not typically IAM Service users, but for tenancies that have identity domains, they might be.
+    For conceptual information about users and other IAM Service components, see `Overview of IAM`__.
 
     These users are created directly within the Oracle Cloud Infrastructure system, via the IAM service.
     They are different from *federated users*, who authenticate themselves to the Oracle Cloud Infrastructure
@@ -26,15 +26,15 @@ class User(object):
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access,
-    see `Getting Started with Policies`__.
+    see `Get Started with Policies`__.
 
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
     using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/usercredentials.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/overview.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/usercred/usercredentials.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/getstarted/identity-domains.htm
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a User.
@@ -278,6 +278,8 @@ class User(object):
         **[Required]** Gets the description of this User.
         The description you assign to the user. Does not have to be unique, and it's changeable.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The description of this User.
         :rtype: str
@@ -289,6 +291,8 @@ class User(object):
         """
         Sets the description of this User.
         The description you assign to the user. Does not have to be unique, and it's changeable.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param description: The description of this User.
@@ -303,6 +307,8 @@ class User(object):
         The email address you assign to the user.
         The email address must be unique across all users in the tenancy.
 
+        (For tenancies that support identity domains) The email address is required unless the requirement is disabled at the tenancy level.
+
 
         :return: The email of this User.
         :rtype: str
@@ -315,6 +321,8 @@ class User(object):
         Sets the email of this User.
         The email address you assign to the user.
         The email address must be unique across all users in the tenancy.
+
+        (For tenancies that support identity domains) The email address is required unless the requirement is disabled at the tenancy level.
 
 
         :param email: The email of this User.

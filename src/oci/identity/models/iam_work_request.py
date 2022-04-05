@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IamWorkRequest(object):
     """
-    A IAM work request object that allows users to track Asynchronous API status.
+    (For tenancies that support identity domains) An IAM work request object that allows users to track the status of asynchronous API requests.
     """
 
     #: A constant which can be used with the operation_type property of a IamWorkRequest.
@@ -207,7 +207,7 @@ class IamWorkRequest(object):
     def status(self):
         """
         **[Required]** Gets the status of this IamWorkRequest.
-        Status of the work request
+        The status of the work request.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -222,7 +222,7 @@ class IamWorkRequest(object):
     def status(self, status):
         """
         Sets the status of this IamWorkRequest.
-        Status of the work request
+        The status of the work request.
 
 
         :param status: The status of this IamWorkRequest.

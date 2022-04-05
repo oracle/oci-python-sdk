@@ -93,8 +93,8 @@ class UpdatePolicyDetails(object):
         `How Policies Work`__ and
         `Common Policies`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policiescommon/commonpolicies.htm
 
 
         :return: The statements of this UpdatePolicyDetails.
@@ -110,8 +110,8 @@ class UpdatePolicyDetails(object):
         `How Policies Work`__ and
         `Common Policies`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policies.htm
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/commonpolicies.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm
+        __ https://docs.cloud.oracle.com/Content/Identity/policiescommon/commonpolicies.htm
 
 
         :param statements: The statements of this UpdatePolicyDetails.

@@ -32,23 +32,147 @@ class PaypalPaymentOption(PaymentOption):
             Allowed values for this property are: "CREDIT_CARD", "PAYPAL"
         :type payment_method: str
 
+        :param email_address:
+            The value to assign to the email_address property of this PaypalPaymentOption.
+        :type email_address: str
+
+        :param first_name:
+            The value to assign to the first_name property of this PaypalPaymentOption.
+        :type first_name: str
+
+        :param last_name:
+            The value to assign to the last_name property of this PaypalPaymentOption.
+        :type last_name: str
+
+        :param ext_billing_agreement_id:
+            The value to assign to the ext_billing_agreement_id property of this PaypalPaymentOption.
+        :type ext_billing_agreement_id: str
+
         """
         self.swagger_types = {
             'wallet_instrument_id': 'str',
             'wallet_transaction_id': 'str',
-            'payment_method': 'str'
+            'payment_method': 'str',
+            'email_address': 'str',
+            'first_name': 'str',
+            'last_name': 'str',
+            'ext_billing_agreement_id': 'str'
         }
 
         self.attribute_map = {
             'wallet_instrument_id': 'walletInstrumentId',
             'wallet_transaction_id': 'walletTransactionId',
-            'payment_method': 'paymentMethod'
+            'payment_method': 'paymentMethod',
+            'email_address': 'emailAddress',
+            'first_name': 'firstName',
+            'last_name': 'lastName',
+            'ext_billing_agreement_id': 'extBillingAgreementId'
         }
 
         self._wallet_instrument_id = None
         self._wallet_transaction_id = None
         self._payment_method = None
+        self._email_address = None
+        self._first_name = None
+        self._last_name = None
+        self._ext_billing_agreement_id = None
         self._payment_method = 'PAYPAL'
+
+    @property
+    def email_address(self):
+        """
+        Gets the email_address of this PaypalPaymentOption.
+        The email address of the paypal user.
+
+
+        :return: The email_address of this PaypalPaymentOption.
+        :rtype: str
+        """
+        return self._email_address
+
+    @email_address.setter
+    def email_address(self, email_address):
+        """
+        Sets the email_address of this PaypalPaymentOption.
+        The email address of the paypal user.
+
+
+        :param email_address: The email_address of this PaypalPaymentOption.
+        :type: str
+        """
+        self._email_address = email_address
+
+    @property
+    def first_name(self):
+        """
+        Gets the first_name of this PaypalPaymentOption.
+        First name of the paypal user.
+
+
+        :return: The first_name of this PaypalPaymentOption.
+        :rtype: str
+        """
+        return self._first_name
+
+    @first_name.setter
+    def first_name(self, first_name):
+        """
+        Sets the first_name of this PaypalPaymentOption.
+        First name of the paypal user.
+
+
+        :param first_name: The first_name of this PaypalPaymentOption.
+        :type: str
+        """
+        self._first_name = first_name
+
+    @property
+    def last_name(self):
+        """
+        Gets the last_name of this PaypalPaymentOption.
+        Last name of the paypal user.
+
+
+        :return: The last_name of this PaypalPaymentOption.
+        :rtype: str
+        """
+        return self._last_name
+
+    @last_name.setter
+    def last_name(self, last_name):
+        """
+        Sets the last_name of this PaypalPaymentOption.
+        Last name of the paypal user.
+
+
+        :param last_name: The last_name of this PaypalPaymentOption.
+        :type: str
+        """
+        self._last_name = last_name
+
+    @property
+    def ext_billing_agreement_id(self):
+        """
+        Gets the ext_billing_agreement_id of this PaypalPaymentOption.
+        Agreement id for the paypal account.
+
+
+        :return: The ext_billing_agreement_id of this PaypalPaymentOption.
+        :rtype: str
+        """
+        return self._ext_billing_agreement_id
+
+    @ext_billing_agreement_id.setter
+    def ext_billing_agreement_id(self, ext_billing_agreement_id):
+        """
+        Sets the ext_billing_agreement_id of this PaypalPaymentOption.
+        Agreement id for the paypal account.
+
+
+        :param ext_billing_agreement_id: The ext_billing_agreement_id of this PaypalPaymentOption.
+        :type: str
+        """
+        self._ext_billing_agreement_id = ext_billing_agreement_id
 
     def __repr__(self):
         return formatted_flat_dict(self)

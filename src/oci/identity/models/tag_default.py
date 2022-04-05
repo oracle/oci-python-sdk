@@ -22,7 +22,7 @@ class TagDefault(object):
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingtagdefaults.htm
+    __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagdefaults.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a TagDefault.

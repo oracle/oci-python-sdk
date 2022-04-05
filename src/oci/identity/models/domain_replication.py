@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DomainReplication(object):
     """
-    Domain replication states.
+    (For tenancies that support identity domains) Identity domain replication states.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class DomainReplication(object):
     def opc_water_mark(self):
         """
         **[Required]** Gets the opc_water_mark of this DomainReplication.
-        Version number indicating the value of kievTxnId, starting from which, the domain replication events need to be returned.
+        The version number indicating the value of kievTxnId, starting from which the identity domain replication events need to be returned.
 
 
         :return: The opc_water_mark of this DomainReplication.
@@ -63,7 +63,7 @@ class DomainReplication(object):
     def opc_water_mark(self, opc_water_mark):
         """
         Sets the opc_water_mark of this DomainReplication.
-        Version number indicating the value of kievTxnId, starting from which, the domain replication events need to be returned.
+        The version number indicating the value of kievTxnId, starting from which the identity domain replication events need to be returned.
 
 
         :param opc_water_mark: The opc_water_mark of this DomainReplication.
@@ -75,7 +75,7 @@ class DomainReplication(object):
     def txn_seq_number(self):
         """
         **[Required]** Gets the txn_seq_number of this DomainReplication.
-        Custom value defining the order of records with same kievTxnId
+        A custom value defining the order of records with the same kievTxnId.
 
 
         :return: The txn_seq_number of this DomainReplication.
@@ -87,7 +87,7 @@ class DomainReplication(object):
     def txn_seq_number(self, txn_seq_number):
         """
         Sets the txn_seq_number of this DomainReplication.
-        Custom value defining the order of records with same kievTxnId
+        A custom value defining the order of records with the same kievTxnId.
 
 
         :param txn_seq_number: The txn_seq_number of this DomainReplication.
@@ -99,7 +99,7 @@ class DomainReplication(object):
     def domain_replication_states(self):
         """
         **[Required]** Gets the domain_replication_states of this DomainReplication.
-        The domain's replication state
+        The identity domain's replication state.
 
 
         :return: The domain_replication_states of this DomainReplication.
@@ -111,7 +111,7 @@ class DomainReplication(object):
     def domain_replication_states(self, domain_replication_states):
         """
         Sets the domain_replication_states of this DomainReplication.
-        The domain's replication state
+        The identity domain's replication state.
 
 
         :param domain_replication_states: The domain_replication_states of this DomainReplication.

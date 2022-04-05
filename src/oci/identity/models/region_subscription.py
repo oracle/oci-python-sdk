@@ -15,10 +15,10 @@ class RegionSubscription(object):
 
     To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
     talk to an administrator. If you're an administrator who needs to write policies to give users access,
-    see `Getting Started with Policies`__.
+    see `Get Started with Policies`__.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingregions.htm
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/regions/managingregions.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm
     """
 
     #: A constant which can be used with the status property of a RegionSubscription.

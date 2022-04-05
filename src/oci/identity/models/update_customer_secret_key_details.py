@@ -39,6 +39,8 @@ class UpdateCustomerSecretKeyDetails(object):
         Gets the display_name of this UpdateCustomerSecretKeyDetails.
         The description you assign to the secret key. Does not have to be unique, and it's changeable.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The display_name of this UpdateCustomerSecretKeyDetails.
         :rtype: str
@@ -50,6 +52,8 @@ class UpdateCustomerSecretKeyDetails(object):
         """
         Sets the display_name of this UpdateCustomerSecretKeyDetails.
         The description you assign to the secret key. Does not have to be unique, and it's changeable.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param display_name: The display_name of this UpdateCustomerSecretKeyDetails.

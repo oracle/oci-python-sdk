@@ -19,7 +19,7 @@ class SmtpCredential(object):
 
     For more information, see `Managing User Credentials`__.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm#SMTP
+    __ https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm#SMTP
     """
 
     #: A constant which can be used with the lifecycle_state property of a SmtpCredential.
@@ -222,6 +222,8 @@ class SmtpCredential(object):
         Gets the description of this SmtpCredential.
         The description you assign to the SMTP credential. Does not have to be unique, and it's changeable.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The description of this SmtpCredential.
         :rtype: str
@@ -233,6 +235,8 @@ class SmtpCredential(object):
         """
         Sets the description of this SmtpCredential.
         The description you assign to the SMTP credential. Does not have to be unique, and it's changeable.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param description: The description of this SmtpCredential.

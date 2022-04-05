@@ -21,7 +21,7 @@ class HostNetworkActivitySummary(HostPerformanceMetricGroup):
 
         :param metric_name:
             The value to assign to the metric_name property of this HostNetworkActivitySummary.
-            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY"
+            Allowed values for this property are: "HOST_CPU_USAGE", "HOST_MEMORY_USAGE", "HOST_NETWORK_ACTIVITY_SUMMARY", "HOST_TOP_PROCESSES"
         :type metric_name: str
 
         :param time_collected:

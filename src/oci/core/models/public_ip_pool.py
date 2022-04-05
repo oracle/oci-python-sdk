@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class PublicIpPool(object):
     """
-    A public IP pool is a set of public IP addresses represented as one or more IPv4 CIDR blocks. Resources like load balancers and compute instances can be allocated public IP addresses from a public IP pool.
+    A public IP pool is a set of public IP addresses represented as one or more IPv4 CIDR blocks.      Resources like load balancers and compute instances can be allocated public IP addresses from a public IP pool.
     """
 
     #: A constant which can be used with the lifecycle_state property of a PublicIpPool.

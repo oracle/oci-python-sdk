@@ -124,6 +124,8 @@ class DbCredentialSummary(object):
         Gets the description of this DbCredentialSummary.
         The description you assign to the DB credential. Does not have to be unique, and it's changeable.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The description of this DbCredentialSummary.
         :rtype: str
@@ -135,6 +137,8 @@ class DbCredentialSummary(object):
         """
         Sets the description of this DbCredentialSummary.
         The description you assign to the DB credential. Does not have to be unique, and it's changeable.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param description: The description of this DbCredentialSummary.

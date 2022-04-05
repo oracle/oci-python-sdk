@@ -21,7 +21,7 @@ class AuthToken(object):
 
     For more information, see `Managing User Credentials`__.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm
+    __ https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a AuthToken.
@@ -195,6 +195,8 @@ class AuthToken(object):
         Gets the description of this AuthToken.
         The description you assign to the auth token. Does not have to be unique, and it's changeable.
 
+        (For tenancies that support identity domains) You can have an empty description.
+
 
         :return: The description of this AuthToken.
         :rtype: str
@@ -206,6 +208,8 @@ class AuthToken(object):
         """
         Sets the description of this AuthToken.
         The description you assign to the auth token. Does not have to be unique, and it's changeable.
+
+        (For tenancies that support identity domains) You can have an empty description.
 
 
         :param description: The description of this AuthToken.

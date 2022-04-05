@@ -135,6 +135,7 @@ Opsi
     oci.opsi.models.HostResourceAllocation
     oci.opsi.models.HostResourceCapacityTrendAggregation
     oci.opsi.models.HostResourceStatistics
+    oci.opsi.models.HostTopProcesses
     oci.opsi.models.HostedEntityCollection
     oci.opsi.models.HostedEntitySummary
     oci.opsi.models.ImportableAgentEntitySummary
@@ -237,10 +238,13 @@ Opsi
     oci.opsi.models.SummarizeHostInsightResourceUsageAggregation
     oci.opsi.models.SummarizeHostInsightResourceUsageTrendAggregationCollection
     oci.opsi.models.SummarizeHostInsightResourceUtilizationInsightAggregation
+    oci.opsi.models.SummarizeHostInsightsTopProcessesUsageTrendCollection
     oci.opsi.models.SummarizeOperationsInsightsWarehouseResourceUsageAggregation
     oci.opsi.models.SummaryStatistics
     oci.opsi.models.TablespaceUsageTrend
     oci.opsi.models.TablespaceUsageTrendAggregation
+    oci.opsi.models.TopProcessesUsageTrend
+    oci.opsi.models.TopProcessesUsageTrendAggregation
     oci.opsi.models.UpdateAutonomousDatabaseInsightDetails
     oci.opsi.models.UpdateAwrHubDetails
     oci.opsi.models.UpdateDatabaseInsightDetails

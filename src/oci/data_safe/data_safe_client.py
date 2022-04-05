@@ -10938,7 +10938,7 @@ class DataSafeClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that matches the specified lifecycle state.
 
-            Allowed values are: "CREATING", "ACTIVE", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED"
+            Allowed values are: "CREATING", "ACTIVE", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", "UPDATING"
 
         :param datetime time_of_expiry: (optional)
             The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
@@ -11009,7 +11009,7 @@ class DataSafeClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED"]
+            lifecycle_state_allowed_values = ["CREATING", "ACTIVE", "NEEDS_ATTENTION", "FAILED", "DELETING", "DELETED", "UPDATING"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -15880,7 +15880,7 @@ class DataSafeClient(object):
         :param str lifecycle_state: (optional)
             A filter to return only resources that match the specified lifecycle state.
 
-            Allowed values are: "CREATING", "SUCCEEDED", "UPDATING", "DELETING", "FAILED"
+            Allowed values are: "CREATING", "SUCCEEDED", "UPDATING", "DELETING", "DELETED", "FAILED"
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -15966,7 +15966,7 @@ class DataSafeClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "SUCCEEDED", "UPDATING", "DELETING", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "SUCCEEDED", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -17607,7 +17607,7 @@ class DataSafeClient(object):
         :param str lifecycle_state: (optional)
             The current state of the user assessment.
 
-            Allowed values are: "CREATING", "SUCCEEDED", "UPDATING", "DELETING", "FAILED"
+            Allowed values are: "CREATING", "SUCCEEDED", "UPDATING", "DELETING", "DELETED", "FAILED"
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -17692,7 +17692,7 @@ class DataSafeClient(object):
                 )
 
         if 'lifecycle_state' in kwargs:
-            lifecycle_state_allowed_values = ["CREATING", "SUCCEEDED", "UPDATING", "DELETING", "FAILED"]
+            lifecycle_state_allowed_values = ["CREATING", "SUCCEEDED", "UPDATING", "DELETING", "DELETED", "FAILED"]
             if kwargs['lifecycle_state'] not in lifecycle_state_allowed_values:
                 raise ValueError(
                     "Invalid value for `lifecycle_state`, must be one of {0}".format(lifecycle_state_allowed_values)
@@ -18224,9 +18224,9 @@ class DataSafeClient(object):
 
         :param str sort_by: (optional)
             The field used for sorting. Only one sorting order (sortOrder) can be specified.
-            The default order for STARTTIME and FINISHTIME is descending.
+            The default order is descending.
 
-            Allowed values are: "STARTTIME", "FINISHTIME"
+            Allowed values are: "STARTTIME", "FINISHTIME", "ACCEPTEDTIME"
 
         :param str sort_order: (optional)
             The sort order to use, either ascending (ASC) or descending (DESC).
@@ -18292,7 +18292,7 @@ class DataSafeClient(object):
                 "list_work_requests got unknown kwargs: {!r}".format(extra_kwargs))
 
         if 'sort_by' in kwargs:
-            sort_by_allowed_values = ["STARTTIME", "FINISHTIME"]
+            sort_by_allowed_values = ["STARTTIME", "FINISHTIME", "ACCEPTEDTIME"]
             if kwargs['sort_by'] not in sort_by_allowed_values:
                 raise ValueError(
                     "Invalid value for `sort_by`, must be one of {0}".format(sort_by_allowed_values)

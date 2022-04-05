@@ -16,7 +16,7 @@ class TagNamespace(object):
     **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
     using the API.
 
-    __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm
+    __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm
     """
 
     #: A constant which can be used with the lifecycle_state property of a TagNamespace.
@@ -280,7 +280,7 @@ class TagNamespace(object):
         Whether the tag namespace is retired.
         See `Retiring Key Definitions and Namespace Definitions`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
+        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys
 
 
         :return: The is_retired of this TagNamespace.
@@ -295,7 +295,7 @@ class TagNamespace(object):
         Whether the tag namespace is retired.
         See `Retiring Key Definitions and Namespace Definitions`__.
 
-        __ https://docs.cloud.oracle.com/Content/Identity/Concepts/taggingoverview.htm#Retiring
+        __ https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys
 
 
         :param is_retired: The is_retired of this TagNamespace.

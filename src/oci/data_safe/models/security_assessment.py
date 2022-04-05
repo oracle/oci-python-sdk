@@ -34,6 +34,10 @@ class SecurityAssessment(object):
     LIFECYCLE_STATE_DELETING = "DELETING"
 
     #: A constant which can be used with the lifecycle_state property of a SecurityAssessment.
+    #: This constant has a value of "DELETED"
+    LIFECYCLE_STATE_DELETED = "DELETED"
+
+    #: A constant which can be used with the lifecycle_state property of a SecurityAssessment.
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
@@ -116,7 +120,7 @@ class SecurityAssessment(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this SecurityAssessment.
-            Allowed values for this property are: "CREATING", "SUCCEEDED", "UPDATING", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "SUCCEEDED", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -554,7 +558,7 @@ class SecurityAssessment(object):
         **[Required]** Gets the lifecycle_state of this SecurityAssessment.
         The current state of the security assessment.
 
-        Allowed values for this property are: "CREATING", "SUCCEEDED", "UPDATING", "DELETING", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "SUCCEEDED", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -573,7 +577,7 @@ class SecurityAssessment(object):
         :param lifecycle_state: The lifecycle_state of this SecurityAssessment.
         :type: str
         """
-        allowed_values = ["CREATING", "SUCCEEDED", "UPDATING", "DELETING", "FAILED"]
+        allowed_values = ["CREATING", "SUCCEEDED", "UPDATING", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
