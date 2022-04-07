@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InlineImageDetails(ImageDetails):
     """
-    Image incorporated in the request payload.
+    The image incorporated in the request payload.
     """
 
     def __init__(self, **kwargs):
@@ -47,7 +47,7 @@ class InlineImageDetails(ImageDetails):
     def data(self):
         """
         **[Required]** Gets the data of this InlineImageDetails.
-        Image raw data.
+        Raw image data.
 
 
         :return: The data of this InlineImageDetails.
@@ -59,7 +59,7 @@ class InlineImageDetails(ImageDetails):
     def data(self, data):
         """
         Sets the data of this InlineImageDetails.
-        Image raw data.
+        Raw image data.
 
 
         :param data: The data of this InlineImageDetails.

@@ -90,6 +90,10 @@ class Subnet(object):
             The value to assign to the ipv6_cidr_block property of this Subnet.
         :type ipv6_cidr_block: str
 
+        :param ipv6_cidr_blocks:
+            The value to assign to the ipv6_cidr_blocks property of this Subnet.
+        :type ipv6_cidr_blocks: list[str]
+
         :param ipv6_virtual_router_ip:
             The value to assign to the ipv6_virtual_router_ip property of this Subnet.
         :type ipv6_virtual_router_ip: str
@@ -148,6 +152,7 @@ class Subnet(object):
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
             'ipv6_cidr_block': 'str',
+            'ipv6_cidr_blocks': 'list[str]',
             'ipv6_virtual_router_ip': 'str',
             'lifecycle_state': 'str',
             'prohibit_internet_ingress': 'bool',
@@ -172,6 +177,7 @@ class Subnet(object):
             'freeform_tags': 'freeformTags',
             'id': 'id',
             'ipv6_cidr_block': 'ipv6CidrBlock',
+            'ipv6_cidr_blocks': 'ipv6CidrBlocks',
             'ipv6_virtual_router_ip': 'ipv6VirtualRouterIp',
             'lifecycle_state': 'lifecycleState',
             'prohibit_internet_ingress': 'prohibitInternetIngress',
@@ -195,6 +201,7 @@ class Subnet(object):
         self._freeform_tags = None
         self._id = None
         self._ipv6_cidr_block = None
+        self._ipv6_cidr_blocks = None
         self._ipv6_virtual_router_ip = None
         self._lifecycle_state = None
         self._prohibit_internet_ingress = None
@@ -528,6 +535,30 @@ class Subnet(object):
         :type: str
         """
         self._ipv6_cidr_block = ipv6_cidr_block
+
+    @property
+    def ipv6_cidr_blocks(self):
+        """
+        Gets the ipv6_cidr_blocks of this Subnet.
+        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+
+
+        :return: The ipv6_cidr_blocks of this Subnet.
+        :rtype: list[str]
+        """
+        return self._ipv6_cidr_blocks
+
+    @ipv6_cidr_blocks.setter
+    def ipv6_cidr_blocks(self, ipv6_cidr_blocks):
+        """
+        Sets the ipv6_cidr_blocks of this Subnet.
+        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet.
+
+
+        :param ipv6_cidr_blocks: The ipv6_cidr_blocks of this Subnet.
+        :type: list[str]
+        """
+        self._ipv6_cidr_blocks = ipv6_cidr_blocks
 
     @property
     def ipv6_virtual_router_ip(self):

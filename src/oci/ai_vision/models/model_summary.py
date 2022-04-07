@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ModelSummary(object):
     """
-    Metadata about the model.
+    The metadata about the model.
     """
 
     def __init__(self, **kwargs):
@@ -156,7 +156,7 @@ class ModelSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this ModelSummary.
-        Unique identifier that is immutable after creation.
+        A unique identifier that is immutable after creation.
 
 
         :return: The id of this ModelSummary.
@@ -168,7 +168,7 @@ class ModelSummary(object):
     def id(self, id):
         """
         Sets the id of this ModelSummary.
-        Unique identifier that is immutable after creation.
+        A unique identifier that is immutable after creation.
 
 
         :param id: The id of this ModelSummary.
@@ -180,7 +180,7 @@ class ModelSummary(object):
     def display_name(self):
         """
         Gets the display_name of this ModelSummary.
-        Human-friendly name for the model, which can be changed.
+        A human-friendly name for the model, which can be changed.
 
 
         :return: The display_name of this ModelSummary.
@@ -192,7 +192,7 @@ class ModelSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ModelSummary.
-        Human-friendly name for the model, which can be changed.
+        A human-friendly name for the model, which can be changed.
 
 
         :param display_name: The display_name of this ModelSummary.
@@ -204,7 +204,7 @@ class ModelSummary(object):
     def description(self):
         """
         Gets the description of this ModelSummary.
-        Optional description of the model.
+        An optional description of the model.
 
 
         :return: The description of this ModelSummary.
@@ -216,7 +216,7 @@ class ModelSummary(object):
     def description(self, description):
         """
         Sets the description of this ModelSummary.
-        Optional description of the model.
+        An optional description of the model.
 
 
         :param description: The description of this ModelSummary.
@@ -228,7 +228,7 @@ class ModelSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this ModelSummary.
-        Compartment identifier.
+        The compartment identifier.
 
 
         :return: The compartment_id of this ModelSummary.
@@ -240,7 +240,7 @@ class ModelSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this ModelSummary.
-        Compartment identifier.
+        The compartment identifier.
 
 
         :param compartment_id: The compartment_id of this ModelSummary.
@@ -300,7 +300,7 @@ class ModelSummary(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this ModelSummary.
-        The `OCID`__ of the project which contains the model.
+        The `OCID`__ of the project that contains the model.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -314,7 +314,7 @@ class ModelSummary(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this ModelSummary.
-        The `OCID`__ of the project which contains the model.
+        The `OCID`__ of the project that contains the model.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -400,7 +400,7 @@ class ModelSummary(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this ModelSummary.
-        A message describing the current state in more detail which can provide actionable information if training failed.
+        A message describing the current state in more detail, that can provide actionable information if training failed.
 
 
         :return: The lifecycle_details of this ModelSummary.
@@ -412,7 +412,7 @@ class ModelSummary(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this ModelSummary.
-        A message describing the current state in more detail which can provide actionable information if training failed.
+        A message describing the current state in more detail, that can provide actionable information if training failed.
 
 
         :param lifecycle_details: The lifecycle_details of this ModelSummary.
@@ -424,7 +424,7 @@ class ModelSummary(object):
     def precision(self):
         """
         Gets the precision of this ModelSummary.
-        Precision of the trained model.
+        The precision of the trained model.
 
 
         :return: The precision of this ModelSummary.
@@ -436,7 +436,7 @@ class ModelSummary(object):
     def precision(self, precision):
         """
         Sets the precision of this ModelSummary.
-        Precision of the trained model.
+        The precision of the trained model.
 
 
         :param precision: The precision of this ModelSummary.
@@ -508,8 +508,8 @@ class ModelSummary(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this ModelSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this ModelSummary.
@@ -521,8 +521,8 @@ class ModelSummary(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this ModelSummary.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this ModelSummary.
@@ -535,7 +535,7 @@ class ModelSummary(object):
         """
         Gets the defined_tags of this ModelSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this ModelSummary.
@@ -548,7 +548,7 @@ class ModelSummary(object):
         """
         Sets the defined_tags of this ModelSummary.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this ModelSummary.
@@ -561,7 +561,7 @@ class ModelSummary(object):
         """
         Gets the system_tags of this ModelSummary.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        For example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 
         :return: The system_tags of this ModelSummary.
@@ -574,7 +574,7 @@ class ModelSummary(object):
         """
         Sets the system_tags of this ModelSummary.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        For example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 
         :param system_tags: The system_tags of this ModelSummary.

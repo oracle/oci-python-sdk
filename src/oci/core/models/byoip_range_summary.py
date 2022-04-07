@@ -18,6 +18,10 @@ class ByoipRangeSummary(object):
         Initializes a new ByoipRangeSummary object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param byoip_range_vcn_ipv6_allocations:
+            The value to assign to the byoip_range_vcn_ipv6_allocations property of this ByoipRangeSummary.
+        :type byoip_range_vcn_ipv6_allocations: list[oci.core.models.ByoipRangeVcnIpv6AllocationSummary]
+
         :param cidr_block:
             The value to assign to the cidr_block property of this ByoipRangeSummary.
         :type cidr_block: str
@@ -42,6 +46,10 @@ class ByoipRangeSummary(object):
             The value to assign to the id property of this ByoipRangeSummary.
         :type id: str
 
+        :param ipv6_cidr_block:
+            The value to assign to the ipv6_cidr_block property of this ByoipRangeSummary.
+        :type ipv6_cidr_block: str
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this ByoipRangeSummary.
         :type lifecycle_state: str
@@ -56,38 +64,68 @@ class ByoipRangeSummary(object):
 
         """
         self.swagger_types = {
+            'byoip_range_vcn_ipv6_allocations': 'list[ByoipRangeVcnIpv6AllocationSummary]',
             'cidr_block': 'str',
             'compartment_id': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'id': 'str',
+            'ipv6_cidr_block': 'str',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'time_created': 'datetime'
         }
 
         self.attribute_map = {
+            'byoip_range_vcn_ipv6_allocations': 'byoipRangeVcnIpv6Allocations',
             'cidr_block': 'cidrBlock',
             'compartment_id': 'compartmentId',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'id': 'id',
+            'ipv6_cidr_block': 'ipv6CidrBlock',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'time_created': 'timeCreated'
         }
 
+        self._byoip_range_vcn_ipv6_allocations = None
         self._cidr_block = None
         self._compartment_id = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
         self._id = None
+        self._ipv6_cidr_block = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._time_created = None
+
+    @property
+    def byoip_range_vcn_ipv6_allocations(self):
+        """
+        Gets the byoip_range_vcn_ipv6_allocations of this ByoipRangeSummary.
+        A list of `ByoipRangeVcnIpv6AllocationSummary` objects.
+
+
+        :return: The byoip_range_vcn_ipv6_allocations of this ByoipRangeSummary.
+        :rtype: list[oci.core.models.ByoipRangeVcnIpv6AllocationSummary]
+        """
+        return self._byoip_range_vcn_ipv6_allocations
+
+    @byoip_range_vcn_ipv6_allocations.setter
+    def byoip_range_vcn_ipv6_allocations(self, byoip_range_vcn_ipv6_allocations):
+        """
+        Sets the byoip_range_vcn_ipv6_allocations of this ByoipRangeSummary.
+        A list of `ByoipRangeVcnIpv6AllocationSummary` objects.
+
+
+        :param byoip_range_vcn_ipv6_allocations: The byoip_range_vcn_ipv6_allocations of this ByoipRangeSummary.
+        :type: list[oci.core.models.ByoipRangeVcnIpv6AllocationSummary]
+        """
+        self._byoip_range_vcn_ipv6_allocations = byoip_range_vcn_ipv6_allocations
 
     @property
     def cidr_block(self):
@@ -262,6 +300,34 @@ class ByoipRangeSummary(object):
         :type: str
         """
         self._id = id
+
+    @property
+    def ipv6_cidr_block(self):
+        """
+        Gets the ipv6_cidr_block of this ByoipRangeSummary.
+        The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or larger, and can  be subdivided into sub-ranges used
+        across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify
+        a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+
+
+        :return: The ipv6_cidr_block of this ByoipRangeSummary.
+        :rtype: str
+        """
+        return self._ipv6_cidr_block
+
+    @ipv6_cidr_block.setter
+    def ipv6_cidr_block(self, ipv6_cidr_block):
+        """
+        Sets the ipv6_cidr_block of this ByoipRangeSummary.
+        The IPv6 CIDR block being imported to the Oracle cloud. This CIDR block must be /48 or larger, and can  be subdivided into sub-ranges used
+        across multiple VCNs. A BYOIPv6 prefix can be assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify
+        a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
+
+
+        :param ipv6_cidr_block: The ipv6_cidr_block of this ByoipRangeSummary.
+        :type: str
+        """
+        self._ipv6_cidr_block = ipv6_cidr_block
 
     @property
     def lifecycle_state(self):

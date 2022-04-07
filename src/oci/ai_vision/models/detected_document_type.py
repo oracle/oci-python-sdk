@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetectedDocumentType(object):
     """
-    Detected document type.
+    The detected document type.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class DetectedDocumentType(object):
     def document_type(self):
         """
         **[Required]** Gets the document_type of this DetectedDocumentType.
-        Type of the document.
+        The document type.
 
 
         :return: The document_type of this DetectedDocumentType.
@@ -56,7 +56,7 @@ class DetectedDocumentType(object):
     def document_type(self, document_type):
         """
         Sets the document_type of this DetectedDocumentType.
-        Type of the document.
+        The document type.
 
 
         :param document_type: The document_type of this DetectedDocumentType.
@@ -68,7 +68,7 @@ class DetectedDocumentType(object):
     def confidence(self):
         """
         **[Required]** Gets the confidence of this DetectedDocumentType.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :return: The confidence of this DetectedDocumentType.
@@ -80,7 +80,7 @@ class DetectedDocumentType(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this DetectedDocumentType.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :param confidence: The confidence of this DetectedDocumentType.

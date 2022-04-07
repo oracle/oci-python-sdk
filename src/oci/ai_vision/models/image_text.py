@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImageText(object):
     """
-    Detected text.
+    The detected text.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class ImageText(object):
     def words(self):
         """
         **[Required]** Gets the words of this ImageText.
-        Words recognized in the image.
+        The words recognized in an image.
 
 
         :return: The words of this ImageText.
@@ -56,7 +56,7 @@ class ImageText(object):
     def words(self, words):
         """
         Sets the words of this ImageText.
-        Words recognized in the image.
+        The words recognized in an image.
 
 
         :param words: The words of this ImageText.
@@ -68,7 +68,7 @@ class ImageText(object):
     def lines(self):
         """
         **[Required]** Gets the lines of this ImageText.
-        Lines of text recognized in the image.
+        The lines of text recognized in an image.
 
 
         :return: The lines of this ImageText.
@@ -80,7 +80,7 @@ class ImageText(object):
     def lines(self, lines):
         """
         Sets the lines of this ImageText.
-        Lines of text recognized in the image.
+        The lines of text recognized in an image.
 
 
         :param lines: The lines of this ImageText.

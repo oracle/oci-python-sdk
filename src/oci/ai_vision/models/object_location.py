@@ -51,7 +51,7 @@ class ObjectLocation(object):
     def namespace_name(self):
         """
         **[Required]** Gets the namespace_name of this ObjectLocation.
-        Object Storage namespace name.
+        The Object Storage namespace name.
 
 
         :return: The namespace_name of this ObjectLocation.
@@ -63,7 +63,7 @@ class ObjectLocation(object):
     def namespace_name(self, namespace_name):
         """
         Sets the namespace_name of this ObjectLocation.
-        Object Storage namespace name.
+        The Object Storage namespace name.
 
 
         :param namespace_name: The namespace_name of this ObjectLocation.
@@ -75,7 +75,7 @@ class ObjectLocation(object):
     def bucket_name(self):
         """
         **[Required]** Gets the bucket_name of this ObjectLocation.
-        Object Storage bucket name.
+        The Object Storage bucket name.
 
 
         :return: The bucket_name of this ObjectLocation.
@@ -87,7 +87,7 @@ class ObjectLocation(object):
     def bucket_name(self, bucket_name):
         """
         Sets the bucket_name of this ObjectLocation.
-        Object Storage bucket name.
+        The Object Storage bucket name.
 
 
         :param bucket_name: The bucket_name of this ObjectLocation.
@@ -99,7 +99,7 @@ class ObjectLocation(object):
     def object_name(self):
         """
         **[Required]** Gets the object_name of this ObjectLocation.
-        Object Storage object name.
+        The Object Storage object name.
 
 
         :return: The object_name of this ObjectLocation.
@@ -111,7 +111,7 @@ class ObjectLocation(object):
     def object_name(self, object_name):
         """
         Sets the object_name of this ObjectLocation.
-        Object Storage object name.
+        The Object Storage object name.
 
 
         :param object_name: The object_name of this ObjectLocation.

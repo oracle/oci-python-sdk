@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class BoundingPolygon(object):
     """
-    Object bounding polygon box.
+    The object-bounding polygon box.
     """
 
     def __init__(self, **kwargs):
@@ -38,7 +38,7 @@ class BoundingPolygon(object):
         """
         **[Required]** Gets the normalized_vertices of this BoundingPolygon.
         An array of normalized points defining the polygon's perimeter, with an implicit segment between subsequent points and between the first and last point.
-        Rectangles are defined with four points, e.g. `[{\"x\": 0, \"y\": 0}, {\"x\": 1, \"y\": 0}, {\"x\": 1, \"y\": 0.5}, {\"x\": 0, \"y\": 0.5}]` represents the top half of an image.
+        Rectangles are defined with four points. For example, `[{\"x\": 0, \"y\": 0}, {\"x\": 1, \"y\": 0}, {\"x\": 1, \"y\": 0.5}, {\"x\": 0, \"y\": 0.5}]` represents the top half of an image.
 
 
         :return: The normalized_vertices of this BoundingPolygon.
@@ -51,7 +51,7 @@ class BoundingPolygon(object):
         """
         Sets the normalized_vertices of this BoundingPolygon.
         An array of normalized points defining the polygon's perimeter, with an implicit segment between subsequent points and between the first and last point.
-        Rectangles are defined with four points, e.g. `[{\"x\": 0, \"y\": 0}, {\"x\": 1, \"y\": 0}, {\"x\": 1, \"y\": 0.5}, {\"x\": 0, \"y\": 0.5}]` represents the top half of an image.
+        Rectangles are defined with four points. For example, `[{\"x\": 0, \"y\": 0}, {\"x\": 1, \"y\": 0}, {\"x\": 1, \"y\": 0.5}, {\"x\": 0, \"y\": 0.5}]` represents the top half of an image.
 
 
         :param normalized_vertices: The normalized_vertices of this BoundingPolygon.

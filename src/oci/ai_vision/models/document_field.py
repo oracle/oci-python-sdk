@@ -76,7 +76,7 @@ class DocumentField(object):
     def field_type(self):
         """
         **[Required]** Gets the field_type of this DocumentField.
-        Field type.
+        The field type.
 
         Allowed values for this property are: "LINE_ITEM_GROUP", "LINE_ITEM", "LINE_ITEM_FIELD", "KEY_VALUE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -91,7 +91,7 @@ class DocumentField(object):
     def field_type(self, field_type):
         """
         Sets the field_type of this DocumentField.
-        Field type.
+        The field type.
 
 
         :param field_type: The field_type of this DocumentField.

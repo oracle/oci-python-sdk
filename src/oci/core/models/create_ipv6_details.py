@@ -38,13 +38,18 @@ class CreateIpv6Details(object):
             The value to assign to the vnic_id property of this CreateIpv6Details.
         :type vnic_id: str
 
+        :param ipv6_subnet_cidr:
+            The value to assign to the ipv6_subnet_cidr property of this CreateIpv6Details.
+        :type ipv6_subnet_cidr: str
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'ip_address': 'str',
-            'vnic_id': 'str'
+            'vnic_id': 'str',
+            'ipv6_subnet_cidr': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class CreateIpv6Details(object):
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags',
             'ip_address': 'ipAddress',
-            'vnic_id': 'vnicId'
+            'vnic_id': 'vnicId',
+            'ipv6_subnet_cidr': 'ipv6SubnetCidr'
         }
 
         self._defined_tags = None
@@ -60,6 +66,7 @@ class CreateIpv6Details(object):
         self._freeform_tags = None
         self._ip_address = None
         self._vnic_id = None
+        self._ipv6_subnet_cidr = None
 
     @property
     def defined_tags(self):
@@ -218,6 +225,30 @@ class CreateIpv6Details(object):
         :type: str
         """
         self._vnic_id = vnic_id
+
+    @property
+    def ipv6_subnet_cidr(self):
+        """
+        Gets the ipv6_subnet_cidr of this CreateIpv6Details.
+        The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+
+
+        :return: The ipv6_subnet_cidr of this CreateIpv6Details.
+        :rtype: str
+        """
+        return self._ipv6_subnet_cidr
+
+    @ipv6_subnet_cidr.setter
+    def ipv6_subnet_cidr(self, ipv6_subnet_cidr):
+        """
+        Sets the ipv6_subnet_cidr of this CreateIpv6Details.
+        The IPv6 CIDR allocated to the subnet. This is required if more than one IPv6 CIDR exists on the subnet.
+
+
+        :param ipv6_subnet_cidr: The ipv6_subnet_cidr of this CreateIpv6Details.
+        :type: str
+        """
+        self._ipv6_subnet_cidr = ipv6_subnet_cidr
 
     def __repr__(self):
         return formatted_flat_dict(self)

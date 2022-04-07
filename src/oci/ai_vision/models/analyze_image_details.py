@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnalyzeImageDetails(object):
     """
-    Details about how to analyze an image.
+    The details of how to analyze an image.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class AnalyzeImageDetails(object):
     def features(self):
         """
         **[Required]** Gets the features of this AnalyzeImageDetails.
-        Types of image analysis.
+        The types of image analysis.
 
 
         :return: The features of this AnalyzeImageDetails.
@@ -63,7 +63,7 @@ class AnalyzeImageDetails(object):
     def features(self, features):
         """
         Sets the features of this AnalyzeImageDetails.
-        Types of image analysis.
+        The types of image analysis.
 
 
         :param features: The features of this AnalyzeImageDetails.
@@ -95,7 +95,7 @@ class AnalyzeImageDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this AnalyzeImageDetails.
-        The ocid of the compartment that calls the API.
+        The OCID of the compartment that calls the API.
 
 
         :return: The compartment_id of this AnalyzeImageDetails.
@@ -107,7 +107,7 @@ class AnalyzeImageDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this AnalyzeImageDetails.
-        The ocid of the compartment that calls the API.
+        The OCID of the compartment that calls the API.
 
 
         :param compartment_id: The compartment_id of this AnalyzeImageDetails.

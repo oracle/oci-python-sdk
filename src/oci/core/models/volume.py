@@ -481,6 +481,8 @@ class Volume(object):
 
         Allowed values:
 
+          * `0`: Represents Lower Cost option.
+
           * `10`: Represents Balanced option.
 
           * `20`: Represents Higher Performance option.
@@ -504,6 +506,8 @@ class Volume(object):
         See `Block Volume Performance Levels`__ for more information.
 
         Allowed values:
+
+          * `0`: Represents Lower Cost option.
 
           * `10`: Represents Balanced option.
 
@@ -645,7 +649,7 @@ class Volume(object):
     def is_auto_tune_enabled(self):
         """
         Gets the is_auto_tune_enabled of this Volume.
-        Specifies whether the auto-tune performance is enabled for this boot volume.
+        Specifies whether the auto-tune performance is enabled for this volume.
 
 
         :return: The is_auto_tune_enabled of this Volume.
@@ -657,7 +661,7 @@ class Volume(object):
     def is_auto_tune_enabled(self, is_auto_tune_enabled):
         """
         Sets the is_auto_tune_enabled of this Volume.
-        Specifies whether the auto-tune performance is enabled for this boot volume.
+        Specifies whether the auto-tune performance is enabled for this volume.
 
 
         :param is_auto_tune_enabled: The is_auto_tune_enabled of this Volume.

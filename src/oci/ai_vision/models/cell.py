@@ -72,7 +72,7 @@ class Cell(object):
     def text(self):
         """
         **[Required]** Gets the text of this Cell.
-        Text recognized in the cell.
+        The text recognized in the cell.
 
 
         :return: The text of this Cell.
@@ -84,7 +84,7 @@ class Cell(object):
     def text(self, text):
         """
         Sets the text of this Cell.
-        Text recognized in the cell.
+        The text recognized in the cell.
 
 
         :param text: The text of this Cell.
@@ -96,7 +96,7 @@ class Cell(object):
     def row_index(self):
         """
         **[Required]** Gets the row_index of this Cell.
-        Index of the cell inside the row.
+        The index of the cell inside the row.
 
 
         :return: The row_index of this Cell.
@@ -108,7 +108,7 @@ class Cell(object):
     def row_index(self, row_index):
         """
         Sets the row_index of this Cell.
-        Index of the cell inside the row.
+        The index of the cell inside the row.
 
 
         :param row_index: The row_index of this Cell.
@@ -120,7 +120,7 @@ class Cell(object):
     def column_index(self):
         """
         **[Required]** Gets the column_index of this Cell.
-        Index of the cell inside the column.
+        The index of the cell inside the column.
 
 
         :return: The column_index of this Cell.
@@ -132,7 +132,7 @@ class Cell(object):
     def column_index(self, column_index):
         """
         Sets the column_index of this Cell.
-        Index of the cell inside the column.
+        The index of the cell inside the column.
 
 
         :param column_index: The column_index of this Cell.
@@ -144,7 +144,7 @@ class Cell(object):
     def confidence(self):
         """
         **[Required]** Gets the confidence of this Cell.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :return: The confidence of this Cell.
@@ -156,7 +156,7 @@ class Cell(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this Cell.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :param confidence: The confidence of this Cell.
@@ -188,7 +188,7 @@ class Cell(object):
     def word_indexes(self):
         """
         **[Required]** Gets the word_indexes of this Cell.
-        Words detected in the cell.
+        The words detected in the cell.
 
 
         :return: The word_indexes of this Cell.
@@ -200,7 +200,7 @@ class Cell(object):
     def word_indexes(self, word_indexes):
         """
         Sets the word_indexes of this Cell.
-        Words detected in the cell.
+        The words detected in the cell.
 
 
         :param word_indexes: The word_indexes of this Cell.

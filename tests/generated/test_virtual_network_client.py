@@ -116,6 +116,47 @@ def test_add_drg_route_rules(testing_service_client):
 
 
 # IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_add_ipv6_subnet_cidr(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'AddIpv6SubnetCidr'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'AddIpv6SubnetCidr')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='AddIpv6SubnetCidr')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.add_ipv6_subnet_cidr(
+                subnet_id=request.pop(util.camelize('subnetId')),
+                add_subnet_ipv6_cidr_details=request.pop(util.camelize('AddSubnetIpv6CidrDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'AddIpv6SubnetCidr',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'add_ipv6_subnet_cidr',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
 def test_add_ipv6_vcn_cidr(testing_service_client):
     if not testing_service_client.is_api_enabled('core', 'AddIpv6VcnCidr'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8383,6 +8424,87 @@ def test_remove_import_drg_route_distribution(testing_service_client):
             result,
             service_error,
             'drgRouteTable',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_remove_ipv6_subnet_cidr(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'RemoveIpv6SubnetCidr'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'RemoveIpv6SubnetCidr')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='RemoveIpv6SubnetCidr')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.remove_ipv6_subnet_cidr(
+                subnet_id=request.pop(util.camelize('subnetId')),
+                remove_subnet_ipv6_cidr_details=request.pop(util.camelize('RemoveSubnetIpv6CidrDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'RemoveIpv6SubnetCidr',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_ipv6_subnet_cidr',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="virtualNetwork" email="bmc_vcn_cp_us_grp@oracle.com" jiraProject="VCN" opsJiraProject="VN"
+def test_remove_ipv6_vcn_cidr(testing_service_client):
+    if not testing_service_client.is_api_enabled('core', 'RemoveIpv6VcnCidr'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('core', util.camelize('virtual_network'), 'RemoveIpv6VcnCidr')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='core', api_name='RemoveIpv6VcnCidr')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.core.VirtualNetworkClient(config, service_endpoint=service_endpoint)
+            response = client.remove_ipv6_vcn_cidr(
+                vcn_id=request.pop(util.camelize('vcnId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'core',
+            'RemoveIpv6VcnCidr',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'remove_ipv6_vcn_cidr',
             False,
             False
         )

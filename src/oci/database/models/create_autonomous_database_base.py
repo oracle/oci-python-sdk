@@ -230,6 +230,14 @@ class CreateAutonomousDatabaseBase(object):
             The value to assign to the is_auto_scaling_for_storage_enabled property of this CreateAutonomousDatabaseBase.
         :type is_auto_scaling_for_storage_enabled: bool
 
+        :param max_cpu_core_count:
+            The value to assign to the max_cpu_core_count property of this CreateAutonomousDatabaseBase.
+        :type max_cpu_core_count: int
+
+        :param database_edition:
+            The value to assign to the database_edition property of this CreateAutonomousDatabaseBase.
+        :type database_edition: str
+
         """
         self.swagger_types = {
             'compartment_id': 'str',
@@ -265,7 +273,9 @@ class CreateAutonomousDatabaseBase(object):
             'is_mtls_connection_required': 'bool',
             'autonomous_maintenance_schedule_type': 'str',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
-            'is_auto_scaling_for_storage_enabled': 'bool'
+            'is_auto_scaling_for_storage_enabled': 'bool',
+            'max_cpu_core_count': 'int',
+            'database_edition': 'str'
         }
 
         self.attribute_map = {
@@ -302,7 +312,9 @@ class CreateAutonomousDatabaseBase(object):
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'scheduled_operations': 'scheduledOperations',
-            'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled'
+            'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
+            'max_cpu_core_count': 'maxCpuCoreCount',
+            'database_edition': 'databaseEdition'
         }
 
         self._compartment_id = None
@@ -339,6 +351,8 @@ class CreateAutonomousDatabaseBase(object):
         self._autonomous_maintenance_schedule_type = None
         self._scheduled_operations = None
         self._is_auto_scaling_for_storage_enabled = None
+        self._max_cpu_core_count = None
+        self._database_edition = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -688,7 +702,7 @@ class CreateAutonomousDatabaseBase(object):
     def admin_password(self):
         """
         Gets the admin_password of this CreateAutonomousDatabaseBase.
-        The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing.
+        **Important** The `adminPassword` must be specified for all Autonomous Databases except for refreshable clones. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing.
 
 
         :return: The admin_password of this CreateAutonomousDatabaseBase.
@@ -700,7 +714,7 @@ class CreateAutonomousDatabaseBase(object):
     def admin_password(self, admin_password):
         """
         Sets the admin_password of this CreateAutonomousDatabaseBase.
-        The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing.
+        **Important** The `adminPassword` must be specified for all Autonomous Databases except for refreshable clones. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (\") or the username \"admin\", regardless of casing.
 
 
         :param admin_password: The admin_password of this CreateAutonomousDatabaseBase.
@@ -1044,8 +1058,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_data_guard_enabled(self):
         """
         Gets the is_data_guard_enabled of this CreateAutonomousDatabaseBase.
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
-        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :return: The is_data_guard_enabled of this CreateAutonomousDatabaseBase.
@@ -1057,8 +1070,7 @@ class CreateAutonomousDatabaseBase(object):
     def is_data_guard_enabled(self, is_data_guard_enabled):
         """
         Sets the is_data_guard_enabled of this CreateAutonomousDatabaseBase.
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
-        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :param is_data_guard_enabled: The is_data_guard_enabled of this CreateAutonomousDatabaseBase.
@@ -1429,6 +1441,54 @@ class CreateAutonomousDatabaseBase(object):
         :type: bool
         """
         self._is_auto_scaling_for_storage_enabled = is_auto_scaling_for_storage_enabled
+
+    @property
+    def max_cpu_core_count(self):
+        """
+        Gets the max_cpu_core_count of this CreateAutonomousDatabaseBase.
+        The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+
+
+        :return: The max_cpu_core_count of this CreateAutonomousDatabaseBase.
+        :rtype: int
+        """
+        return self._max_cpu_core_count
+
+    @max_cpu_core_count.setter
+    def max_cpu_core_count(self, max_cpu_core_count):
+        """
+        Sets the max_cpu_core_count of this CreateAutonomousDatabaseBase.
+        The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+
+
+        :param max_cpu_core_count: The max_cpu_core_count of this CreateAutonomousDatabaseBase.
+        :type: int
+        """
+        self._max_cpu_core_count = max_cpu_core_count
+
+    @property
+    def database_edition(self):
+        """
+        Gets the database_edition of this CreateAutonomousDatabaseBase.
+        The Oracle Database Edition that applies to the Autonomous databases.
+
+
+        :return: The database_edition of this CreateAutonomousDatabaseBase.
+        :rtype: str
+        """
+        return self._database_edition
+
+    @database_edition.setter
+    def database_edition(self, database_edition):
+        """
+        Sets the database_edition of this CreateAutonomousDatabaseBase.
+        The Oracle Database Edition that applies to the Autonomous databases.
+
+
+        :param database_edition: The database_edition of this CreateAutonomousDatabaseBase.
+        :type: str
+        """
+        self._database_edition = database_edition
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestResource(object):
     """
-    A resource created or operated on by a work request.
+    A resource created, or operated on, by a work request.
     """
 
     #: A constant which can be used with the action_type property of a WorkRequestResource.
@@ -109,9 +109,9 @@ class WorkRequestResource(object):
         """
         **[Required]** Gets the action_type of this WorkRequestResource.
         The way in which this resource is affected by the work tracked in the work request.
-        A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-        work is complete for that resource at which point it will transition to CREATED, UPDATED,
-        or DELETED, respectively.
+        A resource being created, updated, or deleted remains in the IN_PROGRESS state until
+        the work is complete for. At that point, it transitions to CREATED, UPDATED,
+        or DELETED, as appropriate.
 
         Allowed values for this property are: "CREATED", "UPDATED", "DELETED", "IN_PROGRESS", "RELATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -127,9 +127,9 @@ class WorkRequestResource(object):
         """
         Sets the action_type of this WorkRequestResource.
         The way in which this resource is affected by the work tracked in the work request.
-        A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
-        work is complete for that resource at which point it will transition to CREATED, UPDATED,
-        or DELETED, respectively.
+        A resource being created, updated, or deleted remains in the IN_PROGRESS state until
+        the work is complete for. At that point, it transitions to CREATED, UPDATED,
+        or DELETED, as appropriate.
 
 
         :param action_type: The action_type of this WorkRequestResource.

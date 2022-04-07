@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValueArray(FieldValue):
     """
-    Array of field values.
+    The array of field values.
     """
 
     def __init__(self, **kwargs):

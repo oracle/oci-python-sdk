@@ -76,6 +76,10 @@ class UpdateVmClusterDetails(object):
             The value to assign to the defined_tags property of this UpdateVmClusterDetails.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param data_collection_options:
+            The value to assign to the data_collection_options property of this UpdateVmClusterDetails.
+        :type data_collection_options: oci.database.models.DataCollectionOptions
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -89,7 +93,8 @@ class UpdateVmClusterDetails(object):
             'version': 'PatchDetails',
             'update_details': 'VmClusterUpdateDetails',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'data_collection_options': 'DataCollectionOptions'
         }
 
         self.attribute_map = {
@@ -104,7 +109,8 @@ class UpdateVmClusterDetails(object):
             'version': 'version',
             'update_details': 'updateDetails',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'data_collection_options': 'dataCollectionOptions'
         }
 
         self._cpu_core_count = None
@@ -119,6 +125,7 @@ class UpdateVmClusterDetails(object):
         self._update_details = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._data_collection_options = None
 
     @property
     def cpu_core_count(self):
@@ -423,6 +430,26 @@ class UpdateVmClusterDetails(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def data_collection_options(self):
+        """
+        Gets the data_collection_options of this UpdateVmClusterDetails.
+
+        :return: The data_collection_options of this UpdateVmClusterDetails.
+        :rtype: oci.database.models.DataCollectionOptions
+        """
+        return self._data_collection_options
+
+    @data_collection_options.setter
+    def data_collection_options(self, data_collection_options):
+        """
+        Sets the data_collection_options of this UpdateVmClusterDetails.
+
+        :param data_collection_options: The data_collection_options of this UpdateVmClusterDetails.
+        :type: oci.database.models.DataCollectionOptions
+        """
+        self._data_collection_options = data_collection_options
 
     def __repr__(self):
         return formatted_flat_dict(self)

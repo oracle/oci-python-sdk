@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Dimensions(object):
     """
-    Width and height of a page.
+    The width and height of a page.
     """
 
     #: A constant which can be used with the unit property of a Dimensions.
@@ -61,7 +61,7 @@ class Dimensions(object):
     def width(self):
         """
         **[Required]** Gets the width of this Dimensions.
-        Width of a page.
+        the width of a page.
 
 
         :return: The width of this Dimensions.
@@ -73,7 +73,7 @@ class Dimensions(object):
     def width(self, width):
         """
         Sets the width of this Dimensions.
-        Width of a page.
+        the width of a page.
 
 
         :param width: The width of this Dimensions.
@@ -85,7 +85,7 @@ class Dimensions(object):
     def height(self):
         """
         **[Required]** Gets the height of this Dimensions.
-        Height of a page.
+        The height of a page.
 
 
         :return: The height of this Dimensions.
@@ -97,7 +97,7 @@ class Dimensions(object):
     def height(self, height):
         """
         Sets the height of this Dimensions.
-        Height of a page.
+        The height of a page.
 
 
         :param height: The height of this Dimensions.
@@ -109,7 +109,7 @@ class Dimensions(object):
     def unit(self):
         """
         **[Required]** Gets the unit of this Dimensions.
-        Unit of length.
+        The unit of length.
 
         Allowed values for this property are: "PIXEL", "INCH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -124,7 +124,7 @@ class Dimensions(object):
     def unit(self, unit):
         """
         Sets the unit of this Dimensions.
-        Unit of length.
+        The unit of length.
 
 
         :param unit: The unit of this Dimensions.

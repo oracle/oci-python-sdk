@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DocumentMetadata(object):
     """
-    Document information.
+    The document information.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class DocumentMetadata(object):
     def page_count(self):
         """
         **[Required]** Gets the page_count of this DocumentMetadata.
-        Number of pages in the document.
+        Teh number of pages in the document.
 
 
         :return: The page_count of this DocumentMetadata.
@@ -56,7 +56,7 @@ class DocumentMetadata(object):
     def page_count(self, page_count):
         """
         Sets the page_count of this DocumentMetadata.
-        Number of pages in the document.
+        Teh number of pages in the document.
 
 
         :param page_count: The page_count of this DocumentMetadata.
@@ -68,7 +68,7 @@ class DocumentMetadata(object):
     def mime_type(self):
         """
         **[Required]** Gets the mime_type of this DocumentMetadata.
-        Result data format.
+        The result data format.
 
 
         :return: The mime_type of this DocumentMetadata.
@@ -80,7 +80,7 @@ class DocumentMetadata(object):
     def mime_type(self, mime_type):
         """
         Sets the mime_type of this DocumentMetadata.
-        Result data format.
+        The result data format.
 
 
         :param mime_type: The mime_type of this DocumentMetadata.

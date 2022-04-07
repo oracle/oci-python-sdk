@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DocumentFeature(object):
     """
-    Type of document analysis.
+    The type of document analysis.
     """
 
     #: A constant which can be used with the feature_type property of a DocumentFeature.
@@ -92,8 +92,8 @@ class DocumentFeature(object):
     def feature_type(self):
         """
         **[Required]** Gets the feature_type of this DocumentFeature.
-        Type of document analysis requested
-        Allowed values are:
+        The type of document analysis requested.
+        The allowed values are:
         - `LANGUAGE_CLASSIFICATION`: Detect the language.
         - `TEXT_DETECTION`: Recognize text.
         - `TABLE_DETECTION`: Detect and extract data in tables.
@@ -113,8 +113,8 @@ class DocumentFeature(object):
     def feature_type(self, feature_type):
         """
         Sets the feature_type of this DocumentFeature.
-        Type of document analysis requested
-        Allowed values are:
+        The type of document analysis requested.
+        The allowed values are:
         - `LANGUAGE_CLASSIFICATION`: Detect the language.
         - `TEXT_DETECTION`: Recognize text.
         - `TABLE_DETECTION`: Detect and extract data in tables.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DocumentDetails(object):
     """
-    Details about a document to analyze.
+    The details of a document to analyze.
     """
 
     #: A constant which can be used with the source property of a DocumentDetails.
@@ -67,9 +67,9 @@ class DocumentDetails(object):
     def source(self):
         """
         **[Required]** Gets the source of this DocumentDetails.
-        The location of document data.
-        Allowed values are:
-        - `INLINE`: Data is included directly in the request payload.
+        The location of the document data.
+        The allowed values are:
+        - `INLINE`: The data is included directly in the request payload.
         - `OBJECT_STORAGE`: The document is in OCI Object Storage.
 
         Allowed values for this property are: "INLINE", "OBJECT_STORAGE"
@@ -84,9 +84,9 @@ class DocumentDetails(object):
     def source(self, source):
         """
         Sets the source of this DocumentDetails.
-        The location of document data.
-        Allowed values are:
-        - `INLINE`: Data is included directly in the request payload.
+        The location of the document data.
+        The allowed values are:
+        - `INLINE`: The data is included directly in the request payload.
         - `OBJECT_STORAGE`: The document is in OCI Object Storage.
 
 

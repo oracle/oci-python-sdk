@@ -26,6 +26,10 @@ class CreateByoipRangeDetails(object):
             The value to assign to the compartment_id property of this CreateByoipRangeDetails.
         :type compartment_id: str
 
+        :param ipv6_cidr_block:
+            The value to assign to the ipv6_cidr_block property of this CreateByoipRangeDetails.
+        :type ipv6_cidr_block: str
+
         :param defined_tags:
             The value to assign to the defined_tags property of this CreateByoipRangeDetails.
         :type defined_tags: dict(str, dict(str, object))
@@ -42,6 +46,7 @@ class CreateByoipRangeDetails(object):
         self.swagger_types = {
             'cidr_block': 'str',
             'compartment_id': 'str',
+            'ipv6_cidr_block': 'str',
             'defined_tags': 'dict(str, dict(str, object))',
             'display_name': 'str',
             'freeform_tags': 'dict(str, str)'
@@ -50,6 +55,7 @@ class CreateByoipRangeDetails(object):
         self.attribute_map = {
             'cidr_block': 'cidrBlock',
             'compartment_id': 'compartmentId',
+            'ipv6_cidr_block': 'ipv6CidrBlock',
             'defined_tags': 'definedTags',
             'display_name': 'displayName',
             'freeform_tags': 'freeformTags'
@@ -57,6 +63,7 @@ class CreateByoipRangeDetails(object):
 
         self._cidr_block = None
         self._compartment_id = None
+        self._ipv6_cidr_block = None
         self._defined_tags = None
         self._display_name = None
         self._freeform_tags = None
@@ -64,7 +71,7 @@ class CreateByoipRangeDetails(object):
     @property
     def cidr_block(self):
         """
-        **[Required]** Gets the cidr_block of this CreateByoipRangeDetails.
+        Gets the cidr_block of this CreateByoipRangeDetails.
         The BYOIP CIDR block. You can assign some or all of it to a public IP pool after it is validated.
         Example: `10.0.1.0/24`
 
@@ -114,6 +121,30 @@ class CreateByoipRangeDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def ipv6_cidr_block(self):
+        """
+        Gets the ipv6_cidr_block of this CreateByoipRangeDetails.
+        The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated.
+
+
+        :return: The ipv6_cidr_block of this CreateByoipRangeDetails.
+        :rtype: str
+        """
+        return self._ipv6_cidr_block
+
+    @ipv6_cidr_block.setter
+    def ipv6_cidr_block(self, ipv6_cidr_block):
+        """
+        Sets the ipv6_cidr_block of this CreateByoipRangeDetails.
+        The BYOIPv6 CIDR block. You can assign some or all of it to a VCN after it is validated.
+
+
+        :param ipv6_cidr_block: The ipv6_cidr_block of this CreateByoipRangeDetails.
+        :type: str
+        """
+        self._ipv6_cidr_block = ipv6_cidr_block
 
     @property
     def defined_tags(self):

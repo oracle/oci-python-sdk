@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequest(object):
     """
-    A description of workrequest status.
+    The workrequest status details.
     """
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
@@ -157,7 +157,7 @@ class WorkRequest(object):
     def operation_type(self):
         """
         **[Required]** Gets the operation_type of this WorkRequest.
-        Type of the work request.
+        The type of work request.
 
         Allowed values for this property are: "CREATE_PROJECT", "UPDATE_PROJECT", "DELETE_PROJECT", "MOVE_PROJECT", "CREATE_MODEL", "UPDATE_MODEL", "DELETE_MODEL", "MOVE_MODEL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -172,7 +172,7 @@ class WorkRequest(object):
     def operation_type(self, operation_type):
         """
         Sets the operation_type of this WorkRequest.
-        Type of the work request.
+        The type of work request.
 
 
         :param operation_type: The operation_type of this WorkRequest.
@@ -187,7 +187,7 @@ class WorkRequest(object):
     def status(self):
         """
         **[Required]** Gets the status of this WorkRequest.
-        Status of current work request.
+        The status of the current work request.
 
         Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -202,7 +202,7 @@ class WorkRequest(object):
     def status(self, status):
         """
         Sets the status of this WorkRequest.
-        Status of current work request.
+        The status of the current work request.
 
 
         :param status: The status of this WorkRequest.
@@ -217,7 +217,7 @@ class WorkRequest(object):
     def id(self):
         """
         **[Required]** Gets the id of this WorkRequest.
-        The id of the work request.
+        The ID of the work request.
 
 
         :return: The id of this WorkRequest.
@@ -229,7 +229,7 @@ class WorkRequest(object):
     def id(self, id):
         """
         Sets the id of this WorkRequest.
-        The id of the work request.
+        The ID of the work request.
 
 
         :param id: The id of this WorkRequest.
@@ -291,7 +291,7 @@ class WorkRequest(object):
     def percent_complete(self):
         """
         **[Required]** Gets the percent_complete of this WorkRequest.
-        Percentage of the request completed.
+        The percentage of the request completed.
 
 
         :return: The percent_complete of this WorkRequest.
@@ -303,7 +303,7 @@ class WorkRequest(object):
     def percent_complete(self, percent_complete):
         """
         Sets the percent_complete of this WorkRequest.
-        Percentage of the request completed.
+        The percentage of the request completed.
 
 
         :param percent_complete: The percent_complete of this WorkRequest.

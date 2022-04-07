@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateImageJobDetails(object):
     """
-    Details about the batch image analysis.
+    The details of the batch image analysis.
     """
 
     def __init__(self, **kwargs):
@@ -92,7 +92,7 @@ class CreateImageJobDetails(object):
     def features(self):
         """
         **[Required]** Gets the features of this CreateImageJobDetails.
-        List of image analysis types requested.
+        The list of requested image analysis types.
 
 
         :return: The features of this CreateImageJobDetails.
@@ -104,7 +104,7 @@ class CreateImageJobDetails(object):
     def features(self, features):
         """
         Sets the features of this CreateImageJobDetails.
-        List of image analysis types requested.
+        The list of requested image analysis types.
 
 
         :param features: The features of this CreateImageJobDetails.
@@ -136,7 +136,7 @@ class CreateImageJobDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this CreateImageJobDetails.
-        Compartment identifier from the requester.
+        The compartment identifier from the requester.
 
 
         :return: The compartment_id of this CreateImageJobDetails.
@@ -148,7 +148,7 @@ class CreateImageJobDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateImageJobDetails.
-        Compartment identifier from the requester.
+        The compartment identifier from the requester.
 
 
         :param compartment_id: The compartment_id of this CreateImageJobDetails.
@@ -160,7 +160,7 @@ class CreateImageJobDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateImageJobDetails.
-        Image job display name.
+        The image job display name.
 
 
         :return: The display_name of this CreateImageJobDetails.
@@ -172,7 +172,7 @@ class CreateImageJobDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateImageJobDetails.
-        Image job display name.
+        The image job display name.
 
 
         :param display_name: The display_name of this CreateImageJobDetails.
@@ -184,7 +184,7 @@ class CreateImageJobDetails(object):
     def is_zip_output_enabled(self):
         """
         Gets the is_zip_output_enabled of this CreateImageJobDetails.
-        Whether to generate a Zip file containing the results.
+        Whether or not to generate a ZIP file containing the results.
 
 
         :return: The is_zip_output_enabled of this CreateImageJobDetails.
@@ -196,7 +196,7 @@ class CreateImageJobDetails(object):
     def is_zip_output_enabled(self, is_zip_output_enabled):
         """
         Sets the is_zip_output_enabled of this CreateImageJobDetails.
-        Whether to generate a Zip file containing the results.
+        Whether or not to generate a ZIP file containing the results.
 
 
         :param is_zip_output_enabled: The is_zip_output_enabled of this CreateImageJobDetails.

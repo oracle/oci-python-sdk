@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DetectedLanguage(object):
     """
-    Language detected in a document.
+    The language detected in a document.
     """
 
     #: A constant which can be used with the language_code property of a DetectedLanguage.
@@ -146,7 +146,7 @@ class DetectedLanguage(object):
     def language_code(self):
         """
         **[Required]** Gets the language_code of this DetectedLanguage.
-        Language of the document, abbreviated according to ISO 639-2.
+        The language of the document, abbreviated according to ISO 639-2.
 
         Allowed values for this property are: "ENG", "CES", "DAN", "NLD", "FIN", "FRA", "DEU", "ELL", "HUN", "ITA", "NOR", "POL", "POR", "RON", "RUS", "SLK", "SPA", "SWE", "TUR", "ARA", "CHI_SIM", "HIN", "JPN", "KOR", "OTHERS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -161,7 +161,7 @@ class DetectedLanguage(object):
     def language_code(self, language_code):
         """
         Sets the language_code of this DetectedLanguage.
-        Language of the document, abbreviated according to ISO 639-2.
+        The language of the document, abbreviated according to ISO 639-2.
 
 
         :param language_code: The language_code of this DetectedLanguage.
@@ -176,7 +176,7 @@ class DetectedLanguage(object):
     def confidence(self):
         """
         **[Required]** Gets the confidence of this DetectedLanguage.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :return: The confidence of this DetectedLanguage.
@@ -188,7 +188,7 @@ class DetectedLanguage(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this DetectedLanguage.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :param confidence: The confidence of this DetectedLanguage.

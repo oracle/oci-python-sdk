@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateProjectDetails(object):
     """
-    Information needed to create a new project.
+    The information needed to create a new project.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class CreateProjectDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateProjectDetails.
-        Human-friendly name for the project, which can be changed.
+        A human-friendly name for the project, that can be changed.
 
 
         :return: The display_name of this CreateProjectDetails.
@@ -77,7 +77,7 @@ class CreateProjectDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateProjectDetails.
-        Human-friendly name for the project, which can be changed.
+        A human-friendly name for the project, that can be changed.
 
 
         :param display_name: The display_name of this CreateProjectDetails.
@@ -89,7 +89,7 @@ class CreateProjectDetails(object):
     def description(self):
         """
         Gets the description of this CreateProjectDetails.
-        Optional description of the project.
+        An optional description of the project.
 
 
         :return: The description of this CreateProjectDetails.
@@ -101,7 +101,7 @@ class CreateProjectDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateProjectDetails.
-        Optional description of the project.
+        An optional description of the project.
 
 
         :param description: The description of this CreateProjectDetails.
@@ -113,7 +113,7 @@ class CreateProjectDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateProjectDetails.
-        Compartment identifier.
+        The compartment identifier.
 
 
         :return: The compartment_id of this CreateProjectDetails.
@@ -125,7 +125,7 @@ class CreateProjectDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateProjectDetails.
-        Compartment identifier.
+        The compartment identifier.
 
 
         :param compartment_id: The compartment_id of this CreateProjectDetails.
@@ -137,8 +137,8 @@ class CreateProjectDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateProjectDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this CreateProjectDetails.
@@ -150,8 +150,8 @@ class CreateProjectDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateProjectDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this CreateProjectDetails.
@@ -164,7 +164,7 @@ class CreateProjectDetails(object):
         """
         Gets the defined_tags of this CreateProjectDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this CreateProjectDetails.
@@ -177,7 +177,7 @@ class CreateProjectDetails(object):
         """
         Sets the defined_tags of this CreateProjectDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this CreateProjectDetails.

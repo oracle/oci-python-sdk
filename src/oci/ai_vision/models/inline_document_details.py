@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InlineDocumentDetails(DocumentDetails):
     """
-    Document incorporated in the request payload.
+    The document incorporated in the request payload.
     """
 
     def __init__(self, **kwargs):
@@ -47,7 +47,7 @@ class InlineDocumentDetails(DocumentDetails):
     def data(self):
         """
         **[Required]** Gets the data of this InlineDocumentDetails.
-        Document raw data.
+        Raw document data.
 
 
         :return: The data of this InlineDocumentDetails.
@@ -59,7 +59,7 @@ class InlineDocumentDetails(DocumentDetails):
     def data(self, data):
         """
         Sets the data of this InlineDocumentDetails.
-        Document raw data.
+        Raw document data.
 
 
         :param data: The data of this InlineDocumentDetails.

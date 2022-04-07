@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValueInteger(FieldValue):
     """
-    Integer field value.
+    The integer field value.
     """
 
     def __init__(self, **kwargs):
@@ -75,7 +75,7 @@ class ValueInteger(FieldValue):
     def value(self):
         """
         **[Required]** Gets the value of this ValueInteger.
-        Integer value.
+        The integer value.
 
 
         :return: The value of this ValueInteger.
@@ -87,7 +87,7 @@ class ValueInteger(FieldValue):
     def value(self, value):
         """
         Sets the value of this ValueInteger.
-        Integer value.
+        The integer value.
 
 
         :param value: The value of this ValueInteger.

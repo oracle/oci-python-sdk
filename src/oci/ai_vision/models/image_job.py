@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImageJob(object):
     """
-    Job details for a batch image analysis.
+    The job details for a batch image analysis.
     """
 
     #: A constant which can be used with the lifecycle_state property of a ImageJob.
@@ -157,7 +157,7 @@ class ImageJob(object):
     def id(self):
         """
         **[Required]** Gets the id of this ImageJob.
-        Job id
+        The job id
 
 
         :return: The id of this ImageJob.
@@ -169,7 +169,7 @@ class ImageJob(object):
     def id(self, id):
         """
         Sets the id of this ImageJob.
-        Job id
+        The job id
 
 
         :param id: The id of this ImageJob.
@@ -205,7 +205,7 @@ class ImageJob(object):
     def display_name(self):
         """
         Gets the display_name of this ImageJob.
-        Image job display name.
+        The image job display name.
 
 
         :return: The display_name of this ImageJob.
@@ -217,7 +217,7 @@ class ImageJob(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this ImageJob.
-        Image job display name.
+        The image job display name.
 
 
         :param display_name: The display_name of this ImageJob.
@@ -229,7 +229,7 @@ class ImageJob(object):
     def features(self):
         """
         **[Required]** Gets the features of this ImageJob.
-        List of document analysis types requested.
+        The list of requested document analysis types.
 
 
         :return: The features of this ImageJob.
@@ -241,7 +241,7 @@ class ImageJob(object):
     def features(self, features):
         """
         Sets the features of this ImageJob.
-        List of document analysis types requested.
+        The list of requested document analysis types.
 
 
         :param features: The features of this ImageJob.
@@ -273,7 +273,7 @@ class ImageJob(object):
     def time_accepted(self):
         """
         **[Required]** Gets the time_accepted of this ImageJob.
-        Job accepted time.
+        The job acceptance time.
 
 
         :return: The time_accepted of this ImageJob.
@@ -285,7 +285,7 @@ class ImageJob(object):
     def time_accepted(self, time_accepted):
         """
         Sets the time_accepted of this ImageJob.
-        Job accepted time.
+        The job acceptance time.
 
 
         :param time_accepted: The time_accepted of this ImageJob.
@@ -297,7 +297,7 @@ class ImageJob(object):
     def time_started(self):
         """
         Gets the time_started of this ImageJob.
-        Job started time.
+        The job start time.
 
 
         :return: The time_started of this ImageJob.
@@ -309,7 +309,7 @@ class ImageJob(object):
     def time_started(self, time_started):
         """
         Sets the time_started of this ImageJob.
-        Job started time.
+        The job start time.
 
 
         :param time_started: The time_started of this ImageJob.
@@ -321,7 +321,7 @@ class ImageJob(object):
     def time_finished(self):
         """
         Gets the time_finished of this ImageJob.
-        Job finished time.
+        The job finish time.
 
 
         :return: The time_finished of this ImageJob.
@@ -333,7 +333,7 @@ class ImageJob(object):
     def time_finished(self, time_finished):
         """
         Sets the time_finished of this ImageJob.
-        Job finished time.
+        The job finish time.
 
 
         :param time_finished: The time_finished of this ImageJob.
@@ -345,7 +345,7 @@ class ImageJob(object):
     def percent_complete(self):
         """
         Gets the percent_complete of this ImageJob.
-        How much progress the operation has made, vs the total amount of work that must be performed.
+        How much progress the operation has made, compared to the total amount of work to be performed.
 
 
         :return: The percent_complete of this ImageJob.
@@ -357,7 +357,7 @@ class ImageJob(object):
     def percent_complete(self, percent_complete):
         """
         Sets the percent_complete of this ImageJob.
-        How much progress the operation has made, vs the total amount of work that must be performed.
+        How much progress the operation has made, compared to the total amount of work to be performed.
 
 
         :param percent_complete: The percent_complete of this ImageJob.
@@ -419,7 +419,7 @@ class ImageJob(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this ImageJob.
-        Detailed status of FAILED state.
+        The detailed status of FAILED state.
 
         Allowed values for this property are: "PARTIALLY_SUCCEEDED", "COMPLETELY_FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -434,7 +434,7 @@ class ImageJob(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this ImageJob.
-        Detailed status of FAILED state.
+        The detailed status of FAILED state.
 
 
         :param lifecycle_details: The lifecycle_details of this ImageJob.
@@ -449,7 +449,7 @@ class ImageJob(object):
     def is_zip_output_enabled(self):
         """
         Gets the is_zip_output_enabled of this ImageJob.
-        Whether to generate a Zip file containing the results.
+        Whether or not to generate a ZIP file containing the results.
 
 
         :return: The is_zip_output_enabled of this ImageJob.
@@ -461,7 +461,7 @@ class ImageJob(object):
     def is_zip_output_enabled(self, is_zip_output_enabled):
         """
         Sets the is_zip_output_enabled of this ImageJob.
-        Whether to generate a Zip file containing the results.
+        Whether or not to generate a ZIP file containing the results.
 
 
         :param is_zip_output_enabled: The is_zip_output_enabled of this ImageJob.

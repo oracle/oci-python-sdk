@@ -333,7 +333,9 @@ class DbNode(object):
     def host_ip_id(self):
         """
         Gets the host_ip_id of this DbNode.
-        The `OCID`__ of the host IP address associated with the database node.
+        The `OCID`__ of the host IP address associated with the database node. Use this OCID with either the
+        :func:`get_private_ip` or the :func:`get_public_ip_by_private_ip_id` API to get the IP address
+        needed to make a database connection.
 
         **Note:** Applies only to Exadata Cloud Service.
 
@@ -349,7 +351,9 @@ class DbNode(object):
     def host_ip_id(self, host_ip_id):
         """
         Sets the host_ip_id of this DbNode.
-        The `OCID`__ of the host IP address associated with the database node.
+        The `OCID`__ of the host IP address associated with the database node. Use this OCID with either the
+        :func:`get_private_ip` or the :func:`get_public_ip_by_private_ip_id` API to get the IP address
+        needed to make a database connection.
 
         **Note:** Applies only to Exadata Cloud Service.
 
@@ -365,7 +369,9 @@ class DbNode(object):
     def backup_ip_id(self):
         """
         Gets the backup_ip_id of this DbNode.
-        The `OCID`__ of the backup IP address associated with the database node.
+        The `OCID`__ of the backup IP address associated with the database node. Use this OCID with either the
+        :func:`get_private_ip` or the :func:`get_public_ip_by_private_ip_id` API to get the IP address
+        needed to make a database connection.
 
         **Note:** Applies only to Exadata Cloud Service.
 
@@ -381,7 +387,9 @@ class DbNode(object):
     def backup_ip_id(self, backup_ip_id):
         """
         Sets the backup_ip_id of this DbNode.
-        The `OCID`__ of the backup IP address associated with the database node.
+        The `OCID`__ of the backup IP address associated with the database node. Use this OCID with either the
+        :func:`get_private_ip` or the :func:`get_public_ip_by_private_ip_id` API to get the IP address
+        needed to make a database connection.
 
         **Note:** Applies only to Exadata Cloud Service.
 

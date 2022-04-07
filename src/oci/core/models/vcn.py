@@ -46,6 +46,14 @@ class Vcn(object):
         Initializes a new Vcn object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param byoipv6_cidr_blocks:
+            The value to assign to the byoipv6_cidr_blocks property of this Vcn.
+        :type byoipv6_cidr_blocks: list[str]
+
+        :param ipv6_private_cidr_blocks:
+            The value to assign to the ipv6_private_cidr_blocks property of this Vcn.
+        :type ipv6_private_cidr_blocks: list[str]
+
         :param cidr_block:
             The value to assign to the cidr_block property of this Vcn.
         :type cidr_block: str
@@ -110,6 +118,8 @@ class Vcn(object):
 
         """
         self.swagger_types = {
+            'byoipv6_cidr_blocks': 'list[str]',
+            'ipv6_private_cidr_blocks': 'list[str]',
             'cidr_block': 'str',
             'cidr_blocks': 'list[str]',
             'compartment_id': 'str',
@@ -128,6 +138,8 @@ class Vcn(object):
         }
 
         self.attribute_map = {
+            'byoipv6_cidr_blocks': 'byoipv6CidrBlocks',
+            'ipv6_private_cidr_blocks': 'ipv6PrivateCidrBlocks',
             'cidr_block': 'cidrBlock',
             'cidr_blocks': 'cidrBlocks',
             'compartment_id': 'compartmentId',
@@ -145,6 +157,8 @@ class Vcn(object):
             'vcn_domain_name': 'vcnDomainName'
         }
 
+        self._byoipv6_cidr_blocks = None
+        self._ipv6_private_cidr_blocks = None
         self._cidr_block = None
         self._cidr_blocks = None
         self._compartment_id = None
@@ -160,6 +174,54 @@ class Vcn(object):
         self._lifecycle_state = None
         self._time_created = None
         self._vcn_domain_name = None
+
+    @property
+    def byoipv6_cidr_blocks(self):
+        """
+        Gets the byoipv6_cidr_blocks of this Vcn.
+        The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+
+
+        :return: The byoipv6_cidr_blocks of this Vcn.
+        :rtype: list[str]
+        """
+        return self._byoipv6_cidr_blocks
+
+    @byoipv6_cidr_blocks.setter
+    def byoipv6_cidr_blocks(self, byoipv6_cidr_blocks):
+        """
+        Sets the byoipv6_cidr_blocks of this Vcn.
+        The list of BYOIPv6 CIDR blocks required to create a VCN that uses BYOIPv6 ranges.
+
+
+        :param byoipv6_cidr_blocks: The byoipv6_cidr_blocks of this Vcn.
+        :type: list[str]
+        """
+        self._byoipv6_cidr_blocks = byoipv6_cidr_blocks
+
+    @property
+    def ipv6_private_cidr_blocks(self):
+        """
+        Gets the ipv6_private_cidr_blocks of this Vcn.
+        For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+
+
+        :return: The ipv6_private_cidr_blocks of this Vcn.
+        :rtype: list[str]
+        """
+        return self._ipv6_private_cidr_blocks
+
+    @ipv6_private_cidr_blocks.setter
+    def ipv6_private_cidr_blocks(self, ipv6_private_cidr_blocks):
+        """
+        Sets the ipv6_private_cidr_blocks of this Vcn.
+        For an IPv6-enabled VCN, this is the list of Private IPv6 CIDR blocks for the VCN's IP address space.
+
+
+        :param ipv6_private_cidr_blocks: The ipv6_private_cidr_blocks of this Vcn.
+        :type: list[str]
+        """
+        self._ipv6_private_cidr_blocks = ipv6_private_cidr_blocks
 
     @property
     def cidr_block(self):

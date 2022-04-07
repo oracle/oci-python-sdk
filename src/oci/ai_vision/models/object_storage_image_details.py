@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectStorageImageDetails(ImageDetails):
     """
-    Image residing in OCI Object Storage.
+    The image residing in OCI Object Storage.
     """
 
     def __init__(self, **kwargs):
@@ -61,7 +61,7 @@ class ObjectStorageImageDetails(ImageDetails):
     def namespace_name(self):
         """
         **[Required]** Gets the namespace_name of this ObjectStorageImageDetails.
-        Object Storage namespace.
+        The Object Storage namespace.
 
 
         :return: The namespace_name of this ObjectStorageImageDetails.
@@ -73,7 +73,7 @@ class ObjectStorageImageDetails(ImageDetails):
     def namespace_name(self, namespace_name):
         """
         Sets the namespace_name of this ObjectStorageImageDetails.
-        Object Storage namespace.
+        The Object Storage namespace.
 
 
         :param namespace_name: The namespace_name of this ObjectStorageImageDetails.
@@ -85,7 +85,7 @@ class ObjectStorageImageDetails(ImageDetails):
     def bucket_name(self):
         """
         **[Required]** Gets the bucket_name of this ObjectStorageImageDetails.
-        Object Storage bucket name.
+        The Object Storage bucket name.
 
 
         :return: The bucket_name of this ObjectStorageImageDetails.
@@ -97,7 +97,7 @@ class ObjectStorageImageDetails(ImageDetails):
     def bucket_name(self, bucket_name):
         """
         Sets the bucket_name of this ObjectStorageImageDetails.
-        Object Storage bucket name.
+        The Object Storage bucket name.
 
 
         :param bucket_name: The bucket_name of this ObjectStorageImageDetails.
@@ -109,7 +109,7 @@ class ObjectStorageImageDetails(ImageDetails):
     def object_name(self):
         """
         **[Required]** Gets the object_name of this ObjectStorageImageDetails.
-        Object Storage object name.
+        The Object Storage object name.
 
 
         :return: The object_name of this ObjectStorageImageDetails.
@@ -121,7 +121,7 @@ class ObjectStorageImageDetails(ImageDetails):
     def object_name(self, object_name):
         """
         Sets the object_name of this ObjectStorageImageDetails.
-        Object Storage object name.
+        The Object Storage object name.
 
 
         :param object_name: The object_name of this ObjectStorageImageDetails.

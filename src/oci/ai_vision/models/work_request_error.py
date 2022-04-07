@@ -77,7 +77,7 @@ class WorkRequestError(object):
     def message(self):
         """
         **[Required]** Gets the message of this WorkRequestError.
-        A human readable description of the issue encountered.
+        A human-readable description of the issue encountered.
 
 
         :return: The message of this WorkRequestError.
@@ -89,7 +89,7 @@ class WorkRequestError(object):
     def message(self, message):
         """
         Sets the message of this WorkRequestError.
-        A human readable description of the issue encountered.
+        A human-readable description of the issue encountered.
 
 
         :param message: The message of this WorkRequestError.

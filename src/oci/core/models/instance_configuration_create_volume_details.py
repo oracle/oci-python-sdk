@@ -304,6 +304,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
 
         Allowed values:
 
+          * `0`: Represents Lower Cost option.
+
           * `10`: Represents Balanced option.
 
           * `20`: Represents Higher Performance option.
@@ -327,6 +329,8 @@ class InstanceConfigurationCreateVolumeDetails(object):
         See `Block Volume Performance Levels`__ for more information.
 
         Allowed values:
+
+          * `0`: Represents Lower Cost option.
 
           * `10`: Represents Balanced option.
 

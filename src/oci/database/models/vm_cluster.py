@@ -162,6 +162,10 @@ class VmCluster(object):
             The value to assign to the defined_tags property of this VmCluster.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param data_collection_options:
+            The value to assign to the data_collection_options property of this VmCluster.
+        :type data_collection_options: oci.database.models.DataCollectionOptions
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -189,7 +193,8 @@ class VmCluster(object):
             'license_model': 'str',
             'db_servers': 'list[str]',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'data_collection_options': 'DataCollectionOptions'
         }
 
         self.attribute_map = {
@@ -218,7 +223,8 @@ class VmCluster(object):
             'license_model': 'licenseModel',
             'db_servers': 'dbServers',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'data_collection_options': 'dataCollectionOptions'
         }
 
         self._id = None
@@ -247,6 +253,7 @@ class VmCluster(object):
         self._db_servers = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._data_collection_options = None
 
     @property
     def id(self):
@@ -923,6 +930,26 @@ class VmCluster(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def data_collection_options(self):
+        """
+        Gets the data_collection_options of this VmCluster.
+
+        :return: The data_collection_options of this VmCluster.
+        :rtype: oci.database.models.DataCollectionOptions
+        """
+        return self._data_collection_options
+
+    @data_collection_options.setter
+    def data_collection_options(self, data_collection_options):
+        """
+        Sets the data_collection_options of this VmCluster.
+
+        :param data_collection_options: The data_collection_options of this VmCluster.
+        :type: oci.database.models.DataCollectionOptions
+        """
+        self._data_collection_options = data_collection_options
 
     def __repr__(self):
         return formatted_flat_dict(self)
