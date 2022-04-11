@@ -356,6 +356,7 @@ Added
 * Support for domains in the Identity service
 * Support for redeemable users and support rewards in the Usage service
 * Support for calling Oracle Cloud Infrastructure services in the ap-singapore-1 and eu-marseille-1 regions
+* Support for second level domain fallback via environment variable.
 
 Changed
 -------
