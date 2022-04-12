@@ -7,7 +7,7 @@ from datetime import datetime
 import oci
 import pytest
 from oci._vendor import six
-from tests.util import camel_to_snake
+from tests.util import enum_to_snake
 
 
 def test_all_model_classes_can_be_init_from_kwargs():
@@ -34,7 +34,7 @@ def test_all_model_classes_can_be_init_from_kwargs():
                 if attr_type == 'str':
                     values = []
                     for prop in dir(base_model):
-                        if prop.startswith(attr_name.upper()) and (attr_name + '_' + camel_to_snake(getattr(base_model, prop))).upper() == prop:
+                        if prop.startswith(attr_name.upper()) and (attr_name + '_' + enum_to_snake(getattr(base_model, prop))).upper() == prop:
                             values.append(getattr(base_model, prop))
                     if values:
                         kwargs[attr_name] = values[0]
