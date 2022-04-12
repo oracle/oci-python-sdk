@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DocumentClassificationFeature(DocumentFeature):
     """
-    Identifying the type of the document.
+    Identifying the document type.
     """
 
     def __init__(self, **kwargs):
@@ -78,7 +78,7 @@ class DocumentClassificationFeature(DocumentFeature):
     def model_id(self):
         """
         Gets the model_id of this DocumentClassificationFeature.
-        Custom model id.
+        The custom model ID.
 
 
         :return: The model_id of this DocumentClassificationFeature.
@@ -90,7 +90,7 @@ class DocumentClassificationFeature(DocumentFeature):
     def model_id(self, model_id):
         """
         Sets the model_id of this DocumentClassificationFeature.
-        Custom model id.
+        The custom model ID.
 
 
         :param model_id: The model_id of this DocumentClassificationFeature.

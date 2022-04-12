@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValueDate(FieldValue):
     """
-    Date field value.
+    The date field value.
     """
 
     def __init__(self, **kwargs):
@@ -75,7 +75,7 @@ class ValueDate(FieldValue):
     def value(self):
         """
         **[Required]** Gets the value of this ValueDate.
-        Date field value as yyyy-mm-dd.
+        The date field value as yyyy-mm-dd.
 
 
         :return: The value of this ValueDate.
@@ -87,7 +87,7 @@ class ValueDate(FieldValue):
     def value(self, value):
         """
         Sets the value of this ValueDate.
-        Date field value as yyyy-mm-dd.
+        The date field value as yyyy-mm-dd.
 
 
         :param value: The value of this ValueDate.

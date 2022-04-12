@@ -44,7 +44,7 @@ class WorkRequestLogEntry(object):
     def message(self):
         """
         **[Required]** Gets the message of this WorkRequestLogEntry.
-        Human-readable log message.
+        A human-readable log message.
 
 
         :return: The message of this WorkRequestLogEntry.
@@ -56,7 +56,7 @@ class WorkRequestLogEntry(object):
     def message(self, message):
         """
         Sets the message of this WorkRequestLogEntry.
-        Human-readable log message.
+        A human-readable log message.
 
 
         :param message: The message of this WorkRequestLogEntry.

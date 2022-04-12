@@ -201,6 +201,14 @@ class UpdateAutonomousDatabaseDetails(object):
             The value to assign to the is_auto_scaling_for_storage_enabled property of this UpdateAutonomousDatabaseDetails.
         :type is_auto_scaling_for_storage_enabled: bool
 
+        :param max_cpu_core_count:
+            The value to assign to the max_cpu_core_count property of this UpdateAutonomousDatabaseDetails.
+        :type max_cpu_core_count: int
+
+        :param database_edition:
+            The value to assign to the database_edition property of this UpdateAutonomousDatabaseDetails.
+        :type database_edition: str
+
         """
         self.swagger_types = {
             'cpu_core_count': 'int',
@@ -233,7 +241,9 @@ class UpdateAutonomousDatabaseDetails(object):
             'customer_contacts': 'list[CustomerContact]',
             'is_mtls_connection_required': 'bool',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
-            'is_auto_scaling_for_storage_enabled': 'bool'
+            'is_auto_scaling_for_storage_enabled': 'bool',
+            'max_cpu_core_count': 'int',
+            'database_edition': 'str'
         }
 
         self.attribute_map = {
@@ -267,7 +277,9 @@ class UpdateAutonomousDatabaseDetails(object):
             'customer_contacts': 'customerContacts',
             'is_mtls_connection_required': 'isMtlsConnectionRequired',
             'scheduled_operations': 'scheduledOperations',
-            'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled'
+            'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
+            'max_cpu_core_count': 'maxCpuCoreCount',
+            'database_edition': 'databaseEdition'
         }
 
         self._cpu_core_count = None
@@ -301,6 +313,8 @@ class UpdateAutonomousDatabaseDetails(object):
         self._is_mtls_connection_required = None
         self._scheduled_operations = None
         self._is_auto_scaling_for_storage_enabled = None
+        self._max_cpu_core_count = None
+        self._database_edition = None
 
     @property
     def cpu_core_count(self):
@@ -1283,6 +1297,54 @@ class UpdateAutonomousDatabaseDetails(object):
         :type: bool
         """
         self._is_auto_scaling_for_storage_enabled = is_auto_scaling_for_storage_enabled
+
+    @property
+    def max_cpu_core_count(self):
+        """
+        Gets the max_cpu_core_count of this UpdateAutonomousDatabaseDetails.
+        The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+
+
+        :return: The max_cpu_core_count of this UpdateAutonomousDatabaseDetails.
+        :rtype: int
+        """
+        return self._max_cpu_core_count
+
+    @max_cpu_core_count.setter
+    def max_cpu_core_count(self, max_cpu_core_count):
+        """
+        Sets the max_cpu_core_count of this UpdateAutonomousDatabaseDetails.
+        The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+
+
+        :param max_cpu_core_count: The max_cpu_core_count of this UpdateAutonomousDatabaseDetails.
+        :type: int
+        """
+        self._max_cpu_core_count = max_cpu_core_count
+
+    @property
+    def database_edition(self):
+        """
+        Gets the database_edition of this UpdateAutonomousDatabaseDetails.
+        The Oracle Database Edition that applies to the Autonomous databases.
+
+
+        :return: The database_edition of this UpdateAutonomousDatabaseDetails.
+        :rtype: str
+        """
+        return self._database_edition
+
+    @database_edition.setter
+    def database_edition(self, database_edition):
+        """
+        Sets the database_edition of this UpdateAutonomousDatabaseDetails.
+        The Oracle Database Edition that applies to the Autonomous databases.
+
+
+        :param database_edition: The database_edition of this UpdateAutonomousDatabaseDetails.
+        :type: str
+        """
+        self._database_edition = database_edition
 
     def __repr__(self):
         return formatted_flat_dict(self)

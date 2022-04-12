@@ -32,7 +32,9 @@ Core Services
     oci.core.models.AddNetworkSecurityGroupSecurityRulesDetails
     oci.core.models.AddPublicIpPoolCapacityDetails
     oci.core.models.AddSecurityRuleDetails
+    oci.core.models.AddSubnetIpv6CidrDetails
     oci.core.models.AddVcnCidrDetails
+    oci.core.models.AddVcnIpv6CidrDetails
     oci.core.models.AddedNetworkSecurityGroupSecurityRules
     oci.core.models.AllowedIkeIPSecParameters
     oci.core.models.AllowedPhaseOneParameters
@@ -82,6 +84,8 @@ Core Services
     oci.core.models.ByoipRange
     oci.core.models.ByoipRangeCollection
     oci.core.models.ByoipRangeSummary
+    oci.core.models.ByoipRangeVcnIpv6AllocationSummary
+    oci.core.models.Byoipv6CidrDetails
     oci.core.models.CapacityReservationInstanceSummary
     oci.core.models.CaptureConsoleHistoryDetails
     oci.core.models.ChangeBootVolumeBackupCompartmentDetails
@@ -365,7 +369,9 @@ Core Services
     oci.core.models.RemoveDrgRouteRulesDetails
     oci.core.models.RemoveNetworkSecurityGroupSecurityRulesDetails
     oci.core.models.RemovePublicIpPoolCapacityDetails
+    oci.core.models.RemoveSubnetIpv6CidrDetails
     oci.core.models.RemoveVcnCidrDetails
+    oci.core.models.RemoveVcnIpv6CidrDetails
     oci.core.models.RouteRule
     oci.core.models.RouteTable
     oci.core.models.SecurityList

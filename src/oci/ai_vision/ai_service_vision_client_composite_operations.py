@@ -29,7 +29,7 @@ class AIServiceVisionClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.ai_vision.models.CreateDocumentJobDetails create_document_job_details: (required)
-            Details about the batch document analysis.
+            The details of the batch document analysis.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ai_vision.models.DocumentJob.lifecycle_state`
@@ -67,7 +67,7 @@ class AIServiceVisionClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.ai_vision.models.CreateImageJobDetails create_image_job_details: (required)
-            Details about the batch image analysis.
+            The details of the batch image analysis.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ai_vision.models.ImageJob.lifecycle_state`
@@ -105,7 +105,7 @@ class AIServiceVisionClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.ai_vision.models.CreateModelDetails create_model_details: (required)
-            Metadata about the new model.
+            The metadata about the new model.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ai_vision.models.WorkRequest.status`
@@ -143,7 +143,7 @@ class AIServiceVisionClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.ai_vision.models.CreateProjectDetails create_project_details: (required)
-            Details for the new Project.
+            The new Project's details.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ai_vision.models.WorkRequest.status`
@@ -181,7 +181,7 @@ class AIServiceVisionClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str model_id: (required)
-            unique model identifier.
+            A unique model identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ai_vision.models.WorkRequest.status`
@@ -227,7 +227,7 @@ class AIServiceVisionClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str project_id: (required)
-            unique project identifier.
+            A unique project identifier.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ai_vision.models.WorkRequest.status`
@@ -273,10 +273,10 @@ class AIServiceVisionClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str model_id: (required)
-            unique model identifier.
+            A unique model identifier.
 
         :param oci.ai_vision.models.UpdateModelDetails update_model_details: (required)
-            Model metadata to be updated.
+            The model metadata to be updated.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ai_vision.models.WorkRequest.status`
@@ -314,10 +314,10 @@ class AIServiceVisionClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str project_id: (required)
-            unique project identifier.
+            A unique project identifier.
 
         :param oci.ai_vision.models.UpdateProjectDetails update_project_details: (required)
-            Project metadata to be updated.
+            The project metadata to be updated.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.ai_vision.models.WorkRequest.status`

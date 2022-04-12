@@ -319,7 +319,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
     def autonomous_exadata_infrastructure_id(self):
         """
         Gets the autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
-        The OCID of the Autonomous Exadata Infrastructure.
+        **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 
 
         :return: The autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
@@ -331,7 +331,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
     def autonomous_exadata_infrastructure_id(self, autonomous_exadata_infrastructure_id):
         """
         Sets the autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
-        The OCID of the Autonomous Exadata Infrastructure.
+        **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 
 
         :param autonomous_exadata_infrastructure_id: The autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
@@ -343,7 +343,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
     def peer_autonomous_exadata_infrastructure_id(self):
         """
         Gets the peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
-        The OCID of the peer Autonomous Exadata Infrastructure for Autonomous Data Guard.
+        *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 
 
         :return: The peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
@@ -355,7 +355,7 @@ class CreateAutonomousContainerDatabaseDetails(object):
     def peer_autonomous_exadata_infrastructure_id(self, peer_autonomous_exadata_infrastructure_id):
         """
         Sets the peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.
-        The OCID of the peer Autonomous Exadata Infrastructure for Autonomous Data Guard.
+        *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 
 
         :param peer_autonomous_exadata_infrastructure_id: The peer_autonomous_exadata_infrastructure_id of this CreateAutonomousContainerDatabaseDetails.

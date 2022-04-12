@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImageTextDetectionFeature(ImageFeature):
     """
-    Text detection parameters.
+    The text detection parameters.
     """
 
     #: A constant which can be used with the language property of a ImageTextDetectionFeature.
@@ -150,7 +150,7 @@ class ImageTextDetectionFeature(ImageFeature):
     def language(self):
         """
         Gets the language of this ImageTextDetectionFeature.
-        Language of the document image, abbreviated according to ISO 639-2.
+        The language of the document image, abbreviated according to ISO 639-2.
 
         Allowed values for this property are: "ENG", "CES", "DAN", "NLD", "FIN", "FRA", "DEU", "ELL", "HUN", "ITA", "NOR", "POL", "POR", "RON", "RUS", "SLK", "SPA", "SWE", "TUR", "ARA", "CHI_SIM", "HIN", "JPN", "KOR", "OTHERS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -165,7 +165,7 @@ class ImageTextDetectionFeature(ImageFeature):
     def language(self, language):
         """
         Sets the language of this ImageTextDetectionFeature.
-        Language of the document image, abbreviated according to ISO 639-2.
+        The language of the document image, abbreviated according to ISO 639-2.
 
 
         :param language: The language of this ImageTextDetectionFeature.

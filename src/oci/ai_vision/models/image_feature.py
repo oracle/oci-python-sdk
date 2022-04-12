@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImageFeature(object):
     """
-    Type of image analysis.
+    The type of image analysis.
     """
 
     #: A constant which can be used with the feature_type property of a ImageFeature.
@@ -76,8 +76,8 @@ class ImageFeature(object):
     def feature_type(self):
         """
         **[Required]** Gets the feature_type of this ImageFeature.
-        Type of image analysis requested.
-        Allowed values are:
+        The type of image analysis requested.
+        The allowed values are:
         - `IMAGE_CLASSIFICATION`: Label the image.
         - `OBJECT_DETECTION`: Identify objects in the image with bounding boxes.
         - `TEXT_DETECTION`: Recognize text in the image.
@@ -95,8 +95,8 @@ class ImageFeature(object):
     def feature_type(self, feature_type):
         """
         Sets the feature_type of this ImageFeature.
-        Type of image analysis requested.
-        Allowed values are:
+        The type of image analysis requested.
+        The allowed values are:
         - `IMAGE_CLASSIFICATION`: Label the image.
         - `OBJECT_DETECTION`: Identify objects in the image with bounding boxes.
         - `TEXT_DETECTION`: Recognize text in the image.

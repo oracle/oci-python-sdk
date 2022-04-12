@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnalyzeDocumentDetails(object):
     """
-    Details about how to analyze a document.
+    The details of how to analyze a document.
     """
 
     #: A constant which can be used with the language property of a AnalyzeDocumentDetails.
@@ -214,7 +214,7 @@ class AnalyzeDocumentDetails(object):
     def features(self):
         """
         **[Required]** Gets the features of this AnalyzeDocumentDetails.
-        Types of document analysis requested.
+        The types of document analysis requested.
 
 
         :return: The features of this AnalyzeDocumentDetails.
@@ -226,7 +226,7 @@ class AnalyzeDocumentDetails(object):
     def features(self, features):
         """
         Sets the features of this AnalyzeDocumentDetails.
-        Types of document analysis requested.
+        The types of document analysis requested.
 
 
         :param features: The features of this AnalyzeDocumentDetails.
@@ -302,7 +302,7 @@ class AnalyzeDocumentDetails(object):
     def language(self):
         """
         Gets the language of this AnalyzeDocumentDetails.
-        Language of the document, abbreviated according to ISO 639-2.
+        The document language, abbreviated according to ISO 639-2.
 
         Allowed values for this property are: "ENG", "CES", "DAN", "NLD", "FIN", "FRA", "DEU", "ELL", "HUN", "ITA", "NOR", "POL", "POR", "RON", "RUS", "SLK", "SPA", "SWE", "TUR", "ARA", "CHI_SIM", "HIN", "JPN", "KOR", "OTHERS"
 
@@ -316,7 +316,7 @@ class AnalyzeDocumentDetails(object):
     def language(self, language):
         """
         Sets the language of this AnalyzeDocumentDetails.
-        Language of the document, abbreviated according to ISO 639-2.
+        The document language, abbreviated according to ISO 639-2.
 
 
         :param language: The language of this AnalyzeDocumentDetails.
@@ -334,7 +334,7 @@ class AnalyzeDocumentDetails(object):
     def document_type(self):
         """
         Gets the document_type of this AnalyzeDocumentDetails.
-        The type of document.
+        The document type.
 
         Allowed values for this property are: "INVOICE", "RECEIPT", "RESUME", "TAX_FORM", "DRIVER_LICENSE", "PASSPORT", "BANK_STATEMENT", "CHECK", "PAYSLIP", "OTHERS"
 
@@ -348,7 +348,7 @@ class AnalyzeDocumentDetails(object):
     def document_type(self, document_type):
         """
         Sets the document_type of this AnalyzeDocumentDetails.
-        The type of document.
+        The document type.
 
 
         :param document_type: The document_type of this AnalyzeDocumentDetails.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValueString(FieldValue):
     """
-    String field value.
+    The string field value.
     """
 
     def __init__(self, **kwargs):
@@ -75,7 +75,7 @@ class ValueString(FieldValue):
     def value(self):
         """
         **[Required]** Gets the value of this ValueString.
-        String text.
+        The string text.
 
 
         :return: The value of this ValueString.
@@ -87,7 +87,7 @@ class ValueString(FieldValue):
     def value(self, value):
         """
         Sets the value of this ValueString.
-        String text.
+        The string text.
 
 
         :param value: The value of this ValueString.

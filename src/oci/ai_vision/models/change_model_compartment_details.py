@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ChangeModelCompartmentDetails(object):
     """
-    Which compartment the model should be moved to.
+    The compartment the model should be moved to.
     """
 
     def __init__(self, **kwargs):

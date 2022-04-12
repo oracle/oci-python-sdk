@@ -47,7 +47,13 @@ class CreateDbSystemSourceImportFromUrlDetails(CreateDbSystemSourceDetails):
     def source_url(self):
         """
         **[Required]** Gets the source_url of this CreateDbSystemSourceImportFromUrlDetails.
-        The Pre-Authenticated Request (PAR) URL of the file you want to import from Object Storage.
+        The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage.
+        Check `Using Pre-Authenticated Requests`__
+        for information related to PAR creation.
+        Please create PAR with \"Permit object reads\" access type and \"Enable Object Listing\" permission when using a bucket/prefix PAR.
+        Please create PAR with \"Permit object reads\" access type when using a @.manifest.json object PAR.
+
+        __ https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm
 
 
         :return: The source_url of this CreateDbSystemSourceImportFromUrlDetails.
@@ -59,7 +65,13 @@ class CreateDbSystemSourceImportFromUrlDetails(CreateDbSystemSourceDetails):
     def source_url(self, source_url):
         """
         Sets the source_url of this CreateDbSystemSourceImportFromUrlDetails.
-        The Pre-Authenticated Request (PAR) URL of the file you want to import from Object Storage.
+        The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage.
+        Check `Using Pre-Authenticated Requests`__
+        for information related to PAR creation.
+        Please create PAR with \"Permit object reads\" access type and \"Enable Object Listing\" permission when using a bucket/prefix PAR.
+        Please create PAR with \"Permit object reads\" access type when using a @.manifest.json object PAR.
+
+        __ https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm
 
 
         :param source_url: The source_url of this CreateDbSystemSourceImportFromUrlDetails.

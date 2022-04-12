@@ -334,7 +334,6 @@ def set_parser_arguments(argsList=[]):
     parser.add_argument('-caches', action='store_true', default=False, dest='servicescr', help="Output Cache to screen (JSON format)")
     parser.add_argument('--version', action='version', version='%(prog)s ' + version)
 
-
     if not argsList:
         result = parser.parse_args()
     else:
@@ -502,4 +501,3 @@ def print_to_json_file(output, file_name, data, header):
 ##########################################################################
 if __name__ == "__main__":
     execute_extract()
-

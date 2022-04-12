@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class InputLocation(object):
     """
-    The location of the input(s).
+    The location of the inputs.
     """
 
     #: A constant which can be used with the source_type property of a InputLocation.
@@ -60,8 +60,8 @@ class InputLocation(object):
     def source_type(self):
         """
         **[Required]** Gets the source_type of this InputLocation.
-        The type of input location
-        Allowed values are:
+        The type of input location.
+        The allowed values are:
         - `OBJECT_LIST_INLINE_INPUT_LOCATION`: A list of object locations in Object Storage.
 
         Allowed values for this property are: "OBJECT_LIST_INLINE_INPUT_LOCATION", 'UNKNOWN_ENUM_VALUE'.
@@ -77,8 +77,8 @@ class InputLocation(object):
     def source_type(self, source_type):
         """
         Sets the source_type of this InputLocation.
-        The type of input location
-        Allowed values are:
+        The type of input location.
+        The allowed values are:
         - `OBJECT_LIST_INLINE_INPUT_LOCATION`: A list of object locations in Object Storage.
 
 

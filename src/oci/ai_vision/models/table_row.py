@@ -37,7 +37,7 @@ class TableRow(object):
     def cells(self):
         """
         **[Required]** Gets the cells of this TableRow.
-        Cells in the row.
+        The cells in the row.
 
 
         :return: The cells of this TableRow.
@@ -49,7 +49,7 @@ class TableRow(object):
     def cells(self, cells):
         """
         Sets the cells of this TableRow.
-        Cells in the row.
+        The cells in the row.
 
 
         :param cells: The cells of this TableRow.

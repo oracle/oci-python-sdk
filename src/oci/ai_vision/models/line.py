@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Line(object):
     """
-    Line of text.
+    The line of text.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class Line(object):
     def text(self):
         """
         **[Required]** Gets the text of this Line.
-        Text recognized.
+        The text recognized.
 
 
         :return: The text of this Line.
@@ -70,7 +70,7 @@ class Line(object):
     def text(self, text):
         """
         Sets the text of this Line.
-        Text recognized.
+        The text recognized.
 
 
         :param text: The text of this Line.
@@ -82,7 +82,7 @@ class Line(object):
     def confidence(self):
         """
         **[Required]** Gets the confidence of this Line.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :return: The confidence of this Line.
@@ -94,7 +94,7 @@ class Line(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this Line.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :param confidence: The confidence of this Line.
@@ -126,7 +126,7 @@ class Line(object):
     def word_indexes(self):
         """
         **[Required]** Gets the word_indexes of this Line.
-        Array of words.
+        The array of words.
 
 
         :return: The word_indexes of this Line.
@@ -138,7 +138,7 @@ class Line(object):
     def word_indexes(self, word_indexes):
         """
         Sets the word_indexes of this Line.
-        Array of words.
+        The array of words.
 
 
         :param word_indexes: The word_indexes of this Line.

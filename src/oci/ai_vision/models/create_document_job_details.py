@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateDocumentJobDetails(object):
     """
-    Details about the batch document analysis.
+    The batch document analysis details.
     """
 
     #: A constant which can be used with the language property of a CreateDocumentJobDetails.
@@ -248,7 +248,7 @@ class CreateDocumentJobDetails(object):
     def features(self):
         """
         **[Required]** Gets the features of this CreateDocumentJobDetails.
-        List of document analysis types requested.
+        The list of requested document analysis types.
 
 
         :return: The features of this CreateDocumentJobDetails.
@@ -260,7 +260,7 @@ class CreateDocumentJobDetails(object):
     def features(self, features):
         """
         Sets the features of this CreateDocumentJobDetails.
-        List of document analysis types requested.
+        The list of requested document analysis types.
 
 
         :param features: The features of this CreateDocumentJobDetails.
@@ -292,7 +292,7 @@ class CreateDocumentJobDetails(object):
     def compartment_id(self):
         """
         Gets the compartment_id of this CreateDocumentJobDetails.
-        Compartment identifier from the requester.
+        The compartment identifier from the requester.
 
 
         :return: The compartment_id of this CreateDocumentJobDetails.
@@ -304,7 +304,7 @@ class CreateDocumentJobDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateDocumentJobDetails.
-        Compartment identifier from the requester.
+        The compartment identifier from the requester.
 
 
         :param compartment_id: The compartment_id of this CreateDocumentJobDetails.
@@ -316,7 +316,7 @@ class CreateDocumentJobDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateDocumentJobDetails.
-        Document job display name.
+        The document job display name.
 
 
         :return: The display_name of this CreateDocumentJobDetails.
@@ -328,7 +328,7 @@ class CreateDocumentJobDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateDocumentJobDetails.
-        Document job display name.
+        The document job display name.
 
 
         :param display_name: The display_name of this CreateDocumentJobDetails.
@@ -340,7 +340,7 @@ class CreateDocumentJobDetails(object):
     def language(self):
         """
         Gets the language of this CreateDocumentJobDetails.
-        Language of the document, abbreviated according to ISO 639-2.
+        The language of the document, abbreviated according to ISO 639-2.
 
         Allowed values for this property are: "ENG", "CES", "DAN", "NLD", "FIN", "FRA", "DEU", "ELL", "HUN", "ITA", "NOR", "POL", "POR", "RON", "RUS", "SLK", "SPA", "SWE", "TUR", "ARA", "CHI_SIM", "HIN", "JPN", "KOR", "OTHERS"
 
@@ -354,7 +354,7 @@ class CreateDocumentJobDetails(object):
     def language(self, language):
         """
         Sets the language of this CreateDocumentJobDetails.
-        Language of the document, abbreviated according to ISO 639-2.
+        The language of the document, abbreviated according to ISO 639-2.
 
 
         :param language: The language of this CreateDocumentJobDetails.
@@ -404,7 +404,7 @@ class CreateDocumentJobDetails(object):
     def is_zip_output_enabled(self):
         """
         Gets the is_zip_output_enabled of this CreateDocumentJobDetails.
-        Whether to generate a Zip file containing the results.
+        Whether or not to generate a ZIP file containing the results.
 
 
         :return: The is_zip_output_enabled of this CreateDocumentJobDetails.
@@ -416,7 +416,7 @@ class CreateDocumentJobDetails(object):
     def is_zip_output_enabled(self, is_zip_output_enabled):
         """
         Sets the is_zip_output_enabled of this CreateDocumentJobDetails.
-        Whether to generate a Zip file containing the results.
+        Whether or not to generate a ZIP file containing the results.
 
 
         :param is_zip_output_enabled: The is_zip_output_enabled of this CreateDocumentJobDetails.

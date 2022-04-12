@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class OutputLocation(object):
     """
-    OCI Object Storage Location.
+    The Object Storage Location.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class OutputLocation(object):
     def namespace_name(self):
         """
         **[Required]** Gets the namespace_name of this OutputLocation.
-        Object Storage namespace.
+        The Object Storage namespace.
 
 
         :return: The namespace_name of this OutputLocation.
@@ -63,7 +63,7 @@ class OutputLocation(object):
     def namespace_name(self, namespace_name):
         """
         Sets the namespace_name of this OutputLocation.
-        Object Storage namespace.
+        The Object Storage namespace.
 
 
         :param namespace_name: The namespace_name of this OutputLocation.
@@ -75,7 +75,7 @@ class OutputLocation(object):
     def bucket_name(self):
         """
         **[Required]** Gets the bucket_name of this OutputLocation.
-        Object Storage bucket name.
+        The Object Storage bucket name.
 
 
         :return: The bucket_name of this OutputLocation.
@@ -87,7 +87,7 @@ class OutputLocation(object):
     def bucket_name(self, bucket_name):
         """
         Sets the bucket_name of this OutputLocation.
-        Object Storage bucket name.
+        The Object Storage bucket name.
 
 
         :param bucket_name: The bucket_name of this OutputLocation.
@@ -99,7 +99,7 @@ class OutputLocation(object):
     def prefix(self):
         """
         **[Required]** Gets the prefix of this OutputLocation.
-        Object Storage folder name.
+        The Object Storage folder name.
 
 
         :return: The prefix of this OutputLocation.
@@ -111,7 +111,7 @@ class OutputLocation(object):
     def prefix(self, prefix):
         """
         Sets the prefix of this OutputLocation.
-        Object Storage folder name.
+        The Object Storage folder name.
 
 
         :param prefix: The prefix of this OutputLocation.

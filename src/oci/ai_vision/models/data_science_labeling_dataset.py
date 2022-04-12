@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class DataScienceLabelingDataset(Dataset):
     """
-    Dataset created by the Data Labeling Service.
+    The dataset created by the Data Labeling Service.
     """
 
     def __init__(self, **kwargs):

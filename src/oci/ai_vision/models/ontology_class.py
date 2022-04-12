@@ -51,7 +51,7 @@ class OntologyClass(object):
     def name(self):
         """
         **[Required]** Gets the name of this OntologyClass.
-        Name of the label.
+        The label name.
 
 
         :return: The name of this OntologyClass.
@@ -63,7 +63,7 @@ class OntologyClass(object):
     def name(self, name):
         """
         Sets the name of this OntologyClass.
-        Name of the label.
+        The label name.
 
 
         :param name: The name of this OntologyClass.
@@ -75,7 +75,7 @@ class OntologyClass(object):
     def parent_names(self):
         """
         Gets the parent_names of this OntologyClass.
-        Parents of the label.
+        The label parents.
 
 
         :return: The parent_names of this OntologyClass.
@@ -87,7 +87,7 @@ class OntologyClass(object):
     def parent_names(self, parent_names):
         """
         Sets the parent_names of this OntologyClass.
-        Parents of the label.
+        The label parents.
 
 
         :param parent_names: The parent_names of this OntologyClass.
@@ -99,7 +99,7 @@ class OntologyClass(object):
     def synonym_names(self):
         """
         Gets the synonym_names of this OntologyClass.
-        Synonyms of the label.
+        The label synonyms.
 
 
         :return: The synonym_names of this OntologyClass.
@@ -111,7 +111,7 @@ class OntologyClass(object):
     def synonym_names(self, synonym_names):
         """
         Sets the synonym_names of this OntologyClass.
-        Synonyms of the label.
+        The label synonyms.
 
 
         :param synonym_names: The synonym_names of this OntologyClass.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValueTime(FieldValue):
     """
-    Time field value
+    The time field value.
     """
 
     def __init__(self, **kwargs):
@@ -75,7 +75,7 @@ class ValueTime(FieldValue):
     def value(self):
         """
         **[Required]** Gets the value of this ValueTime.
-        Time field value as yyyy-mm-dd hh-mm-ss.
+        The time field value as yyyy-mm-dd hh-mm-ss.
 
 
         :return: The value of this ValueTime.
@@ -87,7 +87,7 @@ class ValueTime(FieldValue):
     def value(self, value):
         """
         Sets the value of this ValueTime.
-        Time field value as yyyy-mm-dd hh-mm-ss.
+        The time field value as yyyy-mm-dd hh-mm-ss.
 
 
         :param value: The value of this ValueTime.

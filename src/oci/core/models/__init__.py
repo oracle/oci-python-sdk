@@ -12,7 +12,9 @@ from .add_image_shape_compatibility_entry_details import AddImageShapeCompatibil
 from .add_network_security_group_security_rules_details import AddNetworkSecurityGroupSecurityRulesDetails
 from .add_public_ip_pool_capacity_details import AddPublicIpPoolCapacityDetails
 from .add_security_rule_details import AddSecurityRuleDetails
+from .add_subnet_ipv6_cidr_details import AddSubnetIpv6CidrDetails
 from .add_vcn_cidr_details import AddVcnCidrDetails
+from .add_vcn_ipv6_cidr_details import AddVcnIpv6CidrDetails
 from .added_network_security_group_security_rules import AddedNetworkSecurityGroupSecurityRules
 from .allowed_ike_ip_sec_parameters import AllowedIkeIPSecParameters
 from .allowed_phase_one_parameters import AllowedPhaseOneParameters
@@ -62,6 +64,8 @@ from .byoip_allocated_range_summary import ByoipAllocatedRangeSummary
 from .byoip_range import ByoipRange
 from .byoip_range_collection import ByoipRangeCollection
 from .byoip_range_summary import ByoipRangeSummary
+from .byoip_range_vcn_ipv6_allocation_summary import ByoipRangeVcnIpv6AllocationSummary
+from .byoipv6_cidr_details import Byoipv6CidrDetails
 from .capacity_reservation_instance_summary import CapacityReservationInstanceSummary
 from .capture_console_history_details import CaptureConsoleHistoryDetails
 from .change_boot_volume_backup_compartment_details import ChangeBootVolumeBackupCompartmentDetails
@@ -345,7 +349,9 @@ from .remove_drg_route_distribution_statements_details import RemoveDrgRouteDist
 from .remove_drg_route_rules_details import RemoveDrgRouteRulesDetails
 from .remove_network_security_group_security_rules_details import RemoveNetworkSecurityGroupSecurityRulesDetails
 from .remove_public_ip_pool_capacity_details import RemovePublicIpPoolCapacityDetails
+from .remove_subnet_ipv6_cidr_details import RemoveSubnetIpv6CidrDetails
 from .remove_vcn_cidr_details import RemoveVcnCidrDetails
+from .remove_vcn_ipv6_cidr_details import RemoveVcnIpv6CidrDetails
 from .route_rule import RouteRule
 from .route_table import RouteTable
 from .security_list import SecurityList
@@ -497,7 +503,9 @@ core_type_mapping = {
     "AddNetworkSecurityGroupSecurityRulesDetails": AddNetworkSecurityGroupSecurityRulesDetails,
     "AddPublicIpPoolCapacityDetails": AddPublicIpPoolCapacityDetails,
     "AddSecurityRuleDetails": AddSecurityRuleDetails,
+    "AddSubnetIpv6CidrDetails": AddSubnetIpv6CidrDetails,
     "AddVcnCidrDetails": AddVcnCidrDetails,
+    "AddVcnIpv6CidrDetails": AddVcnIpv6CidrDetails,
     "AddedNetworkSecurityGroupSecurityRules": AddedNetworkSecurityGroupSecurityRules,
     "AllowedIkeIPSecParameters": AllowedIkeIPSecParameters,
     "AllowedPhaseOneParameters": AllowedPhaseOneParameters,
@@ -547,6 +555,8 @@ core_type_mapping = {
     "ByoipRange": ByoipRange,
     "ByoipRangeCollection": ByoipRangeCollection,
     "ByoipRangeSummary": ByoipRangeSummary,
+    "ByoipRangeVcnIpv6AllocationSummary": ByoipRangeVcnIpv6AllocationSummary,
+    "Byoipv6CidrDetails": Byoipv6CidrDetails,
     "CapacityReservationInstanceSummary": CapacityReservationInstanceSummary,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
     "ChangeBootVolumeBackupCompartmentDetails": ChangeBootVolumeBackupCompartmentDetails,
@@ -830,7 +840,9 @@ core_type_mapping = {
     "RemoveDrgRouteRulesDetails": RemoveDrgRouteRulesDetails,
     "RemoveNetworkSecurityGroupSecurityRulesDetails": RemoveNetworkSecurityGroupSecurityRulesDetails,
     "RemovePublicIpPoolCapacityDetails": RemovePublicIpPoolCapacityDetails,
+    "RemoveSubnetIpv6CidrDetails": RemoveSubnetIpv6CidrDetails,
     "RemoveVcnCidrDetails": RemoveVcnCidrDetails,
+    "RemoveVcnIpv6CidrDetails": RemoveVcnIpv6CidrDetails,
     "RouteRule": RouteRule,
     "RouteTable": RouteTable,
     "SecurityList": SecurityList,

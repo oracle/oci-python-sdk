@@ -253,6 +253,14 @@ class AutonomousDatabase(object):
     #: This constant has a value of "REGULAR"
     AUTONOMOUS_MAINTENANCE_SCHEDULE_TYPE_REGULAR = "REGULAR"
 
+    #: A constant which can be used with the database_edition property of a AutonomousDatabase.
+    #: This constant has a value of "STANDARD_EDITION"
+    DATABASE_EDITION_STANDARD_EDITION = "STANDARD_EDITION"
+
+    #: A constant which can be used with the database_edition property of a AutonomousDatabase.
+    #: This constant has a value of "ENTERPRISE_EDITION"
+    DATABASE_EDITION_ENTERPRISE_EDITION = "ENTERPRISE_EDITION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutonomousDatabase object with values from keyword arguments.
@@ -618,6 +626,16 @@ class AutonomousDatabase(object):
             The value to assign to the actual_used_data_storage_size_in_tbs property of this AutonomousDatabase.
         :type actual_used_data_storage_size_in_tbs: float
 
+        :param max_cpu_core_count:
+            The value to assign to the max_cpu_core_count property of this AutonomousDatabase.
+        :type max_cpu_core_count: int
+
+        :param database_edition:
+            The value to assign to the database_edition property of this AutonomousDatabase.
+            Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type database_edition: str
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -702,7 +720,9 @@ class AutonomousDatabase(object):
             'scheduled_operations': 'list[ScheduledOperationDetails]',
             'is_auto_scaling_for_storage_enabled': 'bool',
             'allocated_storage_size_in_tbs': 'float',
-            'actual_used_data_storage_size_in_tbs': 'float'
+            'actual_used_data_storage_size_in_tbs': 'float',
+            'max_cpu_core_count': 'int',
+            'database_edition': 'str'
         }
 
         self.attribute_map = {
@@ -788,7 +808,9 @@ class AutonomousDatabase(object):
             'scheduled_operations': 'scheduledOperations',
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
             'allocated_storage_size_in_tbs': 'allocatedStorageSizeInTBs',
-            'actual_used_data_storage_size_in_tbs': 'actualUsedDataStorageSizeInTBs'
+            'actual_used_data_storage_size_in_tbs': 'actualUsedDataStorageSizeInTBs',
+            'max_cpu_core_count': 'maxCpuCoreCount',
+            'database_edition': 'databaseEdition'
         }
 
         self._id = None
@@ -874,6 +896,8 @@ class AutonomousDatabase(object):
         self._is_auto_scaling_for_storage_enabled = None
         self._allocated_storage_size_in_tbs = None
         self._actual_used_data_storage_size_in_tbs = None
+        self._max_cpu_core_count = None
+        self._database_edition = None
 
     @property
     def id(self):
@@ -2615,8 +2639,7 @@ class AutonomousDatabase(object):
     def is_data_guard_enabled(self):
         """
         Gets the is_data_guard_enabled of this AutonomousDatabase.
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
-        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :return: The is_data_guard_enabled of this AutonomousDatabase.
@@ -2628,8 +2651,7 @@ class AutonomousDatabase(object):
     def is_data_guard_enabled(self, is_data_guard_enabled):
         """
         Sets the is_data_guard_enabled of this AutonomousDatabase.
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to
-        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :param is_data_guard_enabled: The is_data_guard_enabled of this AutonomousDatabase.
@@ -3144,6 +3166,60 @@ class AutonomousDatabase(object):
         :type: float
         """
         self._actual_used_data_storage_size_in_tbs = actual_used_data_storage_size_in_tbs
+
+    @property
+    def max_cpu_core_count(self):
+        """
+        Gets the max_cpu_core_count of this AutonomousDatabase.
+        The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+
+
+        :return: The max_cpu_core_count of this AutonomousDatabase.
+        :rtype: int
+        """
+        return self._max_cpu_core_count
+
+    @max_cpu_core_count.setter
+    def max_cpu_core_count(self, max_cpu_core_count):
+        """
+        Sets the max_cpu_core_count of this AutonomousDatabase.
+        The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
+
+
+        :param max_cpu_core_count: The max_cpu_core_count of this AutonomousDatabase.
+        :type: int
+        """
+        self._max_cpu_core_count = max_cpu_core_count
+
+    @property
+    def database_edition(self):
+        """
+        Gets the database_edition of this AutonomousDatabase.
+        The Oracle Database Edition that applies to the Autonomous databases.
+
+        Allowed values for this property are: "STANDARD_EDITION", "ENTERPRISE_EDITION", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The database_edition of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._database_edition
+
+    @database_edition.setter
+    def database_edition(self, database_edition):
+        """
+        Sets the database_edition of this AutonomousDatabase.
+        The Oracle Database Edition that applies to the Autonomous databases.
+
+
+        :param database_edition: The database_edition of this AutonomousDatabase.
+        :type: str
+        """
+        allowed_values = ["STANDARD_EDITION", "ENTERPRISE_EDITION"]
+        if not value_allowed_none_or_none_sentinel(database_edition, allowed_values):
+            database_edition = 'UNKNOWN_ENUM_VALUE'
+        self._database_edition = database_edition
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -86,7 +86,7 @@ class Page(object):
     def page_number(self):
         """
         **[Required]** Gets the page_number of this Page.
-        Document page number.
+        The document page number.
 
 
         :return: The page_number of this Page.
@@ -98,7 +98,7 @@ class Page(object):
     def page_number(self, page_number):
         """
         Sets the page_number of this Page.
-        Document page number.
+        The document page number.
 
 
         :param page_number: The page_number of this Page.
@@ -178,7 +178,7 @@ class Page(object):
     def words(self):
         """
         Gets the words of this Page.
-        Words detected on the page.
+        The words detected on the page.
 
 
         :return: The words of this Page.
@@ -190,7 +190,7 @@ class Page(object):
     def words(self, words):
         """
         Sets the words of this Page.
-        Words detected on the page.
+        The words detected on the page.
 
 
         :param words: The words of this Page.
@@ -202,7 +202,7 @@ class Page(object):
     def lines(self):
         """
         Gets the lines of this Page.
-        Text lines detected on the page.
+        The lines of text detected on the page.
 
 
         :return: The lines of this Page.
@@ -214,7 +214,7 @@ class Page(object):
     def lines(self, lines):
         """
         Sets the lines of this Page.
-        Text lines detected on the page.
+        The lines of text detected on the page.
 
 
         :param lines: The lines of this Page.
@@ -226,7 +226,7 @@ class Page(object):
     def tables(self):
         """
         Gets the tables of this Page.
-        Tables detected on the page.
+        The tables detected on the page.
 
 
         :return: The tables of this Page.
@@ -238,7 +238,7 @@ class Page(object):
     def tables(self, tables):
         """
         Sets the tables of this Page.
-        Tables detected on the page.
+        The tables detected on the page.
 
 
         :param tables: The tables of this Page.
@@ -250,7 +250,7 @@ class Page(object):
     def document_fields(self):
         """
         Gets the document_fields of this Page.
-        Form fields detected on the page.
+        The form fields detected on the page.
 
 
         :return: The document_fields of this Page.
@@ -262,7 +262,7 @@ class Page(object):
     def document_fields(self, document_fields):
         """
         Sets the document_fields of this Page.
-        Form fields detected on the page.
+        The form fields detected on the page.
 
 
         :param document_fields: The document_fields of this Page.

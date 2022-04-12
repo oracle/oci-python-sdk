@@ -505,11 +505,13 @@ class UpdateDbSystemDetails(object):
     def data_storage_size_in_gbs(self):
         """
         Gets the data_storage_size_in_gbs of this UpdateDbSystemDetails.
-        New size of the data volume in GBs that will be created and attached.
+        Expands the DB System's storage to the specified value. Only supports values larger than the current DB System's
+        storage size.
 
-        Increases in data storage size will happen asynchronously and will require DB System downtime.
+        DB Systems with initial storage of 400 GB or less can be expanded up to 32 TB. DB Systems with initial storage
+        larger than 400 GB can be expanded up to 64 TB.
 
-        Decreases in data storage size are not supported.
+        It is not possible to decrease data storage size.
 
 
         :return: The data_storage_size_in_gbs of this UpdateDbSystemDetails.
@@ -521,11 +523,13 @@ class UpdateDbSystemDetails(object):
     def data_storage_size_in_gbs(self, data_storage_size_in_gbs):
         """
         Sets the data_storage_size_in_gbs of this UpdateDbSystemDetails.
-        New size of the data volume in GBs that will be created and attached.
+        Expands the DB System's storage to the specified value. Only supports values larger than the current DB System's
+        storage size.
 
-        Increases in data storage size will happen asynchronously and will require DB System downtime.
+        DB Systems with initial storage of 400 GB or less can be expanded up to 32 TB. DB Systems with initial storage
+        larger than 400 GB can be expanded up to 64 TB.
 
-        Decreases in data storage size are not supported.
+        It is not possible to decrease data storage size.
 
 
         :param data_storage_size_in_gbs: The data_storage_size_in_gbs of this UpdateDbSystemDetails.

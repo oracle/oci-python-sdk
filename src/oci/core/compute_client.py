@@ -4242,13 +4242,19 @@ class ComputeClient(object):
 
 
 
-        - **DIAGNOSTICREBOOT** - **This feature currently only supports virtual machines** Powers off the VM instance then rebuilds and powers it back on.
+        - **DIAGNOSTICREBOOT** - Powers off the instance, rebuilds it on the physical host, and then powers it back on.
+        Before you send a diagnostic reboot, restart the instance's OS, confirm that the instance and networking settings are configured
+        correctly, and try other `troubleshooting steps`__.
+        Use diagnostic reboot as a final attempt to troubleshoot an unreachable instance. For virtual machine (VM) instances only.
+        For more information, see `Performing a Diagnostic Reboot`__.
 
 
         For more information about managing instance lifecycle states, see
         `Stopping and Starting an Instance`__.
 
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/troubleshooting-compute-instances.htm
+        __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm
         __ https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm
 
 

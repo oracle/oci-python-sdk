@@ -47,7 +47,7 @@ class ObjectListInlineInputLocation(InputLocation):
     def object_locations(self):
         """
         **[Required]** Gets the object_locations of this ObjectListInlineInputLocation.
-        List of ObjectLocations.
+        The list of ObjectLocations.
 
 
         :return: The object_locations of this ObjectListInlineInputLocation.
@@ -59,7 +59,7 @@ class ObjectListInlineInputLocation(InputLocation):
     def object_locations(self, object_locations):
         """
         Sets the object_locations of this ObjectListInlineInputLocation.
-        List of ObjectLocations.
+        The list of ObjectLocations.
 
 
         :param object_locations: The object_locations of this ObjectListInlineInputLocation.
