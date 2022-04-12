@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImageObject(object):
     """
-    Detected object in image.
+    The object detected in an image.
     """
 
     def __init__(self, **kwargs):
@@ -51,7 +51,7 @@ class ImageObject(object):
     def name(self):
         """
         **[Required]** Gets the name of this ImageObject.
-        Object category name. Every value returned by the pre-deployed model will be in English.
+        The object category name. Every value returned by the pre-deployed model is in English.
 
 
         :return: The name of this ImageObject.
@@ -63,7 +63,7 @@ class ImageObject(object):
     def name(self, name):
         """
         Sets the name of this ImageObject.
-        Object category name. Every value returned by the pre-deployed model will be in English.
+        The object category name. Every value returned by the pre-deployed model is in English.
 
 
         :param name: The name of this ImageObject.
@@ -75,7 +75,7 @@ class ImageObject(object):
     def confidence(self):
         """
         **[Required]** Gets the confidence of this ImageObject.
-        Confidence score between 0 to 1.
+        The confidence score, between 0 and 1.
 
 
         :return: The confidence of this ImageObject.
@@ -87,7 +87,7 @@ class ImageObject(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this ImageObject.
-        Confidence score between 0 to 1.
+        The confidence score, between 0 and 1.
 
 
         :param confidence: The confidence of this ImageObject.

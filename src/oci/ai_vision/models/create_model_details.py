@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateModelDetails(object):
     """
-    Information needed to create a new model.
+    The information needed to create a new model.
     """
 
     def __init__(self, **kwargs):
@@ -121,7 +121,7 @@ class CreateModelDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateModelDetails.
-        Human-friendly name for the model, which can be changed.
+        A human-friendly name for the model, which can be changed.
 
 
         :return: The display_name of this CreateModelDetails.
@@ -133,7 +133,7 @@ class CreateModelDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateModelDetails.
-        Human-friendly name for the model, which can be changed.
+        A human-friendly name for the model, which can be changed.
 
 
         :param display_name: The display_name of this CreateModelDetails.
@@ -145,7 +145,7 @@ class CreateModelDetails(object):
     def description(self):
         """
         Gets the description of this CreateModelDetails.
-        Optional description of the model.
+        An optional description of the model.
 
 
         :return: The description of this CreateModelDetails.
@@ -157,7 +157,7 @@ class CreateModelDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateModelDetails.
-        Optional description of the model.
+        An optional description of the model.
 
 
         :param description: The description of this CreateModelDetails.
@@ -169,7 +169,7 @@ class CreateModelDetails(object):
     def model_version(self):
         """
         Gets the model_version of this CreateModelDetails.
-        Model version
+        The model version
 
 
         :return: The model_version of this CreateModelDetails.
@@ -181,7 +181,7 @@ class CreateModelDetails(object):
     def model_version(self, model_version):
         """
         Sets the model_version of this CreateModelDetails.
-        Model version
+        The model version
 
 
         :param model_version: The model_version of this CreateModelDetails.
@@ -193,7 +193,7 @@ class CreateModelDetails(object):
     def model_type(self):
         """
         **[Required]** Gets the model_type of this CreateModelDetails.
-        What type of Vision model this is.
+        Which type of Vision model this is.
 
 
         :return: The model_type of this CreateModelDetails.
@@ -205,7 +205,7 @@ class CreateModelDetails(object):
     def model_type(self, model_type):
         """
         Sets the model_type of this CreateModelDetails.
-        What type of Vision model this is.
+        Which type of Vision model this is.
 
 
         :param model_type: The model_type of this CreateModelDetails.
@@ -217,7 +217,7 @@ class CreateModelDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateModelDetails.
-        Compartment identifier.
+        The compartment identifier.
 
 
         :return: The compartment_id of this CreateModelDetails.
@@ -229,7 +229,7 @@ class CreateModelDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateModelDetails.
-        Compartment identifier.
+        The compartment identifier.
 
 
         :param compartment_id: The compartment_id of this CreateModelDetails.
@@ -241,7 +241,7 @@ class CreateModelDetails(object):
     def is_quick_mode(self):
         """
         Gets the is_quick_mode of this CreateModelDetails.
-        Set to true when experimenting with a new model type or dataset so model training is quick, with a predefined low number of passes through the training data.
+        Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 
 
         :return: The is_quick_mode of this CreateModelDetails.
@@ -253,7 +253,7 @@ class CreateModelDetails(object):
     def is_quick_mode(self, is_quick_mode):
         """
         Sets the is_quick_mode of this CreateModelDetails.
-        Set to true when experimenting with a new model type or dataset so model training is quick, with a predefined low number of passes through the training data.
+        Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 
 
         :param is_quick_mode: The is_quick_mode of this CreateModelDetails.
@@ -265,7 +265,7 @@ class CreateModelDetails(object):
     def max_training_duration_in_hours(self):
         """
         Gets the max_training_duration_in_hours of this CreateModelDetails.
-        Maximum model training duration in hours, expressed as a decimal fraction.
+        The maximum model training duration in hours, expressed as a decimal fraction.
 
 
         :return: The max_training_duration_in_hours of this CreateModelDetails.
@@ -277,7 +277,7 @@ class CreateModelDetails(object):
     def max_training_duration_in_hours(self, max_training_duration_in_hours):
         """
         Sets the max_training_duration_in_hours of this CreateModelDetails.
-        Maximum model training duration in hours, expressed as a decimal fraction.
+        The maximum model training duration in hours, expressed as a decimal fraction.
 
 
         :param max_training_duration_in_hours: The max_training_duration_in_hours of this CreateModelDetails.
@@ -349,7 +349,7 @@ class CreateModelDetails(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this CreateModelDetails.
-        The `OCID`__ of the project which contains the model.
+        The `OCID`__ of the project that contains the model.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -363,7 +363,7 @@ class CreateModelDetails(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this CreateModelDetails.
-        The `OCID`__ of the project which contains the model.
+        The `OCID`__ of the project that contains the model.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -377,8 +377,8 @@ class CreateModelDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this CreateModelDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this CreateModelDetails.
@@ -390,8 +390,8 @@ class CreateModelDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this CreateModelDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this CreateModelDetails.
@@ -404,7 +404,7 @@ class CreateModelDetails(object):
         """
         Gets the defined_tags of this CreateModelDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this CreateModelDetails.
@@ -417,7 +417,7 @@ class CreateModelDetails(object):
         """
         Sets the defined_tags of this CreateModelDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this CreateModelDetails.

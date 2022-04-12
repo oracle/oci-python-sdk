@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FieldValue(object):
     """
-    Value of a form field.
+    The value of a form field.
     """
 
     #: A constant which can be used with the value_type property of a FieldValue.
@@ -136,7 +136,7 @@ class FieldValue(object):
     def value_type(self):
         """
         **[Required]** Gets the value_type of this FieldValue.
-        Type of data detected.
+        The type of data detected.
 
         Allowed values for this property are: "STRING", "DATE", "TIME", "PHONE_NUMBER", "NUMBER", "INTEGER", "ARRAY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -151,7 +151,7 @@ class FieldValue(object):
     def value_type(self, value_type):
         """
         Sets the value_type of this FieldValue.
-        Type of data detected.
+        The type of data detected.
 
 
         :param value_type: The value_type of this FieldValue.
@@ -166,7 +166,7 @@ class FieldValue(object):
     def text(self):
         """
         Gets the text of this FieldValue.
-        Detected text of a field.
+        The detected text of a field.
 
 
         :return: The text of this FieldValue.
@@ -178,7 +178,7 @@ class FieldValue(object):
     def text(self, text):
         """
         Sets the text of this FieldValue.
-        Detected text of a field.
+        The detected text of a field.
 
 
         :param text: The text of this FieldValue.
@@ -190,7 +190,7 @@ class FieldValue(object):
     def confidence(self):
         """
         **[Required]** Gets the confidence of this FieldValue.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :return: The confidence of this FieldValue.
@@ -202,7 +202,7 @@ class FieldValue(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this FieldValue.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :param confidence: The confidence of this FieldValue.
@@ -234,7 +234,7 @@ class FieldValue(object):
     def word_indexes(self):
         """
         **[Required]** Gets the word_indexes of this FieldValue.
-        Indexes of the words in the field value.
+        The indexes of the words in the field value.
 
 
         :return: The word_indexes of this FieldValue.
@@ -246,7 +246,7 @@ class FieldValue(object):
     def word_indexes(self, word_indexes):
         """
         Sets the word_indexes of this FieldValue.
-        Indexes of the words in the field value.
+        The indexes of the words in the field value.
 
 
         :param word_indexes: The word_indexes of this FieldValue.

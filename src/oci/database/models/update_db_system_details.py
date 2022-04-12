@@ -125,7 +125,7 @@ class UpdateDbSystemDetails(object):
     def cpu_core_count(self):
         """
         Gets the cpu_core_count of this UpdateDbSystemDetails.
-        The new number of CPU cores to set for the DB system. Not applicable for virtual machine DB systems.
+        The new number of CPU cores to set for the DB system. Not applicable for INTEL based virtual machine DB systems.
 
 
         :return: The cpu_core_count of this UpdateDbSystemDetails.
@@ -137,7 +137,7 @@ class UpdateDbSystemDetails(object):
     def cpu_core_count(self, cpu_core_count):
         """
         Sets the cpu_core_count of this UpdateDbSystemDetails.
-        The new number of CPU cores to set for the DB system. Not applicable for virtual machine DB systems.
+        The new number of CPU cores to set for the DB system. Not applicable for INTEL based virtual machine DB systems.
 
 
         :param cpu_core_count: The cpu_core_count of this UpdateDbSystemDetails.

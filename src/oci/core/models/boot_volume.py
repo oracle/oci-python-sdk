@@ -453,7 +453,7 @@ class BootVolume(object):
     def vpus_per_gb(self):
         """
         Gets the vpus_per_gb of this BootVolume.
-        The number of volume performance units (VPUs) that will be applied to this volume per GB,
+        The number of volume performance units (VPUs) that will be applied to this boot volume per GB,
         representing the Block Volume service's elastic performance options.
         See `Block Volume Performance Levels`__ for more information.
 
@@ -477,7 +477,7 @@ class BootVolume(object):
     def vpus_per_gb(self, vpus_per_gb):
         """
         Sets the vpus_per_gb of this BootVolume.
-        The number of volume performance units (VPUs) that will be applied to this volume per GB,
+        The number of volume performance units (VPUs) that will be applied to this boot volume per GB,
         representing the Block Volume service's elastic performance options.
         See `Block Volume Performance Levels`__ for more information.
 
@@ -703,7 +703,7 @@ class BootVolume(object):
     def auto_tuned_vpus_per_gb(self):
         """
         Gets the auto_tuned_vpus_per_gb of this BootVolume.
-        The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
 
 
         :return: The auto_tuned_vpus_per_gb of this BootVolume.
@@ -715,7 +715,7 @@ class BootVolume(object):
     def auto_tuned_vpus_per_gb(self, auto_tuned_vpus_per_gb):
         """
         Sets the auto_tuned_vpus_per_gb of this BootVolume.
-        The number of Volume Performance Units per GB that this volume is effectively tuned to when it's idle.
+        The number of Volume Performance Units per GB that this boot volume is effectively tuned to when it's idle.
 
 
         :param auto_tuned_vpus_per_gb: The auto_tuned_vpus_per_gb of this BootVolume.

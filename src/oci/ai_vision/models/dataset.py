@@ -68,7 +68,7 @@ class Dataset(object):
     def dataset_type(self):
         """
         **[Required]** Gets the dataset_type of this Dataset.
-        Type of the dataset based on where it is stored.
+        The dataset type, based on where it is stored.
 
         Allowed values for this property are: "DATA_SCIENCE_LABELING", "OBJECT_STORAGE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -83,7 +83,7 @@ class Dataset(object):
     def dataset_type(self, dataset_type):
         """
         Sets the dataset_type of this Dataset.
-        Type of the dataset based on where it is stored.
+        The dataset type, based on where it is stored.
 
 
         :param dataset_type: The dataset_type of this Dataset.

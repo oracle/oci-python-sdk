@@ -130,6 +130,7 @@ Database
     oci.database.models.CreateRefreshableAutonomousDatabaseCloneDetails
     oci.database.models.CreateVmClusterDetails
     oci.database.models.CustomerContact
+    oci.database.models.DataCollectionOptions
     oci.database.models.DataGuardAssociation
     oci.database.models.DataGuardAssociationSummary
     oci.database.models.Database

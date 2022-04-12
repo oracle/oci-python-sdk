@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnalyzeImageResult(object):
     """
-    Image analysis results.
+    The image analysis results.
     """
 
     def __init__(self, **kwargs):
@@ -86,7 +86,7 @@ class AnalyzeImageResult(object):
     def image_objects(self):
         """
         Gets the image_objects of this AnalyzeImageResult.
-        Detected objects.
+        The detected objects.
 
 
         :return: The image_objects of this AnalyzeImageResult.
@@ -98,7 +98,7 @@ class AnalyzeImageResult(object):
     def image_objects(self, image_objects):
         """
         Sets the image_objects of this AnalyzeImageResult.
-        Detected objects.
+        The detected objects.
 
 
         :param image_objects: The image_objects of this AnalyzeImageResult.
@@ -110,7 +110,7 @@ class AnalyzeImageResult(object):
     def labels(self):
         """
         Gets the labels of this AnalyzeImageResult.
-        Image classification labels.
+        The image classification labels.
 
 
         :return: The labels of this AnalyzeImageResult.
@@ -122,7 +122,7 @@ class AnalyzeImageResult(object):
     def labels(self, labels):
         """
         Sets the labels of this AnalyzeImageResult.
-        Image classification labels.
+        The image classification labels.
 
 
         :param labels: The labels of this AnalyzeImageResult.
@@ -134,7 +134,7 @@ class AnalyzeImageResult(object):
     def ontology_classes(self):
         """
         Gets the ontology_classes of this AnalyzeImageResult.
-        ontologyClasses of image labels.
+        The ontologyClasses of image labels.
 
 
         :return: The ontology_classes of this AnalyzeImageResult.
@@ -146,7 +146,7 @@ class AnalyzeImageResult(object):
     def ontology_classes(self, ontology_classes):
         """
         Sets the ontology_classes of this AnalyzeImageResult.
-        ontologyClasses of image labels.
+        The ontologyClasses of image labels.
 
 
         :param ontology_classes: The ontology_classes of this AnalyzeImageResult.
@@ -178,7 +178,7 @@ class AnalyzeImageResult(object):
     def image_classification_model_version(self):
         """
         Gets the image_classification_model_version of this AnalyzeImageResult.
-        Image classification model version.
+        The image classification model version.
 
 
         :return: The image_classification_model_version of this AnalyzeImageResult.
@@ -190,7 +190,7 @@ class AnalyzeImageResult(object):
     def image_classification_model_version(self, image_classification_model_version):
         """
         Sets the image_classification_model_version of this AnalyzeImageResult.
-        Image classification model version.
+        The image classification model version.
 
 
         :param image_classification_model_version: The image_classification_model_version of this AnalyzeImageResult.
@@ -202,7 +202,7 @@ class AnalyzeImageResult(object):
     def object_detection_model_version(self):
         """
         Gets the object_detection_model_version of this AnalyzeImageResult.
-        Object detection model version.
+        The object detection model version.
 
 
         :return: The object_detection_model_version of this AnalyzeImageResult.
@@ -214,7 +214,7 @@ class AnalyzeImageResult(object):
     def object_detection_model_version(self, object_detection_model_version):
         """
         Sets the object_detection_model_version of this AnalyzeImageResult.
-        Object detection model version.
+        The object detection model version.
 
 
         :param object_detection_model_version: The object_detection_model_version of this AnalyzeImageResult.
@@ -226,7 +226,7 @@ class AnalyzeImageResult(object):
     def text_detection_model_version(self):
         """
         Gets the text_detection_model_version of this AnalyzeImageResult.
-        Text detection model version.
+        The text detection model version.
 
 
         :return: The text_detection_model_version of this AnalyzeImageResult.
@@ -238,7 +238,7 @@ class AnalyzeImageResult(object):
     def text_detection_model_version(self, text_detection_model_version):
         """
         Sets the text_detection_model_version of this AnalyzeImageResult.
-        Text detection model version.
+        The text detection model version.
 
 
         :param text_detection_model_version: The text_detection_model_version of this AnalyzeImageResult.
@@ -250,7 +250,7 @@ class AnalyzeImageResult(object):
     def errors(self):
         """
         Gets the errors of this AnalyzeImageResult.
-        Errors encountered during image analysis.
+        The errors encountered during image analysis.
 
 
         :return: The errors of this AnalyzeImageResult.
@@ -262,7 +262,7 @@ class AnalyzeImageResult(object):
     def errors(self, errors):
         """
         Sets the errors of this AnalyzeImageResult.
-        Errors encountered during image analysis.
+        The errors encountered during image analysis.
 
 
         :param errors: The errors of this AnalyzeImageResult.

@@ -46,7 +46,7 @@ class NormalizedVertex(object):
     def x(self):
         """
         **[Required]** Gets the x of this NormalizedVertex.
-        X axis normalized coordinate.
+        The X-axis normalized coordinate.
 
 
         :return: The x of this NormalizedVertex.
@@ -58,7 +58,7 @@ class NormalizedVertex(object):
     def x(self, x):
         """
         Sets the x of this NormalizedVertex.
-        X axis normalized coordinate.
+        The X-axis normalized coordinate.
 
 
         :param x: The x of this NormalizedVertex.
@@ -70,7 +70,7 @@ class NormalizedVertex(object):
     def y(self):
         """
         **[Required]** Gets the y of this NormalizedVertex.
-        Y axis normalized coordinate.
+        The Y-axis normalized coordinate.
 
 
         :return: The y of this NormalizedVertex.
@@ -82,7 +82,7 @@ class NormalizedVertex(object):
     def y(self, y):
         """
         Sets the y of this NormalizedVertex.
-        Y axis normalized coordinate.
+        The Y-axis normalized coordinate.
 
 
         :param y: The y of this NormalizedVertex.

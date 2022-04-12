@@ -17754,9 +17754,9 @@ class DatabaseClient(object):
             __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
 
         :param str storage_management: (optional)
-            The DB system storage management option. Used to list database versions available for that storage manager. Valid values are:
-            * ASM - Automatic storage management
-            * LVM - Logical volume management
+            The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
+            * ASM specifies Oracle Automatic Storage Management
+            * LVM specifies logical volume manager, sometimes called logical disk manager.
 
             Allowed values are: "ASM", "LVM"
 
@@ -22118,7 +22118,7 @@ class DatabaseClient(object):
     def scan_external_container_database_pluggable_databases(self, external_container_database_id, external_database_connector_id, **kwargs):
         """
         Scans for pluggable databases in the specified external container database.
-        This operation will return un-registered pluggable databases in the `GetWorkRequest` operation.
+        This operation will return un-registered pluggable databases in the :func:`get_work_request` operation.
 
 
         :param str external_container_database_id: (required)

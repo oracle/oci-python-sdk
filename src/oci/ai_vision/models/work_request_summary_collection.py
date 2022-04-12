@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class WorkRequestSummaryCollection(object):
     """
-    Results of a workRequest search.
+    The results of a workRequest search.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class WorkRequestSummaryCollection(object):
     def items(self):
         """
         **[Required]** Gets the items of this WorkRequestSummaryCollection.
-        List of workRequestSummary objects.
+        The list of workRequestSummary objects.
 
 
         :return: The items of this WorkRequestSummaryCollection.
@@ -49,7 +49,7 @@ class WorkRequestSummaryCollection(object):
     def items(self, items):
         """
         Sets the items of this WorkRequestSummaryCollection.
-        List of workRequestSummary objects.
+        The list of workRequestSummary objects.
 
 
         :param items: The items of this WorkRequestSummaryCollection.

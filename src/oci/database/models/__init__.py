@@ -116,6 +116,7 @@ from .create_recovery_appliance_backup_destination_details import CreateRecovery
 from .create_refreshable_autonomous_database_clone_details import CreateRefreshableAutonomousDatabaseCloneDetails
 from .create_vm_cluster_details import CreateVmClusterDetails
 from .customer_contact import CustomerContact
+from .data_collection_options import DataCollectionOptions
 from .data_guard_association import DataGuardAssociation
 from .data_guard_association_summary import DataGuardAssociationSummary
 from .database import Database
@@ -394,6 +395,7 @@ database_type_mapping = {
     "CreateRefreshableAutonomousDatabaseCloneDetails": CreateRefreshableAutonomousDatabaseCloneDetails,
     "CreateVmClusterDetails": CreateVmClusterDetails,
     "CustomerContact": CustomerContact,
+    "DataCollectionOptions": DataCollectionOptions,
     "DataGuardAssociation": DataGuardAssociation,
     "DataGuardAssociationSummary": DataGuardAssociationSummary,
     "Database": Database,

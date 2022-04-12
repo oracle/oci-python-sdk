@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class AIServiceVisionClient(object):
     """
-    A description of the VisionService API.
+    Using Vision, you can upload images to detect and classify objects in them. If you have lots of images, you can process them in batch using asynchronous API endpoints. Vision's features are thematically split between Document AI for document-centric images, and Image Analysis for object and scene-based images. Pretrained models and custom models are supported.
     """
 
     def __init__(self, config, **kwargs):
@@ -110,7 +110,7 @@ class AIServiceVisionClient(object):
 
 
         :param oci.ai_vision.models.AnalyzeDocumentDetails analyze_document_details: (required)
-            Details about how to analyze a document.
+            The details of how to analyze a document.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -258,7 +258,7 @@ class AIServiceVisionClient(object):
 
     def cancel_document_job(self, document_job_id, **kwargs):
         """
-        Cancel a batch document job.
+        Cancel a document batch job.
 
 
         :param str document_job_id: (required)
@@ -349,7 +349,7 @@ class AIServiceVisionClient(object):
 
     def cancel_image_job(self, image_job_id, **kwargs):
         """
-        Cancel a batch image job.
+        Cancel an image batch job.
 
 
         :param str image_job_id: (required)
@@ -440,7 +440,7 @@ class AIServiceVisionClient(object):
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
-        Cancel work request with the given ID.
+        Cancel the work request with the given ID.
 
 
         :param str work_request_id: (required)
@@ -531,14 +531,14 @@ class AIServiceVisionClient(object):
 
     def change_model_compartment(self, model_id, change_model_compartment_details, **kwargs):
         """
-        Moves a model from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+        Moves a model from one compartment to another. When provided, If-Match is checked against the ETag values of the resource.
 
 
         :param str model_id: (required)
-            unique model identifier.
+            A unique model identifier.
 
         :param oci.ai_vision.models.ChangeModelCompartmentDetails change_model_compartment_details: (required)
-            The deatils of the move.
+            The details of the move.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -627,11 +627,11 @@ class AIServiceVisionClient(object):
 
     def change_project_compartment(self, project_id, change_project_compartment_details, **kwargs):
         """
-        Moves a project from one compartment to another. When provided, If-Match is checked against ETag values of the resource.
+        Move a project from one compartment to another. When provided, If-Match is checked against the ETag values of the resource.
 
 
         :param str project_id: (required)
-            unique project identifier.
+            A unique project identifier.
 
         :param oci.ai_vision.models.ChangeProjectCompartmentDetails change_project_compartment_details: (required)
             The deatils of the move.
@@ -723,15 +723,15 @@ class AIServiceVisionClient(object):
 
     def create_document_job(self, create_document_job_details, **kwargs):
         """
-        Create a batch document analysis job
+        Create a document analysis batch job.
 
 
         :param oci.ai_vision.models.CreateDocumentJobDetails create_document_job_details: (required)
-            Details about the batch document analysis.
+            The details of the batch document analysis.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
+            server error without the risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
@@ -807,15 +807,15 @@ class AIServiceVisionClient(object):
 
     def create_image_job(self, create_image_job_details, **kwargs):
         """
-        Create a batch image analysis job.
+        Create an image analysis batch job.
 
 
         :param oci.ai_vision.models.CreateImageJobDetails create_image_job_details: (required)
-            Details about the batch image analysis.
+            The details of the batch image analysis.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
+            server error without the risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
@@ -891,15 +891,15 @@ class AIServiceVisionClient(object):
 
     def create_model(self, create_model_details, **kwargs):
         """
-        Creates a new model.
+        Create a new model.
 
 
         :param oci.ai_vision.models.CreateModelDetails create_model_details: (required)
-            Metadata about the new model.
+            The metadata about the new model.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
+            server error without the risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
@@ -975,15 +975,15 @@ class AIServiceVisionClient(object):
 
     def create_project(self, create_project_details, **kwargs):
         """
-        Creates a new project.
+        Create a new project.
 
 
         :param oci.ai_vision.models.CreateProjectDetails create_project_details: (required)
-            Details for the new Project.
+            The new Project's details.
 
         :param str opc_retry_token: (optional)
             A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
+            server error without the risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
@@ -1059,11 +1059,11 @@ class AIServiceVisionClient(object):
 
     def delete_model(self, model_id, **kwargs):
         """
-        Deletes a model by identifier.
+        Delete a model by identifier.
 
 
         :param str model_id: (required)
-            unique model identifier.
+            A unique model identifier.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1150,11 +1150,11 @@ class AIServiceVisionClient(object):
 
     def delete_project(self, project_id, **kwargs):
         """
-        Deletes a project by identifier.
+        Delete a project by identifier.
 
 
         :param str project_id: (required)
-            unique project identifier.
+            A unique project identifier.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -1241,7 +1241,7 @@ class AIServiceVisionClient(object):
 
     def get_document_job(self, document_job_id, **kwargs):
         """
-        Get details of a batch document job.
+        Get details of a document batch job.
 
 
         :param str document_job_id: (required)
@@ -1325,7 +1325,7 @@ class AIServiceVisionClient(object):
 
     def get_image_job(self, image_job_id, **kwargs):
         """
-        Get details of a batch image job.
+        Get details of an image batch job.
 
 
         :param str image_job_id: (required)
@@ -1409,11 +1409,11 @@ class AIServiceVisionClient(object):
 
     def get_model(self, model_id, **kwargs):
         """
-        Gets a model by identifier.
+        Get a model by identifier.
 
 
         :param str model_id: (required)
-            unique model identifier.
+            A unique model identifier.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1493,11 +1493,11 @@ class AIServiceVisionClient(object):
 
     def get_project(self, project_id, **kwargs):
         """
-        Gets a project by identifier.
+        Get a project by identifier.
 
 
         :param str project_id: (required)
-            unique project identifier.
+            A unique project identifier.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -1671,7 +1671,7 @@ class AIServiceVisionClient(object):
             The ID of the project for which to list the objects.
 
         :param str lifecycle_state: (optional)
-            Filter to match models with the given lifecycleState.
+            The filter to match models with the given lifecycleState.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -1679,7 +1679,7 @@ class AIServiceVisionClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str id: (optional)
-            Filter to find the model with the given identifier.
+            The filter to find the model with the given identifier.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1693,7 +1693,7 @@ class AIServiceVisionClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+            The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for displayName is ascending.
 
             Allowed values are: "timeCreated", "displayName"
 
@@ -1815,7 +1815,7 @@ class AIServiceVisionClient(object):
             The ID of the compartment in which to list resources.
 
         :param str lifecycle_state: (optional)
-            Filter to match projects with the given lifecycleState.
+            The filter to match projects with the given lifecycleState.
 
             Allowed values are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED"
 
@@ -1823,7 +1823,7 @@ class AIServiceVisionClient(object):
             A filter to return only resources that match the entire display name given.
 
         :param str id: (optional)
-            Filter to find the project with the given identifier.
+            The filter to find the project with the given identifier.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -1837,7 +1837,7 @@ class AIServiceVisionClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+            The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for displayName is ascending.
 
             Allowed values are: "timeCreated", "displayName"
 
@@ -1950,7 +1950,7 @@ class AIServiceVisionClient(object):
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
-        Return a (paginated) list of errors for a given work request.
+        Returns a (paginated) list of errors for a given work request.
 
 
         :param str work_request_id: (required)
@@ -1966,7 +1966,7 @@ class AIServiceVisionClient(object):
             The maximum number of items to return.
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+            The field to sort by. Only one sort order may be provided. The default order for timeAccepted is descending.
 
             Allowed values are: "timeAccepted"
 
@@ -2094,7 +2094,7 @@ class AIServiceVisionClient(object):
             The maximum number of items to return.
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+            The field to sort by. Only one sort order may be provided. The default order for timeAccepted is descending.
 
             Allowed values are: "timeAccepted"
 
@@ -2216,7 +2216,7 @@ class AIServiceVisionClient(object):
             The ID of the asynchronous work request.
 
         :param str status: (optional)
-            A filter to return only resources their lifecycleState matches the given OperationStatus.
+            A filter to return only resources whose lifecycleState matches the given OperationStatus.
 
             Allowed values are: "ACCEPTED", "IN_PROGRESS", "WAITING", "FAILED", "SUCCEEDED", "CANCELING", "CANCELED"
 
@@ -2238,7 +2238,7 @@ class AIServiceVisionClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by. Only one sort order may be provided. Default order for timeAccepted is descending.
+            The field to sort by. Only one sort order may be provided. The default order for timeAccepted is descending.
 
             Allowed values are: "timeAccepted"
 
@@ -2348,14 +2348,14 @@ class AIServiceVisionClient(object):
 
     def update_model(self, model_id, update_model_details, **kwargs):
         """
-        Updates model metadata.
+        Updates the model metadata.
 
 
         :param str model_id: (required)
-            unique model identifier.
+            A unique model identifier.
 
         :param oci.ai_vision.models.UpdateModelDetails update_model_details: (required)
-            Model metadata to be updated.
+            The model metadata to be updated.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -2444,14 +2444,14 @@ class AIServiceVisionClient(object):
 
     def update_project(self, project_id, update_project_details, **kwargs):
         """
-        Updates project metadata.
+        Update the project metadata.
 
 
         :param str project_id: (required)
-            unique project identifier.
+            A unique project identifier.
 
         :param oci.ai_vision.models.UpdateProjectDetails update_project_details: (required)
-            Project metadata to be updated.
+            The project metadata to be updated.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call

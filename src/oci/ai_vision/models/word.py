@@ -51,7 +51,7 @@ class Word(object):
     def text(self):
         """
         **[Required]** Gets the text of this Word.
-        String of text characters in the word.
+        The string of text characters in the word.
 
 
         :return: The text of this Word.
@@ -63,7 +63,7 @@ class Word(object):
     def text(self, text):
         """
         Sets the text of this Word.
-        String of text characters in the word.
+        The string of text characters in the word.
 
 
         :param text: The text of this Word.
@@ -75,7 +75,7 @@ class Word(object):
     def confidence(self):
         """
         **[Required]** Gets the confidence of this Word.
-        Confidence score between 0 to 1.
+        the confidence score between 0 and 1.
 
 
         :return: The confidence of this Word.
@@ -87,7 +87,7 @@ class Word(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this Word.
-        Confidence score between 0 to 1.
+        the confidence score between 0 and 1.
 
 
         :param confidence: The confidence of this Word.

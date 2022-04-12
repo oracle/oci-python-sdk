@@ -167,6 +167,14 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             The value to assign to the is_auto_scaling_for_storage_enabled property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type is_auto_scaling_for_storage_enabled: bool
 
+        :param max_cpu_core_count:
+            The value to assign to the max_cpu_core_count property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type max_cpu_core_count: int
+
+        :param database_edition:
+            The value to assign to the database_edition property of this CreateRefreshableAutonomousDatabaseCloneDetails.
+        :type database_edition: str
+
         :param source_id:
             The value to assign to the source_id property of this CreateRefreshableAutonomousDatabaseCloneDetails.
         :type source_id: str
@@ -212,6 +220,8 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'autonomous_maintenance_schedule_type': 'str',
             'scheduled_operations': 'list[ScheduledOperationDetails]',
             'is_auto_scaling_for_storage_enabled': 'bool',
+            'max_cpu_core_count': 'int',
+            'database_edition': 'str',
             'source_id': 'str',
             'refreshable_mode': 'str'
         }
@@ -251,6 +261,8 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
             'autonomous_maintenance_schedule_type': 'autonomousMaintenanceScheduleType',
             'scheduled_operations': 'scheduledOperations',
             'is_auto_scaling_for_storage_enabled': 'isAutoScalingForStorageEnabled',
+            'max_cpu_core_count': 'maxCpuCoreCount',
+            'database_edition': 'databaseEdition',
             'source_id': 'sourceId',
             'refreshable_mode': 'refreshableMode'
         }
@@ -289,6 +301,8 @@ class CreateRefreshableAutonomousDatabaseCloneDetails(CreateAutonomousDatabaseBa
         self._autonomous_maintenance_schedule_type = None
         self._scheduled_operations = None
         self._is_auto_scaling_for_storage_enabled = None
+        self._max_cpu_core_count = None
+        self._database_edition = None
         self._source_id = None
         self._refreshable_mode = None
         self._source = 'CLONE_TO_REFRESHABLE'

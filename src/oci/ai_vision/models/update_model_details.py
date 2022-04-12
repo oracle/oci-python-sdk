@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateModelDetails(object):
     """
-    Metadata which can be edited after model creation.
+    The metadata which can be edited after model creation.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class UpdateModelDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateModelDetails.
-        Human-friendly name of the model, which can be changed.
+        A human-friendly name of the model, which can be changed.
 
 
         :return: The display_name of this UpdateModelDetails.
@@ -70,7 +70,7 @@ class UpdateModelDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateModelDetails.
-        Human-friendly name of the model, which can be changed.
+        A human-friendly name of the model, which can be changed.
 
 
         :param display_name: The display_name of this UpdateModelDetails.
@@ -82,7 +82,7 @@ class UpdateModelDetails(object):
     def description(self):
         """
         Gets the description of this UpdateModelDetails.
-        Optional description of the model.
+        An optional description of the model.
 
 
         :return: The description of this UpdateModelDetails.
@@ -94,7 +94,7 @@ class UpdateModelDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateModelDetails.
-        Optional description of the model.
+        An optional description of the model.
 
 
         :param description: The description of this UpdateModelDetails.
@@ -106,8 +106,8 @@ class UpdateModelDetails(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this UpdateModelDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this UpdateModelDetails.
@@ -119,8 +119,8 @@ class UpdateModelDetails(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this UpdateModelDetails.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this UpdateModelDetails.
@@ -133,7 +133,7 @@ class UpdateModelDetails(object):
         """
         Gets the defined_tags of this UpdateModelDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this UpdateModelDetails.
@@ -146,7 +146,7 @@ class UpdateModelDetails(object):
         """
         Sets the defined_tags of this UpdateModelDetails.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this UpdateModelDetails.

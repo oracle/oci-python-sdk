@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FieldLabel(object):
     """
-    Label in a field.
+    The label in a field.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class FieldLabel(object):
     def name(self):
         """
         **[Required]** Gets the name of this FieldLabel.
-        Name of the field label.
+        The name of the field label.
 
 
         :return: The name of this FieldLabel.
@@ -56,7 +56,7 @@ class FieldLabel(object):
     def name(self, name):
         """
         Sets the name of this FieldLabel.
-        Name of the field label.
+        The name of the field label.
 
 
         :param name: The name of this FieldLabel.
@@ -68,7 +68,7 @@ class FieldLabel(object):
     def confidence(self):
         """
         Gets the confidence of this FieldLabel.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :return: The confidence of this FieldLabel.
@@ -80,7 +80,7 @@ class FieldLabel(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this FieldLabel.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :param confidence: The confidence of this FieldLabel.

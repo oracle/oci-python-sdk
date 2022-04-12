@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProcessingError(object):
     """
-    Error in document processing.
+    The error in document processing.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class ProcessingError(object):
     def code(self):
         """
         **[Required]** Gets the code of this ProcessingError.
-        Error code.
+        The error code.
 
 
         :return: The code of this ProcessingError.
@@ -56,7 +56,7 @@ class ProcessingError(object):
     def code(self, code):
         """
         Sets the code of this ProcessingError.
-        Error code.
+        The error code.
 
 
         :param code: The code of this ProcessingError.
@@ -68,7 +68,7 @@ class ProcessingError(object):
     def message(self):
         """
         **[Required]** Gets the message of this ProcessingError.
-        Error message.
+        The error message.
 
 
         :return: The message of this ProcessingError.
@@ -80,7 +80,7 @@ class ProcessingError(object):
     def message(self, message):
         """
         Sets the message of this ProcessingError.
-        Error message.
+        The error message.
 
 
         :param message: The message of this ProcessingError.

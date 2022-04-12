@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class FieldName(object):
     """
-    Name of a form field.
+    The name of a form field.
     """
 
     def __init__(self, **kwargs):
@@ -58,7 +58,7 @@ class FieldName(object):
     def name(self):
         """
         **[Required]** Gets the name of this FieldName.
-        Name of the field.
+        The name of the field.
 
 
         :return: The name of this FieldName.
@@ -70,7 +70,7 @@ class FieldName(object):
     def name(self, name):
         """
         Sets the name of this FieldName.
-        Name of the field.
+        The name of the field.
 
 
         :param name: The name of this FieldName.
@@ -82,7 +82,7 @@ class FieldName(object):
     def confidence(self):
         """
         Gets the confidence of this FieldName.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :return: The confidence of this FieldName.
@@ -94,7 +94,7 @@ class FieldName(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this FieldName.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :param confidence: The confidence of this FieldName.
@@ -126,7 +126,7 @@ class FieldName(object):
     def word_indexes(self):
         """
         Gets the word_indexes of this FieldName.
-        Indexes of the words in the field name.
+        The indexes of the words in the field name.
 
 
         :return: The word_indexes of this FieldName.
@@ -138,7 +138,7 @@ class FieldName(object):
     def word_indexes(self, word_indexes):
         """
         Sets the word_indexes of this FieldName.
-        Indexes of the words in the field name.
+        The indexes of the words in the field name.
 
 
         :param word_indexes: The word_indexes of this FieldName.

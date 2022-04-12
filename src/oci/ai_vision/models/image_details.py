@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ImageDetails(object):
     """
-    Details about an image to analyze.
+    The details of an image to analyze.
     """
 
     #: A constant which can be used with the source property of a ImageDetails.
@@ -67,9 +67,9 @@ class ImageDetails(object):
     def source(self):
         """
         **[Required]** Gets the source of this ImageDetails.
-        The location of image data
-        Allowed values are:
-        - `INLINE`: Data is included directly in the request payload.
+        The location of the image data.
+        The allowed values are:
+        - `INLINE`: The data is included directly in the request payload.
         - `OBJECT_STORAGE`: The image is in OCI Object Storage.
 
         Allowed values for this property are: "INLINE", "OBJECT_STORAGE"
@@ -84,9 +84,9 @@ class ImageDetails(object):
     def source(self, source):
         """
         Sets the source of this ImageDetails.
-        The location of image data
-        Allowed values are:
-        - `INLINE`: Data is included directly in the request payload.
+        The location of the image data.
+        The allowed values are:
+        - `INLINE`: The data is included directly in the request payload.
         - `OBJECT_STORAGE`: The image is in OCI Object Storage.
 
 

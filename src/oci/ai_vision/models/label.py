@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Label(object):
     """
-    A label describing an image. Every label returned by the pre-deployed model will be in English.
+    A label describing an image. Every label returned by the pre-deployed model is in English.
     """
 
     def __init__(self, **kwargs):
@@ -44,7 +44,7 @@ class Label(object):
     def name(self):
         """
         **[Required]** Gets the name of this Label.
-        Classification catagory label name.
+        The classification catagory label name.
 
 
         :return: The name of this Label.
@@ -56,7 +56,7 @@ class Label(object):
     def name(self, name):
         """
         Sets the name of this Label.
-        Classification catagory label name.
+        The classification catagory label name.
 
 
         :param name: The name of this Label.
@@ -68,7 +68,7 @@ class Label(object):
     def confidence(self):
         """
         **[Required]** Gets the confidence of this Label.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :return: The confidence of this Label.
@@ -80,7 +80,7 @@ class Label(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this Label.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :param confidence: The confidence of this Label.

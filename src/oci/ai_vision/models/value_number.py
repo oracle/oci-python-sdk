@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValueNumber(FieldValue):
     """
-    Floating point number field value.
+    The floating point number field value.
     """
 
     def __init__(self, **kwargs):
@@ -75,7 +75,7 @@ class ValueNumber(FieldValue):
     def value(self):
         """
         **[Required]** Gets the value of this ValueNumber.
-        Number value.
+        The number value.
 
 
         :return: The value of this ValueNumber.
@@ -87,7 +87,7 @@ class ValueNumber(FieldValue):
     def value(self, value):
         """
         Sets the value of this ValueNumber.
-        Number value.
+        The number value.
 
 
         :param value: The value of this ValueNumber.

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class Table(object):
     """
-    Table extracted from a document.
+    The table extracted from a document.
     """
 
     def __init__(self, **kwargs):
@@ -79,7 +79,7 @@ class Table(object):
     def row_count(self):
         """
         **[Required]** Gets the row_count of this Table.
-        Number of rows.
+        The number of rows.
 
 
         :return: The row_count of this Table.
@@ -91,7 +91,7 @@ class Table(object):
     def row_count(self, row_count):
         """
         Sets the row_count of this Table.
-        Number of rows.
+        The number of rows.
 
 
         :param row_count: The row_count of this Table.
@@ -103,7 +103,7 @@ class Table(object):
     def column_count(self):
         """
         **[Required]** Gets the column_count of this Table.
-        Number of columns.
+        The number of columns.
 
 
         :return: The column_count of this Table.
@@ -115,7 +115,7 @@ class Table(object):
     def column_count(self, column_count):
         """
         Sets the column_count of this Table.
-        Number of columns.
+        The number of columns.
 
 
         :param column_count: The column_count of this Table.
@@ -127,7 +127,7 @@ class Table(object):
     def header_rows(self):
         """
         **[Required]** Gets the header_rows of this Table.
-        Header rows.
+        The header rows.
 
 
         :return: The header_rows of this Table.
@@ -139,7 +139,7 @@ class Table(object):
     def header_rows(self, header_rows):
         """
         Sets the header_rows of this Table.
-        Header rows.
+        The header rows.
 
 
         :param header_rows: The header_rows of this Table.
@@ -151,7 +151,7 @@ class Table(object):
     def body_rows(self):
         """
         **[Required]** Gets the body_rows of this Table.
-        Body rows.
+        The body rows.
 
 
         :return: The body_rows of this Table.
@@ -163,7 +163,7 @@ class Table(object):
     def body_rows(self, body_rows):
         """
         Sets the body_rows of this Table.
-        Body rows.
+        The body rows.
 
 
         :param body_rows: The body_rows of this Table.
@@ -175,7 +175,7 @@ class Table(object):
     def footer_rows(self):
         """
         **[Required]** Gets the footer_rows of this Table.
-        Footer rows.
+        the footer rows.
 
 
         :return: The footer_rows of this Table.
@@ -187,7 +187,7 @@ class Table(object):
     def footer_rows(self, footer_rows):
         """
         Sets the footer_rows of this Table.
-        Footer rows.
+        the footer rows.
 
 
         :param footer_rows: The footer_rows of this Table.
@@ -199,7 +199,7 @@ class Table(object):
     def confidence(self):
         """
         **[Required]** Gets the confidence of this Table.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :return: The confidence of this Table.
@@ -211,7 +211,7 @@ class Table(object):
     def confidence(self, confidence):
         """
         Sets the confidence of this Table.
-        Confidence score between 0 to 1.
+        The confidence score between 0 and 1.
 
 
         :param confidence: The confidence of this Table.

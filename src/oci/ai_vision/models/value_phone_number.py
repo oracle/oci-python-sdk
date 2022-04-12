@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ValuePhoneNumber(FieldValue):
     """
-    Phone number field value.
+    The phone number field value.
     """
 
     def __init__(self, **kwargs):
@@ -75,7 +75,7 @@ class ValuePhoneNumber(FieldValue):
     def value(self):
         """
         **[Required]** Gets the value of this ValuePhoneNumber.
-        Phone number field value.
+        The phone number field value.
 
 
         :return: The value of this ValuePhoneNumber.
@@ -87,7 +87,7 @@ class ValuePhoneNumber(FieldValue):
     def value(self, value):
         """
         Sets the value of this ValuePhoneNumber.
-        Phone number field value.
+        The phone number field value.
 
 
         :param value: The value of this ValuePhoneNumber.

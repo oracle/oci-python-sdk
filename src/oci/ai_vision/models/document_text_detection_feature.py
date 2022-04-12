@@ -47,7 +47,7 @@ class DocumentTextDetectionFeature(DocumentFeature):
     def generate_searchable_pdf(self):
         """
         Gets the generate_searchable_pdf of this DocumentTextDetectionFeature.
-        Whether to generate a searchable PDF file.
+        Whether or not to generate a searchable PDF file.
 
 
         :return: The generate_searchable_pdf of this DocumentTextDetectionFeature.
@@ -59,7 +59,7 @@ class DocumentTextDetectionFeature(DocumentFeature):
     def generate_searchable_pdf(self, generate_searchable_pdf):
         """
         Sets the generate_searchable_pdf of this DocumentTextDetectionFeature.
-        Whether to generate a searchable PDF file.
+        Whether or not to generate a searchable PDF file.
 
 
         :param generate_searchable_pdf: The generate_searchable_pdf of this DocumentTextDetectionFeature.

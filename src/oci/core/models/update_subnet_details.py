@@ -50,6 +50,10 @@ class UpdateSubnetDetails(object):
             The value to assign to the ipv6_cidr_block property of this UpdateSubnetDetails.
         :type ipv6_cidr_block: str
 
+        :param ipv6_cidr_blocks:
+            The value to assign to the ipv6_cidr_blocks property of this UpdateSubnetDetails.
+        :type ipv6_cidr_blocks: list[str]
+
         """
         self.swagger_types = {
             'defined_tags': 'dict(str, dict(str, object))',
@@ -59,7 +63,8 @@ class UpdateSubnetDetails(object):
             'route_table_id': 'str',
             'security_list_ids': 'list[str]',
             'cidr_block': 'str',
-            'ipv6_cidr_block': 'str'
+            'ipv6_cidr_block': 'str',
+            'ipv6_cidr_blocks': 'list[str]'
         }
 
         self.attribute_map = {
@@ -70,7 +75,8 @@ class UpdateSubnetDetails(object):
             'route_table_id': 'routeTableId',
             'security_list_ids': 'securityListIds',
             'cidr_block': 'cidrBlock',
-            'ipv6_cidr_block': 'ipv6CidrBlock'
+            'ipv6_cidr_block': 'ipv6CidrBlock',
+            'ipv6_cidr_blocks': 'ipv6CidrBlocks'
         }
 
         self._defined_tags = None
@@ -81,6 +87,7 @@ class UpdateSubnetDetails(object):
         self._security_list_ids = None
         self._cidr_block = None
         self._ipv6_cidr_block = None
+        self._ipv6_cidr_blocks = None
 
     @property
     def defined_tags(self):
@@ -349,6 +356,36 @@ class UpdateSubnetDetails(object):
         :type: str
         """
         self._ipv6_cidr_block = ipv6_cidr_block
+
+    @property
+    def ipv6_cidr_blocks(self):
+        """
+        Gets the ipv6_cidr_blocks of this UpdateSubnetDetails.
+        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
+        - The CIDR blocks must be valid.
+        - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+        - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+
+
+        :return: The ipv6_cidr_blocks of this UpdateSubnetDetails.
+        :rtype: list[str]
+        """
+        return self._ipv6_cidr_blocks
+
+    @ipv6_cidr_blocks.setter
+    def ipv6_cidr_blocks(self, ipv6_cidr_blocks):
+        """
+        Sets the ipv6_cidr_blocks of this UpdateSubnetDetails.
+        The list of all IPv6 CIDR blocks (Oracle allocated IPv6 GUA, ULA or private IPv6 CIDR blocks, BYOIPv6 CIDR blocks) for the subnet that meets the following criteria:
+        - The CIDR blocks must be valid.
+        - Multiple CIDR blocks must not overlap each other or the on-premises network CIDR block.
+        - The number of CIDR blocks must not exceed the limit of IPv6 CIDR blocks allowed to a subnet.
+
+
+        :param ipv6_cidr_blocks: The ipv6_cidr_blocks of this UpdateSubnetDetails.
+        :type: list[str]
+        """
+        self._ipv6_cidr_blocks = ipv6_cidr_blocks
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -475,7 +475,7 @@ class AutonomousContainerDatabase(object):
     def autonomous_exadata_infrastructure_id(self):
         """
         Gets the autonomous_exadata_infrastructure_id of this AutonomousContainerDatabase.
-        The OCID of the Autonomous Exadata Infrastructure.
+        **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 
 
         :return: The autonomous_exadata_infrastructure_id of this AutonomousContainerDatabase.
@@ -487,7 +487,7 @@ class AutonomousContainerDatabase(object):
     def autonomous_exadata_infrastructure_id(self, autonomous_exadata_infrastructure_id):
         """
         Sets the autonomous_exadata_infrastructure_id of this AutonomousContainerDatabase.
-        The OCID of the Autonomous Exadata Infrastructure.
+        **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
 
 
         :param autonomous_exadata_infrastructure_id: The autonomous_exadata_infrastructure_id of this AutonomousContainerDatabase.

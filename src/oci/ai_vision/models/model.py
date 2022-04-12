@@ -255,7 +255,7 @@ class Model(object):
     def id(self):
         """
         **[Required]** Gets the id of this Model.
-        Unique identifier that is immutable after creation.
+        A unique identifier that is immutable after creation.
 
 
         :return: The id of this Model.
@@ -267,7 +267,7 @@ class Model(object):
     def id(self, id):
         """
         Sets the id of this Model.
-        Unique identifier that is immutable after creation.
+        A unique identifier that is immutable after creation.
 
 
         :param id: The id of this Model.
@@ -279,7 +279,7 @@ class Model(object):
     def display_name(self):
         """
         Gets the display_name of this Model.
-        Human-friendly name for the model, which can be changed.
+        A human-friendly name for the model, which can be changed.
 
 
         :return: The display_name of this Model.
@@ -291,7 +291,7 @@ class Model(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Model.
-        Human-friendly name for the model, which can be changed.
+        A human-friendly name for the model, which can be changed.
 
 
         :param display_name: The display_name of this Model.
@@ -303,7 +303,7 @@ class Model(object):
     def description(self):
         """
         Gets the description of this Model.
-        Optional description of the model.
+        An optional description of the model.
 
 
         :return: The description of this Model.
@@ -315,7 +315,7 @@ class Model(object):
     def description(self, description):
         """
         Sets the description of this Model.
-        Optional description of the model.
+        An optional description of the model.
 
 
         :param description: The description of this Model.
@@ -327,7 +327,7 @@ class Model(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Model.
-        Compartment identifier.
+        The compartment identifier.
 
 
         :return: The compartment_id of this Model.
@@ -339,7 +339,7 @@ class Model(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Model.
-        Compartment identifier.
+        The compartment identifier.
 
 
         :param compartment_id: The compartment_id of this Model.
@@ -381,7 +381,7 @@ class Model(object):
     def is_quick_mode(self):
         """
         Gets the is_quick_mode of this Model.
-        Set to true when experimenting with a new model type or dataset so model training is quick, with a predefined low number of passes through the training data.
+        Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
 
 
         :return: The is_quick_mode of this Model.
@@ -393,7 +393,7 @@ class Model(object):
     def is_quick_mode(self, is_quick_mode):
         """
         Sets the is_quick_mode of this Model.
-        Set to true when experimenting with a new model type or dataset so model training is quick, with a predefined low number of passes through the training data.
+        Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
 
 
         :param is_quick_mode: The is_quick_mode of this Model.
@@ -405,7 +405,7 @@ class Model(object):
     def max_training_duration_in_hours(self):
         """
         Gets the max_training_duration_in_hours of this Model.
-        Maximum model training duration in hours, expressed as a decimal fraction.
+        The maximum model training duration in hours, expressed as a decimal fraction.
 
 
         :return: The max_training_duration_in_hours of this Model.
@@ -417,7 +417,7 @@ class Model(object):
     def max_training_duration_in_hours(self, max_training_duration_in_hours):
         """
         Sets the max_training_duration_in_hours of this Model.
-        Maximum model training duration in hours, expressed as a decimal fraction.
+        The maximum model training duration in hours, expressed as a decimal fraction.
 
 
         :param max_training_duration_in_hours: The max_training_duration_in_hours of this Model.
@@ -429,7 +429,7 @@ class Model(object):
     def trained_duration_in_hours(self):
         """
         Gets the trained_duration_in_hours of this Model.
-        Total hours actually used for model training.
+        The total hours actually used for model training.
 
 
         :return: The trained_duration_in_hours of this Model.
@@ -441,7 +441,7 @@ class Model(object):
     def trained_duration_in_hours(self, trained_duration_in_hours):
         """
         Sets the trained_duration_in_hours of this Model.
-        Total hours actually used for model training.
+        The total hours actually used for model training.
 
 
         :param trained_duration_in_hours: The trained_duration_in_hours of this Model.
@@ -537,7 +537,7 @@ class Model(object):
     def project_id(self):
         """
         **[Required]** Gets the project_id of this Model.
-        The `OCID`__ of the project which contains the model.
+        The `OCID`__ of the project that contains the model.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -551,7 +551,7 @@ class Model(object):
     def project_id(self, project_id):
         """
         Sets the project_id of this Model.
-        The `OCID`__ of the project which contains the model.
+        The `OCID`__ of the project that contains the model.
 
         __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
@@ -613,7 +613,7 @@ class Model(object):
     def lifecycle_state(self):
         """
         **[Required]** Gets the lifecycle_state of this Model.
-        Current state of the model.
+        The current state of the model.
 
         Allowed values for this property are: "CREATING", "UPDATING", "ACTIVE", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -628,7 +628,7 @@ class Model(object):
     def lifecycle_state(self, lifecycle_state):
         """
         Sets the lifecycle_state of this Model.
-        Current state of the model.
+        The current state of the model.
 
 
         :param lifecycle_state: The lifecycle_state of this Model.
@@ -643,7 +643,7 @@ class Model(object):
     def lifecycle_details(self):
         """
         Gets the lifecycle_details of this Model.
-        A message describing the current state in more detail which can provide actionable information if training failed.
+        A message describing the current state in more detail, that can provide actionable information if training failed.
 
 
         :return: The lifecycle_details of this Model.
@@ -655,7 +655,7 @@ class Model(object):
     def lifecycle_details(self, lifecycle_details):
         """
         Sets the lifecycle_details of this Model.
-        A message describing the current state in more detail which can provide actionable information if training failed.
+        A message describing the current state in more detail, that can provide actionable information if training failed.
 
 
         :param lifecycle_details: The lifecycle_details of this Model.
@@ -667,7 +667,7 @@ class Model(object):
     def precision(self):
         """
         Gets the precision of this Model.
-        Precision of the trained model.
+        The precision of the trained model.
 
 
         :return: The precision of this Model.
@@ -679,7 +679,7 @@ class Model(object):
     def precision(self, precision):
         """
         Sets the precision of this Model.
-        Precision of the trained model.
+        The precision of the trained model.
 
 
         :param precision: The precision of this Model.
@@ -715,7 +715,7 @@ class Model(object):
     def average_precision(self):
         """
         Gets the average_precision of this Model.
-        Mean average precision of the trained model.
+        The mean average precision of the trained model.
 
 
         :return: The average_precision of this Model.
@@ -727,7 +727,7 @@ class Model(object):
     def average_precision(self, average_precision):
         """
         Sets the average_precision of this Model.
-        Mean average precision of the trained model.
+        The mean average precision of the trained model.
 
 
         :param average_precision: The average_precision of this Model.
@@ -739,7 +739,7 @@ class Model(object):
     def confidence_threshold(self):
         """
         Gets the confidence_threshold of this Model.
-        Intersection over union threshold used for calculating precision and recall.
+        The intersection over the union threshold used for calculating precision and recall.
 
 
         :return: The confidence_threshold of this Model.
@@ -751,7 +751,7 @@ class Model(object):
     def confidence_threshold(self, confidence_threshold):
         """
         Sets the confidence_threshold of this Model.
-        Intersection over union threshold used for calculating precision and recall.
+        The intersection over the union threshold used for calculating precision and recall.
 
 
         :param confidence_threshold: The confidence_threshold of this Model.
@@ -763,7 +763,7 @@ class Model(object):
     def total_image_count(self):
         """
         Gets the total_image_count of this Model.
-        Number of images in the dataset used to train, validate, and test the model.
+        The number of images in the dataset used to train, validate, and test the model.
 
 
         :return: The total_image_count of this Model.
@@ -775,7 +775,7 @@ class Model(object):
     def total_image_count(self, total_image_count):
         """
         Sets the total_image_count of this Model.
-        Number of images in the dataset used to train, validate, and test the model.
+        The number of images in the dataset used to train, validate, and test the model.
 
 
         :param total_image_count: The total_image_count of this Model.
@@ -787,7 +787,7 @@ class Model(object):
     def test_image_count(self):
         """
         Gets the test_image_count of this Model.
-        Number of images set aside for evaluating model performance metrics after training.
+        The number of images set aside for evaluating model performance metrics after training.
 
 
         :return: The test_image_count of this Model.
@@ -799,7 +799,7 @@ class Model(object):
     def test_image_count(self, test_image_count):
         """
         Sets the test_image_count of this Model.
-        Number of images set aside for evaluating model performance metrics after training.
+        The number of images set aside for evaluating model performance metrics after training.
 
 
         :param test_image_count: The test_image_count of this Model.
@@ -811,7 +811,7 @@ class Model(object):
     def metrics(self):
         """
         Gets the metrics of this Model.
-        Complete set of per-label metrics for successfully trained model.
+        The complete set of per-label metrics for successfully trained models.
 
 
         :return: The metrics of this Model.
@@ -823,7 +823,7 @@ class Model(object):
     def metrics(self, metrics):
         """
         Sets the metrics of this Model.
-        Complete set of per-label metrics for successfully trained model.
+        The complete set of per-label metrics for successfully trained models.
 
 
         :param metrics: The metrics of this Model.
@@ -835,8 +835,8 @@ class Model(object):
     def freeform_tags(self):
         """
         Gets the freeform_tags of this Model.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :return: The freeform_tags of this Model.
@@ -848,8 +848,8 @@ class Model(object):
     def freeform_tags(self, freeform_tags):
         """
         Sets the freeform_tags of this Model.
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-        Example: `{\"bar-key\": \"value\"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+        For example: `{\"bar-key\": \"value\"}`
 
 
         :param freeform_tags: The freeform_tags of this Model.
@@ -862,7 +862,7 @@ class Model(object):
         """
         Gets the defined_tags of this Model.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :return: The defined_tags of this Model.
@@ -875,7 +875,7 @@ class Model(object):
         """
         Sets the defined_tags of this Model.
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        Example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
+        For example: `{\"foo-namespace\": {\"bar-key\": \"value\"}}`
 
 
         :param defined_tags: The defined_tags of this Model.
@@ -888,7 +888,7 @@ class Model(object):
         """
         Gets the system_tags of this Model.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        For example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 
         :return: The system_tags of this Model.
@@ -901,7 +901,7 @@ class Model(object):
         """
         Sets the system_tags of this Model.
         Usage of system tag keys. These predefined keys are scoped to namespaces.
-        Example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
+        For example: `{\"orcl-cloud\": {\"free-tier-retained\": \"true\"}}`
 
 
         :param system_tags: The system_tags of this Model.

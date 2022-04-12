@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AnalyzeDocumentResult(object):
     """
-    Document analysis results.
+    The document analysis results.
     """
 
     def __init__(self, **kwargs):
@@ -127,7 +127,7 @@ class AnalyzeDocumentResult(object):
     def pages(self):
         """
         **[Required]** Gets the pages of this AnalyzeDocumentResult.
-        Array of Page.
+        The array of a Page.
 
 
         :return: The pages of this AnalyzeDocumentResult.
@@ -139,7 +139,7 @@ class AnalyzeDocumentResult(object):
     def pages(self, pages):
         """
         Sets the pages of this AnalyzeDocumentResult.
-        Array of Page.
+        The array of a Page.
 
 
         :param pages: The pages of this AnalyzeDocumentResult.
@@ -199,7 +199,7 @@ class AnalyzeDocumentResult(object):
     def document_classification_model_version(self):
         """
         Gets the document_classification_model_version of this AnalyzeDocumentResult.
-        Document classification model version.
+        The document classification model version.
 
 
         :return: The document_classification_model_version of this AnalyzeDocumentResult.
@@ -211,7 +211,7 @@ class AnalyzeDocumentResult(object):
     def document_classification_model_version(self, document_classification_model_version):
         """
         Sets the document_classification_model_version of this AnalyzeDocumentResult.
-        Document classification model version.
+        The document classification model version.
 
 
         :param document_classification_model_version: The document_classification_model_version of this AnalyzeDocumentResult.
@@ -223,7 +223,7 @@ class AnalyzeDocumentResult(object):
     def language_classification_model_version(self):
         """
         Gets the language_classification_model_version of this AnalyzeDocumentResult.
-        Document language classification model version.
+        The document language classification model version.
 
 
         :return: The language_classification_model_version of this AnalyzeDocumentResult.
@@ -235,7 +235,7 @@ class AnalyzeDocumentResult(object):
     def language_classification_model_version(self, language_classification_model_version):
         """
         Sets the language_classification_model_version of this AnalyzeDocumentResult.
-        Document language classification model version.
+        The document language classification model version.
 
 
         :param language_classification_model_version: The language_classification_model_version of this AnalyzeDocumentResult.
@@ -247,7 +247,7 @@ class AnalyzeDocumentResult(object):
     def text_detection_model_version(self):
         """
         Gets the text_detection_model_version of this AnalyzeDocumentResult.
-        Document text detection model version.
+        The document text detection model version.
 
 
         :return: The text_detection_model_version of this AnalyzeDocumentResult.
@@ -259,7 +259,7 @@ class AnalyzeDocumentResult(object):
     def text_detection_model_version(self, text_detection_model_version):
         """
         Sets the text_detection_model_version of this AnalyzeDocumentResult.
-        Document text detection model version.
+        The document text detection model version.
 
 
         :param text_detection_model_version: The text_detection_model_version of this AnalyzeDocumentResult.
@@ -271,7 +271,7 @@ class AnalyzeDocumentResult(object):
     def key_value_detection_model_version(self):
         """
         Gets the key_value_detection_model_version of this AnalyzeDocumentResult.
-        Document keyValue detection model version.
+        The document keyValue detection model version.
 
 
         :return: The key_value_detection_model_version of this AnalyzeDocumentResult.
@@ -283,7 +283,7 @@ class AnalyzeDocumentResult(object):
     def key_value_detection_model_version(self, key_value_detection_model_version):
         """
         Sets the key_value_detection_model_version of this AnalyzeDocumentResult.
-        Document keyValue detection model version.
+        The document keyValue detection model version.
 
 
         :param key_value_detection_model_version: The key_value_detection_model_version of this AnalyzeDocumentResult.
@@ -295,7 +295,7 @@ class AnalyzeDocumentResult(object):
     def table_detection_model_version(self):
         """
         Gets the table_detection_model_version of this AnalyzeDocumentResult.
-        Document table detection model version.
+        The document table detection model version.
 
 
         :return: The table_detection_model_version of this AnalyzeDocumentResult.
@@ -307,7 +307,7 @@ class AnalyzeDocumentResult(object):
     def table_detection_model_version(self, table_detection_model_version):
         """
         Sets the table_detection_model_version of this AnalyzeDocumentResult.
-        Document table detection model version.
+        The document table detection model version.
 
 
         :param table_detection_model_version: The table_detection_model_version of this AnalyzeDocumentResult.
@@ -319,7 +319,7 @@ class AnalyzeDocumentResult(object):
     def errors(self):
         """
         Gets the errors of this AnalyzeDocumentResult.
-        Errors encountered during document analysis.
+        The errors encountered during document analysis.
 
 
         :return: The errors of this AnalyzeDocumentResult.
@@ -331,7 +331,7 @@ class AnalyzeDocumentResult(object):
     def errors(self, errors):
         """
         Sets the errors of this AnalyzeDocumentResult.
-        Errors encountered during document analysis.
+        The errors encountered during document analysis.
 
 
         :param errors: The errors of this AnalyzeDocumentResult.
@@ -343,7 +343,7 @@ class AnalyzeDocumentResult(object):
     def searchable_pdf(self):
         """
         Gets the searchable_pdf of this AnalyzeDocumentResult.
-        Generated searchable PDF file.
+        The searchable PDF file that was generated.
 
 
         :return: The searchable_pdf of this AnalyzeDocumentResult.
@@ -355,7 +355,7 @@ class AnalyzeDocumentResult(object):
     def searchable_pdf(self, searchable_pdf):
         """
         Sets the searchable_pdf of this AnalyzeDocumentResult.
-        Generated searchable PDF file.
+        The searchable PDF file that was generated.
 
 
         :param searchable_pdf: The searchable_pdf of this AnalyzeDocumentResult.
