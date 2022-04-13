@@ -15,7 +15,7 @@ auth = Signer(
     pass_phrase=config['pass_phrase']
 )
 
-endpoint = 'https://identity.us-phoenix-1.oraclecloud.com/20160918/users/'
+endpoint = 'https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/users/'
 
 body = {
     'compartmentId': config['tenancy'],  # root compartment
