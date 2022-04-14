@@ -145,3 +145,4 @@
 ^src/oci/ai_vision/.*\.py$
 ^src/oci/ai_speech/.*\.py$
 ^src/oci/data_connectivity/.*\.py$
+^src/oci/stack_monitoring/.*\.py$

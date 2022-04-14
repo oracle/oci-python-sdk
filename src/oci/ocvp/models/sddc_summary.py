@@ -100,6 +100,14 @@ class SddcSummary(object):
             The value to assign to the is_shielded_instance_enabled property of this SddcSummary.
         :type is_shielded_instance_enabled: bool
 
+        :param initial_host_shape_name:
+            The value to assign to the initial_host_shape_name property of this SddcSummary.
+        :type initial_host_shape_name: str
+
+        :param initial_host_ocpu_count:
+            The value to assign to the initial_host_ocpu_count property of this SddcSummary.
+        :type initial_host_ocpu_count: float
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this SddcSummary.
         :type freeform_tags: dict(str, str)
@@ -124,6 +132,8 @@ class SddcSummary(object):
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
             'is_shielded_instance_enabled': 'bool',
+            'initial_host_shape_name': 'str',
+            'initial_host_ocpu_count': 'float',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -143,6 +153,8 @@ class SddcSummary(object):
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
             'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
+            'initial_host_shape_name': 'initialHostShapeName',
+            'initial_host_ocpu_count': 'initialHostOcpuCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -161,6 +173,8 @@ class SddcSummary(object):
         self._time_updated = None
         self._lifecycle_state = None
         self._is_shielded_instance_enabled = None
+        self._initial_host_shape_name = None
+        self._initial_host_ocpu_count = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -571,6 +585,56 @@ class SddcSummary(object):
         :type: bool
         """
         self._is_shielded_instance_enabled = is_shielded_instance_enabled
+
+    @property
+    def initial_host_shape_name(self):
+        """
+        **[Required]** Gets the initial_host_shape_name of this SddcSummary.
+        The initial compute shape of the SDDC's ESXi hosts.
+        :func:`list_supported_host_shapes`.
+
+
+        :return: The initial_host_shape_name of this SddcSummary.
+        :rtype: str
+        """
+        return self._initial_host_shape_name
+
+    @initial_host_shape_name.setter
+    def initial_host_shape_name(self, initial_host_shape_name):
+        """
+        Sets the initial_host_shape_name of this SddcSummary.
+        The initial compute shape of the SDDC's ESXi hosts.
+        :func:`list_supported_host_shapes`.
+
+
+        :param initial_host_shape_name: The initial_host_shape_name of this SddcSummary.
+        :type: str
+        """
+        self._initial_host_shape_name = initial_host_shape_name
+
+    @property
+    def initial_host_ocpu_count(self):
+        """
+        Gets the initial_host_ocpu_count of this SddcSummary.
+        The initial OCPU count of the SDDC's ESXi hosts.
+
+
+        :return: The initial_host_ocpu_count of this SddcSummary.
+        :rtype: float
+        """
+        return self._initial_host_ocpu_count
+
+    @initial_host_ocpu_count.setter
+    def initial_host_ocpu_count(self, initial_host_ocpu_count):
+        """
+        Sets the initial_host_ocpu_count of this SddcSummary.
+        The initial OCPU count of the SDDC's ESXi hosts.
+
+
+        :param initial_host_ocpu_count: The initial_host_ocpu_count of this SddcSummary.
+        :type: float
+        """
+        self._initial_host_ocpu_count = initial_host_ocpu_count
 
     @property
     def freeform_tags(self):

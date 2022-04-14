@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MonthlyRewardSummary(object):
     """
-    Object describing the rewards summary for a month for the requested subscriptionId.
+    Object describing the monthly rewards summary for the requested subscription ID.
     """
 
     def __init__(self, **kwargs):
@@ -186,7 +186,7 @@ class MonthlyRewardSummary(object):
     def is_manual(self):
         """
         Gets the is_manual of this MonthlyRewardSummary.
-        The boolean flag to tell if the available rewards are posted manually or not.
+        The boolean parameter to indicate whether or not the available rewards are manually posted.
 
 
         :return: The is_manual of this MonthlyRewardSummary.
@@ -198,7 +198,7 @@ class MonthlyRewardSummary(object):
     def is_manual(self, is_manual):
         """
         Sets the is_manual of this MonthlyRewardSummary.
-        The boolean flag to tell if the available rewards are posted manually or not.
+        The boolean parameter to indicate whether or not the available rewards are manually posted.
 
 
         :param is_manual: The is_manual of this MonthlyRewardSummary.
@@ -210,7 +210,7 @@ class MonthlyRewardSummary(object):
     def time_rewards_expired(self):
         """
         Gets the time_rewards_expired of this MonthlyRewardSummary.
-        The date and time on which rewards are expired.
+        The date and time when rewards expire.
 
 
         :return: The time_rewards_expired of this MonthlyRewardSummary.
@@ -222,7 +222,7 @@ class MonthlyRewardSummary(object):
     def time_rewards_expired(self, time_rewards_expired):
         """
         Sets the time_rewards_expired of this MonthlyRewardSummary.
-        The date and time on which rewards are expired.
+        The date and time when rewards expire.
 
 
         :param time_rewards_expired: The time_rewards_expired of this MonthlyRewardSummary.
@@ -234,7 +234,7 @@ class MonthlyRewardSummary(object):
     def time_rewards_earned(self):
         """
         Gets the time_rewards_earned of this MonthlyRewardSummary.
-        The date and time on which rewards are accrued.
+        The date and time when rewards accrue.
 
 
         :return: The time_rewards_earned of this MonthlyRewardSummary.
@@ -246,7 +246,7 @@ class MonthlyRewardSummary(object):
     def time_rewards_earned(self, time_rewards_earned):
         """
         Sets the time_rewards_earned of this MonthlyRewardSummary.
-        The date and time on which rewards are accrued.
+        The date and time when rewards accrue.
 
 
         :param time_rewards_earned: The time_rewards_earned of this MonthlyRewardSummary.
@@ -354,7 +354,7 @@ class MonthlyRewardSummary(object):
     def ineligible_usage_amount(self):
         """
         Gets the ineligible_usage_amount of this MonthlyRewardSummary.
-        The in eligible usage amount for the usage period.
+        The ineligible usage amount for the usage period.
 
 
         :return: The ineligible_usage_amount of this MonthlyRewardSummary.
@@ -366,7 +366,7 @@ class MonthlyRewardSummary(object):
     def ineligible_usage_amount(self, ineligible_usage_amount):
         """
         Sets the ineligible_usage_amount of this MonthlyRewardSummary.
-        The in eligible usage amount for the usage period.
+        The ineligible usage amount for the usage period.
 
 
         :param ineligible_usage_amount: The ineligible_usage_amount of this MonthlyRewardSummary.
@@ -378,7 +378,7 @@ class MonthlyRewardSummary(object):
     def usage_period_key(self):
         """
         Gets the usage_period_key of this MonthlyRewardSummary.
-        The id for the usage period.
+        The usage period ID.
 
 
         :return: The usage_period_key of this MonthlyRewardSummary.
@@ -390,7 +390,7 @@ class MonthlyRewardSummary(object):
     def usage_period_key(self, usage_period_key):
         """
         Sets the usage_period_key of this MonthlyRewardSummary.
-        The id for the usage period.
+        The usage period ID.
 
 
         :param usage_period_key: The usage_period_key of this MonthlyRewardSummary.

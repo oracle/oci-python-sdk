@@ -61,6 +61,10 @@ class DataGuardAssociationSummary(object):
     #: This constant has a value of "FAILED"
     LIFECYCLE_STATE_FAILED = "FAILED"
 
+    #: A constant which can be used with the lifecycle_state property of a DataGuardAssociationSummary.
+    #: This constant has a value of "UPGRADING"
+    LIFECYCLE_STATE_UPGRADING = "UPGRADING"
+
     #: A constant which can be used with the peer_role property of a DataGuardAssociationSummary.
     #: This constant has a value of "PRIMARY"
     PEER_ROLE_PRIMARY = "PRIMARY"
@@ -118,7 +122,7 @@ class DataGuardAssociationSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DataGuardAssociationSummary.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "UPGRADING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -324,7 +328,7 @@ class DataGuardAssociationSummary(object):
         **[Required]** Gets the lifecycle_state of this DataGuardAssociationSummary.
         The current state of the Data Guard association.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "UPGRADING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -343,7 +347,7 @@ class DataGuardAssociationSummary(object):
         :param lifecycle_state: The lifecycle_state of this DataGuardAssociationSummary.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "UPGRADING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

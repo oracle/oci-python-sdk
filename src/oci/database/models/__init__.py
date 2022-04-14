@@ -154,16 +154,22 @@ from .db_system import DbSystem
 from .db_system_options import DbSystemOptions
 from .db_system_shape_summary import DbSystemShapeSummary
 from .db_system_summary import DbSystemSummary
+from .db_system_upgrade_history_entry import DbSystemUpgradeHistoryEntry
+from .db_system_upgrade_history_entry_summary import DbSystemUpgradeHistoryEntrySummary
 from .db_version_summary import DbVersionSummary
 from .deregister_autonomous_database_data_safe_details import DeregisterAutonomousDatabaseDataSafeDetails
 from .enable_database_management_details import EnableDatabaseManagementDetails
 from .enable_external_container_database_database_management_details import EnableExternalContainerDatabaseDatabaseManagementDetails
+from .enable_external_container_database_stack_monitoring_details import EnableExternalContainerDatabaseStackMonitoringDetails
 from .enable_external_database_management_details_base import EnableExternalDatabaseManagementDetailsBase
 from .enable_external_database_operations_insights_details_base import EnableExternalDatabaseOperationsInsightsDetailsBase
+from .enable_external_database_stack_monitoring_details_base import EnableExternalDatabaseStackMonitoringDetailsBase
 from .enable_external_non_container_database_database_management_details import EnableExternalNonContainerDatabaseDatabaseManagementDetails
 from .enable_external_non_container_database_operations_insights_details import EnableExternalNonContainerDatabaseOperationsInsightsDetails
+from .enable_external_non_container_database_stack_monitoring_details import EnableExternalNonContainerDatabaseStackMonitoringDetails
 from .enable_external_pluggable_database_database_management_details import EnableExternalPluggableDatabaseDatabaseManagementDetails
 from .enable_external_pluggable_database_operations_insights_details import EnableExternalPluggableDatabaseOperationsInsightsDetails
+from .enable_external_pluggable_database_stack_monitoring_details import EnableExternalPluggableDatabaseStackMonitoringDetails
 from .estimated_patching_time import EstimatedPatchingTime
 from .exadata_db_system_migration import ExadataDbSystemMigration
 from .exadata_db_system_migration_summary import ExadataDbSystemMigrationSummary
@@ -234,6 +240,7 @@ from .restore_database_details import RestoreDatabaseDetails
 from .scan_details import ScanDetails
 from .scheduled_operation_details import ScheduledOperationDetails
 from .self_mount_details import SelfMountDetails
+from .stack_monitoring_config import StackMonitoringConfig
 from .switchover_data_guard_association_details import SwitchoverDataGuardAssociationDetails
 from .update import Update
 from .update_autonomous_container_database_data_guard_association_details import UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
@@ -268,6 +275,7 @@ from .update_summary import UpdateSummary
 from .update_vm_cluster_details import UpdateVmClusterDetails
 from .update_vm_cluster_network_details import UpdateVmClusterNetworkDetails
 from .upgrade_database_details import UpgradeDatabaseDetails
+from .upgrade_db_system_details import UpgradeDbSystemDetails
 from .vm_cluster import VmCluster
 from .vm_cluster_network import VmClusterNetwork
 from .vm_cluster_network_details import VmClusterNetworkDetails
@@ -433,16 +441,22 @@ database_type_mapping = {
     "DbSystemOptions": DbSystemOptions,
     "DbSystemShapeSummary": DbSystemShapeSummary,
     "DbSystemSummary": DbSystemSummary,
+    "DbSystemUpgradeHistoryEntry": DbSystemUpgradeHistoryEntry,
+    "DbSystemUpgradeHistoryEntrySummary": DbSystemUpgradeHistoryEntrySummary,
     "DbVersionSummary": DbVersionSummary,
     "DeregisterAutonomousDatabaseDataSafeDetails": DeregisterAutonomousDatabaseDataSafeDetails,
     "EnableDatabaseManagementDetails": EnableDatabaseManagementDetails,
     "EnableExternalContainerDatabaseDatabaseManagementDetails": EnableExternalContainerDatabaseDatabaseManagementDetails,
+    "EnableExternalContainerDatabaseStackMonitoringDetails": EnableExternalContainerDatabaseStackMonitoringDetails,
     "EnableExternalDatabaseManagementDetailsBase": EnableExternalDatabaseManagementDetailsBase,
     "EnableExternalDatabaseOperationsInsightsDetailsBase": EnableExternalDatabaseOperationsInsightsDetailsBase,
+    "EnableExternalDatabaseStackMonitoringDetailsBase": EnableExternalDatabaseStackMonitoringDetailsBase,
     "EnableExternalNonContainerDatabaseDatabaseManagementDetails": EnableExternalNonContainerDatabaseDatabaseManagementDetails,
     "EnableExternalNonContainerDatabaseOperationsInsightsDetails": EnableExternalNonContainerDatabaseOperationsInsightsDetails,
+    "EnableExternalNonContainerDatabaseStackMonitoringDetails": EnableExternalNonContainerDatabaseStackMonitoringDetails,
     "EnableExternalPluggableDatabaseDatabaseManagementDetails": EnableExternalPluggableDatabaseDatabaseManagementDetails,
     "EnableExternalPluggableDatabaseOperationsInsightsDetails": EnableExternalPluggableDatabaseOperationsInsightsDetails,
+    "EnableExternalPluggableDatabaseStackMonitoringDetails": EnableExternalPluggableDatabaseStackMonitoringDetails,
     "EstimatedPatchingTime": EstimatedPatchingTime,
     "ExadataDbSystemMigration": ExadataDbSystemMigration,
     "ExadataDbSystemMigrationSummary": ExadataDbSystemMigrationSummary,
@@ -513,6 +527,7 @@ database_type_mapping = {
     "ScanDetails": ScanDetails,
     "ScheduledOperationDetails": ScheduledOperationDetails,
     "SelfMountDetails": SelfMountDetails,
+    "StackMonitoringConfig": StackMonitoringConfig,
     "SwitchoverDataGuardAssociationDetails": SwitchoverDataGuardAssociationDetails,
     "Update": Update,
     "UpdateAutonomousContainerDatabaseDataGuardAssociationDetails": UpdateAutonomousContainerDatabaseDataGuardAssociationDetails,
@@ -547,6 +562,7 @@ database_type_mapping = {
     "UpdateVmClusterDetails": UpdateVmClusterDetails,
     "UpdateVmClusterNetworkDetails": UpdateVmClusterNetworkDetails,
     "UpgradeDatabaseDetails": UpgradeDatabaseDetails,
+    "UpgradeDbSystemDetails": UpgradeDbSystemDetails,
     "VmCluster": VmCluster,
     "VmClusterNetwork": VmClusterNetwork,
     "VmClusterNetworkDetails": VmClusterNetworkDetails,

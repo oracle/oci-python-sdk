@@ -248,6 +248,14 @@ class Sddc(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
+        :param initial_host_shape_name:
+            The value to assign to the initial_host_shape_name property of this Sddc.
+        :type initial_host_shape_name: str
+
+        :param initial_host_ocpu_count:
+            The value to assign to the initial_host_ocpu_count property of this Sddc.
+        :type initial_host_ocpu_count: float
+
         :param is_shielded_instance_enabled:
             The value to assign to the is_shielded_instance_enabled property of this Sddc.
         :type is_shielded_instance_enabled: bool
@@ -306,6 +314,8 @@ class Sddc(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'lifecycle_state': 'str',
+            'initial_host_shape_name': 'str',
+            'initial_host_ocpu_count': 'float',
             'is_shielded_instance_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -356,6 +366,8 @@ class Sddc(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'lifecycle_state': 'lifecycleState',
+            'initial_host_shape_name': 'initialHostShapeName',
+            'initial_host_ocpu_count': 'initialHostOcpuCount',
             'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -405,6 +417,8 @@ class Sddc(object):
         self._time_created = None
         self._time_updated = None
         self._lifecycle_state = None
+        self._initial_host_shape_name = None
+        self._initial_host_ocpu_count = None
         self._is_shielded_instance_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -1894,6 +1908,56 @@ class Sddc(object):
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
+
+    @property
+    def initial_host_shape_name(self):
+        """
+        **[Required]** Gets the initial_host_shape_name of this Sddc.
+        The initial compute shape of the SDDC's ESXi hosts.
+        :func:`list_supported_host_shapes`.
+
+
+        :return: The initial_host_shape_name of this Sddc.
+        :rtype: str
+        """
+        return self._initial_host_shape_name
+
+    @initial_host_shape_name.setter
+    def initial_host_shape_name(self, initial_host_shape_name):
+        """
+        Sets the initial_host_shape_name of this Sddc.
+        The initial compute shape of the SDDC's ESXi hosts.
+        :func:`list_supported_host_shapes`.
+
+
+        :param initial_host_shape_name: The initial_host_shape_name of this Sddc.
+        :type: str
+        """
+        self._initial_host_shape_name = initial_host_shape_name
+
+    @property
+    def initial_host_ocpu_count(self):
+        """
+        Gets the initial_host_ocpu_count of this Sddc.
+        The initial OCPU count of the SDDC's ESXi hosts.
+
+
+        :return: The initial_host_ocpu_count of this Sddc.
+        :rtype: float
+        """
+        return self._initial_host_ocpu_count
+
+    @initial_host_ocpu_count.setter
+    def initial_host_ocpu_count(self, initial_host_ocpu_count):
+        """
+        Sets the initial_host_ocpu_count of this Sddc.
+        The initial OCPU count of the SDDC's ESXi hosts.
+
+
+        :param initial_host_ocpu_count: The initial_host_ocpu_count of this Sddc.
+        :type: float
+        """
+        self._initial_host_ocpu_count = initial_host_ocpu_count
 
     @property
     def is_shielded_instance_enabled(self):

@@ -160,6 +160,10 @@ class ExternalPluggableDatabaseSummary(object):
             The value to assign to the database_management_config property of this ExternalPluggableDatabaseSummary.
         :type database_management_config: oci.database.models.DatabaseManagementConfig
 
+        :param stack_monitoring_config:
+            The value to assign to the stack_monitoring_config property of this ExternalPluggableDatabaseSummary.
+        :type stack_monitoring_config: oci.database.models.StackMonitoringConfig
+
         """
         self.swagger_types = {
             'source_id': 'str',
@@ -182,7 +186,8 @@ class ExternalPluggableDatabaseSummary(object):
             'ncharacter_set': 'str',
             'db_packs': 'str',
             'database_configuration': 'str',
-            'database_management_config': 'DatabaseManagementConfig'
+            'database_management_config': 'DatabaseManagementConfig',
+            'stack_monitoring_config': 'StackMonitoringConfig'
         }
 
         self.attribute_map = {
@@ -206,7 +211,8 @@ class ExternalPluggableDatabaseSummary(object):
             'ncharacter_set': 'ncharacterSet',
             'db_packs': 'dbPacks',
             'database_configuration': 'databaseConfiguration',
-            'database_management_config': 'databaseManagementConfig'
+            'database_management_config': 'databaseManagementConfig',
+            'stack_monitoring_config': 'stackMonitoringConfig'
         }
 
         self._source_id = None
@@ -230,6 +236,7 @@ class ExternalPluggableDatabaseSummary(object):
         self._db_packs = None
         self._database_configuration = None
         self._database_management_config = None
+        self._stack_monitoring_config = None
 
     @property
     def source_id(self):
@@ -786,6 +793,26 @@ class ExternalPluggableDatabaseSummary(object):
         :type: oci.database.models.DatabaseManagementConfig
         """
         self._database_management_config = database_management_config
+
+    @property
+    def stack_monitoring_config(self):
+        """
+        Gets the stack_monitoring_config of this ExternalPluggableDatabaseSummary.
+
+        :return: The stack_monitoring_config of this ExternalPluggableDatabaseSummary.
+        :rtype: oci.database.models.StackMonitoringConfig
+        """
+        return self._stack_monitoring_config
+
+    @stack_monitoring_config.setter
+    def stack_monitoring_config(self, stack_monitoring_config):
+        """
+        Sets the stack_monitoring_config of this ExternalPluggableDatabaseSummary.
+
+        :param stack_monitoring_config: The stack_monitoring_config of this ExternalPluggableDatabaseSummary.
+        :type: oci.database.models.StackMonitoringConfig
+        """
+        self._stack_monitoring_config = stack_monitoring_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProductSummary(object):
     """
-    It provides details about a product rewards and usage amount.
+    Provides details about product rewards and the usage amount.
     """
 
     def __init__(self, **kwargs):
@@ -65,7 +65,7 @@ class ProductSummary(object):
     def product_number(self):
         """
         Gets the product_number of this ProductSummary.
-        The ratecard product number.
+        The rate card product number.
 
 
         :return: The product_number of this ProductSummary.
@@ -77,7 +77,7 @@ class ProductSummary(object):
     def product_number(self, product_number):
         """
         Sets the product_number of this ProductSummary.
-        The ratecard product number.
+        The rate card product number.
 
 
         :param product_number: The product_number of this ProductSummary.
@@ -89,7 +89,7 @@ class ProductSummary(object):
     def product_name(self):
         """
         Gets the product_name of this ProductSummary.
-        The ratecard product Name.
+        The rate card product name.
 
 
         :return: The product_name of this ProductSummary.
@@ -101,7 +101,7 @@ class ProductSummary(object):
     def product_name(self, product_name):
         """
         Sets the product_name of this ProductSummary.
-        The ratecard product Name.
+        The rate card product name.
 
 
         :param product_name: The product_name of this ProductSummary.
@@ -113,7 +113,7 @@ class ProductSummary(object):
     def usage_amount(self):
         """
         Gets the usage_amount of this ProductSummary.
-        The ratecard product usage amount.
+        The rate card product usage amount.
 
 
         :return: The usage_amount of this ProductSummary.
@@ -125,7 +125,7 @@ class ProductSummary(object):
     def usage_amount(self, usage_amount):
         """
         Sets the usage_amount of this ProductSummary.
-        The ratecard product usage amount.
+        The rate card product usage amount.
 
 
         :param usage_amount: The usage_amount of this ProductSummary.
@@ -161,7 +161,7 @@ class ProductSummary(object):
     def is_eligible_to_earn_rewards(self):
         """
         Gets the is_eligible_to_earn_rewards of this ProductSummary.
-        The boolean flag to tell if the product is eligible for earning rewards.
+        The boolean parameter to indicate if the product is eligible to earn rewards.
 
 
         :return: The is_eligible_to_earn_rewards of this ProductSummary.
@@ -173,7 +173,7 @@ class ProductSummary(object):
     def is_eligible_to_earn_rewards(self, is_eligible_to_earn_rewards):
         """
         Sets the is_eligible_to_earn_rewards of this ProductSummary.
-        The boolean flag to tell if the product is eligible for earning rewards.
+        The boolean parameter to indicate if the product is eligible to earn rewards.
 
 
         :param is_eligible_to_earn_rewards: The is_eligible_to_earn_rewards of this ProductSummary.

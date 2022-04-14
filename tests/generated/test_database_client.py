@@ -3022,6 +3022,46 @@ def test_disable_external_container_database_database_management(testing_service
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_disable_external_container_database_stack_monitoring(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DisableExternalContainerDatabaseStackMonitoring'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DisableExternalContainerDatabaseStackMonitoring')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DisableExternalContainerDatabaseStackMonitoring')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.disable_external_container_database_stack_monitoring(
+                external_container_database_id=request.pop(util.camelize('externalContainerDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DisableExternalContainerDatabaseStackMonitoring',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'disable_external_container_database_stack_monitoring',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_disable_external_non_container_database_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableExternalNonContainerDatabaseDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3102,6 +3142,46 @@ def test_disable_external_non_container_database_operations_insights(testing_ser
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_disable_external_non_container_database_stack_monitoring(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DisableExternalNonContainerDatabaseStackMonitoring'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DisableExternalNonContainerDatabaseStackMonitoring')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DisableExternalNonContainerDatabaseStackMonitoring')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.disable_external_non_container_database_stack_monitoring(
+                external_non_container_database_id=request.pop(util.camelize('externalNonContainerDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DisableExternalNonContainerDatabaseStackMonitoring',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'disable_external_non_container_database_stack_monitoring',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_disable_external_pluggable_database_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'DisableExternalPluggableDatabaseDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3176,6 +3256,46 @@ def test_disable_external_pluggable_database_operations_insights(testing_service
             result,
             service_error,
             'disable_external_pluggable_database_operations_insights',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_disable_external_pluggable_database_stack_monitoring(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'DisableExternalPluggableDatabaseStackMonitoring'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'DisableExternalPluggableDatabaseStackMonitoring')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='DisableExternalPluggableDatabaseStackMonitoring')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.disable_external_pluggable_database_stack_monitoring(
+                external_pluggable_database_id=request.pop(util.camelize('externalPluggableDatabaseId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'DisableExternalPluggableDatabaseStackMonitoring',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'disable_external_pluggable_database_stack_monitoring',
             False,
             False
         )
@@ -3466,6 +3586,47 @@ def test_enable_external_container_database_database_management(testing_service_
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_enable_external_container_database_stack_monitoring(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'EnableExternalContainerDatabaseStackMonitoring'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'EnableExternalContainerDatabaseStackMonitoring')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='EnableExternalContainerDatabaseStackMonitoring')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.enable_external_container_database_stack_monitoring(
+                external_container_database_id=request.pop(util.camelize('externalContainerDatabaseId')),
+                enable_external_container_database_stack_monitoring_details=request.pop(util.camelize('EnableExternalContainerDatabaseStackMonitoringDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'EnableExternalContainerDatabaseStackMonitoring',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'enable_external_container_database_stack_monitoring',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_enable_external_non_container_database_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableExternalNonContainerDatabaseDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3548,6 +3709,47 @@ def test_enable_external_non_container_database_operations_insights(testing_serv
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_enable_external_non_container_database_stack_monitoring(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'EnableExternalNonContainerDatabaseStackMonitoring'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'EnableExternalNonContainerDatabaseStackMonitoring')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='EnableExternalNonContainerDatabaseStackMonitoring')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.enable_external_non_container_database_stack_monitoring(
+                external_non_container_database_id=request.pop(util.camelize('externalNonContainerDatabaseId')),
+                enable_external_non_container_database_stack_monitoring_details=request.pop(util.camelize('EnableExternalNonContainerDatabaseStackMonitoringDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'EnableExternalNonContainerDatabaseStackMonitoring',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'enable_external_non_container_database_stack_monitoring',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_enable_external_pluggable_database_database_management(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'EnableExternalPluggableDatabaseDatabaseManagement'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -3624,6 +3826,47 @@ def test_enable_external_pluggable_database_operations_insights(testing_service_
             result,
             service_error,
             'enable_external_pluggable_database_operations_insights',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_enable_external_pluggable_database_stack_monitoring(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'EnableExternalPluggableDatabaseStackMonitoring'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'EnableExternalPluggableDatabaseStackMonitoring')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='EnableExternalPluggableDatabaseStackMonitoring')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.enable_external_pluggable_database_stack_monitoring(
+                external_pluggable_database_id=request.pop(util.camelize('externalPluggableDatabaseId')),
+                enable_external_pluggable_database_stack_monitoring_details=request.pop(util.camelize('EnableExternalPluggableDatabaseStackMonitoringDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'EnableExternalPluggableDatabaseStackMonitoring',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'enable_external_pluggable_database_stack_monitoring',
             False,
             False
         )
@@ -5080,6 +5323,47 @@ def test_get_db_system_patch_history_entry(testing_service_client):
             result,
             service_error,
             'patchHistoryEntry',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_get_db_system_upgrade_history_entry(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'GetDbSystemUpgradeHistoryEntry'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'GetDbSystemUpgradeHistoryEntry')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='GetDbSystemUpgradeHistoryEntry')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.get_db_system_upgrade_history_entry(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                upgrade_history_entry_id=request.pop(util.camelize('upgradeHistoryEntryId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'GetDbSystemUpgradeHistoryEntry',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dbSystemUpgradeHistoryEntry',
             False,
             False
         )
@@ -7792,6 +8076,66 @@ def test_list_db_system_shapes(testing_service_client):
             result,
             service_error,
             'dbSystemShapeSummary',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_db_system_upgrade_history_entries(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListDbSystemUpgradeHistoryEntries'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDbSystemUpgradeHistoryEntries')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDbSystemUpgradeHistoryEntries')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_db_system_upgrade_history_entries(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_db_system_upgrade_history_entries(
+                    db_system_id=request.pop(util.camelize('dbSystemId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_db_system_upgrade_history_entries(
+                        db_system_id=request.pop(util.camelize('dbSystemId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListDbSystemUpgradeHistoryEntries',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dbSystemUpgradeHistoryEntrySummary',
             False,
             True
         )
@@ -11420,6 +11764,47 @@ def test_upgrade_database(testing_service_client):
             result,
             service_error,
             'database',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_upgrade_db_system(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'UpgradeDbSystem'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'UpgradeDbSystem')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='UpgradeDbSystem')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.upgrade_db_system(
+                db_system_id=request.pop(util.camelize('dbSystemId')),
+                upgrade_db_system_details=request.pop(util.camelize('UpgradeDbSystemDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'UpgradeDbSystem',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dbSystem',
             False,
             False
         )

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateRedeemableUserDetails(object):
     """
-    It contains a list of email Ids to be added to the redeemable users.
+    A list of email IDs to be added to the list of users that can redeem rewards.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class CreateRedeemableUserDetails(object):
     def items(self):
         """
         Gets the items of this CreateRedeemableUserDetails.
-        The list of email ids to be added to the redeemable users list.
+        The list of email IDs to be added to the list of users that can redeem rewards.
 
 
         :return: The items of this CreateRedeemableUserDetails.
@@ -49,7 +49,7 @@ class CreateRedeemableUserDetails(object):
     def items(self, items):
         """
         Sets the items of this CreateRedeemableUserDetails.
-        The list of email ids to be added to the redeemable users list.
+        The list of email IDs to be added to the list of users that can redeem rewards.
 
 
         :param items: The items of this CreateRedeemableUserDetails.

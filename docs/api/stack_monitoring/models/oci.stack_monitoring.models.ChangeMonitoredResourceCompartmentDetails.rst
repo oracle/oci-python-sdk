@@ -1,0 +1,11 @@
+ChangeMonitoredResourceCompartmentDetails
+=========================================
+
+.. currentmodule:: oci.stack_monitoring.models
+
+.. autoclass:: ChangeMonitoredResourceCompartmentDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

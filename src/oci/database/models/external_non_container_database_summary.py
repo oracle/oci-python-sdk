@@ -153,6 +153,10 @@ class ExternalNonContainerDatabaseSummary(object):
             The value to assign to the database_management_config property of this ExternalNonContainerDatabaseSummary.
         :type database_management_config: oci.database.models.DatabaseManagementConfig
 
+        :param stack_monitoring_config:
+            The value to assign to the stack_monitoring_config property of this ExternalNonContainerDatabaseSummary.
+        :type stack_monitoring_config: oci.database.models.StackMonitoringConfig
+
         """
         self.swagger_types = {
             'operations_insights_config': 'OperationsInsightsConfig',
@@ -173,7 +177,8 @@ class ExternalNonContainerDatabaseSummary(object):
             'ncharacter_set': 'str',
             'db_packs': 'str',
             'database_configuration': 'str',
-            'database_management_config': 'DatabaseManagementConfig'
+            'database_management_config': 'DatabaseManagementConfig',
+            'stack_monitoring_config': 'StackMonitoringConfig'
         }
 
         self.attribute_map = {
@@ -195,7 +200,8 @@ class ExternalNonContainerDatabaseSummary(object):
             'ncharacter_set': 'ncharacterSet',
             'db_packs': 'dbPacks',
             'database_configuration': 'databaseConfiguration',
-            'database_management_config': 'databaseManagementConfig'
+            'database_management_config': 'databaseManagementConfig',
+            'stack_monitoring_config': 'stackMonitoringConfig'
         }
 
         self._operations_insights_config = None
@@ -217,6 +223,7 @@ class ExternalNonContainerDatabaseSummary(object):
         self._db_packs = None
         self._database_configuration = None
         self._database_management_config = None
+        self._stack_monitoring_config = None
 
     @property
     def operations_insights_config(self):
@@ -711,6 +718,26 @@ class ExternalNonContainerDatabaseSummary(object):
         :type: oci.database.models.DatabaseManagementConfig
         """
         self._database_management_config = database_management_config
+
+    @property
+    def stack_monitoring_config(self):
+        """
+        Gets the stack_monitoring_config of this ExternalNonContainerDatabaseSummary.
+
+        :return: The stack_monitoring_config of this ExternalNonContainerDatabaseSummary.
+        :rtype: oci.database.models.StackMonitoringConfig
+        """
+        return self._stack_monitoring_config
+
+    @stack_monitoring_config.setter
+    def stack_monitoring_config(self, stack_monitoring_config):
+        """
+        Sets the stack_monitoring_config of this ExternalNonContainerDatabaseSummary.
+
+        :param stack_monitoring_config: The stack_monitoring_config of this ExternalNonContainerDatabaseSummary.
+        :type: oci.database.models.StackMonitoringConfig
+        """
+        self._stack_monitoring_config = stack_monitoring_config
 
     def __repr__(self):
         return formatted_flat_dict(self)
