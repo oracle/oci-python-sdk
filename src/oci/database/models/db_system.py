@@ -65,6 +65,10 @@ class DbSystem(object):
     #: This constant has a value of "NEEDS_ATTENTION"
     LIFECYCLE_STATE_NEEDS_ATTENTION = "NEEDS_ATTENTION"
 
+    #: A constant which can be used with the lifecycle_state property of a DbSystem.
+    #: This constant has a value of "UPGRADING"
+    LIFECYCLE_STATE_UPGRADING = "UPGRADING"
+
     #: A constant which can be used with the disk_redundancy property of a DbSystem.
     #: This constant has a value of "HIGH"
     DISK_REDUNDANCY_HIGH = "HIGH"
@@ -186,7 +190,7 @@ class DbSystem(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this DbSystem.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MIGRATED", "MAINTENANCE_IN_PROGRESS", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MIGRATED", "MAINTENANCE_IN_PROGRESS", "NEEDS_ATTENTION", "UPGRADING", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -1063,7 +1067,7 @@ class DbSystem(object):
         **[Required]** Gets the lifecycle_state of this DbSystem.
         The current state of the DB system.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MIGRATED", "MAINTENANCE_IN_PROGRESS", "NEEDS_ATTENTION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MIGRATED", "MAINTENANCE_IN_PROGRESS", "NEEDS_ATTENTION", "UPGRADING", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -1082,7 +1086,7 @@ class DbSystem(object):
         :param lifecycle_state: The lifecycle_state of this DbSystem.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MIGRATED", "MAINTENANCE_IN_PROGRESS", "NEEDS_ATTENTION"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "UPDATING", "TERMINATING", "TERMINATED", "FAILED", "MIGRATED", "MAINTENANCE_IN_PROGRESS", "NEEDS_ATTENTION", "UPGRADING"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

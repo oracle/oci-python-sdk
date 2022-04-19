@@ -134,6 +134,7 @@ API Reference
 * :doc:`Secrets <secrets/client/oci.secrets.SecretsClient>`
 * :doc:`Service Catalog <service_catalog/client/oci.service_catalog.ServiceCatalogClient>`
 * :doc:`Service Manager Proxy <service_manager_proxy/client/oci.service_manager_proxy.ServiceManagerProxyClient>`
+* :doc:`Stack Monitoring <stack_monitoring/client/oci.stack_monitoring.StackMonitoringClient>`
 * :doc:`Stream Admin <streaming/client/oci.streaming.StreamAdminClient>`
 * :doc:`Stream <streaming/client/oci.streaming.StreamClient>`
 * :doc:`Domain <tenant_manager_control_plane/client/oci.tenant_manager_control_plane.DomainClient>`
@@ -263,6 +264,7 @@ API Reference
     secrets
     service_catalog
     service_manager_proxy
+    stack_monitoring
     streaming
     tenant_manager_control_plane
     threat_intelligence

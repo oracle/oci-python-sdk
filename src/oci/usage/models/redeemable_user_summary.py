@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RedeemableUserSummary(object):
     """
-    It provides email Id information.
+    Email ID information.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class RedeemableUserSummary(object):
     def email_id(self):
         """
         Gets the email_id of this RedeemableUserSummary.
-        The email Id of Redeemable User.
+        The email ID of a user that can redeem rewards.
 
 
         :return: The email_id of this RedeemableUserSummary.
@@ -49,7 +49,7 @@ class RedeemableUserSummary(object):
     def email_id(self, email_id):
         """
         Sets the email_id of this RedeemableUserSummary.
-        The email Id of Redeemable User.
+        The email ID of a user that can redeem rewards.
 
 
         :param email_id: The email_id of this RedeemableUserSummary.

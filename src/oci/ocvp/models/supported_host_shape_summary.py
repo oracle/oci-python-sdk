@@ -86,6 +86,10 @@ class SupportedHostShapeSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type supported_sddc_types: list[str]
 
+        :param supported_vmware_software_versions:
+            The value to assign to the supported_vmware_software_versions property of this SupportedHostShapeSummary.
+        :type supported_vmware_software_versions: list[str]
+
         :param description:
             The value to assign to the description property of this SupportedHostShapeSummary.
         :type description: str
@@ -102,6 +106,7 @@ class SupportedHostShapeSummary(object):
             'default_ocpu_count': 'float',
             'supported_ocpu_count': 'list[float]',
             'supported_sddc_types': 'list[str]',
+            'supported_vmware_software_versions': 'list[str]',
             'description': 'str',
             'is_support_shielded_instances': 'bool'
         }
@@ -113,6 +118,7 @@ class SupportedHostShapeSummary(object):
             'default_ocpu_count': 'defaultOcpuCount',
             'supported_ocpu_count': 'supportedOcpuCount',
             'supported_sddc_types': 'supportedSddcTypes',
+            'supported_vmware_software_versions': 'supportedVmwareSoftwareVersions',
             'description': 'description',
             'is_support_shielded_instances': 'isSupportShieldedInstances'
         }
@@ -123,6 +129,7 @@ class SupportedHostShapeSummary(object):
         self._default_ocpu_count = None
         self._supported_ocpu_count = None
         self._supported_sddc_types = None
+        self._supported_vmware_software_versions = None
         self._description = None
         self._is_support_shielded_instances = None
 
@@ -281,6 +288,30 @@ class SupportedHostShapeSummary(object):
         if supported_sddc_types:
             supported_sddc_types[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in supported_sddc_types]
         self._supported_sddc_types = supported_sddc_types
+
+    @property
+    def supported_vmware_software_versions(self):
+        """
+        Gets the supported_vmware_software_versions of this SupportedHostShapeSummary.
+        The VMware software versions supported by the shape.
+
+
+        :return: The supported_vmware_software_versions of this SupportedHostShapeSummary.
+        :rtype: list[str]
+        """
+        return self._supported_vmware_software_versions
+
+    @supported_vmware_software_versions.setter
+    def supported_vmware_software_versions(self, supported_vmware_software_versions):
+        """
+        Sets the supported_vmware_software_versions of this SupportedHostShapeSummary.
+        The VMware software versions supported by the shape.
+
+
+        :param supported_vmware_software_versions: The supported_vmware_software_versions of this SupportedHostShapeSummary.
+        :type: list[str]
+        """
+        self._supported_vmware_software_versions = supported_vmware_software_versions
 
     @property
     def description(self):

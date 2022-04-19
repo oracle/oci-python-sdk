@@ -168,16 +168,22 @@ Database
     oci.database.models.DbSystemOptions
     oci.database.models.DbSystemShapeSummary
     oci.database.models.DbSystemSummary
+    oci.database.models.DbSystemUpgradeHistoryEntry
+    oci.database.models.DbSystemUpgradeHistoryEntrySummary
     oci.database.models.DbVersionSummary
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
     oci.database.models.EnableDatabaseManagementDetails
     oci.database.models.EnableExternalContainerDatabaseDatabaseManagementDetails
+    oci.database.models.EnableExternalContainerDatabaseStackMonitoringDetails
     oci.database.models.EnableExternalDatabaseManagementDetailsBase
     oci.database.models.EnableExternalDatabaseOperationsInsightsDetailsBase
+    oci.database.models.EnableExternalDatabaseStackMonitoringDetailsBase
     oci.database.models.EnableExternalNonContainerDatabaseDatabaseManagementDetails
     oci.database.models.EnableExternalNonContainerDatabaseOperationsInsightsDetails
+    oci.database.models.EnableExternalNonContainerDatabaseStackMonitoringDetails
     oci.database.models.EnableExternalPluggableDatabaseDatabaseManagementDetails
     oci.database.models.EnableExternalPluggableDatabaseOperationsInsightsDetails
+    oci.database.models.EnableExternalPluggableDatabaseStackMonitoringDetails
     oci.database.models.EstimatedPatchingTime
     oci.database.models.ExadataDbSystemMigration
     oci.database.models.ExadataDbSystemMigrationSummary
@@ -248,6 +254,7 @@ Database
     oci.database.models.ScanDetails
     oci.database.models.ScheduledOperationDetails
     oci.database.models.SelfMountDetails
+    oci.database.models.StackMonitoringConfig
     oci.database.models.SwitchoverDataGuardAssociationDetails
     oci.database.models.Update
     oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
@@ -282,6 +289,7 @@ Database
     oci.database.models.UpdateVmClusterDetails
     oci.database.models.UpdateVmClusterNetworkDetails
     oci.database.models.UpgradeDatabaseDetails
+    oci.database.models.UpgradeDbSystemDetails
     oci.database.models.VmCluster
     oci.database.models.VmClusterNetwork
     oci.database.models.VmClusterNetworkDetails

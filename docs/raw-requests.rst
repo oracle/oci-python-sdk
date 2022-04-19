@@ -80,7 +80,7 @@ The following creates a new user by talking to the identity endpoint:
 
 .. code-block:: python
 
-    endpoint = 'https://identity.us-phoenix-1.oraclecloud.com/20160918/users/'
+    endpoint = 'https://identity.us-phoenix-1.oci.oraclecloud.com/20160918/users/'
     body = {
         'compartmentId': config['tenancy'],  # root compartment
         'name': 'TestUser',

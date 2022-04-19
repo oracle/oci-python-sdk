@@ -148,6 +148,12 @@ def is_retryable_service_error(service_error):
     return service_error.status >= 500 or service_error.status == 429 or (service_error.status == 409 and service_error.code == 'Conflict')
 
 
+def enum_to_snake(name):
+    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
+    s1 = re.sub(r'\.([A-Z0-9])', r'_\1', s1)
+    return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
+
+
 def camel_to_snake(name):
     s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
     return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
