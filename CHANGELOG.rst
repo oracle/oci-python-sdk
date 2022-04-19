@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.64.0 - 2022-04-19
+====================
+
+Added
+-----
+* Support for the Stack Monitoring service
+* Support for stack monitoring on external databases in the Database service
+* Support for upgrading VM database systems in place in the Database service
+* Support for viewing supported VMWare software versions when listing host shapes in the VMWare Solution service
+* Support for choosing compute shapes when creating SDDCs and ESXi hosts in the VMWare Solution service
+* Support for work requests on delete operations in the Vulnerability Scanning service
+* Support for additional scan metadata in reports, including CVE descriptions, in the Vulnerability Scanning service
+* Support for redemption codes in the Usage service
+
+Breaking
+--------
+* Param `type` in model `DiscoveryDetails` assumes the value of `UNKNOWN_ENUM_VALUE` if it is assigned a value that is not of the allowed_values. It will not raise a `ValueError`.
+
+====================
 2.63.0 - 2022-04-12
 ====================
 
@@ -356,6 +375,7 @@ Added
 * Support for domains in the Identity service
 * Support for redeemable users and support rewards in the Usage service
 * Support for calling Oracle Cloud Infrastructure services in the ap-singapore-1 and eu-marseille-1 regions
+* Support for second level domain fallback via environment variable.
 
 Changed
 -------

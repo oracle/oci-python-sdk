@@ -123,6 +123,14 @@ class CreateSddcDetails(object):
             The value to assign to the provisioning_vlan_id property of this CreateSddcDetails.
         :type provisioning_vlan_id: str
 
+        :param initial_host_shape_name:
+            The value to assign to the initial_host_shape_name property of this CreateSddcDetails.
+        :type initial_host_shape_name: str
+
+        :param initial_host_ocpu_count:
+            The value to assign to the initial_host_ocpu_count property of this CreateSddcDetails.
+        :type initial_host_ocpu_count: float
+
         :param is_shielded_instance_enabled:
             The value to assign to the is_shielded_instance_enabled property of this CreateSddcDetails.
         :type is_shielded_instance_enabled: bool
@@ -159,6 +167,8 @@ class CreateSddcDetails(object):
             'nsx_edge_uplink2_vlan_id': 'str',
             'replication_vlan_id': 'str',
             'provisioning_vlan_id': 'str',
+            'initial_host_shape_name': 'str',
+            'initial_host_ocpu_count': 'float',
             'is_shielded_instance_enabled': 'bool',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -187,6 +197,8 @@ class CreateSddcDetails(object):
             'nsx_edge_uplink2_vlan_id': 'nsxEdgeUplink2VlanId',
             'replication_vlan_id': 'replicationVlanId',
             'provisioning_vlan_id': 'provisioningVlanId',
+            'initial_host_shape_name': 'initialHostShapeName',
+            'initial_host_ocpu_count': 'initialHostOcpuCount',
             'is_shielded_instance_enabled': 'isShieldedInstanceEnabled',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -214,6 +226,8 @@ class CreateSddcDetails(object):
         self._nsx_edge_uplink2_vlan_id = None
         self._replication_vlan_id = None
         self._provisioning_vlan_id = None
+        self._initial_host_shape_name = None
+        self._initial_host_ocpu_count = None
         self._is_shielded_instance_enabled = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -863,6 +877,56 @@ class CreateSddcDetails(object):
         :type: str
         """
         self._provisioning_vlan_id = provisioning_vlan_id
+
+    @property
+    def initial_host_shape_name(self):
+        """
+        Gets the initial_host_shape_name of this CreateSddcDetails.
+        The initial compute shape of the SDDC's ESXi hosts.
+        :func:`list_supported_host_shapes`.
+
+
+        :return: The initial_host_shape_name of this CreateSddcDetails.
+        :rtype: str
+        """
+        return self._initial_host_shape_name
+
+    @initial_host_shape_name.setter
+    def initial_host_shape_name(self, initial_host_shape_name):
+        """
+        Sets the initial_host_shape_name of this CreateSddcDetails.
+        The initial compute shape of the SDDC's ESXi hosts.
+        :func:`list_supported_host_shapes`.
+
+
+        :param initial_host_shape_name: The initial_host_shape_name of this CreateSddcDetails.
+        :type: str
+        """
+        self._initial_host_shape_name = initial_host_shape_name
+
+    @property
+    def initial_host_ocpu_count(self):
+        """
+        Gets the initial_host_ocpu_count of this CreateSddcDetails.
+        The initial OCPU count of the SDDC's ESXi hosts.
+
+
+        :return: The initial_host_ocpu_count of this CreateSddcDetails.
+        :rtype: float
+        """
+        return self._initial_host_ocpu_count
+
+    @initial_host_ocpu_count.setter
+    def initial_host_ocpu_count(self, initial_host_ocpu_count):
+        """
+        Sets the initial_host_ocpu_count of this CreateSddcDetails.
+        The initial OCPU count of the SDDC's ESXi hosts.
+
+
+        :param initial_host_ocpu_count: The initial_host_ocpu_count of this CreateSddcDetails.
+        :type: float
+        """
+        self._initial_host_ocpu_count = initial_host_ocpu_count
 
     @property
     def is_shielded_instance_enabled(self):

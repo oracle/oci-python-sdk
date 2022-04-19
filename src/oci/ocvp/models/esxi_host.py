@@ -147,6 +147,14 @@ class EsxiHost(object):
             The value to assign to the compute_availability_domain property of this EsxiHost.
         :type compute_availability_domain: str
 
+        :param host_shape_name:
+            The value to assign to the host_shape_name property of this EsxiHost.
+        :type host_shape_name: str
+
+        :param host_ocpu_count:
+            The value to assign to the host_ocpu_count property of this EsxiHost.
+        :type host_ocpu_count: float
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this EsxiHost.
         :type freeform_tags: dict(str, str)
@@ -172,6 +180,8 @@ class EsxiHost(object):
             'replacement_esxi_host_id': 'str',
             'grace_period_end_date': 'datetime',
             'compute_availability_domain': 'str',
+            'host_shape_name': 'str',
+            'host_ocpu_count': 'float',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -192,6 +202,8 @@ class EsxiHost(object):
             'replacement_esxi_host_id': 'replacementEsxiHostId',
             'grace_period_end_date': 'gracePeriodEndDate',
             'compute_availability_domain': 'computeAvailabilityDomain',
+            'host_shape_name': 'hostShapeName',
+            'host_ocpu_count': 'hostOcpuCount',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -211,6 +223,8 @@ class EsxiHost(object):
         self._replacement_esxi_host_id = None
         self._grace_period_end_date = None
         self._compute_availability_domain = None
+        self._host_shape_name = None
+        self._host_ocpu_count = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -661,6 +675,56 @@ class EsxiHost(object):
         :type: str
         """
         self._compute_availability_domain = compute_availability_domain
+
+    @property
+    def host_shape_name(self):
+        """
+        **[Required]** Gets the host_shape_name of this EsxiHost.
+        The compute shape name of the ESXi host.
+        :func:`list_supported_host_shapes`.
+
+
+        :return: The host_shape_name of this EsxiHost.
+        :rtype: str
+        """
+        return self._host_shape_name
+
+    @host_shape_name.setter
+    def host_shape_name(self, host_shape_name):
+        """
+        Sets the host_shape_name of this EsxiHost.
+        The compute shape name of the ESXi host.
+        :func:`list_supported_host_shapes`.
+
+
+        :param host_shape_name: The host_shape_name of this EsxiHost.
+        :type: str
+        """
+        self._host_shape_name = host_shape_name
+
+    @property
+    def host_ocpu_count(self):
+        """
+        Gets the host_ocpu_count of this EsxiHost.
+        The OCPU count of the ESXi host.
+
+
+        :return: The host_ocpu_count of this EsxiHost.
+        :rtype: float
+        """
+        return self._host_ocpu_count
+
+    @host_ocpu_count.setter
+    def host_ocpu_count(self, host_ocpu_count):
+        """
+        Sets the host_ocpu_count of this EsxiHost.
+        The OCPU count of the ESXi host.
+
+
+        :param host_ocpu_count: The host_ocpu_count of this EsxiHost.
+        :type: float
+        """
+        self._host_ocpu_count = host_ocpu_count
 
     @property
     def freeform_tags(self):

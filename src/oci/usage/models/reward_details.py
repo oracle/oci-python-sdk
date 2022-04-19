@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class RewardDetails(object):
     """
-    The overrall reward summary of the monthly summary rewards.
+    The overall monthly reward summary.
     """
 
     def __init__(self, **kwargs):
@@ -38,13 +38,18 @@ class RewardDetails(object):
             The value to assign to the total_rewards_available property of this RewardDetails.
         :type total_rewards_available: float
 
+        :param redemption_code:
+            The value to assign to the redemption_code property of this RewardDetails.
+        :type redemption_code: str
+
         """
         self.swagger_types = {
             'tenancy_id': 'str',
             'subscription_id': 'str',
             'currency': 'str',
             'rewards_rate': 'float',
-            'total_rewards_available': 'float'
+            'total_rewards_available': 'float',
+            'redemption_code': 'str'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class RewardDetails(object):
             'subscription_id': 'subscriptionId',
             'currency': 'currency',
             'rewards_rate': 'rewardsRate',
-            'total_rewards_available': 'totalRewardsAvailable'
+            'total_rewards_available': 'totalRewardsAvailable',
+            'redemption_code': 'redemptionCode'
         }
 
         self._tenancy_id = None
@@ -60,6 +66,7 @@ class RewardDetails(object):
         self._currency = None
         self._rewards_rate = None
         self._total_rewards_available = None
+        self._redemption_code = None
 
     @property
     def tenancy_id(self):
@@ -89,7 +96,7 @@ class RewardDetails(object):
     def subscription_id(self):
         """
         Gets the subscription_id of this RewardDetails.
-        The entitlement id from MQS and it is same as subcription id.
+        The entitlement ID from MQS, which is the same as the subcription ID.
 
 
         :return: The subscription_id of this RewardDetails.
@@ -101,7 +108,7 @@ class RewardDetails(object):
     def subscription_id(self, subscription_id):
         """
         Sets the subscription_id of this RewardDetails.
-        The entitlement id from MQS and it is same as subcription id.
+        The entitlement ID from MQS, which is the same as the subcription ID.
 
 
         :param subscription_id: The subscription_id of this RewardDetails.
@@ -161,7 +168,7 @@ class RewardDetails(object):
     def total_rewards_available(self):
         """
         Gets the total_rewards_available of this RewardDetails.
-        The total number of available rewards for a given subscription Id.
+        The total number of available rewards for a given subscription ID.
 
 
         :return: The total_rewards_available of this RewardDetails.
@@ -173,13 +180,37 @@ class RewardDetails(object):
     def total_rewards_available(self, total_rewards_available):
         """
         Sets the total_rewards_available of this RewardDetails.
-        The total number of available rewards for a given subscription Id.
+        The total number of available rewards for a given subscription ID.
 
 
         :param total_rewards_available: The total_rewards_available of this RewardDetails.
         :type: float
         """
         self._total_rewards_available = total_rewards_available
+
+    @property
+    def redemption_code(self):
+        """
+        Gets the redemption_code of this RewardDetails.
+        The redemption code used in the billing center during the reward redemption process
+
+
+        :return: The redemption_code of this RewardDetails.
+        :rtype: str
+        """
+        return self._redemption_code
+
+    @redemption_code.setter
+    def redemption_code(self, redemption_code):
+        """
+        Sets the redemption_code of this RewardDetails.
+        The redemption code used in the billing center during the reward redemption process
+
+
+        :param redemption_code: The redemption_code of this RewardDetails.
+        :type: str
+        """
+        self._redemption_code = redemption_code
 
     def __repr__(self):
         return formatted_flat_dict(self)

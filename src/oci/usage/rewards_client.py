@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class RewardsClient(object):
     """
-    A description of the UsageApi API.
+    Use the Usage Proxy API to list Oracle Support Rewards, view related detailed usage information, and manage users who redeem rewards. For more information, see [Oracle Support Rewards Overview](/iaas/Content/Billing/Concepts/supportrewardsoverview.htm).
     """
 
     def __init__(self, config, **kwargs):
@@ -106,7 +106,7 @@ class RewardsClient(object):
 
     def create_redeemable_user(self, create_redeemable_user_details, tenancy_id, subscription_id, **kwargs):
         """
-        Add list of redeemable user email ids for a subscription Id
+        Adds the list of redeemable user email IDs for a subscription ID.
 
 
         :param oci.usage.models.CreateRedeemableUserDetails create_redeemable_user_details: (required)
@@ -116,10 +116,10 @@ class RewardsClient(object):
             The OCID of the tenancy.
 
         :param str subscription_id: (required)
-            The subscriptionId for which rewards information is requested for.
+            The subscription ID for which rewards information is requested for.
 
         :param str user_id: (optional)
-            The user Id of the person whose email we cc
+            The user ID of the person to send a copy of an email.
 
         :param str opc_request_id: (optional)
             Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -229,17 +229,17 @@ class RewardsClient(object):
 
     def delete_redeemable_user(self, email_id, tenancy_id, subscription_id, **kwargs):
         """
-        Delete list of redeemable user email ids for a subscription Id
+        Deletes the list of redeemable user email IDs for a subscription ID.
 
 
         :param str email_id: (required)
-            The EmailId that needs to be deleted
+            The email ID that needs to be deleted.
 
         :param str tenancy_id: (required)
             The OCID of the tenancy.
 
         :param str subscription_id: (required)
-            The subscriptionId for which rewards information is requested for.
+            The subscription ID for which rewards information is requested for.
 
         :param str opc_request_id: (optional)
             Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -334,14 +334,14 @@ class RewardsClient(object):
 
     def list_products(self, tenancy_id, subscription_id, usage_period_key, **kwargs):
         """
-        This API provides usage period specific product and its usage details.
+        Provides product information that is specific to a reward usage period and its usage details.
 
 
         :param str tenancy_id: (required)
             The OCID of the tenancy.
 
         :param str subscription_id: (required)
-            The subscriptionId for which rewards information is requested for.
+            The subscription ID for which rewards information is requested for.
 
         :param str usage_period_key: (required)
             The SPM Identifier for the usage period.
@@ -356,12 +356,12 @@ class RewardsClient(object):
             The maximum number of items to return in the paginated response.
 
         :param str sort_order: (optional)
-            The sort order to use, can be ascending (ASC) or descending (DESC).
+            The sort order to use, which can be ascending (ASC) or descending (DESC).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by, supports one sort Order.
+            The field to sort by. Supports one sort order.
 
             Allowed values are: "TIMECREATED", "TIMESTART"
 
@@ -484,14 +484,14 @@ class RewardsClient(object):
 
     def list_redeemable_users(self, tenancy_id, subscription_id, **kwargs):
         """
-        Provides emailids of redeemable users for the given subscriptionId
+        Provides the email IDs of users that can redeem rewards for the given subscription ID.
 
 
         :param str tenancy_id: (required)
             The OCID of the tenancy.
 
         :param str subscription_id: (required)
-            The subscriptionId for which rewards information is requested for.
+            The subscription ID for which rewards information is requested for.
 
         :param str opc_request_id: (optional)
             Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
@@ -503,12 +503,12 @@ class RewardsClient(object):
             The maximum number of items to return in the paginated response.
 
         :param str sort_order: (optional)
-            The sort order to use, can be ascending (ASC) or descending (DESC).
+            The sort order to use, which can be ascending (ASC) or descending (DESC).
 
             Allowed values are: "ASC", "DESC"
 
         :param str sort_by: (optional)
-            The field to sort by, supports one sort Order.
+            The field to sort by. Supports one sort order.
 
             Allowed values are: "TIMECREATED", "TIMESTART"
 
@@ -616,14 +616,14 @@ class RewardsClient(object):
 
     def list_rewards(self, tenancy_id, subscription_id, **kwargs):
         """
-        This API returns list of rewards for a subscription Id
+        Returns the list of rewards for a subscription ID.
 
 
         :param str tenancy_id: (required)
             The OCID of the tenancy.
 
         :param str subscription_id: (required)
-            The subscriptionId for which rewards information is requested for.
+            The subscription ID for which rewards information is requested for.
 
         :param str opc_request_id: (optional)
             Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
