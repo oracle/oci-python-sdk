@@ -6,6 +6,7 @@ from __future__ import absolute_import
 
 from .activity_problem_aggregation import ActivityProblemAggregation
 from .activity_problem_aggregation_collection import ActivityProblemAggregationCollection
+from .add_compartment_details import AddCompartmentDetails
 from .all_targets_selected import AllTargetsSelected
 from .attach_target_detector_recipe_details import AttachTargetDetectorRecipeDetails
 from .attach_target_responder_recipe_details import AttachTargetResponderRecipeDetails
@@ -13,6 +14,9 @@ from .candidate_responder_rule import CandidateResponderRule
 from .change_detector_recipe_compartment_details import ChangeDetectorRecipeCompartmentDetails
 from .change_managed_list_compartment_details import ChangeManagedListCompartmentDetails
 from .change_responder_recipe_compartment_details import ChangeResponderRecipeCompartmentDetails
+from .change_security_policy_compartment_details import ChangeSecurityPolicyCompartmentDetails
+from .change_security_recipe_compartment_details import ChangeSecurityRecipeCompartmentDetails
+from .change_security_zone_compartment_details import ChangeSecurityZoneCompartmentDetails
 from .composite_condition import CompositeCondition
 from .condition import Condition
 from .condition_group import ConditionGroup
@@ -26,6 +30,9 @@ from .create_data_mask_rule_details import CreateDataMaskRuleDetails
 from .create_detector_recipe_details import CreateDetectorRecipeDetails
 from .create_managed_list_details import CreateManagedListDetails
 from .create_responder_recipe_details import CreateResponderRecipeDetails
+from .create_security_policy_details import CreateSecurityPolicyDetails
+from .create_security_recipe_details import CreateSecurityRecipeDetails
+from .create_security_zone_details import CreateSecurityZoneDetails
 from .create_target_details import CreateTargetDetails
 from .create_target_detector_recipe_details import CreateTargetDetectorRecipeDetails
 from .create_target_responder_recipe_details import CreateTargetResponderRecipeDetails
@@ -72,6 +79,7 @@ from .problem_trend_aggregation import ProblemTrendAggregation
 from .problem_trend_aggregation_collection import ProblemTrendAggregationCollection
 from .recommendation_summary import RecommendationSummary
 from .recommendation_summary_collection import RecommendationSummaryCollection
+from .remove_compartment_details import RemoveCompartmentDetails
 from .request_summarized_trend_resource_risk_scores_details import RequestSummarizedTrendResourceRiskScoresDetails
 from .resource_profile import ResourceProfile
 from .resource_profile_collection import ResourceProfileCollection
@@ -110,10 +118,20 @@ from .responder_rule_summary import ResponderRuleSummary
 from .risk_score_aggregation import RiskScoreAggregation
 from .risk_score_aggregation_collection import RiskScoreAggregationCollection
 from .rule_summary import RuleSummary
+from .security_policy import SecurityPolicy
+from .security_policy_collection import SecurityPolicyCollection
+from .security_policy_summary import SecurityPolicySummary
+from .security_recipe import SecurityRecipe
+from .security_recipe_collection import SecurityRecipeCollection
+from .security_recipe_summary import SecurityRecipeSummary
 from .security_score_aggregation import SecurityScoreAggregation
 from .security_score_aggregation_collection import SecurityScoreAggregationCollection
 from .security_score_trend_aggregation import SecurityScoreTrendAggregation
 from .security_score_trend_aggregation_collection import SecurityScoreTrendAggregationCollection
+from .security_zone import SecurityZone
+from .security_zone_collection import SecurityZoneCollection
+from .security_zone_summary import SecurityZoneSummary
+from .security_zone_target_details import SecurityZoneTargetDetails
 from .service_type_summary import ServiceTypeSummary
 from .sighting import Sighting
 from .sighting_collection import SightingCollection
@@ -129,6 +147,7 @@ from .tactic_collection import TacticCollection
 from .tactic_summary import TacticSummary
 from .target import Target
 from .target_collection import TargetCollection
+from .target_details import TargetDetails
 from .target_detector_details import TargetDetectorDetails
 from .target_detector_recipe import TargetDetectorRecipe
 from .target_detector_recipe_collection import TargetDetectorRecipeCollection
@@ -162,6 +181,9 @@ from .update_responder_recipe_details import UpdateResponderRecipeDetails
 from .update_responder_recipe_responder_rule import UpdateResponderRecipeResponderRule
 from .update_responder_recipe_responder_rule_details import UpdateResponderRecipeResponderRuleDetails
 from .update_responder_rule_details import UpdateResponderRuleDetails
+from .update_security_policy_details import UpdateSecurityPolicyDetails
+from .update_security_recipe_details import UpdateSecurityRecipeDetails
+from .update_security_zone_details import UpdateSecurityZoneDetails
 from .update_target_details import UpdateTargetDetails
 from .update_target_detector_recipe import UpdateTargetDetectorRecipe
 from .update_target_detector_recipe_details import UpdateTargetDetectorRecipeDetails
@@ -178,6 +200,7 @@ from .update_target_responder_rule_details import UpdateTargetResponderRuleDetai
 cloud_guard_type_mapping = {
     "ActivityProblemAggregation": ActivityProblemAggregation,
     "ActivityProblemAggregationCollection": ActivityProblemAggregationCollection,
+    "AddCompartmentDetails": AddCompartmentDetails,
     "AllTargetsSelected": AllTargetsSelected,
     "AttachTargetDetectorRecipeDetails": AttachTargetDetectorRecipeDetails,
     "AttachTargetResponderRecipeDetails": AttachTargetResponderRecipeDetails,
@@ -185,6 +208,9 @@ cloud_guard_type_mapping = {
     "ChangeDetectorRecipeCompartmentDetails": ChangeDetectorRecipeCompartmentDetails,
     "ChangeManagedListCompartmentDetails": ChangeManagedListCompartmentDetails,
     "ChangeResponderRecipeCompartmentDetails": ChangeResponderRecipeCompartmentDetails,
+    "ChangeSecurityPolicyCompartmentDetails": ChangeSecurityPolicyCompartmentDetails,
+    "ChangeSecurityRecipeCompartmentDetails": ChangeSecurityRecipeCompartmentDetails,
+    "ChangeSecurityZoneCompartmentDetails": ChangeSecurityZoneCompartmentDetails,
     "CompositeCondition": CompositeCondition,
     "Condition": Condition,
     "ConditionGroup": ConditionGroup,
@@ -198,6 +224,9 @@ cloud_guard_type_mapping = {
     "CreateDetectorRecipeDetails": CreateDetectorRecipeDetails,
     "CreateManagedListDetails": CreateManagedListDetails,
     "CreateResponderRecipeDetails": CreateResponderRecipeDetails,
+    "CreateSecurityPolicyDetails": CreateSecurityPolicyDetails,
+    "CreateSecurityRecipeDetails": CreateSecurityRecipeDetails,
+    "CreateSecurityZoneDetails": CreateSecurityZoneDetails,
     "CreateTargetDetails": CreateTargetDetails,
     "CreateTargetDetectorRecipeDetails": CreateTargetDetectorRecipeDetails,
     "CreateTargetResponderRecipeDetails": CreateTargetResponderRecipeDetails,
@@ -244,6 +273,7 @@ cloud_guard_type_mapping = {
     "ProblemTrendAggregationCollection": ProblemTrendAggregationCollection,
     "RecommendationSummary": RecommendationSummary,
     "RecommendationSummaryCollection": RecommendationSummaryCollection,
+    "RemoveCompartmentDetails": RemoveCompartmentDetails,
     "RequestSummarizedTrendResourceRiskScoresDetails": RequestSummarizedTrendResourceRiskScoresDetails,
     "ResourceProfile": ResourceProfile,
     "ResourceProfileCollection": ResourceProfileCollection,
@@ -282,10 +312,20 @@ cloud_guard_type_mapping = {
     "RiskScoreAggregation": RiskScoreAggregation,
     "RiskScoreAggregationCollection": RiskScoreAggregationCollection,
     "RuleSummary": RuleSummary,
+    "SecurityPolicy": SecurityPolicy,
+    "SecurityPolicyCollection": SecurityPolicyCollection,
+    "SecurityPolicySummary": SecurityPolicySummary,
+    "SecurityRecipe": SecurityRecipe,
+    "SecurityRecipeCollection": SecurityRecipeCollection,
+    "SecurityRecipeSummary": SecurityRecipeSummary,
     "SecurityScoreAggregation": SecurityScoreAggregation,
     "SecurityScoreAggregationCollection": SecurityScoreAggregationCollection,
     "SecurityScoreTrendAggregation": SecurityScoreTrendAggregation,
     "SecurityScoreTrendAggregationCollection": SecurityScoreTrendAggregationCollection,
+    "SecurityZone": SecurityZone,
+    "SecurityZoneCollection": SecurityZoneCollection,
+    "SecurityZoneSummary": SecurityZoneSummary,
+    "SecurityZoneTargetDetails": SecurityZoneTargetDetails,
     "ServiceTypeSummary": ServiceTypeSummary,
     "Sighting": Sighting,
     "SightingCollection": SightingCollection,
@@ -301,6 +341,7 @@ cloud_guard_type_mapping = {
     "TacticSummary": TacticSummary,
     "Target": Target,
     "TargetCollection": TargetCollection,
+    "TargetDetails": TargetDetails,
     "TargetDetectorDetails": TargetDetectorDetails,
     "TargetDetectorRecipe": TargetDetectorRecipe,
     "TargetDetectorRecipeCollection": TargetDetectorRecipeCollection,
@@ -334,6 +375,9 @@ cloud_guard_type_mapping = {
     "UpdateResponderRecipeResponderRule": UpdateResponderRecipeResponderRule,
     "UpdateResponderRecipeResponderRuleDetails": UpdateResponderRecipeResponderRuleDetails,
     "UpdateResponderRuleDetails": UpdateResponderRuleDetails,
+    "UpdateSecurityPolicyDetails": UpdateSecurityPolicyDetails,
+    "UpdateSecurityRecipeDetails": UpdateSecurityRecipeDetails,
+    "UpdateSecurityZoneDetails": UpdateSecurityZoneDetails,
     "UpdateTargetDetails": UpdateTargetDetails,
     "UpdateTargetDetectorRecipe": UpdateTargetDetectorRecipe,
     "UpdateTargetDetectorRecipeDetails": UpdateTargetDetectorRecipeDetails,

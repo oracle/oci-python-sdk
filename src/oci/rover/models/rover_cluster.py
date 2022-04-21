@@ -210,6 +210,10 @@ class RoverCluster(object):
             The value to assign to the image_export_par property of this RoverCluster.
         :type image_export_par: str
 
+        :param master_key_id:
+            The value to assign to the master_key_id property of this RoverCluster.
+        :type master_key_id: str
+
         :param tags:
             The value to assign to the tags property of this RoverCluster.
         :type tags: str
@@ -262,6 +266,7 @@ class RoverCluster(object):
             'import_file_bucket': 'str',
             'data_validation_code': 'str',
             'image_export_par': 'str',
+            'master_key_id': 'str',
             'tags': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -303,6 +308,7 @@ class RoverCluster(object):
             'import_file_bucket': 'importFileBucket',
             'data_validation_code': 'dataValidationCode',
             'image_export_par': 'imageExportPar',
+            'master_key_id': 'masterKeyId',
             'tags': 'tags',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -343,6 +349,7 @@ class RoverCluster(object):
         self._import_file_bucket = None
         self._data_validation_code = None
         self._image_export_par = None
+        self._master_key_id = None
         self._tags = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -1183,6 +1190,30 @@ class RoverCluster(object):
         :type: str
         """
         self._image_export_par = image_export_par
+
+    @property
+    def master_key_id(self):
+        """
+        Gets the master_key_id of this RoverCluster.
+        Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
+
+
+        :return: The master_key_id of this RoverCluster.
+        :rtype: str
+        """
+        return self._master_key_id
+
+    @master_key_id.setter
+    def master_key_id(self, master_key_id):
+        """
+        Sets the master_key_id of this RoverCluster.
+        Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
+
+
+        :param master_key_id: The master_key_id of this RoverCluster.
+        :type: str
+        """
+        self._master_key_id = master_key_id
 
     @property
     def tags(self):

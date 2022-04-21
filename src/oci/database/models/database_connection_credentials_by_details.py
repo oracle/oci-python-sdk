@@ -30,7 +30,7 @@ class DatabaseConnectionCredentialsByDetails(DatabaseConnectionCredentials):
 
         :param credential_type:
             The value to assign to the credential_type property of this DatabaseConnectionCredentialsByDetails.
-            Allowed values for this property are: "NAME_REFERENCE", "DETAILS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NAME_REFERENCE", "DETAILS", "SSL_DETAILS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type credential_type: str
 

@@ -38,13 +38,18 @@ class AddAutoScalingConfigurationDetails(object):
             The value to assign to the policy property of this AddAutoScalingConfigurationDetails.
         :type policy: oci.bds.models.AutoScalePolicy
 
+        :param policy_details:
+            The value to assign to the policy_details property of this AddAutoScalingConfigurationDetails.
+        :type policy_details: oci.bds.models.AddAutoScalePolicyDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'node_type': 'str',
             'is_enabled': 'bool',
             'cluster_admin_password': 'str',
-            'policy': 'AutoScalePolicy'
+            'policy': 'AutoScalePolicy',
+            'policy_details': 'AddAutoScalePolicyDetails'
         }
 
         self.attribute_map = {
@@ -52,7 +57,8 @@ class AddAutoScalingConfigurationDetails(object):
             'node_type': 'nodeType',
             'is_enabled': 'isEnabled',
             'cluster_admin_password': 'clusterAdminPassword',
-            'policy': 'policy'
+            'policy': 'policy',
+            'policy_details': 'policyDetails'
         }
 
         self._display_name = None
@@ -60,6 +66,7 @@ class AddAutoScalingConfigurationDetails(object):
         self._is_enabled = None
         self._cluster_admin_password = None
         self._policy = None
+        self._policy_details = None
 
     @property
     def display_name(self):
@@ -89,7 +96,7 @@ class AddAutoScalingConfigurationDetails(object):
     def node_type(self):
         """
         **[Required]** Gets the node_type of this AddAutoScalingConfigurationDetails.
-        A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+        A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
 
 
         :return: The node_type of this AddAutoScalingConfigurationDetails.
@@ -101,7 +108,7 @@ class AddAutoScalingConfigurationDetails(object):
     def node_type(self, node_type):
         """
         Sets the node_type of this AddAutoScalingConfigurationDetails.
-        A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+        A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
 
 
         :param node_type: The node_type of this AddAutoScalingConfigurationDetails.
@@ -160,7 +167,7 @@ class AddAutoScalingConfigurationDetails(object):
     @property
     def policy(self):
         """
-        **[Required]** Gets the policy of this AddAutoScalingConfigurationDetails.
+        Gets the policy of this AddAutoScalingConfigurationDetails.
 
         :return: The policy of this AddAutoScalingConfigurationDetails.
         :rtype: oci.bds.models.AutoScalePolicy
@@ -176,6 +183,26 @@ class AddAutoScalingConfigurationDetails(object):
         :type: oci.bds.models.AutoScalePolicy
         """
         self._policy = policy
+
+    @property
+    def policy_details(self):
+        """
+        Gets the policy_details of this AddAutoScalingConfigurationDetails.
+
+        :return: The policy_details of this AddAutoScalingConfigurationDetails.
+        :rtype: oci.bds.models.AddAutoScalePolicyDetails
+        """
+        return self._policy_details
+
+    @policy_details.setter
+    def policy_details(self, policy_details):
+        """
+        Sets the policy_details of this AddAutoScalingConfigurationDetails.
+
+        :param policy_details: The policy_details of this AddAutoScalingConfigurationDetails.
+        :type: oci.bds.models.AddAutoScalePolicyDetails
+        """
+        self._policy_details = policy_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

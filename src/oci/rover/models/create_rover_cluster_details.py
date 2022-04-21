@@ -158,6 +158,10 @@ class CreateRoverClusterDetails(object):
             The value to assign to the data_validation_code property of this CreateRoverClusterDetails.
         :type data_validation_code: str
 
+        :param master_key_id:
+            The value to assign to the master_key_id property of this CreateRoverClusterDetails.
+        :type master_key_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateRoverClusterDetails.
         :type freeform_tags: dict(str, str)
@@ -194,6 +198,7 @@ class CreateRoverClusterDetails(object):
             'import_compartment_id': 'str',
             'import_file_bucket': 'str',
             'data_validation_code': 'str',
+            'master_key_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -222,6 +227,7 @@ class CreateRoverClusterDetails(object):
             'import_compartment_id': 'importCompartmentId',
             'import_file_bucket': 'importFileBucket',
             'data_validation_code': 'dataValidationCode',
+            'master_key_id': 'masterKeyId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -249,6 +255,7 @@ class CreateRoverClusterDetails(object):
         self._import_compartment_id = None
         self._import_file_bucket = None
         self._data_validation_code = None
+        self._master_key_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -808,6 +815,30 @@ class CreateRoverClusterDetails(object):
         :type: str
         """
         self._data_validation_code = data_validation_code
+
+    @property
+    def master_key_id(self):
+        """
+        Gets the master_key_id of this CreateRoverClusterDetails.
+        Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
+
+
+        :return: The master_key_id of this CreateRoverClusterDetails.
+        :rtype: str
+        """
+        return self._master_key_id
+
+    @master_key_id.setter
+    def master_key_id(self, master_key_id):
+        """
+        Sets the master_key_id of this CreateRoverClusterDetails.
+        Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
+
+
+        :param master_key_id: The master_key_id of this CreateRoverClusterDetails.
+        :type: str
+        """
+        self._master_key_id = master_key_id
 
     @property
     def freeform_tags(self):

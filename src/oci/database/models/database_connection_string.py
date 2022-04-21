@@ -17,6 +17,10 @@ class DatabaseConnectionString(object):
     #: This constant has a value of "TCP"
     PROTOCOL_TCP = "TCP"
 
+    #: A constant which can be used with the protocol property of a DatabaseConnectionString.
+    #: This constant has a value of "TCPS"
+    PROTOCOL_TCPS = "TCPS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseConnectionString object with values from keyword arguments.
@@ -36,7 +40,7 @@ class DatabaseConnectionString(object):
 
         :param protocol:
             The value to assign to the protocol property of this DatabaseConnectionString.
-            Allowed values for this property are: "TCP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "TCP", "TCPS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type protocol: str
 
@@ -138,7 +142,7 @@ class DatabaseConnectionString(object):
         **[Required]** Gets the protocol of this DatabaseConnectionString.
         The protocol used to connect to the database.
 
-        Allowed values for this property are: "TCP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "TCP", "TCPS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -157,7 +161,7 @@ class DatabaseConnectionString(object):
         :param protocol: The protocol of this DatabaseConnectionString.
         :type: str
         """
-        allowed_values = ["TCP"]
+        allowed_values = ["TCP", "TCPS"]
         if not value_allowed_none_or_none_sentinel(protocol, allowed_values):
             protocol = 'UNKNOWN_ENUM_VALUE'
         self._protocol = protocol

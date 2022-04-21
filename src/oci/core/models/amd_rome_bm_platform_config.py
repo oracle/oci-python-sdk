@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AmdRomeBmPlatformConfig(PlatformConfig):
     """
-    The platform configuration of a bare metal instance that uses the AMD Rome platform.
+    The platform configuration of a bare metal instance that uses the BM.Standard.E3.128 shape (the AMD Rome platform).
     """
 
     def __init__(self, **kwargs):

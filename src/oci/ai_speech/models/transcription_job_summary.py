@@ -142,7 +142,9 @@ class TranscriptionJobSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this TranscriptionJobSummary.
-        Unique identifier that is immutable on creation.
+        The `OCID`__ of the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this TranscriptionJobSummary.
@@ -154,7 +156,9 @@ class TranscriptionJobSummary(object):
     def id(self, id):
         """
         Sets the id of this TranscriptionJobSummary.
-        Unique identifier that is immutable on creation.
+        The `OCID`__ of the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this TranscriptionJobSummary.
@@ -166,7 +170,7 @@ class TranscriptionJobSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this TranscriptionJobSummary.
-        Transcription Job name, can be renamed.
+        A user-friendly display name for the job.
 
 
         :return: The display_name of this TranscriptionJobSummary.
@@ -178,7 +182,7 @@ class TranscriptionJobSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TranscriptionJobSummary.
-        Transcription Job name, can be renamed.
+        A user-friendly display name for the job.
 
 
         :param display_name: The display_name of this TranscriptionJobSummary.
@@ -190,7 +194,9 @@ class TranscriptionJobSummary(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this TranscriptionJobSummary.
-        The OCID of the compartment that contains the transcriptionJob.
+        The `OCID`__ of the compartment where you want to create the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this TranscriptionJobSummary.
@@ -202,7 +208,9 @@ class TranscriptionJobSummary(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TranscriptionJobSummary.
-        The OCID of the compartment that contains the transcriptionJob.
+        The `OCID`__ of the compartment where you want to create the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this TranscriptionJobSummary.
@@ -214,7 +222,9 @@ class TranscriptionJobSummary(object):
     def created_by(self):
         """
         Gets the created_by of this TranscriptionJobSummary.
-        OCID of the user who created the transcriptionJob.
+        The `OCID`__ of the user who created the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The created_by of this TranscriptionJobSummary.
@@ -226,7 +236,9 @@ class TranscriptionJobSummary(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this TranscriptionJobSummary.
-        OCID of the user who created the transcriptionJob.
+        The `OCID`__ of the user who created the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param created_by: The created_by of this TranscriptionJobSummary.

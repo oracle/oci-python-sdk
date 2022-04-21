@@ -176,7 +176,7 @@ class MonitorResult(object):
     def vantage_point(self):
         """
         Gets the vantage_point of this MonitorResult.
-        The name of the vantage point.
+        The name of the public or dedicated vantage point.
 
 
         :return: The vantage_point of this MonitorResult.
@@ -188,7 +188,7 @@ class MonitorResult(object):
     def vantage_point(self, vantage_point):
         """
         Sets the vantage_point of this MonitorResult.
-        The name of the vantage point.
+        The name of the public or dedicated vantage point.
 
 
         :param vantage_point: The vantage_point of this MonitorResult.

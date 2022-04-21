@@ -151,8 +151,8 @@ class UpdateMonitorDetails(object):
     def vantage_points(self):
         """
         Gets the vantage_points of this UpdateMonitorDetails.
-        A list of vantage points from which to execute the monitor.
-        Use /publicVantagePoints to fetch public vantage points.
+        A list of public and dedicated vantage points from which to execute the monitor.
+        Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
 
 
         :return: The vantage_points of this UpdateMonitorDetails.
@@ -164,8 +164,8 @@ class UpdateMonitorDetails(object):
     def vantage_points(self, vantage_points):
         """
         Sets the vantage_points of this UpdateMonitorDetails.
-        A list of vantage points from which to execute the monitor.
-        Use /publicVantagePoints to fetch public vantage points.
+        A list of public and dedicated vantage points from which to execute the monitor.
+        Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
 
 
         :param vantage_points: The vantage_points of this UpdateMonitorDetails.
@@ -240,7 +240,7 @@ class UpdateMonitorDetails(object):
         """
         Gets the repeat_interval_in_seconds of this UpdateMonitorDetails.
         Interval in seconds after the start time when the job should be repeated.
-        Minimum repeatIntervalInSeconds should be 300 seconds.
+        Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 
 
         :return: The repeat_interval_in_seconds of this UpdateMonitorDetails.
@@ -253,7 +253,7 @@ class UpdateMonitorDetails(object):
         """
         Sets the repeat_interval_in_seconds of this UpdateMonitorDetails.
         Interval in seconds after the start time when the job should be repeated.
-        Minimum repeatIntervalInSeconds should be 300 seconds.
+        Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 
 
         :param repeat_interval_in_seconds: The repeat_interval_in_seconds of this UpdateMonitorDetails.
@@ -290,7 +290,8 @@ class UpdateMonitorDetails(object):
         """
         Gets the timeout_in_seconds of this UpdateMonitorDetails.
         Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
-        Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
+        Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 
 
         :return: The timeout_in_seconds of this UpdateMonitorDetails.
@@ -303,7 +304,8 @@ class UpdateMonitorDetails(object):
         """
         Sets the timeout_in_seconds of this UpdateMonitorDetails.
         Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
-        Also, timeoutInSeconds should be a multiple of 60. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
+        Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 
 
         :param timeout_in_seconds: The timeout_in_seconds of this UpdateMonitorDetails.

@@ -621,7 +621,7 @@ class VirtualCircuit(object):
     def bgp_admin_state(self):
         """
         Gets the bgp_admin_state of this VirtualCircuit.
-        Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+        Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
 
         Allowed values for this property are: "ENABLED", "DISABLED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -636,7 +636,7 @@ class VirtualCircuit(object):
     def bgp_admin_state(self, bgp_admin_state):
         """
         Sets the bgp_admin_state of this VirtualCircuit.
-        Set to ENABLED to activate the  bgp session of virtual circuit, DISABLED to deactivate.
+        Set to `ENABLED` (the default) to activate the BGP session of the virtual circuit, set to `DISABLED` to deactivate the virtual circuit.
 
 
         :param bgp_admin_state: The bgp_admin_state of this VirtualCircuit.
@@ -651,7 +651,7 @@ class VirtualCircuit(object):
     def is_bfd_enabled(self):
         """
         Gets the is_bfd_enabled of this VirtualCircuit.
-        Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 
 
         :return: The is_bfd_enabled of this VirtualCircuit.
@@ -663,7 +663,7 @@ class VirtualCircuit(object):
     def is_bfd_enabled(self, is_bfd_enabled):
         """
         Sets the is_bfd_enabled of this VirtualCircuit.
-        Set to true to enable BFD for ipv4 Bgp Peering, false to disable. If not set, default is false
+        Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
 
 
         :param is_bfd_enabled: The is_bfd_enabled of this VirtualCircuit.

@@ -130,6 +130,7 @@ from .database_credential_details import DatabaseCredentialDetails
 from .database_management_config import DatabaseManagementConfig
 from .database_software_image import DatabaseSoftwareImage
 from .database_software_image_summary import DatabaseSoftwareImageSummary
+from .database_ssl_connection_credentials import DatabaseSslConnectionCredentials
 from .database_summary import DatabaseSummary
 from .database_upgrade_history_entry import DatabaseUpgradeHistoryEntry
 from .database_upgrade_history_entry_summary import DatabaseUpgradeHistoryEntrySummary
@@ -417,6 +418,7 @@ database_type_mapping = {
     "DatabaseManagementConfig": DatabaseManagementConfig,
     "DatabaseSoftwareImage": DatabaseSoftwareImage,
     "DatabaseSoftwareImageSummary": DatabaseSoftwareImageSummary,
+    "DatabaseSslConnectionCredentials": DatabaseSslConnectionCredentials,
     "DatabaseSummary": DatabaseSummary,
     "DatabaseUpgradeHistoryEntry": DatabaseUpgradeHistoryEntry,
     "DatabaseUpgradeHistoryEntrySummary": DatabaseUpgradeHistoryEntrySummary,

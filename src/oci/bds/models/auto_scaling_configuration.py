@@ -22,6 +22,10 @@ class AutoScalingConfiguration(object):
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
 
     #: A constant which can be used with the lifecycle_state property of a AutoScalingConfiguration.
+    #: This constant has a value of "INACTIVE"
+    LIFECYCLE_STATE_INACTIVE = "INACTIVE"
+
+    #: A constant which can be used with the lifecycle_state property of a AutoScalingConfiguration.
     #: This constant has a value of "UPDATING"
     LIFECYCLE_STATE_UPDATING = "UPDATING"
 
@@ -56,7 +60,7 @@ class AutoScalingConfiguration(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutoScalingConfiguration.
-            Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -72,6 +76,10 @@ class AutoScalingConfiguration(object):
             The value to assign to the policy property of this AutoScalingConfiguration.
         :type policy: oci.bds.models.AutoScalePolicy
 
+        :param policy_details:
+            The value to assign to the policy_details property of this AutoScalingConfiguration.
+        :type policy_details: oci.bds.models.AutoScalePolicyDetails
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -80,7 +88,8 @@ class AutoScalingConfiguration(object):
             'lifecycle_state': 'str',
             'time_created': 'datetime',
             'time_updated': 'datetime',
-            'policy': 'AutoScalePolicy'
+            'policy': 'AutoScalePolicy',
+            'policy_details': 'AutoScalePolicyDetails'
         }
 
         self.attribute_map = {
@@ -90,7 +99,8 @@ class AutoScalingConfiguration(object):
             'lifecycle_state': 'lifecycleState',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
-            'policy': 'policy'
+            'policy': 'policy',
+            'policy_details': 'policyDetails'
         }
 
         self._id = None
@@ -100,6 +110,7 @@ class AutoScalingConfiguration(object):
         self._time_created = None
         self._time_updated = None
         self._policy = None
+        self._policy_details = None
 
     @property
     def id(self):
@@ -153,7 +164,7 @@ class AutoScalingConfiguration(object):
     def node_type(self):
         """
         **[Required]** Gets the node_type of this AutoScalingConfiguration.
-        A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+        A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
 
 
         :return: The node_type of this AutoScalingConfiguration.
@@ -165,7 +176,7 @@ class AutoScalingConfiguration(object):
     def node_type(self, node_type):
         """
         Sets the node_type of this AutoScalingConfiguration.
-        A node type that is managed by an autoscale configuration. The only supported type is WORKER.
+        A node type that is managed by an autoscale configuration. The only supported types are WORKER and COMPUTE_ONLY_WORKER.
 
 
         :param node_type: The node_type of this AutoScalingConfiguration.
@@ -179,7 +190,7 @@ class AutoScalingConfiguration(object):
         **[Required]** Gets the lifecycle_state of this AutoScalingConfiguration.
         The state of the autoscale configuration.
 
-        Allowed values for this property are: "CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -198,7 +209,7 @@ class AutoScalingConfiguration(object):
         :param lifecycle_state: The lifecycle_state of this AutoScalingConfiguration.
         :type: str
         """
-        allowed_values = ["CREATING", "ACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
+        allowed_values = ["CREATING", "ACTIVE", "INACTIVE", "UPDATING", "DELETING", "DELETED", "FAILED"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -270,6 +281,26 @@ class AutoScalingConfiguration(object):
         :type: oci.bds.models.AutoScalePolicy
         """
         self._policy = policy
+
+    @property
+    def policy_details(self):
+        """
+        Gets the policy_details of this AutoScalingConfiguration.
+
+        :return: The policy_details of this AutoScalingConfiguration.
+        :rtype: oci.bds.models.AutoScalePolicyDetails
+        """
+        return self._policy_details
+
+    @policy_details.setter
+    def policy_details(self, policy_details):
+        """
+        Sets the policy_details of this AutoScalingConfiguration.
+
+        :param policy_details: The policy_details of this AutoScalingConfiguration.
+        :type: oci.bds.models.AutoScalePolicyDetails
+        """
+        self._policy_details = policy_details
 
     def __repr__(self):
         return formatted_flat_dict(self)

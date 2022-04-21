@@ -114,6 +114,46 @@ def test_create_query(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_create_schedule(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'CreateSchedule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'CreateSchedule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='CreateSchedule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.create_schedule(
+                create_schedule_details=request.pop(util.camelize('CreateScheduleDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'CreateSchedule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'schedule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
 def test_delete_custom_table(testing_service_client):
     if not testing_service_client.is_api_enabled('usage_api', 'DeleteCustomTable'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -194,6 +234,46 @@ def test_delete_query(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_delete_schedule(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'DeleteSchedule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'DeleteSchedule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='DeleteSchedule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.delete_schedule(
+                schedule_id=request.pop(util.camelize('scheduleId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'DeleteSchedule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_schedule',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
 def test_get_custom_table(testing_service_client):
     if not testing_service_client.is_api_enabled('usage_api', 'GetCustomTable'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -268,6 +348,86 @@ def test_get_query(testing_service_client):
             result,
             service_error,
             'query',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_get_schedule(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'GetSchedule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'GetSchedule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='GetSchedule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.get_schedule(
+                schedule_id=request.pop(util.camelize('scheduleId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'GetSchedule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'schedule',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_get_scheduled_run(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'GetScheduledRun'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'GetScheduledRun')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='GetScheduledRun')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.get_scheduled_run(
+                scheduled_run_id=request.pop(util.camelize('scheduledRunId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'GetScheduledRun',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'scheduledRun',
             False,
             False
         )
@@ -391,6 +551,126 @@ def test_list_queries(testing_service_client):
             result,
             service_error,
             'queryCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_list_scheduled_runs(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'ListScheduledRuns'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'ListScheduledRuns')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='ListScheduledRuns')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.list_scheduled_runs(
+                schedule_id=request.pop(util.camelize('scheduleId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_scheduled_runs(
+                    schedule_id=request.pop(util.camelize('scheduleId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_scheduled_runs(
+                        schedule_id=request.pop(util.camelize('scheduleId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'ListScheduledRuns',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'scheduledRunCollection',
+            False,
+            True
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_list_schedules(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'ListSchedules'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'ListSchedules')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='ListSchedules')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.list_schedules(
+                compartment_id=request.pop(util.camelize('compartmentId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_schedules(
+                    compartment_id=request.pop(util.camelize('compartmentId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_schedules(
+                        compartment_id=request.pop(util.camelize('compartmentId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'ListSchedules',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'scheduleCollection',
             False,
             True
         )
@@ -573,6 +853,47 @@ def test_update_query(testing_service_client):
             result,
             service_error,
             'query',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="oci_metering_team_us_grp@oracle.com" jiraProject="METER" opsJiraProject="MTRC"
+def test_update_schedule(testing_service_client):
+    if not testing_service_client.is_api_enabled('usage_api', 'UpdateSchedule'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('usage_api', util.camelize('usageapi'), 'UpdateSchedule')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='usage_api', api_name='UpdateSchedule')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.usage_api.UsageapiClient(config, service_endpoint=service_endpoint)
+            response = client.update_schedule(
+                update_schedule_details=request.pop(util.camelize('UpdateScheduleDetails')),
+                schedule_id=request.pop(util.camelize('scheduleId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'usage_api',
+            'UpdateSchedule',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'schedule',
             False,
             False
         )

@@ -34,6 +34,47 @@ def vcr_fixture(request):
 
 
 # IssueRoutingInfo tag="default" email="rchandok_org_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
+def test_create_dedicated_vantage_point(testing_service_client):
+    if not testing_service_client.is_api_enabled('apm_synthetics', 'CreateDedicatedVantagePoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apm_synthetics', util.camelize('apm_synthetic'), 'CreateDedicatedVantagePoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apm_synthetics', api_name='CreateDedicatedVantagePoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apm_synthetics.ApmSyntheticClient(config, service_endpoint=service_endpoint)
+            response = client.create_dedicated_vantage_point(
+                apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                create_dedicated_vantage_point_details=request.pop(util.camelize('CreateDedicatedVantagePointDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apm_synthetics',
+            'CreateDedicatedVantagePoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dedicatedVantagePoint',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="rchandok_org_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
 def test_create_monitor(testing_service_client):
     if not testing_service_client.is_api_enabled('apm_synthetics', 'CreateMonitor'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -116,6 +157,47 @@ def test_create_script(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="rchandok_org_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
+def test_delete_dedicated_vantage_point(testing_service_client):
+    if not testing_service_client.is_api_enabled('apm_synthetics', 'DeleteDedicatedVantagePoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apm_synthetics', util.camelize('apm_synthetic'), 'DeleteDedicatedVantagePoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apm_synthetics', api_name='DeleteDedicatedVantagePoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apm_synthetics.ApmSyntheticClient(config, service_endpoint=service_endpoint)
+            response = client.delete_dedicated_vantage_point(
+                apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                dedicated_vantage_point_id=request.pop(util.camelize('dedicatedVantagePointId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apm_synthetics',
+            'DeleteDedicatedVantagePoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'delete_dedicated_vantage_point',
+            True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="rchandok_org_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
 def test_delete_monitor(testing_service_client):
     if not testing_service_client.is_api_enabled('apm_synthetics', 'DeleteMonitor'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -193,6 +275,47 @@ def test_delete_script(testing_service_client):
             service_error,
             'delete_script',
             True,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="rchandok_org_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
+def test_get_dedicated_vantage_point(testing_service_client):
+    if not testing_service_client.is_api_enabled('apm_synthetics', 'GetDedicatedVantagePoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apm_synthetics', util.camelize('apm_synthetic'), 'GetDedicatedVantagePoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apm_synthetics', api_name='GetDedicatedVantagePoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apm_synthetics.ApmSyntheticClient(config, service_endpoint=service_endpoint)
+            response = client.get_dedicated_vantage_point(
+                apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                dedicated_vantage_point_id=request.pop(util.camelize('dedicatedVantagePointId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apm_synthetics',
+            'GetDedicatedVantagePoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dedicatedVantagePoint',
+            False,
             False
         )
 
@@ -321,6 +444,66 @@ def test_get_script(testing_service_client):
             'script',
             False,
             False
+        )
+
+
+# IssueRoutingInfo tag="default" email="rchandok_org_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
+def test_list_dedicated_vantage_points(testing_service_client):
+    if not testing_service_client.is_api_enabled('apm_synthetics', 'ListDedicatedVantagePoints'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apm_synthetics', util.camelize('apm_synthetic'), 'ListDedicatedVantagePoints')
+    )
+    mock_mode = config['test_mode'] == 'mock' if 'test_mode' in config else False
+
+    request_containers = testing_service_client.get_requests(service_name='apm_synthetics', api_name='ListDedicatedVantagePoints')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apm_synthetics.ApmSyntheticClient(config, service_endpoint=service_endpoint)
+            response = client.list_dedicated_vantage_points(
+                apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+            if not mock_mode and response.has_next_page:
+                next_page = response.headers['opc-next-page']
+                request = request_containers[i]['request'].copy()
+                next_response = client.list_dedicated_vantage_points(
+                    apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                    page=next_page,
+                    **(util.camel_to_snake_keys(request))
+                )
+                result.append(next_response)
+
+                prev_page = 'opc-prev-page'
+                if prev_page in next_response.headers:
+                    request = request_containers[i]['request'].copy()
+                    prev_response = client.list_dedicated_vantage_points(
+                        apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                        page=next_response.headers[prev_page],
+                        **(util.camel_to_snake_keys(request))
+                    )
+                    result.append(prev_response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apm_synthetics',
+            'ListDedicatedVantagePoints',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dedicatedVantagePointCollection',
+            False,
+            True
         )
 
 
@@ -501,6 +684,48 @@ def test_list_scripts(testing_service_client):
             'scriptCollection',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="rchandok_org_ww@oracle.com" jiraProject="APM" opsJiraProject="APMSDC"
+def test_update_dedicated_vantage_point(testing_service_client):
+    if not testing_service_client.is_api_enabled('apm_synthetics', 'UpdateDedicatedVantagePoint'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('apm_synthetics', util.camelize('apm_synthetic'), 'UpdateDedicatedVantagePoint')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='apm_synthetics', api_name='UpdateDedicatedVantagePoint')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.apm_synthetics.ApmSyntheticClient(config, service_endpoint=service_endpoint)
+            response = client.update_dedicated_vantage_point(
+                apm_domain_id=request.pop(util.camelize('apmDomainId')),
+                dedicated_vantage_point_id=request.pop(util.camelize('dedicatedVantagePointId')),
+                update_dedicated_vantage_point_details=request.pop(util.camelize('UpdateDedicatedVantagePointDetails')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'apm_synthetics',
+            'UpdateDedicatedVantagePoint',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dedicatedVantagePoint',
+            False,
+            False
         )
 
 

@@ -30,6 +30,13 @@ Sch
     oci.sch.models.LogSource
     oci.sch.models.LoggingAnalyticsTargetDetails
     oci.sch.models.LoggingSourceDetails
+    oci.sch.models.MonitoringSource
+    oci.sch.models.MonitoringSourceAllMetrics
+    oci.sch.models.MonitoringSourceDetails
+    oci.sch.models.MonitoringSourceMetricDetails
+    oci.sch.models.MonitoringSourceNamespaceDetails
+    oci.sch.models.MonitoringSourceSelectedNamespace
+    oci.sch.models.MonitoringSourceSelectedNamespaceDetails
     oci.sch.models.MonitoringTargetDetails
     oci.sch.models.NotificationsTargetDetails
     oci.sch.models.ObjectStorageTargetDetails

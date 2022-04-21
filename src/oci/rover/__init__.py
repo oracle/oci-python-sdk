@@ -11,6 +11,8 @@ from .rover_entitlement_client import RoverEntitlementClient
 from .rover_entitlement_client_composite_operations import RoverEntitlementClientCompositeOperations
 from .rover_node_client import RoverNodeClient
 from .rover_node_client_composite_operations import RoverNodeClientCompositeOperations
+from .shape_client import ShapeClient
+from .shape_client_composite_operations import ShapeClientCompositeOperations
 from . import models
 
-__all__ = ["RoverClusterClient", "RoverClusterClientCompositeOperations", "RoverEntitlementClient", "RoverEntitlementClientCompositeOperations", "RoverNodeClient", "RoverNodeClientCompositeOperations", "models"]
+__all__ = ["RoverClusterClient", "RoverClusterClientCompositeOperations", "RoverEntitlementClient", "RoverEntitlementClientCompositeOperations", "RoverNodeClient", "RoverNodeClientCompositeOperations", "ShapeClient", "ShapeClientCompositeOperations", "models"]

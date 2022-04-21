@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class GeoSummary(object):
     """
-    Geographic summary about a vantage point.
+    Geographic summary of a vantage point.
     """
 
     def __init__(self, **kwargs):

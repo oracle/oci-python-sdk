@@ -144,6 +144,7 @@ Database
     oci.database.models.DatabaseManagementConfig
     oci.database.models.DatabaseSoftwareImage
     oci.database.models.DatabaseSoftwareImageSummary
+    oci.database.models.DatabaseSslConnectionCredentials
     oci.database.models.DatabaseSummary
     oci.database.models.DatabaseUpgradeHistoryEntry
     oci.database.models.DatabaseUpgradeHistoryEntrySummary

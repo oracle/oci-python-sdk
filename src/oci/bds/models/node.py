@@ -58,6 +58,10 @@ class Node(object):
     NODE_TYPE_WORKER = "WORKER"
 
     #: A constant which can be used with the node_type property of a Node.
+    #: This constant has a value of "COMPUTE_ONLY_WORKER"
+    NODE_TYPE_COMPUTE_ONLY_WORKER = "COMPUTE_ONLY_WORKER"
+
+    #: A constant which can be used with the node_type property of a Node.
     #: This constant has a value of "BURSTING"
     NODE_TYPE_BURSTING = "BURSTING"
 
@@ -86,7 +90,7 @@ class Node(object):
 
         :param node_type:
             The value to assign to the node_type property of this Node.
-            Allowed values for this property are: "MASTER", "EDGE", "UTILITY", "WORKER", "BURSTING", "CLOUD_SQL", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "MASTER", "EDGE", "UTILITY", "WORKER", "COMPUTE_ONLY_WORKER", "BURSTING", "CLOUD_SQL", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type node_type: str
 
@@ -134,6 +138,14 @@ class Node(object):
             The value to assign to the time_updated property of this Node.
         :type time_updated: datetime
 
+        :param ocpus:
+            The value to assign to the ocpus property of this Node.
+        :type ocpus: int
+
+        :param memory_in_gbs:
+            The value to assign to the memory_in_gbs property of this Node.
+        :type memory_in_gbs: int
+
         """
         self.swagger_types = {
             'instance_id': 'str',
@@ -150,7 +162,9 @@ class Node(object):
             'availability_domain': 'str',
             'fault_domain': 'str',
             'time_created': 'datetime',
-            'time_updated': 'datetime'
+            'time_updated': 'datetime',
+            'ocpus': 'int',
+            'memory_in_gbs': 'int'
         }
 
         self.attribute_map = {
@@ -168,7 +182,9 @@ class Node(object):
             'availability_domain': 'availabilityDomain',
             'fault_domain': 'faultDomain',
             'time_created': 'timeCreated',
-            'time_updated': 'timeUpdated'
+            'time_updated': 'timeUpdated',
+            'ocpus': 'ocpus',
+            'memory_in_gbs': 'memoryInGBs'
         }
 
         self._instance_id = None
@@ -186,6 +202,8 @@ class Node(object):
         self._fault_domain = None
         self._time_created = None
         self._time_updated = None
+        self._ocpus = None
+        self._memory_in_gbs = None
 
     @property
     def instance_id(self):
@@ -271,7 +289,7 @@ class Node(object):
         **[Required]** Gets the node_type of this Node.
         Cluster node type.
 
-        Allowed values for this property are: "MASTER", "EDGE", "UTILITY", "WORKER", "BURSTING", "CLOUD_SQL", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "MASTER", "EDGE", "UTILITY", "WORKER", "COMPUTE_ONLY_WORKER", "BURSTING", "CLOUD_SQL", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -290,7 +308,7 @@ class Node(object):
         :param node_type: The node_type of this Node.
         :type: str
         """
-        allowed_values = ["MASTER", "EDGE", "UTILITY", "WORKER", "BURSTING", "CLOUD_SQL"]
+        allowed_values = ["MASTER", "EDGE", "UTILITY", "WORKER", "COMPUTE_ONLY_WORKER", "BURSTING", "CLOUD_SQL"]
         if not value_allowed_none_or_none_sentinel(node_type, allowed_values):
             node_type = 'UNKNOWN_ENUM_VALUE'
         self._node_type = node_type
@@ -558,6 +576,54 @@ class Node(object):
         :type: datetime
         """
         self._time_updated = time_updated
+
+    @property
+    def ocpus(self):
+        """
+        Gets the ocpus of this Node.
+        The total number of OCPUs available to the node.
+
+
+        :return: The ocpus of this Node.
+        :rtype: int
+        """
+        return self._ocpus
+
+    @ocpus.setter
+    def ocpus(self, ocpus):
+        """
+        Sets the ocpus of this Node.
+        The total number of OCPUs available to the node.
+
+
+        :param ocpus: The ocpus of this Node.
+        :type: int
+        """
+        self._ocpus = ocpus
+
+    @property
+    def memory_in_gbs(self):
+        """
+        Gets the memory_in_gbs of this Node.
+        The total amount of memory available to the node, in gigabytes.
+
+
+        :return: The memory_in_gbs of this Node.
+        :rtype: int
+        """
+        return self._memory_in_gbs
+
+    @memory_in_gbs.setter
+    def memory_in_gbs(self, memory_in_gbs):
+        """
+        Sets the memory_in_gbs of this Node.
+        The total amount of memory available to the node, in gigabytes.
+
+
+        :param memory_in_gbs: The memory_in_gbs of this Node.
+        :type: int
+        """
+        self._memory_in_gbs = memory_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

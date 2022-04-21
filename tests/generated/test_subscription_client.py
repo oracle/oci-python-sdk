@@ -374,6 +374,7 @@ def test_list_subscription_mappings(testing_service_client):
             service_endpoint = config['endpoint'] if 'endpoint' in config else None
             client = oci.tenant_manager_control_plane.SubscriptionClient(config, service_endpoint=service_endpoint)
             response = client.list_subscription_mappings(
+                subscription_id=request.pop(util.camelize('subscriptionId')),
                 **(util.camel_to_snake_keys(request))
             )
             result.append(response)
@@ -381,6 +382,7 @@ def test_list_subscription_mappings(testing_service_client):
                 next_page = response.headers['opc-next-page']
                 request = request_containers[i]['request'].copy()
                 next_response = client.list_subscription_mappings(
+                    subscription_id=request.pop(util.camelize('subscriptionId')),
                     page=next_page,
                     **(util.camel_to_snake_keys(request))
                 )
@@ -390,6 +392,7 @@ def test_list_subscription_mappings(testing_service_client):
                 if prev_page in next_response.headers:
                     request = request_containers[i]['request'].copy()
                     prev_response = client.list_subscription_mappings(
+                        subscription_id=request.pop(util.camelize('subscriptionId')),
                         page=next_response.headers[prev_page],
                         **(util.camel_to_snake_keys(request))
                     )

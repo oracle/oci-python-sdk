@@ -62,6 +62,10 @@ class UpdateRoverNodeDetails(object):
             The value to assign to the display_name property of this UpdateRoverNodeDetails.
         :type display_name: str
 
+        :param shape:
+            The value to assign to the shape property of this UpdateRoverNodeDetails.
+        :type shape: str
+
         :param serial_number:
             The value to assign to the serial_number property of this UpdateRoverNodeDetails.
         :type serial_number: str
@@ -164,6 +168,7 @@ class UpdateRoverNodeDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'shape': 'str',
             'serial_number': 'str',
             'customer_shipping_address': 'ShippingAddress',
             'node_workloads': 'list[RoverWorkload]',
@@ -192,6 +197,7 @@ class UpdateRoverNodeDetails(object):
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'shape': 'shape',
             'serial_number': 'serialNumber',
             'customer_shipping_address': 'customerShippingAddress',
             'node_workloads': 'nodeWorkloads',
@@ -219,6 +225,7 @@ class UpdateRoverNodeDetails(object):
         }
 
         self._display_name = None
+        self._shape = None
         self._serial_number = None
         self._customer_shipping_address = None
         self._node_workloads = None
@@ -267,6 +274,30 @@ class UpdateRoverNodeDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this UpdateRoverNodeDetails.
+        The shape of workloads in the node.
+
+
+        :return: The shape of this UpdateRoverNodeDetails.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this UpdateRoverNodeDetails.
+        The shape of workloads in the node.
+
+
+        :param shape: The shape of this UpdateRoverNodeDetails.
+        :type: str
+        """
+        self._shape = shape
 
     @property
     def serial_number(self):

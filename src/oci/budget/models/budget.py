@@ -17,6 +17,14 @@ class Budget(object):
     #: This constant has a value of "MONTHLY"
     RESET_PERIOD_MONTHLY = "MONTHLY"
 
+    #: A constant which can be used with the processing_period_type property of a Budget.
+    #: This constant has a value of "INVOICE"
+    PROCESSING_PERIOD_TYPE_INVOICE = "INVOICE"
+
+    #: A constant which can be used with the processing_period_type property of a Budget.
+    #: This constant has a value of "MONTH"
+    PROCESSING_PERIOD_TYPE_MONTH = "MONTH"
+
     #: A constant which can be used with the target_type property of a Budget.
     #: This constant has a value of "COMPARTMENT"
     TARGET_TYPE_COMPARTMENT = "COMPARTMENT"
@@ -71,6 +79,12 @@ class Budget(object):
         :param budget_processing_period_start_offset:
             The value to assign to the budget_processing_period_start_offset property of this Budget.
         :type budget_processing_period_start_offset: int
+
+        :param processing_period_type:
+            The value to assign to the processing_period_type property of this Budget.
+            Allowed values for this property are: "INVOICE", "MONTH", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type processing_period_type: str
 
         :param target_type:
             The value to assign to the target_type property of this Budget.
@@ -134,6 +148,7 @@ class Budget(object):
             'amount': 'float',
             'reset_period': 'str',
             'budget_processing_period_start_offset': 'int',
+            'processing_period_type': 'str',
             'target_type': 'str',
             'targets': 'list[str]',
             'lifecycle_state': 'str',
@@ -157,6 +172,7 @@ class Budget(object):
             'amount': 'amount',
             'reset_period': 'resetPeriod',
             'budget_processing_period_start_offset': 'budgetProcessingPeriodStartOffset',
+            'processing_period_type': 'processingPeriodType',
             'target_type': 'targetType',
             'targets': 'targets',
             'lifecycle_state': 'lifecycleState',
@@ -179,6 +195,7 @@ class Budget(object):
         self._amount = None
         self._reset_period = None
         self._budget_processing_period_start_offset = None
+        self._processing_period_type = None
         self._target_type = None
         self._targets = None
         self._lifecycle_state = None
@@ -196,7 +213,7 @@ class Budget(object):
     def id(self):
         """
         **[Required]** Gets the id of this Budget.
-        The OCID of the budget
+        The OCID of the budget.
 
 
         :return: The id of this Budget.
@@ -208,7 +225,7 @@ class Budget(object):
     def id(self, id):
         """
         Sets the id of this Budget.
-        The OCID of the budget
+        The OCID of the budget.
 
 
         :param id: The id of this Budget.
@@ -220,7 +237,7 @@ class Budget(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this Budget.
-        The OCID of the compartment
+        The OCID of the compartment.
 
 
         :return: The compartment_id of this Budget.
@@ -232,7 +249,7 @@ class Budget(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this Budget.
-        The OCID of the compartment
+        The OCID of the compartment.
 
 
         :param compartment_id: The compartment_id of this Budget.
@@ -244,8 +261,8 @@ class Budget(object):
     def target_compartment_id(self):
         """
         Gets the target_compartment_id of this Budget.
-        This is DEPRECATED. For backwards compatability, the property will be populated when
-        targetType is \"COMPARTMENT\" AND targets contains EXACT ONE target compartment ocid.
+        This is DEPRECATED. For backwards compatability, the property is populated when
+        the targetType is \"COMPARTMENT\", and targets contain the specific target compartment OCID.
         For all other scenarios, this property will be left empty.
 
 
@@ -258,8 +275,8 @@ class Budget(object):
     def target_compartment_id(self, target_compartment_id):
         """
         Sets the target_compartment_id of this Budget.
-        This is DEPRECATED. For backwards compatability, the property will be populated when
-        targetType is \"COMPARTMENT\" AND targets contains EXACT ONE target compartment ocid.
+        This is DEPRECATED. For backwards compatability, the property is populated when
+        the targetType is \"COMPARTMENT\", and targets contain the specific target compartment OCID.
         For all other scenarios, this property will be left empty.
 
 
@@ -272,7 +289,7 @@ class Budget(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this Budget.
-        The display name of the budget.
+        The display name of the budget. Avoid entering confidential information.
 
 
         :return: The display_name of this Budget.
@@ -284,7 +301,7 @@ class Budget(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this Budget.
-        The display name of the budget.
+        The display name of the budget. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this Budget.
@@ -395,6 +412,36 @@ class Budget(object):
         self._budget_processing_period_start_offset = budget_processing_period_start_offset
 
     @property
+    def processing_period_type(self):
+        """
+        Gets the processing_period_type of this Budget.
+        The type of the budget processing period. Valid values are INVOICE and MONTH.
+
+        Allowed values for this property are: "INVOICE", "MONTH", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The processing_period_type of this Budget.
+        :rtype: str
+        """
+        return self._processing_period_type
+
+    @processing_period_type.setter
+    def processing_period_type(self, processing_period_type):
+        """
+        Sets the processing_period_type of this Budget.
+        The type of the budget processing period. Valid values are INVOICE and MONTH.
+
+
+        :param processing_period_type: The processing_period_type of this Budget.
+        :type: str
+        """
+        allowed_values = ["INVOICE", "MONTH"]
+        if not value_allowed_none_or_none_sentinel(processing_period_type, allowed_values):
+            processing_period_type = 'UNKNOWN_ENUM_VALUE'
+        self._processing_period_type = processing_period_type
+
+    @property
     def target_type(self):
         """
         Gets the target_type of this Budget.
@@ -429,8 +476,8 @@ class Budget(object):
         """
         Gets the targets of this Budget.
         The list of targets on which the budget is applied.
-          If targetType is \"COMPARTMENT\", targets contains list of compartment OCIDs.
-          If targetType is \"TAG\", targets contains list of cost tracking tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
+          If the targetType is \"COMPARTMENT\", the targets contain the list of compartment OCIDs.
+          If the targetType is \"TAG\", the targets contain the list of cost tracking tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
 
 
         :return: The targets of this Budget.
@@ -443,8 +490,8 @@ class Budget(object):
         """
         Sets the targets of this Budget.
         The list of targets on which the budget is applied.
-          If targetType is \"COMPARTMENT\", targets contains list of compartment OCIDs.
-          If targetType is \"TAG\", targets contains list of cost tracking tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
+          If the targetType is \"COMPARTMENT\", the targets contain the list of compartment OCIDs.
+          If the targetType is \"TAG\", the targets contain the list of cost tracking tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
 
 
         :param targets: The targets of this Budget.
@@ -486,7 +533,7 @@ class Budget(object):
     def alert_rule_count(self):
         """
         **[Required]** Gets the alert_rule_count of this Budget.
-        Total number of alert rules in the budget
+        The total number of alert rules in the budget.
 
 
         :return: The alert_rule_count of this Budget.
@@ -498,7 +545,7 @@ class Budget(object):
     def alert_rule_count(self, alert_rule_count):
         """
         Sets the alert_rule_count of this Budget.
-        Total number of alert rules in the budget
+        The total number of alert rules in the budget.
 
 
         :param alert_rule_count: The alert_rule_count of this Budget.
@@ -510,7 +557,7 @@ class Budget(object):
     def version(self):
         """
         Gets the version of this Budget.
-        Version of the budget. Starts from 1 and increments by 1.
+        The version of the budget. Starts from 1 and increments by 1.
 
 
         :return: The version of this Budget.
@@ -522,7 +569,7 @@ class Budget(object):
     def version(self, version):
         """
         Sets the version of this Budget.
-        Version of the budget. Starts from 1 and increments by 1.
+        The version of the budget. Starts from 1 and increments by 1.
 
 
         :param version: The version of this Budget.
@@ -534,7 +581,7 @@ class Budget(object):
     def actual_spend(self):
         """
         Gets the actual_spend of this Budget.
-        The actual spend in currency for the current budget cycle
+        The actual spend in currency for the current budget cycle.
 
 
         :return: The actual_spend of this Budget.
@@ -546,7 +593,7 @@ class Budget(object):
     def actual_spend(self, actual_spend):
         """
         Sets the actual_spend of this Budget.
-        The actual spend in currency for the current budget cycle
+        The actual spend in currency for the current budget cycle.
 
 
         :param actual_spend: The actual_spend of this Budget.
@@ -558,7 +605,7 @@ class Budget(object):
     def forecasted_spend(self):
         """
         Gets the forecasted_spend of this Budget.
-        The forecasted spend in currency by the end of the current budget cycle
+        The forecasted spend in currency by the end of the current budget cycle.
 
 
         :return: The forecasted_spend of this Budget.
@@ -570,7 +617,7 @@ class Budget(object):
     def forecasted_spend(self, forecasted_spend):
         """
         Sets the forecasted_spend of this Budget.
-        The forecasted spend in currency by the end of the current budget cycle
+        The forecasted spend in currency by the end of the current budget cycle.
 
 
         :param forecasted_spend: The forecasted_spend of this Budget.
@@ -582,7 +629,7 @@ class Budget(object):
     def time_spend_computed(self):
         """
         Gets the time_spend_computed of this Budget.
-        The time that the budget spend was last computed
+        The time that the budget spend was last computed.
 
 
         :return: The time_spend_computed of this Budget.
@@ -594,7 +641,7 @@ class Budget(object):
     def time_spend_computed(self, time_spend_computed):
         """
         Sets the time_spend_computed of this Budget.
-        The time that the budget spend was last computed
+        The time that the budget spend was last computed.
 
 
         :param time_spend_computed: The time_spend_computed of this Budget.
@@ -606,7 +653,7 @@ class Budget(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this Budget.
-        Time that budget was created
+        The time that the budget was created.
 
 
         :return: The time_created of this Budget.
@@ -618,7 +665,7 @@ class Budget(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this Budget.
-        Time that budget was created
+        The time that the budget was created.
 
 
         :param time_created: The time_created of this Budget.
@@ -630,7 +677,7 @@ class Budget(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this Budget.
-        Time that budget was updated
+        The time that the budget was updated.
 
 
         :return: The time_updated of this Budget.
@@ -642,7 +689,7 @@ class Budget(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this Budget.
-        Time that budget was updated
+        The time that the budget was updated.
 
 
         :param time_updated: The time_updated of this Budget.

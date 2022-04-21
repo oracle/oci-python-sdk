@@ -18,6 +18,11 @@ class LaunchInstancePlatformConfig(object):
 
     Each shape only supports certain configurable values. If the values that you provide are not valid for the
     specified `shape`, an error is returned.
+
+    For more information about shielded instances, see
+    `Shielded Instances`__.
+
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/shielded-instances.htm
     """
 
     #: A constant which can be used with the type property of a LaunchInstancePlatformConfig.

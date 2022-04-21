@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.rover</groupId>
         <artifactId>rover-cloud-service-spec</artifactId>
-        <version>3.0.13589</version>
+        <version>3.1.5036</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

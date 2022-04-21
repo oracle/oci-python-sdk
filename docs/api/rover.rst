@@ -9,9 +9,11 @@ Rover
     oci.rover.RoverClusterClient
     oci.rover.RoverEntitlementClient
     oci.rover.RoverNodeClient
+    oci.rover.ShapeClient
     oci.rover.RoverClusterClientCompositeOperations
     oci.rover.RoverEntitlementClientCompositeOperations
     oci.rover.RoverNodeClientCompositeOperations
+    oci.rover.ShapeClientCompositeOperations
 
 --------
  Models
@@ -44,6 +46,8 @@ Rover
     oci.rover.models.RoverNodeSetKey
     oci.rover.models.RoverNodeSummary
     oci.rover.models.RoverWorkload
+    oci.rover.models.ShapeCollection
+    oci.rover.models.ShapeSummary
     oci.rover.models.ShippingAddress
     oci.rover.models.UpdateRoverClusterDetails
     oci.rover.models.UpdateRoverEntitlementDetails

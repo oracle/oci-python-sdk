@@ -58,6 +58,22 @@ class WorkRequest(object):
     OPERATION_TYPE_RESTART_NODE = "RESTART_NODE"
 
     #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "REMOVE_NODE"
+    OPERATION_TYPE_REMOVE_NODE = "REMOVE_NODE"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "CREATE_AUTOSCALE_CONFIG"
+    OPERATION_TYPE_CREATE_AUTOSCALE_CONFIG = "CREATE_AUTOSCALE_CONFIG"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "UPDATE_AUTOSCALE_CONFIG"
+    OPERATION_TYPE_UPDATE_AUTOSCALE_CONFIG = "UPDATE_AUTOSCALE_CONFIG"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "DELETE_AUTOSCALE_CONFIG"
+    OPERATION_TYPE_DELETE_AUTOSCALE_CONFIG = "DELETE_AUTOSCALE_CONFIG"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "AUTOSCALE_CONFIG"
     OPERATION_TYPE_AUTOSCALE_CONFIG = "AUTOSCALE_CONFIG"
 
@@ -96,6 +112,14 @@ class WorkRequest(object):
     #: A constant which can be used with the operation_type property of a WorkRequest.
     #: This constant has a value of "TEST_METASTORE_CONFIG"
     OPERATION_TYPE_TEST_METASTORE_CONFIG = "TEST_METASTORE_CONFIG"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "PATCH_BDS"
+    OPERATION_TYPE_PATCH_BDS = "PATCH_BDS"
+
+    #: A constant which can be used with the operation_type property of a WorkRequest.
+    #: This constant has a value of "PATCH_ODH"
+    OPERATION_TYPE_PATCH_ODH = "PATCH_ODH"
 
     #: A constant which can be used with the status property of a WorkRequest.
     #: This constant has a value of "ACCEPTED"
@@ -136,7 +160,7 @@ class WorkRequest(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequest.
-            Allowed values for this property are: "CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", "AUTOSCALE_CONFIG", "AUTOSCALE_RUN", "CREATE_API_KEY", "DELETE_API_KEY", "TEST_OBJECT_STORE_CONNECTION", "CREATE_METASTORE_CONFIG", "DELETE_METASTORE_CONFIG", "UPDATE_METASTORE_CONFIG", "ACTIVATE_METASTORE_CONFIG", "TEST_METASTORE_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", "REMOVE_NODE", "CREATE_AUTOSCALE_CONFIG", "UPDATE_AUTOSCALE_CONFIG", "DELETE_AUTOSCALE_CONFIG", "AUTOSCALE_CONFIG", "AUTOSCALE_RUN", "CREATE_API_KEY", "DELETE_API_KEY", "TEST_OBJECT_STORE_CONNECTION", "CREATE_METASTORE_CONFIG", "DELETE_METASTORE_CONFIG", "UPDATE_METASTORE_CONFIG", "ACTIVATE_METASTORE_CONFIG", "TEST_METASTORE_CONFIG", "PATCH_BDS", "PATCH_ODH", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -255,7 +279,7 @@ class WorkRequest(object):
         **[Required]** Gets the operation_type of this WorkRequest.
         The type of this work request.
 
-        Allowed values for this property are: "CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", "AUTOSCALE_CONFIG", "AUTOSCALE_RUN", "CREATE_API_KEY", "DELETE_API_KEY", "TEST_OBJECT_STORE_CONNECTION", "CREATE_METASTORE_CONFIG", "DELETE_METASTORE_CONFIG", "UPDATE_METASTORE_CONFIG", "ACTIVATE_METASTORE_CONFIG", "TEST_METASTORE_CONFIG", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", "REMOVE_NODE", "CREATE_AUTOSCALE_CONFIG", "UPDATE_AUTOSCALE_CONFIG", "DELETE_AUTOSCALE_CONFIG", "AUTOSCALE_CONFIG", "AUTOSCALE_RUN", "CREATE_API_KEY", "DELETE_API_KEY", "TEST_OBJECT_STORE_CONNECTION", "CREATE_METASTORE_CONFIG", "DELETE_METASTORE_CONFIG", "UPDATE_METASTORE_CONFIG", "ACTIVATE_METASTORE_CONFIG", "TEST_METASTORE_CONFIG", "PATCH_BDS", "PATCH_ODH", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -274,7 +298,7 @@ class WorkRequest(object):
         :param operation_type: The operation_type of this WorkRequest.
         :type: str
         """
-        allowed_values = ["CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", "AUTOSCALE_CONFIG", "AUTOSCALE_RUN", "CREATE_API_KEY", "DELETE_API_KEY", "TEST_OBJECT_STORE_CONNECTION", "CREATE_METASTORE_CONFIG", "DELETE_METASTORE_CONFIG", "UPDATE_METASTORE_CONFIG", "ACTIVATE_METASTORE_CONFIG", "TEST_METASTORE_CONFIG"]
+        allowed_values = ["CREATE_BDS", "UPDATE_BDS", "DELETE_BDS", "ADD_BLOCK_STORAGE", "ADD_WORKER_NODES", "ADD_CLOUD_SQL", "REMOVE_CLOUD_SQL", "CHANGE_COMPARTMENT_FOR_BDS", "CHANGE_SHAPE", "UPDATE_INFRA", "RESTART_NODE", "REMOVE_NODE", "CREATE_AUTOSCALE_CONFIG", "UPDATE_AUTOSCALE_CONFIG", "DELETE_AUTOSCALE_CONFIG", "AUTOSCALE_CONFIG", "AUTOSCALE_RUN", "CREATE_API_KEY", "DELETE_API_KEY", "TEST_OBJECT_STORE_CONNECTION", "CREATE_METASTORE_CONFIG", "DELETE_METASTORE_CONFIG", "UPDATE_METASTORE_CONFIG", "ACTIVATE_METASTORE_CONFIG", "TEST_METASTORE_CONFIG", "PATCH_BDS", "PATCH_ODH"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

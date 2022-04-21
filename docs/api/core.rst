@@ -88,9 +88,11 @@ Core Services
     oci.core.models.Byoipv6CidrDetails
     oci.core.models.CapacityReservationInstanceSummary
     oci.core.models.CaptureConsoleHistoryDetails
+    oci.core.models.CaptureFilter
     oci.core.models.ChangeBootVolumeBackupCompartmentDetails
     oci.core.models.ChangeBootVolumeCompartmentDetails
     oci.core.models.ChangeByoipRangeCompartmentDetails
+    oci.core.models.ChangeCaptureFilterCompartmentDetails
     oci.core.models.ChangeClusterNetworkCompartmentDetails
     oci.core.models.ChangeComputeCapacityReservationCompartmentDetails
     oci.core.models.ChangeComputeImageCapabilitySchemaCompartmentDetails
@@ -123,6 +125,7 @@ Core Services
     oci.core.models.ChangeVolumeCompartmentDetails
     oci.core.models.ChangeVolumeGroupBackupCompartmentDetails
     oci.core.models.ChangeVolumeGroupCompartmentDetails
+    oci.core.models.ChangeVtapCompartmentDetails
     oci.core.models.ClusterNetwork
     oci.core.models.ClusterNetworkPlacementConfigurationDetails
     oci.core.models.ClusterNetworkSummary
@@ -152,6 +155,7 @@ Core Services
     oci.core.models.CreateBootVolumeBackupDetails
     oci.core.models.CreateBootVolumeDetails
     oci.core.models.CreateByoipRangeDetails
+    oci.core.models.CreateCaptureFilterDetails
     oci.core.models.CreateClusterNetworkDetails
     oci.core.models.CreateClusterNetworkInstancePoolDetails
     oci.core.models.CreateComputeCapacityReservationDetails
@@ -202,6 +206,7 @@ Core Services
     oci.core.models.CreateVolumeDetails
     oci.core.models.CreateVolumeGroupBackupDetails
     oci.core.models.CreateVolumeGroupDetails
+    oci.core.models.CreateVtapDetails
     oci.core.models.CrossConnect
     oci.core.models.CrossConnectGroup
     oci.core.models.CrossConnectLocation
@@ -414,6 +419,7 @@ Core Services
     oci.core.models.UpdateBootVolumeDetails
     oci.core.models.UpdateBootVolumeKmsKeyDetails
     oci.core.models.UpdateByoipRangeDetails
+    oci.core.models.UpdateCaptureFilterDetails
     oci.core.models.UpdateClusterNetworkDetails
     oci.core.models.UpdateClusterNetworkInstancePoolDetails
     oci.core.models.UpdateComputeCapacityReservationDetails
@@ -476,6 +482,7 @@ Core Services
     oci.core.models.UpdateVolumeGroupBackupDetails
     oci.core.models.UpdateVolumeGroupDetails
     oci.core.models.UpdateVolumeKmsKeyDetails
+    oci.core.models.UpdateVtapDetails
     oci.core.models.UpdatedNetworkSecurityGroupSecurityRules
     oci.core.models.UpgradeStatus
     oci.core.models.Vcn
@@ -512,3 +519,5 @@ Core Services
     oci.core.models.VolumeSourceFromBlockVolumeReplicaDetails
     oci.core.models.VolumeSourceFromVolumeBackupDetails
     oci.core.models.VolumeSourceFromVolumeDetails
+    oci.core.models.Vtap
+    oci.core.models.VtapCaptureFilterRuleDetails

@@ -25,6 +25,10 @@ class TargetResourceTypesSelected(TargetSelected):
     #: This constant has a value of "HCMCLOUD"
     VALUES_HCMCLOUD = "HCMCLOUD"
 
+    #: A constant which can be used with the values property of a TargetResourceTypesSelected.
+    #: This constant has a value of "SECURITY_ZONE"
+    VALUES_SECURITY_ZONE = "SECURITY_ZONE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TargetResourceTypesSelected object with values from keyword arguments. The default value of the :py:attr:`~oci.cloud_guard.models.TargetResourceTypesSelected.kind` attribute
@@ -39,7 +43,7 @@ class TargetResourceTypesSelected(TargetSelected):
 
         :param values:
             The value to assign to the values property of this TargetResourceTypesSelected.
-            Allowed values for items in this list are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for items in this list are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type values: list[str]
 
@@ -64,7 +68,7 @@ class TargetResourceTypesSelected(TargetSelected):
         Gets the values of this TargetResourceTypesSelected.
         Types of Targets
 
-        Allowed values for items in this list are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for items in this list are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -83,7 +87,7 @@ class TargetResourceTypesSelected(TargetSelected):
         :param values: The values of this TargetResourceTypesSelected.
         :type: list[str]
         """
-        allowed_values = ["COMPARTMENT", "ERPCLOUD", "HCMCLOUD"]
+        allowed_values = ["COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE"]
         if values:
             values[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in values]
         self._values = values

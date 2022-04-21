@@ -61,8 +61,6 @@ class TranscriptionFilter(object):
         """
         **[Required]** Gets the type of this TranscriptionFilter.
         The type of filters.
-        Allowed values are:
-        - `PROFANITY`
 
         Allowed values for this property are: "PROFANITY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -78,8 +76,6 @@ class TranscriptionFilter(object):
         """
         Sets the type of this TranscriptionFilter.
         The type of filters.
-        Allowed values are:
-        - `PROFANITY`
 
 
         :param type: The type of this TranscriptionFilter.

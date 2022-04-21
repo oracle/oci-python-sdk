@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class MetricThresholdRule(object):
     """
-    An autoscale action is triggered when a performance metric meets or exceeds a threshold.
+    An autoscale action is triggered when a performance metric exceeds a threshold.
     """
 
     #: A constant which can be used with the operator property of a MetricThresholdRule.
@@ -61,7 +61,7 @@ class MetricThresholdRule(object):
     def duration_in_minutes(self):
         """
         **[Required]** Gets the duration_in_minutes of this MetricThresholdRule.
-        This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+        This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
 
 
         :return: The duration_in_minutes of this MetricThresholdRule.
@@ -73,7 +73,7 @@ class MetricThresholdRule(object):
     def duration_in_minutes(self, duration_in_minutes):
         """
         Sets the duration_in_minutes of this MetricThresholdRule.
-        This value is the minimum period of time the metric value meets or exceeds the threshold value before the action is triggered. The value is in minutes.
+        This value is the minimum period of time the metric value exceeds the threshold value before the action is triggered. The value is in minutes.
 
 
         :param duration_in_minutes: The duration_in_minutes of this MetricThresholdRule.

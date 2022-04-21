@@ -70,6 +70,14 @@ class ClusterDetails(object):
             The value to assign to the hue_server_url property of this ClusterDetails.
         :type hue_server_url: str
 
+        :param odh_version:
+            The value to assign to the odh_version property of this ClusterDetails.
+        :type odh_version: str
+
+        :param jupyter_hub_url:
+            The value to assign to the jupyter_hub_url property of this ClusterDetails.
+        :type jupyter_hub_url: str
+
         """
         self.swagger_types = {
             'bda_version': 'str',
@@ -84,7 +92,9 @@ class ClusterDetails(object):
             'cloudera_manager_url': 'str',
             'ambari_url': 'str',
             'big_data_manager_url': 'str',
-            'hue_server_url': 'str'
+            'hue_server_url': 'str',
+            'odh_version': 'str',
+            'jupyter_hub_url': 'str'
         }
 
         self.attribute_map = {
@@ -100,7 +110,9 @@ class ClusterDetails(object):
             'cloudera_manager_url': 'clouderaManagerUrl',
             'ambari_url': 'ambariUrl',
             'big_data_manager_url': 'bigDataManagerUrl',
-            'hue_server_url': 'hueServerUrl'
+            'hue_server_url': 'hueServerUrl',
+            'odh_version': 'odhVersion',
+            'jupyter_hub_url': 'jupyterHubUrl'
         }
 
         self._bda_version = None
@@ -116,6 +128,8 @@ class ClusterDetails(object):
         self._ambari_url = None
         self._big_data_manager_url = None
         self._hue_server_url = None
+        self._odh_version = None
+        self._jupyter_hub_url = None
 
     @property
     def bda_version(self):
@@ -428,6 +442,54 @@ class ClusterDetails(object):
         :type: str
         """
         self._hue_server_url = hue_server_url
+
+    @property
+    def odh_version(self):
+        """
+        Gets the odh_version of this ClusterDetails.
+        Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+
+
+        :return: The odh_version of this ClusterDetails.
+        :rtype: str
+        """
+        return self._odh_version
+
+    @odh_version.setter
+    def odh_version(self, odh_version):
+        """
+        Sets the odh_version of this ClusterDetails.
+        Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
+
+
+        :param odh_version: The odh_version of this ClusterDetails.
+        :type: str
+        """
+        self._odh_version = odh_version
+
+    @property
+    def jupyter_hub_url(self):
+        """
+        Gets the jupyter_hub_url of this ClusterDetails.
+        The URL of the Jupyterhub.
+
+
+        :return: The jupyter_hub_url of this ClusterDetails.
+        :rtype: str
+        """
+        return self._jupyter_hub_url
+
+    @jupyter_hub_url.setter
+    def jupyter_hub_url(self, jupyter_hub_url):
+        """
+        Sets the jupyter_hub_url of this ClusterDetails.
+        The URL of the Jupyterhub.
+
+
+        :param jupyter_hub_url: The jupyter_hub_url of this ClusterDetails.
+        :type: str
+        """
+        self._jupyter_hub_url = jupyter_hub_url
 
     def __repr__(self):
         return formatted_flat_dict(self)

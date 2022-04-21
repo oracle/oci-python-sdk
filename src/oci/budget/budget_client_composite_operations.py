@@ -29,7 +29,7 @@ class BudgetClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str budget_id: (required)
-            The unique Budget OCID
+            The unique budget OCID.
 
         :param oci.budget.models.CreateAlertRuleDetails create_alert_rule_details: (required)
             Details for the new Alert Rule.
@@ -70,7 +70,7 @@ class BudgetClientCompositeOperations(object):
         to enter the given state(s).
 
         :param oci.budget.models.CreateBudgetDetails create_budget_details: (required)
-            Details for the new Budget.
+            Details for the new budget.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.budget.models.Budget.lifecycle_state`
@@ -108,7 +108,7 @@ class BudgetClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str budget_id: (required)
-            The unique Budget OCID
+            The unique budget OCID.
 
         :param list[str] wait_for_states:
             An array of states to wait on. These should be valid values for :py:attr:`~oci.budget.models.Budget.lifecycle_state`
@@ -155,10 +155,10 @@ class BudgetClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str budget_id: (required)
-            The unique Budget OCID
+            The unique budget OCID.
 
         :param str alert_rule_id: (required)
-            The unique Alert Rule OCID
+            The unique Alert Rule OCID.
 
         :param oci.budget.models.UpdateAlertRuleDetails update_alert_rule_details: (required)
             The information to be updated.
@@ -199,7 +199,7 @@ class BudgetClientCompositeOperations(object):
         to enter the given state(s).
 
         :param str budget_id: (required)
-            The unique Budget OCID
+            The unique budget OCID.
 
         :param oci.budget.models.UpdateBudgetDetails update_budget_details: (required)
             The information to be updated.

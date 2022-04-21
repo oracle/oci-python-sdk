@@ -165,7 +165,7 @@ class AlertRuleSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this AlertRuleSummary.
-        The OCID of the alert rule
+        The OCID of the alert rule.
 
 
         :return: The id of this AlertRuleSummary.
@@ -177,7 +177,7 @@ class AlertRuleSummary(object):
     def id(self, id):
         """
         Sets the id of this AlertRuleSummary.
-        The OCID of the alert rule
+        The OCID of the alert rule.
 
 
         :param id: The id of this AlertRuleSummary.
@@ -189,7 +189,7 @@ class AlertRuleSummary(object):
     def budget_id(self):
         """
         **[Required]** Gets the budget_id of this AlertRuleSummary.
-        The OCID of the budget
+        The OCID of the budget.
 
 
         :return: The budget_id of this AlertRuleSummary.
@@ -201,7 +201,7 @@ class AlertRuleSummary(object):
     def budget_id(self, budget_id):
         """
         Sets the budget_id of this AlertRuleSummary.
-        The OCID of the budget
+        The OCID of the budget.
 
 
         :param budget_id: The budget_id of this AlertRuleSummary.
@@ -213,7 +213,7 @@ class AlertRuleSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this AlertRuleSummary.
-        The name of the alert rule.
+        The name of the alert rule. Avoid entering confidential information.
 
 
         :return: The display_name of this AlertRuleSummary.
@@ -225,7 +225,7 @@ class AlertRuleSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this AlertRuleSummary.
-        The name of the alert rule.
+        The name of the alert rule. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this AlertRuleSummary.
@@ -237,8 +237,8 @@ class AlertRuleSummary(object):
     def type(self):
         """
         **[Required]** Gets the type of this AlertRuleSummary.
-        ACTUAL means the alert will trigger based on actual usage.
-        FORECAST means the alert will trigger based on predicted usage.
+        ACTUAL means the alert triggers based on actual usage.
+        FORECAST means the alert triggers based on predicted usage.
 
         Allowed values for this property are: "ACTUAL", "FORECAST", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -253,8 +253,8 @@ class AlertRuleSummary(object):
     def type(self, type):
         """
         Sets the type of this AlertRuleSummary.
-        ACTUAL means the alert will trigger based on actual usage.
-        FORECAST means the alert will trigger based on predicted usage.
+        ACTUAL means the alert triggers based on actual usage.
+        FORECAST means the alert triggers based on predicted usage.
 
 
         :param type: The type of this AlertRuleSummary.
@@ -269,7 +269,7 @@ class AlertRuleSummary(object):
     def threshold(self):
         """
         **[Required]** Gets the threshold of this AlertRuleSummary.
-        The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+        The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
 
 
         :return: The threshold of this AlertRuleSummary.
@@ -281,7 +281,7 @@ class AlertRuleSummary(object):
     def threshold(self, threshold):
         """
         Sets the threshold of this AlertRuleSummary.
-        The threshold for triggering the alert. If thresholdType is PERCENTAGE, the maximum value is 10000.
+        The threshold for triggering the alert. If the thresholdType is PERCENTAGE, the maximum value is 10000.
 
 
         :param threshold: The threshold of this AlertRuleSummary.
@@ -353,7 +353,7 @@ class AlertRuleSummary(object):
     def message(self):
         """
         Gets the message of this AlertRuleSummary.
-        Custom message that will be sent when alert is triggered
+        The custom message that will be sent when the alert is triggered.
 
 
         :return: The message of this AlertRuleSummary.
@@ -365,7 +365,7 @@ class AlertRuleSummary(object):
     def message(self, message):
         """
         Sets the message of this AlertRuleSummary.
-        Custom message that will be sent when alert is triggered
+        The custom message that will be sent when the alert is triggered.
 
 
         :param message: The message of this AlertRuleSummary.
@@ -401,7 +401,7 @@ class AlertRuleSummary(object):
     def version(self):
         """
         Gets the version of this AlertRuleSummary.
-        Version of the alert rule. Starts from 1 and increments by 1.
+        The version of the alert rule. Starts from 1 and increments by 1.
 
 
         :return: The version of this AlertRuleSummary.
@@ -413,7 +413,7 @@ class AlertRuleSummary(object):
     def version(self, version):
         """
         Sets the version of this AlertRuleSummary.
-        Version of the alert rule. Starts from 1 and increments by 1.
+        The version of the alert rule. Starts from 1 and increments by 1.
 
 
         :param version: The version of this AlertRuleSummary.
@@ -425,7 +425,7 @@ class AlertRuleSummary(object):
     def recipients(self):
         """
         **[Required]** Gets the recipients of this AlertRuleSummary.
-        The audience that will receive the alert when it triggers.
+        The audience that receives the alert when it triggers.
 
 
         :return: The recipients of this AlertRuleSummary.
@@ -437,7 +437,7 @@ class AlertRuleSummary(object):
     def recipients(self, recipients):
         """
         Sets the recipients of this AlertRuleSummary.
-        The audience that will receive the alert when it triggers.
+        The audience that receives the alert when it triggers.
 
 
         :param recipients: The recipients of this AlertRuleSummary.
@@ -449,7 +449,7 @@ class AlertRuleSummary(object):
     def time_created(self):
         """
         **[Required]** Gets the time_created of this AlertRuleSummary.
-        Time when budget was created
+        The time when the budget was created.
 
 
         :return: The time_created of this AlertRuleSummary.
@@ -461,7 +461,7 @@ class AlertRuleSummary(object):
     def time_created(self, time_created):
         """
         Sets the time_created of this AlertRuleSummary.
-        Time when budget was created
+        The time when the budget was created.
 
 
         :param time_created: The time_created of this AlertRuleSummary.
@@ -473,7 +473,7 @@ class AlertRuleSummary(object):
     def time_updated(self):
         """
         **[Required]** Gets the time_updated of this AlertRuleSummary.
-        Time when budget was updated
+        The time when the budget was updated.
 
 
         :return: The time_updated of this AlertRuleSummary.
@@ -485,7 +485,7 @@ class AlertRuleSummary(object):
     def time_updated(self, time_updated):
         """
         Sets the time_updated of this AlertRuleSummary.
-        Time when budget was updated
+        The time when the budget was updated.
 
 
         :param time_updated: The time_updated of this AlertRuleSummary.

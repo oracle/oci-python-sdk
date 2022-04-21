@@ -34,25 +34,32 @@ class CreateNodeDetails(object):
             The value to assign to the subnet_id property of this CreateNodeDetails.
         :type subnet_id: str
 
+        :param shape_config:
+            The value to assign to the shape_config property of this CreateNodeDetails.
+        :type shape_config: oci.bds.models.ShapeConfigDetails
+
         """
         self.swagger_types = {
             'node_type': 'str',
             'shape': 'str',
             'block_volume_size_in_gbs': 'int',
-            'subnet_id': 'str'
+            'subnet_id': 'str',
+            'shape_config': 'ShapeConfigDetails'
         }
 
         self.attribute_map = {
             'node_type': 'nodeType',
             'shape': 'shape',
             'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
-            'subnet_id': 'subnetId'
+            'subnet_id': 'subnetId',
+            'shape_config': 'shapeConfig'
         }
 
         self._node_type = None
         self._shape = None
         self._block_volume_size_in_gbs = None
         self._subnet_id = None
+        self._shape_config = None
 
     @property
     def node_type(self):
@@ -151,6 +158,26 @@ class CreateNodeDetails(object):
         :type: str
         """
         self._subnet_id = subnet_id
+
+    @property
+    def shape_config(self):
+        """
+        Gets the shape_config of this CreateNodeDetails.
+
+        :return: The shape_config of this CreateNodeDetails.
+        :rtype: oci.bds.models.ShapeConfigDetails
+        """
+        return self._shape_config
+
+    @shape_config.setter
+    def shape_config(self, shape_config):
+        """
+        Sets the shape_config of this CreateNodeDetails.
+
+        :param shape_config: The shape_config of this CreateNodeDetails.
+        :type: oci.bds.models.ShapeConfigDetails
+        """
+        self._shape_config = shape_config
 
     def __repr__(self):
         return formatted_flat_dict(self)

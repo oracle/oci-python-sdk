@@ -25,6 +25,10 @@ class TargetSummary(object):
     #: This constant has a value of "HCMCLOUD"
     TARGET_RESOURCE_TYPE_HCMCLOUD = "HCMCLOUD"
 
+    #: A constant which can be used with the target_resource_type property of a TargetSummary.
+    #: This constant has a value of "SECURITY_ZONE"
+    TARGET_RESOURCE_TYPE_SECURITY_ZONE = "SECURITY_ZONE"
+
     #: A constant which can be used with the lifecycle_state property of a TargetSummary.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -72,7 +76,7 @@ class TargetSummary(object):
 
         :param target_resource_type:
             The value to assign to the target_resource_type property of this TargetSummary.
-            Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type target_resource_type: str
 
@@ -239,7 +243,7 @@ class TargetSummary(object):
         **[Required]** Gets the target_resource_type of this TargetSummary.
         possible type of targets(compartment/HCMCloud/ERPCloud)
 
-        Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -258,7 +262,7 @@ class TargetSummary(object):
         :param target_resource_type: The target_resource_type of this TargetSummary.
         :type: str
         """
-        allowed_values = ["COMPARTMENT", "ERPCLOUD", "HCMCLOUD"]
+        allowed_values = ["COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE"]
         if not value_allowed_none_or_none_sentinel(target_resource_type, allowed_values):
             target_resource_type = 'UNKNOWN_ENUM_VALUE'
         self._target_resource_type = target_resource_type

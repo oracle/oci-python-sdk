@@ -57,6 +57,26 @@ class WorkRequestSummary(object):
     #: This constant has a value of "TERMINATE_ORGANIZATION_TENANCY"
     OPERATION_TYPE_TERMINATE_ORGANIZATION_TENANCY = "TERMINATE_ORGANIZATION_TENANCY"
 
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "UPDATE_SAAS_CAPABILITY"
+    OPERATION_TYPE_UPDATE_SAAS_CAPABILITY = "UPDATE_SAAS_CAPABILITY"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "SOFT_TERMINATE_TENANCY"
+    OPERATION_TYPE_SOFT_TERMINATE_TENANCY = "SOFT_TERMINATE_TENANCY"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "HARD_TERMINATE_TENANCY"
+    OPERATION_TYPE_HARD_TERMINATE_TENANCY = "HARD_TERMINATE_TENANCY"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "RESTORE_TENANCY"
+    OPERATION_TYPE_RESTORE_TENANCY = "RESTORE_TENANCY"
+
+    #: A constant which can be used with the operation_type property of a WorkRequestSummary.
+    #: This constant has a value of "LOG_TENANCY_TERMINATION_REQUEST"
+    OPERATION_TYPE_LOG_TENANCY_TERMINATION_REQUEST = "LOG_TENANCY_TERMINATION_REQUEST"
+
     #: A constant which can be used with the status property of a WorkRequestSummary.
     #: This constant has a value of "ACCEPTED"
     STATUS_ACCEPTED = "ACCEPTED"
@@ -88,7 +108,7 @@ class WorkRequestSummary(object):
 
         :param operation_type:
             The value to assign to the operation_type property of this WorkRequestSummary.
-            Allowed values for this property are: "CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "COMPLETE_ORDER_ACTIVATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", "ASSIGN_DEFAULT_SUBSCRIPTION", "MANUAL_LINK_CREATION", "TERMINATE_ORGANIZATION_TENANCY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "COMPLETE_ORDER_ACTIVATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", "ASSIGN_DEFAULT_SUBSCRIPTION", "MANUAL_LINK_CREATION", "TERMINATE_ORGANIZATION_TENANCY", "UPDATE_SAAS_CAPABILITY", "SOFT_TERMINATE_TENANCY", "HARD_TERMINATE_TENANCY", "RESTORE_TENANCY", "LOG_TENANCY_TERMINATION_REQUEST", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type operation_type: str
 
@@ -167,7 +187,7 @@ class WorkRequestSummary(object):
         **[Required]** Gets the operation_type of this WorkRequestSummary.
         Type of the work request.
 
-        Allowed values for this property are: "CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "COMPLETE_ORDER_ACTIVATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", "ASSIGN_DEFAULT_SUBSCRIPTION", "MANUAL_LINK_CREATION", "TERMINATE_ORGANIZATION_TENANCY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "COMPLETE_ORDER_ACTIVATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", "ASSIGN_DEFAULT_SUBSCRIPTION", "MANUAL_LINK_CREATION", "TERMINATE_ORGANIZATION_TENANCY", "UPDATE_SAAS_CAPABILITY", "SOFT_TERMINATE_TENANCY", "HARD_TERMINATE_TENANCY", "RESTORE_TENANCY", "LOG_TENANCY_TERMINATION_REQUEST", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -186,7 +206,7 @@ class WorkRequestSummary(object):
         :param operation_type: The operation_type of this WorkRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "COMPLETE_ORDER_ACTIVATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", "ASSIGN_DEFAULT_SUBSCRIPTION", "MANUAL_LINK_CREATION", "TERMINATE_ORGANIZATION_TENANCY"]
+        allowed_values = ["CREATE_SENDER_INVITATION", "ACCEPT_RECIPIENT_INVITATION", "CANCEL_SENDER_INVITATION", "COMPLETE_ORDER_ACTIVATION", "ACTIVATE_ORDER_EXISTING_TENANCY", "REGISTER_DOMAIN", "RELEASE_DOMAIN", "CREATE_CHILD_TENANCY", "ASSIGN_DEFAULT_SUBSCRIPTION", "MANUAL_LINK_CREATION", "TERMINATE_ORGANIZATION_TENANCY", "UPDATE_SAAS_CAPABILITY", "SOFT_TERMINATE_TENANCY", "HARD_TERMINATE_TENANCY", "RESTORE_TENANCY", "LOG_TENANCY_TERMINATION_REQUEST"]
         if not value_allowed_none_or_none_sentinel(operation_type, allowed_values):
             operation_type = 'UNKNOWN_ENUM_VALUE'
         self._operation_type = operation_type

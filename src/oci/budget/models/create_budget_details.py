@@ -12,17 +12,25 @@ class CreateBudgetDetails(object):
     """
     The create budget details.
 
-    Client should use 'targetType' & 'targets' to specify the target type and list of targets on which the budget is applied.
+    Clients should use 'targetType' and 'targets' to specify the target type and list of targets on which the budget is applied.
 
-    For backwards compatibility, 'targetCompartmentId' will still be supported for all existing clients.
-    However, this is considered deprecreated and all clients be upgraded to use 'targetType' & 'targets'.
+    For backwards compatibility, 'targetCompartmentId' is still supported for all existing clients.
+    This is considered deprecated, however, and all clients are upgraded to use 'targetType' and 'targets'.
 
-    Specifying both 'targetCompartmentId' and 'targets' will cause a Bad Request.
+    Specifying both 'targetCompartmentId' and 'targets' causes a Bad Request.
     """
 
     #: A constant which can be used with the reset_period property of a CreateBudgetDetails.
     #: This constant has a value of "MONTHLY"
     RESET_PERIOD_MONTHLY = "MONTHLY"
+
+    #: A constant which can be used with the processing_period_type property of a CreateBudgetDetails.
+    #: This constant has a value of "INVOICE"
+    PROCESSING_PERIOD_TYPE_INVOICE = "INVOICE"
+
+    #: A constant which can be used with the processing_period_type property of a CreateBudgetDetails.
+    #: This constant has a value of "MONTH"
+    PROCESSING_PERIOD_TYPE_MONTH = "MONTH"
 
     #: A constant which can be used with the target_type property of a CreateBudgetDetails.
     #: This constant has a value of "COMPARTMENT"
@@ -66,6 +74,11 @@ class CreateBudgetDetails(object):
             The value to assign to the budget_processing_period_start_offset property of this CreateBudgetDetails.
         :type budget_processing_period_start_offset: int
 
+        :param processing_period_type:
+            The value to assign to the processing_period_type property of this CreateBudgetDetails.
+            Allowed values for this property are: "INVOICE", "MONTH"
+        :type processing_period_type: str
+
         :param target_type:
             The value to assign to the target_type property of this CreateBudgetDetails.
             Allowed values for this property are: "COMPARTMENT", "TAG"
@@ -92,6 +105,7 @@ class CreateBudgetDetails(object):
             'amount': 'float',
             'reset_period': 'str',
             'budget_processing_period_start_offset': 'int',
+            'processing_period_type': 'str',
             'target_type': 'str',
             'targets': 'list[str]',
             'freeform_tags': 'dict(str, str)',
@@ -106,6 +120,7 @@ class CreateBudgetDetails(object):
             'amount': 'amount',
             'reset_period': 'resetPeriod',
             'budget_processing_period_start_offset': 'budgetProcessingPeriodStartOffset',
+            'processing_period_type': 'processingPeriodType',
             'target_type': 'targetType',
             'targets': 'targets',
             'freeform_tags': 'freeformTags',
@@ -119,6 +134,7 @@ class CreateBudgetDetails(object):
         self._amount = None
         self._reset_period = None
         self._budget_processing_period_start_offset = None
+        self._processing_period_type = None
         self._target_type = None
         self._targets = None
         self._freeform_tags = None
@@ -128,7 +144,7 @@ class CreateBudgetDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateBudgetDetails.
-        The OCID of the compartment
+        The OCID of the compartment.
 
 
         :return: The compartment_id of this CreateBudgetDetails.
@@ -140,7 +156,7 @@ class CreateBudgetDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateBudgetDetails.
-        The OCID of the compartment
+        The OCID of the compartment.
 
 
         :param compartment_id: The compartment_id of this CreateBudgetDetails.
@@ -152,7 +168,7 @@ class CreateBudgetDetails(object):
     def target_compartment_id(self):
         """
         Gets the target_compartment_id of this CreateBudgetDetails.
-        This is DEPRECTAED. Set the target compartment id in targets instead.
+        This is DEPRECATED. Set the target compartment ID in targets instead.
 
 
         :return: The target_compartment_id of this CreateBudgetDetails.
@@ -164,7 +180,7 @@ class CreateBudgetDetails(object):
     def target_compartment_id(self, target_compartment_id):
         """
         Sets the target_compartment_id of this CreateBudgetDetails.
-        This is DEPRECTAED. Set the target compartment id in targets instead.
+        This is DEPRECATED. Set the target compartment ID in targets instead.
 
 
         :param target_compartment_id: The target_compartment_id of this CreateBudgetDetails.
@@ -176,7 +192,7 @@ class CreateBudgetDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateBudgetDetails.
-        The displayName of the budget.
+        The displayName of the budget. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateBudgetDetails.
@@ -188,7 +204,7 @@ class CreateBudgetDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateBudgetDetails.
-        The displayName of the budget.
+        The displayName of the budget. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateBudgetDetails.
@@ -301,6 +317,38 @@ class CreateBudgetDetails(object):
         self._budget_processing_period_start_offset = budget_processing_period_start_offset
 
     @property
+    def processing_period_type(self):
+        """
+        Gets the processing_period_type of this CreateBudgetDetails.
+        The type of the budget processing period. Valid values are INVOICE and MONTH.
+
+        Allowed values for this property are: "INVOICE", "MONTH"
+
+
+        :return: The processing_period_type of this CreateBudgetDetails.
+        :rtype: str
+        """
+        return self._processing_period_type
+
+    @processing_period_type.setter
+    def processing_period_type(self, processing_period_type):
+        """
+        Sets the processing_period_type of this CreateBudgetDetails.
+        The type of the budget processing period. Valid values are INVOICE and MONTH.
+
+
+        :param processing_period_type: The processing_period_type of this CreateBudgetDetails.
+        :type: str
+        """
+        allowed_values = ["INVOICE", "MONTH"]
+        if not value_allowed_none_or_none_sentinel(processing_period_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `processing_period_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._processing_period_type = processing_period_type
+
+    @property
     def target_type(self):
         """
         Gets the target_type of this CreateBudgetDetails.
@@ -337,9 +385,9 @@ class CreateBudgetDetails(object):
         """
         Gets the targets of this CreateBudgetDetails.
         The list of targets on which the budget is applied.
-          If targetType is \"COMPARTMENT\", targets contains list of compartment OCIDs.
-          If targetType is \"TAG\", targets contains list of cost tracking tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
-        Curerntly, the array should contain EXACT ONE item.
+          If targetType is \"COMPARTMENT\", the targets contain the list of compartment OCIDs.
+          If targetType is \"TAG\", the targets contain the list of cost tracking tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
+        Curerntly, the array should contain exactly one item.
 
 
         :return: The targets of this CreateBudgetDetails.
@@ -352,9 +400,9 @@ class CreateBudgetDetails(object):
         """
         Sets the targets of this CreateBudgetDetails.
         The list of targets on which the budget is applied.
-          If targetType is \"COMPARTMENT\", targets contains list of compartment OCIDs.
-          If targetType is \"TAG\", targets contains list of cost tracking tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
-        Curerntly, the array should contain EXACT ONE item.
+          If targetType is \"COMPARTMENT\", the targets contain the list of compartment OCIDs.
+          If targetType is \"TAG\", the targets contain the list of cost tracking tag identifiers in the form of \"{tagNamespace}.{tagKey}.{tagValue}\".
+        Curerntly, the array should contain exactly one item.
 
 
         :param targets: The targets of this CreateBudgetDetails.

@@ -111,7 +111,7 @@ class CreateAlertRuleDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateAlertRuleDetails.
-        The name of the alert rule.
+        The name of the alert rule. Avoid entering confidential information.
 
 
         :return: The display_name of this CreateAlertRuleDetails.
@@ -123,7 +123,7 @@ class CreateAlertRuleDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateAlertRuleDetails.
-        The name of the alert rule.
+        The name of the alert rule. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this CreateAlertRuleDetails.
@@ -159,8 +159,8 @@ class CreateAlertRuleDetails(object):
     def type(self):
         """
         **[Required]** Gets the type of this CreateAlertRuleDetails.
-        Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or
-        FORECAST (the alert will trigger based on predicted usage).
+        The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or
+        FORECAST (the alert triggers based on predicted usage).
 
         Allowed values for this property are: "ACTUAL", "FORECAST"
 
@@ -174,8 +174,8 @@ class CreateAlertRuleDetails(object):
     def type(self, type):
         """
         Sets the type of this CreateAlertRuleDetails.
-        Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or
-        FORECAST (the alert will trigger based on predicted usage).
+        The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or
+        FORECAST (the alert triggers based on predicted usage).
 
 
         :param type: The type of this CreateAlertRuleDetails.
@@ -193,9 +193,9 @@ class CreateAlertRuleDetails(object):
     def threshold(self):
         """
         **[Required]** Gets the threshold of this CreateAlertRuleDetails.
-        The threshold for triggering the alert expressed as a whole number or decimal value.
-        If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point.
-        If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        The threshold for triggering the alert, expressed as a whole number or decimal value.
+        If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point.
+        If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
 
 
         :return: The threshold of this CreateAlertRuleDetails.
@@ -207,9 +207,9 @@ class CreateAlertRuleDetails(object):
     def threshold(self, threshold):
         """
         Sets the threshold of this CreateAlertRuleDetails.
-        The threshold for triggering the alert expressed as a whole number or decimal value.
-        If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point.
-        If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        The threshold for triggering the alert, expressed as a whole number or decimal value.
+        If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point.
+        If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
 
 
         :param threshold: The threshold of this CreateAlertRuleDetails.
@@ -253,7 +253,7 @@ class CreateAlertRuleDetails(object):
     def recipients(self):
         """
         Gets the recipients of this CreateAlertRuleDetails.
-        The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+        The audience that receives the alert when it triggers. An empty string is interpreted as null.
 
 
         :return: The recipients of this CreateAlertRuleDetails.
@@ -265,7 +265,7 @@ class CreateAlertRuleDetails(object):
     def recipients(self, recipients):
         """
         Sets the recipients of this CreateAlertRuleDetails.
-        The audience that will receive the alert when it triggers. An empty string is interpreted as null.
+        The audience that receives the alert when it triggers. An empty string is interpreted as null.
 
 
         :param recipients: The recipients of this CreateAlertRuleDetails.
@@ -277,7 +277,7 @@ class CreateAlertRuleDetails(object):
     def message(self):
         """
         Gets the message of this CreateAlertRuleDetails.
-        The message to be sent to the recipients when alert rule is triggered.
+        The message to be sent to the recipients when the alert rule is triggered.
 
 
         :return: The message of this CreateAlertRuleDetails.
@@ -289,7 +289,7 @@ class CreateAlertRuleDetails(object):
     def message(self, message):
         """
         Sets the message of this CreateAlertRuleDetails.
-        The message to be sent to the recipients when alert rule is triggered.
+        The message to be sent to the recipients when the alert rule is triggered.
 
 
         :param message: The message of this CreateAlertRuleDetails.

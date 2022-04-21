@@ -356,6 +356,46 @@ def test_list_organizations(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="acc_customer_tools_us_grp@oracle.com" jiraProject="ACCMGMT" opsJiraProject="ACCMGMT"
+def test_restore_organization_tenancy(testing_service_client):
+    if not testing_service_client.is_api_enabled('tenant_manager_control_plane', 'RestoreOrganizationTenancy'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('tenant_manager_control_plane', util.camelize('organization'), 'RestoreOrganizationTenancy')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='tenant_manager_control_plane', api_name='RestoreOrganizationTenancy')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.tenant_manager_control_plane.OrganizationClient(config, service_endpoint=service_endpoint)
+            response = client.restore_organization_tenancy(
+                organization_tenancy_id=request.pop(util.camelize('organizationTenancyId')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'tenant_manager_control_plane',
+            'RestoreOrganizationTenancy',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'restore_organization_tenancy',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="acc_customer_tools_us_grp@oracle.com" jiraProject="ACCMGMT" opsJiraProject="ACCMGMT"
 def test_unapprove_organization_tenancy_for_transfer(testing_service_client):
     if not testing_service_client.is_api_enabled('tenant_manager_control_plane', 'UnapproveOrganizationTenancyForTransfer'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.oci.cloudguard</groupId>
         <artifactId>cloudguard-cp-api-spec</artifactId>
-        <version>2.1.648</version>
+        <version>2.1.698</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

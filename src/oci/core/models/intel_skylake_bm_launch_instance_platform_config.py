@@ -10,7 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class IntelSkylakeBmLaunchInstancePlatformConfig(LaunchInstancePlatformConfig):
     """
-    The platform configuration used when launching a bare metal instance with the Intel Skylake platform.
+    The platform configuration used when launching a bare metal instance with an Intel X7-based processor
+    (the Intel Skylake platform).
     """
 
     def __init__(self, **kwargs):

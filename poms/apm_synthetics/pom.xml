@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.apm.service.synapi</groupId>
         <artifactId>apm-synapi-spec</artifactId>
-        <version>0.1.1256</version>
+        <version>0.1.1529</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

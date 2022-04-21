@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.oci.waf.controlplane</groupId>
         <artifactId>waf-control-plane-spec</artifactId>
-        <version>0.2.4-RELEASEPREVIEW</version>
+        <version>1.0.2-RELEASEPREVIEW</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

@@ -34,25 +34,32 @@ class UpdateAutoScalingConfigurationDetails(object):
             The value to assign to the policy property of this UpdateAutoScalingConfigurationDetails.
         :type policy: oci.bds.models.AutoScalePolicy
 
+        :param policy_details:
+            The value to assign to the policy_details property of this UpdateAutoScalingConfigurationDetails.
+        :type policy_details: oci.bds.models.UpdateAutoScalePolicyDetails
+
         """
         self.swagger_types = {
             'display_name': 'str',
             'is_enabled': 'bool',
             'cluster_admin_password': 'str',
-            'policy': 'AutoScalePolicy'
+            'policy': 'AutoScalePolicy',
+            'policy_details': 'UpdateAutoScalePolicyDetails'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
             'is_enabled': 'isEnabled',
             'cluster_admin_password': 'clusterAdminPassword',
-            'policy': 'policy'
+            'policy': 'policy',
+            'policy_details': 'policyDetails'
         }
 
         self._display_name = None
         self._is_enabled = None
         self._cluster_admin_password = None
         self._policy = None
+        self._policy_details = None
 
     @property
     def display_name(self):
@@ -145,6 +152,26 @@ class UpdateAutoScalingConfigurationDetails(object):
         :type: oci.bds.models.AutoScalePolicy
         """
         self._policy = policy
+
+    @property
+    def policy_details(self):
+        """
+        Gets the policy_details of this UpdateAutoScalingConfigurationDetails.
+
+        :return: The policy_details of this UpdateAutoScalingConfigurationDetails.
+        :rtype: oci.bds.models.UpdateAutoScalePolicyDetails
+        """
+        return self._policy_details
+
+    @policy_details.setter
+    def policy_details(self, policy_details):
+        """
+        Sets the policy_details of this UpdateAutoScalingConfigurationDetails.
+
+        :param policy_details: The policy_details of this UpdateAutoScalingConfigurationDetails.
+        :type: oci.bds.models.UpdateAutoScalePolicyDetails
+        """
+        self._policy_details = policy_details
 
     def __repr__(self):
         return formatted_flat_dict(self)
