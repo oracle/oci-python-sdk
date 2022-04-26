@@ -21,19 +21,24 @@ class DatabaseConnectionCredentials(object):
     #: This constant has a value of "DETAILS"
     CREDENTIAL_TYPE_DETAILS = "DETAILS"
 
+    #: A constant which can be used with the credential_type property of a DatabaseConnectionCredentials.
+    #: This constant has a value of "SSL_DETAILS"
+    CREDENTIAL_TYPE_SSL_DETAILS = "SSL_DETAILS"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DatabaseConnectionCredentials object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.database.models.DatabaseConnectionCredentailsByName`
+        * :class:`~oci.database.models.DatabaseSslConnectionCredentials`
         * :class:`~oci.database.models.DatabaseConnectionCredentialsByDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param credential_type:
             The value to assign to the credential_type property of this DatabaseConnectionCredentials.
-            Allowed values for this property are: "NAME_REFERENCE", "DETAILS", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "NAME_REFERENCE", "DETAILS", "SSL_DETAILS", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type credential_type: str
 
@@ -59,6 +64,9 @@ class DatabaseConnectionCredentials(object):
         if type == 'NAME_REFERENCE':
             return 'DatabaseConnectionCredentailsByName'
 
+        if type == 'SSL_DETAILS':
+            return 'DatabaseSslConnectionCredentials'
+
         if type == 'DETAILS':
             return 'DatabaseConnectionCredentialsByDetails'
         else:
@@ -70,7 +78,7 @@ class DatabaseConnectionCredentials(object):
         Gets the credential_type of this DatabaseConnectionCredentials.
         The type of credential used to connect to the database.
 
-        Allowed values for this property are: "NAME_REFERENCE", "DETAILS", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "NAME_REFERENCE", "DETAILS", "SSL_DETAILS", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -89,7 +97,7 @@ class DatabaseConnectionCredentials(object):
         :param credential_type: The credential_type of this DatabaseConnectionCredentials.
         :type: str
         """
-        allowed_values = ["NAME_REFERENCE", "DETAILS"]
+        allowed_values = ["NAME_REFERENCE", "DETAILS", "SSL_DETAILS"]
         if not value_allowed_none_or_none_sentinel(credential_type, allowed_values):
             credential_type = 'UNKNOWN_ENUM_VALUE'
         self._credential_type = credential_type

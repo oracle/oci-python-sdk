@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ObjectListInlineInputLocation(InputLocation):
     """
-    A list of object locations in Object Storage.
+    A list of object locations in Object Storage inline in request.
     """
 
     def __init__(self, **kwargs):

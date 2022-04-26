@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class AutoScalePolicy(object):
     """
-    Policy definitions for the autoscale configuration.
+    This model for autoscaling policy is deprecated and not supported for ODH clusters. Use the `AutoScalePolicyDetails` model to manage autoscale policy details for ODH clusters.
     """
 
     #: A constant which can be used with the policy_type property of a AutoScalePolicy.
@@ -21,6 +21,10 @@ class AutoScalePolicy(object):
     #: This constant has a value of "SCHEDULE_BASED"
     POLICY_TYPE_SCHEDULE_BASED = "SCHEDULE_BASED"
 
+    #: A constant which can be used with the policy_type property of a AutoScalePolicy.
+    #: This constant has a value of "NONE"
+    POLICY_TYPE_NONE = "NONE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AutoScalePolicy object with values from keyword arguments.
@@ -28,7 +32,7 @@ class AutoScalePolicy(object):
 
         :param policy_type:
             The value to assign to the policy_type property of this AutoScalePolicy.
-            Allowed values for this property are: "THRESHOLD_BASED", "SCHEDULE_BASED", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "THRESHOLD_BASED", "SCHEDULE_BASED", "NONE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type policy_type: str
 
@@ -56,7 +60,7 @@ class AutoScalePolicy(object):
         **[Required]** Gets the policy_type of this AutoScalePolicy.
         Types of autoscale policies. Options are SCHEDULE-BASED or THRESHOLD-BASED. (Only THRESHOLD-BASED is supported in this release.)
 
-        Allowed values for this property are: "THRESHOLD_BASED", "SCHEDULE_BASED", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "THRESHOLD_BASED", "SCHEDULE_BASED", "NONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -75,7 +79,7 @@ class AutoScalePolicy(object):
         :param policy_type: The policy_type of this AutoScalePolicy.
         :type: str
         """
-        allowed_values = ["THRESHOLD_BASED", "SCHEDULE_BASED"]
+        allowed_values = ["THRESHOLD_BASED", "SCHEDULE_BASED", "NONE"]
         if not value_allowed_none_or_none_sentinel(policy_type, allowed_values):
             policy_type = 'UNKNOWN_ENUM_VALUE'
         self._policy_type = policy_type

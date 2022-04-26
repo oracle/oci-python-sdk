@@ -68,9 +68,11 @@ from .byoip_range_vcn_ipv6_allocation_summary import ByoipRangeVcnIpv6Allocation
 from .byoipv6_cidr_details import Byoipv6CidrDetails
 from .capacity_reservation_instance_summary import CapacityReservationInstanceSummary
 from .capture_console_history_details import CaptureConsoleHistoryDetails
+from .capture_filter import CaptureFilter
 from .change_boot_volume_backup_compartment_details import ChangeBootVolumeBackupCompartmentDetails
 from .change_boot_volume_compartment_details import ChangeBootVolumeCompartmentDetails
 from .change_byoip_range_compartment_details import ChangeByoipRangeCompartmentDetails
+from .change_capture_filter_compartment_details import ChangeCaptureFilterCompartmentDetails
 from .change_cluster_network_compartment_details import ChangeClusterNetworkCompartmentDetails
 from .change_compute_capacity_reservation_compartment_details import ChangeComputeCapacityReservationCompartmentDetails
 from .change_compute_image_capability_schema_compartment_details import ChangeComputeImageCapabilitySchemaCompartmentDetails
@@ -103,6 +105,7 @@ from .change_volume_backup_compartment_details import ChangeVolumeBackupCompartm
 from .change_volume_compartment_details import ChangeVolumeCompartmentDetails
 from .change_volume_group_backup_compartment_details import ChangeVolumeGroupBackupCompartmentDetails
 from .change_volume_group_compartment_details import ChangeVolumeGroupCompartmentDetails
+from .change_vtap_compartment_details import ChangeVtapCompartmentDetails
 from .cluster_network import ClusterNetwork
 from .cluster_network_placement_configuration_details import ClusterNetworkPlacementConfigurationDetails
 from .cluster_network_summary import ClusterNetworkSummary
@@ -132,6 +135,7 @@ from .create_app_catalog_subscription_details import CreateAppCatalogSubscriptio
 from .create_boot_volume_backup_details import CreateBootVolumeBackupDetails
 from .create_boot_volume_details import CreateBootVolumeDetails
 from .create_byoip_range_details import CreateByoipRangeDetails
+from .create_capture_filter_details import CreateCaptureFilterDetails
 from .create_cluster_network_details import CreateClusterNetworkDetails
 from .create_cluster_network_instance_pool_details import CreateClusterNetworkInstancePoolDetails
 from .create_compute_capacity_reservation_details import CreateComputeCapacityReservationDetails
@@ -182,6 +186,7 @@ from .create_volume_backup_policy_details import CreateVolumeBackupPolicyDetails
 from .create_volume_details import CreateVolumeDetails
 from .create_volume_group_backup_details import CreateVolumeGroupBackupDetails
 from .create_volume_group_details import CreateVolumeGroupDetails
+from .create_vtap_details import CreateVtapDetails
 from .cross_connect import CrossConnect
 from .cross_connect_group import CrossConnectGroup
 from .cross_connect_location import CrossConnectLocation
@@ -394,6 +399,7 @@ from .update_boot_volume_backup_details import UpdateBootVolumeBackupDetails
 from .update_boot_volume_details import UpdateBootVolumeDetails
 from .update_boot_volume_kms_key_details import UpdateBootVolumeKmsKeyDetails
 from .update_byoip_range_details import UpdateByoipRangeDetails
+from .update_capture_filter_details import UpdateCaptureFilterDetails
 from .update_cluster_network_details import UpdateClusterNetworkDetails
 from .update_cluster_network_instance_pool_details import UpdateClusterNetworkInstancePoolDetails
 from .update_compute_capacity_reservation_details import UpdateComputeCapacityReservationDetails
@@ -456,6 +462,7 @@ from .update_volume_details import UpdateVolumeDetails
 from .update_volume_group_backup_details import UpdateVolumeGroupBackupDetails
 from .update_volume_group_details import UpdateVolumeGroupDetails
 from .update_volume_kms_key_details import UpdateVolumeKmsKeyDetails
+from .update_vtap_details import UpdateVtapDetails
 from .updated_network_security_group_security_rules import UpdatedNetworkSecurityGroupSecurityRules
 from .upgrade_status import UpgradeStatus
 from .vcn import Vcn
@@ -492,6 +499,8 @@ from .volume_source_details import VolumeSourceDetails
 from .volume_source_from_block_volume_replica_details import VolumeSourceFromBlockVolumeReplicaDetails
 from .volume_source_from_volume_backup_details import VolumeSourceFromVolumeBackupDetails
 from .volume_source_from_volume_details import VolumeSourceFromVolumeDetails
+from .vtap import Vtap
+from .vtap_capture_filter_rule_details import VtapCaptureFilterRuleDetails
 
 # Maps type names to classes for core services.
 core_type_mapping = {
@@ -559,9 +568,11 @@ core_type_mapping = {
     "Byoipv6CidrDetails": Byoipv6CidrDetails,
     "CapacityReservationInstanceSummary": CapacityReservationInstanceSummary,
     "CaptureConsoleHistoryDetails": CaptureConsoleHistoryDetails,
+    "CaptureFilter": CaptureFilter,
     "ChangeBootVolumeBackupCompartmentDetails": ChangeBootVolumeBackupCompartmentDetails,
     "ChangeBootVolumeCompartmentDetails": ChangeBootVolumeCompartmentDetails,
     "ChangeByoipRangeCompartmentDetails": ChangeByoipRangeCompartmentDetails,
+    "ChangeCaptureFilterCompartmentDetails": ChangeCaptureFilterCompartmentDetails,
     "ChangeClusterNetworkCompartmentDetails": ChangeClusterNetworkCompartmentDetails,
     "ChangeComputeCapacityReservationCompartmentDetails": ChangeComputeCapacityReservationCompartmentDetails,
     "ChangeComputeImageCapabilitySchemaCompartmentDetails": ChangeComputeImageCapabilitySchemaCompartmentDetails,
@@ -594,6 +605,7 @@ core_type_mapping = {
     "ChangeVolumeCompartmentDetails": ChangeVolumeCompartmentDetails,
     "ChangeVolumeGroupBackupCompartmentDetails": ChangeVolumeGroupBackupCompartmentDetails,
     "ChangeVolumeGroupCompartmentDetails": ChangeVolumeGroupCompartmentDetails,
+    "ChangeVtapCompartmentDetails": ChangeVtapCompartmentDetails,
     "ClusterNetwork": ClusterNetwork,
     "ClusterNetworkPlacementConfigurationDetails": ClusterNetworkPlacementConfigurationDetails,
     "ClusterNetworkSummary": ClusterNetworkSummary,
@@ -623,6 +635,7 @@ core_type_mapping = {
     "CreateBootVolumeBackupDetails": CreateBootVolumeBackupDetails,
     "CreateBootVolumeDetails": CreateBootVolumeDetails,
     "CreateByoipRangeDetails": CreateByoipRangeDetails,
+    "CreateCaptureFilterDetails": CreateCaptureFilterDetails,
     "CreateClusterNetworkDetails": CreateClusterNetworkDetails,
     "CreateClusterNetworkInstancePoolDetails": CreateClusterNetworkInstancePoolDetails,
     "CreateComputeCapacityReservationDetails": CreateComputeCapacityReservationDetails,
@@ -673,6 +686,7 @@ core_type_mapping = {
     "CreateVolumeDetails": CreateVolumeDetails,
     "CreateVolumeGroupBackupDetails": CreateVolumeGroupBackupDetails,
     "CreateVolumeGroupDetails": CreateVolumeGroupDetails,
+    "CreateVtapDetails": CreateVtapDetails,
     "CrossConnect": CrossConnect,
     "CrossConnectGroup": CrossConnectGroup,
     "CrossConnectLocation": CrossConnectLocation,
@@ -885,6 +899,7 @@ core_type_mapping = {
     "UpdateBootVolumeDetails": UpdateBootVolumeDetails,
     "UpdateBootVolumeKmsKeyDetails": UpdateBootVolumeKmsKeyDetails,
     "UpdateByoipRangeDetails": UpdateByoipRangeDetails,
+    "UpdateCaptureFilterDetails": UpdateCaptureFilterDetails,
     "UpdateClusterNetworkDetails": UpdateClusterNetworkDetails,
     "UpdateClusterNetworkInstancePoolDetails": UpdateClusterNetworkInstancePoolDetails,
     "UpdateComputeCapacityReservationDetails": UpdateComputeCapacityReservationDetails,
@@ -947,6 +962,7 @@ core_type_mapping = {
     "UpdateVolumeGroupBackupDetails": UpdateVolumeGroupBackupDetails,
     "UpdateVolumeGroupDetails": UpdateVolumeGroupDetails,
     "UpdateVolumeKmsKeyDetails": UpdateVolumeKmsKeyDetails,
+    "UpdateVtapDetails": UpdateVtapDetails,
     "UpdatedNetworkSecurityGroupSecurityRules": UpdatedNetworkSecurityGroupSecurityRules,
     "UpgradeStatus": UpgradeStatus,
     "Vcn": Vcn,
@@ -982,5 +998,7 @@ core_type_mapping = {
     "VolumeSourceDetails": VolumeSourceDetails,
     "VolumeSourceFromBlockVolumeReplicaDetails": VolumeSourceFromBlockVolumeReplicaDetails,
     "VolumeSourceFromVolumeBackupDetails": VolumeSourceFromVolumeBackupDetails,
-    "VolumeSourceFromVolumeDetails": VolumeSourceFromVolumeDetails
+    "VolumeSourceFromVolumeDetails": VolumeSourceFromVolumeDetails,
+    "Vtap": Vtap,
+    "VtapCaptureFilterRuleDetails": VtapCaptureFilterRuleDetails
 }

@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class UpdateOrganizationDetails(object):
     """
-    UpdateOrganizationDetails contains subscriptionId information.
+    The parameters for updating an organization.
     """
 
     def __init__(self, **kwargs):
@@ -37,7 +37,7 @@ class UpdateOrganizationDetails(object):
     def default_ucm_subscription_id(self):
         """
         **[Required]** Gets the default_ucm_subscription_id of this UpdateOrganizationDetails.
-        OCID of the default Annual Universal Credits subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription is not explictly assigned.
+        OCID of the default UCM subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription if not explictly assigned.
 
 
         :return: The default_ucm_subscription_id of this UpdateOrganizationDetails.
@@ -49,7 +49,7 @@ class UpdateOrganizationDetails(object):
     def default_ucm_subscription_id(self, default_ucm_subscription_id):
         """
         Sets the default_ucm_subscription_id of this UpdateOrganizationDetails.
-        OCID of the default Annual Universal Credits subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription is not explictly assigned.
+        OCID of the default UCM subscription. Any tenancy joining the organization will automatically get assigned this subscription if a subscription if not explictly assigned.
 
 
         :param default_ucm_subscription_id: The default_ucm_subscription_id of this UpdateOrganizationDetails.

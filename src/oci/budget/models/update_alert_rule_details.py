@@ -111,7 +111,7 @@ class UpdateAlertRuleDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateAlertRuleDetails.
-        The name of the alert rule.
+        The name of the alert rule. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateAlertRuleDetails.
@@ -123,7 +123,7 @@ class UpdateAlertRuleDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateAlertRuleDetails.
-        The name of the alert rule.
+        The name of the alert rule. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateAlertRuleDetails.
@@ -135,8 +135,8 @@ class UpdateAlertRuleDetails(object):
     def type(self):
         """
         Gets the type of this UpdateAlertRuleDetails.
-        Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or
-        FORECAST (the alert will trigger based on predicted usage).
+        The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or
+        FORECAST (the alert triggers based on predicted usage).
 
         Allowed values for this property are: "ACTUAL", "FORECAST"
 
@@ -150,8 +150,8 @@ class UpdateAlertRuleDetails(object):
     def type(self, type):
         """
         Sets the type of this UpdateAlertRuleDetails.
-        Type of alert. Valid values are ACTUAL (the alert will trigger based on actual usage) or
-        FORECAST (the alert will trigger based on predicted usage).
+        The type of the alert. Valid values are ACTUAL (the alert triggers based on actual usage), or
+        FORECAST (the alert triggers based on predicted usage).
 
 
         :param type: The type of this UpdateAlertRuleDetails.
@@ -169,9 +169,9 @@ class UpdateAlertRuleDetails(object):
     def threshold(self):
         """
         Gets the threshold of this UpdateAlertRuleDetails.
-        The threshold for triggering the alert expressed as a whole number or decimal value.
-        If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point.
-        If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        The threshold for triggering the alert, expressed as a whole number or decimal value.
+        If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point.
+        If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
 
 
         :return: The threshold of this UpdateAlertRuleDetails.
@@ -183,9 +183,9 @@ class UpdateAlertRuleDetails(object):
     def threshold(self, threshold):
         """
         Sets the threshold of this UpdateAlertRuleDetails.
-        The threshold for triggering the alert expressed as a whole number or decimal value.
-        If thresholdType is ABSOLUTE, threshold can have at most 12 digits before the decimal point and up to 2 digits after the decimal point.
-        If thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to 2 digits after the decimal point.
+        The threshold for triggering the alert, expressed as a whole number or decimal value.
+        If the thresholdType is ABSOLUTE, the threshold can have at most 12 digits before the decimal point, and up to two digits after the decimal point.
+        If the thresholdType is PERCENTAGE, the maximum value is 10000 and can have up to two digits after the decimal point.
 
 
         :param threshold: The threshold of this UpdateAlertRuleDetails.
@@ -229,7 +229,7 @@ class UpdateAlertRuleDetails(object):
     def recipients(self):
         """
         Gets the recipients of this UpdateAlertRuleDetails.
-        The audience that will receive the alert when it triggers. If you need to clear out this value, please pass in an empty string instead of null.
+        The audience that receives the alert when it triggers. If you need to clear out this value, pass in an empty string instead of a null value.
 
 
         :return: The recipients of this UpdateAlertRuleDetails.
@@ -241,7 +241,7 @@ class UpdateAlertRuleDetails(object):
     def recipients(self, recipients):
         """
         Sets the recipients of this UpdateAlertRuleDetails.
-        The audience that will receive the alert when it triggers. If you need to clear out this value, please pass in an empty string instead of null.
+        The audience that receives the alert when it triggers. If you need to clear out this value, pass in an empty string instead of a null value.
 
 
         :param recipients: The recipients of this UpdateAlertRuleDetails.
@@ -253,7 +253,7 @@ class UpdateAlertRuleDetails(object):
     def description(self):
         """
         Gets the description of this UpdateAlertRuleDetails.
-        The description of the alert rule
+        The description of the alert rule.
 
 
         :return: The description of this UpdateAlertRuleDetails.
@@ -265,7 +265,7 @@ class UpdateAlertRuleDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateAlertRuleDetails.
-        The description of the alert rule
+        The description of the alert rule.
 
 
         :param description: The description of this UpdateAlertRuleDetails.
@@ -277,7 +277,7 @@ class UpdateAlertRuleDetails(object):
     def message(self):
         """
         Gets the message of this UpdateAlertRuleDetails.
-        The message to be delivered to the recipients when alert is triggered
+        The message to be delivered to the recipients when an alert is triggered.
 
 
         :return: The message of this UpdateAlertRuleDetails.
@@ -289,7 +289,7 @@ class UpdateAlertRuleDetails(object):
     def message(self, message):
         """
         Sets the message of this UpdateAlertRuleDetails.
-        The message to be delivered to the recipients when alert is triggered
+        The message to be delivered to the recipients when an alert is triggered.
 
 
         :param message: The message of this UpdateAlertRuleDetails.

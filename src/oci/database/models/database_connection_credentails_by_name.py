@@ -21,7 +21,7 @@ class DatabaseConnectionCredentailsByName(DatabaseConnectionCredentials):
 
         :param credential_type:
             The value to assign to the credential_type property of this DatabaseConnectionCredentailsByName.
-            Allowed values for this property are: "NAME_REFERENCE", "DETAILS"
+            Allowed values for this property are: "NAME_REFERENCE", "DETAILS", "SSL_DETAILS"
         :type credential_type: str
 
         :param credential_name:

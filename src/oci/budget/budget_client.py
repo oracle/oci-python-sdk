@@ -110,14 +110,14 @@ class BudgetClient(object):
 
 
         :param str budget_id: (required)
-            The unique Budget OCID
+            The unique budget OCID.
 
         :param oci.budget.models.CreateAlertRuleDetails create_alert_rule_details: (required)
             Details for the new Alert Rule.
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
+            A token that uniquely identifies a request so it can be retried, in case of a timeout or
+            server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
@@ -205,15 +205,15 @@ class BudgetClient(object):
 
     def create_budget(self, create_budget_details, **kwargs):
         """
-        Creates a new Budget.
+        Creates a new budget.
 
 
         :param oci.budget.models.CreateBudgetDetails create_budget_details: (required)
-            Details for the new Budget.
+            Details for the new budget.
 
         :param str opc_retry_token: (optional)
-            A token that uniquely identifies a request so it can be retried in case of a timeout or
-            server error without risk of executing that same action again. Retry tokens expire after 24
+            A token that uniquely identifies a request so it can be retried, in case of a timeout or
+            server error, without risk of executing that same action again. Retry tokens expire after 24
             hours, but can be invalidated before then due to conflicting operations. For example, if a resource
             has been deleted and purged from the system, then a retry of the original creation request
             might be rejected.
@@ -293,10 +293,10 @@ class BudgetClient(object):
 
 
         :param str budget_id: (required)
-            The unique Budget OCID
+            The unique budget OCID.
 
         :param str alert_rule_id: (required)
-            The unique Alert Rule OCID
+            The unique Alert Rule OCID.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -384,11 +384,11 @@ class BudgetClient(object):
 
     def delete_budget(self, budget_id, **kwargs):
         """
-        Deletes a specified Budget resource
+        Deletes a specified budget resource.
 
 
         :param str budget_id: (required)
-            The unique Budget OCID
+            The unique budget OCID.
 
         :param str if_match: (optional)
             For optimistic concurrency control. In the PUT or DELETE call
@@ -475,14 +475,14 @@ class BudgetClient(object):
 
     def get_alert_rule(self, budget_id, alert_rule_id, **kwargs):
         """
-        Gets an Alert Rule for a specified Budget.
+        Gets an Alert Rule for a specified budget.
 
 
         :param str budget_id: (required)
-            The unique Budget OCID
+            The unique budget OCID.
 
         :param str alert_rule_id: (required)
-            The unique Alert Rule OCID
+            The unique Alert Rule OCID.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -563,11 +563,11 @@ class BudgetClient(object):
 
     def get_budget(self, budget_id, **kwargs):
         """
-        Gets a Budget by identifier
+        Gets a budget by the identifier.
 
 
         :param str budget_id: (required)
-            The unique Budget OCID
+            The unique budget OCID.
 
         :param str opc_request_id: (optional)
             The client request ID for tracing.
@@ -647,11 +647,11 @@ class BudgetClient(object):
 
     def list_alert_rules(self, budget_id, **kwargs):
         """
-        Returns a list of Alert Rules for a specified Budget.
+        Returns a list of Alert Rules for a specified budget.
 
 
         :param str budget_id: (required)
-            The unique Budget OCID
+            The unique budget OCID.
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -677,7 +677,7 @@ class BudgetClient(object):
             Allowed values are: "ACTIVE", "INACTIVE"
 
         :param str display_name: (optional)
-            A user-friendly name. Does not have to be unique, and it's changeable.
+            A user-friendly name. This does not have to be unique, and it's changeable.
 
             Example: `My new resource`
 
@@ -798,16 +798,14 @@ class BudgetClient(object):
 
     def list_budgets(self, compartment_id, **kwargs):
         """
-        Gets a list of Budgets in a compartment.
+        Gets a list of budgets in a compartment.
 
-        By default, ListBudgets returns budgets of 'COMPARTMENT' target type and the budget records with only ONE target compartment OCID.
+        By default, ListBudgets returns budgets of the 'COMPARTMENT' target type, and the budget records with only one target compartment OCID.
 
-        To list ALL budgets, set the targetType query parameter to ALL.
-        Example:
-          'targetType=ALL'
+        To list all budgets, set the targetType query parameter to ALL (for example: 'targetType=ALL').
 
-        Additional targetTypes would be available in future releases. Clients should ignore new targetType
-        or upgrade to latest version of client SDK to handle new targetType.
+        Additional targetTypes would be available in future releases. Clients should ignore new targetTypes,
+        or upgrade to the latest version of the client SDK to handle new targetTypes.
 
 
         :param str compartment_id: (required)
@@ -837,12 +835,12 @@ class BudgetClient(object):
             Allowed values are: "ACTIVE", "INACTIVE"
 
         :param str display_name: (optional)
-            A user-friendly name. Does not have to be unique, and it's changeable.
+            A user-friendly name. This does not have to be unique, and it's changeable.
 
             Example: `My new resource`
 
         :param str target_type: (optional)
-            The type of target to filter by.
+            The type of target to filter by:
               * ALL - List all budgets
               * COMPARTMENT - List all budgets with targetType == \"COMPARTMENT\"
               * TAG - List all budgets with targetType == \"TAG\"
@@ -968,10 +966,10 @@ class BudgetClient(object):
 
 
         :param str budget_id: (required)
-            The unique Budget OCID
+            The unique budget OCID.
 
         :param str alert_rule_id: (required)
-            The unique Alert Rule OCID
+            The unique Alert Rule OCID.
 
         :param oci.budget.models.UpdateAlertRuleDetails update_alert_rule_details: (required)
             The information to be updated.
@@ -1066,11 +1064,11 @@ class BudgetClient(object):
 
     def update_budget(self, budget_id, update_budget_details, **kwargs):
         """
-        Update a Budget identified by the OCID
+        Update a budget identified by the OCID.
 
 
         :param str budget_id: (required)
-            The unique Budget OCID
+            The unique budget OCID.
 
         :param oci.budget.models.UpdateBudgetDetails update_budget_details: (required)
             The information to be updated.

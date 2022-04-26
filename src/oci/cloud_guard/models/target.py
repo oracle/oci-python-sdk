@@ -25,6 +25,10 @@ class Target(object):
     #: This constant has a value of "HCMCLOUD"
     TARGET_RESOURCE_TYPE_HCMCLOUD = "HCMCLOUD"
 
+    #: A constant which can be used with the target_resource_type property of a Target.
+    #: This constant has a value of "SECURITY_ZONE"
+    TARGET_RESOURCE_TYPE_SECURITY_ZONE = "SECURITY_ZONE"
+
     #: A constant which can be used with the lifecycle_state property of a Target.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -76,7 +80,7 @@ class Target(object):
 
         :param target_resource_type:
             The value to assign to the target_resource_type property of this Target.
-            Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type target_resource_type: str
 
@@ -95,6 +99,10 @@ class Target(object):
         :param target_responder_recipes:
             The value to assign to the target_responder_recipes property of this Target.
         :type target_responder_recipes: list[oci.cloud_guard.models.TargetResponderRecipe]
+
+        :param target_details:
+            The value to assign to the target_details property of this Target.
+        :type target_details: oci.cloud_guard.models.TargetDetails
 
         :param inherited_by_compartments:
             The value to assign to the inherited_by_compartments property of this Target.
@@ -141,6 +149,7 @@ class Target(object):
             'recipe_count': 'int',
             'target_detector_recipes': 'list[TargetDetectorRecipe]',
             'target_responder_recipes': 'list[TargetResponderRecipe]',
+            'target_details': 'TargetDetails',
             'inherited_by_compartments': 'list[str]',
             'time_created': 'datetime',
             'time_updated': 'datetime',
@@ -161,6 +170,7 @@ class Target(object):
             'recipe_count': 'recipeCount',
             'target_detector_recipes': 'targetDetectorRecipes',
             'target_responder_recipes': 'targetResponderRecipes',
+            'target_details': 'targetDetails',
             'inherited_by_compartments': 'inheritedByCompartments',
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
@@ -180,6 +190,7 @@ class Target(object):
         self._recipe_count = None
         self._target_detector_recipes = None
         self._target_responder_recipes = None
+        self._target_details = None
         self._inherited_by_compartments = None
         self._time_created = None
         self._time_updated = None
@@ -291,7 +302,7 @@ class Target(object):
         **[Required]** Gets the target_resource_type of this Target.
         possible type of targets
 
-        Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -310,7 +321,7 @@ class Target(object):
         :param target_resource_type: The target_resource_type of this Target.
         :type: str
         """
-        allowed_values = ["COMPARTMENT", "ERPCLOUD", "HCMCLOUD"]
+        allowed_values = ["COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE"]
         if not value_allowed_none_or_none_sentinel(target_resource_type, allowed_values):
             target_resource_type = 'UNKNOWN_ENUM_VALUE'
         self._target_resource_type = target_resource_type
@@ -410,6 +421,26 @@ class Target(object):
         :type: list[oci.cloud_guard.models.TargetResponderRecipe]
         """
         self._target_responder_recipes = target_responder_recipes
+
+    @property
+    def target_details(self):
+        """
+        Gets the target_details of this Target.
+
+        :return: The target_details of this Target.
+        :rtype: oci.cloud_guard.models.TargetDetails
+        """
+        return self._target_details
+
+    @target_details.setter
+    def target_details(self, target_details):
+        """
+        Sets the target_details of this Target.
+
+        :param target_details: The target_details of this Target.
+        :type: oci.cloud_guard.models.TargetDetails
+        """
+        self._target_details = target_details
 
     @property
     def inherited_by_compartments(self):

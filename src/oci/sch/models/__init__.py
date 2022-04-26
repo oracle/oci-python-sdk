@@ -16,6 +16,13 @@ from .log_rule_task_details import LogRuleTaskDetails
 from .log_source import LogSource
 from .logging_analytics_target_details import LoggingAnalyticsTargetDetails
 from .logging_source_details import LoggingSourceDetails
+from .monitoring_source import MonitoringSource
+from .monitoring_source_all_metrics import MonitoringSourceAllMetrics
+from .monitoring_source_details import MonitoringSourceDetails
+from .monitoring_source_metric_details import MonitoringSourceMetricDetails
+from .monitoring_source_namespace_details import MonitoringSourceNamespaceDetails
+from .monitoring_source_selected_namespace import MonitoringSourceSelectedNamespace
+from .monitoring_source_selected_namespace_details import MonitoringSourceSelectedNamespaceDetails
 from .monitoring_target_details import MonitoringTargetDetails
 from .notifications_target_details import NotificationsTargetDetails
 from .object_storage_target_details import ObjectStorageTargetDetails
@@ -53,6 +60,13 @@ sch_type_mapping = {
     "LogSource": LogSource,
     "LoggingAnalyticsTargetDetails": LoggingAnalyticsTargetDetails,
     "LoggingSourceDetails": LoggingSourceDetails,
+    "MonitoringSource": MonitoringSource,
+    "MonitoringSourceAllMetrics": MonitoringSourceAllMetrics,
+    "MonitoringSourceDetails": MonitoringSourceDetails,
+    "MonitoringSourceMetricDetails": MonitoringSourceMetricDetails,
+    "MonitoringSourceNamespaceDetails": MonitoringSourceNamespaceDetails,
+    "MonitoringSourceSelectedNamespace": MonitoringSourceSelectedNamespace,
+    "MonitoringSourceSelectedNamespaceDetails": MonitoringSourceSelectedNamespaceDetails,
     "MonitoringTargetDetails": MonitoringTargetDetails,
     "NotificationsTargetDetails": NotificationsTargetDetails,
     "ObjectStorageTargetDetails": ObjectStorageTargetDetails,

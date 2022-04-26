@@ -52,6 +52,10 @@ class ProtectionRule(WebAppFirewallPolicyRule):
             The value to assign to the protection_capability_settings property of this ProtectionRule.
         :type protection_capability_settings: oci.waf.models.ProtectionCapabilitySettings
 
+        :param is_body_inspection_enabled:
+            The value to assign to the is_body_inspection_enabled property of this ProtectionRule.
+        :type is_body_inspection_enabled: bool
+
         """
         self.swagger_types = {
             'type': 'str',
@@ -60,7 +64,8 @@ class ProtectionRule(WebAppFirewallPolicyRule):
             'condition': 'str',
             'action_name': 'str',
             'protection_capabilities': 'list[ProtectionCapability]',
-            'protection_capability_settings': 'ProtectionCapabilitySettings'
+            'protection_capability_settings': 'ProtectionCapabilitySettings',
+            'is_body_inspection_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -70,7 +75,8 @@ class ProtectionRule(WebAppFirewallPolicyRule):
             'condition': 'condition',
             'action_name': 'actionName',
             'protection_capabilities': 'protectionCapabilities',
-            'protection_capability_settings': 'protectionCapabilitySettings'
+            'protection_capability_settings': 'protectionCapabilitySettings',
+            'is_body_inspection_enabled': 'isBodyInspectionEnabled'
         }
 
         self._type = None
@@ -80,6 +86,7 @@ class ProtectionRule(WebAppFirewallPolicyRule):
         self._action_name = None
         self._protection_capabilities = None
         self._protection_capability_settings = None
+        self._is_body_inspection_enabled = None
         self._type = 'PROTECTION'
 
     @property
@@ -87,7 +94,8 @@ class ProtectionRule(WebAppFirewallPolicyRule):
         """
         **[Required]** Gets the protection_capabilities of this ProtectionRule.
         An ordered list that references OCI-managed protection capabilities.
-        Referenced protection capabilities are executed in order of appearance.
+        Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order
+        is decided at runtime for improved performance.
         The array cannot contain entries with the same pair of capability key and version more than once.
 
 
@@ -101,7 +109,8 @@ class ProtectionRule(WebAppFirewallPolicyRule):
         """
         Sets the protection_capabilities of this ProtectionRule.
         An ordered list that references OCI-managed protection capabilities.
-        Referenced protection capabilities are executed in order of appearance.
+        Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order
+        is decided at runtime for improved performance.
         The array cannot contain entries with the same pair of capability key and version more than once.
 
 
@@ -129,6 +138,34 @@ class ProtectionRule(WebAppFirewallPolicyRule):
         :type: oci.waf.models.ProtectionCapabilitySettings
         """
         self._protection_capability_settings = protection_capability_settings
+
+    @property
+    def is_body_inspection_enabled(self):
+        """
+        Gets the is_body_inspection_enabled of this ProtectionRule.
+        Enables/disables body inspection for this protection rule.
+        Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will
+        be available at a later date.
+
+
+        :return: The is_body_inspection_enabled of this ProtectionRule.
+        :rtype: bool
+        """
+        return self._is_body_inspection_enabled
+
+    @is_body_inspection_enabled.setter
+    def is_body_inspection_enabled(self, is_body_inspection_enabled):
+        """
+        Sets the is_body_inspection_enabled of this ProtectionRule.
+        Enables/disables body inspection for this protection rule.
+        Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will
+        be available at a later date.
+
+
+        :param is_body_inspection_enabled: The is_body_inspection_enabled of this ProtectionRule.
+        :type: bool
+        """
+        self._is_body_inspection_enabled = is_body_inspection_enabled
 
     def __repr__(self):
         return formatted_flat_dict(self)

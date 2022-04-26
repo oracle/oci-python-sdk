@@ -76,6 +76,10 @@ class RoverNodeSummary(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type node_type: str
 
+        :param shape:
+            The value to assign to the shape property of this RoverNodeSummary.
+        :type shape: str
+
         :param display_name:
             The value to assign to the display_name property of this RoverNodeSummary.
         :type display_name: str
@@ -113,6 +117,7 @@ class RoverNodeSummary(object):
             'cluster_id': 'str',
             'serial_number': 'str',
             'node_type': 'str',
+            'shape': 'str',
             'display_name': 'str',
             'time_created': 'datetime',
             'lifecycle_state': 'str',
@@ -128,6 +133,7 @@ class RoverNodeSummary(object):
             'cluster_id': 'clusterId',
             'serial_number': 'serialNumber',
             'node_type': 'nodeType',
+            'shape': 'shape',
             'display_name': 'displayName',
             'time_created': 'timeCreated',
             'lifecycle_state': 'lifecycleState',
@@ -142,6 +148,7 @@ class RoverNodeSummary(object):
         self._cluster_id = None
         self._serial_number = None
         self._node_type = None
+        self._shape = None
         self._display_name = None
         self._time_created = None
         self._lifecycle_state = None
@@ -275,6 +282,30 @@ class RoverNodeSummary(object):
         if not value_allowed_none_or_none_sentinel(node_type, allowed_values):
             node_type = 'UNKNOWN_ENUM_VALUE'
         self._node_type = node_type
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this RoverNodeSummary.
+        The shape of the node.
+
+
+        :return: The shape of this RoverNodeSummary.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this RoverNodeSummary.
+        The shape of the node.
+
+
+        :param shape: The shape of this RoverNodeSummary.
+        :type: str
+        """
+        self._shape = shape
 
     @property
     def display_name(self):

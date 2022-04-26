@@ -18,20 +18,51 @@ class TranscriptionNormalization(object):
         Initializes a new TranscriptionNormalization object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param is_punctuation_enabled:
+            The value to assign to the is_punctuation_enabled property of this TranscriptionNormalization.
+        :type is_punctuation_enabled: bool
+
         :param filters:
             The value to assign to the filters property of this TranscriptionNormalization.
         :type filters: list[oci.ai_speech.models.TranscriptionFilter]
 
         """
         self.swagger_types = {
+            'is_punctuation_enabled': 'bool',
             'filters': 'list[TranscriptionFilter]'
         }
 
         self.attribute_map = {
+            'is_punctuation_enabled': 'isPunctuationEnabled',
             'filters': 'filters'
         }
 
+        self._is_punctuation_enabled = None
         self._filters = None
+
+    @property
+    def is_punctuation_enabled(self):
+        """
+        Gets the is_punctuation_enabled of this TranscriptionNormalization.
+        Whether to add punctuation in generated transcription. By default it is enabled.
+
+
+        :return: The is_punctuation_enabled of this TranscriptionNormalization.
+        :rtype: bool
+        """
+        return self._is_punctuation_enabled
+
+    @is_punctuation_enabled.setter
+    def is_punctuation_enabled(self, is_punctuation_enabled):
+        """
+        Sets the is_punctuation_enabled of this TranscriptionNormalization.
+        Whether to add punctuation in generated transcription. By default it is enabled.
+
+
+        :param is_punctuation_enabled: The is_punctuation_enabled of this TranscriptionNormalization.
+        :type: bool
+        """
+        self._is_punctuation_enabled = is_punctuation_enabled
 
     @property
     def filters(self):

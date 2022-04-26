@@ -61,6 +61,10 @@ class BdsInstance(object):
     #: This constant has a value of "ODH1"
     CLUSTER_VERSION_ODH1 = "ODH1"
 
+    #: A constant which can be used with the cluster_version property of a BdsInstance.
+    #: This constant has a value of "ODH0_9"
+    CLUSTER_VERSION_ODH0_9 = "ODH0_9"
+
     def __init__(self, **kwargs):
         """
         Initializes a new BdsInstance object with values from keyword arguments.
@@ -86,7 +90,7 @@ class BdsInstance(object):
 
         :param cluster_version:
             The value to assign to the cluster_version property of this BdsInstance.
-            Allowed values for this property are: "CDH5", "CDH6", "ODH1", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CDH5", "CDH6", "ODH1", "ODH0_9", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type cluster_version: str
 
@@ -134,6 +138,10 @@ class BdsInstance(object):
             The value to assign to the number_of_nodes property of this BdsInstance.
         :type number_of_nodes: int
 
+        :param bootstrap_script_url:
+            The value to assign to the bootstrap_script_url property of this BdsInstance.
+        :type bootstrap_script_url: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this BdsInstance.
         :type freeform_tags: dict(str, str)
@@ -160,6 +168,7 @@ class BdsInstance(object):
             'time_created': 'datetime',
             'time_updated': 'datetime',
             'number_of_nodes': 'int',
+            'bootstrap_script_url': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -181,6 +190,7 @@ class BdsInstance(object):
             'time_created': 'timeCreated',
             'time_updated': 'timeUpdated',
             'number_of_nodes': 'numberOfNodes',
+            'bootstrap_script_url': 'bootstrapScriptUrl',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -201,6 +211,7 @@ class BdsInstance(object):
         self._time_created = None
         self._time_updated = None
         self._number_of_nodes = None
+        self._bootstrap_script_url = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -312,7 +323,7 @@ class BdsInstance(object):
         Gets the cluster_version of this BdsInstance.
         Version of the Hadoop distribution.
 
-        Allowed values for this property are: "CDH5", "CDH6", "ODH1", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CDH5", "CDH6", "ODH1", "ODH0_9", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -331,7 +342,7 @@ class BdsInstance(object):
         :param cluster_version: The cluster_version of this BdsInstance.
         :type: str
         """
-        allowed_values = ["CDH5", "CDH6", "ODH1"]
+        allowed_values = ["CDH5", "CDH6", "ODH1", "ODH0_9"]
         if not value_allowed_none_or_none_sentinel(cluster_version, allowed_values):
             cluster_version = 'UNKNOWN_ENUM_VALUE'
         self._cluster_version = cluster_version
@@ -587,6 +598,30 @@ class BdsInstance(object):
         :type: int
         """
         self._number_of_nodes = number_of_nodes
+
+    @property
+    def bootstrap_script_url(self):
+        """
+        Gets the bootstrap_script_url of this BdsInstance.
+        pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+
+
+        :return: The bootstrap_script_url of this BdsInstance.
+        :rtype: str
+        """
+        return self._bootstrap_script_url
+
+    @bootstrap_script_url.setter
+    def bootstrap_script_url(self, bootstrap_script_url):
+        """
+        Sets the bootstrap_script_url of this BdsInstance.
+        pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed.
+
+
+        :param bootstrap_script_url: The bootstrap_script_url of this BdsInstance.
+        :type: str
+        """
+        self._bootstrap_script_url = bootstrap_script_url
 
     @property
     def freeform_tags(self):

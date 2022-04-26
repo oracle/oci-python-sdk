@@ -13,6 +13,14 @@ class UpdateBudgetDetails(object):
     The update budget details.
     """
 
+    #: A constant which can be used with the processing_period_type property of a UpdateBudgetDetails.
+    #: This constant has a value of "INVOICE"
+    PROCESSING_PERIOD_TYPE_INVOICE = "INVOICE"
+
+    #: A constant which can be used with the processing_period_type property of a UpdateBudgetDetails.
+    #: This constant has a value of "MONTH"
+    PROCESSING_PERIOD_TYPE_MONTH = "MONTH"
+
     #: A constant which can be used with the reset_period property of a UpdateBudgetDetails.
     #: This constant has a value of "MONTHLY"
     RESET_PERIOD_MONTHLY = "MONTHLY"
@@ -38,6 +46,11 @@ class UpdateBudgetDetails(object):
             The value to assign to the budget_processing_period_start_offset property of this UpdateBudgetDetails.
         :type budget_processing_period_start_offset: int
 
+        :param processing_period_type:
+            The value to assign to the processing_period_type property of this UpdateBudgetDetails.
+            Allowed values for this property are: "INVOICE", "MONTH"
+        :type processing_period_type: str
+
         :param reset_period:
             The value to assign to the reset_period property of this UpdateBudgetDetails.
             Allowed values for this property are: "MONTHLY"
@@ -57,6 +70,7 @@ class UpdateBudgetDetails(object):
             'description': 'str',
             'amount': 'float',
             'budget_processing_period_start_offset': 'int',
+            'processing_period_type': 'str',
             'reset_period': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -67,6 +81,7 @@ class UpdateBudgetDetails(object):
             'description': 'description',
             'amount': 'amount',
             'budget_processing_period_start_offset': 'budgetProcessingPeriodStartOffset',
+            'processing_period_type': 'processingPeriodType',
             'reset_period': 'resetPeriod',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -76,6 +91,7 @@ class UpdateBudgetDetails(object):
         self._description = None
         self._amount = None
         self._budget_processing_period_start_offset = None
+        self._processing_period_type = None
         self._reset_period = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -84,7 +100,7 @@ class UpdateBudgetDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateBudgetDetails.
-        The displayName of the budget.
+        The displayName of the budget. Avoid entering confidential information.
 
 
         :return: The display_name of this UpdateBudgetDetails.
@@ -96,7 +112,7 @@ class UpdateBudgetDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateBudgetDetails.
-        The displayName of the budget.
+        The displayName of the budget. Avoid entering confidential information.
 
 
         :param display_name: The display_name of this UpdateBudgetDetails.
@@ -175,6 +191,38 @@ class UpdateBudgetDetails(object):
         :type: int
         """
         self._budget_processing_period_start_offset = budget_processing_period_start_offset
+
+    @property
+    def processing_period_type(self):
+        """
+        Gets the processing_period_type of this UpdateBudgetDetails.
+        The type of the budget processing period. Valid values are INVOICE and MONTH.
+
+        Allowed values for this property are: "INVOICE", "MONTH"
+
+
+        :return: The processing_period_type of this UpdateBudgetDetails.
+        :rtype: str
+        """
+        return self._processing_period_type
+
+    @processing_period_type.setter
+    def processing_period_type(self, processing_period_type):
+        """
+        Sets the processing_period_type of this UpdateBudgetDetails.
+        The type of the budget processing period. Valid values are INVOICE and MONTH.
+
+
+        :param processing_period_type: The processing_period_type of this UpdateBudgetDetails.
+        :type: str
+        """
+        allowed_values = ["INVOICE", "MONTH"]
+        if not value_allowed_none_or_none_sentinel(processing_period_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `processing_period_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._processing_period_type = processing_period_type
 
     @property
     def reset_period(self):

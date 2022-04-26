@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class CreateRoverNodeDetails(object):
     """
-    CreateRoverNodeDetails model.
+    The information required to create a RoverNode.
     """
 
     #: A constant which can be used with the shipping_preference property of a CreateRoverNodeDetails.
@@ -65,6 +65,10 @@ class CreateRoverNodeDetails(object):
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateRoverNodeDetails.
         :type compartment_id: str
+
+        :param shape:
+            The value to assign to the shape property of this CreateRoverNodeDetails.
+        :type shape: str
 
         :param customer_shipping_address:
             The value to assign to the customer_shipping_address property of this CreateRoverNodeDetails.
@@ -153,6 +157,10 @@ class CreateRoverNodeDetails(object):
             The value to assign to the data_validation_code property of this CreateRoverNodeDetails.
         :type data_validation_code: str
 
+        :param master_key_id:
+            The value to assign to the master_key_id property of this CreateRoverNodeDetails.
+        :type master_key_id: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateRoverNodeDetails.
         :type freeform_tags: dict(str, str)
@@ -169,6 +177,7 @@ class CreateRoverNodeDetails(object):
         self.swagger_types = {
             'display_name': 'str',
             'compartment_id': 'str',
+            'shape': 'str',
             'customer_shipping_address': 'ShippingAddress',
             'node_workloads': 'list[RoverWorkload]',
             'super_user_password': 'str',
@@ -190,6 +199,7 @@ class CreateRoverNodeDetails(object):
             'import_compartment_id': 'str',
             'import_file_bucket': 'str',
             'data_validation_code': 'str',
+            'master_key_id': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
             'system_tags': 'dict(str, dict(str, object))'
@@ -198,6 +208,7 @@ class CreateRoverNodeDetails(object):
         self.attribute_map = {
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
+            'shape': 'shape',
             'customer_shipping_address': 'customerShippingAddress',
             'node_workloads': 'nodeWorkloads',
             'super_user_password': 'superUserPassword',
@@ -219,6 +230,7 @@ class CreateRoverNodeDetails(object):
             'import_compartment_id': 'importCompartmentId',
             'import_file_bucket': 'importFileBucket',
             'data_validation_code': 'dataValidationCode',
+            'master_key_id': 'masterKeyId',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
             'system_tags': 'systemTags'
@@ -226,6 +238,7 @@ class CreateRoverNodeDetails(object):
 
         self._display_name = None
         self._compartment_id = None
+        self._shape = None
         self._customer_shipping_address = None
         self._node_workloads = None
         self._super_user_password = None
@@ -247,6 +260,7 @@ class CreateRoverNodeDetails(object):
         self._import_compartment_id = None
         self._import_file_bucket = None
         self._data_validation_code = None
+        self._master_key_id = None
         self._freeform_tags = None
         self._defined_tags = None
         self._system_tags = None
@@ -298,6 +312,30 @@ class CreateRoverNodeDetails(object):
         :type: str
         """
         self._compartment_id = compartment_id
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this CreateRoverNodeDetails.
+        The shape of the node.
+
+
+        :return: The shape of this CreateRoverNodeDetails.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this CreateRoverNodeDetails.
+        The shape of the node.
+
+
+        :param shape: The shape of this CreateRoverNodeDetails.
+        :type: str
+        """
+        self._shape = shape
 
     @property
     def customer_shipping_address(self):
@@ -822,6 +860,30 @@ class CreateRoverNodeDetails(object):
         :type: str
         """
         self._data_validation_code = data_validation_code
+
+    @property
+    def master_key_id(self):
+        """
+        Gets the master_key_id of this CreateRoverNodeDetails.
+        Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
+
+
+        :return: The master_key_id of this CreateRoverNodeDetails.
+        :rtype: str
+        """
+        return self._master_key_id
+
+    @master_key_id.setter
+    def master_key_id(self, master_key_id):
+        """
+        Sets the master_key_id of this CreateRoverNodeDetails.
+        Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
+
+
+        :param master_key_id: The master_key_id of this CreateRoverNodeDetails.
+        :type: str
+        """
+        self._master_key_id = master_key_id
 
     @property
     def freeform_tags(self):

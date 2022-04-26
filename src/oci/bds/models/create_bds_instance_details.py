@@ -50,9 +50,17 @@ class CreateBdsInstanceDetails(object):
             The value to assign to the network_config property of this CreateBdsInstanceDetails.
         :type network_config: oci.bds.models.NetworkConfig
 
+        :param bootstrap_script_url:
+            The value to assign to the bootstrap_script_url property of this CreateBdsInstanceDetails.
+        :type bootstrap_script_url: str
+
         :param nodes:
             The value to assign to the nodes property of this CreateBdsInstanceDetails.
         :type nodes: list[oci.bds.models.CreateNodeDetails]
+
+        :param kerberos_realm_name:
+            The value to assign to the kerberos_realm_name property of this CreateBdsInstanceDetails.
+        :type kerberos_realm_name: str
 
         :param freeform_tags:
             The value to assign to the freeform_tags property of this CreateBdsInstanceDetails.
@@ -72,7 +80,9 @@ class CreateBdsInstanceDetails(object):
             'is_high_availability': 'bool',
             'is_secure': 'bool',
             'network_config': 'NetworkConfig',
+            'bootstrap_script_url': 'str',
             'nodes': 'list[CreateNodeDetails]',
+            'kerberos_realm_name': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
@@ -86,7 +96,9 @@ class CreateBdsInstanceDetails(object):
             'is_high_availability': 'isHighAvailability',
             'is_secure': 'isSecure',
             'network_config': 'networkConfig',
+            'bootstrap_script_url': 'bootstrapScriptUrl',
             'nodes': 'nodes',
+            'kerberos_realm_name': 'kerberosRealmName',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
@@ -99,7 +111,9 @@ class CreateBdsInstanceDetails(object):
         self._is_high_availability = None
         self._is_secure = None
         self._network_config = None
+        self._bootstrap_script_url = None
         self._nodes = None
+        self._kerberos_realm_name = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -292,6 +306,30 @@ class CreateBdsInstanceDetails(object):
         self._network_config = network_config
 
     @property
+    def bootstrap_script_url(self):
+        """
+        Gets the bootstrap_script_url of this CreateBdsInstanceDetails.
+        Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+
+
+        :return: The bootstrap_script_url of this CreateBdsInstanceDetails.
+        :rtype: str
+        """
+        return self._bootstrap_script_url
+
+    @bootstrap_script_url.setter
+    def bootstrap_script_url(self, bootstrap_script_url):
+        """
+        Sets the bootstrap_script_url of this CreateBdsInstanceDetails.
+        Pre-authenticated URL of the script in Object Store that is downloaded and executed.
+
+
+        :param bootstrap_script_url: The bootstrap_script_url of this CreateBdsInstanceDetails.
+        :type: str
+        """
+        self._bootstrap_script_url = bootstrap_script_url
+
+    @property
     def nodes(self):
         """
         **[Required]** Gets the nodes of this CreateBdsInstanceDetails.
@@ -314,6 +352,30 @@ class CreateBdsInstanceDetails(object):
         :type: list[oci.bds.models.CreateNodeDetails]
         """
         self._nodes = nodes
+
+    @property
+    def kerberos_realm_name(self):
+        """
+        Gets the kerberos_realm_name of this CreateBdsInstanceDetails.
+        The user-defined kerberos realm name.
+
+
+        :return: The kerberos_realm_name of this CreateBdsInstanceDetails.
+        :rtype: str
+        """
+        return self._kerberos_realm_name
+
+    @kerberos_realm_name.setter
+    def kerberos_realm_name(self, kerberos_realm_name):
+        """
+        Sets the kerberos_realm_name of this CreateBdsInstanceDetails.
+        The user-defined kerberos realm name.
+
+
+        :param kerberos_realm_name: The kerberos_realm_name of this CreateBdsInstanceDetails.
+        :type: str
+        """
+        self._kerberos_realm_name = kerberos_realm_name
 
     @property
     def freeform_tags(self):

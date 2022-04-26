@@ -766,6 +766,9 @@ class RoverNodeClient(object):
 
             Allowed values are: "STANDALONE", "CLUSTERED", "STATION"
 
+        :param str shape: (optional)
+            A filter to return only Nodes of type matched with the given node shape.
+
         :param int limit: (optional)
             The maximum number of items to return.
 
@@ -817,6 +820,7 @@ class RoverNodeClient(object):
             "retry_strategy",
             "display_name",
             "node_type",
+            "shape",
             "limit",
             "page",
             "lifecycle_state",
@@ -861,6 +865,7 @@ class RoverNodeClient(object):
             "compartmentId": compartment_id,
             "displayName": kwargs.get("display_name", missing),
             "nodeType": kwargs.get("node_type", missing),
+            "shape": kwargs.get("shape", missing),
             "limit": kwargs.get("limit", missing),
             "page": kwargs.get("page", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),

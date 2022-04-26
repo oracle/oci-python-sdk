@@ -22,6 +22,10 @@ class UpdateBdsInstanceDetails(object):
             The value to assign to the display_name property of this UpdateBdsInstanceDetails.
         :type display_name: str
 
+        :param bootstrap_script_url:
+            The value to assign to the bootstrap_script_url property of this UpdateBdsInstanceDetails.
+        :type bootstrap_script_url: str
+
         :param freeform_tags:
             The value to assign to the freeform_tags property of this UpdateBdsInstanceDetails.
         :type freeform_tags: dict(str, str)
@@ -33,17 +37,20 @@ class UpdateBdsInstanceDetails(object):
         """
         self.swagger_types = {
             'display_name': 'str',
+            'bootstrap_script_url': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
         }
 
         self.attribute_map = {
             'display_name': 'displayName',
+            'bootstrap_script_url': 'bootstrapScriptUrl',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
         }
 
         self._display_name = None
+        self._bootstrap_script_url = None
         self._freeform_tags = None
         self._defined_tags = None
 
@@ -70,6 +77,30 @@ class UpdateBdsInstanceDetails(object):
         :type: str
         """
         self._display_name = display_name
+
+    @property
+    def bootstrap_script_url(self):
+        """
+        Gets the bootstrap_script_url of this UpdateBdsInstanceDetails.
+        Pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed..
+
+
+        :return: The bootstrap_script_url of this UpdateBdsInstanceDetails.
+        :rtype: str
+        """
+        return self._bootstrap_script_url
+
+    @bootstrap_script_url.setter
+    def bootstrap_script_url(self, bootstrap_script_url):
+        """
+        Sets the bootstrap_script_url of this UpdateBdsInstanceDetails.
+        Pre-authenticated URL of the bootstrap script in Object Store that can be downloaded and executed..
+
+
+        :param bootstrap_script_url: The bootstrap_script_url of this UpdateBdsInstanceDetails.
+        :type: str
+        """
+        self._bootstrap_script_url = bootstrap_script_url
 
     @property
     def freeform_tags(self):

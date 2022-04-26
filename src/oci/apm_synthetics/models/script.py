@@ -251,7 +251,7 @@ class Script(object):
     def time_uploaded(self):
         """
         Gets the time_uploaded of this Script.
-        The time when the script was uploaded.
+        The time the script was uploaded.
 
 
         :return: The time_uploaded of this Script.
@@ -263,7 +263,7 @@ class Script(object):
     def time_uploaded(self, time_uploaded):
         """
         Sets the time_uploaded of this Script.
-        The time when the script was uploaded.
+        The time the script was uploaded.
 
 
         :param time_uploaded: The time_uploaded of this Script.

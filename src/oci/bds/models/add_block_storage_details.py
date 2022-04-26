@@ -13,6 +13,14 @@ class AddBlockStorageDetails(object):
     The information about added block volumes.
     """
 
+    #: A constant which can be used with the node_type property of a AddBlockStorageDetails.
+    #: This constant has a value of "WORKER"
+    NODE_TYPE_WORKER = "WORKER"
+
+    #: A constant which can be used with the node_type property of a AddBlockStorageDetails.
+    #: This constant has a value of "COMPUTE_ONLY_WORKER"
+    NODE_TYPE_COMPUTE_ONLY_WORKER = "COMPUTE_ONLY_WORKER"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AddBlockStorageDetails object with values from keyword arguments.
@@ -26,19 +34,27 @@ class AddBlockStorageDetails(object):
             The value to assign to the block_volume_size_in_gbs property of this AddBlockStorageDetails.
         :type block_volume_size_in_gbs: int
 
+        :param node_type:
+            The value to assign to the node_type property of this AddBlockStorageDetails.
+            Allowed values for this property are: "WORKER", "COMPUTE_ONLY_WORKER"
+        :type node_type: str
+
         """
         self.swagger_types = {
             'cluster_admin_password': 'str',
-            'block_volume_size_in_gbs': 'int'
+            'block_volume_size_in_gbs': 'int',
+            'node_type': 'str'
         }
 
         self.attribute_map = {
             'cluster_admin_password': 'clusterAdminPassword',
-            'block_volume_size_in_gbs': 'blockVolumeSizeInGBs'
+            'block_volume_size_in_gbs': 'blockVolumeSizeInGBs',
+            'node_type': 'nodeType'
         }
 
         self._cluster_admin_password = None
         self._block_volume_size_in_gbs = None
+        self._node_type = None
 
     @property
     def cluster_admin_password(self):
@@ -89,6 +105,38 @@ class AddBlockStorageDetails(object):
         :type: int
         """
         self._block_volume_size_in_gbs = block_volume_size_in_gbs
+
+    @property
+    def node_type(self):
+        """
+        **[Required]** Gets the node_type of this AddBlockStorageDetails.
+        Worker node types, can either be Worker Data node or Compute only worker node.
+
+        Allowed values for this property are: "WORKER", "COMPUTE_ONLY_WORKER"
+
+
+        :return: The node_type of this AddBlockStorageDetails.
+        :rtype: str
+        """
+        return self._node_type
+
+    @node_type.setter
+    def node_type(self, node_type):
+        """
+        Sets the node_type of this AddBlockStorageDetails.
+        Worker node types, can either be Worker Data node or Compute only worker node.
+
+
+        :param node_type: The node_type of this AddBlockStorageDetails.
+        :type: str
+        """
+        allowed_values = ["WORKER", "COMPUTE_ONLY_WORKER"]
+        if not value_allowed_none_or_none_sentinel(node_type, allowed_values):
+            raise ValueError(
+                "Invalid value for `node_type`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._node_type = node_type
 
     def __repr__(self):
         return formatted_flat_dict(self)

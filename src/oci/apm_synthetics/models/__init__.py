@@ -5,8 +5,13 @@
 from __future__ import absolute_import
 
 from .browser_monitor_configuration import BrowserMonitorConfiguration
+from .create_dedicated_vantage_point_details import CreateDedicatedVantagePointDetails
 from .create_monitor_details import CreateMonitorDetails
 from .create_script_details import CreateScriptDetails
+from .dedicated_vantage_point import DedicatedVantagePoint
+from .dedicated_vantage_point_collection import DedicatedVantagePointCollection
+from .dedicated_vantage_point_summary import DedicatedVantagePointSummary
+from .dvp_stack_details import DvpStackDetails
 from .geo_summary import GeoSummary
 from .header import Header
 from .monitor import Monitor
@@ -19,6 +24,7 @@ from .monitor_script_parameter_info import MonitorScriptParameterInfo
 from .monitor_status_count_map import MonitorStatusCountMap
 from .monitor_summary import MonitorSummary
 from .network_configuration import NetworkConfiguration
+from .oracle_rm_stack import OracleRMStack
 from .public_vantage_point_collection import PublicVantagePointCollection
 from .public_vantage_point_summary import PublicVantagePointSummary
 from .request_authentication_details import RequestAuthenticationDetails
@@ -31,6 +37,7 @@ from .script_parameter_info import ScriptParameterInfo
 from .script_summary import ScriptSummary
 from .scripted_browser_monitor_configuration import ScriptedBrowserMonitorConfiguration
 from .scripted_rest_monitor_configuration import ScriptedRestMonitorConfiguration
+from .update_dedicated_vantage_point_details import UpdateDedicatedVantagePointDetails
 from .update_monitor_details import UpdateMonitorDetails
 from .update_script_details import UpdateScriptDetails
 from .vantage_point_info import VantagePointInfo
@@ -39,8 +46,13 @@ from .verify_text import VerifyText
 # Maps type names to classes for apm_synthetics services.
 apm_synthetics_type_mapping = {
     "BrowserMonitorConfiguration": BrowserMonitorConfiguration,
+    "CreateDedicatedVantagePointDetails": CreateDedicatedVantagePointDetails,
     "CreateMonitorDetails": CreateMonitorDetails,
     "CreateScriptDetails": CreateScriptDetails,
+    "DedicatedVantagePoint": DedicatedVantagePoint,
+    "DedicatedVantagePointCollection": DedicatedVantagePointCollection,
+    "DedicatedVantagePointSummary": DedicatedVantagePointSummary,
+    "DvpStackDetails": DvpStackDetails,
     "GeoSummary": GeoSummary,
     "Header": Header,
     "Monitor": Monitor,
@@ -53,6 +65,7 @@ apm_synthetics_type_mapping = {
     "MonitorStatusCountMap": MonitorStatusCountMap,
     "MonitorSummary": MonitorSummary,
     "NetworkConfiguration": NetworkConfiguration,
+    "OracleRMStack": OracleRMStack,
     "PublicVantagePointCollection": PublicVantagePointCollection,
     "PublicVantagePointSummary": PublicVantagePointSummary,
     "RequestAuthenticationDetails": RequestAuthenticationDetails,
@@ -65,6 +78,7 @@ apm_synthetics_type_mapping = {
     "ScriptSummary": ScriptSummary,
     "ScriptedBrowserMonitorConfiguration": ScriptedBrowserMonitorConfiguration,
     "ScriptedRestMonitorConfiguration": ScriptedRestMonitorConfiguration,
+    "UpdateDedicatedVantagePointDetails": UpdateDedicatedVantagePointDetails,
     "UpdateMonitorDetails": UpdateMonitorDetails,
     "UpdateScriptDetails": UpdateScriptDetails,
     "VantagePointInfo": VantagePointInfo,
