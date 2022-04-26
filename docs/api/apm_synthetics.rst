@@ -19,8 +19,13 @@ Apm Synthetics
     :template: autosummary/model_class.rst
 
     oci.apm_synthetics.models.BrowserMonitorConfiguration
+    oci.apm_synthetics.models.CreateDedicatedVantagePointDetails
     oci.apm_synthetics.models.CreateMonitorDetails
     oci.apm_synthetics.models.CreateScriptDetails
+    oci.apm_synthetics.models.DedicatedVantagePoint
+    oci.apm_synthetics.models.DedicatedVantagePointCollection
+    oci.apm_synthetics.models.DedicatedVantagePointSummary
+    oci.apm_synthetics.models.DvpStackDetails
     oci.apm_synthetics.models.GeoSummary
     oci.apm_synthetics.models.Header
     oci.apm_synthetics.models.Monitor
@@ -33,6 +38,7 @@ Apm Synthetics
     oci.apm_synthetics.models.MonitorStatusCountMap
     oci.apm_synthetics.models.MonitorSummary
     oci.apm_synthetics.models.NetworkConfiguration
+    oci.apm_synthetics.models.OracleRMStack
     oci.apm_synthetics.models.PublicVantagePointCollection
     oci.apm_synthetics.models.PublicVantagePointSummary
     oci.apm_synthetics.models.RequestAuthenticationDetails
@@ -45,6 +51,7 @@ Apm Synthetics
     oci.apm_synthetics.models.ScriptSummary
     oci.apm_synthetics.models.ScriptedBrowserMonitorConfiguration
     oci.apm_synthetics.models.ScriptedRestMonitorConfiguration
+    oci.apm_synthetics.models.UpdateDedicatedVantagePointDetails
     oci.apm_synthetics.models.UpdateMonitorDetails
     oci.apm_synthetics.models.UpdateScriptDetails
     oci.apm_synthetics.models.VantagePointInfo

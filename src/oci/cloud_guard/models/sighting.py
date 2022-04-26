@@ -132,10 +132,6 @@ class Sighting(object):
             The value to assign to the sighting_score property of this Sighting.
         :type sighting_score: int
 
-        :param risk_score:
-            The value to assign to the risk_score property of this Sighting.
-        :type risk_score: float
-
         :param severity:
             The value to assign to the severity property of this Sighting.
             Allowed values for this property are: "CRITICAL", "HIGH", "MEDIUM", "LOW", "MINOR", 'UNKNOWN_ENUM_VALUE'.
@@ -179,7 +175,6 @@ class Sighting(object):
             'tactic_name': 'str',
             'technique_name': 'str',
             'sighting_score': 'int',
-            'risk_score': 'float',
             'severity': 'str',
             'confidence': 'str',
             'time_first_detected': 'datetime',
@@ -202,7 +197,6 @@ class Sighting(object):
             'tactic_name': 'tacticName',
             'technique_name': 'techniqueName',
             'sighting_score': 'sightingScore',
-            'risk_score': 'riskScore',
             'severity': 'severity',
             'confidence': 'confidence',
             'time_first_detected': 'timeFirstDetected',
@@ -224,7 +218,6 @@ class Sighting(object):
         self._tactic_name = None
         self._technique_name = None
         self._sighting_score = None
-        self._risk_score = None
         self._severity = None
         self._confidence = None
         self._time_first_detected = None
@@ -549,30 +542,6 @@ class Sighting(object):
         :type: int
         """
         self._sighting_score = sighting_score
-
-    @property
-    def risk_score(self):
-        """
-        Gets the risk_score of this Sighting.
-        DEPRECATED
-
-
-        :return: The risk_score of this Sighting.
-        :rtype: float
-        """
-        return self._risk_score
-
-    @risk_score.setter
-    def risk_score(self, risk_score):
-        """
-        Sets the risk_score of this Sighting.
-        DEPRECATED
-
-
-        :param risk_score: The risk_score of this Sighting.
-        :type: float
-        """
-        self._risk_score = risk_score
 
     @property
     def severity(self):

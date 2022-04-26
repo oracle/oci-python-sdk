@@ -760,12 +760,12 @@ class SubscriptionClient(object):
                 header_params=header_params,
                 response_type="AvailableRegionCollection")
 
-    def list_subscription_mappings(self, **kwargs):
+    def list_subscription_mappings(self, subscription_id, **kwargs):
         """
         Lists the subscription mappings for all the subscriptions owned by a given compartmentId. Only the root compartment is allowed.
 
 
-        :param str subscription_id: (optional)
+        :param str subscription_id: (required)
             The ID of the subscription to which the tenancy is associated.
 
         :param str subscription_mapping_id: (optional)
@@ -826,7 +826,6 @@ class SubscriptionClient(object):
         expected_kwargs = [
             "allow_control_chars",
             "retry_strategy",
-            "subscription_id",
             "subscription_mapping_id",
             "compartment_id",
             "lifecycle_state",
@@ -863,7 +862,7 @@ class SubscriptionClient(object):
                 )
 
         query_params = {
-            "subscriptionId": kwargs.get("subscription_id", missing),
+            "subscriptionId": subscription_id,
             "subscriptionMappingId": kwargs.get("subscription_mapping_id", missing),
             "compartmentId": kwargs.get("compartment_id", missing),
             "lifecycleState": kwargs.get("lifecycle_state", missing),

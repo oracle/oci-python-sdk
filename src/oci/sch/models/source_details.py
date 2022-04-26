@@ -26,6 +26,10 @@ class SourceDetails(object):
     KIND_LOGGING = "logging"
 
     #: A constant which can be used with the kind property of a SourceDetails.
+    #: This constant has a value of "monitoring"
+    KIND_MONITORING = "monitoring"
+
+    #: A constant which can be used with the kind property of a SourceDetails.
     #: This constant has a value of "streaming"
     KIND_STREAMING = "streaming"
 
@@ -35,13 +39,14 @@ class SourceDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.sch.models.LoggingSourceDetails`
+        * :class:`~oci.sch.models.MonitoringSourceDetails`
         * :class:`~oci.sch.models.StreamingSourceDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param kind:
             The value to assign to the kind property of this SourceDetails.
-            Allowed values for this property are: "logging", "streaming", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "logging", "monitoring", "streaming", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type kind: str
 
@@ -67,6 +72,9 @@ class SourceDetails(object):
         if type == 'logging':
             return 'LoggingSourceDetails'
 
+        if type == 'monitoring':
+            return 'MonitoringSourceDetails'
+
         if type == 'streaming':
             return 'StreamingSourceDetails'
         else:
@@ -78,7 +86,7 @@ class SourceDetails(object):
         **[Required]** Gets the kind of this SourceDetails.
         The type descriminator.
 
-        Allowed values for this property are: "logging", "streaming", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "logging", "monitoring", "streaming", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -97,7 +105,7 @@ class SourceDetails(object):
         :param kind: The kind of this SourceDetails.
         :type: str
         """
-        allowed_values = ["logging", "streaming"]
+        allowed_values = ["logging", "monitoring", "streaming"]
         if not value_allowed_none_or_none_sentinel(kind, allowed_values):
             kind = 'UNKNOWN_ENUM_VALUE'
         self._kind = kind

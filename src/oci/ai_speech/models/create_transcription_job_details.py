@@ -13,6 +13,10 @@ class CreateTranscriptionJobDetails(object):
     The information about new Transcription Job.
     """
 
+    #: A constant which can be used with the additional_transcription_formats property of a CreateTranscriptionJobDetails.
+    #: This constant has a value of "SRT"
+    ADDITIONAL_TRANSCRIPTION_FORMATS_SRT = "SRT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateTranscriptionJobDetails object with values from keyword arguments.
@@ -29,6 +33,11 @@ class CreateTranscriptionJobDetails(object):
         :param description:
             The value to assign to the description property of this CreateTranscriptionJobDetails.
         :type description: str
+
+        :param additional_transcription_formats:
+            The value to assign to the additional_transcription_formats property of this CreateTranscriptionJobDetails.
+            Allowed values for items in this list are: "SRT"
+        :type additional_transcription_formats: list[str]
 
         :param model_details:
             The value to assign to the model_details property of this CreateTranscriptionJobDetails.
@@ -59,6 +68,7 @@ class CreateTranscriptionJobDetails(object):
             'display_name': 'str',
             'compartment_id': 'str',
             'description': 'str',
+            'additional_transcription_formats': 'list[str]',
             'model_details': 'TranscriptionModelDetails',
             'normalization': 'TranscriptionNormalization',
             'input_location': 'InputLocation',
@@ -71,6 +81,7 @@ class CreateTranscriptionJobDetails(object):
             'display_name': 'displayName',
             'compartment_id': 'compartmentId',
             'description': 'description',
+            'additional_transcription_formats': 'additionalTranscriptionFormats',
             'model_details': 'modelDetails',
             'normalization': 'normalization',
             'input_location': 'inputLocation',
@@ -82,6 +93,7 @@ class CreateTranscriptionJobDetails(object):
         self._display_name = None
         self._compartment_id = None
         self._description = None
+        self._additional_transcription_formats = None
         self._model_details = None
         self._normalization = None
         self._input_location = None
@@ -93,7 +105,7 @@ class CreateTranscriptionJobDetails(object):
     def display_name(self):
         """
         Gets the display_name of this CreateTranscriptionJobDetails.
-        Transcription job name.
+        A user-friendly display name for the job.
 
 
         :return: The display_name of this CreateTranscriptionJobDetails.
@@ -105,7 +117,7 @@ class CreateTranscriptionJobDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this CreateTranscriptionJobDetails.
-        Transcription job name.
+        A user-friendly display name for the job.
 
 
         :param display_name: The display_name of this CreateTranscriptionJobDetails.
@@ -117,7 +129,9 @@ class CreateTranscriptionJobDetails(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this CreateTranscriptionJobDetails.
-        The OCID of the compartment that contains the transcriptionJob.
+        The `OCID`__ of the compartment where you want to create the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this CreateTranscriptionJobDetails.
@@ -129,7 +143,9 @@ class CreateTranscriptionJobDetails(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this CreateTranscriptionJobDetails.
-        The OCID of the compartment that contains the transcriptionJob.
+        The `OCID`__ of the compartment where you want to create the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this CreateTranscriptionJobDetails.
@@ -141,7 +157,7 @@ class CreateTranscriptionJobDetails(object):
     def description(self):
         """
         Gets the description of this CreateTranscriptionJobDetails.
-        Transcription job description.
+        A short description of the job.
 
 
         :return: The description of this CreateTranscriptionJobDetails.
@@ -153,13 +169,48 @@ class CreateTranscriptionJobDetails(object):
     def description(self, description):
         """
         Sets the description of this CreateTranscriptionJobDetails.
-        Transcription job description.
+        A short description of the job.
 
 
         :param description: The description of this CreateTranscriptionJobDetails.
         :type: str
         """
         self._description = description
+
+    @property
+    def additional_transcription_formats(self):
+        """
+        Gets the additional_transcription_formats of this CreateTranscriptionJobDetails.
+        Transcription Format. By default JSON format will be considered.
+
+        Allowed values for items in this list are: "SRT"
+
+
+        :return: The additional_transcription_formats of this CreateTranscriptionJobDetails.
+        :rtype: list[str]
+        """
+        return self._additional_transcription_formats
+
+    @additional_transcription_formats.setter
+    def additional_transcription_formats(self, additional_transcription_formats):
+        """
+        Sets the additional_transcription_formats of this CreateTranscriptionJobDetails.
+        Transcription Format. By default JSON format will be considered.
+
+
+        :param additional_transcription_formats: The additional_transcription_formats of this CreateTranscriptionJobDetails.
+        :type: list[str]
+        """
+        allowed_values = ["SRT"]
+
+        if additional_transcription_formats and additional_transcription_formats is not NONE_SENTINEL:
+            for value in additional_transcription_formats:
+                if not value_allowed_none_or_none_sentinel(value, allowed_values):
+                    raise ValueError(
+                        "Invalid value for `additional_transcription_formats`, must be None or one of {0}"
+                        .format(allowed_values)
+                    )
+        self._additional_transcription_formats = additional_transcription_formats
 
     @property
     def model_details(self):

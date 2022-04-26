@@ -58,7 +58,7 @@ class UpdateTranscriptionJobDetails(object):
     def display_name(self):
         """
         Gets the display_name of this UpdateTranscriptionJobDetails.
-        Transcription job name.
+        A user-friendly display name for the job.
 
 
         :return: The display_name of this UpdateTranscriptionJobDetails.
@@ -70,7 +70,7 @@ class UpdateTranscriptionJobDetails(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this UpdateTranscriptionJobDetails.
-        Transcription job name.
+        A user-friendly display name for the job.
 
 
         :param display_name: The display_name of this UpdateTranscriptionJobDetails.
@@ -82,7 +82,7 @@ class UpdateTranscriptionJobDetails(object):
     def description(self):
         """
         Gets the description of this UpdateTranscriptionJobDetails.
-        Transcription job description.
+        A short description of the job.
 
 
         :return: The description of this UpdateTranscriptionJobDetails.
@@ -94,7 +94,7 @@ class UpdateTranscriptionJobDetails(object):
     def description(self, description):
         """
         Sets the description of this UpdateTranscriptionJobDetails.
-        Transcription job description.
+        A short description of the job.
 
 
         :param description: The description of this UpdateTranscriptionJobDetails.

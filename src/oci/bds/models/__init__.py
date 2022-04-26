@@ -5,11 +5,17 @@
 from __future__ import absolute_import
 
 from .activate_bds_metastore_configuration_details import ActivateBdsMetastoreConfigurationDetails
+from .add_auto_scale_policy_details import AddAutoScalePolicyDetails
 from .add_auto_scaling_configuration_details import AddAutoScalingConfigurationDetails
 from .add_block_storage_details import AddBlockStorageDetails
 from .add_cloud_sql_details import AddCloudSqlDetails
+from .add_metric_based_horizontal_scaling_policy_details import AddMetricBasedHorizontalScalingPolicyDetails
+from .add_metric_based_vertical_scaling_policy_details import AddMetricBasedVerticalScalingPolicyDetails
+from .add_schedule_based_horizontal_scaling_policy_details import AddScheduleBasedHorizontalScalingPolicyDetails
+from .add_schedule_based_vertical_scaling_policy_details import AddScheduleBasedVerticalScalingPolicyDetails
 from .add_worker_nodes_details import AddWorkerNodesDetails
 from .auto_scale_policy import AutoScalePolicy
+from .auto_scale_policy_details import AutoScalePolicyDetails
 from .auto_scale_policy_metric_rule import AutoScalePolicyMetricRule
 from .auto_scale_policy_rule import AutoScalePolicyRule
 from .auto_scaling_configuration import AutoScalingConfiguration
@@ -29,19 +35,43 @@ from .create_bds_api_key_details import CreateBdsApiKeyDetails
 from .create_bds_instance_details import CreateBdsInstanceDetails
 from .create_bds_metastore_configuration_details import CreateBdsMetastoreConfigurationDetails
 from .create_node_details import CreateNodeDetails
+from .day_based_horizontal_scaling_schedule_details import DayBasedHorizontalScalingScheduleDetails
+from .day_based_vertical_scaling_schedule_details import DayBasedVerticalScalingScheduleDetails
 from .default_error import DefaultError
+from .horizontal_scaling_schedule_details import HorizontalScalingScheduleDetails
+from .install_patch_details import InstallPatchDetails
 from .kerberos_details import KerberosDetails
+from .metric_based_horizontal_scale_in_config import MetricBasedHorizontalScaleInConfig
+from .metric_based_horizontal_scale_out_config import MetricBasedHorizontalScaleOutConfig
+from .metric_based_horizontal_scaling_policy_details import MetricBasedHorizontalScalingPolicyDetails
+from .metric_based_vertical_scale_down_config import MetricBasedVerticalScaleDownConfig
+from .metric_based_vertical_scale_up_config import MetricBasedVerticalScaleUpConfig
+from .metric_based_vertical_scaling_policy_details import MetricBasedVerticalScalingPolicyDetails
 from .metric_threshold_rule import MetricThresholdRule
 from .network_config import NetworkConfig
 from .node import Node
+from .patch_history_summary import PatchHistorySummary
+from .patch_summary import PatchSummary
 from .remove_auto_scaling_configuration_details import RemoveAutoScalingConfigurationDetails
 from .remove_cloud_sql_details import RemoveCloudSqlDetails
+from .remove_node_details import RemoveNodeDetails
 from .restart_node_details import RestartNodeDetails
+from .schedule_based_horizontal_scaling_policy_details import ScheduleBasedHorizontalScalingPolicyDetails
+from .schedule_based_vertical_scaling_policy_details import ScheduleBasedVerticalScalingPolicyDetails
+from .shape_config_details import ShapeConfigDetails
 from .test_bds_metastore_configuration_details import TestBdsMetastoreConfigurationDetails
 from .test_bds_object_storage_connection_details import TestBdsObjectStorageConnectionDetails
+from .time_and_horizontal_scaling_config import TimeAndHorizontalScalingConfig
+from .time_and_vertical_scaling_config import TimeAndVerticalScalingConfig
+from .update_auto_scale_policy_details import UpdateAutoScalePolicyDetails
 from .update_auto_scaling_configuration_details import UpdateAutoScalingConfigurationDetails
 from .update_bds_instance_details import UpdateBdsInstanceDetails
 from .update_bds_metastore_configuration_details import UpdateBdsMetastoreConfigurationDetails
+from .update_metric_based_horizontal_scaling_policy_details import UpdateMetricBasedHorizontalScalingPolicyDetails
+from .update_metric_based_vertical_scaling_policy_details import UpdateMetricBasedVerticalScalingPolicyDetails
+from .update_schedule_based_horizontal_scaling_policy_details import UpdateScheduleBasedHorizontalScalingPolicyDetails
+from .update_schedule_based_vertical_scaling_policy_details import UpdateScheduleBasedVerticalScalingPolicyDetails
+from .vertical_scaling_schedule_details import VerticalScalingScheduleDetails
 from .volume_attachment_detail import VolumeAttachmentDetail
 from .work_request import WorkRequest
 from .work_request_error import WorkRequestError
@@ -51,11 +81,17 @@ from .work_request_resource import WorkRequestResource
 # Maps type names to classes for bds services.
 bds_type_mapping = {
     "ActivateBdsMetastoreConfigurationDetails": ActivateBdsMetastoreConfigurationDetails,
+    "AddAutoScalePolicyDetails": AddAutoScalePolicyDetails,
     "AddAutoScalingConfigurationDetails": AddAutoScalingConfigurationDetails,
     "AddBlockStorageDetails": AddBlockStorageDetails,
     "AddCloudSqlDetails": AddCloudSqlDetails,
+    "AddMetricBasedHorizontalScalingPolicyDetails": AddMetricBasedHorizontalScalingPolicyDetails,
+    "AddMetricBasedVerticalScalingPolicyDetails": AddMetricBasedVerticalScalingPolicyDetails,
+    "AddScheduleBasedHorizontalScalingPolicyDetails": AddScheduleBasedHorizontalScalingPolicyDetails,
+    "AddScheduleBasedVerticalScalingPolicyDetails": AddScheduleBasedVerticalScalingPolicyDetails,
     "AddWorkerNodesDetails": AddWorkerNodesDetails,
     "AutoScalePolicy": AutoScalePolicy,
+    "AutoScalePolicyDetails": AutoScalePolicyDetails,
     "AutoScalePolicyMetricRule": AutoScalePolicyMetricRule,
     "AutoScalePolicyRule": AutoScalePolicyRule,
     "AutoScalingConfiguration": AutoScalingConfiguration,
@@ -75,19 +111,43 @@ bds_type_mapping = {
     "CreateBdsInstanceDetails": CreateBdsInstanceDetails,
     "CreateBdsMetastoreConfigurationDetails": CreateBdsMetastoreConfigurationDetails,
     "CreateNodeDetails": CreateNodeDetails,
+    "DayBasedHorizontalScalingScheduleDetails": DayBasedHorizontalScalingScheduleDetails,
+    "DayBasedVerticalScalingScheduleDetails": DayBasedVerticalScalingScheduleDetails,
     "DefaultError": DefaultError,
+    "HorizontalScalingScheduleDetails": HorizontalScalingScheduleDetails,
+    "InstallPatchDetails": InstallPatchDetails,
     "KerberosDetails": KerberosDetails,
+    "MetricBasedHorizontalScaleInConfig": MetricBasedHorizontalScaleInConfig,
+    "MetricBasedHorizontalScaleOutConfig": MetricBasedHorizontalScaleOutConfig,
+    "MetricBasedHorizontalScalingPolicyDetails": MetricBasedHorizontalScalingPolicyDetails,
+    "MetricBasedVerticalScaleDownConfig": MetricBasedVerticalScaleDownConfig,
+    "MetricBasedVerticalScaleUpConfig": MetricBasedVerticalScaleUpConfig,
+    "MetricBasedVerticalScalingPolicyDetails": MetricBasedVerticalScalingPolicyDetails,
     "MetricThresholdRule": MetricThresholdRule,
     "NetworkConfig": NetworkConfig,
     "Node": Node,
+    "PatchHistorySummary": PatchHistorySummary,
+    "PatchSummary": PatchSummary,
     "RemoveAutoScalingConfigurationDetails": RemoveAutoScalingConfigurationDetails,
     "RemoveCloudSqlDetails": RemoveCloudSqlDetails,
+    "RemoveNodeDetails": RemoveNodeDetails,
     "RestartNodeDetails": RestartNodeDetails,
+    "ScheduleBasedHorizontalScalingPolicyDetails": ScheduleBasedHorizontalScalingPolicyDetails,
+    "ScheduleBasedVerticalScalingPolicyDetails": ScheduleBasedVerticalScalingPolicyDetails,
+    "ShapeConfigDetails": ShapeConfigDetails,
     "TestBdsMetastoreConfigurationDetails": TestBdsMetastoreConfigurationDetails,
     "TestBdsObjectStorageConnectionDetails": TestBdsObjectStorageConnectionDetails,
+    "TimeAndHorizontalScalingConfig": TimeAndHorizontalScalingConfig,
+    "TimeAndVerticalScalingConfig": TimeAndVerticalScalingConfig,
+    "UpdateAutoScalePolicyDetails": UpdateAutoScalePolicyDetails,
     "UpdateAutoScalingConfigurationDetails": UpdateAutoScalingConfigurationDetails,
     "UpdateBdsInstanceDetails": UpdateBdsInstanceDetails,
     "UpdateBdsMetastoreConfigurationDetails": UpdateBdsMetastoreConfigurationDetails,
+    "UpdateMetricBasedHorizontalScalingPolicyDetails": UpdateMetricBasedHorizontalScalingPolicyDetails,
+    "UpdateMetricBasedVerticalScalingPolicyDetails": UpdateMetricBasedVerticalScalingPolicyDetails,
+    "UpdateScheduleBasedHorizontalScalingPolicyDetails": UpdateScheduleBasedHorizontalScalingPolicyDetails,
+    "UpdateScheduleBasedVerticalScalingPolicyDetails": UpdateScheduleBasedVerticalScalingPolicyDetails,
+    "VerticalScalingScheduleDetails": VerticalScalingScheduleDetails,
     "VolumeAttachmentDetail": VolumeAttachmentDetail,
     "WorkRequest": WorkRequest,
     "WorkRequestError": WorkRequestError,

@@ -18,20 +18,82 @@ class UpdateTargetDetectorRecipeDetails(object):
         Initializes a new UpdateTargetDetectorRecipeDetails object with values from keyword arguments.
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
+        :param detector_recipe_id:
+            The value to assign to the detector_recipe_id property of this UpdateTargetDetectorRecipeDetails.
+        :type detector_recipe_id: str
+
+        :param is_validation_only_query:
+            The value to assign to the is_validation_only_query property of this UpdateTargetDetectorRecipeDetails.
+        :type is_validation_only_query: bool
+
         :param detector_rules:
             The value to assign to the detector_rules property of this UpdateTargetDetectorRecipeDetails.
         :type detector_rules: list[oci.cloud_guard.models.UpdateTargetRecipeDetectorRuleDetails]
 
         """
         self.swagger_types = {
+            'detector_recipe_id': 'str',
+            'is_validation_only_query': 'bool',
             'detector_rules': 'list[UpdateTargetRecipeDetectorRuleDetails]'
         }
 
         self.attribute_map = {
+            'detector_recipe_id': 'detectorRecipeId',
+            'is_validation_only_query': 'isValidationOnlyQuery',
             'detector_rules': 'detectorRules'
         }
 
+        self._detector_recipe_id = None
+        self._is_validation_only_query = None
         self._detector_rules = None
+
+    @property
+    def detector_recipe_id(self):
+        """
+        Gets the detector_recipe_id of this UpdateTargetDetectorRecipeDetails.
+        Detector recipe identifier associated with the target
+
+
+        :return: The detector_recipe_id of this UpdateTargetDetectorRecipeDetails.
+        :rtype: str
+        """
+        return self._detector_recipe_id
+
+    @detector_recipe_id.setter
+    def detector_recipe_id(self, detector_recipe_id):
+        """
+        Sets the detector_recipe_id of this UpdateTargetDetectorRecipeDetails.
+        Detector recipe identifier associated with the target
+
+
+        :param detector_recipe_id: The detector_recipe_id of this UpdateTargetDetectorRecipeDetails.
+        :type: str
+        """
+        self._detector_recipe_id = detector_recipe_id
+
+    @property
+    def is_validation_only_query(self):
+        """
+        Gets the is_validation_only_query of this UpdateTargetDetectorRecipeDetails.
+        When enabled, validation is performed for attaching the detector recipe.
+
+
+        :return: The is_validation_only_query of this UpdateTargetDetectorRecipeDetails.
+        :rtype: bool
+        """
+        return self._is_validation_only_query
+
+    @is_validation_only_query.setter
+    def is_validation_only_query(self, is_validation_only_query):
+        """
+        Sets the is_validation_only_query of this UpdateTargetDetectorRecipeDetails.
+        When enabled, validation is performed for attaching the detector recipe.
+
+
+        :param is_validation_only_query: The is_validation_only_query of this UpdateTargetDetectorRecipeDetails.
+        :type: bool
+        """
+        self._is_validation_only_query = is_validation_only_query
 
     @property
     def detector_rules(self):

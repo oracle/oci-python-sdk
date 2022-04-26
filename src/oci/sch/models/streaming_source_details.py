@@ -21,7 +21,7 @@ class StreamingSourceDetails(SourceDetails):
 
         :param kind:
             The value to assign to the kind property of this StreamingSourceDetails.
-            Allowed values for this property are: "logging", "streaming"
+            Allowed values for this property are: "logging", "monitoring", "streaming"
         :type kind: str
 
         :param stream_id:

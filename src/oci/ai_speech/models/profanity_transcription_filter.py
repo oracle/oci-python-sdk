@@ -10,7 +10,7 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class ProfanityTranscriptionFilter(TranscriptionFilter):
     """
-    Profanity transcription filter.
+    Profanity transcription filter to recognize profane words.
     """
 
     #: A constant which can be used with the mode property of a ProfanityTranscriptionFilter.
@@ -62,8 +62,6 @@ class ProfanityTranscriptionFilter(TranscriptionFilter):
     def mode(self):
         """
         **[Required]** Gets the mode of this ProfanityTranscriptionFilter.
-        The mode of filters.
-        Allowed values are:
         - `MASK`: Will mask detected profanity in transcription.
         - `REMOVE`: Will replace profane word with * in transcription.
         - `TAG`: Will tag profane word as profanity but will show actual word.
@@ -81,8 +79,6 @@ class ProfanityTranscriptionFilter(TranscriptionFilter):
     def mode(self, mode):
         """
         Sets the mode of this ProfanityTranscriptionFilter.
-        The mode of filters.
-        Allowed values are:
         - `MASK`: Will mask detected profanity in transcription.
         - `REMOVE`: Will replace profane word with * in transcription.
         - `TAG`: Will tag profane word as profanity but will show actual word.

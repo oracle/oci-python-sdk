@@ -182,7 +182,7 @@ class OrganizationSummary(object):
     def default_ucm_subscription_id(self):
         """
         **[Required]** Gets the default_ucm_subscription_id of this OrganizationSummary.
-        OCID of the default Annual Universal Credits subscription. Any tenancy joining the organization will automatically get assigned this subscription, if a subscription is not explictly assigned.
+        OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription, if a subscription is not explictly assigned.
 
 
         :return: The default_ucm_subscription_id of this OrganizationSummary.
@@ -194,7 +194,7 @@ class OrganizationSummary(object):
     def default_ucm_subscription_id(self, default_ucm_subscription_id):
         """
         Sets the default_ucm_subscription_id of this OrganizationSummary.
-        OCID of the default Annual Universal Credits subscription. Any tenancy joining the organization will automatically get assigned this subscription, if a subscription is not explictly assigned.
+        OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription, if a subscription is not explictly assigned.
 
 
         :param default_ucm_subscription_id: The default_ucm_subscription_id of this OrganizationSummary.

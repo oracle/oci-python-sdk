@@ -93,7 +93,9 @@ class TranscriptionTaskSummary(object):
     def id(self):
         """
         **[Required]** Gets the id of this TranscriptionTaskSummary.
-        Unique identifier that is immutable on creation.
+        The `OCID`__ of the task.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this TranscriptionTaskSummary.
@@ -105,7 +107,9 @@ class TranscriptionTaskSummary(object):
     def id(self, id):
         """
         Sets the id of this TranscriptionTaskSummary.
-        Unique identifier that is immutable on creation.
+        The `OCID`__ of the task.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this TranscriptionTaskSummary.
@@ -117,7 +121,7 @@ class TranscriptionTaskSummary(object):
     def display_name(self):
         """
         **[Required]** Gets the display_name of this TranscriptionTaskSummary.
-        Transcription task name.
+        A user-friendly display name for the task.
 
 
         :return: The display_name of this TranscriptionTaskSummary.
@@ -129,7 +133,7 @@ class TranscriptionTaskSummary(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TranscriptionTaskSummary.
-        Transcription task name.
+        A user-friendly display name for the task.
 
 
         :param display_name: The display_name of this TranscriptionTaskSummary.

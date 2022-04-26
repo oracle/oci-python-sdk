@@ -92,7 +92,7 @@ class BrowserMonitorConfiguration(MonitorConfiguration):
     def verify_texts(self):
         """
         Gets the verify_texts of this BrowserMonitorConfiguration.
-        Verify all the search strings present in response.
+        Verifies all the search strings present in the response.
         If any search string is not present in the response, then it will be considered as a failure.
 
 
@@ -105,7 +105,7 @@ class BrowserMonitorConfiguration(MonitorConfiguration):
     def verify_texts(self, verify_texts):
         """
         Sets the verify_texts of this BrowserMonitorConfiguration.
-        Verify all the search strings present in response.
+        Verifies all the search strings present in the response.
         If any search string is not present in the response, then it will be considered as a failure.
 
 

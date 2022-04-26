@@ -69,9 +69,6 @@ class InputLocation(object):
         """
         **[Required]** Gets the location_type of this InputLocation.
         The type of input location.
-        Allowed values are:
-        - `OBJECT_LIST_INLINE_INPUT_LOCATION`: A list of object locations in Object Storage.
-        - `OBJECT_LIST_FILE_INPUT_LOCATION`: An object in Object Storage that contains a list of input files.
 
         Allowed values for this property are: "OBJECT_LIST_INLINE_INPUT_LOCATION", "OBJECT_LIST_FILE_INPUT_LOCATION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
@@ -87,9 +84,6 @@ class InputLocation(object):
         """
         Sets the location_type of this InputLocation.
         The type of input location.
-        Allowed values are:
-        - `OBJECT_LIST_INLINE_INPUT_LOCATION`: A list of object locations in Object Storage.
-        - `OBJECT_LIST_FILE_INPUT_LOCATION`: An object in Object Storage that contains a list of input files.
 
 
         :param location_type: The location_type of this InputLocation.

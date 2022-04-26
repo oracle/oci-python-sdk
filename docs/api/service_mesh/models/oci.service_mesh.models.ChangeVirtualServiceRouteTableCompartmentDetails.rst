@@ -1,0 +1,11 @@
+ChangeVirtualServiceRouteTableCompartmentDetails
+================================================
+
+.. currentmodule:: oci.service_mesh.models
+
+.. autoclass:: ChangeVirtualServiceRouteTableCompartmentDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

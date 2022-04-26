@@ -13,6 +13,10 @@ class TranscriptionJob(object):
     Description of Transcription Job.
     """
 
+    #: A constant which can be used with the additional_transcription_formats property of a TranscriptionJob.
+    #: This constant has a value of "SRT"
+    ADDITIONAL_TRANSCRIPTION_FORMATS_SRT = "SRT"
+
     #: A constant which can be used with the lifecycle_state property of a TranscriptionJob.
     #: This constant has a value of "ACCEPTED"
     LIFECYCLE_STATE_ACCEPTED = "ACCEPTED"
@@ -110,6 +114,12 @@ class TranscriptionJob(object):
             The value to assign to the created_by property of this TranscriptionJob.
         :type created_by: str
 
+        :param additional_transcription_formats:
+            The value to assign to the additional_transcription_formats property of this TranscriptionJob.
+            Allowed values for items in this list are: "SRT", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type additional_transcription_formats: list[str]
+
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this TranscriptionJob.
             Allowed values for this property are: "ACCEPTED", "IN_PROGRESS", "SUCCEEDED", "FAILED", "CANCELING", "CANCELED", 'UNKNOWN_ENUM_VALUE'.
@@ -151,6 +161,7 @@ class TranscriptionJob(object):
             'input_location': 'InputLocation',
             'output_location': 'OutputLocation',
             'created_by': 'str',
+            'additional_transcription_formats': 'list[str]',
             'lifecycle_state': 'str',
             'lifecycle_details': 'str',
             'freeform_tags': 'dict(str, str)',
@@ -176,6 +187,7 @@ class TranscriptionJob(object):
             'input_location': 'inputLocation',
             'output_location': 'outputLocation',
             'created_by': 'createdBy',
+            'additional_transcription_formats': 'additionalTranscriptionFormats',
             'lifecycle_state': 'lifecycleState',
             'lifecycle_details': 'lifecycleDetails',
             'freeform_tags': 'freeformTags',
@@ -200,6 +212,7 @@ class TranscriptionJob(object):
         self._input_location = None
         self._output_location = None
         self._created_by = None
+        self._additional_transcription_formats = None
         self._lifecycle_state = None
         self._lifecycle_details = None
         self._freeform_tags = None
@@ -210,7 +223,9 @@ class TranscriptionJob(object):
     def id(self):
         """
         **[Required]** Gets the id of this TranscriptionJob.
-        Unique identifier that is immutable on creation.
+        The `OCID`__ of the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The id of this TranscriptionJob.
@@ -222,7 +237,9 @@ class TranscriptionJob(object):
     def id(self, id):
         """
         Sets the id of this TranscriptionJob.
-        Unique identifier that is immutable on creation.
+        The `OCID`__ of the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param id: The id of this TranscriptionJob.
@@ -234,7 +251,7 @@ class TranscriptionJob(object):
     def display_name(self):
         """
         Gets the display_name of this TranscriptionJob.
-        Job name.
+        A user-friendly display name for the job.
 
 
         :return: The display_name of this TranscriptionJob.
@@ -246,7 +263,7 @@ class TranscriptionJob(object):
     def display_name(self, display_name):
         """
         Sets the display_name of this TranscriptionJob.
-        Job name.
+        A user-friendly display name for the job.
 
 
         :param display_name: The display_name of this TranscriptionJob.
@@ -258,7 +275,9 @@ class TranscriptionJob(object):
     def compartment_id(self):
         """
         **[Required]** Gets the compartment_id of this TranscriptionJob.
-        The OCID of the compartment that contains the transcriptionJob.
+        The `OCID`__ of the compartment where you want to create the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The compartment_id of this TranscriptionJob.
@@ -270,7 +289,9 @@ class TranscriptionJob(object):
     def compartment_id(self, compartment_id):
         """
         Sets the compartment_id of this TranscriptionJob.
-        The OCID of the compartment that contains the transcriptionJob.
+        The `OCID`__ of the compartment where you want to create the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param compartment_id: The compartment_id of this TranscriptionJob.
@@ -282,7 +303,7 @@ class TranscriptionJob(object):
     def description(self):
         """
         Gets the description of this TranscriptionJob.
-        Job description.
+        A short description of the job.
 
 
         :return: The description of this TranscriptionJob.
@@ -294,7 +315,7 @@ class TranscriptionJob(object):
     def description(self, description):
         """
         Sets the description of this TranscriptionJob.
-        Job description.
+        A short description of the job.
 
 
         :param description: The description of this TranscriptionJob.
@@ -578,7 +599,9 @@ class TranscriptionJob(object):
     def created_by(self):
         """
         Gets the created_by of this TranscriptionJob.
-        OCID of the user who created the transcriptionJob.
+        The `OCID`__ of the user who created the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :return: The created_by of this TranscriptionJob.
@@ -590,13 +613,45 @@ class TranscriptionJob(object):
     def created_by(self, created_by):
         """
         Sets the created_by of this TranscriptionJob.
-        OCID of the user who created the transcriptionJob.
+        The `OCID`__ of the user who created the job.
+
+        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm
 
 
         :param created_by: The created_by of this TranscriptionJob.
         :type: str
         """
         self._created_by = created_by
+
+    @property
+    def additional_transcription_formats(self):
+        """
+        Gets the additional_transcription_formats of this TranscriptionJob.
+        Transcription format. JSON format will always be provided in addition to any formats in this list.
+
+        Allowed values for items in this list are: "SRT", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The additional_transcription_formats of this TranscriptionJob.
+        :rtype: list[str]
+        """
+        return self._additional_transcription_formats
+
+    @additional_transcription_formats.setter
+    def additional_transcription_formats(self, additional_transcription_formats):
+        """
+        Sets the additional_transcription_formats of this TranscriptionJob.
+        Transcription format. JSON format will always be provided in addition to any formats in this list.
+
+
+        :param additional_transcription_formats: The additional_transcription_formats of this TranscriptionJob.
+        :type: list[str]
+        """
+        allowed_values = ["SRT"]
+        if additional_transcription_formats:
+            additional_transcription_formats[:] = ['UNKNOWN_ENUM_VALUE' if not value_allowed_none_or_none_sentinel(x, allowed_values) else x for x in additional_transcription_formats]
+        self._additional_transcription_formats = additional_transcription_formats
 
     @property
     def lifecycle_state(self):

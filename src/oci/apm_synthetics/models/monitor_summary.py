@@ -256,7 +256,7 @@ class MonitorSummary(object):
     def vantage_points(self):
         """
         **[Required]** Gets the vantage_points of this MonitorSummary.
-        List of vantage points where the monitor is running.
+        List of public and dedicated vantage points where the monitor is running.
 
 
         :return: The vantage_points of this MonitorSummary.
@@ -268,7 +268,7 @@ class MonitorSummary(object):
     def vantage_points(self, vantage_points):
         """
         Sets the vantage_points of this MonitorSummary.
-        List of vantage points where the monitor is running.
+        List of public and dedicated vantage points where the monitor is running.
 
 
         :param vantage_points: The vantage_points of this MonitorSummary.
@@ -389,7 +389,7 @@ class MonitorSummary(object):
         """
         **[Required]** Gets the repeat_interval_in_seconds of this MonitorSummary.
         Interval in seconds after the start time when the job should be repeated.
-        Minimum repeatIntervalInSeconds should be 300 seconds.
+        Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 
 
         :return: The repeat_interval_in_seconds of this MonitorSummary.
@@ -402,7 +402,7 @@ class MonitorSummary(object):
         """
         Sets the repeat_interval_in_seconds of this MonitorSummary.
         Interval in seconds after the start time when the job should be repeated.
-        Minimum repeatIntervalInSeconds should be 300 seconds.
+        Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 
 
         :param repeat_interval_in_seconds: The repeat_interval_in_seconds of this MonitorSummary.
@@ -439,7 +439,7 @@ class MonitorSummary(object):
         """
         **[Required]** Gets the timeout_in_seconds of this MonitorSummary.
         Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
-        Also, timeoutInSeconds should be a multiple of 60.
+        Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
         Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 
 
@@ -453,7 +453,7 @@ class MonitorSummary(object):
         """
         Sets the timeout_in_seconds of this MonitorSummary.
         Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors.
-        Also, timeoutInSeconds should be a multiple of 60.
+        Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors.
         Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 
 

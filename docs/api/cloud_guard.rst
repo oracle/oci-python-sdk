@@ -20,6 +20,7 @@ Cloud Guard
 
     oci.cloud_guard.models.ActivityProblemAggregation
     oci.cloud_guard.models.ActivityProblemAggregationCollection
+    oci.cloud_guard.models.AddCompartmentDetails
     oci.cloud_guard.models.AllTargetsSelected
     oci.cloud_guard.models.AttachTargetDetectorRecipeDetails
     oci.cloud_guard.models.AttachTargetResponderRecipeDetails
@@ -27,6 +28,9 @@ Cloud Guard
     oci.cloud_guard.models.ChangeDetectorRecipeCompartmentDetails
     oci.cloud_guard.models.ChangeManagedListCompartmentDetails
     oci.cloud_guard.models.ChangeResponderRecipeCompartmentDetails
+    oci.cloud_guard.models.ChangeSecurityPolicyCompartmentDetails
+    oci.cloud_guard.models.ChangeSecurityRecipeCompartmentDetails
+    oci.cloud_guard.models.ChangeSecurityZoneCompartmentDetails
     oci.cloud_guard.models.CompositeCondition
     oci.cloud_guard.models.Condition
     oci.cloud_guard.models.ConditionGroup
@@ -40,6 +44,9 @@ Cloud Guard
     oci.cloud_guard.models.CreateDetectorRecipeDetails
     oci.cloud_guard.models.CreateManagedListDetails
     oci.cloud_guard.models.CreateResponderRecipeDetails
+    oci.cloud_guard.models.CreateSecurityPolicyDetails
+    oci.cloud_guard.models.CreateSecurityRecipeDetails
+    oci.cloud_guard.models.CreateSecurityZoneDetails
     oci.cloud_guard.models.CreateTargetDetails
     oci.cloud_guard.models.CreateTargetDetectorRecipeDetails
     oci.cloud_guard.models.CreateTargetResponderRecipeDetails
@@ -86,6 +93,7 @@ Cloud Guard
     oci.cloud_guard.models.ProblemTrendAggregationCollection
     oci.cloud_guard.models.RecommendationSummary
     oci.cloud_guard.models.RecommendationSummaryCollection
+    oci.cloud_guard.models.RemoveCompartmentDetails
     oci.cloud_guard.models.RequestSummarizedTrendResourceRiskScoresDetails
     oci.cloud_guard.models.ResourceProfile
     oci.cloud_guard.models.ResourceProfileCollection
@@ -124,10 +132,20 @@ Cloud Guard
     oci.cloud_guard.models.RiskScoreAggregation
     oci.cloud_guard.models.RiskScoreAggregationCollection
     oci.cloud_guard.models.RuleSummary
+    oci.cloud_guard.models.SecurityPolicy
+    oci.cloud_guard.models.SecurityPolicyCollection
+    oci.cloud_guard.models.SecurityPolicySummary
+    oci.cloud_guard.models.SecurityRecipe
+    oci.cloud_guard.models.SecurityRecipeCollection
+    oci.cloud_guard.models.SecurityRecipeSummary
     oci.cloud_guard.models.SecurityScoreAggregation
     oci.cloud_guard.models.SecurityScoreAggregationCollection
     oci.cloud_guard.models.SecurityScoreTrendAggregation
     oci.cloud_guard.models.SecurityScoreTrendAggregationCollection
+    oci.cloud_guard.models.SecurityZone
+    oci.cloud_guard.models.SecurityZoneCollection
+    oci.cloud_guard.models.SecurityZoneSummary
+    oci.cloud_guard.models.SecurityZoneTargetDetails
     oci.cloud_guard.models.ServiceTypeSummary
     oci.cloud_guard.models.Sighting
     oci.cloud_guard.models.SightingCollection
@@ -143,6 +161,7 @@ Cloud Guard
     oci.cloud_guard.models.TacticSummary
     oci.cloud_guard.models.Target
     oci.cloud_guard.models.TargetCollection
+    oci.cloud_guard.models.TargetDetails
     oci.cloud_guard.models.TargetDetectorDetails
     oci.cloud_guard.models.TargetDetectorRecipe
     oci.cloud_guard.models.TargetDetectorRecipeCollection
@@ -176,6 +195,9 @@ Cloud Guard
     oci.cloud_guard.models.UpdateResponderRecipeResponderRule
     oci.cloud_guard.models.UpdateResponderRecipeResponderRuleDetails
     oci.cloud_guard.models.UpdateResponderRuleDetails
+    oci.cloud_guard.models.UpdateSecurityPolicyDetails
+    oci.cloud_guard.models.UpdateSecurityRecipeDetails
+    oci.cloud_guard.models.UpdateSecurityZoneDetails
     oci.cloud_guard.models.UpdateTargetDetails
     oci.cloud_guard.models.UpdateTargetDetectorRecipe
     oci.cloud_guard.models.UpdateTargetDetectorRecipeDetails

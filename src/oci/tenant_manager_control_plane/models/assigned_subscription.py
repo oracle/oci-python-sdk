@@ -199,7 +199,7 @@ class AssignedSubscription(object):
     def classic_subscription_id(self):
         """
         **[Required]** Gets the classic_subscription_id of this AssignedSubscription.
-        Subscription id.
+        Subscription ID.
 
 
         :return: The classic_subscription_id of this AssignedSubscription.
@@ -211,7 +211,7 @@ class AssignedSubscription(object):
     def classic_subscription_id(self, classic_subscription_id):
         """
         Sets the classic_subscription_id of this AssignedSubscription.
-        Subscription id.
+        Subscription ID.
 
 
         :param classic_subscription_id: The classic_subscription_id of this AssignedSubscription.
@@ -325,7 +325,7 @@ class AssignedSubscription(object):
     def skus(self):
         """
         Gets the skus of this AssignedSubscription.
-        List of sku linked to the subscription.
+        List of SKUs linked to the subscription.
 
 
         :return: The skus of this AssignedSubscription.
@@ -337,7 +337,7 @@ class AssignedSubscription(object):
     def skus(self, skus):
         """
         Sets the skus of this AssignedSubscription.
-        List of sku linked to the subscription.
+        List of SKUs linked to the subscription.
 
 
         :param skus: The skus of this AssignedSubscription.

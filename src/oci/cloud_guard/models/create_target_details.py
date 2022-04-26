@@ -25,6 +25,10 @@ class CreateTargetDetails(object):
     #: This constant has a value of "HCMCLOUD"
     TARGET_RESOURCE_TYPE_HCMCLOUD = "HCMCLOUD"
 
+    #: A constant which can be used with the target_resource_type property of a CreateTargetDetails.
+    #: This constant has a value of "SECURITY_ZONE"
+    TARGET_RESOURCE_TYPE_SECURITY_ZONE = "SECURITY_ZONE"
+
     #: A constant which can be used with the lifecycle_state property of a CreateTargetDetails.
     #: This constant has a value of "CREATING"
     LIFECYCLE_STATE_CREATING = "CREATING"
@@ -72,7 +76,7 @@ class CreateTargetDetails(object):
 
         :param target_resource_type:
             The value to assign to the target_resource_type property of this CreateTargetDetails.
-            Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD"
+            Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE"
         :type target_resource_type: str
 
         :param target_resource_id:
@@ -224,7 +228,7 @@ class CreateTargetDetails(object):
         **[Required]** Gets the target_resource_type of this CreateTargetDetails.
         possible type of targets(compartment/HCMCloud/ERPCloud)
 
-        Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD"
+        Allowed values for this property are: "COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE"
 
 
         :return: The target_resource_type of this CreateTargetDetails.
@@ -242,7 +246,7 @@ class CreateTargetDetails(object):
         :param target_resource_type: The target_resource_type of this CreateTargetDetails.
         :type: str
         """
-        allowed_values = ["COMPARTMENT", "ERPCLOUD", "HCMCLOUD"]
+        allowed_values = ["COMPARTMENT", "ERPCLOUD", "HCMCLOUD", "SECURITY_ZONE"]
         if not value_allowed_none_or_none_sentinel(target_resource_type, allowed_values):
             raise ValueError(
                 "Invalid value for `target_resource_type`, must be None or one of {0}"

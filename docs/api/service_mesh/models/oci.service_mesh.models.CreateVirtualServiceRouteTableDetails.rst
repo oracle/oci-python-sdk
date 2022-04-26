@@ -1,0 +1,11 @@
+CreateVirtualServiceRouteTableDetails
+=====================================
+
+.. currentmodule:: oci.service_mesh.models
+
+.. autoclass:: CreateVirtualServiceRouteTableDetails
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

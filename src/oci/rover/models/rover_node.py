@@ -88,6 +88,10 @@ class RoverNode(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type node_type: str
 
+        :param shape:
+            The value to assign to the shape property of this RoverNode.
+        :type shape: str
+
         :param enclosure_type:
             The value to assign to the enclosure_type property of this RoverNode.
             Allowed values for this property are: "RUGGADIZED", "NON_RUGGADIZED", 'UNKNOWN_ENUM_VALUE'.
@@ -206,6 +210,10 @@ class RoverNode(object):
             The value to assign to the image_export_par property of this RoverNode.
         :type image_export_par: str
 
+        :param master_key_id:
+            The value to assign to the master_key_id property of this RoverNode.
+        :type master_key_id: str
+
         :param tags:
             The value to assign to the tags property of this RoverNode.
         :type tags: str
@@ -228,6 +236,7 @@ class RoverNode(object):
             'cluster_id': 'str',
             'compartment_id': 'str',
             'node_type': 'str',
+            'shape': 'str',
             'enclosure_type': 'str',
             'serial_number': 'str',
             'display_name': 'str',
@@ -256,6 +265,7 @@ class RoverNode(object):
             'data_validation_code': 'str',
             'public_key': 'str',
             'image_export_par': 'str',
+            'master_key_id': 'str',
             'tags': 'str',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))',
@@ -267,6 +277,7 @@ class RoverNode(object):
             'cluster_id': 'clusterId',
             'compartment_id': 'compartmentId',
             'node_type': 'nodeType',
+            'shape': 'shape',
             'enclosure_type': 'enclosureType',
             'serial_number': 'serialNumber',
             'display_name': 'displayName',
@@ -295,6 +306,7 @@ class RoverNode(object):
             'data_validation_code': 'dataValidationCode',
             'public_key': 'publicKey',
             'image_export_par': 'imageExportPar',
+            'master_key_id': 'masterKeyId',
             'tags': 'tags',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags',
@@ -305,6 +317,7 @@ class RoverNode(object):
         self._cluster_id = None
         self._compartment_id = None
         self._node_type = None
+        self._shape = None
         self._enclosure_type = None
         self._serial_number = None
         self._display_name = None
@@ -333,6 +346,7 @@ class RoverNode(object):
         self._data_validation_code = None
         self._public_key = None
         self._image_export_par = None
+        self._master_key_id = None
         self._tags = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -439,6 +453,30 @@ class RoverNode(object):
         if not value_allowed_none_or_none_sentinel(node_type, allowed_values):
             node_type = 'UNKNOWN_ENUM_VALUE'
         self._node_type = node_type
+
+    @property
+    def shape(self):
+        """
+        Gets the shape of this RoverNode.
+        The shape of the node.
+
+
+        :return: The shape of this RoverNode.
+        :rtype: str
+        """
+        return self._shape
+
+    @shape.setter
+    def shape(self, shape):
+        """
+        Sets the shape of this RoverNode.
+        The shape of the node.
+
+
+        :param shape: The shape of this RoverNode.
+        :type: str
+        """
+        self._shape = shape
 
     @property
     def enclosure_type(self):
@@ -1125,6 +1163,30 @@ class RoverNode(object):
         :type: str
         """
         self._image_export_par = image_export_par
+
+    @property
+    def master_key_id(self):
+        """
+        Gets the master_key_id of this RoverNode.
+        Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
+
+
+        :return: The master_key_id of this RoverNode.
+        :rtype: str
+        """
+        return self._master_key_id
+
+    @master_key_id.setter
+    def master_key_id(self, master_key_id):
+        """
+        Sets the master_key_id of this RoverNode.
+        Customer provided master key ID to encrypt secret information. If not provided, Rover's master key will be used for encryption.
+
+
+        :param master_key_id: The master_key_id of this RoverNode.
+        :type: str
+        """
+        self._master_key_id = master_key_id
 
     @property
     def tags(self):

@@ -26,6 +26,8 @@ from .rover_node_get_rpt import RoverNodeGetRpt
 from .rover_node_set_key import RoverNodeSetKey
 from .rover_node_summary import RoverNodeSummary
 from .rover_workload import RoverWorkload
+from .shape_collection import ShapeCollection
+from .shape_summary import ShapeSummary
 from .shipping_address import ShippingAddress
 from .update_rover_cluster_details import UpdateRoverClusterDetails
 from .update_rover_entitlement_details import UpdateRoverEntitlementDetails
@@ -55,6 +57,8 @@ rover_type_mapping = {
     "RoverNodeSetKey": RoverNodeSetKey,
     "RoverNodeSummary": RoverNodeSummary,
     "RoverWorkload": RoverWorkload,
+    "ShapeCollection": ShapeCollection,
+    "ShapeSummary": ShapeSummary,
     "ShippingAddress": ShippingAddress,
     "UpdateRoverClusterDetails": UpdateRoverClusterDetails,
     "UpdateRoverEntitlementDetails": UpdateRoverEntitlementDetails,
