@@ -81,10 +81,6 @@ class RequestProtection(object):
 
         Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
 
-        For steps to request a limit increase, see `Requesting a Service Limit Increase`__.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm
-
 
         :return: The body_inspection_size_limit_in_bytes of this RequestProtection.
         :rtype: int
@@ -98,10 +94,6 @@ class RequestProtection(object):
         Maximum size of inspected HTTP message body in bytes. Actions to take if this limit is exceeded are defined in `bodyInspectionSizeLimitExceededActionName`.
 
         Body inspection maximum size allowed is defined with per-tenancy limit: 8192 bytes.
-
-        For steps to request a limit increase, see `Requesting a Service Limit Increase`__.
-
-        __ https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm
 
 
         :param body_inspection_size_limit_in_bytes: The body_inspection_size_limit_in_bytes of this RequestProtection.

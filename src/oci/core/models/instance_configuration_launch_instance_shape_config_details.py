@@ -52,22 +52,29 @@ class InstanceConfigurationLaunchInstanceShapeConfigDetails(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type baseline_ocpu_utilization: str
 
+        :param nvmes:
+            The value to assign to the nvmes property of this InstanceConfigurationLaunchInstanceShapeConfigDetails.
+        :type nvmes: int
+
         """
         self.swagger_types = {
             'ocpus': 'float',
             'memory_in_gbs': 'float',
-            'baseline_ocpu_utilization': 'str'
+            'baseline_ocpu_utilization': 'str',
+            'nvmes': 'int'
         }
 
         self.attribute_map = {
             'ocpus': 'ocpus',
             'memory_in_gbs': 'memoryInGBs',
-            'baseline_ocpu_utilization': 'baselineOcpuUtilization'
+            'baseline_ocpu_utilization': 'baselineOcpuUtilization',
+            'nvmes': 'nvmes'
         }
 
         self._ocpus = None
         self._memory_in_gbs = None
         self._baseline_ocpu_utilization = None
+        self._nvmes = None
 
     @property
     def ocpus(self):
@@ -158,6 +165,30 @@ class InstanceConfigurationLaunchInstanceShapeConfigDetails(object):
         if not value_allowed_none_or_none_sentinel(baseline_ocpu_utilization, allowed_values):
             baseline_ocpu_utilization = 'UNKNOWN_ENUM_VALUE'
         self._baseline_ocpu_utilization = baseline_ocpu_utilization
+
+    @property
+    def nvmes(self):
+        """
+        Gets the nvmes of this InstanceConfigurationLaunchInstanceShapeConfigDetails.
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+
+
+        :return: The nvmes of this InstanceConfigurationLaunchInstanceShapeConfigDetails.
+        :rtype: int
+        """
+        return self._nvmes
+
+    @nvmes.setter
+    def nvmes(self, nvmes):
+        """
+        Sets the nvmes of this InstanceConfigurationLaunchInstanceShapeConfigDetails.
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+
+
+        :param nvmes: The nvmes of this InstanceConfigurationLaunchInstanceShapeConfigDetails.
+        :type: int
+        """
+        self._nvmes = nvmes
 
     def __repr__(self):
         return formatted_flat_dict(self)

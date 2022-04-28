@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.ocisms.controlplane</groupId>
         <artifactId>oci-sms-api-spec</artifactId>
-        <version>0.0.16</version>
+        <version>0.0.40</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

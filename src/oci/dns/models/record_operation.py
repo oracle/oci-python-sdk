@@ -267,7 +267,7 @@ class RecordOperation(object):
     def ttl(self):
         """
         Gets the ttl of this RecordOperation.
-        The Time To Live for the record, in seconds.
+        The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 
 
         :return: The ttl of this RecordOperation.
@@ -279,7 +279,7 @@ class RecordOperation(object):
     def ttl(self, ttl):
         """
         Sets the ttl of this RecordOperation.
-        The Time To Live for the record, in seconds.
+        The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
 
 
         :param ttl: The ttl of this RecordOperation.

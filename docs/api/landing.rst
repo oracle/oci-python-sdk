@@ -3,6 +3,7 @@ API Reference
 
 .. rubric:: Service Clients
 
+* :doc:`Application Dependency Management <adm/client/oci.adm.ApplicationDependencyManagementClient>`
 * :doc:`Anomaly Detection <ai_anomaly_detection/client/oci.ai_anomaly_detection.AnomalyDetectionClient>`
 * :doc:`Ai Service Language <ai_language/client/oci.ai_language.AIServiceLanguageClient>`
 * :doc:`Ai Service Speech <ai_speech/client/oci.ai_speech.AIServiceSpeechClient>`
@@ -177,6 +178,7 @@ API Reference
     :hidden:
     :maxdepth: 5
 
+    adm
     ai_anomaly_detection
     ai_language
     ai_speech

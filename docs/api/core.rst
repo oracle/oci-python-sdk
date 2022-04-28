@@ -41,6 +41,8 @@ Core Services
     oci.core.models.AllowedPhaseTwoParameters
     oci.core.models.AmdMilanBmLaunchInstancePlatformConfig
     oci.core.models.AmdMilanBmPlatformConfig
+    oci.core.models.AmdRomeBmGpuLaunchInstancePlatformConfig
+    oci.core.models.AmdRomeBmGpuPlatformConfig
     oci.core.models.AmdRomeBmLaunchInstancePlatformConfig
     oci.core.models.AmdRomeBmPlatformConfig
     oci.core.models.AmdVmLaunchInstancePlatformConfig
@@ -284,6 +286,7 @@ Core Services
     oci.core.models.InstanceAvailabilityConfig
     oci.core.models.InstanceConfiguration
     oci.core.models.InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
+    oci.core.models.InstanceConfigurationAmdRomeBmGpuLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationAmdVmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationAttachVnicDetails
@@ -297,6 +300,7 @@ Core Services
     oci.core.models.InstanceConfigurationInstanceSourceDetails
     oci.core.models.InstanceConfigurationInstanceSourceViaBootVolumeDetails
     oci.core.models.InstanceConfigurationInstanceSourceViaImageDetails
+    oci.core.models.InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationIntelVmLaunchInstancePlatformConfig
     oci.core.models.InstanceConfigurationIscsiAttachVolumeDetails
@@ -320,6 +324,7 @@ Core Services
     oci.core.models.InstancePoolPlacementConfiguration
     oci.core.models.InstancePoolPlacementSecondaryVnicSubnet
     oci.core.models.InstancePoolSummary
+    oci.core.models.InstancePowerActionDetails
     oci.core.models.InstanceReservationConfig
     oci.core.models.InstanceReservationConfigDetails
     oci.core.models.InstanceReservationShapeConfigDetails
@@ -328,6 +333,8 @@ Core Services
     oci.core.models.InstanceSourceViaBootVolumeDetails
     oci.core.models.InstanceSourceViaImageDetails
     oci.core.models.InstanceSummary
+    oci.core.models.IntelIcelakeBmLaunchInstancePlatformConfig
+    oci.core.models.IntelIcelakeBmPlatformConfig
     oci.core.models.IntelSkylakeBmLaunchInstancePlatformConfig
     oci.core.models.IntelSkylakeBmPlatformConfig
     oci.core.models.IntelVmLaunchInstancePlatformConfig
@@ -357,6 +364,7 @@ Core Services
     oci.core.models.NetworkingTopology
     oci.core.models.ParavirtualizedVolumeAttachment
     oci.core.models.PeerRegionForRemotePeering
+    oci.core.models.PercentageOfCoresEnabledOptions
     oci.core.models.PhaseOneConfigDetails
     oci.core.models.PhaseTwoConfigDetails
     oci.core.models.PlatformConfig
@@ -377,6 +385,7 @@ Core Services
     oci.core.models.RemoveSubnetIpv6CidrDetails
     oci.core.models.RemoveVcnCidrDetails
     oci.core.models.RemoveVcnIpv6CidrDetails
+    oci.core.models.ResetActionDetails
     oci.core.models.RouteRule
     oci.core.models.RouteTable
     oci.core.models.SecurityList
@@ -386,7 +395,9 @@ Core Services
     oci.core.models.ServiceIdRequestDetails
     oci.core.models.ServiceIdResponseDetails
     oci.core.models.Shape
+    oci.core.models.ShapeAccessControlServiceEnabledPlatformOptions
     oci.core.models.ShapeAlternativeObject
+    oci.core.models.ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
     oci.core.models.ShapeMaxVnicAttachmentOptions
     oci.core.models.ShapeMeasuredBootOptions
     oci.core.models.ShapeMemoryOptions
@@ -395,7 +406,10 @@ Core Services
     oci.core.models.ShapeOcpuOptions
     oci.core.models.ShapePlatformConfigOptions
     oci.core.models.ShapeSecureBootOptions
+    oci.core.models.ShapeSymmetricMultiThreadingEnabledPlatformOptions
     oci.core.models.ShapeTrustedPlatformModuleOptions
+    oci.core.models.ShapeVirtualInstructionsEnabledPlatformOptions
+    oci.core.models.SoftResetActionDetails
     oci.core.models.Subnet
     oci.core.models.SubnetTopology
     oci.core.models.TcpOptions

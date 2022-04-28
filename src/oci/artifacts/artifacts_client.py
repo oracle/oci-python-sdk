@@ -18,8 +18,8 @@ missing = Sentinel("Missing")
 
 class ArtifactsClient(object):
     """
-    API covering the [Registry](/iaas/Content/Registry/Concepts/registryoverview.htm) services.
-    Use this API to manage resources such as container images and repositories.
+    API covering the Artifacts and [Registry](/iaas/Content/Registry/Concepts/registryoverview.htm) services.
+    Use this API to manage resources such as generic artifacts and container images.
     """
 
     def __init__(self, config, **kwargs):

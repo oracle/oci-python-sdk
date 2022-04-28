@@ -18,7 +18,7 @@ missing = Sentinel("Missing")
 
 class AppmgmtControlClient(object):
     """
-    AppMgmt Control API
+    Use the Resource Discovery and Monitoring Control API to get details about monitored instances and perform actions. For more information, see [Resource Discovery and Monitoring](https://docs.oracle.com/iaas/os-management/osms/osms-resource-discovery-monitoring.htm).
     """
 
     def __init__(self, config, **kwargs):

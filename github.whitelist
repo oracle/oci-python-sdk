@@ -147,3 +147,4 @@
 ^src/oci/data_connectivity/.*\.py$
 ^src/oci/stack_monitoring/.*\.py$
 ^src/oci/service_mesh/.*\.py$
+^src/oci/adm/.*\.py$

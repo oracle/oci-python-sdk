@@ -43,6 +43,7 @@
     </plugins>
   </build>
   <modules>
+    <module>poms/adm/pom.xml</module>
     <module>poms/service_mesh/pom.xml</module>
     <module>poms/stack_monitoring/pom.xml</module>
     <module>poms/data_connectivity/pom.xml</module>

@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.dashboard</groupId>
         <artifactId>dashboard-service-spec</artifactId>
-        <version>0.1.148</version>
+        <version>0.1.175</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

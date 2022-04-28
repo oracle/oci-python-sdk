@@ -33,7 +33,7 @@ def vcr_fixture(request):
             yield
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_change_resolver_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ChangeResolverCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -74,7 +74,7 @@ def test_change_resolver_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_change_steering_policy_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ChangeSteeringPolicyCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -115,7 +115,7 @@ def test_change_steering_policy_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_change_tsig_key_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ChangeTsigKeyCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -156,7 +156,7 @@ def test_change_tsig_key_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_change_view_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ChangeViewCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -197,7 +197,7 @@ def test_change_view_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_change_zone_compartment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ChangeZoneCompartment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -238,7 +238,7 @@ def test_change_zone_compartment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_create_resolver_endpoint(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'CreateResolverEndpoint'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -279,7 +279,7 @@ def test_create_resolver_endpoint(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_create_steering_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'CreateSteeringPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -319,7 +319,7 @@ def test_create_steering_policy(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_create_steering_policy_attachment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'CreateSteeringPolicyAttachment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -359,7 +359,7 @@ def test_create_steering_policy_attachment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_create_tsig_key(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'CreateTsigKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -399,7 +399,7 @@ def test_create_tsig_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_create_view(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'CreateView'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -439,7 +439,7 @@ def test_create_view(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_create_zone(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'CreateZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -479,7 +479,7 @@ def test_create_zone(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_delete_domain_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteDomainRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -520,7 +520,7 @@ def test_delete_domain_records(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_delete_resolver_endpoint(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteResolverEndpoint'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -561,7 +561,7 @@ def test_delete_resolver_endpoint(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_delete_rr_set(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteRRSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -603,7 +603,7 @@ def test_delete_rr_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_delete_steering_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteSteeringPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -643,7 +643,7 @@ def test_delete_steering_policy(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_delete_steering_policy_attachment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteSteeringPolicyAttachment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -683,7 +683,7 @@ def test_delete_steering_policy_attachment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_delete_tsig_key(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteTsigKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -723,7 +723,7 @@ def test_delete_tsig_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_delete_view(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteView'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -763,7 +763,7 @@ def test_delete_view(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_delete_zone(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'DeleteZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -803,7 +803,7 @@ def test_delete_zone(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_get_domain_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetDomainRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -866,7 +866,7 @@ def test_get_domain_records(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_get_resolver(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetResolver'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -906,7 +906,7 @@ def test_get_resolver(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_get_resolver_endpoint(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetResolverEndpoint'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -947,7 +947,7 @@ def test_get_resolver_endpoint(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_get_rr_set(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetRRSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1013,7 +1013,7 @@ def test_get_rr_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_get_steering_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetSteeringPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1053,7 +1053,7 @@ def test_get_steering_policy(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_get_steering_policy_attachment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetSteeringPolicyAttachment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1093,7 +1093,7 @@ def test_get_steering_policy_attachment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_get_tsig_key(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetTsigKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1133,7 +1133,7 @@ def test_get_tsig_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_get_view(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetView'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1173,7 +1173,7 @@ def test_get_view(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_get_zone(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1213,7 +1213,7 @@ def test_get_zone(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_get_zone_content(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetZoneContent'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1253,7 +1253,7 @@ def test_get_zone_content(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_get_zone_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'GetZoneRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1313,7 +1313,7 @@ def test_get_zone_records(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_list_resolver_endpoints(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ListResolverEndpoints'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1373,7 +1373,7 @@ def test_list_resolver_endpoints(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_list_resolvers(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ListResolvers'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1433,7 +1433,7 @@ def test_list_resolvers(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_list_steering_policies(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ListSteeringPolicies'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1493,7 +1493,7 @@ def test_list_steering_policies(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_list_steering_policy_attachments(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ListSteeringPolicyAttachments'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1553,7 +1553,7 @@ def test_list_steering_policy_attachments(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_list_tsig_keys(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ListTsigKeys'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1613,7 +1613,7 @@ def test_list_tsig_keys(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_list_views(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ListViews'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1673,7 +1673,7 @@ def test_list_views(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_list_zone_transfer_servers(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ListZoneTransferServers'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1733,7 +1733,7 @@ def test_list_zone_transfer_servers(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_list_zones(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'ListZones'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1793,7 +1793,7 @@ def test_list_zones(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_patch_domain_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'PatchDomainRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1835,7 +1835,7 @@ def test_patch_domain_records(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_patch_rr_set(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'PatchRRSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1878,7 +1878,7 @@ def test_patch_rr_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_patch_zone_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'PatchZoneRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1919,7 +1919,7 @@ def test_patch_zone_records(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_update_domain_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateDomainRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -1961,7 +1961,7 @@ def test_update_domain_records(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_update_resolver(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateResolver'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2002,7 +2002,7 @@ def test_update_resolver(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_update_resolver_endpoint(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateResolverEndpoint'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2044,7 +2044,7 @@ def test_update_resolver_endpoint(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_update_rr_set(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateRRSet'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2087,7 +2087,7 @@ def test_update_rr_set(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_update_steering_policy(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateSteeringPolicy'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2128,7 +2128,7 @@ def test_update_steering_policy(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_update_steering_policy_attachment(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateSteeringPolicyAttachment'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2169,7 +2169,7 @@ def test_update_steering_policy_attachment(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_update_tsig_key(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateTsigKey'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2210,7 +2210,7 @@ def test_update_tsig_key(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_update_view(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateView'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2251,7 +2251,7 @@ def test_update_view(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_update_zone(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateZone'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -2292,7 +2292,7 @@ def test_update_zone(testing_service_client):
         )
 
 
-# IssueRoutingInfo tag="default" email="oci_pubdns_dev_us_grp@oracle.com" jiraProject="PD" opsJiraProject="PUBDNS"
+# IssueRoutingInfo tag="default" email="team_oci_dns_control_plane_ww_grp@oracle.com" jiraProject="DNSCP" opsJiraProject="DNS"
 def test_update_zone_records(testing_service_client):
     if not testing_service_client.is_api_enabled('dns', 'UpdateZoneRecords'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')

@@ -1,0 +1,11 @@
+ShapeSymmetricMultiThreadingEnabledPlatformOptions
+==================================================
+
+.. currentmodule:: oci.core.models
+
+.. autoclass:: ShapeSymmetricMultiThreadingEnabledPlatformOptions
+    :show-inheritance:
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :inherited-members:

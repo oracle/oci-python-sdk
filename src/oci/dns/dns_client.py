@@ -108,7 +108,9 @@ class DnsClient(object):
     def change_resolver_compartment(self, resolver_id, change_resolver_compartment_details, **kwargs):
         """
         Moves a resolver into a different compartment along with its protected default view and any endpoints.
-        Zones in the default view are not moved. Requires a `PRIVATE` scope query parameter.
+
+        Zones in the default view are not moved. VCN-dedicated resolvers are initially created in the same compartment
+        as their corresponding VCN, but can then be moved to a different compartment.
 
 
         :param str resolver_id: (required)
@@ -146,7 +148,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -213,6 +215,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -275,7 +279,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -342,6 +346,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -404,7 +410,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -471,6 +477,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -496,8 +504,9 @@ class DnsClient(object):
 
     def change_view_compartment(self, view_id, change_view_compartment_details, **kwargs):
         """
-        Moves a view into a different compartment. Protected views cannot have their compartment changed. Requires a
-        `PRIVATE` scope query parameter.
+        Moves a view into a different compartment.
+
+        To change the compartment of a protected view, change the compartment of its corresponding resolver.
 
 
         :param str view_id: (required)
@@ -534,7 +543,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -601,6 +610,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -626,11 +637,14 @@ class DnsClient(object):
 
     def change_zone_compartment(self, zone_id, change_zone_compartment_details, **kwargs):
         """
-        Moves a zone into a different compartment. Protected zones cannot have their compartment changed. For private
-        zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is provided as a
-        path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+        Moves a zone into a different compartment.
 
-        **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into the provided compartment.
+        Protected zones cannot have their compartment changed. When the zone name is provided as a path
+        parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is
+        required.
+
+        **Note:** All SteeringPolicyAttachment objects associated with this zone will also be moved into
+        the provided compartment.
 
 
         :param str zone_id: (required)
@@ -667,7 +681,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -734,6 +748,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -759,7 +775,7 @@ class DnsClient(object):
 
     def create_resolver_endpoint(self, resolver_id, create_resolver_endpoint_details, **kwargs):
         """
-        Creates a new resolver endpoint. Requires a `PRIVATE` scope query parameter.
+        Creates a new resolver endpoint in the same compartment as the resolver.
 
 
         :param str resolver_id: (required)
@@ -789,7 +805,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -854,6 +870,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -911,7 +929,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -966,6 +984,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1023,7 +1043,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1078,6 +1098,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1123,7 +1145,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1176,6 +1198,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1200,7 +1224,7 @@ class DnsClient(object):
 
     def create_view(self, create_view_details, **kwargs):
         """
-        Creates a new view in the specified compartment. Requires a `PRIVATE` scope query parameter.
+        Creates a new view in the specified compartment.
 
 
         :param oci.dns.models.CreateViewDetails create_view_details: (required)
@@ -1227,7 +1251,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1282,6 +1306,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1307,11 +1333,10 @@ class DnsClient(object):
 
     def create_zone(self, create_zone_details, **kwargs):
         """
-        Creates a new zone in the specified compartment. For global zones, if the `Content-Type` header for the request
-        is `text/dns`, the `compartmentId` query parameter is required. `text/dns` for the `Content-Type` header is
-        not supported for private zones. Query parameter scope with a value of `PRIVATE` is required when creating a
-        private zone. Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under
-        `oraclevcn.com` within the default protected view of a VCN-dedicated resolver is not permitted.
+        Creates a new zone in the specified compartment.
+
+        Private zones must have a zone type of `PRIMARY`. Creating a private zone at or under `oraclevcn.com`
+        within the default protected view of a VCN-dedicated resolver is not permitted.
 
 
         :param oci.dns.models.CreateZoneBaseDetails create_zone_details: (required)
@@ -1323,7 +1348,9 @@ class DnsClient(object):
             the request ID.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param str scope: (optional)
             Specifies to operate only on resources that have a matching DNS scope.
@@ -1417,9 +1444,10 @@ class DnsClient(object):
 
     def delete_domain_records(self, zone_name_or_id, domain, **kwargs):
         """
-        Deletes all records at the specified zone and domain. For private zones, the scope query parameter is
-        required with a value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used
-        for the scope query parameter then the viewId query parameter is required.
+        Deletes all records at the specified zone and domain.
+
+        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+        then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -1456,12 +1484,14 @@ class DnsClient(object):
             The OCID of the view the resource is associated with.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1533,6 +1563,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1555,10 +1587,11 @@ class DnsClient(object):
 
     def delete_resolver_endpoint(self, resolver_id, resolver_endpoint_name, **kwargs):
         """
-        Deletes the specified resolver endpoint. Note that attempting to delete a resolver endpoint in the
-        DELETED lifecycle state will result in a `404` response to be consistent with other operations of the API.
-        Resolver endpoints may not be deleted if they are referenced by a resolver rule. Requires a `PRIVATE` scope
-        query parameter.
+        Deletes the specified resolver endpoint.
+
+        Note that attempting to delete a resolver endpoint in the DELETED lifecycle state will result in
+        a `404` response to be consistent with other operations of the API. Resolver endpoints may not
+        be deleted if they are referenced by a resolver rule.
 
 
         :param str resolver_id: (required)
@@ -1594,7 +1627,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1662,6 +1695,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1684,8 +1719,9 @@ class DnsClient(object):
 
     def delete_rr_set(self, zone_name_or_id, domain, rtype, **kwargs):
         """
-        Deletes all records in the specified RRSet. For private zones, the scope query parameter is required with a
-        value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+        Deletes all records in the specified RRSet.
+
+        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
         query parameter then the viewId query parameter is required.
 
 
@@ -1718,7 +1754,9 @@ class DnsClient(object):
             the request ID.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param str scope: (optional)
             Specifies to operate only on resources that have a matching DNS scope.
@@ -1731,7 +1769,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1804,6 +1842,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1827,6 +1867,7 @@ class DnsClient(object):
     def delete_steering_policy(self, steering_policy_id, **kwargs):
         """
         Deletes the specified steering policy.
+
         A `204` response indicates that the delete has been successful.
         Deletion will fail if the policy is attached to any zones. To detach a
         policy from a zone, see `DeleteSteeringPolicyAttachment`.
@@ -1862,7 +1903,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -1929,6 +1970,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -1985,7 +2028,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2052,6 +2095,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2107,7 +2152,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2174,6 +2219,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2196,11 +2243,12 @@ class DnsClient(object):
 
     def delete_view(self, view_id, **kwargs):
         """
-        Deletes the specified view. Note that attempting to delete a
-        view in the DELETED lifecycleState will result in a `404` response to be
-        consistent with other operations of the API. Views cannot be
+        Deletes the specified view.
+
+        Note that attempting to delete a view in the DELETED lifecycleState will result in a `404`
+        response to be consistent with other operations of the API. Views cannot be
         deleted if they are referenced by non-deleted zones or resolvers.
-        Protected views cannot be deleted. Requires a `PRIVATE` scope query parameter.
+        Protected views cannot be deleted.
 
 
         :param str view_id: (required)
@@ -2233,7 +2281,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2300,6 +2348,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2322,10 +2372,11 @@ class DnsClient(object):
 
     def delete_zone(self, zone_name_or_id, **kwargs):
         """
-        Deletes the specified zone and all its steering policy attachments. A `204` response indicates that the zone has
-        been successfully deleted. Protected zones cannot be deleted. For private zones, the scope query parameter is
-        required with a value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used
-        for the scope query parameter then the viewId query parameter is required.
+        Deletes the specified zone and all its steering policy attachments.
+
+        A `204` response indicates that the zone has been successfully deleted. Protected zones cannot be deleted.
+        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+        then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -2359,7 +2410,9 @@ class DnsClient(object):
             The OCID of the view the resource is associated with.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
@@ -2457,11 +2510,11 @@ class DnsClient(object):
 
     def get_domain_records(self, zone_name_or_id, domain, **kwargs):
         """
-        Gets a list of all records at the specified zone and domain. The results are sorted by `rtype` in
-        alphabetical order by default. You can optionally filter and/or sort the results using the listed parameters.
-        For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-        provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-        parameter is required.
+        Gets a list of all records at the specified zone and domain.
+
+        The results are sorted by `rtype` in alphabetical order by default. You can optionally filter and/or sort
+        the results using the listed parameters. When the zone name is provided as a path parameter and `PRIVATE`
+        is used for the scope query parameter then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -2521,12 +2574,14 @@ class DnsClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2624,6 +2679,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2648,9 +2705,10 @@ class DnsClient(object):
 
     def get_resolver(self, resolver_id, **kwargs):
         """
-        Gets information about a specific resolver. Note that attempting to get a
-        resolver in the DELETED lifecycleState will result in a `404` response to be
-        consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+        Gets information about a specific resolver.
+
+        Note that attempting to get a resolver in the DELETED lifecycleState will result in a `404`
+        response to be consistent with other operations of the API.
 
 
         :param str resolver_id: (required)
@@ -2681,7 +2739,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2748,6 +2806,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2772,9 +2832,10 @@ class DnsClient(object):
 
     def get_resolver_endpoint(self, resolver_id, resolver_endpoint_name, **kwargs):
         """
-        Gets information about a specific resolver endpoint. Note that attempting to get a resolver endpoint
-        in the DELETED lifecycle state will result in a `404` response to be consistent with other operations of the
-        API. Requires a `PRIVATE` scope query parameter.
+        Gets information about a specific resolver endpoint.
+
+        Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
+        in a `404` response to be consistent with other operations of the API.
 
 
         :param str resolver_id: (required)
@@ -2808,7 +2869,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -2876,6 +2937,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -2900,10 +2963,10 @@ class DnsClient(object):
 
     def get_rr_set(self, zone_name_or_id, domain, rtype, **kwargs):
         """
-        Gets a list of all records in the specified RRSet. The results are sorted by `recordHash` by default. For
-        private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-        provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-        parameter is required.
+        Gets a list of all records in the specified RRSet.
+
+        The results are sorted by `recordHash` by default. When the zone name is provided as a path parameter
+        and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -2942,7 +3005,9 @@ class DnsClient(object):
             The version of the zone for which data is requested.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param str scope: (optional)
             Specifies to operate only on resources that have a matching DNS scope.
@@ -2955,7 +3020,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -3034,6 +3099,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -3089,7 +3156,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -3156,6 +3223,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -3211,7 +3280,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -3278,6 +3347,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -3333,7 +3404,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -3400,6 +3471,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -3424,9 +3497,11 @@ class DnsClient(object):
 
     def get_view(self, view_id, **kwargs):
         """
-        Gets information about a specific view. Note that attempting to get a
+        Gets information about a specific view.
+
+        Note that attempting to get a
         view in the DELETED lifecycleState will result in a `404` response to be
-        consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+        consistent with other operations of the API.
 
 
         :param str view_id: (required)
@@ -3457,7 +3532,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -3524,6 +3599,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -3548,9 +3625,10 @@ class DnsClient(object):
 
     def get_zone(self, zone_name_or_id, **kwargs):
         """
-        Gets information about the specified zone, including its creation date, zone type, and serial. For private
-        zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is provided as a
-        path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is required.
+        Gets information about the specified zone, including its creation date, zone type, and serial.
+
+        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+        parameter then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -3582,12 +3660,14 @@ class DnsClient(object):
             The OCID of the view the resource is associated with.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -3658,6 +3738,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -3716,7 +3798,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -3785,6 +3867,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -3809,11 +3893,12 @@ class DnsClient(object):
 
     def get_zone_records(self, zone_name_or_id, **kwargs):
         """
-        Gets all records in the specified zone. The results are sorted by `domain` in alphabetical order by default.
-        For more information about records, see `Resource Record (RR) TYPEs`__.
-        For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-        provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-        parameter is required.
+        Gets all records in the specified zone.
+
+        The results are sorted by `domain` in alphabetical order by default. For more information about records,
+        see `Resource Record (RR) TYPEs`__.
+        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
+        then the viewId query parameter is required.
 
         __ https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4
 
@@ -3872,7 +3957,9 @@ class DnsClient(object):
             Allowed values are: "ASC", "DESC"
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param str scope: (optional)
             Specifies to operate only on resources that have a matching DNS scope.
@@ -3885,7 +3972,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -3986,6 +4073,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -4013,7 +4102,7 @@ class DnsClient(object):
         Gets a list of all endpoints within a resolver. The collection can be filtered by name or lifecycle state.
         It can be sorted on creation time or name both in ASC or DESC order. Note that when no lifecycleState
         query parameter is provided, the collection does not include resolver endpoints in the DELETED
-        lifecycle state to be consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+        lifecycle state to be consistent with other operations of the API.
 
 
         :param str resolver_id: (required)
@@ -4056,7 +4145,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -4152,6 +4241,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -4176,12 +4267,12 @@ class DnsClient(object):
 
     def list_resolvers(self, compartment_id, **kwargs):
         """
-        Gets a list of all resolvers within a compartment. The collection can
-        be filtered by display name, id, or lifecycle state. It can be sorted
-        on creation time or displayName both in ASC or DESC order. Note that
-        when no lifecycleState query parameter is provided, the collection
-        does not include resolvers in the DELETED lifecycleState to be consistent
-        with other operations of the API. Requires a `PRIVATE` scope query parameter.
+        Gets a list of all resolvers within a compartment.
+
+        The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+        on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+        query parameter is provided, the collection does not include resolvers in the DELETED
+        lifecycleState to be consistent with other operations of the API.
 
 
         :param str compartment_id: (required)
@@ -4227,7 +4318,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -4316,6 +4407,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -4408,7 +4501,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -4507,6 +4600,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -4603,7 +4698,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -4704,6 +4799,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -4772,7 +4869,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -4861,6 +4958,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -4883,12 +4982,12 @@ class DnsClient(object):
 
     def list_views(self, compartment_id, **kwargs):
         """
-        Gets a list of all views within a compartment. The collection can
-        be filtered by display name, id, or lifecycle state. It can be sorted
-        on creation time or displayName both in ASC or DESC order. Note that
-        when no lifecycleState query parameter is provided, the collection
-        does not include views in the DELETED lifecycleState to be consistent
-        with other operations of the API. Requires a `PRIVATE` scope query parameter.
+        Gets a list of all views within a compartment.
+
+        The collection can be filtered by display name, id, or lifecycle state. It can be sorted
+        on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
+        query parameter is provided, the collection does not include views in the DELETED
+        lifecycleState to be consistent with other operations of the API.
 
 
         :param str compartment_id: (required)
@@ -4934,7 +5033,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -5023,6 +5122,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -5069,7 +5170,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -5125,6 +5226,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -5147,8 +5250,10 @@ class DnsClient(object):
 
     def list_zones(self, compartment_id, **kwargs):
         """
-        Gets a list of all zones in the specified compartment. The collection can be filtered by name, time created,
-        scope, associated view, and zone type. Filtering by view is only supported for private zones.
+        Gets a list of all zones in the specified compartment.
+
+        The collection can be filtered by name, time created, scope, associated view, and zone type.
+        Filtering by view is only supported for private zones.
 
 
         :param str compartment_id: (required)
@@ -5220,7 +5325,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -5326,6 +5431,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -5348,11 +5455,12 @@ class DnsClient(object):
 
     def patch_domain_records(self, zone_name_or_id, domain, patch_domain_records_details, **kwargs):
         """
-        Updates records in the specified zone at a domain. You can update one record or all records for the specified
-        zone depending on the changes provided in the request body. You can also add or remove records using this
-        function. For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone
-        name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId
-        query parameter is required.
+        Updates records in the specified zone at a domain.
+
+        You can update one record or all records for the specified zone depending on the changes provided in the
+        request body. You can also add or remove records using this function. When the zone name is provided as
+        a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is
+        required.
 
 
         :param str zone_name_or_id: (required)
@@ -5392,12 +5500,14 @@ class DnsClient(object):
             The OCID of the view the resource is associated with.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -5469,6 +5579,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -5495,8 +5607,9 @@ class DnsClient(object):
 
     def patch_rr_set(self, zone_name_or_id, domain, rtype, patch_rr_set_details, **kwargs):
         """
-        Updates records in the specified RRSet. For private zones, the scope query parameter is required with a value
-        of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
+        Updates records in the specified RRSet.
+
+        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query
         parameter then the viewId query parameter is required.
 
 
@@ -5540,12 +5653,14 @@ class DnsClient(object):
             The OCID of the view the resource is associated with.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -5618,6 +5733,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -5644,11 +5761,12 @@ class DnsClient(object):
 
     def patch_zone_records(self, zone_name_or_id, patch_zone_records_details, **kwargs):
         """
-        Updates a collection of records in the specified zone. You can update one record or all records for the
-        specified zone depending on the changes provided in the request body. You can also add or remove records
-        using this function. For private zones, the scope query parameter is required with a value of `PRIVATE`. When
-        the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then the
-        viewId query parameter is required.
+        Updates a collection of records in the specified zone.
+
+        You can update one record or all records for the specified zone depending on the changes provided in the
+        request body. You can also add or remove records using this function. When the zone name is provided as
+        a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is
+        required.
 
 
         :param str zone_name_or_id: (required)
@@ -5685,12 +5803,14 @@ class DnsClient(object):
             The OCID of the view the resource is associated with.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -5761,6 +5881,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -5787,12 +5909,12 @@ class DnsClient(object):
 
     def update_domain_records(self, zone_name_or_id, domain, update_domain_records_details, **kwargs):
         """
-        Replaces records in the specified zone at a domain with the records specified in the request body. If a
-        specified record does not exist, it will be created. If the record exists, then it will be updated to
+        Replaces records in the specified zone at a domain with the records specified in the request body.
+
+        If a specified record does not exist, it will be created. If the record exists, then it will be updated to
         represent the record in the body of the request. If a record in the zone does not exist in the request body,
-        the record will be removed from the zone. For private zones, the scope query parameter is required with a
-        value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
-        query parameter then the viewId query parameter is required.
+        the record will be removed from the zone. When the zone name is provided as a path parameter and `PRIVATE`
+        is used for the scope query parameter then the viewId query parameter is required.
 
 
         :param str zone_name_or_id: (required)
@@ -5832,12 +5954,14 @@ class DnsClient(object):
             The OCID of the view the resource is associated with.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -5909,6 +6033,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -5935,7 +6061,7 @@ class DnsClient(object):
 
     def update_resolver(self, resolver_id, update_resolver_details, **kwargs):
         """
-        Updates the specified resolver with your new information. Requires a `PRIVATE` scope query parameter.
+        Updates the specified resolver with your new information.
 
 
         :param str resolver_id: (required)
@@ -5971,7 +6097,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -6038,6 +6164,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -6064,7 +6192,7 @@ class DnsClient(object):
 
     def update_resolver_endpoint(self, resolver_id, resolver_endpoint_name, update_resolver_endpoint_details, **kwargs):
         """
-        Updates the specified resolver endpoint with your new information. Requires a `PRIVATE` scope query parameter.
+        Updates the specified resolver endpoint with your new information.
 
 
         :param str resolver_id: (required)
@@ -6103,7 +6231,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -6171,6 +6299,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -6197,8 +6327,9 @@ class DnsClient(object):
 
     def update_rr_set(self, zone_name_or_id, domain, rtype, update_rr_set_details, **kwargs):
         """
-        Replaces records in the specified RRSet. For private zones, the scope query parameter is required with a
-        value of `PRIVATE`. When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
+        Replaces records in the specified RRSet.
+
+        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope
         query parameter then the viewId query parameter is required.
 
 
@@ -6242,12 +6373,14 @@ class DnsClient(object):
             The OCID of the view the resource is associated with.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -6320,6 +6453,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -6382,7 +6517,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -6449,6 +6584,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -6511,7 +6648,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -6578,6 +6715,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -6640,7 +6779,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -6707,6 +6846,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -6733,7 +6874,7 @@ class DnsClient(object):
 
     def update_view(self, view_id, update_view_details, **kwargs):
         """
-        Updates the specified view with your new information. Requires a `PRIVATE` scope query parameter.
+        Updates the specified view with your new information.
 
 
         :param str view_id: (required)
@@ -6769,7 +6910,7 @@ class DnsClient(object):
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -6836,6 +6977,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -6862,11 +7005,12 @@ class DnsClient(object):
 
     def update_zone(self, zone_name_or_id, update_zone_details, **kwargs):
         """
-        Updates the zone with the specified information. Global secondary zones may have their external masters updated.
-        For more information about secondary zone, see `Manage DNS Service Zone`__.
-        For private zones, the scope query parameter is required with a value of `PRIVATE`. When the zone name is
-        provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId query
-        parameter is required.
+        Updates the zone with the specified information.
+
+        Global secondary zones may have their external masters updated. For more information about secondary
+        zones, see `Manage DNS Service Zone`__. When the zone name
+        is provided as a path parameter and `PRIVATE` is used for the scope query parameter then the viewId
+        query parameter is required.
 
         __ https://docs.cloud.oracle.com/iaas/Content/DNS/Tasks/managingdnszones.htm
 
@@ -6905,12 +7049,14 @@ class DnsClient(object):
             The OCID of the view the resource is associated with.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -6981,6 +7127,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
@@ -7007,12 +7155,13 @@ class DnsClient(object):
 
     def update_zone_records(self, zone_name_or_id, update_zone_records_details, **kwargs):
         """
-        Replaces records in the specified zone with the records specified in the request body. If a specified record
-        does not exist, it will be created. If the record exists, then it will be updated to represent the record in
-        the body of the request. If a record in the zone does not exist in the request body, the record will be
-        removed from the zone. For private zones, the scope query parameter is required with a value of `PRIVATE`.
-        When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter then
-        the viewId query parameter is required.
+        Replaces records in the specified zone with the records specified in the request body.
+
+        If a specified record does not exist, it will be created. If the record exists, then it will be updated
+        to represent the record in the body of the request. If a record in the zone does not exist in the
+        request body, the record will be removed from the zone. When the zone name is provided as a path
+        parameter and `PRIVATE` is used for the scope query parameter then the viewId query parameter is
+        required.
 
 
         :param str zone_name_or_id: (required)
@@ -7049,12 +7198,14 @@ class DnsClient(object):
             The OCID of the view the resource is associated with.
 
         :param str compartment_id: (optional)
-            The OCID of the compartment the resource belongs to.
+            The OCID of the compartment the zone belongs to.
+
+            This parameter is deprecated and should be omitted.
 
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
-            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation will not retry by default, users can also use the convenient :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` provided by the SDK to enable retries for it.
+            This should be one of the strategies available in the :py:mod:`~oci.retry` module. This operation uses :py:data:`~oci.retry.DEFAULT_RETRY_STRATEGY` as default if no retry strategy is provided.
             The specifics of the default retry strategy are described `here <https://docs.oracle.com/en-us/iaas/tools/python/latest/sdk_behaviors/retries.html>`__.
 
             To have this operation explicitly not perform any retries, pass an instance of :py:class:`~oci.retry.NoneRetryStrategy`.
@@ -7125,6 +7276,8 @@ class DnsClient(object):
             operation_retry_strategy=kwargs.get('retry_strategy'),
             client_retry_strategy=self.retry_strategy
         )
+        if retry_strategy is None:
+            retry_strategy = retry.DEFAULT_RETRY_STRATEGY
 
         if retry_strategy:
             if not isinstance(retry_strategy, retry.NoneRetryStrategy):
