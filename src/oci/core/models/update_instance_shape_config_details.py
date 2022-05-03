@@ -50,22 +50,29 @@ class UpdateInstanceShapeConfigDetails(object):
             Allowed values for this property are: "BASELINE_1_8", "BASELINE_1_2", "BASELINE_1_1"
         :type baseline_ocpu_utilization: str
 
+        :param nvmes:
+            The value to assign to the nvmes property of this UpdateInstanceShapeConfigDetails.
+        :type nvmes: int
+
         """
         self.swagger_types = {
             'ocpus': 'float',
             'memory_in_gbs': 'float',
-            'baseline_ocpu_utilization': 'str'
+            'baseline_ocpu_utilization': 'str',
+            'nvmes': 'int'
         }
 
         self.attribute_map = {
             'ocpus': 'ocpus',
             'memory_in_gbs': 'memoryInGBs',
-            'baseline_ocpu_utilization': 'baselineOcpuUtilization'
+            'baseline_ocpu_utilization': 'baselineOcpuUtilization',
+            'nvmes': 'nvmes'
         }
 
         self._ocpus = None
         self._memory_in_gbs = None
         self._baseline_ocpu_utilization = None
+        self._nvmes = None
 
     @property
     def ocpus(self):
@@ -158,6 +165,30 @@ class UpdateInstanceShapeConfigDetails(object):
                 .format(allowed_values)
             )
         self._baseline_ocpu_utilization = baseline_ocpu_utilization
+
+    @property
+    def nvmes(self):
+        """
+        Gets the nvmes of this UpdateInstanceShapeConfigDetails.
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+
+
+        :return: The nvmes of this UpdateInstanceShapeConfigDetails.
+        :rtype: int
+        """
+        return self._nvmes
+
+    @nvmes.setter
+    def nvmes(self, nvmes):
+        """
+        Sets the nvmes of this UpdateInstanceShapeConfigDetails.
+        The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+
+
+        :param nvmes: The nvmes of this UpdateInstanceShapeConfigDetails.
+        :type: int
+        """
+        self._nvmes = nvmes
 
     def __repr__(self):
         return formatted_flat_dict(self)

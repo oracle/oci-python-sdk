@@ -4280,6 +4280,9 @@ class ComputeClient(object):
             parameter to the value of the etag from a previous GET or POST response for that resource. The resource
             will be updated or deleted only if the etag you provide matches the resource's current etag value.
 
+        :param oci.core.models.InstancePowerActionDetails instance_power_action_details: (optional)
+            Instance Power Action details
+
         :param obj retry_strategy: (optional)
             A retry strategy to apply to this specific operation/call. This will override any retry strategy set at the client-level.
 
@@ -4306,7 +4309,8 @@ class ComputeClient(object):
             "allow_control_chars",
             "retry_strategy",
             "opc_retry_token",
-            "if_match"
+            "if_match",
+            "instance_power_action_details"
         ]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
         if extra_kwargs:
@@ -4353,6 +4357,7 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
+                body=kwargs.get('instance_power_action_details'),
                 response_type="Instance")
         else:
             return self.base_client.call_api(
@@ -4361,6 +4366,7 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
+                body=kwargs.get('instance_power_action_details'),
                 response_type="Instance")
 
     def launch_instance(self, launch_instance_details, **kwargs):

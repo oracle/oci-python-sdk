@@ -22,6 +22,14 @@ class ShapePlatformConfigOptions(object):
     TYPE_AMD_ROME_BM = "AMD_ROME_BM"
 
     #: A constant which can be used with the type property of a ShapePlatformConfigOptions.
+    #: This constant has a value of "AMD_ROME_BM_GPU"
+    TYPE_AMD_ROME_BM_GPU = "AMD_ROME_BM_GPU"
+
+    #: A constant which can be used with the type property of a ShapePlatformConfigOptions.
+    #: This constant has a value of "INTEL_ICELAKE_BM"
+    TYPE_INTEL_ICELAKE_BM = "INTEL_ICELAKE_BM"
+
+    #: A constant which can be used with the type property of a ShapePlatformConfigOptions.
     #: This constant has a value of "INTEL_SKYLAKE_BM"
     TYPE_INTEL_SKYLAKE_BM = "INTEL_SKYLAKE_BM"
 
@@ -40,7 +48,7 @@ class ShapePlatformConfigOptions(object):
 
         :param type:
             The value to assign to the type property of this ShapePlatformConfigOptions.
-            Allowed values for this property are: "AMD_MILAN_BM", "AMD_ROME_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "AMD_MILAN_BM", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -60,13 +68,38 @@ class ShapePlatformConfigOptions(object):
             The value to assign to the numa_nodes_per_socket_platform_options property of this ShapePlatformConfigOptions.
         :type numa_nodes_per_socket_platform_options: oci.core.models.ShapeNumaNodesPerSocketPlatformOptions
 
+        :param symmetric_multi_threading_options:
+            The value to assign to the symmetric_multi_threading_options property of this ShapePlatformConfigOptions.
+        :type symmetric_multi_threading_options: oci.core.models.ShapeSymmetricMultiThreadingEnabledPlatformOptions
+
+        :param access_control_service_options:
+            The value to assign to the access_control_service_options property of this ShapePlatformConfigOptions.
+        :type access_control_service_options: oci.core.models.ShapeAccessControlServiceEnabledPlatformOptions
+
+        :param virtual_instructions_options:
+            The value to assign to the virtual_instructions_options property of this ShapePlatformConfigOptions.
+        :type virtual_instructions_options: oci.core.models.ShapeVirtualInstructionsEnabledPlatformOptions
+
+        :param input_output_memory_management_unit_options:
+            The value to assign to the input_output_memory_management_unit_options property of this ShapePlatformConfigOptions.
+        :type input_output_memory_management_unit_options: oci.core.models.ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
+
+        :param percentage_of_cores_enabled_options:
+            The value to assign to the percentage_of_cores_enabled_options property of this ShapePlatformConfigOptions.
+        :type percentage_of_cores_enabled_options: oci.core.models.PercentageOfCoresEnabledOptions
+
         """
         self.swagger_types = {
             'type': 'str',
             'secure_boot_options': 'ShapeSecureBootOptions',
             'measured_boot_options': 'ShapeMeasuredBootOptions',
             'trusted_platform_module_options': 'ShapeTrustedPlatformModuleOptions',
-            'numa_nodes_per_socket_platform_options': 'ShapeNumaNodesPerSocketPlatformOptions'
+            'numa_nodes_per_socket_platform_options': 'ShapeNumaNodesPerSocketPlatformOptions',
+            'symmetric_multi_threading_options': 'ShapeSymmetricMultiThreadingEnabledPlatformOptions',
+            'access_control_service_options': 'ShapeAccessControlServiceEnabledPlatformOptions',
+            'virtual_instructions_options': 'ShapeVirtualInstructionsEnabledPlatformOptions',
+            'input_output_memory_management_unit_options': 'ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions',
+            'percentage_of_cores_enabled_options': 'PercentageOfCoresEnabledOptions'
         }
 
         self.attribute_map = {
@@ -74,7 +107,12 @@ class ShapePlatformConfigOptions(object):
             'secure_boot_options': 'secureBootOptions',
             'measured_boot_options': 'measuredBootOptions',
             'trusted_platform_module_options': 'trustedPlatformModuleOptions',
-            'numa_nodes_per_socket_platform_options': 'numaNodesPerSocketPlatformOptions'
+            'numa_nodes_per_socket_platform_options': 'numaNodesPerSocketPlatformOptions',
+            'symmetric_multi_threading_options': 'symmetricMultiThreadingOptions',
+            'access_control_service_options': 'accessControlServiceOptions',
+            'virtual_instructions_options': 'virtualInstructionsOptions',
+            'input_output_memory_management_unit_options': 'inputOutputMemoryManagementUnitOptions',
+            'percentage_of_cores_enabled_options': 'percentageOfCoresEnabledOptions'
         }
 
         self._type = None
@@ -82,6 +120,11 @@ class ShapePlatformConfigOptions(object):
         self._measured_boot_options = None
         self._trusted_platform_module_options = None
         self._numa_nodes_per_socket_platform_options = None
+        self._symmetric_multi_threading_options = None
+        self._access_control_service_options = None
+        self._virtual_instructions_options = None
+        self._input_output_memory_management_unit_options = None
+        self._percentage_of_cores_enabled_options = None
 
     @property
     def type(self):
@@ -89,7 +132,7 @@ class ShapePlatformConfigOptions(object):
         Gets the type of this ShapePlatformConfigOptions.
         The type of platform being configured.
 
-        Allowed values for this property are: "AMD_MILAN_BM", "AMD_ROME_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "AMD_MILAN_BM", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -108,7 +151,7 @@ class ShapePlatformConfigOptions(object):
         :param type: The type of this ShapePlatformConfigOptions.
         :type: str
         """
-        allowed_values = ["AMD_MILAN_BM", "AMD_ROME_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"]
+        allowed_values = ["AMD_MILAN_BM", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type
@@ -192,6 +235,106 @@ class ShapePlatformConfigOptions(object):
         :type: oci.core.models.ShapeNumaNodesPerSocketPlatformOptions
         """
         self._numa_nodes_per_socket_platform_options = numa_nodes_per_socket_platform_options
+
+    @property
+    def symmetric_multi_threading_options(self):
+        """
+        Gets the symmetric_multi_threading_options of this ShapePlatformConfigOptions.
+
+        :return: The symmetric_multi_threading_options of this ShapePlatformConfigOptions.
+        :rtype: oci.core.models.ShapeSymmetricMultiThreadingEnabledPlatformOptions
+        """
+        return self._symmetric_multi_threading_options
+
+    @symmetric_multi_threading_options.setter
+    def symmetric_multi_threading_options(self, symmetric_multi_threading_options):
+        """
+        Sets the symmetric_multi_threading_options of this ShapePlatformConfigOptions.
+
+        :param symmetric_multi_threading_options: The symmetric_multi_threading_options of this ShapePlatformConfigOptions.
+        :type: oci.core.models.ShapeSymmetricMultiThreadingEnabledPlatformOptions
+        """
+        self._symmetric_multi_threading_options = symmetric_multi_threading_options
+
+    @property
+    def access_control_service_options(self):
+        """
+        Gets the access_control_service_options of this ShapePlatformConfigOptions.
+
+        :return: The access_control_service_options of this ShapePlatformConfigOptions.
+        :rtype: oci.core.models.ShapeAccessControlServiceEnabledPlatformOptions
+        """
+        return self._access_control_service_options
+
+    @access_control_service_options.setter
+    def access_control_service_options(self, access_control_service_options):
+        """
+        Sets the access_control_service_options of this ShapePlatformConfigOptions.
+
+        :param access_control_service_options: The access_control_service_options of this ShapePlatformConfigOptions.
+        :type: oci.core.models.ShapeAccessControlServiceEnabledPlatformOptions
+        """
+        self._access_control_service_options = access_control_service_options
+
+    @property
+    def virtual_instructions_options(self):
+        """
+        Gets the virtual_instructions_options of this ShapePlatformConfigOptions.
+
+        :return: The virtual_instructions_options of this ShapePlatformConfigOptions.
+        :rtype: oci.core.models.ShapeVirtualInstructionsEnabledPlatformOptions
+        """
+        return self._virtual_instructions_options
+
+    @virtual_instructions_options.setter
+    def virtual_instructions_options(self, virtual_instructions_options):
+        """
+        Sets the virtual_instructions_options of this ShapePlatformConfigOptions.
+
+        :param virtual_instructions_options: The virtual_instructions_options of this ShapePlatformConfigOptions.
+        :type: oci.core.models.ShapeVirtualInstructionsEnabledPlatformOptions
+        """
+        self._virtual_instructions_options = virtual_instructions_options
+
+    @property
+    def input_output_memory_management_unit_options(self):
+        """
+        Gets the input_output_memory_management_unit_options of this ShapePlatformConfigOptions.
+
+        :return: The input_output_memory_management_unit_options of this ShapePlatformConfigOptions.
+        :rtype: oci.core.models.ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
+        """
+        return self._input_output_memory_management_unit_options
+
+    @input_output_memory_management_unit_options.setter
+    def input_output_memory_management_unit_options(self, input_output_memory_management_unit_options):
+        """
+        Sets the input_output_memory_management_unit_options of this ShapePlatformConfigOptions.
+
+        :param input_output_memory_management_unit_options: The input_output_memory_management_unit_options of this ShapePlatformConfigOptions.
+        :type: oci.core.models.ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
+        """
+        self._input_output_memory_management_unit_options = input_output_memory_management_unit_options
+
+    @property
+    def percentage_of_cores_enabled_options(self):
+        """
+        Gets the percentage_of_cores_enabled_options of this ShapePlatformConfigOptions.
+
+        :return: The percentage_of_cores_enabled_options of this ShapePlatformConfigOptions.
+        :rtype: oci.core.models.PercentageOfCoresEnabledOptions
+        """
+        return self._percentage_of_cores_enabled_options
+
+    @percentage_of_cores_enabled_options.setter
+    def percentage_of_cores_enabled_options(self, percentage_of_cores_enabled_options):
+        """
+        Sets the percentage_of_cores_enabled_options of this ShapePlatformConfigOptions.
+
+        :param percentage_of_cores_enabled_options: The percentage_of_cores_enabled_options of this ShapePlatformConfigOptions.
+        :type: oci.core.models.PercentageOfCoresEnabledOptions
+        """
+        self._percentage_of_cores_enabled_options = percentage_of_cores_enabled_options
 
     def __repr__(self):
         return formatted_flat_dict(self)
