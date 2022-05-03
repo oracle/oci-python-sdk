@@ -84,6 +84,10 @@ class FunctionSummary(object):
             The value to assign to the timeout_in_seconds property of this FunctionSummary.
         :type timeout_in_seconds: int
 
+        :param provisioned_concurrency_config:
+            The value to assign to the provisioned_concurrency_config property of this FunctionSummary.
+        :type provisioned_concurrency_config: oci.functions.models.FunctionProvisionedConcurrencyConfig
+
         :param trace_config:
             The value to assign to the trace_config property of this FunctionSummary.
         :type trace_config: oci.functions.models.FunctionTraceConfig
@@ -119,6 +123,7 @@ class FunctionSummary(object):
             'image_digest': 'str',
             'memory_in_mbs': 'int',
             'timeout_in_seconds': 'int',
+            'provisioned_concurrency_config': 'FunctionProvisionedConcurrencyConfig',
             'trace_config': 'FunctionTraceConfig',
             'freeform_tags': 'dict(str, str)',
             'invoke_endpoint': 'str',
@@ -137,6 +142,7 @@ class FunctionSummary(object):
             'image_digest': 'imageDigest',
             'memory_in_mbs': 'memoryInMBs',
             'timeout_in_seconds': 'timeoutInSeconds',
+            'provisioned_concurrency_config': 'provisionedConcurrencyConfig',
             'trace_config': 'traceConfig',
             'freeform_tags': 'freeformTags',
             'invoke_endpoint': 'invokeEndpoint',
@@ -154,6 +160,7 @@ class FunctionSummary(object):
         self._image_digest = None
         self._memory_in_mbs = None
         self._timeout_in_seconds = None
+        self._provisioned_concurrency_config = None
         self._trace_config = None
         self._freeform_tags = None
         self._invoke_endpoint = None
@@ -394,6 +401,26 @@ class FunctionSummary(object):
         :type: int
         """
         self._timeout_in_seconds = timeout_in_seconds
+
+    @property
+    def provisioned_concurrency_config(self):
+        """
+        Gets the provisioned_concurrency_config of this FunctionSummary.
+
+        :return: The provisioned_concurrency_config of this FunctionSummary.
+        :rtype: oci.functions.models.FunctionProvisionedConcurrencyConfig
+        """
+        return self._provisioned_concurrency_config
+
+    @provisioned_concurrency_config.setter
+    def provisioned_concurrency_config(self, provisioned_concurrency_config):
+        """
+        Sets the provisioned_concurrency_config of this FunctionSummary.
+
+        :param provisioned_concurrency_config: The provisioned_concurrency_config of this FunctionSummary.
+        :type: oci.functions.models.FunctionProvisionedConcurrencyConfig
+        """
+        self._provisioned_concurrency_config = provisioned_concurrency_config
 
     @property
     def trace_config(self):

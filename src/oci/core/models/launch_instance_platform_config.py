@@ -22,7 +22,11 @@ class LaunchInstancePlatformConfig(object):
     For more information about shielded instances, see
     `Shielded Instances`__.
 
+    For more information about BIOS settings for bare metal instances, see
+    `BIOS Settings for Bare Metal Instances`__.
+
     __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/shielded-instances.htm
+    __ https://docs.cloud.oracle.com/iaas/Content/Compute/References/bios-settings.htm
     """
 
     #: A constant which can be used with the type property of a LaunchInstancePlatformConfig.
@@ -32,6 +36,14 @@ class LaunchInstancePlatformConfig(object):
     #: A constant which can be used with the type property of a LaunchInstancePlatformConfig.
     #: This constant has a value of "AMD_ROME_BM"
     TYPE_AMD_ROME_BM = "AMD_ROME_BM"
+
+    #: A constant which can be used with the type property of a LaunchInstancePlatformConfig.
+    #: This constant has a value of "AMD_ROME_BM_GPU"
+    TYPE_AMD_ROME_BM_GPU = "AMD_ROME_BM_GPU"
+
+    #: A constant which can be used with the type property of a LaunchInstancePlatformConfig.
+    #: This constant has a value of "INTEL_ICELAKE_BM"
+    TYPE_INTEL_ICELAKE_BM = "INTEL_ICELAKE_BM"
 
     #: A constant which can be used with the type property of a LaunchInstancePlatformConfig.
     #: This constant has a value of "INTEL_SKYLAKE_BM"
@@ -50,7 +62,9 @@ class LaunchInstancePlatformConfig(object):
         Initializes a new LaunchInstancePlatformConfig object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.core.models.AmdRomeBmGpuLaunchInstancePlatformConfig`
         * :class:`~oci.core.models.AmdRomeBmLaunchInstancePlatformConfig`
+        * :class:`~oci.core.models.IntelIcelakeBmLaunchInstancePlatformConfig`
         * :class:`~oci.core.models.AmdVmLaunchInstancePlatformConfig`
         * :class:`~oci.core.models.IntelVmLaunchInstancePlatformConfig`
         * :class:`~oci.core.models.IntelSkylakeBmLaunchInstancePlatformConfig`
@@ -60,7 +74,7 @@ class LaunchInstancePlatformConfig(object):
 
         :param type:
             The value to assign to the type property of this LaunchInstancePlatformConfig.
-            Allowed values for this property are: "AMD_MILAN_BM", "AMD_ROME_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
+            Allowed values for this property are: "AMD_MILAN_BM", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
         :type type: str
 
         :param is_secure_boot_enabled:
@@ -103,8 +117,14 @@ class LaunchInstancePlatformConfig(object):
         """
         type = object_dictionary['type']
 
+        if type == 'AMD_ROME_BM_GPU':
+            return 'AmdRomeBmGpuLaunchInstancePlatformConfig'
+
         if type == 'AMD_ROME_BM':
             return 'AmdRomeBmLaunchInstancePlatformConfig'
+
+        if type == 'INTEL_ICELAKE_BM':
+            return 'IntelIcelakeBmLaunchInstancePlatformConfig'
 
         if type == 'AMD_VM':
             return 'AmdVmLaunchInstancePlatformConfig'
@@ -126,7 +146,7 @@ class LaunchInstancePlatformConfig(object):
         **[Required]** Gets the type of this LaunchInstancePlatformConfig.
         The type of platform being configured.
 
-        Allowed values for this property are: "AMD_MILAN_BM", "AMD_ROME_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
+        Allowed values for this property are: "AMD_MILAN_BM", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"
 
 
         :return: The type of this LaunchInstancePlatformConfig.
@@ -144,7 +164,7 @@ class LaunchInstancePlatformConfig(object):
         :param type: The type of this LaunchInstancePlatformConfig.
         :type: str
         """
-        allowed_values = ["AMD_MILAN_BM", "AMD_ROME_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"]
+        allowed_values = ["AMD_MILAN_BM", "AMD_ROME_BM", "AMD_ROME_BM_GPU", "INTEL_ICELAKE_BM", "INTEL_SKYLAKE_BM", "AMD_VM", "INTEL_VM"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             raise ValueError(
                 "Invalid value for `type`, must be None or one of {0}"

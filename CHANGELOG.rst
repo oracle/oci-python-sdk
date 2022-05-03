@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
+2.66.0 - 2022-05-03
+====================
+
+Added
+-----
+* Support for the Application Dependency Management service
+* Support for platform configuration options on some bare metal shapes in the Compute service
+* Support for shielded instances for BM.Standard.E4.128 and BM.Standard3.64 shapes in the Compute service
+* Support for E4 dense VMs on launch and update instance operations in the Compute service
+* Support for reboot migration on DenseIO shapes in the Compute service
+* Support for an increased database name maximum length, from 14 to 30 characters, in the Database service
+* Support for provisioned concurrency in the Functions service
+ 
+Breaking
+--------
+* Support for retries by default on operations in the Vault service
+* Support for retries by default on operations in the DNS service
+* Support for retries by default on operations in the Content Management service
+* Support for retries by default on operations in the Console Dashboard service
+* Support for retries by default on Web Application Firewall operations in the Web Application Acceleration and Security service
+* Support for retries by default on operations in the Data Science service
+
+====================
 2.65.0 - 2022-04-26
 ====================
 

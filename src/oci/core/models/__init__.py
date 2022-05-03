@@ -21,6 +21,8 @@ from .allowed_phase_one_parameters import AllowedPhaseOneParameters
 from .allowed_phase_two_parameters import AllowedPhaseTwoParameters
 from .amd_milan_bm_launch_instance_platform_config import AmdMilanBmLaunchInstancePlatformConfig
 from .amd_milan_bm_platform_config import AmdMilanBmPlatformConfig
+from .amd_rome_bm_gpu_launch_instance_platform_config import AmdRomeBmGpuLaunchInstancePlatformConfig
+from .amd_rome_bm_gpu_platform_config import AmdRomeBmGpuPlatformConfig
 from .amd_rome_bm_launch_instance_platform_config import AmdRomeBmLaunchInstancePlatformConfig
 from .amd_rome_bm_platform_config import AmdRomeBmPlatformConfig
 from .amd_vm_launch_instance_platform_config import AmdVmLaunchInstancePlatformConfig
@@ -264,6 +266,7 @@ from .instance_agent_plugin_config_details import InstanceAgentPluginConfigDetai
 from .instance_availability_config import InstanceAvailabilityConfig
 from .instance_configuration import InstanceConfiguration
 from .instance_configuration_amd_milan_bm_launch_instance_platform_config import InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig
+from .instance_configuration_amd_rome_bm_gpu_launch_instance_platform_config import InstanceConfigurationAmdRomeBmGpuLaunchInstancePlatformConfig
 from .instance_configuration_amd_rome_bm_launch_instance_platform_config import InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig
 from .instance_configuration_amd_vm_launch_instance_platform_config import InstanceConfigurationAmdVmLaunchInstancePlatformConfig
 from .instance_configuration_attach_vnic_details import InstanceConfigurationAttachVnicDetails
@@ -277,6 +280,7 @@ from .instance_configuration_instance_options import InstanceConfigurationInstan
 from .instance_configuration_instance_source_details import InstanceConfigurationInstanceSourceDetails
 from .instance_configuration_instance_source_via_boot_volume_details import InstanceConfigurationInstanceSourceViaBootVolumeDetails
 from .instance_configuration_instance_source_via_image_details import InstanceConfigurationInstanceSourceViaImageDetails
+from .instance_configuration_intel_icelake_bm_launch_instance_platform_config import InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig
 from .instance_configuration_intel_skylake_bm_launch_instance_platform_config import InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig
 from .instance_configuration_intel_vm_launch_instance_platform_config import InstanceConfigurationIntelVmLaunchInstancePlatformConfig
 from .instance_configuration_iscsi_attach_volume_details import InstanceConfigurationIscsiAttachVolumeDetails
@@ -300,6 +304,7 @@ from .instance_pool_load_balancer_attachment import InstancePoolLoadBalancerAtta
 from .instance_pool_placement_configuration import InstancePoolPlacementConfiguration
 from .instance_pool_placement_secondary_vnic_subnet import InstancePoolPlacementSecondaryVnicSubnet
 from .instance_pool_summary import InstancePoolSummary
+from .instance_power_action_details import InstancePowerActionDetails
 from .instance_reservation_config import InstanceReservationConfig
 from .instance_reservation_config_details import InstanceReservationConfigDetails
 from .instance_reservation_shape_config_details import InstanceReservationShapeConfigDetails
@@ -308,6 +313,8 @@ from .instance_source_details import InstanceSourceDetails
 from .instance_source_via_boot_volume_details import InstanceSourceViaBootVolumeDetails
 from .instance_source_via_image_details import InstanceSourceViaImageDetails
 from .instance_summary import InstanceSummary
+from .intel_icelake_bm_launch_instance_platform_config import IntelIcelakeBmLaunchInstancePlatformConfig
+from .intel_icelake_bm_platform_config import IntelIcelakeBmPlatformConfig
 from .intel_skylake_bm_launch_instance_platform_config import IntelSkylakeBmLaunchInstancePlatformConfig
 from .intel_skylake_bm_platform_config import IntelSkylakeBmPlatformConfig
 from .intel_vm_launch_instance_platform_config import IntelVmLaunchInstancePlatformConfig
@@ -337,6 +344,7 @@ from .network_security_group_vnic import NetworkSecurityGroupVnic
 from .networking_topology import NetworkingTopology
 from .paravirtualized_volume_attachment import ParavirtualizedVolumeAttachment
 from .peer_region_for_remote_peering import PeerRegionForRemotePeering
+from .percentage_of_cores_enabled_options import PercentageOfCoresEnabledOptions
 from .phase_one_config_details import PhaseOneConfigDetails
 from .phase_two_config_details import PhaseTwoConfigDetails
 from .platform_config import PlatformConfig
@@ -357,6 +365,7 @@ from .remove_public_ip_pool_capacity_details import RemovePublicIpPoolCapacityDe
 from .remove_subnet_ipv6_cidr_details import RemoveSubnetIpv6CidrDetails
 from .remove_vcn_cidr_details import RemoveVcnCidrDetails
 from .remove_vcn_ipv6_cidr_details import RemoveVcnIpv6CidrDetails
+from .reset_action_details import ResetActionDetails
 from .route_rule import RouteRule
 from .route_table import RouteTable
 from .security_list import SecurityList
@@ -366,7 +375,9 @@ from .service_gateway import ServiceGateway
 from .service_id_request_details import ServiceIdRequestDetails
 from .service_id_response_details import ServiceIdResponseDetails
 from .shape import Shape
+from .shape_access_control_service_enabled_platform_options import ShapeAccessControlServiceEnabledPlatformOptions
 from .shape_alternative_object import ShapeAlternativeObject
+from .shape_input_output_memory_management_unit_enabled_platform_options import ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions
 from .shape_max_vnic_attachment_options import ShapeMaxVnicAttachmentOptions
 from .shape_measured_boot_options import ShapeMeasuredBootOptions
 from .shape_memory_options import ShapeMemoryOptions
@@ -375,7 +386,10 @@ from .shape_numa_nodes_per_socket_platform_options import ShapeNumaNodesPerSocke
 from .shape_ocpu_options import ShapeOcpuOptions
 from .shape_platform_config_options import ShapePlatformConfigOptions
 from .shape_secure_boot_options import ShapeSecureBootOptions
+from .shape_symmetric_multi_threading_enabled_platform_options import ShapeSymmetricMultiThreadingEnabledPlatformOptions
 from .shape_trusted_platform_module_options import ShapeTrustedPlatformModuleOptions
+from .shape_virtual_instructions_enabled_platform_options import ShapeVirtualInstructionsEnabledPlatformOptions
+from .soft_reset_action_details import SoftResetActionDetails
 from .subnet import Subnet
 from .subnet_topology import SubnetTopology
 from .tcp_options import TcpOptions
@@ -521,6 +535,8 @@ core_type_mapping = {
     "AllowedPhaseTwoParameters": AllowedPhaseTwoParameters,
     "AmdMilanBmLaunchInstancePlatformConfig": AmdMilanBmLaunchInstancePlatformConfig,
     "AmdMilanBmPlatformConfig": AmdMilanBmPlatformConfig,
+    "AmdRomeBmGpuLaunchInstancePlatformConfig": AmdRomeBmGpuLaunchInstancePlatformConfig,
+    "AmdRomeBmGpuPlatformConfig": AmdRomeBmGpuPlatformConfig,
     "AmdRomeBmLaunchInstancePlatformConfig": AmdRomeBmLaunchInstancePlatformConfig,
     "AmdRomeBmPlatformConfig": AmdRomeBmPlatformConfig,
     "AmdVmLaunchInstancePlatformConfig": AmdVmLaunchInstancePlatformConfig,
@@ -764,6 +780,7 @@ core_type_mapping = {
     "InstanceAvailabilityConfig": InstanceAvailabilityConfig,
     "InstanceConfiguration": InstanceConfiguration,
     "InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig": InstanceConfigurationAmdMilanBmLaunchInstancePlatformConfig,
+    "InstanceConfigurationAmdRomeBmGpuLaunchInstancePlatformConfig": InstanceConfigurationAmdRomeBmGpuLaunchInstancePlatformConfig,
     "InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig": InstanceConfigurationAmdRomeBmLaunchInstancePlatformConfig,
     "InstanceConfigurationAmdVmLaunchInstancePlatformConfig": InstanceConfigurationAmdVmLaunchInstancePlatformConfig,
     "InstanceConfigurationAttachVnicDetails": InstanceConfigurationAttachVnicDetails,
@@ -777,6 +794,7 @@ core_type_mapping = {
     "InstanceConfigurationInstanceSourceDetails": InstanceConfigurationInstanceSourceDetails,
     "InstanceConfigurationInstanceSourceViaBootVolumeDetails": InstanceConfigurationInstanceSourceViaBootVolumeDetails,
     "InstanceConfigurationInstanceSourceViaImageDetails": InstanceConfigurationInstanceSourceViaImageDetails,
+    "InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig": InstanceConfigurationIntelIcelakeBmLaunchInstancePlatformConfig,
     "InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig": InstanceConfigurationIntelSkylakeBmLaunchInstancePlatformConfig,
     "InstanceConfigurationIntelVmLaunchInstancePlatformConfig": InstanceConfigurationIntelVmLaunchInstancePlatformConfig,
     "InstanceConfigurationIscsiAttachVolumeDetails": InstanceConfigurationIscsiAttachVolumeDetails,
@@ -800,6 +818,7 @@ core_type_mapping = {
     "InstancePoolPlacementConfiguration": InstancePoolPlacementConfiguration,
     "InstancePoolPlacementSecondaryVnicSubnet": InstancePoolPlacementSecondaryVnicSubnet,
     "InstancePoolSummary": InstancePoolSummary,
+    "InstancePowerActionDetails": InstancePowerActionDetails,
     "InstanceReservationConfig": InstanceReservationConfig,
     "InstanceReservationConfigDetails": InstanceReservationConfigDetails,
     "InstanceReservationShapeConfigDetails": InstanceReservationShapeConfigDetails,
@@ -808,6 +827,8 @@ core_type_mapping = {
     "InstanceSourceViaBootVolumeDetails": InstanceSourceViaBootVolumeDetails,
     "InstanceSourceViaImageDetails": InstanceSourceViaImageDetails,
     "InstanceSummary": InstanceSummary,
+    "IntelIcelakeBmLaunchInstancePlatformConfig": IntelIcelakeBmLaunchInstancePlatformConfig,
+    "IntelIcelakeBmPlatformConfig": IntelIcelakeBmPlatformConfig,
     "IntelSkylakeBmLaunchInstancePlatformConfig": IntelSkylakeBmLaunchInstancePlatformConfig,
     "IntelSkylakeBmPlatformConfig": IntelSkylakeBmPlatformConfig,
     "IntelVmLaunchInstancePlatformConfig": IntelVmLaunchInstancePlatformConfig,
@@ -837,6 +858,7 @@ core_type_mapping = {
     "NetworkingTopology": NetworkingTopology,
     "ParavirtualizedVolumeAttachment": ParavirtualizedVolumeAttachment,
     "PeerRegionForRemotePeering": PeerRegionForRemotePeering,
+    "PercentageOfCoresEnabledOptions": PercentageOfCoresEnabledOptions,
     "PhaseOneConfigDetails": PhaseOneConfigDetails,
     "PhaseTwoConfigDetails": PhaseTwoConfigDetails,
     "PlatformConfig": PlatformConfig,
@@ -857,6 +879,7 @@ core_type_mapping = {
     "RemoveSubnetIpv6CidrDetails": RemoveSubnetIpv6CidrDetails,
     "RemoveVcnCidrDetails": RemoveVcnCidrDetails,
     "RemoveVcnIpv6CidrDetails": RemoveVcnIpv6CidrDetails,
+    "ResetActionDetails": ResetActionDetails,
     "RouteRule": RouteRule,
     "RouteTable": RouteTable,
     "SecurityList": SecurityList,
@@ -866,7 +889,9 @@ core_type_mapping = {
     "ServiceIdRequestDetails": ServiceIdRequestDetails,
     "ServiceIdResponseDetails": ServiceIdResponseDetails,
     "Shape": Shape,
+    "ShapeAccessControlServiceEnabledPlatformOptions": ShapeAccessControlServiceEnabledPlatformOptions,
     "ShapeAlternativeObject": ShapeAlternativeObject,
+    "ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions": ShapeInputOutputMemoryManagementUnitEnabledPlatformOptions,
     "ShapeMaxVnicAttachmentOptions": ShapeMaxVnicAttachmentOptions,
     "ShapeMeasuredBootOptions": ShapeMeasuredBootOptions,
     "ShapeMemoryOptions": ShapeMemoryOptions,
@@ -875,7 +900,10 @@ core_type_mapping = {
     "ShapeOcpuOptions": ShapeOcpuOptions,
     "ShapePlatformConfigOptions": ShapePlatformConfigOptions,
     "ShapeSecureBootOptions": ShapeSecureBootOptions,
+    "ShapeSymmetricMultiThreadingEnabledPlatformOptions": ShapeSymmetricMultiThreadingEnabledPlatformOptions,
     "ShapeTrustedPlatformModuleOptions": ShapeTrustedPlatformModuleOptions,
+    "ShapeVirtualInstructionsEnabledPlatformOptions": ShapeVirtualInstructionsEnabledPlatformOptions,
+    "SoftResetActionDetails": SoftResetActionDetails,
     "Subnet": Subnet,
     "SubnetTopology": SubnetTopology,
     "TcpOptions": TcpOptions,

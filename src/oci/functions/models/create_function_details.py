@@ -46,6 +46,10 @@ class CreateFunctionDetails(object):
             The value to assign to the timeout_in_seconds property of this CreateFunctionDetails.
         :type timeout_in_seconds: int
 
+        :param provisioned_concurrency_config:
+            The value to assign to the provisioned_concurrency_config property of this CreateFunctionDetails.
+        :type provisioned_concurrency_config: oci.functions.models.FunctionProvisionedConcurrencyConfig
+
         :param trace_config:
             The value to assign to the trace_config property of this CreateFunctionDetails.
         :type trace_config: oci.functions.models.FunctionTraceConfig
@@ -67,6 +71,7 @@ class CreateFunctionDetails(object):
             'memory_in_mbs': 'int',
             'config': 'dict(str, str)',
             'timeout_in_seconds': 'int',
+            'provisioned_concurrency_config': 'FunctionProvisionedConcurrencyConfig',
             'trace_config': 'FunctionTraceConfig',
             'freeform_tags': 'dict(str, str)',
             'defined_tags': 'dict(str, dict(str, object))'
@@ -80,6 +85,7 @@ class CreateFunctionDetails(object):
             'memory_in_mbs': 'memoryInMBs',
             'config': 'config',
             'timeout_in_seconds': 'timeoutInSeconds',
+            'provisioned_concurrency_config': 'provisionedConcurrencyConfig',
             'trace_config': 'traceConfig',
             'freeform_tags': 'freeformTags',
             'defined_tags': 'definedTags'
@@ -92,6 +98,7 @@ class CreateFunctionDetails(object):
         self._memory_in_mbs = None
         self._config = None
         self._timeout_in_seconds = None
+        self._provisioned_concurrency_config = None
         self._trace_config = None
         self._freeform_tags = None
         self._defined_tags = None
@@ -281,6 +288,26 @@ class CreateFunctionDetails(object):
         :type: int
         """
         self._timeout_in_seconds = timeout_in_seconds
+
+    @property
+    def provisioned_concurrency_config(self):
+        """
+        Gets the provisioned_concurrency_config of this CreateFunctionDetails.
+
+        :return: The provisioned_concurrency_config of this CreateFunctionDetails.
+        :rtype: oci.functions.models.FunctionProvisionedConcurrencyConfig
+        """
+        return self._provisioned_concurrency_config
+
+    @provisioned_concurrency_config.setter
+    def provisioned_concurrency_config(self, provisioned_concurrency_config):
+        """
+        Sets the provisioned_concurrency_config of this CreateFunctionDetails.
+
+        :param provisioned_concurrency_config: The provisioned_concurrency_config of this CreateFunctionDetails.
+        :type: oci.functions.models.FunctionProvisionedConcurrencyConfig
+        """
+        self._provisioned_concurrency_config = provisioned_concurrency_config
 
     @property
     def trace_config(self):
