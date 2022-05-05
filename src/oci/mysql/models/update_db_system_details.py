@@ -265,8 +265,12 @@ class UpdateDbSystemDetails(object):
     def is_highly_available(self):
         """
         Gets the is_highly_available of this UpdateDbSystemDetails.
-        If the policy is to enable high availability of the instance, by
-        maintaining secondary/failover capacity as necessary.
+        Specifies if the DB System is highly available.
+
+        Set to true to enable high availability. Two secondary MySQL instances are created and placed in the unused
+        availability or fault domains, depending on your region and subnet type.
+        Set to false to disable high availability. The secondary MySQL instances are removed and the MySQL instance
+        in the preferred location is used.
 
 
         :return: The is_highly_available of this UpdateDbSystemDetails.
@@ -278,8 +282,12 @@ class UpdateDbSystemDetails(object):
     def is_highly_available(self, is_highly_available):
         """
         Sets the is_highly_available of this UpdateDbSystemDetails.
-        If the policy is to enable high availability of the instance, by
-        maintaining secondary/failover capacity as necessary.
+        Specifies if the DB System is highly available.
+
+        Set to true to enable high availability. Two secondary MySQL instances are created and placed in the unused
+        availability or fault domains, depending on your region and subnet type.
+        Set to false to disable high availability. The secondary MySQL instances are removed and the MySQL instance
+        in the preferred location is used.
 
 
         :param is_highly_available: The is_highly_available of this UpdateDbSystemDetails.

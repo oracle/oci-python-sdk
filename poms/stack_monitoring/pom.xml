@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.pic.stackmonitoring</groupId>
         <artifactId>stack-monitoring-spec</artifactId>
-        <version>0.3.26</version>
+        <version>0.3.44</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

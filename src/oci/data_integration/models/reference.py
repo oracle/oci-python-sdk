@@ -37,6 +37,42 @@ class Reference(object):
     #: This constant has a value of "GENERIC_JDBC_DATA_ASSET"
     TYPE_GENERIC_JDBC_DATA_ASSET = "GENERIC_JDBC_DATA_ASSET"
 
+    #: A constant which can be used with the type property of a Reference.
+    #: This constant has a value of "FUSION_APP_DATA_ASSET"
+    TYPE_FUSION_APP_DATA_ASSET = "FUSION_APP_DATA_ASSET"
+
+    #: A constant which can be used with the type property of a Reference.
+    #: This constant has a value of "AMAZON_S3_DATA_ASSET"
+    TYPE_AMAZON_S3_DATA_ASSET = "AMAZON_S3_DATA_ASSET"
+
+    #: A constant which can be used with the type property of a Reference.
+    #: This constant has a value of "SCHEMA"
+    TYPE_SCHEMA = "SCHEMA"
+
+    #: A constant which can be used with the type property of a Reference.
+    #: This constant has a value of "INTEGRATION_TASK"
+    TYPE_INTEGRATION_TASK = "INTEGRATION_TASK"
+
+    #: A constant which can be used with the type property of a Reference.
+    #: This constant has a value of "DATA_LOADER_TASK"
+    TYPE_DATA_LOADER_TASK = "DATA_LOADER_TASK"
+
+    #: A constant which can be used with the type property of a Reference.
+    #: This constant has a value of "SQL_TASK"
+    TYPE_SQL_TASK = "SQL_TASK"
+
+    #: A constant which can be used with the type property of a Reference.
+    #: This constant has a value of "OCI_DATAFLOW_TASK"
+    TYPE_OCI_DATAFLOW_TASK = "OCI_DATAFLOW_TASK"
+
+    #: A constant which can be used with the type property of a Reference.
+    #: This constant has a value of "PIPELINE_TASK"
+    TYPE_PIPELINE_TASK = "PIPELINE_TASK"
+
+    #: A constant which can be used with the type property of a Reference.
+    #: This constant has a value of "REST_TASK"
+    TYPE_REST_TASK = "REST_TASK"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Reference object with values from keyword arguments.
@@ -64,7 +100,7 @@ class Reference(object):
 
         :param type:
             The value to assign to the type property of this Reference.
-            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET", "SCHEMA", "INTEGRATION_TASK", "DATA_LOADER_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "PIPELINE_TASK", "REST_TASK", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -248,7 +284,7 @@ class Reference(object):
         Gets the type of this Reference.
         The type of reference object.
 
-        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET", "SCHEMA", "INTEGRATION_TASK", "DATA_LOADER_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "PIPELINE_TASK", "REST_TASK", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -267,7 +303,7 @@ class Reference(object):
         :param type: The type of this Reference.
         :type: str
         """
-        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET"]
+        allowed_values = ["ORACLE_DATA_ASSET", "ORACLE_OBJECT_STORAGE_DATA_ASSET", "ORACLE_ATP_DATA_ASSET", "ORACLE_ADWC_DATA_ASSET", "MYSQL_DATA_ASSET", "GENERIC_JDBC_DATA_ASSET", "FUSION_APP_DATA_ASSET", "AMAZON_S3_DATA_ASSET", "SCHEMA", "INTEGRATION_TASK", "DATA_LOADER_TASK", "SQL_TASK", "OCI_DATAFLOW_TASK", "PIPELINE_TASK", "REST_TASK"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

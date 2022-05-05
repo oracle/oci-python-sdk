@@ -82,7 +82,7 @@ class DataAssetFromFusionApp(DataAsset):
 
         :param default_connection:
             The value to assign to the default_connection property of this DataAssetFromFusionApp.
-        :type default_connection: oci.data_integration.models.ConnectionFromBICCDetails
+        :type default_connection: oci.data_integration.models.ConnectionDetails
 
         """
         self.swagger_types = {
@@ -101,7 +101,7 @@ class DataAssetFromFusionApp(DataAsset):
             'metadata': 'ObjectMetadata',
             'key_map': 'dict(str, str)',
             'service_url': 'str',
-            'default_connection': 'ConnectionFromBICCDetails'
+            'default_connection': 'ConnectionDetails'
         }
 
         self.attribute_map = {
@@ -171,7 +171,7 @@ class DataAssetFromFusionApp(DataAsset):
         Gets the default_connection of this DataAssetFromFusionApp.
 
         :return: The default_connection of this DataAssetFromFusionApp.
-        :rtype: oci.data_integration.models.ConnectionFromBICCDetails
+        :rtype: oci.data_integration.models.ConnectionDetails
         """
         return self._default_connection
 
@@ -181,7 +181,7 @@ class DataAssetFromFusionApp(DataAsset):
         Sets the default_connection of this DataAssetFromFusionApp.
 
         :param default_connection: The default_connection of this DataAssetFromFusionApp.
-        :type: oci.data_integration.models.ConnectionFromBICCDetails
+        :type: oci.data_integration.models.ConnectionDetails
         """
         self._default_connection = default_connection
 

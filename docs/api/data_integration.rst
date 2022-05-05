@@ -18,6 +18,7 @@ Data Integration
     :nosignatures:
     :template: autosummary/model_class.rst
 
+    oci.data_integration.models.AbstractCallAttribute
     oci.data_integration.models.AbstractDataOperationConfig
     oci.data_integration.models.AbstractField
     oci.data_integration.models.AbstractFormatAttribute
@@ -36,6 +37,9 @@ Data Integration
     oci.data_integration.models.AvroFormatAttribute
     oci.data_integration.models.BaseType
     oci.data_integration.models.BiccReadAttributes
+    oci.data_integration.models.BipCallAttribute
+    oci.data_integration.models.BipReadAttributes
+    oci.data_integration.models.BipReportParameterValue
     oci.data_integration.models.CancelRestCallConfig
     oci.data_integration.models.ChangeCompartmentDetails
     oci.data_integration.models.ChangeDisApplicationCompartmentDetails
@@ -44,7 +48,9 @@ Data Integration
     oci.data_integration.models.CompositeFieldMap
     oci.data_integration.models.CompositeType
     oci.data_integration.models.Compression
+    oci.data_integration.models.ConditionalCompositeFieldMap
     oci.data_integration.models.ConditionalInputLink
+    oci.data_integration.models.ConditionalOutputPort
     oci.data_integration.models.ConfigDefinition
     oci.data_integration.models.ConfigParameterDefinition
     oci.data_integration.models.ConfigParameterValue
@@ -62,6 +68,8 @@ Data Integration
     oci.data_integration.models.ConnectionFromAtpDetails
     oci.data_integration.models.ConnectionFromBICC
     oci.data_integration.models.ConnectionFromBICCDetails
+    oci.data_integration.models.ConnectionFromBIP
+    oci.data_integration.models.ConnectionFromBipDetails
     oci.data_integration.models.ConnectionFromJdbc
     oci.data_integration.models.ConnectionFromJdbcDetails
     oci.data_integration.models.ConnectionFromMySQL
@@ -77,6 +85,7 @@ Data Integration
     oci.data_integration.models.ConnectionSummaryFromAmazonS3
     oci.data_integration.models.ConnectionSummaryFromAtp
     oci.data_integration.models.ConnectionSummaryFromBICC
+    oci.data_integration.models.ConnectionSummaryFromBIP
     oci.data_integration.models.ConnectionSummaryFromJdbc
     oci.data_integration.models.ConnectionSummaryFromMySQL
     oci.data_integration.models.ConnectionSummaryFromObjectStorage
@@ -94,6 +103,7 @@ Data Integration
     oci.data_integration.models.CreateConnectionFromAmazonS3
     oci.data_integration.models.CreateConnectionFromAtp
     oci.data_integration.models.CreateConnectionFromBICC
+    oci.data_integration.models.CreateConnectionFromBIP
     oci.data_integration.models.CreateConnectionFromJdbc
     oci.data_integration.models.CreateConnectionFromMySQL
     oci.data_integration.models.CreateConnectionFromObjectStorage
@@ -225,6 +235,9 @@ Data Integration
     oci.data_integration.models.FieldMap
     oci.data_integration.models.Filter
     oci.data_integration.models.FilterPush
+    oci.data_integration.models.Flatten
+    oci.data_integration.models.FlattenDetails
+    oci.data_integration.models.FlattenProjectionPreferences
     oci.data_integration.models.FlowNode
     oci.data_integration.models.FlowPort
     oci.data_integration.models.FlowPortLink
@@ -233,6 +246,7 @@ Data Integration
     oci.data_integration.models.FolderSummary
     oci.data_integration.models.FolderSummaryCollection
     oci.data_integration.models.ForeignKey
+    oci.data_integration.models.Function
     oci.data_integration.models.FunctionLibrary
     oci.data_integration.models.FunctionLibraryDetails
     oci.data_integration.models.FunctionLibrarySummary
@@ -255,6 +269,7 @@ Data Integration
     oci.data_integration.models.LastRunDetails
     oci.data_integration.models.Lookup
     oci.data_integration.models.MacroField
+    oci.data_integration.models.MacroPivotField
     oci.data_integration.models.MergeOperator
     oci.data_integration.models.Message
     oci.data_integration.models.Minus
@@ -262,10 +277,12 @@ Data Integration
     oci.data_integration.models.MonthlyRuleFrequencyDetails
     oci.data_integration.models.NameListRule
     oci.data_integration.models.NamePatternRule
+    oci.data_integration.models.NamedEntityMap
     oci.data_integration.models.NativeShapeField
     oci.data_integration.models.ObjectMetadata
     oci.data_integration.models.ObjectStorageWriteAttribute
     oci.data_integration.models.ObjectStorageWriteAttributes
+    oci.data_integration.models.OciFunction
     oci.data_integration.models.OciVaultSecretConfig
     oci.data_integration.models.Operator
     oci.data_integration.models.OracleAdwcWriteAttribute
@@ -296,6 +313,9 @@ Data Integration
     oci.data_integration.models.PipelineValidation
     oci.data_integration.models.PipelineValidationSummary
     oci.data_integration.models.PipelineValidationSummaryCollection
+    oci.data_integration.models.Pivot
+    oci.data_integration.models.PivotField
+    oci.data_integration.models.PivotKeys
     oci.data_integration.models.PollRestCallConfig
     oci.data_integration.models.PrimaryKey
     oci.data_integration.models.Project
@@ -327,6 +347,7 @@ Data Integration
     oci.data_integration.models.ResourcePrincipalAuthConfig
     oci.data_integration.models.RestCallConfig
     oci.data_integration.models.RootObject
+    oci.data_integration.models.RuleBasedEntityMap
     oci.data_integration.models.RuleBasedFieldMap
     oci.data_integration.models.RuleTypeConfig
     oci.data_integration.models.Schedule
@@ -350,6 +371,7 @@ Data Integration
     oci.data_integration.models.SortOper
     oci.data_integration.models.Source
     oci.data_integration.models.SourceApplicationInfo
+    oci.data_integration.models.Split
     oci.data_integration.models.StartOperator
     oci.data_integration.models.StructuredType
     oci.data_integration.models.Target
@@ -397,6 +419,7 @@ Data Integration
     oci.data_integration.models.UpdateConnectionFromAmazonS3
     oci.data_integration.models.UpdateConnectionFromAtp
     oci.data_integration.models.UpdateConnectionFromBICC
+    oci.data_integration.models.UpdateConnectionFromBIP
     oci.data_integration.models.UpdateConnectionFromJdbc
     oci.data_integration.models.UpdateConnectionFromMySQL
     oci.data_integration.models.UpdateConnectionFromObjectStorage

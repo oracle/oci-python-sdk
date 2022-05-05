@@ -240,7 +240,7 @@ class WorkRequest(object):
         The ocid of the compartment that contains the work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources,
         and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used
+        resource whose compartment should be used.
 
 
         :return: The compartment_id of this WorkRequest.
@@ -255,7 +255,7 @@ class WorkRequest(object):
         The ocid of the compartment that contains the work request. Work requests should be scoped to
         the same compartment as the resource the work request affects. If the work request affects multiple resources,
         and those resources are not in the same compartment, it is up to the service team to pick the primary
-        resource whose compartment should be used
+        resource whose compartment should be used.
 
 
         :param compartment_id: The compartment_id of this WorkRequest.

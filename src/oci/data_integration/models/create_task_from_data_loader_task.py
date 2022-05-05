@@ -80,6 +80,18 @@ class CreateTaskFromDataLoaderTask(CreateTaskDetails):
             The value to assign to the data_flow property of this CreateTaskFromDataLoaderTask.
         :type data_flow: oci.data_integration.models.DataFlow
 
+        :param conditional_composite_field_map:
+            The value to assign to the conditional_composite_field_map property of this CreateTaskFromDataLoaderTask.
+        :type conditional_composite_field_map: oci.data_integration.models.ConditionalCompositeFieldMap
+
+        :param is_single_load:
+            The value to assign to the is_single_load property of this CreateTaskFromDataLoaderTask.
+        :type is_single_load: bool
+
+        :param parallel_load_limit:
+            The value to assign to the parallel_load_limit property of this CreateTaskFromDataLoaderTask.
+        :type parallel_load_limit: int
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -96,7 +108,10 @@ class CreateTaskFromDataLoaderTask(CreateTaskDetails):
             'op_config_values': 'ConfigValues',
             'config_provider_delegate': 'CreateConfigProvider',
             'registry_metadata': 'RegistryMetadata',
-            'data_flow': 'DataFlow'
+            'data_flow': 'DataFlow',
+            'conditional_composite_field_map': 'ConditionalCompositeFieldMap',
+            'is_single_load': 'bool',
+            'parallel_load_limit': 'int'
         }
 
         self.attribute_map = {
@@ -114,7 +129,10 @@ class CreateTaskFromDataLoaderTask(CreateTaskDetails):
             'op_config_values': 'opConfigValues',
             'config_provider_delegate': 'configProviderDelegate',
             'registry_metadata': 'registryMetadata',
-            'data_flow': 'dataFlow'
+            'data_flow': 'dataFlow',
+            'conditional_composite_field_map': 'conditionalCompositeFieldMap',
+            'is_single_load': 'isSingleLoad',
+            'parallel_load_limit': 'parallelLoadLimit'
         }
 
         self._model_type = None
@@ -132,6 +150,9 @@ class CreateTaskFromDataLoaderTask(CreateTaskDetails):
         self._config_provider_delegate = None
         self._registry_metadata = None
         self._data_flow = None
+        self._conditional_composite_field_map = None
+        self._is_single_load = None
+        self._parallel_load_limit = None
         self._model_type = 'DATA_LOADER_TASK'
 
     @property
@@ -153,6 +174,74 @@ class CreateTaskFromDataLoaderTask(CreateTaskDetails):
         :type: oci.data_integration.models.DataFlow
         """
         self._data_flow = data_flow
+
+    @property
+    def conditional_composite_field_map(self):
+        """
+        Gets the conditional_composite_field_map of this CreateTaskFromDataLoaderTask.
+
+        :return: The conditional_composite_field_map of this CreateTaskFromDataLoaderTask.
+        :rtype: oci.data_integration.models.ConditionalCompositeFieldMap
+        """
+        return self._conditional_composite_field_map
+
+    @conditional_composite_field_map.setter
+    def conditional_composite_field_map(self, conditional_composite_field_map):
+        """
+        Sets the conditional_composite_field_map of this CreateTaskFromDataLoaderTask.
+
+        :param conditional_composite_field_map: The conditional_composite_field_map of this CreateTaskFromDataLoaderTask.
+        :type: oci.data_integration.models.ConditionalCompositeFieldMap
+        """
+        self._conditional_composite_field_map = conditional_composite_field_map
+
+    @property
+    def is_single_load(self):
+        """
+        Gets the is_single_load of this CreateTaskFromDataLoaderTask.
+        Defines whether Data Loader task is used for single load or multiple
+
+
+        :return: The is_single_load of this CreateTaskFromDataLoaderTask.
+        :rtype: bool
+        """
+        return self._is_single_load
+
+    @is_single_load.setter
+    def is_single_load(self, is_single_load):
+        """
+        Sets the is_single_load of this CreateTaskFromDataLoaderTask.
+        Defines whether Data Loader task is used for single load or multiple
+
+
+        :param is_single_load: The is_single_load of this CreateTaskFromDataLoaderTask.
+        :type: bool
+        """
+        self._is_single_load = is_single_load
+
+    @property
+    def parallel_load_limit(self):
+        """
+        Gets the parallel_load_limit of this CreateTaskFromDataLoaderTask.
+        Defines the number of entities being loaded in parallel at a time for a Data Loader task
+
+
+        :return: The parallel_load_limit of this CreateTaskFromDataLoaderTask.
+        :rtype: int
+        """
+        return self._parallel_load_limit
+
+    @parallel_load_limit.setter
+    def parallel_load_limit(self, parallel_load_limit):
+        """
+        Sets the parallel_load_limit of this CreateTaskFromDataLoaderTask.
+        Defines the number of entities being loaded in parallel at a time for a Data Loader task
+
+
+        :param parallel_load_limit: The parallel_load_limit of this CreateTaskFromDataLoaderTask.
+        :type: int
+        """
+        self._parallel_load_limit = parallel_load_limit
 
     def __repr__(self):
         return formatted_flat_dict(self)

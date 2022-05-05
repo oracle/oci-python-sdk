@@ -36,16 +36,37 @@ class AbstractDataOperationConfig(object):
             Allowed values for this property are: "READ_OPERATION_CONFIG", "WRITE_OPERATION_CONFIG"
         :type model_type: str
 
+        :param metadata_config_properties:
+            The value to assign to the metadata_config_properties property of this AbstractDataOperationConfig.
+        :type metadata_config_properties: dict(str, str)
+
+        :param derived_attributes:
+            The value to assign to the derived_attributes property of this AbstractDataOperationConfig.
+        :type derived_attributes: dict(str, str)
+
+        :param call_attribute:
+            The value to assign to the call_attribute property of this AbstractDataOperationConfig.
+        :type call_attribute: oci.data_integration.models.BipCallAttribute
+
         """
         self.swagger_types = {
-            'model_type': 'str'
+            'model_type': 'str',
+            'metadata_config_properties': 'dict(str, str)',
+            'derived_attributes': 'dict(str, str)',
+            'call_attribute': 'BipCallAttribute'
         }
 
         self.attribute_map = {
-            'model_type': 'modelType'
+            'model_type': 'modelType',
+            'metadata_config_properties': 'metadataConfigProperties',
+            'derived_attributes': 'derivedAttributes',
+            'call_attribute': 'callAttribute'
         }
 
         self._model_type = None
+        self._metadata_config_properties = None
+        self._derived_attributes = None
+        self._call_attribute = None
 
     @staticmethod
     def get_subtype(object_dictionary):
@@ -94,6 +115,74 @@ class AbstractDataOperationConfig(object):
                 .format(allowed_values)
             )
         self._model_type = model_type
+
+    @property
+    def metadata_config_properties(self):
+        """
+        Gets the metadata_config_properties of this AbstractDataOperationConfig.
+        This map is used for passing extra metatdata configuration that is required by read / write operation.
+
+
+        :return: The metadata_config_properties of this AbstractDataOperationConfig.
+        :rtype: dict(str, str)
+        """
+        return self._metadata_config_properties
+
+    @metadata_config_properties.setter
+    def metadata_config_properties(self, metadata_config_properties):
+        """
+        Sets the metadata_config_properties of this AbstractDataOperationConfig.
+        This map is used for passing extra metatdata configuration that is required by read / write operation.
+
+
+        :param metadata_config_properties: The metadata_config_properties of this AbstractDataOperationConfig.
+        :type: dict(str, str)
+        """
+        self._metadata_config_properties = metadata_config_properties
+
+    @property
+    def derived_attributes(self):
+        """
+        Gets the derived_attributes of this AbstractDataOperationConfig.
+        this map is used for passing BIP report parameter values.
+
+
+        :return: The derived_attributes of this AbstractDataOperationConfig.
+        :rtype: dict(str, str)
+        """
+        return self._derived_attributes
+
+    @derived_attributes.setter
+    def derived_attributes(self, derived_attributes):
+        """
+        Sets the derived_attributes of this AbstractDataOperationConfig.
+        this map is used for passing BIP report parameter values.
+
+
+        :param derived_attributes: The derived_attributes of this AbstractDataOperationConfig.
+        :type: dict(str, str)
+        """
+        self._derived_attributes = derived_attributes
+
+    @property
+    def call_attribute(self):
+        """
+        Gets the call_attribute of this AbstractDataOperationConfig.
+
+        :return: The call_attribute of this AbstractDataOperationConfig.
+        :rtype: oci.data_integration.models.BipCallAttribute
+        """
+        return self._call_attribute
+
+    @call_attribute.setter
+    def call_attribute(self, call_attribute):
+        """
+        Sets the call_attribute of this AbstractDataOperationConfig.
+
+        :param call_attribute: The call_attribute of this AbstractDataOperationConfig.
+        :type: oci.data_integration.models.BipCallAttribute
+        """
+        self._call_attribute = call_attribute
 
     def __repr__(self):
         return formatted_flat_dict(self)

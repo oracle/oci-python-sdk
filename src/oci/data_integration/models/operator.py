@@ -38,6 +38,10 @@ class Operator(object):
     MODEL_TYPE_TARGET_OPERATOR = "TARGET_OPERATOR"
 
     #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "FLATTEN_OPERATOR"
+    MODEL_TYPE_FLATTEN_OPERATOR = "FLATTEN_OPERATOR"
+
+    #: A constant which can be used with the model_type property of a Operator.
     #: This constant has a value of "DISTINCT_OPERATOR"
     MODEL_TYPE_DISTINCT_OPERATOR = "DISTINCT_OPERATOR"
 
@@ -60,6 +64,14 @@ class Operator(object):
     #: A constant which can be used with the model_type property of a Operator.
     #: This constant has a value of "MERGE_OPERATOR"
     MODEL_TYPE_MERGE_OPERATOR = "MERGE_OPERATOR"
+
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "FUNCTION_OPERATOR"
+    MODEL_TYPE_FUNCTION_OPERATOR = "FUNCTION_OPERATOR"
+
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "SPLIT_OPERATOR"
+    MODEL_TYPE_SPLIT_OPERATOR = "SPLIT_OPERATOR"
 
     #: A constant which can be used with the model_type property of a Operator.
     #: This constant has a value of "START_OPERATOR"
@@ -85,6 +97,10 @@ class Operator(object):
     #: This constant has a value of "LOOKUP_OPERATOR"
     MODEL_TYPE_LOOKUP_OPERATOR = "LOOKUP_OPERATOR"
 
+    #: A constant which can be used with the model_type property of a Operator.
+    #: This constant has a value of "PIVOT_OPERATOR"
+    MODEL_TYPE_PIVOT_OPERATOR = "PIVOT_OPERATOR"
+
     def __init__(self, **kwargs):
         """
         Initializes a new Operator object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -92,6 +108,7 @@ class Operator(object):
 
         * :class:`~oci.data_integration.models.Joiner`
         * :class:`~oci.data_integration.models.TaskOperator`
+        * :class:`~oci.data_integration.models.Flatten`
         * :class:`~oci.data_integration.models.Aggregator`
         * :class:`~oci.data_integration.models.SortOper`
         * :class:`~oci.data_integration.models.Projection`
@@ -99,20 +116,23 @@ class Operator(object):
         * :class:`~oci.data_integration.models.Source`
         * :class:`~oci.data_integration.models.Union`
         * :class:`~oci.data_integration.models.ExpressionOperator`
+        * :class:`~oci.data_integration.models.Function`
         * :class:`~oci.data_integration.models.Intersect`
         * :class:`~oci.data_integration.models.Target`
         * :class:`~oci.data_integration.models.Distinct`
         * :class:`~oci.data_integration.models.Filter`
         * :class:`~oci.data_integration.models.Lookup`
+        * :class:`~oci.data_integration.models.Pivot`
         * :class:`~oci.data_integration.models.StartOperator`
         * :class:`~oci.data_integration.models.MergeOperator`
+        * :class:`~oci.data_integration.models.Split`
         * :class:`~oci.data_integration.models.Minus`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this Operator.
-            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "FLATTEN_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "FUNCTION_OPERATOR", "SPLIT_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", "PIVOT_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -146,7 +166,7 @@ class Operator(object):
 
         :param output_ports:
             The value to assign to the output_ports property of this Operator.
-        :type output_ports: list[oci.data_integration.models.OutputPort]
+        :type output_ports: list[oci.data_integration.models.TypedObject]
 
         :param object_status:
             The value to assign to the object_status property of this Operator.
@@ -174,7 +194,7 @@ class Operator(object):
             'description': 'str',
             'object_version': 'int',
             'input_ports': 'list[InputPort]',
-            'output_ports': 'list[OutputPort]',
+            'output_ports': 'list[TypedObject]',
             'object_status': 'int',
             'identifier': 'str',
             'parameters': 'list[Parameter]',
@@ -225,6 +245,9 @@ class Operator(object):
         if type == 'TASK_OPERATOR':
             return 'TaskOperator'
 
+        if type == 'FLATTEN_OPERATOR':
+            return 'Flatten'
+
         if type == 'AGGREGATOR_OPERATOR':
             return 'Aggregator'
 
@@ -246,6 +269,9 @@ class Operator(object):
         if type == 'EXPRESSION_OPERATOR':
             return 'ExpressionOperator'
 
+        if type == 'FUNCTION_OPERATOR':
+            return 'Function'
+
         if type == 'INTERSECT_OPERATOR':
             return 'Intersect'
 
@@ -261,11 +287,17 @@ class Operator(object):
         if type == 'LOOKUP_OPERATOR':
             return 'Lookup'
 
+        if type == 'PIVOT_OPERATOR':
+            return 'Pivot'
+
         if type == 'START_OPERATOR':
             return 'StartOperator'
 
         if type == 'MERGE_OPERATOR':
             return 'MergeOperator'
+
+        if type == 'SPLIT_OPERATOR':
+            return 'Split'
 
         if type == 'MINUS_OPERATOR':
             return 'Minus'
@@ -278,7 +310,7 @@ class Operator(object):
         **[Required]** Gets the model_type of this Operator.
         The model type of the operator.
 
-        Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "FLATTEN_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "FUNCTION_OPERATOR", "SPLIT_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", "PIVOT_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -297,7 +329,7 @@ class Operator(object):
         :param model_type: The model_type of this Operator.
         :type: str
         """
-        allowed_values = ["SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR"]
+        allowed_values = ["SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "FLATTEN_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "FUNCTION_OPERATOR", "SPLIT_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", "PIVOT_OPERATOR"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type
@@ -474,7 +506,7 @@ class Operator(object):
 
 
         :return: The output_ports of this Operator.
-        :rtype: list[oci.data_integration.models.OutputPort]
+        :rtype: list[oci.data_integration.models.TypedObject]
         """
         return self._output_ports
 
@@ -486,7 +518,7 @@ class Operator(object):
 
 
         :param output_ports: The output_ports of this Operator.
-        :type: list[oci.data_integration.models.OutputPort]
+        :type: list[oci.data_integration.models.TypedObject]
         """
         self._output_ports = output_ports
 
