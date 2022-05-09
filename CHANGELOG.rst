@@ -4,13 +4,26 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.66.1 - TBD
+2.67.0 - 2022-05-10
 ====================
 
 Added
 -----
-* TBD
-
+* Support for getting usage information for autonomous databases and Cloud at Customer autonomous databases in the Database service
+* Support for the "standby" lifecycle state on autonomous databases in the Database service
+* Support for BIP connections and dataflow operators in the Data Integration service
+ 
+Breaking
+--------
+* The type of parameter `default_connection` was changed from `CreateConnectionFromBICC` to `CreateConnectionDetails` in the create_data_asset_from_fusion_app model in the Data Integration service
+* The type of parameter `default_connection` was changed from `ConnectionFromBICCDetails` to `ConnectionDetails` in the data_asset_from_fusion_app model in the Data Integration service
+* The type of parameter `default_connection` was changed from `ConnectionSummaryFromBICC` to `ConnectionSummary` in the data_asset_summary_from_fusion_app model in the Data Integration service
+* The type of parameter `output_ports` was changed from a list of oci.data_integration.models.OutputPort to oci.data_integration.models.TypedObject in the aggregator model in the Data Integration service
+* Support for retries by default on WAF Edge Policy GET / LIST operations in the Web Application Acceleration and Security service
+* Support for retries by default on some operations in the Stack Monitoring service
+* Support for retries by default on some resource discovery and monitoring operations in the Application Management service
+* Support for retries by default on some operations in the MySQL Database service
+ 
 ====================
 2.66.0 - 2022-05-03
 ====================
