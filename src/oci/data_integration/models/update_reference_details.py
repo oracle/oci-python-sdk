@@ -75,7 +75,7 @@ class UpdateReferenceDetails(object):
     def target_object(self):
         """
         Gets the target_object of this UpdateReferenceDetails.
-        The new target object to reference. This should be of type `DataAsset`. The child references can be of type `Connection`.
+        The new target object to reference. This can be of type `DataAsset`, `Schema` or `Task`. In case of `DataAsset`, the child references can be of type `Connection`.
 
 
         :return: The target_object of this UpdateReferenceDetails.
@@ -87,7 +87,7 @@ class UpdateReferenceDetails(object):
     def target_object(self, target_object):
         """
         Sets the target_object of this UpdateReferenceDetails.
-        The new target object to reference. This should be of type `DataAsset`. The child references can be of type `Connection`.
+        The new target object to reference. This can be of type `DataAsset`, `Schema` or `Task`. In case of `DataAsset`, the child references can be of type `Connection`.
 
 
         :param target_object: The target_object of this UpdateReferenceDetails.

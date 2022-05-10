@@ -244,6 +244,22 @@ class AutonomousContainerDatabaseSummary(object):
             The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this AutonomousContainerDatabaseSummary.
         :type memory_per_oracle_compute_unit_in_gbs: int
 
+        :param available_cpus:
+            The value to assign to the available_cpus property of this AutonomousContainerDatabaseSummary.
+        :type available_cpus: float
+
+        :param total_cpus:
+            The value to assign to the total_cpus property of this AutonomousContainerDatabaseSummary.
+        :type total_cpus: int
+
+        :param reclaimable_cpus:
+            The value to assign to the reclaimable_cpus property of this AutonomousContainerDatabaseSummary.
+        :type reclaimable_cpus: float
+
+        :param provisionable_cpus:
+            The value to assign to the provisionable_cpus property of this AutonomousContainerDatabaseSummary.
+        :type provisionable_cpus: list[float]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -276,7 +292,11 @@ class AutonomousContainerDatabaseSummary(object):
             'backup_config': 'AutonomousContainerDatabaseBackupConfig',
             'key_store_id': 'str',
             'key_store_wallet_name': 'str',
-            'memory_per_oracle_compute_unit_in_gbs': 'int'
+            'memory_per_oracle_compute_unit_in_gbs': 'int',
+            'available_cpus': 'float',
+            'total_cpus': 'int',
+            'reclaimable_cpus': 'float',
+            'provisionable_cpus': 'list[float]'
         }
 
         self.attribute_map = {
@@ -310,7 +330,11 @@ class AutonomousContainerDatabaseSummary(object):
             'backup_config': 'backupConfig',
             'key_store_id': 'keyStoreId',
             'key_store_wallet_name': 'keyStoreWalletName',
-            'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs'
+            'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
+            'available_cpus': 'availableCpus',
+            'total_cpus': 'totalCpus',
+            'reclaimable_cpus': 'reclaimableCpus',
+            'provisionable_cpus': 'provisionableCpus'
         }
 
         self._id = None
@@ -344,6 +368,10 @@ class AutonomousContainerDatabaseSummary(object):
         self._key_store_id = None
         self._key_store_wallet_name = None
         self._memory_per_oracle_compute_unit_in_gbs = None
+        self._available_cpus = None
+        self._total_cpus = None
+        self._reclaimable_cpus = None
+        self._provisionable_cpus = None
 
     @property
     def id(self):
@@ -1154,6 +1182,102 @@ class AutonomousContainerDatabaseSummary(object):
         :type: int
         """
         self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
+
+    @property
+    def available_cpus(self):
+        """
+        Gets the available_cpus of this AutonomousContainerDatabaseSummary.
+        Sum of OCPUs available on the Autonomous VM Cluster + Sum of Fractional OCPUs available in the Autonomous Container Database.
+
+
+        :return: The available_cpus of this AutonomousContainerDatabaseSummary.
+        :rtype: float
+        """
+        return self._available_cpus
+
+    @available_cpus.setter
+    def available_cpus(self, available_cpus):
+        """
+        Sets the available_cpus of this AutonomousContainerDatabaseSummary.
+        Sum of OCPUs available on the Autonomous VM Cluster + Sum of Fractional OCPUs available in the Autonomous Container Database.
+
+
+        :param available_cpus: The available_cpus of this AutonomousContainerDatabaseSummary.
+        :type: float
+        """
+        self._available_cpus = available_cpus
+
+    @property
+    def total_cpus(self):
+        """
+        Gets the total_cpus of this AutonomousContainerDatabaseSummary.
+        The number of CPU cores allocated to the Autonomous VM cluster.
+
+
+        :return: The total_cpus of this AutonomousContainerDatabaseSummary.
+        :rtype: int
+        """
+        return self._total_cpus
+
+    @total_cpus.setter
+    def total_cpus(self, total_cpus):
+        """
+        Sets the total_cpus of this AutonomousContainerDatabaseSummary.
+        The number of CPU cores allocated to the Autonomous VM cluster.
+
+
+        :param total_cpus: The total_cpus of this AutonomousContainerDatabaseSummary.
+        :type: int
+        """
+        self._total_cpus = total_cpus
+
+    @property
+    def reclaimable_cpus(self):
+        """
+        Gets the reclaimable_cpus of this AutonomousContainerDatabaseSummary.
+        CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+
+
+        :return: The reclaimable_cpus of this AutonomousContainerDatabaseSummary.
+        :rtype: float
+        """
+        return self._reclaimable_cpus
+
+    @reclaimable_cpus.setter
+    def reclaimable_cpus(self, reclaimable_cpus):
+        """
+        Sets the reclaimable_cpus of this AutonomousContainerDatabaseSummary.
+        CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+
+
+        :param reclaimable_cpus: The reclaimable_cpus of this AutonomousContainerDatabaseSummary.
+        :type: float
+        """
+        self._reclaimable_cpus = reclaimable_cpus
+
+    @property
+    def provisionable_cpus(self):
+        """
+        Gets the provisionable_cpus of this AutonomousContainerDatabaseSummary.
+        An array of CPU values that can be used to successfully provision a single Autonomous Database.
+
+
+        :return: The provisionable_cpus of this AutonomousContainerDatabaseSummary.
+        :rtype: list[float]
+        """
+        return self._provisionable_cpus
+
+    @provisionable_cpus.setter
+    def provisionable_cpus(self, provisionable_cpus):
+        """
+        Sets the provisionable_cpus of this AutonomousContainerDatabaseSummary.
+        An array of CPU values that can be used to successfully provision a single Autonomous Database.
+
+
+        :param provisionable_cpus: The provisionable_cpus of this AutonomousContainerDatabaseSummary.
+        :type: list[float]
+        """
+        self._provisionable_cpus = provisionable_cpus
 
     def __repr__(self):
         return formatted_flat_dict(self)

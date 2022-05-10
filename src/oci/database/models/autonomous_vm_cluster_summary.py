@@ -170,6 +170,18 @@ class AutonomousVmClusterSummary(object):
             The value to assign to the defined_tags property of this AutonomousVmClusterSummary.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param reclaimable_cpus:
+            The value to assign to the reclaimable_cpus property of this AutonomousVmClusterSummary.
+        :type reclaimable_cpus: int
+
+        :param available_container_databases:
+            The value to assign to the available_container_databases property of this AutonomousVmClusterSummary.
+        :type available_container_databases: int
+
+        :param available_autonomous_data_storage_size_in_tbs:
+            The value to assign to the available_autonomous_data_storage_size_in_tbs property of this AutonomousVmClusterSummary.
+        :type available_autonomous_data_storage_size_in_tbs: float
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -199,7 +211,10 @@ class AutonomousVmClusterSummary(object):
             'available_data_storage_size_in_tbs': 'float',
             'license_model': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'reclaimable_cpus': 'int',
+            'available_container_databases': 'int',
+            'available_autonomous_data_storage_size_in_tbs': 'float'
         }
 
         self.attribute_map = {
@@ -230,7 +245,10 @@ class AutonomousVmClusterSummary(object):
             'available_data_storage_size_in_tbs': 'availableDataStorageSizeInTBs',
             'license_model': 'licenseModel',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'reclaimable_cpus': 'reclaimableCpus',
+            'available_container_databases': 'availableContainerDatabases',
+            'available_autonomous_data_storage_size_in_tbs': 'availableAutonomousDataStorageSizeInTBs'
         }
 
         self._id = None
@@ -261,6 +279,9 @@ class AutonomousVmClusterSummary(object):
         self._license_model = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._reclaimable_cpus = None
+        self._available_container_databases = None
+        self._available_autonomous_data_storage_size_in_tbs = None
 
     @property
     def id(self):
@@ -872,7 +893,7 @@ class AutonomousVmClusterSummary(object):
     def available_data_storage_size_in_tbs(self):
         """
         Gets the available_data_storage_size_in_tbs of this AutonomousVmClusterSummary.
-        The data storage available in TBs
+        **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases data storage available, in TBs.
 
 
         :return: The available_data_storage_size_in_tbs of this AutonomousVmClusterSummary.
@@ -884,7 +905,7 @@ class AutonomousVmClusterSummary(object):
     def available_data_storage_size_in_tbs(self, available_data_storage_size_in_tbs):
         """
         Sets the available_data_storage_size_in_tbs of this AutonomousVmClusterSummary.
-        The data storage available in TBs
+        **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases data storage available, in TBs.
 
 
         :param available_data_storage_size_in_tbs: The available_data_storage_size_in_tbs of this AutonomousVmClusterSummary.
@@ -985,6 +1006,78 @@ class AutonomousVmClusterSummary(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def reclaimable_cpus(self):
+        """
+        Gets the reclaimable_cpus of this AutonomousVmClusterSummary.
+        CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+
+
+        :return: The reclaimable_cpus of this AutonomousVmClusterSummary.
+        :rtype: int
+        """
+        return self._reclaimable_cpus
+
+    @reclaimable_cpus.setter
+    def reclaimable_cpus(self, reclaimable_cpus):
+        """
+        Sets the reclaimable_cpus of this AutonomousVmClusterSummary.
+        CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+
+
+        :param reclaimable_cpus: The reclaimable_cpus of this AutonomousVmClusterSummary.
+        :type: int
+        """
+        self._reclaimable_cpus = reclaimable_cpus
+
+    @property
+    def available_container_databases(self):
+        """
+        Gets the available_container_databases of this AutonomousVmClusterSummary.
+        The number of Autonomous Container Databases that can be created with the currently available local storage.
+
+
+        :return: The available_container_databases of this AutonomousVmClusterSummary.
+        :rtype: int
+        """
+        return self._available_container_databases
+
+    @available_container_databases.setter
+    def available_container_databases(self, available_container_databases):
+        """
+        Sets the available_container_databases of this AutonomousVmClusterSummary.
+        The number of Autonomous Container Databases that can be created with the currently available local storage.
+
+
+        :param available_container_databases: The available_container_databases of this AutonomousVmClusterSummary.
+        :type: int
+        """
+        self._available_container_databases = available_container_databases
+
+    @property
+    def available_autonomous_data_storage_size_in_tbs(self):
+        """
+        Gets the available_autonomous_data_storage_size_in_tbs of this AutonomousVmClusterSummary.
+        The data disk group size available for Autonomous Databases, in TBs.
+
+
+        :return: The available_autonomous_data_storage_size_in_tbs of this AutonomousVmClusterSummary.
+        :rtype: float
+        """
+        return self._available_autonomous_data_storage_size_in_tbs
+
+    @available_autonomous_data_storage_size_in_tbs.setter
+    def available_autonomous_data_storage_size_in_tbs(self, available_autonomous_data_storage_size_in_tbs):
+        """
+        Sets the available_autonomous_data_storage_size_in_tbs of this AutonomousVmClusterSummary.
+        The data disk group size available for Autonomous Databases, in TBs.
+
+
+        :param available_autonomous_data_storage_size_in_tbs: The available_autonomous_data_storage_size_in_tbs of this AutonomousVmClusterSummary.
+        :type: float
+        """
+        self._available_autonomous_data_storage_size_in_tbs = available_autonomous_data_storage_size_in_tbs
 
     def __repr__(self):
         return formatted_flat_dict(self)

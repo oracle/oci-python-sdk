@@ -45,7 +45,7 @@ class Target(Operator):
 
         :param model_type:
             The value to assign to the model_type property of this Target.
-            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "FLATTEN_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "FUNCTION_OPERATOR", "SPLIT_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", "PIVOT_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -79,7 +79,7 @@ class Target(Operator):
 
         :param output_ports:
             The value to assign to the output_ports property of this Target.
-        :type output_ports: list[oci.data_integration.models.OutputPort]
+        :type output_ports: list[oci.data_integration.models.TypedObject]
 
         :param object_status:
             The value to assign to the object_status property of this Target.
@@ -113,6 +113,18 @@ class Target(Operator):
             The value to assign to the is_predefined_shape property of this Target.
         :type is_predefined_shape: bool
 
+        :param is_use_same_source_name:
+            The value to assign to the is_use_same_source_name property of this Target.
+        :type is_use_same_source_name: bool
+
+        :param target_entity_name_prefix:
+            The value to assign to the target_entity_name_prefix property of this Target.
+        :type target_entity_name_prefix: str
+
+        :param target_entity_name_suffix:
+            The value to assign to the target_entity_name_suffix property of this Target.
+        :type target_entity_name_suffix: str
+
         :param data_property:
             The value to assign to the data_property property of this Target.
             Allowed values for this property are: "TRUNCATE", "MERGE", "BACKUP", "OVERWRITE", "APPEND", "IGNORE", 'UNKNOWN_ENUM_VALUE'.
@@ -131,6 +143,10 @@ class Target(Operator):
             The value to assign to the write_operation_config property of this Target.
         :type write_operation_config: oci.data_integration.models.WriteOperationConfig
 
+        :param load_order:
+            The value to assign to the load_order property of this Target.
+        :type load_order: int
+
         """
         self.swagger_types = {
             'model_type': 'str',
@@ -141,7 +157,7 @@ class Target(Operator):
             'description': 'str',
             'object_version': 'int',
             'input_ports': 'list[InputPort]',
-            'output_ports': 'list[OutputPort]',
+            'output_ports': 'list[TypedObject]',
             'object_status': 'int',
             'identifier': 'str',
             'parameters': 'list[Parameter]',
@@ -150,10 +166,14 @@ class Target(Operator):
             'is_read_access': 'bool',
             'is_copy_fields': 'bool',
             'is_predefined_shape': 'bool',
+            'is_use_same_source_name': 'bool',
+            'target_entity_name_prefix': 'str',
+            'target_entity_name_suffix': 'str',
             'data_property': 'str',
             'schema_drift_config': 'SchemaDriftConfig',
             'fixed_data_shape': 'Shape',
-            'write_operation_config': 'WriteOperationConfig'
+            'write_operation_config': 'WriteOperationConfig',
+            'load_order': 'int'
         }
 
         self.attribute_map = {
@@ -174,10 +194,14 @@ class Target(Operator):
             'is_read_access': 'isReadAccess',
             'is_copy_fields': 'isCopyFields',
             'is_predefined_shape': 'isPredefinedShape',
+            'is_use_same_source_name': 'isUseSameSourceName',
+            'target_entity_name_prefix': 'targetEntityNamePrefix',
+            'target_entity_name_suffix': 'targetEntityNameSuffix',
             'data_property': 'dataProperty',
             'schema_drift_config': 'schemaDriftConfig',
             'fixed_data_shape': 'fixedDataShape',
-            'write_operation_config': 'writeOperationConfig'
+            'write_operation_config': 'writeOperationConfig',
+            'load_order': 'loadOrder'
         }
 
         self._model_type = None
@@ -197,10 +221,14 @@ class Target(Operator):
         self._is_read_access = None
         self._is_copy_fields = None
         self._is_predefined_shape = None
+        self._is_use_same_source_name = None
+        self._target_entity_name_prefix = None
+        self._target_entity_name_suffix = None
         self._data_property = None
         self._schema_drift_config = None
         self._fixed_data_shape = None
         self._write_operation_config = None
+        self._load_order = None
         self._model_type = 'TARGET_OPERATOR'
 
     @property
@@ -296,6 +324,78 @@ class Target(Operator):
         self._is_predefined_shape = is_predefined_shape
 
     @property
+    def is_use_same_source_name(self):
+        """
+        Gets the is_use_same_source_name of this Target.
+        Specifies if entity name is the same as source.
+
+
+        :return: The is_use_same_source_name of this Target.
+        :rtype: bool
+        """
+        return self._is_use_same_source_name
+
+    @is_use_same_source_name.setter
+    def is_use_same_source_name(self, is_use_same_source_name):
+        """
+        Sets the is_use_same_source_name of this Target.
+        Specifies if entity name is the same as source.
+
+
+        :param is_use_same_source_name: The is_use_same_source_name of this Target.
+        :type: bool
+        """
+        self._is_use_same_source_name = is_use_same_source_name
+
+    @property
+    def target_entity_name_prefix(self):
+        """
+        Gets the target_entity_name_prefix of this Target.
+        Prefix for the entity Name.
+
+
+        :return: The target_entity_name_prefix of this Target.
+        :rtype: str
+        """
+        return self._target_entity_name_prefix
+
+    @target_entity_name_prefix.setter
+    def target_entity_name_prefix(self, target_entity_name_prefix):
+        """
+        Sets the target_entity_name_prefix of this Target.
+        Prefix for the entity Name.
+
+
+        :param target_entity_name_prefix: The target_entity_name_prefix of this Target.
+        :type: str
+        """
+        self._target_entity_name_prefix = target_entity_name_prefix
+
+    @property
+    def target_entity_name_suffix(self):
+        """
+        Gets the target_entity_name_suffix of this Target.
+        Suffix for the entity Name.
+
+
+        :return: The target_entity_name_suffix of this Target.
+        :rtype: str
+        """
+        return self._target_entity_name_suffix
+
+    @target_entity_name_suffix.setter
+    def target_entity_name_suffix(self, target_entity_name_suffix):
+        """
+        Sets the target_entity_name_suffix of this Target.
+        Suffix for the entity Name.
+
+
+        :param target_entity_name_suffix: The target_entity_name_suffix of this Target.
+        :type: str
+        """
+        self._target_entity_name_suffix = target_entity_name_suffix
+
+    @property
     def data_property(self):
         """
         Gets the data_property of this Target.
@@ -384,6 +484,30 @@ class Target(Operator):
         :type: oci.data_integration.models.WriteOperationConfig
         """
         self._write_operation_config = write_operation_config
+
+    @property
+    def load_order(self):
+        """
+        Gets the load_order of this Target.
+        A numeric loading order number for the target.
+
+
+        :return: The load_order of this Target.
+        :rtype: int
+        """
+        return self._load_order
+
+    @load_order.setter
+    def load_order(self, load_order):
+        """
+        Sets the load_order of this Target.
+        A numeric loading order number for the target.
+
+
+        :param load_order: The load_order of this Target.
+        :type: int
+        """
+        self._load_order = load_order
 
     def __repr__(self):
         return formatted_flat_dict(self)

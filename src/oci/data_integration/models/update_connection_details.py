@@ -45,6 +45,10 @@ class UpdateConnectionDetails(object):
     #: This constant has a value of "AMAZON_S3_CONNECTION"
     MODEL_TYPE_AMAZON_S3_CONNECTION = "AMAZON_S3_CONNECTION"
 
+    #: A constant which can be used with the model_type property of a UpdateConnectionDetails.
+    #: This constant has a value of "BIP_CONNECTION"
+    MODEL_TYPE_BIP_CONNECTION = "BIP_CONNECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new UpdateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -57,13 +61,14 @@ class UpdateConnectionDetails(object):
         * :class:`~oci.data_integration.models.UpdateConnectionFromAtp`
         * :class:`~oci.data_integration.models.UpdateConnectionFromOracle`
         * :class:`~oci.data_integration.models.UpdateConnectionFromAdwc`
+        * :class:`~oci.data_integration.models.UpdateConnectionFromBIP`
         * :class:`~oci.data_integration.models.UpdateConnectionFromMySQL`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this UpdateConnectionDetails.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION"
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION"
         :type model_type: str
 
         :param key:
@@ -176,6 +181,9 @@ class UpdateConnectionDetails(object):
         if type == 'ORACLE_ADWC_CONNECTION':
             return 'UpdateConnectionFromAdwc'
 
+        if type == 'BIP_CONNECTION':
+            return 'UpdateConnectionFromBIP'
+
         if type == 'MYSQL_CONNECTION':
             return 'UpdateConnectionFromMySQL'
         else:
@@ -187,7 +195,7 @@ class UpdateConnectionDetails(object):
         **[Required]** Gets the model_type of this UpdateConnectionDetails.
         The type of the connection.
 
-        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION"
+        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION"
 
 
         :return: The model_type of this UpdateConnectionDetails.
@@ -205,7 +213,7 @@ class UpdateConnectionDetails(object):
         :param model_type: The model_type of this UpdateConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION"]
+        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

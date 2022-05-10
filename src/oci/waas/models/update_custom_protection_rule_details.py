@@ -147,7 +147,7 @@ class UpdateCustomProtectionRuleDetails(object):
 
         For more information about ModSecurity's open source WAF rules, see `Mod Security's OWASP Core Rule Set documentation`__.
 
-        __ https://docs.cloud.oracle.com/Content/WAF/tasks/customprotectionrules.htm
+        __ https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm
         __ https://www.modsecurity.org/CRS/Documentation/making.html
         __ https://www.modsecurity.org/CRS/Documentation/index.html
 
@@ -194,7 +194,7 @@ class UpdateCustomProtectionRuleDetails(object):
 
         For more information about ModSecurity's open source WAF rules, see `Mod Security's OWASP Core Rule Set documentation`__.
 
-        __ https://docs.cloud.oracle.com/Content/WAF/tasks/customprotectionrules.htm
+        __ https://docs.cloud.oracle.com/Content/WAF/Tasks/customprotectionrules.htm
         __ https://www.modsecurity.org/CRS/Documentation/making.html
         __ https://www.modsecurity.org/CRS/Documentation/index.html
 

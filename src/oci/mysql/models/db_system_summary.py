@@ -283,8 +283,7 @@ class DbSystemSummary(object):
     def is_highly_available(self):
         """
         Gets the is_highly_available of this DbSystemSummary.
-        If the policy is to enable high availability of the instance, by
-        maintaining secondary/failover capacity as necessary.
+        Specifies if the DB System is highly available.
 
 
         :return: The is_highly_available of this DbSystemSummary.
@@ -296,8 +295,7 @@ class DbSystemSummary(object):
     def is_highly_available(self, is_highly_available):
         """
         Sets the is_highly_available of this DbSystemSummary.
-        If the policy is to enable high availability of the instance, by
-        maintaining secondary/failover capacity as necessary.
+        Specifies if the DB System is highly available.
 
 
         :param is_highly_available: The is_highly_available of this DbSystemSummary.
