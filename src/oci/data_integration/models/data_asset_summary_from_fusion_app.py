@@ -78,7 +78,19 @@ class DataAssetSummaryFromFusionApp(DataAssetSummary):
 
         :param default_connection:
             The value to assign to the default_connection property of this DataAssetSummaryFromFusionApp.
-        :type default_connection: oci.data_integration.models.ConnectionSummaryFromBICC
+        :type default_connection: oci.data_integration.models.ConnectionSummary
+
+        :param staging_data_asset:
+            The value to assign to the staging_data_asset property of this DataAssetSummaryFromFusionApp.
+        :type staging_data_asset: oci.data_integration.models.DataAssetSummaryFromObjectStorage
+
+        :param staging_connection:
+            The value to assign to the staging_connection property of this DataAssetSummaryFromFusionApp.
+        :type staging_connection: oci.data_integration.models.ConnectionSummaryFromObjectStorage
+
+        :param bucket_schema:
+            The value to assign to the bucket_schema property of this DataAssetSummaryFromFusionApp.
+        :type bucket_schema: oci.data_integration.models.Schema
 
         """
         self.swagger_types = {
@@ -96,7 +108,10 @@ class DataAssetSummaryFromFusionApp(DataAssetSummary):
             'parent_ref': 'ParentReference',
             'metadata': 'ObjectMetadata',
             'service_url': 'str',
-            'default_connection': 'ConnectionSummaryFromBICC'
+            'default_connection': 'ConnectionSummary',
+            'staging_data_asset': 'DataAssetSummaryFromObjectStorage',
+            'staging_connection': 'ConnectionSummaryFromObjectStorage',
+            'bucket_schema': 'Schema'
         }
 
         self.attribute_map = {
@@ -114,7 +129,10 @@ class DataAssetSummaryFromFusionApp(DataAssetSummary):
             'parent_ref': 'parentRef',
             'metadata': 'metadata',
             'service_url': 'serviceUrl',
-            'default_connection': 'defaultConnection'
+            'default_connection': 'defaultConnection',
+            'staging_data_asset': 'stagingDataAsset',
+            'staging_connection': 'stagingConnection',
+            'bucket_schema': 'bucketSchema'
         }
 
         self._model_type = None
@@ -132,6 +150,9 @@ class DataAssetSummaryFromFusionApp(DataAssetSummary):
         self._metadata = None
         self._service_url = None
         self._default_connection = None
+        self._staging_data_asset = None
+        self._staging_connection = None
+        self._bucket_schema = None
         self._model_type = 'FUSION_APP_DATA_ASSET'
 
     @property
@@ -164,7 +185,7 @@ class DataAssetSummaryFromFusionApp(DataAssetSummary):
         Gets the default_connection of this DataAssetSummaryFromFusionApp.
 
         :return: The default_connection of this DataAssetSummaryFromFusionApp.
-        :rtype: oci.data_integration.models.ConnectionSummaryFromBICC
+        :rtype: oci.data_integration.models.ConnectionSummary
         """
         return self._default_connection
 
@@ -174,9 +195,69 @@ class DataAssetSummaryFromFusionApp(DataAssetSummary):
         Sets the default_connection of this DataAssetSummaryFromFusionApp.
 
         :param default_connection: The default_connection of this DataAssetSummaryFromFusionApp.
-        :type: oci.data_integration.models.ConnectionSummaryFromBICC
+        :type: oci.data_integration.models.ConnectionSummary
         """
         self._default_connection = default_connection
+
+    @property
+    def staging_data_asset(self):
+        """
+        Gets the staging_data_asset of this DataAssetSummaryFromFusionApp.
+
+        :return: The staging_data_asset of this DataAssetSummaryFromFusionApp.
+        :rtype: oci.data_integration.models.DataAssetSummaryFromObjectStorage
+        """
+        return self._staging_data_asset
+
+    @staging_data_asset.setter
+    def staging_data_asset(self, staging_data_asset):
+        """
+        Sets the staging_data_asset of this DataAssetSummaryFromFusionApp.
+
+        :param staging_data_asset: The staging_data_asset of this DataAssetSummaryFromFusionApp.
+        :type: oci.data_integration.models.DataAssetSummaryFromObjectStorage
+        """
+        self._staging_data_asset = staging_data_asset
+
+    @property
+    def staging_connection(self):
+        """
+        Gets the staging_connection of this DataAssetSummaryFromFusionApp.
+
+        :return: The staging_connection of this DataAssetSummaryFromFusionApp.
+        :rtype: oci.data_integration.models.ConnectionSummaryFromObjectStorage
+        """
+        return self._staging_connection
+
+    @staging_connection.setter
+    def staging_connection(self, staging_connection):
+        """
+        Sets the staging_connection of this DataAssetSummaryFromFusionApp.
+
+        :param staging_connection: The staging_connection of this DataAssetSummaryFromFusionApp.
+        :type: oci.data_integration.models.ConnectionSummaryFromObjectStorage
+        """
+        self._staging_connection = staging_connection
+
+    @property
+    def bucket_schema(self):
+        """
+        Gets the bucket_schema of this DataAssetSummaryFromFusionApp.
+
+        :return: The bucket_schema of this DataAssetSummaryFromFusionApp.
+        :rtype: oci.data_integration.models.Schema
+        """
+        return self._bucket_schema
+
+    @bucket_schema.setter
+    def bucket_schema(self, bucket_schema):
+        """
+        Sets the bucket_schema of this DataAssetSummaryFromFusionApp.
+
+        :param bucket_schema: The bucket_schema of this DataAssetSummaryFromFusionApp.
+        :type: oci.data_integration.models.Schema
+        """
+        self._bucket_schema = bucket_schema
 
     def __repr__(self):
         return formatted_flat_dict(self)

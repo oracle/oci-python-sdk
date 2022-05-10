@@ -164,6 +164,10 @@ class TaskRunSummary(object):
             The value to assign to the step_id property of this TaskRunSummary.
         :type step_id: str
 
+        :param inputs:
+            The value to assign to the inputs property of this TaskRunSummary.
+        :type inputs: dict(str, ParameterValue)
+
         :param metadata:
             The value to assign to the metadata property of this TaskRunSummary.
         :type metadata: oci.data_integration.models.ObjectMetadata
@@ -189,6 +193,7 @@ class TaskRunSummary(object):
             'ref_task_run_id': 'str',
             're_run_type': 'str',
             'step_id': 'str',
+            'inputs': 'dict(str, ParameterValue)',
             'metadata': 'ObjectMetadata'
         }
 
@@ -212,6 +217,7 @@ class TaskRunSummary(object):
             'ref_task_run_id': 'refTaskRunId',
             're_run_type': 'reRunType',
             'step_id': 'stepId',
+            'inputs': 'inputs',
             'metadata': 'metadata'
         }
 
@@ -234,6 +240,7 @@ class TaskRunSummary(object):
         self._ref_task_run_id = None
         self._re_run_type = None
         self._step_id = None
+        self._inputs = None
         self._metadata = None
 
     @property
@@ -705,6 +712,30 @@ class TaskRunSummary(object):
         :type: str
         """
         self._step_id = step_id
+
+    @property
+    def inputs(self):
+        """
+        Gets the inputs of this TaskRunSummary.
+        A map of the configuration provider input bindings of the run.
+
+
+        :return: The inputs of this TaskRunSummary.
+        :rtype: dict(str, ParameterValue)
+        """
+        return self._inputs
+
+    @inputs.setter
+    def inputs(self, inputs):
+        """
+        Sets the inputs of this TaskRunSummary.
+        A map of the configuration provider input bindings of the run.
+
+
+        :param inputs: The inputs of this TaskRunSummary.
+        :type: dict(str, ParameterValue)
+        """
+        self._inputs = inputs
 
     @property
     def metadata(self):

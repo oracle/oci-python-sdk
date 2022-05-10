@@ -41,7 +41,7 @@ class MergeOperator(Operator):
 
         :param model_type:
             The value to assign to the model_type property of this MergeOperator.
-            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SOURCE_OPERATOR", "FILTER_OPERATOR", "JOINER_OPERATOR", "AGGREGATOR_OPERATOR", "PROJECTION_OPERATOR", "TARGET_OPERATOR", "FLATTEN_OPERATOR", "DISTINCT_OPERATOR", "SORT_OPERATOR", "UNION_OPERATOR", "INTERSECT_OPERATOR", "MINUS_OPERATOR", "MERGE_OPERATOR", "FUNCTION_OPERATOR", "SPLIT_OPERATOR", "START_OPERATOR", "END_OPERATOR", "PIPELINE_OPERATOR", "TASK_OPERATOR", "EXPRESSION_OPERATOR", "LOOKUP_OPERATOR", "PIVOT_OPERATOR", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -75,7 +75,7 @@ class MergeOperator(Operator):
 
         :param output_ports:
             The value to assign to the output_ports property of this MergeOperator.
-        :type output_ports: list[oci.data_integration.models.OutputPort]
+        :type output_ports: list[oci.data_integration.models.TypedObject]
 
         :param object_status:
             The value to assign to the object_status property of this MergeOperator.
@@ -109,7 +109,7 @@ class MergeOperator(Operator):
             'description': 'str',
             'object_version': 'int',
             'input_ports': 'list[InputPort]',
-            'output_ports': 'list[OutputPort]',
+            'output_ports': 'list[TypedObject]',
             'object_status': 'int',
             'identifier': 'str',
             'parameters': 'list[Parameter]',

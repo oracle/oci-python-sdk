@@ -25,6 +25,10 @@ class AbstractReadAttribute(object):
     #: This constant has a value of "BICC_READ_ATTRIBUTE"
     MODEL_TYPE_BICC_READ_ATTRIBUTE = "BICC_READ_ATTRIBUTE"
 
+    #: A constant which can be used with the model_type property of a AbstractReadAttribute.
+    #: This constant has a value of "BIP_READ_ATTRIBUTE"
+    MODEL_TYPE_BIP_READ_ATTRIBUTE = "BIP_READ_ATTRIBUTE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new AbstractReadAttribute object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -32,13 +36,14 @@ class AbstractReadAttribute(object):
 
         * :class:`~oci.data_integration.models.OracleReadAttributes`
         * :class:`~oci.data_integration.models.BiccReadAttributes`
+        * :class:`~oci.data_integration.models.BipReadAttributes`
         * :class:`~oci.data_integration.models.OracleReadAttribute`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this AbstractReadAttribute.
-            Allowed values for this property are: "ORACLEREADATTRIBUTE", "ORACLE_READ_ATTRIBUTE", "BICC_READ_ATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLEREADATTRIBUTE", "ORACLE_READ_ATTRIBUTE", "BICC_READ_ATTRIBUTE", "BIP_READ_ATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -67,6 +72,9 @@ class AbstractReadAttribute(object):
         if type == 'BICC_READ_ATTRIBUTE':
             return 'BiccReadAttributes'
 
+        if type == 'BIP_READ_ATTRIBUTE':
+            return 'BipReadAttributes'
+
         if type == 'ORACLEREADATTRIBUTE':
             return 'OracleReadAttribute'
         else:
@@ -78,7 +86,7 @@ class AbstractReadAttribute(object):
         **[Required]** Gets the model_type of this AbstractReadAttribute.
         The type of the abstract read attribute.
 
-        Allowed values for this property are: "ORACLEREADATTRIBUTE", "ORACLE_READ_ATTRIBUTE", "BICC_READ_ATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLEREADATTRIBUTE", "ORACLE_READ_ATTRIBUTE", "BICC_READ_ATTRIBUTE", "BIP_READ_ATTRIBUTE", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -97,7 +105,7 @@ class AbstractReadAttribute(object):
         :param model_type: The model_type of this AbstractReadAttribute.
         :type: str
         """
-        allowed_values = ["ORACLEREADATTRIBUTE", "ORACLE_READ_ATTRIBUTE", "BICC_READ_ATTRIBUTE"]
+        allowed_values = ["ORACLEREADATTRIBUTE", "ORACLE_READ_ATTRIBUTE", "BICC_READ_ATTRIBUTE", "BIP_READ_ATTRIBUTE"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

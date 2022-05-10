@@ -66,7 +66,19 @@ class CreateDataAssetFromFusionApp(CreateDataAssetDetails):
 
         :param default_connection:
             The value to assign to the default_connection property of this CreateDataAssetFromFusionApp.
-        :type default_connection: oci.data_integration.models.CreateConnectionFromBICC
+        :type default_connection: oci.data_integration.models.CreateConnectionDetails
+
+        :param staging_data_asset:
+            The value to assign to the staging_data_asset property of this CreateDataAssetFromFusionApp.
+        :type staging_data_asset: oci.data_integration.models.DataAssetSummaryFromObjectStorage
+
+        :param staging_connection:
+            The value to assign to the staging_connection property of this CreateDataAssetFromFusionApp.
+        :type staging_connection: oci.data_integration.models.ConnectionSummaryFromObjectStorage
+
+        :param bucket_schema:
+            The value to assign to the bucket_schema property of this CreateDataAssetFromFusionApp.
+        :type bucket_schema: oci.data_integration.models.Schema
 
         """
         self.swagger_types = {
@@ -81,7 +93,10 @@ class CreateDataAssetFromFusionApp(CreateDataAssetDetails):
             'asset_properties': 'dict(str, str)',
             'registry_metadata': 'RegistryMetadata',
             'service_url': 'str',
-            'default_connection': 'CreateConnectionFromBICC'
+            'default_connection': 'CreateConnectionDetails',
+            'staging_data_asset': 'DataAssetSummaryFromObjectStorage',
+            'staging_connection': 'ConnectionSummaryFromObjectStorage',
+            'bucket_schema': 'Schema'
         }
 
         self.attribute_map = {
@@ -96,7 +111,10 @@ class CreateDataAssetFromFusionApp(CreateDataAssetDetails):
             'asset_properties': 'assetProperties',
             'registry_metadata': 'registryMetadata',
             'service_url': 'serviceUrl',
-            'default_connection': 'defaultConnection'
+            'default_connection': 'defaultConnection',
+            'staging_data_asset': 'stagingDataAsset',
+            'staging_connection': 'stagingConnection',
+            'bucket_schema': 'bucketSchema'
         }
 
         self._model_type = None
@@ -111,6 +129,9 @@ class CreateDataAssetFromFusionApp(CreateDataAssetDetails):
         self._registry_metadata = None
         self._service_url = None
         self._default_connection = None
+        self._staging_data_asset = None
+        self._staging_connection = None
+        self._bucket_schema = None
         self._model_type = 'FUSION_APP_DATA_ASSET'
 
     @property
@@ -143,7 +164,7 @@ class CreateDataAssetFromFusionApp(CreateDataAssetDetails):
         Gets the default_connection of this CreateDataAssetFromFusionApp.
 
         :return: The default_connection of this CreateDataAssetFromFusionApp.
-        :rtype: oci.data_integration.models.CreateConnectionFromBICC
+        :rtype: oci.data_integration.models.CreateConnectionDetails
         """
         return self._default_connection
 
@@ -153,9 +174,69 @@ class CreateDataAssetFromFusionApp(CreateDataAssetDetails):
         Sets the default_connection of this CreateDataAssetFromFusionApp.
 
         :param default_connection: The default_connection of this CreateDataAssetFromFusionApp.
-        :type: oci.data_integration.models.CreateConnectionFromBICC
+        :type: oci.data_integration.models.CreateConnectionDetails
         """
         self._default_connection = default_connection
+
+    @property
+    def staging_data_asset(self):
+        """
+        Gets the staging_data_asset of this CreateDataAssetFromFusionApp.
+
+        :return: The staging_data_asset of this CreateDataAssetFromFusionApp.
+        :rtype: oci.data_integration.models.DataAssetSummaryFromObjectStorage
+        """
+        return self._staging_data_asset
+
+    @staging_data_asset.setter
+    def staging_data_asset(self, staging_data_asset):
+        """
+        Sets the staging_data_asset of this CreateDataAssetFromFusionApp.
+
+        :param staging_data_asset: The staging_data_asset of this CreateDataAssetFromFusionApp.
+        :type: oci.data_integration.models.DataAssetSummaryFromObjectStorage
+        """
+        self._staging_data_asset = staging_data_asset
+
+    @property
+    def staging_connection(self):
+        """
+        Gets the staging_connection of this CreateDataAssetFromFusionApp.
+
+        :return: The staging_connection of this CreateDataAssetFromFusionApp.
+        :rtype: oci.data_integration.models.ConnectionSummaryFromObjectStorage
+        """
+        return self._staging_connection
+
+    @staging_connection.setter
+    def staging_connection(self, staging_connection):
+        """
+        Sets the staging_connection of this CreateDataAssetFromFusionApp.
+
+        :param staging_connection: The staging_connection of this CreateDataAssetFromFusionApp.
+        :type: oci.data_integration.models.ConnectionSummaryFromObjectStorage
+        """
+        self._staging_connection = staging_connection
+
+    @property
+    def bucket_schema(self):
+        """
+        Gets the bucket_schema of this CreateDataAssetFromFusionApp.
+
+        :return: The bucket_schema of this CreateDataAssetFromFusionApp.
+        :rtype: oci.data_integration.models.Schema
+        """
+        return self._bucket_schema
+
+    @bucket_schema.setter
+    def bucket_schema(self, bucket_schema):
+        """
+        Sets the bucket_schema of this CreateDataAssetFromFusionApp.
+
+        :param bucket_schema: The bucket_schema of this CreateDataAssetFromFusionApp.
+        :type: oci.data_integration.models.Schema
+        """
+        self._bucket_schema = bucket_schema
 
     def __repr__(self):
         return formatted_flat_dict(self)

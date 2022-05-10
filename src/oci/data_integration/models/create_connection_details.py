@@ -45,6 +45,10 @@ class CreateConnectionDetails(object):
     #: This constant has a value of "AMAZON_S3_CONNECTION"
     MODEL_TYPE_AMAZON_S3_CONNECTION = "AMAZON_S3_CONNECTION"
 
+    #: A constant which can be used with the model_type property of a CreateConnectionDetails.
+    #: This constant has a value of "BIP_CONNECTION"
+    MODEL_TYPE_BIP_CONNECTION = "BIP_CONNECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -55,6 +59,7 @@ class CreateConnectionDetails(object):
         * :class:`~oci.data_integration.models.CreateConnectionFromJdbc`
         * :class:`~oci.data_integration.models.CreateConnectionFromBICC`
         * :class:`~oci.data_integration.models.CreateConnectionFromAtp`
+        * :class:`~oci.data_integration.models.CreateConnectionFromBIP`
         * :class:`~oci.data_integration.models.CreateConnectionFromAdwc`
         * :class:`~oci.data_integration.models.CreateConnectionFromOracle`
         * :class:`~oci.data_integration.models.CreateConnectionFromObjectStorage`
@@ -63,7 +68,7 @@ class CreateConnectionDetails(object):
 
         :param model_type:
             The value to assign to the model_type property of this CreateConnectionDetails.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION"
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION"
         :type model_type: str
 
         :param key:
@@ -163,6 +168,9 @@ class CreateConnectionDetails(object):
         if type == 'ORACLE_ATP_CONNECTION':
             return 'CreateConnectionFromAtp'
 
+        if type == 'BIP_CONNECTION':
+            return 'CreateConnectionFromBIP'
+
         if type == 'ORACLE_ADWC_CONNECTION':
             return 'CreateConnectionFromAdwc'
 
@@ -180,7 +188,7 @@ class CreateConnectionDetails(object):
         Gets the model_type of this CreateConnectionDetails.
         The type of the connection.
 
-        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION"
+        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION"
 
 
         :return: The model_type of this CreateConnectionDetails.
@@ -198,7 +206,7 @@ class CreateConnectionDetails(object):
         :param model_type: The model_type of this CreateConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION"]
+        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             raise ValueError(
                 "Invalid value for `model_type`, must be None or one of {0}"

@@ -95,6 +95,10 @@ class AutonomousDatabaseSummary(object):
     #: This constant has a value of "INACCESSIBLE"
     LIFECYCLE_STATE_INACCESSIBLE = "INACCESSIBLE"
 
+    #: A constant which can be used with the lifecycle_state property of a AutonomousDatabaseSummary.
+    #: This constant has a value of "STANDBY"
+    LIFECYCLE_STATE_STANDBY = "STANDBY"
+
     #: A constant which can be used with the infrastructure_type property of a AutonomousDatabaseSummary.
     #: This constant has a value of "CLOUD"
     INFRASTRUCTURE_TYPE_CLOUD = "CLOUD"
@@ -278,7 +282,7 @@ class AutonomousDatabaseSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AutonomousDatabaseSummary.
-            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -337,6 +341,10 @@ class AutonomousDatabaseSummary(object):
         :param ocpu_count:
             The value to assign to the ocpu_count property of this AutonomousDatabaseSummary.
         :type ocpu_count: float
+
+        :param provisionable_cpus:
+            The value to assign to the provisionable_cpus property of this AutonomousDatabaseSummary.
+        :type provisionable_cpus: list[float]
 
         :param data_storage_size_in_tbs:
             The value to assign to the data_storage_size_in_tbs property of this AutonomousDatabaseSummary.
@@ -657,6 +665,7 @@ class AutonomousDatabaseSummary(object):
             'key_history_entry': 'list[AutonomousDatabaseKeyHistoryEntry]',
             'cpu_core_count': 'int',
             'ocpu_count': 'float',
+            'provisionable_cpus': 'list[float]',
             'data_storage_size_in_tbs': 'int',
             'memory_per_oracle_compute_unit_in_gbs': 'int',
             'data_storage_size_in_gbs': 'int',
@@ -745,6 +754,7 @@ class AutonomousDatabaseSummary(object):
             'key_history_entry': 'keyHistoryEntry',
             'cpu_core_count': 'cpuCoreCount',
             'ocpu_count': 'ocpuCount',
+            'provisionable_cpus': 'provisionableCpus',
             'data_storage_size_in_tbs': 'dataStorageSizeInTBs',
             'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs',
             'data_storage_size_in_gbs': 'dataStorageSizeInGBs',
@@ -832,6 +842,7 @@ class AutonomousDatabaseSummary(object):
         self._key_history_entry = None
         self._cpu_core_count = None
         self._ocpu_count = None
+        self._provisionable_cpus = None
         self._data_storage_size_in_tbs = None
         self._memory_per_oracle_compute_unit_in_gbs = None
         self._data_storage_size_in_gbs = None
@@ -963,7 +974,7 @@ class AutonomousDatabaseSummary(object):
         **[Required]** Gets the lifecycle_state of this AutonomousDatabaseSummary.
         The current state of the Autonomous Database.
 
-        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -982,7 +993,7 @@ class AutonomousDatabaseSummary(object):
         :param lifecycle_state: The lifecycle_state of this AutonomousDatabaseSummary.
         :type: str
         """
-        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE"]
+        allowed_values = ["PROVISIONING", "AVAILABLE", "STOPPING", "STOPPED", "STARTING", "TERMINATING", "TERMINATED", "UNAVAILABLE", "RESTORE_IN_PROGRESS", "RESTORE_FAILED", "BACKUP_IN_PROGRESS", "SCALE_IN_PROGRESS", "AVAILABLE_NEEDS_ATTENTION", "UPDATING", "MAINTENANCE_IN_PROGRESS", "RESTARTING", "RECREATING", "ROLE_CHANGE_IN_PROGRESS", "UPGRADING", "INACCESSIBLE", "STANDBY"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state
@@ -1358,6 +1369,30 @@ class AutonomousDatabaseSummary(object):
         :type: float
         """
         self._ocpu_count = ocpu_count
+
+    @property
+    def provisionable_cpus(self):
+        """
+        Gets the provisionable_cpus of this AutonomousDatabaseSummary.
+        An array of CPU values that an Autonomous Database can be scaled to.
+
+
+        :return: The provisionable_cpus of this AutonomousDatabaseSummary.
+        :rtype: list[float]
+        """
+        return self._provisionable_cpus
+
+    @provisionable_cpus.setter
+    def provisionable_cpus(self, provisionable_cpus):
+        """
+        Sets the provisionable_cpus of this AutonomousDatabaseSummary.
+        An array of CPU values that an Autonomous Database can be scaled to.
+
+
+        :param provisionable_cpus: The provisionable_cpus of this AutonomousDatabaseSummary.
+        :type: list[float]
+        """
+        self._provisionable_cpus = provisionable_cpus
 
     @property
     def data_storage_size_in_tbs(self):

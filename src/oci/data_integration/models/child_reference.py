@@ -37,6 +37,18 @@ class ChildReference(object):
     #: This constant has a value of "GENERIC_JDBC_CONNECTION"
     TYPE_GENERIC_JDBC_CONNECTION = "GENERIC_JDBC_CONNECTION"
 
+    #: A constant which can be used with the type property of a ChildReference.
+    #: This constant has a value of "BIP_CONNECTION"
+    TYPE_BIP_CONNECTION = "BIP_CONNECTION"
+
+    #: A constant which can be used with the type property of a ChildReference.
+    #: This constant has a value of "BICC_CONNECTION"
+    TYPE_BICC_CONNECTION = "BICC_CONNECTION"
+
+    #: A constant which can be used with the type property of a ChildReference.
+    #: This constant has a value of "AMAZON_S3_CONNECTION"
+    TYPE_AMAZON_S3_CONNECTION = "AMAZON_S3_CONNECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ChildReference object with values from keyword arguments.
@@ -64,7 +76,7 @@ class ChildReference(object):
 
         :param type:
             The value to assign to the type property of this ChildReference.
-            Allowed values for this property are: "ORACLEDB_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_ADWC_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLEDB_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_ADWC_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BIP_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type type: str
 
@@ -241,7 +253,7 @@ class ChildReference(object):
         Gets the type of this ChildReference.
         The type of the reference object.
 
-        Allowed values for this property are: "ORACLEDB_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_ADWC_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLEDB_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_ADWC_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BIP_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -260,7 +272,7 @@ class ChildReference(object):
         :param type: The type of this ChildReference.
         :type: str
         """
-        allowed_values = ["ORACLEDB_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_ADWC_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION"]
+        allowed_values = ["ORACLEDB_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_ADWC_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BIP_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(type, allowed_values):
             type = 'UNKNOWN_ENUM_VALUE'
         self._type = type

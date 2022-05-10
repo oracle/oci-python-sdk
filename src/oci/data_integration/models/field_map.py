@@ -29,21 +29,36 @@ class FieldMap(object):
     #: This constant has a value of "RULE_BASED_FIELD_MAP"
     MODEL_TYPE_RULE_BASED_FIELD_MAP = "RULE_BASED_FIELD_MAP"
 
+    #: A constant which can be used with the model_type property of a FieldMap.
+    #: This constant has a value of "CONDITIONAL_COMPOSITE_FIELD_MAP"
+    MODEL_TYPE_CONDITIONAL_COMPOSITE_FIELD_MAP = "CONDITIONAL_COMPOSITE_FIELD_MAP"
+
+    #: A constant which can be used with the model_type property of a FieldMap.
+    #: This constant has a value of "NAMED_ENTITY_MAP"
+    MODEL_TYPE_NAMED_ENTITY_MAP = "NAMED_ENTITY_MAP"
+
+    #: A constant which can be used with the model_type property of a FieldMap.
+    #: This constant has a value of "RULE_BASED_ENTITY_MAP"
+    MODEL_TYPE_RULE_BASED_ENTITY_MAP = "RULE_BASED_ENTITY_MAP"
+
     def __init__(self, **kwargs):
         """
         Initializes a new FieldMap object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.data_integration.models.RuleBasedFieldMap`
+        * :class:`~oci.data_integration.models.RuleBasedEntityMap`
+        * :class:`~oci.data_integration.models.NamedEntityMap`
         * :class:`~oci.data_integration.models.DirectFieldMap`
         * :class:`~oci.data_integration.models.CompositeFieldMap`
+        * :class:`~oci.data_integration.models.ConditionalCompositeFieldMap`
         * :class:`~oci.data_integration.models.DirectNamedFieldMap`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this FieldMap.
-            Allowed values for this property are: "DIRECT_NAMED_FIELD_MAP", "COMPOSITE_FIELD_MAP", "DIRECT_FIELD_MAP", "RULE_BASED_FIELD_MAP", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DIRECT_NAMED_FIELD_MAP", "COMPOSITE_FIELD_MAP", "DIRECT_FIELD_MAP", "RULE_BASED_FIELD_MAP", "CONDITIONAL_COMPOSITE_FIELD_MAP", "NAMED_ENTITY_MAP", "RULE_BASED_ENTITY_MAP", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -76,11 +91,20 @@ class FieldMap(object):
         if type == 'RULE_BASED_FIELD_MAP':
             return 'RuleBasedFieldMap'
 
+        if type == 'RULE_BASED_ENTITY_MAP':
+            return 'RuleBasedEntityMap'
+
+        if type == 'NAMED_ENTITY_MAP':
+            return 'NamedEntityMap'
+
         if type == 'DIRECT_FIELD_MAP':
             return 'DirectFieldMap'
 
         if type == 'COMPOSITE_FIELD_MAP':
             return 'CompositeFieldMap'
+
+        if type == 'CONDITIONAL_COMPOSITE_FIELD_MAP':
+            return 'ConditionalCompositeFieldMap'
 
         if type == 'DIRECT_NAMED_FIELD_MAP':
             return 'DirectNamedFieldMap'
@@ -93,7 +117,7 @@ class FieldMap(object):
         **[Required]** Gets the model_type of this FieldMap.
         The model type for the field map.
 
-        Allowed values for this property are: "DIRECT_NAMED_FIELD_MAP", "COMPOSITE_FIELD_MAP", "DIRECT_FIELD_MAP", "RULE_BASED_FIELD_MAP", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DIRECT_NAMED_FIELD_MAP", "COMPOSITE_FIELD_MAP", "DIRECT_FIELD_MAP", "RULE_BASED_FIELD_MAP", "CONDITIONAL_COMPOSITE_FIELD_MAP", "NAMED_ENTITY_MAP", "RULE_BASED_ENTITY_MAP", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -112,7 +136,7 @@ class FieldMap(object):
         :param model_type: The model_type of this FieldMap.
         :type: str
         """
-        allowed_values = ["DIRECT_NAMED_FIELD_MAP", "COMPOSITE_FIELD_MAP", "DIRECT_FIELD_MAP", "RULE_BASED_FIELD_MAP"]
+        allowed_values = ["DIRECT_NAMED_FIELD_MAP", "COMPOSITE_FIELD_MAP", "DIRECT_FIELD_MAP", "RULE_BASED_FIELD_MAP", "CONDITIONAL_COMPOSITE_FIELD_MAP", "NAMED_ENTITY_MAP", "RULE_BASED_ENTITY_MAP"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

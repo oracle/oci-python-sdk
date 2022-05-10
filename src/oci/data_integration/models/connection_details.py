@@ -45,6 +45,10 @@ class ConnectionDetails(object):
     #: This constant has a value of "AMAZON_S3_CONNECTION"
     MODEL_TYPE_AMAZON_S3_CONNECTION = "AMAZON_S3_CONNECTION"
 
+    #: A constant which can be used with the model_type property of a ConnectionDetails.
+    #: This constant has a value of "BIP_CONNECTION"
+    MODEL_TYPE_BIP_CONNECTION = "BIP_CONNECTION"
+
     def __init__(self, **kwargs):
         """
         Initializes a new ConnectionDetails object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -58,12 +62,13 @@ class ConnectionDetails(object):
         * :class:`~oci.data_integration.models.ConnectionFromAdwcDetails`
         * :class:`~oci.data_integration.models.ConnectionFromAtpDetails`
         * :class:`~oci.data_integration.models.ConnectionFromOracleDetails`
+        * :class:`~oci.data_integration.models.ConnectionFromBipDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
         :param model_type:
             The value to assign to the model_type property of this ConnectionDetails.
-            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -193,6 +198,9 @@ class ConnectionDetails(object):
 
         if type == 'ORACLEDB_CONNECTION':
             return 'ConnectionFromOracleDetails'
+
+        if type == 'BIP_CONNECTION':
+            return 'ConnectionFromBipDetails'
         else:
             return 'ConnectionDetails'
 
@@ -202,7 +210,7 @@ class ConnectionDetails(object):
         **[Required]** Gets the model_type of this ConnectionDetails.
         The type of the connection.
 
-        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -221,7 +229,7 @@ class ConnectionDetails(object):
         :param model_type: The model_type of this ConnectionDetails.
         :type: str
         """
-        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION"]
+        allowed_values = ["ORACLE_ADWC_CONNECTION", "ORACLE_ATP_CONNECTION", "ORACLE_OBJECT_STORAGE_CONNECTION", "ORACLEDB_CONNECTION", "MYSQL_CONNECTION", "GENERIC_JDBC_CONNECTION", "BICC_CONNECTION", "AMAZON_S3_CONNECTION", "BIP_CONNECTION"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

@@ -25,6 +25,18 @@ class ReadOperationConfig(AbstractDataOperationConfig):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
+        :param metadata_config_properties:
+            The value to assign to the metadata_config_properties property of this ReadOperationConfig.
+        :type metadata_config_properties: dict(str, str)
+
+        :param derived_attributes:
+            The value to assign to the derived_attributes property of this ReadOperationConfig.
+        :type derived_attributes: dict(str, str)
+
+        :param call_attribute:
+            The value to assign to the call_attribute property of this ReadOperationConfig.
+        :type call_attribute: oci.data_integration.models.BipCallAttribute
+
         :param key:
             The value to assign to the key property of this ReadOperationConfig.
         :type key: str
@@ -60,6 +72,9 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         """
         self.swagger_types = {
             'model_type': 'str',
+            'metadata_config_properties': 'dict(str, str)',
+            'derived_attributes': 'dict(str, str)',
+            'call_attribute': 'BipCallAttribute',
             'key': 'str',
             'model_version': 'str',
             'parent_ref': 'ParentReference',
@@ -72,6 +87,9 @@ class ReadOperationConfig(AbstractDataOperationConfig):
 
         self.attribute_map = {
             'model_type': 'modelType',
+            'metadata_config_properties': 'metadataConfigProperties',
+            'derived_attributes': 'derivedAttributes',
+            'call_attribute': 'callAttribute',
             'key': 'key',
             'model_version': 'modelVersion',
             'parent_ref': 'parentRef',
@@ -83,6 +101,9 @@ class ReadOperationConfig(AbstractDataOperationConfig):
         }
 
         self._model_type = None
+        self._metadata_config_properties = None
+        self._derived_attributes = None
+        self._call_attribute = None
         self._key = None
         self._model_version = None
         self._parent_ref = None

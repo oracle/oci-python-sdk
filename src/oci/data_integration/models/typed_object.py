@@ -61,6 +61,18 @@ class TypedObject(object):
     #: This constant has a value of "PARAMETER"
     MODEL_TYPE_PARAMETER = "PARAMETER"
 
+    #: A constant which can be used with the model_type property of a TypedObject.
+    #: This constant has a value of "PIVOT_FIELD"
+    MODEL_TYPE_PIVOT_FIELD = "PIVOT_FIELD"
+
+    #: A constant which can be used with the model_type property of a TypedObject.
+    #: This constant has a value of "MACRO_PIVOT_FIELD"
+    MODEL_TYPE_MACRO_PIVOT_FIELD = "MACRO_PIVOT_FIELD"
+
+    #: A constant which can be used with the model_type property of a TypedObject.
+    #: This constant has a value of "CONDITIONAL_OUTPUT_PORT"
+    MODEL_TYPE_CONDITIONAL_OUTPUT_PORT = "CONDITIONAL_OUTPUT_PORT"
+
     def __init__(self, **kwargs):
         """
         Initializes a new TypedObject object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
@@ -72,10 +84,12 @@ class TypedObject(object):
         * :class:`~oci.data_integration.models.InputField`
         * :class:`~oci.data_integration.models.Shape`
         * :class:`~oci.data_integration.models.InputPort`
+        * :class:`~oci.data_integration.models.ConditionalOutputPort`
         * :class:`~oci.data_integration.models.ProxyField`
         * :class:`~oci.data_integration.models.DynamicProxyField`
         * :class:`~oci.data_integration.models.ShapeField`
         * :class:`~oci.data_integration.models.Parameter`
+        * :class:`~oci.data_integration.models.PivotField`
         * :class:`~oci.data_integration.models.OutputField`
         * :class:`~oci.data_integration.models.MacroField`
         * :class:`~oci.data_integration.models.DerivedField`
@@ -86,7 +100,7 @@ class TypedObject(object):
 
         :param model_type:
             The value to assign to the model_type property of this TypedObject.
-            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", "PIVOT_FIELD", "MACRO_PIVOT_FIELD", "CONDITIONAL_OUTPUT_PORT", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type model_type: str
 
@@ -176,6 +190,9 @@ class TypedObject(object):
         if type == 'INPUT_PORT':
             return 'InputPort'
 
+        if type == 'CONDITIONAL_OUTPUT_PORT':
+            return 'ConditionalOutputPort'
+
         if type == 'PROXY_FIELD':
             return 'ProxyField'
 
@@ -187,6 +204,9 @@ class TypedObject(object):
 
         if type == 'PARAMETER':
             return 'Parameter'
+
+        if type == 'PIVOT_FIELD':
+            return 'PivotField'
 
         if type == 'OUTPUT_FIELD':
             return 'OutputField'
@@ -211,7 +231,7 @@ class TypedObject(object):
         **[Required]** Gets the model_type of this TypedObject.
         The type of the types object.
 
-        Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", "PIVOT_FIELD", "MACRO_PIVOT_FIELD", "CONDITIONAL_OUTPUT_PORT", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -230,7 +250,7 @@ class TypedObject(object):
         :param model_type: The model_type of this TypedObject.
         :type: str
         """
-        allowed_values = ["SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER"]
+        allowed_values = ["SHAPE", "INPUT_PORT", "SHAPE_FIELD", "INPUT_FIELD", "DERIVED_FIELD", "MACRO_FIELD", "OUTPUT_FIELD", "DYNAMIC_PROXY_FIELD", "OUTPUT_PORT", "DYNAMIC_INPUT_FIELD", "PROXY_FIELD", "PARAMETER", "PIVOT_FIELD", "MACRO_PIVOT_FIELD", "CONDITIONAL_OUTPUT_PORT"]
         if not value_allowed_none_or_none_sentinel(model_type, allowed_values):
             model_type = 'UNKNOWN_ENUM_VALUE'
         self._model_type = model_type

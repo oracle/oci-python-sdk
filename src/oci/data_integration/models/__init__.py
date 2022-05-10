@@ -4,6 +4,7 @@
 
 from __future__ import absolute_import
 
+from .abstract_call_attribute import AbstractCallAttribute
 from .abstract_data_operation_config import AbstractDataOperationConfig
 from .abstract_field import AbstractField
 from .abstract_format_attribute import AbstractFormatAttribute
@@ -22,6 +23,9 @@ from .auth_details import AuthDetails
 from .avro_format_attribute import AvroFormatAttribute
 from .base_type import BaseType
 from .bicc_read_attributes import BiccReadAttributes
+from .bip_call_attribute import BipCallAttribute
+from .bip_read_attributes import BipReadAttributes
+from .bip_report_parameter_value import BipReportParameterValue
 from .cancel_rest_call_config import CancelRestCallConfig
 from .change_compartment_details import ChangeCompartmentDetails
 from .change_dis_application_compartment_details import ChangeDisApplicationCompartmentDetails
@@ -30,7 +34,9 @@ from .child_reference_detail import ChildReferenceDetail
 from .composite_field_map import CompositeFieldMap
 from .composite_type import CompositeType
 from .compression import Compression
+from .conditional_composite_field_map import ConditionalCompositeFieldMap
 from .conditional_input_link import ConditionalInputLink
+from .conditional_output_port import ConditionalOutputPort
 from .config_definition import ConfigDefinition
 from .config_parameter_definition import ConfigParameterDefinition
 from .config_parameter_value import ConfigParameterValue
@@ -48,6 +54,8 @@ from .connection_from_atp import ConnectionFromAtp
 from .connection_from_atp_details import ConnectionFromAtpDetails
 from .connection_from_bicc import ConnectionFromBICC
 from .connection_from_bicc_details import ConnectionFromBICCDetails
+from .connection_from_bip import ConnectionFromBIP
+from .connection_from_bip_details import ConnectionFromBipDetails
 from .connection_from_jdbc import ConnectionFromJdbc
 from .connection_from_jdbc_details import ConnectionFromJdbcDetails
 from .connection_from_my_sql import ConnectionFromMySQL
@@ -63,6 +71,7 @@ from .connection_summary_from_adwc import ConnectionSummaryFromAdwc
 from .connection_summary_from_amazon_s3 import ConnectionSummaryFromAmazonS3
 from .connection_summary_from_atp import ConnectionSummaryFromAtp
 from .connection_summary_from_bicc import ConnectionSummaryFromBICC
+from .connection_summary_from_bip import ConnectionSummaryFromBIP
 from .connection_summary_from_jdbc import ConnectionSummaryFromJdbc
 from .connection_summary_from_my_sql import ConnectionSummaryFromMySQL
 from .connection_summary_from_object_storage import ConnectionSummaryFromObjectStorage
@@ -80,6 +89,7 @@ from .create_connection_from_adwc import CreateConnectionFromAdwc
 from .create_connection_from_amazon_s3 import CreateConnectionFromAmazonS3
 from .create_connection_from_atp import CreateConnectionFromAtp
 from .create_connection_from_bicc import CreateConnectionFromBICC
+from .create_connection_from_bip import CreateConnectionFromBIP
 from .create_connection_from_jdbc import CreateConnectionFromJdbc
 from .create_connection_from_my_sql import CreateConnectionFromMySQL
 from .create_connection_from_object_storage import CreateConnectionFromObjectStorage
@@ -211,6 +221,9 @@ from .external_storage import ExternalStorage
 from .field_map import FieldMap
 from .filter import Filter
 from .filter_push import FilterPush
+from .flatten import Flatten
+from .flatten_details import FlattenDetails
+from .flatten_projection_preferences import FlattenProjectionPreferences
 from .flow_node import FlowNode
 from .flow_port import FlowPort
 from .flow_port_link import FlowPortLink
@@ -219,6 +232,7 @@ from .folder_details import FolderDetails
 from .folder_summary import FolderSummary
 from .folder_summary_collection import FolderSummaryCollection
 from .foreign_key import ForeignKey
+from .function import Function
 from .function_library import FunctionLibrary
 from .function_library_details import FunctionLibraryDetails
 from .function_library_summary import FunctionLibrarySummary
@@ -241,6 +255,7 @@ from .key_range_partition_config import KeyRangePartitionConfig
 from .last_run_details import LastRunDetails
 from .lookup import Lookup
 from .macro_field import MacroField
+from .macro_pivot_field import MacroPivotField
 from .merge_operator import MergeOperator
 from .message import Message
 from .minus import Minus
@@ -248,10 +263,12 @@ from .monthly_frequency_details import MonthlyFrequencyDetails
 from .monthly_rule_frequency_details import MonthlyRuleFrequencyDetails
 from .name_list_rule import NameListRule
 from .name_pattern_rule import NamePatternRule
+from .named_entity_map import NamedEntityMap
 from .native_shape_field import NativeShapeField
 from .object_metadata import ObjectMetadata
 from .object_storage_write_attribute import ObjectStorageWriteAttribute
 from .object_storage_write_attributes import ObjectStorageWriteAttributes
+from .oci_function import OciFunction
 from .oci_vault_secret_config import OciVaultSecretConfig
 from .operator import Operator
 from .oracle_adwc_write_attribute import OracleAdwcWriteAttribute
@@ -282,6 +299,9 @@ from .pipeline_summary_collection import PipelineSummaryCollection
 from .pipeline_validation import PipelineValidation
 from .pipeline_validation_summary import PipelineValidationSummary
 from .pipeline_validation_summary_collection import PipelineValidationSummaryCollection
+from .pivot import Pivot
+from .pivot_field import PivotField
+from .pivot_keys import PivotKeys
 from .poll_rest_call_config import PollRestCallConfig
 from .primary_key import PrimaryKey
 from .project import Project
@@ -313,6 +333,7 @@ from .resource_configuration import ResourceConfiguration
 from .resource_principal_auth_config import ResourcePrincipalAuthConfig
 from .rest_call_config import RestCallConfig
 from .root_object import RootObject
+from .rule_based_entity_map import RuleBasedEntityMap
 from .rule_based_field_map import RuleBasedFieldMap
 from .rule_type_config import RuleTypeConfig
 from .schedule import Schedule
@@ -336,6 +357,7 @@ from .sort_key_rule import SortKeyRule
 from .sort_oper import SortOper
 from .source import Source
 from .source_application_info import SourceApplicationInfo
+from .split import Split
 from .start_operator import StartOperator
 from .structured_type import StructuredType
 from .target import Target
@@ -383,6 +405,7 @@ from .update_connection_from_adwc import UpdateConnectionFromAdwc
 from .update_connection_from_amazon_s3 import UpdateConnectionFromAmazonS3
 from .update_connection_from_atp import UpdateConnectionFromAtp
 from .update_connection_from_bicc import UpdateConnectionFromBICC
+from .update_connection_from_bip import UpdateConnectionFromBIP
 from .update_connection_from_jdbc import UpdateConnectionFromJdbc
 from .update_connection_from_my_sql import UpdateConnectionFromMySQL
 from .update_connection_from_object_storage import UpdateConnectionFromObjectStorage
@@ -437,6 +460,7 @@ from .write_operation_config import WriteOperationConfig
 
 # Maps type names to classes for data_integration services.
 data_integration_type_mapping = {
+    "AbstractCallAttribute": AbstractCallAttribute,
     "AbstractDataOperationConfig": AbstractDataOperationConfig,
     "AbstractField": AbstractField,
     "AbstractFormatAttribute": AbstractFormatAttribute,
@@ -455,6 +479,9 @@ data_integration_type_mapping = {
     "AvroFormatAttribute": AvroFormatAttribute,
     "BaseType": BaseType,
     "BiccReadAttributes": BiccReadAttributes,
+    "BipCallAttribute": BipCallAttribute,
+    "BipReadAttributes": BipReadAttributes,
+    "BipReportParameterValue": BipReportParameterValue,
     "CancelRestCallConfig": CancelRestCallConfig,
     "ChangeCompartmentDetails": ChangeCompartmentDetails,
     "ChangeDisApplicationCompartmentDetails": ChangeDisApplicationCompartmentDetails,
@@ -463,7 +490,9 @@ data_integration_type_mapping = {
     "CompositeFieldMap": CompositeFieldMap,
     "CompositeType": CompositeType,
     "Compression": Compression,
+    "ConditionalCompositeFieldMap": ConditionalCompositeFieldMap,
     "ConditionalInputLink": ConditionalInputLink,
+    "ConditionalOutputPort": ConditionalOutputPort,
     "ConfigDefinition": ConfigDefinition,
     "ConfigParameterDefinition": ConfigParameterDefinition,
     "ConfigParameterValue": ConfigParameterValue,
@@ -481,6 +510,8 @@ data_integration_type_mapping = {
     "ConnectionFromAtpDetails": ConnectionFromAtpDetails,
     "ConnectionFromBICC": ConnectionFromBICC,
     "ConnectionFromBICCDetails": ConnectionFromBICCDetails,
+    "ConnectionFromBIP": ConnectionFromBIP,
+    "ConnectionFromBipDetails": ConnectionFromBipDetails,
     "ConnectionFromJdbc": ConnectionFromJdbc,
     "ConnectionFromJdbcDetails": ConnectionFromJdbcDetails,
     "ConnectionFromMySQL": ConnectionFromMySQL,
@@ -496,6 +527,7 @@ data_integration_type_mapping = {
     "ConnectionSummaryFromAmazonS3": ConnectionSummaryFromAmazonS3,
     "ConnectionSummaryFromAtp": ConnectionSummaryFromAtp,
     "ConnectionSummaryFromBICC": ConnectionSummaryFromBICC,
+    "ConnectionSummaryFromBIP": ConnectionSummaryFromBIP,
     "ConnectionSummaryFromJdbc": ConnectionSummaryFromJdbc,
     "ConnectionSummaryFromMySQL": ConnectionSummaryFromMySQL,
     "ConnectionSummaryFromObjectStorage": ConnectionSummaryFromObjectStorage,
@@ -513,6 +545,7 @@ data_integration_type_mapping = {
     "CreateConnectionFromAmazonS3": CreateConnectionFromAmazonS3,
     "CreateConnectionFromAtp": CreateConnectionFromAtp,
     "CreateConnectionFromBICC": CreateConnectionFromBICC,
+    "CreateConnectionFromBIP": CreateConnectionFromBIP,
     "CreateConnectionFromJdbc": CreateConnectionFromJdbc,
     "CreateConnectionFromMySQL": CreateConnectionFromMySQL,
     "CreateConnectionFromObjectStorage": CreateConnectionFromObjectStorage,
@@ -644,6 +677,9 @@ data_integration_type_mapping = {
     "FieldMap": FieldMap,
     "Filter": Filter,
     "FilterPush": FilterPush,
+    "Flatten": Flatten,
+    "FlattenDetails": FlattenDetails,
+    "FlattenProjectionPreferences": FlattenProjectionPreferences,
     "FlowNode": FlowNode,
     "FlowPort": FlowPort,
     "FlowPortLink": FlowPortLink,
@@ -652,6 +688,7 @@ data_integration_type_mapping = {
     "FolderSummary": FolderSummary,
     "FolderSummaryCollection": FolderSummaryCollection,
     "ForeignKey": ForeignKey,
+    "Function": Function,
     "FunctionLibrary": FunctionLibrary,
     "FunctionLibraryDetails": FunctionLibraryDetails,
     "FunctionLibrarySummary": FunctionLibrarySummary,
@@ -674,6 +711,7 @@ data_integration_type_mapping = {
     "LastRunDetails": LastRunDetails,
     "Lookup": Lookup,
     "MacroField": MacroField,
+    "MacroPivotField": MacroPivotField,
     "MergeOperator": MergeOperator,
     "Message": Message,
     "Minus": Minus,
@@ -681,10 +719,12 @@ data_integration_type_mapping = {
     "MonthlyRuleFrequencyDetails": MonthlyRuleFrequencyDetails,
     "NameListRule": NameListRule,
     "NamePatternRule": NamePatternRule,
+    "NamedEntityMap": NamedEntityMap,
     "NativeShapeField": NativeShapeField,
     "ObjectMetadata": ObjectMetadata,
     "ObjectStorageWriteAttribute": ObjectStorageWriteAttribute,
     "ObjectStorageWriteAttributes": ObjectStorageWriteAttributes,
+    "OciFunction": OciFunction,
     "OciVaultSecretConfig": OciVaultSecretConfig,
     "Operator": Operator,
     "OracleAdwcWriteAttribute": OracleAdwcWriteAttribute,
@@ -715,6 +755,9 @@ data_integration_type_mapping = {
     "PipelineValidation": PipelineValidation,
     "PipelineValidationSummary": PipelineValidationSummary,
     "PipelineValidationSummaryCollection": PipelineValidationSummaryCollection,
+    "Pivot": Pivot,
+    "PivotField": PivotField,
+    "PivotKeys": PivotKeys,
     "PollRestCallConfig": PollRestCallConfig,
     "PrimaryKey": PrimaryKey,
     "Project": Project,
@@ -746,6 +789,7 @@ data_integration_type_mapping = {
     "ResourcePrincipalAuthConfig": ResourcePrincipalAuthConfig,
     "RestCallConfig": RestCallConfig,
     "RootObject": RootObject,
+    "RuleBasedEntityMap": RuleBasedEntityMap,
     "RuleBasedFieldMap": RuleBasedFieldMap,
     "RuleTypeConfig": RuleTypeConfig,
     "Schedule": Schedule,
@@ -769,6 +813,7 @@ data_integration_type_mapping = {
     "SortOper": SortOper,
     "Source": Source,
     "SourceApplicationInfo": SourceApplicationInfo,
+    "Split": Split,
     "StartOperator": StartOperator,
     "StructuredType": StructuredType,
     "Target": Target,
@@ -816,6 +861,7 @@ data_integration_type_mapping = {
     "UpdateConnectionFromAmazonS3": UpdateConnectionFromAmazonS3,
     "UpdateConnectionFromAtp": UpdateConnectionFromAtp,
     "UpdateConnectionFromBICC": UpdateConnectionFromBICC,
+    "UpdateConnectionFromBIP": UpdateConnectionFromBIP,
     "UpdateConnectionFromJdbc": UpdateConnectionFromJdbc,
     "UpdateConnectionFromMySQL": UpdateConnectionFromMySQL,
     "UpdateConnectionFromObjectStorage": UpdateConnectionFromObjectStorage,

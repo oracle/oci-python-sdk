@@ -166,6 +166,38 @@ class CloudAutonomousVmCluster(object):
             The value to assign to the defined_tags property of this CloudAutonomousVmCluster.
         :type defined_tags: dict(str, dict(str, object))
 
+        :param available_cpus:
+            The value to assign to the available_cpus property of this CloudAutonomousVmCluster.
+        :type available_cpus: float
+
+        :param reclaimable_cpus:
+            The value to assign to the reclaimable_cpus property of this CloudAutonomousVmCluster.
+        :type reclaimable_cpus: float
+
+        :param available_container_databases:
+            The value to assign to the available_container_databases property of this CloudAutonomousVmCluster.
+        :type available_container_databases: int
+
+        :param total_container_databases:
+            The value to assign to the total_container_databases property of this CloudAutonomousVmCluster.
+        :type total_container_databases: int
+
+        :param available_autonomous_data_storage_size_in_tbs:
+            The value to assign to the available_autonomous_data_storage_size_in_tbs property of this CloudAutonomousVmCluster.
+        :type available_autonomous_data_storage_size_in_tbs: float
+
+        :param autonomous_data_storage_size_in_tbs:
+            The value to assign to the autonomous_data_storage_size_in_tbs property of this CloudAutonomousVmCluster.
+        :type autonomous_data_storage_size_in_tbs: float
+
+        :param db_node_storage_size_in_gbs:
+            The value to assign to the db_node_storage_size_in_gbs property of this CloudAutonomousVmCluster.
+        :type db_node_storage_size_in_gbs: int
+
+        :param memory_per_oracle_compute_unit_in_gbs:
+            The value to assign to the memory_per_oracle_compute_unit_in_gbs property of this CloudAutonomousVmCluster.
+        :type memory_per_oracle_compute_unit_in_gbs: int
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -194,7 +226,15 @@ class CloudAutonomousVmCluster(object):
             'last_maintenance_run_id': 'str',
             'next_maintenance_run_id': 'str',
             'freeform_tags': 'dict(str, str)',
-            'defined_tags': 'dict(str, dict(str, object))'
+            'defined_tags': 'dict(str, dict(str, object))',
+            'available_cpus': 'float',
+            'reclaimable_cpus': 'float',
+            'available_container_databases': 'int',
+            'total_container_databases': 'int',
+            'available_autonomous_data_storage_size_in_tbs': 'float',
+            'autonomous_data_storage_size_in_tbs': 'float',
+            'db_node_storage_size_in_gbs': 'int',
+            'memory_per_oracle_compute_unit_in_gbs': 'int'
         }
 
         self.attribute_map = {
@@ -224,7 +264,15 @@ class CloudAutonomousVmCluster(object):
             'last_maintenance_run_id': 'lastMaintenanceRunId',
             'next_maintenance_run_id': 'nextMaintenanceRunId',
             'freeform_tags': 'freeformTags',
-            'defined_tags': 'definedTags'
+            'defined_tags': 'definedTags',
+            'available_cpus': 'availableCpus',
+            'reclaimable_cpus': 'reclaimableCpus',
+            'available_container_databases': 'availableContainerDatabases',
+            'total_container_databases': 'totalContainerDatabases',
+            'available_autonomous_data_storage_size_in_tbs': 'availableAutonomousDataStorageSizeInTBs',
+            'autonomous_data_storage_size_in_tbs': 'autonomousDataStorageSizeInTBs',
+            'db_node_storage_size_in_gbs': 'dbNodeStorageSizeInGBs',
+            'memory_per_oracle_compute_unit_in_gbs': 'memoryPerOracleComputeUnitInGBs'
         }
 
         self._id = None
@@ -254,6 +302,14 @@ class CloudAutonomousVmCluster(object):
         self._next_maintenance_run_id = None
         self._freeform_tags = None
         self._defined_tags = None
+        self._available_cpus = None
+        self._reclaimable_cpus = None
+        self._available_container_databases = None
+        self._total_container_databases = None
+        self._available_autonomous_data_storage_size_in_tbs = None
+        self._autonomous_data_storage_size_in_tbs = None
+        self._db_node_storage_size_in_gbs = None
+        self._memory_per_oracle_compute_unit_in_gbs = None
 
     @property
     def id(self):
@@ -994,6 +1050,198 @@ class CloudAutonomousVmCluster(object):
         :type: dict(str, dict(str, object))
         """
         self._defined_tags = defined_tags
+
+    @property
+    def available_cpus(self):
+        """
+        Gets the available_cpus of this CloudAutonomousVmCluster.
+        CPU cores available for allocation to Autonomous Databases.
+
+
+        :return: The available_cpus of this CloudAutonomousVmCluster.
+        :rtype: float
+        """
+        return self._available_cpus
+
+    @available_cpus.setter
+    def available_cpus(self, available_cpus):
+        """
+        Sets the available_cpus of this CloudAutonomousVmCluster.
+        CPU cores available for allocation to Autonomous Databases.
+
+
+        :param available_cpus: The available_cpus of this CloudAutonomousVmCluster.
+        :type: float
+        """
+        self._available_cpus = available_cpus
+
+    @property
+    def reclaimable_cpus(self):
+        """
+        Gets the reclaimable_cpus of this CloudAutonomousVmCluster.
+        CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+
+
+        :return: The reclaimable_cpus of this CloudAutonomousVmCluster.
+        :rtype: float
+        """
+        return self._reclaimable_cpus
+
+    @reclaimable_cpus.setter
+    def reclaimable_cpus(self, reclaimable_cpus):
+        """
+        Sets the reclaimable_cpus of this CloudAutonomousVmCluster.
+        CPU cores that are not released to available pool after an Autonomous Database is terminated (Requires Autonomous Container Database restart).
+
+
+        :param reclaimable_cpus: The reclaimable_cpus of this CloudAutonomousVmCluster.
+        :type: float
+        """
+        self._reclaimable_cpus = reclaimable_cpus
+
+    @property
+    def available_container_databases(self):
+        """
+        Gets the available_container_databases of this CloudAutonomousVmCluster.
+        The number of Autonomous Container Databases that can be created with the currently available local storage.
+
+
+        :return: The available_container_databases of this CloudAutonomousVmCluster.
+        :rtype: int
+        """
+        return self._available_container_databases
+
+    @available_container_databases.setter
+    def available_container_databases(self, available_container_databases):
+        """
+        Sets the available_container_databases of this CloudAutonomousVmCluster.
+        The number of Autonomous Container Databases that can be created with the currently available local storage.
+
+
+        :param available_container_databases: The available_container_databases of this CloudAutonomousVmCluster.
+        :type: int
+        """
+        self._available_container_databases = available_container_databases
+
+    @property
+    def total_container_databases(self):
+        """
+        Gets the total_container_databases of this CloudAutonomousVmCluster.
+        The total number of Autonomous Container Databases that can be created with the allocated local storage.
+
+
+        :return: The total_container_databases of this CloudAutonomousVmCluster.
+        :rtype: int
+        """
+        return self._total_container_databases
+
+    @total_container_databases.setter
+    def total_container_databases(self, total_container_databases):
+        """
+        Sets the total_container_databases of this CloudAutonomousVmCluster.
+        The total number of Autonomous Container Databases that can be created with the allocated local storage.
+
+
+        :param total_container_databases: The total_container_databases of this CloudAutonomousVmCluster.
+        :type: int
+        """
+        self._total_container_databases = total_container_databases
+
+    @property
+    def available_autonomous_data_storage_size_in_tbs(self):
+        """
+        Gets the available_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmCluster.
+        The data disk group size available for Autonomous Databases, in TBs.
+
+
+        :return: The available_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmCluster.
+        :rtype: float
+        """
+        return self._available_autonomous_data_storage_size_in_tbs
+
+    @available_autonomous_data_storage_size_in_tbs.setter
+    def available_autonomous_data_storage_size_in_tbs(self, available_autonomous_data_storage_size_in_tbs):
+        """
+        Sets the available_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmCluster.
+        The data disk group size available for Autonomous Databases, in TBs.
+
+
+        :param available_autonomous_data_storage_size_in_tbs: The available_autonomous_data_storage_size_in_tbs of this CloudAutonomousVmCluster.
+        :type: float
+        """
+        self._available_autonomous_data_storage_size_in_tbs = available_autonomous_data_storage_size_in_tbs
+
+    @property
+    def autonomous_data_storage_size_in_tbs(self):
+        """
+        Gets the autonomous_data_storage_size_in_tbs of this CloudAutonomousVmCluster.
+        The data disk group size allocated for Autonomous Databases, in TBs.
+
+
+        :return: The autonomous_data_storage_size_in_tbs of this CloudAutonomousVmCluster.
+        :rtype: float
+        """
+        return self._autonomous_data_storage_size_in_tbs
+
+    @autonomous_data_storage_size_in_tbs.setter
+    def autonomous_data_storage_size_in_tbs(self, autonomous_data_storage_size_in_tbs):
+        """
+        Sets the autonomous_data_storage_size_in_tbs of this CloudAutonomousVmCluster.
+        The data disk group size allocated for Autonomous Databases, in TBs.
+
+
+        :param autonomous_data_storage_size_in_tbs: The autonomous_data_storage_size_in_tbs of this CloudAutonomousVmCluster.
+        :type: float
+        """
+        self._autonomous_data_storage_size_in_tbs = autonomous_data_storage_size_in_tbs
+
+    @property
+    def db_node_storage_size_in_gbs(self):
+        """
+        Gets the db_node_storage_size_in_gbs of this CloudAutonomousVmCluster.
+        The local node storage allocated in GBs.
+
+
+        :return: The db_node_storage_size_in_gbs of this CloudAutonomousVmCluster.
+        :rtype: int
+        """
+        return self._db_node_storage_size_in_gbs
+
+    @db_node_storage_size_in_gbs.setter
+    def db_node_storage_size_in_gbs(self, db_node_storage_size_in_gbs):
+        """
+        Sets the db_node_storage_size_in_gbs of this CloudAutonomousVmCluster.
+        The local node storage allocated in GBs.
+
+
+        :param db_node_storage_size_in_gbs: The db_node_storage_size_in_gbs of this CloudAutonomousVmCluster.
+        :type: int
+        """
+        self._db_node_storage_size_in_gbs = db_node_storage_size_in_gbs
+
+    @property
+    def memory_per_oracle_compute_unit_in_gbs(self):
+        """
+        Gets the memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmCluster.
+        The amount of memory (in GBs) enabled per each OCPU core.
+
+
+        :return: The memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmCluster.
+        :rtype: int
+        """
+        return self._memory_per_oracle_compute_unit_in_gbs
+
+    @memory_per_oracle_compute_unit_in_gbs.setter
+    def memory_per_oracle_compute_unit_in_gbs(self, memory_per_oracle_compute_unit_in_gbs):
+        """
+        Sets the memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmCluster.
+        The amount of memory (in GBs) enabled per each OCPU core.
+
+
+        :param memory_per_oracle_compute_unit_in_gbs: The memory_per_oracle_compute_unit_in_gbs of this CloudAutonomousVmCluster.
+        :type: int
+        """
+        self._memory_per_oracle_compute_unit_in_gbs = memory_per_oracle_compute_unit_in_gbs
 
     def __repr__(self):
         return formatted_flat_dict(self)
