@@ -166,7 +166,7 @@
       <dependency>
         <groupId>com.oracle.vb.cp.spec</groupId>
         <artifactId>vb-cp-apiserver-user-spec</artifactId>
-        <version>1.0.4</version>
+        <version>1.0.11</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

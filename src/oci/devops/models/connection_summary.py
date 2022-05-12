@@ -18,6 +18,7 @@ class ConnectionSummary(object):
         Initializes a new ConnectionSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.devops.models.BitbucketCloudAppPasswordConnectionSummary`
         * :class:`~oci.devops.models.GithubAccessTokenConnectionSummary`
         * :class:`~oci.devops.models.GitlabAccessTokenConnectionSummary`
 
@@ -122,6 +123,9 @@ class ConnectionSummary(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['connectionType']
+
+        if type == 'BITBUCKET_CLOUD_APP_PASSWORD':
+            return 'BitbucketCloudAppPasswordConnectionSummary'
 
         if type == 'GITHUB_ACCESS_TOKEN':
             return 'GithubAccessTokenConnectionSummary'

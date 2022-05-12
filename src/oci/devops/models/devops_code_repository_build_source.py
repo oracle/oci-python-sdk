@@ -25,7 +25,7 @@ class DevopsCodeRepositoryBuildSource(BuildSource):
 
         :param connection_type:
             The value to assign to the connection_type property of this DevopsCodeRepositoryBuildSource.
-            Allowed values for this property are: "GITHUB", "GITLAB", "DEVOPS_CODE_REPOSITORY"
+            Allowed values for this property are: "GITHUB", "GITLAB", "BITBUCKET_CLOUD", "DEVOPS_CODE_REPOSITORY"
         :type connection_type: str
 
         :param repository_url:

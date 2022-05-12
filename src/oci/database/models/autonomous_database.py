@@ -308,6 +308,14 @@ class AutonomousDatabase(object):
             The value to assign to the db_name property of this AutonomousDatabase.
         :type db_name: str
 
+        :param character_set:
+            The value to assign to the character_set property of this AutonomousDatabase.
+        :type character_set: str
+
+        :param ncharacter_set:
+            The value to assign to the ncharacter_set property of this AutonomousDatabase.
+        :type ncharacter_set: str
+
         :param is_free_tier:
             The value to assign to the is_free_tier property of this AutonomousDatabase.
         :type is_free_tier: bool
@@ -556,6 +564,18 @@ class AutonomousDatabase(object):
             The value to assign to the standby_db property of this AutonomousDatabase.
         :type standby_db: oci.database.models.AutonomousDatabaseStandbySummary
 
+        :param is_local_data_guard_enabled:
+            The value to assign to the is_local_data_guard_enabled property of this AutonomousDatabase.
+        :type is_local_data_guard_enabled: bool
+
+        :param is_remote_data_guard_enabled:
+            The value to assign to the is_remote_data_guard_enabled property of this AutonomousDatabase.
+        :type is_remote_data_guard_enabled: bool
+
+        :param local_standby_db:
+            The value to assign to the local_standby_db property of this AutonomousDatabase.
+        :type local_standby_db: oci.database.models.AutonomousDatabaseStandbySummary
+
         :param role:
             The value to assign to the role property of this AutonomousDatabase.
             Allowed values for this property are: "PRIMARY", "STANDBY", "DISABLED_STANDBY", 'UNKNOWN_ENUM_VALUE'.
@@ -655,6 +675,8 @@ class AutonomousDatabase(object):
             'kms_key_lifecycle_details': 'str',
             'kms_key_version_id': 'str',
             'db_name': 'str',
+            'character_set': 'str',
+            'ncharacter_set': 'str',
             'is_free_tier': 'bool',
             'system_tags': 'dict(str, dict(str, object))',
             'time_reclamation_of_free_autonomous_database': 'datetime',
@@ -712,6 +734,9 @@ class AutonomousDatabase(object):
             'is_data_guard_enabled': 'bool',
             'failed_data_recovery_in_seconds': 'int',
             'standby_db': 'AutonomousDatabaseStandbySummary',
+            'is_local_data_guard_enabled': 'bool',
+            'is_remote_data_guard_enabled': 'bool',
+            'local_standby_db': 'AutonomousDatabaseStandbySummary',
             'role': 'str',
             'available_upgrade_versions': 'list[str]',
             'key_store_id': 'str',
@@ -744,6 +769,8 @@ class AutonomousDatabase(object):
             'kms_key_lifecycle_details': 'kmsKeyLifecycleDetails',
             'kms_key_version_id': 'kmsKeyVersionId',
             'db_name': 'dbName',
+            'character_set': 'characterSet',
+            'ncharacter_set': 'ncharacterSet',
             'is_free_tier': 'isFreeTier',
             'system_tags': 'systemTags',
             'time_reclamation_of_free_autonomous_database': 'timeReclamationOfFreeAutonomousDatabase',
@@ -801,6 +828,9 @@ class AutonomousDatabase(object):
             'is_data_guard_enabled': 'isDataGuardEnabled',
             'failed_data_recovery_in_seconds': 'failedDataRecoveryInSeconds',
             'standby_db': 'standbyDb',
+            'is_local_data_guard_enabled': 'isLocalDataGuardEnabled',
+            'is_remote_data_guard_enabled': 'isRemoteDataGuardEnabled',
+            'local_standby_db': 'localStandbyDb',
             'role': 'role',
             'available_upgrade_versions': 'availableUpgradeVersions',
             'key_store_id': 'keyStoreId',
@@ -832,6 +862,8 @@ class AutonomousDatabase(object):
         self._kms_key_lifecycle_details = None
         self._kms_key_version_id = None
         self._db_name = None
+        self._character_set = None
+        self._ncharacter_set = None
         self._is_free_tier = None
         self._system_tags = None
         self._time_reclamation_of_free_autonomous_database = None
@@ -889,6 +921,9 @@ class AutonomousDatabase(object):
         self._is_data_guard_enabled = None
         self._failed_data_recovery_in_seconds = None
         self._standby_db = None
+        self._is_local_data_guard_enabled = None
+        self._is_remote_data_guard_enabled = None
+        self._local_standby_db = None
         self._role = None
         self._available_upgrade_versions = None
         self._key_store_id = None
@@ -1145,6 +1180,60 @@ class AutonomousDatabase(object):
         :type: str
         """
         self._db_name = db_name
+
+    @property
+    def character_set(self):
+        """
+        Gets the character_set of this AutonomousDatabase.
+        The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+
+        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+
+
+        :return: The character_set of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._character_set
+
+    @character_set.setter
+    def character_set(self, character_set):
+        """
+        Sets the character_set of this AutonomousDatabase.
+        The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
+
+        AL32UTF8, AR8ADOS710, AR8ADOS720, AR8APTEC715, AR8ARABICMACS, AR8ASMO8X, AR8ISO8859P6, AR8MSWIN1256, AR8MUSSAD768, AR8NAFITHA711, AR8NAFITHA721, AR8SAKHR706, AR8SAKHR707, AZ8ISO8859P9E, BG8MSWIN, BG8PC437S, BLT8CP921, BLT8ISO8859P13, BLT8MSWIN1257, BLT8PC775, BN8BSCII, CDN8PC863, CEL8ISO8859P14, CL8ISO8859P5, CL8ISOIR111, CL8KOI8R, CL8KOI8U, CL8MACCYRILLICS, CL8MSWIN1251, EE8ISO8859P2, EE8MACCES, EE8MACCROATIANS, EE8MSWIN1250, EE8PC852, EL8DEC, EL8ISO8859P7, EL8MACGREEKS, EL8MSWIN1253, EL8PC437S, EL8PC851, EL8PC869, ET8MSWIN923, HU8ABMOD, HU8CWI2, IN8ISCII, IS8PC861, IW8ISO8859P8, IW8MACHEBREWS, IW8MSWIN1255, IW8PC1507, JA16EUC, JA16EUCTILDE, JA16SJIS, JA16SJISTILDE, JA16VMS, KO16KSC5601, KO16KSCCS, KO16MSWIN949, LA8ISO6937, LA8PASSPORT, LT8MSWIN921, LT8PC772, LT8PC774, LV8PC1117, LV8PC8LR, LV8RST104090, N8PC865, NE8ISO8859P10, NEE8ISO8859P4, RU8BESTA, RU8PC855, RU8PC866, SE8ISO8859P3, TH8MACTHAIS, TH8TISASCII, TR8DEC, TR8MACTURKISHS, TR8MSWIN1254, TR8PC857, US7ASCII, US8PC437, UTF8, VN8MSWIN1258, VN8VN3, WE8DEC, WE8DG, WE8ISO8859P1, WE8ISO8859P15, WE8ISO8859P9, WE8MACROMAN8S, WE8MSWIN1252, WE8NCR4970, WE8NEXTSTEP, WE8PC850, WE8PC858, WE8PC860, WE8ROMAN8, ZHS16CGB231280, ZHS16GBK, ZHT16BIG5, ZHT16CCDC, ZHT16DBT, ZHT16HKSCS, ZHT16MSWIN950, ZHT32EUC, ZHT32SOPS, ZHT32TRIS
+
+
+        :param character_set: The character_set of this AutonomousDatabase.
+        :type: str
+        """
+        self._character_set = character_set
+
+    @property
+    def ncharacter_set(self):
+        """
+        Gets the ncharacter_set of this AutonomousDatabase.
+        The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are:
+        AL16UTF16 or UTF8.
+
+
+        :return: The ncharacter_set of this AutonomousDatabase.
+        :rtype: str
+        """
+        return self._ncharacter_set
+
+    @ncharacter_set.setter
+    def ncharacter_set(self, ncharacter_set):
+        """
+        Sets the ncharacter_set of this AutonomousDatabase.
+        The national character set for the autonomous database.  The default is AL16UTF16. Allowed values are:
+        AL16UTF16 or UTF8.
+
+
+        :param ncharacter_set: The ncharacter_set of this AutonomousDatabase.
+        :type: str
+        """
+        self._ncharacter_set = ncharacter_set
 
     @property
     def is_free_tier(self):
@@ -1846,9 +1935,9 @@ class AutonomousDatabase(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this AutonomousDatabase.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -1863,9 +1952,9 @@ class AutonomousDatabase(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this AutonomousDatabase.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -2674,7 +2763,7 @@ class AutonomousDatabase(object):
     def is_data_guard_enabled(self):
         """
         Gets the is_data_guard_enabled of this AutonomousDatabase.
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :return: The is_data_guard_enabled of this AutonomousDatabase.
@@ -2686,7 +2775,7 @@ class AutonomousDatabase(object):
     def is_data_guard_enabled(self, is_data_guard_enabled):
         """
         Sets the is_data_guard_enabled of this AutonomousDatabase.
-        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+        **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
 
         :param is_data_guard_enabled: The is_data_guard_enabled of this AutonomousDatabase.
@@ -2722,6 +2811,8 @@ class AutonomousDatabase(object):
     def standby_db(self):
         """
         Gets the standby_db of this AutonomousDatabase.
+        **Deprecated** Autonomous Data Guard standby database details.
+
 
         :return: The standby_db of this AutonomousDatabase.
         :rtype: oci.database.models.AutonomousDatabaseStandbySummary
@@ -2732,11 +2823,81 @@ class AutonomousDatabase(object):
     def standby_db(self, standby_db):
         """
         Sets the standby_db of this AutonomousDatabase.
+        **Deprecated** Autonomous Data Guard standby database details.
+
 
         :param standby_db: The standby_db of this AutonomousDatabase.
         :type: oci.database.models.AutonomousDatabaseStandbySummary
         """
         self._standby_db = standby_db
+
+    @property
+    def is_local_data_guard_enabled(self):
+        """
+        Gets the is_local_data_guard_enabled of this AutonomousDatabase.
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+
+
+        :return: The is_local_data_guard_enabled of this AutonomousDatabase.
+        :rtype: bool
+        """
+        return self._is_local_data_guard_enabled
+
+    @is_local_data_guard_enabled.setter
+    def is_local_data_guard_enabled(self, is_local_data_guard_enabled):
+        """
+        Sets the is_local_data_guard_enabled of this AutonomousDatabase.
+        Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+
+
+        :param is_local_data_guard_enabled: The is_local_data_guard_enabled of this AutonomousDatabase.
+        :type: bool
+        """
+        self._is_local_data_guard_enabled = is_local_data_guard_enabled
+
+    @property
+    def is_remote_data_guard_enabled(self):
+        """
+        Gets the is_remote_data_guard_enabled of this AutonomousDatabase.
+        Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+
+
+        :return: The is_remote_data_guard_enabled of this AutonomousDatabase.
+        :rtype: bool
+        """
+        return self._is_remote_data_guard_enabled
+
+    @is_remote_data_guard_enabled.setter
+    def is_remote_data_guard_enabled(self, is_remote_data_guard_enabled):
+        """
+        Sets the is_remote_data_guard_enabled of this AutonomousDatabase.
+        Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+
+
+        :param is_remote_data_guard_enabled: The is_remote_data_guard_enabled of this AutonomousDatabase.
+        :type: bool
+        """
+        self._is_remote_data_guard_enabled = is_remote_data_guard_enabled
+
+    @property
+    def local_standby_db(self):
+        """
+        Gets the local_standby_db of this AutonomousDatabase.
+
+        :return: The local_standby_db of this AutonomousDatabase.
+        :rtype: oci.database.models.AutonomousDatabaseStandbySummary
+        """
+        return self._local_standby_db
+
+    @local_standby_db.setter
+    def local_standby_db(self, local_standby_db):
+        """
+        Sets the local_standby_db of this AutonomousDatabase.
+
+        :param local_standby_db: The local_standby_db of this AutonomousDatabase.
+        :type: oci.database.models.AutonomousDatabaseStandbySummary
+        """
+        self._local_standby_db = local_standby_db
 
     @property
     def role(self):

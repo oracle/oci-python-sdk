@@ -54,7 +54,7 @@ class PrivateEndpointChannel(NetworkChannel):
     def subnet_id(self):
         """
         **[Required]** Gets the subnet_id of this PrivateEndpointChannel.
-        The OCID of the subnet where Virtual Network Interface Cards (VNIC) resources are created for private endpoint access.
+        The OCID of the subnet where VNIC resources will be created for private endpoint.
 
 
         :return: The subnet_id of this PrivateEndpointChannel.
@@ -66,7 +66,7 @@ class PrivateEndpointChannel(NetworkChannel):
     def subnet_id(self, subnet_id):
         """
         Sets the subnet_id of this PrivateEndpointChannel.
-        The OCID of the subnet where Virtual Network Interface Cards (VNIC) resources are created for private endpoint access.
+        The OCID of the subnet where VNIC resources will be created for private endpoint.
 
 
         :param subnet_id: The subnet_id of this PrivateEndpointChannel.

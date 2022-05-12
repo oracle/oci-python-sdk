@@ -151,6 +151,10 @@ class UpdateAutonomousDatabaseDetails(object):
             Allowed values for this property are: "AUTOMATIC", "MANUAL"
         :type refreshable_mode: str
 
+        :param is_local_data_guard_enabled:
+            The value to assign to the is_local_data_guard_enabled property of this UpdateAutonomousDatabaseDetails.
+        :type is_local_data_guard_enabled: bool
+
         :param is_data_guard_enabled:
             The value to assign to the is_data_guard_enabled property of this UpdateAutonomousDatabaseDetails.
         :type is_data_guard_enabled: bool
@@ -230,6 +234,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'is_auto_scaling_enabled': 'bool',
             'is_refreshable_clone': 'bool',
             'refreshable_mode': 'str',
+            'is_local_data_guard_enabled': 'bool',
             'is_data_guard_enabled': 'bool',
             'peer_db_id': 'str',
             'db_version': 'str',
@@ -266,6 +271,7 @@ class UpdateAutonomousDatabaseDetails(object):
             'is_auto_scaling_enabled': 'isAutoScalingEnabled',
             'is_refreshable_clone': 'isRefreshableClone',
             'refreshable_mode': 'refreshableMode',
+            'is_local_data_guard_enabled': 'isLocalDataGuardEnabled',
             'is_data_guard_enabled': 'isDataGuardEnabled',
             'peer_db_id': 'peerDbId',
             'db_version': 'dbVersion',
@@ -301,6 +307,7 @@ class UpdateAutonomousDatabaseDetails(object):
         self._is_auto_scaling_enabled = None
         self._is_refreshable_clone = None
         self._refreshable_mode = None
+        self._is_local_data_guard_enabled = None
         self._is_data_guard_enabled = None
         self._peer_db_id = None
         self._db_version = None
@@ -348,7 +355,11 @@ class UpdateAutonomousDatabaseDetails(object):
     def ocpu_count(self):
         """
         Gets the ocpu_count of this UpdateAutonomousDatabaseDetails.
-        The number of OCPU cores to be made available to the Autonomous Database. To provision less than 1 core, enter a fractional value in an increment of 0.1. To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available to the infrastructure shape. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. Likewise, you can provision 2 cores or 3 cores, but not 2.5 cores. The maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        The number of OCPU cores to be made available to the Autonomous Database.
+
+        For databases on dedicated Exadata infrastructure, you can specify a fractional value for this parameter. Fractional values are not supported for Autonomous Database on shared Exadata infrastructure.
+
+        To provision less than 1 core, enter a fractional value in an increment of 0.1. To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available to the infrastructure shape. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. Likewise, you can provision 2 cores or 3 cores, but not 2.5 cores. The maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
         **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
 
@@ -364,7 +375,11 @@ class UpdateAutonomousDatabaseDetails(object):
     def ocpu_count(self, ocpu_count):
         """
         Sets the ocpu_count of this UpdateAutonomousDatabaseDetails.
-        The number of OCPU cores to be made available to the Autonomous Database. To provision less than 1 core, enter a fractional value in an increment of 0.1. To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available to the infrastructure shape. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. Likewise, you can provision 2 cores or 3 cores, but not 2.5 cores. The maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
+        The number of OCPU cores to be made available to the Autonomous Database.
+
+        For databases on dedicated Exadata infrastructure, you can specify a fractional value for this parameter. Fractional values are not supported for Autonomous Database on shared Exadata infrastructure.
+
+        To provision less than 1 core, enter a fractional value in an increment of 0.1. To provision 1 or more cores, you must enter an integer between 1 and the maximum number of cores available to the infrastructure shape. For example, you can provision 0.3 or 0.4 cores, but not 0.35 cores. Likewise, you can provision 2 cores or 3 cores, but not 2.5 cores. The maximum number of cores is determined by the infrastructure shape. See `Characteristics of Infrastructure Shapes`__ for shape details.
 
         **Note:** This parameter cannot be used with the `cpuCoreCount` parameter.
 
@@ -937,10 +952,48 @@ class UpdateAutonomousDatabaseDetails(object):
         self._refreshable_mode = refreshable_mode
 
     @property
+    def is_local_data_guard_enabled(self):
+        """
+        Gets the is_local_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
+        Indicates whether the Autonomous Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
+        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+
+        To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on shared Exadata infrastructure (local and cross-region) , see `About Standby Databases`__
+
+        To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see :func:`create_cross_region_autonomous_database_data_guard_details`.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B
+
+
+        :return: The is_local_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
+        :rtype: bool
+        """
+        return self._is_local_data_guard_enabled
+
+    @is_local_data_guard_enabled.setter
+    def is_local_data_guard_enabled(self, is_local_data_guard_enabled):
+        """
+        Sets the is_local_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
+        Indicates whether the Autonomous Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
+        Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
+
+        To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on shared Exadata infrastructure (local and cross-region) , see `About Standby Databases`__
+
+        To enable cross-region Autonomous Data Guard on shared Exadata infrastructure, see :func:`create_cross_region_autonomous_database_data_guard_details`.
+
+        __ https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/autonomous-data-guard-about.html#GUID-045AD017-8120-4BDC-AF58-7430FFE28D2B
+
+
+        :param is_local_data_guard_enabled: The is_local_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
+        :type: bool
+        """
+        self._is_local_data_guard_enabled = is_local_data_guard_enabled
+
+    @property
     def is_data_guard_enabled(self):
         """
         Gets the is_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates whether the Autonomous Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
+        ** Deprecated. ** Indicates whether the Autonomous Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
         Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
         To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on shared Exadata infrastructure (local and cross-region) , see `About Standby Databases`__
@@ -961,7 +1014,7 @@ class UpdateAutonomousDatabaseDetails(object):
     def is_data_guard_enabled(self, is_data_guard_enabled):
         """
         Sets the is_data_guard_enabled of this UpdateAutonomousDatabaseDetails.
-        Indicates whether the Autonomous Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
+        ** Deprecated. ** Indicates whether the Autonomous Database has a local (in-region) standby database. Not applicable when creating a cross-region Autonomous Data Guard associations, or to
         Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 
         To create a local standby, set to `TRUE`. To delete a local standby, set to `FALSE`. For more information on using Autonomous Data Guard on shared Exadata infrastructure (local and cross-region) , see `About Standby Databases`__
@@ -1172,9 +1225,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this UpdateAutonomousDatabaseDetails.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -1189,9 +1242,9 @@ class UpdateAutonomousDatabaseDetails(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this UpdateAutonomousDatabaseDetails.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm

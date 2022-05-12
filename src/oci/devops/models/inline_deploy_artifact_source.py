@@ -21,7 +21,7 @@ class InlineDeployArtifactSource(DeployArtifactSource):
 
         :param deploy_artifact_source_type:
             The value to assign to the deploy_artifact_source_type property of this InlineDeployArtifactSource.
-            Allowed values for this property are: "INLINE", "OCIR", "GENERIC_ARTIFACT"
+            Allowed values for this property are: "INLINE", "OCIR", "GENERIC_ARTIFACT", "HELM_CHART"
         :type deploy_artifact_source_type: str
 
         :param base64_encoded_content:

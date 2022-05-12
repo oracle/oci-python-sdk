@@ -21,6 +21,10 @@ class Connection(object):
     #: This constant has a value of "GITLAB_ACCESS_TOKEN"
     CONNECTION_TYPE_GITLAB_ACCESS_TOKEN = "GITLAB_ACCESS_TOKEN"
 
+    #: A constant which can be used with the connection_type property of a Connection.
+    #: This constant has a value of "BITBUCKET_CLOUD_APP_PASSWORD"
+    CONNECTION_TYPE_BITBUCKET_CLOUD_APP_PASSWORD = "BITBUCKET_CLOUD_APP_PASSWORD"
+
     #: A constant which can be used with the lifecycle_state property of a Connection.
     #: This constant has a value of "ACTIVE"
     LIFECYCLE_STATE_ACTIVE = "ACTIVE"
@@ -32,6 +36,7 @@ class Connection(object):
 
         * :class:`~oci.devops.models.GitlabAccessTokenConnection`
         * :class:`~oci.devops.models.GithubAccessTokenConnection`
+        * :class:`~oci.devops.models.BitbucketCloudAppPasswordConnection`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -57,7 +62,7 @@ class Connection(object):
 
         :param connection_type:
             The value to assign to the connection_type property of this Connection.
-            Allowed values for this property are: "GITHUB_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GITHUB_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "BITBUCKET_CLOUD_APP_PASSWORD", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -144,6 +149,9 @@ class Connection(object):
 
         if type == 'GITHUB_ACCESS_TOKEN':
             return 'GithubAccessTokenConnection'
+
+        if type == 'BITBUCKET_CLOUD_APP_PASSWORD':
+            return 'BitbucketCloudAppPasswordConnection'
         else:
             return 'Connection'
 
@@ -273,7 +281,7 @@ class Connection(object):
         **[Required]** Gets the connection_type of this Connection.
         The type of connection.
 
-        Allowed values for this property are: "GITHUB_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GITHUB_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "BITBUCKET_CLOUD_APP_PASSWORD", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -292,7 +300,7 @@ class Connection(object):
         :param connection_type: The connection_type of this Connection.
         :type: str
         """
-        allowed_values = ["GITHUB_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN"]
+        allowed_values = ["GITHUB_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "BITBUCKET_CLOUD_APP_PASSWORD"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type

@@ -6352,6 +6352,45 @@ def test_list_autonomous_database_backups(testing_service_client):
         )
 
 
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_autonomous_database_character_sets(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabaseCharacterSets'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListAutonomousDatabaseCharacterSets')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListAutonomousDatabaseCharacterSets')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_autonomous_database_character_sets(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListAutonomousDatabaseCharacterSets',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'autonomousDatabaseCharacterSets',
+            False,
+            False
+        )
+
+
 # IssueRoutingInfo tag="dbaas-adb" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_list_autonomous_database_clones(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListAutonomousDatabaseClones'):
@@ -7902,6 +7941,45 @@ def test_list_db_servers(testing_service_client):
 
 
 # IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_db_system_compute_performances(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListDbSystemComputePerformances'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDbSystemComputePerformances')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDbSystemComputePerformances')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_db_system_compute_performances(
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListDbSystemComputePerformances',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dbSystemComputePerformanceSummary',
+            False,
+            False
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
 def test_list_db_system_patch_history_entries(testing_service_client):
     if not testing_service_client.is_api_enabled('database', 'ListDbSystemPatchHistoryEntries'):
         pytest.skip('OCI Testing Service has not been configured for this operation yet.')
@@ -8078,6 +8156,46 @@ def test_list_db_system_shapes(testing_service_client):
             'dbSystemShapeSummary',
             False,
             True
+        )
+
+
+# IssueRoutingInfo tag="default" email="sic_dbaas_cp_us_grp@oracle.com" jiraProject="DBAAS" opsJiraProject="DBAASOPS"
+def test_list_db_system_storage_performances(testing_service_client):
+    if not testing_service_client.is_api_enabled('database', 'ListDbSystemStoragePerformances'):
+        pytest.skip('OCI Testing Service has not been configured for this operation yet.')
+
+    config = util.test_config_to_python_config(
+        testing_service_client.get_test_config('database', util.camelize('database'), 'ListDbSystemStoragePerformances')
+    )
+
+    request_containers = testing_service_client.get_requests(service_name='database', api_name='ListDbSystemStoragePerformances')
+
+    for i in range(len(request_containers)):
+        request = request_containers[i]['request'].copy()
+        result = []
+        service_error = None
+
+        try:
+            service_endpoint = config['endpoint'] if 'endpoint' in config else None
+            client = oci.database.DatabaseClient(config, service_endpoint=service_endpoint)
+            response = client.list_db_system_storage_performances(
+                storage_management=request.pop(util.camelize('storageManagement')),
+                **(util.camel_to_snake_keys(request))
+            )
+            result.append(response)
+        except oci_exception.ServiceError as service_exception:
+            service_error = service_exception
+
+        testing_service_client.validate_result(
+            'database',
+            'ListDbSystemStoragePerformances',
+            request_containers[i]['containerId'],
+            request_containers[i]['request'],
+            result,
+            service_error,
+            'dbSystemStoragePerformanceSummary',
+            False,
+            False
         )
 
 

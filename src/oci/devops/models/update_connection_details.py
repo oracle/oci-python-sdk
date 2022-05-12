@@ -20,6 +20,7 @@ class UpdateConnectionDetails(object):
 
         * :class:`~oci.devops.models.UpdateGithubAccessTokenConnectionDetails`
         * :class:`~oci.devops.models.UpdateGitlabAccessTokenConnectionDetails`
+        * :class:`~oci.devops.models.UpdateBitbucketCloudAppPasswordConnectionDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -79,6 +80,9 @@ class UpdateConnectionDetails(object):
 
         if type == 'GITLAB_ACCESS_TOKEN':
             return 'UpdateGitlabAccessTokenConnectionDetails'
+
+        if type == 'BITBUCKET_CLOUD_APP_PASSWORD':
+            return 'UpdateBitbucketCloudAppPasswordConnectionDetails'
         else:
             return 'UpdateConnectionDetails'
 

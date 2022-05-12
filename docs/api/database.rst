@@ -34,6 +34,7 @@ Database
     oci.database.models.AutonomousDatabaseBackup
     oci.database.models.AutonomousDatabaseBackupConfig
     oci.database.models.AutonomousDatabaseBackupSummary
+    oci.database.models.AutonomousDatabaseCharacterSets
     oci.database.models.AutonomousDatabaseConnectionStrings
     oci.database.models.AutonomousDatabaseConnectionUrls
     oci.database.models.AutonomousDatabaseConsoleTokenDetails
@@ -73,6 +74,7 @@ Database
     oci.database.models.CloudVmCluster
     oci.database.models.CloudVmClusterSummary
     oci.database.models.CompleteExternalBackupJobDetails
+    oci.database.models.ComputePerformanceSummary
     oci.database.models.ConfigureAutonomousDatabaseVaultKeyDetails
     oci.database.models.ConsoleConnection
     oci.database.models.ConsoleConnectionSummary
@@ -166,13 +168,16 @@ Database
     oci.database.models.DbServerPatchingDetails
     oci.database.models.DbServerSummary
     oci.database.models.DbSystem
+    oci.database.models.DbSystemComputePerformanceSummary
     oci.database.models.DbSystemOptions
     oci.database.models.DbSystemShapeSummary
+    oci.database.models.DbSystemStoragePerformanceSummary
     oci.database.models.DbSystemSummary
     oci.database.models.DbSystemUpgradeHistoryEntry
     oci.database.models.DbSystemUpgradeHistoryEntrySummary
     oci.database.models.DbVersionSummary
     oci.database.models.DeregisterAutonomousDatabaseDataSafeDetails
+    oci.database.models.DiskPerformanceDetails
     oci.database.models.EnableDatabaseManagementDetails
     oci.database.models.EnableExternalContainerDatabaseDatabaseManagementDetails
     oci.database.models.EnableExternalContainerDatabaseStackMonitoringDetails
@@ -256,6 +261,7 @@ Database
     oci.database.models.ScheduledOperationDetails
     oci.database.models.SelfMountDetails
     oci.database.models.StackMonitoringConfig
+    oci.database.models.StoragePerformanceDetails
     oci.database.models.SwitchoverDataGuardAssociationDetails
     oci.database.models.Update
     oci.database.models.UpdateAutonomousContainerDatabaseDataGuardAssociationDetails

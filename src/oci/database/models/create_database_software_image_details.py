@@ -319,7 +319,7 @@ class CreateDatabaseSoftwareImageDetails(object):
     def ls_inventory(self):
         """
         Gets the ls_inventory of this CreateDatabaseSoftwareImageDetails.
-        output from lsinventory which will get passed as a string
+        The output from the OPatch lsInventory command, which is passed as a string.
 
 
         :return: The ls_inventory of this CreateDatabaseSoftwareImageDetails.
@@ -331,7 +331,7 @@ class CreateDatabaseSoftwareImageDetails(object):
     def ls_inventory(self, ls_inventory):
         """
         Sets the ls_inventory of this CreateDatabaseSoftwareImageDetails.
-        output from lsinventory which will get passed as a string
+        The output from the OPatch lsInventory command, which is passed as a string.
 
 
         :param ls_inventory: The ls_inventory of this CreateDatabaseSoftwareImageDetails.

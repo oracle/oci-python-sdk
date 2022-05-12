@@ -6,10 +6,12 @@ from __future__ import absolute_import
 
 from .application_summary import ApplicationSummary
 from .application_summary_collection import ApplicationSummaryCollection
+from .attachment_details import AttachmentDetails
 from .change_vb_instance_compartment_details import ChangeVbInstanceCompartmentDetails
 from .create_custom_endpoint_details import CreateCustomEndpointDetails
 from .create_vb_instance_details import CreateVbInstanceDetails
 from .custom_endpoint_details import CustomEndpointDetails
+from .idcs_info_details import IdcsInfoDetails
 from .request_summarized_applications_details import RequestSummarizedApplicationsDetails
 from .update_custom_endpoint_details import UpdateCustomEndpointDetails
 from .update_vb_instance_details import UpdateVbInstanceDetails
@@ -29,10 +31,12 @@ from .work_request_summary_collection import WorkRequestSummaryCollection
 visual_builder_type_mapping = {
     "ApplicationSummary": ApplicationSummary,
     "ApplicationSummaryCollection": ApplicationSummaryCollection,
+    "AttachmentDetails": AttachmentDetails,
     "ChangeVbInstanceCompartmentDetails": ChangeVbInstanceCompartmentDetails,
     "CreateCustomEndpointDetails": CreateCustomEndpointDetails,
     "CreateVbInstanceDetails": CreateVbInstanceDetails,
     "CustomEndpointDetails": CustomEndpointDetails,
+    "IdcsInfoDetails": IdcsInfoDetails,
     "RequestSummarizedApplicationsDetails": RequestSummarizedApplicationsDetails,
     "UpdateCustomEndpointDetails": UpdateCustomEndpointDetails,
     "UpdateVbInstanceDetails": UpdateVbInstanceDetails,
