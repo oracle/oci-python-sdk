@@ -4,12 +4,23 @@ All notable changes to this project will be documented in this file.
 
 The format is based on `Keep a Changelog <http://keepachangelog.com/>`_.
 ====================
-2.67.1 - TBD
+2.68.0 - 2022-05-17
 ====================
 
 Added
 -----
-* TBD
+* Support for information requests in the Operator Access Control service
+* Support for Helm charts and repositories on deployments in the DevOps service
+* Support for Application Dependency Management service scan results on builds in the DevOps service
+* Support for build resources to use Bitbucket Cloud repositories for source code in the DevOps service
+* Support for character set selection on autonomous dedicated databases in the Database service
+* Support for listing autonomous dedicated database supported character sets in the Database service
+* Support for AMD E4 flex shapes on virtual machine database systems in the Database service
+* Support for terraform and improvements for cross-region ADGs in the Database service
+
+Breaking
+--------
+* Support for retries by default on GET and LIST operations in the Visual Builder service
 
 ====================
 2.67.0 - 2022-05-10
