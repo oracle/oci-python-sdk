@@ -144,6 +144,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/serviceCatalogs/{serviceCatalogId}/actions/bulkReplaceAssociations"
         method = "PUT"
+        operation_name = "bulk_replace_service_catalog_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalogAssociation/BulkReplaceServiceCatalogAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -190,14 +192,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=bulk_replace_service_catalog_associations_details)
+                body=bulk_replace_service_catalog_associations_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=bulk_replace_service_catalog_associations_details)
+                body=bulk_replace_service_catalog_associations_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_private_application_compartment(self, private_application_id, change_private_application_compartment_details, **kwargs):
         """
@@ -239,6 +247,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/privateApplications/{privateApplicationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_private_application_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/ChangePrivateApplicationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -285,14 +295,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_private_application_compartment_details)
+                body=change_private_application_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_private_application_compartment_details)
+                body=change_private_application_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_service_catalog_compartment(self, service_catalog_id, change_service_catalog_compartment_details, **kwargs):
         """
@@ -334,6 +350,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/serviceCatalogs/{serviceCatalogId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_service_catalog_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalog/ChangeServiceCatalogCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -380,14 +398,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_service_catalog_compartment_details)
+                body=change_service_catalog_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_service_catalog_compartment_details)
+                body=change_service_catalog_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_private_application(self, create_private_application_details, **kwargs):
         """
@@ -427,6 +451,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/privateApplications"
         method = "POST"
+        operation_name = "create_private_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/CreatePrivateApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -464,14 +490,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_private_application_details,
-                response_type="PrivateApplication")
+                response_type="PrivateApplication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_private_application_details,
-                response_type="PrivateApplication")
+                response_type="PrivateApplication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_service_catalog(self, create_service_catalog_details, **kwargs):
         """
@@ -511,6 +543,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/serviceCatalogs"
         method = "POST"
+        operation_name = "create_service_catalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalog/CreateServiceCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -548,14 +582,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_service_catalog_details,
-                response_type="ServiceCatalog")
+                response_type="ServiceCatalog",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_service_catalog_details,
-                response_type="ServiceCatalog")
+                response_type="ServiceCatalog",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_service_catalog_association(self, create_service_catalog_association_details, **kwargs):
         """
@@ -595,6 +635,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/serviceCatalogAssociations"
         method = "POST"
+        operation_name = "create_service_catalog_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalogAssociation/CreateServiceCatalogAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -632,14 +674,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_service_catalog_association_details,
-                response_type="ServiceCatalogAssociation")
+                response_type="ServiceCatalogAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_service_catalog_association_details,
-                response_type="ServiceCatalogAssociation")
+                response_type="ServiceCatalogAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_private_application(self, private_application_id, **kwargs):
         """
@@ -678,6 +726,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/privateApplications/{privateApplicationId}"
         method = "DELETE"
+        operation_name = "delete_private_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/DeletePrivateApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -723,13 +773,19 @@ class ServiceCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_service_catalog(self, service_catalog_id, **kwargs):
         """
@@ -768,6 +824,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/serviceCatalogs/{serviceCatalogId}"
         method = "DELETE"
+        operation_name = "delete_service_catalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalog/DeleteServiceCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -813,13 +871,19 @@ class ServiceCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_service_catalog_association(self, service_catalog_association_id, **kwargs):
         """
@@ -858,6 +922,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/serviceCatalogAssociations/{serviceCatalogAssociationId}"
         method = "DELETE"
+        operation_name = "delete_service_catalog_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalogAssociation/DeleteServiceCatalogAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -903,13 +969,19 @@ class ServiceCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_private_application(self, private_application_id, **kwargs):
         """
@@ -943,6 +1015,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/privateApplications/{privateApplicationId}"
         method = "GET"
+        operation_name = "get_private_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/GetPrivateApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -987,14 +1061,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PrivateApplication")
+                response_type="PrivateApplication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PrivateApplication")
+                response_type="PrivateApplication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_private_application_action_download_logo(self, private_application_id, **kwargs):
         """
@@ -1028,6 +1108,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/privateApplications/{privateApplicationId}/actions/downloadLogo"
         method = "GET"
+        operation_name = "get_private_application_action_download_logo"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/GetPrivateApplicationActionDownloadLogo"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1072,14 +1154,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_private_application_package(self, private_application_package_id, **kwargs):
         """
@@ -1113,6 +1201,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/privateApplicationPackages/{privateApplicationPackageId}"
         method = "GET"
+        operation_name = "get_private_application_package"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplicationPackage/GetPrivateApplicationPackage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1157,14 +1247,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PrivateApplicationPackage")
+                response_type="PrivateApplicationPackage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PrivateApplicationPackage")
+                response_type="PrivateApplicationPackage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_private_application_package_action_download_config(self, private_application_package_id, **kwargs):
         """
@@ -1198,6 +1294,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/privateApplicationPackages/{privateApplicationPackageId}/actions/downloadConfig"
         method = "GET"
+        operation_name = "get_private_application_package_action_download_config"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplicationPackage/GetPrivateApplicationPackageActionDownloadConfig"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1242,14 +1340,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_service_catalog(self, service_catalog_id, **kwargs):
         """
@@ -1283,6 +1387,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/serviceCatalogs/{serviceCatalogId}"
         method = "GET"
+        operation_name = "get_service_catalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalog/GetServiceCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1327,14 +1433,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ServiceCatalog")
+                response_type="ServiceCatalog",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ServiceCatalog")
+                response_type="ServiceCatalog",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_service_catalog_association(self, service_catalog_association_id, **kwargs):
         """
@@ -1368,6 +1480,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/serviceCatalogAssociations/{serviceCatalogAssociationId}"
         method = "GET"
+        operation_name = "get_service_catalog_association"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalogAssociation/GetServiceCatalogAssociation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1412,14 +1526,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ServiceCatalogAssociation")
+                response_type="ServiceCatalogAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ServiceCatalogAssociation")
+                response_type="ServiceCatalogAssociation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1453,6 +1573,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1497,14 +1619,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_applications(self, **kwargs):
         """
@@ -1581,6 +1709,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/applications"
         method = "GET"
+        operation_name = "list_applications"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ApplicationSummary/ListApplications"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1666,14 +1796,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ApplicationCollection")
+                response_type="ApplicationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ApplicationCollection")
+                response_type="ApplicationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_private_application_packages(self, private_application_id, **kwargs):
         """
@@ -1737,6 +1873,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/privateApplicationPackages"
         method = "GET"
+        operation_name = "list_private_application_packages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplicationPackage/ListPrivateApplicationPackages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1812,14 +1950,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PrivateApplicationPackageCollection")
+                response_type="PrivateApplicationPackageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PrivateApplicationPackageCollection")
+                response_type="PrivateApplicationPackageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_private_applications(self, compartment_id, **kwargs):
         """
@@ -1876,6 +2020,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/privateApplications"
         method = "GET"
+        operation_name = "list_private_applications"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/ListPrivateApplications"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1941,14 +2087,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PrivateApplicationCollection")
+                response_type="PrivateApplicationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PrivateApplicationCollection")
+                response_type="PrivateApplicationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_service_catalog_associations(self, **kwargs):
         """
@@ -2007,6 +2159,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/serviceCatalogAssociations"
         method = "GET"
+        operation_name = "list_service_catalog_associations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalogAssociation/ListServiceCatalogAssociations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2075,14 +2229,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ServiceCatalogAssociationCollection")
+                response_type="ServiceCatalogAssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ServiceCatalogAssociationCollection")
+                response_type="ServiceCatalogAssociationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_service_catalogs(self, compartment_id, **kwargs):
         """
@@ -2138,6 +2298,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/serviceCatalogs"
         method = "GET"
+        operation_name = "list_service_catalogs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalog/ListServiceCatalogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2203,14 +2365,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ServiceCatalogCollection")
+                response_type="ServiceCatalogCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ServiceCatalogCollection")
+                response_type="ServiceCatalogCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2260,6 +2428,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2331,7 +2501,10 @@ class ServiceCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2339,7 +2512,10 @@ class ServiceCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2389,6 +2565,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2460,7 +2638,10 @@ class ServiceCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2468,7 +2649,10 @@ class ServiceCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, **kwargs):
         """
@@ -2529,6 +2713,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2604,14 +2790,20 @@ class ServiceCatalogClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_private_application(self, private_application_id, update_private_application_details, **kwargs):
         """
@@ -2653,6 +2845,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/privateApplications/{privateApplicationId}"
         method = "PUT"
+        operation_name = "update_private_application"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/PrivateApplication/UpdatePrivateApplication"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2700,7 +2894,10 @@ class ServiceCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_private_application_details,
-                response_type="PrivateApplication")
+                response_type="PrivateApplication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2708,7 +2905,10 @@ class ServiceCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_private_application_details,
-                response_type="PrivateApplication")
+                response_type="PrivateApplication",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_service_catalog(self, service_catalog_id, update_service_catalog_details, **kwargs):
         """
@@ -2750,6 +2950,8 @@ class ServiceCatalogClient(object):
         """
         resource_path = "/serviceCatalogs/{serviceCatalogId}"
         method = "PUT"
+        operation_name = "update_service_catalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/service-catalog/20210527/ServiceCatalog/UpdateServiceCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2797,7 +2999,10 @@ class ServiceCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_service_catalog_details,
-                response_type="ServiceCatalog")
+                response_type="ServiceCatalog",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2805,4 +3010,7 @@ class ServiceCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_service_catalog_details,
-                response_type="ServiceCatalog")
+                response_type="ServiceCatalog",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

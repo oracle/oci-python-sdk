@@ -152,6 +152,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/apmDomains/{apmDomainId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_apm_domain_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/ChangeApmDomainCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,14 +205,20 @@ class ApmDomainClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_apm_domain_compartment_details)
+                body=change_apm_domain_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_apm_domain_compartment_details)
+                body=change_apm_domain_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_apm_domain(self, create_apm_domain_details, **kwargs):
         """
@@ -250,6 +258,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/apmDomains"
         method = "POST"
+        operation_name = "create_apm_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/CreateApmDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -288,13 +298,19 @@ class ApmDomainClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_apm_domain_details)
+                body=create_apm_domain_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_apm_domain_details)
+                body=create_apm_domain_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_apm_domain(self, apm_domain_id, **kwargs):
         """
@@ -335,6 +351,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/apmDomains/{apmDomainId}"
         method = "DELETE"
+        operation_name = "delete_apm_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/DeleteApmDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -382,13 +400,19 @@ class ApmDomainClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_data_keys(self, generate_data_keys_list_details, apm_domain_id, **kwargs):
         """
@@ -431,6 +455,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/apmDomains/{apmDomainId}/actions/generateDataKeys"
         method = "POST"
+        operation_name = "generate_data_keys"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/DataKey/GenerateDataKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -479,14 +505,20 @@ class ApmDomainClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_data_keys_list_details)
+                body=generate_data_keys_list_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=generate_data_keys_list_details)
+                body=generate_data_keys_list_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_apm_domain(self, apm_domain_id, **kwargs):
         """
@@ -519,6 +551,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/apmDomains/{apmDomainId}"
         method = "GET"
+        operation_name = "get_apm_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/GetApmDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -565,14 +599,20 @@ class ApmDomainClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ApmDomain")
+                response_type="ApmDomain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ApmDomain")
+                response_type="ApmDomain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -605,6 +645,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -651,14 +693,20 @@ class ApmDomainClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_apm_domain_work_requests(self, apm_domain_id, **kwargs):
         """
@@ -697,6 +745,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/apmDomains/{apmDomainId}/workRequests"
         method = "GET"
+        operation_name = "list_apm_domain_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequest/ListApmDomainWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -752,7 +802,10 @@ class ApmDomainClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -760,7 +813,10 @@ class ApmDomainClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_apm_domains(self, compartment_id, **kwargs):
         """
@@ -817,6 +873,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/apmDomains"
         method = "GET"
+        operation_name = "list_apm_domains"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomainSummary/ListApmDomains"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -891,14 +949,20 @@ class ApmDomainClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ApmDomainSummary]")
+                response_type="list[ApmDomainSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ApmDomainSummary]")
+                response_type="list[ApmDomainSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_keys(self, apm_domain_id, **kwargs):
         """
@@ -937,6 +1001,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/apmDomains/{apmDomainId}/dataKeys"
         method = "GET"
+        operation_name = "list_data_keys"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/DataKeySummary/ListDataKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -997,7 +1063,10 @@ class ApmDomainClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DataKeySummary]")
+                response_type="list[DataKeySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1005,7 +1074,10 @@ class ApmDomainClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DataKeySummary]")
+                response_type="list[DataKeySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1044,6 +1116,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1099,7 +1173,10 @@ class ApmDomainClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1107,7 +1184,10 @@ class ApmDomainClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1146,6 +1226,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1201,7 +1283,10 @@ class ApmDomainClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1209,7 +1294,10 @@ class ApmDomainClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1248,6 +1336,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1293,14 +1383,20 @@ class ApmDomainClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_data_keys(self, apm_domain_id, remove_data_keys_list_details, **kwargs):
         """
@@ -1343,6 +1439,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/apmDomains/{apmDomainId}/actions/removeDataKeys"
         method = "POST"
+        operation_name = "remove_data_keys"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/DataKey/RemoveDataKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1391,14 +1489,20 @@ class ApmDomainClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_data_keys_list_details)
+                body=remove_data_keys_list_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_data_keys_list_details)
+                body=remove_data_keys_list_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_apm_domain(self, apm_domain_id, update_apm_domain_details, **kwargs):
         """
@@ -1440,6 +1544,8 @@ class ApmDomainClient(object):
         """
         resource_path = "/apmDomains/{apmDomainId}"
         method = "PUT"
+        operation_name = "update_apm_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-control-plane/20200630/ApmDomain/UpdateApmDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1488,11 +1594,17 @@ class ApmDomainClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_apm_domain_details)
+                body=update_apm_domain_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_apm_domain_details)
+                body=update_apm_domain_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

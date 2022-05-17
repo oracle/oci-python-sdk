@@ -154,6 +154,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/apis/{apiId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_api_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/ChangeApiCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,14 +205,20 @@ class ApiGatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_api_compartment_details)
+                body=change_api_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_api_compartment_details)
+                body=change_api_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_certificate_compartment(self, certificate_id, change_certificate_compartment_details, **kwargs):
         """
@@ -260,6 +268,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/certificates/{certificateId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_certificate_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/ChangeCertificateCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -309,14 +319,20 @@ class ApiGatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_certificate_compartment_details)
+                body=change_certificate_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_certificate_compartment_details)
+                body=change_certificate_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_api(self, create_api_details, **kwargs):
         """
@@ -356,6 +372,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/apis"
         method = "POST"
+        operation_name = "create_api"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -393,14 +411,20 @@ class ApiGatewayClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_api_details,
-                response_type="Api")
+                response_type="Api",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_api_details,
-                response_type="Api")
+                response_type="Api",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_certificate(self, create_certificate_details, **kwargs):
         """
@@ -440,6 +464,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/certificates"
         method = "POST"
+        operation_name = "create_certificate"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -477,14 +503,20 @@ class ApiGatewayClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_certificate_details,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_certificate_details,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_sdk(self, create_sdk_details, **kwargs):
         """
@@ -524,6 +556,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/sdks"
         method = "POST"
+        operation_name = "create_sdk"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/CreateSdk"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -561,14 +595,20 @@ class ApiGatewayClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_sdk_details,
-                response_type="Sdk")
+                response_type="Sdk",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_sdk_details,
-                response_type="Sdk")
+                response_type="Sdk",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_api(self, api_id, **kwargs):
         """
@@ -608,6 +648,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/apis/{apiId}"
         method = "DELETE"
+        operation_name = "delete_api"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/DeleteApi"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -653,13 +695,19 @@ class ApiGatewayClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_certificate(self, certificate_id, **kwargs):
         """
@@ -699,6 +747,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/certificates/{certificateId}"
         method = "DELETE"
+        operation_name = "delete_certificate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/DeleteCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -744,13 +794,19 @@ class ApiGatewayClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_sdk(self, sdk_id, **kwargs):
         """
@@ -790,6 +846,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/sdks/{sdkId}"
         method = "DELETE"
+        operation_name = "delete_sdk"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/DeleteSdk"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -835,13 +893,19 @@ class ApiGatewayClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_api(self, api_id, **kwargs):
         """
@@ -874,6 +938,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/apis/{apiId}"
         method = "GET"
+        operation_name = "get_api"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/GetApi"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -918,14 +984,20 @@ class ApiGatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Api")
+                response_type="Api",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Api")
+                response_type="Api",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_api_content(self, api_id, **kwargs):
         """
@@ -972,6 +1044,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/apis/{apiId}/content"
         method = "GET"
+        operation_name = "get_api_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/GetApiContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1020,14 +1094,20 @@ class ApiGatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_api_deployment_specification(self, api_id, **kwargs):
         """
@@ -1067,6 +1147,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/apis/{apiId}/deploymentSpecification"
         method = "GET"
+        operation_name = "get_api_deployment_specification"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/ApiSpecification/GetApiDeploymentSpecification"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1113,14 +1195,20 @@ class ApiGatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ApiSpecification")
+                response_type="ApiSpecification",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ApiSpecification")
+                response_type="ApiSpecification",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_api_validations(self, api_id, **kwargs):
         """
@@ -1160,6 +1248,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/apis/{apiId}/validations"
         method = "GET"
+        operation_name = "get_api_validations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/ApiValidations/GetApiValidations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1206,14 +1296,20 @@ class ApiGatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ApiValidations")
+                response_type="ApiValidations",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ApiValidations")
+                response_type="ApiValidations",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_certificate(self, certificate_id, **kwargs):
         """
@@ -1246,6 +1342,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/certificates/{certificateId}"
         method = "GET"
+        operation_name = "get_certificate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/GetCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1290,14 +1388,20 @@ class ApiGatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Certificate")
+                response_type="Certificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_sdk(self, sdk_id, **kwargs):
         """
@@ -1330,6 +1434,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/sdks/{sdkId}"
         method = "GET"
+        operation_name = "get_sdk"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/GetSdk"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1374,14 +1480,20 @@ class ApiGatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Sdk")
+                response_type="Sdk",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Sdk")
+                response_type="Sdk",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_apis(self, compartment_id, **kwargs):
         """
@@ -1445,6 +1557,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/apis"
         method = "GET"
+        operation_name = "list_apis"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/ListApis"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1517,14 +1631,20 @@ class ApiGatewayClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ApiCollection")
+                response_type="ApiCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ApiCollection")
+                response_type="ApiCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_certificates(self, compartment_id, **kwargs):
         """
@@ -1588,6 +1708,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/certificates"
         method = "GET"
+        operation_name = "list_certificates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/ListCertificates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1660,14 +1782,20 @@ class ApiGatewayClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CertificateCollection")
+                response_type="CertificateCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CertificateCollection")
+                response_type="CertificateCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sdk_language_types(self, compartment_id, **kwargs):
         """
@@ -1724,6 +1852,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/sdkLanguageTypes"
         method = "GET"
+        operation_name = "list_sdk_language_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/SdkLanguageTypeSummary/ListSdkLanguageTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1787,14 +1917,20 @@ class ApiGatewayClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SdkLanguageTypeCollection")
+                response_type="SdkLanguageTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SdkLanguageTypeCollection")
+                response_type="SdkLanguageTypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sdks(self, **kwargs):
         """
@@ -1861,6 +1997,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/sdks"
         method = "GET"
+        operation_name = "list_sdks"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/ListSdks"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1936,14 +2074,20 @@ class ApiGatewayClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SdkCollection")
+                response_type="SdkCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SdkCollection")
+                response_type="SdkCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_api(self, api_id, update_api_details, **kwargs):
         """
@@ -1986,6 +2130,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/apis/{apiId}"
         method = "PUT"
+        operation_name = "update_api"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/UpdateApi"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2032,14 +2178,20 @@ class ApiGatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_api_details)
+                body=update_api_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_api_details)
+                body=update_api_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_certificate(self, certificate_id, update_certificate_details, **kwargs):
         """
@@ -2082,6 +2234,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/certificates/{certificateId}"
         method = "PUT"
+        operation_name = "update_certificate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/UpdateCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2128,14 +2282,20 @@ class ApiGatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_certificate_details)
+                body=update_certificate_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_certificate_details)
+                body=update_certificate_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_sdk(self, sdk_id, update_sdk_details, **kwargs):
         """
@@ -2178,6 +2338,8 @@ class ApiGatewayClient(object):
         """
         resource_path = "/sdks/{sdkId}"
         method = "PUT"
+        operation_name = "update_sdk"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/UpdateSdk"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2224,11 +2386,17 @@ class ApiGatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_sdk_details)
+                body=update_sdk_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_sdk_details)
+                body=update_sdk_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

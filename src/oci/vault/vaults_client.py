@@ -146,6 +146,8 @@ class VaultsClient(object):
         """
         resource_path = "/secrets/{secretId}/actions/cancelDeletion"
         method = "POST"
+        operation_name = "cancel_secret_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -191,13 +193,19 @@ class VaultsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_secret_version_deletion(self, secret_id, secret_version_number, **kwargs):
         """
@@ -242,6 +250,8 @@ class VaultsClient(object):
         """
         resource_path = "/secrets/{secretId}/version/{secretVersionNumber}/actions/cancelDeletion"
         method = "POST"
+        operation_name = "cancel_secret_version_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/CancelSecretVersionDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -288,13 +298,19 @@ class VaultsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_secret_compartment(self, secret_id, change_secret_compartment_details, **kwargs):
         """
@@ -352,6 +368,8 @@ class VaultsClient(object):
         """
         resource_path = "/secrets/{secretId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_secret_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ChangeSecretCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -401,14 +419,20 @@ class VaultsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_secret_compartment_details)
+                body=change_secret_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_secret_compartment_details)
+                body=change_secret_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_secret(self, create_secret_details, **kwargs):
         """
@@ -453,6 +477,8 @@ class VaultsClient(object):
         """
         resource_path = "/secrets"
         method = "POST"
+        operation_name = "create_secret"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CreateSecret"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -492,14 +518,20 @@ class VaultsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_secret_details,
-                response_type="Secret")
+                response_type="Secret",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_secret_details,
-                response_type="Secret")
+                response_type="Secret",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_secret(self, secret_id, **kwargs):
         """
@@ -534,6 +566,8 @@ class VaultsClient(object):
         """
         resource_path = "/secrets/{secretId}"
         method = "GET"
+        operation_name = "get_secret"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/GetSecret"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -580,14 +614,20 @@ class VaultsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Secret")
+                response_type="Secret",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Secret")
+                response_type="Secret",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_secret_version(self, secret_id, secret_version_number, **kwargs):
         """
@@ -625,6 +665,8 @@ class VaultsClient(object):
         """
         resource_path = "/secrets/{secretId}/version/{secretVersionNumber}"
         method = "GET"
+        operation_name = "get_secret_version"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/GetSecretVersion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -672,14 +714,20 @@ class VaultsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecretVersion")
+                response_type="SecretVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SecretVersion")
+                response_type="SecretVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_secret_versions(self, secret_id, **kwargs):
         """
@@ -731,6 +779,8 @@ class VaultsClient(object):
         """
         resource_path = "/secrets/{secretId}/versions"
         method = "GET"
+        operation_name = "list_secret_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersionSummary/ListSecretVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -804,7 +854,10 @@ class VaultsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SecretVersionSummary]")
+                response_type="list[SecretVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -812,7 +865,10 @@ class VaultsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SecretVersionSummary]")
+                response_type="list[SecretVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_secrets(self, compartment_id, **kwargs):
         """
@@ -876,6 +932,8 @@ class VaultsClient(object):
         """
         resource_path = "/secrets"
         method = "GET"
+        operation_name = "list_secrets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretSummary/ListSecrets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -952,14 +1010,20 @@ class VaultsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SecretSummary]")
+                response_type="list[SecretSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SecretSummary]")
+                response_type="list[SecretSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def schedule_secret_deletion(self, secret_id, schedule_secret_deletion_details, **kwargs):
         """
@@ -1005,6 +1069,8 @@ class VaultsClient(object):
         """
         resource_path = "/secrets/{secretId}/actions/scheduleDeletion"
         method = "POST"
+        operation_name = "schedule_secret_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ScheduleSecretDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1051,14 +1117,20 @@ class VaultsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=schedule_secret_deletion_details)
+                body=schedule_secret_deletion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=schedule_secret_deletion_details)
+                body=schedule_secret_deletion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def schedule_secret_version_deletion(self, secret_id, secret_version_number, schedule_secret_version_deletion_details, **kwargs):
         """
@@ -1107,6 +1179,8 @@ class VaultsClient(object):
         """
         resource_path = "/secrets/{secretId}/version/{secretVersionNumber}/actions/scheduleDeletion"
         method = "POST"
+        operation_name = "schedule_secret_version_deletion"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/ScheduleSecretVersionDeletion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1154,14 +1228,20 @@ class VaultsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=schedule_secret_version_deletion_details)
+                body=schedule_secret_version_deletion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=schedule_secret_version_deletion_details)
+                body=schedule_secret_version_deletion_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_secret(self, secret_id, update_secret_details, **kwargs):
         """
@@ -1211,6 +1291,8 @@ class VaultsClient(object):
         """
         resource_path = "/secrets/{secretId}"
         method = "PUT"
+        operation_name = "update_secret"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/UpdateSecret"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1258,7 +1340,10 @@ class VaultsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_secret_details,
-                response_type="Secret")
+                response_type="Secret",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1266,4 +1351,7 @@ class VaultsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_secret_details,
-                response_type="Secret")
+                response_type="Secret",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

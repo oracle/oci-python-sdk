@@ -165,6 +165,8 @@ class DnsClient(object):
         """
         resource_path = "/resolvers/{resolverId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_resolver_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/ChangeResolverCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -230,7 +232,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=change_resolver_compartment_details)
+                body=change_resolver_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -238,7 +243,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=change_resolver_compartment_details)
+                body=change_resolver_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_steering_policy_compartment(self, steering_policy_id, change_steering_policy_compartment_details, **kwargs):
         """
@@ -296,6 +304,8 @@ class DnsClient(object):
         """
         resource_path = "/steeringPolicies/{steeringPolicyId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_steering_policy_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/ChangeSteeringPolicyCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -361,7 +371,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=change_steering_policy_compartment_details)
+                body=change_steering_policy_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -369,7 +382,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=change_steering_policy_compartment_details)
+                body=change_steering_policy_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_tsig_key_compartment(self, tsig_key_id, change_tsig_key_compartment_details, **kwargs):
         """
@@ -427,6 +443,8 @@ class DnsClient(object):
         """
         resource_path = "/tsigKeys/{tsigKeyId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_tsig_key_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/ChangeTsigKeyCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -492,7 +510,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=change_tsig_key_compartment_details)
+                body=change_tsig_key_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -500,7 +521,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=change_tsig_key_compartment_details)
+                body=change_tsig_key_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_view_compartment(self, view_id, change_view_compartment_details, **kwargs):
         """
@@ -560,6 +584,8 @@ class DnsClient(object):
         """
         resource_path = "/views/{viewId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_view_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/ChangeViewCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -625,7 +651,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=change_view_compartment_details)
+                body=change_view_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -633,7 +662,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=change_view_compartment_details)
+                body=change_view_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_zone_compartment(self, zone_id, change_zone_compartment_details, **kwargs):
         """
@@ -698,6 +730,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_zone_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/ChangeZoneCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -763,7 +797,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=change_zone_compartment_details)
+                body=change_zone_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -771,7 +808,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=change_zone_compartment_details)
+                body=change_zone_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_resolver_endpoint(self, resolver_id, create_resolver_endpoint_details, **kwargs):
         """
@@ -822,6 +862,8 @@ class DnsClient(object):
         """
         resource_path = "/resolvers/{resolverId}/endpoints"
         method = "POST"
+        operation_name = "create_resolver_endpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -886,7 +928,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_resolver_endpoint_details,
-                response_type="ResolverEndpoint")
+                response_type="ResolverEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -895,7 +940,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_resolver_endpoint_details,
-                response_type="ResolverEndpoint")
+                response_type="ResolverEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_steering_policy(self, create_steering_policy_details, **kwargs):
         """
@@ -946,6 +994,8 @@ class DnsClient(object):
         """
         resource_path = "/steeringPolicies"
         method = "POST"
+        operation_name = "create_steering_policy"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -999,7 +1049,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_steering_policy_details,
-                response_type="SteeringPolicy")
+                response_type="SteeringPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1007,7 +1060,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_steering_policy_details,
-                response_type="SteeringPolicy")
+                response_type="SteeringPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_steering_policy_attachment(self, create_steering_policy_attachment_details, **kwargs):
         """
@@ -1060,6 +1116,8 @@ class DnsClient(object):
         """
         resource_path = "/steeringPolicyAttachments"
         method = "POST"
+        operation_name = "create_steering_policy_attachment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1113,7 +1171,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_steering_policy_attachment_details,
-                response_type="SteeringPolicyAttachment")
+                response_type="SteeringPolicyAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1121,7 +1182,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_steering_policy_attachment_details,
-                response_type="SteeringPolicyAttachment")
+                response_type="SteeringPolicyAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_tsig_key(self, create_tsig_key_details, **kwargs):
         """
@@ -1162,6 +1226,8 @@ class DnsClient(object):
         """
         resource_path = "/tsigKeys"
         method = "POST"
+        operation_name = "create_tsig_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1212,7 +1278,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_tsig_key_details,
-                response_type="TsigKey")
+                response_type="TsigKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1220,7 +1289,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_tsig_key_details,
-                response_type="TsigKey")
+                response_type="TsigKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_view(self, create_view_details, **kwargs):
         """
@@ -1268,6 +1340,8 @@ class DnsClient(object):
         """
         resource_path = "/views"
         method = "POST"
+        operation_name = "create_view"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1321,7 +1395,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_view_details,
-                response_type="View")
+                response_type="View",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1329,7 +1406,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_view_details,
-                response_type="View")
+                response_type="View",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_zone(self, create_zone_details, **kwargs):
         """
@@ -1380,6 +1460,8 @@ class DnsClient(object):
         """
         resource_path = "/zones"
         method = "POST"
+        operation_name = "create_zone"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1432,7 +1514,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_zone_details,
-                response_type="Zone")
+                response_type="Zone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1440,7 +1525,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_zone_details,
-                response_type="Zone")
+                response_type="Zone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_domain_records(self, zone_name_or_id, domain, **kwargs):
         """
@@ -1508,6 +1596,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}"
         method = "DELETE"
+        operation_name = "delete_domain_records"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/DeleteDomainRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1576,14 +1666,20 @@ class DnsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_resolver_endpoint(self, resolver_id, resolver_endpoint_name, **kwargs):
         """
@@ -1644,6 +1740,8 @@ class DnsClient(object):
         """
         resource_path = "/resolvers/{resolverId}/endpoints/{resolverEndpointName}"
         method = "DELETE"
+        operation_name = "delete_resolver_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/DeleteResolverEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1708,14 +1806,20 @@ class DnsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_rr_set(self, zone_name_or_id, domain, rtype, **kwargs):
         """
@@ -1786,6 +1890,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}/{rtype}"
         method = "DELETE"
+        operation_name = "delete_rr_set"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1855,14 +1961,20 @@ class DnsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_steering_policy(self, steering_policy_id, **kwargs):
         """
@@ -1920,6 +2032,8 @@ class DnsClient(object):
         """
         resource_path = "/steeringPolicies/{steeringPolicyId}"
         method = "DELETE"
+        operation_name = "delete_steering_policy"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1983,14 +2097,20 @@ class DnsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_steering_policy_attachment(self, steering_policy_attachment_id, **kwargs):
         """
@@ -2045,6 +2165,8 @@ class DnsClient(object):
         """
         resource_path = "/steeringPolicyAttachments/{steeringPolicyAttachmentId}"
         method = "DELETE"
+        operation_name = "delete_steering_policy_attachment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2108,14 +2230,20 @@ class DnsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_tsig_key(self, tsig_key_id, **kwargs):
         """
@@ -2169,6 +2297,8 @@ class DnsClient(object):
         """
         resource_path = "/tsigKeys/{tsigKeyId}"
         method = "DELETE"
+        operation_name = "delete_tsig_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2232,14 +2362,20 @@ class DnsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_view(self, view_id, **kwargs):
         """
@@ -2298,6 +2434,8 @@ class DnsClient(object):
         """
         resource_path = "/views/{viewId}"
         method = "DELETE"
+        operation_name = "delete_view"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/DeleteView"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2361,14 +2499,20 @@ class DnsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_zone(self, zone_name_or_id, **kwargs):
         """
@@ -2434,6 +2578,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}"
         method = "DELETE"
+        operation_name = "delete_zone"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2499,14 +2645,20 @@ class DnsClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_domain_records(self, zone_name_or_id, domain, **kwargs):
         """
@@ -2598,6 +2750,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}"
         method = "GET"
+        operation_name = "get_domain_records"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/GetDomainRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2693,7 +2847,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2701,7 +2858,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_resolver(self, resolver_id, **kwargs):
         """
@@ -2756,6 +2916,8 @@ class DnsClient(object):
         """
         resource_path = "/resolvers/{resolverId}"
         method = "GET"
+        operation_name = "get_resolver"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/GetResolver"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2820,7 +2982,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Resolver")
+                response_type="Resolver",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2828,7 +2993,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Resolver")
+                response_type="Resolver",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_resolver_endpoint(self, resolver_id, resolver_endpoint_name, **kwargs):
         """
@@ -2886,6 +3054,8 @@ class DnsClient(object):
         """
         resource_path = "/resolvers/{resolverId}/endpoints/{resolverEndpointName}"
         method = "GET"
+        operation_name = "get_resolver_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/GetResolverEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2951,7 +3121,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResolverEndpoint")
+                response_type="ResolverEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2959,7 +3132,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResolverEndpoint")
+                response_type="ResolverEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_rr_set(self, zone_name_or_id, domain, rtype, **kwargs):
         """
@@ -3037,6 +3213,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}/{rtype}"
         method = "GET"
+        operation_name = "get_rr_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/RRSet/GetRrSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3113,7 +3291,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RRSet")
+                response_type="RRSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3121,7 +3302,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RRSet")
+                response_type="RRSet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_steering_policy(self, steering_policy_id, **kwargs):
         """
@@ -3173,6 +3357,8 @@ class DnsClient(object):
         """
         resource_path = "/steeringPolicies/{steeringPolicyId}"
         method = "GET"
+        operation_name = "get_steering_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/GetSteeringPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3237,7 +3423,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SteeringPolicy")
+                response_type="SteeringPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3245,7 +3434,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SteeringPolicy")
+                response_type="SteeringPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_steering_policy_attachment(self, steering_policy_attachment_id, **kwargs):
         """
@@ -3297,6 +3489,8 @@ class DnsClient(object):
         """
         resource_path = "/steeringPolicyAttachments/{steeringPolicyAttachmentId}"
         method = "GET"
+        operation_name = "get_steering_policy_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicyAttachment/GetSteeringPolicyAttachment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3361,7 +3555,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SteeringPolicyAttachment")
+                response_type="SteeringPolicyAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3369,7 +3566,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SteeringPolicyAttachment")
+                response_type="SteeringPolicyAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_tsig_key(self, tsig_key_id, **kwargs):
         """
@@ -3421,6 +3621,8 @@ class DnsClient(object):
         """
         resource_path = "/tsigKeys/{tsigKeyId}"
         method = "GET"
+        operation_name = "get_tsig_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/GetTsigKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3485,7 +3687,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TsigKey")
+                response_type="TsigKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3493,7 +3698,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TsigKey")
+                response_type="TsigKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_view(self, view_id, **kwargs):
         """
@@ -3549,6 +3757,8 @@ class DnsClient(object):
         """
         resource_path = "/views/{viewId}"
         method = "GET"
+        operation_name = "get_view"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/GetView"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3613,7 +3823,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="View")
+                response_type="View",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3621,7 +3834,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="View")
+                response_type="View",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_zone(self, zone_name_or_id, **kwargs):
         """
@@ -3684,6 +3900,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}"
         method = "GET"
+        operation_name = "get_zone"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/GetZone"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3752,7 +3970,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Zone")
+                response_type="Zone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3760,7 +3981,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Zone")
+                response_type="Zone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_zone_content(self, zone_name_or_id, **kwargs):
         """
@@ -3815,6 +4039,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}/content"
         method = "GET"
+        operation_name = "get_zone_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/GetZoneContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3881,7 +4107,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3889,7 +4118,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_zone_records(self, zone_name_or_id, **kwargs):
         """
@@ -3989,6 +4221,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}/records"
         method = "GET"
+        operation_name = "get_zone_records"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/GetZoneRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4087,7 +4321,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4095,7 +4332,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_resolver_endpoints(self, resolver_id, **kwargs):
         """
@@ -4162,6 +4402,8 @@ class DnsClient(object):
         """
         resource_path = "/resolvers/{resolverId}/endpoints"
         method = "GET"
+        operation_name = "list_resolver_endpoints"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/ListResolverEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4255,7 +4497,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ResolverEndpointSummary]")
+                response_type="list[ResolverEndpointSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4263,7 +4508,10 @@ class DnsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ResolverEndpointSummary]")
+                response_type="list[ResolverEndpointSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_resolvers(self, compartment_id, **kwargs):
         """
@@ -4335,6 +4583,8 @@ class DnsClient(object):
         """
         resource_path = "/resolvers"
         method = "GET"
+        operation_name = "list_resolvers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/ListResolvers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4420,14 +4670,20 @@ class DnsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ResolverSummary]")
+                response_type="list[ResolverSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ResolverSummary]")
+                response_type="list[ResolverSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_steering_policies(self, compartment_id, **kwargs):
         """
@@ -4518,6 +4774,8 @@ class DnsClient(object):
         """
         resource_path = "/steeringPolicies"
         method = "GET"
+        operation_name = "list_steering_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/ListSteeringPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4613,14 +4871,20 @@ class DnsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SteeringPolicySummary]")
+                response_type="list[SteeringPolicySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SteeringPolicySummary]")
+                response_type="list[SteeringPolicySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_steering_policy_attachments(self, compartment_id, **kwargs):
         """
@@ -4715,6 +4979,8 @@ class DnsClient(object):
         """
         resource_path = "/steeringPolicyAttachments"
         method = "GET"
+        operation_name = "list_steering_policy_attachments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicyAttachment/ListSteeringPolicyAttachments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4812,14 +5078,20 @@ class DnsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SteeringPolicyAttachmentSummary]")
+                response_type="list[SteeringPolicyAttachmentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SteeringPolicyAttachmentSummary]")
+                response_type="list[SteeringPolicyAttachmentSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tsig_keys(self, compartment_id, **kwargs):
         """
@@ -4886,6 +5158,8 @@ class DnsClient(object):
         """
         resource_path = "/tsigKeys"
         method = "GET"
+        operation_name = "list_tsig_keys"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/ListTsigKeys"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4971,14 +5245,20 @@ class DnsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TsigKeySummary]")
+                response_type="list[TsigKeySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TsigKeySummary]")
+                response_type="list[TsigKeySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_views(self, compartment_id, **kwargs):
         """
@@ -5050,6 +5330,8 @@ class DnsClient(object):
         """
         resource_path = "/views"
         method = "GET"
+        operation_name = "list_views"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/ListViews"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5135,14 +5417,20 @@ class DnsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ViewSummary]")
+                response_type="list[ViewSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ViewSummary]")
+                response_type="list[ViewSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_zone_transfer_servers(self, compartment_id, **kwargs):
         """
@@ -5187,6 +5475,8 @@ class DnsClient(object):
         """
         resource_path = "/zoneTransferServers"
         method = "GET"
+        operation_name = "list_zone_transfer_servers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ZoneTransferServer/ListZoneTransferServers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5239,14 +5529,20 @@ class DnsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ZoneTransferServer]")
+                response_type="list[ZoneTransferServer]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ZoneTransferServer]")
+                response_type="list[ZoneTransferServer]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_zones(self, compartment_id, **kwargs):
         """
@@ -5342,6 +5638,8 @@ class DnsClient(object):
         """
         resource_path = "/zones"
         method = "GET"
+        operation_name = "list_zones"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/ListZones"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5444,14 +5742,20 @@ class DnsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ZoneSummary]")
+                response_type="list[ZoneSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ZoneSummary]")
+                response_type="list[ZoneSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def patch_domain_records(self, zone_name_or_id, domain, patch_domain_records_details, **kwargs):
         """
@@ -5524,6 +5828,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}"
         method = "PATCH"
+        operation_name = "patch_domain_records"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/PatchDomainRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5594,7 +5900,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=patch_domain_records_details,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5603,7 +5912,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=patch_domain_records_details,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def patch_rr_set(self, zone_name_or_id, domain, rtype, patch_rr_set_details, **kwargs):
         """
@@ -5677,6 +5989,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}/{rtype}"
         method = "PATCH"
+        operation_name = "patch_rr_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/RRSet/PatchRrSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5748,7 +6062,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=patch_rr_set_details,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5757,7 +6074,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=patch_rr_set_details,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def patch_zone_records(self, zone_name_or_id, patch_zone_records_details, **kwargs):
         """
@@ -5827,6 +6147,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}/records"
         method = "PATCH"
+        operation_name = "patch_zone_records"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/PatchZoneRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5896,7 +6218,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=patch_zone_records_details,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5905,7 +6230,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=patch_zone_records_details,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_domain_records(self, zone_name_or_id, domain, update_domain_records_details, **kwargs):
         """
@@ -5978,6 +6306,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}"
         method = "PUT"
+        operation_name = "update_domain_records"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/UpdateDomainRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6048,7 +6378,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_domain_records_details,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6057,7 +6390,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_domain_records_details,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_resolver(self, resolver_id, update_resolver_details, **kwargs):
         """
@@ -6114,6 +6450,8 @@ class DnsClient(object):
         """
         resource_path = "/resolvers/{resolverId}"
         method = "PUT"
+        operation_name = "update_resolver"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Resolver/UpdateResolver"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6179,7 +6517,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_resolver_details,
-                response_type="Resolver")
+                response_type="Resolver",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6188,7 +6529,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_resolver_details,
-                response_type="Resolver")
+                response_type="Resolver",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_resolver_endpoint(self, resolver_id, resolver_endpoint_name, update_resolver_endpoint_details, **kwargs):
         """
@@ -6248,6 +6592,8 @@ class DnsClient(object):
         """
         resource_path = "/resolvers/{resolverId}/endpoints/{resolverEndpointName}"
         method = "PUT"
+        operation_name = "update_resolver_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/ResolverEndpoint/UpdateResolverEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6314,7 +6660,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_resolver_endpoint_details,
-                response_type="ResolverEndpoint")
+                response_type="ResolverEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6323,7 +6672,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_resolver_endpoint_details,
-                response_type="ResolverEndpoint")
+                response_type="ResolverEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_rr_set(self, zone_name_or_id, domain, rtype, update_rr_set_details, **kwargs):
         """
@@ -6397,6 +6749,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}/records/{domain}/{rtype}"
         method = "PUT"
+        operation_name = "update_rr_set"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/RRSet/UpdateRrSet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6468,7 +6822,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_rr_set_details,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6477,7 +6834,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_rr_set_details,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_steering_policy(self, steering_policy_id, update_steering_policy_details, **kwargs):
         """
@@ -6534,6 +6894,8 @@ class DnsClient(object):
         """
         resource_path = "/steeringPolicies/{steeringPolicyId}"
         method = "PUT"
+        operation_name = "update_steering_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicy/UpdateSteeringPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6599,7 +6961,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_steering_policy_details,
-                response_type="SteeringPolicy")
+                response_type="SteeringPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6608,7 +6973,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_steering_policy_details,
-                response_type="SteeringPolicy")
+                response_type="SteeringPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_steering_policy_attachment(self, steering_policy_attachment_id, update_steering_policy_attachment_details, **kwargs):
         """
@@ -6665,6 +7033,8 @@ class DnsClient(object):
         """
         resource_path = "/steeringPolicyAttachments/{steeringPolicyAttachmentId}"
         method = "PUT"
+        operation_name = "update_steering_policy_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/SteeringPolicyAttachment/UpdateSteeringPolicyAttachment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6730,7 +7100,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_steering_policy_attachment_details,
-                response_type="SteeringPolicyAttachment")
+                response_type="SteeringPolicyAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6739,7 +7112,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_steering_policy_attachment_details,
-                response_type="SteeringPolicyAttachment")
+                response_type="SteeringPolicyAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_tsig_key(self, tsig_key_id, update_tsig_key_details, **kwargs):
         """
@@ -6796,6 +7172,8 @@ class DnsClient(object):
         """
         resource_path = "/tsigKeys/{tsigKeyId}"
         method = "PUT"
+        operation_name = "update_tsig_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/TsigKey/UpdateTsigKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6861,7 +7239,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_tsig_key_details,
-                response_type="TsigKey")
+                response_type="TsigKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6870,7 +7251,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_tsig_key_details,
-                response_type="TsigKey")
+                response_type="TsigKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_view(self, view_id, update_view_details, **kwargs):
         """
@@ -6927,6 +7311,8 @@ class DnsClient(object):
         """
         resource_path = "/views/{viewId}"
         method = "PUT"
+        operation_name = "update_view"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/View/UpdateView"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6992,7 +7378,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_view_details,
-                response_type="View")
+                response_type="View",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7001,7 +7390,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_view_details,
-                response_type="View")
+                response_type="View",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_zone(self, zone_name_or_id, update_zone_details, **kwargs):
         """
@@ -7073,6 +7465,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}"
         method = "PUT"
+        operation_name = "update_zone"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/UpdateZone"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7142,7 +7536,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_zone_details,
-                response_type="Zone")
+                response_type="Zone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7151,7 +7548,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_zone_details,
-                response_type="Zone")
+                response_type="Zone",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_zone_records(self, zone_name_or_id, update_zone_records_details, **kwargs):
         """
@@ -7222,6 +7622,8 @@ class DnsClient(object):
         """
         resource_path = "/zones/{zoneNameOrId}/records"
         method = "PUT"
+        operation_name = "update_zone_records"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Records/UpdateZoneRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7291,7 +7693,10 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_zone_records_details,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7300,4 +7705,7 @@ class DnsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_zone_records_details,
-                response_type="RecordCollection")
+                response_type="RecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

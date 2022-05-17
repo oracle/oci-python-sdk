@@ -147,6 +147,8 @@ class LoggingClient(object):
         """
         resource_path = "/logs/{logId}/actions/push"
         method = "POST"
+        operation_name = "put_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-dataplane/20200831/LogEntry/PutLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -195,11 +197,17 @@ class LoggingClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=put_logs_details)
+                body=put_logs_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=put_logs_details)
+                body=put_logs_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

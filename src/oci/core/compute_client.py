@@ -154,6 +154,8 @@ class ComputeClient(object):
         """
         resource_path = "/instances/{instanceId}/actions/acceptShieldedIntegrityPolicy"
         method = "POST"
+        operation_name = "accept_shielded_integrity_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/MeasuredBootReport/AcceptShieldedIntegrityPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -202,13 +204,19 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def add_image_shape_compatibility_entry(self, image_id, shape_name, **kwargs):
         """
@@ -246,6 +254,8 @@ class ComputeClient(object):
         """
         resource_path = "/images/{imageId}/shapes/{shapeName}"
         method = "PUT"
+        operation_name = "add_image_shape_compatibility_entry"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/AddImageShapeCompatibilityEntry"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -290,7 +300,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('add_image_shape_compatibility_entry_details'),
-                response_type="ImageShapeCompatibilityEntry")
+                response_type="ImageShapeCompatibilityEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -298,7 +311,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('add_image_shape_compatibility_entry_details'),
-                response_type="ImageShapeCompatibilityEntry")
+                response_type="ImageShapeCompatibilityEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def attach_boot_volume(self, attach_boot_volume_details, **kwargs):
         """
@@ -335,6 +351,8 @@ class ComputeClient(object):
         """
         resource_path = "/bootVolumeAttachments"
         method = "POST"
+        operation_name = "attach_boot_volume"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/AttachBootVolume"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -370,14 +388,20 @@ class ComputeClient(object):
                 method=method,
                 header_params=header_params,
                 body=attach_boot_volume_details,
-                response_type="BootVolumeAttachment")
+                response_type="BootVolumeAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=attach_boot_volume_details,
-                response_type="BootVolumeAttachment")
+                response_type="BootVolumeAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def attach_vnic(self, attach_vnic_details, **kwargs):
         """
@@ -418,6 +442,8 @@ class ComputeClient(object):
         """
         resource_path = "/vnicAttachments"
         method = "POST"
+        operation_name = "attach_vnic"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/AttachVnic"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -453,14 +479,20 @@ class ComputeClient(object):
                 method=method,
                 header_params=header_params,
                 body=attach_vnic_details,
-                response_type="VnicAttachment")
+                response_type="VnicAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=attach_vnic_details,
-                response_type="VnicAttachment")
+                response_type="VnicAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def attach_volume(self, attach_volume_details, **kwargs):
         """
@@ -497,6 +529,8 @@ class ComputeClient(object):
         """
         resource_path = "/volumeAttachments"
         method = "POST"
+        operation_name = "attach_volume"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/AttachVolume"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -532,14 +566,20 @@ class ComputeClient(object):
                 method=method,
                 header_params=header_params,
                 body=attach_volume_details,
-                response_type="VolumeAttachment")
+                response_type="VolumeAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=attach_volume_details,
-                response_type="VolumeAttachment")
+                response_type="VolumeAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def capture_console_history(self, capture_console_history_details, **kwargs):
         """
@@ -592,6 +632,8 @@ class ComputeClient(object):
         """
         resource_path = "/instanceConsoleHistories"
         method = "POST"
+        operation_name = "capture_console_history"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/CaptureConsoleHistory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -627,14 +669,20 @@ class ComputeClient(object):
                 method=method,
                 header_params=header_params,
                 body=capture_console_history_details,
-                response_type="ConsoleHistory")
+                response_type="ConsoleHistory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=capture_console_history_details,
-                response_type="ConsoleHistory")
+                response_type="ConsoleHistory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_compute_capacity_reservation_compartment(self, capacity_reservation_id, change_compute_capacity_reservation_compartment_details, **kwargs):
         """
@@ -687,6 +735,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeCapacityReservations/{capacityReservationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_compute_capacity_reservation_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/ChangeComputeCapacityReservationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -736,14 +786,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compute_capacity_reservation_compartment_details)
+                body=change_compute_capacity_reservation_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compute_capacity_reservation_compartment_details)
+                body=change_compute_capacity_reservation_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_compute_image_capability_schema_compartment(self, compute_image_capability_schema_id, change_compute_image_capability_schema_compartment_details, **kwargs):
         """
@@ -796,6 +852,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeImageCapabilitySchemas/{computeImageCapabilitySchemaId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_compute_image_capability_schema_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/ChangeComputeImageCapabilitySchemaCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -845,14 +903,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compute_image_capability_schema_compartment_details)
+                body=change_compute_image_capability_schema_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compute_image_capability_schema_compartment_details)
+                body=change_compute_image_capability_schema_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_dedicated_vm_host_compartment(self, dedicated_vm_host_id, change_dedicated_vm_host_compartment_details, **kwargs):
         """
@@ -901,6 +965,8 @@ class ComputeClient(object):
         """
         resource_path = "/dedicatedVmHosts/{dedicatedVmHostId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_dedicated_vm_host_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/ChangeDedicatedVmHostCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -950,14 +1016,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_dedicated_vm_host_compartment_details)
+                body=change_dedicated_vm_host_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_dedicated_vm_host_compartment_details)
+                body=change_dedicated_vm_host_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_image_compartment(self, image_id, change_image_compartment_details, **kwargs):
         """
@@ -1012,6 +1084,8 @@ class ComputeClient(object):
         """
         resource_path = "/images/{imageId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_image_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ChangeImageCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1061,14 +1135,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_image_compartment_details)
+                body=change_image_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_image_compartment_details)
+                body=change_image_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_instance_compartment(self, instance_id, change_instance_compartment_details, **kwargs):
         """
@@ -1126,6 +1206,8 @@ class ComputeClient(object):
         """
         resource_path = "/instances/{instanceId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_instance_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ChangeInstanceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1175,14 +1257,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_instance_compartment_details)
+                body=change_instance_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_instance_compartment_details)
+                body=change_instance_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_app_catalog_subscription(self, create_app_catalog_subscription_details, **kwargs):
         """
@@ -1219,6 +1307,8 @@ class ComputeClient(object):
         """
         resource_path = "/appCatalogSubscriptions"
         method = "POST"
+        operation_name = "create_app_catalog_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogSubscription/CreateAppCatalogSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1254,14 +1344,20 @@ class ComputeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_app_catalog_subscription_details,
-                response_type="AppCatalogSubscription")
+                response_type="AppCatalogSubscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_app_catalog_subscription_details,
-                response_type="AppCatalogSubscription")
+                response_type="AppCatalogSubscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_compute_capacity_reservation(self, create_compute_capacity_reservation_details, **kwargs):
         """
@@ -1310,6 +1406,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeCapacityReservations"
         method = "POST"
+        operation_name = "create_compute_capacity_reservation"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1347,14 +1445,20 @@ class ComputeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_compute_capacity_reservation_details,
-                response_type="ComputeCapacityReservation")
+                response_type="ComputeCapacityReservation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_compute_capacity_reservation_details,
-                response_type="ComputeCapacityReservation")
+                response_type="ComputeCapacityReservation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_compute_image_capability_schema(self, create_compute_image_capability_schema_details, **kwargs):
         """
@@ -1391,6 +1495,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeImageCapabilitySchemas"
         method = "POST"
+        operation_name = "create_compute_image_capability_schema"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/CreateComputeImageCapabilitySchema"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1426,14 +1532,20 @@ class ComputeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_compute_image_capability_schema_details,
-                response_type="ComputeImageCapabilitySchema")
+                response_type="ComputeImageCapabilitySchema",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_compute_image_capability_schema_details,
-                response_type="ComputeImageCapabilitySchema")
+                response_type="ComputeImageCapabilitySchema",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_dedicated_vm_host(self, create_dedicated_vm_host_details, **kwargs):
         """
@@ -1479,6 +1591,8 @@ class ComputeClient(object):
         """
         resource_path = "/dedicatedVmHosts"
         method = "POST"
+        operation_name = "create_dedicated_vm_host"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/CreateDedicatedVmHost"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1516,14 +1630,20 @@ class ComputeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_dedicated_vm_host_details,
-                response_type="DedicatedVmHost")
+                response_type="DedicatedVmHost",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_dedicated_vm_host_details,
-                response_type="DedicatedVmHost")
+                response_type="DedicatedVmHost",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_image(self, create_image_details, **kwargs):
         """
@@ -1587,6 +1707,8 @@ class ComputeClient(object):
         """
         resource_path = "/images"
         method = "POST"
+        operation_name = "create_image"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/CreateImage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1622,14 +1744,20 @@ class ComputeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_image_details,
-                response_type="Image")
+                response_type="Image",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_image_details,
-                response_type="Image")
+                response_type="Image",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_instance_console_connection(self, create_instance_console_connection_details, **kwargs):
         """
@@ -1672,6 +1800,8 @@ class ComputeClient(object):
         """
         resource_path = "/instanceConsoleConnections"
         method = "POST"
+        operation_name = "create_instance_console_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/CreateInstanceConsoleConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1707,14 +1837,20 @@ class ComputeClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_instance_console_connection_details,
-                response_type="InstanceConsoleConnection")
+                response_type="InstanceConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_instance_console_connection_details,
-                response_type="InstanceConsoleConnection")
+                response_type="InstanceConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_app_catalog_subscription(self, listing_id, compartment_id, resource_version, **kwargs):
         """
@@ -1752,6 +1888,8 @@ class ComputeClient(object):
         """
         resource_path = "/appCatalogSubscriptions"
         method = "DELETE"
+        operation_name = "delete_app_catalog_subscription"
+        api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1785,13 +1923,19 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_compute_capacity_reservation(self, capacity_reservation_id, **kwargs):
         """
@@ -1830,6 +1974,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeCapacityReservations/{capacityReservationId}"
         method = "DELETE"
+        operation_name = "delete_compute_capacity_reservation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/DeleteComputeCapacityReservation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1875,13 +2021,19 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_compute_image_capability_schema(self, compute_image_capability_schema_id, **kwargs):
         """
@@ -1916,6 +2068,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeImageCapabilitySchemas/{computeImageCapabilitySchemaId}"
         method = "DELETE"
+        operation_name = "delete_compute_image_capability_schema"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/DeleteComputeImageCapabilitySchema"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1959,13 +2113,19 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_console_history(self, instance_console_history_id, **kwargs):
         """
@@ -2000,6 +2160,8 @@ class ComputeClient(object):
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
         method = "DELETE"
+        operation_name = "delete_console_history"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/DeleteConsoleHistory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2043,13 +2205,19 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_dedicated_vm_host(self, dedicated_vm_host_id, **kwargs):
         """
@@ -2086,6 +2254,8 @@ class ComputeClient(object):
         """
         resource_path = "/dedicatedVmHosts/{dedicatedVmHostId}"
         method = "DELETE"
+        operation_name = "delete_dedicated_vm_host"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/DeleteDedicatedVmHost"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2129,13 +2299,19 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_image(self, image_id, **kwargs):
         """
@@ -2172,6 +2348,8 @@ class ComputeClient(object):
         """
         resource_path = "/images/{imageId}"
         method = "DELETE"
+        operation_name = "delete_image"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2215,13 +2393,19 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_instance_console_connection(self, instance_console_connection_id, **kwargs):
         """
@@ -2256,6 +2440,8 @@ class ComputeClient(object):
         """
         resource_path = "/instanceConsoleConnections/{instanceConsoleConnectionId}"
         method = "DELETE"
+        operation_name = "delete_instance_console_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/DeleteInstanceConsoleConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2299,13 +2485,19 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detach_boot_volume(self, boot_volume_attachment_id, **kwargs):
         """
@@ -2343,6 +2535,8 @@ class ComputeClient(object):
         """
         resource_path = "/bootVolumeAttachments/{bootVolumeAttachmentId}"
         method = "DELETE"
+        operation_name = "detach_boot_volume"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2386,13 +2580,19 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detach_vnic(self, vnic_attachment_id, **kwargs):
         """
@@ -2438,6 +2638,8 @@ class ComputeClient(object):
         """
         resource_path = "/vnicAttachments/{vnicAttachmentId}"
         method = "DELETE"
+        operation_name = "detach_vnic"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/DetachVnic"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2481,13 +2683,19 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detach_volume(self, volume_attachment_id, **kwargs):
         """
@@ -2525,6 +2733,8 @@ class ComputeClient(object):
         """
         resource_path = "/volumeAttachments/{volumeAttachmentId}"
         method = "DELETE"
+        operation_name = "detach_volume"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/DetachVolume"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2568,13 +2778,19 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def export_image(self, image_id, export_image_details, **kwargs):
         """
@@ -2635,6 +2851,8 @@ class ComputeClient(object):
         """
         resource_path = "/images/{imageId}/actions/export"
         method = "POST"
+        operation_name = "export_image"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ExportImage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2683,7 +2901,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=export_image_details,
-                response_type="Image")
+                response_type="Image",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2691,7 +2912,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=export_image_details,
-                response_type="Image")
+                response_type="Image",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_app_catalog_listing(self, listing_id, **kwargs):
         """
@@ -2721,6 +2945,8 @@ class ComputeClient(object):
         """
         resource_path = "/appCatalogListings/{listingId}"
         method = "GET"
+        operation_name = "get_app_catalog_listing"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListing/GetAppCatalogListing"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2758,14 +2984,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AppCatalogListing")
+                response_type="AppCatalogListing",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AppCatalogListing")
+                response_type="AppCatalogListing",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_app_catalog_listing_agreements(self, listing_id, resource_version, **kwargs):
         """
@@ -2798,6 +3030,8 @@ class ComputeClient(object):
         """
         resource_path = "/appCatalogListings/{listingId}/resourceVersions/{resourceVersion}/agreements"
         method = "GET"
+        operation_name = "get_app_catalog_listing_agreements"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersionAgreements/GetAppCatalogListingAgreements"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2836,14 +3070,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AppCatalogListingResourceVersionAgreements")
+                response_type="AppCatalogListingResourceVersionAgreements",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AppCatalogListingResourceVersionAgreements")
+                response_type="AppCatalogListingResourceVersionAgreements",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_app_catalog_listing_resource_version(self, listing_id, resource_version, **kwargs):
         """
@@ -2876,6 +3116,8 @@ class ComputeClient(object):
         """
         resource_path = "/appCatalogListings/{listingId}/resourceVersions/{resourceVersion}"
         method = "GET"
+        operation_name = "get_app_catalog_listing_resource_version"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersion/GetAppCatalogListingResourceVersion"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2914,14 +3156,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AppCatalogListingResourceVersion")
+                response_type="AppCatalogListingResourceVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AppCatalogListingResourceVersion")
+                response_type="AppCatalogListingResourceVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_boot_volume_attachment(self, boot_volume_attachment_id, **kwargs):
         """
@@ -2951,6 +3199,8 @@ class ComputeClient(object):
         """
         resource_path = "/bootVolumeAttachments/{bootVolumeAttachmentId}"
         method = "GET"
+        operation_name = "get_boot_volume_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/GetBootVolumeAttachment"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2988,14 +3238,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BootVolumeAttachment")
+                response_type="BootVolumeAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BootVolumeAttachment")
+                response_type="BootVolumeAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_compute_capacity_reservation(self, capacity_reservation_id, **kwargs):
         """
@@ -3029,6 +3285,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeCapacityReservations/{capacityReservationId}"
         method = "GET"
+        operation_name = "get_compute_capacity_reservation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/GetComputeCapacityReservation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3073,14 +3331,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ComputeCapacityReservation")
+                response_type="ComputeCapacityReservation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ComputeCapacityReservation")
+                response_type="ComputeCapacityReservation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_compute_global_image_capability_schema(self, compute_global_image_capability_schema_id, **kwargs):
         """
@@ -3112,6 +3376,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeGlobalImageCapabilitySchemas/{computeGlobalImageCapabilitySchemaId}"
         method = "GET"
+        operation_name = "get_compute_global_image_capability_schema"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchema/GetComputeGlobalImageCapabilitySchema"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3149,14 +3415,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ComputeGlobalImageCapabilitySchema")
+                response_type="ComputeGlobalImageCapabilitySchema",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ComputeGlobalImageCapabilitySchema")
+                response_type="ComputeGlobalImageCapabilitySchema",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_compute_global_image_capability_schema_version(self, compute_global_image_capability_schema_id, compute_global_image_capability_schema_version_name, **kwargs):
         """
@@ -3191,6 +3463,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeGlobalImageCapabilitySchemas/{computeGlobalImageCapabilitySchemaId}/versions/{computeGlobalImageCapabilitySchemaVersionName}"
         method = "GET"
+        operation_name = "get_compute_global_image_capability_schema_version"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaVersion/GetComputeGlobalImageCapabilitySchemaVersion"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3229,14 +3503,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ComputeGlobalImageCapabilitySchemaVersion")
+                response_type="ComputeGlobalImageCapabilitySchemaVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ComputeGlobalImageCapabilitySchemaVersion")
+                response_type="ComputeGlobalImageCapabilitySchemaVersion",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_compute_image_capability_schema(self, compute_image_capability_schema_id, **kwargs):
         """
@@ -3269,6 +3549,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeImageCapabilitySchemas/{computeImageCapabilitySchemaId}"
         method = "GET"
+        operation_name = "get_compute_image_capability_schema"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/GetComputeImageCapabilitySchema"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3317,7 +3599,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ComputeImageCapabilitySchema")
+                response_type="ComputeImageCapabilitySchema",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3325,7 +3610,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ComputeImageCapabilitySchema")
+                response_type="ComputeImageCapabilitySchema",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_console_history(self, instance_console_history_id, **kwargs):
         """
@@ -3357,6 +3645,8 @@ class ComputeClient(object):
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
         method = "GET"
+        operation_name = "get_console_history"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/GetConsoleHistory"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3394,14 +3684,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ConsoleHistory")
+                response_type="ConsoleHistory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ConsoleHistory")
+                response_type="ConsoleHistory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_console_history_content(self, instance_console_history_id, **kwargs):
         """
@@ -3439,6 +3735,8 @@ class ComputeClient(object):
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}/data"
         method = "GET"
+        operation_name = "get_console_history_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/GetConsoleHistoryContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3489,7 +3787,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="bytes")
+                response_type="bytes",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3497,7 +3798,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="bytes")
+                response_type="bytes",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_dedicated_vm_host(self, dedicated_vm_host_id, **kwargs):
         """
@@ -3531,6 +3835,8 @@ class ComputeClient(object):
         """
         resource_path = "/dedicatedVmHosts/{dedicatedVmHostId}"
         method = "GET"
+        operation_name = "get_dedicated_vm_host"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/GetDedicatedVmHost"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3575,14 +3881,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DedicatedVmHost")
+                response_type="DedicatedVmHost",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DedicatedVmHost")
+                response_type="DedicatedVmHost",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_image(self, image_id, **kwargs):
         """
@@ -3614,6 +3926,8 @@ class ComputeClient(object):
         """
         resource_path = "/images/{imageId}"
         method = "GET"
+        operation_name = "get_image"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/GetImage"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3651,14 +3965,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Image")
+                response_type="Image",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Image")
+                response_type="Image",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_image_shape_compatibility_entry(self, image_id, shape_name, **kwargs):
         """
@@ -3697,6 +4017,8 @@ class ComputeClient(object):
         """
         resource_path = "/images/{imageId}/shapes/{shapeName}"
         method = "GET"
+        operation_name = "get_image_shape_compatibility_entry"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/GetImageShapeCompatibilityEntry"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3742,14 +4064,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ImageShapeCompatibilityEntry")
+                response_type="ImageShapeCompatibilityEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ImageShapeCompatibilityEntry")
+                response_type="ImageShapeCompatibilityEntry",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_instance(self, instance_id, **kwargs):
         """
@@ -3781,6 +4109,8 @@ class ComputeClient(object):
         """
         resource_path = "/instances/{instanceId}"
         method = "GET"
+        operation_name = "get_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/GetInstance"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3818,14 +4148,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Instance")
+                response_type="Instance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Instance")
+                response_type="Instance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_instance_console_connection(self, instance_console_connection_id, **kwargs):
         """
@@ -3855,6 +4191,8 @@ class ComputeClient(object):
         """
         resource_path = "/instanceConsoleConnections/{instanceConsoleConnectionId}"
         method = "GET"
+        operation_name = "get_instance_console_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/GetInstanceConsoleConnection"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3892,14 +4230,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstanceConsoleConnection")
+                response_type="InstanceConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstanceConsoleConnection")
+                response_type="InstanceConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_measured_boot_report(self, instance_id, **kwargs):
         """
@@ -3935,6 +4279,8 @@ class ComputeClient(object):
         """
         resource_path = "/instances/{instanceId}/measuredBootReport"
         method = "GET"
+        operation_name = "get_measured_boot_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/MeasuredBootReport/GetMeasuredBootReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3979,14 +4325,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MeasuredBootReport")
+                response_type="MeasuredBootReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="MeasuredBootReport")
+                response_type="MeasuredBootReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vnic_attachment(self, vnic_attachment_id, **kwargs):
         """
@@ -4016,6 +4368,8 @@ class ComputeClient(object):
         """
         resource_path = "/vnicAttachments/{vnicAttachmentId}"
         method = "GET"
+        operation_name = "get_vnic_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/GetVnicAttachment"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -4053,14 +4407,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VnicAttachment")
+                response_type="VnicAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VnicAttachment")
+                response_type="VnicAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_volume_attachment(self, volume_attachment_id, **kwargs):
         """
@@ -4090,6 +4450,8 @@ class ComputeClient(object):
         """
         resource_path = "/volumeAttachments/{volumeAttachmentId}"
         method = "GET"
+        operation_name = "get_volume_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/GetVolumeAttachment"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -4127,14 +4489,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeAttachment")
+                response_type="VolumeAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeAttachment")
+                response_type="VolumeAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_windows_instance_initial_credentials(self, instance_id, **kwargs):
         """
@@ -4167,6 +4535,8 @@ class ComputeClient(object):
         """
         resource_path = "/instances/{instanceId}/initialCredentials"
         method = "GET"
+        operation_name = "get_windows_instance_initial_credentials"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceCredentials/GetWindowsInstanceInitialCredentials"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -4204,14 +4574,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstanceCredentials")
+                response_type="InstanceCredentials",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="InstanceCredentials")
+                response_type="InstanceCredentials",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def instance_action(self, instance_id, action, **kwargs):
         """
@@ -4303,6 +4679,8 @@ class ComputeClient(object):
         """
         resource_path = "/instances/{instanceId}"
         method = "POST"
+        operation_name = "instance_action"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/InstanceAction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4358,7 +4736,10 @@ class ComputeClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=kwargs.get('instance_power_action_details'),
-                response_type="Instance")
+                response_type="Instance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4367,7 +4748,10 @@ class ComputeClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=kwargs.get('instance_power_action_details'),
-                response_type="Instance")
+                response_type="Instance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def launch_instance(self, launch_instance_details, **kwargs):
         """
@@ -4447,6 +4831,8 @@ class ComputeClient(object):
         """
         resource_path = "/instances"
         method = "POST"
+        operation_name = "launch_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/LaunchInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4482,14 +4868,20 @@ class ComputeClient(object):
                 method=method,
                 header_params=header_params,
                 body=launch_instance_details,
-                response_type="Instance")
+                response_type="Instance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=launch_instance_details,
-                response_type="Instance")
+                response_type="Instance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_app_catalog_listing_resource_versions(self, listing_id, **kwargs):
         """
@@ -4541,6 +4933,8 @@ class ComputeClient(object):
         """
         resource_path = "/appCatalogListings/{listingId}/resourceVersions"
         method = "GET"
+        operation_name = "list_app_catalog_listing_resource_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingResourceVersionSummary/ListAppCatalogListingResourceVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4600,7 +4994,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AppCatalogListingResourceVersionSummary]")
+                response_type="list[AppCatalogListingResourceVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4608,7 +5005,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AppCatalogListingResourceVersionSummary]")
+                response_type="list[AppCatalogListingResourceVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_app_catalog_listings(self, **kwargs):
         """
@@ -4666,6 +5066,8 @@ class ComputeClient(object):
         """
         resource_path = "/appCatalogListings"
         method = "GET"
+        operation_name = "list_app_catalog_listings"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogListingSummary/ListAppCatalogListings"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4720,14 +5122,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AppCatalogListingSummary]")
+                response_type="list[AppCatalogListingSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AppCatalogListingSummary]")
+                response_type="list[AppCatalogListingSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_app_catalog_subscriptions(self, compartment_id, **kwargs):
         """
@@ -4796,6 +5204,8 @@ class ComputeClient(object):
         """
         resource_path = "/appCatalogSubscriptions"
         method = "GET"
+        operation_name = "list_app_catalog_subscriptions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/AppCatalogSubscriptionSummary/ListAppCatalogSubscriptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4856,14 +5266,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AppCatalogSubscriptionSummary]")
+                response_type="list[AppCatalogSubscriptionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AppCatalogSubscriptionSummary]")
+                response_type="list[AppCatalogSubscriptionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_boot_volume_attachments(self, availability_domain, compartment_id, **kwargs):
         """
@@ -4923,6 +5339,8 @@ class ComputeClient(object):
         """
         resource_path = "/bootVolumeAttachments"
         method = "GET"
+        operation_name = "list_boot_volume_attachments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeAttachment/ListBootVolumeAttachments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4968,14 +5386,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BootVolumeAttachment]")
+                response_type="list[BootVolumeAttachment]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BootVolumeAttachment]")
+                response_type="list[BootVolumeAttachment]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_compute_capacity_reservation_instance_shapes(self, compartment_id, **kwargs):
         """
@@ -5053,6 +5477,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeCapacityReservationInstanceShapes"
         method = "GET"
+        operation_name = "list_compute_capacity_reservation_instance_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservationInstanceShapeSummary/ListComputeCapacityReservationInstanceShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5118,14 +5544,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputeCapacityReservationInstanceShapeSummary]")
+                response_type="list[ComputeCapacityReservationInstanceShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputeCapacityReservationInstanceShapeSummary]")
+                response_type="list[ComputeCapacityReservationInstanceShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_compute_capacity_reservation_instances(self, capacity_reservation_id, **kwargs):
         """
@@ -5203,6 +5635,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeCapacityReservations/{capacityReservationId}/instances"
         method = "GET"
+        operation_name = "list_compute_capacity_reservation_instances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/CapacityReservationInstanceSummary/ListComputeCapacityReservationInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5278,7 +5712,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CapacityReservationInstanceSummary]")
+                response_type="list[CapacityReservationInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5286,7 +5723,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CapacityReservationInstanceSummary]")
+                response_type="list[CapacityReservationInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_compute_capacity_reservations(self, compartment_id, **kwargs):
         """
@@ -5372,6 +5812,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeCapacityReservations"
         method = "GET"
+        operation_name = "list_compute_capacity_reservations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/ListComputeCapacityReservations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5446,14 +5888,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputeCapacityReservationSummary]")
+                response_type="list[ComputeCapacityReservationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputeCapacityReservationSummary]")
+                response_type="list[ComputeCapacityReservationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_compute_global_image_capability_schema_versions(self, compute_global_image_capability_schema_id, **kwargs):
         """
@@ -5522,6 +5970,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeGlobalImageCapabilitySchemas/{computeGlobalImageCapabilitySchemaId}/versions"
         method = "GET"
+        operation_name = "list_compute_global_image_capability_schema_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaVersionSummary/ListComputeGlobalImageCapabilitySchemaVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5592,7 +6042,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputeGlobalImageCapabilitySchemaVersionSummary]")
+                response_type="list[ComputeGlobalImageCapabilitySchemaVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5600,7 +6053,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputeGlobalImageCapabilitySchemaVersionSummary]")
+                response_type="list[ComputeGlobalImageCapabilitySchemaVersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_compute_global_image_capability_schemas(self, **kwargs):
         """
@@ -5667,6 +6123,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeGlobalImageCapabilitySchemas"
         method = "GET"
+        operation_name = "list_compute_global_image_capability_schemas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeGlobalImageCapabilitySchemaSummary/ListComputeGlobalImageCapabilitySchemas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5728,14 +6186,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputeGlobalImageCapabilitySchemaSummary]")
+                response_type="list[ComputeGlobalImageCapabilitySchemaSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputeGlobalImageCapabilitySchemaSummary]")
+                response_type="list[ComputeGlobalImageCapabilitySchemaSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_compute_image_capability_schemas(self, **kwargs):
         """
@@ -5807,6 +6271,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeImageCapabilitySchemas"
         method = "GET"
+        operation_name = "list_compute_image_capability_schemas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchemaSummary/ListComputeImageCapabilitySchemas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5870,14 +6336,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputeImageCapabilitySchemaSummary]")
+                response_type="list[ComputeImageCapabilitySchemaSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputeImageCapabilitySchemaSummary]")
+                response_type="list[ComputeImageCapabilitySchemaSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_console_histories(self, compartment_id, **kwargs):
         """
@@ -5957,6 +6429,8 @@ class ComputeClient(object):
         """
         resource_path = "/instanceConsoleHistories"
         method = "GET"
+        operation_name = "list_console_histories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/ListConsoleHistories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6028,14 +6502,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ConsoleHistory]")
+                response_type="list[ConsoleHistory]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ConsoleHistory]")
+                response_type="list[ConsoleHistory]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_dedicated_vm_host_instance_shapes(self, compartment_id, **kwargs):
         """
@@ -6096,6 +6576,8 @@ class ComputeClient(object):
         """
         resource_path = "/dedicatedVmHostInstanceShapes"
         method = "GET"
+        operation_name = "list_dedicated_vm_host_instance_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostInstanceShapeSummary/ListDedicatedVmHostInstanceShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6143,14 +6625,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DedicatedVmHostInstanceShapeSummary]")
+                response_type="list[DedicatedVmHostInstanceShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DedicatedVmHostInstanceShapeSummary]")
+                response_type="list[DedicatedVmHostInstanceShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_dedicated_vm_host_instances(self, compartment_id, dedicated_vm_host_id, **kwargs):
         """
@@ -6228,6 +6716,8 @@ class ComputeClient(object):
         """
         resource_path = "/dedicatedVmHosts/{dedicatedVmHostId}/instances"
         method = "GET"
+        operation_name = "list_dedicated_vm_host_instances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostInstanceSummary/ListDedicatedVmHostInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6302,7 +6792,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DedicatedVmHostInstanceSummary]")
+                response_type="list[DedicatedVmHostInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6310,7 +6803,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DedicatedVmHostInstanceSummary]")
+                response_type="list[DedicatedVmHostInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_dedicated_vm_host_shapes(self, compartment_id, **kwargs):
         """
@@ -6370,6 +6866,8 @@ class ComputeClient(object):
         """
         resource_path = "/dedicatedVmHostShapes"
         method = "GET"
+        operation_name = "list_dedicated_vm_host_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostShapeSummary/ListDedicatedVmHostShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6417,14 +6915,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DedicatedVmHostShapeSummary]")
+                response_type="list[DedicatedVmHostShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DedicatedVmHostShapeSummary]")
+                response_type="list[DedicatedVmHostShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_dedicated_vm_hosts(self, compartment_id, **kwargs):
         """
@@ -6519,6 +7023,8 @@ class ComputeClient(object):
         """
         resource_path = "/dedicatedVmHosts"
         method = "GET"
+        operation_name = "list_dedicated_vm_hosts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHostSummary/ListDedicatedVmHosts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6599,14 +7105,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DedicatedVmHostSummary]")
+                response_type="list[DedicatedVmHostSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[DedicatedVmHostSummary]")
+                response_type="list[DedicatedVmHostSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_image_shape_compatibility_entries(self, image_id, **kwargs):
         """
@@ -6658,6 +7170,8 @@ class ComputeClient(object):
         """
         resource_path = "/images/{imageId}/shapes"
         method = "GET"
+        operation_name = "list_image_shape_compatibility_entries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/ListImageShapeCompatibilityEntries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6711,7 +7225,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ImageShapeCompatibilitySummary]")
+                response_type="list[ImageShapeCompatibilitySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6719,7 +7236,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ImageShapeCompatibilitySummary]")
+                response_type="list[ImageShapeCompatibilitySummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_images(self, compartment_id, **kwargs):
         """
@@ -6820,6 +7340,8 @@ class ComputeClient(object):
         """
         resource_path = "/images"
         method = "GET"
+        operation_name = "list_images"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/ListImages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6895,14 +7417,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Image]")
+                response_type="list[Image]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Image]")
+                response_type="list[Image]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_instance_console_connections(self, compartment_id, **kwargs):
         """
@@ -6957,6 +7485,8 @@ class ComputeClient(object):
         """
         resource_path = "/instanceConsoleConnections"
         method = "GET"
+        operation_name = "list_instance_console_connections"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/ListInstanceConsoleConnections"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6999,14 +7529,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceConsoleConnection]")
+                response_type="list[InstanceConsoleConnection]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstanceConsoleConnection]")
+                response_type="list[InstanceConsoleConnection]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_instance_devices(self, instance_id, **kwargs):
         """
@@ -7082,6 +7618,8 @@ class ComputeClient(object):
         """
         resource_path = "/instances/{instanceId}/devices"
         method = "GET"
+        operation_name = "list_instance_devices"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Device/ListInstanceDevices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7157,7 +7695,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Device]")
+                response_type="list[Device]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7165,7 +7706,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Device]")
+                response_type="list[Device]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_instances(self, compartment_id, **kwargs):
         """
@@ -7250,6 +7794,8 @@ class ComputeClient(object):
         """
         resource_path = "/instances"
         method = "GET"
+        operation_name = "list_instances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ListInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7323,14 +7869,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Instance]")
+                response_type="list[Instance]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Instance]")
+                response_type="list[Instance]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_shapes(self, compartment_id, **kwargs):
         """
@@ -7389,6 +7941,8 @@ class ComputeClient(object):
         """
         resource_path = "/shapes"
         method = "GET"
+        operation_name = "list_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Shape/ListShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7433,14 +7987,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Shape]")
+                response_type="list[Shape]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Shape]")
+                response_type="list[Shape]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vnic_attachments(self, compartment_id, **kwargs):
         """
@@ -7501,6 +8061,8 @@ class ComputeClient(object):
         """
         resource_path = "/vnicAttachments"
         method = "GET"
+        operation_name = "list_vnic_attachments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VnicAttachment/ListVnicAttachments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7547,14 +8109,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VnicAttachment]")
+                response_type="list[VnicAttachment]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VnicAttachment]")
+                response_type="list[VnicAttachment]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_volume_attachments(self, compartment_id, **kwargs):
         """
@@ -7617,6 +8185,8 @@ class ComputeClient(object):
         """
         resource_path = "/volumeAttachments"
         method = "GET"
+        operation_name = "list_volume_attachments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/ListVolumeAttachments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7663,14 +8233,20 @@ class ComputeClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeAttachment]")
+                response_type="list[VolumeAttachment]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeAttachment]")
+                response_type="list[VolumeAttachment]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_image_shape_compatibility_entry(self, image_id, shape_name, **kwargs):
         """
@@ -7705,6 +8281,8 @@ class ComputeClient(object):
         """
         resource_path = "/images/{imageId}/shapes/{shapeName}"
         method = "DELETE"
+        operation_name = "remove_image_shape_compatibility_entry"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ImageShapeCompatibilityEntry/RemoveImageShapeCompatibilityEntry"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -7742,13 +8320,19 @@ class ComputeClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def terminate_instance(self, instance_id, **kwargs):
         """
@@ -7803,6 +8387,8 @@ class ComputeClient(object):
         """
         resource_path = "/instances/{instanceId}"
         method = "DELETE"
+        operation_name = "terminate_instance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7855,14 +8441,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_compute_capacity_reservation(self, capacity_reservation_id, update_compute_capacity_reservation_details, **kwargs):
         """
@@ -7906,6 +8498,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeCapacityReservations/{capacityReservationId}"
         method = "PUT"
+        operation_name = "update_compute_capacity_reservation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeCapacityReservation/UpdateComputeCapacityReservation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7952,14 +8546,20 @@ class ComputeClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_compute_capacity_reservation_details)
+                body=update_compute_capacity_reservation_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_compute_capacity_reservation_details)
+                body=update_compute_capacity_reservation_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_compute_image_capability_schema(self, compute_image_capability_schema_id, update_compute_image_capability_schema_details, **kwargs):
         """
@@ -7997,6 +8597,8 @@ class ComputeClient(object):
         """
         resource_path = "/computeImageCapabilitySchemas/{computeImageCapabilitySchemaId}"
         method = "PUT"
+        operation_name = "update_compute_image_capability_schema"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ComputeImageCapabilitySchema/UpdateComputeImageCapabilitySchema"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8042,7 +8644,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_compute_image_capability_schema_details,
-                response_type="ComputeImageCapabilitySchema")
+                response_type="ComputeImageCapabilitySchema",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8050,7 +8655,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_compute_image_capability_schema_details,
-                response_type="ComputeImageCapabilitySchema")
+                response_type="ComputeImageCapabilitySchema",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_console_history(self, instance_console_history_id, update_console_history_details, **kwargs):
         """
@@ -8088,6 +8696,8 @@ class ComputeClient(object):
         """
         resource_path = "/instanceConsoleHistories/{instanceConsoleHistoryId}"
         method = "PUT"
+        operation_name = "update_console_history"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ConsoleHistory/UpdateConsoleHistory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8133,7 +8743,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_console_history_details,
-                response_type="ConsoleHistory")
+                response_type="ConsoleHistory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8141,7 +8754,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_console_history_details,
-                response_type="ConsoleHistory")
+                response_type="ConsoleHistory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_dedicated_vm_host(self, dedicated_vm_host_id, update_dedicated_vm_host_details, **kwargs):
         """
@@ -8191,6 +8807,8 @@ class ComputeClient(object):
         """
         resource_path = "/dedicatedVmHosts/{dedicatedVmHostId}"
         method = "PUT"
+        operation_name = "update_dedicated_vm_host"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/DedicatedVmHost/UpdateDedicatedVmHost"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8241,7 +8859,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dedicated_vm_host_details,
-                response_type="DedicatedVmHost")
+                response_type="DedicatedVmHost",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8249,7 +8870,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dedicated_vm_host_details,
-                response_type="DedicatedVmHost")
+                response_type="DedicatedVmHost",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_image(self, image_id, update_image_details, **kwargs):
         """
@@ -8296,6 +8920,8 @@ class ComputeClient(object):
         """
         resource_path = "/images/{imageId}"
         method = "PUT"
+        operation_name = "update_image"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Image/UpdateImage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8344,7 +8970,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_image_details,
-                response_type="Image")
+                response_type="Image",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8352,7 +8981,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_image_details,
-                response_type="Image")
+                response_type="Image",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_instance(self, instance_id, update_instance_details, **kwargs):
         """
@@ -8405,6 +9037,8 @@ class ComputeClient(object):
         """
         resource_path = "/instances/{instanceId}"
         method = "PUT"
+        operation_name = "update_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Instance/UpdateInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8453,7 +9087,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_instance_details,
-                response_type="Instance")
+                response_type="Instance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8461,7 +9098,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_instance_details,
-                response_type="Instance")
+                response_type="Instance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_instance_console_connection(self, instance_console_connection_id, update_instance_console_connection_details, **kwargs):
         """
@@ -8503,6 +9143,8 @@ class ComputeClient(object):
         """
         resource_path = "/instanceConsoleConnections/{instanceConsoleConnectionId}"
         method = "PUT"
+        operation_name = "update_instance_console_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceConsoleConnection/UpdateInstanceConsoleConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8550,7 +9192,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_instance_console_connection_details,
-                response_type="InstanceConsoleConnection")
+                response_type="InstanceConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8558,7 +9203,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_instance_console_connection_details,
-                response_type="InstanceConsoleConnection")
+                response_type="InstanceConsoleConnection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_volume_attachment(self, volume_attachment_id, update_volume_attachment_details, **kwargs):
         """
@@ -8600,6 +9248,8 @@ class ComputeClient(object):
         """
         resource_path = "/volumeAttachments/{volumeAttachmentId}"
         method = "PUT"
+        operation_name = "update_volume_attachment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeAttachment/UpdateVolumeAttachment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8647,7 +9297,10 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_volume_attachment_details,
-                response_type="VolumeAttachment")
+                response_type="VolumeAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8655,4 +9308,7 @@ class ComputeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_volume_attachment_details,
-                response_type="VolumeAttachment")
+                response_type="VolumeAttachment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

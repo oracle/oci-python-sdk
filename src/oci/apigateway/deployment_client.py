@@ -154,6 +154,8 @@ class DeploymentClient(object):
         """
         resource_path = "/deployments/{deploymentId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_deployment_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/ChangeDeploymentCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,14 +205,20 @@ class DeploymentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_deployment_compartment_details)
+                body=change_deployment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_deployment_compartment_details)
+                body=change_deployment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_deployment(self, create_deployment_details, **kwargs):
         """
@@ -250,6 +258,8 @@ class DeploymentClient(object):
         """
         resource_path = "/deployments"
         method = "POST"
+        operation_name = "create_deployment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -287,14 +297,20 @@ class DeploymentClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_deployment(self, deployment_id, **kwargs):
         """
@@ -334,6 +350,8 @@ class DeploymentClient(object):
         """
         resource_path = "/deployments/{deploymentId}"
         method = "DELETE"
+        operation_name = "delete_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/DeleteDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -379,13 +397,19 @@ class DeploymentClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_deployment(self, deployment_id, **kwargs):
         """
@@ -418,6 +442,8 @@ class DeploymentClient(object):
         """
         resource_path = "/deployments/{deploymentId}"
         method = "GET"
+        operation_name = "get_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/GetDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -462,14 +488,20 @@ class DeploymentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_deployments(self, compartment_id, **kwargs):
         """
@@ -536,6 +568,8 @@ class DeploymentClient(object):
         """
         resource_path = "/deployments"
         method = "GET"
+        operation_name = "list_deployments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/DeploymentSummary/ListDeployments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -610,14 +644,20 @@ class DeploymentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeploymentCollection")
+                response_type="DeploymentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeploymentCollection")
+                response_type="DeploymentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_deployment(self, deployment_id, update_deployment_details, **kwargs):
         """
@@ -660,6 +700,8 @@ class DeploymentClient(object):
         """
         resource_path = "/deployments/{deploymentId}"
         method = "PUT"
+        operation_name = "update_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Deployment/UpdateDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -706,11 +748,17 @@ class DeploymentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_deployment_details)
+                body=update_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_deployment_details)
+                body=update_deployment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

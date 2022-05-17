@@ -138,6 +138,8 @@ class KmsCryptoClient(object):
         """
         resource_path = "/20180608/decrypt"
         method = "POST"
+        operation_name = "decrypt"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -172,14 +174,20 @@ class KmsCryptoClient(object):
                 method=method,
                 header_params=header_params,
                 body=decrypt_data_details,
-                response_type="DecryptedData")
+                response_type="DecryptedData",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=decrypt_data_details,
-                response_type="DecryptedData")
+                response_type="DecryptedData",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def encrypt(self, encrypt_data_details, **kwargs):
         """
@@ -217,6 +225,8 @@ class KmsCryptoClient(object):
         """
         resource_path = "/20180608/encrypt"
         method = "POST"
+        operation_name = "encrypt"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -251,14 +261,20 @@ class KmsCryptoClient(object):
                 method=method,
                 header_params=header_params,
                 body=encrypt_data_details,
-                response_type="EncryptedData")
+                response_type="EncryptedData",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=encrypt_data_details,
-                response_type="EncryptedData")
+                response_type="EncryptedData",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def export_key(self, export_key_details, **kwargs):
         """
@@ -290,6 +306,8 @@ class KmsCryptoClient(object):
         """
         resource_path = "/20180608/exportKey"
         method = "POST"
+        operation_name = "export_key"
+        api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -317,14 +335,20 @@ class KmsCryptoClient(object):
                 method=method,
                 header_params=header_params,
                 body=export_key_details,
-                response_type="ExportedKeyData")
+                response_type="ExportedKeyData",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=export_key_details,
-                response_type="ExportedKeyData")
+                response_type="ExportedKeyData",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def generate_data_encryption_key(self, generate_key_details, **kwargs):
         """
@@ -359,6 +383,8 @@ class KmsCryptoClient(object):
         """
         resource_path = "/20180608/generateDataEncryptionKey"
         method = "POST"
+        operation_name = "generate_data_encryption_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -393,14 +419,20 @@ class KmsCryptoClient(object):
                 method=method,
                 header_params=header_params,
                 body=generate_key_details,
-                response_type="GeneratedKey")
+                response_type="GeneratedKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=generate_key_details,
-                response_type="GeneratedKey")
+                response_type="GeneratedKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def sign(self, sign_data_details, **kwargs):
         """
@@ -439,6 +471,8 @@ class KmsCryptoClient(object):
         """
         resource_path = "/20180608/sign"
         method = "POST"
+        operation_name = "sign"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -473,14 +507,20 @@ class KmsCryptoClient(object):
                 method=method,
                 header_params=header_params,
                 body=sign_data_details,
-                response_type="SignedData")
+                response_type="SignedData",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=sign_data_details,
-                response_type="SignedData")
+                response_type="SignedData",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def verify(self, verify_data_details, **kwargs):
         """
@@ -519,6 +559,8 @@ class KmsCryptoClient(object):
         """
         resource_path = "/20180608/verify"
         method = "POST"
+        operation_name = "verify"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -553,11 +595,17 @@ class KmsCryptoClient(object):
                 method=method,
                 header_params=header_params,
                 body=verify_data_details,
-                response_type="VerifiedData")
+                response_type="VerifiedData",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=verify_data_details,
-                response_type="VerifiedData")
+                response_type="VerifiedData",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

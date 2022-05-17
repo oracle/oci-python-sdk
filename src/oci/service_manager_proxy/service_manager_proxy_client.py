@@ -146,6 +146,8 @@ class ServiceManagerProxyClient(object):
         """
         resource_path = "/serviceEnvironments/{serviceEnvironmentId}"
         method = "GET"
+        operation_name = "get_service_environment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/smp/20210914/ServiceEnvironment/GetServiceEnvironment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -196,7 +198,10 @@ class ServiceManagerProxyClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ServiceEnvironment")
+                response_type="ServiceEnvironment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -204,7 +209,10 @@ class ServiceManagerProxyClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ServiceEnvironment")
+                response_type="ServiceEnvironment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_service_environments(self, compartment_id, **kwargs):
         """
@@ -271,6 +279,8 @@ class ServiceManagerProxyClient(object):
         """
         resource_path = "/serviceEnvironments"
         method = "GET"
+        operation_name = "list_service_environments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/smp/20210914/ServiceEnvironment/ListServiceEnvironments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -338,11 +348,17 @@ class ServiceManagerProxyClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ServiceEnvironmentCollection")
+                response_type="ServiceEnvironmentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ServiceEnvironmentCollection")
+                response_type="ServiceEnvironmentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

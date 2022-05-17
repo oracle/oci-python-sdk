@@ -155,6 +155,8 @@ class OperatorControlAssignmentClient(object):
         """
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_operator_control_assignment_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ChangeOperatorControlAssignmentCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -204,14 +206,20 @@ class OperatorControlAssignmentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_operator_control_assignment_compartment_details)
+                body=change_operator_control_assignment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_operator_control_assignment_compartment_details)
+                body=change_operator_control_assignment_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_operator_control_assignment(self, create_operator_control_assignment_details, **kwargs):
         """
@@ -251,6 +259,8 @@ class OperatorControlAssignmentClient(object):
         """
         resource_path = "/operatorControlAssignments"
         method = "POST"
+        operation_name = "create_operator_control_assignment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/CreateOperatorControlAssignment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -288,14 +298,20 @@ class OperatorControlAssignmentClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_operator_control_assignment_details,
-                response_type="OperatorControlAssignment")
+                response_type="OperatorControlAssignment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_operator_control_assignment_details,
-                response_type="OperatorControlAssignment")
+                response_type="OperatorControlAssignment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_operator_control_assignment(self, operator_control_assignment_id, **kwargs):
         """
@@ -338,6 +354,8 @@ class OperatorControlAssignmentClient(object):
         """
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}"
         method = "DELETE"
+        operation_name = "delete_operator_control_assignment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/DeleteOperatorControlAssignment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -390,14 +408,20 @@ class OperatorControlAssignmentClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_operator_control_assignment(self, operator_control_assignment_id, **kwargs):
         """
@@ -430,6 +454,8 @@ class OperatorControlAssignmentClient(object):
         """
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}"
         method = "GET"
+        operation_name = "get_operator_control_assignment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetOperatorControlAssignment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -474,14 +500,20 @@ class OperatorControlAssignmentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OperatorControlAssignment")
+                response_type="OperatorControlAssignment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OperatorControlAssignment")
+                response_type="OperatorControlAssignment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_operator_control_assignments(self, compartment_id, **kwargs):
         """
@@ -544,6 +576,8 @@ class OperatorControlAssignmentClient(object):
         """
         resource_path = "/operatorControlAssignments"
         method = "GET"
+        operation_name = "list_operator_control_assignments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ListOperatorControlAssignments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -620,14 +654,20 @@ class OperatorControlAssignmentClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperatorControlAssignmentCollection")
+                response_type="OperatorControlAssignmentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OperatorControlAssignmentCollection")
+                response_type="OperatorControlAssignmentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_operator_control_assignment(self, operator_control_assignment_id, update_operator_control_assignment_details, **kwargs):
         """
@@ -670,6 +710,8 @@ class OperatorControlAssignmentClient(object):
         """
         resource_path = "/operatorControlAssignments/{operatorControlAssignmentId}"
         method = "PUT"
+        operation_name = "update_operator_control_assignment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/UpdateOperatorControlAssignment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -717,7 +759,10 @@ class OperatorControlAssignmentClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_operator_control_assignment_details,
-                response_type="OperatorControlAssignment")
+                response_type="OperatorControlAssignment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -725,4 +770,7 @@ class OperatorControlAssignmentClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_operator_control_assignment_details,
-                response_type="OperatorControlAssignment")
+                response_type="OperatorControlAssignment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

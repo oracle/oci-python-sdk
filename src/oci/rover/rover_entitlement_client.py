@@ -152,6 +152,8 @@ class RoverEntitlementClient(object):
         """
         resource_path = "/roverEntitlements/{roverEntitlementId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_rover_entitlement_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/ChangeRoverEntitlementCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,14 +205,20 @@ class RoverEntitlementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_rover_entitlement_compartment_details)
+                body=change_rover_entitlement_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_rover_entitlement_compartment_details)
+                body=change_rover_entitlement_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_rover_entitlement(self, create_rover_entitlement_details, **kwargs):
         """
@@ -250,6 +258,8 @@ class RoverEntitlementClient(object):
         """
         resource_path = "/roverEntitlements"
         method = "POST"
+        operation_name = "create_rover_entitlement"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/CreateRoverEntitlement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -289,14 +299,20 @@ class RoverEntitlementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_rover_entitlement_details,
-                response_type="RoverEntitlement")
+                response_type="RoverEntitlement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_rover_entitlement_details,
-                response_type="RoverEntitlement")
+                response_type="RoverEntitlement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_rover_entitlement(self, rover_entitlement_id, **kwargs):
         """
@@ -343,6 +359,8 @@ class RoverEntitlementClient(object):
         """
         resource_path = "/roverEntitlements/{roverEntitlementId}"
         method = "DELETE"
+        operation_name = "delete_rover_entitlement"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/DeleteRoverEntitlement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -393,13 +411,19 @@ class RoverEntitlementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_rover_entitlement(self, rover_entitlement_id, compartment_id, **kwargs):
         """
@@ -442,6 +466,8 @@ class RoverEntitlementClient(object):
         """
         resource_path = "/roverEntitlements/{roverEntitlementId}"
         method = "GET"
+        operation_name = "get_rover_entitlement"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/GetRoverEntitlement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -497,7 +523,10 @@ class RoverEntitlementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RoverEntitlement")
+                response_type="RoverEntitlement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -505,7 +534,10 @@ class RoverEntitlementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RoverEntitlement")
+                response_type="RoverEntitlement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_rover_entitlements(self, compartment_id, **kwargs):
         """
@@ -565,6 +597,8 @@ class RoverEntitlementClient(object):
         """
         resource_path = "/roverEntitlements"
         method = "GET"
+        operation_name = "list_rover_entitlements"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/ListRoverEntitlements"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -641,14 +675,20 @@ class RoverEntitlementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RoverEntitlementCollection")
+                response_type="RoverEntitlementCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RoverEntitlementCollection")
+                response_type="RoverEntitlementCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_rover_entitlement(self, rover_entitlement_id, update_rover_entitlement_details, **kwargs):
         """
@@ -691,6 +731,8 @@ class RoverEntitlementClient(object):
         """
         resource_path = "/roverEntitlements/{roverEntitlementId}"
         method = "PUT"
+        operation_name = "update_rover_entitlement"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverEntitlement/UpdateRoverEntitlement"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -740,7 +782,10 @@ class RoverEntitlementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_rover_entitlement_details,
-                response_type="RoverEntitlement")
+                response_type="RoverEntitlement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -748,4 +793,7 @@ class RoverEntitlementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_rover_entitlement_details,
-                response_type="RoverEntitlement")
+                response_type="RoverEntitlement",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

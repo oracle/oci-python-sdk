@@ -144,6 +144,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployments/{deploymentId}/actions/approve"
         method = "POST"
+        operation_name = "approve_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/ApproveDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -196,7 +198,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=approve_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -204,7 +209,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=approve_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_build_run(self, cancel_build_run_details, build_run_id, **kwargs):
         """
@@ -246,6 +254,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildRuns/{buildRunId}/actions/cancel"
         method = "POST"
+        operation_name = "cancel_build_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CancelBuildRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -298,7 +308,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=cancel_build_run_details,
-                response_type="BuildRun")
+                response_type="BuildRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -306,7 +319,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=cancel_build_run_details,
-                response_type="BuildRun")
+                response_type="BuildRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_deployment(self, deployment_id, cancel_deployment_details, **kwargs):
         """
@@ -348,6 +364,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployments/{deploymentId}/actions/cancel"
         method = "POST"
+        operation_name = "cancel_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CancelDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -400,7 +418,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=cancel_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -408,7 +429,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=cancel_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_project_compartment(self, project_id, change_project_compartment_details, **kwargs):
         """
@@ -450,6 +474,8 @@ class DevopsClient(object):
         """
         resource_path = "/projects/{projectId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_project_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/ChangeProjectCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -501,14 +527,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_project_compartment_details)
+                body=change_project_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_project_compartment_details)
+                body=change_project_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_build_pipeline(self, create_build_pipeline_details, **kwargs):
         """
@@ -544,6 +576,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildPipelines"
         method = "POST"
+        operation_name = "create_build_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/CreateBuildPipeline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -583,14 +617,20 @@ class DevopsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_build_pipeline_details,
-                response_type="BuildPipeline")
+                response_type="BuildPipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_build_pipeline_details,
-                response_type="BuildPipeline")
+                response_type="BuildPipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_build_pipeline_stage(self, create_build_pipeline_stage_details, **kwargs):
         """
@@ -626,6 +666,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildPipelineStages"
         method = "POST"
+        operation_name = "create_build_pipeline_stage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/CreateBuildPipelineStage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -665,14 +707,20 @@ class DevopsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_build_pipeline_stage_details,
-                response_type="BuildPipelineStage")
+                response_type="BuildPipelineStage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_build_pipeline_stage_details,
-                response_type="BuildPipelineStage")
+                response_type="BuildPipelineStage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_build_run(self, create_build_run_details, **kwargs):
         """
@@ -711,6 +759,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildRuns"
         method = "POST"
+        operation_name = "create_build_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/CreateBuildRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -752,14 +802,20 @@ class DevopsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_build_run_details,
-                response_type="BuildRun")
+                response_type="BuildRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_build_run_details,
-                response_type="BuildRun")
+                response_type="BuildRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_connection(self, create_connection_details, **kwargs):
         """
@@ -795,6 +851,8 @@ class DevopsClient(object):
         """
         resource_path = "/connections"
         method = "POST"
+        operation_name = "create_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/CreateConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -834,14 +892,20 @@ class DevopsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_deploy_artifact(self, create_deploy_artifact_details, **kwargs):
         """
@@ -877,6 +941,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployArtifacts"
         method = "POST"
+        operation_name = "create_deploy_artifact"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/CreateDeployArtifact"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -916,14 +982,20 @@ class DevopsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_deploy_artifact_details,
-                response_type="DeployArtifact")
+                response_type="DeployArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_deploy_artifact_details,
-                response_type="DeployArtifact")
+                response_type="DeployArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_deploy_environment(self, create_deploy_environment_details, **kwargs):
         """
@@ -959,6 +1031,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployEnvironments"
         method = "POST"
+        operation_name = "create_deploy_environment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/CreateDeployEnvironment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -998,14 +1072,20 @@ class DevopsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_deploy_environment_details,
-                response_type="DeployEnvironment")
+                response_type="DeployEnvironment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_deploy_environment_details,
-                response_type="DeployEnvironment")
+                response_type="DeployEnvironment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_deploy_pipeline(self, create_deploy_pipeline_details, **kwargs):
         """
@@ -1041,6 +1121,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployPipelines"
         method = "POST"
+        operation_name = "create_deploy_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/CreateDeployPipeline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1080,14 +1162,20 @@ class DevopsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_deploy_pipeline_details,
-                response_type="DeployPipeline")
+                response_type="DeployPipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_deploy_pipeline_details,
-                response_type="DeployPipeline")
+                response_type="DeployPipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_deploy_stage(self, create_deploy_stage_details, **kwargs):
         """
@@ -1123,6 +1211,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployStages"
         method = "POST"
+        operation_name = "create_deploy_stage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/CreateDeployStage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1162,14 +1252,20 @@ class DevopsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_deploy_stage_details,
-                response_type="DeployStage")
+                response_type="DeployStage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_deploy_stage_details,
-                response_type="DeployStage")
+                response_type="DeployStage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_deployment(self, create_deployment_details, **kwargs):
         """
@@ -1205,6 +1301,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployments"
         method = "POST"
+        operation_name = "create_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/CreateDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1244,14 +1342,20 @@ class DevopsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_project(self, create_project_details, **kwargs):
         """
@@ -1287,6 +1391,8 @@ class DevopsClient(object):
         """
         resource_path = "/projects"
         method = "POST"
+        operation_name = "create_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/CreateProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1326,14 +1432,20 @@ class DevopsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_repository(self, create_repository_details, **kwargs):
         """
@@ -1369,6 +1481,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories"
         method = "POST"
+        operation_name = "create_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/CreateRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1408,14 +1522,20 @@ class DevopsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_repository_details,
-                response_type="Repository")
+                response_type="Repository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_repository_details,
-                response_type="Repository")
+                response_type="Repository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_trigger(self, create_trigger_details, **kwargs):
         """
@@ -1451,6 +1571,8 @@ class DevopsClient(object):
         """
         resource_path = "/triggers"
         method = "POST"
+        operation_name = "create_trigger"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/CreateTrigger"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1490,14 +1612,20 @@ class DevopsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_trigger_details,
-                response_type="TriggerCreateResult")
+                response_type="TriggerCreateResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_trigger_details,
-                response_type="TriggerCreateResult")
+                response_type="TriggerCreateResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_build_pipeline(self, build_pipeline_id, **kwargs):
         """
@@ -1533,6 +1661,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildPipelines/{buildPipelineId}"
         method = "DELETE"
+        operation_name = "delete_build_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/DeleteBuildPipeline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1580,13 +1710,19 @@ class DevopsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_build_pipeline_stage(self, build_pipeline_stage_id, **kwargs):
         """
@@ -1622,6 +1758,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildPipelineStages/{buildPipelineStageId}"
         method = "DELETE"
+        operation_name = "delete_build_pipeline_stage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/DeleteBuildPipelineStage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1669,13 +1807,19 @@ class DevopsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_connection(self, connection_id, **kwargs):
         """
@@ -1711,6 +1855,8 @@ class DevopsClient(object):
         """
         resource_path = "/connections/{connectionId}"
         method = "DELETE"
+        operation_name = "delete_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/DeleteConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1758,13 +1904,19 @@ class DevopsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_deploy_artifact(self, deploy_artifact_id, **kwargs):
         """
@@ -1800,6 +1952,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployArtifacts/{deployArtifactId}"
         method = "DELETE"
+        operation_name = "delete_deploy_artifact"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/DeleteDeployArtifact"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1847,13 +2001,19 @@ class DevopsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_deploy_environment(self, deploy_environment_id, **kwargs):
         """
@@ -1889,6 +2049,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployEnvironments/{deployEnvironmentId}"
         method = "DELETE"
+        operation_name = "delete_deploy_environment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/DeleteDeployEnvironment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1936,13 +2098,19 @@ class DevopsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_deploy_pipeline(self, deploy_pipeline_id, **kwargs):
         """
@@ -1978,6 +2146,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployPipelines/{deployPipelineId}"
         method = "DELETE"
+        operation_name = "delete_deploy_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/DeleteDeployPipeline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2025,13 +2195,19 @@ class DevopsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_deploy_stage(self, deploy_stage_id, **kwargs):
         """
@@ -2067,6 +2243,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployStages/{deployStageId}"
         method = "DELETE"
+        operation_name = "delete_deploy_stage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/DeleteDeployStage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2114,13 +2292,19 @@ class DevopsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_project(self, project_id, **kwargs):
         """
@@ -2156,6 +2340,8 @@ class DevopsClient(object):
         """
         resource_path = "/projects/{projectId}"
         method = "DELETE"
+        operation_name = "delete_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/DeleteProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2203,13 +2389,19 @@ class DevopsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_ref(self, repository_id, ref_name, **kwargs):
         """
@@ -2251,6 +2443,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/refs/{refName}"
         method = "DELETE"
+        operation_name = "delete_ref"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRef"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2302,13 +2496,19 @@ class DevopsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_repository(self, repository_id, **kwargs):
         """
@@ -2344,6 +2544,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}"
         method = "DELETE"
+        operation_name = "delete_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/DeleteRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2391,13 +2593,19 @@ class DevopsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_trigger(self, trigger_id, **kwargs):
         """
@@ -2433,6 +2641,8 @@ class DevopsClient(object):
         """
         resource_path = "/triggers/{triggerId}"
         method = "DELETE"
+        operation_name = "delete_trigger"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/DeleteTrigger"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2480,13 +2690,19 @@ class DevopsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_build_pipeline(self, build_pipeline_id, **kwargs):
         """
@@ -2519,6 +2735,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildPipelines/{buildPipelineId}"
         method = "GET"
+        operation_name = "get_build_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/GetBuildPipeline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2565,14 +2783,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BuildPipeline")
+                response_type="BuildPipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BuildPipeline")
+                response_type="BuildPipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_build_pipeline_stage(self, build_pipeline_stage_id, **kwargs):
         """
@@ -2605,6 +2829,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildPipelineStages/{buildPipelineStageId}"
         method = "GET"
+        operation_name = "get_build_pipeline_stage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/GetBuildPipelineStage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2651,14 +2877,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BuildPipelineStage")
+                response_type="BuildPipelineStage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BuildPipelineStage")
+                response_type="BuildPipelineStage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_build_run(self, build_run_id, **kwargs):
         """
@@ -2691,6 +2923,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildRuns/{buildRunId}"
         method = "GET"
+        operation_name = "get_build_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/GetBuildRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2737,14 +2971,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BuildRun")
+                response_type="BuildRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BuildRun")
+                response_type="BuildRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_commit(self, repository_id, commit_id, **kwargs):
         """
@@ -2780,6 +3020,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/commits/{commitId}"
         method = "GET"
+        operation_name = "get_commit"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommit"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2827,14 +3069,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RepositoryCommit")
+                response_type="RepositoryCommit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RepositoryCommit")
+                response_type="RepositoryCommit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_commit_diff(self, repository_id, target_version, **kwargs):
         """
@@ -2876,6 +3124,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/diff"
         method = "GET"
+        operation_name = "get_commit_diff"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetCommitDiff"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2932,7 +3182,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiffResponse")
+                response_type="DiffResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2940,7 +3193,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiffResponse")
+                response_type="DiffResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_connection(self, connection_id, **kwargs):
         """
@@ -2973,6 +3229,8 @@ class DevopsClient(object):
         """
         resource_path = "/connections/{connectionId}"
         method = "GET"
+        operation_name = "get_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/GetConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3019,14 +3277,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_deploy_artifact(self, deploy_artifact_id, **kwargs):
         """
@@ -3059,6 +3323,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployArtifacts/{deployArtifactId}"
         method = "GET"
+        operation_name = "get_deploy_artifact"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/GetDeployArtifact"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3105,14 +3371,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeployArtifact")
+                response_type="DeployArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeployArtifact")
+                response_type="DeployArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_deploy_environment(self, deploy_environment_id, **kwargs):
         """
@@ -3145,6 +3417,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployEnvironments/{deployEnvironmentId}"
         method = "GET"
+        operation_name = "get_deploy_environment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/GetDeployEnvironment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3191,14 +3465,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeployEnvironment")
+                response_type="DeployEnvironment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeployEnvironment")
+                response_type="DeployEnvironment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_deploy_pipeline(self, deploy_pipeline_id, **kwargs):
         """
@@ -3231,6 +3511,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployPipelines/{deployPipelineId}"
         method = "GET"
+        operation_name = "get_deploy_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/GetDeployPipeline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3277,14 +3559,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeployPipeline")
+                response_type="DeployPipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeployPipeline")
+                response_type="DeployPipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_deploy_stage(self, deploy_stage_id, **kwargs):
         """
@@ -3317,6 +3605,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployStages/{deployStageId}"
         method = "GET"
+        operation_name = "get_deploy_stage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/GetDeployStage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3363,14 +3653,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeployStage")
+                response_type="DeployStage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DeployStage")
+                response_type="DeployStage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_deployment(self, deployment_id, **kwargs):
         """
@@ -3403,6 +3699,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployments/{deploymentId}"
         method = "GET"
+        operation_name = "get_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/GetDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3449,14 +3747,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_file_diff(self, repository_id, file_path, base_version, target_version, **kwargs):
         """
@@ -3501,6 +3805,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/diffs/{filePath}"
         method = "GET"
+        operation_name = "get_file_diff"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetFileDiff"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3557,7 +3863,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FileDiffResponse")
+                response_type="FileDiffResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3565,7 +3874,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FileDiffResponse")
+                response_type="FileDiffResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_mirror_record(self, repository_id, mirror_record_type, **kwargs):
         """
@@ -3605,6 +3917,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/mirrorRecords/{mirrorRecordType}"
         method = "GET"
+        operation_name = "get_mirror_record"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetMirrorRecord"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3652,14 +3966,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RepositoryMirrorRecord")
+                response_type="RepositoryMirrorRecord",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RepositoryMirrorRecord")
+                response_type="RepositoryMirrorRecord",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_object(self, repository_id, **kwargs):
         """
@@ -3698,6 +4018,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/object"
         method = "GET"
+        operation_name = "get_object"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryObject/GetObject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3753,7 +4075,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryObject")
+                response_type="RepositoryObject",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3761,7 +4086,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryObject")
+                response_type="RepositoryObject",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_object_content(self, repository_id, sha, **kwargs):
         """
@@ -3800,6 +4128,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/objects/{sha}/content"
         method = "GET"
+        operation_name = "get_object_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetObjectContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3854,7 +4184,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3862,7 +4195,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_project(self, project_id, **kwargs):
         """
@@ -3895,6 +4231,8 @@ class DevopsClient(object):
         """
         resource_path = "/projects/{projectId}"
         method = "GET"
+        operation_name = "get_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/GetProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3941,14 +4279,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ref(self, repository_id, ref_name, **kwargs):
         """
@@ -3984,6 +4328,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/refs/{refName}"
         method = "GET"
+        operation_name = "get_ref"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRef"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4031,14 +4377,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RepositoryRef")
+                response_type="RepositoryRef",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RepositoryRef")
+                response_type="RepositoryRef",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_repo_file_diff(self, repository_id, base_version, target_version, **kwargs):
         """
@@ -4083,6 +4435,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/file/diffs"
         method = "GET"
+        operation_name = "get_repo_file_diff"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileDiff"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4140,7 +4494,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FileDiffResponse")
+                response_type="FileDiffResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4148,7 +4505,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FileDiffResponse")
+                response_type="FileDiffResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_repo_file_lines(self, repository_id, revision, **kwargs):
         """
@@ -4193,6 +4553,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/file/lines"
         method = "GET"
+        operation_name = "get_repo_file_lines"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepoFileLines"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4251,7 +4613,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryFileLines")
+                response_type="RepositoryFileLines",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4259,7 +4624,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryFileLines")
+                response_type="RepositoryFileLines",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_repository(self, repository_id, **kwargs):
         """
@@ -4297,6 +4665,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}"
         method = "GET"
+        operation_name = "get_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4358,7 +4728,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Repository")
+                response_type="Repository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4366,7 +4739,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Repository")
+                response_type="Repository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_repository_archive_content(self, repository_id, **kwargs):
         """
@@ -4405,6 +4781,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/archive/content"
         method = "GET"
+        operation_name = "get_repository_archive_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryArchiveContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4460,7 +4838,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4468,7 +4849,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_repository_file_lines(self, repository_id, file_path, revision, **kwargs):
         """
@@ -4513,6 +4897,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/files/{filePath}/lines"
         method = "GET"
+        operation_name = "get_repository_file_lines"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/GetRepositoryFileLines"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4570,7 +4956,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryFileLines")
+                response_type="RepositoryFileLines",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4578,7 +4967,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryFileLines")
+                response_type="RepositoryFileLines",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_trigger(self, trigger_id, **kwargs):
         """
@@ -4611,6 +5003,8 @@ class DevopsClient(object):
         """
         resource_path = "/triggers/{triggerId}"
         method = "GET"
+        operation_name = "get_trigger"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/GetTrigger"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4657,14 +5051,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Trigger")
+                response_type="Trigger",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Trigger")
+                response_type="Trigger",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -4697,6 +5097,8 @@ class DevopsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4743,14 +5145,20 @@ class DevopsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_authors(self, repository_id, **kwargs):
         """
@@ -4797,6 +5205,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/authors"
         method = "GET"
+        operation_name = "list_authors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListAuthors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4863,7 +5273,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryAuthorCollection")
+                response_type="RepositoryAuthorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4871,7 +5284,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryAuthorCollection")
+                response_type="RepositoryAuthorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_build_pipeline_stages(self, **kwargs):
         """
@@ -4934,6 +5350,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildPipelineStages"
         method = "GET"
+        operation_name = "list_build_pipeline_stages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStageSummary/ListBuildPipelineStages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5013,14 +5431,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BuildPipelineStageCollection")
+                response_type="BuildPipelineStageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BuildPipelineStageCollection")
+                response_type="BuildPipelineStageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_build_pipelines(self, **kwargs):
         """
@@ -5083,6 +5507,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildPipelines"
         method = "GET"
+        operation_name = "list_build_pipelines"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineCollection/ListBuildPipelines"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5162,14 +5588,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BuildPipelineCollection")
+                response_type="BuildPipelineCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BuildPipelineCollection")
+                response_type="BuildPipelineCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_build_runs(self, **kwargs):
         """
@@ -5235,6 +5667,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildRuns"
         method = "GET"
+        operation_name = "list_build_runs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRunSummary/ListBuildRuns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5316,14 +5750,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BuildRunSummaryCollection")
+                response_type="BuildRunSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BuildRunSummaryCollection")
+                response_type="BuildRunSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_commit_diffs(self, repository_id, base_version, target_version, **kwargs):
         """
@@ -5371,6 +5811,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/diffs"
         method = "GET"
+        operation_name = "list_commit_diffs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListCommitDiffs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5430,7 +5872,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiffCollection")
+                response_type="DiffCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5438,7 +5883,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DiffCollection")
+                response_type="DiffCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_commits(self, repository_id, **kwargs):
         """
@@ -5498,6 +5946,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/commits"
         method = "GET"
+        operation_name = "list_commits"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryCommit/ListCommits"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5567,7 +6017,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryCommitCollection")
+                response_type="RepositoryCommitCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5575,7 +6028,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryCommitCollection")
+                response_type="RepositoryCommitCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_connections(self, **kwargs):
         """
@@ -5643,6 +6099,8 @@ class DevopsClient(object):
         """
         resource_path = "/connections"
         method = "GET"
+        operation_name = "list_connections"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ConnectionCollection/ListConnections"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5731,14 +6189,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionCollection")
+                response_type="ConnectionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionCollection")
+                response_type="ConnectionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_deploy_artifacts(self, **kwargs):
         """
@@ -5801,6 +6265,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployArtifacts"
         method = "GET"
+        operation_name = "list_deploy_artifacts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifactSummary/ListDeployArtifacts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5880,14 +6346,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeployArtifactCollection")
+                response_type="DeployArtifactCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeployArtifactCollection")
+                response_type="DeployArtifactCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_deploy_environments(self, **kwargs):
         """
@@ -5950,6 +6422,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployEnvironments"
         method = "GET"
+        operation_name = "list_deploy_environments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironmentSummary/ListDeployEnvironments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6029,14 +6503,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeployEnvironmentCollection")
+                response_type="DeployEnvironmentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeployEnvironmentCollection")
+                response_type="DeployEnvironmentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_deploy_pipelines(self, **kwargs):
         """
@@ -6099,6 +6579,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployPipelines"
         method = "GET"
+        operation_name = "list_deploy_pipelines"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipelineSummary/ListDeployPipelines"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6178,14 +6660,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeployPipelineCollection")
+                response_type="DeployPipelineCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeployPipelineCollection")
+                response_type="DeployPipelineCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_deploy_stages(self, **kwargs):
         """
@@ -6248,6 +6736,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployStages"
         method = "GET"
+        operation_name = "list_deploy_stages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStageSummary/ListDeployStages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6327,14 +6817,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeployStageCollection")
+                response_type="DeployStageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeployStageCollection")
+                response_type="DeployStageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_deployments(self, **kwargs):
         """
@@ -6410,6 +6906,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployments"
         method = "GET"
+        operation_name = "list_deployments"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeploymentSummary/ListDeployments"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6495,14 +6993,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeploymentCollection")
+                response_type="DeploymentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DeploymentCollection")
+                response_type="DeploymentCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_mirror_records(self, repository_id, **kwargs):
         """
@@ -6546,6 +7050,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/mirrorRecords"
         method = "GET"
+        operation_name = "list_mirror_records"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListMirrorRecords"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6610,7 +7116,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryMirrorRecordCollection")
+                response_type="RepositoryMirrorRecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6618,7 +7127,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryMirrorRecordCollection")
+                response_type="RepositoryMirrorRecordCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_paths(self, repository_id, **kwargs):
         """
@@ -6680,6 +7192,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/paths"
         method = "GET"
+        operation_name = "list_paths"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryPathSummary/ListPaths"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6761,7 +7275,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryPathCollection")
+                response_type="RepositoryPathCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6769,7 +7286,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryPathCollection")
+                response_type="RepositoryPathCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_projects(self, compartment_id, **kwargs):
         """
@@ -6829,6 +7349,8 @@ class DevopsClient(object):
         """
         resource_path = "/projects"
         method = "GET"
+        operation_name = "list_projects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/ProjectSummary/ListProjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6905,14 +7427,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProjectCollection")
+                response_type="ProjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProjectCollection")
+                response_type="ProjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_refs(self, repository_id, **kwargs):
         """
@@ -6972,6 +7500,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/refs"
         method = "GET"
+        operation_name = "list_refs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/RepositoryRef/ListRefs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7058,7 +7588,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryRefCollection")
+                response_type="RepositoryRefCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7066,7 +7599,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryRefCollection")
+                response_type="RepositoryRefCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_repositories(self, **kwargs):
         """
@@ -7129,6 +7665,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories"
         method = "GET"
+        operation_name = "list_repositories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/ListRepositories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7208,14 +7746,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryCollection")
+                response_type="RepositoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryCollection")
+                response_type="RepositoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_triggers(self, **kwargs):
         """
@@ -7278,6 +7822,8 @@ class DevopsClient(object):
         """
         resource_path = "/triggers"
         method = "GET"
+        operation_name = "list_triggers"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/TriggerCollection/ListTriggers"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7357,14 +7903,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TriggerCollection")
+                response_type="TriggerCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TriggerCollection")
+                response_type="TriggerCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -7413,6 +7965,8 @@ class DevopsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7486,7 +8040,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7494,7 +8051,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -7543,6 +8103,8 @@ class DevopsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7616,7 +8178,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7624,7 +8189,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -7684,6 +8252,8 @@ class DevopsClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7760,14 +8330,20 @@ class DevopsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def mirror_repository(self, repository_id, **kwargs):
         """
@@ -7803,6 +8379,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/actions/mirror"
         method = "POST"
+        operation_name = "mirror_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/MirrorRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7850,13 +8428,19 @@ class DevopsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def put_repository_ref(self, repository_id, ref_name, put_repository_ref_details, **kwargs):
         """
@@ -7901,6 +8485,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/refs/{refName}"
         method = "PUT"
+        operation_name = "put_repository_ref"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/PutRepositoryRef"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7954,7 +8540,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=put_repository_ref_details,
-                response_type="RepositoryRef")
+                response_type="RepositoryRef",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7962,7 +8551,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=put_repository_ref_details,
-                response_type="RepositoryRef")
+                response_type="RepositoryRef",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_build_pipeline(self, build_pipeline_id, update_build_pipeline_details, **kwargs):
         """
@@ -8001,6 +8593,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildPipelines/{buildPipelineId}"
         method = "PUT"
+        operation_name = "update_build_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipeline/UpdateBuildPipeline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8050,7 +8644,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_build_pipeline_details,
-                response_type="BuildPipeline")
+                response_type="BuildPipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8058,7 +8655,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_build_pipeline_details,
-                response_type="BuildPipeline")
+                response_type="BuildPipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_build_pipeline_stage(self, build_pipeline_stage_id, update_build_pipeline_stage_details, **kwargs):
         """
@@ -8097,6 +8697,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildPipelineStages/{buildPipelineStageId}"
         method = "PUT"
+        operation_name = "update_build_pipeline_stage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildPipelineStage/UpdateBuildPipelineStage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8146,7 +8748,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_build_pipeline_stage_details,
-                response_type="BuildPipelineStage")
+                response_type="BuildPipelineStage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8154,7 +8759,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_build_pipeline_stage_details,
-                response_type="BuildPipelineStage")
+                response_type="BuildPipelineStage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_build_run(self, build_run_id, update_build_run_details, **kwargs):
         """
@@ -8193,6 +8801,8 @@ class DevopsClient(object):
         """
         resource_path = "/buildRuns/{buildRunId}"
         method = "PUT"
+        operation_name = "update_build_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/BuildRun/UpdateBuildRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8242,7 +8852,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_build_run_details,
-                response_type="BuildRun")
+                response_type="BuildRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8250,7 +8863,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_build_run_details,
-                response_type="BuildRun")
+                response_type="BuildRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_connection(self, connection_id, update_connection_details, **kwargs):
         """
@@ -8289,6 +8905,8 @@ class DevopsClient(object):
         """
         resource_path = "/connections/{connectionId}"
         method = "PUT"
+        operation_name = "update_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Connection/UpdateConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8338,7 +8956,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8346,7 +8967,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_deploy_artifact(self, deploy_artifact_id, update_deploy_artifact_details, **kwargs):
         """
@@ -8385,6 +9009,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployArtifacts/{deployArtifactId}"
         method = "PUT"
+        operation_name = "update_deploy_artifact"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployArtifact/UpdateDeployArtifact"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8434,7 +9060,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deploy_artifact_details,
-                response_type="DeployArtifact")
+                response_type="DeployArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8442,7 +9071,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deploy_artifact_details,
-                response_type="DeployArtifact")
+                response_type="DeployArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_deploy_environment(self, deploy_environment_id, update_deploy_environment_details, **kwargs):
         """
@@ -8481,6 +9113,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployEnvironments/{deployEnvironmentId}"
         method = "PUT"
+        operation_name = "update_deploy_environment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployEnvironment/UpdateDeployEnvironment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8530,7 +9164,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deploy_environment_details,
-                response_type="DeployEnvironment")
+                response_type="DeployEnvironment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8538,7 +9175,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deploy_environment_details,
-                response_type="DeployEnvironment")
+                response_type="DeployEnvironment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_deploy_pipeline(self, deploy_pipeline_id, update_deploy_pipeline_details, **kwargs):
         """
@@ -8577,6 +9217,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployPipelines/{deployPipelineId}"
         method = "PUT"
+        operation_name = "update_deploy_pipeline"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployPipeline/UpdateDeployPipeline"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8626,7 +9268,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deploy_pipeline_details,
-                response_type="DeployPipeline")
+                response_type="DeployPipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8634,7 +9279,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deploy_pipeline_details,
-                response_type="DeployPipeline")
+                response_type="DeployPipeline",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_deploy_stage(self, deploy_stage_id, update_deploy_stage_details, **kwargs):
         """
@@ -8673,6 +9321,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployStages/{deployStageId}"
         method = "PUT"
+        operation_name = "update_deploy_stage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/DeployStage/UpdateDeployStage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8722,7 +9372,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deploy_stage_details,
-                response_type="DeployStage")
+                response_type="DeployStage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8730,7 +9383,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deploy_stage_details,
-                response_type="DeployStage")
+                response_type="DeployStage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_deployment(self, deployment_id, update_deployment_details, **kwargs):
         """
@@ -8769,6 +9425,8 @@ class DevopsClient(object):
         """
         resource_path = "/deployments/{deploymentId}"
         method = "PUT"
+        operation_name = "update_deployment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Deployment/UpdateDeployment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8818,7 +9476,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8826,7 +9487,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_deployment_details,
-                response_type="Deployment")
+                response_type="Deployment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_project(self, project_id, update_project_details, **kwargs):
         """
@@ -8865,6 +9529,8 @@ class DevopsClient(object):
         """
         resource_path = "/projects/{projectId}"
         method = "PUT"
+        operation_name = "update_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Project/UpdateProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8914,7 +9580,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8922,7 +9591,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_repository(self, repository_id, update_repository_details, **kwargs):
         """
@@ -8961,6 +9633,8 @@ class DevopsClient(object):
         """
         resource_path = "/repositories/{repositoryId}"
         method = "PUT"
+        operation_name = "update_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Repository/UpdateRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9010,7 +9684,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_repository_details,
-                response_type="Repository")
+                response_type="Repository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9018,7 +9695,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_repository_details,
-                response_type="Repository")
+                response_type="Repository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_trigger(self, trigger_id, update_trigger_details, **kwargs):
         """
@@ -9057,6 +9737,8 @@ class DevopsClient(object):
         """
         resource_path = "/triggers/{triggerId}"
         method = "PUT"
+        operation_name = "update_trigger"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/devops/20210630/Trigger/UpdateTrigger"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9106,7 +9788,10 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_trigger_details,
-                response_type="Trigger")
+                response_type="Trigger",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9114,4 +9799,7 @@ class DevopsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_trigger_details,
-                response_type="Trigger")
+                response_type="Trigger",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

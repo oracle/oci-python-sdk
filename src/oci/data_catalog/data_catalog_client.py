@@ -156,6 +156,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/addDataSelectorPatterns"
         method = "POST"
+        operation_name = "add_data_selector_patterns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/AddDataSelectorPatterns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -207,7 +209,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=data_selector_pattern_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -215,7 +220,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=data_selector_pattern_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def associate_custom_property(self, catalog_id, type_key, associate_custom_property_details, **kwargs):
         """
@@ -268,6 +276,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/types/{typeKey}/actions/associateCustomProperties"
         method = "POST"
+        operation_name = "associate_custom_property"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Type/AssociateCustomProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -319,7 +329,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=associate_custom_property_details,
-                response_type="Type")
+                response_type="Type",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -327,7 +340,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=associate_custom_property_details,
-                response_type="Type")
+                response_type="Type",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def attach_catalog_private_endpoint(self, attach_catalog_private_endpoint_details, catalog_id, **kwargs):
         """
@@ -377,6 +393,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/actions/attachCatalogPrivateEndpoint"
         method = "POST"
+        operation_name = "attach_catalog_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/AttachCatalogPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -426,14 +444,20 @@ class DataCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=attach_catalog_private_endpoint_details)
+                body=attach_catalog_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=attach_catalog_private_endpoint_details)
+                body=attach_catalog_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_catalog_compartment(self, change_catalog_compartment_details, catalog_id, **kwargs):
         """
@@ -476,6 +500,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_catalog_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/ChangeCatalogCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -522,14 +548,20 @@ class DataCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_catalog_compartment_details)
+                body=change_catalog_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_catalog_compartment_details)
+                body=change_catalog_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_catalog_private_endpoint_compartment(self, change_catalog_private_endpoint_compartment_details, catalog_private_endpoint_id, **kwargs):
         """
@@ -572,6 +604,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_catalog_private_endpoint_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/ChangeCatalogPrivateEndpointCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -618,14 +652,20 @@ class DataCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_catalog_private_endpoint_compartment_details)
+                body=change_catalog_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_catalog_private_endpoint_compartment_details)
+                body=change_catalog_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_metastore_compartment(self, change_metastore_compartment_details, metastore_id, **kwargs):
         """
@@ -668,6 +708,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/metastores/{metastoreId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_metastore_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/ChangeMetastoreCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -714,14 +756,20 @@ class DataCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_metastore_compartment_details)
+                body=change_metastore_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_metastore_compartment_details)
+                body=change_metastore_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_attribute(self, catalog_id, data_asset_key, entity_key, create_attribute_details, **kwargs):
         """
@@ -770,6 +818,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes"
         method = "POST"
+        operation_name = "create_attribute"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Attribute/CreateAttribute"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -820,7 +870,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_attribute_details,
-                response_type="Attribute")
+                response_type="Attribute",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -828,7 +881,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_attribute_details,
-                response_type="Attribute")
+                response_type="Attribute",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_attribute_tag(self, catalog_id, data_asset_key, entity_key, attribute_key, create_attribute_tag_details, **kwargs):
         """
@@ -880,6 +936,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}/tags"
         method = "POST"
+        operation_name = "create_attribute_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeTag/CreateAttributeTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -931,7 +989,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_attribute_tag_details,
-                response_type="AttributeTag")
+                response_type="AttributeTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -939,7 +1000,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_attribute_tag_details,
-                response_type="AttributeTag")
+                response_type="AttributeTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_catalog(self, create_catalog_details, **kwargs):
         """
@@ -980,6 +1044,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs"
         method = "POST"
+        operation_name = "create_catalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/CreateCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1016,13 +1082,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_catalog_details)
+                body=create_catalog_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_catalog_details)
+                body=create_catalog_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_catalog_private_endpoint(self, create_catalog_private_endpoint_details, **kwargs):
         """
@@ -1062,6 +1134,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogPrivateEndpoints"
         method = "POST"
+        operation_name = "create_catalog_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/CreateCatalogPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1098,13 +1172,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_catalog_private_endpoint_details)
+                body=create_catalog_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_catalog_private_endpoint_details)
+                body=create_catalog_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_connection(self, catalog_id, data_asset_key, create_connection_details, **kwargs):
         """
@@ -1150,6 +1230,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections"
         method = "POST"
+        operation_name = "create_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/CreateConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1199,7 +1281,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1207,7 +1292,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_custom_property(self, catalog_id, namespace_id, create_custom_property_details, **kwargs):
         """
@@ -1253,6 +1341,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties"
         method = "POST"
+        operation_name = "create_custom_property"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/CreateCustomProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1302,7 +1392,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_custom_property_details,
-                response_type="CustomProperty")
+                response_type="CustomProperty",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1310,7 +1403,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_custom_property_details,
-                response_type="CustomProperty")
+                response_type="CustomProperty",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_data_asset(self, catalog_id, create_data_asset_details, **kwargs):
         """
@@ -1353,6 +1449,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets"
         method = "POST"
+        operation_name = "create_data_asset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/CreateDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1401,7 +1499,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1409,7 +1510,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_data_asset_tag(self, catalog_id, data_asset_key, create_data_asset_tag_details, **kwargs):
         """
@@ -1455,6 +1559,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/tags"
         method = "POST"
+        operation_name = "create_data_asset_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetTag/CreateDataAssetTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1504,7 +1610,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_asset_tag_details,
-                response_type="DataAssetTag")
+                response_type="DataAssetTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1512,7 +1621,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_data_asset_tag_details,
-                response_type="DataAssetTag")
+                response_type="DataAssetTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_entity(self, catalog_id, data_asset_key, create_entity_details, **kwargs):
         """
@@ -1558,6 +1670,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities"
         method = "POST"
+        operation_name = "create_entity"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/CreateEntity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1607,7 +1721,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_entity_details,
-                response_type="Entity")
+                response_type="Entity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1615,7 +1732,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_entity_details,
-                response_type="Entity")
+                response_type="Entity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_entity_tag(self, catalog_id, data_asset_key, entity_key, create_entity_tag_details, **kwargs):
         """
@@ -1664,6 +1784,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/tags"
         method = "POST"
+        operation_name = "create_entity_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/EntityTag/CreateEntityTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1714,7 +1836,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_entity_tag_details,
-                response_type="EntityTag")
+                response_type="EntityTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1722,7 +1847,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_entity_tag_details,
-                response_type="EntityTag")
+                response_type="EntityTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_folder(self, catalog_id, data_asset_key, create_folder_details, **kwargs):
         """
@@ -1768,6 +1896,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders"
         method = "POST"
+        operation_name = "create_folder"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Folder/CreateFolder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1817,7 +1947,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_folder_details,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1825,7 +1958,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_folder_details,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_folder_tag(self, catalog_id, data_asset_key, folder_key, create_folder_tag_details, **kwargs):
         """
@@ -1874,6 +2010,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}/tags"
         method = "POST"
+        operation_name = "create_folder_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderTag/CreateFolderTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1924,7 +2062,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_folder_tag_details,
-                response_type="FolderTag")
+                response_type="FolderTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1932,7 +2073,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_folder_tag_details,
-                response_type="FolderTag")
+                response_type="FolderTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_glossary(self, catalog_id, create_glossary_details, **kwargs):
         """
@@ -1975,6 +2119,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries"
         method = "POST"
+        operation_name = "create_glossary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/CreateGlossary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2023,7 +2169,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_glossary_details,
-                response_type="Glossary")
+                response_type="Glossary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2031,7 +2180,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_glossary_details,
-                response_type="Glossary")
+                response_type="Glossary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_job(self, catalog_id, create_job_details, **kwargs):
         """
@@ -2074,6 +2226,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobs"
         method = "POST"
+        operation_name = "create_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Job/CreateJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2122,7 +2276,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2130,7 +2287,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_job_definition(self, catalog_id, create_job_definition_details, **kwargs):
         """
@@ -2173,6 +2333,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobDefinitions"
         method = "POST"
+        operation_name = "create_job_definition"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinition/CreateJobDefinition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2221,7 +2383,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_job_definition_details,
-                response_type="JobDefinition")
+                response_type="JobDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2229,7 +2394,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_job_definition_details,
-                response_type="JobDefinition")
+                response_type="JobDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_job_execution(self, catalog_id, job_key, create_job_execution_details, **kwargs):
         """
@@ -2275,6 +2443,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions"
         method = "POST"
+        operation_name = "create_job_execution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobExecution/CreateJobExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2324,7 +2494,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_job_execution_details,
-                response_type="JobExecution")
+                response_type="JobExecution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2332,7 +2505,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_job_execution_details,
-                response_type="JobExecution")
+                response_type="JobExecution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_metastore(self, create_metastore_details, **kwargs):
         """
@@ -2372,6 +2548,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/metastores"
         method = "POST"
+        operation_name = "create_metastore"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/CreateMetastore"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2408,13 +2586,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_metastore_details)
+                body=create_metastore_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_metastore_details)
+                body=create_metastore_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_namespace(self, catalog_id, create_namespace_details, **kwargs):
         """
@@ -2457,6 +2641,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/namespaces"
         method = "POST"
+        operation_name = "create_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/CreateNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2505,7 +2691,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_namespace_details,
-                response_type="Namespace")
+                response_type="Namespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2513,7 +2702,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_namespace_details,
-                response_type="Namespace")
+                response_type="Namespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_pattern(self, catalog_id, create_pattern_details, **kwargs):
         """
@@ -2556,6 +2748,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/patterns"
         method = "POST"
+        operation_name = "create_pattern"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/CreatePattern"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2604,7 +2798,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_pattern_details,
-                response_type="Pattern")
+                response_type="Pattern",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2612,7 +2809,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_pattern_details,
-                response_type="Pattern")
+                response_type="Pattern",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_term(self, catalog_id, glossary_key, create_term_details, **kwargs):
         """
@@ -2658,6 +2858,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms"
         method = "POST"
+        operation_name = "create_term"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/CreateTerm"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2707,7 +2909,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_term_details,
-                response_type="Term")
+                response_type="Term",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2715,7 +2920,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_term_details,
-                response_type="Term")
+                response_type="Term",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_term_relationship(self, catalog_id, glossary_key, term_key, create_term_relationship_details, **kwargs):
         """
@@ -2764,6 +2972,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships"
         method = "POST"
+        operation_name = "create_term_relationship"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/CreateTermRelationship"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2814,7 +3024,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_term_relationship_details,
-                response_type="TermRelationship")
+                response_type="TermRelationship",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2822,7 +3035,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_term_relationship_details,
-                response_type="TermRelationship")
+                response_type="TermRelationship",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_attribute(self, catalog_id, data_asset_key, entity_key, attribute_key, **kwargs):
         """
@@ -2871,6 +3087,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}"
         method = "DELETE"
+        operation_name = "delete_attribute"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Attribute/DeleteAttribute"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2919,13 +3137,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_attribute_tag(self, catalog_id, data_asset_key, entity_key, attribute_key, tag_key, **kwargs):
         """
@@ -2977,6 +3201,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}/tags/{tagKey}"
         method = "DELETE"
+        operation_name = "delete_attribute_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeTag/DeleteAttributeTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3026,13 +3252,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_catalog(self, catalog_id, **kwargs):
         """
@@ -3072,6 +3304,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}"
         method = "DELETE"
+        operation_name = "delete_catalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/DeleteCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3117,13 +3351,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_catalog_private_endpoint(self, catalog_private_endpoint_id, **kwargs):
         """
@@ -3163,6 +3403,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}"
         method = "DELETE"
+        operation_name = "delete_catalog_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/DeleteCatalogPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3208,13 +3450,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """
@@ -3260,6 +3508,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
         method = "DELETE"
+        operation_name = "delete_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/DeleteConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3307,13 +3557,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_custom_property(self, catalog_id, namespace_id, custom_property_key, **kwargs):
         """
@@ -3359,6 +3615,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties/{customPropertyKey}"
         method = "DELETE"
+        operation_name = "delete_custom_property"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/DeleteCustomProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3406,13 +3664,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_data_asset(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -3455,6 +3719,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         method = "DELETE"
+        operation_name = "delete_data_asset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/DeleteDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3501,13 +3767,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_data_asset_tag(self, catalog_id, data_asset_key, tag_key, **kwargs):
         """
@@ -3553,6 +3825,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/tags/{tagKey}"
         method = "DELETE"
+        operation_name = "delete_data_asset_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetTag/DeleteDataAssetTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3600,13 +3874,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_entity(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
@@ -3652,6 +3932,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}"
         method = "DELETE"
+        operation_name = "delete_entity"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/DeleteEntity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3699,13 +3981,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_entity_tag(self, catalog_id, data_asset_key, entity_key, tag_key, **kwargs):
         """
@@ -3754,6 +4042,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/tags/{tagKey}"
         method = "DELETE"
+        operation_name = "delete_entity_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/EntityTag/DeleteEntityTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3802,13 +4092,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_folder(self, catalog_id, data_asset_key, folder_key, **kwargs):
         """
@@ -3854,6 +4150,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}"
         method = "DELETE"
+        operation_name = "delete_folder"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Folder/DeleteFolder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3901,13 +4199,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_folder_tag(self, catalog_id, data_asset_key, folder_key, tag_key, **kwargs):
         """
@@ -3956,6 +4260,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}/tags/{tagKey}"
         method = "DELETE"
+        operation_name = "delete_folder_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderTag/DeleteFolderTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4004,13 +4310,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_glossary(self, catalog_id, glossary_key, **kwargs):
         """
@@ -4053,6 +4365,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}"
         method = "DELETE"
+        operation_name = "delete_glossary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/DeleteGlossary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4099,13 +4413,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_job(self, catalog_id, job_key, **kwargs):
         """
@@ -4148,6 +4468,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}"
         method = "DELETE"
+        operation_name = "delete_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Job/DeleteJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4194,13 +4516,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_job_definition(self, catalog_id, job_definition_key, **kwargs):
         """
@@ -4243,6 +4571,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobDefinitions/{jobDefinitionKey}"
         method = "DELETE"
+        operation_name = "delete_job_definition"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinition/DeleteJobDefinition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4289,13 +4619,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_metastore(self, metastore_id, **kwargs):
         """
@@ -4335,6 +4671,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/metastores/{metastoreId}"
         method = "DELETE"
+        operation_name = "delete_metastore"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/DeleteMetastore"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4380,13 +4718,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_namespace(self, catalog_id, namespace_id, **kwargs):
         """
@@ -4429,6 +4773,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}"
         method = "DELETE"
+        operation_name = "delete_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/DeleteNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4475,13 +4821,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_pattern(self, catalog_id, pattern_key, **kwargs):
         """
@@ -4524,6 +4876,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}"
         method = "DELETE"
+        operation_name = "delete_pattern"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/DeletePattern"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4570,13 +4924,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_term(self, catalog_id, glossary_key, term_key, **kwargs):
         """
@@ -4622,6 +4982,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}"
         method = "DELETE"
+        operation_name = "delete_term"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/DeleteTerm"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4669,13 +5031,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_term_relationship(self, catalog_id, glossary_key, term_key, term_relationship_key, **kwargs):
         """
@@ -4724,6 +5092,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships/{termRelationshipKey}"
         method = "DELETE"
+        operation_name = "delete_term_relationship"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/DeleteTermRelationship"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4772,13 +5142,19 @@ class DataCatalogClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detach_catalog_private_endpoint(self, detach_catalog_private_endpoint_details, catalog_id, **kwargs):
         """
@@ -4821,6 +5197,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/actions/detachCatalogPrivateEndpoint"
         method = "POST"
+        operation_name = "detach_catalog_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/DetachCatalogPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4867,14 +5245,20 @@ class DataCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=detach_catalog_private_endpoint_details)
+                body=detach_catalog_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=detach_catalog_private_endpoint_details)
+                body=detach_catalog_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def disassociate_custom_property(self, catalog_id, type_key, disassociate_custom_property_details, **kwargs):
         """
@@ -4927,6 +5311,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/types/{typeKey}/actions/disassociateCustomProperties"
         method = "POST"
+        operation_name = "disassociate_custom_property"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Type/DisassociateCustomProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4978,7 +5364,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=disassociate_custom_property_details,
-                response_type="Type")
+                response_type="Type",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4986,7 +5375,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=disassociate_custom_property_details,
-                response_type="Type")
+                response_type="Type",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def expand_tree_for_glossary(self, catalog_id, glossary_key, **kwargs):
         """
@@ -5029,6 +5421,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/actions/expandTree"
         method = "POST"
+        operation_name = "expand_tree_for_glossary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/ExpandTreeForGlossary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5079,14 +5473,20 @@ class DataCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[GlossaryTreeElement]")
+                response_type="list[GlossaryTreeElement]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="list[GlossaryTreeElement]")
+                response_type="list[GlossaryTreeElement]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def export_glossary(self, catalog_id, glossary_key, **kwargs):
         """
@@ -5132,6 +5532,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/actions/export"
         method = "POST"
+        operation_name = "export_glossary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/ExportGlossary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5187,7 +5589,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5195,7 +5600,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_attribute(self, catalog_id, data_asset_key, entity_key, attribute_key, **kwargs):
         """
@@ -5245,6 +5653,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}"
         method = "GET"
+        operation_name = "get_attribute"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Attribute/GetAttribute"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5311,7 +5721,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Attribute")
+                response_type="Attribute",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5319,7 +5732,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Attribute")
+                response_type="Attribute",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_attribute_tag(self, catalog_id, data_asset_key, entity_key, attribute_key, tag_key, **kwargs):
         """
@@ -5369,6 +5785,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}/tags/{tagKey}"
         method = "GET"
+        operation_name = "get_attribute_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeTag/GetAttributeTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5434,7 +5852,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AttributeTag")
+                response_type="AttributeTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5442,7 +5863,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AttributeTag")
+                response_type="AttributeTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_catalog(self, catalog_id, **kwargs):
         """
@@ -5475,6 +5899,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}"
         method = "GET"
+        operation_name = "get_catalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/GetCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5521,14 +5947,20 @@ class DataCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Catalog")
+                response_type="Catalog",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Catalog")
+                response_type="Catalog",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_catalog_private_endpoint(self, catalog_private_endpoint_id, **kwargs):
         """
@@ -5561,6 +5993,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}"
         method = "GET"
+        operation_name = "get_catalog_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/GetCatalogPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5607,14 +6041,20 @@ class DataCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CatalogPrivateEndpoint")
+                response_type="CatalogPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CatalogPrivateEndpoint")
+                response_type="CatalogPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """
@@ -5658,6 +6098,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
         method = "GET"
+        operation_name = "get_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/GetConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5721,7 +6163,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5729,7 +6174,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_custom_property(self, catalog_id, namespace_id, custom_property_key, **kwargs):
         """
@@ -5773,6 +6221,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties/{customPropertyKey}"
         method = "GET"
+        operation_name = "get_custom_property"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/GetCustomProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5836,7 +6286,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CustomProperty")
+                response_type="CustomProperty",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5844,7 +6297,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CustomProperty")
+                response_type="CustomProperty",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_asset(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -5885,6 +6341,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         method = "GET"
+        operation_name = "get_data_asset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/GetDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5947,7 +6405,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5955,7 +6416,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_asset_tag(self, catalog_id, data_asset_key, tag_key, **kwargs):
         """
@@ -5999,6 +6463,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/tags/{tagKey}"
         method = "GET"
+        operation_name = "get_data_asset_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetTag/GetDataAssetTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6062,7 +6528,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAssetTag")
+                response_type="DataAssetTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6070,7 +6539,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAssetTag")
+                response_type="DataAssetTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_entity(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
@@ -6117,6 +6589,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}"
         method = "GET"
+        operation_name = "get_entity"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/GetEntity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6182,7 +6656,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Entity")
+                response_type="Entity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6190,7 +6667,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Entity")
+                response_type="Entity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_entity_tag(self, catalog_id, data_asset_key, entity_key, tag_key, **kwargs):
         """
@@ -6237,6 +6717,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/tags/{tagKey}"
         method = "GET"
+        operation_name = "get_entity_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/EntityTag/GetEntityTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6301,7 +6783,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EntityTag")
+                response_type="EntityTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6309,7 +6794,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EntityTag")
+                response_type="EntityTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_folder(self, catalog_id, data_asset_key, folder_key, **kwargs):
         """
@@ -6356,6 +6844,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}"
         method = "GET"
+        operation_name = "get_folder"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Folder/GetFolder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6421,7 +6911,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6429,7 +6922,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_folder_tag(self, catalog_id, data_asset_key, folder_key, tag_key, **kwargs):
         """
@@ -6476,6 +6972,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}/tags/{tagKey}"
         method = "GET"
+        operation_name = "get_folder_tag"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderTag/GetFolderTag"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6540,7 +7038,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FolderTag")
+                response_type="FolderTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6548,7 +7049,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FolderTag")
+                response_type="FolderTag",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_glossary(self, catalog_id, glossary_key, **kwargs):
         """
@@ -6589,6 +7093,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}"
         method = "GET"
+        operation_name = "get_glossary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/GetGlossary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6651,7 +7157,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Glossary")
+                response_type="Glossary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6659,7 +7168,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Glossary")
+                response_type="Glossary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job(self, catalog_id, job_key, **kwargs):
         """
@@ -6700,6 +7212,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}"
         method = "GET"
+        operation_name = "get_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Job/GetJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6762,7 +7276,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6770,7 +7287,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_definition(self, catalog_id, job_definition_key, **kwargs):
         """
@@ -6811,6 +7331,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobDefinitions/{jobDefinitionKey}"
         method = "GET"
+        operation_name = "get_job_definition"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinition/GetJobDefinition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6873,7 +7395,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobDefinition")
+                response_type="JobDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6881,7 +7406,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobDefinition")
+                response_type="JobDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_execution(self, catalog_id, job_key, job_execution_key, **kwargs):
         """
@@ -6925,6 +7453,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}"
         method = "GET"
+        operation_name = "get_job_execution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobExecution/GetJobExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6988,7 +7518,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobExecution")
+                response_type="JobExecution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6996,7 +7529,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobExecution")
+                response_type="JobExecution",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_log(self, catalog_id, job_key, job_execution_key, job_log_key, **kwargs):
         """
@@ -7043,6 +7579,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}/logs/{jobLogKey}"
         method = "GET"
+        operation_name = "get_job_log"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobLog/GetJobLog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7107,7 +7645,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobLog")
+                response_type="JobLog",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7115,7 +7656,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobLog")
+                response_type="JobLog",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_job_metrics(self, catalog_id, job_key, job_execution_key, job_metrics_key, **kwargs):
         """
@@ -7162,6 +7706,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}/metrics/{jobMetricsKey}"
         method = "GET"
+        operation_name = "get_job_metrics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobMetric/GetJobMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7226,7 +7772,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobMetric")
+                response_type="JobMetric",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7234,7 +7783,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobMetric")
+                response_type="JobMetric",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_metastore(self, metastore_id, **kwargs):
         """
@@ -7267,6 +7819,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/metastores/{metastoreId}"
         method = "GET"
+        operation_name = "get_metastore"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/GetMetastore"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7313,14 +7867,20 @@ class DataCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Metastore")
+                response_type="Metastore",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Metastore")
+                response_type="Metastore",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_namespace(self, catalog_id, namespace_id, **kwargs):
         """
@@ -7361,6 +7921,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}"
         method = "GET"
+        operation_name = "get_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/GetNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7423,7 +7985,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Namespace")
+                response_type="Namespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7431,7 +7996,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Namespace")
+                response_type="Namespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_pattern(self, catalog_id, pattern_key, **kwargs):
         """
@@ -7472,6 +8040,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}"
         method = "GET"
+        operation_name = "get_pattern"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/GetPattern"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7534,7 +8104,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Pattern")
+                response_type="Pattern",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7542,7 +8115,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Pattern")
+                response_type="Pattern",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_term(self, catalog_id, glossary_key, term_key, **kwargs):
         """
@@ -7586,6 +8162,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}"
         method = "GET"
+        operation_name = "get_term"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/GetTerm"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7649,7 +8227,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Term")
+                response_type="Term",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7657,7 +8238,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Term")
+                response_type="Term",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_term_relationship(self, catalog_id, glossary_key, term_key, term_relationship_key, **kwargs):
         """
@@ -7704,6 +8288,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships/{termRelationshipKey}"
         method = "GET"
+        operation_name = "get_term_relationship"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/GetTermRelationship"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7768,7 +8354,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TermRelationship")
+                response_type="TermRelationship",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7776,7 +8365,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TermRelationship")
+                response_type="TermRelationship",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_type(self, catalog_id, type_key, **kwargs):
         """
@@ -7817,6 +8409,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/types/{typeKey}"
         method = "GET"
+        operation_name = "get_type"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Type/GetType"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7879,7 +8473,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Type")
+                response_type="Type",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -7887,7 +8484,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Type")
+                response_type="Type",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -7920,6 +8520,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -7966,14 +8568,20 @@ class DataCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def import_connection(self, catalog_id, data_asset_key, import_connection_details, **kwargs):
         """
@@ -8026,6 +8634,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/importConnection"
         method = "POST"
+        operation_name = "import_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ImportConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8077,7 +8687,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=import_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8085,7 +8698,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=import_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def import_data_asset(self, catalog_id, data_asset_key, import_data_asset_details, import_type, **kwargs):
         """
@@ -8139,6 +8755,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/import"
         method = "POST"
+        operation_name = "import_data_asset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ImportDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8203,7 +8821,10 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=import_data_asset_details,
-                response_type="ImportDataAssetJobResult")
+                response_type="ImportDataAssetJobResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8212,7 +8833,10 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=import_data_asset_details,
-                response_type="ImportDataAssetJobResult")
+                response_type="ImportDataAssetJobResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def import_glossary(self, catalog_id, glossary_key, import_glossary_details, **kwargs):
         """
@@ -8261,6 +8885,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/actions/import"
         method = "POST"
+        operation_name = "import_glossary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/ImportGlossary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8316,7 +8942,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=import_glossary_details)
+                body=import_glossary_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8324,7 +8953,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                body=import_glossary_details)
+                body=import_glossary_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_aggregated_physical_entities(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
@@ -8392,6 +9024,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/actions/listAggregatedPhysicalEntities"
         method = "POST"
+        operation_name = "list_aggregated_physical_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/ListAggregatedPhysicalEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8481,7 +9115,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EntityCollection")
+                response_type="EntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8489,7 +9126,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EntityCollection")
+                response_type="EntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_attribute_tags(self, catalog_id, data_asset_key, entity_key, attribute_key, **kwargs):
         """
@@ -8574,6 +9214,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}/tags"
         method = "GET"
+        operation_name = "list_attribute_tags"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeTagCollection/ListAttributeTags"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8679,7 +9321,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AttributeTagCollection")
+                response_type="AttributeTagCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8687,7 +9332,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AttributeTagCollection")
+                response_type="AttributeTagCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_attributes(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
@@ -8811,6 +9459,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes"
         method = "GET"
+        operation_name = "list_attributes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/AttributeCollection/ListAttributes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -8939,7 +9589,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AttributeCollection")
+                response_type="AttributeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -8947,7 +9600,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AttributeCollection")
+                response_type="AttributeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_catalog_private_endpoints(self, compartment_id, **kwargs):
         """
@@ -9004,6 +9660,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogPrivateEndpoints"
         method = "GET"
+        operation_name = "list_catalog_private_endpoints"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpointSummary/ListCatalogPrivateEndpoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9078,14 +9736,20 @@ class DataCatalogClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CatalogPrivateEndpointSummary]")
+                response_type="list[CatalogPrivateEndpointSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CatalogPrivateEndpointSummary]")
+                response_type="list[CatalogPrivateEndpointSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_catalogs(self, compartment_id, **kwargs):
         """
@@ -9142,6 +9806,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs"
         method = "GET"
+        operation_name = "list_catalogs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogSummary/ListCatalogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9216,14 +9882,20 @@ class DataCatalogClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CatalogSummary]")
+                response_type="list[CatalogSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[CatalogSummary]")
+                response_type="list[CatalogSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_connections(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -9320,6 +9992,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections"
         method = "GET"
+        operation_name = "list_connections"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/ConnectionCollection/ListConnections"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9431,7 +10105,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionCollection")
+                response_type="ConnectionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9439,7 +10116,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConnectionCollection")
+                response_type="ConnectionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_custom_properties(self, catalog_id, namespace_id, **kwargs):
         """
@@ -9535,6 +10215,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties"
         method = "GET"
+        operation_name = "list_custom_properties"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/ListCustomProperties"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9660,7 +10342,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CustomPropertyCollection")
+                response_type="CustomPropertyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9668,7 +10353,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CustomPropertyCollection")
+                response_type="CustomPropertyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_asset_tags(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -9747,6 +10435,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/tags"
         method = "GET"
+        operation_name = "list_data_asset_tags"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetTagCollection/ListDataAssetTags"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -9850,7 +10540,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAssetTagCollection")
+                response_type="DataAssetTagCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -9858,7 +10551,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAssetTagCollection")
+                response_type="DataAssetTagCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_assets(self, catalog_id, **kwargs):
         """
@@ -9947,6 +10643,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets"
         method = "GET"
+        operation_name = "list_data_assets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAssetCollection/ListDataAssets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10055,7 +10753,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAssetCollection")
+                response_type="DataAssetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10063,7 +10764,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAssetCollection")
+                response_type="DataAssetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_derived_logical_entities(self, catalog_id, pattern_key, **kwargs):
         """
@@ -10134,6 +10838,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}/actions/listDerivedLogicalEntities"
         method = "POST"
+        operation_name = "list_derived_logical_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/ListDerivedLogicalEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10215,7 +10921,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EntityCollection")
+                response_type="EntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10223,7 +10932,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EntityCollection")
+                response_type="EntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_entities(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -10354,6 +11066,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities"
         method = "GET"
+        operation_name = "list_entities"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/ListEntities"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10492,7 +11206,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EntityCollection")
+                response_type="EntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10500,7 +11217,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EntityCollection")
+                response_type="EntityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_entity_tags(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
@@ -10582,6 +11302,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/tags"
         method = "GET"
+        operation_name = "list_entity_tags"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/EntityTagCollection/ListEntityTags"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10686,7 +11408,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EntityTagCollection")
+                response_type="EntityTagCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10694,7 +11419,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EntityTagCollection")
+                response_type="EntityTagCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_folder_tags(self, catalog_id, data_asset_key, folder_key, **kwargs):
         """
@@ -10776,6 +11504,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}/tags"
         method = "GET"
+        operation_name = "list_folder_tags"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderTagCollection/ListFolderTags"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -10880,7 +11610,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FolderTagCollection")
+                response_type="FolderTagCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -10888,7 +11621,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FolderTagCollection")
+                response_type="FolderTagCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_folders(self, catalog_id, data_asset_key, **kwargs):
         """
@@ -10999,6 +11735,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders"
         method = "GET"
+        operation_name = "list_folders"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/FolderCollection/ListFolders"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11125,7 +11863,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FolderCollection")
+                response_type="FolderCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11133,7 +11874,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FolderCollection")
+                response_type="FolderCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_glossaries(self, catalog_id, **kwargs):
         """
@@ -11216,6 +11960,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries"
         method = "GET"
+        operation_name = "list_glossaries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/ListGlossaries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11320,7 +12066,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="GlossaryCollection")
+                response_type="GlossaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11328,7 +12077,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="GlossaryCollection")
+                response_type="GlossaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_job_definitions(self, catalog_id, **kwargs):
         """
@@ -11433,6 +12185,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobDefinitions"
         method = "GET"
+        operation_name = "list_job_definitions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinitionCollection/ListJobDefinitions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11563,7 +12317,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobDefinitionCollection")
+                response_type="JobDefinitionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11571,7 +12328,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobDefinitionCollection")
+                response_type="JobDefinitionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_job_executions(self, catalog_id, job_key, **kwargs):
         """
@@ -11690,6 +12450,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions"
         method = "GET"
+        operation_name = "list_job_executions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobExecutionCollection/ListJobExecutions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -11820,7 +12582,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobExecutionCollection")
+                response_type="JobExecutionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -11828,7 +12593,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobExecutionCollection")
+                response_type="JobExecutionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_job_logs(self, catalog_id, job_key, job_execution_key, **kwargs):
         """
@@ -11912,6 +12680,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}/logs"
         method = "GET"
+        operation_name = "list_job_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobLogCollection/ListJobLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12016,7 +12786,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobLogCollection")
+                response_type="JobLogCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12024,7 +12797,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobLogCollection")
+                response_type="JobLogCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_job_metrics(self, catalog_id, job_key, job_execution_key, **kwargs):
         """
@@ -12129,6 +12905,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}/executions/{jobExecutionKey}/metrics"
         method = "GET"
+        operation_name = "list_job_metrics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobMetricCollection/ListJobMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12238,7 +13016,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobMetricCollection")
+                response_type="JobMetricCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12246,7 +13027,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobMetricCollection")
+                response_type="JobMetricCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_jobs(self, catalog_id, **kwargs):
         """
@@ -12371,6 +13155,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobs"
         method = "GET"
+        operation_name = "list_jobs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobCollection/ListJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12509,7 +13295,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobCollection")
+                response_type="JobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12517,7 +13306,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JobCollection")
+                response_type="JobCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_metastores(self, compartment_id, **kwargs):
         """
@@ -12574,6 +13366,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/metastores"
         method = "GET"
+        operation_name = "list_metastores"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/MetastoreSummary/ListMetastores"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12648,14 +13442,20 @@ class DataCatalogClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[MetastoreSummary]")
+                response_type="list[MetastoreSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[MetastoreSummary]")
+                response_type="list[MetastoreSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_namespaces(self, catalog_id, **kwargs):
         """
@@ -12738,6 +13538,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/namespaces"
         method = "GET"
+        operation_name = "list_namespaces"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/ListNamespaces"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -12842,7 +13644,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NamespaceCollection")
+                response_type="NamespaceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -12850,7 +13655,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="NamespaceCollection")
+                response_type="NamespaceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_patterns(self, catalog_id, **kwargs):
         """
@@ -12933,6 +13741,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/patterns"
         method = "GET"
+        operation_name = "list_patterns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/ListPatterns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13037,7 +13847,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PatternCollection")
+                response_type="PatternCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13045,7 +13858,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PatternCollection")
+                response_type="PatternCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_rules(self, catalog_id, data_asset_key, entity_key, **kwargs):
         """
@@ -13147,6 +13963,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/rules"
         method = "GET"
+        operation_name = "list_rules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/RuleSummary/ListRules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13273,7 +14091,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RuleCollection")
+                response_type="RuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13281,7 +14102,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RuleCollection")
+                response_type="RuleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_tags(self, catalog_id, **kwargs):
         """
@@ -13348,6 +14172,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/tags"
         method = "GET"
+        operation_name = "list_tags"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/ListTags"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13444,7 +14270,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TermCollection")
+                response_type="TermCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13452,7 +14281,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TermCollection")
+                response_type="TermCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_term_relationships(self, catalog_id, glossary_key, term_key, **kwargs):
         """
@@ -13525,6 +14357,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships"
         method = "GET"
+        operation_name = "list_term_relationships"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/ListTermRelationships"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13623,7 +14457,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TermRelationshipCollection")
+                response_type="TermRelationshipCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13631,7 +14468,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TermRelationshipCollection")
+                response_type="TermRelationshipCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_terms(self, catalog_id, glossary_key, **kwargs):
         """
@@ -13715,6 +14555,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms"
         method = "GET"
+        operation_name = "list_terms"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/ListTerms"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -13827,7 +14669,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TermCollection")
+                response_type="TermCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -13835,7 +14680,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TermCollection")
+                response_type="TermCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_types(self, catalog_id, **kwargs):
         """
@@ -13912,6 +14760,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/types"
         method = "GET"
+        operation_name = "list_types"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TypeCollection/ListTypes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14016,7 +14866,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TypeCollection")
+                response_type="TypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14024,7 +14877,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TypeCollection")
+                response_type="TypeCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -14073,6 +14929,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14146,7 +15004,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14154,7 +15015,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -14203,6 +15067,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/WorkRequestLog/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14276,7 +15142,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLog]")
+                response_type="list[WorkRequestLog]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14284,7 +15153,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLog]")
+                response_type="list[WorkRequestLog]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -14323,6 +15195,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14368,14 +15242,20 @@ class DataCatalogClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequest]")
+                response_type="list[WorkRequest]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def object_stats(self, catalog_id, **kwargs):
         """
@@ -14424,6 +15304,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/actions/objectStats"
         method = "POST"
+        operation_name = "object_stats"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/ObjectStats"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14497,7 +15379,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14505,7 +15390,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def parse_connection(self, catalog_id, data_asset_key, parse_connection_details, **kwargs):
         """
@@ -14554,6 +15442,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/parseConnection"
         method = "POST"
+        operation_name = "parse_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ParseConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14610,7 +15500,10 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=parse_connection_details,
-                response_type="list[ConnectionAliasSummary]")
+                response_type="list[ConnectionAliasSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14619,7 +15512,10 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=parse_connection_details,
-                response_type="list[ConnectionAliasSummary]")
+                response_type="list[ConnectionAliasSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def process_recommendation(self, catalog_id, process_recommendation_details, **kwargs):
         """
@@ -14663,6 +15559,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/actions/processRecommendation"
         method = "POST"
+        operation_name = "process_recommendation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/ProcessRecommendation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14710,7 +15608,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=process_recommendation_details,
-                response_type="ProcessRecommendationDetails")
+                response_type="ProcessRecommendationDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14718,7 +15619,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=process_recommendation_details,
-                response_type="ProcessRecommendationDetails")
+                response_type="ProcessRecommendationDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def recommendations(self, catalog_id, recommendation_type, source_object_key, source_object_type, **kwargs):
         """
@@ -14771,6 +15675,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/actions/getRecommendations"
         method = "POST"
+        operation_name = "recommendations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/Recommendations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14845,7 +15751,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecommendationCollection")
+                response_type="RecommendationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14853,7 +15762,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RecommendationCollection")
+                response_type="RecommendationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_data_selector_patterns(self, catalog_id, data_asset_key, data_selector_pattern_details, **kwargs):
         """
@@ -14906,6 +15818,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/removeDataSelectorPatterns"
         method = "POST"
+        operation_name = "remove_data_selector_patterns"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/RemoveDataSelectorPatterns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -14957,7 +15871,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=data_selector_pattern_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -14965,7 +15882,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=data_selector_pattern_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def search_criteria(self, catalog_id, **kwargs):
         """
@@ -15033,6 +15953,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/search"
         method = "POST"
+        operation_name = "search_criteria"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/SearchResult/SearchCriteria"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15123,7 +16045,10 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=kwargs.get('search_criteria_details'),
-                response_type="SearchResultCollection")
+                response_type="SearchResultCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15132,7 +16057,10 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=kwargs.get('search_criteria_details'),
-                response_type="SearchResultCollection")
+                response_type="SearchResultCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def suggest_matches(self, catalog_id, input_text, **kwargs):
         """
@@ -15176,6 +16104,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/actions/suggest"
         method = "POST"
+        operation_name = "suggest_matches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/SuggestResults/SuggestMatches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15232,7 +16162,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SuggestResults")
+                response_type="SuggestResults",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15240,7 +16173,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SuggestResults")
+                response_type="SuggestResults",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def synchronous_export_data_asset(self, catalog_id, data_asset_key, synchronous_export_data_asset_details, export_type, **kwargs):
         """
@@ -15291,6 +16227,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/synchronousExport"
         method = "POST"
+        operation_name = "synchronous_export_data_asset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/SynchronousExportDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15353,7 +16291,10 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=synchronous_export_data_asset_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15362,7 +16303,10 @@ class DataCatalogClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=synchronous_export_data_asset_details,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def test_connection(self, catalog_id, data_asset_key, connection_key, **kwargs):
         """
@@ -15408,6 +16352,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}/actions/test"
         method = "POST"
+        operation_name = "test_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/TestConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15459,14 +16405,20 @@ class DataCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ValidateConnectionResult")
+                response_type="ValidateConnectionResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ValidateConnectionResult")
+                response_type="ValidateConnectionResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_attribute(self, catalog_id, data_asset_key, entity_key, attribute_key, update_attribute_details, **kwargs):
         """
@@ -15518,6 +16470,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}/attributes/{attributeKey}"
         method = "PUT"
+        operation_name = "update_attribute"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Attribute/UpdateAttribute"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15568,7 +16522,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_attribute_details,
-                response_type="Attribute")
+                response_type="Attribute",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15576,7 +16533,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_attribute_details,
-                response_type="Attribute")
+                response_type="Attribute",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_catalog(self, catalog_id, update_catalog_details, **kwargs):
         """
@@ -15619,6 +16579,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}"
         method = "PUT"
+        operation_name = "update_catalog"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/UpdateCatalog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15666,7 +16628,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_catalog_details,
-                response_type="Catalog")
+                response_type="Catalog",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15674,7 +16639,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_catalog_details,
-                response_type="Catalog")
+                response_type="Catalog",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_catalog_private_endpoint(self, catalog_private_endpoint_id, update_catalog_private_endpoint_details, **kwargs):
         """
@@ -15717,6 +16685,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogPrivateEndpoints/{catalogPrivateEndpointId}"
         method = "PUT"
+        operation_name = "update_catalog_private_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CatalogPrivateEndpoint/UpdateCatalogPrivateEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15763,14 +16733,20 @@ class DataCatalogClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_catalog_private_endpoint_details)
+                body=update_catalog_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_catalog_private_endpoint_details)
+                body=update_catalog_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_connection(self, catalog_id, data_asset_key, connection_key, update_connection_details, **kwargs):
         """
@@ -15819,6 +16795,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}"
         method = "PUT"
+        operation_name = "update_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/UpdateConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15868,7 +16846,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15876,7 +16857,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_connection_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_custom_property(self, catalog_id, namespace_id, custom_property_key, update_custom_property_details, **kwargs):
         """
@@ -15925,6 +16909,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}/customProperties/{customPropertyKey}"
         method = "PUT"
+        operation_name = "update_custom_property"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/CustomProperty/UpdateCustomProperty"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -15974,7 +16960,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_custom_property_details,
-                response_type="CustomProperty")
+                response_type="CustomProperty",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -15982,7 +16971,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_custom_property_details,
-                response_type="CustomProperty")
+                response_type="CustomProperty",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_data_asset(self, catalog_id, data_asset_key, update_data_asset_details, **kwargs):
         """
@@ -16028,6 +17020,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}"
         method = "PUT"
+        operation_name = "update_data_asset"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/UpdateDataAsset"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16076,7 +17070,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16084,7 +17081,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_entity(self, catalog_id, data_asset_key, entity_key, update_entity_details, **kwargs):
         """
@@ -16133,6 +17133,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/entities/{entityKey}"
         method = "PUT"
+        operation_name = "update_entity"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Entity/UpdateEntity"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16182,7 +17184,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_entity_details,
-                response_type="Entity")
+                response_type="Entity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16190,7 +17195,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_entity_details,
-                response_type="Entity")
+                response_type="Entity",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_folder(self, catalog_id, data_asset_key, folder_key, update_folder_details, **kwargs):
         """
@@ -16239,6 +17247,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/folders/{folderKey}"
         method = "PUT"
+        operation_name = "update_folder"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Folder/UpdateFolder"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16288,7 +17298,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_folder_details,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16296,7 +17309,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_folder_details,
-                response_type="Folder")
+                response_type="Folder",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_glossary(self, catalog_id, glossary_key, update_glossary_details, **kwargs):
         """
@@ -16342,6 +17358,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}"
         method = "PUT"
+        operation_name = "update_glossary"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Glossary/UpdateGlossary"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16390,7 +17408,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_glossary_details,
-                response_type="Glossary")
+                response_type="Glossary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16398,7 +17419,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_glossary_details,
-                response_type="Glossary")
+                response_type="Glossary",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_job(self, catalog_id, job_key, update_job_details, **kwargs):
         """
@@ -16444,6 +17468,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobs/{jobKey}"
         method = "PUT"
+        operation_name = "update_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Job/UpdateJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16492,7 +17518,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16500,7 +17529,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_details,
-                response_type="Job")
+                response_type="Job",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_job_definition(self, catalog_id, job_definition_key, update_job_definition_details, **kwargs):
         """
@@ -16546,6 +17578,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/jobDefinitions/{jobDefinitionKey}"
         method = "PUT"
+        operation_name = "update_job_definition"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/JobDefinition/UpdateJobDefinition"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16594,7 +17628,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_definition_details,
-                response_type="JobDefinition")
+                response_type="JobDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16602,7 +17639,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_job_definition_details,
-                response_type="JobDefinition")
+                response_type="JobDefinition",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_metastore(self, metastore_id, update_metastore_details, **kwargs):
         """
@@ -16645,6 +17685,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/metastores/{metastoreId}"
         method = "PUT"
+        operation_name = "update_metastore"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Metastore/UpdateMetastore"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16692,7 +17734,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_metastore_details,
-                response_type="Metastore")
+                response_type="Metastore",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16700,7 +17745,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_metastore_details,
-                response_type="Metastore")
+                response_type="Metastore",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_namespace(self, catalog_id, namespace_id, update_namespace_details, **kwargs):
         """
@@ -16746,6 +17794,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/namespaces/{namespaceId}"
         method = "PUT"
+        operation_name = "update_namespace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Namespace/UpdateNamespace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16794,7 +17844,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_namespace_details,
-                response_type="Namespace")
+                response_type="Namespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16802,7 +17855,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_namespace_details,
-                response_type="Namespace")
+                response_type="Namespace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_pattern(self, catalog_id, pattern_key, update_pattern_details, **kwargs):
         """
@@ -16848,6 +17904,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}"
         method = "PUT"
+        operation_name = "update_pattern"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/UpdatePattern"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -16896,7 +17954,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_pattern_details,
-                response_type="Pattern")
+                response_type="Pattern",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -16904,7 +17965,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_pattern_details,
-                response_type="Pattern")
+                response_type="Pattern",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_term(self, catalog_id, glossary_key, term_key, update_term_details, **kwargs):
         """
@@ -16953,6 +18017,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}"
         method = "PUT"
+        operation_name = "update_term"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Term/UpdateTerm"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17002,7 +18068,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_term_details,
-                response_type="Term")
+                response_type="Term",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17010,7 +18079,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_term_details,
-                response_type="Term")
+                response_type="Term",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_term_relationship(self, catalog_id, glossary_key, term_key, term_relationship_key, update_term_relationship_details, **kwargs):
         """
@@ -17062,6 +18134,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/glossaries/{glossaryKey}/terms/{termKey}/termRelationships/{termRelationshipKey}"
         method = "PUT"
+        operation_name = "update_term_relationship"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/TermRelationship/UpdateTermRelationship"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17112,7 +18186,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_term_relationship_details,
-                response_type="TermRelationship")
+                response_type="TermRelationship",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17120,7 +18197,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_term_relationship_details,
-                response_type="TermRelationship")
+                response_type="TermRelationship",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upload_credentials(self, catalog_id, data_asset_key, connection_key, upload_credentials_details, **kwargs):
         """
@@ -17176,6 +18256,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/connections/{connectionKey}/actions/uploadCredentials"
         method = "POST"
+        operation_name = "upload_credentials"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Connection/UploadCredentials"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17228,7 +18310,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=upload_credentials_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17236,7 +18321,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=upload_credentials_details,
-                response_type="Connection")
+                response_type="Connection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def users(self, catalog_id, **kwargs):
         """
@@ -17285,6 +18373,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/actions/users"
         method = "POST"
+        operation_name = "users"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Catalog/Users"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17358,7 +18448,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17366,7 +18459,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="str")
+                response_type="str",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def validate_connection(self, catalog_id, data_asset_key, validate_connection_details, **kwargs):
         """
@@ -17412,6 +18508,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/dataAssets/{dataAssetKey}/actions/validateConnection"
         method = "POST"
+        operation_name = "validate_connection"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/DataAsset/ValidateConnection"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17463,7 +18561,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=validate_connection_details,
-                response_type="ValidateConnectionResult")
+                response_type="ValidateConnectionResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17471,7 +18572,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=validate_connection_details,
-                response_type="ValidateConnectionResult")
+                response_type="ValidateConnectionResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def validate_pattern(self, catalog_id, pattern_key, validate_pattern_details, **kwargs):
         """
@@ -17517,6 +18621,8 @@ class DataCatalogClient(object):
         """
         resource_path = "/catalogs/{catalogId}/patterns/{patternKey}/actions/validate"
         method = "POST"
+        operation_name = "validate_pattern"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/data-catalog/20190325/Pattern/ValidatePattern"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -17568,7 +18674,10 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=validate_pattern_details,
-                response_type="ValidatePatternResult")
+                response_type="ValidatePatternResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -17576,4 +18685,7 @@ class DataCatalogClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=validate_pattern_details,
-                response_type="ValidatePatternResult")
+                response_type="ValidatePatternResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

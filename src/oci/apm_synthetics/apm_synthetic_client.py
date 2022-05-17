@@ -146,6 +146,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/dedicatedVantagePoints"
         method = "POST"
+        operation_name = "create_dedicated_vantage_point"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/CreateDedicatedVantagePoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -191,7 +193,10 @@ class ApmSyntheticClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_dedicated_vantage_point_details,
-                response_type="DedicatedVantagePoint")
+                response_type="DedicatedVantagePoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -199,7 +204,10 @@ class ApmSyntheticClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_dedicated_vantage_point_details,
-                response_type="DedicatedVantagePoint")
+                response_type="DedicatedVantagePoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_monitor(self, apm_domain_id, create_monitor_details, **kwargs):
         """
@@ -243,6 +251,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/monitors"
         method = "POST"
+        operation_name = "create_monitor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/CreateMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -288,7 +298,10 @@ class ApmSyntheticClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_monitor_details,
-                response_type="Monitor")
+                response_type="Monitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -296,7 +309,10 @@ class ApmSyntheticClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_monitor_details,
-                response_type="Monitor")
+                response_type="Monitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_script(self, apm_domain_id, create_script_details, **kwargs):
         """
@@ -340,6 +356,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/scripts"
         method = "POST"
+        operation_name = "create_script"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/CreateScript"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -385,7 +403,10 @@ class ApmSyntheticClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_script_details,
-                response_type="Script")
+                response_type="Script",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -393,7 +414,10 @@ class ApmSyntheticClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=create_script_details,
-                response_type="Script")
+                response_type="Script",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_dedicated_vantage_point(self, apm_domain_id, dedicated_vantage_point_id, **kwargs):
         """
@@ -437,6 +461,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/dedicatedVantagePoints/{dedicatedVantagePointId}"
         method = "DELETE"
+        operation_name = "delete_dedicated_vantage_point"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/DeleteDedicatedVantagePoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -490,14 +516,20 @@ class ApmSyntheticClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_monitor(self, apm_domain_id, monitor_id, **kwargs):
         """
@@ -541,6 +573,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/monitors/{monitorId}"
         method = "DELETE"
+        operation_name = "delete_monitor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/DeleteMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -594,14 +628,20 @@ class ApmSyntheticClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_script(self, apm_domain_id, script_id, **kwargs):
         """
@@ -645,6 +685,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/scripts/{scriptId}"
         method = "DELETE"
+        operation_name = "delete_script"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/DeleteScript"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -698,14 +740,20 @@ class ApmSyntheticClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_dedicated_vantage_point(self, apm_domain_id, dedicated_vantage_point_id, **kwargs):
         """
@@ -742,6 +790,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/dedicatedVantagePoints/{dedicatedVantagePointId}"
         method = "GET"
+        operation_name = "get_dedicated_vantage_point"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/GetDedicatedVantagePoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -794,7 +844,10 @@ class ApmSyntheticClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DedicatedVantagePoint")
+                response_type="DedicatedVantagePoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -802,7 +855,10 @@ class ApmSyntheticClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DedicatedVantagePoint")
+                response_type="DedicatedVantagePoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_monitor(self, apm_domain_id, monitor_id, **kwargs):
         """
@@ -839,6 +895,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/monitors/{monitorId}"
         method = "GET"
+        operation_name = "get_monitor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/GetMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -891,7 +949,10 @@ class ApmSyntheticClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Monitor")
+                response_type="Monitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -899,7 +960,10 @@ class ApmSyntheticClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Monitor")
+                response_type="Monitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_monitor_result(self, apm_domain_id, monitor_id, vantage_point, result_type, result_content_type, execution_time, **kwargs):
         """
@@ -948,6 +1012,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/monitors/{monitorId}/results/{executionTime}"
         method = "GET"
+        operation_name = "get_monitor_result"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorResult/GetMonitorResult"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1004,7 +1070,10 @@ class ApmSyntheticClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MonitorResult")
+                response_type="MonitorResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1012,7 +1081,10 @@ class ApmSyntheticClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MonitorResult")
+                response_type="MonitorResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_script(self, apm_domain_id, script_id, **kwargs):
         """
@@ -1049,6 +1121,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/scripts/{scriptId}"
         method = "GET"
+        operation_name = "get_script"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/GetScript"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1101,7 +1175,10 @@ class ApmSyntheticClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Script")
+                response_type="Script",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1109,7 +1186,10 @@ class ApmSyntheticClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Script")
+                response_type="Script",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_dedicated_vantage_points(self, apm_domain_id, **kwargs):
         """
@@ -1179,6 +1259,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/dedicatedVantagePoints"
         method = "GET"
+        operation_name = "list_dedicated_vantage_points"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePointCollection/ListDedicatedVantagePoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1255,14 +1337,20 @@ class ApmSyntheticClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DedicatedVantagePointCollection")
+                response_type="DedicatedVantagePointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DedicatedVantagePointCollection")
+                response_type="DedicatedVantagePointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_monitors(self, apm_domain_id, **kwargs):
         """
@@ -1339,6 +1427,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/monitors"
         method = "GET"
+        operation_name = "list_monitors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/MonitorCollection/ListMonitors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1419,14 +1509,20 @@ class ApmSyntheticClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MonitorCollection")
+                response_type="MonitorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MonitorCollection")
+                response_type="MonitorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_public_vantage_points(self, apm_domain_id, **kwargs):
         """
@@ -1489,6 +1585,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/publicVantagePoints"
         method = "GET"
+        operation_name = "list_public_vantage_points"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/PublicVantagePointCollection/ListPublicVantagePoints"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1556,14 +1654,20 @@ class ApmSyntheticClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PublicVantagePointCollection")
+                response_type="PublicVantagePointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="PublicVantagePointCollection")
+                response_type="PublicVantagePointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_scripts(self, apm_domain_id, **kwargs):
         """
@@ -1628,6 +1732,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/scripts"
         method = "GET"
+        operation_name = "list_scripts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/ScriptCollection/ListScripts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1695,14 +1801,20 @@ class ApmSyntheticClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ScriptCollection")
+                response_type="ScriptCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ScriptCollection")
+                response_type="ScriptCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_dedicated_vantage_point(self, apm_domain_id, dedicated_vantage_point_id, update_dedicated_vantage_point_details, **kwargs):
         """
@@ -1749,6 +1861,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/dedicatedVantagePoints/{dedicatedVantagePointId}"
         method = "PUT"
+        operation_name = "update_dedicated_vantage_point"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/DedicatedVantagePoint/UpdateDedicatedVantagePoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1804,7 +1918,10 @@ class ApmSyntheticClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_dedicated_vantage_point_details,
-                response_type="DedicatedVantagePoint")
+                response_type="DedicatedVantagePoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1813,7 +1930,10 @@ class ApmSyntheticClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_dedicated_vantage_point_details,
-                response_type="DedicatedVantagePoint")
+                response_type="DedicatedVantagePoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_monitor(self, apm_domain_id, monitor_id, update_monitor_details, **kwargs):
         """
@@ -1860,6 +1980,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/monitors/{monitorId}"
         method = "PUT"
+        operation_name = "update_monitor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Monitor/UpdateMonitor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1915,7 +2037,10 @@ class ApmSyntheticClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_monitor_details,
-                response_type="Monitor")
+                response_type="Monitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1924,7 +2049,10 @@ class ApmSyntheticClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_monitor_details,
-                response_type="Monitor")
+                response_type="Monitor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_script(self, apm_domain_id, script_id, update_script_details, **kwargs):
         """
@@ -1971,6 +2099,8 @@ class ApmSyntheticClient(object):
         """
         resource_path = "/scripts/{scriptId}"
         method = "PUT"
+        operation_name = "update_script"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-synthetic-monitoring/20200630/Script/UpdateScript"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2026,7 +2156,10 @@ class ApmSyntheticClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_script_details,
-                response_type="Script")
+                response_type="Script",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2035,4 +2168,7 @@ class ApmSyntheticClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_script_details,
-                response_type="Script")
+                response_type="Script",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

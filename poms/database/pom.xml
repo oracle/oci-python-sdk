@@ -110,6 +110,7 @@
               </additionalProperties>
               <featureIdConfigFile>${feature-id-file}</featureIdConfigFile>
               <featureIdConfigDir>${feature-id-dir}</featureIdConfigDir>
+              <serviceSlugNameMappingConfigFile>${spec-temp-dir}/serviceSlugNameMapping.yaml</serviceSlugNameMappingConfigFile>
               <isTestGenerationEnabled>true</isTestGenerationEnabled>
             </configuration>
           </execution>

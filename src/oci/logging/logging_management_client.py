@@ -149,6 +149,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logGroups/{logGroupId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_log_group_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/ChangeLogGroupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -195,14 +197,20 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_group_compartment_details)
+                body=change_log_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_group_compartment_details)
+                body=change_log_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_log_log_group(self, log_group_id, log_id, change_log_log_group_details, **kwargs):
         """
@@ -249,6 +257,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logGroups/{logGroupId}/logs/{logId}/actions/changeLogGroup"
         method = "POST"
+        operation_name = "change_log_log_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/ChangeLogLogGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -296,14 +306,20 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_log_group_details)
+                body=change_log_log_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_log_group_details)
+                body=change_log_log_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_log_saved_search_compartment(self, log_saved_search_id, change_log_saved_search_compartment_details, **kwargs):
         """
@@ -358,6 +374,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logSavedSearches/{logSavedSearchId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_log_saved_search_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ChangeLogSavedSearchCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -407,14 +425,20 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_saved_search_compartment_details)
+                body=change_log_saved_search_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_log_saved_search_compartment_details)
+                body=change_log_saved_search_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_unified_agent_configuration_compartment(self, unified_agent_configuration_id, change_unified_agent_configuration_compartment_details, **kwargs):
         """
@@ -469,6 +493,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/unifiedAgentConfigurations/{unifiedAgentConfigurationId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_unified_agent_configuration_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ChangeUnifiedAgentConfigurationCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -518,14 +544,20 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_unified_agent_configuration_compartment_details)
+                body=change_unified_agent_configuration_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_unified_agent_configuration_compartment_details)
+                body=change_unified_agent_configuration_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_log(self, log_group_id, create_log_details, **kwargs):
         """
@@ -571,6 +603,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logGroups/{logGroupId}/logs"
         method = "POST"
+        operation_name = "create_log"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/CreateLog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -618,14 +652,20 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_log_details)
+                body=create_log_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_log_details)
+                body=create_log_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_log_group(self, create_log_group_details, **kwargs):
         """
@@ -668,6 +708,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logGroups"
         method = "POST"
+        operation_name = "create_log_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/CreateLogGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -704,13 +746,19 @@ class LoggingManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_log_group_details)
+                body=create_log_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_log_group_details)
+                body=create_log_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_log_saved_search(self, create_log_saved_search_details, **kwargs):
         """
@@ -752,6 +800,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logSavedSearches"
         method = "POST"
+        operation_name = "create_log_saved_search"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/CreateLogSavedSearch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -789,14 +839,20 @@ class LoggingManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_log_saved_search_details,
-                response_type="LogSavedSearch")
+                response_type="LogSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_log_saved_search_details,
-                response_type="LogSavedSearch")
+                response_type="LogSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_unified_agent_configuration(self, create_unified_agent_configuration_details, **kwargs):
         """
@@ -838,6 +894,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/unifiedAgentConfigurations"
         method = "POST"
+        operation_name = "create_unified_agent_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/CreateUnifiedAgentConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -874,13 +932,19 @@ class LoggingManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_unified_agent_configuration_details)
+                body=create_unified_agent_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_unified_agent_configuration_details)
+                body=create_unified_agent_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_log(self, log_group_id, log_id, **kwargs):
         """
@@ -924,6 +988,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logGroups/{logGroupId}/logs/{logId}"
         method = "DELETE"
+        operation_name = "delete_log"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/DeleteLog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -970,13 +1036,19 @@ class LoggingManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_log_group(self, log_group_id, **kwargs):
         """
@@ -1017,6 +1089,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logGroups/{logGroupId}"
         method = "DELETE"
+        operation_name = "delete_log_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/DeleteLogGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1062,13 +1136,19 @@ class LoggingManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_log_saved_search(self, log_saved_search_id, **kwargs):
         """
@@ -1109,6 +1189,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logSavedSearches/{logSavedSearchId}"
         method = "DELETE"
+        operation_name = "delete_log_saved_search"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/DeleteLogSavedSearch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1154,13 +1236,19 @@ class LoggingManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_unified_agent_configuration(self, unified_agent_configuration_id, **kwargs):
         """
@@ -1201,6 +1289,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/unifiedAgentConfigurations/{unifiedAgentConfigurationId}"
         method = "DELETE"
+        operation_name = "delete_unified_agent_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/DeleteUnifiedAgentConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1246,13 +1336,19 @@ class LoggingManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
@@ -1293,6 +1389,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "delete_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/DeleteWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1338,13 +1436,19 @@ class LoggingManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log(self, log_group_id, log_id, **kwargs):
         """
@@ -1381,6 +1485,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logGroups/{logGroupId}/logs/{logId}"
         method = "GET"
+        operation_name = "get_log"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/GetLog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1426,14 +1532,20 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Log")
+                response_type="Log",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Log")
+                response_type="Log",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log_group(self, log_group_id, **kwargs):
         """
@@ -1467,6 +1579,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logGroups/{logGroupId}"
         method = "GET"
+        operation_name = "get_log_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/GetLogGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1511,14 +1625,20 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogGroup")
+                response_type="LogGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogGroup")
+                response_type="LogGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log_included_search(self, compartment_id, log_included_search_id, **kwargs):
         """
@@ -1556,6 +1676,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logIncludedSearch/{logIncludedSearchId}"
         method = "GET"
+        operation_name = "get_log_included_search"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/GetLogIncludedSearch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1606,7 +1728,10 @@ class LoggingManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogIncludedSearch")
+                response_type="LogIncludedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1614,7 +1739,10 @@ class LoggingManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogIncludedSearch")
+                response_type="LogIncludedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_log_saved_search(self, log_saved_search_id, **kwargs):
         """
@@ -1648,6 +1776,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logSavedSearches/{logSavedSearchId}"
         method = "GET"
+        operation_name = "get_log_saved_search"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/GetLogSavedSearch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1692,14 +1822,20 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogSavedSearch")
+                response_type="LogSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="LogSavedSearch")
+                response_type="LogSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_unified_agent_configuration(self, unified_agent_configuration_id, **kwargs):
         """
@@ -1733,6 +1869,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/unifiedAgentConfigurations/{unifiedAgentConfigurationId}"
         method = "GET"
+        operation_name = "get_unified_agent_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/GetUnifiedAgentConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1777,14 +1915,20 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UnifiedAgentConfiguration")
+                response_type="UnifiedAgentConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="UnifiedAgentConfiguration")
+                response_type="UnifiedAgentConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1818,6 +1962,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1862,14 +2008,20 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_log_groups(self, compartment_id, **kwargs):
         """
@@ -1930,6 +2082,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logGroups"
         method = "GET"
+        operation_name = "list_log_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroupSummary/ListLogGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1995,14 +2149,20 @@ class LoggingManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LogGroupSummary]")
+                response_type="list[LogGroupSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LogGroupSummary]")
+                response_type="list[LogGroupSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_log_included_searches(self, compartment_id, **kwargs):
         """
@@ -2063,6 +2223,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logIncludedSearches"
         method = "GET"
+        operation_name = "list_log_included_searches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogIncludedSearch/ListLogIncludedSearches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2128,14 +2290,20 @@ class LoggingManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogIncludedSearchSummaryCollection")
+                response_type="LogIncludedSearchSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogIncludedSearchSummaryCollection")
+                response_type="LogIncludedSearchSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_log_saved_searches(self, compartment_id, **kwargs):
         """
@@ -2196,6 +2364,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logSavedSearches"
         method = "GET"
+        operation_name = "list_log_saved_searches"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/ListLogSavedSearches"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2261,14 +2431,20 @@ class LoggingManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogSavedSearchSummaryCollection")
+                response_type="LogSavedSearchSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="LogSavedSearchSummaryCollection")
+                response_type="LogSavedSearchSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_logs(self, log_group_id, **kwargs):
         """
@@ -2341,6 +2517,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logGroups/{logGroupId}/logs"
         method = "GET"
+        operation_name = "list_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSummary/ListLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2436,7 +2614,10 @@ class LoggingManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LogSummary]")
+                response_type="list[LogSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2444,7 +2625,10 @@ class LoggingManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[LogSummary]")
+                response_type="list[LogSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_services(self, **kwargs):
         """
@@ -2475,6 +2659,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/v2/registry/services"
         method = "GET"
+        operation_name = "list_services"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/ServiceSummary/ListServices"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2508,13 +2694,19 @@ class LoggingManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="list[ServiceSummary]")
+                response_type="list[ServiceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                response_type="list[ServiceSummary]")
+                response_type="list[ServiceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_unified_agent_configurations(self, compartment_id, **kwargs):
         """
@@ -2586,6 +2778,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/unifiedAgentConfigurations"
         method = "GET"
+        operation_name = "list_unified_agent_configurations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/ListUnifiedAgentConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2664,14 +2858,20 @@ class LoggingManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UnifiedAgentConfigurationCollection")
+                response_type="UnifiedAgentConfigurationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="UnifiedAgentConfigurationCollection")
+                response_type="UnifiedAgentConfigurationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2714,6 +2914,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2767,7 +2969,10 @@ class LoggingManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2775,7 +2980,10 @@ class LoggingManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2818,6 +3026,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequestLog/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2871,7 +3081,10 @@ class LoggingManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLog]")
+                response_type="list[WorkRequestLog]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2879,7 +3092,10 @@ class LoggingManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLog]")
+                response_type="list[WorkRequestLog]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2943,6 +3159,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3015,14 +3233,20 @@ class LoggingManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_log(self, log_group_id, log_id, update_log_details, **kwargs):
         """
@@ -3070,6 +3294,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logGroups/{logGroupId}/logs/{logId}"
         method = "PUT"
+        operation_name = "update_log"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/Log/UpdateLog"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3117,14 +3343,20 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_log_details)
+                body=update_log_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_log_details)
+                body=update_log_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_log_group(self, log_group_id, update_log_group_details, **kwargs):
         """
@@ -3169,6 +3401,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logGroups/{logGroupId}"
         method = "PUT"
+        operation_name = "update_log_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogGroup/UpdateLogGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3215,14 +3449,20 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_log_group_details)
+                body=update_log_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_log_group_details)
+                body=update_log_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_log_saved_search(self, log_saved_search_id, update_log_saved_search_details, **kwargs):
         """
@@ -3266,6 +3506,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/logSavedSearches/{logSavedSearchId}"
         method = "PUT"
+        operation_name = "update_log_saved_search"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/LogSavedSearch/UpdateLogSavedSearch"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3313,7 +3555,10 @@ class LoggingManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_log_saved_search_details,
-                response_type="LogSavedSearch")
+                response_type="LogSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3321,7 +3566,10 @@ class LoggingManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_log_saved_search_details,
-                response_type="LogSavedSearch")
+                response_type="LogSavedSearch",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_unified_agent_configuration(self, unified_agent_configuration_id, update_unified_agent_configuration_details, **kwargs):
         """
@@ -3366,6 +3614,8 @@ class LoggingManagementClient(object):
         """
         resource_path = "/unifiedAgentConfigurations/{unifiedAgentConfigurationId}"
         method = "PUT"
+        operation_name = "update_unified_agent_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-management/20200531/UnifiedAgentConfiguration/UpdateUnifiedAgentConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3412,11 +3662,17 @@ class LoggingManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_unified_agent_configuration_details)
+                body=update_unified_agent_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_unified_agent_configuration_details)
+                body=update_unified_agent_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

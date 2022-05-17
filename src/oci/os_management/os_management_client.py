@@ -139,6 +139,8 @@ class OsManagementClient(object):
         """
         resource_path = "/softwareSources/{softwareSourceId}/actions/addPackages"
         method = "POST"
+        operation_name = "add_packages_to_software_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/AddPackagesToSoftwareSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -183,14 +185,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_packages_to_software_source_details)
+                body=add_packages_to_software_source_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=add_packages_to_software_source_details)
+                body=add_packages_to_software_source_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def attach_child_software_source_to_managed_instance(self, managed_instance_id, attach_child_software_source_to_managed_instance_details, **kwargs):
         """
@@ -235,6 +243,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/actions/attachChildSoftwareSource"
         method = "POST"
+        operation_name = "attach_child_software_source_to_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachChildSoftwareSourceToManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -282,14 +292,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=attach_child_software_source_to_managed_instance_details)
+                body=attach_child_software_source_to_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=attach_child_software_source_to_managed_instance_details)
+                body=attach_child_software_source_to_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def attach_managed_instance_to_managed_instance_group(self, managed_instance_group_id, managed_instance_id, **kwargs):
         """
@@ -335,6 +351,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/attachManagedInstance"
         method = "POST"
+        operation_name = "attach_managed_instance_to_managed_instance_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/AttachManagedInstanceToManagedInstanceGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -387,14 +405,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def attach_parent_software_source_to_managed_instance(self, managed_instance_id, attach_parent_software_source_to_managed_instance_details, **kwargs):
         """
@@ -440,6 +464,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/actions/attachParentSoftwareSource"
         method = "POST"
+        operation_name = "attach_parent_software_source_to_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/AttachParentSoftwareSourceToManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -487,14 +513,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=attach_parent_software_source_to_managed_instance_details)
+                body=attach_parent_software_source_to_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=attach_parent_software_source_to_managed_instance_details)
+                body=attach_parent_software_source_to_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_managed_instance_group_compartment(self, managed_instance_group_id, change_managed_instance_group_compartment_details, **kwargs):
         """
@@ -545,6 +577,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_managed_instance_group_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/ChangeManagedInstanceGroupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -594,14 +628,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_managed_instance_group_compartment_details)
+                body=change_managed_instance_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_managed_instance_group_compartment_details)
+                body=change_managed_instance_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_scheduled_job_compartment(self, scheduled_job_id, change_scheduled_job_compartment_details, **kwargs):
         """
@@ -652,6 +692,8 @@ class OsManagementClient(object):
         """
         resource_path = "/scheduledJobs/{scheduledJobId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_scheduled_job_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ChangeScheduledJobCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -701,14 +743,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_scheduled_job_compartment_details)
+                body=change_scheduled_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_scheduled_job_compartment_details)
+                body=change_scheduled_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_software_source_compartment(self, software_source_id, change_software_source_compartment_details, **kwargs):
         """
@@ -759,6 +807,8 @@ class OsManagementClient(object):
         """
         resource_path = "/softwareSources/{softwareSourceId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_software_source_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ChangeSoftwareSourceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -808,14 +858,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_software_source_compartment_details)
+                body=change_software_source_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_software_source_compartment_details)
+                body=change_software_source_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_managed_instance_group(self, create_managed_instance_group_details, **kwargs):
         """
@@ -857,6 +913,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstanceGroups"
         method = "POST"
+        operation_name = "create_managed_instance_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/CreateManagedInstanceGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -894,14 +952,20 @@ class OsManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_managed_instance_group_details,
-                response_type="ManagedInstanceGroup")
+                response_type="ManagedInstanceGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_managed_instance_group_details,
-                response_type="ManagedInstanceGroup")
+                response_type="ManagedInstanceGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_scheduled_job(self, create_scheduled_job_details, **kwargs):
         """
@@ -944,6 +1008,8 @@ class OsManagementClient(object):
         """
         resource_path = "/scheduledJobs"
         method = "POST"
+        operation_name = "create_scheduled_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/CreateScheduledJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -981,14 +1047,20 @@ class OsManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_scheduled_job_details,
-                response_type="ScheduledJob")
+                response_type="ScheduledJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_scheduled_job_details,
-                response_type="ScheduledJob")
+                response_type="ScheduledJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_software_source(self, create_software_source_details, **kwargs):
         """
@@ -1030,6 +1102,8 @@ class OsManagementClient(object):
         """
         resource_path = "/softwareSources"
         method = "POST"
+        operation_name = "create_software_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/CreateSoftwareSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1067,14 +1141,20 @@ class OsManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_software_source_details,
-                response_type="SoftwareSource")
+                response_type="SoftwareSource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_software_source_details,
-                response_type="SoftwareSource")
+                response_type="SoftwareSource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_managed_instance_group(self, managed_instance_group_id, **kwargs):
         """
@@ -1114,6 +1194,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}"
         method = "DELETE"
+        operation_name = "delete_managed_instance_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DeleteManagedInstanceGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1159,13 +1241,19 @@ class OsManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_scheduled_job(self, scheduled_job_id, **kwargs):
         """
@@ -1205,6 +1293,8 @@ class OsManagementClient(object):
         """
         resource_path = "/scheduledJobs/{scheduledJobId}"
         method = "DELETE"
+        operation_name = "delete_scheduled_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/DeleteScheduledJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1250,13 +1340,19 @@ class OsManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_software_source(self, software_source_id, **kwargs):
         """
@@ -1296,6 +1392,8 @@ class OsManagementClient(object):
         """
         resource_path = "/softwareSources/{softwareSourceId}"
         method = "DELETE"
+        operation_name = "delete_software_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/DeleteSoftwareSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1341,13 +1439,19 @@ class OsManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detach_child_software_source_from_managed_instance(self, managed_instance_id, detach_child_software_source_from_managed_instance_details, **kwargs):
         """
@@ -1391,6 +1495,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/actions/detachChildSoftwareSource"
         method = "POST"
+        operation_name = "detach_child_software_source_from_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachChildSoftwareSourceFromManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1438,14 +1544,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=detach_child_software_source_from_managed_instance_details)
+                body=detach_child_software_source_from_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=detach_child_software_source_from_managed_instance_details)
+                body=detach_child_software_source_from_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detach_managed_instance_from_managed_instance_group(self, managed_instance_group_id, managed_instance_id, **kwargs):
         """
@@ -1488,6 +1600,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/detachManagedInstance"
         method = "POST"
+        operation_name = "detach_managed_instance_from_managed_instance_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/DetachManagedInstanceFromManagedInstanceGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1540,14 +1654,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detach_parent_software_source_from_managed_instance(self, managed_instance_id, detach_parent_software_source_from_managed_instance_details, **kwargs):
         """
@@ -1591,6 +1711,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/actions/detachParentSoftwareSource"
         method = "POST"
+        operation_name = "detach_parent_software_source_from_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/DetachParentSoftwareSourceFromManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1638,14 +1760,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=detach_parent_software_source_from_managed_instance_details)
+                body=detach_parent_software_source_from_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=detach_parent_software_source_from_managed_instance_details)
+                body=detach_parent_software_source_from_managed_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_erratum(self, erratum_id, **kwargs):
         """
@@ -1678,6 +1806,8 @@ class OsManagementClient(object):
         """
         resource_path = "/errata/{erratumId}"
         method = "GET"
+        operation_name = "get_erratum"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Erratum/GetErratum"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1722,14 +1852,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Erratum")
+                response_type="Erratum",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Erratum")
+                response_type="Erratum",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_managed_instance(self, managed_instance_id, **kwargs):
         """
@@ -1762,6 +1898,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}"
         method = "GET"
+        operation_name = "get_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/GetManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1806,14 +1944,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagedInstance")
+                response_type="ManagedInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagedInstance")
+                response_type="ManagedInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_managed_instance_group(self, managed_instance_group_id, **kwargs):
         """
@@ -1846,6 +1990,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}"
         method = "GET"
+        operation_name = "get_managed_instance_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/GetManagedInstanceGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1890,14 +2036,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagedInstanceGroup")
+                response_type="ManagedInstanceGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ManagedInstanceGroup")
+                response_type="ManagedInstanceGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_scheduled_job(self, scheduled_job_id, **kwargs):
         """
@@ -1930,6 +2082,8 @@ class OsManagementClient(object):
         """
         resource_path = "/scheduledJobs/{scheduledJobId}"
         method = "GET"
+        operation_name = "get_scheduled_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/GetScheduledJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1974,14 +2128,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ScheduledJob")
+                response_type="ScheduledJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ScheduledJob")
+                response_type="ScheduledJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_software_package(self, software_source_id, software_package_name, **kwargs):
         """
@@ -2017,6 +2177,8 @@ class OsManagementClient(object):
         """
         resource_path = "/softwareSources/{softwareSourceId}/softwarePackages/{softwarePackageName}"
         method = "GET"
+        operation_name = "get_software_package"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwarePackage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2062,14 +2224,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SoftwarePackage")
+                response_type="SoftwarePackage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SoftwarePackage")
+                response_type="SoftwarePackage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_software_source(self, software_source_id, **kwargs):
         """
@@ -2102,6 +2270,8 @@ class OsManagementClient(object):
         """
         resource_path = "/softwareSources/{softwareSourceId}"
         method = "GET"
+        operation_name = "get_software_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/GetSoftwareSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2146,14 +2316,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SoftwareSource")
+                response_type="SoftwareSource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SoftwareSource")
+                response_type="SoftwareSource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_windows_update(self, windows_update, **kwargs):
         """
@@ -2186,6 +2362,8 @@ class OsManagementClient(object):
         """
         resource_path = "/updates/{windowsUpdate}"
         method = "GET"
+        operation_name = "get_windows_update"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdate/GetWindowsUpdate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2230,14 +2408,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WindowsUpdate")
+                response_type="WindowsUpdate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WindowsUpdate")
+                response_type="WindowsUpdate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -2270,6 +2454,8 @@ class OsManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2314,14 +2500,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def install_all_package_updates_on_managed_instance(self, managed_instance_id, **kwargs):
         """
@@ -2366,6 +2558,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/actions/packages/updateAll"
         method = "POST"
+        operation_name = "install_all_package_updates_on_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllPackageUpdatesOnManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2426,14 +2620,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def install_all_updates_on_managed_instance_group(self, managed_instance_group_id, **kwargs):
         """
@@ -2478,6 +2678,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}/actions/updates/installAll"
         method = "POST"
+        operation_name = "install_all_updates_on_managed_instance_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/InstallAllUpdatesOnManagedInstanceGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2538,14 +2740,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def install_all_windows_updates_on_managed_instance(self, managed_instance_id, **kwargs):
         """
@@ -2590,6 +2798,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/actions/updates/installAll"
         method = "POST"
+        operation_name = "install_all_windows_updates_on_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallAllWindowsUpdatesOnManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2650,14 +2860,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def install_package_on_managed_instance(self, managed_instance_id, software_package_name, **kwargs):
         """
@@ -2700,6 +2916,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/actions/packages/install"
         method = "POST"
+        operation_name = "install_package_on_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageOnManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2752,14 +2970,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def install_package_update_on_managed_instance(self, managed_instance_id, software_package_name, **kwargs):
         """
@@ -2802,6 +3026,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/actions/packages/update"
         method = "POST"
+        operation_name = "install_package_update_on_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallPackageUpdateOnManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2854,14 +3080,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def install_windows_update_on_managed_instance(self, managed_instance_id, windows_update_name, **kwargs):
         """
@@ -2906,6 +3138,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/actions/updates/install"
         method = "POST"
+        operation_name = "install_windows_update_on_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/InstallWindowsUpdateOnManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2958,14 +3192,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_available_packages_for_managed_instance(self, managed_instance_id, **kwargs):
         """
@@ -3022,6 +3262,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/packages/available"
         method = "GET"
+        operation_name = "list_available_packages_for_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailablePackagesForManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3097,7 +3339,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstallablePackageSummary]")
+                response_type="list[InstallablePackageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3105,7 +3350,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstallablePackageSummary]")
+                response_type="list[InstallablePackageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_available_software_sources_for_managed_instance(self, managed_instance_id, **kwargs):
         """
@@ -3162,6 +3410,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/availableSoftwareSources"
         method = "GET"
+        operation_name = "list_available_software_sources_for_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableSoftwareSourcesForManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3237,7 +3487,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AvailableSoftwareSourceSummary]")
+                response_type="list[AvailableSoftwareSourceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3245,7 +3498,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AvailableSoftwareSourceSummary]")
+                response_type="list[AvailableSoftwareSourceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_available_updates_for_managed_instance(self, managed_instance_id, **kwargs):
         """
@@ -3302,6 +3558,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/packages/updates"
         method = "GET"
+        operation_name = "list_available_updates_for_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableUpdatesForManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3377,7 +3635,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AvailableUpdateSummary]")
+                response_type="list[AvailableUpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3385,7 +3646,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AvailableUpdateSummary]")
+                response_type="list[AvailableUpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_available_windows_updates_for_managed_instance(self, managed_instance_id, **kwargs):
         """
@@ -3447,6 +3711,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/updates/available"
         method = "GET"
+        operation_name = "list_available_windows_updates_for_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListAvailableWindowsUpdatesForManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3531,7 +3797,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AvailableWindowsUpdateSummary]")
+                response_type="list[AvailableWindowsUpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3539,7 +3808,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AvailableWindowsUpdateSummary]")
+                response_type="list[AvailableWindowsUpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_errata(self, **kwargs):
         """
@@ -3606,6 +3878,8 @@ class OsManagementClient(object):
         """
         resource_path = "/errata"
         method = "GET"
+        operation_name = "list_errata"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ErratumSummary/ListErrata"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3676,14 +3950,20 @@ class OsManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ErratumSummary]")
+                response_type="list[ErratumSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ErratumSummary]")
+                response_type="list[ErratumSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_managed_instance_errata(self, managed_instance_id, **kwargs):
         """
@@ -3740,6 +4020,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/errata"
         method = "GET"
+        operation_name = "list_managed_instance_errata"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListManagedInstanceErrata"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3815,7 +4097,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ErratumSummary]")
+                response_type="list[ErratumSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3823,7 +4108,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ErratumSummary]")
+                response_type="list[ErratumSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_managed_instance_groups(self, compartment_id, **kwargs):
         """
@@ -3887,6 +4175,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstanceGroups"
         method = "GET"
+        operation_name = "list_managed_instance_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroupSummary/ListManagedInstanceGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3968,14 +4258,20 @@ class OsManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ManagedInstanceGroupSummary]")
+                response_type="list[ManagedInstanceGroupSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ManagedInstanceGroupSummary]")
+                response_type="list[ManagedInstanceGroupSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_managed_instances(self, compartment_id, **kwargs):
         """
@@ -4034,6 +4330,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances"
         method = "GET"
+        operation_name = "list_managed_instances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceSummary/ListManagedInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4106,14 +4404,20 @@ class OsManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ManagedInstanceSummary]")
+                response_type="list[ManagedInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ManagedInstanceSummary]")
+                response_type="list[ManagedInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_packages_installed_on_managed_instance(self, managed_instance_id, **kwargs):
         """
@@ -4170,6 +4474,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/packages"
         method = "GET"
+        operation_name = "list_packages_installed_on_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListPackagesInstalledOnManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4245,7 +4551,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstalledPackageSummary]")
+                response_type="list[InstalledPackageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4253,7 +4562,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstalledPackageSummary]")
+                response_type="list[InstalledPackageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_scheduled_jobs(self, compartment_id, **kwargs):
         """
@@ -4331,6 +4643,8 @@ class OsManagementClient(object):
         """
         resource_path = "/scheduledJobs"
         method = "GET"
+        operation_name = "list_scheduled_jobs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListScheduledJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4427,14 +4741,20 @@ class OsManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ScheduledJobSummary]")
+                response_type="list[ScheduledJobSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ScheduledJobSummary]")
+                response_type="list[ScheduledJobSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_software_source_packages(self, software_source_id, **kwargs):
         """
@@ -4491,6 +4811,8 @@ class OsManagementClient(object):
         """
         resource_path = "/softwareSources/{softwareSourceId}/softwarePackages"
         method = "GET"
+        operation_name = "list_software_source_packages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/ListSoftwareSourcePackages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4566,7 +4888,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SoftwarePackageSummary]")
+                response_type="list[SoftwarePackageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -4574,7 +4899,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SoftwarePackageSummary]")
+                response_type="list[SoftwarePackageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_software_sources(self, compartment_id, **kwargs):
         """
@@ -4633,6 +4961,8 @@ class OsManagementClient(object):
         """
         resource_path = "/softwareSources"
         method = "GET"
+        operation_name = "list_software_sources"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSourceSummary/ListSoftwareSources"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4705,14 +5035,20 @@ class OsManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SoftwareSourceSummary]")
+                response_type="list[SoftwareSourceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SoftwareSourceSummary]")
+                response_type="list[SoftwareSourceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_upcoming_scheduled_jobs(self, compartment_id, time_end, **kwargs):
         """
@@ -4787,6 +5123,8 @@ class OsManagementClient(object):
         """
         resource_path = "/scheduledJobs/upcomingSchedules"
         method = "GET"
+        operation_name = "list_upcoming_scheduled_jobs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/ListUpcomingScheduledJobs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4873,14 +5211,20 @@ class OsManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ScheduledJobSummary]")
+                response_type="list[ScheduledJobSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ScheduledJobSummary]")
+                response_type="list[ScheduledJobSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_windows_updates(self, **kwargs):
         """
@@ -4934,6 +5278,8 @@ class OsManagementClient(object):
         """
         resource_path = "/updates"
         method = "GET"
+        operation_name = "list_windows_updates"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WindowsUpdateSummary/ListWindowsUpdates"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4998,14 +5344,20 @@ class OsManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WindowsUpdateSummary]")
+                response_type="list[WindowsUpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WindowsUpdateSummary]")
+                response_type="list[WindowsUpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_windows_updates_installed_on_managed_instance(self, managed_instance_id, **kwargs):
         """
@@ -5062,6 +5414,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/updates/installed"
         method = "GET"
+        operation_name = "list_windows_updates_installed_on_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/ListWindowsUpdatesInstalledOnManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5137,7 +5491,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstalledWindowsUpdateSummary]")
+                response_type="list[InstalledWindowsUpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5145,7 +5502,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[InstalledWindowsUpdateSummary]")
+                response_type="list[InstalledWindowsUpdateSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -5194,6 +5554,8 @@ class OsManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5265,7 +5627,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5273,7 +5638,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -5322,6 +5690,8 @@ class OsManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequest/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5393,7 +5763,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5401,7 +5774,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -5463,6 +5839,8 @@ class OsManagementClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/WorkRequestSummary/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5537,14 +5915,20 @@ class OsManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_package_from_managed_instance(self, managed_instance_id, software_package_name, **kwargs):
         """
@@ -5587,6 +5971,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/actions/packages/remove"
         method = "POST"
+        operation_name = "remove_package_from_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstance/RemovePackageFromManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5639,14 +6025,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_packages_from_software_source(self, software_source_id, remove_packages_from_software_source_details, **kwargs):
         """
@@ -5682,6 +6074,8 @@ class OsManagementClient(object):
         """
         resource_path = "/softwareSources/{softwareSourceId}/actions/removePackages"
         method = "POST"
+        operation_name = "remove_packages_from_software_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/RemovePackagesFromSoftwareSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5726,14 +6120,20 @@ class OsManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_packages_from_software_source_details)
+                body=remove_packages_from_software_source_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_packages_from_software_source_details)
+                body=remove_packages_from_software_source_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def run_scheduled_job_now(self, scheduled_job_id, **kwargs):
         """
@@ -5781,6 +6181,8 @@ class OsManagementClient(object):
         """
         resource_path = "/scheduledJobs/{scheduledJobId}/actions/runNow"
         method = "POST"
+        operation_name = "run_scheduled_job_now"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/RunScheduledJobNow"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5829,13 +6231,19 @@ class OsManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def search_software_packages(self, **kwargs):
         """
@@ -5894,6 +6302,8 @@ class OsManagementClient(object):
         """
         resource_path = "/softwareSources/softwarePackages"
         method = "GET"
+        operation_name = "search_software_packages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/SearchSoftwarePackages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5960,14 +6370,20 @@ class OsManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SoftwarePackageSearchSummary]")
+                response_type="list[SoftwarePackageSearchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SoftwarePackageSearchSummary]")
+                response_type="list[SoftwarePackageSearchSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def skip_next_scheduled_job_execution(self, scheduled_job_id, **kwargs):
         """
@@ -6015,6 +6431,8 @@ class OsManagementClient(object):
         """
         resource_path = "/scheduledJobs/{scheduledJobId}/actions/skipNextExecution"
         method = "POST"
+        operation_name = "skip_next_scheduled_job_execution"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/SkipNextScheduledJobExecution"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6063,13 +6481,19 @@ class OsManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_managed_instance(self, managed_instance_id, update_managed_instance_details, **kwargs):
         """
@@ -6112,6 +6536,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}"
         method = "PUT"
+        operation_name = "update_managed_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/UpdateManagedInstanceDetails/UpdateManagedInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6159,7 +6585,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_managed_instance_details,
-                response_type="ManagedInstance")
+                response_type="ManagedInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6167,7 +6596,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_managed_instance_details,
-                response_type="ManagedInstance")
+                response_type="ManagedInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_managed_instance_group(self, managed_instance_group_id, update_managed_instance_group_details, **kwargs):
         """
@@ -6210,6 +6642,8 @@ class OsManagementClient(object):
         """
         resource_path = "/managedInstanceGroups/{managedInstanceGroupId}"
         method = "PUT"
+        operation_name = "update_managed_instance_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ManagedInstanceGroup/UpdateManagedInstanceGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6257,7 +6691,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_managed_instance_group_details,
-                response_type="ManagedInstanceGroup")
+                response_type="ManagedInstanceGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6265,7 +6702,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_managed_instance_group_details,
-                response_type="ManagedInstanceGroup")
+                response_type="ManagedInstanceGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_scheduled_job(self, scheduled_job_id, update_scheduled_job_details, **kwargs):
         """
@@ -6308,6 +6748,8 @@ class OsManagementClient(object):
         """
         resource_path = "/scheduledJobs/{scheduledJobId}"
         method = "PUT"
+        operation_name = "update_scheduled_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/ScheduledJob/UpdateScheduledJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6355,7 +6797,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_scheduled_job_details,
-                response_type="ScheduledJob")
+                response_type="ScheduledJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6363,7 +6808,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_scheduled_job_details,
-                response_type="ScheduledJob")
+                response_type="ScheduledJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_software_source(self, software_source_id, update_software_source_details, **kwargs):
         """
@@ -6406,6 +6854,8 @@ class OsManagementClient(object):
         """
         resource_path = "/softwareSources/{softwareSourceId}"
         method = "PUT"
+        operation_name = "update_software_source"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/SoftwareSource/UpdateSoftwareSource"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -6453,7 +6903,10 @@ class OsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_software_source_details,
-                response_type="SoftwareSource")
+                response_type="SoftwareSource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -6461,4 +6914,7 @@ class OsManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_software_source_details,
-                response_type="SoftwareSource")
+                response_type="SoftwareSource",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -143,6 +143,8 @@ class UsageapiClient(object):
         """
         resource_path = "/customTables"
         method = "POST"
+        operation_name = "create_custom_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/CreateCustomTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -180,14 +182,20 @@ class UsageapiClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_custom_table_details,
-                response_type="CustomTable")
+                response_type="CustomTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_custom_table_details,
-                response_type="CustomTable")
+                response_type="CustomTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_query(self, create_query_details, **kwargs):
         """
@@ -228,6 +236,8 @@ class UsageapiClient(object):
         """
         resource_path = "/queries"
         method = "POST"
+        operation_name = "create_query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/CreateQuery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -265,14 +275,20 @@ class UsageapiClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_query_details,
-                response_type="Query")
+                response_type="Query",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_query_details,
-                response_type="Query")
+                response_type="Query",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_schedule(self, create_schedule_details, **kwargs):
         """
@@ -313,6 +329,8 @@ class UsageapiClient(object):
         """
         resource_path = "/schedules"
         method = "POST"
+        operation_name = "create_schedule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/CreateSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -350,14 +368,20 @@ class UsageapiClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_schedule_details,
-                response_type="Schedule")
+                response_type="Schedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_schedule_details,
-                response_type="Schedule")
+                response_type="Schedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_custom_table(self, custom_table_id, **kwargs):
         """
@@ -398,6 +422,8 @@ class UsageapiClient(object):
         """
         resource_path = "/customTables/{customTableId}"
         method = "DELETE"
+        operation_name = "delete_custom_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/DeleteCustomTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -443,13 +469,19 @@ class UsageapiClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_query(self, query_id, **kwargs):
         """
@@ -490,6 +522,8 @@ class UsageapiClient(object):
         """
         resource_path = "/queries/{queryId}"
         method = "DELETE"
+        operation_name = "delete_query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/DeleteQuery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -535,13 +569,19 @@ class UsageapiClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_schedule(self, schedule_id, **kwargs):
         """
@@ -582,6 +622,8 @@ class UsageapiClient(object):
         """
         resource_path = "/schedules/{scheduleId}"
         method = "DELETE"
+        operation_name = "delete_schedule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/DeleteSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -627,13 +669,19 @@ class UsageapiClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_custom_table(self, custom_table_id, **kwargs):
         """
@@ -667,6 +715,8 @@ class UsageapiClient(object):
         """
         resource_path = "/customTables/{customTableId}"
         method = "GET"
+        operation_name = "get_custom_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/GetCustomTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -711,14 +761,20 @@ class UsageapiClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CustomTable")
+                response_type="CustomTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="CustomTable")
+                response_type="CustomTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_query(self, query_id, **kwargs):
         """
@@ -752,6 +808,8 @@ class UsageapiClient(object):
         """
         resource_path = "/queries/{queryId}"
         method = "GET"
+        operation_name = "get_query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/GetQuery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -796,14 +854,20 @@ class UsageapiClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Query")
+                response_type="Query",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Query")
+                response_type="Query",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_schedule(self, schedule_id, **kwargs):
         """
@@ -837,6 +901,8 @@ class UsageapiClient(object):
         """
         resource_path = "/schedules/{scheduleId}"
         method = "GET"
+        operation_name = "get_schedule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/GetSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -881,14 +947,20 @@ class UsageapiClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Schedule")
+                response_type="Schedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Schedule")
+                response_type="Schedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_scheduled_run(self, scheduled_run_id, **kwargs):
         """
@@ -922,6 +994,8 @@ class UsageapiClient(object):
         """
         resource_path = "/scheduledRuns/{scheduledRunId}"
         method = "GET"
+        operation_name = "get_scheduled_run"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/ScheduledRun/GetScheduledRun"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -966,14 +1040,20 @@ class UsageapiClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ScheduledRun")
+                response_type="ScheduledRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ScheduledRun")
+                response_type="ScheduledRun",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_custom_tables(self, compartment_id, saved_report_id, **kwargs):
         """
@@ -1027,6 +1107,8 @@ class UsageapiClient(object):
         """
         resource_path = "/customTables"
         method = "GET"
+        operation_name = "list_custom_tables"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/ListCustomTables"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1089,14 +1171,20 @@ class UsageapiClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CustomTableCollection")
+                response_type="CustomTableCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="CustomTableCollection")
+                response_type="CustomTableCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_queries(self, compartment_id, **kwargs):
         """
@@ -1147,6 +1235,8 @@ class UsageapiClient(object):
         """
         resource_path = "/queries"
         method = "GET"
+        operation_name = "list_queries"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/ListQueries"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1208,14 +1298,20 @@ class UsageapiClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="QueryCollection")
+                response_type="QueryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="QueryCollection")
+                response_type="QueryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_scheduled_runs(self, schedule_id, **kwargs):
         """
@@ -1266,6 +1362,8 @@ class UsageapiClient(object):
         """
         resource_path = "/scheduledRuns"
         method = "GET"
+        operation_name = "list_scheduled_runs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/ScheduledRun/ListScheduledRuns"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1327,14 +1425,20 @@ class UsageapiClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ScheduledRunCollection")
+                response_type="ScheduledRunCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ScheduledRunCollection")
+                response_type="ScheduledRunCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_schedules(self, compartment_id, **kwargs):
         """
@@ -1388,6 +1492,8 @@ class UsageapiClient(object):
         """
         resource_path = "/schedules"
         method = "GET"
+        operation_name = "list_schedules"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/ListSchedules"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1451,14 +1557,20 @@ class UsageapiClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ScheduleCollection")
+                response_type="ScheduleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ScheduleCollection")
+                response_type="ScheduleCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_summarized_configurations(self, tenant_id, **kwargs):
         """
@@ -1492,6 +1604,8 @@ class UsageapiClient(object):
         """
         resource_path = "/configuration"
         method = "GET"
+        operation_name = "request_summarized_configurations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Configuration/RequestSummarizedConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1531,14 +1645,20 @@ class UsageapiClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConfigurationAggregation")
+                response_type="ConfigurationAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ConfigurationAggregation")
+                response_type="ConfigurationAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def request_summarized_usages(self, request_summarized_usages_details, **kwargs):
         """
@@ -1579,6 +1699,8 @@ class UsageapiClient(object):
         """
         resource_path = "/usage"
         method = "POST"
+        operation_name = "request_summarized_usages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/UsageSummary/RequestSummarizedUsages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1622,7 +1744,10 @@ class UsageapiClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=request_summarized_usages_details,
-                response_type="UsageAggregation")
+                response_type="UsageAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1630,7 +1755,10 @@ class UsageapiClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=request_summarized_usages_details,
-                response_type="UsageAggregation")
+                response_type="UsageAggregation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_custom_table(self, update_custom_table_details, custom_table_id, **kwargs):
         """
@@ -1674,6 +1802,8 @@ class UsageapiClient(object):
         """
         resource_path = "/customTables/{customTableId}"
         method = "PUT"
+        operation_name = "update_custom_table"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/CustomTable/UpdateCustomTable"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1721,7 +1851,10 @@ class UsageapiClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_custom_table_details,
-                response_type="CustomTable")
+                response_type="CustomTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1729,7 +1862,10 @@ class UsageapiClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_custom_table_details,
-                response_type="CustomTable")
+                response_type="CustomTable",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_query(self, update_query_details, query_id, **kwargs):
         """
@@ -1773,6 +1909,8 @@ class UsageapiClient(object):
         """
         resource_path = "/queries/{queryId}"
         method = "PUT"
+        operation_name = "update_query"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Query/UpdateQuery"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1820,7 +1958,10 @@ class UsageapiClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_query_details,
-                response_type="Query")
+                response_type="Query",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1828,7 +1969,10 @@ class UsageapiClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_query_details,
-                response_type="Query")
+                response_type="Query",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_schedule(self, update_schedule_details, schedule_id, **kwargs):
         """
@@ -1872,6 +2016,8 @@ class UsageapiClient(object):
         """
         resource_path = "/schedules/{scheduleId}"
         method = "PUT"
+        operation_name = "update_schedule"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/usage/20200107/Schedule/UpdateSchedule"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1919,7 +2065,10 @@ class UsageapiClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_schedule_details,
-                response_type="Schedule")
+                response_type="Schedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1927,4 +2076,7 @@ class UsageapiClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_schedule_details,
-                response_type="Schedule")
+                response_type="Schedule",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

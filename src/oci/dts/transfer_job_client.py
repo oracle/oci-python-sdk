@@ -150,6 +150,8 @@ class TransferJobClient(object):
         """
         resource_path = "/transferJobs/{transferJobId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_transfer_job_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -199,14 +201,20 @@ class TransferJobClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_transfer_job_compartment_details)
+                body=change_transfer_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_transfer_job_compartment_details)
+                body=change_transfer_job_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_transfer_job(self, create_transfer_job_details, **kwargs):
         """
@@ -242,6 +250,8 @@ class TransferJobClient(object):
         """
         resource_path = "/transferJobs"
         method = "POST"
+        operation_name = "create_transfer_job"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -279,14 +289,20 @@ class TransferJobClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_transfer_job_details,
-                response_type="TransferJob")
+                response_type="TransferJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_transfer_job_details,
-                response_type="TransferJob")
+                response_type="TransferJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_transfer_job(self, id, **kwargs):
         """
@@ -320,6 +336,8 @@ class TransferJobClient(object):
         """
         resource_path = "/transferJobs/{id}"
         method = "DELETE"
+        operation_name = "delete_transfer_job"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -363,13 +381,19 @@ class TransferJobClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_transfer_job(self, id, **kwargs):
         """
@@ -403,6 +427,8 @@ class TransferJobClient(object):
         """
         resource_path = "/transferJobs/{id}"
         method = "GET"
+        operation_name = "get_transfer_job"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -447,14 +473,20 @@ class TransferJobClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TransferJob")
+                response_type="TransferJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TransferJob")
+                response_type="TransferJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_transfer_jobs(self, compartment_id, **kwargs):
         """
@@ -512,6 +544,8 @@ class TransferJobClient(object):
         """
         resource_path = "/transferJobs"
         method = "GET"
+        operation_name = "list_transfer_jobs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -566,14 +600,20 @@ class TransferJobClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TransferJobSummary]")
+                response_type="list[TransferJobSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[TransferJobSummary]")
+                response_type="list[TransferJobSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_transfer_job(self, id, update_transfer_job_details, **kwargs):
         """
@@ -614,6 +654,8 @@ class TransferJobClient(object):
         """
         resource_path = "/transferJobs/{id}"
         method = "PUT"
+        operation_name = "update_transfer_job"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -661,7 +703,10 @@ class TransferJobClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_transfer_job_details,
-                response_type="TransferJob")
+                response_type="TransferJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -669,4 +714,7 @@ class TransferJobClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_transfer_job_details,
-                response_type="TransferJob")
+                response_type="TransferJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

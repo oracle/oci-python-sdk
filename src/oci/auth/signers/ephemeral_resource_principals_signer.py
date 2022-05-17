@@ -8,6 +8,8 @@ import os
 from .security_token_signer import SecurityTokenSigner, SECURITY_TOKEN_FORMAT_STRING
 from ..security_token_container import SecurityTokenContainer
 
+RP_DEBUG_INFORMATION_LOG = "Resource principals authentication can only be used in certain OCI services. Please check that the OCI service you're running this code from supports Resource principals. See https://docs.oracle.com/en-us/iaas/Content/API/Concepts/sdk_authentication_methods.htm#sdk_authentication_methods_resource_principal for more info."
+
 
 class EphemeralResourcePrincipalSigner(SecurityTokenSigner):
     def __init__(self, session_token=None, private_key=None, private_key_passphrase=None, region=None, generic_headers=None, **kwargs):
@@ -36,7 +38,7 @@ class EphemeralResourcePrincipalSigner(SecurityTokenSigner):
         self.region = self._initialize_and_return_region(region)
         self._rpst = session_token
         if self._rpst is None:
-            raise ValueError("session_token was not provided")
+            raise ValueError("session_token was not provided " + RP_DEBUG_INFORMATION_LOG)
 
         # Load the initial values
         self.session_key_supplier = self._construct_session_key_supplier(private_key, private_key_passphrase)
@@ -72,7 +74,7 @@ class EphemeralResourcePrincipalSigner(SecurityTokenSigner):
 
     def _construct_session_key_supplier(self, private_key=None, private_key_passphrase=None):
         if private_key is None:
-            raise ValueError("private_key must be provided")
+            raise ValueError("private_key must be provided " + RP_DEBUG_INFORMATION_LOG)
         passphrase = private_key_passphrase
         if os.path.isabs(private_key):
             return FileBasedSessionKeySupplier(private_key, passphrase)

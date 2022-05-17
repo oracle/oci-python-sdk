@@ -169,6 +169,8 @@ class RatecardClient(object):
         """
         resource_path = "/ratecards"
         method = "GET"
+        operation_name = "list_rate_cards"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -239,11 +241,17 @@ class RatecardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RateCardSummary]")
+                response_type="list[RateCardSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[RateCardSummary]")
+                response_type="list[RateCardSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

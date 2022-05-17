@@ -149,6 +149,8 @@ class LogSearchClient(object):
         """
         resource_path = "/search"
         method = "POST"
+        operation_name = "search_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/logging-search/20190909/SearchResult/SearchLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -192,7 +194,10 @@ class LogSearchClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=search_logs_details,
-                response_type="SearchResponse")
+                response_type="SearchResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -200,4 +205,7 @@ class LogSearchClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=search_logs_details,
-                response_type="SearchResponse")
+                response_type="SearchResponse",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

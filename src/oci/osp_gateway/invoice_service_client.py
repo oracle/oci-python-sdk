@@ -144,6 +144,8 @@ class InvoiceServiceClient(object):
         """
         resource_path = "/invoices/{internalInvoiceId}/actions/downloadPdfContent"
         method = "POST"
+        operation_name = "download_pdf_content"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -195,7 +197,10 @@ class InvoiceServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -203,7 +208,10 @@ class InvoiceServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_invoice(self, osp_home_region, compartment_id, internal_invoice_id, **kwargs):
         """
@@ -245,6 +253,8 @@ class InvoiceServiceClient(object):
         """
         resource_path = "/invoices/{internalInvoiceId}"
         method = "GET"
+        operation_name = "get_invoice"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -296,7 +306,10 @@ class InvoiceServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Invoice")
+                response_type="Invoice",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -304,7 +317,10 @@ class InvoiceServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Invoice")
+                response_type="Invoice",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_invoice_lines(self, osp_home_region, compartment_id, internal_invoice_id, **kwargs):
         """
@@ -352,6 +368,8 @@ class InvoiceServiceClient(object):
         """
         resource_path = "/invoices/{internalInvoiceId}/invoiceLines"
         method = "GET"
+        operation_name = "list_invoice_lines"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -407,7 +425,10 @@ class InvoiceServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InvoiceLineCollection")
+                response_type="InvoiceLineCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -415,7 +436,10 @@ class InvoiceServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InvoiceLineCollection")
+                response_type="InvoiceLineCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_invoices(self, osp_home_region, compartment_id, **kwargs):
         """
@@ -501,6 +525,8 @@ class InvoiceServiceClient(object):
         """
         resource_path = "/invoices"
         method = "GET"
+        operation_name = "list_invoices"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -595,14 +621,20 @@ class InvoiceServiceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InvoiceCollection")
+                response_type="InvoiceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InvoiceCollection")
+                response_type="InvoiceCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def pay_invoice(self, osp_home_region, internal_invoice_id, compartment_id, pay_invoice_details, **kwargs):
         """
@@ -658,6 +690,8 @@ class InvoiceServiceClient(object):
         """
         resource_path = "/invoices/{internalInvoiceId}/actions/pay"
         method = "POST"
+        operation_name = "pay_invoice"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -715,7 +749,10 @@ class InvoiceServiceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=pay_invoice_details,
-                response_type="PayInvoiceReceipt")
+                response_type="PayInvoiceReceipt",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -724,4 +761,7 @@ class InvoiceServiceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=pay_invoice_details,
-                response_type="PayInvoiceReceipt")
+                response_type="PayInvoiceReceipt",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -149,6 +149,8 @@ class SenderInvitationClient(object):
         """
         resource_path = "/senderInvitations/{senderInvitationId}/actions/cancel"
         method = "POST"
+        operation_name = "cancel_sender_invitation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/CancelSenderInvitation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -197,13 +199,19 @@ class SenderInvitationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_sender_invitation(self, create_sender_invitation_details, **kwargs):
         """
@@ -243,6 +251,8 @@ class SenderInvitationClient(object):
         """
         resource_path = "/senderInvitations"
         method = "POST"
+        operation_name = "create_sender_invitation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/CreateSenderInvitation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -280,14 +290,20 @@ class SenderInvitationClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_sender_invitation_details,
-                response_type="SenderInvitation")
+                response_type="SenderInvitation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_sender_invitation_details,
-                response_type="SenderInvitation")
+                response_type="SenderInvitation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_sender_invitation(self, sender_invitation_id, **kwargs):
         """
@@ -320,6 +336,8 @@ class SenderInvitationClient(object):
         """
         resource_path = "/senderInvitations/{senderInvitationId}"
         method = "GET"
+        operation_name = "get_sender_invitation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/GetSenderInvitation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -364,14 +382,20 @@ class SenderInvitationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SenderInvitation")
+                response_type="SenderInvitation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="SenderInvitation")
+                response_type="SenderInvitation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_sender_invitations(self, compartment_id, **kwargs):
         """
@@ -439,6 +463,8 @@ class SenderInvitationClient(object):
         """
         resource_path = "/senderInvitations"
         method = "GET"
+        operation_name = "list_sender_invitations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/ListSenderInvitations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -522,14 +548,20 @@ class SenderInvitationClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SenderInvitationCollection")
+                response_type="SenderInvitationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SenderInvitationCollection")
+                response_type="SenderInvitationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_sender_invitation(self, sender_invitation_id, update_sender_invitation_details, **kwargs):
         """
@@ -572,6 +604,8 @@ class SenderInvitationClient(object):
         """
         resource_path = "/senderInvitations/{senderInvitationId}"
         method = "PUT"
+        operation_name = "update_sender_invitation"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/SenderInvitation/UpdateSenderInvitation"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -619,7 +653,10 @@ class SenderInvitationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_sender_invitation_details,
-                response_type="SenderInvitation")
+                response_type="SenderInvitation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -627,4 +664,7 @@ class SenderInvitationClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_sender_invitation_details,
-                response_type="SenderInvitation")
+                response_type="SenderInvitation",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

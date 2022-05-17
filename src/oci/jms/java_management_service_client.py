@@ -144,6 +144,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "cancel_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -191,13 +193,19 @@ class JavaManagementServiceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_fleet_compartment(self, fleet_id, change_fleet_compartment_details, **kwargs):
         """
@@ -249,6 +257,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_fleet_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ChangeFleetCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -300,14 +310,20 @@ class JavaManagementServiceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_fleet_compartment_details)
+                body=change_fleet_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_fleet_compartment_details)
+                body=change_fleet_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_blocklist(self, fleet_id, create_blocklist_details, **kwargs):
         """
@@ -352,6 +368,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}/blocklists"
         method = "POST"
+        operation_name = "create_blocklist"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/CreateBlocklist"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -402,7 +420,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_blocklist_details,
-                response_type="Blocklist")
+                response_type="Blocklist",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -410,7 +431,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_blocklist_details,
-                response_type="Blocklist")
+                response_type="Blocklist",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_fleet(self, create_fleet_details, **kwargs):
         """
@@ -450,6 +474,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets"
         method = "POST"
+        operation_name = "create_fleet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateFleet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -488,13 +514,19 @@ class JavaManagementServiceClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_fleet_details)
+                body=create_fleet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_fleet_details)
+                body=create_fleet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_blocklist(self, fleet_id, blocklist_key, **kwargs):
         """
@@ -539,6 +571,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}/blocklists/{blocklistKey}"
         method = "DELETE"
+        operation_name = "delete_blocklist"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/DeleteBlocklist"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -587,13 +621,19 @@ class JavaManagementServiceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_fleet(self, fleet_id, **kwargs):
         """
@@ -635,6 +675,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}"
         method = "DELETE"
+        operation_name = "delete_fleet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DeleteFleet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -682,13 +724,19 @@ class JavaManagementServiceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_fleet(self, fleet_id, **kwargs):
         """
@@ -723,6 +771,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}"
         method = "GET"
+        operation_name = "get_fleet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GetFleet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -769,14 +819,20 @@ class JavaManagementServiceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Fleet")
+                response_type="Fleet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Fleet")
+                response_type="Fleet",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_fleet_agent_configuration(self, fleet_id, **kwargs):
         """
@@ -811,6 +867,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}/agentConfiguration"
         method = "GET"
+        operation_name = "get_fleet_agent_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/GetFleetAgentConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -857,14 +915,20 @@ class JavaManagementServiceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="FleetAgentConfiguration")
+                response_type="FleetAgentConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="FleetAgentConfiguration")
+                response_type="FleetAgentConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -899,6 +963,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -945,14 +1011,20 @@ class JavaManagementServiceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_blocklists(self, fleet_id, **kwargs):
         """
@@ -1013,6 +1085,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}/blocklists"
         method = "GET"
+        operation_name = "list_blocklists"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/ListBlocklists"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1097,7 +1171,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BlocklistCollection")
+                response_type="BlocklistCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1105,7 +1182,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="BlocklistCollection")
+                response_type="BlocklistCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_fleets(self, **kwargs):
         """
@@ -1172,6 +1252,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets"
         method = "GET"
+        operation_name = "list_fleets"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ListFleets"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1249,14 +1331,20 @@ class JavaManagementServiceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FleetCollection")
+                response_type="FleetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="FleetCollection")
+                response_type="FleetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_installation_sites(self, fleet_id, **kwargs):
         """
@@ -1338,6 +1426,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}/installationSites"
         method = "GET"
+        operation_name = "list_installation_sites"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/ListInstallationSites"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1442,7 +1532,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InstallationSiteCollection")
+                response_type="InstallationSiteCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1450,7 +1543,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InstallationSiteCollection")
+                response_type="InstallationSiteCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_jre_usage(self, **kwargs):
         """
@@ -1527,6 +1623,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/listJreUsage"
         method = "GET"
+        operation_name = "list_jre_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/ListJreUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1601,14 +1699,20 @@ class JavaManagementServiceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JreUsageCollection")
+                response_type="JreUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JreUsageCollection")
+                response_type="JreUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_items(self, work_request_id, **kwargs):
         """
@@ -1649,6 +1753,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/workItems"
         method = "GET"
+        operation_name = "list_work_items"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkItemSummary/ListWorkItems"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1704,7 +1810,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkItemCollection")
+                response_type="WorkItemCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1712,7 +1821,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkItemCollection")
+                response_type="WorkItemCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1753,6 +1865,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1808,7 +1922,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1816,7 +1933,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1857,6 +1977,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1912,7 +2034,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1920,7 +2045,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, **kwargs):
         """
@@ -1969,6 +2097,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2019,14 +2149,20 @@ class JavaManagementServiceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestCollection")
+                response_type="WorkRequestCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_fleet_installation_sites(self, fleet_id, remove_fleet_installation_sites_details, **kwargs):
         """
@@ -2078,6 +2214,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}/actions/removeInstallationSites"
         method = "POST"
+        operation_name = "remove_fleet_installation_sites"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/RemoveFleetInstallationSites"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2129,14 +2267,20 @@ class JavaManagementServiceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_fleet_installation_sites_details)
+                body=remove_fleet_installation_sites_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=remove_fleet_installation_sites_details)
+                body=remove_fleet_installation_sites_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_application_usage(self, fleet_id, **kwargs):
         """
@@ -2237,6 +2381,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}/actions/summarizeApplicationUsage"
         method = "GET"
+        operation_name = "summarize_application_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationUsage/SummarizeApplicationUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2350,7 +2496,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ApplicationUsageCollection")
+                response_type="ApplicationUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2358,7 +2507,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ApplicationUsageCollection")
+                response_type="ApplicationUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_installation_usage(self, fleet_id, **kwargs):
         """
@@ -2452,6 +2604,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}/actions/summarizeInstallationUsage"
         method = "GET"
+        operation_name = "summarize_installation_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationUsage/SummarizeInstallationUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2561,7 +2715,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InstallationUsageCollection")
+                response_type="InstallationUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2569,7 +2726,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="InstallationUsageCollection")
+                response_type="InstallationUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_jre_usage(self, fleet_id, **kwargs):
         """
@@ -2667,6 +2827,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}/actions/summarizeJreUsage"
         method = "GET"
+        operation_name = "summarize_jre_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/SummarizeJreUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2783,7 +2945,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JreUsageCollection")
+                response_type="JreUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2791,7 +2956,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="JreUsageCollection")
+                response_type="JreUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_managed_instance_usage(self, fleet_id, **kwargs):
         """
@@ -2891,6 +3059,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}/actions/summarizeManagedInstanceUsage"
         method = "GET"
+        operation_name = "summarize_managed_instance_usage"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ManagedInstanceUsage/SummarizeManagedInstanceUsage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3009,7 +3179,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagedInstanceUsageCollection")
+                response_type="ManagedInstanceUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3017,7 +3190,10 @@ class JavaManagementServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ManagedInstanceUsageCollection")
+                response_type="ManagedInstanceUsageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_resource_inventory(self, **kwargs):
         """
@@ -3062,6 +3238,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/summarizeResourceInventory"
         method = "GET"
+        operation_name = "summarize_resource_inventory"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/SummarizeResourceInventory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3108,14 +3286,20 @@ class JavaManagementServiceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceInventory")
+                response_type="ResourceInventory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ResourceInventory")
+                response_type="ResourceInventory",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_fleet(self, fleet_id, update_fleet_details, **kwargs):
         """
@@ -3160,6 +3344,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}"
         method = "PUT"
+        operation_name = "update_fleet"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateFleet"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3208,14 +3394,20 @@ class JavaManagementServiceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_fleet_details)
+                body=update_fleet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_fleet_details)
+                body=update_fleet_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_fleet_agent_configuration(self, fleet_id, update_fleet_agent_configuration_details, **kwargs):
         """
@@ -3260,6 +3452,8 @@ class JavaManagementServiceClient(object):
         """
         resource_path = "/fleets/{fleetId}/agentConfiguration"
         method = "PUT"
+        operation_name = "update_fleet_agent_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/UpdateFleetAgentConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3308,11 +3502,17 @@ class JavaManagementServiceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_fleet_agent_configuration_details)
+                body=update_fleet_agent_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_fleet_agent_configuration_details)
+                body=update_fleet_agent_configuration_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

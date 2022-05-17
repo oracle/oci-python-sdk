@@ -144,6 +144,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "cancel_work_request"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -189,13 +191,19 @@ class AnomalyDetectionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_ai_private_endpoint_compartment(self, ai_private_endpoint_id, change_ai_private_endpoint_compartment_details, **kwargs):
         """
@@ -245,6 +253,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_ai_private_endpoint_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -294,14 +304,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_ai_private_endpoint_compartment_details)
+                body=change_ai_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_ai_private_endpoint_compartment_details)
+                body=change_ai_private_endpoint_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_data_asset_compartment(self, data_asset_id, change_data_asset_compartment_details, **kwargs):
         """
@@ -351,6 +367,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/dataAssets/{dataAssetId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_data_asset_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -401,7 +419,10 @@ class AnomalyDetectionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_data_asset_compartment_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -409,7 +430,10 @@ class AnomalyDetectionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=change_data_asset_compartment_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_model_compartment(self, model_id, change_model_compartment_details, **kwargs):
         """
@@ -459,6 +483,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/models/{modelId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_model_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -508,14 +534,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_model_compartment_details)
+                body=change_model_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_model_compartment_details)
+                body=change_model_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_project_compartment(self, project_id, change_project_compartment_details, **kwargs):
         """
@@ -565,6 +597,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/projects/{projectId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_project_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -614,14 +648,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_project_compartment_details)
+                body=change_project_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_project_compartment_details)
+                body=change_project_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_ai_private_endpoint(self, create_ai_private_endpoint_details, **kwargs):
         """
@@ -661,6 +701,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/aiPrivateEndpoints"
         method = "POST"
+        operation_name = "create_ai_private_endpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -697,13 +739,19 @@ class AnomalyDetectionClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_ai_private_endpoint_details)
+                body=create_ai_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_ai_private_endpoint_details)
+                body=create_ai_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_data_asset(self, create_data_asset_details, **kwargs):
         """
@@ -743,6 +791,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/dataAssets"
         method = "POST"
+        operation_name = "create_data_asset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -780,14 +830,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_model(self, create_model_details, **kwargs):
         """
@@ -827,6 +883,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/models"
         method = "POST"
+        operation_name = "create_model"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -864,14 +922,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_model_details,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_model_details,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_project(self, create_project_details, **kwargs):
         """
@@ -911,6 +975,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/projects"
         method = "POST"
+        operation_name = "create_project"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -948,14 +1014,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_ai_private_endpoint(self, ai_private_endpoint_id, **kwargs):
         """
@@ -995,6 +1067,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}"
         method = "DELETE"
+        operation_name = "delete_ai_private_endpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1040,13 +1114,19 @@ class AnomalyDetectionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_data_asset(self, data_asset_id, **kwargs):
         """
@@ -1086,6 +1166,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/dataAssets/{dataAssetId}"
         method = "DELETE"
+        operation_name = "delete_data_asset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1131,13 +1213,19 @@ class AnomalyDetectionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_model(self, model_id, **kwargs):
         """
@@ -1177,6 +1265,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/models/{modelId}"
         method = "DELETE"
+        operation_name = "delete_model"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1222,13 +1312,19 @@ class AnomalyDetectionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_project(self, project_id, **kwargs):
         """
@@ -1268,6 +1364,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/projects/{projectId}"
         method = "DELETE"
+        operation_name = "delete_project"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1313,13 +1411,19 @@ class AnomalyDetectionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def detect_anomalies(self, detect_anomalies_details, **kwargs):
         """
@@ -1374,6 +1478,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/actions/detectAnomalies"
         method = "POST"
+        operation_name = "detect_anomalies"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1413,14 +1519,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 header_params=header_params,
                 body=detect_anomalies_details,
-                response_type="AnomalyDetectResult")
+                response_type="AnomalyDetectResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=detect_anomalies_details,
-                response_type="AnomalyDetectResult")
+                response_type="AnomalyDetectResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_ai_private_endpoint(self, ai_private_endpoint_id, **kwargs):
         """
@@ -1453,6 +1565,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}"
         method = "GET"
+        operation_name = "get_ai_private_endpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1497,14 +1611,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AiPrivateEndpoint")
+                response_type="AiPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AiPrivateEndpoint")
+                response_type="AiPrivateEndpoint",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_data_asset(self, data_asset_id, **kwargs):
         """
@@ -1537,6 +1657,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/dataAssets/{dataAssetId}"
         method = "GET"
+        operation_name = "get_data_asset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1581,14 +1703,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_model(self, model_id, **kwargs):
         """
@@ -1621,6 +1749,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/models/{modelId}"
         method = "GET"
+        operation_name = "get_model"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1665,14 +1795,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_project(self, project_id, **kwargs):
         """
@@ -1705,6 +1841,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/projects/{projectId}"
         method = "GET"
+        operation_name = "get_project"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1749,14 +1887,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1789,6 +1933,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1833,14 +1979,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_ai_private_endpoints(self, compartment_id, **kwargs):
         """
@@ -1901,6 +2053,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/aiPrivateEndpoints"
         method = "GET"
+        operation_name = "list_ai_private_endpoints"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1975,14 +2129,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AiPrivateEndpointCollection")
+                response_type="AiPrivateEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AiPrivateEndpointCollection")
+                response_type="AiPrivateEndpointCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_data_assets(self, compartment_id, **kwargs):
         """
@@ -2043,6 +2203,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/dataAssets"
         method = "GET"
+        operation_name = "list_data_assets"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2117,14 +2279,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAssetCollection")
+                response_type="DataAssetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DataAssetCollection")
+                response_type="DataAssetCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_models(self, compartment_id, **kwargs):
         """
@@ -2188,6 +2356,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/models"
         method = "GET"
+        operation_name = "list_models"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2262,14 +2432,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ModelCollection")
+                response_type="ModelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ModelCollection")
+                response_type="ModelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_projects(self, compartment_id, **kwargs):
         """
@@ -2330,6 +2506,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/projects"
         method = "GET"
+        operation_name = "list_projects"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2402,14 +2580,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProjectCollection")
+                response_type="ProjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProjectCollection")
+                response_type="ProjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -2448,6 +2632,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2501,7 +2687,10 @@ class AnomalyDetectionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2509,7 +2698,10 @@ class AnomalyDetectionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2548,6 +2740,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2601,7 +2795,10 @@ class AnomalyDetectionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2609,7 +2806,10 @@ class AnomalyDetectionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -2651,6 +2851,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2696,14 +2898,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_ai_private_endpoint(self, ai_private_endpoint_id, update_ai_private_endpoint_details, **kwargs):
         """
@@ -2746,6 +2954,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/aiPrivateEndpoints/{aiPrivateEndpointId}"
         method = "PUT"
+        operation_name = "update_ai_private_endpoint"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2792,14 +3002,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_ai_private_endpoint_details)
+                body=update_ai_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_ai_private_endpoint_details)
+                body=update_ai_private_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_data_asset(self, data_asset_id, update_data_asset_details, **kwargs):
         """
@@ -2842,6 +3058,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/dataAssets/{dataAssetId}"
         method = "PUT"
+        operation_name = "update_data_asset"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2889,7 +3107,10 @@ class AnomalyDetectionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2897,7 +3118,10 @@ class AnomalyDetectionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_data_asset_details,
-                response_type="DataAsset")
+                response_type="DataAsset",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_model(self, model_id, update_model_details, **kwargs):
         """
@@ -2940,6 +3164,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/models/{modelId}"
         method = "PUT"
+        operation_name = "update_model"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2986,14 +3212,20 @@ class AnomalyDetectionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_model_details)
+                body=update_model_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_model_details)
+                body=update_model_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_project(self, project_id, update_project_details, **kwargs):
         """
@@ -3036,6 +3268,8 @@ class AnomalyDetectionClient(object):
         """
         resource_path = "/projects/{projectId}"
         method = "PUT"
+        operation_name = "update_project"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3083,7 +3317,10 @@ class AnomalyDetectionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3091,4 +3328,7 @@ class AnomalyDetectionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

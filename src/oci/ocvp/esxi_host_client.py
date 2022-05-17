@@ -149,6 +149,8 @@ class EsxiHostClient(object):
         """
         resource_path = "/esxiHosts"
         method = "POST"
+        operation_name = "create_esxi_host"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/CreateEsxiHost"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -187,13 +189,19 @@ class EsxiHostClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_esxi_host_details)
+                body=create_esxi_host_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_esxi_host_details)
+                body=create_esxi_host_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_esxi_host(self, esxi_host_id, **kwargs):
         """
@@ -249,6 +257,8 @@ class EsxiHostClient(object):
         """
         resource_path = "/esxiHosts/{esxiHostId}"
         method = "DELETE"
+        operation_name = "delete_esxi_host"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/DeleteEsxiHost"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -296,13 +306,19 @@ class EsxiHostClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_esxi_host(self, esxi_host_id, **kwargs):
         """
@@ -338,6 +354,8 @@ class EsxiHostClient(object):
         """
         resource_path = "/esxiHosts/{esxiHostId}"
         method = "GET"
+        operation_name = "get_esxi_host"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/GetEsxiHost"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -384,14 +402,20 @@ class EsxiHostClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="EsxiHost")
+                response_type="EsxiHost",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="EsxiHost")
+                response_type="EsxiHost",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_esxi_hosts(self, **kwargs):
         """
@@ -480,6 +504,8 @@ class EsxiHostClient(object):
         """
         resource_path = "/esxiHosts"
         method = "GET"
+        operation_name = "list_esxi_hosts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHostSummary/ListEsxiHosts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -557,14 +583,20 @@ class EsxiHostClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EsxiHostCollection")
+                response_type="EsxiHostCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EsxiHostCollection")
+                response_type="EsxiHostCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_esxi_host(self, esxi_host_id, update_esxi_host_details, **kwargs):
         """
@@ -610,6 +642,8 @@ class EsxiHostClient(object):
         """
         resource_path = "/esxiHosts/{esxiHostId}"
         method = "PUT"
+        operation_name = "update_esxi_host"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vmware/20200501/EsxiHost/UpdateEsxiHost"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -659,7 +693,10 @@ class EsxiHostClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_esxi_host_details,
-                response_type="EsxiHost")
+                response_type="EsxiHost",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -667,4 +704,7 @@ class EsxiHostClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_esxi_host_details,
-                response_type="EsxiHost")
+                response_type="EsxiHost",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

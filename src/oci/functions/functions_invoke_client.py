@@ -161,6 +161,8 @@ class FunctionsInvokeClient(object):
         """
         resource_path = "/functions/{functionId}/actions/invoke"
         method = "POST"
+        operation_name = "invoke_function"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/functions/20181201/Function/InvokeFunction"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -232,7 +234,10 @@ class FunctionsInvokeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('invoke_function_body'),
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -240,4 +245,7 @@ class FunctionsInvokeClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('invoke_function_body'),
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

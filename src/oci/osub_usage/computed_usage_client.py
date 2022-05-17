@@ -147,6 +147,8 @@ class ComputedUsageClient(object):
         """
         resource_path = "/computedUsages/{computedUsageId}"
         method = "GET"
+        operation_name = "get_computed_usage"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -201,7 +203,10 @@ class ComputedUsageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ComputedUsage")
+                response_type="ComputedUsage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -209,7 +214,10 @@ class ComputedUsageClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ComputedUsage")
+                response_type="ComputedUsage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_computed_usage_aggregateds(self, compartment_id, subscription_id, time_from, time_to, **kwargs):
         """
@@ -270,6 +278,8 @@ class ComputedUsageClient(object):
         """
         resource_path = "/computedUsages/aggregated"
         method = "GET"
+        operation_name = "list_computed_usage_aggregateds"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -329,14 +339,20 @@ class ComputedUsageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputedUsageAggregatedSummary]")
+                response_type="list[ComputedUsageAggregatedSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputedUsageAggregatedSummary]")
+                response_type="list[ComputedUsageAggregatedSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_computed_usages(self, compartment_id, subscription_id, time_from, time_to, **kwargs):
         """
@@ -405,6 +421,8 @@ class ComputedUsageClient(object):
         """
         resource_path = "/computedUsages"
         method = "GET"
+        operation_name = "list_computed_usages"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -475,11 +493,17 @@ class ComputedUsageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputedUsageSummary]")
+                response_type="list[ComputedUsageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ComputedUsageSummary]")
+                response_type="list[ComputedUsageSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

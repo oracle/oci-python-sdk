@@ -159,6 +159,8 @@ class MonitoringClient(object):
         """
         resource_path = "/alarms/{alarmId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_alarm_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/ChangeAlarmCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -208,14 +210,20 @@ class MonitoringClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_alarm_compartment_details)
+                body=change_alarm_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_alarm_compartment_details)
+                body=change_alarm_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_alarm(self, create_alarm_details, **kwargs):
         """
@@ -263,6 +271,8 @@ class MonitoringClient(object):
         """
         resource_path = "/alarms"
         method = "POST"
+        operation_name = "create_alarm"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/CreateAlarm"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -300,14 +310,20 @@ class MonitoringClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_alarm_details,
-                response_type="Alarm")
+                response_type="Alarm",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_alarm_details,
-                response_type="Alarm")
+                response_type="Alarm",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_alarm(self, alarm_id, **kwargs):
         """
@@ -355,6 +371,8 @@ class MonitoringClient(object):
         """
         resource_path = "/alarms/{alarmId}"
         method = "DELETE"
+        operation_name = "delete_alarm"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/DeleteAlarm"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -400,13 +418,19 @@ class MonitoringClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_alarm(self, alarm_id, **kwargs):
         """
@@ -449,6 +473,8 @@ class MonitoringClient(object):
         """
         resource_path = "/alarms/{alarmId}"
         method = "GET"
+        operation_name = "get_alarm"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/GetAlarm"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -493,14 +519,20 @@ class MonitoringClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Alarm")
+                response_type="Alarm",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Alarm")
+                response_type="Alarm",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_alarm_history(self, alarm_id, **kwargs):
         """
@@ -577,6 +609,8 @@ class MonitoringClient(object):
         """
         resource_path = "/alarms/{alarmId}/history"
         method = "GET"
+        operation_name = "get_alarm_history"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmHistoryCollection/GetAlarmHistory"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -643,7 +677,10 @@ class MonitoringClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AlarmHistoryCollection")
+                response_type="AlarmHistoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -651,7 +688,10 @@ class MonitoringClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AlarmHistoryCollection")
+                response_type="AlarmHistoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_alarms(self, compartment_id, **kwargs):
         """
@@ -744,6 +784,8 @@ class MonitoringClient(object):
         """
         resource_path = "/alarms"
         method = "GET"
+        operation_name = "list_alarms"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmSummary/ListAlarms"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -818,14 +860,20 @@ class MonitoringClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AlarmSummary]")
+                response_type="list[AlarmSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AlarmSummary]")
+                response_type="list[AlarmSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_alarms_status(self, compartment_id, **kwargs):
         """
@@ -913,6 +961,8 @@ class MonitoringClient(object):
         """
         resource_path = "/alarms/status"
         method = "GET"
+        operation_name = "list_alarms_status"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/AlarmStatusSummary/ListAlarmsStatus"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -978,14 +1028,20 @@ class MonitoringClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AlarmStatusSummary]")
+                response_type="list[AlarmStatusSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AlarmStatusSummary]")
+                response_type="list[AlarmStatusSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_metrics(self, compartment_id, list_metrics_details, **kwargs):
         """
@@ -1058,6 +1114,8 @@ class MonitoringClient(object):
         """
         resource_path = "/metrics/actions/listMetrics"
         method = "POST"
+        operation_name = "list_metrics"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Metric/ListMetrics"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1104,7 +1162,10 @@ class MonitoringClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=list_metrics_details,
-                response_type="list[Metric]")
+                response_type="list[Metric]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1112,7 +1173,10 @@ class MonitoringClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=list_metrics_details,
-                response_type="list[Metric]")
+                response_type="list[Metric]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def post_metric_data(self, post_metric_data_details, **kwargs):
         """
@@ -1167,6 +1231,8 @@ class MonitoringClient(object):
         """
         resource_path = "/metrics"
         method = "POST"
+        operation_name = "post_metric_data"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData/PostMetricData"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1201,14 +1267,20 @@ class MonitoringClient(object):
                 method=method,
                 header_params=header_params,
                 body=post_metric_data_details,
-                response_type="PostMetricDataResponseDetails")
+                response_type="PostMetricDataResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=post_metric_data_details,
-                response_type="PostMetricDataResponseDetails")
+                response_type="PostMetricDataResponseDetails",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_alarm_suppression(self, alarm_id, **kwargs):
         """
@@ -1256,6 +1328,8 @@ class MonitoringClient(object):
         """
         resource_path = "/alarms/{alarmId}/actions/removeSuppression"
         method = "POST"
+        operation_name = "remove_alarm_suppression"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Suppression/RemoveAlarmSuppression"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1301,13 +1375,19 @@ class MonitoringClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def summarize_metrics_data(self, compartment_id, summarize_metrics_data_details, **kwargs):
         """
@@ -1364,6 +1444,8 @@ class MonitoringClient(object):
         """
         resource_path = "/metrics/actions/summarizeMetricsData"
         method = "POST"
+        operation_name = "summarize_metrics_data"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData/SummarizeMetricsData"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1406,7 +1488,10 @@ class MonitoringClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=summarize_metrics_data_details,
-                response_type="list[MetricData]")
+                response_type="list[MetricData]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1414,7 +1499,10 @@ class MonitoringClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=summarize_metrics_data_details,
-                response_type="list[MetricData]")
+                response_type="list[MetricData]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_alarm(self, alarm_id, update_alarm_details, **kwargs):
         """
@@ -1465,6 +1553,8 @@ class MonitoringClient(object):
         """
         resource_path = "/alarms/{alarmId}"
         method = "PUT"
+        operation_name = "update_alarm"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/monitoring/20180401/Alarm/UpdateAlarm"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1512,7 +1602,10 @@ class MonitoringClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_alarm_details,
-                response_type="Alarm")
+                response_type="Alarm",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1520,4 +1613,7 @@ class MonitoringClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_alarm_details,
-                response_type="Alarm")
+                response_type="Alarm",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

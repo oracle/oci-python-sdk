@@ -156,6 +156,8 @@ class EventClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}/content"
         method = "DELETE"
+        operation_name = "delete_event_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/DeleteEventContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -211,14 +213,20 @@ class EventClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_event(self, managed_instance_id, event_id, compartment_id, **kwargs):
         """
@@ -257,6 +265,8 @@ class EventClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}"
         method = "GET"
+        operation_name = "get_event"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/GetEvent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -308,7 +318,10 @@ class EventClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Event")
+                response_type="Event",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -316,7 +329,10 @@ class EventClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Event")
+                response_type="Event",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_event_content(self, managed_instance_id, event_id, compartment_id, **kwargs):
         """
@@ -355,6 +371,8 @@ class EventClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}/content"
         method = "GET"
+        operation_name = "get_event_content"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -406,7 +424,10 @@ class EventClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -414,7 +435,10 @@ class EventClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_event_report(self, managed_instance_id, compartment_id, **kwargs):
         """
@@ -458,6 +482,8 @@ class EventClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/events/report"
         method = "GET"
+        operation_name = "get_event_report"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventReport/GetEventReport"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -512,7 +538,10 @@ class EventClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EventReport")
+                response_type="EventReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -520,7 +549,10 @@ class EventClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EventReport")
+                response_type="EventReport",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_events(self, managed_instance_id, compartment_id, **kwargs):
         """
@@ -588,6 +620,8 @@ class EventClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/events"
         method = "GET"
+        operation_name = "list_events"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventCollection/ListEvents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -675,7 +709,10 @@ class EventClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EventCollection")
+                response_type="EventCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -683,7 +720,10 @@ class EventClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="EventCollection")
+                response_type="EventCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_related_events(self, event_fingerprint, compartment_id, **kwargs):
         """
@@ -743,6 +783,8 @@ class EventClient(object):
         """
         resource_path = "/relatedEvents"
         method = "GET"
+        operation_name = "list_related_events"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/RelatedEventCollection/ListRelatedEvents"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -809,14 +851,20 @@ class EventClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RelatedEventCollection")
+                response_type="RelatedEventCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RelatedEventCollection")
+                response_type="RelatedEventCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_event(self, managed_instance_id, event_id, compartment_id, update_event_details, **kwargs):
         """
@@ -865,6 +913,8 @@ class EventClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}"
         method = "PUT"
+        operation_name = "update_event"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/Event/UpdateEvent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -919,7 +969,10 @@ class EventClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_event_details,
-                response_type="Event")
+                response_type="Event",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -928,7 +981,10 @@ class EventClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_event_details,
-                response_type="Event")
+                response_type="Event",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def upload_event_content(self, managed_instance_id, event_id, compartment_id, **kwargs):
         """
@@ -981,6 +1037,8 @@ class EventClient(object):
         """
         resource_path = "/managedInstances/{managedInstanceId}/events/{eventId}/content/actions/upload"
         method = "POST"
+        operation_name = "upload_event_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/os-management/20190801/EventContent/UploadEventContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1036,11 +1094,17 @@ class EventClient(object):
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 query_params=query_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

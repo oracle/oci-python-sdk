@@ -156,6 +156,8 @@ class DbBackupsClient(object):
         """
         resource_path = "/backups/{backupId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_backup_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/ChangeBackupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -205,14 +207,20 @@ class DbBackupsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_backup_compartment_details)
+                body=change_backup_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_backup_compartment_details)
+                body=change_backup_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_backup(self, create_backup_details, **kwargs):
         """
@@ -255,6 +263,8 @@ class DbBackupsClient(object):
         """
         resource_path = "/backups"
         method = "POST"
+        operation_name = "create_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/CreateBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -294,14 +304,20 @@ class DbBackupsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_backup_details,
-                response_type="Backup")
+                response_type="Backup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_backup_details,
-                response_type="Backup")
+                response_type="Backup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_backup(self, backup_id, **kwargs):
         """
@@ -343,6 +359,8 @@ class DbBackupsClient(object):
         """
         resource_path = "/backups/{backupId}"
         method = "DELETE"
+        operation_name = "delete_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/DeleteBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -390,13 +408,19 @@ class DbBackupsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_backup(self, backup_id, **kwargs):
         """
@@ -438,6 +462,8 @@ class DbBackupsClient(object):
         """
         resource_path = "/backups/{backupId}"
         method = "GET"
+        operation_name = "get_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/GetBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -486,14 +512,20 @@ class DbBackupsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Backup")
+                response_type="Backup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Backup")
+                response_type="Backup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_backups(self, compartment_id, **kwargs):
         """
@@ -574,6 +606,8 @@ class DbBackupsClient(object):
         """
         resource_path = "/backups"
         method = "GET"
+        operation_name = "list_backups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/BackupSummary/ListBackups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -661,14 +695,20 @@ class DbBackupsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BackupSummary]")
+                response_type="list[BackupSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BackupSummary]")
+                response_type="list[BackupSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_backup(self, backup_id, update_backup_details, **kwargs):
         """
@@ -713,6 +753,8 @@ class DbBackupsClient(object):
         """
         resource_path = "/backups/{backupId}"
         method = "PUT"
+        operation_name = "update_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/UpdateBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -761,11 +803,17 @@ class DbBackupsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_backup_details)
+                body=update_backup_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_backup_details)
+                body=update_backup_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

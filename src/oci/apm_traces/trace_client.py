@@ -139,6 +139,8 @@ class TraceClient(object):
         """
         resource_path = "/traces/{traceKey}/aggregatedSnapshotData"
         method = "GET"
+        operation_name = "get_aggregated_snapshot"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/AggregatedSnapshot/GetAggregatedSnapshot"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -189,7 +191,10 @@ class TraceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AggregatedSnapshot")
+                response_type="AggregatedSnapshot",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -197,7 +202,10 @@ class TraceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AggregatedSnapshot")
+                response_type="AggregatedSnapshot",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_span(self, apm_domain_id, span_key, trace_key, **kwargs):
         """
@@ -237,6 +245,8 @@ class TraceClient(object):
         """
         resource_path = "/spans/{traceKey}/{spanKey}"
         method = "GET"
+        operation_name = "get_span"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Span/GetSpan"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -288,7 +298,10 @@ class TraceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Span")
+                response_type="Span",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -296,7 +309,10 @@ class TraceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Span")
+                response_type="Span",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_trace(self, apm_domain_id, trace_key, **kwargs):
         """
@@ -333,6 +349,8 @@ class TraceClient(object):
         """
         resource_path = "/traces/{traceKey}"
         method = "GET"
+        operation_name = "get_trace"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/Trace/GetTrace"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -383,7 +401,10 @@ class TraceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Trace")
+                response_type="Trace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -391,7 +412,10 @@ class TraceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Trace")
+                response_type="Trace",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_trace_snapshot(self, apm_domain_id, trace_key, **kwargs):
         """
@@ -437,6 +461,8 @@ class TraceClient(object):
         """
         resource_path = "/traces/{traceKey}/snapshotData"
         method = "GET"
+        operation_name = "get_trace_snapshot"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/TraceSnapshot/GetTraceSnapshot"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -493,7 +519,10 @@ class TraceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TraceSnapshot")
+                response_type="TraceSnapshot",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -501,4 +530,7 @@ class TraceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="TraceSnapshot")
+                response_type="TraceSnapshot",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

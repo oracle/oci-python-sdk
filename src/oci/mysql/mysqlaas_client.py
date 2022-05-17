@@ -145,6 +145,8 @@ class MysqlaasClient(object):
         """
         resource_path = "/configurations"
         method = "POST"
+        operation_name = "create_configuration"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -182,14 +184,20 @@ class MysqlaasClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_configuration_details,
-                response_type="Configuration")
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_configuration_details,
-                response_type="Configuration")
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_configuration(self, configuration_id, **kwargs):
         """
@@ -232,6 +240,8 @@ class MysqlaasClient(object):
         """
         resource_path = "/configurations/{configurationId}"
         method = "DELETE"
+        operation_name = "delete_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Configuration/DeleteConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -279,13 +289,19 @@ class MysqlaasClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_configuration(self, configuration_id, **kwargs):
         """
@@ -327,6 +343,8 @@ class MysqlaasClient(object):
         """
         resource_path = "/configurations/{configurationId}"
         method = "GET"
+        operation_name = "get_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Configuration/GetConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -375,14 +393,20 @@ class MysqlaasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Configuration")
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Configuration")
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_configurations(self, compartment_id, **kwargs):
         """
@@ -468,6 +492,8 @@ class MysqlaasClient(object):
         """
         resource_path = "/configurations"
         method = "GET"
+        operation_name = "list_configurations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ConfigurationSummary/ListConfigurations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -556,14 +582,20 @@ class MysqlaasClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ConfigurationSummary]")
+                response_type="list[ConfigurationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ConfigurationSummary]")
+                response_type="list[ConfigurationSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_shapes(self, compartment_id, **kwargs):
         """
@@ -614,6 +646,8 @@ class MysqlaasClient(object):
         """
         resource_path = "/shapes"
         method = "GET"
+        operation_name = "list_shapes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -669,14 +703,20 @@ class MysqlaasClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ShapeSummary]")
+                response_type="list[ShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ShapeSummary]")
+                response_type="list[ShapeSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_versions(self, compartment_id, **kwargs):
         """
@@ -715,6 +755,8 @@ class MysqlaasClient(object):
         """
         resource_path = "/versions"
         method = "GET"
+        operation_name = "list_versions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/VersionSummary/ListVersions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -756,14 +798,20 @@ class MysqlaasClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VersionSummary]")
+                response_type="list[VersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VersionSummary]")
+                response_type="list[VersionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_configuration(self, configuration_id, update_configuration_details, **kwargs):
         """
@@ -808,6 +856,8 @@ class MysqlaasClient(object):
         """
         resource_path = "/configurations/{configurationId}"
         method = "PUT"
+        operation_name = "update_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Configuration/UpdateConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -857,7 +907,10 @@ class MysqlaasClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_configuration_details,
-                response_type="Configuration")
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -865,4 +918,7 @@ class MysqlaasClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_configuration_details,
-                response_type="Configuration")
+                response_type="Configuration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

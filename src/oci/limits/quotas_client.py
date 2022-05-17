@@ -143,6 +143,8 @@ class QuotasClient(object):
         """
         resource_path = "/20181025/quotas"
         method = "POST"
+        operation_name = "create_quota"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/CreateQuota"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -180,14 +182,20 @@ class QuotasClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_quota_details,
-                response_type="Quota")
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_quota_details,
-                response_type="Quota")
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_quota(self, quota_id, **kwargs):
         """
@@ -226,6 +234,8 @@ class QuotasClient(object):
         """
         resource_path = "/20181025/quotas/{quotaId}"
         method = "DELETE"
+        operation_name = "delete_quota"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/DeleteQuota"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -271,13 +281,19 @@ class QuotasClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_quota(self, quota_id, **kwargs):
         """
@@ -311,6 +327,8 @@ class QuotasClient(object):
         """
         resource_path = "/20181025/quotas/{quotaId}"
         method = "GET"
+        operation_name = "get_quota"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/GetQuota"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -355,14 +373,20 @@ class QuotasClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Quota")
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Quota")
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_quotas(self, compartment_id, **kwargs):
         """
@@ -420,6 +444,8 @@ class QuotasClient(object):
         """
         resource_path = "/20181025/quotas"
         method = "GET"
+        operation_name = "list_quotas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/QuotaSummary/ListQuotas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -492,14 +518,20 @@ class QuotasClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[QuotaSummary]")
+                response_type="list[QuotaSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[QuotaSummary]")
+                response_type="list[QuotaSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_quota(self, quota_id, update_quota_details, **kwargs):
         """
@@ -541,6 +573,8 @@ class QuotasClient(object):
         """
         resource_path = "/20181025/quotas/{quotaId}"
         method = "PUT"
+        operation_name = "update_quota"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/limits/20181025/Quota/UpdateQuota"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -588,7 +622,10 @@ class QuotasClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_quota_details,
-                response_type="Quota")
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -596,4 +633,7 @@ class QuotasClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_quota_details,
-                response_type="Quota")
+                response_type="Quota",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

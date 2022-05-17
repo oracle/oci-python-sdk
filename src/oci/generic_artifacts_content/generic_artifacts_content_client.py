@@ -146,6 +146,8 @@ class GenericArtifactsContentClient(object):
         """
         resource_path = "/generic/artifacts/{artifactId}/content"
         method = "GET"
+        operation_name = "get_generic_artifact_content"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContent"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -190,14 +192,20 @@ class GenericArtifactsContentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_generic_artifact_content_by_path(self, repository_id, artifact_path, version, **kwargs):
         """
@@ -249,6 +257,8 @@ class GenericArtifactsContentClient(object):
         """
         resource_path = "/generic/repositories/{repositoryId}/artifactPaths/{artifactPath}/versions/{version}/content"
         method = "GET"
+        operation_name = "get_generic_artifact_content_by_path"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/GetGenericArtifactContentByPath"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -295,14 +305,20 @@ class GenericArtifactsContentClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="stream")
+                response_type="stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def put_generic_artifact_content_by_path(self, repository_id, artifact_path, version, generic_artifact_content_body, **kwargs):
         """
@@ -367,6 +383,8 @@ class GenericArtifactsContentClient(object):
         """
         resource_path = "/generic/repositories/{repositoryId}/artifactPaths/{artifactPath}/versions/{version}/content"
         method = "PUT"
+        operation_name = "put_generic_artifact_content_by_path"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/generic/20160918/GenericArtifact/PutGenericArtifactContentByPath"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -438,8 +456,10 @@ class GenericArtifactsContentClient(object):
                 header_params=header_params,
                 body=generic_artifact_content_body,
                 response_type="GenericArtifact",
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -448,5 +468,7 @@ class GenericArtifactsContentClient(object):
                 header_params=header_params,
                 body=generic_artifact_content_body,
                 response_type="GenericArtifact",
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

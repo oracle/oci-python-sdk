@@ -136,6 +136,8 @@ class StreamClient(object):
         """
         resource_path = "/streams/{streamId}/commit"
         method = "POST"
+        operation_name = "consumer_commit"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/ConsumerCommit"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -188,7 +190,10 @@ class StreamClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Cursor")
+                response_type="Cursor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -196,7 +201,10 @@ class StreamClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Cursor")
+                response_type="Cursor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def consumer_heartbeat(self, stream_id, cursor, **kwargs):
         """
@@ -233,6 +241,8 @@ class StreamClient(object):
         """
         resource_path = "/streams/{streamId}/heartbeat"
         method = "POST"
+        operation_name = "consumer_heartbeat"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/ConsumerHeartbeat"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -285,7 +295,10 @@ class StreamClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Cursor")
+                response_type="Cursor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -293,7 +306,10 @@ class StreamClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Cursor")
+                response_type="Cursor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_cursor(self, stream_id, create_cursor_details, **kwargs):
         """
@@ -334,6 +350,8 @@ class StreamClient(object):
         """
         resource_path = "/streams/{streamId}/cursors"
         method = "POST"
+        operation_name = "create_cursor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Cursor/CreateCursor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -381,7 +399,10 @@ class StreamClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_cursor_details,
-                response_type="Cursor")
+                response_type="Cursor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -389,7 +410,10 @@ class StreamClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_cursor_details,
-                response_type="Cursor")
+                response_type="Cursor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_group_cursor(self, stream_id, create_group_cursor_details, **kwargs):
         """
@@ -426,6 +450,8 @@ class StreamClient(object):
         """
         resource_path = "/streams/{streamId}/groupCursors"
         method = "POST"
+        operation_name = "create_group_cursor"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Cursor/CreateGroupCursor"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -473,7 +499,10 @@ class StreamClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_group_cursor_details,
-                response_type="Cursor")
+                response_type="Cursor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -481,7 +510,10 @@ class StreamClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_group_cursor_details,
-                response_type="Cursor")
+                response_type="Cursor",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_group(self, stream_id, group_name, **kwargs):
         """
@@ -518,6 +550,8 @@ class StreamClient(object):
         """
         resource_path = "/streams/{streamId}/groups/{groupName}"
         method = "GET"
+        operation_name = "get_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/GetGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -565,14 +599,20 @@ class StreamClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Group")
+                response_type="Group",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Group")
+                response_type="Group",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_messages(self, stream_id, cursor, **kwargs):
         """
@@ -615,6 +655,8 @@ class StreamClient(object):
         """
         resource_path = "/streams/{streamId}/messages"
         method = "GET"
+        operation_name = "get_messages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Message/GetMessages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -669,7 +711,10 @@ class StreamClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Message]")
+                response_type="list[Message]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -677,7 +722,10 @@ class StreamClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Message]")
+                response_type="list[Message]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def put_messages(self, stream_id, put_messages_details, **kwargs):
         """
@@ -717,6 +765,8 @@ class StreamClient(object):
         """
         resource_path = "/streams/{streamId}/messages"
         method = "POST"
+        operation_name = "put_messages"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Message/PutMessages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -763,8 +813,10 @@ class StreamClient(object):
                 header_params=header_params,
                 body=put_messages_details,
                 response_type="PutMessagesResult",
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -773,8 +825,10 @@ class StreamClient(object):
                 header_params=header_params,
                 body=put_messages_details,
                 response_type="PutMessagesResult",
+                enforce_content_headers=False,
                 allow_control_chars=kwargs.get('allow_control_chars'),
-                enforce_content_headers=False)
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_group(self, stream_id, group_name, update_group_details, **kwargs):
         """
@@ -814,6 +868,8 @@ class StreamClient(object):
         """
         resource_path = "/streams/{streamId}/groups/{groupName}"
         method = "PUT"
+        operation_name = "update_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Group/UpdateGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -861,11 +917,17 @@ class StreamClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_group_details)
+                body=update_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_group_details)
+                body=update_group_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

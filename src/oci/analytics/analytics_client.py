@@ -152,6 +152,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_analytics_instance_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ChangeAnalyticsInstanceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -201,14 +203,20 @@ class AnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_compartment_details)
+                body=change_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_analytics_instance_network_endpoint(self, analytics_instance_id, change_analytics_instance_network_endpoint_details, **kwargs):
         """
@@ -258,6 +266,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/changeNetworkEndpoint"
         method = "POST"
+        operation_name = "change_analytics_instance_network_endpoint"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ChangeAnalyticsInstanceNetworkEndpoint"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -307,14 +317,20 @@ class AnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_analytics_instance_network_endpoint_details)
+                body=change_analytics_instance_network_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_analytics_instance_network_endpoint_details)
+                body=change_analytics_instance_network_endpoint_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_analytics_instance(self, create_analytics_instance_details, **kwargs):
         """
@@ -356,6 +372,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances"
         method = "POST"
+        operation_name = "create_analytics_instance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -393,14 +411,20 @@ class AnalyticsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_analytics_instance_details,
-                response_type="AnalyticsInstance")
+                response_type="AnalyticsInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_analytics_instance_details,
-                response_type="AnalyticsInstance")
+                response_type="AnalyticsInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_private_access_channel(self, analytics_instance_id, create_private_access_channel_details, **kwargs):
         """
@@ -445,6 +469,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/privateAccessChannels"
         method = "POST"
+        operation_name = "create_private_access_channel"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/CreatePrivateAccessChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -492,14 +518,20 @@ class AnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_private_access_channel_details)
+                body=create_private_access_channel_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_private_access_channel_details)
+                body=create_private_access_channel_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_vanity_url(self, analytics_instance_id, create_vanity_url_details, **kwargs):
         """
@@ -544,6 +576,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/vanityUrls"
         method = "POST"
+        operation_name = "create_vanity_url"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/CreateVanityUrl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -591,14 +625,20 @@ class AnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_vanity_url_details)
+                body=create_vanity_url_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=create_vanity_url_details)
+                body=create_vanity_url_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_analytics_instance(self, analytics_instance_id, **kwargs):
         """
@@ -645,6 +685,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}"
         method = "DELETE"
+        operation_name = "delete_analytics_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeleteAnalyticsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -693,13 +735,19 @@ class AnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_private_access_channel(self, private_access_channel_key, analytics_instance_id, **kwargs):
         """
@@ -748,6 +796,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
         method = "DELETE"
+        operation_name = "delete_private_access_channel"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeletePrivateAccessChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -797,13 +847,19 @@ class AnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_vanity_url(self, analytics_instance_id, vanity_url_key, **kwargs):
         """
@@ -852,6 +908,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
         method = "DELETE"
+        operation_name = "delete_vanity_url"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/DeleteVanityUrl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -901,13 +959,19 @@ class AnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_work_request(self, work_request_id, **kwargs):
         """
@@ -946,6 +1010,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "delete_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequest/DeleteWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -991,13 +1057,19 @@ class AnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_analytics_instance(self, analytics_instance_id, **kwargs):
         """
@@ -1031,6 +1103,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}"
         method = "GET"
+        operation_name = "get_analytics_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/GetAnalyticsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1075,14 +1149,20 @@ class AnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnalyticsInstance")
+                response_type="AnalyticsInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnalyticsInstance")
+                response_type="AnalyticsInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_private_access_channel(self, private_access_channel_key, analytics_instance_id, **kwargs):
         """
@@ -1119,6 +1199,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
         method = "GET"
+        operation_name = "get_private_access_channel"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/GetPrivateAccessChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1164,14 +1246,20 @@ class AnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PrivateAccessChannel")
+                response_type="PrivateAccessChannel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="PrivateAccessChannel")
+                response_type="PrivateAccessChannel",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1205,6 +1293,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1249,14 +1339,20 @@ class AnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_analytics_instances(self, compartment_id, **kwargs):
         """
@@ -1338,6 +1434,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances"
         method = "GET"
+        operation_name = "list_analytics_instances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstanceSummary/ListAnalyticsInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1428,14 +1526,20 @@ class AnalyticsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AnalyticsInstanceSummary]")
+                response_type="list[AnalyticsInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[AnalyticsInstanceSummary]")
+                response_type="list[AnalyticsInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1485,6 +1589,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1538,7 +1644,10 @@ class AnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1546,7 +1655,10 @@ class AnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1596,6 +1708,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestLog/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1649,7 +1763,10 @@ class AnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLog]")
+                response_type="list[WorkRequestLog]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1657,7 +1774,10 @@ class AnalyticsClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLog]")
+                response_type="list[WorkRequestLog]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1730,6 +1850,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/WorkRequestSummary/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1812,14 +1934,20 @@ class AnalyticsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def scale_analytics_instance(self, analytics_instance_id, scale_analytics_instance_details, **kwargs):
         """
@@ -1869,6 +1997,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/scale"
         method = "POST"
+        operation_name = "scale_analytics_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/ScaleAnalyticsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1918,14 +2048,20 @@ class AnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=scale_analytics_instance_details)
+                body=scale_analytics_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=scale_analytics_instance_details)
+                body=scale_analytics_instance_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def set_kms_key(self, analytics_instance_id, set_kms_key_details, **kwargs):
         """
@@ -1974,6 +2110,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/setKmsKey"
         method = "POST"
+        operation_name = "set_kms_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/SetKmsKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2023,14 +2161,20 @@ class AnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=set_kms_key_details)
+                body=set_kms_key_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=set_kms_key_details)
+                body=set_kms_key_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_analytics_instance(self, analytics_instance_id, **kwargs):
         """
@@ -2077,6 +2221,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/start"
         method = "POST"
+        operation_name = "start_analytics_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/StartAnalyticsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2125,13 +2271,19 @@ class AnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_analytics_instance(self, analytics_instance_id, **kwargs):
         """
@@ -2178,6 +2330,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/actions/stop"
         method = "POST"
+        operation_name = "stop_analytics_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/StopAnalyticsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2226,13 +2380,19 @@ class AnalyticsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_analytics_instance(self, analytics_instance_id, update_analytics_instance_details, **kwargs):
         """
@@ -2276,6 +2436,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}"
         method = "PUT"
+        operation_name = "update_analytics_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdateAnalyticsInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2323,7 +2485,10 @@ class AnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_analytics_instance_details,
-                response_type="AnalyticsInstance")
+                response_type="AnalyticsInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2331,7 +2496,10 @@ class AnalyticsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_analytics_instance_details,
-                response_type="AnalyticsInstance")
+                response_type="AnalyticsInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_private_access_channel(self, private_access_channel_key, analytics_instance_id, update_private_access_channel_details, **kwargs):
         """
@@ -2383,6 +2551,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/privateAccessChannels/{privateAccessChannelKey}"
         method = "PUT"
+        operation_name = "update_private_access_channel"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdatePrivateAccessChannel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2433,14 +2603,20 @@ class AnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_private_access_channel_details)
+                body=update_private_access_channel_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_private_access_channel_details)
+                body=update_private_access_channel_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_vanity_url(self, analytics_instance_id, vanity_url_key, update_vanity_url_details, **kwargs):
         """
@@ -2492,6 +2668,8 @@ class AnalyticsClient(object):
         """
         resource_path = "/analyticsInstances/{analyticsInstanceId}/vanityUrls/{vanityUrlKey}"
         method = "PUT"
+        operation_name = "update_vanity_url"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/UpdateVanityUrl"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2542,11 +2720,17 @@ class AnalyticsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_vanity_url_details)
+                body=update_vanity_url_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_vanity_url_details)
+                body=update_vanity_url_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

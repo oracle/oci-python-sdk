@@ -144,6 +144,8 @@ class AnnouncementSubscriptionClient(object):
         """
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_announcement_subscription_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/ChangeAnnouncementSubscriptionCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -190,14 +192,20 @@ class AnnouncementSubscriptionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_announcement_subscription_compartment_details)
+                body=change_announcement_subscription_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_announcement_subscription_compartment_details)
+                body=change_announcement_subscription_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_announcement_subscription(self, create_announcement_subscription_details, **kwargs):
         """
@@ -240,6 +248,8 @@ class AnnouncementSubscriptionClient(object):
         """
         resource_path = "/announcementSubscriptions"
         method = "POST"
+        operation_name = "create_announcement_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/CreateAnnouncementSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -277,14 +287,20 @@ class AnnouncementSubscriptionClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_announcement_subscription_details,
-                response_type="AnnouncementSubscription")
+                response_type="AnnouncementSubscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_announcement_subscription_details,
-                response_type="AnnouncementSubscription")
+                response_type="AnnouncementSubscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_filter_group(self, announcement_subscription_id, create_filter_group_details, **kwargs):
         """
@@ -333,6 +349,8 @@ class AnnouncementSubscriptionClient(object):
         """
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}/filterGroups"
         method = "POST"
+        operation_name = "create_filter_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/CreateFilterGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -383,7 +401,10 @@ class AnnouncementSubscriptionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_filter_group_details,
-                response_type="FilterGroup")
+                response_type="FilterGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -391,7 +412,10 @@ class AnnouncementSubscriptionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_filter_group_details,
-                response_type="FilterGroup")
+                response_type="FilterGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_announcement_subscription(self, announcement_subscription_id, **kwargs):
         """
@@ -430,6 +454,8 @@ class AnnouncementSubscriptionClient(object):
         """
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}"
         method = "DELETE"
+        operation_name = "delete_announcement_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/DeleteAnnouncementSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -475,13 +501,19 @@ class AnnouncementSubscriptionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_filter_group(self, announcement_subscription_id, filter_group_name, **kwargs):
         """
@@ -523,6 +555,8 @@ class AnnouncementSubscriptionClient(object):
         """
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}/filterGroups/{filterGroupName}"
         method = "DELETE"
+        operation_name = "delete_filter_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/DeleteFilterGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -569,13 +603,19 @@ class AnnouncementSubscriptionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_announcement_subscription(self, announcement_subscription_id, **kwargs):
         """
@@ -611,6 +651,8 @@ class AnnouncementSubscriptionClient(object):
         """
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}"
         method = "GET"
+        operation_name = "get_announcement_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/GetAnnouncementSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -655,14 +697,20 @@ class AnnouncementSubscriptionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnnouncementSubscription")
+                response_type="AnnouncementSubscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="AnnouncementSubscription")
+                response_type="AnnouncementSubscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_announcement_subscriptions(self, compartment_id, **kwargs):
         """
@@ -725,6 +773,8 @@ class AnnouncementSubscriptionClient(object):
         """
         resource_path = "/announcementSubscriptions"
         method = "GET"
+        operation_name = "list_announcement_subscriptions"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscriptionCollection/ListAnnouncementSubscriptions"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -799,14 +849,20 @@ class AnnouncementSubscriptionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AnnouncementSubscriptionCollection")
+                response_type="AnnouncementSubscriptionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="AnnouncementSubscriptionCollection")
+                response_type="AnnouncementSubscriptionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_announcement_subscription(self, announcement_subscription_id, update_announcement_subscription_details, **kwargs):
         """
@@ -848,6 +904,8 @@ class AnnouncementSubscriptionClient(object):
         """
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}"
         method = "PUT"
+        operation_name = "update_announcement_subscription"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/UpdateAnnouncementSubscription"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -895,7 +953,10 @@ class AnnouncementSubscriptionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_announcement_subscription_details,
-                response_type="AnnouncementSubscription")
+                response_type="AnnouncementSubscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -903,7 +964,10 @@ class AnnouncementSubscriptionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_announcement_subscription_details,
-                response_type="AnnouncementSubscription")
+                response_type="AnnouncementSubscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_filter_group(self, announcement_subscription_id, filter_group_name, update_filter_group_details, **kwargs):
         """
@@ -948,6 +1012,8 @@ class AnnouncementSubscriptionClient(object):
         """
         resource_path = "/announcementSubscriptions/{announcementSubscriptionId}/filterGroups/{filterGroupName}"
         method = "PUT"
+        operation_name = "update_filter_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/UpdateFilterGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -996,7 +1062,10 @@ class AnnouncementSubscriptionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_filter_group_details,
-                response_type="FilterGroup")
+                response_type="FilterGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1004,4 +1073,7 @@ class AnnouncementSubscriptionClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_filter_group_details,
-                response_type="FilterGroup")
+                response_type="FilterGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

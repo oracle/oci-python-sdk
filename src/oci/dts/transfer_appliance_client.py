@@ -137,6 +137,8 @@ class TransferApplianceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferAppliances"
         method = "POST"
+        operation_name = "create_transfer_appliance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -184,7 +186,10 @@ class TransferApplianceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('create_transfer_appliance_details'),
-                response_type="TransferAppliance")
+                response_type="TransferAppliance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -192,7 +197,10 @@ class TransferApplianceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=kwargs.get('create_transfer_appliance_details'),
-                response_type="TransferAppliance")
+                response_type="TransferAppliance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_transfer_appliance_admin_credentials(self, id, transfer_appliance_label, admin_public_key, **kwargs):
         """
@@ -227,6 +235,8 @@ class TransferApplianceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferAppliances/{transferApplianceLabel}/admin_credentials"
         method = "POST"
+        operation_name = "create_transfer_appliance_admin_credentials"
+        api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -266,7 +276,10 @@ class TransferApplianceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=admin_public_key,
-                response_type="TransferApplianceCertificate")
+                response_type="TransferApplianceCertificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -274,7 +287,10 @@ class TransferApplianceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=admin_public_key,
-                response_type="TransferApplianceCertificate")
+                response_type="TransferApplianceCertificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_transfer_appliance(self, id, transfer_appliance_label, **kwargs):
         """
@@ -307,6 +323,8 @@ class TransferApplianceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferAppliances/{transferApplianceLabel}"
         method = "DELETE"
+        operation_name = "delete_transfer_appliance"
+        api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -344,13 +362,19 @@ class TransferApplianceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_transfer_appliance(self, id, transfer_appliance_label, **kwargs):
         """
@@ -383,6 +407,8 @@ class TransferApplianceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferAppliances/{transferApplianceLabel}"
         method = "GET"
+        operation_name = "get_transfer_appliance"
+        api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -421,14 +447,20 @@ class TransferApplianceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TransferAppliance")
+                response_type="TransferAppliance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TransferAppliance")
+                response_type="TransferAppliance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_transfer_appliance_certificate_authority_certificate(self, id, transfer_appliance_label, **kwargs):
         """
@@ -461,6 +493,8 @@ class TransferApplianceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferAppliances/{transferApplianceLabel}/certificate_authority_certificate"
         method = "GET"
+        operation_name = "get_transfer_appliance_certificate_authority_certificate"
+        api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -499,14 +533,20 @@ class TransferApplianceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TransferApplianceCertificate")
+                response_type="TransferApplianceCertificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TransferApplianceCertificate")
+                response_type="TransferApplianceCertificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_transfer_appliance_encryption_passphrase(self, id, transfer_appliance_label, **kwargs):
         """
@@ -539,6 +579,8 @@ class TransferApplianceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferAppliances/{transferApplianceLabel}/encryptionPassphrase"
         method = "GET"
+        operation_name = "get_transfer_appliance_encryption_passphrase"
+        api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -577,14 +619,20 @@ class TransferApplianceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TransferApplianceEncryptionPassphrase")
+                response_type="TransferApplianceEncryptionPassphrase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TransferApplianceEncryptionPassphrase")
+                response_type="TransferApplianceEncryptionPassphrase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_transfer_appliances(self, id, **kwargs):
         """
@@ -619,6 +667,8 @@ class TransferApplianceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferAppliances"
         method = "GET"
+        operation_name = "list_transfer_appliances"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -674,7 +724,10 @@ class TransferApplianceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MultipleTransferAppliances")
+                response_type="MultipleTransferAppliances",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -682,7 +735,10 @@ class TransferApplianceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MultipleTransferAppliances")
+                response_type="MultipleTransferAppliances",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_transfer_appliance(self, id, transfer_appliance_label, update_transfer_appliance_details, **kwargs):
         """
@@ -722,6 +778,8 @@ class TransferApplianceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferAppliances/{transferApplianceLabel}"
         method = "PUT"
+        operation_name = "update_transfer_appliance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -768,7 +826,10 @@ class TransferApplianceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_transfer_appliance_details,
-                response_type="TransferAppliance")
+                response_type="TransferAppliance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -776,4 +837,7 @@ class TransferApplianceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_transfer_appliance_details,
-                response_type="TransferAppliance")
+                response_type="TransferAppliance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

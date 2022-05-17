@@ -152,6 +152,8 @@ class RoverClusterClient(object):
         """
         resource_path = "/roverClusters/{roverClusterId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_rover_cluster_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/ChangeRoverClusterCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,14 +205,20 @@ class RoverClusterClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_rover_cluster_compartment_details)
+                body=change_rover_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_rover_cluster_compartment_details)
+                body=change_rover_cluster_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_rover_cluster(self, create_rover_cluster_details, **kwargs):
         """
@@ -250,6 +258,8 @@ class RoverClusterClient(object):
         """
         resource_path = "/roverClusters"
         method = "POST"
+        operation_name = "create_rover_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/CreateRoverCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -289,14 +299,20 @@ class RoverClusterClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_rover_cluster_details,
-                response_type="RoverCluster")
+                response_type="RoverCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_rover_cluster_details,
-                response_type="RoverCluster")
+                response_type="RoverCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_rover_cluster(self, rover_cluster_id, **kwargs):
         """
@@ -343,6 +359,8 @@ class RoverClusterClient(object):
         """
         resource_path = "/roverClusters/{roverClusterId}"
         method = "DELETE"
+        operation_name = "delete_rover_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/DeleteRoverCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -393,13 +411,19 @@ class RoverClusterClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_rover_cluster(self, rover_cluster_id, **kwargs):
         """
@@ -432,6 +456,8 @@ class RoverClusterClient(object):
         """
         resource_path = "/roverClusters/{roverClusterId}"
         method = "GET"
+        operation_name = "get_rover_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/GetRoverCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -478,14 +504,20 @@ class RoverClusterClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoverCluster")
+                response_type="RoverCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoverCluster")
+                response_type="RoverCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_rover_cluster_certificate(self, rover_cluster_id, **kwargs):
         """
@@ -518,6 +550,8 @@ class RoverClusterClient(object):
         """
         resource_path = "/roverClusters/{roverClusterId}/certificate"
         method = "GET"
+        operation_name = "get_rover_cluster_certificate"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverClusterCertificate/GetRoverClusterCertificate"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -564,14 +598,20 @@ class RoverClusterClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoverClusterCertificate")
+                response_type="RoverClusterCertificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="RoverClusterCertificate")
+                response_type="RoverClusterCertificate",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_rover_clusters(self, compartment_id, **kwargs):
         """
@@ -633,6 +673,8 @@ class RoverClusterClient(object):
         """
         resource_path = "/roverClusters"
         method = "GET"
+        operation_name = "list_rover_clusters"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/ListRoverClusters"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -716,14 +758,20 @@ class RoverClusterClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RoverClusterCollection")
+                response_type="RoverClusterCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RoverClusterCollection")
+                response_type="RoverClusterCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_rover_cluster(self, rover_cluster_id, update_rover_cluster_details, **kwargs):
         """
@@ -766,6 +814,8 @@ class RoverClusterClient(object):
         """
         resource_path = "/roverClusters/{roverClusterId}"
         method = "PUT"
+        operation_name = "update_rover_cluster"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/rover/20201210/RoverCluster/UpdateRoverCluster"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -815,7 +865,10 @@ class RoverClusterClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_rover_cluster_details,
-                response_type="RoverCluster")
+                response_type="RoverCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -823,4 +876,7 @@ class RoverClusterClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_rover_cluster_details,
-                response_type="RoverCluster")
+                response_type="RoverCluster",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

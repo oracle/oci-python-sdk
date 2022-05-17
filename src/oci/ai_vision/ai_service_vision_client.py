@@ -135,6 +135,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/actions/analyzeDocument"
         method = "POST"
+        operation_name = "analyze_document"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/AnalyzeDocumentResult/AnalyzeDocument"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -171,14 +173,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 header_params=header_params,
                 body=analyze_document_details,
-                response_type="AnalyzeDocumentResult")
+                response_type="AnalyzeDocumentResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=analyze_document_details,
-                response_type="AnalyzeDocumentResult")
+                response_type="AnalyzeDocumentResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def analyze_image(self, analyze_image_details, **kwargs):
         """
@@ -211,6 +219,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/actions/analyzeImage"
         method = "POST"
+        operation_name = "analyze_image"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/AnalyzeImageResult/AnalyzeImage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -247,14 +257,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 header_params=header_params,
                 body=analyze_image_details,
-                response_type="AnalyzeImageResult")
+                response_type="AnalyzeImageResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=analyze_image_details,
-                response_type="AnalyzeImageResult")
+                response_type="AnalyzeImageResult",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_document_job(self, document_job_id, **kwargs):
         """
@@ -294,6 +310,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/documentJobs/{documentJobId}/actions/cancel"
         method = "POST"
+        operation_name = "cancel_document_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/DocumentJob/CancelDocumentJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -339,13 +357,19 @@ class AIServiceVisionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_image_job(self, image_job_id, **kwargs):
         """
@@ -385,6 +409,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/imageJobs/{imageJobId}/actions/cancel"
         method = "POST"
+        operation_name = "cancel_image_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ImageJob/CancelImageJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -430,13 +456,19 @@ class AIServiceVisionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def cancel_work_request(self, work_request_id, **kwargs):
         """
@@ -476,6 +508,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "cancel_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequest/CancelWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -521,13 +555,19 @@ class AIServiceVisionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_model_compartment(self, model_id, change_model_compartment_details, **kwargs):
         """
@@ -570,6 +610,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/models/{modelId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_model_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Model/ChangeModelCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -616,14 +658,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_model_compartment_details)
+                body=change_model_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_model_compartment_details)
+                body=change_model_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_project_compartment(self, project_id, change_project_compartment_details, **kwargs):
         """
@@ -666,6 +714,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/projects/{projectId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_project_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Project/ChangeProjectCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -712,14 +762,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_project_compartment_details)
+                body=change_project_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_project_compartment_details)
+                body=change_project_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_document_job(self, create_document_job_details, **kwargs):
         """
@@ -759,6 +815,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/documentJobs"
         method = "POST"
+        operation_name = "create_document_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/DocumentJob/CreateDocumentJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -796,14 +854,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_document_job_details,
-                response_type="DocumentJob")
+                response_type="DocumentJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_document_job_details,
-                response_type="DocumentJob")
+                response_type="DocumentJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_image_job(self, create_image_job_details, **kwargs):
         """
@@ -843,6 +907,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/imageJobs"
         method = "POST"
+        operation_name = "create_image_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ImageJob/CreateImageJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -880,14 +946,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_image_job_details,
-                response_type="ImageJob")
+                response_type="ImageJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_image_job_details,
-                response_type="ImageJob")
+                response_type="ImageJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_model(self, create_model_details, **kwargs):
         """
@@ -927,6 +999,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/models"
         method = "POST"
+        operation_name = "create_model"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -964,14 +1038,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_model_details,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_model_details,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_project(self, create_project_details, **kwargs):
         """
@@ -1011,6 +1091,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/projects"
         method = "POST"
+        operation_name = "create_project"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1048,14 +1130,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_project_details,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_model(self, model_id, **kwargs):
         """
@@ -1095,6 +1183,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/models/{modelId}"
         method = "DELETE"
+        operation_name = "delete_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Model/DeleteModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1140,13 +1230,19 @@ class AIServiceVisionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_project(self, project_id, **kwargs):
         """
@@ -1186,6 +1282,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/projects/{projectId}"
         method = "DELETE"
+        operation_name = "delete_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Project/DeleteProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1231,13 +1329,19 @@ class AIServiceVisionClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_document_job(self, document_job_id, **kwargs):
         """
@@ -1270,6 +1374,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/documentJobs/{documentJobId}"
         method = "GET"
+        operation_name = "get_document_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/DocumentJob/GetDocumentJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1314,14 +1420,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DocumentJob")
+                response_type="DocumentJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DocumentJob")
+                response_type="DocumentJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_image_job(self, image_job_id, **kwargs):
         """
@@ -1354,6 +1466,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/imageJobs/{imageJobId}"
         method = "GET"
+        operation_name = "get_image_job"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ImageJob/GetImageJob"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1398,14 +1512,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ImageJob")
+                response_type="ImageJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ImageJob")
+                response_type="ImageJob",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_model(self, model_id, **kwargs):
         """
@@ -1438,6 +1558,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/models/{modelId}"
         method = "GET"
+        operation_name = "get_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Model/GetModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1482,14 +1604,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Model")
+                response_type="Model",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_project(self, project_id, **kwargs):
         """
@@ -1522,6 +1650,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/projects/{projectId}"
         method = "GET"
+        operation_name = "get_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Project/GetProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1566,14 +1696,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Project")
+                response_type="Project",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -1606,6 +1742,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1650,14 +1788,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_models(self, **kwargs):
         """
@@ -1720,6 +1864,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/models"
         method = "GET"
+        operation_name = "list_models"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ModelCollection/ListModels"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1797,14 +1943,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ModelCollection")
+                response_type="ModelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ModelCollection")
+                response_type="ModelCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_projects(self, **kwargs):
         """
@@ -1864,6 +2016,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/projects"
         method = "GET"
+        operation_name = "list_projects"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/ProjectCollection/ListProjects"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1939,14 +2093,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProjectCollection")
+                response_type="ProjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ProjectCollection")
+                response_type="ProjectCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1995,6 +2155,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2066,7 +2228,10 @@ class AIServiceVisionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2074,7 +2239,10 @@ class AIServiceVisionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -2123,6 +2291,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2194,7 +2364,10 @@ class AIServiceVisionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2202,7 +2375,10 @@ class AIServiceVisionClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, **kwargs):
         """
@@ -2262,6 +2438,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2337,14 +2515,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_model(self, model_id, update_model_details, **kwargs):
         """
@@ -2387,6 +2571,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/models/{modelId}"
         method = "PUT"
+        operation_name = "update_model"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Model/UpdateModel"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2433,14 +2619,20 @@ class AIServiceVisionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_model_details)
+                body=update_model_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_model_details)
+                body=update_model_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_project(self, project_id, update_project_details, **kwargs):
         """
@@ -2483,6 +2675,8 @@ class AIServiceVisionClient(object):
         """
         resource_path = "/projects/{projectId}"
         method = "PUT"
+        operation_name = "update_project"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/vision/20220125/Project/UpdateProject"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2529,11 +2723,17 @@ class AIServiceVisionClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_project_details)
+                body=update_project_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_project_details)
+                body=update_project_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

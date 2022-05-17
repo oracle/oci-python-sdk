@@ -155,6 +155,8 @@ class OdaClient(object):
         """
         resource_path = "/odaInstances/{odaInstanceId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_oda_instance_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstance/ChangeOdaInstanceCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -204,14 +206,20 @@ class OdaClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_oda_instance_compartment_details)
+                body=change_oda_instance_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_oda_instance_compartment_details)
+                body=change_oda_instance_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_oda_instance(self, create_oda_instance_details, **kwargs):
         """
@@ -255,6 +263,8 @@ class OdaClient(object):
         """
         resource_path = "/odaInstances"
         method = "POST"
+        operation_name = "create_oda_instance"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -292,14 +302,20 @@ class OdaClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_oda_instance_details,
-                response_type="OdaInstance")
+                response_type="OdaInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_oda_instance_details,
-                response_type="OdaInstance")
+                response_type="OdaInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_oda_instance(self, oda_instance_id, **kwargs):
         """
@@ -341,6 +357,8 @@ class OdaClient(object):
         """
         resource_path = "/odaInstances/{odaInstanceId}"
         method = "DELETE"
+        operation_name = "delete_oda_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstance/DeleteOdaInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -386,13 +404,19 @@ class OdaClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_oda_instance(self, oda_instance_id, **kwargs):
         """
@@ -425,6 +449,8 @@ class OdaClient(object):
         """
         resource_path = "/odaInstances/{odaInstanceId}"
         method = "GET"
+        operation_name = "get_oda_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstance/GetOdaInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -469,14 +495,20 @@ class OdaClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OdaInstance")
+                response_type="OdaInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OdaInstance")
+                response_type="OdaInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -512,6 +544,8 @@ class OdaClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/WorkRequest/GetWorkRequest"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -556,14 +590,20 @@ class OdaClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_oda_instances(self, compartment_id, **kwargs):
         """
@@ -634,6 +674,8 @@ class OdaClient(object):
         """
         resource_path = "/odaInstances"
         method = "GET"
+        operation_name = "list_oda_instances"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstanceSummary/ListOdaInstances"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -706,14 +748,20 @@ class OdaClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[OdaInstanceSummary]")
+                response_type="list[OdaInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[OdaInstanceSummary]")
+                response_type="list[OdaInstanceSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -773,6 +821,8 @@ class OdaClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/WorkRequestError/ListWorkRequestErrors"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -844,7 +894,10 @@ class OdaClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -852,7 +905,10 @@ class OdaClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestError]")
+                response_type="list[WorkRequestError]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -912,6 +968,8 @@ class OdaClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/WorkRequestLogEntry/ListWorkRequestLogs"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -983,7 +1041,10 @@ class OdaClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -991,7 +1052,10 @@ class OdaClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestLogEntry]")
+                response_type="list[WorkRequestLogEntry]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, compartment_id, **kwargs):
         """
@@ -1054,6 +1118,8 @@ class OdaClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/WorkRequest/ListWorkRequests"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1117,14 +1183,20 @@ class OdaClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[WorkRequestSummary]")
+                response_type="list[WorkRequestSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def start_oda_instance(self, oda_instance_id, **kwargs):
         """
@@ -1174,6 +1246,8 @@ class OdaClient(object):
         """
         resource_path = "/odaInstances/{odaInstanceId}/actions/start"
         method = "POST"
+        operation_name = "start_oda_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstance/StartOdaInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1222,13 +1296,19 @@ class OdaClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def stop_oda_instance(self, oda_instance_id, **kwargs):
         """
@@ -1279,6 +1359,8 @@ class OdaClient(object):
         """
         resource_path = "/odaInstances/{odaInstanceId}/actions/stop"
         method = "POST"
+        operation_name = "stop_oda_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstance/StopOdaInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1327,13 +1409,19 @@ class OdaClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_oda_instance(self, oda_instance_id, update_oda_instance_details, **kwargs):
         """
@@ -1377,6 +1465,8 @@ class OdaClient(object):
         """
         resource_path = "/odaInstances/{odaInstanceId}"
         method = "PUT"
+        operation_name = "update_oda_instance"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/digital-assistant/20190506/OdaInstance/UpdateOdaInstance"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1424,7 +1514,10 @@ class OdaClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_oda_instance_details,
-                response_type="OdaInstance")
+                response_type="OdaInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1432,4 +1525,7 @@ class OdaClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_oda_instance_details,
-                response_type="OdaInstance")
+                response_type="OdaInstance",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

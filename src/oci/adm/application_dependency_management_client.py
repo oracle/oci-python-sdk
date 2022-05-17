@@ -144,6 +144,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "DELETE"
+        operation_name = "cancel_work_request"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -189,13 +191,19 @@ class ApplicationDependencyManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_knowledge_base_compartment(self, knowledge_base_id, change_knowledge_base_compartment_details, **kwargs):
         """
@@ -247,6 +255,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/knowledgeBases/{knowledgeBaseId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_knowledge_base_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -296,14 +306,20 @@ class ApplicationDependencyManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_knowledge_base_compartment_details)
+                body=change_knowledge_base_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_knowledge_base_compartment_details)
+                body=change_knowledge_base_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_vulnerability_audit_compartment(self, vulnerability_audit_id, change_vulnerability_audit_compartment_details, **kwargs):
         """
@@ -353,6 +369,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_vulnerability_audit_compartment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -402,14 +420,20 @@ class ApplicationDependencyManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_vulnerability_audit_compartment_details)
+                body=change_vulnerability_audit_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_vulnerability_audit_compartment_details)
+                body=change_vulnerability_audit_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_knowledge_base(self, create_knowledge_base_details, **kwargs):
         """
@@ -449,6 +473,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/knowledgeBases"
         method = "POST"
+        operation_name = "create_knowledge_base"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -485,13 +511,19 @@ class ApplicationDependencyManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_knowledge_base_details)
+                body=create_knowledge_base_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_knowledge_base_details)
+                body=create_knowledge_base_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_vulnerability_audit(self, create_vulnerability_audit_details, **kwargs):
         """
@@ -538,6 +570,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/vulnerabilityAudits"
         method = "POST"
+        operation_name = "create_vulnerability_audit"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -577,14 +611,20 @@ class ApplicationDependencyManagementClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_vulnerability_audit_details,
-                response_type="VulnerabilityAudit")
+                response_type="VulnerabilityAudit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_vulnerability_audit_details,
-                response_type="VulnerabilityAudit")
+                response_type="VulnerabilityAudit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_knowledge_base(self, knowledge_base_id, **kwargs):
         """
@@ -626,6 +666,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/knowledgeBases/{knowledgeBaseId}"
         method = "DELETE"
+        operation_name = "delete_knowledge_base"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -671,13 +713,19 @@ class ApplicationDependencyManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_vulnerability_audit(self, vulnerability_audit_id, **kwargs):
         """
@@ -717,6 +765,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}"
         method = "DELETE"
+        operation_name = "delete_vulnerability_audit"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -762,13 +812,19 @@ class ApplicationDependencyManagementClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_knowledge_base(self, knowledge_base_id, **kwargs):
         """
@@ -803,6 +859,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/knowledgeBases/{knowledgeBaseId}"
         method = "GET"
+        operation_name = "get_knowledge_base"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -847,14 +905,20 @@ class ApplicationDependencyManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="KnowledgeBase")
+                response_type="KnowledgeBase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="KnowledgeBase")
+                response_type="KnowledgeBase",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_vulnerability_audit(self, vulnerability_audit_id, **kwargs):
         """
@@ -887,6 +951,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}"
         method = "GET"
+        operation_name = "get_vulnerability_audit"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -931,14 +997,20 @@ class ApplicationDependencyManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VulnerabilityAudit")
+                response_type="VulnerabilityAudit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VulnerabilityAudit")
+                response_type="VulnerabilityAudit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_work_request(self, work_request_id, **kwargs):
         """
@@ -973,6 +1045,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}"
         method = "GET"
+        operation_name = "get_work_request"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1017,14 +1091,20 @@ class ApplicationDependencyManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="WorkRequest")
+                response_type="WorkRequest",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_application_dependency_vulnerabilities(self, vulnerability_audit_id, **kwargs):
         """
@@ -1087,6 +1167,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}/applicationDependencyVulnerabilities"
         method = "GET"
+        operation_name = "list_application_dependency_vulnerabilities"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1166,7 +1248,10 @@ class ApplicationDependencyManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ApplicationDependencyVulnerabilityCollection")
+                response_type="ApplicationDependencyVulnerabilityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1174,7 +1259,10 @@ class ApplicationDependencyManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ApplicationDependencyVulnerabilityCollection")
+                response_type="ApplicationDependencyVulnerabilityCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_knowledge_bases(self, **kwargs):
         """
@@ -1238,6 +1326,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/knowledgeBases"
         method = "GET"
+        operation_name = "list_knowledge_bases"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1313,14 +1403,20 @@ class ApplicationDependencyManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="KnowledgeBaseCollection")
+                response_type="KnowledgeBaseCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="KnowledgeBaseCollection")
+                response_type="KnowledgeBaseCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_vulnerability_audits(self, **kwargs):
         """
@@ -1391,6 +1487,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/vulnerabilityAudits"
         method = "GET"
+        operation_name = "list_vulnerability_audits"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1470,14 +1568,20 @@ class ApplicationDependencyManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="VulnerabilityAuditCollection")
+                response_type="VulnerabilityAuditCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="VulnerabilityAuditCollection")
+                response_type="VulnerabilityAuditCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_errors(self, work_request_id, **kwargs):
         """
@@ -1528,6 +1632,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/errors"
         method = "GET"
+        operation_name = "list_work_request_errors"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1599,7 +1705,10 @@ class ApplicationDependencyManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1607,7 +1716,10 @@ class ApplicationDependencyManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestErrorCollection")
+                response_type="WorkRequestErrorCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_request_logs(self, work_request_id, **kwargs):
         """
@@ -1658,6 +1770,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/workRequests/{workRequestId}/logs"
         method = "GET"
+        operation_name = "list_work_request_logs"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1729,7 +1843,10 @@ class ApplicationDependencyManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1737,7 +1854,10 @@ class ApplicationDependencyManagementClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestLogEntryCollection")
+                response_type="WorkRequestLogEntryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_work_requests(self, **kwargs):
         """
@@ -1799,6 +1919,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/workRequests"
         method = "GET"
+        operation_name = "list_work_requests"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1874,14 +1996,20 @@ class ApplicationDependencyManagementClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="WorkRequestSummaryCollection")
+                response_type="WorkRequestSummaryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_knowledge_base(self, knowledge_base_id, update_knowledge_base_details, **kwargs):
         """
@@ -1926,6 +2054,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/knowledgeBases/{knowledgeBaseId}"
         method = "PUT"
+        operation_name = "update_knowledge_base"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1972,14 +2102,20 @@ class ApplicationDependencyManagementClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_knowledge_base_details)
+                body=update_knowledge_base_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_knowledge_base_details)
+                body=update_knowledge_base_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_vulnerability_audit(self, vulnerability_audit_id, update_vulnerability_audit_details, **kwargs):
         """
@@ -2022,6 +2158,8 @@ class ApplicationDependencyManagementClient(object):
         """
         resource_path = "/vulnerabilityAudits/{vulnerabilityAuditId}"
         method = "PUT"
+        operation_name = "update_vulnerability_audit"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2069,7 +2207,10 @@ class ApplicationDependencyManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vulnerability_audit_details,
-                response_type="VulnerabilityAudit")
+                response_type="VulnerabilityAudit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2077,4 +2218,7 @@ class ApplicationDependencyManagementClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_vulnerability_audit_details,
-                response_type="VulnerabilityAudit")
+                response_type="VulnerabilityAudit",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

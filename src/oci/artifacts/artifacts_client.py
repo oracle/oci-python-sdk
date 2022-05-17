@@ -160,6 +160,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/repositories/{repositoryId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_container_repository_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ChangeContainerRepositoryCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -209,14 +211,20 @@ class ArtifactsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_container_repository_compartment_details)
+                body=change_container_repository_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_container_repository_compartment_details)
+                body=change_container_repository_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_repository_compartment(self, repository_id, change_repository_compartment_details, **kwargs):
         """
@@ -273,6 +281,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/repositories/{repositoryId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_repository_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ChangeRepositoryCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -322,14 +332,20 @@ class ArtifactsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_repository_compartment_details)
+                body=change_repository_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_repository_compartment_details)
+                body=change_repository_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_container_image_signature(self, create_container_image_signature_details, **kwargs):
         """
@@ -375,6 +391,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/imageSignatures"
         method = "POST"
+        operation_name = "create_container_image_signature"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/CreateContainerImageSignature"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -414,14 +432,20 @@ class ArtifactsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_container_image_signature_details,
-                response_type="ContainerImageSignature")
+                response_type="ContainerImageSignature",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_container_image_signature_details,
-                response_type="ContainerImageSignature")
+                response_type="ContainerImageSignature",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_container_repository(self, create_container_repository_details, **kwargs):
         """
@@ -462,6 +486,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/repositories"
         method = "POST"
+        operation_name = "create_container_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/CreateContainerRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -499,14 +525,20 @@ class ArtifactsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_container_repository_details,
-                response_type="ContainerRepository")
+                response_type="ContainerRepository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_container_repository_details,
-                response_type="ContainerRepository")
+                response_type="ContainerRepository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_repository(self, create_repository_details, **kwargs):
         """
@@ -547,6 +579,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/repositories"
         method = "POST"
+        operation_name = "create_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/CreateRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -584,14 +618,20 @@ class ArtifactsClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_repository_details,
-                response_type="Repository")
+                response_type="Repository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_repository_details,
-                response_type="Repository")
+                response_type="Repository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_container_image(self, image_id, **kwargs):
         """
@@ -634,6 +674,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/images/{imageId}"
         method = "DELETE"
+        operation_name = "delete_container_image"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/DeleteContainerImage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -679,13 +721,19 @@ class ArtifactsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_container_image_signature(self, image_signature_id, **kwargs):
         """
@@ -728,6 +776,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/imageSignatures/{imageSignatureId}"
         method = "DELETE"
+        operation_name = "delete_container_image_signature"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/DeleteContainerImageSignature"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -773,13 +823,19 @@ class ArtifactsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_container_repository(self, repository_id, **kwargs):
         """
@@ -822,6 +878,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/repositories/{repositoryId}"
         method = "DELETE"
+        operation_name = "delete_container_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/DeleteContainerRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -867,13 +925,19 @@ class ArtifactsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_generic_artifact(self, artifact_id, **kwargs):
         """
@@ -918,6 +982,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/generic/artifacts/{artifactId}"
         method = "DELETE"
+        operation_name = "delete_generic_artifact"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifact"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -963,13 +1029,19 @@ class ArtifactsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_generic_artifact_by_path(self, repository_id, artifact_path, version, **kwargs):
         """
@@ -1022,6 +1094,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/generic/repositories/{repositoryId}/artifactPaths/{artifactPath}/versions/{version}"
         method = "DELETE"
+        operation_name = "delete_generic_artifact_by_path"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/DeleteGenericArtifactByPath"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1069,13 +1143,19 @@ class ArtifactsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_repository(self, repository_id, **kwargs):
         """
@@ -1118,6 +1198,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/repositories/{repositoryId}"
         method = "DELETE"
+        operation_name = "delete_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/DeleteRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1163,13 +1245,19 @@ class ArtifactsClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_container_configuration(self, compartment_id, **kwargs):
         """
@@ -1205,6 +1293,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/configuration"
         method = "GET"
+        operation_name = "get_container_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/GetContainerConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1244,14 +1334,20 @@ class ArtifactsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ContainerConfiguration")
+                response_type="ContainerConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ContainerConfiguration")
+                response_type="ContainerConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_container_image(self, image_id, **kwargs):
         """
@@ -1289,6 +1385,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/images/{imageId}"
         method = "GET"
+        operation_name = "get_container_image"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/GetContainerImage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1333,14 +1431,20 @@ class ArtifactsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ContainerImage")
+                response_type="ContainerImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ContainerImage")
+                response_type="ContainerImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_container_image_signature(self, image_signature_id, **kwargs):
         """
@@ -1378,6 +1482,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/imageSignatures/{imageSignatureId}"
         method = "GET"
+        operation_name = "get_container_image_signature"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignature/GetContainerImageSignature"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1422,14 +1528,20 @@ class ArtifactsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ContainerImageSignature")
+                response_type="ContainerImageSignature",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ContainerImageSignature")
+                response_type="ContainerImageSignature",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_container_repository(self, repository_id, **kwargs):
         """
@@ -1467,6 +1579,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/repositories/{repositoryId}"
         method = "GET"
+        operation_name = "get_container_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/GetContainerRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1511,14 +1625,20 @@ class ArtifactsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ContainerRepository")
+                response_type="ContainerRepository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ContainerRepository")
+                response_type="ContainerRepository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_generic_artifact(self, artifact_id, **kwargs):
         """
@@ -1558,6 +1678,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/generic/artifacts/{artifactId}"
         method = "GET"
+        operation_name = "get_generic_artifact"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifact"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1602,14 +1724,20 @@ class ArtifactsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="GenericArtifact")
+                response_type="GenericArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="GenericArtifact")
+                response_type="GenericArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_generic_artifact_by_path(self, repository_id, artifact_path, version, **kwargs):
         """
@@ -1657,6 +1785,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/generic/repositories/{repositoryId}/artifactPaths/{artifactPath}/versions/{version}"
         method = "GET"
+        operation_name = "get_generic_artifact_by_path"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/GetGenericArtifactByPath"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1703,14 +1833,20 @@ class ArtifactsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="GenericArtifact")
+                response_type="GenericArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="GenericArtifact")
+                response_type="GenericArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_repository(self, repository_id, **kwargs):
         """
@@ -1748,6 +1884,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/repositories/{repositoryId}"
         method = "GET"
+        operation_name = "get_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/GetRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1792,14 +1930,20 @@ class ArtifactsClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Repository")
+                response_type="Repository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Repository")
+                response_type="Repository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_container_image_signatures(self, compartment_id, **kwargs):
         """
@@ -1914,6 +2058,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/imageSignatures"
         method = "GET"
+        operation_name = "list_container_image_signatures"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSignatureSummary/ListContainerImageSignatures"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2000,14 +2146,20 @@ class ArtifactsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ContainerImageSignatureCollection")
+                response_type="ContainerImageSignatureCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ContainerImageSignatureCollection")
+                response_type="ContainerImageSignatureCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_container_images(self, compartment_id, **kwargs):
         """
@@ -2109,6 +2261,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/images"
         method = "GET"
+        operation_name = "list_container_images"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImageSummary/ListContainerImages"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2186,14 +2340,20 @@ class ArtifactsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ContainerImageCollection")
+                response_type="ContainerImageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ContainerImageCollection")
+                response_type="ContainerImageCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_container_repositories(self, compartment_id, **kwargs):
         """
@@ -2282,6 +2442,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/repositories"
         method = "GET"
+        operation_name = "list_container_repositories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/ListContainerRepositories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2353,14 +2515,20 @@ class ArtifactsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ContainerRepositoryCollection")
+                response_type="ContainerRepositoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="ContainerRepositoryCollection")
+                response_type="ContainerRepositoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_generic_artifacts(self, compartment_id, repository_id, **kwargs):
         """
@@ -2451,6 +2619,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/generic/artifacts"
         method = "GET"
+        operation_name = "list_generic_artifacts"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/ListGenericArtifacts"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2525,14 +2695,20 @@ class ArtifactsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="GenericArtifactCollection")
+                response_type="GenericArtifactCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="GenericArtifactCollection")
+                response_type="GenericArtifactCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_repositories(self, compartment_id, **kwargs):
         """
@@ -2614,6 +2790,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/repositories"
         method = "GET"
+        operation_name = "list_repositories"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/ListRepositories"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2683,14 +2861,20 @@ class ArtifactsClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryCollection")
+                response_type="RepositoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="RepositoryCollection")
+                response_type="RepositoryCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def remove_container_version(self, image_id, remove_container_version_details, **kwargs):
         """
@@ -2743,6 +2927,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/images/{imageId}/actions/removeVersion"
         method = "POST"
+        operation_name = "remove_container_version"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RemoveContainerVersion"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2793,7 +2979,10 @@ class ArtifactsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remove_container_version_details,
-                response_type="ContainerImage")
+                response_type="ContainerImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2801,7 +2990,10 @@ class ArtifactsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=remove_container_version_details,
-                response_type="ContainerImage")
+                response_type="ContainerImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restore_container_image(self, image_id, restore_container_image_details, **kwargs):
         """
@@ -2854,6 +3046,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/images/{imageId}/actions/restore"
         method = "POST"
+        operation_name = "restore_container_image"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerImage/RestoreContainerImage"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2904,7 +3098,10 @@ class ArtifactsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=restore_container_image_details,
-                response_type="ContainerImage")
+                response_type="ContainerImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -2912,7 +3109,10 @@ class ArtifactsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=restore_container_image_details,
-                response_type="ContainerImage")
+                response_type="ContainerImage",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_container_configuration(self, compartment_id, update_container_configuration_details, **kwargs):
         """
@@ -2956,6 +3156,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/configuration"
         method = "PUT"
+        operation_name = "update_container_configuration"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerConfiguration/UpdateContainerConfiguration"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2998,7 +3200,10 @@ class ArtifactsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_container_configuration_details,
-                response_type="ContainerConfiguration")
+                response_type="ContainerConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3006,7 +3211,10 @@ class ArtifactsClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_container_configuration_details,
-                response_type="ContainerConfiguration")
+                response_type="ContainerConfiguration",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_container_repository(self, repository_id, update_container_repository_details, **kwargs):
         """
@@ -3052,6 +3260,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/container/repositories/{repositoryId}"
         method = "PUT"
+        operation_name = "update_container_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/ContainerRepository/UpdateContainerRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3099,7 +3309,10 @@ class ArtifactsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_container_repository_details,
-                response_type="ContainerRepository")
+                response_type="ContainerRepository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3107,7 +3320,10 @@ class ArtifactsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_container_repository_details,
-                response_type="ContainerRepository")
+                response_type="ContainerRepository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_generic_artifact(self, artifact_id, update_generic_artifact_details, **kwargs):
         """
@@ -3157,6 +3373,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/generic/artifacts/{artifactId}"
         method = "PUT"
+        operation_name = "update_generic_artifact"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifact"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3204,7 +3422,10 @@ class ArtifactsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_generic_artifact_details,
-                response_type="GenericArtifact")
+                response_type="GenericArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3212,7 +3433,10 @@ class ArtifactsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_generic_artifact_details,
-                response_type="GenericArtifact")
+                response_type="GenericArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_generic_artifact_by_path(self, repository_id, artifact_path, version, update_generic_artifact_by_path_details, **kwargs):
         """
@@ -3268,6 +3492,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/generic/repositories/{repositoryId}/artifactPaths/{artifactPath}/versions/{version}"
         method = "PUT"
+        operation_name = "update_generic_artifact_by_path"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/GenericArtifact/UpdateGenericArtifactByPath"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3317,7 +3543,10 @@ class ArtifactsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_generic_artifact_by_path_details,
-                response_type="GenericArtifact")
+                response_type="GenericArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3325,7 +3554,10 @@ class ArtifactsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_generic_artifact_by_path_details,
-                response_type="GenericArtifact")
+                response_type="GenericArtifact",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_repository(self, repository_id, update_repository_details, **kwargs):
         """
@@ -3371,6 +3603,8 @@ class ArtifactsClient(object):
         """
         resource_path = "/repositories/{repositoryId}"
         method = "PUT"
+        operation_name = "update_repository"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/registry/20160918/Repository/UpdateRepository"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3418,7 +3652,10 @@ class ArtifactsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_repository_details,
-                response_type="Repository")
+                response_type="Repository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -3426,4 +3663,7 @@ class ArtifactsClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_repository_details,
-                response_type="Repository")
+                response_type="Repository",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

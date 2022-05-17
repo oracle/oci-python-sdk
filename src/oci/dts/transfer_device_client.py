@@ -137,6 +137,8 @@ class TransferDeviceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferDevices"
         method = "POST"
+        operation_name = "create_transfer_device"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -183,7 +185,10 @@ class TransferDeviceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_transfer_device_details,
-                response_type="NewTransferDevice")
+                response_type="NewTransferDevice",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -191,7 +196,10 @@ class TransferDeviceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=create_transfer_device_details,
-                response_type="NewTransferDevice")
+                response_type="NewTransferDevice",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_transfer_device(self, id, transfer_device_label, **kwargs):
         """
@@ -224,6 +232,8 @@ class TransferDeviceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferDevices/{transferDeviceLabel}"
         method = "DELETE"
+        operation_name = "delete_transfer_device"
+        api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -261,13 +271,19 @@ class TransferDeviceClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_transfer_device(self, id, transfer_device_label, **kwargs):
         """
@@ -300,6 +316,8 @@ class TransferDeviceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferDevices/{transferDeviceLabel}"
         method = "GET"
+        operation_name = "get_transfer_device"
+        api_reference_link = ""
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -338,14 +356,20 @@ class TransferDeviceClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TransferDevice")
+                response_type="TransferDevice",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="TransferDevice")
+                response_type="TransferDevice",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_transfer_devices(self, id, **kwargs):
         """
@@ -383,6 +407,8 @@ class TransferDeviceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferDevices"
         method = "GET"
+        operation_name = "list_transfer_devices"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -440,7 +466,10 @@ class TransferDeviceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MultipleTransferDevices")
+                response_type="MultipleTransferDevices",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -448,7 +477,10 @@ class TransferDeviceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="MultipleTransferDevices")
+                response_type="MultipleTransferDevices",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_transfer_device(self, id, transfer_device_label, update_transfer_device_details, **kwargs):
         """
@@ -488,6 +520,8 @@ class TransferDeviceClient(object):
         """
         resource_path = "/transferJobs/{id}/transferDevices/{transferDeviceLabel}"
         method = "PUT"
+        operation_name = "update_transfer_device"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -534,7 +568,10 @@ class TransferDeviceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_transfer_device_details,
-                response_type="TransferDevice")
+                response_type="TransferDevice",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -542,4 +579,7 @@ class TransferDeviceClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_transfer_device_details,
-                response_type="TransferDevice")
+                response_type="TransferDevice",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

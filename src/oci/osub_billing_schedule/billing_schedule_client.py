@@ -163,6 +163,8 @@ class BillingScheduleClient(object):
         """
         resource_path = "/billingSchedules"
         method = "GET"
+        operation_name = "list_billing_schedules"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -229,11 +231,17 @@ class BillingScheduleClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BillingScheduleSummary]")
+                response_type="list[BillingScheduleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BillingScheduleSummary]")
+                response_type="list[BillingScheduleSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

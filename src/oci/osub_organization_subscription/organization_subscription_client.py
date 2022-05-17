@@ -159,6 +159,8 @@ class OrganizationSubscriptionClient(object):
         """
         resource_path = "/organizationSubscription"
         method = "GET"
+        operation_name = "list_organization_subscriptions"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -223,11 +225,17 @@ class OrganizationSubscriptionClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SubscriptionSummary]")
+                response_type="list[SubscriptionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[SubscriptionSummary]")
+                response_type="list[SubscriptionSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

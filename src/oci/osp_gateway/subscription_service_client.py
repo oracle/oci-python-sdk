@@ -158,6 +158,8 @@ class SubscriptionServiceClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}/actions/psd2auth"
         method = "POST"
+        operation_name = "authorize_subscription_payment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -215,7 +217,10 @@ class SubscriptionServiceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=authorize_subscription_payment_details,
-                response_type="AuthorizeSubscriptionPaymentReceipt")
+                response_type="AuthorizeSubscriptionPaymentReceipt",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -224,7 +229,10 @@ class SubscriptionServiceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=authorize_subscription_payment_details,
-                response_type="AuthorizeSubscriptionPaymentReceipt")
+                response_type="AuthorizeSubscriptionPaymentReceipt",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_subscription(self, subscription_id, osp_home_region, compartment_id, **kwargs):
         """
@@ -266,6 +274,8 @@ class SubscriptionServiceClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}"
         method = "GET"
+        operation_name = "get_subscription"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -317,7 +327,10 @@ class SubscriptionServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Subscription")
+                response_type="Subscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -325,7 +338,10 @@ class SubscriptionServiceClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="Subscription")
+                response_type="Subscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_subscriptions(self, osp_home_region, compartment_id, **kwargs):
         """
@@ -380,6 +396,8 @@ class SubscriptionServiceClient(object):
         """
         resource_path = "/subscriptions"
         method = "GET"
+        operation_name = "list_subscriptions"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -442,14 +460,20 @@ class SubscriptionServiceClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SubscriptionCollection")
+                response_type="SubscriptionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="SubscriptionCollection")
+                response_type="SubscriptionCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def pay_subscription(self, osp_home_region, subscription_id, compartment_id, pay_subscription_details, **kwargs):
         """
@@ -505,6 +529,8 @@ class SubscriptionServiceClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}/actions/pay"
         method = "POST"
+        operation_name = "pay_subscription"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -562,7 +588,10 @@ class SubscriptionServiceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=pay_subscription_details,
-                response_type="PaySubscriptionReceipt")
+                response_type="PaySubscriptionReceipt",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -571,7 +600,10 @@ class SubscriptionServiceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=pay_subscription_details,
-                response_type="PaySubscriptionReceipt")
+                response_type="PaySubscriptionReceipt",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_subscription(self, subscription_id, osp_home_region, compartment_id, update_subscription_details, **kwargs):
         """
@@ -623,6 +655,8 @@ class SubscriptionServiceClient(object):
         """
         resource_path = "/subscriptions/{subscriptionId}"
         method = "PUT"
+        operation_name = "update_subscription"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -677,7 +711,10 @@ class SubscriptionServiceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_subscription_details,
-                response_type="Subscription")
+                response_type="Subscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -686,4 +723,7 @@ class SubscriptionServiceClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_subscription_details,
-                response_type="Subscription")
+                response_type="Subscription",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

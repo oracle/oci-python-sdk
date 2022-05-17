@@ -161,6 +161,8 @@ class DashboardGroupClient(object):
         """
         resource_path = "/dashboardGroups"
         method = "POST"
+        operation_name = "create_dashboard_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/CreateDashboardGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -200,14 +202,20 @@ class DashboardGroupClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_dashboard_group_details,
-                response_type="DashboardGroup")
+                response_type="DashboardGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_dashboard_group_details,
-                response_type="DashboardGroup")
+                response_type="DashboardGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_dashboard_group(self, dashboard_group_id, **kwargs):
         """
@@ -256,6 +264,8 @@ class DashboardGroupClient(object):
         """
         resource_path = "/dashboardGroups/{dashboardGroupId}"
         method = "DELETE"
+        operation_name = "delete_dashboard_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/DeleteDashboardGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -303,13 +313,19 @@ class DashboardGroupClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_dashboard_group(self, dashboard_group_id, **kwargs):
         """
@@ -351,6 +367,8 @@ class DashboardGroupClient(object):
         """
         resource_path = "/dashboardGroups/{dashboardGroupId}"
         method = "GET"
+        operation_name = "get_dashboard_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/GetDashboardGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -399,14 +417,20 @@ class DashboardGroupClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DashboardGroup")
+                response_type="DashboardGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="DashboardGroup")
+                response_type="DashboardGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_dashboard_groups(self, compartment_id, **kwargs):
         """
@@ -480,6 +504,8 @@ class DashboardGroupClient(object):
         """
         resource_path = "/dashboardGroups"
         method = "GET"
+        operation_name = "list_dashboard_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroupCollection/ListDashboardGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -558,14 +584,20 @@ class DashboardGroupClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DashboardGroupCollection")
+                response_type="DashboardGroupCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DashboardGroupCollection")
+                response_type="DashboardGroupCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_dashboard_group(self, dashboard_group_id, update_dashboard_group_details, **kwargs):
         """
@@ -617,6 +649,8 @@ class DashboardGroupClient(object):
         """
         resource_path = "/dashboardGroups/{dashboardGroupId}"
         method = "PUT"
+        operation_name = "update_dashboard_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardGroup/UpdateDashboardGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -666,7 +700,10 @@ class DashboardGroupClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dashboard_group_details,
-                response_type="DashboardGroup")
+                response_type="DashboardGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -674,4 +711,7 @@ class DashboardGroupClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dashboard_group_details,
-                response_type="DashboardGroup")
+                response_type="DashboardGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

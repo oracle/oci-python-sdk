@@ -154,6 +154,8 @@ class GatewayClient(object):
         """
         resource_path = "/gateways/{gatewayId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_gateway_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/ChangeGatewayCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -203,14 +205,20 @@ class GatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_gateway_compartment_details)
+                body=change_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_gateway_compartment_details)
+                body=change_gateway_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_gateway(self, create_gateway_details, **kwargs):
         """
@@ -250,6 +258,8 @@ class GatewayClient(object):
         """
         resource_path = "/gateways"
         method = "POST"
+        operation_name = "create_gateway"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -287,14 +297,20 @@ class GatewayClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_gateway_details,
-                response_type="Gateway")
+                response_type="Gateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_gateway_details,
-                response_type="Gateway")
+                response_type="Gateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_gateway(self, gateway_id, **kwargs):
         """
@@ -334,6 +350,8 @@ class GatewayClient(object):
         """
         resource_path = "/gateways/{gatewayId}"
         method = "DELETE"
+        operation_name = "delete_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/DeleteGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -379,13 +397,19 @@ class GatewayClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_gateway(self, gateway_id, **kwargs):
         """
@@ -418,6 +442,8 @@ class GatewayClient(object):
         """
         resource_path = "/gateways/{gatewayId}"
         method = "GET"
+        operation_name = "get_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/GetGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -462,14 +488,20 @@ class GatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Gateway")
+                response_type="Gateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Gateway")
+                response_type="Gateway",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_gateways(self, compartment_id, **kwargs):
         """
@@ -536,6 +568,8 @@ class GatewayClient(object):
         """
         resource_path = "/gateways"
         method = "GET"
+        operation_name = "list_gateways"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/GatewaySummary/ListGateways"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -610,14 +644,20 @@ class GatewayClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="GatewayCollection")
+                response_type="GatewayCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="GatewayCollection")
+                response_type="GatewayCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_gateway(self, gateway_id, update_gateway_details, **kwargs):
         """
@@ -660,6 +700,8 @@ class GatewayClient(object):
         """
         resource_path = "/gateways/{gatewayId}"
         method = "PUT"
+        operation_name = "update_gateway"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Gateway/UpdateGateway"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -706,11 +748,17 @@ class GatewayClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_gateway_details)
+                body=update_gateway_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_gateway_details)
+                body=update_gateway_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

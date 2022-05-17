@@ -142,6 +142,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/connectharnesses/{connectHarnessId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_connect_harness_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/ChangeConnectHarnessCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -190,14 +192,20 @@ class StreamAdminClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_connect_harness_compartment_details)
+                body=change_connect_harness_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_connect_harness_compartment_details)
+                body=change_connect_harness_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_stream_compartment(self, stream_id, change_stream_compartment_details, **kwargs):
         """
@@ -239,6 +247,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/streams/{streamId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_stream_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/ChangeStreamCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -287,14 +297,20 @@ class StreamAdminClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_stream_compartment_details)
+                body=change_stream_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_stream_compartment_details)
+                body=change_stream_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_stream_pool_compartment(self, stream_pool_id, change_stream_pool_compartment_details, **kwargs):
         """
@@ -334,6 +350,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/streampools/{streamPoolId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_stream_pool_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/ChangeStreamPoolCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -382,14 +400,20 @@ class StreamAdminClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_stream_pool_compartment_details)
+                body=change_stream_pool_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_stream_pool_compartment_details)
+                body=change_stream_pool_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_connect_harness(self, create_connect_harness_details, **kwargs):
         """
@@ -427,6 +451,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/connectharnesses"
         method = "POST"
+        operation_name = "create_connect_harness"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/CreateConnectHarness"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -466,14 +492,20 @@ class StreamAdminClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_connect_harness_details,
-                response_type="ConnectHarness")
+                response_type="ConnectHarness",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_connect_harness_details,
-                response_type="ConnectHarness")
+                response_type="ConnectHarness",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_stream(self, create_stream_details, **kwargs):
         """
@@ -511,6 +543,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/streams"
         method = "POST"
+        operation_name = "create_stream"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/CreateStream"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -547,14 +581,20 @@ class StreamAdminClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_stream_details,
-                response_type="Stream")
+                response_type="Stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_stream_details,
-                response_type="Stream")
+                response_type="Stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_stream_pool(self, create_stream_pool_details, **kwargs):
         """
@@ -593,6 +633,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/streampools"
         method = "POST"
+        operation_name = "create_stream_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/CreateStreamPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -632,14 +674,20 @@ class StreamAdminClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_stream_pool_details,
-                response_type="StreamPool")
+                response_type="StreamPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_stream_pool_details,
-                response_type="StreamPool")
+                response_type="StreamPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_connect_harness(self, connect_harness_id, **kwargs):
         """
@@ -680,6 +728,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/connectharnesses/{connectHarnessId}"
         method = "DELETE"
+        operation_name = "delete_connect_harness"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/DeleteConnectHarness"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -727,13 +777,19 @@ class StreamAdminClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_stream(self, stream_id, **kwargs):
         """
@@ -774,6 +830,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/streams/{streamId}"
         method = "DELETE"
+        operation_name = "delete_stream"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/DeleteStream"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -821,13 +879,19 @@ class StreamAdminClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_stream_pool(self, stream_pool_id, **kwargs):
         """
@@ -865,6 +929,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/streampools/{streamPoolId}"
         method = "DELETE"
+        operation_name = "delete_stream_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/DeleteStreamPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -912,13 +978,19 @@ class StreamAdminClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_connect_harness(self, connect_harness_id, **kwargs):
         """
@@ -952,6 +1024,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/connectharnesses/{connectHarnessId}"
         method = "GET"
+        operation_name = "get_connect_harness"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/GetConnectHarness"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -998,14 +1072,20 @@ class StreamAdminClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ConnectHarness")
+                response_type="ConnectHarness",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="ConnectHarness")
+                response_type="ConnectHarness",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_stream(self, stream_id, **kwargs):
         """
@@ -1039,6 +1119,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/streams/{streamId}"
         method = "GET"
+        operation_name = "get_stream"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/GetStream"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1085,14 +1167,20 @@ class StreamAdminClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Stream")
+                response_type="Stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Stream")
+                response_type="Stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_stream_pool(self, stream_pool_id, **kwargs):
         """
@@ -1126,6 +1214,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/streampools/{streamPoolId}"
         method = "GET"
+        operation_name = "get_stream_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1172,14 +1262,20 @@ class StreamAdminClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="StreamPool")
+                response_type="StreamPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="StreamPool")
+                response_type="StreamPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_connect_harnesses(self, compartment_id, **kwargs):
         """
@@ -1240,6 +1336,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/connectharnesses"
         method = "GET"
+        operation_name = "list_connect_harnesses"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarnessSummary/ListConnectHarnesses"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1316,14 +1414,20 @@ class StreamAdminClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ConnectHarnessSummary]")
+                response_type="list[ConnectHarnessSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[ConnectHarnessSummary]")
+                response_type="list[ConnectHarnessSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_stream_pools(self, compartment_id, **kwargs):
         """
@@ -1384,6 +1488,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/streampools"
         method = "GET"
+        operation_name = "list_stream_pools"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPoolSummary/ListStreamPools"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1460,14 +1566,20 @@ class StreamAdminClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[StreamPoolSummary]")
+                response_type="list[StreamPoolSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[StreamPoolSummary]")
+                response_type="list[StreamPoolSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_streams(self, **kwargs):
         """
@@ -1534,6 +1646,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/streams"
         method = "GET"
+        operation_name = "list_streams"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamSummary/ListStreams"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1613,14 +1727,20 @@ class StreamAdminClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[StreamSummary]")
+                response_type="list[StreamSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[StreamSummary]")
+                response_type="list[StreamSummary]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_connect_harness(self, connect_harness_id, update_connect_harness_details, **kwargs):
         """
@@ -1660,6 +1780,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/connectharnesses/{connectHarnessId}"
         method = "PUT"
+        operation_name = "update_connect_harness"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/ConnectHarness/UpdateConnectHarness"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1709,7 +1831,10 @@ class StreamAdminClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_connect_harness_details,
-                response_type="ConnectHarness")
+                response_type="ConnectHarness",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1717,7 +1842,10 @@ class StreamAdminClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_connect_harness_details,
-                response_type="ConnectHarness")
+                response_type="ConnectHarness",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_stream(self, stream_id, update_stream_details, **kwargs):
         """
@@ -1757,6 +1885,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/streams/{streamId}"
         method = "PUT"
+        operation_name = "update_stream"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/Stream/UpdateStream"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1806,7 +1936,10 @@ class StreamAdminClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_stream_details,
-                response_type="Stream")
+                response_type="Stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1814,7 +1947,10 @@ class StreamAdminClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_stream_details,
-                response_type="Stream")
+                response_type="Stream",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_stream_pool(self, stream_pool_id, update_stream_pool_details, **kwargs):
         """
@@ -1854,6 +1990,8 @@ class StreamAdminClient(object):
         """
         resource_path = "/streampools/{streamPoolId}"
         method = "PUT"
+        operation_name = "update_stream_pool"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/UpdateStreamPool"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1903,7 +2041,10 @@ class StreamAdminClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_stream_pool_details,
-                response_type="StreamPool")
+                response_type="StreamPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -1911,4 +2052,7 @@ class StreamAdminClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_stream_pool_details,
-                response_type="StreamPool")
+                response_type="StreamPool",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

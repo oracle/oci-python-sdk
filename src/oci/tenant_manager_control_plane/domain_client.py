@@ -142,6 +142,8 @@ class DomainClient(object):
         """
         resource_path = "/domains"
         method = "POST"
+        operation_name = "create_domain"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -179,14 +181,20 @@ class DomainClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_domain_details,
-                response_type="Domain")
+                response_type="Domain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_domain_details,
-                response_type="Domain")
+                response_type="Domain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_domain(self, domain_id, **kwargs):
         """
@@ -226,6 +234,8 @@ class DomainClient(object):
         """
         resource_path = "/domains/{domainId}"
         method = "DELETE"
+        operation_name = "delete_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/DeleteDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -271,13 +281,19 @@ class DomainClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_domain(self, domain_id, **kwargs):
         """
@@ -310,6 +326,8 @@ class DomainClient(object):
         """
         resource_path = "/domains/{domainId}"
         method = "GET"
+        operation_name = "get_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/GetDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -354,14 +372,20 @@ class DomainClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Domain")
+                response_type="Domain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Domain")
+                response_type="Domain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_domains(self, compartment_id, **kwargs):
         """
@@ -429,6 +453,8 @@ class DomainClient(object):
         """
         resource_path = "/domains"
         method = "GET"
+        operation_name = "list_domains"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/ListDomains"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -512,14 +538,20 @@ class DomainClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DomainCollection")
+                response_type="DomainCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DomainCollection")
+                response_type="DomainCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_domain(self, domain_id, update_domain_details, **kwargs):
         """
@@ -562,6 +594,8 @@ class DomainClient(object):
         """
         resource_path = "/domains/{domainId}"
         method = "PUT"
+        operation_name = "update_domain"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Domain/UpdateDomain"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -609,7 +643,10 @@ class DomainClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_domain_details,
-                response_type="Domain")
+                response_type="Domain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -617,4 +654,7 @@ class DomainClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_domain_details,
-                response_type="Domain")
+                response_type="Domain",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -152,6 +152,8 @@ class OrganizationClient(object):
         """
         resource_path = "/organizationTenancies/{organizationTenancyId}/actions/approveForTransfer"
         method = "POST"
+        operation_name = "approve_organization_tenancy_for_transfer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/ApproveOrganizationTenancyForTransfer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -207,7 +209,10 @@ class OrganizationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OrganizationTenancy")
+                response_type="OrganizationTenancy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -215,7 +220,10 @@ class OrganizationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OrganizationTenancy")
+                response_type="OrganizationTenancy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_child_tenancy(self, create_child_tenancy_details, **kwargs):
         """
@@ -255,6 +263,8 @@ class OrganizationClient(object):
         """
         resource_path = "/childTenancies"
         method = "POST"
+        operation_name = "create_child_tenancy"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -291,13 +301,19 @@ class OrganizationClient(object):
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_child_tenancy_details)
+                body=create_child_tenancy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
-                body=create_child_tenancy_details)
+                body=create_child_tenancy_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_organization_tenancy(self, organization_tenancy_id, **kwargs):
         """
@@ -344,6 +360,8 @@ class OrganizationClient(object):
         """
         resource_path = "/organizationTenancies/{organizationTenancyId}"
         method = "DELETE"
+        operation_name = "delete_organization_tenancy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/DeleteOrganizationTenancy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -392,13 +410,19 @@ class OrganizationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_organization(self, organization_id, **kwargs):
         """
@@ -431,6 +455,8 @@ class OrganizationClient(object):
         """
         resource_path = "/organizations/{organizationId}"
         method = "GET"
+        operation_name = "get_organization"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/GetOrganization"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -475,14 +501,20 @@ class OrganizationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Organization")
+                response_type="Organization",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Organization")
+                response_type="Organization",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_organization_tenancy(self, organization_id, tenancy_id, **kwargs):
         """
@@ -518,6 +550,8 @@ class OrganizationClient(object):
         """
         resource_path = "/organizations/{organizationId}/tenancies/{tenancyId}"
         method = "GET"
+        operation_name = "get_organization_tenancy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/GetOrganizationTenancy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -563,14 +597,20 @@ class OrganizationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OrganizationTenancy")
+                response_type="OrganizationTenancy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="OrganizationTenancy")
+                response_type="OrganizationTenancy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_organization_tenancies(self, organization_id, **kwargs):
         """
@@ -609,6 +649,8 @@ class OrganizationClient(object):
         """
         resource_path = "/organizations/{organizationId}/tenancies"
         method = "GET"
+        operation_name = "list_organization_tenancies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizationTenancies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -662,7 +704,10 @@ class OrganizationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OrganizationTenancyCollection")
+                response_type="OrganizationTenancyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -670,7 +715,10 @@ class OrganizationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OrganizationTenancyCollection")
+                response_type="OrganizationTenancyCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_organizations(self, compartment_id, **kwargs):
         """
@@ -709,6 +757,8 @@ class OrganizationClient(object):
         """
         resource_path = "/organizations"
         method = "GET"
+        operation_name = "list_organizations"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/ListOrganizations"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -752,14 +802,20 @@ class OrganizationClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OrganizationCollection")
+                response_type="OrganizationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OrganizationCollection")
+                response_type="OrganizationCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def restore_organization_tenancy(self, organization_tenancy_id, **kwargs):
         """
@@ -799,6 +855,8 @@ class OrganizationClient(object):
         """
         resource_path = "/organizationTenancies/{organizationTenancyId}/actions/restore"
         method = "POST"
+        operation_name = "restore_organization_tenancy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/RestoreOrganizationTenancy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -844,13 +902,19 @@ class OrganizationClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def unapprove_organization_tenancy_for_transfer(self, compartment_id, organization_tenancy_id, **kwargs):
         """
@@ -900,6 +964,8 @@ class OrganizationClient(object):
         """
         resource_path = "/organizationTenancies/{organizationTenancyId}/actions/unapproveForTransfer"
         method = "POST"
+        operation_name = "unapprove_organization_tenancy_for_transfer"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/OrganizationTenancy/UnapproveOrganizationTenancyForTransfer"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -955,7 +1021,10 @@ class OrganizationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OrganizationTenancy")
+                response_type="OrganizationTenancy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -963,7 +1032,10 @@ class OrganizationClient(object):
                 path_params=path_params,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="OrganizationTenancy")
+                response_type="OrganizationTenancy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_organization(self, organization_id, update_organization_details, **kwargs):
         """
@@ -1013,6 +1085,8 @@ class OrganizationClient(object):
         """
         resource_path = "/organizations/{organizationId}"
         method = "PUT"
+        operation_name = "update_organization"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/organizations/20200801/Organization/UpdateOrganization"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1062,11 +1136,17 @@ class OrganizationClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_organization_details)
+                body=update_organization_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=update_organization_details)
+                body=update_organization_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -161,6 +161,8 @@ class DashboardClient(object):
         """
         resource_path = "/dashboards"
         method = "POST"
+        operation_name = "create_dashboard"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/CreateDashboard"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -200,14 +202,20 @@ class DashboardClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_dashboard_details,
-                response_type="Dashboard")
+                response_type="Dashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_dashboard_details,
-                response_type="Dashboard")
+                response_type="Dashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_dashboard(self, dashboard_id, **kwargs):
         """
@@ -256,6 +264,8 @@ class DashboardClient(object):
         """
         resource_path = "/dashboards/{dashboardId}"
         method = "DELETE"
+        operation_name = "delete_dashboard"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/DeleteDashboard"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -303,13 +313,19 @@ class DashboardClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_dashboard(self, dashboard_id, **kwargs):
         """
@@ -351,6 +367,8 @@ class DashboardClient(object):
         """
         resource_path = "/dashboards/{dashboardId}"
         method = "GET"
+        operation_name = "get_dashboard"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/GetDashboard"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -399,14 +417,20 @@ class DashboardClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Dashboard")
+                response_type="Dashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Dashboard")
+                response_type="Dashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_dashboards(self, dashboard_group_id, **kwargs):
         """
@@ -480,6 +504,8 @@ class DashboardClient(object):
         """
         resource_path = "/dashboards"
         method = "GET"
+        operation_name = "list_dashboards"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/DashboardCollection/ListDashboards"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -558,14 +584,20 @@ class DashboardClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DashboardCollection")
+                response_type="DashboardCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="DashboardCollection")
+                response_type="DashboardCollection",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_dashboard(self, dashboard_id, update_dashboard_details, **kwargs):
         """
@@ -617,6 +649,8 @@ class DashboardClient(object):
         """
         resource_path = "/dashboards/{dashboardId}"
         method = "PUT"
+        operation_name = "update_dashboard"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/dashboard/20210731/Dashboard/UpdateDashboard"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -666,7 +700,10 @@ class DashboardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dashboard_details,
-                response_type="Dashboard")
+                response_type="Dashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -674,4 +711,7 @@ class DashboardClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_dashboard_details,
-                response_type="Dashboard")
+                response_type="Dashboard",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)

@@ -149,6 +149,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_boot_volume_backup_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/ChangeBootVolumeBackupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -193,14 +195,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_boot_volume_backup_compartment_details)
+                body=change_boot_volume_backup_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_boot_volume_backup_compartment_details)
+                body=change_boot_volume_backup_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_boot_volume_compartment(self, boot_volume_id, change_boot_volume_compartment_details, **kwargs):
         """
@@ -241,6 +249,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumes/{bootVolumeId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_boot_volume_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/ChangeBootVolumeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -285,14 +295,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_boot_volume_compartment_details)
+                body=change_boot_volume_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_boot_volume_compartment_details)
+                body=change_boot_volume_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_volume_backup_compartment(self, volume_backup_id, change_volume_backup_compartment_details, **kwargs):
         """
@@ -333,6 +349,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackups/{volumeBackupId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_volume_backup_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/ChangeVolumeBackupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -377,14 +395,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_volume_backup_compartment_details)
+                body=change_volume_backup_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_volume_backup_compartment_details)
+                body=change_volume_backup_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_volume_compartment(self, volume_id, change_volume_compartment_details, **kwargs):
         """
@@ -425,6 +449,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumes/{volumeId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_volume_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ChangeVolumeCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -469,14 +495,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_volume_compartment_details)
+                body=change_volume_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_volume_compartment_details)
+                body=change_volume_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_volume_group_backup_compartment(self, volume_group_backup_id, change_volume_group_backup_compartment_details, **kwargs):
         """
@@ -517,6 +549,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_volume_group_backup_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/ChangeVolumeGroupBackupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -561,14 +595,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_volume_group_backup_compartment_details)
+                body=change_volume_group_backup_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_volume_group_backup_compartment_details)
+                body=change_volume_group_backup_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def change_volume_group_compartment(self, volume_group_id, change_volume_group_compartment_details, **kwargs):
         """
@@ -609,6 +649,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroups/{volumeGroupId}/actions/changeCompartment"
         method = "POST"
+        operation_name = "change_volume_group_compartment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/ChangeVolumeGroupCompartment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -653,14 +695,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_volume_group_compartment_details)
+                body=change_volume_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                body=change_volume_group_compartment_details)
+                body=change_volume_group_compartment_details,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def copy_boot_volume_backup(self, boot_volume_backup_id, copy_boot_volume_backup_details, **kwargs):
         """
@@ -707,6 +755,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}/actions/copy"
         method = "POST"
+        operation_name = "copy_boot_volume_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/CopyBootVolumeBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -755,7 +805,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=copy_boot_volume_backup_details,
-                response_type="BootVolumeBackup")
+                response_type="BootVolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -763,7 +816,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=copy_boot_volume_backup_details,
-                response_type="BootVolumeBackup")
+                response_type="BootVolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def copy_volume_backup(self, volume_backup_id, copy_volume_backup_details, **kwargs):
         """
@@ -810,6 +866,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackups/{volumeBackupId}/actions/copy"
         method = "POST"
+        operation_name = "copy_volume_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/CopyVolumeBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -858,7 +916,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=copy_volume_backup_details,
-                response_type="VolumeBackup")
+                response_type="VolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -866,7 +927,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=copy_volume_backup_details,
-                response_type="VolumeBackup")
+                response_type="VolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def copy_volume_group_backup(self, volume_group_backup_id, copy_volume_group_backup_details, **kwargs):
         """
@@ -913,6 +977,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}/actions/copy"
         method = "POST"
+        operation_name = "copy_volume_group_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/CopyVolumeGroupBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -961,7 +1027,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=copy_volume_group_backup_details,
-                response_type="VolumeGroupBackup")
+                response_type="VolumeGroupBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -969,7 +1038,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=copy_volume_group_backup_details,
-                response_type="VolumeGroupBackup")
+                response_type="VolumeGroupBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_boot_volume(self, create_boot_volume_details, **kwargs):
         """
@@ -1011,6 +1083,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumes"
         method = "POST"
+        operation_name = "create_boot_volume"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/CreateBootVolume"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1046,14 +1120,20 @@ class BlockstorageClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_boot_volume_details,
-                response_type="BootVolume")
+                response_type="BootVolume",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_boot_volume_details,
-                response_type="BootVolume")
+                response_type="BootVolume",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_boot_volume_backup(self, create_boot_volume_backup_details, **kwargs):
         """
@@ -1097,6 +1177,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumeBackups"
         method = "POST"
+        operation_name = "create_boot_volume_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/CreateBootVolumeBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1132,14 +1214,20 @@ class BlockstorageClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_boot_volume_backup_details,
-                response_type="BootVolumeBackup")
+                response_type="BootVolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_boot_volume_backup_details,
-                response_type="BootVolumeBackup")
+                response_type="BootVolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_volume(self, create_volume_details, **kwargs):
         """
@@ -1193,6 +1281,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumes"
         method = "POST"
+        operation_name = "create_volume"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/CreateVolume"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1228,14 +1318,20 @@ class BlockstorageClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_volume_details,
-                response_type="Volume")
+                response_type="Volume",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_volume_details,
-                response_type="Volume")
+                response_type="Volume",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_volume_backup(self, create_volume_backup_details, **kwargs):
         """
@@ -1279,6 +1375,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackups"
         method = "POST"
+        operation_name = "create_volume_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/CreateVolumeBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1314,14 +1412,20 @@ class BlockstorageClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_volume_backup_details,
-                response_type="VolumeBackup")
+                response_type="VolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_volume_backup_details,
-                response_type="VolumeBackup")
+                response_type="VolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_volume_backup_policy(self, create_volume_backup_policy_details, **kwargs):
         """
@@ -1367,6 +1471,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackupPolicies"
         method = "POST"
+        operation_name = "create_volume_backup_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/CreateVolumeBackupPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1404,14 +1510,20 @@ class BlockstorageClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_volume_backup_policy_details,
-                response_type="VolumeBackupPolicy")
+                response_type="VolumeBackupPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_volume_backup_policy_details,
-                response_type="VolumeBackupPolicy")
+                response_type="VolumeBackupPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_volume_backup_policy_assignment(self, create_volume_backup_policy_assignment_details, **kwargs):
         """
@@ -1443,6 +1555,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackupPolicyAssignments"
         method = "POST"
+        operation_name = "create_volume_backup_policy_assignment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/CreateVolumeBackupPolicyAssignment"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -1470,14 +1584,20 @@ class BlockstorageClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_volume_backup_policy_assignment_details,
-                response_type="VolumeBackupPolicyAssignment")
+                response_type="VolumeBackupPolicyAssignment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_volume_backup_policy_assignment_details,
-                response_type="VolumeBackupPolicyAssignment")
+                response_type="VolumeBackupPolicyAssignment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_volume_group(self, create_volume_group_details, **kwargs):
         """
@@ -1522,6 +1642,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroups"
         method = "POST"
+        operation_name = "create_volume_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/CreateVolumeGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1557,14 +1679,20 @@ class BlockstorageClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_volume_group_details,
-                response_type="VolumeGroup")
+                response_type="VolumeGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_volume_group_details,
-                response_type="VolumeGroup")
+                response_type="VolumeGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def create_volume_group_backup(self, create_volume_group_backup_details, **kwargs):
         """
@@ -1604,6 +1732,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroupBackups"
         method = "POST"
+        operation_name = "create_volume_group_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/CreateVolumeGroupBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1639,14 +1769,20 @@ class BlockstorageClient(object):
                 method=method,
                 header_params=header_params,
                 body=create_volume_group_backup_details,
-                response_type="VolumeGroupBackup")
+                response_type="VolumeGroupBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 header_params=header_params,
                 body=create_volume_group_backup_details,
-                response_type="VolumeGroupBackup")
+                response_type="VolumeGroupBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_boot_volume(self, boot_volume_id, **kwargs):
         """
@@ -1686,6 +1822,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumes/{bootVolumeId}"
         method = "DELETE"
+        operation_name = "delete_boot_volume"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1729,13 +1867,19 @@ class BlockstorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_boot_volume_backup(self, boot_volume_backup_id, **kwargs):
         """
@@ -1770,6 +1914,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}"
         method = "DELETE"
+        operation_name = "delete_boot_volume_backup"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1813,13 +1959,19 @@ class BlockstorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_boot_volume_kms_key(self, boot_volume_id, **kwargs):
         """
@@ -1854,6 +2006,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumes/{bootVolumeId}/kmsKey"
         method = "DELETE"
+        operation_name = "delete_boot_volume_kms_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1897,13 +2051,19 @@ class BlockstorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_volume(self, volume_id, **kwargs):
         """
@@ -1943,6 +2103,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumes/{volumeId}"
         method = "DELETE"
+        operation_name = "delete_volume"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -1986,13 +2148,19 @@ class BlockstorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_volume_backup(self, volume_backup_id, **kwargs):
         """
@@ -2027,6 +2195,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "DELETE"
+        operation_name = "delete_volume_backup"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2070,13 +2240,19 @@ class BlockstorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_volume_backup_policy(self, policy_id, **kwargs):
         """
@@ -2121,6 +2297,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackupPolicies/{policyId}"
         method = "DELETE"
+        operation_name = "delete_volume_backup_policy"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2166,13 +2344,19 @@ class BlockstorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_volume_backup_policy_assignment(self, policy_assignment_id, **kwargs):
         """
@@ -2207,6 +2391,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackupPolicyAssignments/{policyAssignmentId}"
         method = "DELETE"
+        operation_name = "delete_volume_backup_policy_assignment"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2250,13 +2436,19 @@ class BlockstorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_volume_group(self, volume_group_id, **kwargs):
         """
@@ -2294,6 +2486,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroups/{volumeGroupId}"
         method = "DELETE"
+        operation_name = "delete_volume_group"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2337,13 +2531,19 @@ class BlockstorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_volume_group_backup(self, volume_group_backup_id, **kwargs):
         """
@@ -2381,6 +2581,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}"
         method = "DELETE"
+        operation_name = "delete_volume_group_backup"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2424,13 +2626,19 @@ class BlockstorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def delete_volume_kms_key(self, volume_id, **kwargs):
         """
@@ -2465,6 +2673,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumes/{volumeId}/kmsKey"
         method = "DELETE"
+        operation_name = "delete_volume_kms_key"
+        api_reference_link = ""
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2508,13 +2718,19 @@ class BlockstorageClient(object):
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
-                header_params=header_params)
+                header_params=header_params,
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_block_volume_replica(self, block_volume_replica_id, **kwargs):
         """
@@ -2544,6 +2760,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/blockVolumeReplicas/{blockVolumeReplicaId}"
         method = "GET"
+        operation_name = "get_block_volume_replica"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BlockVolumeReplica/GetBlockVolumeReplica"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2581,14 +2799,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BlockVolumeReplica")
+                response_type="BlockVolumeReplica",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BlockVolumeReplica")
+                response_type="BlockVolumeReplica",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_boot_volume(self, boot_volume_id, **kwargs):
         """
@@ -2618,6 +2842,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumes/{bootVolumeId}"
         method = "GET"
+        operation_name = "get_boot_volume"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/GetBootVolume"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2655,14 +2881,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BootVolume")
+                response_type="BootVolume",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BootVolume")
+                response_type="BootVolume",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_boot_volume_backup(self, boot_volume_backup_id, **kwargs):
         """
@@ -2692,6 +2924,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}"
         method = "GET"
+        operation_name = "get_boot_volume_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/GetBootVolumeBackup"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2729,14 +2963,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BootVolumeBackup")
+                response_type="BootVolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BootVolumeBackup")
+                response_type="BootVolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_boot_volume_kms_key(self, boot_volume_id, **kwargs):
         """
@@ -2771,6 +3011,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumes/{bootVolumeId}/kmsKey"
         method = "GET"
+        operation_name = "get_boot_volume_kms_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeKmsKey/GetBootVolumeKmsKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -2815,14 +3057,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BootVolumeKmsKey")
+                response_type="BootVolumeKmsKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BootVolumeKmsKey")
+                response_type="BootVolumeKmsKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_boot_volume_replica(self, boot_volume_replica_id, **kwargs):
         """
@@ -2852,6 +3100,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumeReplicas/{bootVolumeReplicaId}"
         method = "GET"
+        operation_name = "get_boot_volume_replica"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeReplica/GetBootVolumeReplica"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2889,14 +3139,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BootVolumeReplica")
+                response_type="BootVolumeReplica",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="BootVolumeReplica")
+                response_type="BootVolumeReplica",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_volume(self, volume_id, **kwargs):
         """
@@ -2926,6 +3182,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumes/{volumeId}"
         method = "GET"
+        operation_name = "get_volume"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/GetVolume"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -2963,14 +3221,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Volume")
+                response_type="Volume",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="Volume")
+                response_type="Volume",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_volume_backup(self, volume_backup_id, **kwargs):
         """
@@ -3000,6 +3264,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "GET"
+        operation_name = "get_volume_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/GetVolumeBackup"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3037,14 +3303,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeBackup")
+                response_type="VolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeBackup")
+                response_type="VolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_volume_backup_policy(self, policy_id, **kwargs):
         """
@@ -3074,6 +3346,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackupPolicies/{policyId}"
         method = "GET"
+        operation_name = "get_volume_backup_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/GetVolumeBackupPolicy"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3111,14 +3385,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeBackupPolicy")
+                response_type="VolumeBackupPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeBackupPolicy")
+                response_type="VolumeBackupPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_volume_backup_policy_asset_assignment(self, asset_id, **kwargs):
         """
@@ -3166,6 +3446,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackupPolicyAssignments"
         method = "GET"
+        operation_name = "get_volume_backup_policy_asset_assignment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/GetVolumeBackupPolicyAssetAssignment"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3206,14 +3488,20 @@ class BlockstorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeBackupPolicyAssignment]")
+                response_type="list[VolumeBackupPolicyAssignment]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeBackupPolicyAssignment]")
+                response_type="list[VolumeBackupPolicyAssignment]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_volume_backup_policy_assignment(self, policy_assignment_id, **kwargs):
         """
@@ -3243,6 +3531,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackupPolicyAssignments/{policyAssignmentId}"
         method = "GET"
+        operation_name = "get_volume_backup_policy_assignment"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicyAssignment/GetVolumeBackupPolicyAssignment"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3280,14 +3570,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeBackupPolicyAssignment")
+                response_type="VolumeBackupPolicyAssignment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeBackupPolicyAssignment")
+                response_type="VolumeBackupPolicyAssignment",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_volume_group(self, volume_group_id, **kwargs):
         """
@@ -3319,6 +3615,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroups/{volumeGroupId}"
         method = "GET"
+        operation_name = "get_volume_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/GetVolumeGroup"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3356,14 +3654,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeGroup")
+                response_type="VolumeGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeGroup")
+                response_type="VolumeGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_volume_group_backup(self, volume_group_backup_id, **kwargs):
         """
@@ -3395,6 +3699,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}"
         method = "GET"
+        operation_name = "get_volume_group_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/GetVolumeGroupBackup"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3432,14 +3738,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeGroupBackup")
+                response_type="VolumeGroupBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeGroupBackup")
+                response_type="VolumeGroupBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_volume_group_replica(self, volume_group_replica_id, **kwargs):
         """
@@ -3469,6 +3781,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroupReplicas/{volumeGroupReplicaId}"
         method = "GET"
+        operation_name = "get_volume_group_replica"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupReplica/GetVolumeGroupReplica"
 
         expected_kwargs = ["retry_strategy"]
         extra_kwargs = [_key for _key in six.iterkeys(kwargs) if _key not in expected_kwargs]
@@ -3506,14 +3820,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeGroupReplica")
+                response_type="VolumeGroupReplica",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeGroupReplica")
+                response_type="VolumeGroupReplica",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def get_volume_kms_key(self, volume_id, **kwargs):
         """
@@ -3548,6 +3868,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumes/{volumeId}/kmsKey"
         method = "GET"
+        operation_name = "get_volume_kms_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeKmsKey/GetVolumeKmsKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3592,14 +3914,20 @@ class BlockstorageClient(object):
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeKmsKey")
+                response_type="VolumeKmsKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 path_params=path_params,
                 header_params=header_params,
-                response_type="VolumeKmsKey")
+                response_type="VolumeKmsKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_block_volume_replicas(self, availability_domain, compartment_id, **kwargs):
         """
@@ -3678,6 +4006,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/blockVolumeReplicas"
         method = "GET"
+        operation_name = "list_block_volume_replicas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BlockVolumeReplica/ListBlockVolumeReplicas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3748,14 +4078,20 @@ class BlockstorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BlockVolumeReplica]")
+                response_type="list[BlockVolumeReplica]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BlockVolumeReplica]")
+                response_type="list[BlockVolumeReplica]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_boot_volume_backups(self, compartment_id, **kwargs):
         """
@@ -3836,6 +4172,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumeBackups"
         method = "GET"
+        operation_name = "list_boot_volume_backups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/ListBootVolumeBackups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -3909,14 +4247,20 @@ class BlockstorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BootVolumeBackup]")
+                response_type="list[BootVolumeBackup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BootVolumeBackup]")
+                response_type="list[BootVolumeBackup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_boot_volume_replicas(self, availability_domain, compartment_id, **kwargs):
         """
@@ -3995,6 +4339,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumeReplicas"
         method = "GET"
+        operation_name = "list_boot_volume_replicas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeReplica/ListBootVolumeReplicas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4065,14 +4411,20 @@ class BlockstorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BootVolumeReplica]")
+                response_type="list[BootVolumeReplica]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BootVolumeReplica]")
+                response_type="list[BootVolumeReplica]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_boot_volumes(self, availability_domain, compartment_id, **kwargs):
         """
@@ -4128,6 +4480,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumes"
         method = "GET"
+        operation_name = "list_boot_volumes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/ListBootVolumes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4171,14 +4525,20 @@ class BlockstorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BootVolume]")
+                response_type="list[BootVolume]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[BootVolume]")
+                response_type="list[BootVolume]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_volume_backup_policies(self, **kwargs):
         """
@@ -4230,6 +4590,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackupPolicies"
         method = "GET"
+        operation_name = "list_volume_backup_policies"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/ListVolumeBackupPolicies"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4271,14 +4633,20 @@ class BlockstorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeBackupPolicy]")
+                response_type="list[VolumeBackupPolicy]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeBackupPolicy]")
+                response_type="list[VolumeBackupPolicy]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_volume_backups(self, compartment_id, **kwargs):
         """
@@ -4359,6 +4727,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackups"
         method = "GET"
+        operation_name = "list_volume_backups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/ListVolumeBackups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4432,14 +4802,20 @@ class BlockstorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeBackup]")
+                response_type="list[VolumeBackup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeBackup]")
+                response_type="list[VolumeBackup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_volume_group_backups(self, compartment_id, **kwargs):
         """
@@ -4514,6 +4890,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroupBackups"
         method = "GET"
+        operation_name = "list_volume_group_backups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/ListVolumeGroupBackups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4576,14 +4954,20 @@ class BlockstorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeGroupBackup]")
+                response_type="list[VolumeGroupBackup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeGroupBackup]")
+                response_type="list[VolumeGroupBackup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_volume_group_replicas(self, availability_domain, compartment_id, **kwargs):
         """
@@ -4665,6 +5049,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroupReplicas"
         method = "GET"
+        operation_name = "list_volume_group_replicas"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupReplica/ListVolumeGroupReplicas"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4735,14 +5121,20 @@ class BlockstorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeGroupReplica]")
+                response_type="list[VolumeGroupReplica]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeGroupReplica]")
+                response_type="list[VolumeGroupReplica]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_volume_groups(self, compartment_id, **kwargs):
         """
@@ -4825,6 +5217,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroups"
         method = "GET"
+        operation_name = "list_volume_groups"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/ListVolumeGroups"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -4896,14 +5290,20 @@ class BlockstorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeGroup]")
+                response_type="list[VolumeGroup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[VolumeGroup]")
+                response_type="list[VolumeGroup]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def list_volumes(self, compartment_id, **kwargs):
         """
@@ -4986,6 +5386,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumes"
         method = "GET"
+        operation_name = "list_volumes"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5059,14 +5461,20 @@ class BlockstorageClient(object):
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Volume]")
+                response_type="list[Volume]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
                 method=method,
                 query_params=query_params,
                 header_params=header_params,
-                response_type="list[Volume]")
+                response_type="list[Volume]",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_boot_volume(self, boot_volume_id, update_boot_volume_details, **kwargs):
         """
@@ -5104,6 +5512,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumes/{bootVolumeId}"
         method = "PUT"
+        operation_name = "update_boot_volume"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolume/UpdateBootVolume"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5149,7 +5559,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_boot_volume_details,
-                response_type="BootVolume")
+                response_type="BootVolume",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5157,7 +5570,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_boot_volume_details,
-                response_type="BootVolume")
+                response_type="BootVolume",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_boot_volume_backup(self, boot_volume_backup_id, update_boot_volume_backup_details, **kwargs):
         """
@@ -5196,6 +5612,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumeBackups/{bootVolumeBackupId}"
         method = "PUT"
+        operation_name = "update_boot_volume_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeBackup/UpdateBootVolumeBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5241,7 +5659,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_boot_volume_backup_details,
-                response_type="BootVolumeBackup")
+                response_type="BootVolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5249,7 +5670,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_boot_volume_backup_details,
-                response_type="BootVolumeBackup")
+                response_type="BootVolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_boot_volume_kms_key(self, boot_volume_id, update_boot_volume_kms_key_details, **kwargs):
         """
@@ -5287,6 +5711,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/bootVolumes/{bootVolumeId}/kmsKey"
         method = "PUT"
+        operation_name = "update_boot_volume_kms_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/BootVolumeKmsKey/UpdateBootVolumeKmsKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5332,7 +5758,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_boot_volume_kms_key_details,
-                response_type="BootVolumeKmsKey")
+                response_type="BootVolumeKmsKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5340,7 +5769,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_boot_volume_kms_key_details,
-                response_type="BootVolumeKmsKey")
+                response_type="BootVolumeKmsKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_volume(self, volume_id, update_volume_details, **kwargs):
         """
@@ -5379,6 +5811,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumes/{volumeId}"
         method = "PUT"
+        operation_name = "update_volume"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Volume/UpdateVolume"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5424,7 +5858,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_volume_details,
-                response_type="Volume")
+                response_type="Volume",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5432,7 +5869,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_volume_details,
-                response_type="Volume")
+                response_type="Volume",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_volume_backup(self, volume_backup_id, update_volume_backup_details, **kwargs):
         """
@@ -5471,6 +5911,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackups/{volumeBackupId}"
         method = "PUT"
+        operation_name = "update_volume_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackup/UpdateVolumeBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5516,7 +5958,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_volume_backup_details,
-                response_type="VolumeBackup")
+                response_type="VolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5524,7 +5969,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_volume_backup_details,
-                response_type="VolumeBackup")
+                response_type="VolumeBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_volume_backup_policy(self, policy_id, update_volume_backup_policy_details, **kwargs):
         """
@@ -5579,6 +6027,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeBackupPolicies/{policyId}"
         method = "PUT"
+        operation_name = "update_volume_backup_policy"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeBackupPolicy/UpdateVolumeBackupPolicy"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5629,7 +6079,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_volume_backup_policy_details,
-                response_type="VolumeBackupPolicy")
+                response_type="VolumeBackupPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5637,7 +6090,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_volume_backup_policy_details,
-                response_type="VolumeBackupPolicy")
+                response_type="VolumeBackupPolicy",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_volume_group(self, volume_group_id, update_volume_group_details, **kwargs):
         """
@@ -5687,6 +6143,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroups/{volumeGroupId}"
         method = "PUT"
+        operation_name = "update_volume_group"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroup/UpdateVolumeGroup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5739,7 +6197,10 @@ class BlockstorageClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_volume_group_details,
-                response_type="VolumeGroup")
+                response_type="VolumeGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5748,7 +6209,10 @@ class BlockstorageClient(object):
                 query_params=query_params,
                 header_params=header_params,
                 body=update_volume_group_details,
-                response_type="VolumeGroup")
+                response_type="VolumeGroup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_volume_group_backup(self, volume_group_backup_id, update_volume_group_backup_details, **kwargs):
         """
@@ -5788,6 +6252,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumeGroupBackups/{volumeGroupBackupId}"
         method = "PUT"
+        operation_name = "update_volume_group_backup"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeGroupBackup/UpdateVolumeGroupBackup"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5833,7 +6299,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_volume_group_backup_details,
-                response_type="VolumeGroupBackup")
+                response_type="VolumeGroupBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5841,7 +6310,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_volume_group_backup_details,
-                response_type="VolumeGroupBackup")
+                response_type="VolumeGroupBackup",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
 
     def update_volume_kms_key(self, volume_id, update_volume_kms_key_details, **kwargs):
         """
@@ -5879,6 +6351,8 @@ class BlockstorageClient(object):
         """
         resource_path = "/volumes/{volumeId}/kmsKey"
         method = "PUT"
+        operation_name = "update_volume_kms_key"
+        api_reference_link = "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/VolumeKmsKey/UpdateVolumeKmsKey"
 
         # Don't accept unknown kwargs
         expected_kwargs = [
@@ -5924,7 +6398,10 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_volume_kms_key_details,
-                response_type="VolumeKmsKey")
+                response_type="VolumeKmsKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
         else:
             return self.base_client.call_api(
                 resource_path=resource_path,
@@ -5932,4 +6409,7 @@ class BlockstorageClient(object):
                 path_params=path_params,
                 header_params=header_params,
                 body=update_volume_kms_key_details,
-                response_type="VolumeKmsKey")
+                response_type="VolumeKmsKey",
+                allow_control_chars=kwargs.get('allow_control_chars'),
+                operation_name=operation_name,
+                api_reference_link=api_reference_link)
