@@ -18,6 +18,7 @@ class TriggerSummary(object):
         Initializes a new TriggerSummary object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
+        * :class:`~oci.devops.models.BitbucketCloudTriggerSummary`
         * :class:`~oci.devops.models.GitlabTriggerSummary`
         * :class:`~oci.devops.models.GithubTriggerSummary`
         * :class:`~oci.devops.models.DevopsCodeRepositoryTriggerSummary`
@@ -130,6 +131,9 @@ class TriggerSummary(object):
         use the info in the hash to return the class of the subtype.
         """
         type = object_dictionary['triggerSource']
+
+        if type == 'BITBUCKET_CLOUD':
+            return 'BitbucketCloudTriggerSummary'
 
         if type == 'GITLAB':
             return 'GitlabTriggerSummary'

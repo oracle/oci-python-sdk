@@ -31,6 +31,7 @@ class CreateDeployStageDetails(object):
         * :class:`~oci.devops.models.CreateOkeCanaryDeployStageDetails`
         * :class:`~oci.devops.models.CreateComputeInstanceGroupCanaryTrafficShiftDeployStageDetails`
         * :class:`~oci.devops.models.CreateComputeInstanceGroupCanaryApprovalDeployStageDetails`
+        * :class:`~oci.devops.models.CreateOkeHelmChartDeployStageDetails`
         * :class:`~oci.devops.models.CreateManualApprovalDeployStageDetails`
         * :class:`~oci.devops.models.CreateOkeDeployStageDetails`
         * :class:`~oci.devops.models.CreateComputeInstanceGroupBlueGreenDeployStageDetails`
@@ -141,6 +142,9 @@ class CreateDeployStageDetails(object):
 
         if type == 'COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL':
             return 'CreateComputeInstanceGroupCanaryApprovalDeployStageDetails'
+
+        if type == 'OKE_HELM_CHART_DEPLOYMENT':
+            return 'CreateOkeHelmChartDeployStageDetails'
 
         if type == 'MANUAL_APPROVAL':
             return 'CreateManualApprovalDeployStageDetails'

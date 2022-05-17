@@ -22,6 +22,10 @@ class Trigger(object):
     TRIGGER_SOURCE_GITLAB = "GITLAB"
 
     #: A constant which can be used with the trigger_source property of a Trigger.
+    #: This constant has a value of "BITBUCKET_CLOUD"
+    TRIGGER_SOURCE_BITBUCKET_CLOUD = "BITBUCKET_CLOUD"
+
+    #: A constant which can be used with the trigger_source property of a Trigger.
     #: This constant has a value of "DEVOPS_CODE_REPOSITORY"
     TRIGGER_SOURCE_DEVOPS_CODE_REPOSITORY = "DEVOPS_CODE_REPOSITORY"
 
@@ -37,6 +41,7 @@ class Trigger(object):
         * :class:`~oci.devops.models.GitlabTrigger`
         * :class:`~oci.devops.models.GithubTrigger`
         * :class:`~oci.devops.models.DevopsCodeRepositoryTrigger`
+        * :class:`~oci.devops.models.BitbucketCloudTrigger`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -62,7 +67,7 @@ class Trigger(object):
 
         :param trigger_source:
             The value to assign to the trigger_source property of this Trigger.
-            Allowed values for this property are: "GITHUB", "GITLAB", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GITHUB", "GITLAB", "BITBUCKET_CLOUD", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type trigger_source: str
 
@@ -166,6 +171,9 @@ class Trigger(object):
 
         if type == 'DEVOPS_CODE_REPOSITORY':
             return 'DevopsCodeRepositoryTrigger'
+
+        if type == 'BITBUCKET_CLOUD':
+            return 'BitbucketCloudTrigger'
         else:
             return 'Trigger'
 
@@ -293,9 +301,9 @@ class Trigger(object):
     def trigger_source(self):
         """
         **[Required]** Gets the trigger_source of this Trigger.
-        Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+        Source of the trigger.
 
-        Allowed values for this property are: "GITHUB", "GITLAB", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GITHUB", "GITLAB", "BITBUCKET_CLOUD", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -308,13 +316,13 @@ class Trigger(object):
     def trigger_source(self, trigger_source):
         """
         Sets the trigger_source of this Trigger.
-        Source of the trigger. Allowed values are, GITHUB, GITLAB and DEVOPS_CODE_REPOSITORY.
+        Source of the trigger.
 
 
         :param trigger_source: The trigger_source of this Trigger.
         :type: str
         """
-        allowed_values = ["GITHUB", "GITLAB", "DEVOPS_CODE_REPOSITORY"]
+        allowed_values = ["GITHUB", "GITLAB", "BITBUCKET_CLOUD", "DEVOPS_CODE_REPOSITORY"]
         if not value_allowed_none_or_none_sentinel(trigger_source, allowed_values):
             trigger_source = 'UNKNOWN_ENUM_VALUE'
         self._trigger_source = trigger_source

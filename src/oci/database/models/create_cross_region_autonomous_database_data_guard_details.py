@@ -11,6 +11,10 @@ from oci.decorators import init_model_state_from_kwargs
 class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDatabaseBase):
     """
     Details to create an Autonomous Data Guard association for an existing Autonomous Database where the standby is in a different (remote) region from the source primary database.
+    *IMPORTANT*
+    Note the following for creating standby databases in cross-region Autonomous Data Guard associations:
+    - To create your standby database in a region different from the region of the primary, use the API endpoint of the region in which the standby will be located. For example, if the primary database is in the IAD region, and you want to create the standby in the PHX region, make the API call using the PHX endpoint (https://database.us-phoenix-1.oraclecloud.com). See `API Endpoints`__ for the list of Database Service API endpoints.
+    - In the request to create the standby database, the `sourceId` value should be the OCID of the primary database.
     The following parameters are required for the cross-region standby database and must contain the same values as the source Autonomous Database:
     - dbName
     - cpuCoreCount
@@ -26,7 +30,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
     - whitelistedIps
     - isMtlsConnectionRequired
     Example I - Creating a cross-region standby with required parameters only:
-    {
+    `{
     \"compartmentId\": \"ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>\",
     \"cpuCoreCount\": 1,
     \"dbName\": \"adatabasedb1\",
@@ -34,9 +38,9 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
     \"dataStorageSizeInTBs\": 1,
     \"source\": \"CROSS_REGION_DATAGUARD\",
     \"adminPassword\" : \"<var>&lt;password&gt;</var>\",
-    }
+    }`
     Example II - Creating a cross-region standby that specifies optional parameters in addition to the required parameters:
-    {
+    `{
     \"compartmentId\": \"ocid.compartment.oc1..<var>&lt;unique_ID&gt;</var>\",
     \"cpuCoreCount\": 1,
     \"dbName\": \"adatabasedb1\",
@@ -47,7 +51,9 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
     \"dbVersion\": \"19c\",
     \"licenseModel\": \"LICENSE_INCLUDED\",
     \"isAutoScalingForStorageEnabled\": \"true\"
-    }
+    }`
+
+    __ https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#REST_APIs
     """
 
     def __init__(self, **kwargs):
@@ -59,6 +65,14 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
         :param compartment_id:
             The value to assign to the compartment_id property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type compartment_id: str
+
+        :param character_set:
+            The value to assign to the character_set property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
+        :type character_set: str
+
+        :param ncharacter_set:
+            The value to assign to the ncharacter_set property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
+        :type ncharacter_set: str
 
         :param db_name:
             The value to assign to the db_name property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
@@ -146,6 +160,10 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             The value to assign to the is_data_guard_enabled property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type is_data_guard_enabled: bool
 
+        :param is_local_data_guard_enabled:
+            The value to assign to the is_local_data_guard_enabled property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
+        :type is_local_data_guard_enabled: bool
+
         :param subnet_id:
             The value to assign to the subnet_id property of this CreateCrossRegionAutonomousDatabaseDataGuardDetails.
         :type subnet_id: str
@@ -211,6 +229,8 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
         """
         self.swagger_types = {
             'compartment_id': 'str',
+            'character_set': 'str',
+            'ncharacter_set': 'str',
             'db_name': 'str',
             'cpu_core_count': 'int',
             'ocpu_count': 'float',
@@ -232,6 +252,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             'are_primary_whitelisted_ips_used': 'bool',
             'standby_whitelisted_ips': 'list[str]',
             'is_data_guard_enabled': 'bool',
+            'is_local_data_guard_enabled': 'bool',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
             'private_endpoint_label': 'str',
@@ -251,6 +272,8 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
+            'character_set': 'characterSet',
+            'ncharacter_set': 'ncharacterSet',
             'db_name': 'dbName',
             'cpu_core_count': 'cpuCoreCount',
             'ocpu_count': 'ocpuCount',
@@ -272,6 +295,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
             'are_primary_whitelisted_ips_used': 'arePrimaryWhitelistedIpsUsed',
             'standby_whitelisted_ips': 'standbyWhitelistedIps',
             'is_data_guard_enabled': 'isDataGuardEnabled',
+            'is_local_data_guard_enabled': 'isLocalDataGuardEnabled',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
             'private_endpoint_label': 'privateEndpointLabel',
@@ -290,6 +314,8 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
         }
 
         self._compartment_id = None
+        self._character_set = None
+        self._ncharacter_set = None
         self._db_name = None
         self._cpu_core_count = None
         self._ocpu_count = None
@@ -311,6 +337,7 @@ class CreateCrossRegionAutonomousDatabaseDataGuardDetails(CreateAutonomousDataba
         self._are_primary_whitelisted_ips_used = None
         self._standby_whitelisted_ips = None
         self._is_data_guard_enabled = None
+        self._is_local_data_guard_enabled = None
         self._subnet_id = None
         self._nsg_ids = None
         self._private_endpoint_label = None

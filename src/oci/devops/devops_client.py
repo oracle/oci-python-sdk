@@ -5602,7 +5602,7 @@ class DevopsClient(object):
         :param str connection_type: (optional)
             A filter to return only resources that match the given connection type.
 
-            Allowed values are: "GITHUB_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN"
+            Allowed values are: "GITHUB_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "BITBUCKET_CLOUD_APP_PASSWORD"
 
         :param int limit: (optional)
             The maximum number of items to return.
@@ -5673,7 +5673,7 @@ class DevopsClient(object):
                 )
 
         if 'connection_type' in kwargs:
-            connection_type_allowed_values = ["GITHUB_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN"]
+            connection_type_allowed_values = ["GITHUB_ACCESS_TOKEN", "GITLAB_ACCESS_TOKEN", "BITBUCKET_CLOUD_APP_PASSWORD"]
             if kwargs['connection_type'] not in connection_type_allowed_values:
                 raise ValueError(
                     "Invalid value for `connection_type`, must be one of {0}".format(connection_type_allowed_values)

@@ -21,7 +21,7 @@ class GitlabBuildRunSource(BuildRunSource):
 
         :param source_type:
             The value to assign to the source_type property of this GitlabBuildRunSource.
-            Allowed values for this property are: "MANUAL", "GITHUB", "GITLAB", "DEVOPS_CODE_REPOSITORY"
+            Allowed values for this property are: "MANUAL", "GITHUB", "GITLAB", "BITBUCKET_CLOUD", "DEVOPS_CODE_REPOSITORY"
         :type source_type: str
 
         :param trigger_id:

@@ -19,6 +19,14 @@ class DbSystemShapeSummary(object):
     __ https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm
     """
 
+    #: A constant which can be used with the shape_type property of a DbSystemShapeSummary.
+    #: This constant has a value of "AMD"
+    SHAPE_TYPE_AMD = "AMD"
+
+    #: A constant which can be used with the shape_type property of a DbSystemShapeSummary.
+    #: This constant has a value of "INTEL"
+    SHAPE_TYPE_INTEL = "INTEL"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DbSystemShapeSummary object with values from keyword arguments.
@@ -31,6 +39,12 @@ class DbSystemShapeSummary(object):
         :param shape_family:
             The value to assign to the shape_family property of this DbSystemShapeSummary.
         :type shape_family: str
+
+        :param shape_type:
+            The value to assign to the shape_type property of this DbSystemShapeSummary.
+            Allowed values for this property are: "AMD", "INTEL", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type shape_type: str
 
         :param shape:
             The value to assign to the shape property of this DbSystemShapeSummary.
@@ -112,6 +126,7 @@ class DbSystemShapeSummary(object):
         self.swagger_types = {
             'name': 'str',
             'shape_family': 'str',
+            'shape_type': 'str',
             'shape': 'str',
             'available_core_count': 'int',
             'minimum_core_count': 'int',
@@ -136,6 +151,7 @@ class DbSystemShapeSummary(object):
         self.attribute_map = {
             'name': 'name',
             'shape_family': 'shapeFamily',
+            'shape_type': 'shapeType',
             'shape': 'shape',
             'available_core_count': 'availableCoreCount',
             'minimum_core_count': 'minimumCoreCount',
@@ -159,6 +175,7 @@ class DbSystemShapeSummary(object):
 
         self._name = None
         self._shape_family = None
+        self._shape_type = None
         self._shape = None
         self._available_core_count = None
         self._minimum_core_count = None
@@ -226,6 +243,36 @@ class DbSystemShapeSummary(object):
         :type: str
         """
         self._shape_family = shape_family
+
+    @property
+    def shape_type(self):
+        """
+        Gets the shape_type of this DbSystemShapeSummary.
+        The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+
+        Allowed values for this property are: "AMD", "INTEL", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The shape_type of this DbSystemShapeSummary.
+        :rtype: str
+        """
+        return self._shape_type
+
+    @shape_type.setter
+    def shape_type(self, shape_type):
+        """
+        Sets the shape_type of this DbSystemShapeSummary.
+        The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+
+
+        :param shape_type: The shape_type of this DbSystemShapeSummary.
+        :type: str
+        """
+        allowed_values = ["AMD", "INTEL"]
+        if not value_allowed_none_or_none_sentinel(shape_type, allowed_values):
+            shape_type = 'UNKNOWN_ENUM_VALUE'
+        self._shape_type = shape_type
 
     @property
     def shape(self):

@@ -20,6 +20,7 @@ from .autonomous_database_apex import AutonomousDatabaseApex
 from .autonomous_database_backup import AutonomousDatabaseBackup
 from .autonomous_database_backup_config import AutonomousDatabaseBackupConfig
 from .autonomous_database_backup_summary import AutonomousDatabaseBackupSummary
+from .autonomous_database_character_sets import AutonomousDatabaseCharacterSets
 from .autonomous_database_connection_strings import AutonomousDatabaseConnectionStrings
 from .autonomous_database_connection_urls import AutonomousDatabaseConnectionUrls
 from .autonomous_database_console_token_details import AutonomousDatabaseConsoleTokenDetails
@@ -59,6 +60,7 @@ from .cloud_exadata_infrastructure_summary import CloudExadataInfrastructureSumm
 from .cloud_vm_cluster import CloudVmCluster
 from .cloud_vm_cluster_summary import CloudVmClusterSummary
 from .complete_external_backup_job_details import CompleteExternalBackupJobDetails
+from .compute_performance_summary import ComputePerformanceSummary
 from .configure_autonomous_database_vault_key_details import ConfigureAutonomousDatabaseVaultKeyDetails
 from .console_connection import ConsoleConnection
 from .console_connection_summary import ConsoleConnectionSummary
@@ -152,13 +154,16 @@ from .db_server_details import DbServerDetails
 from .db_server_patching_details import DbServerPatchingDetails
 from .db_server_summary import DbServerSummary
 from .db_system import DbSystem
+from .db_system_compute_performance_summary import DbSystemComputePerformanceSummary
 from .db_system_options import DbSystemOptions
 from .db_system_shape_summary import DbSystemShapeSummary
+from .db_system_storage_performance_summary import DbSystemStoragePerformanceSummary
 from .db_system_summary import DbSystemSummary
 from .db_system_upgrade_history_entry import DbSystemUpgradeHistoryEntry
 from .db_system_upgrade_history_entry_summary import DbSystemUpgradeHistoryEntrySummary
 from .db_version_summary import DbVersionSummary
 from .deregister_autonomous_database_data_safe_details import DeregisterAutonomousDatabaseDataSafeDetails
+from .disk_performance_details import DiskPerformanceDetails
 from .enable_database_management_details import EnableDatabaseManagementDetails
 from .enable_external_container_database_database_management_details import EnableExternalContainerDatabaseDatabaseManagementDetails
 from .enable_external_container_database_stack_monitoring_details import EnableExternalContainerDatabaseStackMonitoringDetails
@@ -242,6 +247,7 @@ from .scan_details import ScanDetails
 from .scheduled_operation_details import ScheduledOperationDetails
 from .self_mount_details import SelfMountDetails
 from .stack_monitoring_config import StackMonitoringConfig
+from .storage_performance_details import StoragePerformanceDetails
 from .switchover_data_guard_association_details import SwitchoverDataGuardAssociationDetails
 from .update import Update
 from .update_autonomous_container_database_data_guard_association_details import UpdateAutonomousContainerDatabaseDataGuardAssociationDetails
@@ -308,6 +314,7 @@ database_type_mapping = {
     "AutonomousDatabaseBackup": AutonomousDatabaseBackup,
     "AutonomousDatabaseBackupConfig": AutonomousDatabaseBackupConfig,
     "AutonomousDatabaseBackupSummary": AutonomousDatabaseBackupSummary,
+    "AutonomousDatabaseCharacterSets": AutonomousDatabaseCharacterSets,
     "AutonomousDatabaseConnectionStrings": AutonomousDatabaseConnectionStrings,
     "AutonomousDatabaseConnectionUrls": AutonomousDatabaseConnectionUrls,
     "AutonomousDatabaseConsoleTokenDetails": AutonomousDatabaseConsoleTokenDetails,
@@ -347,6 +354,7 @@ database_type_mapping = {
     "CloudVmCluster": CloudVmCluster,
     "CloudVmClusterSummary": CloudVmClusterSummary,
     "CompleteExternalBackupJobDetails": CompleteExternalBackupJobDetails,
+    "ComputePerformanceSummary": ComputePerformanceSummary,
     "ConfigureAutonomousDatabaseVaultKeyDetails": ConfigureAutonomousDatabaseVaultKeyDetails,
     "ConsoleConnection": ConsoleConnection,
     "ConsoleConnectionSummary": ConsoleConnectionSummary,
@@ -440,13 +448,16 @@ database_type_mapping = {
     "DbServerPatchingDetails": DbServerPatchingDetails,
     "DbServerSummary": DbServerSummary,
     "DbSystem": DbSystem,
+    "DbSystemComputePerformanceSummary": DbSystemComputePerformanceSummary,
     "DbSystemOptions": DbSystemOptions,
     "DbSystemShapeSummary": DbSystemShapeSummary,
+    "DbSystemStoragePerformanceSummary": DbSystemStoragePerformanceSummary,
     "DbSystemSummary": DbSystemSummary,
     "DbSystemUpgradeHistoryEntry": DbSystemUpgradeHistoryEntry,
     "DbSystemUpgradeHistoryEntrySummary": DbSystemUpgradeHistoryEntrySummary,
     "DbVersionSummary": DbVersionSummary,
     "DeregisterAutonomousDatabaseDataSafeDetails": DeregisterAutonomousDatabaseDataSafeDetails,
+    "DiskPerformanceDetails": DiskPerformanceDetails,
     "EnableDatabaseManagementDetails": EnableDatabaseManagementDetails,
     "EnableExternalContainerDatabaseDatabaseManagementDetails": EnableExternalContainerDatabaseDatabaseManagementDetails,
     "EnableExternalContainerDatabaseStackMonitoringDetails": EnableExternalContainerDatabaseStackMonitoringDetails,
@@ -530,6 +541,7 @@ database_type_mapping = {
     "ScheduledOperationDetails": ScheduledOperationDetails,
     "SelfMountDetails": SelfMountDetails,
     "StackMonitoringConfig": StackMonitoringConfig,
+    "StoragePerformanceDetails": StoragePerformanceDetails,
     "SwitchoverDataGuardAssociationDetails": SwitchoverDataGuardAssociationDetails,
     "Update": Update,
     "UpdateAutonomousContainerDatabaseDataGuardAssociationDetails": UpdateAutonomousContainerDatabaseDataGuardAssociationDetails,

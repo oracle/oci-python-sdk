@@ -34,6 +34,9 @@ Operator Access Control
     oci.operator_access_control.models.ChangeOperatorControlCompartmentDetails
     oci.operator_access_control.models.CreateOperatorControlAssignmentDetails
     oci.operator_access_control.models.CreateOperatorControlDetails
+    oci.operator_access_control.models.InteractionCollection
+    oci.operator_access_control.models.InteractionRequestDetails
+    oci.operator_access_control.models.InteractionSummary
     oci.operator_access_control.models.OperatorAction
     oci.operator_access_control.models.OperatorActionCollection
     oci.operator_access_control.models.OperatorActionProperties

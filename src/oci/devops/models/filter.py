@@ -19,6 +19,7 @@ class Filter(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.devops.models.DevopsCodeRepositoryFilter`
+        * :class:`~oci.devops.models.BitbucketCloudFilter`
         * :class:`~oci.devops.models.GitlabFilter`
         * :class:`~oci.devops.models.GithubFilter`
 
@@ -49,6 +50,9 @@ class Filter(object):
 
         if type == 'DEVOPS_CODE_REPOSITORY':
             return 'DevopsCodeRepositoryFilter'
+
+        if type == 'BITBUCKET_CLOUD':
+            return 'BitbucketCloudFilter'
 
         if type == 'GITLAB':
             return 'GitlabFilter'

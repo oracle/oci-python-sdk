@@ -14,6 +14,9 @@ from .change_operator_control_assignment_compartment_details import ChangeOperat
 from .change_operator_control_compartment_details import ChangeOperatorControlCompartmentDetails
 from .create_operator_control_assignment_details import CreateOperatorControlAssignmentDetails
 from .create_operator_control_details import CreateOperatorControlDetails
+from .interaction_collection import InteractionCollection
+from .interaction_request_details import InteractionRequestDetails
+from .interaction_summary import InteractionSummary
 from .operator_action import OperatorAction
 from .operator_action_collection import OperatorActionCollection
 from .operator_action_properties import OperatorActionProperties
@@ -42,6 +45,9 @@ operator_access_control_type_mapping = {
     "ChangeOperatorControlCompartmentDetails": ChangeOperatorControlCompartmentDetails,
     "CreateOperatorControlAssignmentDetails": CreateOperatorControlAssignmentDetails,
     "CreateOperatorControlDetails": CreateOperatorControlDetails,
+    "InteractionCollection": InteractionCollection,
+    "InteractionRequestDetails": InteractionRequestDetails,
+    "InteractionSummary": InteractionSummary,
     "OperatorAction": OperatorAction,
     "OperatorActionCollection": OperatorActionCollection,
     "OperatorActionProperties": OperatorActionProperties,

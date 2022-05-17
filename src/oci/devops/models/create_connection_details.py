@@ -19,6 +19,7 @@ class CreateConnectionDetails(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.devops.models.CreateGithubAccessTokenConnectionDetails`
+        * :class:`~oci.devops.models.CreateBitbucketCloudAppPasswordConnectionDetails`
         * :class:`~oci.devops.models.CreateGitlabAccessTokenConnectionDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
@@ -83,6 +84,9 @@ class CreateConnectionDetails(object):
 
         if type == 'GITHUB_ACCESS_TOKEN':
             return 'CreateGithubAccessTokenConnectionDetails'
+
+        if type == 'BITBUCKET_CLOUD_APP_PASSWORD':
+            return 'CreateBitbucketCloudAppPasswordConnectionDetails'
 
         if type == 'GITLAB_ACCESS_TOKEN':
             return 'CreateGitlabAccessTokenConnectionDetails'

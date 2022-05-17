@@ -15,6 +15,14 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     To create a Data Guard association for a database in a bare metal or Exadata DB system, use the :func:`create_data_guard_association_to_existing_db_system_details` subtype instead.
     """
 
+    #: A constant which can be used with the storage_volume_performance_mode property of a CreateDataGuardAssociationWithNewDbSystemDetails.
+    #: This constant has a value of "BALANCED"
+    STORAGE_VOLUME_PERFORMANCE_MODE_BALANCED = "BALANCED"
+
+    #: A constant which can be used with the storage_volume_performance_mode property of a CreateDataGuardAssociationWithNewDbSystemDetails.
+    #: This constant has a value of "HIGH_PERFORMANCE"
+    STORAGE_VOLUME_PERFORMANCE_MODE_HIGH_PERFORMANCE = "HIGH_PERFORMANCE"
+
     def __init__(self, **kwargs):
         """
         Initializes a new CreateDataGuardAssociationWithNewDbSystemDetails object with values from keyword arguments. The default value of the :py:attr:`~oci.database.models.CreateDataGuardAssociationWithNewDbSystemDetails.creation_type` attribute
@@ -67,6 +75,15 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             The value to assign to the shape property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type shape: str
 
+        :param cpu_core_count:
+            The value to assign to the cpu_core_count property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type cpu_core_count: int
+
+        :param storage_volume_performance_mode:
+            The value to assign to the storage_volume_performance_mode property of this CreateDataGuardAssociationWithNewDbSystemDetails.
+            Allowed values for this property are: "BALANCED", "HIGH_PERFORMANCE"
+        :type storage_volume_performance_mode: str
+
         :param subnet_id:
             The value to assign to the subnet_id property of this CreateDataGuardAssociationWithNewDbSystemDetails.
         :type subnet_id: str
@@ -96,6 +113,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'display_name': 'str',
             'availability_domain': 'str',
             'shape': 'str',
+            'cpu_core_count': 'int',
+            'storage_volume_performance_mode': 'str',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
             'backup_network_nsg_ids': 'list[str]',
@@ -114,6 +133,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
             'display_name': 'displayName',
             'availability_domain': 'availabilityDomain',
             'shape': 'shape',
+            'cpu_core_count': 'cpuCoreCount',
+            'storage_volume_performance_mode': 'storageVolumePerformanceMode',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
@@ -131,6 +152,8 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         self._display_name = None
         self._availability_domain = None
         self._shape = None
+        self._cpu_core_count = None
+        self._storage_volume_performance_mode = None
         self._subnet_id = None
         self._nsg_ids = None
         self._backup_network_nsg_ids = None
@@ -216,6 +239,66 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
         self._shape = shape
 
     @property
+    def cpu_core_count(self):
+        """
+        Gets the cpu_core_count of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The number of OCPU cores available for AMD-based virtual machine DB systems.
+
+
+        :return: The cpu_core_count of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: int
+        """
+        return self._cpu_core_count
+
+    @cpu_core_count.setter
+    def cpu_core_count(self, cpu_core_count):
+        """
+        Sets the cpu_core_count of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The number of OCPU cores available for AMD-based virtual machine DB systems.
+
+
+        :param cpu_core_count: The cpu_core_count of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: int
+        """
+        self._cpu_core_count = cpu_core_count
+
+    @property
+    def storage_volume_performance_mode(self):
+        """
+        Gets the storage_volume_performance_mode of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See `Block Volume Performance`__ for more information.
+
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm
+
+        Allowed values for this property are: "BALANCED", "HIGH_PERFORMANCE"
+
+
+        :return: The storage_volume_performance_mode of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :rtype: str
+        """
+        return self._storage_volume_performance_mode
+
+    @storage_volume_performance_mode.setter
+    def storage_volume_performance_mode(self, storage_volume_performance_mode):
+        """
+        Sets the storage_volume_performance_mode of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See `Block Volume Performance`__ for more information.
+
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm
+
+
+        :param storage_volume_performance_mode: The storage_volume_performance_mode of this CreateDataGuardAssociationWithNewDbSystemDetails.
+        :type: str
+        """
+        allowed_values = ["BALANCED", "HIGH_PERFORMANCE"]
+        if not value_allowed_none_or_none_sentinel(storage_volume_performance_mode, allowed_values):
+            raise ValueError(
+                "Invalid value for `storage_volume_performance_mode`, must be None or one of {0}"
+                .format(allowed_values)
+            )
+        self._storage_volume_performance_mode = storage_volume_performance_mode
+
+    @property
     def subnet_id(self):
         """
         Gets the subnet_id of this CreateDataGuardAssociationWithNewDbSystemDetails.
@@ -255,9 +338,9 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def nsg_ids(self):
         """
         Gets the nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -272,9 +355,9 @@ class CreateDataGuardAssociationWithNewDbSystemDetails(CreateDataGuardAssociatio
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this CreateDataGuardAssociationWithNewDbSystemDetails.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm

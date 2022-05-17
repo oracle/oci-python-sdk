@@ -10,8 +10,8 @@ from oci.decorators import init_model_state_from_kwargs
 @init_model_state_from_kwargs
 class NetworkChannel(object):
     """
-    Specifies the configuration needed when the target OCI resource, OKE cluster resides
-    in the customer's private network.
+    Specifies the configuration needed when the target OCI resource, i.e., OKE cluster, resides
+    in customer's private network.
     """
 
     #: A constant which can be used with the network_channel_type property of a NetworkChannel.

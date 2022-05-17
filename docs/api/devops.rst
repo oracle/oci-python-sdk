@@ -26,6 +26,15 @@ Devops
     oci.devops.models.ApproveDeploymentDetails
     oci.devops.models.AutomatedDeployStageRollbackPolicy
     oci.devops.models.BackendSetIpCollection
+    oci.devops.models.BitbucketCloudAppPasswordConnection
+    oci.devops.models.BitbucketCloudAppPasswordConnectionSummary
+    oci.devops.models.BitbucketCloudBuildRunSource
+    oci.devops.models.BitbucketCloudBuildSource
+    oci.devops.models.BitbucketCloudFilter
+    oci.devops.models.BitbucketCloudFilterAttributes
+    oci.devops.models.BitbucketCloudTrigger
+    oci.devops.models.BitbucketCloudTriggerCreateResult
+    oci.devops.models.BitbucketCloudTriggerSummary
     oci.devops.models.BuildOutputs
     oci.devops.models.BuildPipeline
     oci.devops.models.BuildPipelineCollection
@@ -92,6 +101,8 @@ Devops
     oci.devops.models.ContainerRegistryDeliveredArtifact
     oci.devops.models.CountBasedApprovalPolicy
     oci.devops.models.CreateAbsoluteWaitCriteriaDetails
+    oci.devops.models.CreateBitbucketCloudAppPasswordConnectionDetails
+    oci.devops.models.CreateBitbucketCloudTriggerDetails
     oci.devops.models.CreateBuildPipelineDetails
     oci.devops.models.CreateBuildPipelineStageDetails
     oci.devops.models.CreateBuildRunDetails
@@ -129,6 +140,7 @@ Devops
     oci.devops.models.CreateOkeCanaryTrafficShiftDeployStageDetails
     oci.devops.models.CreateOkeClusterDeployEnvironmentDetails
     oci.devops.models.CreateOkeDeployStageDetails
+    oci.devops.models.CreateOkeHelmChartDeployStageDetails
     oci.devops.models.CreateProjectDetails
     oci.devops.models.CreateRepositoryDetails
     oci.devops.models.CreateSingleDeployStageDeploymentDetails
@@ -228,6 +240,7 @@ Devops
     oci.devops.models.GitlabTrigger
     oci.devops.models.GitlabTriggerCreateResult
     oci.devops.models.GitlabTriggerSummary
+    oci.devops.models.HelmRepositoryDeployArtifactSource
     oci.devops.models.InlineDeployArtifactSource
     oci.devops.models.InvokeFunctionDeployStage
     oci.devops.models.InvokeFunctionDeployStageExecutionProgress
@@ -270,6 +283,9 @@ Devops
     oci.devops.models.OkeDeployStage
     oci.devops.models.OkeDeployStageExecutionProgress
     oci.devops.models.OkeDeployStageSummary
+    oci.devops.models.OkeHelmChartDeployStage
+    oci.devops.models.OkeHelmChartDeployStageSummary
+    oci.devops.models.OkeHelmChartDeploymentStageExecutionProgress
     oci.devops.models.PrivateEndpointChannel
     oci.devops.models.Project
     oci.devops.models.ProjectCollection
@@ -315,6 +331,8 @@ Devops
     oci.devops.models.TriggerSchedule
     oci.devops.models.TriggerSummary
     oci.devops.models.UpdateAbsoluteWaitCriteriaDetails
+    oci.devops.models.UpdateBitbucketCloudAppPasswordConnectionDetails
+    oci.devops.models.UpdateBitbucketCloudTriggerDetails
     oci.devops.models.UpdateBuildPipelineDetails
     oci.devops.models.UpdateBuildPipelineStageDetails
     oci.devops.models.UpdateBuildRunDetails
@@ -352,6 +370,7 @@ Devops
     oci.devops.models.UpdateOkeCanaryTrafficShiftDeployStageDetails
     oci.devops.models.UpdateOkeClusterDeployEnvironmentDetails
     oci.devops.models.UpdateOkeDeployStageDetails
+    oci.devops.models.UpdateOkeHelmChartDeployStageDetails
     oci.devops.models.UpdateProjectDetails
     oci.devops.models.UpdateRepositoryDetails
     oci.devops.models.UpdateSingleDeployStageDeploymentDetails
@@ -361,6 +380,8 @@ Devops
     oci.devops.models.UpdateWaitCriteriaDetails
     oci.devops.models.UpdateWaitDeployStageDetails
     oci.devops.models.UpdateWaitStageDetails
+    oci.devops.models.VulnerabilityAuditSummary
+    oci.devops.models.VulnerabilityAuditSummaryCollection
     oci.devops.models.WaitCriteria
     oci.devops.models.WaitCriteriaSummary
     oci.devops.models.WaitDeployStage

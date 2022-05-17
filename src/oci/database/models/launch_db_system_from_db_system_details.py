@@ -71,6 +71,11 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             The value to assign to the db_system_options property of this LaunchDbSystemFromDbSystemDetails.
         :type db_system_options: oci.database.models.DbSystemOptions
 
+        :param storage_volume_performance_mode:
+            The value to assign to the storage_volume_performance_mode property of this LaunchDbSystemFromDbSystemDetails.
+            Allowed values for this property are: "BALANCED", "HIGH_PERFORMANCE"
+        :type storage_volume_performance_mode: str
+
         :param sparse_diskgroup:
             The value to assign to the sparse_diskgroup property of this LaunchDbSystemFromDbSystemDetails.
         :type sparse_diskgroup: bool
@@ -158,6 +163,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             'shape': 'str',
             'time_zone': 'str',
             'db_system_options': 'DbSystemOptions',
+            'storage_volume_performance_mode': 'str',
             'sparse_diskgroup': 'bool',
             'ssh_public_keys': 'list[str]',
             'hostname': 'str',
@@ -190,6 +196,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
             'shape': 'shape',
             'time_zone': 'timeZone',
             'db_system_options': 'dbSystemOptions',
+            'storage_volume_performance_mode': 'storageVolumePerformanceMode',
             'sparse_diskgroup': 'sparseDiskgroup',
             'ssh_public_keys': 'sshPublicKeys',
             'hostname': 'hostname',
@@ -221,6 +228,7 @@ class LaunchDbSystemFromDbSystemDetails(LaunchDbSystemBase):
         self._shape = None
         self._time_zone = None
         self._db_system_options = None
+        self._storage_volume_performance_mode = None
         self._sparse_diskgroup = None
         self._ssh_public_keys = None
         self._hostname = None
