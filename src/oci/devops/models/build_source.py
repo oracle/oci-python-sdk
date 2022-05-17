@@ -22,6 +22,10 @@ class BuildSource(object):
     CONNECTION_TYPE_GITLAB = "GITLAB"
 
     #: A constant which can be used with the connection_type property of a BuildSource.
+    #: This constant has a value of "BITBUCKET_CLOUD"
+    CONNECTION_TYPE_BITBUCKET_CLOUD = "BITBUCKET_CLOUD"
+
+    #: A constant which can be used with the connection_type property of a BuildSource.
     #: This constant has a value of "DEVOPS_CODE_REPOSITORY"
     CONNECTION_TYPE_DEVOPS_CODE_REPOSITORY = "DEVOPS_CODE_REPOSITORY"
 
@@ -31,6 +35,7 @@ class BuildSource(object):
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.devops.models.GithubBuildSource`
+        * :class:`~oci.devops.models.BitbucketCloudBuildSource`
         * :class:`~oci.devops.models.DevopsCodeRepositoryBuildSource`
         * :class:`~oci.devops.models.GitlabBuildSource`
 
@@ -42,7 +47,7 @@ class BuildSource(object):
 
         :param connection_type:
             The value to assign to the connection_type property of this BuildSource.
-            Allowed values for this property are: "GITHUB", "GITLAB", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "GITHUB", "GITLAB", "BITBUCKET_CLOUD", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type connection_type: str
 
@@ -85,6 +90,9 @@ class BuildSource(object):
         if type == 'GITHUB':
             return 'GithubBuildSource'
 
+        if type == 'BITBUCKET_CLOUD':
+            return 'BitbucketCloudBuildSource'
+
         if type == 'DEVOPS_CODE_REPOSITORY':
             return 'DevopsCodeRepositoryBuildSource'
 
@@ -123,7 +131,7 @@ class BuildSource(object):
         **[Required]** Gets the connection_type of this BuildSource.
         The type of source provider.
 
-        Allowed values for this property are: "GITHUB", "GITLAB", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "GITHUB", "GITLAB", "BITBUCKET_CLOUD", "DEVOPS_CODE_REPOSITORY", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -142,7 +150,7 @@ class BuildSource(object):
         :param connection_type: The connection_type of this BuildSource.
         :type: str
         """
-        allowed_values = ["GITHUB", "GITLAB", "DEVOPS_CODE_REPOSITORY"]
+        allowed_values = ["GITHUB", "GITLAB", "BITBUCKET_CLOUD", "DEVOPS_CODE_REPOSITORY"]
         if not value_allowed_none_or_none_sentinel(connection_type, allowed_values):
             connection_type = 'UNKNOWN_ENUM_VALUE'
         self._connection_type = connection_type

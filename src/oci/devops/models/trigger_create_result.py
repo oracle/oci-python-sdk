@@ -21,6 +21,7 @@ class TriggerCreateResult(object):
         * :class:`~oci.devops.models.GithubTriggerCreateResult`
         * :class:`~oci.devops.models.GitlabTriggerCreateResult`
         * :class:`~oci.devops.models.DevopsCodeRepositoryTriggerCreateResult`
+        * :class:`~oci.devops.models.BitbucketCloudTriggerCreateResult`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -146,6 +147,9 @@ class TriggerCreateResult(object):
 
         if type == 'DEVOPS_CODE_REPOSITORY':
             return 'DevopsCodeRepositoryTriggerCreateResult'
+
+        if type == 'BITBUCKET_CLOUD':
+            return 'BitbucketCloudTriggerCreateResult'
         else:
             return 'TriggerCreateResult'
 

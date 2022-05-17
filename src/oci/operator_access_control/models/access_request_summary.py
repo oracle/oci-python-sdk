@@ -42,6 +42,10 @@ class AccessRequestSummary(object):
     LIFECYCLE_STATE_APPROVED = "APPROVED"
 
     #: A constant which can be used with the lifecycle_state property of a AccessRequestSummary.
+    #: This constant has a value of "MOREINFO"
+    LIFECYCLE_STATE_MOREINFO = "MOREINFO"
+
+    #: A constant which can be used with the lifecycle_state property of a AccessRequestSummary.
     #: This constant has a value of "REJECTED"
     LIFECYCLE_STATE_REJECTED = "REJECTED"
 
@@ -166,7 +170,7 @@ class AccessRequestSummary(object):
 
         :param lifecycle_state:
             The value to assign to the lifecycle_state property of this AccessRequestSummary.
-            Allowed values for this property are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "MOREINFO", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type lifecycle_state: str
 
@@ -449,7 +453,7 @@ class AccessRequestSummary(object):
         Gets the lifecycle_state of this AccessRequestSummary.
         The current state of the AccessRequest.
 
-        Allowed values for this property are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "MOREINFO", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -468,7 +472,7 @@ class AccessRequestSummary(object):
         :param lifecycle_state: The lifecycle_state of this AccessRequestSummary.
         :type: str
         """
-        allowed_values = ["CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW"]
+        allowed_values = ["CREATED", "APPROVALWAITING", "PREAPPROVED", "APPROVED", "MOREINFO", "REJECTED", "DEPLOYED", "DEPLOYFAILED", "UNDEPLOYED", "UNDEPLOYFAILED", "CLOSEFAILED", "REVOKEFAILED", "EXPIRYFAILED", "REVOKING", "REVOKED", "EXTENDING", "EXTENDED", "EXTENSIONREJECTED", "COMPLETING", "COMPLETED", "EXPIRED", "APPROVEDFORFUTURE", "INREVIEW"]
         if not value_allowed_none_or_none_sentinel(lifecycle_state, allowed_values):
             lifecycle_state = 'UNKNOWN_ENUM_VALUE'
         self._lifecycle_state = lifecycle_state

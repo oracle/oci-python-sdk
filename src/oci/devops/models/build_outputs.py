@@ -30,22 +30,29 @@ class BuildOutputs(object):
             The value to assign to the artifact_override_parameters property of this BuildOutputs.
         :type artifact_override_parameters: oci.devops.models.DeployArtifactOverrideArgumentCollection
 
+        :param vulnerability_audit_summary_collection:
+            The value to assign to the vulnerability_audit_summary_collection property of this BuildOutputs.
+        :type vulnerability_audit_summary_collection: oci.devops.models.VulnerabilityAuditSummaryCollection
+
         """
         self.swagger_types = {
             'exported_variables': 'ExportedVariableCollection',
             'delivered_artifacts': 'DeliveredArtifactCollection',
-            'artifact_override_parameters': 'DeployArtifactOverrideArgumentCollection'
+            'artifact_override_parameters': 'DeployArtifactOverrideArgumentCollection',
+            'vulnerability_audit_summary_collection': 'VulnerabilityAuditSummaryCollection'
         }
 
         self.attribute_map = {
             'exported_variables': 'exportedVariables',
             'delivered_artifacts': 'deliveredArtifacts',
-            'artifact_override_parameters': 'artifactOverrideParameters'
+            'artifact_override_parameters': 'artifactOverrideParameters',
+            'vulnerability_audit_summary_collection': 'vulnerabilityAuditSummaryCollection'
         }
 
         self._exported_variables = None
         self._delivered_artifacts = None
         self._artifact_override_parameters = None
+        self._vulnerability_audit_summary_collection = None
 
     @property
     def exported_variables(self):
@@ -106,6 +113,26 @@ class BuildOutputs(object):
         :type: oci.devops.models.DeployArtifactOverrideArgumentCollection
         """
         self._artifact_override_parameters = artifact_override_parameters
+
+    @property
+    def vulnerability_audit_summary_collection(self):
+        """
+        Gets the vulnerability_audit_summary_collection of this BuildOutputs.
+
+        :return: The vulnerability_audit_summary_collection of this BuildOutputs.
+        :rtype: oci.devops.models.VulnerabilityAuditSummaryCollection
+        """
+        return self._vulnerability_audit_summary_collection
+
+    @vulnerability_audit_summary_collection.setter
+    def vulnerability_audit_summary_collection(self, vulnerability_audit_summary_collection):
+        """
+        Sets the vulnerability_audit_summary_collection of this BuildOutputs.
+
+        :param vulnerability_audit_summary_collection: The vulnerability_audit_summary_collection of this BuildOutputs.
+        :type: oci.devops.models.VulnerabilityAuditSummaryCollection
+        """
+        self._vulnerability_audit_summary_collection = vulnerability_audit_summary_collection
 
     def __repr__(self):
         return formatted_flat_dict(self)

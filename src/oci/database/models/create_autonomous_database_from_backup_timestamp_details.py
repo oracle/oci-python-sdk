@@ -31,6 +31,14 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             The value to assign to the compartment_id property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type compartment_id: str
 
+        :param character_set:
+            The value to assign to the character_set property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type character_set: str
+
+        :param ncharacter_set:
+            The value to assign to the ncharacter_set property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type ncharacter_set: str
+
         :param db_name:
             The value to assign to the db_name property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type db_name: str
@@ -117,6 +125,10 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             The value to assign to the is_data_guard_enabled property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type is_data_guard_enabled: bool
 
+        :param is_local_data_guard_enabled:
+            The value to assign to the is_local_data_guard_enabled property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
+        :type is_local_data_guard_enabled: bool
+
         :param subnet_id:
             The value to assign to the subnet_id property of this CreateAutonomousDatabaseFromBackupTimestampDetails.
         :type subnet_id: str
@@ -191,6 +203,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         """
         self.swagger_types = {
             'compartment_id': 'str',
+            'character_set': 'str',
+            'ncharacter_set': 'str',
             'db_name': 'str',
             'cpu_core_count': 'int',
             'ocpu_count': 'float',
@@ -212,6 +226,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'are_primary_whitelisted_ips_used': 'bool',
             'standby_whitelisted_ips': 'list[str]',
             'is_data_guard_enabled': 'bool',
+            'is_local_data_guard_enabled': 'bool',
             'subnet_id': 'str',
             'nsg_ids': 'list[str]',
             'private_endpoint_label': 'str',
@@ -233,6 +248,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
 
         self.attribute_map = {
             'compartment_id': 'compartmentId',
+            'character_set': 'characterSet',
+            'ncharacter_set': 'ncharacterSet',
             'db_name': 'dbName',
             'cpu_core_count': 'cpuCoreCount',
             'ocpu_count': 'ocpuCount',
@@ -254,6 +271,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
             'are_primary_whitelisted_ips_used': 'arePrimaryWhitelistedIpsUsed',
             'standby_whitelisted_ips': 'standbyWhitelistedIps',
             'is_data_guard_enabled': 'isDataGuardEnabled',
+            'is_local_data_guard_enabled': 'isLocalDataGuardEnabled',
             'subnet_id': 'subnetId',
             'nsg_ids': 'nsgIds',
             'private_endpoint_label': 'privateEndpointLabel',
@@ -274,6 +292,8 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         }
 
         self._compartment_id = None
+        self._character_set = None
+        self._ncharacter_set = None
         self._db_name = None
         self._cpu_core_count = None
         self._ocpu_count = None
@@ -295,6 +315,7 @@ class CreateAutonomousDatabaseFromBackupTimestampDetails(CreateAutonomousDatabas
         self._are_primary_whitelisted_ips_used = None
         self._standby_whitelisted_ips = None
         self._is_data_guard_enabled = None
+        self._is_local_data_guard_enabled = None
         self._subnet_id = None
         self._nsg_ids = None
         self._private_endpoint_label = None

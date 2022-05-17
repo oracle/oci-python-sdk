@@ -33,6 +33,10 @@ class DeployArtifact(object):
     #: This constant has a value of "DOCKER_IMAGE"
     DEPLOY_ARTIFACT_TYPE_DOCKER_IMAGE = "DOCKER_IMAGE"
 
+    #: A constant which can be used with the deploy_artifact_type property of a DeployArtifact.
+    #: This constant has a value of "HELM_CHART"
+    DEPLOY_ARTIFACT_TYPE_HELM_CHART = "HELM_CHART"
+
     #: A constant which can be used with the argument_substitution_mode property of a DeployArtifact.
     #: This constant has a value of "NONE"
     ARGUMENT_SUBSTITUTION_MODE_NONE = "NONE"
@@ -92,7 +96,7 @@ class DeployArtifact(object):
 
         :param deploy_artifact_type:
             The value to assign to the deploy_artifact_type property of this DeployArtifact.
-            Allowed values for this property are: "DEPLOYMENT_SPEC", "JOB_SPEC", "KUBERNETES_MANIFEST", "GENERIC_FILE", "DOCKER_IMAGE", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "DEPLOYMENT_SPEC", "JOB_SPEC", "KUBERNETES_MANIFEST", "GENERIC_FILE", "DOCKER_IMAGE", "HELM_CHART", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deploy_artifact_type: str
 
@@ -315,7 +319,7 @@ class DeployArtifact(object):
         **[Required]** Gets the deploy_artifact_type of this DeployArtifact.
         Type of the deployment artifact.
 
-        Allowed values for this property are: "DEPLOYMENT_SPEC", "JOB_SPEC", "KUBERNETES_MANIFEST", "GENERIC_FILE", "DOCKER_IMAGE", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "DEPLOYMENT_SPEC", "JOB_SPEC", "KUBERNETES_MANIFEST", "GENERIC_FILE", "DOCKER_IMAGE", "HELM_CHART", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -334,7 +338,7 @@ class DeployArtifact(object):
         :param deploy_artifact_type: The deploy_artifact_type of this DeployArtifact.
         :type: str
         """
-        allowed_values = ["DEPLOYMENT_SPEC", "JOB_SPEC", "KUBERNETES_MANIFEST", "GENERIC_FILE", "DOCKER_IMAGE"]
+        allowed_values = ["DEPLOYMENT_SPEC", "JOB_SPEC", "KUBERNETES_MANIFEST", "GENERIC_FILE", "DOCKER_IMAGE", "HELM_CHART"]
         if not value_allowed_none_or_none_sentinel(deploy_artifact_type, allowed_values):
             deploy_artifact_type = 'UNKNOWN_ENUM_VALUE'
         self._deploy_artifact_type = deploy_artifact_type

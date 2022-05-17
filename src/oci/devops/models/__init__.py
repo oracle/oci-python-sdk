@@ -12,6 +12,15 @@ from .approval_policy import ApprovalPolicy
 from .approve_deployment_details import ApproveDeploymentDetails
 from .automated_deploy_stage_rollback_policy import AutomatedDeployStageRollbackPolicy
 from .backend_set_ip_collection import BackendSetIpCollection
+from .bitbucket_cloud_app_password_connection import BitbucketCloudAppPasswordConnection
+from .bitbucket_cloud_app_password_connection_summary import BitbucketCloudAppPasswordConnectionSummary
+from .bitbucket_cloud_build_run_source import BitbucketCloudBuildRunSource
+from .bitbucket_cloud_build_source import BitbucketCloudBuildSource
+from .bitbucket_cloud_filter import BitbucketCloudFilter
+from .bitbucket_cloud_filter_attributes import BitbucketCloudFilterAttributes
+from .bitbucket_cloud_trigger import BitbucketCloudTrigger
+from .bitbucket_cloud_trigger_create_result import BitbucketCloudTriggerCreateResult
+from .bitbucket_cloud_trigger_summary import BitbucketCloudTriggerSummary
 from .build_outputs import BuildOutputs
 from .build_pipeline import BuildPipeline
 from .build_pipeline_collection import BuildPipelineCollection
@@ -78,6 +87,8 @@ from .connection_summary import ConnectionSummary
 from .container_registry_delivered_artifact import ContainerRegistryDeliveredArtifact
 from .count_based_approval_policy import CountBasedApprovalPolicy
 from .create_absolute_wait_criteria_details import CreateAbsoluteWaitCriteriaDetails
+from .create_bitbucket_cloud_app_password_connection_details import CreateBitbucketCloudAppPasswordConnectionDetails
+from .create_bitbucket_cloud_trigger_details import CreateBitbucketCloudTriggerDetails
 from .create_build_pipeline_details import CreateBuildPipelineDetails
 from .create_build_pipeline_stage_details import CreateBuildPipelineStageDetails
 from .create_build_run_details import CreateBuildRunDetails
@@ -115,6 +126,7 @@ from .create_oke_canary_deploy_stage_details import CreateOkeCanaryDeployStageDe
 from .create_oke_canary_traffic_shift_deploy_stage_details import CreateOkeCanaryTrafficShiftDeployStageDetails
 from .create_oke_cluster_deploy_environment_details import CreateOkeClusterDeployEnvironmentDetails
 from .create_oke_deploy_stage_details import CreateOkeDeployStageDetails
+from .create_oke_helm_chart_deploy_stage_details import CreateOkeHelmChartDeployStageDetails
 from .create_project_details import CreateProjectDetails
 from .create_repository_details import CreateRepositoryDetails
 from .create_single_deploy_stage_deployment_details import CreateSingleDeployStageDeploymentDetails
@@ -214,6 +226,7 @@ from .gitlab_filter_attributes import GitlabFilterAttributes
 from .gitlab_trigger import GitlabTrigger
 from .gitlab_trigger_create_result import GitlabTriggerCreateResult
 from .gitlab_trigger_summary import GitlabTriggerSummary
+from .helm_repository_deploy_artifact_source import HelmRepositoryDeployArtifactSource
 from .inline_deploy_artifact_source import InlineDeployArtifactSource
 from .invoke_function_deploy_stage import InvokeFunctionDeployStage
 from .invoke_function_deploy_stage_execution_progress import InvokeFunctionDeployStageExecutionProgress
@@ -256,6 +269,9 @@ from .oke_cluster_deploy_environment_summary import OkeClusterDeployEnvironmentS
 from .oke_deploy_stage import OkeDeployStage
 from .oke_deploy_stage_execution_progress import OkeDeployStageExecutionProgress
 from .oke_deploy_stage_summary import OkeDeployStageSummary
+from .oke_helm_chart_deploy_stage import OkeHelmChartDeployStage
+from .oke_helm_chart_deploy_stage_summary import OkeHelmChartDeployStageSummary
+from .oke_helm_chart_deployment_stage_execution_progress import OkeHelmChartDeploymentStageExecutionProgress
 from .private_endpoint_channel import PrivateEndpointChannel
 from .project import Project
 from .project_collection import ProjectCollection
@@ -301,6 +317,8 @@ from .trigger_info import TriggerInfo
 from .trigger_schedule import TriggerSchedule
 from .trigger_summary import TriggerSummary
 from .update_absolute_wait_criteria_details import UpdateAbsoluteWaitCriteriaDetails
+from .update_bitbucket_cloud_app_password_connection_details import UpdateBitbucketCloudAppPasswordConnectionDetails
+from .update_bitbucket_cloud_trigger_details import UpdateBitbucketCloudTriggerDetails
 from .update_build_pipeline_details import UpdateBuildPipelineDetails
 from .update_build_pipeline_stage_details import UpdateBuildPipelineStageDetails
 from .update_build_run_details import UpdateBuildRunDetails
@@ -338,6 +356,7 @@ from .update_oke_canary_deploy_stage_details import UpdateOkeCanaryDeployStageDe
 from .update_oke_canary_traffic_shift_deploy_stage_details import UpdateOkeCanaryTrafficShiftDeployStageDetails
 from .update_oke_cluster_deploy_environment_details import UpdateOkeClusterDeployEnvironmentDetails
 from .update_oke_deploy_stage_details import UpdateOkeDeployStageDetails
+from .update_oke_helm_chart_deploy_stage_details import UpdateOkeHelmChartDeployStageDetails
 from .update_project_details import UpdateProjectDetails
 from .update_repository_details import UpdateRepositoryDetails
 from .update_single_deploy_stage_deployment_details import UpdateSingleDeployStageDeploymentDetails
@@ -347,6 +366,8 @@ from .update_trigger_details import UpdateTriggerDetails
 from .update_wait_criteria_details import UpdateWaitCriteriaDetails
 from .update_wait_deploy_stage_details import UpdateWaitDeployStageDetails
 from .update_wait_stage_details import UpdateWaitStageDetails
+from .vulnerability_audit_summary import VulnerabilityAuditSummary
+from .vulnerability_audit_summary_collection import VulnerabilityAuditSummaryCollection
 from .wait_criteria import WaitCriteria
 from .wait_criteria_summary import WaitCriteriaSummary
 from .wait_deploy_stage import WaitDeployStage
@@ -374,6 +395,15 @@ devops_type_mapping = {
     "ApproveDeploymentDetails": ApproveDeploymentDetails,
     "AutomatedDeployStageRollbackPolicy": AutomatedDeployStageRollbackPolicy,
     "BackendSetIpCollection": BackendSetIpCollection,
+    "BitbucketCloudAppPasswordConnection": BitbucketCloudAppPasswordConnection,
+    "BitbucketCloudAppPasswordConnectionSummary": BitbucketCloudAppPasswordConnectionSummary,
+    "BitbucketCloudBuildRunSource": BitbucketCloudBuildRunSource,
+    "BitbucketCloudBuildSource": BitbucketCloudBuildSource,
+    "BitbucketCloudFilter": BitbucketCloudFilter,
+    "BitbucketCloudFilterAttributes": BitbucketCloudFilterAttributes,
+    "BitbucketCloudTrigger": BitbucketCloudTrigger,
+    "BitbucketCloudTriggerCreateResult": BitbucketCloudTriggerCreateResult,
+    "BitbucketCloudTriggerSummary": BitbucketCloudTriggerSummary,
     "BuildOutputs": BuildOutputs,
     "BuildPipeline": BuildPipeline,
     "BuildPipelineCollection": BuildPipelineCollection,
@@ -440,6 +470,8 @@ devops_type_mapping = {
     "ContainerRegistryDeliveredArtifact": ContainerRegistryDeliveredArtifact,
     "CountBasedApprovalPolicy": CountBasedApprovalPolicy,
     "CreateAbsoluteWaitCriteriaDetails": CreateAbsoluteWaitCriteriaDetails,
+    "CreateBitbucketCloudAppPasswordConnectionDetails": CreateBitbucketCloudAppPasswordConnectionDetails,
+    "CreateBitbucketCloudTriggerDetails": CreateBitbucketCloudTriggerDetails,
     "CreateBuildPipelineDetails": CreateBuildPipelineDetails,
     "CreateBuildPipelineStageDetails": CreateBuildPipelineStageDetails,
     "CreateBuildRunDetails": CreateBuildRunDetails,
@@ -477,6 +509,7 @@ devops_type_mapping = {
     "CreateOkeCanaryTrafficShiftDeployStageDetails": CreateOkeCanaryTrafficShiftDeployStageDetails,
     "CreateOkeClusterDeployEnvironmentDetails": CreateOkeClusterDeployEnvironmentDetails,
     "CreateOkeDeployStageDetails": CreateOkeDeployStageDetails,
+    "CreateOkeHelmChartDeployStageDetails": CreateOkeHelmChartDeployStageDetails,
     "CreateProjectDetails": CreateProjectDetails,
     "CreateRepositoryDetails": CreateRepositoryDetails,
     "CreateSingleDeployStageDeploymentDetails": CreateSingleDeployStageDeploymentDetails,
@@ -576,6 +609,7 @@ devops_type_mapping = {
     "GitlabTrigger": GitlabTrigger,
     "GitlabTriggerCreateResult": GitlabTriggerCreateResult,
     "GitlabTriggerSummary": GitlabTriggerSummary,
+    "HelmRepositoryDeployArtifactSource": HelmRepositoryDeployArtifactSource,
     "InlineDeployArtifactSource": InlineDeployArtifactSource,
     "InvokeFunctionDeployStage": InvokeFunctionDeployStage,
     "InvokeFunctionDeployStageExecutionProgress": InvokeFunctionDeployStageExecutionProgress,
@@ -618,6 +652,9 @@ devops_type_mapping = {
     "OkeDeployStage": OkeDeployStage,
     "OkeDeployStageExecutionProgress": OkeDeployStageExecutionProgress,
     "OkeDeployStageSummary": OkeDeployStageSummary,
+    "OkeHelmChartDeployStage": OkeHelmChartDeployStage,
+    "OkeHelmChartDeployStageSummary": OkeHelmChartDeployStageSummary,
+    "OkeHelmChartDeploymentStageExecutionProgress": OkeHelmChartDeploymentStageExecutionProgress,
     "PrivateEndpointChannel": PrivateEndpointChannel,
     "Project": Project,
     "ProjectCollection": ProjectCollection,
@@ -663,6 +700,8 @@ devops_type_mapping = {
     "TriggerSchedule": TriggerSchedule,
     "TriggerSummary": TriggerSummary,
     "UpdateAbsoluteWaitCriteriaDetails": UpdateAbsoluteWaitCriteriaDetails,
+    "UpdateBitbucketCloudAppPasswordConnectionDetails": UpdateBitbucketCloudAppPasswordConnectionDetails,
+    "UpdateBitbucketCloudTriggerDetails": UpdateBitbucketCloudTriggerDetails,
     "UpdateBuildPipelineDetails": UpdateBuildPipelineDetails,
     "UpdateBuildPipelineStageDetails": UpdateBuildPipelineStageDetails,
     "UpdateBuildRunDetails": UpdateBuildRunDetails,
@@ -700,6 +739,7 @@ devops_type_mapping = {
     "UpdateOkeCanaryTrafficShiftDeployStageDetails": UpdateOkeCanaryTrafficShiftDeployStageDetails,
     "UpdateOkeClusterDeployEnvironmentDetails": UpdateOkeClusterDeployEnvironmentDetails,
     "UpdateOkeDeployStageDetails": UpdateOkeDeployStageDetails,
+    "UpdateOkeHelmChartDeployStageDetails": UpdateOkeHelmChartDeployStageDetails,
     "UpdateProjectDetails": UpdateProjectDetails,
     "UpdateRepositoryDetails": UpdateRepositoryDetails,
     "UpdateSingleDeployStageDeploymentDetails": UpdateSingleDeployStageDeploymentDetails,
@@ -709,6 +749,8 @@ devops_type_mapping = {
     "UpdateWaitCriteriaDetails": UpdateWaitCriteriaDetails,
     "UpdateWaitDeployStageDetails": UpdateWaitDeployStageDetails,
     "UpdateWaitStageDetails": UpdateWaitStageDetails,
+    "VulnerabilityAuditSummary": VulnerabilityAuditSummary,
+    "VulnerabilityAuditSummaryCollection": VulnerabilityAuditSummaryCollection,
     "WaitCriteria": WaitCriteria,
     "WaitCriteriaSummary": WaitCriteriaSummary,
     "WaitDeployStage": WaitDeployStage,

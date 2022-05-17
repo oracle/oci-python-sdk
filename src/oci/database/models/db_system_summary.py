@@ -42,6 +42,14 @@ class DbSystemSummary(object):
     __ https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
     """
 
+    #: A constant which can be used with the storage_volume_performance_mode property of a DbSystemSummary.
+    #: This constant has a value of "BALANCED"
+    STORAGE_VOLUME_PERFORMANCE_MODE_BALANCED = "BALANCED"
+
+    #: A constant which can be used with the storage_volume_performance_mode property of a DbSystemSummary.
+    #: This constant has a value of "HIGH_PERFORMANCE"
+    STORAGE_VOLUME_PERFORMANCE_MODE_HIGH_PERFORMANCE = "HIGH_PERFORMANCE"
+
     #: A constant which can be used with the database_edition property of a DbSystemSummary.
     #: This constant has a value of "STANDARD_EDITION"
     DATABASE_EDITION_STANDARD_EDITION = "STANDARD_EDITION"
@@ -154,6 +162,16 @@ class DbSystemSummary(object):
         :param backup_network_nsg_ids:
             The value to assign to the backup_network_nsg_ids property of this DbSystemSummary.
         :type backup_network_nsg_ids: list[str]
+
+        :param memory_size_in_gbs:
+            The value to assign to the memory_size_in_gbs property of this DbSystemSummary.
+        :type memory_size_in_gbs: int
+
+        :param storage_volume_performance_mode:
+            The value to assign to the storage_volume_performance_mode property of this DbSystemSummary.
+            Allowed values for this property are: "BALANCED", "HIGH_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+            Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+        :type storage_volume_performance_mode: str
 
         :param shape:
             The value to assign to the shape property of this DbSystemSummary.
@@ -314,6 +332,8 @@ class DbSystemSummary(object):
             'backup_subnet_id': 'str',
             'nsg_ids': 'list[str]',
             'backup_network_nsg_ids': 'list[str]',
+            'memory_size_in_gbs': 'int',
+            'storage_volume_performance_mode': 'str',
             'shape': 'str',
             'db_system_options': 'DbSystemOptions',
             'ssh_public_keys': 'list[str]',
@@ -361,6 +381,8 @@ class DbSystemSummary(object):
             'backup_subnet_id': 'backupSubnetId',
             'nsg_ids': 'nsgIds',
             'backup_network_nsg_ids': 'backupNetworkNsgIds',
+            'memory_size_in_gbs': 'memorySizeInGBs',
+            'storage_volume_performance_mode': 'storageVolumePerformanceMode',
             'shape': 'shape',
             'db_system_options': 'dbSystemOptions',
             'ssh_public_keys': 'sshPublicKeys',
@@ -407,6 +429,8 @@ class DbSystemSummary(object):
         self._backup_subnet_id = None
         self._nsg_ids = None
         self._backup_network_nsg_ids = None
+        self._memory_size_in_gbs = None
+        self._storage_volume_performance_mode = None
         self._shape = None
         self._db_system_options = None
         self._ssh_public_keys = None
@@ -651,9 +675,9 @@ class DbSystemSummary(object):
     def nsg_ids(self):
         """
         Gets the nsg_ids of this DbSystemSummary.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -668,9 +692,9 @@ class DbSystemSummary(object):
     def nsg_ids(self, nsg_ids):
         """
         Sets the nsg_ids of this DbSystemSummary.
-        A list of the `OCIDs`__ of the network security groups (NSGs) that this resource belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see `Security Rules`__.
+        The list of `OCIDs`__ for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see `Security Rules`__.
         **NsgIds restrictions:**
-        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds array cannot be empty.
+        - Autonomous Databases with private access require at least 1 Network Security Group (NSG). The nsgIds list cannot be empty.
 
         __ https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm
         __ https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm
@@ -710,6 +734,64 @@ class DbSystemSummary(object):
         :type: list[str]
         """
         self._backup_network_nsg_ids = backup_network_nsg_ids
+
+    @property
+    def memory_size_in_gbs(self):
+        """
+        Gets the memory_size_in_gbs of this DbSystemSummary.
+        Memory allocated to the DB system, in gigabytes.
+
+
+        :return: The memory_size_in_gbs of this DbSystemSummary.
+        :rtype: int
+        """
+        return self._memory_size_in_gbs
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, memory_size_in_gbs):
+        """
+        Sets the memory_size_in_gbs of this DbSystemSummary.
+        Memory allocated to the DB system, in gigabytes.
+
+
+        :param memory_size_in_gbs: The memory_size_in_gbs of this DbSystemSummary.
+        :type: int
+        """
+        self._memory_size_in_gbs = memory_size_in_gbs
+
+    @property
+    def storage_volume_performance_mode(self):
+        """
+        Gets the storage_volume_performance_mode of this DbSystemSummary.
+        The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See `Block Volume Performance`__ for more information.
+
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm
+
+        Allowed values for this property are: "BALANCED", "HIGH_PERFORMANCE", 'UNKNOWN_ENUM_VALUE'.
+        Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
+
+
+        :return: The storage_volume_performance_mode of this DbSystemSummary.
+        :rtype: str
+        """
+        return self._storage_volume_performance_mode
+
+    @storage_volume_performance_mode.setter
+    def storage_volume_performance_mode(self, storage_volume_performance_mode):
+        """
+        Sets the storage_volume_performance_mode of this DbSystemSummary.
+        The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See `Block Volume Performance`__ for more information.
+
+        __ https://docs.cloud.oracle.com/Content/Block/Concepts/blockvolumeperformance.htm
+
+
+        :param storage_volume_performance_mode: The storage_volume_performance_mode of this DbSystemSummary.
+        :type: str
+        """
+        allowed_values = ["BALANCED", "HIGH_PERFORMANCE"]
+        if not value_allowed_none_or_none_sentinel(storage_volume_performance_mode, allowed_values):
+            storage_volume_performance_mode = 'UNKNOWN_ENUM_VALUE'
+        self._storage_volume_performance_mode = storage_volume_performance_mode
 
     @property
     def shape(self):

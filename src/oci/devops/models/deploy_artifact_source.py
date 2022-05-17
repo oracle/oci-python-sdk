@@ -25,12 +25,17 @@ class DeployArtifactSource(object):
     #: This constant has a value of "GENERIC_ARTIFACT"
     DEPLOY_ARTIFACT_SOURCE_TYPE_GENERIC_ARTIFACT = "GENERIC_ARTIFACT"
 
+    #: A constant which can be used with the deploy_artifact_source_type property of a DeployArtifactSource.
+    #: This constant has a value of "HELM_CHART"
+    DEPLOY_ARTIFACT_SOURCE_TYPE_HELM_CHART = "HELM_CHART"
+
     def __init__(self, **kwargs):
         """
         Initializes a new DeployArtifactSource object with values from keyword arguments. This class has the following subclasses and if you are using this class as input
         to a service operations then you should favor using a subclass over the base class:
 
         * :class:`~oci.devops.models.GenericDeployArtifactSource`
+        * :class:`~oci.devops.models.HelmRepositoryDeployArtifactSource`
         * :class:`~oci.devops.models.OcirDeployArtifactSource`
         * :class:`~oci.devops.models.InlineDeployArtifactSource`
 
@@ -38,7 +43,7 @@ class DeployArtifactSource(object):
 
         :param deploy_artifact_source_type:
             The value to assign to the deploy_artifact_source_type property of this DeployArtifactSource.
-            Allowed values for this property are: "INLINE", "OCIR", "GENERIC_ARTIFACT", 'UNKNOWN_ENUM_VALUE'.
+            Allowed values for this property are: "INLINE", "OCIR", "GENERIC_ARTIFACT", "HELM_CHART", 'UNKNOWN_ENUM_VALUE'.
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type deploy_artifact_source_type: str
 
@@ -64,6 +69,9 @@ class DeployArtifactSource(object):
         if type == 'GENERIC_ARTIFACT':
             return 'GenericDeployArtifactSource'
 
+        if type == 'HELM_CHART':
+            return 'HelmRepositoryDeployArtifactSource'
+
         if type == 'OCIR':
             return 'OcirDeployArtifactSource'
 
@@ -78,7 +86,7 @@ class DeployArtifactSource(object):
         **[Required]** Gets the deploy_artifact_source_type of this DeployArtifactSource.
         Specifies types of artifact sources.
 
-        Allowed values for this property are: "INLINE", "OCIR", "GENERIC_ARTIFACT", 'UNKNOWN_ENUM_VALUE'.
+        Allowed values for this property are: "INLINE", "OCIR", "GENERIC_ARTIFACT", "HELM_CHART", 'UNKNOWN_ENUM_VALUE'.
         Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
 
 
@@ -97,7 +105,7 @@ class DeployArtifactSource(object):
         :param deploy_artifact_source_type: The deploy_artifact_source_type of this DeployArtifactSource.
         :type: str
         """
-        allowed_values = ["INLINE", "OCIR", "GENERIC_ARTIFACT"]
+        allowed_values = ["INLINE", "OCIR", "GENERIC_ARTIFACT", "HELM_CHART"]
         if not value_allowed_none_or_none_sentinel(deploy_artifact_source_type, allowed_values):
             deploy_artifact_source_type = 'UNKNOWN_ENUM_VALUE'
         self._deploy_artifact_source_type = deploy_artifact_source_type

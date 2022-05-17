@@ -67,6 +67,7 @@ class DeployStageExecutionProgress(object):
         * :class:`~oci.devops.models.OkeDeployStageExecutionProgress`
         * :class:`~oci.devops.models.FunctionDeployStageExecutionProgress`
         * :class:`~oci.devops.models.OkeBlueGreenTrafficShiftDeployStageExecutionProgress`
+        * :class:`~oci.devops.models.OkeHelmChartDeploymentStageExecutionProgress`
         * :class:`~oci.devops.models.InvokeFunctionDeployStageExecutionProgress`
         * :class:`~oci.devops.models.OkeCanaryTrafficShiftDeployStageExecutionProgress`
         * :class:`~oci.devops.models.ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress`
@@ -186,6 +187,9 @@ class DeployStageExecutionProgress(object):
 
         if type == 'OKE_BLUE_GREEN_TRAFFIC_SHIFT':
             return 'OkeBlueGreenTrafficShiftDeployStageExecutionProgress'
+
+        if type == 'OKE_HELM_CHART_DEPLOYMENT':
+            return 'OkeHelmChartDeploymentStageExecutionProgress'
 
         if type == 'INVOKE_FUNCTION':
             return 'InvokeFunctionDeployStageExecutionProgress'

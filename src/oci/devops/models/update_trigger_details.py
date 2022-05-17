@@ -21,6 +21,7 @@ class UpdateTriggerDetails(object):
         * :class:`~oci.devops.models.UpdateDevopsCodeRepositoryTriggerDetails`
         * :class:`~oci.devops.models.UpdateGithubTriggerDetails`
         * :class:`~oci.devops.models.UpdateGitlabTriggerDetails`
+        * :class:`~oci.devops.models.UpdateBitbucketCloudTriggerDetails`
 
         The following keyword arguments are supported (corresponding to the getters/setters of this class):
 
@@ -90,6 +91,9 @@ class UpdateTriggerDetails(object):
 
         if type == 'GITLAB':
             return 'UpdateGitlabTriggerDetails'
+
+        if type == 'BITBUCKET_CLOUD':
+            return 'UpdateBitbucketCloudTriggerDetails'
         else:
             return 'UpdateTriggerDetails'
 

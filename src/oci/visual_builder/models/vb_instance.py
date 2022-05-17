@@ -126,6 +126,14 @@ class VbInstance(object):
             Any unrecognized values returned by a service will be mapped to 'UNKNOWN_ENUM_VALUE'.
         :type consumption_model: str
 
+        :param idcs_info:
+            The value to assign to the idcs_info property of this VbInstance.
+        :type idcs_info: oci.visual_builder.models.IdcsInfoDetails
+
+        :param attachments:
+            The value to assign to the attachments property of this VbInstance.
+        :type attachments: list[oci.visual_builder.models.AttachmentDetails]
+
         """
         self.swagger_types = {
             'id': 'str',
@@ -143,7 +151,9 @@ class VbInstance(object):
             'is_visual_builder_enabled': 'bool',
             'custom_endpoint': 'CustomEndpointDetails',
             'alternate_custom_endpoints': 'list[CustomEndpointDetails]',
-            'consumption_model': 'str'
+            'consumption_model': 'str',
+            'idcs_info': 'IdcsInfoDetails',
+            'attachments': 'list[AttachmentDetails]'
         }
 
         self.attribute_map = {
@@ -162,7 +172,9 @@ class VbInstance(object):
             'is_visual_builder_enabled': 'isVisualBuilderEnabled',
             'custom_endpoint': 'customEndpoint',
             'alternate_custom_endpoints': 'alternateCustomEndpoints',
-            'consumption_model': 'consumptionModel'
+            'consumption_model': 'consumptionModel',
+            'idcs_info': 'idcsInfo',
+            'attachments': 'attachments'
         }
 
         self._id = None
@@ -181,6 +193,8 @@ class VbInstance(object):
         self._custom_endpoint = None
         self._alternate_custom_endpoints = None
         self._consumption_model = None
+        self._idcs_info = None
+        self._attachments = None
 
     @property
     def id(self):
@@ -579,6 +593,50 @@ class VbInstance(object):
         if not value_allowed_none_or_none_sentinel(consumption_model, allowed_values):
             consumption_model = 'UNKNOWN_ENUM_VALUE'
         self._consumption_model = consumption_model
+
+    @property
+    def idcs_info(self):
+        """
+        Gets the idcs_info of this VbInstance.
+
+        :return: The idcs_info of this VbInstance.
+        :rtype: oci.visual_builder.models.IdcsInfoDetails
+        """
+        return self._idcs_info
+
+    @idcs_info.setter
+    def idcs_info(self, idcs_info):
+        """
+        Sets the idcs_info of this VbInstance.
+
+        :param idcs_info: The idcs_info of this VbInstance.
+        :type: oci.visual_builder.models.IdcsInfoDetails
+        """
+        self._idcs_info = idcs_info
+
+    @property
+    def attachments(self):
+        """
+        Gets the attachments of this VbInstance.
+        A list of associated attachments to other services
+
+
+        :return: The attachments of this VbInstance.
+        :rtype: list[oci.visual_builder.models.AttachmentDetails]
+        """
+        return self._attachments
+
+    @attachments.setter
+    def attachments(self, attachments):
+        """
+        Sets the attachments of this VbInstance.
+        A list of associated attachments to other services
+
+
+        :param attachments: The attachments of this VbInstance.
+        :type: list[oci.visual_builder.models.AttachmentDetails]
+        """
+        self._attachments = attachments
 
     def __repr__(self):
         return formatted_flat_dict(self)

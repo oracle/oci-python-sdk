@@ -20,6 +20,7 @@ class UpdateDeployStageDetails(object):
 
         * :class:`~oci.devops.models.UpdateOkeCanaryTrafficShiftDeployStageDetails`
         * :class:`~oci.devops.models.UpdateOkeCanaryDeployStageDetails`
+        * :class:`~oci.devops.models.UpdateOkeHelmChartDeployStageDetails`
         * :class:`~oci.devops.models.UpdateComputeInstanceGroupDeployStageDetails`
         * :class:`~oci.devops.models.UpdateOkeCanaryApprovalDeployStageDetails`
         * :class:`~oci.devops.models.UpdateOkeDeployStageDetails`
@@ -101,6 +102,9 @@ class UpdateDeployStageDetails(object):
 
         if type == 'OKE_CANARY_DEPLOYMENT':
             return 'UpdateOkeCanaryDeployStageDetails'
+
+        if type == 'OKE_HELM_CHART_DEPLOYMENT':
+            return 'UpdateOkeHelmChartDeployStageDetails'
 
         if type == 'COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT':
             return 'UpdateComputeInstanceGroupDeployStageDetails'
