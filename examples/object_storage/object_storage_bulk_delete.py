@@ -25,6 +25,7 @@
 #   -sb source_bucket
 #   -sp source_prefix
 #   -sr source_region
+#   -sn source_namespace
 ##########################################################################
 
 import threading
@@ -52,6 +53,7 @@ parser.add_argument('-sb', default="", dest='source_bucket', help='Source Bucket
 parser.add_argument('-sp', default="", dest='source_prefix', help='Source Prefix Include')
 parser.add_argument('-se', default="", dest='source_prefix_exclude', help='Source Prefix Exclude')
 parser.add_argument('-exclude_dirs', action='store_true', default=False, dest='source_exclude_dirs', help='Exclude Directories')
+parser.add_argument('-sn', default="", dest='source_namespace', help='Source Namespace (Default current connection)')
 parser.add_argument('-sr', default="", dest='source_region', help='Source Region')
 cmd = parser.parse_args()
 
@@ -83,6 +85,7 @@ object_storage_client = None
 source_namespace = ""
 source_bucket = cmd.source_bucket
 source_prefix = cmd.source_prefix
+source_namespace = cmd.source_namespace
 source_prefix_exclude = cmd.source_prefix_exclude
 source_region = cmd.source_region
 source_exclude_dirs = cmd.source_exclude_dirs
@@ -289,7 +292,8 @@ def connect_to_object_storage():
             object_storage_client.base_client.session.proxies = {'https': cmd.proxy}
 
         # retrieve namespace from object storage
-        source_namespace = object_storage_client.get_namespace(retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+        if not source_namespace:
+            source_namespace = object_storage_client.get_namespace(retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
         print("Succeed.")
 
     except Exception as e:
