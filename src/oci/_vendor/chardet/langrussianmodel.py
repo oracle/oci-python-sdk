@@ -6,7 +6,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from .sbcharsetprober import SingleByteCharSetModel
+from ..chardet.sbcharsetprober import SingleByteCharSetModel
 
 
 # 3: Positive

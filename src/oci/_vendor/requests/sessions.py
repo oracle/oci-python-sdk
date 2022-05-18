@@ -34,7 +34,7 @@ from .adapters import HTTPAdapter
 
 from .utils import (
     requote_uri, get_environ_proxies, get_netrc_auth, should_bypass_proxies,
-    get_auth_from_url, rewind_body
+    get_auth_from_url, rewind_body, resolve_proxies
 )
 
 from .status_codes import codes
@@ -289,19 +289,8 @@ class SessionRedirectMixin(object):
         """
         proxies = proxies if proxies is not None else {}
         headers = prepared_request.headers
-        url = prepared_request.url
-        scheme = urlparse(url).scheme
-        new_proxies = proxies.copy()
-        no_proxy = proxies.get('no_proxy')
-
-        bypass_proxy = should_bypass_proxies(url, no_proxy=no_proxy)
-        if self.trust_env and not bypass_proxy:
-            environ_proxies = get_environ_proxies(url, no_proxy=no_proxy)
-
-            proxy = environ_proxies.get(scheme, environ_proxies.get('all'))
-
-            if proxy:
-                new_proxies.setdefault(scheme, proxy)
+        scheme = urlparse(prepared_request.url).scheme
+        new_proxies = resolve_proxies(prepared_request, proxies, self.trust_env)
 
         if 'Proxy-Authorization' in headers:
             del headers['Proxy-Authorization']
@@ -511,7 +500,7 @@ class Session(SessionRedirectMixin):
             ``False``, requests will accept any TLS certificate presented by
             the server, and will ignore hostname mismatches and/or expired
             certificates, which will make your application vulnerable to
-            man-in-the-middle (MitM) attacks. Setting verify to ``False``
+            man-in-the-middle (MitM) attacks. Setting verify to ``False`` 
             may be useful during local development or testing.
         :param cert: (optional) if String, path to ssl client cert file (.pem).
             If Tuple, ('cert', 'key') pair.
@@ -638,7 +627,10 @@ class Session(SessionRedirectMixin):
         kwargs.setdefault('stream', self.stream)
         kwargs.setdefault('verify', self.verify)
         kwargs.setdefault('cert', self.cert)
-        kwargs.setdefault('proxies', self.proxies)
+        if 'proxies' not in kwargs:
+            kwargs['proxies'] = resolve_proxies(
+                request, self.proxies, self.trust_env
+            )
 
         # It's possible that users might accidentally send a Request object.
         # Guard against that specific failure case.

@@ -1,0 +1,10 @@
+target='src/oci/_vendor'
+packages = [
+    "PyJWT==1.7.1",
+    "chardet==4.0.0",
+    "idna==2.10",
+    "urllib3==1.26.9",
+    "requests==2.27.1",
+    "six==1.16.0",
+    "httpsig_cffi==15.0.0"
+]
