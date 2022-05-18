@@ -1,5 +1,5 @@
 # coding: utf-8
-# Copyright (c) 2016, 2022, Oracle and/or its affiliates.  All rights reserved.
+# Copyright (c) 2016, 2021, Oracle and/or its affiliates.  All rights reserved.
 # This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
 ##########################################################################
@@ -28,6 +28,7 @@
 #   -sp source_prefix_include
 #   -se source_prefix_exclude
 #   -sr source_region
+#   -sn source_namespace
 ##########################################################################
 import oci
 import argparse
@@ -50,6 +51,7 @@ parser.add_argument('-sb', default="", dest='source_bucket', help='Source Bucket
 parser.add_argument('-sp', default="", dest='source_prefix', help='Source Prefix Include')
 parser.add_argument('-se', default="", dest='source_prefix_exclude', help='Source Prefix Exclude')
 parser.add_argument('-sr', default="", dest='source_region', help='Source Region')
+parser.add_argument('-sn', default="", dest='source_namespace', help='Source Namespace (Default current connection)')
 parser.add_argument('-exclude_dirs', action='store_true', default=False, dest='source_exclude_dirs', help='Exclude Directories')
 parser.add_argument('-f', type=argparse.FileType('w'), dest='file', help="Output to file (as csv)")
 parser.add_argument('-co', action='store_true', default=False, dest='count_only', help='Count only files and size')
@@ -181,11 +183,11 @@ def print_command_info(source_namespace):
 ##############################################################################
 def main():
     object_storage_client = None
-    source_namespace = None
     source_bucket = cmd.source_bucket
     source_prefix = cmd.source_prefix
     source_prefix_exclude = cmd.source_prefix_exclude
     source_exclude_dirs = cmd.source_exclude_dirs
+    source_namespace = cmd.source_namespace
 
     # get signer
     config, signer = create_signer(cmd.config_file, cmd.config_profile, cmd.is_instance_principals, cmd.is_delegation_token)
@@ -202,7 +204,8 @@ def main():
             object_storage_client.base_client.session.proxies = {'https': cmd.proxy}
 
         # retrieve namespace from object storage
-        source_namespace = object_storage_client.get_namespace(retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
+        if not source_namespace:
+            source_namespace = object_storage_client.get_namespace(retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY).data
 
     except Exception as e:
         print("\nError connecting to Object Storage - " + str(e))
@@ -221,7 +224,8 @@ def main():
     # if output to file
     file = None
     if cmd.file:
-        file = open(cmd.file.name + ".txt", "w+")
+        file = open(cmd.file.name + ".csv", "w+")
+        file.write("Object Name,Size,Time Created,Time Modified, Storage Tier\n")
 
     # start processing
     count = 0
@@ -229,7 +233,7 @@ def main():
     next_starts_with = None
 
     while True:
-        response = object_storage_client.list_objects(source_namespace, source_bucket, start=next_starts_with, prefix=source_prefix, fields='size', retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
+        response = object_storage_client.list_objects(source_namespace, source_bucket, start=next_starts_with, prefix=source_prefix, fields='size,timeCreated,timeModified,storageTier', retry_strategy=oci.retry.DEFAULT_RETRY_STRATEGY)
         next_starts_with = response.data.next_start_with
 
         for object_file in response.data.objects:
@@ -243,11 +247,11 @@ def main():
 
             # if write to file:
             if cmd.file:
-                file.write(str(object_file.name) + "," + str(object_file.size) + "\n")
+                file.write(str(object_file.name) + "," + str(object_file.size) + "," + str(object_file.time_created)[0:16] + "," + str(object_file.time_modified)[0:16] + "," + str(object_file.storage_tier) + "\n")
 
             # if print to screen
             if not (cmd.file or cmd.count_only):
-                print(str('{:20,.0f}'.format(object_file.size)).rjust(20) + " - " + str(object_file.name))
+                print(str('{:20,.0f}'.format(object_file.size)).rjust(20) + " | C " + str(object_file.time_created)[0:16] + " | U " + str(object_file.time_modified)[0:16] + " | " + str(object_file.storage_tier).ljust(18)[0:17] + " | " + str(object_file.name))
 
             # feedback if write to file or count every 100k rows
             if (cmd.file or cmd.count_only) and count % 100000 == 0:
